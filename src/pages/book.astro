@@ -1,0 +1,21 @@
+---
+import { getEntry } from 'astro:content';
+import MarketingLayout from '../layouts/MarketingLayout.astro';
+
+const entry = await getEntry('pages', 'book');
+if (!entry) throw new Error('pages/book.mdx is missing.');
+const { Content } = await entry.render();
+export const prerender = true;
+---
+
+<MarketingLayout
+  title={entry.data.title}
+  description={entry.data.description}
+  path="/book"
+  pageType="marketing"
+  pageCategory="book"
+  breadcrumbs={[{ name: 'Home', path: '/' }, { name: 'Book a Review', path: '/book' }]}
+  faq={entry.data.faq}
+>
+  <Content />
+</MarketingLayout>

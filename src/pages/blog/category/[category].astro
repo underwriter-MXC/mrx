@@ -1,0 +1,71 @@
+---
+/**
+ * Blog category filter. /blog/category/[category]
+ */
+import { getCollection, type CollectionEntry } from 'astro:content';
+import MarketingLayout from '../../../layouts/MarketingLayout.astro';
+import PostGrid from '../../../components/organisms/PostGrid.astro';
+import CategoryNav from '../../../components/organisms/CategoryNav.astro';
+import Heading from '../../../components/atoms/Heading.astro';
+import Text from '../../../components/atoms/Text.astro';
+import CtaBlock from '../../../components/molecules/CtaBlock.astro';
+
+export async function getStaticPaths() {
+  const categories = await getCollection('categories');
+  return categories.map((c) => ({
+    params: { category: c.data.slug },
+    props: { category: c },
+  }));
+}
+
+interface Props {
+  category: CollectionEntry<'categories'>;
+}
+
+const { category } = Astro.props;
+const posts = (await getCollection('posts', (p) => !p.data.draft && p.data.category === category.data.id)).sort(
+  (a, b) => new Date(b.data.published_at).getTime() - new Date(a.data.published_at).getTime(),
+);
+const categories = await getCollection('categories');
+export const prerender = true;
+const title = `${category.data.label} · Texas Mineral Rights · MRX`;
+// Compose a description that fits the 160-char canonical SEO budget.
+// When the category description + the suffix would exceed 160 chars,
+// we fall back to a short generic suffix.
+const SUFFIX = ` Read step-by-step guides and a free, no-pressure underwriter review from MRX.`;
+const composed = `${category.data.description}${SUFFIX}`;
+const description = composed.length > 160
+  ? `${category.data.description.slice(0, 160 - SUFFIX.length - 2).replace(/[\s,.;:]+$/, '')}. ${SUFFIX}`
+  : composed;
+---
+
+<MarketingLayout
+  title={title}
+  description={description}
+  path={`/blog/category/${category.data.slug}/`}
+  pageType="blog"
+  pageCategory={category.data.id}
+  breadcrumbs={[
+    { name: 'Home', path: '/' },
+    { name: 'Blog', path: '/blog' },
+    { name: category.data.label, path: `/blog/category/${category.data.slug}/` },
+  ]}
+>
+  <section class="container section--sm">
+    <Heading level={1} size="4xl">{category.data.label}</Heading>
+    <Text class="text--lead" style="margin-top: var(--space-3); max-width: 60ch;">{category.data.description}</Text>
+  </section>
+  <CategoryNav categories={categories} currentSlug={category.data.slug} />
+  {posts.length === 0 ? (
+    <section class="container section">
+      <Text>No posts in this category yet. Check back shortly.</Text>
+    </section>
+  ) : (
+    <PostGrid posts={posts} />
+  )}
+  <CtaBlock
+    title="Want a transparent review of your specific situation?"
+    body="A free, confidential underwriter review. The output is a directional range with the assumptions stated. No card. No obligation."
+    primaryCta={{ label: 'Book My Free Review', href: '/book', ctaName: `cat-${category.data.slug}-cta-book` }}
+  />
+</MarketingLayout>

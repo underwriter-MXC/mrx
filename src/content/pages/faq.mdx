@@ -1,0 +1,93 @@
+---
+title: 'Your Mineral Rights Questions Answered · MRX'
+description: 'Plain-language answers to common questions Texas mineral rights owners ask before booking a free underwriter review. Free? Pressure? Appraisal?'
+slug: 'faq'
+category: 'faq'
+hero_kicker: 'FAQ · Texas mineral rights'
+h1: 'Your mineral rights questions answered'
+primary_cta:
+  label: 'Book My Free Underwriter Review'
+  href: '/book'
+  ctaName: 'faq-primary-book'
+secondary_cta:
+  label: 'See the Published Methodology'
+  href: '/methodology'
+  ctaName: 'faq-secondary-methodology'
+disclaimer_top: false
+faq:
+  - question: 'Is this an appraisal?'
+    answer: 'No. Our review is a directional underwriter assessment, not a certified appraisal. We use the same DCF approach underwriters use internally, but the output is a range with the assumptions stated, not a certified valuation. Owners often consider hiring a Texas-licensed appraiser when a certified value is required (e.g., for certain estate or tax filings); we are happy to help you think through when that makes sense.'
+  - question: 'Is this legal or tax guidance?'
+    answer: 'No. We are not your attorney or your CPA. We can help you think through the questions worth asking a Texas-licensed attorney or CPA, and we will always recommend verifying ownership, royalty, tax, and production assumptions with qualified professionals before any transaction.'
+  - question: 'Will you pressure me to sell?'
+    answer: 'No. The review is genuinely free, with no obligation to sell. If you decide to hold, we still consider the conversation a good use of our time. We do not run follow-up pressure campaigns or push you toward a decision.'
+  - question: 'What if I already have an offer?'
+    answer: 'That is the right moment for a second look. Bring the offer document, royalty statements, and any lease or division-order paperwork. We will walk through what the offer assumes, what it may be leaving out, and the questions worth asking before you sign.'
+  - question: 'Is it really free?'
+    answer: 'Yes. The intake form does not collect a card. We do not charge a fee to review your information. If a transaction results from a review and we become a buyer, we disclose that relationship in writing before any agreement is signed; the price is then part of the agreement, not the review.'
+  - question: 'What documents do I need?'
+    answer: 'A recent royalty check stub, a copy of any offer letter you have received, and a lease or division order if you have one. If you do not have them, we will help you figure out what to ask for; many county clerk and operator records are available online or by request.'
+  - question: 'How long does the review take?'
+    answer: 'Most reviews wrap in 3-7 business days once we have the key documents in hand. If your situation is more complex (multi-county, multi-operator, contested title), it can take a bit longer; we will tell you up front.'
+compliance_signoff:
+  no_disallowed_phrases: true
+  no_named_competitor: true
+  no_superlative_about_mrx: true
+  no_advice_verb: true
+  no_appraisal_term: true
+  no_named_underwriter: true
+  has_footer_disclaimer: true
+  money_figure_sourced: false
+  reviewed_by: 'mrx_compliance-stage06-initial'
+  reviewed_at: '2026-06-11T00:00:00Z'
+---
+
+import Hero from '../../components/molecules/Hero.astro';
+import CtaBlock from '../../components/molecules/CtaBlock.astro';
+import FaqBlock from '../../components/molecules/FaqBlock.astro';
+import Text from '../../components/atoms/Text.astro';
+import Heading from '../../components/atoms/Heading.astro';
+
+<Hero
+  kicker={frontmatter.hero_kicker}
+  h1={frontmatter.h1}
+  lede="Plain-language answers to the questions Texas mineral rights owners ask most, before they book their free underwriter review. The review is genuinely free, with no obligation to sell, and is not a certified appraisal, legal opinion, or tax opinion."
+  primaryCta={frontmatter.primary_cta}
+  secondaryCta={frontmatter.secondary_cta}
+/>
+
+<section class="container section">
+  <Text class="text--lead" style="max-width: 60ch; margin-bottom: var(--space-8);">Seven answers to the questions owners ask most. If your question is not here, send us a note via the contact form and we will add it.</Text>
+  <FaqBlock pairs={frontmatter.faq} id="faq-block" />
+</section>
+
+<section class="section section--alt">
+  <div class="container">
+    <Heading level={2} size="3xl">A few related questions, briefly</Heading>
+    <div class="grid grid--2" style="margin-top: var(--space-8); gap: var(--space-6);">
+      <article>
+        <Heading level={3} size="md">Will the review be private?</Heading>
+        <Text>Yes. Your information is shared only with the underwriter team. We do not list interests publicly or share data with third parties for marketing purposes.</Text>
+      </article>
+      <article>
+        <Heading level={3} size="md">Do I have to share confidential information?</Heading>
+        <Text>You share what is needed to do the review. Production data and royalty statements are necessary; an offer letter, if you have one, sharpens the analysis. Personal information beyond what is needed is not requested.</Text>
+      </article>
+      <article>
+        <Heading level={3} size="md">What if my minerals are small?</Heading>
+        <Text>The size of the interest does not change the quality of the review. If you have a single royalty interest in a producing well, we will tell you what the production and decline context mean for that interest. The output is a directional range, scaled to the interest.</Text>
+      </article>
+      <article>
+        <Heading level={3} size="md">What if I am out of state?</Heading>
+        <Text>Many of the owners we work with are not in Texas. The review is a working conversation, not a series of in-person meetings. Documents can be shared electronically, and the deliverable is a written assessment with a follow-up call.</Text>
+      </article>
+    </div>
+  </div>
+</section>
+
+<CtaBlock
+  title="Ready for a transparent review?"
+  body="The intake is genuinely free, with no card. A confidential underwriter review, in plain language, with the math shown."
+  primaryCta={{ label: 'Book My Free Review', href: '/book', ctaName: 'faq-cta-block-book' }}
+  secondaryCta={{ label: 'Get the Free Guide', href: '/free-guide', ctaName: 'faq-cta-block-guide' }}
+/>

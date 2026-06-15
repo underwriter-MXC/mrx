@@ -1,0 +1,135 @@
+/* =========================================================================
+ * Modern CSS reset. Minimal, opinionated.
+ * Source: derived from Josh Comeau + Andy Bell's resets.
+ * ========================================================================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  min-height: 100vh;
+  line-height: 1.55;
+  font-family: var(--font-sans);
+  background: var(--color-bg);
+  color: var(--color-ink-900);
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-serif);
+  line-height: var(--lh-tight);
+  color: var(--color-brand-900);
+  font-weight: var(--fw-bold);
+}
+
+a {
+  color: var(--color-brand-700);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+a:hover {
+  color: var(--color-brand-900);
+}
+
+/* Visible focus styles for keyboard users only. */
+:focus {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-accent-500);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+}
+
+/* Skip link: visually hidden until focused. */
+.skip-link {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.skip-link:focus {
+  position: fixed;
+  left: 1rem;
+  top: 1rem;
+  width: auto;
+  height: auto;
+  padding: 0.75rem 1.25rem;
+  background: var(--color-brand-900);
+  color: var(--color-white);
+  z-index: var(--z-modal);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  font-weight: var(--fw-semibold);
+}

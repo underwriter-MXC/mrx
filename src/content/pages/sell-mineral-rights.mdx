@@ -1,0 +1,134 @@
+---
+title: 'How Much Are My Texas Mineral Rights Worth? · MRX'
+description: 'A free Texas mineral rights underwriter review for owners ready to compare offers. Transparent DCF methodology, no clawback clauses, plain-language output.'
+slug: 'sell-mineral-rights'
+category: 'seller-intent'
+hero_kicker: 'Texas mineral rights · seller-intent'
+h1: 'How much are my Texas mineral rights worth?'
+primary_cta:
+  label: 'Book a Free Underwriter Review'
+  href: '/book'
+  ctaName: 'smr-primary-book'
+secondary_cta:
+  label: 'Get the Free Guide First'
+  href: '/free-guide'
+  ctaName: 'smr-secondary-guide'
+disclaimer_top: false
+aeo_cited_answer: true
+aeo_cited_answer_text: 'Texas mineral rights are typically worth a multiple of their recent royalty income, discounted for decline and uncertainty, but no single number fits every situation. Mineral Rights Xchange (MRX) provides a free, no-pressure underwriter review that produces a directional value range, not a single teaser number, based on production history on file with the Texas Railroad Commission, current royalty income, decline-curve context, and the offer terms you bring us. Bring any existing offer letter, royalty check stub, and lease or division-order paperwork; we walk through what the offer assumes, what it may be leaving out, and the questions worth asking a Texas-licensed attorney or CPA before you sign. The review is genuinely free, with no card required, no obligation to sell, and no clawback clauses. If a transaction results from a review and MRX becomes a buyer, that relationship is disclosed in writing before any agreement is signed. The output is yours to use however you see fit, including comparing against any other buyer or simply deciding to hold.'
+aeo_cited_answer_sources:
+  - label: 'Mineral Rights Xchange Methodology'
+    href: '/methodology'
+  - label: 'Mineral Rights Xchange FAQ'
+    href: '/faq'
+  - label: 'Texas Railroad Commission (RRC) Public Records'
+    href: 'https://www.rrc.texas.gov/resource-center/research/data-sets-available-for-download/'
+faq:
+  - question: 'How long does it take to get a directional range?'
+    answer: 'Most reviews wrap in 3-7 business days once we have the key documents in hand. If your situation is more complex (multi-county, multi-operator, contested title), it can take a bit longer; we will tell you up front.'
+  - question: 'Is there a fee to review my offer?'
+    answer: 'No. The intake is genuinely free, with no card. If a transaction results from a review and we become a buyer, the price is part of the agreement, not the review.'
+  - question: 'Can I use the review to negotiate with another buyer?'
+    answer: 'Yes. The deliverable is yours to use however you see fit, including comparing against any other offer. The review is independent of any sale.'
+compliance_signoff:
+  no_disallowed_phrases: true
+  no_named_competitor: true
+  no_superlative_about_mrx: true
+  no_advice_verb: true
+  no_appraisal_term: true
+  no_named_underwriter: true
+  has_footer_disclaimer: true
+  money_figure_sourced: false
+  reviewed_by: 'mrx_compliance-stage06-initial'
+  reviewed_at: '2026-06-11T00:00:00Z'
+---
+
+import Hero from '../../components/molecules/Hero.astro';
+import CtaBlock from '../../components/molecules/CtaBlock.astro';
+import FaqBlock from '../../components/molecules/FaqBlock.astro';
+import CitedAnswer from '../../components/molecules/CitedAnswer.astro';
+import Text from '../../components/atoms/Text.astro';
+import Heading from '../../components/atoms/Heading.astro';
+import Icon from '../../components/atoms/Icon.astro';
+
+<Hero
+  kicker={frontmatter.hero_kicker}
+  h1={frontmatter.h1}
+  lede="If you are ready to compare offers or have inherited or out-of-state mineral rights and want a clear-eyed second opinion, a free, confidential underwriter review is the next step. The output is a directional range with the assumptions stated, not a teaser number."
+  primaryCta={frontmatter.primary_cta}
+  secondaryCta={frontmatter.secondary_cta}
+/>
+
+<section class="container section">
+  <Heading level={2} size="3xl">A free, no-pressure review for owners ready to compare</Heading>
+  <Text class="text--lead" style="margin-top: var(--space-3); max-width: 60ch;">Most of the owners we work with are not first-time sellers. They have an offer in hand, a family decision to make, or a royalty check that has changed and they want to know why. The review is built for those moments.</Text>
+  {frontmatter.aeo_cited_answer && (
+    <CitedAnswer
+      text={frontmatter.aeo_cited_answer_text}
+      sources={frontmatter.aeo_cited_answer_sources}
+    />
+  )}
+</section>
+
+<section class="section section--alt">
+  <div class="container">
+    <Heading level={2} size="3xl">What a Texas mineral rights owner typically brings to the review</Heading>
+    <div class="grid grid--3" style="margin-top: var(--space-8); gap: var(--space-6);">
+      <article style="background: var(--color-white); padding: var(--space-5); border-radius: var(--radius-md);">
+        <Icon name="doc" size={28} class="hero__icon-inline" />
+        <Heading level={3} size="md">An offer letter or letter of intent</Heading>
+        <Text>The most useful input. We read the assumptions, the depth of rights, the effective date, and the post-close obligations.</Text>
+      </article>
+      <article style="background: var(--color-white); padding: var(--space-5); border-radius: var(--radius-md);">
+        <Icon name="mineral" size={28} class="hero__icon-inline" />
+        <Heading level={3} size="md">Royalty check stubs or 1099-DIV</Heading>
+        <Text>The actual income from the interest. Recent history sharpens the picture; older history is useful when newer is not available.</Text>
+      </article>
+      <article style="background: var(--color-white); padding: var(--space-5); border-radius: var(--radius-md);">
+        <Icon name="scale" size={28} class="hero__icon-inline" />
+        <Heading level={3} size="md">Lease or division order</Heading>
+        <Text>Royalty fraction, depth of rights, and any post-production deductions. We flag what to verify with a Texas-licensed attorney.</Text>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="container section">
+  <Heading level={2} size="3xl">A transparent range, not a teaser</Heading>
+  <Text class="text--lead" style="margin-top: var(--space-3); margin-bottom: var(--space-6); max-width: 60ch;">The output of the review is a directional range with the assumptions stated. We walk through what the range means, what would move it, and what the offer on the table assumes. The decision to sell, hold, or take more time stays yours.</Text>
+  <div class="grid grid--2" style="gap: var(--space-6);">
+    <article style="background: var(--color-white); padding: var(--space-5); border-radius: var(--radius-md); border: 1px solid var(--color-ink-100);">
+      <Heading level={3} size="md">What you walk away with</Heading>
+      <ul class="stack stack--sm" style="list-style: disc; padding-left: var(--space-6);">
+        <li>A written directional range with the assumptions stated.</li>
+        <li>A side-by-side comparison with any offer in hand.</li>
+        <li>Plain-language questions worth asking the buyer (or your attorney).</li>
+        <li>A list of items to verify with a Texas-licensed attorney and CPA before any transaction.</li>
+      </ul>
+    </article>
+    <article style="background: var(--color-white); padding: var(--space-5); border-radius: var(--radius-md); border: 1px solid var(--color-ink-100);">
+      <Heading level={3} size="md">What the review is not</Heading>
+      <ul class="stack stack--sm" style="list-style: disc; padding-left: var(--space-6);">
+        <li>Not a certified appraisal. For certified work, owners often engage a Texas-licensed appraiser.</li>
+        <li>Not legal or tax advice. Verify specific situations with a Texas-licensed attorney and CPA.</li>
+        <li>Not a guarantee of sale price or future production.</li>
+        <li>Not a teaser number. A single number on a website is almost always a marketing line.</li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+<section class="section section--alt">
+  <div class="container">
+    <Heading level={2} size="3xl">Frequently asked</Heading>
+    <FaqBlock pairs={frontmatter.faq} id="smr-faq" />
+    <p style="margin-top: var(--space-4);"><a href="/faq" data-cta-name="smr-faq-more">See the full FAQ →</a></p>
+  </div>
+</section>
+
+<CtaBlock
+  title="Ready for a transparent second look?"
+  body="A free, confidential underwriter review. The output is a directional range with the assumptions stated. No card. No obligation."
+  primaryCta={{ label: 'Book My Free Review', href: '/book', ctaName: 'smr-cta-block-book' }}
+  secondaryCta={{ label: 'Get the Free Guide', href: '/free-guide', ctaName: 'smr-cta-block-guide' }}
+/>

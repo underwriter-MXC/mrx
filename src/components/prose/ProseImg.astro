@@ -1,0 +1,19 @@
+---
+/**
+ * ProseImg wrapper. <figure><img/></figure> with caption.
+ */
+interface Props {
+  src: string;
+  alt: string;
+  caption?: string;
+  width?: number;
+  height?: number;
+}
+
+const { src, alt, caption, width, height } = Astro.props;
+---
+
+<figure>
+  <img src={src} alt={alt} width={width} height={height} loading="lazy" decoding="async" />
+  {caption && <figcaption>{caption}</figcaption>}
+</figure>

@@ -1,0 +1,18 @@
+name = "mineral-rights-xchange"
+compatibility_date = "2026-06-01"
+pages_build_output_dir = "./dist"
+
+# Cloudflare Pages + Functions: the 2 hybrid POST routes in src/pages/api/
+# are mounted at /api/book and /api/free-guide via @astrojs/cloudflare
+# directory mode. Stage 08 (GHL) sets the actual secrets via:
+#   wrangler pages secret put MRX_GHL_API_KEY
+#   wrangler pages secret put MRX_GHL_LOCATION_ID
+#   wrangler pages secret put MRX_GHL_CALENDAR_URL
+#   wrangler pages secret put MRX_PDF_URL
+#   wrangler pages secret put MRX_CONTACT_NOTIFY_EMAIL
+# Stage 09 (deploy) sets PUBLIC_GTM_ID via Cloudflare Pages env (not secret).
+
+# Reserved env-var names per Astro Architecture Plan §9.
+# DO NOT commit real values; this file is committed but secrets are not.
+[vars]
+# PUBLIC_GTM_ID = "GTM-PLACEHOLDER"

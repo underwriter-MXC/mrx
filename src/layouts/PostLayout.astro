@@ -1,0 +1,52 @@
+---
+/**
+ * PostLayout. For /blog/[...slug] and the 2 blog index/category pages.
+ * Adds article-specific metadata, sidebar, related posts, and the
+ * top-of-page §7 disclaimer when frontmatter disclaimer_top: true.
+ */
+import BaseLayout from './BaseLayout.astro';
+import Disclaimer from '../components/molecules/Disclaimer.astro';
+import type { Crumb } from '../structured-data/breadcrumb';
+
+interface Props {
+  title: string;
+  description: string;
+  path: string;
+  ogImage?: string;
+  noindex?: boolean;
+  robots?: string;
+  pageType?: 'home' | 'marketing' | 'blog' | 'post' | 'utility';
+  pageCategory?: string;
+  breadcrumbs?: Crumb[];
+  /** When true (driven by post.frontmatter.disclaimer_top), render the §7 disclaimer at the top. */
+  disclaimerTop?: boolean;
+}
+
+const {
+  title,
+  description,
+  path,
+  ogImage,
+  noindex,
+  robots,
+  pageType = 'post',
+  pageCategory,
+  breadcrumbs,
+  disclaimerTop = false,
+} = Astro.props;
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  path={path}
+  ogImage={ogImage}
+  noindex={noindex}
+  robots={robots}
+  pageType={pageType}
+  pageCategory={pageCategory}
+  breadcrumbs={breadcrumbs}
+>
+  {disclaimerTop && <div class="container section--sm"><Disclaimer variant="top" /></div>}
+  <slot />
+</BaseLayout>

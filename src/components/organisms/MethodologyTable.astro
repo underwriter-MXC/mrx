@@ -1,0 +1,43 @@
+---
+/**
+ * MethodologyTable organism. The published DCF table on /methodology.
+ * Per the architecture plan, this is a typed data structure that the
+ * /methodology page renders. Stage 06 populates the rows from the
+ * ICP brief; stage 07 (SEO) may add columns for the SEO/AEO surface.
+ */
+interface Row {
+  factor: string;
+  description: string;
+  weight: 'high' | 'medium' | 'low';
+  source: string;
+}
+
+interface Props {
+  rows: Row[];
+}
+
+const { rows } = Astro.props;
+---
+
+<table class="methodology-table" aria-label="DCF methodology factors">
+  <thead>
+    <tr>
+      <th scope="col">Factor</th>
+      <th scope="col">What we look at</th>
+      <th scope="col">Influence</th>
+      <th scope="col">Source / reference</th>
+    </tr>
+  </thead>
+  <tbody>
+    {
+      rows.map((row) => (
+        <tr>
+          <th scope="row">{row.factor}</th>
+          <td>{row.description}</td>
+          <td>{row.weight}</td>
+          <td>{row.source}</td>
+        </tr>
+      ))
+    }
+  </tbody>
+</table>

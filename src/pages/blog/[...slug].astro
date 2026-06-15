@@ -1,0 +1,108 @@
+---
+export const prerender = true;
+
+/**
+ * Post detail. Renders /blog/[...slug]. Posts come from src/content/posts/.
+ */
+import { getCollection, type CollectionEntry } from 'astro:content';
+import PostLayout from '../../layouts/PostLayout.astro';
+import Prose from '../../components/prose/Prose.astro';
+import AuthorByline from '../../components/molecules/AuthorByline.astro';
+import CtaBlock from '../../components/molecules/CtaBlock.astro';
+import JsonLd from '../../components/seo/JsonLd.astro';
+import PostCard from '../../components/organisms/PostCard.astro';
+import Heading from '../../components/atoms/Heading.astro';
+import { article } from '../../structured-data/article';
+import { SITE } from '../../lib/site';
+import Text from '../../components/atoms/Text.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('posts', (p) => !p.data.draft);
+  return posts.map((post) => ({
+    params: { slug: post.id.replace(/\.mdx?$/, '') },
+    props: { post, allPosts: posts },
+  }));
+}
+
+interface Props {
+  post: CollectionEntry<'posts'>;
+  allPosts: CollectionEntry<'posts'>[];
+}
+
+const { post, allPosts } = Astro.props;
+const { Content } = await post.render();
+const slug = post.id.replace(/\.mdx?$/, '');
+
+// Article JSON-LD (per SEO plan §2.4)
+const authorUrlId = `${SITE.url}/about/#author-${post.data.author}`;
+const heroImageUrl = post.data.hero_image.src.startsWith('http')
+  ? post.data.hero_image.src
+  : `${SITE.url}${post.data.hero_image.src}`;
+const articleJsonLd = article({ ...post.data, slug }, authorUrlId, heroImageUrl);
+
+// Internal linking (per SEO plan §4): surface related posts in the
+// same category, excluding the current post. Cap at 3 to keep the
+// section scannable.
+const related = allPosts
+  .filter((p) => p.id !== post.id && p.data.category === post.data.category && !p.data.draft)
+  .sort((a, b) => new Date(b.data.published_at).getTime() - new Date(a.data.published_at).getTime())
+  .slice(0, 3);
+---
+
+<PostLayout
+  title={`${post.data.title} · MRX`}
+  description={post.data.description}
+  path={`/blog/${slug}/`}
+  pageType="post"
+  pageCategory={post.data.category}
+  breadcrumbs={[
+    { name: 'Home', path: '/' },
+    { name: 'Blog', path: '/blog' },
+    { name: post.data.title, path: `/blog/${slug}/` },
+  ]}
+  disclaimerTop={post.data.disclaimer_top}
+>
+  <JsonLd data={articleJsonLd} />
+
+  <section class="container container--prose section--sm">
+    <h1 style="font-size: var(--fs-4xl); line-height: var(--lh-tight); margin-bottom: var(--space-4);">{post.data.title}</h1>
+    <AuthorByline
+      authorName="Mineral Rights Xchange"
+      publishedAt={post.data.published_at}
+      readingMinutes={Math.max(1, Math.round(post.body.split(/\s+/).length / 220))}
+    />
+    <Text class="text--lead" style="margin-top: var(--space-4); margin-bottom: var(--space-6); font-style: italic;">{post.data.excerpt}</Text>
+  </section>
+
+  <section class="container container--prose section--sm">
+    <Prose>
+      <Content />
+    </Prose>
+  </section>
+
+  {
+    related.length > 0 && (
+      <section class="container section--sm" aria-labelledby="related-posts-heading">
+        <Heading level={2} size="2xl" id="related-posts-heading">Related guides</Heading>
+        <Text class="text--lead" style="margin-top: var(--space-2); max-width: 60ch;">
+          More plain-language explainers in the same topic area.
+        </Text>
+        <div class="grid grid--3" style="margin-top: var(--space-6); gap: var(--space-5);">
+          {related.map((p) => {
+            const pSlug = p.id.replace(/\.mdx?$/, '');
+            return (
+              <PostCard post={{ ...p.data, slug: pSlug }} href={`/blog/${pSlug}/`} />
+            );
+          })}
+        </div>
+      </section>
+    )
+  }
+
+  <CtaBlock
+    title="Want a transparent review of your specific situation?"
+    body="A free, confidential underwriter review. The output is a directional range with the assumptions stated. No card. No obligation."
+    primaryCta={{ label: 'Book My Free Review', href: '/book', ctaName: `post-${slug}-cta-book` }}
+    secondaryCta={{ label: 'Get the Free Guide', href: '/free-guide', ctaName: `post-${slug}-cta-guide` }}
+  />
+</PostLayout>

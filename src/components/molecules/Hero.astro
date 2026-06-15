@@ -1,0 +1,63 @@
+---
+/**
+ * Hero molecule. H1 + kicker + sub + primary CTA + optional secondary CTA.
+ * Used on every marketing page (MarketingLayout).
+ */
+import CtaLink from '../atoms/CtaLink.astro';
+import Icon from '../atoms/Icon.astro';
+
+interface Props {
+  kicker?: string;
+  h1: string;
+  lede: string;
+  primaryCta: { label: string; href: string; ctaName: string };
+  secondaryCta?: { label: string; href: string; ctaName: string };
+}
+
+const { kicker, h1, lede, primaryCta, secondaryCta } = Astro.props;
+---
+
+<section class="hero" aria-labelledby="hero-h1">
+  <div class="container">
+    <div class="hero__inner">
+      <div>
+        {kicker && <span class="hero__kicker">{kicker}</span>}
+        <h1 id="hero-h1">{h1}</h1>
+        <p class="hero__lede">{lede}</p>
+        <div class="hero__ctas">
+          <CtaLink
+            ctaName={primaryCta.ctaName}
+            href={primaryCta.href}
+            variant="primary"
+            size="lg"
+          >
+            {primaryCta.label}
+            <Icon name="arrow-right" size={20} />
+          </CtaLink>
+          {
+            secondaryCta && (
+              <CtaLink
+                ctaName={secondaryCta.ctaName}
+                href={secondaryCta.href}
+                variant="ghost"
+                size="lg"
+              >
+                {secondaryCta.label}
+              </CtaLink>
+            )
+          }
+        </div>
+      </div>
+      <aside class="hero__card" aria-label="What to expect">
+        <h3>What the review covers</h3>
+        <ul class="stack stack--sm">
+          <li><Icon name="check" size={20} class="hero__icon-inline" /> Production history and royalty income</li>
+          <li><Icon name="check" size={20} /> Decline-curve context</li>
+          <li><Icon name="check" size={20} /> Offer-clause review (no clawback pressure)</li>
+          <li><Icon name="check" size={20} /> Plain-language next steps</li>
+        </ul>
+        <p class="text text--sm text--muted" style="margin-top: var(--space-3);">No card required. No obligation. Confidential.</p>
+      </aside>
+    </div>
+  </div>
+</section>

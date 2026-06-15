@@ -1,0 +1,83 @@
+---
+/**
+ * Header organism. Nav + logo + mobile menu. Used by BaseLayout.
+ *
+ * Active route highlighting is via aria-current="page" on the
+ * matching <a> (handled by per-page consumers passing the
+ * currentPath prop).
+ */
+import { NAV, SITE } from '../../lib/site';
+import Icon from '../atoms/Icon.astro';
+
+interface Props {
+  currentPath?: string;
+}
+
+const { currentPath = '/' } = Astro.props;
+---
+
+<header class="header" role="banner">
+  <div class="container">
+    <div class="header__inner">
+      <a class="header__brand" href="/" aria-label={`${SITE.name} home`}>
+        <img src="/logo.svg" alt="" width="32" height="32" aria-hidden="true" />
+        Mineral Rights Xchange
+      </a>
+      <nav class="header__nav" aria-label="Primary">
+        {
+          NAV.primary.map((item) => (
+            <a
+              href={item.href}
+              aria-current={currentPath === item.href ? 'page' : undefined}
+            >
+              {item.label}
+            </a>
+          ))
+        }
+      </nav>
+      <div class="row">
+        <a class="header__cta" href="/book" data-cta-name="header-book">Book Free Review</a>
+        <button
+          class="header__toggle"
+          aria-label="Toggle menu"
+          aria-expanded="false"
+          aria-controls="mobile-nav"
+          data-mobile-toggle
+        >
+          <Icon name="chevron-down" size={24} />
+        </button>
+      </div>
+    </div>
+    <nav class="mobile-nav" id="mobile-nav" data-open="false" aria-label="Mobile primary">
+      <ul>
+        {
+          NAV.primary.map((item) => (
+            <li>
+              <a
+                href={item.href}
+                aria-current={currentPath === item.href ? 'page' : undefined}
+              >
+                {item.label}
+              </a>
+            </li>
+          ))
+        }
+        <li><a class="header__cta" href="/book" data-cta-name="mobile-book">Book Free Review</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<script>
+  // Tiny client-side toggle. The site ships zero JS by default; this
+  // ~10 lines is the entire client JS payload on the marketing surface.
+  const btn = document.querySelector<HTMLButtonElement>('[data-mobile-toggle]');
+  const nav = document.getElementById('mobile-nav');
+  if (btn && nav) {
+    btn.addEventListener('click', () => {
+      const open = nav.getAttribute('data-open') === 'true';
+      nav.setAttribute('data-open', open ? 'false' : 'true');
+      btn.setAttribute('aria-expanded', open ? 'false' : 'true');
+    });
+  }
+</script>

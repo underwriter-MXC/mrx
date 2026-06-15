@@ -1,0 +1,81 @@
+---
+/**
+ * Seo organism. The single <head> injector. Composes title, description,
+ * canonical, OG, Twitter card, JSON-LD graph. Renders once per layout.
+ *
+ * Per `SEO AEO Sitemap Schema Plan.md` §1.1, §2.6.
+ */
+import { buildTitle, validateTitle, validateDescription, buildCanonical, buildOgImage } from '../../lib/seo';
+import { SITE } from '../../lib/site';
+import { jsonLdStringify, buildPageGraph } from '../../lib/jsonld';
+import { siteGraph } from '../../structured-data/site';
+import type { Crumb } from '../../structured-data/breadcrumb';
+import { breadcrumbList } from '../../structured-data/breadcrumb';
+
+interface Props {
+  title: string;
+  description: string;
+  path: string;
+  ogImage?: string;
+  robots?: string;
+  noindex?: boolean;
+  jsonLd?: object[];
+  breadcrumbs?: Crumb[];
+  faqPairs?: { question: string; answer: string }[];
+}
+
+const {
+  title,
+  description,
+  path,
+  ogImage,
+  robots,
+  noindex = false,
+  jsonLd = [],
+  breadcrumbs,
+  faqPairs,
+} = Astro.props;
+
+// Final title: if the frontmatter title already includes "Mineral Rights Xchange"
+// or its short form "MRX", use it as-is. Otherwise append the brand.
+const finalTitle = title.includes(SITE.name) || title.includes(SITE.shortName) ? title : buildTitle([title]);
+const tOk = validateTitle(finalTitle);
+const dOk = validateDescription(description);
+
+if (!tOk.ok) console.warn(`[Seo] ${path}: ${tOk.reason}`);
+if (!dOk.ok) console.warn(`[Seo] ${path}: ${dOk.reason}`);
+
+const canonical = buildCanonical(path, SITE.url);
+const og = ogImage ?? buildOgImage(path, SITE.url);
+const robotsContent = noindex ? 'noindex, nofollow' : (robots ?? 'index, follow, max-image-preview:large, max-snippet:-1');
+
+const graph = buildPageGraph([
+  ...siteGraph,
+  ...(breadcrumbs ? [breadcrumbList(breadcrumbs)] : []),
+  ...jsonLd,
+]);
+---
+
+<title>{finalTitle}</title>
+<meta name="description" content={description} />
+<meta name="robots" content={robotsContent} />
+<link rel="canonical" href={canonical} />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content={finalTitle} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonical} />
+<meta property="og:image" content={og} />
+<meta property="og:site_name" content={SITE.name} />
+<meta property="og:locale" content={SITE.locale} />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={finalTitle} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={og} />
+
+<script
+  is:inline
+  type="application/ld+json"
+  set:html={jsonLdStringify(graph)}
+/>

@@ -1,0 +1,31 @@
+---
+/**
+ * FaqBlock molecule. Renders a list of Q&A pairs as a native <details>
+ * accordion. When the JSON-LD graph is being composed, the same
+ * pairs are passed to faqPage() in src/structured-data/faq.ts to emit
+ * FAQPage schema. The pairs are passed in via props (not the
+ * page.frontmatter.faq) so the same molecule can be reused inside
+ * MDX with custom Q&A.
+ */
+import type { FaqPair } from '../../lib/astro/content';
+
+interface Props {
+  pairs: FaqPair[];
+  id?: string;
+}
+
+const { pairs, id = 'faq-block' } = Astro.props;
+---
+
+<section class="faq" id={id} aria-label="Frequently asked questions">
+  {
+    pairs.map((pair, i) => (
+      <details class="faq__item" name={id} open={i === 0 ? '' : undefined}>
+        <summary>{pair.question}</summary>
+        <div class="faq__answer">
+          <p>{pair.answer}</p>
+        </div>
+      </details>
+    ))
+  }
+</section>

@@ -1,0 +1,15 @@
+---
+/**
+ * Tag atom. <span> for category labels, post tags, status badges.
+ */
+interface Props {
+  variant?: 'default' | 'warning' | 'info' | 'success';
+  class?: string;
+}
+
+const { variant = 'default', class: className } = Astro.props;
+const variantCls = variant !== 'default' ? `tag--${variant}` : '';
+const cls = ['tag', variantCls, className].filter(Boolean).join(' ');
+---
+
+<span class={cls}><slot /></span>

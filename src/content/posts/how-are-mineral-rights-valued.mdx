@@ -1,0 +1,80 @@
+---
+title: 'How Are Mineral Rights Valued?'
+description: 'A plain-language explanation of how Texas mineral rights are valued: the DCF approach, the inputs that matter, and the limits of any single number.'
+slug: 'how-are-mineral-rights-valued'
+published_at: '2026-06-11T00:00:00Z'
+author: 'organization'
+category: 'valuation'
+hero_image:
+  src: '/og-default.svg'
+  alt: 'A Texas ranch landscape representing the basics of mineral rights valuation.'
+excerpt: 'How Texas mineral rights are actually valued, in plain language. The DCF approach, the inputs that matter most, and why a single number is almost always a teaser.'
+featured: true
+disclaimer_top: false
+money_figure_sourced: false
+reviewed_at: '2026-06-11T00:00:00Z'
+reviewed_by: 'mrx_compliance-stage06-initial'
+---
+
+import Prose from '../../components/prose/Prose.astro';
+import AuthorByline from '../../components/molecules/AuthorByline.astro';
+import CalloutBox from '../../components/molecules/CalloutBox.astro';
+
+<AuthorByline
+  authorName="Mineral Rights Xchange"
+  publishedAt={frontmatter.published_at}
+  readingMinutes={6}
+/>
+
+<Prose>
+
+Mineral rights valuation is a present-value view of expected future cash flows. A buyer, a seller, an underwriter, or a court can produce one; the value of the result depends on the inputs and the assumptions, not on a magic formula. This post is general information, not legal, tax, or valuation advice.
+
+## The core approach: discounted cash flow
+
+A discounted-cash-flow (DCF) valuation models the expected royalty income from the interest, applies a discount rate that reflects the risk of those cash flows, and arrives at a present value. The result is a range, with the assumptions stated, rather than a single number.
+
+The mechanics in one paragraph: take the next-N-years of expected royalty income (driven by production forecasts and the royalty fraction), discount each year's cash flow back to today at a risk-adjusted rate, sum the present values, and add a terminal value for cash flows beyond the explicit forecast horizon.
+
+## The inputs that matter most
+
+The DCF is only as good as the inputs. The list below is the order in which the inputs typically matter, with the most informative items first.
+
+1. **Production history.** Recent 12-24 months of production for the section, when available. Public Texas RRC data is the most common source. Owner-supplied check stubs are typically the most current source.
+2. **Decline-curve context.** A high recent month does not mean the next 12 months will look like the last 12. The decline curve describes the expected production trajectory; it is the single biggest driver of long-run value.
+3. **Operator quality and basin context.** An active operator with a healthy nearby development plan supports a stronger outlook. An operator with a track record of plugging wells and walking away does not.
+4. **Royalty terms.** The royalty fraction, the depth of rights, and any post-production deductions. These are in the lease and the division order.
+5. **Discount rate.** A risk-adjusted rate that reflects the operator, the basin, and the title confidence. A higher discount rate reduces present value; a lower rate increases it. Stated explicitly in the deliverable.
+6. **Commodity price assumptions.** A flat-line or conservative strip based on a publicly visible benchmark. We do not use undisclosed price decks.
+
+<CalloutBox variant="info" title="A single number is almost always a teaser">
+A range with the assumptions stated is more useful than a single number. The single number is almost always a marketing line, a teaser, or an offer-stage anchor. The owner should be skeptical of any number that does not come with the inputs that produced it.
+</CalloutBox>
+
+## Income approach vs. market approach
+
+The DCF is the income approach. The market approach compares the interest to recent comparable transactions, adjusting for differences in production, royalty fraction, and operator.
+
+The market approach is most useful when there are several recent comparable sales in the same basin, with similar operators and similar decline-curve context. It is less useful when comparables are thin, when the interest is small or partial, or when the operator is unusual.
+
+A robust review uses both: the income approach to anchor the present value, and the market approach to sanity-check the result.
+
+## What the valuation is not
+
+A valuation is not a guarantee of sale price or future production. Markets move, operators change, and title surprises happen. The valuation reflects the inputs; the inputs can change.
+
+A valuation is not a certified appraisal. "Appraisal" is a regulated activity in Texas; the underwriter review is a directional assessment, not a certified valuation. For certified work (estate, certain tax filings, certain court matters), the right move is a Texas-licensed appraiser.
+
+A valuation is not legal or tax advice. Verify the specific situation with a Texas-licensed attorney and CPA before any transaction.
+
+## A few practical things owners often consider
+
+- **What does the offer assume?** A common question. The underwriter can compare the offer's assumptions to the underwriter's own. Differences are usually about the discount rate, the production forecast, or the depth of rights.
+- **What would move the range?** Production, decline-curve context, operator quality, and discount rate. The underwriter can show the sensitivity in a one-page table.
+- **What if the operator changes?** A new operator can change the production outlook. The valuation reflects the operator at the time of review; an updated review after a change is the right move.
+
+## A short summary
+
+A mineral rights valuation is a present-value view of expected cash flows, driven by production, decline-curve context, operator quality, royalty terms, the discount rate, and commodity assumptions. The result is a range with the assumptions stated, not a single number. The owner should ask what the inputs are, what would move the range, and what the offer on the table assumes. A Texas-licensed appraiser is the right professional when a certified valuation is required; a Texas-licensed attorney and CPA are the right professionals for the legal and tax dimensions.
+
+</Prose>

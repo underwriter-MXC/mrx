@@ -1,0 +1,20 @@
+---
+/**
+ * JsonLd organism. Renders a JSON-LD <script> block. Used by pages
+ * that need to compose a graph on top of the Seo.astro site graph
+ * (e.g. /faq with FAQPage, blog posts with Article).
+ */
+import { jsonLdStringify } from '../../lib/jsonld';
+
+interface Props {
+  data: object;
+}
+
+const { data } = Astro.props;
+---
+
+<script
+  is:inline
+  type="application/ld+json"
+  set:html={jsonLdStringify(data)}
+/>

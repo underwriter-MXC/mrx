@@ -1,0 +1,60 @@
+---
+/**
+ * MarketingLayout. For the 9 marketing/legal pages. Adds the Hero,
+ * optional disclaimer_top, optional FAQ block slot, and CTA slot.
+ * Inherits everything from BaseLayout.
+ */
+import BaseLayout from './BaseLayout.astro';
+import Disclaimer from '../components/molecules/Disclaimer.astro';
+import type { Crumb } from '../structured-data/breadcrumb';
+import type { FaqPair } from '../lib/astro/content';
+import { faqPage } from '../structured-data/faq';
+
+interface Props {
+  title: string;
+  description: string;
+  path: string;
+  ogImage?: string;
+  noindex?: boolean;
+  robots?: string;
+  pageType?: 'home' | 'marketing' | 'blog' | 'post' | 'utility';
+  pageCategory?: string;
+  breadcrumbs?: Crumb[];
+  /** When true, renders the §7 disclaimer at the top of the article body. */
+  disclaimerTop?: boolean;
+  /** Optional FAQ pairs that should emit FAQPage JSON-LD. */
+  faq?: FaqPair[];
+}
+
+const {
+  title,
+  description,
+  path,
+  ogImage,
+  noindex,
+  robots,
+  pageType = 'marketing',
+  pageCategory,
+  breadcrumbs,
+  disclaimerTop = false,
+  faq,
+} = Astro.props;
+
+const extraJsonLd = faq && faq.length > 0 ? [faqPage(faq)] : [];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  path={path}
+  ogImage={ogImage}
+  noindex={noindex}
+  robots={robots}
+  pageType={pageType}
+  pageCategory={pageCategory}
+  breadcrumbs={breadcrumbs}
+  jsonLd={extraJsonLd}
+>
+  {disclaimerTop && <div class="container section--sm"><Disclaimer variant="top" /></div>}
+  <slot />
+</BaseLayout>

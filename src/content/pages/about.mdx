@@ -1,0 +1,92 @@
+---
+title: 'About Mineral Rights Xchange · MRX'
+description: 'About Mineral Rights Xchange: transparent underwriter reviews for Texas mineral rights owners, a published DCF methodology, and no predatory buyer pressure.'
+slug: 'about'
+category: 'about'
+hero_kicker: 'About Mineral Rights Xchange'
+h1: 'The platform built for mineral rights owners, not against them'
+primary_cta:
+  label: 'Book My Free Underwriter Review'
+  href: '/book'
+  ctaName: 'about-primary-book'
+secondary_cta:
+  label: 'See the Published Methodology'
+  href: '/methodology'
+  ctaName: 'about-secondary-methodology'
+disclaimer_top: false
+faq:
+  - question: 'Are you a buyer or a marketplace?'
+    answer: 'We are an underwriter review. We may become a buyer in transactions that result from a review, in which case we disclose that relationship in writing before any agreement is signed. The review itself is independent of any sale.'
+  - question: 'Where do you operate?'
+    answer: 'We focus on Texas mineral rights. New Mexico and Oklahoma are on our future-state roadmap but are not part of the MVP.'
+  - question: 'Who reviews my information?'
+    answer: 'A small underwriter team reads the documents and writes the assessment. We do not name individual underwriters on landing pages (per our public-claims policy); if you have questions about who will handle your review, we will tell you when you book.'
+compliance_signoff:
+  no_disallowed_phrases: true
+  no_named_competitor: true
+  no_superlative_about_mrx: true
+  no_advice_verb: true
+  no_appraisal_term: true
+  no_named_underwriter: true
+  has_footer_disclaimer: true
+  money_figure_sourced: false
+  reviewed_by: 'mrx_compliance-stage06-initial'
+  reviewed_at: '2026-06-11T00:00:00Z'
+---
+
+import Hero from '../../components/molecules/Hero.astro';
+import CtaBlock from '../../components/molecules/CtaBlock.astro';
+import FaqBlock from '../../components/molecules/FaqBlock.astro';
+import Text from '../../components/atoms/Text.astro';
+import Heading from '../../components/atoms/Heading.astro';
+
+<Hero
+  kicker={frontmatter.hero_kicker}
+  h1={frontmatter.h1}
+  lede="Transparent, no-pressure underwriter reviews for Texas mineral rights owners. A published DCF methodology, no clawback clauses, and a clear path from intake to next step. The review is genuinely free, with no obligation to sell."
+  primaryCta={frontmatter.primary_cta}
+  secondaryCta={frontmatter.secondary_cta}
+/>
+
+<section class="container section">
+  <Heading level={2} size="3xl">The information gap is real</Heading>
+  <Text class="text--lead" style="margin-top: var(--space-3); max-width: 60ch;">Most mineral rights owners are not oil-and-gas experts. They inherited, accumulated, or discovered an asset that may be valuable but is hard to evaluate. Offers arrive in the mail with urgent language, headline numbers, and clauses that are hard to read. The information gap favors the buyer.</Text>
+  <Text style="margin-top: var(--space-4);">Mineral Rights Xchange exists to close that gap. A free, transparent underwriter review, in plain language, with the math shown. The goal is not to push the owner to sell. The goal is to give the owner enough information to make a decision they are confident in.</Text>
+</section>
+
+<section class="section section--alt">
+  <div class="container">
+    <Heading level={2} size="3xl">How Mineral Rights Xchange is different</Heading>
+    <div class="grid grid--2" style="margin-top: var(--space-10); gap: var(--space-6);">
+      <article>
+        <Heading level={3} size="lg">Transparency, not teaser numbers</Heading>
+        <Text>No inflated headline offers, no hidden black box. Our DCF methodology is published, and the output is a directional range with the assumptions stated. If we cannot show our work, the number is not worth your time.</Text>
+      </article>
+      <article>
+        <Heading level={3} size="lg">No clawback clauses, no pressure</Heading>
+        <Text>Our purchase documents do not re-open the deal after you sign. We do not pressure the owner to commit before they have had time to read the offer, ask their attorney, or talk to their family.</Text>
+      </article>
+      <article>
+        <Heading level={3} size="lg">A published methodology</Heading>
+        <Text>See exactly what we look at, why it matters, and what we do not claim. The methodology page is written for the owner, not for an industry insider.</Text>
+      </article>
+      <article>
+        <Heading level={3} size="lg">Free intake, written disclosure if we buy</Heading>
+        <Text>The intake is genuinely free, with no card. If a transaction results from a review and we become a buyer, we disclose that relationship in writing before any agreement is signed.</Text>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="container section">
+  <Heading level={2} size="3xl">Frequently asked</Heading>
+  <FaqBlock pairs={frontmatter.faq} id="about-faq" />
+  <p style="margin-top: var(--space-4);"><a href="/faq" data-cta-name="about-faq-more">See the full FAQ →</a></p>
+</section>
+
+<CtaBlock
+  title="Book a free, no-pressure underwriter review"
+  body="A confidential review of your Texas mineral rights. The decision to sell, hold, or take more time stays yours."
+  primaryCta={{ label: 'Book My Free Review', href: '/book', ctaName: 'about-cta-block-book' }}
+  secondaryCta={{ label: 'Get the Free Guide', href: '/free-guide', ctaName: 'about-cta-block-guide' }}
+/>

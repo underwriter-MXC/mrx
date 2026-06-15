@@ -1,0 +1,31 @@
+---
+/**
+ * Breadcrumbs organism. Visible breadcrumb list. The JSON-LD graph
+ * counterpart is in src/structured-data/breadcrumb.ts and is
+ * composed by Seo.astro.
+ */
+import type { Crumb } from '../../structured-data/breadcrumb';
+
+interface Props {
+  items: Crumb[];
+}
+
+const { items } = Astro.props;
+---
+
+<nav class="container breadcrumbs" aria-label="Breadcrumb">
+  <ol class="row" style="gap: var(--space-2);">
+    {
+      items.map((c, i) => (
+        <li class="row" style="gap: var(--space-2);">
+          {i > 0 && <span class="breadcrumbs__sep" aria-hidden="true">/</span>}
+          {i === items.length - 1 ? (
+            <span aria-current="page">{c.name}</span>
+          ) : (
+            <a href={c.path}>{c.name}</a>
+          )}
+        </li>
+      ))
+    }
+  </ol>
+</nav>

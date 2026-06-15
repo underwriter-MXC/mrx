@@ -1,0 +1,12 @@
+---
+/**
+ * Prose wrapper. <article> with prose styles. The first <p> child
+ * should carry data-answer-first="true" (enforced at the page-MDX
+ * level, not by this component, because the prose is content not
+ * shell).
+ */
+---
+
+<article class="prose">
+  <slot />
+</article>

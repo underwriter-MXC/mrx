@@ -1,0 +1,31 @@
+---
+/**
+ * 404 page. Branded, with nav and a "back to home" CTA.
+ */
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CtaBlock from '../components/molecules/CtaBlock.astro';
+export const prerender = true;
+---
+
+<BaseLayout
+  title="Page not found · Mineral Rights Xchange"
+  description="The page you requested is not available, or the link may be out of date. Try the navigation, or book a free underwriter review of your Texas rights."
+  path="/404"
+  noindex={true}
+  pageType="utility"
+  pageCategory="404"
+>
+  <section class="error-page">
+    <div>
+      <p class="error-page__code">404</p>
+      <h1 style="font-size: var(--fs-3xl); margin-top: var(--space-3);">This page is not on the map.</h1>
+      <p style="margin-top: var(--space-3); color: var(--color-ink-600);">The page you requested is not available, or the link may be out of date. Try the navigation above, or visit one of the pages below.</p>
+    </div>
+  </section>
+  <CtaBlock
+    title="Looking for a specific page?"
+    body="A few of the most frequently visited pages on the site."
+    primaryCta={{ label: 'Book a Free Review', href: '/book', ctaName: '404-book' }}
+    secondaryCta={{ label: 'See the FAQ', href: '/faq', ctaName: '404-faq' }}
+  />
+</BaseLayout>

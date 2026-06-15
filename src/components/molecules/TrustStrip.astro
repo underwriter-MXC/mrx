@@ -1,0 +1,33 @@
+---
+/**
+ * TrustStrip molecule. 4-6 trust items in a grid. Each item has an
+ * icon, title, and supporting text. Use on home + landing pages.
+ */
+import Icon from '../atoms/Icon.astro';
+
+interface Item {
+  icon: 'check' | 'shield' | 'lock' | 'doc' | 'scale' | 'mineral';
+  title: string;
+  text: string;
+}
+
+interface Props {
+  items: Item[];
+}
+
+const { items } = Astro.props;
+---
+
+<section class="trust-strip" aria-label="Trust signals">
+  {
+    items.map((it) => (
+      <div class="trust-strip__item">
+        <Icon name={it.icon} size={28} class="trust-strip__icon" />
+        <div>
+          <div class="trust-strip__title">{it.title}</div>
+          <div class="trust-strip__text">{it.text}</div>
+        </div>
+      </div>
+    ))
+  }
+</section>

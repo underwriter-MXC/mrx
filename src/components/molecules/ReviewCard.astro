@@ -1,0 +1,32 @@
+---
+/**
+ * ReviewCard molecule. Renders a single Testimonial entry.
+ *
+ * Per compliance W-1: the testimonials collection ships as [] until
+ * real, opt-in reviews are verified. When a real entry is added, the
+ * ReviewCard renders first name + last initial + state + date.
+ *
+ * This component is unused when testimonials.json is empty (the page
+ * does not import it). Stage 06 reserves the shape.
+ */
+import type { Testimonial } from '../../lib/astro/content';
+
+interface Props {
+  testimonial: Testimonial;
+}
+
+const { testimonial } = Astro.props;
+const formattedDate = new Date(testimonial.date).toLocaleDateString('en-US', {
+  month: 'long',
+  year: 'numeric',
+});
+---
+
+<article class="post-card" aria-label={`Review from ${testimonial.first_name} ${testimonial.last_initial}`}>
+  <div class="post-card__body">
+    <p class="post-card__excerpt">&ldquo;{testimonial.body}&rdquo;</p>
+    <p class="post-card__meta">
+      — {testimonial.first_name} {testimonial.last_initial}, {testimonial.state}, {formattedDate}
+    </p>
+  </div>
+</article>

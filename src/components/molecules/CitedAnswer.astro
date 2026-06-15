@@ -1,0 +1,41 @@
+---
+/**
+ * CitedAnswer molecule (AEO). A 200-word cited answer block at the top
+ * of a page when frontmatter has aeo_cited_answer: true. Per SEO plan
+ * §5.3: 180-220 words, 2+ authoritative source links, included in the
+ * page's SpeakableSpecification.
+ *
+ * Stage 07 picks which pages get a CitedAnswer. Stage 06 reserves the
+ * shape.
+ */
+interface Source {
+  label: string;
+  href: string;
+}
+
+interface Props {
+  text: string;
+  sources: Source[];
+}
+
+const { text, sources } = Astro.props;
+---
+
+<aside class="cited-answer" data-cited-answer="true" aria-label="Cited answer">
+  <div class="cited-answer__label">Cited answer</div>
+  <p class="cited-answer__body">{text}</p>
+  {
+    sources.length > 0 && (
+      <div class="cited-answer__sources">
+        <strong>Sources:</strong>
+        {' '}
+        {sources.map((s, i) => (
+          <>
+            <a href={s.href}>{s.label}</a>
+            {i < sources.length - 1 ? ', ' : ''}
+          </>
+        ))}
+      </div>
+    )
+  }
+</aside>

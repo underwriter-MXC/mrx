@@ -1,0 +1,33 @@
+---
+/**
+ * PostCard organism. One blog list item. Used by PostGrid.
+ */
+import type { PostsFrontmatter } from '../../lib/astro/content';
+import Tag from '../atoms/Tag.astro';
+
+interface Props {
+  post: PostsFrontmatter;
+  href: string;
+}
+
+const { post, href } = Astro.props;
+const date = new Date(post.published_at).toLocaleDateString('en-US', {
+  month: 'short',
+  day: 'numeric',
+  year: 'numeric',
+});
+---
+
+<article class="post-card">
+  <div class="post-card__body">
+    <span class="post-card__meta">
+      <Tag>{post.category.replace(/-/g, ' ')}</Tag>
+      <span> · {date}</span>
+    </span>
+    <h3 class="post-card__title"><a href={href}>{post.title}</a></h3>
+    <p class="post-card__excerpt">{post.excerpt}</p>
+    <a class="post-card__cta" href={href} data-cta-name={`post-card-${href}`}>
+      Read the post →
+    </a>
+  </div>
+</article>

@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "title": "MRX Five Hard Rules",
+  "description": "The five hard rules from project-pack/04-compliance/MRX Compliance Review.md §2. Machine-readable mirror.",
+  "last_generated": "2026-06-11T00:00:00Z",
+  "source_review": "project-pack/04-compliance/MRX Compliance Review.md",
+  "source_section": "§2 The Five Hard Rules",
+  "rules": [
+    {
+      "number": 1,
+      "name": "no_guaranteed_value",
+      "description": "No guaranteed value, no guaranteed offer, no 'we will beat any offer', no 'you will receive $X'.",
+      "test_phrases": [
+        "guaranteed value",
+        "guaranteed offer",
+        "we guarantee the highest price",
+        "we will beat any offer",
+        "you will receive $"
+      ]
+    },
+    {
+      "number": 2,
+      "name": "no_certified_appraisal",
+      "description": "No 'certified appraisal', 'certified appraiser', 'USPAP', 'formal appraisal', 'MRX appraisal report'. In Texas and US appraisal standards, 'appraisal' is a regulated activity.",
+      "test_phrases": [
+        "certified appraisal",
+        "certified appraiser",
+        "uspap appraisal",
+        "formal appraisal",
+        "mrx appraisal report"
+      ]
+    },
+    {
+      "number": 3,
+      "name": "no_legal_or_tax_advice",
+      "description": "No 'we advise', 'we recommend', 'our legal opinion', 'for tax purposes you should', 'you qualify for the §1031 exchange'. Unlicensed legal/tax practice.",
+      "test_phrases": [
+        "we advise",
+        "we recommend that you",
+        "our legal opinion",
+        "for tax purposes, you should",
+        "you qualify for the §1031"
+      ]
+    },
+    {
+      "number": 4,
+      "name": "no_underwriter_personal_exposure",
+      "description": "No naming any specific MRX underwriter in marketing copy, no attributing a quote to a named individual, no 'call [name] for your review'.",
+      "test_phrases": []
+    },
+    {
+      "number": 5,
+      "name": "no_unsupported_claims",
+      "description": "Any statistic, payout figure, 'X% of owners', 'average bonus', customer-count claim, year-in-business claim, or 'trusted by' claim must be backed by a verifiable source.",
+      "test_phrases": []
+    }
+  ]
+}

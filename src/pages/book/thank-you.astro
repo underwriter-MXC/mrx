@@ -1,0 +1,36 @@
+---
+/**
+ * /book/thank-you. Redirect target after the /api/book POST.
+ * Pushes a form_submit dataLayer event so GA4 records the conversion.
+ * Noindex by default; this is not a public landing page.
+ */
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CtaBlock from '../../components/molecules/CtaBlock.astro';
+import Heading from '../../components/atoms/Heading.astro';
+import Text from '../../components/atoms/Text.astro';
+export const prerender = true;
+---
+
+<BaseLayout
+  title="Booking received · Mineral Rights Xchange"
+  description="Your Texas mineral rights underwriter review booking has been received. An underwriter will follow up within 1 business day with a directional value range."
+  path="/book/thank-you"
+  noindex={true}
+  pageType="utility"
+  pageCategory="thank-you"
+>
+  <section class="container container--narrow section" style="text-align: center;">
+    <Heading level={1} size="3xl">Booking received</Heading>
+    <Text class="text--lead" style="margin-top: var(--space-4);">An underwriter will follow up within 1 business day. In the meantime, you can read the published methodology or download the free guide.</Text>
+  </section>
+  <CtaBlock
+    title="What to do next"
+    body="While you wait, you can read the published methodology or download the free guide."
+    primaryCta={{ label: 'See the Methodology', href: '/methodology', ctaName: 'book-thank-you-methodology' }}
+    secondaryCta={{ label: 'Download the Free Guide', href: '/free-guide', ctaName: 'book-thank-you-guide' }}
+  />
+  <script is:inline>
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({ event: 'form_submit', mrx_form: 'book' });
+  </script>
+</BaseLayout>

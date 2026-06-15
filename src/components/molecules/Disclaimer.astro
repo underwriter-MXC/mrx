@@ -1,0 +1,28 @@
+---
+/**
+ * Disclaimer molecule. Renders the §7 disclaimer. Two variants:
+ *   - footer: bottom of the page, smaller, neutral
+ *   - top:    top of the article/page, on warning background, used in
+ *             PostLayout and MarketingLayout when disclaimer_top: true
+ *
+ * The text is sourced from src/lib/disclaimer.ts (which re-exports
+ * compliance/disclaimer.ts). The §7 disclaimer is the single source
+ * of truth; any change happens in compliance/disclaimer.ts.
+ *
+ * The data-speakable="true" attribute is the §7-disclaimer-pointed
+ * Speakable scope (per SEO plan §2.5): LLMs read the disclaimer,
+ * not the marketing copy.
+ */
+import { DISCLAIMER_TEXT } from '../../lib/disclaimer';
+
+interface Props {
+  variant: 'footer' | 'top';
+}
+
+const { variant } = Astro.props;
+const className = variant === 'footer' ? 'mrx-disclaimer-footer' : 'mrx-disclaimer-top';
+---
+
+<aside class={className} data-speakable="true" aria-label="Important disclosures">
+  <p>{DISCLAIMER_TEXT}</p>
+</aside>

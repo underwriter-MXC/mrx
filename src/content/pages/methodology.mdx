@@ -1,0 +1,117 @@
+---
+title: 'Our Published DCF Methodology for Texas Reviews · MRX'
+description: 'We publish the DCF methodology behind our Texas reviews: inputs, decline assumptions, discount rate, and the limits of any single number.'
+slug: 'methodology'
+category: 'methodology'
+hero_kicker: 'Published methodology · transparent underwriting'
+h1: 'Published DCF methodology: how we review Texas mineral rights'
+primary_cta:
+  label: 'Book a Free Underwriter Review'
+  href: '/book'
+  ctaName: 'meth-primary-book'
+secondary_cta:
+  label: 'See the FAQ'
+  href: '/faq'
+  ctaName: 'meth-secondary-faq'
+disclaimer_top: true
+faq:
+  - question: 'Is this a methodology that produces a regulated certification?'
+    answer: 'No. The methodology is published to show our work, not to claim a regulated certification. Our review is a directional underwriter assessment. For certified work, owners often consider hiring a Texas-licensed appraiser; we are happy to help you think through when that makes sense.'
+  - question: 'Do you use one number, or a range?'
+    answer: 'A range, with the assumptions stated. A single number is almost always a teaser.'
+  - question: 'What is the most important factor in the range?'
+    answer: 'Production history. Recent and historical production data, decline-curve context, and operator activity are typically the most informative inputs. Everything else is layered on top.'
+compliance_signoff:
+  no_disallowed_phrases: true
+  no_named_competitor: true
+  no_superlative_about_mrx: true
+  no_advice_verb: true
+  no_appraisal_term: true
+  no_named_underwriter: true
+  has_footer_disclaimer: true
+  money_figure_sourced: true
+  reviewed_by: 'mrx_compliance-stage06-initial'
+  reviewed_at: '2026-06-11T00:00:00Z'
+---
+
+import Hero from '../../components/molecules/Hero.astro';
+import CtaBlock from '../../components/molecules/CtaBlock.astro';
+import FaqBlock from '../../components/molecules/FaqBlock.astro';
+import MethodologyTable from '../../components/organisms/MethodologyTable.astro';
+import Text from '../../components/atoms/Text.astro';
+import Heading from '../../components/atoms/Heading.astro';
+import CalloutBox from '../../components/molecules/CalloutBox.astro';
+
+<Hero
+  kicker={frontmatter.hero_kicker}
+  h1={frontmatter.h1}
+  lede="We publish this so you can see our work. The methodology is a discounted-cash-flow approach applied to royalty income, with explicit assumptions, decline-curve context, and offer terms where relevant. The output is a directional range, not a teaser number, and not a certified appraisal."
+  primaryCta={frontmatter.primary_cta}
+  secondaryCta={frontmatter.secondary_cta}
+/>
+
+<CalloutBox variant="warning" title="Read this before you treat the methodology as advice">
+  The methodology is a description of how MRX reviews mineral rights. It is not legal advice, tax advice, or a certified appraisal. Any specific decision (whether to sell, hold, gift, or transfer) should be verified with a Texas-licensed attorney and CPA, and with a Texas-licensed appraiser when a certified valuation is required.
+</CalloutBox>
+
+<section class="container section">
+  <Heading level={2} size="3xl">The approach, in one paragraph</Heading>
+  <Text class="text--lead" style="margin-top: var(--space-3); max-width: 60ch;">A discounted-cash-flow review models expected future royalty income from the section, applies a discount rate that reflects the risk of the cash flows, and arrives at a present-value range. The range is the directional assessment; the assumptions and the inputs are what make it useful.</Text>
+</section>
+
+<section class="section section--alt">
+  <div class="container">
+    <Heading level={2} size="3xl">What we look at</Heading>
+    <Text class="text--lead" style="margin-top: var(--space-3); max-width: 60ch; margin-bottom: var(--space-6);">The factors below are the primary inputs to the DCF. Each carries a different weight in the final range; we state the influence and the source so you can interrogate the result.</Text>
+    <MethodologyTable
+      rows={[
+        { factor: 'Production history', description: '12-24 months of historical production for the section, when available; older when younger is not.', weight: 'high', source: 'Public Texas RRC data, operator disclosures, owner-supplied check stubs' },
+        { factor: 'Decline-curve context', description: 'Type of decline (exponential, hyperbolic), expected terminal rate, and basin context.', weight: 'high', source: 'Operator decline-curve disclosures, MRX internal rate database' },
+        { factor: 'Operator quality', description: 'Operator track record in the basin: drilling cadence, completion efficiency, history of plugging and abandonment.', weight: 'medium', source: 'Public operator filings, RRC enforcement actions' },
+        { factor: 'Royalty terms and depth', description: 'Royalty fraction, depth-of-rights (e.g., "Below the Barnett"), and any post-production deductions.', weight: 'high', source: 'Owner-supplied lease and division order' },
+        { factor: 'Commodity price assumptions', description: 'A flat-line or conservative strip based on a publicly visible benchmark; we do not use undisclosed price decks.', weight: 'medium', source: 'NYMEX strip or equivalent at the time of review' },
+        { factor: 'Discount rate', description: 'A risk-adjusted rate reflecting operator, basin, and title confidence. Stated explicitly in the deliverable.', weight: 'high', source: 'MRX internal rate card; reviewed periodically' },
+        { factor: 'Title and acreage', description: 'Mineral-acreage confirmation, partial-interest flag, multi-heir splits, and any encumbrances.', weight: 'high', source: 'Owner-supplied title documents, county records' },
+        { factor: 'Offer terms (if any)', description: 'Clawback provisions, effective date, post-close obligations, depth of rights conveyed.', weight: 'high', source: 'Owner-supplied offer letter or LOI' },
+        { factor: 'Tax and estate posture', description: 'Whether the interest is held individually, jointly, in trust, or via an estate. Affects structure, not the DCF range.', weight: 'low', source: 'Owner confirmation; MRX does not give tax advice' },
+      ]}
+    />
+  </div>
+</section>
+
+<section class="container section">
+  <Heading level={2} size="3xl">What the methodology is not</Heading>
+  <Text class="text--lead" style="margin-top: var(--space-3); margin-bottom: var(--space-6);">A published methodology is not the same as a regulated certification. We state the limits explicitly so the output is not over-read.</Text>
+  <div class="grid grid--2" style="gap: var(--space-6);">
+    <article style="background: var(--color-white); padding: var(--space-5); border-radius: var(--radius-md);">
+      <Heading level={3} size="md">It is not a certified appraisal</Heading>
+      <Text>"Appraisal" is a regulated activity in Texas. Our review is a directional underwriter assessment. When a certified valuation is required (estate, certain tax filings, certain court matters), the right move is to engage a Texas-licensed appraiser; we are happy to help you think through when that makes sense.</Text>
+    </article>
+    <article style="background: var(--color-white); padding: var(--space-5); border-radius: var(--radius-md);">
+      <Heading level={3} size="md">It is not legal or tax advice</Heading>
+      <Text>Our team does not provide legal or tax advice. We help you think through the questions worth asking a Texas-licensed attorney and CPA, and we recommend verifying ownership, royalty, tax, and production assumptions with qualified professionals before any transaction.</Text>
+    </article>
+    <article style="background: var(--color-white); padding: var(--space-5); border-radius: var(--radius-md);">
+      <Heading level={3} size="md">It is not a guarantee of value or sale price</Heading>
+      <Text>Markets move, operators change, and title surprises happen. A directional range is a present-value view of expected cash flows under stated assumptions. It is not a guarantee.</Text>
+    </article>
+    <article style="background: var(--color-white); padding: var(--space-5); border-radius: var(--radius-md);">
+      <Heading level={3} size="md">It is not a single number</Heading>
+      <Text>A single number is almost always a teaser. The output of the review is a range with the assumptions stated, so you can see how the answer moves when the inputs change.</Text>
+    </article>
+  </div>
+</section>
+
+<section class="section section--alt">
+  <div class="container">
+    <Heading level={2} size="3xl">Frequently asked</Heading>
+    <FaqBlock pairs={frontmatter.faq} id="meth-faq" />
+    <p style="margin-top: var(--space-4);"><a href="/faq" data-cta-name="meth-faq-more">See the full FAQ →</a></p>
+  </div>
+</section>
+
+<CtaBlock
+  title="See the methodology applied to your situation"
+  body="A free, confidential underwriter review. The output is a directional range with the assumptions stated. No card. No obligation."
+  primaryCta={{ label: 'Book My Free Review', href: '/book', ctaName: 'meth-cta-block-book' }}
+/>

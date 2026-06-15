@@ -1,0 +1,57 @@
+{
+  "name": "mrx-web",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Mineral Rights Xchange public website (Astro 5 + Cloudflare Pages)",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "node compliance/scripts/check-compliance.mjs && astro check && astro build",
+    "build:hetzner": "DEPLOY_TARGET=hetzner node compliance/scripts/check-compliance.mjs && DEPLOY_TARGET=hetzner astro check && DEPLOY_TARGET=hetzner astro build",
+    "build:vercel": "DEPLOY_TARGET=vercel node compliance/scripts/check-compliance.mjs && DEPLOY_TARGET=vercel astro check && DEPLOY_TARGET=vercel astro build",
+    "start:hetzner": "HOST=0.0.0.0 PORT=${PORT:-4321} node ./dist/server/entry.mjs",
+    "preview": "astro preview",
+    "astro": "astro",
+    "typecheck": "astro check",
+    "lint": "eslint . --ext .js,.ts,.astro",
+    "lint:schema": "node scripts/lint-schema.mjs",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:e2e": "playwright test",
+    "check-compliance": "node compliance/scripts/check-compliance.mjs",
+    "regenerate-lexicons": "node scripts/regenerate-lexicons.mjs",
+    "migrate-wp": "node scripts/migrate-wp.mjs",
+    "ci": "pnpm install --frozen-lockfile && pnpm typecheck && pnpm lint && pnpm test && pnpm build"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.9.0",
+    "@astrojs/cloudflare": "^12.0.0",
+    "@astrojs/mdx": "^4.0.0",
+    "@astrojs/node": "^9.5.5",
+    "@astrojs/rss": "^4.0.0",
+    "@astrojs/sitemap": "^3.2.0",
+    "@astrojs/vercel": "9.0.5",
+    "astro": "^5.1.0",
+    "schema-dts": "^1.1.0",
+    "tinyglobby": "^0.2.0",
+    "zod": "^3.23.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.49.0",
+    "@types/node": "^22.0.0",
+    "@typescript-eslint/eslint-plugin": "^8.0.0",
+    "@typescript-eslint/parser": "^8.0.0",
+    "eslint": "^9.0.0",
+    "eslint-plugin-astro": "^1.3.0",
+    "prettier": "^3.4.0",
+    "prettier-plugin-astro": "^0.14.0",
+    "typescript": "^5.6.0",
+    "vitest": "^2.1.0"
+  }
+}

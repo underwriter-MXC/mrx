@@ -1,0 +1,95 @@
+---
+title: 'Book Your Free Underwriter Review · MRX'
+description: 'Book a free Texas mineral rights underwriter review. Confidential, no-pressure, no card required. A transparent directional assessment before you sign anything.'
+slug: 'book'
+category: 'book'
+hero_kicker: 'Free underwriter review'
+h1: 'Book your free underwriter review'
+primary_cta:
+  label: 'Submit My Booking'
+  href: '#book-form'
+  ctaName: 'book-primary-submit'
+secondary_cta:
+  label: 'See the Published Methodology'
+  href: '/methodology'
+  ctaName: 'book-secondary-methodology'
+disclaimer_top: false
+faq:
+  - question: 'What happens after I submit the form?'
+    answer: 'After you submit the form, you will get a confirmation email. An underwriter reads your information, follows up to gather any documents you have, and prepares a directional assessment. The deliverable is a written summary with the assumptions stated and a follow-up call to walk through it.'
+  - question: 'Is the call recorded?'
+    answer: 'No. The intake and review are confidential and we do not record calls. Notes are kept internally for the review only.'
+  - question: 'How is this different from a marketplace?'
+    answer: 'A marketplace tries to connect you with multiple buyers. Our review is a single underwriter assessment, not a competitive auction. You can use the review to inform any decision you make, including one with another buyer.'
+compliance_signoff:
+  no_disallowed_phrases: true
+  no_named_competitor: true
+  no_superlative_about_mrx: true
+  no_advice_verb: true
+  no_appraisal_term: true
+  no_named_underwriter: true
+  has_footer_disclaimer: true
+  money_figure_sourced: false
+  reviewed_by: 'mrx_compliance-stage06-initial'
+  reviewed_at: '2026-06-11T00:00:00Z'
+---
+
+import Hero from '../../components/molecules/Hero.astro';
+import CtaBlock from '../../components/molecules/CtaBlock.astro';
+import FaqBlock from '../../components/molecules/FaqBlock.astro';
+import FormSection from '../../components/organisms/FormSection.astro';
+import Text from '../../components/atoms/Text.astro';
+import Heading from '../../components/atoms/Heading.astro';
+import Icon from '../../components/atoms/Icon.astro';
+
+<Hero
+  kicker={frontmatter.hero_kicker}
+  h1={frontmatter.h1}
+  lede="Takes about 60 seconds. No card. No obligation. Find out if your Texas mineral interests qualify for a free, no-obligation underwriter review. You stay in control at every step."
+  primaryCta={frontmatter.primary_cta}
+  secondaryCta={frontmatter.secondary_cta}
+/>
+
+<section class="container section">
+  <div class="grid grid--2" style="gap: var(--space-12); align-items: start;">
+    <div>
+      <Heading level={2} size="3xl">What to expect, and what to bring</Heading>
+      <Text class="text--lead" style="margin-top: var(--space-3); margin-bottom: var(--space-6);">Your free underwriter review is a working conversation, not a sales call. Here is what it looks like.</Text>
+      <ol class="stack" style="list-style: decimal; padding-left: var(--space-6);">
+        <li><strong>Submit the form.</strong> About 60 seconds. Just your name, email, and a sentence on what is in hand.</li>
+        <li><strong>We follow up.</strong> An underwriter reaches out within 1 business day to gather any documents you have.</li>
+        <li><strong>The review.</strong> We read the documents, walk through production, decline-curve context, and offer terms (if any). Plain language.</li>
+        <li><strong>You get a directional range.</strong> Written, with the assumptions stated. No teaser number.</li>
+        <li><strong>You decide.</strong> Sell, hold, or take more time. The decision stays yours.</li>
+      </ol>
+      <Heading level={3} size="lg" class="heading" style="margin-top: var(--space-8);">If you have these, bring them</Heading>
+      <ul class="stack stack--sm" style="list-style: disc; padding-left: var(--space-6);">
+        <li>A recent royalty check stub or 1099-DIV/royalty statement</li>
+        <li>A copy of any offer letter or letter of intent you have received</li>
+        <li>Your lease or division order (if you have one)</li>
+        <li>County, section, and depth-of-rights information if you have it</li>
+      </ul>
+      <Text class="text--sm text--muted" style="margin-top: var(--space-4);">If you do not have these, that is normal. Tell us what you have and we will help you figure out what to ask for.</Text>
+    </div>
+
+    <aside style="background: var(--color-white); padding: var(--space-6); border-radius: var(--radius-md); border: 1px solid var(--color-ink-100);" id="book-form">
+      <Heading level={2} size="2xl">Schedule your free review</Heading>
+      <Text class="text--muted" style="margin-top: var(--space-2); margin-bottom: var(--space-4);">No card required. No obligation. Confidential.</Text>
+      <FormSection form="book" submitLabel="Submit My Booking" legend="Book a free Texas mineral rights underwriter review" />
+    </aside>
+  </div>
+</section>
+
+<section class="section section--alt">
+  <div class="container">
+    <Heading level={2} size="3xl">Frequently asked</Heading>
+    <FaqBlock pairs={frontmatter.faq} id="book-faq" />
+    <p style="margin-top: var(--space-4);"><a href="/faq" data-cta-name="book-faq-more">See the full FAQ →</a></p>
+  </div>
+</section>
+
+<CtaBlock
+  title="Not ready to book?"
+  body="The free guide is a no-pressure way to learn what an underwriter looks at. You can come back to the review when you are ready."
+  primaryCta={{ label: 'Get the Free Guide', href: '/free-guide', ctaName: 'book-cta-block-guide' }}
+/>

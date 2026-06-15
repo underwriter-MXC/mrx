@@ -1,0 +1,35 @@
+---
+/**
+ * CategoryNav organism. 7 categories in a horizontal nav.
+ */
+import type { CollectionEntry } from 'astro:content';
+import Tag from '../atoms/Tag.astro';
+
+interface Props {
+  categories: CollectionEntry<'categories'>[];
+  currentSlug?: string;
+}
+
+const { categories, currentSlug } = Astro.props;
+---
+
+<nav class="container" aria-label="Blog categories" style="padding-block: var(--space-6);">
+  <ul class="row">
+    <li><Tag><a href="/blog" style="color: inherit; text-decoration: none;">All</a></Tag></li>
+    {
+      categories.map((c) => (
+        <li>
+          <Tag>
+            <a
+              href={`/blog/category/${c.data.slug}/`}
+              style="color: inherit; text-decoration: none;"
+              aria-current={currentSlug === c.data.slug ? 'page' : undefined}
+            >
+              {c.data.label}
+            </a>
+          </Tag>
+        </li>
+      ))
+    }
+  </ul>
+</nav>

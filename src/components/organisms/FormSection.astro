@@ -1,0 +1,106 @@
+---
+/**
+ * FormSection organism. The /book or /free-guide form (reused for both).
+ * The actual submit handling is in src/pages/api/{book,free-guide}.ts;
+ * this component just renders the inputs. Stage 06 reserves the
+ * form fields per compliance §9 (no SSN/DOB/full bank info).
+ */
+interface Props {
+  form: 'book' | 'free-guide';
+  submitLabel: string;
+  legend: string;
+}
+
+const { form, submitLabel, legend } = Astro.props;
+const action = form === 'book' ? '/api/book' : '/api/free-guide';
+---
+
+<form class="form" method="POST" action={action} aria-label={legend}>
+  <fieldset style="border: 0; padding: 0; margin: 0; display: contents;">
+    <legend class="visually-hidden">{legend}</legend>
+
+    <div class="form__field">
+      <label class="form__label" for={`${form}-firstName`}>First name</label>
+      <input class="form__input" type="text" id={`${form}-firstName`} name="firstName" required autocomplete="given-name" maxlength="60" />
+    </div>
+
+    <div class="form__field">
+      <label class="form__label" for={`${form}-lastName`}>Last name</label>
+      <input class="form__input" type="text" id={`${form}-lastName`} name="lastName" required autocomplete="family-name" maxlength="60" />
+    </div>
+
+    <div class="form__field">
+      <label class="form__label" for={`${form}-email`}>Email</label>
+      <input class="form__input" type="email" id={`${form}-email`} name="email" required autocomplete="email" maxlength="120" />
+    </div>
+
+    <div class="form__field">
+      <label class="form__label" for={`${form}-phone`}>Phone (optional)</label>
+      <input class="form__input" type="tel" id={`${form}-phone`} name="phone" autocomplete="tel" maxlength="30" />
+      <span class="form__help">Used only for scheduling; we never share or sell contact data.</span>
+    </div>
+
+    <div class="form__field">
+      <label class="form__label" for={`${form}-notes`}>Notes (optional)</label>
+      <textarea class="form__textarea" id={`${form}-notes`} name="notes" maxlength="2000" placeholder="Anything we should know: county, royalty situation, offer in hand, etc."></textarea>
+    </div>
+
+    <div class="form__field">
+      <label style="display: flex; align-items: flex-start; gap: var(--space-2); font-size: var(--fs-sm);">
+        <input type="checkbox" name="consent" required style="margin-top: 4px;" />
+        <span>
+          I consent to Mineral Rights Xchange contacting me about an underwriter
+          review. No card required. No obligation. I can opt out at any time.
+        </span>
+      </label>
+    </div>
+
+    <!-- Hidden fields for UTM tracking; populated by analytics.ts. -->
+    <input type="hidden" name="utm_source" id={`${form}-utm_source`} value="" />
+    <input type="hidden" name="utm_medium" id={`${form}-utm_medium`} value="" />
+    <input type="hidden" name="utm_campaign" id={`${form}-utm_campaign`} value="" />
+    <input type="hidden" name="utm_term" id={`${form}-utm_term`} value="" />
+    <input type="hidden" name="utm_content" id={`${form}-utm_content`} value="" />
+    <input type="hidden" name="page_url" id={`${form}-page_url`} value="" />
+    <input type="hidden" name="page_title" id={`${form}-page_title`} value="" />
+
+    <div class="form__submit">
+      <button type="submit" class="btn btn--primary btn--lg" data-cta-name={`${form}-submit`}>
+        {submitLabel}
+      </button>
+    </div>
+
+    <p class="form__help">
+      <strong>No card required.</strong> No obligation. Confidential review.
+      The intake is genuinely free; MRX will disclose in writing if it becomes
+      a buyer in any resulting transaction.
+    </p>
+  </fieldset>
+</form>
+
+<script>
+  // Populate hidden UTM + page fields on form submit. Pure copy, no
+  // validation; the form zod schema in src/lib/form.ts validates on
+  // the server.
+  function attachUtmCopy(form: HTMLFormElement) {
+    form.addEventListener('submit', () => {
+      const url = new URL(window.location.href);
+      ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'].forEach((k) => {
+        const el = form.querySelector<HTMLInputElement>(`input[name="${k}"]`);
+        if (el && !el.value) {
+          el.value = url.searchParams.get(k) ?? '';
+        }
+      });
+      const pageUrl = form.querySelector<HTMLInputElement>('input[name="page_url"]');
+      if (pageUrl) pageUrl.value = window.location.href;
+      const pageTitle = form.querySelector<HTMLInputElement>('input[name="page_title"]');
+      if (pageTitle) pageTitle.value = document.title;
+
+      // dataLayer: form_submit event
+      const formName = (form.querySelector('input[name="consent"]')?.closest('form')?.getAttribute('action') ?? '').includes('free-guide') ? 'free-guide' : 'book';
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ event: 'form_submit', mrx_form: formName });
+    });
+  }
+  document.querySelectorAll<HTMLFormElement>('form[method="POST"]').forEach(attachUtmCopy);
+</script>

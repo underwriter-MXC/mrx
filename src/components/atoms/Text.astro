@@ -1,0 +1,22 @@
+---
+/**
+ * Text atom. <p> with size + variant. The first paragraph on every
+ * marketing page must carry data-answer-first="true" for the AEO
+ * answer-first pattern; that's the page's responsibility (MDX body).
+ */
+interface Props {
+  variant?: 'default' | 'muted' | 'lead';
+  size?: 'sm' | 'md' | 'lg';
+  class?: string;
+  id?: string;
+  style?: string;
+}
+
+const { variant = 'default', size = 'md', class: className, id, style } = Astro.props;
+
+const variantCls = variant === 'muted' ? 'text--muted' : variant === 'lead' ? 'text--lead' : '';
+const sizeCls = size === 'sm' ? 'text--sm' : size === 'lg' ? 'text--lg' : '';
+const cls = ['text', variantCls, sizeCls, className].filter(Boolean).join(' ');
+---
+
+<p class={cls} id={id} style={style}><slot /></p>

@@ -1,0 +1,28 @@
+---
+/**
+ * PostGrid organism. Renders a grid of PostCard items.
+ */
+import PostCard from './PostCard.astro';
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  posts: CollectionEntry<'posts'>[];
+}
+
+const { posts } = Astro.props;
+const withSlug = (p: CollectionEntry<'posts'>) => ({
+  ...p.data,
+  slug: p.id.replace(/\.mdx?$/, ''),
+});
+---
+
+<section class="container section">
+  <div class="grid grid--3">
+    {posts.map((p) => (
+      <PostCard
+        post={withSlug(p)}
+        href={`/blog/${p.id.replace(/\.mdx?$/, '')}/`}
+      />
+    ))}
+  </div>
+</section>

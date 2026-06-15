@@ -1,0 +1,18 @@
+---
+/**
+ * CalloutBox molecule. info / warning / success / error.
+ */
+interface Props {
+  variant?: 'info' | 'warning' | 'success' | 'danger';
+  title?: string;
+}
+
+const { variant = 'info', title } = Astro.props;
+---
+
+<aside class={`callout callout--${variant}`} role="note">
+  <div>
+    {title && <p class="callout__title">{title}</p>}
+    <slot />
+  </div>
+</aside>

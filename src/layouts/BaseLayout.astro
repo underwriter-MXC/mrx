@@ -1,0 +1,101 @@
+---
+/**
+ * BaseLayout. The global shell. Used by every page (MarketingLayout
+ * and PostLayout extend it).
+ *
+ * Per `Astro Architecture Plan.md` §3. This is the global layout that
+ * emits <html>, <head>, header, and footer (with §7 disclaimer).
+ * MarketingLayout and PostLayout pass children through.
+ */
+import '../styles/index.css';
+import Header from '../components/organisms/Header.astro';
+import Footer from '../components/organisms/Footer.astro';
+import Seo from '../components/seo/Seo.astro';
+import type { Crumb } from '../structured-data/breadcrumb';
+import { initDataLayer } from '../lib/analytics';
+import { SITE } from '../lib/site';
+
+interface Props {
+  title: string;
+  description: string;
+  path: string;
+  ogImage?: string;
+  noindex?: boolean;
+  robots?: string;
+  jsonLd?: object[];
+  breadcrumbs?: Crumb[];
+  pageType: 'home' | 'marketing' | 'blog' | 'post' | 'utility';
+  pageCategory?: string;
+}
+
+const {
+  title,
+  description,
+  path,
+  ogImage,
+  noindex = false,
+  robots,
+  jsonLd = [],
+  breadcrumbs,
+  pageType,
+  pageCategory,
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang={SITE.locale}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0a2540" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.svg" />
+    <link rel="alternate" type="application/rss+xml" title={`${SITE.name} Blog`} href="/blog/rss.xml" />
+    <Seo
+      title={title}
+      description={description}
+      path={path}
+      ogImage={ogImage}
+      noindex={noindex}
+      robots={robots}
+      jsonLd={jsonLd}
+      breadcrumbs={breadcrumbs}
+    />
+    <script
+      is:inline
+      define:vars={{ pageType, pageCategory }}
+    >
+      // GTM/GA4 dataLayer init (per SEO plan §6.2). The GTM container
+      // itself is loaded only if PUBLIC_GTM_ID is set; the dataLayer
+      // shim is always on so the form_submit / cta_click / view_faq_block
+      // pushes work regardless.
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        'gtm.start': Date.now(),
+        event: 'gtm.js',
+        mrx_page_type: pageType,
+        mrx_page_category: pageCategory || null,
+      });
+      function __mrxPush(payload) { window.dataLayer.push(payload); }
+    </script>
+    {
+      import.meta.env.PUBLIC_GTM_ID && (
+        <script
+          is:inline
+          async
+          src={`https://www.googletagmanager.com/gtm.js?id=${import.meta.env.PUBLIC_GTM_ID}`}
+        />
+      )
+    }
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <div class="page">
+      <Header currentPath={path} />
+      <main class="page__main" id="main">
+        <slot />
+      </main>
+      <Footer />
+    </div>
+  </body>
+</html>

@@ -1,0 +1,58 @@
+name: CI
+
+on:
+  push:
+    branches: [main, staging]
+  pull_request:
+    branches: [main, staging]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Compliance check (§4 grep + sign-off)
+        run: pnpm check-compliance
+
+      - name: Lint
+        run: pnpm lint
+
+      - name: Typecheck
+        run: pnpm typecheck
+
+      - name: Unit tests
+        run: pnpm test
+
+      - name: Secret scan
+        run: node scripts/check-secrets.mjs
+
+      - name: Build
+        run: pnpm build
+
+      - name: Schema lint
+        run: pnpm lint:schema
+
+      - name: Install Playwright browsers
+        run: pnpm exec playwright install --with-deps chromium
+
+      - name: E2E tests (against local build)
+        run: pnpm test:e2e
+
+      - name: Lighthouse CI (placeholder)
+        run: echo "Lighthouse CI runs in stage 10 (mrx_launch_qa) on the deployed build; local LCP/CLS budget check is in tests/e2e/perf.spec.ts (deferred)."
+        shell: bash

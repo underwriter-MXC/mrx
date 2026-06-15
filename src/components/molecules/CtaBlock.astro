@@ -1,0 +1,41 @@
+---
+/**
+ * CtaBlock organism. Full-width CTA panel used at the end of marketing
+ * pages. Carries the primary CTA + a small "no card required" reassurance.
+ */
+import CtaLink from '../atoms/CtaLink.astro';
+
+interface Props {
+  title: string;
+  body: string;
+  primaryCta: { label: string; href: string; ctaName: string };
+  secondaryCta?: { label: string; href: string; ctaName: string };
+}
+
+const { title, body, primaryCta, secondaryCta } = Astro.props;
+---
+
+<section class="container">
+  <div class="cta-block">
+    <h2>{title}</h2>
+    <p>{body}</p>
+    <div class="row" style="justify-content: center;">
+      <CtaLink ctaName={primaryCta.ctaName} href={primaryCta.href} variant="primary" size="lg">
+        {primaryCta.label}
+      </CtaLink>
+      {
+        secondaryCta && (
+          <CtaLink
+            ctaName={secondaryCta.ctaName}
+            href={secondaryCta.href}
+            variant="ghost"
+            size="lg"
+          >
+            {secondaryCta.label}
+          </CtaLink>
+        )
+      }
+    </div>
+    <p class="text text--sm" style="color: var(--color-ink-300); margin-top: var(--space-3);">No card required. No obligation. Confidential review.</p>
+  </div>
+</section>

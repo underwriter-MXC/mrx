@@ -1,0 +1,42 @@
+---
+/**
+ * Button atom. Renders as <a> if `href` is provided, otherwise <button>.
+ * Use CtaLink instead when the button is a tracked CTA (data-cta-name
+ * is required for the §9 sign-off rubric).
+ */
+interface Props {
+  variant?: 'primary' | 'secondary' | 'ghost';
+  size?: 'sm' | 'md' | 'lg';
+  href?: string;
+  type?: 'button' | 'submit' | 'reset';
+  disabled?: boolean;
+  class?: string;
+  ariaLabel?: string;
+}
+
+const {
+  variant = 'primary',
+  size = 'md',
+  href,
+  type = 'button',
+  disabled = false,
+  class: className,
+  ariaLabel,
+} = Astro.props;
+
+const cls = ['btn', `btn--${variant}`, size !== 'md' ? `btn--${size}` : '', className]
+  .filter(Boolean)
+  .join(' ');
+---
+
+{
+  href ? (
+    <a class={cls} href={href} aria-label={ariaLabel} aria-disabled={disabled ? 'true' : undefined}>
+      <slot />
+    </a>
+  ) : (
+    <button class={cls} type={type} disabled={disabled} aria-label={ariaLabel}>
+      <slot />
+    </button>
+  )
+}

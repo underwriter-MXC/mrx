@@ -1,0 +1,20 @@
+---
+/**
+ * Heading atom. <h1>..<h6> with size + variant. The level prop drives
+ * the tag; the size prop is independent so a heading can be visually
+ * <h3>-sized but semantically <h2>. Default: level=2 size=2xl.
+ */
+interface Props {
+  level?: 1 | 2 | 3 | 4 | 5 | 6;
+  size?: 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl' | '5xl';
+  class?: string;
+  id?: string;
+}
+
+const { level = 2, size = '2xl', class: className, id } = Astro.props;
+
+const Tag = `h${level}` as 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+const cls = ['heading', `heading--${size}`, className].filter(Boolean).join(' ');
+---
+
+<Tag class={cls} id={id}><slot /></Tag>

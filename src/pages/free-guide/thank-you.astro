@@ -1,0 +1,34 @@
+---
+/**
+ * /free-guide/thank-you. Redirect target after the /api/free-guide POST.
+ * Pushes a form_submit dataLayer event.
+ */
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CtaBlock from '../../components/molecules/CtaBlock.astro';
+import Heading from '../../components/atoms/Heading.astro';
+import Text from '../../components/atoms/Text.astro';
+export const prerender = true;
+---
+
+<BaseLayout
+  title="Guide on the way · Mineral Rights Xchange"
+  description="The free Texas mineral rights guide is on the way to your inbox: valuation, the selling process, and the questions to ask any buyer before you sign."
+  path="/free-guide/thank-you"
+  noindex={true}
+  pageType="utility"
+  pageCategory="thank-you"
+>
+  <section class="container container--narrow section" style="text-align: center;">
+    <Heading level={1} size="3xl">The guide is on the way</Heading>
+    <Text class="text--lead" style="margin-top: var(--space-4);">Check your inbox in a few minutes. The guide is general educational information, not legal, tax, or valuation advice.</Text>
+  </section>
+  <CtaBlock
+    title="Want a transparent review?"
+    body="A free, confidential underwriter review. The output is a directional range with the assumptions stated. No card. No obligation."
+    primaryCta={{ label: 'Book My Free Review', href: '/book', ctaName: 'fg-thank-you-book' }}
+  />
+  <script is:inline>
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({ event: 'form_submit', mrx_form: 'free-guide' });
+  </script>
+</BaseLayout>

@@ -1,0 +1,43 @@
+---
+/**
+ * Footer organism. The §7 disclaimer lives here, in the global
+ * position that renders on every page. BaseLayout passes the
+ * <Disclaimer variant="footer" /> into this organism's slot.
+ */
+import Disclaimer from '../molecules/Disclaimer.astro';
+import { NAV, SITE } from '../../lib/site';
+---
+
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <p class="footer__brand">{SITE.name}</p>
+        <p class="footer__tagline">{SITE.tagline}</p>
+      </div>
+      <div>
+        <h3 class="footer__heading">Company</h3>
+        <ul class="footer__links">
+          {NAV.footer.company.map((l) => <li><a href={l.href}>{l.label}</a></li>)}
+        </ul>
+      </div>
+      <div>
+        <h3 class="footer__heading">Resources</h3>
+        <ul class="footer__links">
+          {NAV.footer.resources.map((l) => <li><a href={l.href}>{l.label}</a></li>)}
+        </ul>
+      </div>
+      <div>
+        <h3 class="footer__heading">Legal</h3>
+        <ul class="footer__links">
+          {NAV.footer.legal.map((l) => <li><a href={l.href}>{l.label}</a></li>)}
+        </ul>
+      </div>
+    </div>
+    <Disclaimer variant="footer" />
+    <div class="footer__bottom">
+      <span>© {new Date().getFullYear()} {SITE.name}. All rights reserved.</span>
+      <span>Texas mineral rights specialists · Transparent underwriter review</span>
+    </div>
+  </div>
+</footer>

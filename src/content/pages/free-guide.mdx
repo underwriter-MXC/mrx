@@ -1,0 +1,102 @@
+---
+title: 'Free Texas Mineral Rights Value Guide · MRX'
+description: 'A free guide for Texas mineral rights owners: how valuation works, questions to ask before signing, and how to prepare for a review. No card required.'
+slug: 'free-guide'
+category: 'free-guide'
+hero_kicker: 'Free Texas mineral rights guide'
+h1: 'Free Texas mineral rights value guide'
+primary_cta:
+  label: 'Email Me the Free Guide'
+  href: '#guide-form'
+  ctaName: 'fg-primary-submit'
+secondary_cta:
+  label: 'Book a Free Review Instead'
+  href: '/book'
+  ctaName: 'fg-secondary-book'
+disclaimer_top: false
+faq:
+  - question: 'Will I be added to a marketing list?'
+    answer: 'We will email you the guide. We may send a brief follow-up to ask if the guide was useful and whether you would like a free review, but you can opt out at any time. We do not sell or share contact data with third parties.'
+  - question: 'Is the guide general information or advice?'
+    answer: 'General educational information, not legal, tax, or valuation advice. Verify any specific situation with a Texas-licensed attorney and CPA.'
+compliance_signoff:
+  no_disallowed_phrases: true
+  no_named_competitor: true
+  no_superlative_about_mrx: true
+  no_advice_verb: true
+  no_appraisal_term: true
+  no_named_underwriter: true
+  has_footer_disclaimer: true
+  money_figure_sourced: false
+  reviewed_by: 'mrx_compliance-stage06-initial'
+  reviewed_at: '2026-06-11T00:00:00Z'
+---
+
+import Hero from '../../components/molecules/Hero.astro';
+import CtaBlock from '../../components/molecules/CtaBlock.astro';
+import FaqBlock from '../../components/molecules/FaqBlock.astro';
+import FormSection from '../../components/organisms/FormSection.astro';
+import Text from '../../components/atoms/Text.astro';
+import Heading from '../../components/atoms/Heading.astro';
+import Icon from '../../components/atoms/Icon.astro';
+
+<Hero
+  kicker={frontmatter.hero_kicker}
+  h1={frontmatter.h1}
+  lede="Use this guide to understand the core factors that influence mineral rights value before you speak with a buyer: royalty income, decline curves, operator quality, basin activity, lease terms, and offer structure. The guide is general educational information, not legal, tax, or valuation advice."
+  primaryCta={frontmatter.primary_cta}
+  secondaryCta={frontmatter.secondary_cta}
+/>
+
+<section class="container section">
+  <Heading level={2} size="3xl">What the guide covers</Heading>
+  <div class="grid grid--2" style="margin-top: var(--space-8); gap: var(--space-6);">
+    <article style="display: flex; gap: var(--space-3); align-items: flex-start;">
+      <Icon name="check" size={28} class="hero__icon-inline" />
+      <div>
+        <Heading level={3} size="md">How underwriters look at recent check stubs and production history</Heading>
+        <Text>What a single royalty check actually tells you, what it does not, and how production history sharpens the picture over a 12-24 month window.</Text>
+      </div>
+    </article>
+    <article style="display: flex; gap: var(--space-3); align-items: flex-start;">
+      <Icon name="check" size={28} class="hero__icon-inline" />
+      <div>
+        <Heading level={3} size="md">Why headline multiples can be misleading without decline-curve context</Heading>
+        <Text>A high headline number based on a 1-month check behaves very differently from one based on a 24-month average. We walk through the difference.</Text>
+      </div>
+    </article>
+    <article style="display: flex; gap: var(--space-3); align-items: flex-start;">
+      <Icon name="check" size={28} class="hero__icon-inline" />
+      <div>
+        <Heading level={3} size="md">Questions to ask before signing an offer, letter of intent, or purchase agreement</Heading>
+        <Text>Plain-language questions that surface the assumptions and clauses that change what a number actually means.</Text>
+      </div>
+    </article>
+    <article style="display: flex; gap: var(--space-3); align-items: flex-start;">
+      <Icon name="check" size={28} class="hero__icon-inline" />
+      <div>
+        <Heading level={3} size="md">How Mineral Rights Xchange approaches the underwriter review</Heading>
+        <Text>What we look at, what we do not, and what we recommend verifying with a Texas-licensed attorney and CPA before any transaction.</Text>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="section section--alt" id="guide-form">
+  <div class="container container--narrow">
+    <Heading level={2} size="3xl">Email me the guide</Heading>
+    <Text class="text--lead" style="margin-top: var(--space-3); margin-bottom: var(--space-6);">The guide is general educational information, not legal, tax, or valuation advice. We do not collect a card. You can opt out at any time.</Text>
+    <FormSection form="free-guide" submitLabel="Email me the guide" legend="Free Texas mineral rights value guide" />
+  </div>
+</section>
+
+<section class="container section">
+  <Heading level={2} size="3xl">Frequently asked</Heading>
+  <FaqBlock pairs={frontmatter.faq} id="fg-faq" />
+</section>
+
+<CtaBlock
+  title="Prefer to talk through it instead?"
+  body="A free, confidential underwriter review. No card. The decision to sell, hold, or take more time stays yours."
+  primaryCta={{ label: 'Book My Free Review', href: '/book', ctaName: 'fg-cta-block-book' }}
+/>

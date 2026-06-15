@@ -1,0 +1,88 @@
+---
+title: 'MRX AI Mineral Rights Guide · Mineral Rights Xchange'
+description: 'Start with the MRX AI Guide. Organize mineral rights questions, offer details, royalty checks, inherited rights, and documents before a free underwriter review.'
+slug: 'index'
+category: 'homepage'
+hero_kicker: 'AI mineral rights guide'
+h1: 'Start with the AI. Leave with a clearer mineral rights decision.'
+primary_cta:
+  label: 'Talk to MRX AI'
+  href: '#mrx-ai-chat'
+  ctaName: 'home-ai-primary-chat'
+secondary_cta:
+  label: 'Book Free Review'
+  href: '/book'
+  ctaName: 'home-ai-secondary-book'
+disclaimer_top: false
+aeo_cited_answer: true
+faq:
+  - question: 'Is the MRX AI Guide a certified valuation?'
+    answer: 'No. The MRX AI Guide helps organize facts and questions before a free underwriter review. It is not a certified valuation, legal opinion, or tax opinion.'
+  - question: 'What should I tell the AI first?'
+    answer: 'Start with your situation: offer in hand, inherited rights, royalty checks, lease or division order, county/state, operator, or what decision you are trying to make.'
+  - question: 'Can I still book a human review?'
+    answer: 'Yes. The AI-first path is designed to make the human review better. When you are ready, you can book a free underwriter review through the MRX calendar.'
+aeo_cited_answer_text: 'Mineral Rights Xchange (MRX) uses an AI-first intake path to help mineral rights owners organize questions, documents, location details, royalty history, and offer terms before a free underwriter review. The AI Guide does not provide a certified valuation, legal opinion, or tax opinion. It helps owners prepare a clearer conversation by identifying what is known, what is missing, and what an underwriter may need to review production history, royalty income, lease or division-order context, and offer assumptions. A visitor can start with an inherited-rights question, a competing offer, royalty checks, lease language, a county/operator detail, or general uncertainty about whether to sell or hold. The AI response routes the question to the relevant MRX role and asks for the next practical fact without requiring private documents on the first click. It also keeps disclaimers visible so the owner understands the review is educational and directional. Owners remain in control of whether they book a review, share documents, compare offers, sell, or hold.'
+aeo_cited_answer_sources:
+  - label: 'Mineral Rights Xchange Methodology'
+    href: '/methodology'
+  - label: 'Mineral Rights Xchange FAQ'
+    href: '/faq'
+compliance_signoff:
+  no_disallowed_phrases: true
+  no_named_competitor: true
+  no_superlative_about_mrx: true
+  no_advice_verb: true
+  no_appraisal_term: true
+  no_named_underwriter: true
+  has_footer_disclaimer: true
+  money_figure_sourced: false
+  reviewed_by: 'mrx_compliance-ai-first-design-draft'
+  reviewed_at: '2026-06-12T00:00:00Z'
+---
+
+import AiFirstHome from '../../components/organisms/AiFirstHome.astro';
+import CitedAnswer from '../../components/molecules/CitedAnswer.astro';
+import FaqBlock from '../../components/molecules/FaqBlock.astro';
+import Heading from '../../components/atoms/Heading.astro';
+import Text from '../../components/atoms/Text.astro';
+
+<AiFirstHome />
+
+<section class="container section">
+  {frontmatter.aeo_cited_answer && (
+    <CitedAnswer text={frontmatter.aeo_cited_answer_text} sources={frontmatter.aeo_cited_answer_sources} />
+  )}
+</section>
+
+<section class="section section--alt">
+  <div class="container">
+    <Heading level={2} size="3xl" id="how-it-works-overview">How the AI-first review path works</Heading>
+    <Text class="text--lead" style="margin-top: var(--space-3); margin-bottom: var(--space-10); max-width: 64ch;">The page now starts the owner in a useful interaction instead of forcing them to read everything before taking action.</Text>
+    <ol class="process-steps" style="list-style: none;">
+      <li class="process-step">
+        <div class="process-step__title">Start with a situation</div>
+        <p class="process-step__text">Offer in hand, inherited rights, royalty check question, lease confusion, or a general mineral rights question.</p>
+      </li>
+      <li class="process-step">
+        <div class="process-step__title">Build an owner profile</div>
+        <p class="process-step__text">The AI asks for state, county, operator, ownership type, documents, offer status, and preferred contact method.</p>
+      </li>
+      <li class="process-step">
+        <div class="process-step__title">Explain what matters</div>
+        <p class="process-step__text">Plain-language guidance covers production history, royalty income, decline context, offer assumptions, and missing documents.</p>
+      </li>
+      <li class="process-step">
+        <div class="process-step__title">Route to GHL when ready</div>
+        <p class="process-step__text">The visitor can move into the existing MRX GHL form or calendar with better context already prepared.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section class="container section">
+  <Heading level={2} size="3xl" id="faq-preview">Questions owners can ask first</Heading>
+  <Text class="text--lead" style="margin-top: var(--space-3); margin-bottom: var(--space-8);">The AI-first version keeps MRX educational and interactive while preserving the free underwriter review path.</Text>
+  <FaqBlock pairs={frontmatter.faq} id="home-faq" />
+  <p style="margin-top: var(--space-4);"><a href="/faq" data-cta-name="home-faq-more">See the full FAQ →</a></p>
+</section>

@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "title": "MRX §9 Per-Page Sign-Off Rubric",
+  "description": "Generated from project-pack/04-compliance/MRX Compliance Review.md §9. The frontend zod schema mirrors this. Every page in src/content/pages/ must populate every field.",
+  "last_generated": "2026-06-11T00:00:00Z",
+  "source_review": "project-pack/04-compliance/MRX Compliance Review.md",
+  "source_section": "§9 Per-Page Compliance Sign-Off Checklist",
+  "booleans": [
+    "no_disallowed_phrases",
+    "no_named_competitor",
+    "no_superlative_about_mrx",
+    "no_advice_verb",
+    "no_appraisal_term",
+    "no_named_underwriter",
+    "has_footer_disclaimer"
+  ],
+  "conditional_booleans": [
+    {
+      "field": "disclaimer_top",
+      "true_when_category_in": ["methodology", "legal", "tax-legal"]
+    }
+  ],
+  "fields_with_source_required": [
+    "money_figure_sourced"
+  ],
+  "reviewer_id_format": "^mrx_compliance-",
+  "checklist": [
+    "No occurrence of any phrase in §4 disallowed list",
+    "No specific competitor named (§6.1)",
+    "No 'only / most / best / guaranteed' superlative about MRX",
+    "No 'we recommend / we advise' advice verb",
+    "No 'certified / USPAP / formal appraisal'",
+    "No named underwriter on landing pages (§8)",
+    "§7 disclaimer present in footer (or top of page for tax/legal/methodology pages)",
+    "Any customer testimonial has a real first name + last initial + state + date, and was collected with consent, no incentive, and no sentiment gating",
+    "Any money figure (price, multiple, savings, tax rate) is sourced or softened",
+    "CTAs ('Book', 'Get my free review') lead to a page that is genuinely free and has no card-required step",
+    "Form fields exclude sensitive-data collection (SSN, DOB, full bank info)",
+    "Meta description and OG copy do not contain disallowed phrases",
+    "Alt text on images does not make unsupported claims",
+    "Page is accessible (alt text, contrast, focus order) per stage 10/11"
+  ]
+}

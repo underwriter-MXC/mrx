@@ -1,0 +1,110 @@
+---
+title: 'How It Works: A Free Underwriter Review · MRX'
+description: 'See how Mineral Rights Xchange reviews Texas mineral rights: intake, document review, underwriting, valuation discussion, and clear next steps. No pressure.'
+slug: 'how-it-works'
+category: 'process'
+hero_kicker: 'A transparent review process'
+h1: 'A better way to get a fair assessment of your mineral rights'
+primary_cta:
+  label: 'Book My Free Underwriter Review'
+  href: '/book'
+  ctaName: 'hiw-primary-book'
+secondary_cta:
+  label: 'See the Published Methodology'
+  href: '/methodology'
+  ctaName: 'hiw-secondary-methodology'
+disclaimer_top: false
+faq:
+  - question: 'What if I do not have all the documents?'
+    answer: 'That is normal. Tell us what you have and we will help you figure out what to ask for. Many owners start with a royalty check stub or an offer letter; we can usually work forward from there.'
+  - question: 'How long does the review take?'
+    answer: 'Most reviews wrap in 3-7 business days once we have the key documents in hand. If your situation is more complex (multi-county, multi-operator, contested title), it can take a bit longer; we will tell you up front.'
+  - question: 'Do I have to sell after the review?'
+    answer: 'No. The review is genuinely free, with no obligation. If you decide to hold, we still consider the conversation a good use of our time.'
+compliance_signoff:
+  no_disallowed_phrases: true
+  no_named_competitor: true
+  no_superlative_about_mrx: true
+  no_advice_verb: true
+  no_appraisal_term: true
+  no_named_underwriter: true
+  has_footer_disclaimer: true
+  money_figure_sourced: false
+  reviewed_by: 'mrx_compliance-stage06-initial'
+  reviewed_at: '2026-06-11T00:00:00Z'
+---
+
+import Hero from '../../components/molecules/Hero.astro';
+import CtaBlock from '../../components/molecules/CtaBlock.astro';
+import FaqBlock from '../../components/molecules/FaqBlock.astro';
+import Text from '../../components/atoms/Text.astro';
+import Heading from '../../components/atoms/Heading.astro';
+import Icon from '../../components/atoms/Icon.astro';
+
+<Hero
+  kicker={frontmatter.hero_kicker}
+  h1={frontmatter.h1}
+  lede="A calm, working conversation about your mineral rights. You stay in control at every step. The output is a directional range with the assumptions stated, not a sales pitch."
+  primaryCta={frontmatter.primary_cta}
+  secondaryCta={frontmatter.secondary_cta}
+/>
+
+<section class="container section">
+  <Heading level={2} size="3xl">What your underwriter review actually covers</Heading>
+  <Text class="text--lead" style="margin-top: var(--space-3); max-width: 60ch;">The review is a structured look at the factors that drive value, framed by plain-language questions and a published methodology.</Text>
+
+  <div class="grid grid--2" style="margin-top: var(--space-10);">
+    <article class="card" style="background: var(--color-white); padding: var(--space-6); border-radius: var(--radius-md); border: 1px solid var(--color-ink-100);">
+      <Heading level={3} size="lg">Production history and royalty income</Heading>
+      <Text>We look at recent production data for the section, royalty checks you have received, and how income has trended. Decline-curve context matters: a high check stub from a new well behaves differently from a steady check stub from a mature one.</Text>
+    </article>
+    <article class="card" style="background: var(--color-white); padding: var(--space-6); border-radius: var(--radius-md); border: 1px solid var(--color-ink-100);">
+      <Heading level={3} size="lg">Offer terms and clauses</Heading>
+      <Text>If you have an offer, we read it. Clawback provisions, depth-of-rights limitations, post-close obligations, and effective dates all change what a headline number means.</Text>
+    </article>
+    <article class="card" style="background: var(--color-white); padding: var(--space-6); border-radius: var(--radius-md); border: 1px solid var(--color-ink-100);">
+      <Heading level={3} size="lg">Operator and basin context</Heading>
+      <Text>An active operator with a healthy nearby development plan supports a stronger outlook. An operator with a track record of plugging wells and walking away does not. We state the difference plainly.</Text>
+    </article>
+    <article class="card" style="background: var(--color-white); padding: var(--space-6); border-radius: var(--radius-md); border: 1px solid var(--color-ink-100);">
+      <Heading level={3} size="lg">Title and acreage confidence</Heading>
+      <Text>Unclear title, partial mineral rights, and multiple-heir situations all change the picture. We flag what to verify with a Texas-licensed attorney before you commit to anything.</Text>
+    </article>
+  </div>
+</section>
+
+<section class="section section--alt">
+  <div class="container">
+    <Heading level={2} size="3xl">The opposite of pressure sales</Heading>
+    <Text class="text--lead" style="margin-top: var(--space-3); margin-bottom: var(--space-8); max-width: 60ch;">The review is a working conversation, not a closing attempt. We will tell you when an offer is reasonable and when it is not. We will also tell you when the better answer is to hold and see what the next year of production looks like.</Text>
+    <div class="grid grid--3">
+      <article class="card" style="background: var(--color-white); padding: var(--space-5); border-radius: var(--radius-md);">
+        <Icon name="lock" size={28} class="hero__icon-inline" />
+        <Heading level={3} size="md">No teaser numbers</Heading>
+        <Text>We do not lead with a single number on a website or in an email. The review produces a range with the assumptions stated, never a one-line promise.</Text>
+      </article>
+      <article class="card" style="background: var(--color-white); padding: var(--space-5); border-radius: var(--radius-md);">
+        <Icon name="shield" size={28} class="hero__icon-inline" />
+        <Heading level={3} size="md">No clawback clauses</Heading>
+        <Text>Our purchase documents do not re-open the deal after you sign. We disclose that relationship in writing before any agreement.</Text>
+      </article>
+      <article class="card" style="background: var(--color-white); padding: var(--space-5); border-radius: var(--radius-md);">
+        <Icon name="doc" size={28} class="hero__icon-inline" />
+        <Heading level={3} size="md">No black box</Heading>
+        <Text>Our DCF methodology is published. If we cannot show our work, the number is not worth your time.</Text>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="container section">
+  <Heading level={2} size="3xl">Frequently asked</Heading>
+  <FaqBlock pairs={frontmatter.faq} id="hiw-faq" />
+  <p style="margin-top: var(--space-4);"><a href="/faq" data-cta-name="hiw-faq-more">See the full FAQ →</a></p>
+</section>
+
+<CtaBlock
+  title="See what your rights may be worth"
+  body="A free, confidential underwriter review. No card. No obligation. The decision to sell, hold, or take more time stays yours."
+  primaryCta={{ label: 'Book My Free Review', href: '/book', ctaName: 'hiw-cta-block-book' }}
+/>

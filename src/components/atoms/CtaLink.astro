@@ -1,0 +1,40 @@
+---
+/**
+ * CtaLink atom. The §9 sign-off rubric build-time check fails if a
+ * CTA <a> is missing data-cta-name, so this component enforces the
+ * attribute is a non-empty string.
+ *
+ * Use this for every primary or secondary CTA on a marketing page.
+ */
+import Button from './Button.astro';
+
+interface Props {
+  ctaName: string;
+  href: string;
+  variant?: 'primary' | 'secondary' | 'ghost';
+  size?: 'sm' | 'md' | 'lg';
+  class?: string;
+}
+
+const { ctaName, href, variant = 'primary', size = 'md', class: className } = Astro.props;
+
+if (!ctaName || ctaName.trim() === '') {
+  // Build-time safety: emit a marker in the DOM that the §9 test scans
+  // for, and throw at SSR. Catching the missing name at SSR is louder
+  // than catching it in a unit test.
+  throw new Error(
+    `<CtaLink> requires a non-empty ctaName prop (the data-cta-name attribute). Got "${ctaName}" at href "${href}".`,
+  );
+}
+---
+
+<Button
+  href={href}
+  variant={variant}
+  size={size}
+  class={className}
+>
+  <a data-cta-name={ctaName} href={href} class:list={['btn', `btn--${variant}`, size !== 'md' ? `btn--${size}` : '', className]}>
+    <slot />
+  </a>
+</Button>

@@ -1,0 +1,32 @@
+---
+/**
+ * CodeBlock. MDX-friendly code block. Renders <pre><code> with the
+ * appropriate class for syntax highlighting hookup (Prism / Shiki
+ * can attach later; the build ships raw <pre> for the MVP).
+ */
+interface Props {
+  language?: string;
+}
+
+const { language = 'text' } = Astro.props;
+---
+
+<pre class={`code-block code-block--${language}`}><code class={`language-${language}`}><slot /></code></pre>
+
+<style>
+  .code-block {
+    background: var(--color-brand-900);
+    color: var(--color-ink-100);
+    padding: var(--space-4);
+    border-radius: var(--radius-md);
+    overflow-x: auto;
+    font-size: var(--fs-sm);
+    line-height: var(--lh-snug);
+    margin-block: var(--space-6);
+  }
+  .code-block code {
+    background: transparent;
+    padding: 0;
+    color: inherit;
+  }
+</style>

@@ -1,0 +1,21 @@
+---
+import { getEntry } from 'astro:content';
+import MarketingLayout from '../layouts/MarketingLayout.astro';
+
+const entry = await getEntry('pages', 'sell-mineral-rights');
+if (!entry) throw new Error('pages/sell-mineral-rights.mdx is missing.');
+const { Content } = await entry.render();
+export const prerender = true;
+---
+
+<MarketingLayout
+  title={entry.data.title}
+  description={entry.data.description}
+  path="/sell-mineral-rights"
+  pageType="marketing"
+  pageCategory="seller-intent"
+  breadcrumbs={[{ name: 'Home', path: '/' }, { name: 'Sell Mineral Rights', path: '/sell-mineral-rights' }]}
+  faq={entry.data.faq}
+>
+  <Content />
+</MarketingLayout>

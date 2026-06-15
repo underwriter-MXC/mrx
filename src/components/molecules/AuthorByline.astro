@@ -1,0 +1,29 @@
+---
+/**
+ * AuthorByline molecule. Author name + date + reading time on a post.
+ */
+interface Props {
+  authorName: string;
+  publishedAt: string;
+  readingMinutes?: number;
+}
+
+const { authorName, publishedAt, readingMinutes } = Astro.props;
+const formatted = new Date(publishedAt).toLocaleDateString('en-US', {
+  month: 'long',
+  day: 'numeric',
+  year: 'numeric',
+});
+---
+
+<p class="byline">
+  <span class="byline__author">{authorName}</span>
+  <span aria-hidden="true">·</span>
+  <time datetime={publishedAt}>{formatted}</time>
+  {readingMinutes && (
+    <>
+      <span aria-hidden="true">·</span>
+      <span>{readingMinutes} min read</span>
+    </>
+  )}
+</p>
