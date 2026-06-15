@@ -1,0 +1,15 @@
+# Keep local crawl/source artifacts out of Vercel deploy uploads.
+knowledge/vercel-academy/raw/
+sqlite_mcp_server.db
+
+# Local dependency/build/test artifacts.
+node_modules/
+dist/
+.astro/
+coverage/
+playwright-report/
+test-results/
+
+# Uncommitted planning artifacts that are not part of the public Vercel site.
+docs/
+scripts/audit-staged-content.mjs
