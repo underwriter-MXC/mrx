@@ -16,7 +16,7 @@
  *
  * astro.config.mjs calls this from the `astro:build:done` hook.
  */
-import { readFile, writeFile } from 'node:fs/promises';
+import { copyFile, readFile, writeFile } from 'node:fs/promises';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { existsSync } from 'node:fs';
@@ -28,6 +28,11 @@ const sitemapCandidates = [
   join(ROOT, 'dist', 'client', 'sitemap-0.xml'),
 ];
 const SITEMAP = sitemapCandidates.find((candidate) => existsSync(candidate));
+const sitemapIndexCandidates = [
+  join(ROOT, 'dist', 'sitemap-index.xml'),
+  join(ROOT, 'dist', 'client', 'sitemap-index.xml'),
+];
+const SITEMAP_INDEX = sitemapIndexCandidates.find((candidate) => existsSync(candidate));
 
 if (!SITEMAP) {
   console.warn(`[postbuild-sitemap] no sitemap-0.xml found in ${sitemapCandidates.join(' or ')}; skipping.`);
@@ -89,3 +94,9 @@ const out = text.replace(
 
 await writeFile(SITEMAP, out, 'utf-8');
 console.log(`[postbuild-sitemap] Rewrote priority on ${rewritten} <url> entries in ${SITEMAP}`);
+
+if (SITEMAP_INDEX) {
+  const sitemapXml = join(dirname(SITEMAP_INDEX), 'sitemap.xml');
+  await copyFile(SITEMAP_INDEX, sitemapXml);
+  console.log(`[postbuild-sitemap] Copied sitemap index to ${sitemapXml} for Search Console compatibility`);
+}

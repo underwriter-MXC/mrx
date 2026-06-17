@@ -1,5 +1,25 @@
 {
   "buildCommand": "pnpm build:vercel",
   "installCommand": "pnpm install --frozen-lockfile",
-  "framework": "astro"
+  "framework": "astro",
+  "headers": [
+    {
+      "source": "/api/(.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
+    },
+    {
+      "source": "/blog/drafts/(.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
+    }
+  ]
 }
