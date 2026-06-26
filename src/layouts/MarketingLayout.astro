@@ -24,6 +24,7 @@ interface Props {
   disclaimerTop?: boolean;
   /** Optional FAQ pairs that should emit FAQPage JSON-LD. */
   faq?: FaqPair[];
+  hideHeader?: boolean;
 }
 
 const {
@@ -38,6 +39,7 @@ const {
   breadcrumbs,
   disclaimerTop = false,
   faq,
+  hideHeader = false,
 } = Astro.props;
 
 const extraJsonLd = faq && faq.length > 0 ? [faqPage(faq)] : [];
@@ -54,6 +56,7 @@ const extraJsonLd = faq && faq.length > 0 ? [faqPage(faq)] : [];
   pageCategory={pageCategory}
   breadcrumbs={breadcrumbs}
   jsonLd={extraJsonLd}
+  hideHeader={hideHeader}
 >
   {disclaimerTop && <div class="container section--sm"><Disclaimer variant="top" /></div>}
   <slot />

@@ -26,6 +26,7 @@ interface Props {
   breadcrumbs?: Crumb[];
   pageType: 'home' | 'marketing' | 'blog' | 'post' | 'utility';
   pageCategory?: string;
+  hideHeader?: boolean;
 }
 
 const {
@@ -39,6 +40,7 @@ const {
   breadcrumbs,
   pageType,
   pageCategory,
+  hideHeader = false,
 } = Astro.props;
 ---
 
@@ -91,7 +93,7 @@ const {
   <body>
     <a class="skip-link" href="#main">Skip to main content</a>
     <div class="page">
-      <Header currentPath={path} />
+      {!hideHeader && <Header currentPath={path} />}
       <main class="page__main" id="main">
         <slot />
       </main>

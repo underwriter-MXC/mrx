@@ -40,18 +40,21 @@ const pathways = [
   <div class="mrx-ai-hero__shell">
     <nav class="mrx-ai-hero__nav" aria-label="AI homepage navigation">
       <a class="mrx-ai-hero__brand" href="/" aria-label="Mineral Rights Xchange home">
-        <span class="mrx-ai-hero__mark">MRX</span>
-        <span>
-          <strong>Mineral Rights Xchange</strong>
-          <small>AI mineral rights guide</small>
-        </span>
+        <img src="/logo.svg" alt="" width="64" height="64" aria-hidden="true" />
+        <span><strong>Mineral Rights</strong><em>Xchange</em></span>
       </a>
       <div class="mrx-ai-hero__links" aria-label="Primary links">
-        <a href="/methodology">Methodology</a>
-        <a href="/sell-mineral-rights">Sell Mineral Rights</a>
+        <a href="#mrx-ai-chat">What Are My Minerals Worth?</a>
+        <a href="#mrx-ai-chat">I Received An Offer</a>
+        <a href="#mrx-ai-chat">Inherited Mineral Rights</a>
+        <a href="/blog">Learning Center</a>
+        <a href="/about">About MRX</a>
         <a href="/faq">FAQ</a>
       </div>
-      <a class="mrx-ai-hero__nav-cta" href="#mrx-ai-chat" data-cta-name="home-ai-nav-start">Talk to the AI →</a>
+      <a class="mrx-ai-hero__nav-cta" href="/book" data-cta-name="home-ai-nav-book">
+        <img class="mrx-ai-icon" src="/assets/mrx-homepage-v4/icons/hmpg-v6-exact/calendar.png" alt="" aria-hidden="true" loading="eager" />
+        Book Free Mineral Review
+      </a>
     </nav>
 
     <div class="mrx-ai-hero__grid">
@@ -181,30 +184,34 @@ const pathways = [
 
 <style>
   .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
-  .mrx-ai-hero { position: relative; overflow: hidden; min-height: 820px; background: #f7f3ea; color: #061A33; }
-  .mrx-ai-hero__background-image { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 31% top; opacity: .98; }
-  .mrx-ai-hero::before { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(247,243,234,.02) 0%, rgba(247,243,234,.12) 21%, rgba(247,243,234,.9) 35%, rgba(247,243,234,.82) 55%, rgba(6,26,51,.12) 68%, rgba(6,26,51,.3) 100%); }
-  .mrx-ai-hero::after { content: ''; position: absolute; inset: auto 0 0; height: 18%; background: linear-gradient(0deg, rgba(6,26,51,.48), transparent); }
+  .mrx-ai-hero { position: relative; overflow: hidden; min-height: 850px; background: #f3eee4; color: #061A33; }
+  .mrx-ai-hero__background-image { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 31% top; opacity: 1; }
+  .mrx-ai-hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 49% 39%, rgba(255,255,255,.96) 0%, rgba(255,255,255,.88) 23%, rgba(247,243,234,.58) 40%, rgba(247,243,234,.08) 61%, rgba(6,26,51,.28) 100%), linear-gradient(90deg, rgba(247,243,234,.01) 0%, rgba(247,243,234,.06) 25%, rgba(247,243,234,.28) 43%, rgba(247,243,234,.06) 60%, rgba(6,26,51,.26) 100%); }
+  .mrx-ai-hero::after { content: ''; position: absolute; inset: auto 0 0; height: 18%; background: linear-gradient(0deg, rgba(6,26,51,.38), transparent); }
   .mrx-ai-hero__glow { position: absolute; border-radius: 999px; filter: blur(58px); opacity: .5; pointer-events: none; }
   .mrx-ai-hero__glow--one { width: 320px; height: 320px; background: rgba(216, 149, 31, .22); right: 9%; top: 20%; }
   .mrx-ai-hero__glow--two { width: 360px; height: 360px; background: rgba(42, 77, 122, .44); left: -8%; bottom: 20%; }
-  .mrx-ai-hero__shell { position: relative; z-index: 1; width: min(100% - 2rem, 1440px); margin: 0 auto; padding: 1.25rem 0 0; opacity: 1; pointer-events: auto; overflow: visible; }
-  .mrx-ai-hero__nav { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-bottom: 1rem; border-bottom: 1px solid rgba(216, 225, 236, .16); }
-  .mrx-ai-hero__brand { display: inline-flex; align-items: center; gap: .8rem; color: inherit; text-decoration: none; }
-  .mrx-ai-hero__brand strong, .mrx-ai-chat__head strong { display: block; font-size: 1rem; }
-  .mrx-ai-hero__brand small, .mrx-ai-chat__head p { display: block; margin: .1rem 0 0; color: rgba(248,251,255,.7); font-size: .82rem; }
-  .mrx-ai-hero__mark { display: grid; place-items: center; width: 54px; height: 42px; border-radius: 12px; background: rgba(255,255,255,.08); border: 1px solid rgba(216,149,31,.48); color: #f9c777; font-weight: 800; letter-spacing: -.04em; }
-  .mrx-ai-hero__links { display: flex; gap: clamp(1rem, 4vw, 3.4rem); font-weight: 700; }
-  .mrx-ai-hero__links a, .mrx-ai-hero__nav-cta { color: rgba(248,251,255,.9); text-decoration: none; }
-  .mrx-ai-hero__nav-cta { border-radius: 999px; background: #c4841c; padding: .9rem 1.4rem; box-shadow: 0 18px 50px rgba(196,132,28,.24); }
+  .mrx-ai-hero__shell { position: relative; z-index: 1; width: min(100% - 2rem, 1480px); margin: 0 auto; padding: 1rem 0 0; opacity: 1; pointer-events: auto; overflow: visible; }
+  .mrx-ai-hero__nav { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: clamp(1rem, 2vw, 2.2rem); padding: .8rem .95rem .8rem 1rem; border: 1px solid rgba(6,26,51,.1); border-radius: 0 0 28px 28px; background: rgba(255,255,255,.97); box-shadow: 0 18px 55px rgba(6,26,51,.12); backdrop-filter: blur(18px); }
+  .mrx-ai-hero__brand { display: inline-flex; align-items: center; gap: .7rem; min-width: max-content; color: #061A33; text-decoration: none; }
+  .mrx-ai-hero__brand img { width: 58px; height: 58px; object-fit: contain; }
+  .mrx-ai-hero__brand span { display: grid; gap: 0; line-height: .95; }
+  .mrx-ai-hero__brand strong { display: block; font-size: 1rem; letter-spacing: -.03em; }
+  .mrx-ai-hero__brand em { display: block; color: #C8A24A; font-size: 1.35rem; font-style: normal; font-weight: 900; letter-spacing: -.05em; }
+  .mrx-ai-chat__head strong { display: block; font-size: 1rem; }
+  .mrx-ai-chat__head p { display: block; margin: .1rem 0 0; color: rgba(248,251,255,.7); font-size: .82rem; }
+  .mrx-ai-hero__links { display: flex; justify-content: center; align-items: center; gap: clamp(.75rem, 1.8vw, 1.9rem); font-size: clamp(.78rem, .78vw, .98rem); font-weight: 800; }
+  .mrx-ai-hero__links a, .mrx-ai-hero__nav-cta { color: #061A33; text-decoration: none; }
+  .mrx-ai-hero__nav-cta { display: inline-flex; align-items: center; justify-content: center; gap: .55rem; min-height: 54px; border-radius: 999px; background: #061A33; padding: .85rem 1.15rem; color: #fff; box-shadow: 0 18px 44px rgba(6,26,51,.18); font-weight: 900; white-space: nowrap; }
+  .mrx-ai-hero__nav-cta .mrx-ai-icon { width: 1.35rem; height: 1.35rem; }
   .mrx-ai-icon { display: block; width: 1.65rem; height: 1.65rem; object-fit: contain; }
   .mrx-ai-icon--large { width: 3rem; height: 3rem; }
-  .mrx-ai-hero__grid { display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(380px, .92fr); gap: clamp(1.8rem, 4vw, 4.5rem); align-items: center; min-height: 640px; padding: clamp(2rem, 5vw, 4.2rem) 0 1.8rem; }
-  .mrx-ai-hero__copy { max-width: 650px; margin-left: clamp(16rem, 27vw, 25rem); text-shadow: 0 2px 20px rgba(255,255,255,.92); }
+  .mrx-ai-hero__grid { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(390px, .82fr); gap: clamp(1.4rem, 3vw, 3.8rem); align-items: center; min-height: 655px; padding: clamp(2.1rem, 4.4vw, 3.9rem) 0 1.75rem; }
+  .mrx-ai-hero__copy { max-width: 690px; margin-left: clamp(15.5rem, 27vw, 24.5rem); padding: clamp(1.05rem, 1.8vw, 1.55rem); border-radius: 34px; background: linear-gradient(90deg, rgba(255,255,255,.82), rgba(255,255,255,.58) 58%, rgba(255,255,255,.16)); box-shadow: 0 18px 70px rgba(255,255,255,.5); text-shadow: 0 2px 0 rgba(255,255,255,.92), 0 14px 38px rgba(255,255,255,.86); }
   .mrx-ai-hero__kicker, .mrx-ai-section__intro p, .mrx-ai-engine > div > p:first-child { color: #f9c777; text-transform: uppercase; letter-spacing: .13em; font-weight: 900; font-size: .84rem; }
   .mrx-ai-hero__kicker { display: inline-flex; border-radius: 999px; background: #061A33; padding: .55rem 1rem; color: #fff; box-shadow: 0 10px 26px rgba(6,26,51,.18); }
-  .mrx-ai-hero h1 { max-width: 640px; margin: 1rem 0 1.2rem; color: #061A33; font-size: clamp(2.8rem, 4.8vw, 5.4rem); line-height: .94; letter-spacing: -.06em; }
-  .mrx-ai-hero__lede { max-width: 610px; color: #061A33; font-size: clamp(1rem, 1.25vw, 1.3rem); font-weight: 800; line-height: 1.45; }
+  .mrx-ai-hero h1 { max-width: 690px; margin: 1rem 0 1.1rem; color: #061A33; font-family: Georgia, 'Times New Roman', serif; font-size: clamp(3.1rem, 5.35vw, 6.35rem); line-height: .88; letter-spacing: -.075em; text-wrap: balance; }
+  .mrx-ai-hero__lede { max-width: 610px; color: #061A33; font-size: clamp(1rem, 1.18vw, 1.22rem); font-weight: 900; line-height: 1.42; }
   .mrx-ai-hero__checks { display: grid; gap: .42rem; margin: .9rem 0 0; padding: 0; list-style: none; color: #061A33; font-weight: 800; }
   .mrx-ai-hero__checks li { display: flex; gap: .55rem; align-items: center; }
   .mrx-ai-hero__checks li::before { content: ''; display: grid; place-items: center; width: 1.25rem; height: 1.25rem; border-radius: 50%; background: url('/assets/mrx-homepage-v4/icons/hmpg-v6-exact/check-bullet.png') center / 1.25rem 1.25rem no-repeat; color: #061A33; font-size: .82rem; font-weight: 900; }
@@ -222,7 +229,7 @@ const pathways = [
   .mrx-ai-hero__avatar-stack { display: flex; }
   .mrx-ai-hero__avatar-stack span { display: grid; place-items: center; width: 48px; height: 48px; margin-left: -10px; border-radius: 50%; border: 2px solid rgba(255,255,255,.18); background: #0a2540; color: #f9c777; font-size: .78rem; font-weight: 900; }
   .mrx-ai-hero__avatar-stack span:first-child { margin-left: 0; }
-  .mrx-ai-chat { display: flex; flex-direction: column; min-height: 0; max-width: 580px; border: 2px solid rgba(214,162,58,.85); border-radius: 30px; background: rgba(6,26,51,.96); box-shadow: 0 28px 100px rgba(0,0,0,.38); padding: clamp(1rem, 2vw, 1.6rem); backdrop-filter: blur(18px); overflow: hidden; }
+  .mrx-ai-chat { display: flex; flex-direction: column; min-height: 0; max-width: 560px; border: 2px solid rgba(214,162,58,.88); border-radius: 30px; background: rgba(6,26,51,.97); box-shadow: 0 28px 100px rgba(0,0,0,.42); padding: clamp(1rem, 1.8vw, 1.45rem); backdrop-filter: blur(18px); overflow: hidden; }
   .mrx-ai-chat__head { display: grid; grid-template-columns: 64px 1fr auto; gap: 1rem; align-items: center; }
   .mrx-ai-chat__head strong { color: #fff; }
   .mrx-ai-chat__avatar { width: 64px; height: 64px; border-radius: 50%; border: 1px solid rgba(249,199,119,.5); object-fit: cover; object-position: center top; box-shadow: 0 12px 32px rgba(0,0,0,.28); }
