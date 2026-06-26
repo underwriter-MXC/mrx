@@ -1,18 +1,18 @@
 ---
 const quickStarts = [
-  { icon: '💰', label: 'What are my minerals worth?', prompt: 'I want to understand what my mineral rights may be worth.' },
-  { icon: '▤', label: 'I received an offer. Is it fair?', prompt: 'I received an offer for my mineral rights and want help understanding whether it is fair.' },
-  { icon: '◇', label: 'I inherited mineral rights. What now?', prompt: 'I inherited mineral rights and need help figuring out what documents and details matter first.' },
-  { icon: '◉', label: 'I receive royalties. Should I sell?', prompt: 'I receive royalty checks and want help deciding whether I should sell.' },
-  { icon: '⌖', label: 'What information do you need?', prompt: 'What information does MRX need to review my mineral rights?' },
-  { icon: '↗', label: 'Should I sell now or wait?', prompt: 'I want help thinking through whether I should sell now or wait.' },
+  { icon: '/assets/mrx-homepage-v4/icons/hmpg-v6/money-bag.svg', label: 'What are my minerals worth?', prompt: 'I want to understand what my mineral rights may be worth.' },
+  { icon: '/assets/mrx-homepage-v4/icons/hmpg-v6/document-offer.svg', label: 'I received an offer. Is it fair?', prompt: 'I received an offer for my mineral rights and want help understanding whether it is fair.' },
+  { icon: '/assets/mrx-homepage-v4/icons/hmpg-v6/gift-inherited.svg', label: 'I inherited mineral rights. What now?', prompt: 'I inherited mineral rights and need help figuring out what documents and details matter first.' },
+  { icon: '/assets/mrx-homepage-v4/icons/hmpg-v6/royalty-droplet.svg', label: 'I receive royalties. Should I sell?', prompt: 'I receive royalty checks and want help deciding whether I should sell.' },
+  { icon: '/assets/mrx-homepage-v4/icons/hmpg-v6/map-pin.svg', label: 'What information do you need?', prompt: 'What information does MRX need to review my mineral rights?' },
+  { icon: '/assets/mrx-homepage-v4/icons/hmpg-v6/trend-up.svg', label: 'Should I sell now or wait?', prompt: 'I want help thinking through whether I should sell now or wait.' },
 ];
 
 const proofItems = [
-  { icon: '✓', title: 'Free', text: 'No cost. No catch.' },
-  { icon: '🔒', title: 'Confidential', text: 'Your information stays private.' },
-  { icon: '✓', title: 'No Obligation', text: 'You’re never obligated to sell.' },
-  { icon: '♧', title: 'No Pressure', text: 'Answers first, pressure never.' },
+  { icon: '/assets/mrx-homepage-v4/icons/hmpg-v6/shield-check.svg', title: 'Free', text: 'No cost. No catch.' },
+  { icon: '/assets/mrx-homepage-v4/icons/hmpg-v6/lock.svg', title: 'Confidential', text: 'Your information stays private.' },
+  { icon: '/assets/mrx-homepage-v4/icons/hmpg-v6/circle-check.svg', title: 'No Obligation', text: 'You’re never obligated to sell.' },
+  { icon: '/assets/mrx-homepage-v4/icons/hmpg-v6/hands-no-pressure.svg', title: 'No Pressure', text: 'Answers first, pressure never.' },
 ];
 
 const pathways = [
@@ -74,11 +74,11 @@ const pathways = [
 
         <div class="mrx-ai-hero__actions" aria-label="AI calls to action">
           <a class="mrx-ai-button mrx-ai-button--primary" href="#mrx-ai-chat" data-cta-name="home-ai-primary-chat">
-            <span aria-hidden="true">▣</span>
+            <img class="mrx-ai-icon" src="/assets/mrx-homepage-v4/icons/hmpg-v6/chat-bubble.svg" alt="" aria-hidden="true" loading="lazy" />
             <span><strong>Find Out What Your Minerals May Be Worth</strong></span>
           </a>
           <a class="mrx-ai-button mrx-ai-button--secondary" href="/book" data-cta-name="home-ai-secondary-book">
-            <span aria-hidden="true">◇</span>
+            <img class="mrx-ai-icon" src="/assets/mrx-homepage-v4/icons/hmpg-v6/document-offer.svg" alt="" aria-hidden="true" loading="lazy" />
             <span><strong>I Received An Offer</strong></span>
           </a>
         </div>
@@ -111,7 +111,7 @@ const pathways = [
         <div class="mrx-ai-chat__quick" aria-label="Start a conversation with MRX AI">
           {quickStarts.map((item) => (
             <button type="button" data-ai-prompt={item.prompt}>
-              <span>{item.icon}</span>
+              <span><img class="mrx-ai-icon" src={item.icon} alt="" aria-hidden="true" loading="lazy" /></span>
               <strong>{item.label}</strong>
               <em>→</em>
             </button>
@@ -134,7 +134,7 @@ const pathways = [
     <div class="mrx-ai-hero__benefits" aria-label="AI-first mineral rights benefits">
       {proofItems.map((item) => (
         <article>
-          <span aria-hidden="true">{item.icon}</span>
+          <span aria-hidden="true"><img class="mrx-ai-icon mrx-ai-icon--large" src={item.icon} alt="" loading="lazy" /></span>
           <div>
             <strong>{item.title}</strong>
             <p>{item.text}</p>
@@ -196,6 +196,8 @@ const pathways = [
   .mrx-ai-hero__links { display: flex; gap: clamp(1rem, 4vw, 3.4rem); font-weight: 700; }
   .mrx-ai-hero__links a, .mrx-ai-hero__nav-cta { color: rgba(248,251,255,.9); text-decoration: none; }
   .mrx-ai-hero__nav-cta { border-radius: 999px; background: #c4841c; padding: .9rem 1.4rem; box-shadow: 0 18px 50px rgba(196,132,28,.24); }
+  .mrx-ai-icon { display: block; width: 1.65rem; height: 1.65rem; object-fit: contain; }
+  .mrx-ai-icon--large { width: 3rem; height: 3rem; }
   .mrx-ai-hero__grid { display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(380px, .92fr); gap: clamp(1.8rem, 4vw, 4.5rem); align-items: center; min-height: 640px; padding: clamp(2rem, 5vw, 4.2rem) 0 1.8rem; }
   .mrx-ai-hero__copy { max-width: 650px; margin-left: clamp(16rem, 27vw, 25rem); text-shadow: 0 2px 20px rgba(255,255,255,.92); }
   .mrx-ai-hero__kicker, .mrx-ai-section__intro p, .mrx-ai-engine > div > p:first-child { color: #f9c777; text-transform: uppercase; letter-spacing: .13em; font-weight: 900; font-size: .84rem; }
