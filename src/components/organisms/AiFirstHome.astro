@@ -1,18 +1,18 @@
 ---
 const quickStarts = [
-  { icon: '/assets/mrx-homepage-v4/icons/hmpg-v6/money-bag.svg', label: 'What are my minerals worth?', prompt: 'I want to understand what my mineral rights may be worth.' },
-  { icon: '/assets/mrx-homepage-v4/icons/hmpg-v6/document-offer.svg', label: 'I received an offer. Is it fair?', prompt: 'I received an offer for my mineral rights and want help understanding whether it is fair.' },
-  { icon: '/assets/mrx-homepage-v4/icons/hmpg-v6/gift-inherited.svg', label: 'I inherited mineral rights. What now?', prompt: 'I inherited mineral rights and need help figuring out what documents and details matter first.' },
-  { icon: '/assets/mrx-homepage-v4/icons/hmpg-v6/royalty-droplet.svg', label: 'I receive royalties. Should I sell?', prompt: 'I receive royalty checks and want help deciding whether I should sell.' },
-  { icon: '/assets/mrx-homepage-v4/icons/hmpg-v6/map-pin.svg', label: 'What information do you need?', prompt: 'What information does MRX need to review my mineral rights?' },
-  { icon: '/assets/mrx-homepage-v4/icons/hmpg-v6/trend-up.svg', label: 'Should I sell now or wait?', prompt: 'I want help thinking through whether I should sell now or wait.' },
+  { icon: '/assets/mrx-homepage-v4/icons/hmpg-v6-exact/money-bag.png', label: 'What are my minerals worth?', prompt: 'I want to understand what my mineral rights may be worth.' },
+  { icon: '/assets/mrx-homepage-v4/icons/hmpg-v6-exact/document-card.png', label: 'I received an offer. Is it fair?', prompt: 'I received an offer for my mineral rights and want help understanding whether it is fair.' },
+  { icon: '/assets/mrx-homepage-v4/icons/hmpg-v6-exact/gift-inherited.png', label: 'I inherited mineral rights. What now?', prompt: 'I inherited mineral rights and need help figuring out what documents and details matter first.' },
+  { icon: '/assets/mrx-homepage-v4/icons/hmpg-v6-exact/royalty-droplet.png', label: 'I receive royalties. Should I sell?', prompt: 'I receive royalty checks and want help deciding whether I should sell.' },
+  { icon: '/assets/mrx-homepage-v4/icons/hmpg-v6-exact/map-pin.png', label: 'What information do you need?', prompt: 'What information does MRX need to review my mineral rights?' },
+  { icon: '/assets/mrx-homepage-v4/icons/hmpg-v6-exact/trend-up.png', label: 'Should I sell now or wait?', prompt: 'I want help thinking through whether I should sell now or wait.' },
 ];
 
 const proofItems = [
-  { icon: '/assets/mrx-homepage-v4/icons/hmpg-v6/shield-check.svg', title: 'Free', text: 'No cost. No catch.' },
-  { icon: '/assets/mrx-homepage-v4/icons/hmpg-v6/lock.svg', title: 'Confidential', text: 'Your information stays private.' },
-  { icon: '/assets/mrx-homepage-v4/icons/hmpg-v6/circle-check.svg', title: 'No Obligation', text: 'You’re never obligated to sell.' },
-  { icon: '/assets/mrx-homepage-v4/icons/hmpg-v6/hands-no-pressure.svg', title: 'No Pressure', text: 'Answers first, pressure never.' },
+  { icon: '/assets/mrx-homepage-v4/icons/hmpg-v6-exact/shield-check.png', title: 'Free', text: 'No cost. No catch.' },
+  { icon: '/assets/mrx-homepage-v4/icons/hmpg-v6-exact/lock.png', title: 'Confidential', text: 'Your information stays private.' },
+  { icon: '/assets/mrx-homepage-v4/icons/hmpg-v6-exact/circle-check.png', title: 'No Obligation', text: 'You’re never obligated to sell.' },
+  { icon: '/assets/mrx-homepage-v4/icons/hmpg-v6-exact/hands-no-pressure.png', title: 'No Pressure', text: 'Answers first, pressure never.' },
 ];
 
 const pathways = [
@@ -74,11 +74,11 @@ const pathways = [
 
         <div class="mrx-ai-hero__actions" aria-label="AI calls to action">
           <a class="mrx-ai-button mrx-ai-button--primary" href="#mrx-ai-chat" data-cta-name="home-ai-primary-chat">
-            <img class="mrx-ai-icon" src="/assets/mrx-homepage-v4/icons/hmpg-v6/chat-bubble.svg" alt="" aria-hidden="true" loading="lazy" />
+            <img class="mrx-ai-icon" src="/assets/mrx-homepage-v4/icons/hmpg-v6-exact/chat-bubble.png" alt="" aria-hidden="true" loading="lazy" />
             <span><strong>Find Out What Your Minerals May Be Worth</strong></span>
           </a>
           <a class="mrx-ai-button mrx-ai-button--secondary" href="/book" data-cta-name="home-ai-secondary-book">
-            <img class="mrx-ai-icon" src="/assets/mrx-homepage-v4/icons/hmpg-v6/document-offer.svg" alt="" aria-hidden="true" loading="lazy" />
+            <img class="mrx-ai-icon" src="/assets/mrx-homepage-v4/icons/hmpg-v6-exact/document-offer.png" alt="" aria-hidden="true" loading="lazy" />
             <span><strong>I Received An Offer</strong></span>
           </a>
         </div>
@@ -126,7 +126,7 @@ const pathways = [
         <div class="mrx-ai-chat__review">
           <strong>Ready for a professional review?</strong>
           <span>Talk with an MRX Underwriter about your specific property.</span>
-          <a href="/book" data-cta-name="home-ai-card-book">Book Free Mineral Review →</a>
+          <a href="/book" data-cta-name="home-ai-card-book"><img class="mrx-ai-icon" src="/assets/mrx-homepage-v4/icons/hmpg-v6-exact/calendar.png" alt="" aria-hidden="true" loading="lazy" />Book Free Mineral Review →</a>
         </div>
       </aside>
     </div>
@@ -207,7 +207,7 @@ const pathways = [
   .mrx-ai-hero__lede { max-width: 610px; color: #061A33; font-size: clamp(1rem, 1.25vw, 1.3rem); font-weight: 800; line-height: 1.45; }
   .mrx-ai-hero__checks { display: grid; gap: .42rem; margin: .9rem 0 0; padding: 0; list-style: none; color: #061A33; font-weight: 800; }
   .mrx-ai-hero__checks li { display: flex; gap: .55rem; align-items: center; }
-  .mrx-ai-hero__checks li::before { content: ''; display: grid; place-items: center; width: 1.25rem; height: 1.25rem; border-radius: 50%; background: #D6A23A url('/assets/mrx-homepage-v4/icons/hmpg-v6/check-bullet.svg') center / 1.25rem 1.25rem no-repeat; color: #061A33; font-size: .82rem; font-weight: 900; }
+  .mrx-ai-hero__checks li::before { content: ''; display: grid; place-items: center; width: 1.25rem; height: 1.25rem; border-radius: 50%; background: url('/assets/mrx-homepage-v4/icons/hmpg-v6-exact/check-bullet.png') center / 1.25rem 1.25rem no-repeat; color: #061A33; font-size: .82rem; font-weight: 900; }
   .mrx-ai-hero__promise { margin: 1.25rem 0 0; max-width: 560px; color: #061A33; font-size: 1.08rem; font-weight: 900; line-height: 1.45; }
   .mrx-ai-hero__actions { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2.2rem; }
   .mrx-ai-button { display: inline-flex; align-items: center; justify-content: space-between; gap: .9rem; min-height: 68px; padding: .9rem 1.5rem; border-radius: 14px; text-decoration: none; border: 1px solid rgba(255,255,255,.22); color: #fff; }
