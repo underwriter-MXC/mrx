@@ -1,0 +1,4553 @@
+{
+  "name": "MRX Icon Library",
+  "version": "1.0.0",
+  "style": {
+    "stroke": 2.5,
+    "primary": "#0B1F3A",
+    "accent": "#C8A24A",
+    "background": "transparent",
+    "viewBox": "0 0 64 64"
+  },
+  "counts": {
+    "categories": 21,
+    "icons": 321
+  },
+  "categories": {
+    "ai": [
+      {
+        "name": "Robot Head",
+        "slug": "robot-head",
+        "motif": "robot",
+        "svg": "/assets/icons/ai/svg/robot-head.svg",
+        "optimizedSvg": "/assets/icons/ai/optimized/robot-head.svg",
+        "png": {
+          "64": "/assets/icons/ai/png/64/robot-head.png",
+          "128": "/assets/icons/ai/png/128/robot-head.png",
+          "256": "/assets/icons/ai/png/256/robot-head.png",
+          "512": "/assets/icons/ai/png/512/robot-head.png"
+        },
+        "react": "/assets/icons/react/Ai/MrxAiRobotHeadIcon.tsx"
+      },
+      {
+        "name": "AI Chat Bubble",
+        "slug": "ai-chat-bubble",
+        "motif": "chat",
+        "svg": "/assets/icons/ai/svg/ai-chat-bubble.svg",
+        "optimizedSvg": "/assets/icons/ai/optimized/ai-chat-bubble.svg",
+        "png": {
+          "64": "/assets/icons/ai/png/64/ai-chat-bubble.png",
+          "128": "/assets/icons/ai/png/128/ai-chat-bubble.png",
+          "256": "/assets/icons/ai/png/256/ai-chat-bubble.png",
+          "512": "/assets/icons/ai/png/512/ai-chat-bubble.png"
+        },
+        "react": "/assets/icons/react/Ai/MrxAiAiChatBubbleIcon.tsx"
+      },
+      {
+        "name": "Brain",
+        "slug": "brain",
+        "motif": "brain",
+        "svg": "/assets/icons/ai/svg/brain.svg",
+        "optimizedSvg": "/assets/icons/ai/optimized/brain.svg",
+        "png": {
+          "64": "/assets/icons/ai/png/64/brain.png",
+          "128": "/assets/icons/ai/png/128/brain.png",
+          "256": "/assets/icons/ai/png/256/brain.png",
+          "512": "/assets/icons/ai/png/512/brain.png"
+        },
+        "react": "/assets/icons/react/Ai/MrxAiBrainIcon.tsx"
+      },
+      {
+        "name": "Spark",
+        "slug": "spark",
+        "motif": "spark",
+        "svg": "/assets/icons/ai/svg/spark.svg",
+        "optimizedSvg": "/assets/icons/ai/optimized/spark.svg",
+        "png": {
+          "64": "/assets/icons/ai/png/64/spark.png",
+          "128": "/assets/icons/ai/png/128/spark.png",
+          "256": "/assets/icons/ai/png/256/spark.png",
+          "512": "/assets/icons/ai/png/512/spark.png"
+        },
+        "react": "/assets/icons/react/Ai/MrxAiSparkIcon.tsx"
+      },
+      {
+        "name": "Magic Wand",
+        "slug": "magic-wand",
+        "motif": "spark",
+        "svg": "/assets/icons/ai/svg/magic-wand.svg",
+        "optimizedSvg": "/assets/icons/ai/optimized/magic-wand.svg",
+        "png": {
+          "64": "/assets/icons/ai/png/64/magic-wand.png",
+          "128": "/assets/icons/ai/png/128/magic-wand.png",
+          "256": "/assets/icons/ai/png/256/magic-wand.png",
+          "512": "/assets/icons/ai/png/512/magic-wand.png"
+        },
+        "react": "/assets/icons/react/Ai/MrxAiMagicWandIcon.tsx"
+      },
+      {
+        "name": "Microphone",
+        "slug": "microphone",
+        "motif": "voice",
+        "svg": "/assets/icons/ai/svg/microphone.svg",
+        "optimizedSvg": "/assets/icons/ai/optimized/microphone.svg",
+        "png": {
+          "64": "/assets/icons/ai/png/64/microphone.png",
+          "128": "/assets/icons/ai/png/128/microphone.png",
+          "256": "/assets/icons/ai/png/256/microphone.png",
+          "512": "/assets/icons/ai/png/512/microphone.png"
+        },
+        "react": "/assets/icons/react/Ai/MrxAiMicrophoneIcon.tsx"
+      },
+      {
+        "name": "Voice Wave",
+        "slug": "voice-wave",
+        "motif": "voice",
+        "svg": "/assets/icons/ai/svg/voice-wave.svg",
+        "optimizedSvg": "/assets/icons/ai/optimized/voice-wave.svg",
+        "png": {
+          "64": "/assets/icons/ai/png/64/voice-wave.png",
+          "128": "/assets/icons/ai/png/128/voice-wave.png",
+          "256": "/assets/icons/ai/png/256/voice-wave.png",
+          "512": "/assets/icons/ai/png/512/voice-wave.png"
+        },
+        "react": "/assets/icons/react/Ai/MrxAiVoiceWaveIcon.tsx"
+      },
+      {
+        "name": "Ask Question",
+        "slug": "ask-question",
+        "motif": "chat",
+        "svg": "/assets/icons/ai/svg/ask-question.svg",
+        "optimizedSvg": "/assets/icons/ai/optimized/ask-question.svg",
+        "png": {
+          "64": "/assets/icons/ai/png/64/ask-question.png",
+          "128": "/assets/icons/ai/png/128/ask-question.png",
+          "256": "/assets/icons/ai/png/256/ask-question.png",
+          "512": "/assets/icons/ai/png/512/ask-question.png"
+        },
+        "react": "/assets/icons/react/Ai/MrxAiAskQuestionIcon.tsx"
+      },
+      {
+        "name": "Conversation",
+        "slug": "conversation",
+        "motif": "chat",
+        "svg": "/assets/icons/ai/svg/conversation.svg",
+        "optimizedSvg": "/assets/icons/ai/optimized/conversation.svg",
+        "png": {
+          "64": "/assets/icons/ai/png/64/conversation.png",
+          "128": "/assets/icons/ai/png/128/conversation.png",
+          "256": "/assets/icons/ai/png/256/conversation.png",
+          "512": "/assets/icons/ai/png/512/conversation.png"
+        },
+        "react": "/assets/icons/react/Ai/MrxAiConversationIcon.tsx"
+      },
+      {
+        "name": "Thinking",
+        "slug": "thinking",
+        "motif": "brain",
+        "svg": "/assets/icons/ai/svg/thinking.svg",
+        "optimizedSvg": "/assets/icons/ai/optimized/thinking.svg",
+        "png": {
+          "64": "/assets/icons/ai/png/64/thinking.png",
+          "128": "/assets/icons/ai/png/128/thinking.png",
+          "256": "/assets/icons/ai/png/256/thinking.png",
+          "512": "/assets/icons/ai/png/512/thinking.png"
+        },
+        "react": "/assets/icons/react/Ai/MrxAiThinkingIcon.tsx"
+      },
+      {
+        "name": "Lightning Bolt",
+        "slug": "lightning-bolt",
+        "motif": "spark",
+        "svg": "/assets/icons/ai/svg/lightning-bolt.svg",
+        "optimizedSvg": "/assets/icons/ai/optimized/lightning-bolt.svg",
+        "png": {
+          "64": "/assets/icons/ai/png/64/lightning-bolt.png",
+          "128": "/assets/icons/ai/png/128/lightning-bolt.png",
+          "256": "/assets/icons/ai/png/256/lightning-bolt.png",
+          "512": "/assets/icons/ai/png/512/lightning-bolt.png"
+        },
+        "react": "/assets/icons/react/Ai/MrxAiLightningBoltIcon.tsx"
+      },
+      {
+        "name": "Automation",
+        "slug": "automation",
+        "motif": "robot",
+        "svg": "/assets/icons/ai/svg/automation.svg",
+        "optimizedSvg": "/assets/icons/ai/optimized/automation.svg",
+        "png": {
+          "64": "/assets/icons/ai/png/64/automation.png",
+          "128": "/assets/icons/ai/png/128/automation.png",
+          "256": "/assets/icons/ai/png/256/automation.png",
+          "512": "/assets/icons/ai/png/512/automation.png"
+        },
+        "react": "/assets/icons/react/Ai/MrxAiAutomationIcon.tsx"
+      },
+      {
+        "name": "Neural Network",
+        "slug": "neural-network",
+        "motif": "network",
+        "svg": "/assets/icons/ai/svg/neural-network.svg",
+        "optimizedSvg": "/assets/icons/ai/optimized/neural-network.svg",
+        "png": {
+          "64": "/assets/icons/ai/png/64/neural-network.png",
+          "128": "/assets/icons/ai/png/128/neural-network.png",
+          "256": "/assets/icons/ai/png/256/neural-network.png",
+          "512": "/assets/icons/ai/png/512/neural-network.png"
+        },
+        "react": "/assets/icons/react/Ai/MrxAiNeuralNetworkIcon.tsx"
+      },
+      {
+        "name": "Connected Nodes",
+        "slug": "connected-nodes",
+        "motif": "network",
+        "svg": "/assets/icons/ai/svg/connected-nodes.svg",
+        "optimizedSvg": "/assets/icons/ai/optimized/connected-nodes.svg",
+        "png": {
+          "64": "/assets/icons/ai/png/64/connected-nodes.png",
+          "128": "/assets/icons/ai/png/128/connected-nodes.png",
+          "256": "/assets/icons/ai/png/256/connected-nodes.png",
+          "512": "/assets/icons/ai/png/512/connected-nodes.png"
+        },
+        "react": "/assets/icons/react/Ai/MrxAiConnectedNodesIcon.tsx"
+      },
+      {
+        "name": "AI Shield",
+        "slug": "ai-shield",
+        "motif": "shield",
+        "svg": "/assets/icons/ai/svg/ai-shield.svg",
+        "optimizedSvg": "/assets/icons/ai/optimized/ai-shield.svg",
+        "png": {
+          "64": "/assets/icons/ai/png/64/ai-shield.png",
+          "128": "/assets/icons/ai/png/128/ai-shield.png",
+          "256": "/assets/icons/ai/png/256/ai-shield.png",
+          "512": "/assets/icons/ai/png/512/ai-shield.png"
+        },
+        "react": "/assets/icons/react/Ai/MrxAiAiShieldIcon.tsx"
+      },
+      {
+        "name": "AI Search",
+        "slug": "ai-search",
+        "motif": "search",
+        "svg": "/assets/icons/ai/svg/ai-search.svg",
+        "optimizedSvg": "/assets/icons/ai/optimized/ai-search.svg",
+        "png": {
+          "64": "/assets/icons/ai/png/64/ai-search.png",
+          "128": "/assets/icons/ai/png/128/ai-search.png",
+          "256": "/assets/icons/ai/png/256/ai-search.png",
+          "512": "/assets/icons/ai/png/512/ai-search.png"
+        },
+        "react": "/assets/icons/react/Ai/MrxAiAiSearchIcon.tsx"
+      },
+      {
+        "name": "AI Recommendation",
+        "slug": "ai-recommendation",
+        "motif": "brain",
+        "svg": "/assets/icons/ai/svg/ai-recommendation.svg",
+        "optimizedSvg": "/assets/icons/ai/optimized/ai-recommendation.svg",
+        "png": {
+          "64": "/assets/icons/ai/png/64/ai-recommendation.png",
+          "128": "/assets/icons/ai/png/128/ai-recommendation.png",
+          "256": "/assets/icons/ai/png/256/ai-recommendation.png",
+          "512": "/assets/icons/ai/png/512/ai-recommendation.png"
+        },
+        "react": "/assets/icons/react/Ai/MrxAiAiRecommendationIcon.tsx"
+      },
+      {
+        "name": "AI Analysis",
+        "slug": "ai-analysis",
+        "motif": "brain",
+        "svg": "/assets/icons/ai/svg/ai-analysis.svg",
+        "optimizedSvg": "/assets/icons/ai/optimized/ai-analysis.svg",
+        "png": {
+          "64": "/assets/icons/ai/png/64/ai-analysis.png",
+          "128": "/assets/icons/ai/png/128/ai-analysis.png",
+          "256": "/assets/icons/ai/png/256/ai-analysis.png",
+          "512": "/assets/icons/ai/png/512/ai-analysis.png"
+        },
+        "react": "/assets/icons/react/Ai/MrxAiAiAnalysisIcon.tsx"
+      }
+    ],
+    "ownership": [
+      {
+        "name": "Mineral Deed",
+        "slug": "mineral-deed",
+        "motif": "document",
+        "svg": "/assets/icons/ownership/svg/mineral-deed.svg",
+        "optimizedSvg": "/assets/icons/ownership/optimized/mineral-deed.svg",
+        "png": {
+          "64": "/assets/icons/ownership/png/64/mineral-deed.png",
+          "128": "/assets/icons/ownership/png/128/mineral-deed.png",
+          "256": "/assets/icons/ownership/png/256/mineral-deed.png",
+          "512": "/assets/icons/ownership/png/512/mineral-deed.png"
+        },
+        "react": "/assets/icons/react/Ownership/MrxOwnershipMineralDeedIcon.tsx"
+      },
+      {
+        "name": "Property Records",
+        "slug": "property-records",
+        "motif": "document",
+        "svg": "/assets/icons/ownership/svg/property-records.svg",
+        "optimizedSvg": "/assets/icons/ownership/optimized/property-records.svg",
+        "png": {
+          "64": "/assets/icons/ownership/png/64/property-records.png",
+          "128": "/assets/icons/ownership/png/128/property-records.png",
+          "256": "/assets/icons/ownership/png/256/property-records.png",
+          "512": "/assets/icons/ownership/png/512/property-records.png"
+        },
+        "react": "/assets/icons/react/Ownership/MrxOwnershipPropertyRecordsIcon.tsx"
+      },
+      {
+        "name": "County Records",
+        "slug": "county-records",
+        "motif": "document",
+        "svg": "/assets/icons/ownership/svg/county-records.svg",
+        "optimizedSvg": "/assets/icons/ownership/optimized/county-records.svg",
+        "png": {
+          "64": "/assets/icons/ownership/png/64/county-records.png",
+          "128": "/assets/icons/ownership/png/128/county-records.png",
+          "256": "/assets/icons/ownership/png/256/county-records.png",
+          "512": "/assets/icons/ownership/png/512/county-records.png"
+        },
+        "react": "/assets/icons/react/Ownership/MrxOwnershipCountyRecordsIcon.tsx"
+      },
+      {
+        "name": "Owner",
+        "slug": "owner",
+        "motif": "person",
+        "svg": "/assets/icons/ownership/svg/owner.svg",
+        "optimizedSvg": "/assets/icons/ownership/optimized/owner.svg",
+        "png": {
+          "64": "/assets/icons/ownership/png/64/owner.png",
+          "128": "/assets/icons/ownership/png/128/owner.png",
+          "256": "/assets/icons/ownership/png/256/owner.png",
+          "512": "/assets/icons/ownership/png/512/owner.png"
+        },
+        "react": "/assets/icons/react/Ownership/MrxOwnershipOwnerIcon.tsx"
+      },
+      {
+        "name": "Family Trust",
+        "slug": "family-trust",
+        "motif": "team",
+        "svg": "/assets/icons/ownership/svg/family-trust.svg",
+        "optimizedSvg": "/assets/icons/ownership/optimized/family-trust.svg",
+        "png": {
+          "64": "/assets/icons/ownership/png/64/family-trust.png",
+          "128": "/assets/icons/ownership/png/128/family-trust.png",
+          "256": "/assets/icons/ownership/png/256/family-trust.png",
+          "512": "/assets/icons/ownership/png/512/family-trust.png"
+        },
+        "react": "/assets/icons/react/Ownership/MrxOwnershipFamilyTrustIcon.tsx"
+      },
+      {
+        "name": "Inheritance",
+        "slug": "inheritance",
+        "motif": "team",
+        "svg": "/assets/icons/ownership/svg/inheritance.svg",
+        "optimizedSvg": "/assets/icons/ownership/optimized/inheritance.svg",
+        "png": {
+          "64": "/assets/icons/ownership/png/64/inheritance.png",
+          "128": "/assets/icons/ownership/png/128/inheritance.png",
+          "256": "/assets/icons/ownership/png/256/inheritance.png",
+          "512": "/assets/icons/ownership/png/512/inheritance.png"
+        },
+        "react": "/assets/icons/react/Ownership/MrxOwnershipInheritanceIcon.tsx"
+      },
+      {
+        "name": "Title Search",
+        "slug": "title-search",
+        "motif": "search",
+        "svg": "/assets/icons/ownership/svg/title-search.svg",
+        "optimizedSvg": "/assets/icons/ownership/optimized/title-search.svg",
+        "png": {
+          "64": "/assets/icons/ownership/png/64/title-search.png",
+          "128": "/assets/icons/ownership/png/128/title-search.png",
+          "256": "/assets/icons/ownership/png/256/title-search.png",
+          "512": "/assets/icons/ownership/png/512/title-search.png"
+        },
+        "react": "/assets/icons/react/Ownership/MrxOwnershipTitleSearchIcon.tsx"
+      },
+      {
+        "name": "Ownership Chain",
+        "slug": "ownership-chain",
+        "motif": "person",
+        "svg": "/assets/icons/ownership/svg/ownership-chain.svg",
+        "optimizedSvg": "/assets/icons/ownership/optimized/ownership-chain.svg",
+        "png": {
+          "64": "/assets/icons/ownership/png/64/ownership-chain.png",
+          "128": "/assets/icons/ownership/png/128/ownership-chain.png",
+          "256": "/assets/icons/ownership/png/256/ownership-chain.png",
+          "512": "/assets/icons/ownership/png/512/ownership-chain.png"
+        },
+        "react": "/assets/icons/react/Ownership/MrxOwnershipOwnershipChainIcon.tsx"
+      },
+      {
+        "name": "Land Records",
+        "slug": "land-records",
+        "motif": "document",
+        "svg": "/assets/icons/ownership/svg/land-records.svg",
+        "optimizedSvg": "/assets/icons/ownership/optimized/land-records.svg",
+        "png": {
+          "64": "/assets/icons/ownership/png/64/land-records.png",
+          "128": "/assets/icons/ownership/png/128/land-records.png",
+          "256": "/assets/icons/ownership/png/256/land-records.png",
+          "512": "/assets/icons/ownership/png/512/land-records.png"
+        },
+        "react": "/assets/icons/react/Ownership/MrxOwnershipLandRecordsIcon.tsx"
+      },
+      {
+        "name": "Document Search",
+        "slug": "document-search",
+        "motif": "search",
+        "svg": "/assets/icons/ownership/svg/document-search.svg",
+        "optimizedSvg": "/assets/icons/ownership/optimized/document-search.svg",
+        "png": {
+          "64": "/assets/icons/ownership/png/64/document-search.png",
+          "128": "/assets/icons/ownership/png/128/document-search.png",
+          "256": "/assets/icons/ownership/png/256/document-search.png",
+          "512": "/assets/icons/ownership/png/512/document-search.png"
+        },
+        "react": "/assets/icons/react/Ownership/MrxOwnershipDocumentSearchIcon.tsx"
+      },
+      {
+        "name": "Legal Document",
+        "slug": "legal-document",
+        "motif": "document",
+        "svg": "/assets/icons/ownership/svg/legal-document.svg",
+        "optimizedSvg": "/assets/icons/ownership/optimized/legal-document.svg",
+        "png": {
+          "64": "/assets/icons/ownership/png/64/legal-document.png",
+          "128": "/assets/icons/ownership/png/128/legal-document.png",
+          "256": "/assets/icons/ownership/png/256/legal-document.png",
+          "512": "/assets/icons/ownership/png/512/legal-document.png"
+        },
+        "react": "/assets/icons/react/Ownership/MrxOwnershipLegalDocumentIcon.tsx"
+      },
+      {
+        "name": "Verified Owner",
+        "slug": "verified-owner",
+        "motif": "person",
+        "svg": "/assets/icons/ownership/svg/verified-owner.svg",
+        "optimizedSvg": "/assets/icons/ownership/optimized/verified-owner.svg",
+        "png": {
+          "64": "/assets/icons/ownership/png/64/verified-owner.png",
+          "128": "/assets/icons/ownership/png/128/verified-owner.png",
+          "256": "/assets/icons/ownership/png/256/verified-owner.png",
+          "512": "/assets/icons/ownership/png/512/verified-owner.png"
+        },
+        "react": "/assets/icons/react/Ownership/MrxOwnershipVerifiedOwnerIcon.tsx"
+      },
+      {
+        "name": "Property Boundary",
+        "slug": "property-boundary",
+        "motif": "map",
+        "svg": "/assets/icons/ownership/svg/property-boundary.svg",
+        "optimizedSvg": "/assets/icons/ownership/optimized/property-boundary.svg",
+        "png": {
+          "64": "/assets/icons/ownership/png/64/property-boundary.png",
+          "128": "/assets/icons/ownership/png/128/property-boundary.png",
+          "256": "/assets/icons/ownership/png/256/property-boundary.png",
+          "512": "/assets/icons/ownership/png/512/property-boundary.png"
+        },
+        "react": "/assets/icons/react/Ownership/MrxOwnershipPropertyBoundaryIcon.tsx"
+      },
+      {
+        "name": "Map Pin",
+        "slug": "map-pin",
+        "motif": "map",
+        "svg": "/assets/icons/ownership/svg/map-pin.svg",
+        "optimizedSvg": "/assets/icons/ownership/optimized/map-pin.svg",
+        "png": {
+          "64": "/assets/icons/ownership/png/64/map-pin.png",
+          "128": "/assets/icons/ownership/png/128/map-pin.png",
+          "256": "/assets/icons/ownership/png/256/map-pin.png",
+          "512": "/assets/icons/ownership/png/512/map-pin.png"
+        },
+        "react": "/assets/icons/react/Ownership/MrxOwnershipMapPinIcon.tsx"
+      },
+      {
+        "name": "Survey Marker",
+        "slug": "survey-marker",
+        "motif": "map",
+        "svg": "/assets/icons/ownership/svg/survey-marker.svg",
+        "optimizedSvg": "/assets/icons/ownership/optimized/survey-marker.svg",
+        "png": {
+          "64": "/assets/icons/ownership/png/64/survey-marker.png",
+          "128": "/assets/icons/ownership/png/128/survey-marker.png",
+          "256": "/assets/icons/ownership/png/256/survey-marker.png",
+          "512": "/assets/icons/ownership/png/512/survey-marker.png"
+        },
+        "react": "/assets/icons/react/Ownership/MrxOwnershipSurveyMarkerIcon.tsx"
+      },
+      {
+        "name": "Parcel",
+        "slug": "parcel",
+        "motif": "map",
+        "svg": "/assets/icons/ownership/svg/parcel.svg",
+        "optimizedSvg": "/assets/icons/ownership/optimized/parcel.svg",
+        "png": {
+          "64": "/assets/icons/ownership/png/64/parcel.png",
+          "128": "/assets/icons/ownership/png/128/parcel.png",
+          "256": "/assets/icons/ownership/png/256/parcel.png",
+          "512": "/assets/icons/ownership/png/512/parcel.png"
+        },
+        "react": "/assets/icons/react/Ownership/MrxOwnershipParcelIcon.tsx"
+      },
+      {
+        "name": "County Courthouse",
+        "slug": "county-courthouse",
+        "motif": "map",
+        "svg": "/assets/icons/ownership/svg/county-courthouse.svg",
+        "optimizedSvg": "/assets/icons/ownership/optimized/county-courthouse.svg",
+        "png": {
+          "64": "/assets/icons/ownership/png/64/county-courthouse.png",
+          "128": "/assets/icons/ownership/png/128/county-courthouse.png",
+          "256": "/assets/icons/ownership/png/256/county-courthouse.png",
+          "512": "/assets/icons/ownership/png/512/county-courthouse.png"
+        },
+        "react": "/assets/icons/react/Ownership/MrxOwnershipCountyCourthouseIcon.tsx"
+      }
+    ],
+    "production": [
+      {
+        "name": "Oil Well",
+        "slug": "oil-well",
+        "motif": "energy",
+        "svg": "/assets/icons/production/svg/oil-well.svg",
+        "optimizedSvg": "/assets/icons/production/optimized/oil-well.svg",
+        "png": {
+          "64": "/assets/icons/production/png/64/oil-well.png",
+          "128": "/assets/icons/production/png/128/oil-well.png",
+          "256": "/assets/icons/production/png/256/oil-well.png",
+          "512": "/assets/icons/production/png/512/oil-well.png"
+        },
+        "react": "/assets/icons/react/Production/MrxProductionOilWellIcon.tsx"
+      },
+      {
+        "name": "Pumpjack",
+        "slug": "pumpjack",
+        "motif": "energy",
+        "svg": "/assets/icons/production/svg/pumpjack.svg",
+        "optimizedSvg": "/assets/icons/production/optimized/pumpjack.svg",
+        "png": {
+          "64": "/assets/icons/production/png/64/pumpjack.png",
+          "128": "/assets/icons/production/png/128/pumpjack.png",
+          "256": "/assets/icons/production/png/256/pumpjack.png",
+          "512": "/assets/icons/production/png/512/pumpjack.png"
+        },
+        "react": "/assets/icons/react/Production/MrxProductionPumpjackIcon.tsx"
+      },
+      {
+        "name": "Drilling Rig",
+        "slug": "drilling-rig",
+        "motif": "energy",
+        "svg": "/assets/icons/production/svg/drilling-rig.svg",
+        "optimizedSvg": "/assets/icons/production/optimized/drilling-rig.svg",
+        "png": {
+          "64": "/assets/icons/production/png/64/drilling-rig.png",
+          "128": "/assets/icons/production/png/128/drilling-rig.png",
+          "256": "/assets/icons/production/png/256/drilling-rig.png",
+          "512": "/assets/icons/production/png/512/drilling-rig.png"
+        },
+        "react": "/assets/icons/react/Production/MrxProductionDrillingRigIcon.tsx"
+      },
+      {
+        "name": "Natural Gas Flame",
+        "slug": "natural-gas-flame",
+        "motif": "flame",
+        "svg": "/assets/icons/production/svg/natural-gas-flame.svg",
+        "optimizedSvg": "/assets/icons/production/optimized/natural-gas-flame.svg",
+        "png": {
+          "64": "/assets/icons/production/png/64/natural-gas-flame.png",
+          "128": "/assets/icons/production/png/128/natural-gas-flame.png",
+          "256": "/assets/icons/production/png/256/natural-gas-flame.png",
+          "512": "/assets/icons/production/png/512/natural-gas-flame.png"
+        },
+        "react": "/assets/icons/react/Production/MrxProductionNaturalGasFlameIcon.tsx"
+      },
+      {
+        "name": "Production Graph",
+        "slug": "production-graph",
+        "motif": "energy",
+        "svg": "/assets/icons/production/svg/production-graph.svg",
+        "optimizedSvg": "/assets/icons/production/optimized/production-graph.svg",
+        "png": {
+          "64": "/assets/icons/production/png/64/production-graph.png",
+          "128": "/assets/icons/production/png/128/production-graph.png",
+          "256": "/assets/icons/production/png/256/production-graph.png",
+          "512": "/assets/icons/production/png/512/production-graph.png"
+        },
+        "react": "/assets/icons/react/Production/MrxProductionProductionGraphIcon.tsx"
+      },
+      {
+        "name": "Barrel",
+        "slug": "barrel",
+        "motif": "energy",
+        "svg": "/assets/icons/production/svg/barrel.svg",
+        "optimizedSvg": "/assets/icons/production/optimized/barrel.svg",
+        "png": {
+          "64": "/assets/icons/production/png/64/barrel.png",
+          "128": "/assets/icons/production/png/128/barrel.png",
+          "256": "/assets/icons/production/png/256/barrel.png",
+          "512": "/assets/icons/production/png/512/barrel.png"
+        },
+        "react": "/assets/icons/react/Production/MrxProductionBarrelIcon.tsx"
+      },
+      {
+        "name": "Pipeline",
+        "slug": "pipeline",
+        "motif": "energy",
+        "svg": "/assets/icons/production/svg/pipeline.svg",
+        "optimizedSvg": "/assets/icons/production/optimized/pipeline.svg",
+        "png": {
+          "64": "/assets/icons/production/png/64/pipeline.png",
+          "128": "/assets/icons/production/png/128/pipeline.png",
+          "256": "/assets/icons/production/png/256/pipeline.png",
+          "512": "/assets/icons/production/png/512/pipeline.png"
+        },
+        "react": "/assets/icons/react/Production/MrxProductionPipelineIcon.tsx"
+      },
+      {
+        "name": "Storage Tank",
+        "slug": "storage-tank",
+        "motif": "energy",
+        "svg": "/assets/icons/production/svg/storage-tank.svg",
+        "optimizedSvg": "/assets/icons/production/optimized/storage-tank.svg",
+        "png": {
+          "64": "/assets/icons/production/png/64/storage-tank.png",
+          "128": "/assets/icons/production/png/128/storage-tank.png",
+          "256": "/assets/icons/production/png/256/storage-tank.png",
+          "512": "/assets/icons/production/png/512/storage-tank.png"
+        },
+        "react": "/assets/icons/react/Production/MrxProductionStorageTankIcon.tsx"
+      },
+      {
+        "name": "Refinery",
+        "slug": "refinery",
+        "motif": "energy",
+        "svg": "/assets/icons/production/svg/refinery.svg",
+        "optimizedSvg": "/assets/icons/production/optimized/refinery.svg",
+        "png": {
+          "64": "/assets/icons/production/png/64/refinery.png",
+          "128": "/assets/icons/production/png/128/refinery.png",
+          "256": "/assets/icons/production/png/256/refinery.png",
+          "512": "/assets/icons/production/png/512/refinery.png"
+        },
+        "react": "/assets/icons/react/Production/MrxProductionRefineryIcon.tsx"
+      },
+      {
+        "name": "Flow Meter",
+        "slug": "flow-meter",
+        "motif": "energy",
+        "svg": "/assets/icons/production/svg/flow-meter.svg",
+        "optimizedSvg": "/assets/icons/production/optimized/flow-meter.svg",
+        "png": {
+          "64": "/assets/icons/production/png/64/flow-meter.png",
+          "128": "/assets/icons/production/png/128/flow-meter.png",
+          "256": "/assets/icons/production/png/256/flow-meter.png",
+          "512": "/assets/icons/production/png/512/flow-meter.png"
+        },
+        "react": "/assets/icons/react/Production/MrxProductionFlowMeterIcon.tsx"
+      },
+      {
+        "name": "Oil Drop",
+        "slug": "oil-drop",
+        "motif": "energy",
+        "svg": "/assets/icons/production/svg/oil-drop.svg",
+        "optimizedSvg": "/assets/icons/production/optimized/oil-drop.svg",
+        "png": {
+          "64": "/assets/icons/production/png/64/oil-drop.png",
+          "128": "/assets/icons/production/png/128/oil-drop.png",
+          "256": "/assets/icons/production/png/256/oil-drop.png",
+          "512": "/assets/icons/production/png/512/oil-drop.png"
+        },
+        "react": "/assets/icons/react/Production/MrxProductionOilDropIcon.tsx"
+      },
+      {
+        "name": "Gas Molecule",
+        "slug": "gas-molecule",
+        "motif": "network",
+        "svg": "/assets/icons/production/svg/gas-molecule.svg",
+        "optimizedSvg": "/assets/icons/production/optimized/gas-molecule.svg",
+        "png": {
+          "64": "/assets/icons/production/png/64/gas-molecule.png",
+          "128": "/assets/icons/production/png/128/gas-molecule.png",
+          "256": "/assets/icons/production/png/256/gas-molecule.png",
+          "512": "/assets/icons/production/png/512/gas-molecule.png"
+        },
+        "react": "/assets/icons/react/Production/MrxProductionGasMoleculeIcon.tsx"
+      },
+      {
+        "name": "Pressure Gauge",
+        "slug": "pressure-gauge",
+        "motif": "gauge",
+        "svg": "/assets/icons/production/svg/pressure-gauge.svg",
+        "optimizedSvg": "/assets/icons/production/optimized/pressure-gauge.svg",
+        "png": {
+          "64": "/assets/icons/production/png/64/pressure-gauge.png",
+          "128": "/assets/icons/production/png/128/pressure-gauge.png",
+          "256": "/assets/icons/production/png/256/pressure-gauge.png",
+          "512": "/assets/icons/production/png/512/pressure-gauge.png"
+        },
+        "react": "/assets/icons/react/Production/MrxProductionPressureGaugeIcon.tsx"
+      },
+      {
+        "name": "Monthly Production",
+        "slug": "monthly-production",
+        "motif": "energy",
+        "svg": "/assets/icons/production/svg/monthly-production.svg",
+        "optimizedSvg": "/assets/icons/production/optimized/monthly-production.svg",
+        "png": {
+          "64": "/assets/icons/production/png/64/monthly-production.png",
+          "128": "/assets/icons/production/png/128/monthly-production.png",
+          "256": "/assets/icons/production/png/256/monthly-production.png",
+          "512": "/assets/icons/production/png/512/monthly-production.png"
+        },
+        "react": "/assets/icons/react/Production/MrxProductionMonthlyProductionIcon.tsx"
+      },
+      {
+        "name": "Historical Production",
+        "slug": "historical-production",
+        "motif": "energy",
+        "svg": "/assets/icons/production/svg/historical-production.svg",
+        "optimizedSvg": "/assets/icons/production/optimized/historical-production.svg",
+        "png": {
+          "64": "/assets/icons/production/png/64/historical-production.png",
+          "128": "/assets/icons/production/png/128/historical-production.png",
+          "256": "/assets/icons/production/png/256/historical-production.png",
+          "512": "/assets/icons/production/png/512/historical-production.png"
+        },
+        "react": "/assets/icons/react/Production/MrxProductionHistoricalProductionIcon.tsx"
+      },
+      {
+        "name": "Forecast",
+        "slug": "forecast",
+        "motif": "graph",
+        "svg": "/assets/icons/production/svg/forecast.svg",
+        "optimizedSvg": "/assets/icons/production/optimized/forecast.svg",
+        "png": {
+          "64": "/assets/icons/production/png/64/forecast.png",
+          "128": "/assets/icons/production/png/128/forecast.png",
+          "256": "/assets/icons/production/png/256/forecast.png",
+          "512": "/assets/icons/production/png/512/forecast.png"
+        },
+        "react": "/assets/icons/react/Production/MrxProductionForecastIcon.tsx"
+      }
+    ],
+    "valuation": [
+      {
+        "name": "Dollar",
+        "slug": "dollar",
+        "motif": "money",
+        "svg": "/assets/icons/valuation/svg/dollar.svg",
+        "optimizedSvg": "/assets/icons/valuation/optimized/dollar.svg",
+        "png": {
+          "64": "/assets/icons/valuation/png/64/dollar.png",
+          "128": "/assets/icons/valuation/png/128/dollar.png",
+          "256": "/assets/icons/valuation/png/256/dollar.png",
+          "512": "/assets/icons/valuation/png/512/dollar.png"
+        },
+        "react": "/assets/icons/react/Valuation/MrxValuationDollarIcon.tsx"
+      },
+      {
+        "name": "Money Bag",
+        "slug": "money-bag",
+        "motif": "money",
+        "svg": "/assets/icons/valuation/svg/money-bag.svg",
+        "optimizedSvg": "/assets/icons/valuation/optimized/money-bag.svg",
+        "png": {
+          "64": "/assets/icons/valuation/png/64/money-bag.png",
+          "128": "/assets/icons/valuation/png/128/money-bag.png",
+          "256": "/assets/icons/valuation/png/256/money-bag.png",
+          "512": "/assets/icons/valuation/png/512/money-bag.png"
+        },
+        "react": "/assets/icons/react/Valuation/MrxValuationMoneyBagIcon.tsx"
+      },
+      {
+        "name": "Coins",
+        "slug": "coins",
+        "motif": "money",
+        "svg": "/assets/icons/valuation/svg/coins.svg",
+        "optimizedSvg": "/assets/icons/valuation/optimized/coins.svg",
+        "png": {
+          "64": "/assets/icons/valuation/png/64/coins.png",
+          "128": "/assets/icons/valuation/png/128/coins.png",
+          "256": "/assets/icons/valuation/png/256/coins.png",
+          "512": "/assets/icons/valuation/png/512/coins.png"
+        },
+        "react": "/assets/icons/react/Valuation/MrxValuationCoinsIcon.tsx"
+      },
+      {
+        "name": "Stack of Cash",
+        "slug": "stack-of-cash",
+        "motif": "money",
+        "svg": "/assets/icons/valuation/svg/stack-of-cash.svg",
+        "optimizedSvg": "/assets/icons/valuation/optimized/stack-of-cash.svg",
+        "png": {
+          "64": "/assets/icons/valuation/png/64/stack-of-cash.png",
+          "128": "/assets/icons/valuation/png/128/stack-of-cash.png",
+          "256": "/assets/icons/valuation/png/256/stack-of-cash.png",
+          "512": "/assets/icons/valuation/png/512/stack-of-cash.png"
+        },
+        "react": "/assets/icons/react/Valuation/MrxValuationStackOfCashIcon.tsx"
+      },
+      {
+        "name": "Calculator",
+        "slug": "calculator",
+        "motif": "calculator",
+        "svg": "/assets/icons/valuation/svg/calculator.svg",
+        "optimizedSvg": "/assets/icons/valuation/optimized/calculator.svg",
+        "png": {
+          "64": "/assets/icons/valuation/png/64/calculator.png",
+          "128": "/assets/icons/valuation/png/128/calculator.png",
+          "256": "/assets/icons/valuation/png/256/calculator.png",
+          "512": "/assets/icons/valuation/png/512/calculator.png"
+        },
+        "react": "/assets/icons/react/Valuation/MrxValuationCalculatorIcon.tsx"
+      },
+      {
+        "name": "Price Tag",
+        "slug": "price-tag",
+        "motif": "money",
+        "svg": "/assets/icons/valuation/svg/price-tag.svg",
+        "optimizedSvg": "/assets/icons/valuation/optimized/price-tag.svg",
+        "png": {
+          "64": "/assets/icons/valuation/png/64/price-tag.png",
+          "128": "/assets/icons/valuation/png/128/price-tag.png",
+          "256": "/assets/icons/valuation/png/256/price-tag.png",
+          "512": "/assets/icons/valuation/png/512/price-tag.png"
+        },
+        "react": "/assets/icons/react/Valuation/MrxValuationPriceTagIcon.tsx"
+      },
+      {
+        "name": "Market Value",
+        "slug": "market-value",
+        "motif": "graph",
+        "svg": "/assets/icons/valuation/svg/market-value.svg",
+        "optimizedSvg": "/assets/icons/valuation/optimized/market-value.svg",
+        "png": {
+          "64": "/assets/icons/valuation/png/64/market-value.png",
+          "128": "/assets/icons/valuation/png/128/market-value.png",
+          "256": "/assets/icons/valuation/png/256/market-value.png",
+          "512": "/assets/icons/valuation/png/512/market-value.png"
+        },
+        "react": "/assets/icons/react/Valuation/MrxValuationMarketValueIcon.tsx"
+      },
+      {
+        "name": "Trend Up",
+        "slug": "trend-up",
+        "motif": "graph",
+        "svg": "/assets/icons/valuation/svg/trend-up.svg",
+        "optimizedSvg": "/assets/icons/valuation/optimized/trend-up.svg",
+        "png": {
+          "64": "/assets/icons/valuation/png/64/trend-up.png",
+          "128": "/assets/icons/valuation/png/128/trend-up.png",
+          "256": "/assets/icons/valuation/png/256/trend-up.png",
+          "512": "/assets/icons/valuation/png/512/trend-up.png"
+        },
+        "react": "/assets/icons/react/Valuation/MrxValuationTrendUpIcon.tsx"
+      },
+      {
+        "name": "Trend Down",
+        "slug": "trend-down",
+        "motif": "graph",
+        "svg": "/assets/icons/valuation/svg/trend-down.svg",
+        "optimizedSvg": "/assets/icons/valuation/optimized/trend-down.svg",
+        "png": {
+          "64": "/assets/icons/valuation/png/64/trend-down.png",
+          "128": "/assets/icons/valuation/png/128/trend-down.png",
+          "256": "/assets/icons/valuation/png/256/trend-down.png",
+          "512": "/assets/icons/valuation/png/512/trend-down.png"
+        },
+        "react": "/assets/icons/react/Valuation/MrxValuationTrendDownIcon.tsx"
+      },
+      {
+        "name": "ROI",
+        "slug": "roi",
+        "motif": "graph",
+        "svg": "/assets/icons/valuation/svg/roi.svg",
+        "optimizedSvg": "/assets/icons/valuation/optimized/roi.svg",
+        "png": {
+          "64": "/assets/icons/valuation/png/64/roi.png",
+          "128": "/assets/icons/valuation/png/128/roi.png",
+          "256": "/assets/icons/valuation/png/256/roi.png",
+          "512": "/assets/icons/valuation/png/512/roi.png"
+        },
+        "react": "/assets/icons/react/Valuation/MrxValuationRoiIcon.tsx"
+      },
+      {
+        "name": "Offer",
+        "slug": "offer",
+        "motif": "money",
+        "svg": "/assets/icons/valuation/svg/offer.svg",
+        "optimizedSvg": "/assets/icons/valuation/optimized/offer.svg",
+        "png": {
+          "64": "/assets/icons/valuation/png/64/offer.png",
+          "128": "/assets/icons/valuation/png/128/offer.png",
+          "256": "/assets/icons/valuation/png/256/offer.png",
+          "512": "/assets/icons/valuation/png/512/offer.png"
+        },
+        "react": "/assets/icons/react/Valuation/MrxValuationOfferIcon.tsx"
+      },
+      {
+        "name": "Handshake",
+        "slug": "handshake",
+        "motif": "handshake",
+        "svg": "/assets/icons/valuation/svg/handshake.svg",
+        "optimizedSvg": "/assets/icons/valuation/optimized/handshake.svg",
+        "png": {
+          "64": "/assets/icons/valuation/png/64/handshake.png",
+          "128": "/assets/icons/valuation/png/128/handshake.png",
+          "256": "/assets/icons/valuation/png/256/handshake.png",
+          "512": "/assets/icons/valuation/png/512/handshake.png"
+        },
+        "react": "/assets/icons/react/Valuation/MrxValuationHandshakeIcon.tsx"
+      },
+      {
+        "name": "Investment",
+        "slug": "investment",
+        "motif": "spark",
+        "svg": "/assets/icons/valuation/svg/investment.svg",
+        "optimizedSvg": "/assets/icons/valuation/optimized/investment.svg",
+        "png": {
+          "64": "/assets/icons/valuation/png/64/investment.png",
+          "128": "/assets/icons/valuation/png/128/investment.png",
+          "256": "/assets/icons/valuation/png/256/investment.png",
+          "512": "/assets/icons/valuation/png/512/investment.png"
+        },
+        "react": "/assets/icons/react/Valuation/MrxValuationInvestmentIcon.tsx"
+      },
+      {
+        "name": "Financial Report",
+        "slug": "financial-report",
+        "motif": "document",
+        "svg": "/assets/icons/valuation/svg/financial-report.svg",
+        "optimizedSvg": "/assets/icons/valuation/optimized/financial-report.svg",
+        "png": {
+          "64": "/assets/icons/valuation/png/64/financial-report.png",
+          "128": "/assets/icons/valuation/png/128/financial-report.png",
+          "256": "/assets/icons/valuation/png/256/financial-report.png",
+          "512": "/assets/icons/valuation/png/512/financial-report.png"
+        },
+        "react": "/assets/icons/react/Valuation/MrxValuationFinancialReportIcon.tsx"
+      },
+      {
+        "name": "Estimate",
+        "slug": "estimate",
+        "motif": "calculator",
+        "svg": "/assets/icons/valuation/svg/estimate.svg",
+        "optimizedSvg": "/assets/icons/valuation/optimized/estimate.svg",
+        "png": {
+          "64": "/assets/icons/valuation/png/64/estimate.png",
+          "128": "/assets/icons/valuation/png/128/estimate.png",
+          "256": "/assets/icons/valuation/png/256/estimate.png",
+          "512": "/assets/icons/valuation/png/512/estimate.png"
+        },
+        "react": "/assets/icons/react/Valuation/MrxValuationEstimateIcon.tsx"
+      },
+      {
+        "name": "Premium Value",
+        "slug": "premium-value",
+        "motif": "money",
+        "svg": "/assets/icons/valuation/svg/premium-value.svg",
+        "optimizedSvg": "/assets/icons/valuation/optimized/premium-value.svg",
+        "png": {
+          "64": "/assets/icons/valuation/png/64/premium-value.png",
+          "128": "/assets/icons/valuation/png/128/premium-value.png",
+          "256": "/assets/icons/valuation/png/256/premium-value.png",
+          "512": "/assets/icons/valuation/png/512/premium-value.png"
+        },
+        "react": "/assets/icons/react/Valuation/MrxValuationPremiumValueIcon.tsx"
+      }
+    ],
+    "geology": [
+      {
+        "name": "Rock Layers",
+        "slug": "rock-layers",
+        "motif": "geology",
+        "svg": "/assets/icons/geology/svg/rock-layers.svg",
+        "optimizedSvg": "/assets/icons/geology/optimized/rock-layers.svg",
+        "png": {
+          "64": "/assets/icons/geology/png/64/rock-layers.png",
+          "128": "/assets/icons/geology/png/128/rock-layers.png",
+          "256": "/assets/icons/geology/png/256/rock-layers.png",
+          "512": "/assets/icons/geology/png/512/rock-layers.png"
+        },
+        "react": "/assets/icons/react/Geology/MrxGeologyRockLayersIcon.tsx"
+      },
+      {
+        "name": "Cross Section",
+        "slug": "cross-section",
+        "motif": "geology",
+        "svg": "/assets/icons/geology/svg/cross-section.svg",
+        "optimizedSvg": "/assets/icons/geology/optimized/cross-section.svg",
+        "png": {
+          "64": "/assets/icons/geology/png/64/cross-section.png",
+          "128": "/assets/icons/geology/png/128/cross-section.png",
+          "256": "/assets/icons/geology/png/256/cross-section.png",
+          "512": "/assets/icons/geology/png/512/cross-section.png"
+        },
+        "react": "/assets/icons/react/Geology/MrxGeologyCrossSectionIcon.tsx"
+      },
+      {
+        "name": "Earth",
+        "slug": "earth",
+        "motif": "geology",
+        "svg": "/assets/icons/geology/svg/earth.svg",
+        "optimizedSvg": "/assets/icons/geology/optimized/earth.svg",
+        "png": {
+          "64": "/assets/icons/geology/png/64/earth.png",
+          "128": "/assets/icons/geology/png/128/earth.png",
+          "256": "/assets/icons/geology/png/256/earth.png",
+          "512": "/assets/icons/geology/png/512/earth.png"
+        },
+        "react": "/assets/icons/react/Geology/MrxGeologyEarthIcon.tsx"
+      },
+      {
+        "name": "Mountain",
+        "slug": "mountain",
+        "motif": "geology",
+        "svg": "/assets/icons/geology/svg/mountain.svg",
+        "optimizedSvg": "/assets/icons/geology/optimized/mountain.svg",
+        "png": {
+          "64": "/assets/icons/geology/png/64/mountain.png",
+          "128": "/assets/icons/geology/png/128/mountain.png",
+          "256": "/assets/icons/geology/png/256/mountain.png",
+          "512": "/assets/icons/geology/png/512/mountain.png"
+        },
+        "react": "/assets/icons/react/Geology/MrxGeologyMountainIcon.tsx"
+      },
+      {
+        "name": "Fault Line",
+        "slug": "fault-line",
+        "motif": "graph",
+        "svg": "/assets/icons/geology/svg/fault-line.svg",
+        "optimizedSvg": "/assets/icons/geology/optimized/fault-line.svg",
+        "png": {
+          "64": "/assets/icons/geology/png/64/fault-line.png",
+          "128": "/assets/icons/geology/png/128/fault-line.png",
+          "256": "/assets/icons/geology/png/256/fault-line.png",
+          "512": "/assets/icons/geology/png/512/fault-line.png"
+        },
+        "react": "/assets/icons/react/Geology/MrxGeologyFaultLineIcon.tsx"
+      },
+      {
+        "name": "Seismic Wave",
+        "slug": "seismic-wave",
+        "motif": "geology",
+        "svg": "/assets/icons/geology/svg/seismic-wave.svg",
+        "optimizedSvg": "/assets/icons/geology/optimized/seismic-wave.svg",
+        "png": {
+          "64": "/assets/icons/geology/png/64/seismic-wave.png",
+          "128": "/assets/icons/geology/png/128/seismic-wave.png",
+          "256": "/assets/icons/geology/png/256/seismic-wave.png",
+          "512": "/assets/icons/geology/png/512/seismic-wave.png"
+        },
+        "react": "/assets/icons/react/Geology/MrxGeologySeismicWaveIcon.tsx"
+      },
+      {
+        "name": "Geology Hammer",
+        "slug": "geology-hammer",
+        "motif": "geology",
+        "svg": "/assets/icons/geology/svg/geology-hammer.svg",
+        "optimizedSvg": "/assets/icons/geology/optimized/geology-hammer.svg",
+        "png": {
+          "64": "/assets/icons/geology/png/64/geology-hammer.png",
+          "128": "/assets/icons/geology/png/128/geology-hammer.png",
+          "256": "/assets/icons/geology/png/256/geology-hammer.png",
+          "512": "/assets/icons/geology/png/512/geology-hammer.png"
+        },
+        "react": "/assets/icons/react/Geology/MrxGeologyGeologyHammerIcon.tsx"
+      },
+      {
+        "name": "Core Sample",
+        "slug": "core-sample",
+        "motif": "geology",
+        "svg": "/assets/icons/geology/svg/core-sample.svg",
+        "optimizedSvg": "/assets/icons/geology/optimized/core-sample.svg",
+        "png": {
+          "64": "/assets/icons/geology/png/64/core-sample.png",
+          "128": "/assets/icons/geology/png/128/core-sample.png",
+          "256": "/assets/icons/geology/png/256/core-sample.png",
+          "512": "/assets/icons/geology/png/512/core-sample.png"
+        },
+        "react": "/assets/icons/react/Geology/MrxGeologyCoreSampleIcon.tsx"
+      },
+      {
+        "name": "Formation",
+        "slug": "formation",
+        "motif": "geology",
+        "svg": "/assets/icons/geology/svg/formation.svg",
+        "optimizedSvg": "/assets/icons/geology/optimized/formation.svg",
+        "png": {
+          "64": "/assets/icons/geology/png/64/formation.png",
+          "128": "/assets/icons/geology/png/128/formation.png",
+          "256": "/assets/icons/geology/png/256/formation.png",
+          "512": "/assets/icons/geology/png/512/formation.png"
+        },
+        "react": "/assets/icons/react/Geology/MrxGeologyFormationIcon.tsx"
+      },
+      {
+        "name": "Strata",
+        "slug": "strata",
+        "motif": "geology",
+        "svg": "/assets/icons/geology/svg/strata.svg",
+        "optimizedSvg": "/assets/icons/geology/optimized/strata.svg",
+        "png": {
+          "64": "/assets/icons/geology/png/64/strata.png",
+          "128": "/assets/icons/geology/png/128/strata.png",
+          "256": "/assets/icons/geology/png/256/strata.png",
+          "512": "/assets/icons/geology/png/512/strata.png"
+        },
+        "react": "/assets/icons/react/Geology/MrxGeologyStrataIcon.tsx"
+      },
+      {
+        "name": "Underground Layers",
+        "slug": "underground-layers",
+        "motif": "geology",
+        "svg": "/assets/icons/geology/svg/underground-layers.svg",
+        "optimizedSvg": "/assets/icons/geology/optimized/underground-layers.svg",
+        "png": {
+          "64": "/assets/icons/geology/png/64/underground-layers.png",
+          "128": "/assets/icons/geology/png/128/underground-layers.png",
+          "256": "/assets/icons/geology/png/256/underground-layers.png",
+          "512": "/assets/icons/geology/png/512/underground-layers.png"
+        },
+        "react": "/assets/icons/react/Geology/MrxGeologyUndergroundLayersIcon.tsx"
+      },
+      {
+        "name": "Map Contours",
+        "slug": "map-contours",
+        "motif": "map",
+        "svg": "/assets/icons/geology/svg/map-contours.svg",
+        "optimizedSvg": "/assets/icons/geology/optimized/map-contours.svg",
+        "png": {
+          "64": "/assets/icons/geology/png/64/map-contours.png",
+          "128": "/assets/icons/geology/png/128/map-contours.png",
+          "256": "/assets/icons/geology/png/256/map-contours.png",
+          "512": "/assets/icons/geology/png/512/map-contours.png"
+        },
+        "react": "/assets/icons/react/Geology/MrxGeologyMapContoursIcon.tsx"
+      },
+      {
+        "name": "Compass",
+        "slug": "compass",
+        "motif": "geology",
+        "svg": "/assets/icons/geology/svg/compass.svg",
+        "optimizedSvg": "/assets/icons/geology/optimized/compass.svg",
+        "png": {
+          "64": "/assets/icons/geology/png/64/compass.png",
+          "128": "/assets/icons/geology/png/128/compass.png",
+          "256": "/assets/icons/geology/png/256/compass.png",
+          "512": "/assets/icons/geology/png/512/compass.png"
+        },
+        "react": "/assets/icons/react/Geology/MrxGeologyCompassIcon.tsx"
+      },
+      {
+        "name": "Geologist",
+        "slug": "geologist",
+        "motif": "person",
+        "svg": "/assets/icons/geology/svg/geologist.svg",
+        "optimizedSvg": "/assets/icons/geology/optimized/geologist.svg",
+        "png": {
+          "64": "/assets/icons/geology/png/64/geologist.png",
+          "128": "/assets/icons/geology/png/128/geologist.png",
+          "256": "/assets/icons/geology/png/256/geologist.png",
+          "512": "/assets/icons/geology/png/512/geologist.png"
+        },
+        "react": "/assets/icons/react/Geology/MrxGeologyGeologistIcon.tsx"
+      }
+    ],
+    "leasing": [
+      {
+        "name": "Contract",
+        "slug": "contract",
+        "motif": "document",
+        "svg": "/assets/icons/leasing/svg/contract.svg",
+        "optimizedSvg": "/assets/icons/leasing/optimized/contract.svg",
+        "png": {
+          "64": "/assets/icons/leasing/png/64/contract.png",
+          "128": "/assets/icons/leasing/png/128/contract.png",
+          "256": "/assets/icons/leasing/png/256/contract.png",
+          "512": "/assets/icons/leasing/png/512/contract.png"
+        },
+        "react": "/assets/icons/react/Leasing/MrxLeasingContractIcon.tsx"
+      },
+      {
+        "name": "Lease",
+        "slug": "lease",
+        "motif": "document",
+        "svg": "/assets/icons/leasing/svg/lease.svg",
+        "optimizedSvg": "/assets/icons/leasing/optimized/lease.svg",
+        "png": {
+          "64": "/assets/icons/leasing/png/64/lease.png",
+          "128": "/assets/icons/leasing/png/128/lease.png",
+          "256": "/assets/icons/leasing/png/256/lease.png",
+          "512": "/assets/icons/leasing/png/512/lease.png"
+        },
+        "react": "/assets/icons/react/Leasing/MrxLeasingLeaseIcon.tsx"
+      },
+      {
+        "name": "Signature",
+        "slug": "signature",
+        "motif": "pen",
+        "svg": "/assets/icons/leasing/svg/signature.svg",
+        "optimizedSvg": "/assets/icons/leasing/optimized/signature.svg",
+        "png": {
+          "64": "/assets/icons/leasing/png/64/signature.png",
+          "128": "/assets/icons/leasing/png/128/signature.png",
+          "256": "/assets/icons/leasing/png/256/signature.png",
+          "512": "/assets/icons/leasing/png/512/signature.png"
+        },
+        "react": "/assets/icons/react/Leasing/MrxLeasingSignatureIcon.tsx"
+      },
+      {
+        "name": "Pen",
+        "slug": "pen",
+        "motif": "pen",
+        "svg": "/assets/icons/leasing/svg/pen.svg",
+        "optimizedSvg": "/assets/icons/leasing/optimized/pen.svg",
+        "png": {
+          "64": "/assets/icons/leasing/png/64/pen.png",
+          "128": "/assets/icons/leasing/png/128/pen.png",
+          "256": "/assets/icons/leasing/png/256/pen.png",
+          "512": "/assets/icons/leasing/png/512/pen.png"
+        },
+        "react": "/assets/icons/react/Leasing/MrxLeasingPenIcon.tsx"
+      },
+      {
+        "name": "Calendar",
+        "slug": "calendar",
+        "motif": "calendar",
+        "svg": "/assets/icons/leasing/svg/calendar.svg",
+        "optimizedSvg": "/assets/icons/leasing/optimized/calendar.svg",
+        "png": {
+          "64": "/assets/icons/leasing/png/64/calendar.png",
+          "128": "/assets/icons/leasing/png/128/calendar.png",
+          "256": "/assets/icons/leasing/png/256/calendar.png",
+          "512": "/assets/icons/leasing/png/512/calendar.png"
+        },
+        "react": "/assets/icons/react/Leasing/MrxLeasingCalendarIcon.tsx"
+      },
+      {
+        "name": "Expiration",
+        "slug": "expiration",
+        "motif": "calendar",
+        "svg": "/assets/icons/leasing/svg/expiration.svg",
+        "optimizedSvg": "/assets/icons/leasing/optimized/expiration.svg",
+        "png": {
+          "64": "/assets/icons/leasing/png/64/expiration.png",
+          "128": "/assets/icons/leasing/png/128/expiration.png",
+          "256": "/assets/icons/leasing/png/256/expiration.png",
+          "512": "/assets/icons/leasing/png/512/expiration.png"
+        },
+        "react": "/assets/icons/react/Leasing/MrxLeasingExpirationIcon.tsx"
+      },
+      {
+        "name": "Renewal",
+        "slug": "renewal",
+        "motif": "calendar",
+        "svg": "/assets/icons/leasing/svg/renewal.svg",
+        "optimizedSvg": "/assets/icons/leasing/optimized/renewal.svg",
+        "png": {
+          "64": "/assets/icons/leasing/png/64/renewal.png",
+          "128": "/assets/icons/leasing/png/128/renewal.png",
+          "256": "/assets/icons/leasing/png/256/renewal.png",
+          "512": "/assets/icons/leasing/png/512/renewal.png"
+        },
+        "react": "/assets/icons/react/Leasing/MrxLeasingRenewalIcon.tsx"
+      },
+      {
+        "name": "Royalty",
+        "slug": "royalty",
+        "motif": "royalty",
+        "svg": "/assets/icons/leasing/svg/royalty.svg",
+        "optimizedSvg": "/assets/icons/leasing/optimized/royalty.svg",
+        "png": {
+          "64": "/assets/icons/leasing/png/64/royalty.png",
+          "128": "/assets/icons/leasing/png/128/royalty.png",
+          "256": "/assets/icons/leasing/png/256/royalty.png",
+          "512": "/assets/icons/leasing/png/512/royalty.png"
+        },
+        "react": "/assets/icons/react/Leasing/MrxLeasingRoyaltyIcon.tsx"
+      },
+      {
+        "name": "Royalty Check",
+        "slug": "royalty-check",
+        "motif": "royalty",
+        "svg": "/assets/icons/leasing/svg/royalty-check.svg",
+        "optimizedSvg": "/assets/icons/leasing/optimized/royalty-check.svg",
+        "png": {
+          "64": "/assets/icons/leasing/png/64/royalty-check.png",
+          "128": "/assets/icons/leasing/png/128/royalty-check.png",
+          "256": "/assets/icons/leasing/png/256/royalty-check.png",
+          "512": "/assets/icons/leasing/png/512/royalty-check.png"
+        },
+        "react": "/assets/icons/react/Leasing/MrxLeasingRoyaltyCheckIcon.tsx"
+      },
+      {
+        "name": "Lease Payment",
+        "slug": "lease-payment",
+        "motif": "document",
+        "svg": "/assets/icons/leasing/svg/lease-payment.svg",
+        "optimizedSvg": "/assets/icons/leasing/optimized/lease-payment.svg",
+        "png": {
+          "64": "/assets/icons/leasing/png/64/lease-payment.png",
+          "128": "/assets/icons/leasing/png/128/lease-payment.png",
+          "256": "/assets/icons/leasing/png/256/lease-payment.png",
+          "512": "/assets/icons/leasing/png/512/lease-payment.png"
+        },
+        "react": "/assets/icons/react/Leasing/MrxLeasingLeasePaymentIcon.tsx"
+      },
+      {
+        "name": "Agreement",
+        "slug": "agreement",
+        "motif": "document",
+        "svg": "/assets/icons/leasing/svg/agreement.svg",
+        "optimizedSvg": "/assets/icons/leasing/optimized/agreement.svg",
+        "png": {
+          "64": "/assets/icons/leasing/png/64/agreement.png",
+          "128": "/assets/icons/leasing/png/128/agreement.png",
+          "256": "/assets/icons/leasing/png/256/agreement.png",
+          "512": "/assets/icons/leasing/png/512/agreement.png"
+        },
+        "react": "/assets/icons/react/Leasing/MrxLeasingAgreementIcon.tsx"
+      },
+      {
+        "name": "Negotiation",
+        "slug": "negotiation",
+        "motif": "handshake",
+        "svg": "/assets/icons/leasing/svg/negotiation.svg",
+        "optimizedSvg": "/assets/icons/leasing/optimized/negotiation.svg",
+        "png": {
+          "64": "/assets/icons/leasing/png/64/negotiation.png",
+          "128": "/assets/icons/leasing/png/128/negotiation.png",
+          "256": "/assets/icons/leasing/png/256/negotiation.png",
+          "512": "/assets/icons/leasing/png/512/negotiation.png"
+        },
+        "react": "/assets/icons/react/Leasing/MrxLeasingNegotiationIcon.tsx"
+      },
+      {
+        "name": "Handshake",
+        "slug": "handshake",
+        "motif": "handshake",
+        "svg": "/assets/icons/leasing/svg/handshake.svg",
+        "optimizedSvg": "/assets/icons/leasing/optimized/handshake.svg",
+        "png": {
+          "64": "/assets/icons/leasing/png/64/handshake.png",
+          "128": "/assets/icons/leasing/png/128/handshake.png",
+          "256": "/assets/icons/leasing/png/256/handshake.png",
+          "512": "/assets/icons/leasing/png/512/handshake.png"
+        },
+        "react": "/assets/icons/react/Leasing/MrxLeasingHandshakeIcon.tsx"
+      }
+    ],
+    "legal": [
+      {
+        "name": "Scale of Justice",
+        "slug": "scale-of-justice",
+        "motif": "legal",
+        "svg": "/assets/icons/legal/svg/scale-of-justice.svg",
+        "optimizedSvg": "/assets/icons/legal/optimized/scale-of-justice.svg",
+        "png": {
+          "64": "/assets/icons/legal/png/64/scale-of-justice.png",
+          "128": "/assets/icons/legal/png/128/scale-of-justice.png",
+          "256": "/assets/icons/legal/png/256/scale-of-justice.png",
+          "512": "/assets/icons/legal/png/512/scale-of-justice.png"
+        },
+        "react": "/assets/icons/react/Legal/MrxLegalScaleOfJusticeIcon.tsx"
+      },
+      {
+        "name": "Shield",
+        "slug": "shield",
+        "motif": "shield",
+        "svg": "/assets/icons/legal/svg/shield.svg",
+        "optimizedSvg": "/assets/icons/legal/optimized/shield.svg",
+        "png": {
+          "64": "/assets/icons/legal/png/64/shield.png",
+          "128": "/assets/icons/legal/png/128/shield.png",
+          "256": "/assets/icons/legal/png/256/shield.png",
+          "512": "/assets/icons/legal/png/512/shield.png"
+        },
+        "react": "/assets/icons/react/Legal/MrxLegalShieldIcon.tsx"
+      },
+      {
+        "name": "Gavel",
+        "slug": "gavel",
+        "motif": "legal",
+        "svg": "/assets/icons/legal/svg/gavel.svg",
+        "optimizedSvg": "/assets/icons/legal/optimized/gavel.svg",
+        "png": {
+          "64": "/assets/icons/legal/png/64/gavel.png",
+          "128": "/assets/icons/legal/png/128/gavel.png",
+          "256": "/assets/icons/legal/png/256/gavel.png",
+          "512": "/assets/icons/legal/png/512/gavel.png"
+        },
+        "react": "/assets/icons/react/Legal/MrxLegalGavelIcon.tsx"
+      },
+      {
+        "name": "Legal Document",
+        "slug": "legal-document",
+        "motif": "document",
+        "svg": "/assets/icons/legal/svg/legal-document.svg",
+        "optimizedSvg": "/assets/icons/legal/optimized/legal-document.svg",
+        "png": {
+          "64": "/assets/icons/legal/png/64/legal-document.png",
+          "128": "/assets/icons/legal/png/128/legal-document.png",
+          "256": "/assets/icons/legal/png/256/legal-document.png",
+          "512": "/assets/icons/legal/png/512/legal-document.png"
+        },
+        "react": "/assets/icons/react/Legal/MrxLegalLegalDocumentIcon.tsx"
+      },
+      {
+        "name": "Verified",
+        "slug": "verified",
+        "motif": "spark",
+        "svg": "/assets/icons/legal/svg/verified.svg",
+        "optimizedSvg": "/assets/icons/legal/optimized/verified.svg",
+        "png": {
+          "64": "/assets/icons/legal/png/64/verified.png",
+          "128": "/assets/icons/legal/png/128/verified.png",
+          "256": "/assets/icons/legal/png/256/verified.png",
+          "512": "/assets/icons/legal/png/512/verified.png"
+        },
+        "react": "/assets/icons/react/Legal/MrxLegalVerifiedIcon.tsx"
+      },
+      {
+        "name": "Compliance",
+        "slug": "compliance",
+        "motif": "legal",
+        "svg": "/assets/icons/legal/svg/compliance.svg",
+        "optimizedSvg": "/assets/icons/legal/optimized/compliance.svg",
+        "png": {
+          "64": "/assets/icons/legal/png/64/compliance.png",
+          "128": "/assets/icons/legal/png/128/compliance.png",
+          "256": "/assets/icons/legal/png/256/compliance.png",
+          "512": "/assets/icons/legal/png/512/compliance.png"
+        },
+        "react": "/assets/icons/react/Legal/MrxLegalComplianceIcon.tsx"
+      },
+      {
+        "name": "Secure",
+        "slug": "secure",
+        "motif": "shield",
+        "svg": "/assets/icons/legal/svg/secure.svg",
+        "optimizedSvg": "/assets/icons/legal/optimized/secure.svg",
+        "png": {
+          "64": "/assets/icons/legal/png/64/secure.png",
+          "128": "/assets/icons/legal/png/128/secure.png",
+          "256": "/assets/icons/legal/png/256/secure.png",
+          "512": "/assets/icons/legal/png/512/secure.png"
+        },
+        "react": "/assets/icons/react/Legal/MrxLegalSecureIcon.tsx"
+      },
+      {
+        "name": "Privacy",
+        "slug": "privacy",
+        "motif": "shield",
+        "svg": "/assets/icons/legal/svg/privacy.svg",
+        "optimizedSvg": "/assets/icons/legal/optimized/privacy.svg",
+        "png": {
+          "64": "/assets/icons/legal/png/64/privacy.png",
+          "128": "/assets/icons/legal/png/128/privacy.png",
+          "256": "/assets/icons/legal/png/256/privacy.png",
+          "512": "/assets/icons/legal/png/512/privacy.png"
+        },
+        "react": "/assets/icons/react/Legal/MrxLegalPrivacyIcon.tsx"
+      },
+      {
+        "name": "Lock",
+        "slug": "lock",
+        "motif": "spark",
+        "svg": "/assets/icons/legal/svg/lock.svg",
+        "optimizedSvg": "/assets/icons/legal/optimized/lock.svg",
+        "png": {
+          "64": "/assets/icons/legal/png/64/lock.png",
+          "128": "/assets/icons/legal/png/128/lock.png",
+          "256": "/assets/icons/legal/png/256/lock.png",
+          "512": "/assets/icons/legal/png/512/lock.png"
+        },
+        "react": "/assets/icons/react/Legal/MrxLegalLockIcon.tsx"
+      },
+      {
+        "name": "Certificate",
+        "slug": "certificate",
+        "motif": "document",
+        "svg": "/assets/icons/legal/svg/certificate.svg",
+        "optimizedSvg": "/assets/icons/legal/optimized/certificate.svg",
+        "png": {
+          "64": "/assets/icons/legal/png/64/certificate.png",
+          "128": "/assets/icons/legal/png/128/certificate.png",
+          "256": "/assets/icons/legal/png/256/certificate.png",
+          "512": "/assets/icons/legal/png/512/certificate.png"
+        },
+        "react": "/assets/icons/react/Legal/MrxLegalCertificateIcon.tsx"
+      },
+      {
+        "name": "Attorney",
+        "slug": "attorney",
+        "motif": "person",
+        "svg": "/assets/icons/legal/svg/attorney.svg",
+        "optimizedSvg": "/assets/icons/legal/optimized/attorney.svg",
+        "png": {
+          "64": "/assets/icons/legal/png/64/attorney.png",
+          "128": "/assets/icons/legal/png/128/attorney.png",
+          "256": "/assets/icons/legal/png/256/attorney.png",
+          "512": "/assets/icons/legal/png/512/attorney.png"
+        },
+        "react": "/assets/icons/react/Legal/MrxLegalAttorneyIcon.tsx"
+      },
+      {
+        "name": "Court File",
+        "slug": "court-file",
+        "motif": "document",
+        "svg": "/assets/icons/legal/svg/court-file.svg",
+        "optimizedSvg": "/assets/icons/legal/optimized/court-file.svg",
+        "png": {
+          "64": "/assets/icons/legal/png/64/court-file.png",
+          "128": "/assets/icons/legal/png/128/court-file.png",
+          "256": "/assets/icons/legal/png/256/court-file.png",
+          "512": "/assets/icons/legal/png/512/court-file.png"
+        },
+        "react": "/assets/icons/react/Legal/MrxLegalCourtFileIcon.tsx"
+      },
+      {
+        "name": "Audit",
+        "slug": "audit",
+        "motif": "legal",
+        "svg": "/assets/icons/legal/svg/audit.svg",
+        "optimizedSvg": "/assets/icons/legal/optimized/audit.svg",
+        "png": {
+          "64": "/assets/icons/legal/png/64/audit.png",
+          "128": "/assets/icons/legal/png/128/audit.png",
+          "256": "/assets/icons/legal/png/256/audit.png",
+          "512": "/assets/icons/legal/png/512/audit.png"
+        },
+        "react": "/assets/icons/react/Legal/MrxLegalAuditIcon.tsx"
+      },
+      {
+        "name": "Approved",
+        "slug": "approved",
+        "motif": "legal",
+        "svg": "/assets/icons/legal/svg/approved.svg",
+        "optimizedSvg": "/assets/icons/legal/optimized/approved.svg",
+        "png": {
+          "64": "/assets/icons/legal/png/64/approved.png",
+          "128": "/assets/icons/legal/png/128/approved.png",
+          "256": "/assets/icons/legal/png/256/approved.png",
+          "512": "/assets/icons/legal/png/512/approved.png"
+        },
+        "react": "/assets/icons/react/Legal/MrxLegalApprovedIcon.tsx"
+      },
+      {
+        "name": "Rejected",
+        "slug": "rejected",
+        "motif": "legal",
+        "svg": "/assets/icons/legal/svg/rejected.svg",
+        "optimizedSvg": "/assets/icons/legal/optimized/rejected.svg",
+        "png": {
+          "64": "/assets/icons/legal/png/64/rejected.png",
+          "128": "/assets/icons/legal/png/128/rejected.png",
+          "256": "/assets/icons/legal/png/256/rejected.png",
+          "512": "/assets/icons/legal/png/512/rejected.png"
+        },
+        "react": "/assets/icons/react/Legal/MrxLegalRejectedIcon.tsx"
+      }
+    ],
+    "maps": [
+      {
+        "name": "Texas",
+        "slug": "texas",
+        "motif": "map",
+        "svg": "/assets/icons/maps/svg/texas.svg",
+        "optimizedSvg": "/assets/icons/maps/optimized/texas.svg",
+        "png": {
+          "64": "/assets/icons/maps/png/64/texas.png",
+          "128": "/assets/icons/maps/png/128/texas.png",
+          "256": "/assets/icons/maps/png/256/texas.png",
+          "512": "/assets/icons/maps/png/512/texas.png"
+        },
+        "react": "/assets/icons/react/Maps/MrxMapsTexasIcon.tsx"
+      },
+      {
+        "name": "United States",
+        "slug": "united-states",
+        "motif": "map",
+        "svg": "/assets/icons/maps/svg/united-states.svg",
+        "optimizedSvg": "/assets/icons/maps/optimized/united-states.svg",
+        "png": {
+          "64": "/assets/icons/maps/png/64/united-states.png",
+          "128": "/assets/icons/maps/png/128/united-states.png",
+          "256": "/assets/icons/maps/png/256/united-states.png",
+          "512": "/assets/icons/maps/png/512/united-states.png"
+        },
+        "react": "/assets/icons/react/Maps/MrxMapsUnitedStatesIcon.tsx"
+      },
+      {
+        "name": "County Map",
+        "slug": "county-map",
+        "motif": "map",
+        "svg": "/assets/icons/maps/svg/county-map.svg",
+        "optimizedSvg": "/assets/icons/maps/optimized/county-map.svg",
+        "png": {
+          "64": "/assets/icons/maps/png/64/county-map.png",
+          "128": "/assets/icons/maps/png/128/county-map.png",
+          "256": "/assets/icons/maps/png/256/county-map.png",
+          "512": "/assets/icons/maps/png/512/county-map.png"
+        },
+        "react": "/assets/icons/react/Maps/MrxMapsCountyMapIcon.tsx"
+      },
+      {
+        "name": "GPS",
+        "slug": "gps",
+        "motif": "map",
+        "svg": "/assets/icons/maps/svg/gps.svg",
+        "optimizedSvg": "/assets/icons/maps/optimized/gps.svg",
+        "png": {
+          "64": "/assets/icons/maps/png/64/gps.png",
+          "128": "/assets/icons/maps/png/128/gps.png",
+          "256": "/assets/icons/maps/png/256/gps.png",
+          "512": "/assets/icons/maps/png/512/gps.png"
+        },
+        "react": "/assets/icons/react/Maps/MrxMapsGpsIcon.tsx"
+      },
+      {
+        "name": "Location Pin",
+        "slug": "location-pin",
+        "motif": "map",
+        "svg": "/assets/icons/maps/svg/location-pin.svg",
+        "optimizedSvg": "/assets/icons/maps/optimized/location-pin.svg",
+        "png": {
+          "64": "/assets/icons/maps/png/64/location-pin.png",
+          "128": "/assets/icons/maps/png/128/location-pin.png",
+          "256": "/assets/icons/maps/png/256/location-pin.png",
+          "512": "/assets/icons/maps/png/512/location-pin.png"
+        },
+        "react": "/assets/icons/react/Maps/MrxMapsLocationPinIcon.tsx"
+      },
+      {
+        "name": "Property Outline",
+        "slug": "property-outline",
+        "motif": "graph",
+        "svg": "/assets/icons/maps/svg/property-outline.svg",
+        "optimizedSvg": "/assets/icons/maps/optimized/property-outline.svg",
+        "png": {
+          "64": "/assets/icons/maps/png/64/property-outline.png",
+          "128": "/assets/icons/maps/png/128/property-outline.png",
+          "256": "/assets/icons/maps/png/256/property-outline.png",
+          "512": "/assets/icons/maps/png/512/property-outline.png"
+        },
+        "react": "/assets/icons/react/Maps/MrxMapsPropertyOutlineIcon.tsx"
+      },
+      {
+        "name": "Satellite",
+        "slug": "satellite",
+        "motif": "map",
+        "svg": "/assets/icons/maps/svg/satellite.svg",
+        "optimizedSvg": "/assets/icons/maps/optimized/satellite.svg",
+        "png": {
+          "64": "/assets/icons/maps/png/64/satellite.png",
+          "128": "/assets/icons/maps/png/128/satellite.png",
+          "256": "/assets/icons/maps/png/256/satellite.png",
+          "512": "/assets/icons/maps/png/512/satellite.png"
+        },
+        "react": "/assets/icons/react/Maps/MrxMapsSatelliteIcon.tsx"
+      },
+      {
+        "name": "Navigation",
+        "slug": "navigation",
+        "motif": "map",
+        "svg": "/assets/icons/maps/svg/navigation.svg",
+        "optimizedSvg": "/assets/icons/maps/optimized/navigation.svg",
+        "png": {
+          "64": "/assets/icons/maps/png/64/navigation.png",
+          "128": "/assets/icons/maps/png/128/navigation.png",
+          "256": "/assets/icons/maps/png/256/navigation.png",
+          "512": "/assets/icons/maps/png/512/navigation.png"
+        },
+        "react": "/assets/icons/react/Maps/MrxMapsNavigationIcon.tsx"
+      },
+      {
+        "name": "Road",
+        "slug": "road",
+        "motif": "map",
+        "svg": "/assets/icons/maps/svg/road.svg",
+        "optimizedSvg": "/assets/icons/maps/optimized/road.svg",
+        "png": {
+          "64": "/assets/icons/maps/png/64/road.png",
+          "128": "/assets/icons/maps/png/128/road.png",
+          "256": "/assets/icons/maps/png/256/road.png",
+          "512": "/assets/icons/maps/png/512/road.png"
+        },
+        "react": "/assets/icons/react/Maps/MrxMapsRoadIcon.tsx"
+      },
+      {
+        "name": "Acreage",
+        "slug": "acreage",
+        "motif": "map",
+        "svg": "/assets/icons/maps/svg/acreage.svg",
+        "optimizedSvg": "/assets/icons/maps/optimized/acreage.svg",
+        "png": {
+          "64": "/assets/icons/maps/png/64/acreage.png",
+          "128": "/assets/icons/maps/png/128/acreage.png",
+          "256": "/assets/icons/maps/png/256/acreage.png",
+          "512": "/assets/icons/maps/png/512/acreage.png"
+        },
+        "react": "/assets/icons/react/Maps/MrxMapsAcreageIcon.tsx"
+      },
+      {
+        "name": "Survey",
+        "slug": "survey",
+        "motif": "map",
+        "svg": "/assets/icons/maps/svg/survey.svg",
+        "optimizedSvg": "/assets/icons/maps/optimized/survey.svg",
+        "png": {
+          "64": "/assets/icons/maps/png/64/survey.png",
+          "128": "/assets/icons/maps/png/128/survey.png",
+          "256": "/assets/icons/maps/png/256/survey.png",
+          "512": "/assets/icons/maps/png/512/survey.png"
+        },
+        "react": "/assets/icons/react/Maps/MrxMapsSurveyIcon.tsx"
+      },
+      {
+        "name": "Distance",
+        "slug": "distance",
+        "motif": "spark",
+        "svg": "/assets/icons/maps/svg/distance.svg",
+        "optimizedSvg": "/assets/icons/maps/optimized/distance.svg",
+        "png": {
+          "64": "/assets/icons/maps/png/64/distance.png",
+          "128": "/assets/icons/maps/png/128/distance.png",
+          "256": "/assets/icons/maps/png/256/distance.png",
+          "512": "/assets/icons/maps/png/512/distance.png"
+        },
+        "react": "/assets/icons/react/Maps/MrxMapsDistanceIcon.tsx"
+      },
+      {
+        "name": "Nearby Wells",
+        "slug": "nearby-wells",
+        "motif": "map",
+        "svg": "/assets/icons/maps/svg/nearby-wells.svg",
+        "optimizedSvg": "/assets/icons/maps/optimized/nearby-wells.svg",
+        "png": {
+          "64": "/assets/icons/maps/png/64/nearby-wells.png",
+          "128": "/assets/icons/maps/png/128/nearby-wells.png",
+          "256": "/assets/icons/maps/png/256/nearby-wells.png",
+          "512": "/assets/icons/maps/png/512/nearby-wells.png"
+        },
+        "react": "/assets/icons/react/Maps/MrxMapsNearbyWellsIcon.tsx"
+      },
+      {
+        "name": "Radius",
+        "slug": "radius",
+        "motif": "map",
+        "svg": "/assets/icons/maps/svg/radius.svg",
+        "optimizedSvg": "/assets/icons/maps/optimized/radius.svg",
+        "png": {
+          "64": "/assets/icons/maps/png/64/radius.png",
+          "128": "/assets/icons/maps/png/128/radius.png",
+          "256": "/assets/icons/maps/png/256/radius.png",
+          "512": "/assets/icons/maps/png/512/radius.png"
+        },
+        "react": "/assets/icons/react/Maps/MrxMapsRadiusIcon.tsx"
+      }
+    ],
+    "timeline": [
+      {
+        "name": "Clock",
+        "slug": "clock",
+        "motif": "time",
+        "svg": "/assets/icons/timeline/svg/clock.svg",
+        "optimizedSvg": "/assets/icons/timeline/optimized/clock.svg",
+        "png": {
+          "64": "/assets/icons/timeline/png/64/clock.png",
+          "128": "/assets/icons/timeline/png/128/clock.png",
+          "256": "/assets/icons/timeline/png/256/clock.png",
+          "512": "/assets/icons/timeline/png/512/clock.png"
+        },
+        "react": "/assets/icons/react/Timeline/MrxTimelineClockIcon.tsx"
+      },
+      {
+        "name": "Hourglass",
+        "slug": "hourglass",
+        "motif": "time",
+        "svg": "/assets/icons/timeline/svg/hourglass.svg",
+        "optimizedSvg": "/assets/icons/timeline/optimized/hourglass.svg",
+        "png": {
+          "64": "/assets/icons/timeline/png/64/hourglass.png",
+          "128": "/assets/icons/timeline/png/128/hourglass.png",
+          "256": "/assets/icons/timeline/png/256/hourglass.png",
+          "512": "/assets/icons/timeline/png/512/hourglass.png"
+        },
+        "react": "/assets/icons/react/Timeline/MrxTimelineHourglassIcon.tsx"
+      },
+      {
+        "name": "History",
+        "slug": "history",
+        "motif": "time",
+        "svg": "/assets/icons/timeline/svg/history.svg",
+        "optimizedSvg": "/assets/icons/timeline/optimized/history.svg",
+        "png": {
+          "64": "/assets/icons/timeline/png/64/history.png",
+          "128": "/assets/icons/timeline/png/128/history.png",
+          "256": "/assets/icons/timeline/png/256/history.png",
+          "512": "/assets/icons/timeline/png/512/history.png"
+        },
+        "react": "/assets/icons/react/Timeline/MrxTimelineHistoryIcon.tsx"
+      },
+      {
+        "name": "Timeline",
+        "slug": "timeline",
+        "motif": "graph",
+        "svg": "/assets/icons/timeline/svg/timeline.svg",
+        "optimizedSvg": "/assets/icons/timeline/optimized/timeline.svg",
+        "png": {
+          "64": "/assets/icons/timeline/png/64/timeline.png",
+          "128": "/assets/icons/timeline/png/128/timeline.png",
+          "256": "/assets/icons/timeline/png/256/timeline.png",
+          "512": "/assets/icons/timeline/png/512/timeline.png"
+        },
+        "react": "/assets/icons/react/Timeline/MrxTimelineTimelineIcon.tsx"
+      },
+      {
+        "name": "Milestone",
+        "slug": "milestone",
+        "motif": "time",
+        "svg": "/assets/icons/timeline/svg/milestone.svg",
+        "optimizedSvg": "/assets/icons/timeline/optimized/milestone.svg",
+        "png": {
+          "64": "/assets/icons/timeline/png/64/milestone.png",
+          "128": "/assets/icons/timeline/png/128/milestone.png",
+          "256": "/assets/icons/timeline/png/256/milestone.png",
+          "512": "/assets/icons/timeline/png/512/milestone.png"
+        },
+        "react": "/assets/icons/react/Timeline/MrxTimelineMilestoneIcon.tsx"
+      },
+      {
+        "name": "Calendar",
+        "slug": "calendar",
+        "motif": "calendar",
+        "svg": "/assets/icons/timeline/svg/calendar.svg",
+        "optimizedSvg": "/assets/icons/timeline/optimized/calendar.svg",
+        "png": {
+          "64": "/assets/icons/timeline/png/64/calendar.png",
+          "128": "/assets/icons/timeline/png/128/calendar.png",
+          "256": "/assets/icons/timeline/png/256/calendar.png",
+          "512": "/assets/icons/timeline/png/512/calendar.png"
+        },
+        "react": "/assets/icons/react/Timeline/MrxTimelineCalendarIcon.tsx"
+      },
+      {
+        "name": "Future",
+        "slug": "future",
+        "motif": "calendar",
+        "svg": "/assets/icons/timeline/svg/future.svg",
+        "optimizedSvg": "/assets/icons/timeline/optimized/future.svg",
+        "png": {
+          "64": "/assets/icons/timeline/png/64/future.png",
+          "128": "/assets/icons/timeline/png/128/future.png",
+          "256": "/assets/icons/timeline/png/256/future.png",
+          "512": "/assets/icons/timeline/png/512/future.png"
+        },
+        "react": "/assets/icons/react/Timeline/MrxTimelineFutureIcon.tsx"
+      },
+      {
+        "name": "Past",
+        "slug": "past",
+        "motif": "calendar",
+        "svg": "/assets/icons/timeline/svg/past.svg",
+        "optimizedSvg": "/assets/icons/timeline/optimized/past.svg",
+        "png": {
+          "64": "/assets/icons/timeline/png/64/past.png",
+          "128": "/assets/icons/timeline/png/128/past.png",
+          "256": "/assets/icons/timeline/png/256/past.png",
+          "512": "/assets/icons/timeline/png/512/past.png"
+        },
+        "react": "/assets/icons/react/Timeline/MrxTimelinePastIcon.tsx"
+      },
+      {
+        "name": "Today",
+        "slug": "today",
+        "motif": "calendar",
+        "svg": "/assets/icons/timeline/svg/today.svg",
+        "optimizedSvg": "/assets/icons/timeline/optimized/today.svg",
+        "png": {
+          "64": "/assets/icons/timeline/png/64/today.png",
+          "128": "/assets/icons/timeline/png/128/today.png",
+          "256": "/assets/icons/timeline/png/256/today.png",
+          "512": "/assets/icons/timeline/png/512/today.png"
+        },
+        "react": "/assets/icons/react/Timeline/MrxTimelineTodayIcon.tsx"
+      },
+      {
+        "name": "Activity",
+        "slug": "activity",
+        "motif": "graph",
+        "svg": "/assets/icons/timeline/svg/activity.svg",
+        "optimizedSvg": "/assets/icons/timeline/optimized/activity.svg",
+        "png": {
+          "64": "/assets/icons/timeline/png/64/activity.png",
+          "128": "/assets/icons/timeline/png/128/activity.png",
+          "256": "/assets/icons/timeline/png/256/activity.png",
+          "512": "/assets/icons/timeline/png/512/activity.png"
+        },
+        "react": "/assets/icons/react/Timeline/MrxTimelineActivityIcon.tsx"
+      },
+      {
+        "name": "Recent",
+        "slug": "recent",
+        "motif": "calendar",
+        "svg": "/assets/icons/timeline/svg/recent.svg",
+        "optimizedSvg": "/assets/icons/timeline/optimized/recent.svg",
+        "png": {
+          "64": "/assets/icons/timeline/png/64/recent.png",
+          "128": "/assets/icons/timeline/png/128/recent.png",
+          "256": "/assets/icons/timeline/png/256/recent.png",
+          "512": "/assets/icons/timeline/png/512/recent.png"
+        },
+        "react": "/assets/icons/react/Timeline/MrxTimelineRecentIcon.tsx"
+      },
+      {
+        "name": "Updates",
+        "slug": "updates",
+        "motif": "calendar",
+        "svg": "/assets/icons/timeline/svg/updates.svg",
+        "optimizedSvg": "/assets/icons/timeline/optimized/updates.svg",
+        "png": {
+          "64": "/assets/icons/timeline/png/64/updates.png",
+          "128": "/assets/icons/timeline/png/128/updates.png",
+          "256": "/assets/icons/timeline/png/256/updates.png",
+          "512": "/assets/icons/timeline/png/512/updates.png"
+        },
+        "react": "/assets/icons/react/Timeline/MrxTimelineUpdatesIcon.tsx"
+      },
+      {
+        "name": "Progress",
+        "slug": "progress",
+        "motif": "graph",
+        "svg": "/assets/icons/timeline/svg/progress.svg",
+        "optimizedSvg": "/assets/icons/timeline/optimized/progress.svg",
+        "png": {
+          "64": "/assets/icons/timeline/png/64/progress.png",
+          "128": "/assets/icons/timeline/png/128/progress.png",
+          "256": "/assets/icons/timeline/png/256/progress.png",
+          "512": "/assets/icons/timeline/png/512/progress.png"
+        },
+        "react": "/assets/icons/react/Timeline/MrxTimelineProgressIcon.tsx"
+      }
+    ],
+    "communication": [
+      {
+        "name": "Phone",
+        "slug": "phone",
+        "motif": "voice",
+        "svg": "/assets/icons/communication/svg/phone.svg",
+        "optimizedSvg": "/assets/icons/communication/optimized/phone.svg",
+        "png": {
+          "64": "/assets/icons/communication/png/64/phone.png",
+          "128": "/assets/icons/communication/png/128/phone.png",
+          "256": "/assets/icons/communication/png/256/phone.png",
+          "512": "/assets/icons/communication/png/512/phone.png"
+        },
+        "react": "/assets/icons/react/Communication/MrxCommunicationPhoneIcon.tsx"
+      },
+      {
+        "name": "Email",
+        "slug": "email",
+        "motif": "email",
+        "svg": "/assets/icons/communication/svg/email.svg",
+        "optimizedSvg": "/assets/icons/communication/optimized/email.svg",
+        "png": {
+          "64": "/assets/icons/communication/png/64/email.png",
+          "128": "/assets/icons/communication/png/128/email.png",
+          "256": "/assets/icons/communication/png/256/email.png",
+          "512": "/assets/icons/communication/png/512/email.png"
+        },
+        "react": "/assets/icons/react/Communication/MrxCommunicationEmailIcon.tsx"
+      },
+      {
+        "name": "Message",
+        "slug": "message",
+        "motif": "chat",
+        "svg": "/assets/icons/communication/svg/message.svg",
+        "optimizedSvg": "/assets/icons/communication/optimized/message.svg",
+        "png": {
+          "64": "/assets/icons/communication/png/64/message.png",
+          "128": "/assets/icons/communication/png/128/message.png",
+          "256": "/assets/icons/communication/png/256/message.png",
+          "512": "/assets/icons/communication/png/512/message.png"
+        },
+        "react": "/assets/icons/react/Communication/MrxCommunicationMessageIcon.tsx"
+      },
+      {
+        "name": "Chat",
+        "slug": "chat",
+        "motif": "chat",
+        "svg": "/assets/icons/communication/svg/chat.svg",
+        "optimizedSvg": "/assets/icons/communication/optimized/chat.svg",
+        "png": {
+          "64": "/assets/icons/communication/png/64/chat.png",
+          "128": "/assets/icons/communication/png/128/chat.png",
+          "256": "/assets/icons/communication/png/256/chat.png",
+          "512": "/assets/icons/communication/png/512/chat.png"
+        },
+        "react": "/assets/icons/react/Communication/MrxCommunicationChatIcon.tsx"
+      },
+      {
+        "name": "Text",
+        "slug": "text",
+        "motif": "chat",
+        "svg": "/assets/icons/communication/svg/text.svg",
+        "optimizedSvg": "/assets/icons/communication/optimized/text.svg",
+        "png": {
+          "64": "/assets/icons/communication/png/64/text.png",
+          "128": "/assets/icons/communication/png/128/text.png",
+          "256": "/assets/icons/communication/png/256/text.png",
+          "512": "/assets/icons/communication/png/512/text.png"
+        },
+        "react": "/assets/icons/react/Communication/MrxCommunicationTextIcon.tsx"
+      },
+      {
+        "name": "Video",
+        "slug": "video",
+        "motif": "media",
+        "svg": "/assets/icons/communication/svg/video.svg",
+        "optimizedSvg": "/assets/icons/communication/optimized/video.svg",
+        "png": {
+          "64": "/assets/icons/communication/png/64/video.png",
+          "128": "/assets/icons/communication/png/128/video.png",
+          "256": "/assets/icons/communication/png/256/video.png",
+          "512": "/assets/icons/communication/png/512/video.png"
+        },
+        "react": "/assets/icons/react/Communication/MrxCommunicationVideoIcon.tsx"
+      },
+      {
+        "name": "Camera",
+        "slug": "camera",
+        "motif": "media",
+        "svg": "/assets/icons/communication/svg/camera.svg",
+        "optimizedSvg": "/assets/icons/communication/optimized/camera.svg",
+        "png": {
+          "64": "/assets/icons/communication/png/64/camera.png",
+          "128": "/assets/icons/communication/png/128/camera.png",
+          "256": "/assets/icons/communication/png/256/camera.png",
+          "512": "/assets/icons/communication/png/512/camera.png"
+        },
+        "react": "/assets/icons/react/Communication/MrxCommunicationCameraIcon.tsx"
+      },
+      {
+        "name": "Notification",
+        "slug": "notification",
+        "motif": "bell",
+        "svg": "/assets/icons/communication/svg/notification.svg",
+        "optimizedSvg": "/assets/icons/communication/optimized/notification.svg",
+        "png": {
+          "64": "/assets/icons/communication/png/64/notification.png",
+          "128": "/assets/icons/communication/png/128/notification.png",
+          "256": "/assets/icons/communication/png/256/notification.png",
+          "512": "/assets/icons/communication/png/512/notification.png"
+        },
+        "react": "/assets/icons/react/Communication/MrxCommunicationNotificationIcon.tsx"
+      },
+      {
+        "name": "Bell",
+        "slug": "bell",
+        "motif": "bell",
+        "svg": "/assets/icons/communication/svg/bell.svg",
+        "optimizedSvg": "/assets/icons/communication/optimized/bell.svg",
+        "png": {
+          "64": "/assets/icons/communication/png/64/bell.png",
+          "128": "/assets/icons/communication/png/128/bell.png",
+          "256": "/assets/icons/communication/png/256/bell.png",
+          "512": "/assets/icons/communication/png/512/bell.png"
+        },
+        "react": "/assets/icons/react/Communication/MrxCommunicationBellIcon.tsx"
+      },
+      {
+        "name": "Help",
+        "slug": "help",
+        "motif": "spark",
+        "svg": "/assets/icons/communication/svg/help.svg",
+        "optimizedSvg": "/assets/icons/communication/optimized/help.svg",
+        "png": {
+          "64": "/assets/icons/communication/png/64/help.png",
+          "128": "/assets/icons/communication/png/128/help.png",
+          "256": "/assets/icons/communication/png/256/help.png",
+          "512": "/assets/icons/communication/png/512/help.png"
+        },
+        "react": "/assets/icons/react/Communication/MrxCommunicationHelpIcon.tsx"
+      },
+      {
+        "name": "Support",
+        "slug": "support",
+        "motif": "chat",
+        "svg": "/assets/icons/communication/svg/support.svg",
+        "optimizedSvg": "/assets/icons/communication/optimized/support.svg",
+        "png": {
+          "64": "/assets/icons/communication/png/64/support.png",
+          "128": "/assets/icons/communication/png/128/support.png",
+          "256": "/assets/icons/communication/png/256/support.png",
+          "512": "/assets/icons/communication/png/512/support.png"
+        },
+        "react": "/assets/icons/react/Communication/MrxCommunicationSupportIcon.tsx"
+      },
+      {
+        "name": "Customer Service",
+        "slug": "customer-service",
+        "motif": "chat",
+        "svg": "/assets/icons/communication/svg/customer-service.svg",
+        "optimizedSvg": "/assets/icons/communication/optimized/customer-service.svg",
+        "png": {
+          "64": "/assets/icons/communication/png/64/customer-service.png",
+          "128": "/assets/icons/communication/png/128/customer-service.png",
+          "256": "/assets/icons/communication/png/256/customer-service.png",
+          "512": "/assets/icons/communication/png/512/customer-service.png"
+        },
+        "react": "/assets/icons/react/Communication/MrxCommunicationCustomerServiceIcon.tsx"
+      },
+      {
+        "name": "FAQ",
+        "slug": "faq",
+        "motif": "chat",
+        "svg": "/assets/icons/communication/svg/faq.svg",
+        "optimizedSvg": "/assets/icons/communication/optimized/faq.svg",
+        "png": {
+          "64": "/assets/icons/communication/png/64/faq.png",
+          "128": "/assets/icons/communication/png/128/faq.png",
+          "256": "/assets/icons/communication/png/256/faq.png",
+          "512": "/assets/icons/communication/png/512/faq.png"
+        },
+        "react": "/assets/icons/react/Communication/MrxCommunicationFaqIcon.tsx"
+      },
+      {
+        "name": "Question Mark",
+        "slug": "question-mark",
+        "motif": "chat",
+        "svg": "/assets/icons/communication/svg/question-mark.svg",
+        "optimizedSvg": "/assets/icons/communication/optimized/question-mark.svg",
+        "png": {
+          "64": "/assets/icons/communication/png/64/question-mark.png",
+          "128": "/assets/icons/communication/png/128/question-mark.png",
+          "256": "/assets/icons/communication/png/256/question-mark.png",
+          "512": "/assets/icons/communication/png/512/question-mark.png"
+        },
+        "react": "/assets/icons/react/Communication/MrxCommunicationQuestionMarkIcon.tsx"
+      }
+    ],
+    "search": [
+      {
+        "name": "Magnifying Glass",
+        "slug": "magnifying-glass",
+        "motif": "search",
+        "svg": "/assets/icons/search/svg/magnifying-glass.svg",
+        "optimizedSvg": "/assets/icons/search/optimized/magnifying-glass.svg",
+        "png": {
+          "64": "/assets/icons/search/png/64/magnifying-glass.png",
+          "128": "/assets/icons/search/png/128/magnifying-glass.png",
+          "256": "/assets/icons/search/png/256/magnifying-glass.png",
+          "512": "/assets/icons/search/png/512/magnifying-glass.png"
+        },
+        "react": "/assets/icons/react/Search/MrxSearchMagnifyingGlassIcon.tsx"
+      },
+      {
+        "name": "Filter",
+        "slug": "filter",
+        "motif": "search",
+        "svg": "/assets/icons/search/svg/filter.svg",
+        "optimizedSvg": "/assets/icons/search/optimized/filter.svg",
+        "png": {
+          "64": "/assets/icons/search/png/64/filter.png",
+          "128": "/assets/icons/search/png/128/filter.png",
+          "256": "/assets/icons/search/png/256/filter.png",
+          "512": "/assets/icons/search/png/512/filter.png"
+        },
+        "react": "/assets/icons/react/Search/MrxSearchFilterIcon.tsx"
+      },
+      {
+        "name": "Sort",
+        "slug": "sort",
+        "motif": "search",
+        "svg": "/assets/icons/search/svg/sort.svg",
+        "optimizedSvg": "/assets/icons/search/optimized/sort.svg",
+        "png": {
+          "64": "/assets/icons/search/png/64/sort.png",
+          "128": "/assets/icons/search/png/128/sort.png",
+          "256": "/assets/icons/search/png/256/sort.png",
+          "512": "/assets/icons/search/png/512/sort.png"
+        },
+        "react": "/assets/icons/react/Search/MrxSearchSortIcon.tsx"
+      },
+      {
+        "name": "Database",
+        "slug": "database",
+        "motif": "database",
+        "svg": "/assets/icons/search/svg/database.svg",
+        "optimizedSvg": "/assets/icons/search/optimized/database.svg",
+        "png": {
+          "64": "/assets/icons/search/png/64/database.png",
+          "128": "/assets/icons/search/png/128/database.png",
+          "256": "/assets/icons/search/png/256/database.png",
+          "512": "/assets/icons/search/png/512/database.png"
+        },
+        "react": "/assets/icons/react/Search/MrxSearchDatabaseIcon.tsx"
+      },
+      {
+        "name": "Lookup",
+        "slug": "lookup",
+        "motif": "search",
+        "svg": "/assets/icons/search/svg/lookup.svg",
+        "optimizedSvg": "/assets/icons/search/optimized/lookup.svg",
+        "png": {
+          "64": "/assets/icons/search/png/64/lookup.png",
+          "128": "/assets/icons/search/png/128/lookup.png",
+          "256": "/assets/icons/search/png/256/lookup.png",
+          "512": "/assets/icons/search/png/512/lookup.png"
+        },
+        "react": "/assets/icons/react/Search/MrxSearchLookupIcon.tsx"
+      },
+      {
+        "name": "Find Owner",
+        "slug": "find-owner",
+        "motif": "search",
+        "svg": "/assets/icons/search/svg/find-owner.svg",
+        "optimizedSvg": "/assets/icons/search/optimized/find-owner.svg",
+        "png": {
+          "64": "/assets/icons/search/png/64/find-owner.png",
+          "128": "/assets/icons/search/png/128/find-owner.png",
+          "256": "/assets/icons/search/png/256/find-owner.png",
+          "512": "/assets/icons/search/png/512/find-owner.png"
+        },
+        "react": "/assets/icons/react/Search/MrxSearchFindOwnerIcon.tsx"
+      },
+      {
+        "name": "Search Well",
+        "slug": "search-well",
+        "motif": "search",
+        "svg": "/assets/icons/search/svg/search-well.svg",
+        "optimizedSvg": "/assets/icons/search/optimized/search-well.svg",
+        "png": {
+          "64": "/assets/icons/search/png/64/search-well.png",
+          "128": "/assets/icons/search/png/128/search-well.png",
+          "256": "/assets/icons/search/png/256/search-well.png",
+          "512": "/assets/icons/search/png/512/search-well.png"
+        },
+        "react": "/assets/icons/react/Search/MrxSearchSearchWellIcon.tsx"
+      },
+      {
+        "name": "Search County",
+        "slug": "search-county",
+        "motif": "search",
+        "svg": "/assets/icons/search/svg/search-county.svg",
+        "optimizedSvg": "/assets/icons/search/optimized/search-county.svg",
+        "png": {
+          "64": "/assets/icons/search/png/64/search-county.png",
+          "128": "/assets/icons/search/png/128/search-county.png",
+          "256": "/assets/icons/search/png/256/search-county.png",
+          "512": "/assets/icons/search/png/512/search-county.png"
+        },
+        "react": "/assets/icons/react/Search/MrxSearchSearchCountyIcon.tsx"
+      },
+      {
+        "name": "Search Parcel",
+        "slug": "search-parcel",
+        "motif": "search",
+        "svg": "/assets/icons/search/svg/search-parcel.svg",
+        "optimizedSvg": "/assets/icons/search/optimized/search-parcel.svg",
+        "png": {
+          "64": "/assets/icons/search/png/64/search-parcel.png",
+          "128": "/assets/icons/search/png/128/search-parcel.png",
+          "256": "/assets/icons/search/png/256/search-parcel.png",
+          "512": "/assets/icons/search/png/512/search-parcel.png"
+        },
+        "react": "/assets/icons/react/Search/MrxSearchSearchParcelIcon.tsx"
+      },
+      {
+        "name": "Search Documents",
+        "slug": "search-documents",
+        "motif": "search",
+        "svg": "/assets/icons/search/svg/search-documents.svg",
+        "optimizedSvg": "/assets/icons/search/optimized/search-documents.svg",
+        "png": {
+          "64": "/assets/icons/search/png/64/search-documents.png",
+          "128": "/assets/icons/search/png/128/search-documents.png",
+          "256": "/assets/icons/search/png/256/search-documents.png",
+          "512": "/assets/icons/search/png/512/search-documents.png"
+        },
+        "react": "/assets/icons/react/Search/MrxSearchSearchDocumentsIcon.tsx"
+      },
+      {
+        "name": "Results",
+        "slug": "results",
+        "motif": "database",
+        "svg": "/assets/icons/search/svg/results.svg",
+        "optimizedSvg": "/assets/icons/search/optimized/results.svg",
+        "png": {
+          "64": "/assets/icons/search/png/64/results.png",
+          "128": "/assets/icons/search/png/128/results.png",
+          "256": "/assets/icons/search/png/256/results.png",
+          "512": "/assets/icons/search/png/512/results.png"
+        },
+        "react": "/assets/icons/react/Search/MrxSearchResultsIcon.tsx"
+      },
+      {
+        "name": "Verified Results",
+        "slug": "verified-results",
+        "motif": "database",
+        "svg": "/assets/icons/search/svg/verified-results.svg",
+        "optimizedSvg": "/assets/icons/search/optimized/verified-results.svg",
+        "png": {
+          "64": "/assets/icons/search/png/64/verified-results.png",
+          "128": "/assets/icons/search/png/128/verified-results.png",
+          "256": "/assets/icons/search/png/256/verified-results.png",
+          "512": "/assets/icons/search/png/512/verified-results.png"
+        },
+        "react": "/assets/icons/react/Search/MrxSearchVerifiedResultsIcon.tsx"
+      }
+    ],
+    "reports": [
+      {
+        "name": "PDF",
+        "slug": "pdf",
+        "motif": "document",
+        "svg": "/assets/icons/reports/svg/pdf.svg",
+        "optimizedSvg": "/assets/icons/reports/optimized/pdf.svg",
+        "png": {
+          "64": "/assets/icons/reports/png/64/pdf.png",
+          "128": "/assets/icons/reports/png/128/pdf.png",
+          "256": "/assets/icons/reports/png/256/pdf.png",
+          "512": "/assets/icons/reports/png/512/pdf.png"
+        },
+        "react": "/assets/icons/react/Reports/MrxReportsPdfIcon.tsx"
+      },
+      {
+        "name": "Analytics",
+        "slug": "analytics",
+        "motif": "brain",
+        "svg": "/assets/icons/reports/svg/analytics.svg",
+        "optimizedSvg": "/assets/icons/reports/optimized/analytics.svg",
+        "png": {
+          "64": "/assets/icons/reports/png/64/analytics.png",
+          "128": "/assets/icons/reports/png/128/analytics.png",
+          "256": "/assets/icons/reports/png/256/analytics.png",
+          "512": "/assets/icons/reports/png/512/analytics.png"
+        },
+        "react": "/assets/icons/react/Reports/MrxReportsAnalyticsIcon.tsx"
+      },
+      {
+        "name": "Pie Chart",
+        "slug": "pie-chart",
+        "motif": "graph",
+        "svg": "/assets/icons/reports/svg/pie-chart.svg",
+        "optimizedSvg": "/assets/icons/reports/optimized/pie-chart.svg",
+        "png": {
+          "64": "/assets/icons/reports/png/64/pie-chart.png",
+          "128": "/assets/icons/reports/png/128/pie-chart.png",
+          "256": "/assets/icons/reports/png/256/pie-chart.png",
+          "512": "/assets/icons/reports/png/512/pie-chart.png"
+        },
+        "react": "/assets/icons/react/Reports/MrxReportsPieChartIcon.tsx"
+      },
+      {
+        "name": "Line Graph",
+        "slug": "line-graph",
+        "motif": "graph",
+        "svg": "/assets/icons/reports/svg/line-graph.svg",
+        "optimizedSvg": "/assets/icons/reports/optimized/line-graph.svg",
+        "png": {
+          "64": "/assets/icons/reports/png/64/line-graph.png",
+          "128": "/assets/icons/reports/png/128/line-graph.png",
+          "256": "/assets/icons/reports/png/256/line-graph.png",
+          "512": "/assets/icons/reports/png/512/line-graph.png"
+        },
+        "react": "/assets/icons/react/Reports/MrxReportsLineGraphIcon.tsx"
+      },
+      {
+        "name": "Bar Graph",
+        "slug": "bar-graph",
+        "motif": "graph",
+        "svg": "/assets/icons/reports/svg/bar-graph.svg",
+        "optimizedSvg": "/assets/icons/reports/optimized/bar-graph.svg",
+        "png": {
+          "64": "/assets/icons/reports/png/64/bar-graph.png",
+          "128": "/assets/icons/reports/png/128/bar-graph.png",
+          "256": "/assets/icons/reports/png/256/bar-graph.png",
+          "512": "/assets/icons/reports/png/512/bar-graph.png"
+        },
+        "react": "/assets/icons/react/Reports/MrxReportsBarGraphIcon.tsx"
+      },
+      {
+        "name": "Dashboard",
+        "slug": "dashboard",
+        "motif": "graph",
+        "svg": "/assets/icons/reports/svg/dashboard.svg",
+        "optimizedSvg": "/assets/icons/reports/optimized/dashboard.svg",
+        "png": {
+          "64": "/assets/icons/reports/png/64/dashboard.png",
+          "128": "/assets/icons/reports/png/128/dashboard.png",
+          "256": "/assets/icons/reports/png/256/dashboard.png",
+          "512": "/assets/icons/reports/png/512/dashboard.png"
+        },
+        "react": "/assets/icons/react/Reports/MrxReportsDashboardIcon.tsx"
+      },
+      {
+        "name": "Clipboard",
+        "slug": "clipboard",
+        "motif": "clipboard",
+        "svg": "/assets/icons/reports/svg/clipboard.svg",
+        "optimizedSvg": "/assets/icons/reports/optimized/clipboard.svg",
+        "png": {
+          "64": "/assets/icons/reports/png/64/clipboard.png",
+          "128": "/assets/icons/reports/png/128/clipboard.png",
+          "256": "/assets/icons/reports/png/256/clipboard.png",
+          "512": "/assets/icons/reports/png/512/clipboard.png"
+        },
+        "react": "/assets/icons/react/Reports/MrxReportsClipboardIcon.tsx"
+      },
+      {
+        "name": "Report",
+        "slug": "report",
+        "motif": "document",
+        "svg": "/assets/icons/reports/svg/report.svg",
+        "optimizedSvg": "/assets/icons/reports/optimized/report.svg",
+        "png": {
+          "64": "/assets/icons/reports/png/64/report.png",
+          "128": "/assets/icons/reports/png/128/report.png",
+          "256": "/assets/icons/reports/png/256/report.png",
+          "512": "/assets/icons/reports/png/512/report.png"
+        },
+        "react": "/assets/icons/react/Reports/MrxReportsReportIcon.tsx"
+      },
+      {
+        "name": "Summary",
+        "slug": "summary",
+        "motif": "document",
+        "svg": "/assets/icons/reports/svg/summary.svg",
+        "optimizedSvg": "/assets/icons/reports/optimized/summary.svg",
+        "png": {
+          "64": "/assets/icons/reports/png/64/summary.png",
+          "128": "/assets/icons/reports/png/128/summary.png",
+          "256": "/assets/icons/reports/png/256/summary.png",
+          "512": "/assets/icons/reports/png/512/summary.png"
+        },
+        "react": "/assets/icons/react/Reports/MrxReportsSummaryIcon.tsx"
+      },
+      {
+        "name": "Insights",
+        "slug": "insights",
+        "motif": "brain",
+        "svg": "/assets/icons/reports/svg/insights.svg",
+        "optimizedSvg": "/assets/icons/reports/optimized/insights.svg",
+        "png": {
+          "64": "/assets/icons/reports/png/64/insights.png",
+          "128": "/assets/icons/reports/png/128/insights.png",
+          "256": "/assets/icons/reports/png/256/insights.png",
+          "512": "/assets/icons/reports/png/512/insights.png"
+        },
+        "react": "/assets/icons/react/Reports/MrxReportsInsightsIcon.tsx"
+      },
+      {
+        "name": "Export",
+        "slug": "export",
+        "motif": "transfer",
+        "svg": "/assets/icons/reports/svg/export.svg",
+        "optimizedSvg": "/assets/icons/reports/optimized/export.svg",
+        "png": {
+          "64": "/assets/icons/reports/png/64/export.png",
+          "128": "/assets/icons/reports/png/128/export.png",
+          "256": "/assets/icons/reports/png/256/export.png",
+          "512": "/assets/icons/reports/png/512/export.png"
+        },
+        "react": "/assets/icons/react/Reports/MrxReportsExportIcon.tsx"
+      },
+      {
+        "name": "Print",
+        "slug": "print",
+        "motif": "transfer",
+        "svg": "/assets/icons/reports/svg/print.svg",
+        "optimizedSvg": "/assets/icons/reports/optimized/print.svg",
+        "png": {
+          "64": "/assets/icons/reports/png/64/print.png",
+          "128": "/assets/icons/reports/png/128/print.png",
+          "256": "/assets/icons/reports/png/256/print.png",
+          "512": "/assets/icons/reports/png/512/print.png"
+        },
+        "react": "/assets/icons/react/Reports/MrxReportsPrintIcon.tsx"
+      },
+      {
+        "name": "Download",
+        "slug": "download",
+        "motif": "transfer",
+        "svg": "/assets/icons/reports/svg/download.svg",
+        "optimizedSvg": "/assets/icons/reports/optimized/download.svg",
+        "png": {
+          "64": "/assets/icons/reports/png/64/download.png",
+          "128": "/assets/icons/reports/png/128/download.png",
+          "256": "/assets/icons/reports/png/256/download.png",
+          "512": "/assets/icons/reports/png/512/download.png"
+        },
+        "react": "/assets/icons/react/Reports/MrxReportsDownloadIcon.tsx"
+      },
+      {
+        "name": "Upload",
+        "slug": "upload",
+        "motif": "transfer",
+        "svg": "/assets/icons/reports/svg/upload.svg",
+        "optimizedSvg": "/assets/icons/reports/optimized/upload.svg",
+        "png": {
+          "64": "/assets/icons/reports/png/64/upload.png",
+          "128": "/assets/icons/reports/png/128/upload.png",
+          "256": "/assets/icons/reports/png/256/upload.png",
+          "512": "/assets/icons/reports/png/512/upload.png"
+        },
+        "react": "/assets/icons/react/Reports/MrxReportsUploadIcon.tsx"
+      }
+    ],
+    "navigation": [
+      {
+        "name": "Home",
+        "slug": "home",
+        "motif": "navigation",
+        "svg": "/assets/icons/navigation/svg/home.svg",
+        "optimizedSvg": "/assets/icons/navigation/optimized/home.svg",
+        "png": {
+          "64": "/assets/icons/navigation/png/64/home.png",
+          "128": "/assets/icons/navigation/png/128/home.png",
+          "256": "/assets/icons/navigation/png/256/home.png",
+          "512": "/assets/icons/navigation/png/512/home.png"
+        },
+        "react": "/assets/icons/react/Navigation/MrxNavigationHomeIcon.tsx"
+      },
+      {
+        "name": "Dashboard",
+        "slug": "dashboard",
+        "motif": "graph",
+        "svg": "/assets/icons/navigation/svg/dashboard.svg",
+        "optimizedSvg": "/assets/icons/navigation/optimized/dashboard.svg",
+        "png": {
+          "64": "/assets/icons/navigation/png/64/dashboard.png",
+          "128": "/assets/icons/navigation/png/128/dashboard.png",
+          "256": "/assets/icons/navigation/png/256/dashboard.png",
+          "512": "/assets/icons/navigation/png/512/dashboard.png"
+        },
+        "react": "/assets/icons/react/Navigation/MrxNavigationDashboardIcon.tsx"
+      },
+      {
+        "name": "Search",
+        "slug": "search",
+        "motif": "search",
+        "svg": "/assets/icons/navigation/svg/search.svg",
+        "optimizedSvg": "/assets/icons/navigation/optimized/search.svg",
+        "png": {
+          "64": "/assets/icons/navigation/png/64/search.png",
+          "128": "/assets/icons/navigation/png/128/search.png",
+          "256": "/assets/icons/navigation/png/256/search.png",
+          "512": "/assets/icons/navigation/png/512/search.png"
+        },
+        "react": "/assets/icons/react/Navigation/MrxNavigationSearchIcon.tsx"
+      },
+      {
+        "name": "Pricing",
+        "slug": "pricing",
+        "motif": "navigation",
+        "svg": "/assets/icons/navigation/svg/pricing.svg",
+        "optimizedSvg": "/assets/icons/navigation/optimized/pricing.svg",
+        "png": {
+          "64": "/assets/icons/navigation/png/64/pricing.png",
+          "128": "/assets/icons/navigation/png/128/pricing.png",
+          "256": "/assets/icons/navigation/png/256/pricing.png",
+          "512": "/assets/icons/navigation/png/512/pricing.png"
+        },
+        "react": "/assets/icons/react/Navigation/MrxNavigationPricingIcon.tsx"
+      },
+      {
+        "name": "About",
+        "slug": "about",
+        "motif": "navigation",
+        "svg": "/assets/icons/navigation/svg/about.svg",
+        "optimizedSvg": "/assets/icons/navigation/optimized/about.svg",
+        "png": {
+          "64": "/assets/icons/navigation/png/64/about.png",
+          "128": "/assets/icons/navigation/png/128/about.png",
+          "256": "/assets/icons/navigation/png/256/about.png",
+          "512": "/assets/icons/navigation/png/512/about.png"
+        },
+        "react": "/assets/icons/react/Navigation/MrxNavigationAboutIcon.tsx"
+      },
+      {
+        "name": "Contact",
+        "slug": "contact",
+        "motif": "navigation",
+        "svg": "/assets/icons/navigation/svg/contact.svg",
+        "optimizedSvg": "/assets/icons/navigation/optimized/contact.svg",
+        "png": {
+          "64": "/assets/icons/navigation/png/64/contact.png",
+          "128": "/assets/icons/navigation/png/128/contact.png",
+          "256": "/assets/icons/navigation/png/256/contact.png",
+          "512": "/assets/icons/navigation/png/512/contact.png"
+        },
+        "react": "/assets/icons/react/Navigation/MrxNavigationContactIcon.tsx"
+      },
+      {
+        "name": "Resources",
+        "slug": "resources",
+        "motif": "navigation",
+        "svg": "/assets/icons/navigation/svg/resources.svg",
+        "optimizedSvg": "/assets/icons/navigation/optimized/resources.svg",
+        "png": {
+          "64": "/assets/icons/navigation/png/64/resources.png",
+          "128": "/assets/icons/navigation/png/128/resources.png",
+          "256": "/assets/icons/navigation/png/256/resources.png",
+          "512": "/assets/icons/navigation/png/512/resources.png"
+        },
+        "react": "/assets/icons/react/Navigation/MrxNavigationResourcesIcon.tsx"
+      },
+      {
+        "name": "Articles",
+        "slug": "articles",
+        "motif": "document",
+        "svg": "/assets/icons/navigation/svg/articles.svg",
+        "optimizedSvg": "/assets/icons/navigation/optimized/articles.svg",
+        "png": {
+          "64": "/assets/icons/navigation/png/64/articles.png",
+          "128": "/assets/icons/navigation/png/128/articles.png",
+          "256": "/assets/icons/navigation/png/256/articles.png",
+          "512": "/assets/icons/navigation/png/512/articles.png"
+        },
+        "react": "/assets/icons/react/Navigation/MrxNavigationArticlesIcon.tsx"
+      },
+      {
+        "name": "Education",
+        "slug": "education",
+        "motif": "navigation",
+        "svg": "/assets/icons/navigation/svg/education.svg",
+        "optimizedSvg": "/assets/icons/navigation/optimized/education.svg",
+        "png": {
+          "64": "/assets/icons/navigation/png/64/education.png",
+          "128": "/assets/icons/navigation/png/128/education.png",
+          "256": "/assets/icons/navigation/png/256/education.png",
+          "512": "/assets/icons/navigation/png/512/education.png"
+        },
+        "react": "/assets/icons/react/Navigation/MrxNavigationEducationIcon.tsx"
+      },
+      {
+        "name": "FAQ",
+        "slug": "faq",
+        "motif": "chat",
+        "svg": "/assets/icons/navigation/svg/faq.svg",
+        "optimizedSvg": "/assets/icons/navigation/optimized/faq.svg",
+        "png": {
+          "64": "/assets/icons/navigation/png/64/faq.png",
+          "128": "/assets/icons/navigation/png/128/faq.png",
+          "256": "/assets/icons/navigation/png/256/faq.png",
+          "512": "/assets/icons/navigation/png/512/faq.png"
+        },
+        "react": "/assets/icons/react/Navigation/MrxNavigationFaqIcon.tsx"
+      },
+      {
+        "name": "Settings",
+        "slug": "settings",
+        "motif": "navigation",
+        "svg": "/assets/icons/navigation/svg/settings.svg",
+        "optimizedSvg": "/assets/icons/navigation/optimized/settings.svg",
+        "png": {
+          "64": "/assets/icons/navigation/png/64/settings.png",
+          "128": "/assets/icons/navigation/png/128/settings.png",
+          "256": "/assets/icons/navigation/png/256/settings.png",
+          "512": "/assets/icons/navigation/png/512/settings.png"
+        },
+        "react": "/assets/icons/react/Navigation/MrxNavigationSettingsIcon.tsx"
+      },
+      {
+        "name": "Notifications",
+        "slug": "notifications",
+        "motif": "bell",
+        "svg": "/assets/icons/navigation/svg/notifications.svg",
+        "optimizedSvg": "/assets/icons/navigation/optimized/notifications.svg",
+        "png": {
+          "64": "/assets/icons/navigation/png/64/notifications.png",
+          "128": "/assets/icons/navigation/png/128/notifications.png",
+          "256": "/assets/icons/navigation/png/256/notifications.png",
+          "512": "/assets/icons/navigation/png/512/notifications.png"
+        },
+        "react": "/assets/icons/react/Navigation/MrxNavigationNotificationsIcon.tsx"
+      },
+      {
+        "name": "Profile",
+        "slug": "profile",
+        "motif": "person",
+        "svg": "/assets/icons/navigation/svg/profile.svg",
+        "optimizedSvg": "/assets/icons/navigation/optimized/profile.svg",
+        "png": {
+          "64": "/assets/icons/navigation/png/64/profile.png",
+          "128": "/assets/icons/navigation/png/128/profile.png",
+          "256": "/assets/icons/navigation/png/256/profile.png",
+          "512": "/assets/icons/navigation/png/512/profile.png"
+        },
+        "react": "/assets/icons/react/Navigation/MrxNavigationProfileIcon.tsx"
+      },
+      {
+        "name": "Account",
+        "slug": "account",
+        "motif": "navigation",
+        "svg": "/assets/icons/navigation/svg/account.svg",
+        "optimizedSvg": "/assets/icons/navigation/optimized/account.svg",
+        "png": {
+          "64": "/assets/icons/navigation/png/64/account.png",
+          "128": "/assets/icons/navigation/png/128/account.png",
+          "256": "/assets/icons/navigation/png/256/account.png",
+          "512": "/assets/icons/navigation/png/512/account.png"
+        },
+        "react": "/assets/icons/react/Navigation/MrxNavigationAccountIcon.tsx"
+      },
+      {
+        "name": "Login",
+        "slug": "login",
+        "motif": "navigation",
+        "svg": "/assets/icons/navigation/svg/login.svg",
+        "optimizedSvg": "/assets/icons/navigation/optimized/login.svg",
+        "png": {
+          "64": "/assets/icons/navigation/png/64/login.png",
+          "128": "/assets/icons/navigation/png/128/login.png",
+          "256": "/assets/icons/navigation/png/256/login.png",
+          "512": "/assets/icons/navigation/png/512/login.png"
+        },
+        "react": "/assets/icons/react/Navigation/MrxNavigationLoginIcon.tsx"
+      },
+      {
+        "name": "Logout",
+        "slug": "logout",
+        "motif": "navigation",
+        "svg": "/assets/icons/navigation/svg/logout.svg",
+        "optimizedSvg": "/assets/icons/navigation/optimized/logout.svg",
+        "png": {
+          "64": "/assets/icons/navigation/png/64/logout.png",
+          "128": "/assets/icons/navigation/png/128/logout.png",
+          "256": "/assets/icons/navigation/png/256/logout.png",
+          "512": "/assets/icons/navigation/png/512/logout.png"
+        },
+        "react": "/assets/icons/react/Navigation/MrxNavigationLogoutIcon.tsx"
+      }
+    ],
+    "users": [
+      {
+        "name": "Person",
+        "slug": "person",
+        "motif": "person",
+        "svg": "/assets/icons/users/svg/person.svg",
+        "optimizedSvg": "/assets/icons/users/optimized/person.svg",
+        "png": {
+          "64": "/assets/icons/users/png/64/person.png",
+          "128": "/assets/icons/users/png/128/person.png",
+          "256": "/assets/icons/users/png/256/person.png",
+          "512": "/assets/icons/users/png/512/person.png"
+        },
+        "react": "/assets/icons/react/Users/MrxUsersPersonIcon.tsx"
+      },
+      {
+        "name": "Multiple Users",
+        "slug": "multiple-users",
+        "motif": "person",
+        "svg": "/assets/icons/users/svg/multiple-users.svg",
+        "optimizedSvg": "/assets/icons/users/optimized/multiple-users.svg",
+        "png": {
+          "64": "/assets/icons/users/png/64/multiple-users.png",
+          "128": "/assets/icons/users/png/128/multiple-users.png",
+          "256": "/assets/icons/users/png/256/multiple-users.png",
+          "512": "/assets/icons/users/png/512/multiple-users.png"
+        },
+        "react": "/assets/icons/react/Users/MrxUsersMultipleUsersIcon.tsx"
+      },
+      {
+        "name": "Team",
+        "slug": "team",
+        "motif": "team",
+        "svg": "/assets/icons/users/svg/team.svg",
+        "optimizedSvg": "/assets/icons/users/optimized/team.svg",
+        "png": {
+          "64": "/assets/icons/users/png/64/team.png",
+          "128": "/assets/icons/users/png/128/team.png",
+          "256": "/assets/icons/users/png/256/team.png",
+          "512": "/assets/icons/users/png/512/team.png"
+        },
+        "react": "/assets/icons/react/Users/MrxUsersTeamIcon.tsx"
+      },
+      {
+        "name": "Admin",
+        "slug": "admin",
+        "motif": "person",
+        "svg": "/assets/icons/users/svg/admin.svg",
+        "optimizedSvg": "/assets/icons/users/optimized/admin.svg",
+        "png": {
+          "64": "/assets/icons/users/png/64/admin.png",
+          "128": "/assets/icons/users/png/128/admin.png",
+          "256": "/assets/icons/users/png/256/admin.png",
+          "512": "/assets/icons/users/png/512/admin.png"
+        },
+        "react": "/assets/icons/react/Users/MrxUsersAdminIcon.tsx"
+      },
+      {
+        "name": "User Settings",
+        "slug": "user-settings",
+        "motif": "person",
+        "svg": "/assets/icons/users/svg/user-settings.svg",
+        "optimizedSvg": "/assets/icons/users/optimized/user-settings.svg",
+        "png": {
+          "64": "/assets/icons/users/png/64/user-settings.png",
+          "128": "/assets/icons/users/png/128/user-settings.png",
+          "256": "/assets/icons/users/png/256/user-settings.png",
+          "512": "/assets/icons/users/png/512/user-settings.png"
+        },
+        "react": "/assets/icons/react/Users/MrxUsersUserSettingsIcon.tsx"
+      },
+      {
+        "name": "Password",
+        "slug": "password",
+        "motif": "spark",
+        "svg": "/assets/icons/users/svg/password.svg",
+        "optimizedSvg": "/assets/icons/users/optimized/password.svg",
+        "png": {
+          "64": "/assets/icons/users/png/64/password.png",
+          "128": "/assets/icons/users/png/128/password.png",
+          "256": "/assets/icons/users/png/256/password.png",
+          "512": "/assets/icons/users/png/512/password.png"
+        },
+        "react": "/assets/icons/react/Users/MrxUsersPasswordIcon.tsx"
+      },
+      {
+        "name": "Security",
+        "slug": "security",
+        "motif": "shield",
+        "svg": "/assets/icons/users/svg/security.svg",
+        "optimizedSvg": "/assets/icons/users/optimized/security.svg",
+        "png": {
+          "64": "/assets/icons/users/png/64/security.png",
+          "128": "/assets/icons/users/png/128/security.png",
+          "256": "/assets/icons/users/png/256/security.png",
+          "512": "/assets/icons/users/png/512/security.png"
+        },
+        "react": "/assets/icons/react/Users/MrxUsersSecurityIcon.tsx"
+      },
+      {
+        "name": "Profile",
+        "slug": "profile",
+        "motif": "person",
+        "svg": "/assets/icons/users/svg/profile.svg",
+        "optimizedSvg": "/assets/icons/users/optimized/profile.svg",
+        "png": {
+          "64": "/assets/icons/users/png/64/profile.png",
+          "128": "/assets/icons/users/png/128/profile.png",
+          "256": "/assets/icons/users/png/256/profile.png",
+          "512": "/assets/icons/users/png/512/profile.png"
+        },
+        "react": "/assets/icons/react/Users/MrxUsersProfileIcon.tsx"
+      },
+      {
+        "name": "Avatar",
+        "slug": "avatar",
+        "motif": "person",
+        "svg": "/assets/icons/users/svg/avatar.svg",
+        "optimizedSvg": "/assets/icons/users/optimized/avatar.svg",
+        "png": {
+          "64": "/assets/icons/users/png/64/avatar.png",
+          "128": "/assets/icons/users/png/128/avatar.png",
+          "256": "/assets/icons/users/png/256/avatar.png",
+          "512": "/assets/icons/users/png/512/avatar.png"
+        },
+        "react": "/assets/icons/react/Users/MrxUsersAvatarIcon.tsx"
+      },
+      {
+        "name": "Membership",
+        "slug": "membership",
+        "motif": "person",
+        "svg": "/assets/icons/users/svg/membership.svg",
+        "optimizedSvg": "/assets/icons/users/optimized/membership.svg",
+        "png": {
+          "64": "/assets/icons/users/png/64/membership.png",
+          "128": "/assets/icons/users/png/128/membership.png",
+          "256": "/assets/icons/users/png/256/membership.png",
+          "512": "/assets/icons/users/png/512/membership.png"
+        },
+        "react": "/assets/icons/react/Users/MrxUsersMembershipIcon.tsx"
+      },
+      {
+        "name": "Subscription",
+        "slug": "subscription",
+        "motif": "spark",
+        "svg": "/assets/icons/users/svg/subscription.svg",
+        "optimizedSvg": "/assets/icons/users/optimized/subscription.svg",
+        "png": {
+          "64": "/assets/icons/users/png/64/subscription.png",
+          "128": "/assets/icons/users/png/128/subscription.png",
+          "256": "/assets/icons/users/png/256/subscription.png",
+          "512": "/assets/icons/users/png/512/subscription.png"
+        },
+        "react": "/assets/icons/react/Users/MrxUsersSubscriptionIcon.tsx"
+      },
+      {
+        "name": "Billing",
+        "slug": "billing",
+        "motif": "money",
+        "svg": "/assets/icons/users/svg/billing.svg",
+        "optimizedSvg": "/assets/icons/users/optimized/billing.svg",
+        "png": {
+          "64": "/assets/icons/users/png/64/billing.png",
+          "128": "/assets/icons/users/png/128/billing.png",
+          "256": "/assets/icons/users/png/256/billing.png",
+          "512": "/assets/icons/users/png/512/billing.png"
+        },
+        "react": "/assets/icons/react/Users/MrxUsersBillingIcon.tsx"
+      },
+      {
+        "name": "Credit Card",
+        "slug": "credit-card",
+        "motif": "money",
+        "svg": "/assets/icons/users/svg/credit-card.svg",
+        "optimizedSvg": "/assets/icons/users/optimized/credit-card.svg",
+        "png": {
+          "64": "/assets/icons/users/png/64/credit-card.png",
+          "128": "/assets/icons/users/png/128/credit-card.png",
+          "256": "/assets/icons/users/png/256/credit-card.png",
+          "512": "/assets/icons/users/png/512/credit-card.png"
+        },
+        "react": "/assets/icons/react/Users/MrxUsersCreditCardIcon.tsx"
+      },
+      {
+        "name": "Invoice",
+        "slug": "invoice",
+        "motif": "voice",
+        "svg": "/assets/icons/users/svg/invoice.svg",
+        "optimizedSvg": "/assets/icons/users/optimized/invoice.svg",
+        "png": {
+          "64": "/assets/icons/users/png/64/invoice.png",
+          "128": "/assets/icons/users/png/128/invoice.png",
+          "256": "/assets/icons/users/png/256/invoice.png",
+          "512": "/assets/icons/users/png/512/invoice.png"
+        },
+        "react": "/assets/icons/react/Users/MrxUsersInvoiceIcon.tsx"
+      },
+      {
+        "name": "Receipt",
+        "slug": "receipt",
+        "motif": "money",
+        "svg": "/assets/icons/users/svg/receipt.svg",
+        "optimizedSvg": "/assets/icons/users/optimized/receipt.svg",
+        "png": {
+          "64": "/assets/icons/users/png/64/receipt.png",
+          "128": "/assets/icons/users/png/128/receipt.png",
+          "256": "/assets/icons/users/png/256/receipt.png",
+          "512": "/assets/icons/users/png/512/receipt.png"
+        },
+        "react": "/assets/icons/react/Users/MrxUsersReceiptIcon.tsx"
+      }
+    ],
+    "transactions": [
+      {
+        "name": "Offer",
+        "slug": "offer",
+        "motif": "money",
+        "svg": "/assets/icons/transactions/svg/offer.svg",
+        "optimizedSvg": "/assets/icons/transactions/optimized/offer.svg",
+        "png": {
+          "64": "/assets/icons/transactions/png/64/offer.png",
+          "128": "/assets/icons/transactions/png/128/offer.png",
+          "256": "/assets/icons/transactions/png/256/offer.png",
+          "512": "/assets/icons/transactions/png/512/offer.png"
+        },
+        "react": "/assets/icons/react/Transactions/MrxTransactionsOfferIcon.tsx"
+      },
+      {
+        "name": "Sell",
+        "slug": "sell",
+        "motif": "handshake",
+        "svg": "/assets/icons/transactions/svg/sell.svg",
+        "optimizedSvg": "/assets/icons/transactions/optimized/sell.svg",
+        "png": {
+          "64": "/assets/icons/transactions/png/64/sell.png",
+          "128": "/assets/icons/transactions/png/128/sell.png",
+          "256": "/assets/icons/transactions/png/256/sell.png",
+          "512": "/assets/icons/transactions/png/512/sell.png"
+        },
+        "react": "/assets/icons/react/Transactions/MrxTransactionsSellIcon.tsx"
+      },
+      {
+        "name": "Buy",
+        "slug": "buy",
+        "motif": "handshake",
+        "svg": "/assets/icons/transactions/svg/buy.svg",
+        "optimizedSvg": "/assets/icons/transactions/optimized/buy.svg",
+        "png": {
+          "64": "/assets/icons/transactions/png/64/buy.png",
+          "128": "/assets/icons/transactions/png/128/buy.png",
+          "256": "/assets/icons/transactions/png/256/buy.png",
+          "512": "/assets/icons/transactions/png/512/buy.png"
+        },
+        "react": "/assets/icons/react/Transactions/MrxTransactionsBuyIcon.tsx"
+      },
+      {
+        "name": "Cash",
+        "slug": "cash",
+        "motif": "money",
+        "svg": "/assets/icons/transactions/svg/cash.svg",
+        "optimizedSvg": "/assets/icons/transactions/optimized/cash.svg",
+        "png": {
+          "64": "/assets/icons/transactions/png/64/cash.png",
+          "128": "/assets/icons/transactions/png/128/cash.png",
+          "256": "/assets/icons/transactions/png/256/cash.png",
+          "512": "/assets/icons/transactions/png/512/cash.png"
+        },
+        "react": "/assets/icons/react/Transactions/MrxTransactionsCashIcon.tsx"
+      },
+      {
+        "name": "Wire Transfer",
+        "slug": "wire-transfer",
+        "motif": "money",
+        "svg": "/assets/icons/transactions/svg/wire-transfer.svg",
+        "optimizedSvg": "/assets/icons/transactions/optimized/wire-transfer.svg",
+        "png": {
+          "64": "/assets/icons/transactions/png/64/wire-transfer.png",
+          "128": "/assets/icons/transactions/png/128/wire-transfer.png",
+          "256": "/assets/icons/transactions/png/256/wire-transfer.png",
+          "512": "/assets/icons/transactions/png/512/wire-transfer.png"
+        },
+        "react": "/assets/icons/react/Transactions/MrxTransactionsWireTransferIcon.tsx"
+      },
+      {
+        "name": "Bank",
+        "slug": "bank",
+        "motif": "money",
+        "svg": "/assets/icons/transactions/svg/bank.svg",
+        "optimizedSvg": "/assets/icons/transactions/optimized/bank.svg",
+        "png": {
+          "64": "/assets/icons/transactions/png/64/bank.png",
+          "128": "/assets/icons/transactions/png/128/bank.png",
+          "256": "/assets/icons/transactions/png/256/bank.png",
+          "512": "/assets/icons/transactions/png/512/bank.png"
+        },
+        "react": "/assets/icons/react/Transactions/MrxTransactionsBankIcon.tsx"
+      },
+      {
+        "name": "Wallet",
+        "slug": "wallet",
+        "motif": "money",
+        "svg": "/assets/icons/transactions/svg/wallet.svg",
+        "optimizedSvg": "/assets/icons/transactions/optimized/wallet.svg",
+        "png": {
+          "64": "/assets/icons/transactions/png/64/wallet.png",
+          "128": "/assets/icons/transactions/png/128/wallet.png",
+          "256": "/assets/icons/transactions/png/256/wallet.png",
+          "512": "/assets/icons/transactions/png/512/wallet.png"
+        },
+        "react": "/assets/icons/react/Transactions/MrxTransactionsWalletIcon.tsx"
+      },
+      {
+        "name": "Payment",
+        "slug": "payment",
+        "motif": "money",
+        "svg": "/assets/icons/transactions/svg/payment.svg",
+        "optimizedSvg": "/assets/icons/transactions/optimized/payment.svg",
+        "png": {
+          "64": "/assets/icons/transactions/png/64/payment.png",
+          "128": "/assets/icons/transactions/png/128/payment.png",
+          "256": "/assets/icons/transactions/png/256/payment.png",
+          "512": "/assets/icons/transactions/png/512/payment.png"
+        },
+        "react": "/assets/icons/react/Transactions/MrxTransactionsPaymentIcon.tsx"
+      },
+      {
+        "name": "Escrow",
+        "slug": "escrow",
+        "motif": "money",
+        "svg": "/assets/icons/transactions/svg/escrow.svg",
+        "optimizedSvg": "/assets/icons/transactions/optimized/escrow.svg",
+        "png": {
+          "64": "/assets/icons/transactions/png/64/escrow.png",
+          "128": "/assets/icons/transactions/png/128/escrow.png",
+          "256": "/assets/icons/transactions/png/256/escrow.png",
+          "512": "/assets/icons/transactions/png/512/escrow.png"
+        },
+        "react": "/assets/icons/react/Transactions/MrxTransactionsEscrowIcon.tsx"
+      },
+      {
+        "name": "Closing",
+        "slug": "closing",
+        "motif": "handshake",
+        "svg": "/assets/icons/transactions/svg/closing.svg",
+        "optimizedSvg": "/assets/icons/transactions/optimized/closing.svg",
+        "png": {
+          "64": "/assets/icons/transactions/png/64/closing.png",
+          "128": "/assets/icons/transactions/png/128/closing.png",
+          "256": "/assets/icons/transactions/png/256/closing.png",
+          "512": "/assets/icons/transactions/png/512/closing.png"
+        },
+        "react": "/assets/icons/react/Transactions/MrxTransactionsClosingIcon.tsx"
+      },
+      {
+        "name": "Contract Signed",
+        "slug": "contract-signed",
+        "motif": "document",
+        "svg": "/assets/icons/transactions/svg/contract-signed.svg",
+        "optimizedSvg": "/assets/icons/transactions/optimized/contract-signed.svg",
+        "png": {
+          "64": "/assets/icons/transactions/png/64/contract-signed.png",
+          "128": "/assets/icons/transactions/png/128/contract-signed.png",
+          "256": "/assets/icons/transactions/png/256/contract-signed.png",
+          "512": "/assets/icons/transactions/png/512/contract-signed.png"
+        },
+        "react": "/assets/icons/react/Transactions/MrxTransactionsContractSignedIcon.tsx"
+      },
+      {
+        "name": "Completed",
+        "slug": "completed",
+        "motif": "status",
+        "svg": "/assets/icons/transactions/svg/completed.svg",
+        "optimizedSvg": "/assets/icons/transactions/optimized/completed.svg",
+        "png": {
+          "64": "/assets/icons/transactions/png/64/completed.png",
+          "128": "/assets/icons/transactions/png/128/completed.png",
+          "256": "/assets/icons/transactions/png/256/completed.png",
+          "512": "/assets/icons/transactions/png/512/completed.png"
+        },
+        "react": "/assets/icons/react/Transactions/MrxTransactionsCompletedIcon.tsx"
+      },
+      {
+        "name": "Pending",
+        "slug": "pending",
+        "motif": "pen",
+        "svg": "/assets/icons/transactions/svg/pending.svg",
+        "optimizedSvg": "/assets/icons/transactions/optimized/pending.svg",
+        "png": {
+          "64": "/assets/icons/transactions/png/64/pending.png",
+          "128": "/assets/icons/transactions/png/128/pending.png",
+          "256": "/assets/icons/transactions/png/256/pending.png",
+          "512": "/assets/icons/transactions/png/512/pending.png"
+        },
+        "react": "/assets/icons/react/Transactions/MrxTransactionsPendingIcon.tsx"
+      },
+      {
+        "name": "Rejected",
+        "slug": "rejected",
+        "motif": "legal",
+        "svg": "/assets/icons/transactions/svg/rejected.svg",
+        "optimizedSvg": "/assets/icons/transactions/optimized/rejected.svg",
+        "png": {
+          "64": "/assets/icons/transactions/png/64/rejected.png",
+          "128": "/assets/icons/transactions/png/128/rejected.png",
+          "256": "/assets/icons/transactions/png/256/rejected.png",
+          "512": "/assets/icons/transactions/png/512/rejected.png"
+        },
+        "react": "/assets/icons/react/Transactions/MrxTransactionsRejectedIcon.tsx"
+      },
+      {
+        "name": "Approved",
+        "slug": "approved",
+        "motif": "legal",
+        "svg": "/assets/icons/transactions/svg/approved.svg",
+        "optimizedSvg": "/assets/icons/transactions/optimized/approved.svg",
+        "png": {
+          "64": "/assets/icons/transactions/png/64/approved.png",
+          "128": "/assets/icons/transactions/png/128/approved.png",
+          "256": "/assets/icons/transactions/png/256/approved.png",
+          "512": "/assets/icons/transactions/png/512/approved.png"
+        },
+        "react": "/assets/icons/react/Transactions/MrxTransactionsApprovedIcon.tsx"
+      }
+    ],
+    "trust": [
+      {
+        "name": "Five Stars",
+        "slug": "five-stars",
+        "motif": "trust",
+        "svg": "/assets/icons/trust/svg/five-stars.svg",
+        "optimizedSvg": "/assets/icons/trust/optimized/five-stars.svg",
+        "png": {
+          "64": "/assets/icons/trust/png/64/five-stars.png",
+          "128": "/assets/icons/trust/png/128/five-stars.png",
+          "256": "/assets/icons/trust/png/256/five-stars.png",
+          "512": "/assets/icons/trust/png/512/five-stars.png"
+        },
+        "react": "/assets/icons/react/Trust/MrxTrustFiveStarsIcon.tsx"
+      },
+      {
+        "name": "Shield Check",
+        "slug": "shield-check",
+        "motif": "shield",
+        "svg": "/assets/icons/trust/svg/shield-check.svg",
+        "optimizedSvg": "/assets/icons/trust/optimized/shield-check.svg",
+        "png": {
+          "64": "/assets/icons/trust/png/64/shield-check.png",
+          "128": "/assets/icons/trust/png/128/shield-check.png",
+          "256": "/assets/icons/trust/png/256/shield-check.png",
+          "512": "/assets/icons/trust/png/512/shield-check.png"
+        },
+        "react": "/assets/icons/react/Trust/MrxTrustShieldCheckIcon.tsx"
+      },
+      {
+        "name": "Verified",
+        "slug": "verified",
+        "motif": "spark",
+        "svg": "/assets/icons/trust/svg/verified.svg",
+        "optimizedSvg": "/assets/icons/trust/optimized/verified.svg",
+        "png": {
+          "64": "/assets/icons/trust/png/64/verified.png",
+          "128": "/assets/icons/trust/png/128/verified.png",
+          "256": "/assets/icons/trust/png/256/verified.png",
+          "512": "/assets/icons/trust/png/512/verified.png"
+        },
+        "react": "/assets/icons/react/Trust/MrxTrustVerifiedIcon.tsx"
+      },
+      {
+        "name": "Secure",
+        "slug": "secure",
+        "motif": "shield",
+        "svg": "/assets/icons/trust/svg/secure.svg",
+        "optimizedSvg": "/assets/icons/trust/optimized/secure.svg",
+        "png": {
+          "64": "/assets/icons/trust/png/64/secure.png",
+          "128": "/assets/icons/trust/png/128/secure.png",
+          "256": "/assets/icons/trust/png/256/secure.png",
+          "512": "/assets/icons/trust/png/512/secure.png"
+        },
+        "react": "/assets/icons/react/Trust/MrxTrustSecureIcon.tsx"
+      },
+      {
+        "name": "SSL",
+        "slug": "ssl",
+        "motif": "shield",
+        "svg": "/assets/icons/trust/svg/ssl.svg",
+        "optimizedSvg": "/assets/icons/trust/optimized/ssl.svg",
+        "png": {
+          "64": "/assets/icons/trust/png/64/ssl.png",
+          "128": "/assets/icons/trust/png/128/ssl.png",
+          "256": "/assets/icons/trust/png/256/ssl.png",
+          "512": "/assets/icons/trust/png/512/ssl.png"
+        },
+        "react": "/assets/icons/react/Trust/MrxTrustSslIcon.tsx"
+      },
+      {
+        "name": "Privacy",
+        "slug": "privacy",
+        "motif": "shield",
+        "svg": "/assets/icons/trust/svg/privacy.svg",
+        "optimizedSvg": "/assets/icons/trust/optimized/privacy.svg",
+        "png": {
+          "64": "/assets/icons/trust/png/64/privacy.png",
+          "128": "/assets/icons/trust/png/128/privacy.png",
+          "256": "/assets/icons/trust/png/256/privacy.png",
+          "512": "/assets/icons/trust/png/512/privacy.png"
+        },
+        "react": "/assets/icons/react/Trust/MrxTrustPrivacyIcon.tsx"
+      },
+      {
+        "name": "Insurance",
+        "slug": "insurance",
+        "motif": "shield",
+        "svg": "/assets/icons/trust/svg/insurance.svg",
+        "optimizedSvg": "/assets/icons/trust/optimized/insurance.svg",
+        "png": {
+          "64": "/assets/icons/trust/png/64/insurance.png",
+          "128": "/assets/icons/trust/png/128/insurance.png",
+          "256": "/assets/icons/trust/png/256/insurance.png",
+          "512": "/assets/icons/trust/png/512/insurance.png"
+        },
+        "react": "/assets/icons/react/Trust/MrxTrustInsuranceIcon.tsx"
+      },
+      {
+        "name": "Trusted",
+        "slug": "trusted",
+        "motif": "shield",
+        "svg": "/assets/icons/trust/svg/trusted.svg",
+        "optimizedSvg": "/assets/icons/trust/optimized/trusted.svg",
+        "png": {
+          "64": "/assets/icons/trust/png/64/trusted.png",
+          "128": "/assets/icons/trust/png/128/trusted.png",
+          "256": "/assets/icons/trust/png/256/trusted.png",
+          "512": "/assets/icons/trust/png/512/trusted.png"
+        },
+        "react": "/assets/icons/react/Trust/MrxTrustTrustedIcon.tsx"
+      },
+      {
+        "name": "Family Owned",
+        "slug": "family-owned",
+        "motif": "team",
+        "svg": "/assets/icons/trust/svg/family-owned.svg",
+        "optimizedSvg": "/assets/icons/trust/optimized/family-owned.svg",
+        "png": {
+          "64": "/assets/icons/trust/png/64/family-owned.png",
+          "128": "/assets/icons/trust/png/128/family-owned.png",
+          "256": "/assets/icons/trust/png/256/family-owned.png",
+          "512": "/assets/icons/trust/png/512/family-owned.png"
+        },
+        "react": "/assets/icons/react/Trust/MrxTrustFamilyOwnedIcon.tsx"
+      },
+      {
+        "name": "Veteran Owned",
+        "slug": "veteran-owned",
+        "motif": "trust",
+        "svg": "/assets/icons/trust/svg/veteran-owned.svg",
+        "optimizedSvg": "/assets/icons/trust/optimized/veteran-owned.svg",
+        "png": {
+          "64": "/assets/icons/trust/png/64/veteran-owned.png",
+          "128": "/assets/icons/trust/png/128/veteran-owned.png",
+          "256": "/assets/icons/trust/png/256/veteran-owned.png",
+          "512": "/assets/icons/trust/png/512/veteran-owned.png"
+        },
+        "react": "/assets/icons/react/Trust/MrxTrustVeteranOwnedIcon.tsx"
+      },
+      {
+        "name": "Texas",
+        "slug": "texas",
+        "motif": "map",
+        "svg": "/assets/icons/trust/svg/texas.svg",
+        "optimizedSvg": "/assets/icons/trust/optimized/texas.svg",
+        "png": {
+          "64": "/assets/icons/trust/png/64/texas.png",
+          "128": "/assets/icons/trust/png/128/texas.png",
+          "256": "/assets/icons/trust/png/256/texas.png",
+          "512": "/assets/icons/trust/png/512/texas.png"
+        },
+        "react": "/assets/icons/react/Trust/MrxTrustTexasIcon.tsx"
+      },
+      {
+        "name": "American Flag",
+        "slug": "american-flag",
+        "motif": "trust",
+        "svg": "/assets/icons/trust/svg/american-flag.svg",
+        "optimizedSvg": "/assets/icons/trust/optimized/american-flag.svg",
+        "png": {
+          "64": "/assets/icons/trust/png/64/american-flag.png",
+          "128": "/assets/icons/trust/png/128/american-flag.png",
+          "256": "/assets/icons/trust/png/256/american-flag.png",
+          "512": "/assets/icons/trust/png/512/american-flag.png"
+        },
+        "react": "/assets/icons/react/Trust/MrxTrustAmericanFlagIcon.tsx"
+      },
+      {
+        "name": "Award",
+        "slug": "award",
+        "motif": "trust",
+        "svg": "/assets/icons/trust/svg/award.svg",
+        "optimizedSvg": "/assets/icons/trust/optimized/award.svg",
+        "png": {
+          "64": "/assets/icons/trust/png/64/award.png",
+          "128": "/assets/icons/trust/png/128/award.png",
+          "256": "/assets/icons/trust/png/256/award.png",
+          "512": "/assets/icons/trust/png/512/award.png"
+        },
+        "react": "/assets/icons/react/Trust/MrxTrustAwardIcon.tsx"
+      },
+      {
+        "name": "Experience",
+        "slug": "experience",
+        "motif": "trust",
+        "svg": "/assets/icons/trust/svg/experience.svg",
+        "optimizedSvg": "/assets/icons/trust/optimized/experience.svg",
+        "png": {
+          "64": "/assets/icons/trust/png/64/experience.png",
+          "128": "/assets/icons/trust/png/128/experience.png",
+          "256": "/assets/icons/trust/png/256/experience.png",
+          "512": "/assets/icons/trust/png/512/experience.png"
+        },
+        "react": "/assets/icons/react/Trust/MrxTrustExperienceIcon.tsx"
+      },
+      {
+        "name": "Top Rated",
+        "slug": "top-rated",
+        "motif": "trust",
+        "svg": "/assets/icons/trust/svg/top-rated.svg",
+        "optimizedSvg": "/assets/icons/trust/optimized/top-rated.svg",
+        "png": {
+          "64": "/assets/icons/trust/png/64/top-rated.png",
+          "128": "/assets/icons/trust/png/128/top-rated.png",
+          "256": "/assets/icons/trust/png/256/top-rated.png",
+          "512": "/assets/icons/trust/png/512/top-rated.png"
+        },
+        "react": "/assets/icons/react/Trust/MrxTrustTopRatedIcon.tsx"
+      }
+    ],
+    "education": [
+      {
+        "name": "Graduation Cap",
+        "slug": "graduation-cap",
+        "motif": "education",
+        "svg": "/assets/icons/education/svg/graduation-cap.svg",
+        "optimizedSvg": "/assets/icons/education/optimized/graduation-cap.svg",
+        "png": {
+          "64": "/assets/icons/education/png/64/graduation-cap.png",
+          "128": "/assets/icons/education/png/128/graduation-cap.png",
+          "256": "/assets/icons/education/png/256/graduation-cap.png",
+          "512": "/assets/icons/education/png/512/graduation-cap.png"
+        },
+        "react": "/assets/icons/react/Education/MrxEducationGraduationCapIcon.tsx"
+      },
+      {
+        "name": "Book",
+        "slug": "book",
+        "motif": "education",
+        "svg": "/assets/icons/education/svg/book.svg",
+        "optimizedSvg": "/assets/icons/education/optimized/book.svg",
+        "png": {
+          "64": "/assets/icons/education/png/64/book.png",
+          "128": "/assets/icons/education/png/128/book.png",
+          "256": "/assets/icons/education/png/256/book.png",
+          "512": "/assets/icons/education/png/512/book.png"
+        },
+        "react": "/assets/icons/react/Education/MrxEducationBookIcon.tsx"
+      },
+      {
+        "name": "Video",
+        "slug": "video",
+        "motif": "media",
+        "svg": "/assets/icons/education/svg/video.svg",
+        "optimizedSvg": "/assets/icons/education/optimized/video.svg",
+        "png": {
+          "64": "/assets/icons/education/png/64/video.png",
+          "128": "/assets/icons/education/png/128/video.png",
+          "256": "/assets/icons/education/png/256/video.png",
+          "512": "/assets/icons/education/png/512/video.png"
+        },
+        "react": "/assets/icons/react/Education/MrxEducationVideoIcon.tsx"
+      },
+      {
+        "name": "Play",
+        "slug": "play",
+        "motif": "media",
+        "svg": "/assets/icons/education/svg/play.svg",
+        "optimizedSvg": "/assets/icons/education/optimized/play.svg",
+        "png": {
+          "64": "/assets/icons/education/png/64/play.png",
+          "128": "/assets/icons/education/png/128/play.png",
+          "256": "/assets/icons/education/png/256/play.png",
+          "512": "/assets/icons/education/png/512/play.png"
+        },
+        "react": "/assets/icons/react/Education/MrxEducationPlayIcon.tsx"
+      },
+      {
+        "name": "Checklist",
+        "slug": "checklist",
+        "motif": "royalty",
+        "svg": "/assets/icons/education/svg/checklist.svg",
+        "optimizedSvg": "/assets/icons/education/optimized/checklist.svg",
+        "png": {
+          "64": "/assets/icons/education/png/64/checklist.png",
+          "128": "/assets/icons/education/png/128/checklist.png",
+          "256": "/assets/icons/education/png/256/checklist.png",
+          "512": "/assets/icons/education/png/512/checklist.png"
+        },
+        "react": "/assets/icons/react/Education/MrxEducationChecklistIcon.tsx"
+      },
+      {
+        "name": "Guide",
+        "slug": "guide",
+        "motif": "clipboard",
+        "svg": "/assets/icons/education/svg/guide.svg",
+        "optimizedSvg": "/assets/icons/education/optimized/guide.svg",
+        "png": {
+          "64": "/assets/icons/education/png/64/guide.png",
+          "128": "/assets/icons/education/png/128/guide.png",
+          "256": "/assets/icons/education/png/256/guide.png",
+          "512": "/assets/icons/education/png/512/guide.png"
+        },
+        "react": "/assets/icons/react/Education/MrxEducationGuideIcon.tsx"
+      },
+      {
+        "name": "Learning",
+        "slug": "learning",
+        "motif": "spark",
+        "svg": "/assets/icons/education/svg/learning.svg",
+        "optimizedSvg": "/assets/icons/education/optimized/learning.svg",
+        "png": {
+          "64": "/assets/icons/education/png/64/learning.png",
+          "128": "/assets/icons/education/png/128/learning.png",
+          "256": "/assets/icons/education/png/256/learning.png",
+          "512": "/assets/icons/education/png/512/learning.png"
+        },
+        "react": "/assets/icons/react/Education/MrxEducationLearningIcon.tsx"
+      },
+      {
+        "name": "Tutorial",
+        "slug": "tutorial",
+        "motif": "clipboard",
+        "svg": "/assets/icons/education/svg/tutorial.svg",
+        "optimizedSvg": "/assets/icons/education/optimized/tutorial.svg",
+        "png": {
+          "64": "/assets/icons/education/png/64/tutorial.png",
+          "128": "/assets/icons/education/png/128/tutorial.png",
+          "256": "/assets/icons/education/png/256/tutorial.png",
+          "512": "/assets/icons/education/png/512/tutorial.png"
+        },
+        "react": "/assets/icons/react/Education/MrxEducationTutorialIcon.tsx"
+      },
+      {
+        "name": "Question",
+        "slug": "question",
+        "motif": "chat",
+        "svg": "/assets/icons/education/svg/question.svg",
+        "optimizedSvg": "/assets/icons/education/optimized/question.svg",
+        "png": {
+          "64": "/assets/icons/education/png/64/question.png",
+          "128": "/assets/icons/education/png/128/question.png",
+          "256": "/assets/icons/education/png/256/question.png",
+          "512": "/assets/icons/education/png/512/question.png"
+        },
+        "react": "/assets/icons/react/Education/MrxEducationQuestionIcon.tsx"
+      },
+      {
+        "name": "Idea",
+        "slug": "idea",
+        "motif": "spark",
+        "svg": "/assets/icons/education/svg/idea.svg",
+        "optimizedSvg": "/assets/icons/education/optimized/idea.svg",
+        "png": {
+          "64": "/assets/icons/education/png/64/idea.png",
+          "128": "/assets/icons/education/png/128/idea.png",
+          "256": "/assets/icons/education/png/256/idea.png",
+          "512": "/assets/icons/education/png/512/idea.png"
+        },
+        "react": "/assets/icons/react/Education/MrxEducationIdeaIcon.tsx"
+      },
+      {
+        "name": "Lightbulb",
+        "slug": "lightbulb",
+        "motif": "spark",
+        "svg": "/assets/icons/education/svg/lightbulb.svg",
+        "optimizedSvg": "/assets/icons/education/optimized/lightbulb.svg",
+        "png": {
+          "64": "/assets/icons/education/png/64/lightbulb.png",
+          "128": "/assets/icons/education/png/128/lightbulb.png",
+          "256": "/assets/icons/education/png/256/lightbulb.png",
+          "512": "/assets/icons/education/png/512/lightbulb.png"
+        },
+        "react": "/assets/icons/react/Education/MrxEducationLightbulbIcon.tsx"
+      },
+      {
+        "name": "Knowledge",
+        "slug": "knowledge",
+        "motif": "education",
+        "svg": "/assets/icons/education/svg/knowledge.svg",
+        "optimizedSvg": "/assets/icons/education/optimized/knowledge.svg",
+        "png": {
+          "64": "/assets/icons/education/png/64/knowledge.png",
+          "128": "/assets/icons/education/png/128/knowledge.png",
+          "256": "/assets/icons/education/png/256/knowledge.png",
+          "512": "/assets/icons/education/png/512/knowledge.png"
+        },
+        "react": "/assets/icons/react/Education/MrxEducationKnowledgeIcon.tsx"
+      },
+      {
+        "name": "Library",
+        "slug": "library",
+        "motif": "education",
+        "svg": "/assets/icons/education/svg/library.svg",
+        "optimizedSvg": "/assets/icons/education/optimized/library.svg",
+        "png": {
+          "64": "/assets/icons/education/png/64/library.png",
+          "128": "/assets/icons/education/png/128/library.png",
+          "256": "/assets/icons/education/png/256/library.png",
+          "512": "/assets/icons/education/png/512/library.png"
+        },
+        "react": "/assets/icons/react/Education/MrxEducationLibraryIcon.tsx"
+      },
+      {
+        "name": "Article",
+        "slug": "article",
+        "motif": "document",
+        "svg": "/assets/icons/education/svg/article.svg",
+        "optimizedSvg": "/assets/icons/education/optimized/article.svg",
+        "png": {
+          "64": "/assets/icons/education/png/64/article.png",
+          "128": "/assets/icons/education/png/128/article.png",
+          "256": "/assets/icons/education/png/256/article.png",
+          "512": "/assets/icons/education/png/512/article.png"
+        },
+        "react": "/assets/icons/react/Education/MrxEducationArticleIcon.tsx"
+      }
+    ],
+    "agents": [
+      {
+        "name": "Tommy",
+        "slug": "tommy",
+        "motif": "agent",
+        "svg": "/assets/icons/agents/svg/tommy.svg",
+        "optimizedSvg": "/assets/icons/agents/optimized/tommy.svg",
+        "png": {
+          "64": "/assets/icons/agents/png/64/tommy.png",
+          "128": "/assets/icons/agents/png/128/tommy.png",
+          "256": "/assets/icons/agents/png/256/tommy.png",
+          "512": "/assets/icons/agents/png/512/tommy.png"
+        },
+        "react": "/assets/icons/react/Agents/MrxAgentsTommyIcon.tsx"
+      },
+      {
+        "name": "Rebecca",
+        "slug": "rebecca",
+        "motif": "agent",
+        "svg": "/assets/icons/agents/svg/rebecca.svg",
+        "optimizedSvg": "/assets/icons/agents/optimized/rebecca.svg",
+        "png": {
+          "64": "/assets/icons/agents/png/64/rebecca.png",
+          "128": "/assets/icons/agents/png/128/rebecca.png",
+          "256": "/assets/icons/agents/png/256/rebecca.png",
+          "512": "/assets/icons/agents/png/512/rebecca.png"
+        },
+        "react": "/assets/icons/react/Agents/MrxAgentsRebeccaIcon.tsx"
+      },
+      {
+        "name": "Charlie",
+        "slug": "charlie",
+        "motif": "agent",
+        "svg": "/assets/icons/agents/svg/charlie.svg",
+        "optimizedSvg": "/assets/icons/agents/optimized/charlie.svg",
+        "png": {
+          "64": "/assets/icons/agents/png/64/charlie.png",
+          "128": "/assets/icons/agents/png/128/charlie.png",
+          "256": "/assets/icons/agents/png/256/charlie.png",
+          "512": "/assets/icons/agents/png/512/charlie.png"
+        },
+        "react": "/assets/icons/react/Agents/MrxAgentsCharlieIcon.tsx"
+      },
+      {
+        "name": "Cooper",
+        "slug": "cooper",
+        "motif": "agent",
+        "svg": "/assets/icons/agents/svg/cooper.svg",
+        "optimizedSvg": "/assets/icons/agents/optimized/cooper.svg",
+        "png": {
+          "64": "/assets/icons/agents/png/64/cooper.png",
+          "128": "/assets/icons/agents/png/128/cooper.png",
+          "256": "/assets/icons/agents/png/256/cooper.png",
+          "512": "/assets/icons/agents/png/512/cooper.png"
+        },
+        "react": "/assets/icons/react/Agents/MrxAgentsCooperIcon.tsx"
+      },
+      {
+        "name": "Chesty",
+        "slug": "chesty",
+        "motif": "agent",
+        "svg": "/assets/icons/agents/svg/chesty.svg",
+        "optimizedSvg": "/assets/icons/agents/optimized/chesty.svg",
+        "png": {
+          "64": "/assets/icons/agents/png/64/chesty.png",
+          "128": "/assets/icons/agents/png/128/chesty.png",
+          "256": "/assets/icons/agents/png/256/chesty.png",
+          "512": "/assets/icons/agents/png/512/chesty.png"
+        },
+        "react": "/assets/icons/react/Agents/MrxAgentsChestyIcon.tsx"
+      },
+      {
+        "name": "Tex",
+        "slug": "tex",
+        "motif": "agent",
+        "svg": "/assets/icons/agents/svg/tex.svg",
+        "optimizedSvg": "/assets/icons/agents/optimized/tex.svg",
+        "png": {
+          "64": "/assets/icons/agents/png/64/tex.png",
+          "128": "/assets/icons/agents/png/128/tex.png",
+          "256": "/assets/icons/agents/png/256/tex.png",
+          "512": "/assets/icons/agents/png/512/tex.png"
+        },
+        "react": "/assets/icons/react/Agents/MrxAgentsTexIcon.tsx"
+      },
+      {
+        "name": "Grant",
+        "slug": "grant",
+        "motif": "agent",
+        "svg": "/assets/icons/agents/svg/grant.svg",
+        "optimizedSvg": "/assets/icons/agents/optimized/grant.svg",
+        "png": {
+          "64": "/assets/icons/agents/png/64/grant.png",
+          "128": "/assets/icons/agents/png/128/grant.png",
+          "256": "/assets/icons/agents/png/256/grant.png",
+          "512": "/assets/icons/agents/png/512/grant.png"
+        },
+        "react": "/assets/icons/react/Agents/MrxAgentsGrantIcon.tsx"
+      },
+      {
+        "name": "Reed",
+        "slug": "reed",
+        "motif": "agent",
+        "svg": "/assets/icons/agents/svg/reed.svg",
+        "optimizedSvg": "/assets/icons/agents/optimized/reed.svg",
+        "png": {
+          "64": "/assets/icons/agents/png/64/reed.png",
+          "128": "/assets/icons/agents/png/128/reed.png",
+          "256": "/assets/icons/agents/png/256/reed.png",
+          "512": "/assets/icons/agents/png/512/reed.png"
+        },
+        "react": "/assets/icons/react/Agents/MrxAgentsReedIcon.tsx"
+      },
+      {
+        "name": "Mason",
+        "slug": "mason",
+        "motif": "agent",
+        "svg": "/assets/icons/agents/svg/mason.svg",
+        "optimizedSvg": "/assets/icons/agents/optimized/mason.svg",
+        "png": {
+          "64": "/assets/icons/agents/png/64/mason.png",
+          "128": "/assets/icons/agents/png/128/mason.png",
+          "256": "/assets/icons/agents/png/256/mason.png",
+          "512": "/assets/icons/agents/png/512/mason.png"
+        },
+        "react": "/assets/icons/react/Agents/MrxAgentsMasonIcon.tsx"
+      },
+      {
+        "name": "Radar",
+        "slug": "radar",
+        "motif": "agent",
+        "svg": "/assets/icons/agents/svg/radar.svg",
+        "optimizedSvg": "/assets/icons/agents/optimized/radar.svg",
+        "png": {
+          "64": "/assets/icons/agents/png/64/radar.png",
+          "128": "/assets/icons/agents/png/128/radar.png",
+          "256": "/assets/icons/agents/png/256/radar.png",
+          "512": "/assets/icons/agents/png/512/radar.png"
+        },
+        "react": "/assets/icons/react/Agents/MrxAgentsRadarIcon.tsx"
+      },
+      {
+        "name": "Stackhouse",
+        "slug": "stackhouse",
+        "motif": "agent",
+        "svg": "/assets/icons/agents/svg/stackhouse.svg",
+        "optimizedSvg": "/assets/icons/agents/optimized/stackhouse.svg",
+        "png": {
+          "64": "/assets/icons/agents/png/64/stackhouse.png",
+          "128": "/assets/icons/agents/png/128/stackhouse.png",
+          "256": "/assets/icons/agents/png/256/stackhouse.png",
+          "512": "/assets/icons/agents/png/512/stackhouse.png"
+        },
+        "react": "/assets/icons/react/Agents/MrxAgentsStackhouseIcon.tsx"
+      },
+      {
+        "name": "Iron Mike",
+        "slug": "iron-mike",
+        "motif": "agent",
+        "svg": "/assets/icons/agents/svg/iron-mike.svg",
+        "optimizedSvg": "/assets/icons/agents/optimized/iron-mike.svg",
+        "png": {
+          "64": "/assets/icons/agents/png/64/iron-mike.png",
+          "128": "/assets/icons/agents/png/128/iron-mike.png",
+          "256": "/assets/icons/agents/png/256/iron-mike.png",
+          "512": "/assets/icons/agents/png/512/iron-mike.png"
+        },
+        "react": "/assets/icons/react/Agents/MrxAgentsIronMikeIcon.tsx"
+      },
+      {
+        "name": "Doc Holliday",
+        "slug": "doc-holliday",
+        "motif": "agent",
+        "svg": "/assets/icons/agents/svg/doc-holliday.svg",
+        "optimizedSvg": "/assets/icons/agents/optimized/doc-holliday.svg",
+        "png": {
+          "64": "/assets/icons/agents/png/64/doc-holliday.png",
+          "128": "/assets/icons/agents/png/128/doc-holliday.png",
+          "256": "/assets/icons/agents/png/256/doc-holliday.png",
+          "512": "/assets/icons/agents/png/512/doc-holliday.png"
+        },
+        "react": "/assets/icons/react/Agents/MrxAgentsDocHollidayIcon.tsx"
+      },
+      {
+        "name": "Mission",
+        "slug": "mission",
+        "motif": "agent",
+        "svg": "/assets/icons/agents/svg/mission.svg",
+        "optimizedSvg": "/assets/icons/agents/optimized/mission.svg",
+        "png": {
+          "64": "/assets/icons/agents/png/64/mission.png",
+          "128": "/assets/icons/agents/png/128/mission.png",
+          "256": "/assets/icons/agents/png/256/mission.png",
+          "512": "/assets/icons/agents/png/512/mission.png"
+        },
+        "react": "/assets/icons/react/Agents/MrxAgentsMissionIcon.tsx"
+      },
+      {
+        "name": "Orders",
+        "slug": "orders",
+        "motif": "document",
+        "svg": "/assets/icons/agents/svg/orders.svg",
+        "optimizedSvg": "/assets/icons/agents/optimized/orders.svg",
+        "png": {
+          "64": "/assets/icons/agents/png/64/orders.png",
+          "128": "/assets/icons/agents/png/128/orders.png",
+          "256": "/assets/icons/agents/png/256/orders.png",
+          "512": "/assets/icons/agents/png/512/orders.png"
+        },
+        "react": "/assets/icons/react/Agents/MrxAgentsOrdersIcon.tsx"
+      },
+      {
+        "name": "Command Center",
+        "slug": "command-center",
+        "motif": "agent",
+        "svg": "/assets/icons/agents/svg/command-center.svg",
+        "optimizedSvg": "/assets/icons/agents/optimized/command-center.svg",
+        "png": {
+          "64": "/assets/icons/agents/png/64/command-center.png",
+          "128": "/assets/icons/agents/png/128/command-center.png",
+          "256": "/assets/icons/agents/png/256/command-center.png",
+          "512": "/assets/icons/agents/png/512/command-center.png"
+        },
+        "react": "/assets/icons/react/Agents/MrxAgentsCommandCenterIcon.tsx"
+      },
+      {
+        "name": "Mission Complete",
+        "slug": "mission-complete",
+        "motif": "agent",
+        "svg": "/assets/icons/agents/svg/mission-complete.svg",
+        "optimizedSvg": "/assets/icons/agents/optimized/mission-complete.svg",
+        "png": {
+          "64": "/assets/icons/agents/png/64/mission-complete.png",
+          "128": "/assets/icons/agents/png/128/mission-complete.png",
+          "256": "/assets/icons/agents/png/256/mission-complete.png",
+          "512": "/assets/icons/agents/png/512/mission-complete.png"
+        },
+        "react": "/assets/icons/react/Agents/MrxAgentsMissionCompleteIcon.tsx"
+      },
+      {
+        "name": "Mission Failed",
+        "slug": "mission-failed",
+        "motif": "agent",
+        "svg": "/assets/icons/agents/svg/mission-failed.svg",
+        "optimizedSvg": "/assets/icons/agents/optimized/mission-failed.svg",
+        "png": {
+          "64": "/assets/icons/agents/png/64/mission-failed.png",
+          "128": "/assets/icons/agents/png/128/mission-failed.png",
+          "256": "/assets/icons/agents/png/256/mission-failed.png",
+          "512": "/assets/icons/agents/png/512/mission-failed.png"
+        },
+        "react": "/assets/icons/react/Agents/MrxAgentsMissionFailedIcon.tsx"
+      },
+      {
+        "name": "Mission Processing",
+        "slug": "mission-processing",
+        "motif": "agent",
+        "svg": "/assets/icons/agents/svg/mission-processing.svg",
+        "optimizedSvg": "/assets/icons/agents/optimized/mission-processing.svg",
+        "png": {
+          "64": "/assets/icons/agents/png/64/mission-processing.png",
+          "128": "/assets/icons/agents/png/128/mission-processing.png",
+          "256": "/assets/icons/agents/png/256/mission-processing.png",
+          "512": "/assets/icons/agents/png/512/mission-processing.png"
+        },
+        "react": "/assets/icons/react/Agents/MrxAgentsMissionProcessingIcon.tsx"
+      },
+      {
+        "name": "AI Team",
+        "slug": "ai-team",
+        "motif": "robot",
+        "svg": "/assets/icons/agents/svg/ai-team.svg",
+        "optimizedSvg": "/assets/icons/agents/optimized/ai-team.svg",
+        "png": {
+          "64": "/assets/icons/agents/png/64/ai-team.png",
+          "128": "/assets/icons/agents/png/128/ai-team.png",
+          "256": "/assets/icons/agents/png/256/ai-team.png",
+          "512": "/assets/icons/agents/png/512/ai-team.png"
+        },
+        "react": "/assets/icons/react/Agents/MrxAgentsAiTeamIcon.tsx"
+      }
+    ],
+    "marketing": [
+      {
+        "name": "Megaphone",
+        "slug": "megaphone",
+        "motif": "voice",
+        "svg": "/assets/icons/marketing/svg/megaphone.svg",
+        "optimizedSvg": "/assets/icons/marketing/optimized/megaphone.svg",
+        "png": {
+          "64": "/assets/icons/marketing/png/64/megaphone.png",
+          "128": "/assets/icons/marketing/png/128/megaphone.png",
+          "256": "/assets/icons/marketing/png/256/megaphone.png",
+          "512": "/assets/icons/marketing/png/512/megaphone.png"
+        },
+        "react": "/assets/icons/react/Marketing/MrxMarketingMegaphoneIcon.tsx"
+      },
+      {
+        "name": "SEO",
+        "slug": "seo",
+        "motif": "marketing",
+        "svg": "/assets/icons/marketing/svg/seo.svg",
+        "optimizedSvg": "/assets/icons/marketing/optimized/seo.svg",
+        "png": {
+          "64": "/assets/icons/marketing/png/64/seo.png",
+          "128": "/assets/icons/marketing/png/128/seo.png",
+          "256": "/assets/icons/marketing/png/256/seo.png",
+          "512": "/assets/icons/marketing/png/512/seo.png"
+        },
+        "react": "/assets/icons/react/Marketing/MrxMarketingSeoIcon.tsx"
+      },
+      {
+        "name": "Google",
+        "slug": "google",
+        "motif": "marketing",
+        "svg": "/assets/icons/marketing/svg/google.svg",
+        "optimizedSvg": "/assets/icons/marketing/optimized/google.svg",
+        "png": {
+          "64": "/assets/icons/marketing/png/64/google.png",
+          "128": "/assets/icons/marketing/png/128/google.png",
+          "256": "/assets/icons/marketing/png/256/google.png",
+          "512": "/assets/icons/marketing/png/512/google.png"
+        },
+        "react": "/assets/icons/react/Marketing/MrxMarketingGoogleIcon.tsx"
+      },
+      {
+        "name": "Search Ranking",
+        "slug": "search-ranking",
+        "motif": "search",
+        "svg": "/assets/icons/marketing/svg/search-ranking.svg",
+        "optimizedSvg": "/assets/icons/marketing/optimized/search-ranking.svg",
+        "png": {
+          "64": "/assets/icons/marketing/png/64/search-ranking.png",
+          "128": "/assets/icons/marketing/png/128/search-ranking.png",
+          "256": "/assets/icons/marketing/png/256/search-ranking.png",
+          "512": "/assets/icons/marketing/png/512/search-ranking.png"
+        },
+        "react": "/assets/icons/react/Marketing/MrxMarketingSearchRankingIcon.tsx"
+      },
+      {
+        "name": "Social Media",
+        "slug": "social-media",
+        "motif": "marketing",
+        "svg": "/assets/icons/marketing/svg/social-media.svg",
+        "optimizedSvg": "/assets/icons/marketing/optimized/social-media.svg",
+        "png": {
+          "64": "/assets/icons/marketing/png/64/social-media.png",
+          "128": "/assets/icons/marketing/png/128/social-media.png",
+          "256": "/assets/icons/marketing/png/256/social-media.png",
+          "512": "/assets/icons/marketing/png/512/social-media.png"
+        },
+        "react": "/assets/icons/react/Marketing/MrxMarketingSocialMediaIcon.tsx"
+      },
+      {
+        "name": "Email Campaign",
+        "slug": "email-campaign",
+        "motif": "email",
+        "svg": "/assets/icons/marketing/svg/email-campaign.svg",
+        "optimizedSvg": "/assets/icons/marketing/optimized/email-campaign.svg",
+        "png": {
+          "64": "/assets/icons/marketing/png/64/email-campaign.png",
+          "128": "/assets/icons/marketing/png/128/email-campaign.png",
+          "256": "/assets/icons/marketing/png/256/email-campaign.png",
+          "512": "/assets/icons/marketing/png/512/email-campaign.png"
+        },
+        "react": "/assets/icons/react/Marketing/MrxMarketingEmailCampaignIcon.tsx"
+      },
+      {
+        "name": "Traffic",
+        "slug": "traffic",
+        "motif": "marketing",
+        "svg": "/assets/icons/marketing/svg/traffic.svg",
+        "optimizedSvg": "/assets/icons/marketing/optimized/traffic.svg",
+        "png": {
+          "64": "/assets/icons/marketing/png/64/traffic.png",
+          "128": "/assets/icons/marketing/png/128/traffic.png",
+          "256": "/assets/icons/marketing/png/256/traffic.png",
+          "512": "/assets/icons/marketing/png/512/traffic.png"
+        },
+        "react": "/assets/icons/react/Marketing/MrxMarketingTrafficIcon.tsx"
+      },
+      {
+        "name": "Visitors",
+        "slug": "visitors",
+        "motif": "person",
+        "svg": "/assets/icons/marketing/svg/visitors.svg",
+        "optimizedSvg": "/assets/icons/marketing/optimized/visitors.svg",
+        "png": {
+          "64": "/assets/icons/marketing/png/64/visitors.png",
+          "128": "/assets/icons/marketing/png/128/visitors.png",
+          "256": "/assets/icons/marketing/png/256/visitors.png",
+          "512": "/assets/icons/marketing/png/512/visitors.png"
+        },
+        "react": "/assets/icons/react/Marketing/MrxMarketingVisitorsIcon.tsx"
+      },
+      {
+        "name": "Conversions",
+        "slug": "conversions",
+        "motif": "graph",
+        "svg": "/assets/icons/marketing/svg/conversions.svg",
+        "optimizedSvg": "/assets/icons/marketing/optimized/conversions.svg",
+        "png": {
+          "64": "/assets/icons/marketing/png/64/conversions.png",
+          "128": "/assets/icons/marketing/png/128/conversions.png",
+          "256": "/assets/icons/marketing/png/256/conversions.png",
+          "512": "/assets/icons/marketing/png/512/conversions.png"
+        },
+        "react": "/assets/icons/react/Marketing/MrxMarketingConversionsIcon.tsx"
+      },
+      {
+        "name": "Leads",
+        "slug": "leads",
+        "motif": "marketing",
+        "svg": "/assets/icons/marketing/svg/leads.svg",
+        "optimizedSvg": "/assets/icons/marketing/optimized/leads.svg",
+        "png": {
+          "64": "/assets/icons/marketing/png/64/leads.png",
+          "128": "/assets/icons/marketing/png/128/leads.png",
+          "256": "/assets/icons/marketing/png/256/leads.png",
+          "512": "/assets/icons/marketing/png/512/leads.png"
+        },
+        "react": "/assets/icons/react/Marketing/MrxMarketingLeadsIcon.tsx"
+      },
+      {
+        "name": "Funnels",
+        "slug": "funnels",
+        "motif": "marketing",
+        "svg": "/assets/icons/marketing/svg/funnels.svg",
+        "optimizedSvg": "/assets/icons/marketing/optimized/funnels.svg",
+        "png": {
+          "64": "/assets/icons/marketing/png/64/funnels.png",
+          "128": "/assets/icons/marketing/png/128/funnels.png",
+          "256": "/assets/icons/marketing/png/256/funnels.png",
+          "512": "/assets/icons/marketing/png/512/funnels.png"
+        },
+        "react": "/assets/icons/react/Marketing/MrxMarketingFunnelsIcon.tsx"
+      },
+      {
+        "name": "Analytics",
+        "slug": "analytics",
+        "motif": "brain",
+        "svg": "/assets/icons/marketing/svg/analytics.svg",
+        "optimizedSvg": "/assets/icons/marketing/optimized/analytics.svg",
+        "png": {
+          "64": "/assets/icons/marketing/png/64/analytics.png",
+          "128": "/assets/icons/marketing/png/128/analytics.png",
+          "256": "/assets/icons/marketing/png/256/analytics.png",
+          "512": "/assets/icons/marketing/png/512/analytics.png"
+        },
+        "react": "/assets/icons/react/Marketing/MrxMarketingAnalyticsIcon.tsx"
+      },
+      {
+        "name": "CTR",
+        "slug": "ctr",
+        "motif": "graph",
+        "svg": "/assets/icons/marketing/svg/ctr.svg",
+        "optimizedSvg": "/assets/icons/marketing/optimized/ctr.svg",
+        "png": {
+          "64": "/assets/icons/marketing/png/64/ctr.png",
+          "128": "/assets/icons/marketing/png/128/ctr.png",
+          "256": "/assets/icons/marketing/png/256/ctr.png",
+          "512": "/assets/icons/marketing/png/512/ctr.png"
+        },
+        "react": "/assets/icons/react/Marketing/MrxMarketingCtrIcon.tsx"
+      },
+      {
+        "name": "Growth",
+        "slug": "growth",
+        "motif": "graph",
+        "svg": "/assets/icons/marketing/svg/growth.svg",
+        "optimizedSvg": "/assets/icons/marketing/optimized/growth.svg",
+        "png": {
+          "64": "/assets/icons/marketing/png/64/growth.png",
+          "128": "/assets/icons/marketing/png/128/growth.png",
+          "256": "/assets/icons/marketing/png/256/growth.png",
+          "512": "/assets/icons/marketing/png/512/growth.png"
+        },
+        "react": "/assets/icons/react/Marketing/MrxMarketingGrowthIcon.tsx"
+      }
+    ],
+    "status": [
+      {
+        "name": "Success",
+        "slug": "success",
+        "motif": "status",
+        "svg": "/assets/icons/status/svg/success.svg",
+        "optimizedSvg": "/assets/icons/status/optimized/success.svg",
+        "png": {
+          "64": "/assets/icons/status/png/64/success.png",
+          "128": "/assets/icons/status/png/128/success.png",
+          "256": "/assets/icons/status/png/256/success.png",
+          "512": "/assets/icons/status/png/512/success.png"
+        },
+        "react": "/assets/icons/react/Status/MrxStatusSuccessIcon.tsx"
+      },
+      {
+        "name": "Warning",
+        "slug": "warning",
+        "motif": "status",
+        "svg": "/assets/icons/status/svg/warning.svg",
+        "optimizedSvg": "/assets/icons/status/optimized/warning.svg",
+        "png": {
+          "64": "/assets/icons/status/png/64/warning.png",
+          "128": "/assets/icons/status/png/128/warning.png",
+          "256": "/assets/icons/status/png/256/warning.png",
+          "512": "/assets/icons/status/png/512/warning.png"
+        },
+        "react": "/assets/icons/react/Status/MrxStatusWarningIcon.tsx"
+      },
+      {
+        "name": "Error",
+        "slug": "error",
+        "motif": "status",
+        "svg": "/assets/icons/status/svg/error.svg",
+        "optimizedSvg": "/assets/icons/status/optimized/error.svg",
+        "png": {
+          "64": "/assets/icons/status/png/64/error.png",
+          "128": "/assets/icons/status/png/128/error.png",
+          "256": "/assets/icons/status/png/256/error.png",
+          "512": "/assets/icons/status/png/512/error.png"
+        },
+        "react": "/assets/icons/react/Status/MrxStatusErrorIcon.tsx"
+      },
+      {
+        "name": "Info",
+        "slug": "info",
+        "motif": "status",
+        "svg": "/assets/icons/status/svg/info.svg",
+        "optimizedSvg": "/assets/icons/status/optimized/info.svg",
+        "png": {
+          "64": "/assets/icons/status/png/64/info.png",
+          "128": "/assets/icons/status/png/128/info.png",
+          "256": "/assets/icons/status/png/256/info.png",
+          "512": "/assets/icons/status/png/512/info.png"
+        },
+        "react": "/assets/icons/react/Status/MrxStatusInfoIcon.tsx"
+      },
+      {
+        "name": "Loading",
+        "slug": "loading",
+        "motif": "status",
+        "svg": "/assets/icons/status/svg/loading.svg",
+        "optimizedSvg": "/assets/icons/status/optimized/loading.svg",
+        "png": {
+          "64": "/assets/icons/status/png/64/loading.png",
+          "128": "/assets/icons/status/png/128/loading.png",
+          "256": "/assets/icons/status/png/256/loading.png",
+          "512": "/assets/icons/status/png/512/loading.png"
+        },
+        "react": "/assets/icons/react/Status/MrxStatusLoadingIcon.tsx"
+      },
+      {
+        "name": "Sync",
+        "slug": "sync",
+        "motif": "status",
+        "svg": "/assets/icons/status/svg/sync.svg",
+        "optimizedSvg": "/assets/icons/status/optimized/sync.svg",
+        "png": {
+          "64": "/assets/icons/status/png/64/sync.png",
+          "128": "/assets/icons/status/png/128/sync.png",
+          "256": "/assets/icons/status/png/256/sync.png",
+          "512": "/assets/icons/status/png/512/sync.png"
+        },
+        "react": "/assets/icons/react/Status/MrxStatusSyncIcon.tsx"
+      },
+      {
+        "name": "Refresh",
+        "slug": "refresh",
+        "motif": "status",
+        "svg": "/assets/icons/status/svg/refresh.svg",
+        "optimizedSvg": "/assets/icons/status/optimized/refresh.svg",
+        "png": {
+          "64": "/assets/icons/status/png/64/refresh.png",
+          "128": "/assets/icons/status/png/128/refresh.png",
+          "256": "/assets/icons/status/png/256/refresh.png",
+          "512": "/assets/icons/status/png/512/refresh.png"
+        },
+        "react": "/assets/icons/react/Status/MrxStatusRefreshIcon.tsx"
+      },
+      {
+        "name": "Pending",
+        "slug": "pending",
+        "motif": "pen",
+        "svg": "/assets/icons/status/svg/pending.svg",
+        "optimizedSvg": "/assets/icons/status/optimized/pending.svg",
+        "png": {
+          "64": "/assets/icons/status/png/64/pending.png",
+          "128": "/assets/icons/status/png/128/pending.png",
+          "256": "/assets/icons/status/png/256/pending.png",
+          "512": "/assets/icons/status/png/512/pending.png"
+        },
+        "react": "/assets/icons/react/Status/MrxStatusPendingIcon.tsx"
+      },
+      {
+        "name": "Offline",
+        "slug": "offline",
+        "motif": "graph",
+        "svg": "/assets/icons/status/svg/offline.svg",
+        "optimizedSvg": "/assets/icons/status/optimized/offline.svg",
+        "png": {
+          "64": "/assets/icons/status/png/64/offline.png",
+          "128": "/assets/icons/status/png/128/offline.png",
+          "256": "/assets/icons/status/png/256/offline.png",
+          "512": "/assets/icons/status/png/512/offline.png"
+        },
+        "react": "/assets/icons/react/Status/MrxStatusOfflineIcon.tsx"
+      },
+      {
+        "name": "Online",
+        "slug": "online",
+        "motif": "graph",
+        "svg": "/assets/icons/status/svg/online.svg",
+        "optimizedSvg": "/assets/icons/status/optimized/online.svg",
+        "png": {
+          "64": "/assets/icons/status/png/64/online.png",
+          "128": "/assets/icons/status/png/128/online.png",
+          "256": "/assets/icons/status/png/256/online.png",
+          "512": "/assets/icons/status/png/512/online.png"
+        },
+        "react": "/assets/icons/react/Status/MrxStatusOnlineIcon.tsx"
+      },
+      {
+        "name": "Completed",
+        "slug": "completed",
+        "motif": "status",
+        "svg": "/assets/icons/status/svg/completed.svg",
+        "optimizedSvg": "/assets/icons/status/optimized/completed.svg",
+        "png": {
+          "64": "/assets/icons/status/png/64/completed.png",
+          "128": "/assets/icons/status/png/128/completed.png",
+          "256": "/assets/icons/status/png/256/completed.png",
+          "512": "/assets/icons/status/png/512/completed.png"
+        },
+        "react": "/assets/icons/react/Status/MrxStatusCompletedIcon.tsx"
+      },
+      {
+        "name": "In Progress",
+        "slug": "in-progress",
+        "motif": "graph",
+        "svg": "/assets/icons/status/svg/in-progress.svg",
+        "optimizedSvg": "/assets/icons/status/optimized/in-progress.svg",
+        "png": {
+          "64": "/assets/icons/status/png/64/in-progress.png",
+          "128": "/assets/icons/status/png/128/in-progress.png",
+          "256": "/assets/icons/status/png/256/in-progress.png",
+          "512": "/assets/icons/status/png/512/in-progress.png"
+        },
+        "react": "/assets/icons/react/Status/MrxStatusInProgressIcon.tsx"
+      },
+      {
+        "name": "Scheduled",
+        "slug": "scheduled",
+        "motif": "calendar",
+        "svg": "/assets/icons/status/svg/scheduled.svg",
+        "optimizedSvg": "/assets/icons/status/optimized/scheduled.svg",
+        "png": {
+          "64": "/assets/icons/status/png/64/scheduled.png",
+          "128": "/assets/icons/status/png/128/scheduled.png",
+          "256": "/assets/icons/status/png/256/scheduled.png",
+          "512": "/assets/icons/status/png/512/scheduled.png"
+        },
+        "react": "/assets/icons/react/Status/MrxStatusScheduledIcon.tsx"
+      },
+      {
+        "name": "Paused",
+        "slug": "paused",
+        "motif": "status",
+        "svg": "/assets/icons/status/svg/paused.svg",
+        "optimizedSvg": "/assets/icons/status/optimized/paused.svg",
+        "png": {
+          "64": "/assets/icons/status/png/64/paused.png",
+          "128": "/assets/icons/status/png/128/paused.png",
+          "256": "/assets/icons/status/png/256/paused.png",
+          "512": "/assets/icons/status/png/512/paused.png"
+        },
+        "react": "/assets/icons/react/Status/MrxStatusPausedIcon.tsx"
+      },
+      {
+        "name": "Active",
+        "slug": "active",
+        "motif": "status",
+        "svg": "/assets/icons/status/svg/active.svg",
+        "optimizedSvg": "/assets/icons/status/optimized/active.svg",
+        "png": {
+          "64": "/assets/icons/status/png/64/active.png",
+          "128": "/assets/icons/status/png/128/active.png",
+          "256": "/assets/icons/status/png/256/active.png",
+          "512": "/assets/icons/status/png/512/active.png"
+        },
+        "react": "/assets/icons/react/Status/MrxStatusActiveIcon.tsx"
+      },
+      {
+        "name": "Inactive",
+        "slug": "inactive",
+        "motif": "status",
+        "svg": "/assets/icons/status/svg/inactive.svg",
+        "optimizedSvg": "/assets/icons/status/optimized/inactive.svg",
+        "png": {
+          "64": "/assets/icons/status/png/64/inactive.png",
+          "128": "/assets/icons/status/png/128/inactive.png",
+          "256": "/assets/icons/status/png/256/inactive.png",
+          "512": "/assets/icons/status/png/512/inactive.png"
+        },
+        "react": "/assets/icons/react/Status/MrxStatusInactiveIcon.tsx"
+      }
+    ],
+    "homepage": [
+      {
+        "name": "Ownership Research",
+        "slug": "ownership-research",
+        "motif": "search",
+        "svg": "/assets/icons/homepage/svg/ownership-research.svg",
+        "optimizedSvg": "/assets/icons/homepage/optimized/ownership-research.svg",
+        "png": {
+          "64": "/assets/icons/homepage/png/64/ownership-research.png",
+          "128": "/assets/icons/homepage/png/128/ownership-research.png",
+          "256": "/assets/icons/homepage/png/256/ownership-research.png",
+          "512": "/assets/icons/homepage/png/512/ownership-research.png"
+        },
+        "react": "/assets/icons/react/Homepage/MrxHomepageOwnershipResearchIcon.tsx"
+      },
+      {
+        "name": "Production Analysis",
+        "slug": "production-analysis",
+        "motif": "brain",
+        "svg": "/assets/icons/homepage/svg/production-analysis.svg",
+        "optimizedSvg": "/assets/icons/homepage/optimized/production-analysis.svg",
+        "png": {
+          "64": "/assets/icons/homepage/png/64/production-analysis.png",
+          "128": "/assets/icons/homepage/png/128/production-analysis.png",
+          "256": "/assets/icons/homepage/png/256/production-analysis.png",
+          "512": "/assets/icons/homepage/png/512/production-analysis.png"
+        },
+        "react": "/assets/icons/react/Homepage/MrxHomepageProductionAnalysisIcon.tsx"
+      },
+      {
+        "name": "Mineral Valuation",
+        "slug": "mineral-valuation",
+        "motif": "money",
+        "svg": "/assets/icons/homepage/svg/mineral-valuation.svg",
+        "optimizedSvg": "/assets/icons/homepage/optimized/mineral-valuation.svg",
+        "png": {
+          "64": "/assets/icons/homepage/png/64/mineral-valuation.png",
+          "128": "/assets/icons/homepage/png/128/mineral-valuation.png",
+          "256": "/assets/icons/homepage/png/256/mineral-valuation.png",
+          "512": "/assets/icons/homepage/png/512/mineral-valuation.png"
+        },
+        "react": "/assets/icons/react/Homepage/MrxHomepageMineralValuationIcon.tsx"
+      },
+      {
+        "name": "AI Underwriter",
+        "slug": "ai-underwriter",
+        "motif": "robot",
+        "svg": "/assets/icons/homepage/svg/ai-underwriter.svg",
+        "optimizedSvg": "/assets/icons/homepage/optimized/ai-underwriter.svg",
+        "png": {
+          "64": "/assets/icons/homepage/png/64/ai-underwriter.png",
+          "128": "/assets/icons/homepage/png/128/ai-underwriter.png",
+          "256": "/assets/icons/homepage/png/256/ai-underwriter.png",
+          "512": "/assets/icons/homepage/png/512/ai-underwriter.png"
+        },
+        "react": "/assets/icons/react/Homepage/MrxHomepageAiUnderwriterIcon.tsx"
+      },
+      {
+        "name": "Secure Offer Review",
+        "slug": "secure-offer-review",
+        "motif": "shield",
+        "svg": "/assets/icons/homepage/svg/secure-offer-review.svg",
+        "optimizedSvg": "/assets/icons/homepage/optimized/secure-offer-review.svg",
+        "png": {
+          "64": "/assets/icons/homepage/png/64/secure-offer-review.png",
+          "128": "/assets/icons/homepage/png/128/secure-offer-review.png",
+          "256": "/assets/icons/homepage/png/256/secure-offer-review.png",
+          "512": "/assets/icons/homepage/png/512/secure-offer-review.png"
+        },
+        "react": "/assets/icons/react/Homepage/MrxHomepageSecureOfferReviewIcon.tsx"
+      },
+      {
+        "name": "County Research",
+        "slug": "county-research",
+        "motif": "search",
+        "svg": "/assets/icons/homepage/svg/county-research.svg",
+        "optimizedSvg": "/assets/icons/homepage/optimized/county-research.svg",
+        "png": {
+          "64": "/assets/icons/homepage/png/64/county-research.png",
+          "128": "/assets/icons/homepage/png/128/county-research.png",
+          "256": "/assets/icons/homepage/png/256/county-research.png",
+          "512": "/assets/icons/homepage/png/512/county-research.png"
+        },
+        "react": "/assets/icons/react/Homepage/MrxHomepageCountyResearchIcon.tsx"
+      },
+      {
+        "name": "Royalty Analysis",
+        "slug": "royalty-analysis",
+        "motif": "brain",
+        "svg": "/assets/icons/homepage/svg/royalty-analysis.svg",
+        "optimizedSvg": "/assets/icons/homepage/optimized/royalty-analysis.svg",
+        "png": {
+          "64": "/assets/icons/homepage/png/64/royalty-analysis.png",
+          "128": "/assets/icons/homepage/png/128/royalty-analysis.png",
+          "256": "/assets/icons/homepage/png/256/royalty-analysis.png",
+          "512": "/assets/icons/homepage/png/512/royalty-analysis.png"
+        },
+        "react": "/assets/icons/react/Homepage/MrxHomepageRoyaltyAnalysisIcon.tsx"
+      },
+      {
+        "name": "Drilling Activity",
+        "slug": "drilling-activity",
+        "motif": "energy",
+        "svg": "/assets/icons/homepage/svg/drilling-activity.svg",
+        "optimizedSvg": "/assets/icons/homepage/optimized/drilling-activity.svg",
+        "png": {
+          "64": "/assets/icons/homepage/png/64/drilling-activity.png",
+          "128": "/assets/icons/homepage/png/128/drilling-activity.png",
+          "256": "/assets/icons/homepage/png/256/drilling-activity.png",
+          "512": "/assets/icons/homepage/png/512/drilling-activity.png"
+        },
+        "react": "/assets/icons/react/Homepage/MrxHomepageDrillingActivityIcon.tsx"
+      },
+      {
+        "name": "Permit Tracking",
+        "slug": "permit-tracking",
+        "motif": "energy",
+        "svg": "/assets/icons/homepage/svg/permit-tracking.svg",
+        "optimizedSvg": "/assets/icons/homepage/optimized/permit-tracking.svg",
+        "png": {
+          "64": "/assets/icons/homepage/png/64/permit-tracking.png",
+          "128": "/assets/icons/homepage/png/128/permit-tracking.png",
+          "256": "/assets/icons/homepage/png/256/permit-tracking.png",
+          "512": "/assets/icons/homepage/png/512/permit-tracking.png"
+        },
+        "react": "/assets/icons/react/Homepage/MrxHomepagePermitTrackingIcon.tsx"
+      },
+      {
+        "name": "Title Verification",
+        "slug": "title-verification",
+        "motif": "spark",
+        "svg": "/assets/icons/homepage/svg/title-verification.svg",
+        "optimizedSvg": "/assets/icons/homepage/optimized/title-verification.svg",
+        "png": {
+          "64": "/assets/icons/homepage/png/64/title-verification.png",
+          "128": "/assets/icons/homepage/png/128/title-verification.png",
+          "256": "/assets/icons/homepage/png/256/title-verification.png",
+          "512": "/assets/icons/homepage/png/512/title-verification.png"
+        },
+        "react": "/assets/icons/react/Homepage/MrxHomepageTitleVerificationIcon.tsx"
+      },
+      {
+        "name": "Market Analysis",
+        "slug": "market-analysis",
+        "motif": "brain",
+        "svg": "/assets/icons/homepage/svg/market-analysis.svg",
+        "optimizedSvg": "/assets/icons/homepage/optimized/market-analysis.svg",
+        "png": {
+          "64": "/assets/icons/homepage/png/64/market-analysis.png",
+          "128": "/assets/icons/homepage/png/128/market-analysis.png",
+          "256": "/assets/icons/homepage/png/256/market-analysis.png",
+          "512": "/assets/icons/homepage/png/512/market-analysis.png"
+        },
+        "react": "/assets/icons/react/Homepage/MrxHomepageMarketAnalysisIcon.tsx"
+      },
+      {
+        "name": "Future Development",
+        "slug": "future-development",
+        "motif": "calendar",
+        "svg": "/assets/icons/homepage/svg/future-development.svg",
+        "optimizedSvg": "/assets/icons/homepage/optimized/future-development.svg",
+        "png": {
+          "64": "/assets/icons/homepage/png/64/future-development.png",
+          "128": "/assets/icons/homepage/png/128/future-development.png",
+          "256": "/assets/icons/homepage/png/256/future-development.png",
+          "512": "/assets/icons/homepage/png/512/future-development.png"
+        },
+        "react": "/assets/icons/react/Homepage/MrxHomepageFutureDevelopmentIcon.tsx"
+      },
+      {
+        "name": "Production Forecast",
+        "slug": "production-forecast",
+        "motif": "energy",
+        "svg": "/assets/icons/homepage/svg/production-forecast.svg",
+        "optimizedSvg": "/assets/icons/homepage/optimized/production-forecast.svg",
+        "png": {
+          "64": "/assets/icons/homepage/png/64/production-forecast.png",
+          "128": "/assets/icons/homepage/png/128/production-forecast.png",
+          "256": "/assets/icons/homepage/png/256/production-forecast.png",
+          "512": "/assets/icons/homepage/png/512/production-forecast.png"
+        },
+        "react": "/assets/icons/react/Homepage/MrxHomepageProductionForecastIcon.tsx"
+      },
+      {
+        "name": "Offer Comparison",
+        "slug": "offer-comparison",
+        "motif": "money",
+        "svg": "/assets/icons/homepage/svg/offer-comparison.svg",
+        "optimizedSvg": "/assets/icons/homepage/optimized/offer-comparison.svg",
+        "png": {
+          "64": "/assets/icons/homepage/png/64/offer-comparison.png",
+          "128": "/assets/icons/homepage/png/128/offer-comparison.png",
+          "256": "/assets/icons/homepage/png/256/offer-comparison.png",
+          "512": "/assets/icons/homepage/png/512/offer-comparison.png"
+        },
+        "react": "/assets/icons/react/Homepage/MrxHomepageOfferComparisonIcon.tsx"
+      },
+      {
+        "name": "Negotiation",
+        "slug": "negotiation",
+        "motif": "handshake",
+        "svg": "/assets/icons/homepage/svg/negotiation.svg",
+        "optimizedSvg": "/assets/icons/homepage/optimized/negotiation.svg",
+        "png": {
+          "64": "/assets/icons/homepage/png/64/negotiation.png",
+          "128": "/assets/icons/homepage/png/128/negotiation.png",
+          "256": "/assets/icons/homepage/png/256/negotiation.png",
+          "512": "/assets/icons/homepage/png/512/negotiation.png"
+        },
+        "react": "/assets/icons/react/Homepage/MrxHomepageNegotiationIcon.tsx"
+      },
+      {
+        "name": "Contract Review",
+        "slug": "contract-review",
+        "motif": "document",
+        "svg": "/assets/icons/homepage/svg/contract-review.svg",
+        "optimizedSvg": "/assets/icons/homepage/optimized/contract-review.svg",
+        "png": {
+          "64": "/assets/icons/homepage/png/64/contract-review.png",
+          "128": "/assets/icons/homepage/png/128/contract-review.png",
+          "256": "/assets/icons/homepage/png/256/contract-review.png",
+          "512": "/assets/icons/homepage/png/512/contract-review.png"
+        },
+        "react": "/assets/icons/react/Homepage/MrxHomepageContractReviewIcon.tsx"
+      },
+      {
+        "name": "Cash Offers",
+        "slug": "cash-offers",
+        "motif": "money",
+        "svg": "/assets/icons/homepage/svg/cash-offers.svg",
+        "optimizedSvg": "/assets/icons/homepage/optimized/cash-offers.svg",
+        "png": {
+          "64": "/assets/icons/homepage/png/64/cash-offers.png",
+          "128": "/assets/icons/homepage/png/128/cash-offers.png",
+          "256": "/assets/icons/homepage/png/256/cash-offers.png",
+          "512": "/assets/icons/homepage/png/512/cash-offers.png"
+        },
+        "react": "/assets/icons/react/Homepage/MrxHomepageCashOffersIcon.tsx"
+      },
+      {
+        "name": "Family Minerals",
+        "slug": "family-minerals",
+        "motif": "team",
+        "svg": "/assets/icons/homepage/svg/family-minerals.svg",
+        "optimizedSvg": "/assets/icons/homepage/optimized/family-minerals.svg",
+        "png": {
+          "64": "/assets/icons/homepage/png/64/family-minerals.png",
+          "128": "/assets/icons/homepage/png/128/family-minerals.png",
+          "256": "/assets/icons/homepage/png/256/family-minerals.png",
+          "512": "/assets/icons/homepage/png/512/family-minerals.png"
+        },
+        "react": "/assets/icons/react/Homepage/MrxHomepageFamilyMineralsIcon.tsx"
+      },
+      {
+        "name": "Inherited Minerals",
+        "slug": "inherited-minerals",
+        "motif": "team",
+        "svg": "/assets/icons/homepage/svg/inherited-minerals.svg",
+        "optimizedSvg": "/assets/icons/homepage/optimized/inherited-minerals.svg",
+        "png": {
+          "64": "/assets/icons/homepage/png/64/inherited-minerals.png",
+          "128": "/assets/icons/homepage/png/128/inherited-minerals.png",
+          "256": "/assets/icons/homepage/png/256/inherited-minerals.png",
+          "512": "/assets/icons/homepage/png/512/inherited-minerals.png"
+        },
+        "react": "/assets/icons/react/Homepage/MrxHomepageInheritedMineralsIcon.tsx"
+      },
+      {
+        "name": "Mineral Portfolio",
+        "slug": "mineral-portfolio",
+        "motif": "spark",
+        "svg": "/assets/icons/homepage/svg/mineral-portfolio.svg",
+        "optimizedSvg": "/assets/icons/homepage/optimized/mineral-portfolio.svg",
+        "png": {
+          "64": "/assets/icons/homepage/png/64/mineral-portfolio.png",
+          "128": "/assets/icons/homepage/png/128/mineral-portfolio.png",
+          "256": "/assets/icons/homepage/png/256/mineral-portfolio.png",
+          "512": "/assets/icons/homepage/png/512/mineral-portfolio.png"
+        },
+        "react": "/assets/icons/react/Homepage/MrxHomepageMineralPortfolioIcon.tsx"
+      }
+    ]
+  }
+}

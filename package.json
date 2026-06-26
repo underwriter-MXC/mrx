@@ -26,6 +26,7 @@
     "test:watch": "vitest",
     "test:e2e": "playwright test",
     "check-compliance": "node compliance/scripts/check-compliance.mjs",
+    "icons:generate": "python3 scripts/generate_mrx_icon_library.py",
     "regenerate-lexicons": "node scripts/regenerate-lexicons.mjs",
     "migrate-wp": "node scripts/migrate-wp.mjs",
     "ci": "pnpm install --frozen-lockfile && pnpm typecheck && pnpm lint && pnpm test && pnpm build"
