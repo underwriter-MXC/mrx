@@ -21,6 +21,16 @@ const pathways = [
 ---
 
 <section class="mrx-ai-hero" aria-labelledby="mrx-ai-hero-title">
+  <img
+    class="mrx-ai-hero__background-image"
+    src="/assets/mrx-homepage-v4/backgrounds/tommy-mrx-underwriter-oilfield-hero.jpg"
+    alt="Tommy MRX Underwriter in a West Texas oilfield at sunset"
+    width="1536"
+    height="1024"
+    loading="eager"
+    fetchpriority="high"
+    aria-hidden="true"
+  />
   <div class="mrx-ai-hero__glow mrx-ai-hero__glow--one" aria-hidden="true"></div>
   <div class="mrx-ai-hero__glow mrx-ai-hero__glow--two" aria-hidden="true"></div>
 
@@ -79,16 +89,24 @@ const pathways = [
 
       <aside class="mrx-ai-chat" id="mrx-ai-chat" aria-label="MRX AI interaction preview">
         <div class="mrx-ai-chat__head">
-          <div class="mrx-ai-chat__bot" aria-hidden="true">✦</div>
+          <img
+            class="mrx-ai-chat__avatar"
+            src="/assets/mrx-homepage-v4/avatars/tommy-mrx-underwriter-headshot.jpg"
+            alt=""
+            width="1254"
+            height="1254"
+            loading="eager"
+            aria-hidden="true"
+          />
           <div>
-            <strong>MRX AI Guide</strong>
+            <strong>Tommy · MRX Underwriter™</strong>
             <p><span></span> Building your owner profile</p>
           </div>
           <button type="button" class="mrx-ai-chat__more" aria-label="More MRX AI options">⋮</button>
         </div>
 
         <div class="mrx-ai-chat__bubble" data-ai-response>
-          Hi, I’m the MRX AI Guide. Tell me what you want help with and I’ll start organizing the facts an underwriter would need: location, ownership type, documents, royalty history, and offer terms.
+          Hi, I’m Tommy with MRX. Tell me what you want help with and I’ll start organizing the facts an underwriter would need: location, ownership type, documents, royalty history, and offer terms.
         </div>
 
         <div class="mrx-ai-chat__quick" aria-label="Start a conversation with MRX AI">
@@ -160,8 +178,9 @@ const pathways = [
 
 <style>
   .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
-  .mrx-ai-hero { position: relative; overflow: hidden; min-height: 880px; background: radial-gradient(circle at 80% 20%, rgba(216, 149, 31, .18), transparent 32%), linear-gradient(118deg, #03111f 0%, #071d31 38%, #1c2f3f 100%); color: #f8fbff; }
-  .mrx-ai-hero::before { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(3, 17, 31, .98) 0%, rgba(3, 17, 31, .82) 48%, rgba(3, 17, 31, .34) 100%), radial-gradient(circle at 76% 48%, rgba(196, 132, 28, .22), transparent 24%); }
+  .mrx-ai-hero { position: relative; overflow: hidden; min-height: 880px; background: #03111f; color: #f8fbff; }
+  .mrx-ai-hero__background-image { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 38% top; opacity: .92; }
+  .mrx-ai-hero::before { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(3, 17, 31, .92) 0%, rgba(3, 17, 31, .72) 42%, rgba(3, 17, 31, .38) 72%, rgba(3, 17, 31, .12) 100%), radial-gradient(circle at 76% 48%, rgba(196, 132, 28, .18), transparent 24%); }
   .mrx-ai-hero::after { content: ''; position: absolute; inset: auto 0 0; height: 42%; background: linear-gradient(0deg, rgba(3, 17, 31, 1), transparent); }
   .mrx-ai-hero__glow { position: absolute; border-radius: 999px; filter: blur(58px); opacity: .5; pointer-events: none; }
   .mrx-ai-hero__glow--one { width: 320px; height: 320px; background: rgba(216, 149, 31, .22); right: 9%; top: 20%; }
@@ -194,7 +213,7 @@ const pathways = [
   .mrx-ai-hero__avatar-stack span:first-child { margin-left: 0; }
   .mrx-ai-chat { display: flex; flex-direction: column; min-height: 0; height: min(700px, calc(100svh - 88px)); border: 1px solid rgba(249,199,119,.38); border-radius: 28px; background: rgba(3,17,31,.9); box-shadow: 0 28px 100px rgba(0,0,0,.38); padding: clamp(1rem, 2vw, 1.6rem); backdrop-filter: blur(18px); overflow: hidden; }
   .mrx-ai-chat__head { display: grid; grid-template-columns: 64px 1fr auto; gap: 1rem; align-items: center; }
-  .mrx-ai-chat__bot { display: grid; place-items: center; width: 64px; height: 64px; border-radius: 50%; border: 1px solid rgba(249,199,119,.5); color: #f9c777; font-size: 1.6rem; }
+  .mrx-ai-chat__avatar { width: 64px; height: 64px; border-radius: 50%; border: 1px solid rgba(249,199,119,.5); object-fit: cover; object-position: center top; box-shadow: 0 12px 32px rgba(0,0,0,.28); }
   .mrx-ai-chat__head p span { display: inline-block; width: 9px; height: 9px; margin-right: .35rem; background: #2a8d4f; border-radius: 50%; }
   .mrx-ai-chat__more { width: 48px; height: 48px; border-radius: 50%; border: 1px solid rgba(216,225,236,.24); background: rgba(255,255,255,.05); color: #fff; font-size: 1.5rem; }
   .mrx-ai-chat__bubble { flex: 1 1 auto; min-height: 0; margin-top: 1.5rem; border-radius: 18px; background: rgba(216,225,236,.12); padding: 1.1rem 1.25rem; color: rgba(248,251,255,.9); line-height: 1.55; overflow-y: auto; }
