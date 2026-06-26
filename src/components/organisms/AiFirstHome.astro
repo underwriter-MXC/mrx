@@ -1,15 +1,18 @@
 ---
 const quickStarts = [
-  { icon: '↳', label: 'I have an offer', prompt: 'I have an offer for my mineral rights and want help understanding what questions to ask before I sign.' },
-  { icon: '◇', label: 'Value my minerals', prompt: 'I want to understand what information affects the value range for my mineral rights.' },
-  { icon: '▤', label: 'Inherited rights', prompt: 'I inherited mineral rights and need help figuring out what documents and details matter first.' },
-  { icon: '↗', label: 'Book underwriter review', prompt: 'I am ready to schedule a free underwriter review.' },
+  { icon: '💰', label: 'What are my minerals worth?', prompt: 'I want to understand what my mineral rights may be worth.' },
+  { icon: '▤', label: 'I received an offer. Is it fair?', prompt: 'I received an offer for my mineral rights and want help understanding whether it is fair.' },
+  { icon: '◇', label: 'I inherited mineral rights. What now?', prompt: 'I inherited mineral rights and need help figuring out what documents and details matter first.' },
+  { icon: '◉', label: 'I receive royalties. Should I sell?', prompt: 'I receive royalty checks and want help deciding whether I should sell.' },
+  { icon: '⌖', label: 'What information do you need?', prompt: 'What information does MRX need to review my mineral rights?' },
+  { icon: '↗', label: 'Should I sell now or wait?', prompt: 'I want help thinking through whether I should sell now or wait.' },
 ];
 
 const proofItems = [
-  { title: 'Production + royalty context', text: 'The AI asks for the county, operator, royalty checks, lease, division order, and offer details you already have.' },
-  { title: 'Plain-language next step', text: 'Owners get a calm summary of what is known, what is missing, and whether an underwriter review makes sense.' },
-  { title: 'GHL-ready handoff', text: 'When the owner is ready, the conversation can hand into the MRX calendar, form, and CRM workflow.' },
+  { icon: '✓', title: 'Free', text: 'No cost. No catch.' },
+  { icon: '🔒', title: 'Confidential', text: 'Your information stays private.' },
+  { icon: '✓', title: 'No Obligation', text: 'You’re never obligated to sell.' },
+  { icon: '♧', title: 'No Pressure', text: 'Answers first, pressure never.' },
 ];
 
 const pathways = [
@@ -23,7 +26,7 @@ const pathways = [
 <section class="mrx-ai-hero" aria-labelledby="mrx-ai-hero-title">
   <img
     class="mrx-ai-hero__background-image"
-    src="/assets/mrx-homepage-v4/backgrounds/tommy-hero-daryl-upload-20260626.jpg"
+    src="/assets/mrx-homepage-v4/backgrounds/hero-tommy-left-layout.png"
     alt="Tommy MRX Underwriter in a West Texas oilfield at sunset"
     width="1536"
     height="1024"
@@ -53,38 +56,33 @@ const pathways = [
 
     <div class="mrx-ai-hero__grid">
       <div class="mrx-ai-hero__copy">
-        <p class="mrx-ai-hero__kicker">AI mineral rights guide in your pocket</p>
-        <h1 id="mrx-ai-hero-title">Start with the AI. Leave with a clearer mineral rights decision.</h1>
+        <p class="mrx-ai-hero__kicker">Meet Tommy™</p>
+        <h1 id="mrx-ai-hero-title">Don’t Sell Your Mineral Rights Until You Know What They’re Really Worth.</h1>
         <p class="mrx-ai-hero__lede">
-          Tell MRX what you have: an offer, royalty checks, inherited rights, a lease, or just a question. The AI helps organize the facts, explain valuation drivers in plain English, and route you to a free underwriter review when you are ready.
+          Before accepting an offer, talk with Tommy. He’ll help you understand:
         </p>
+
+        <ul class="mrx-ai-hero__checks" aria-label="What Tommy helps mineral owners understand">
+          <li>What you own</li>
+          <li>What your minerals may be worth</li>
+          <li>Whether an offer is fair</li>
+          <li>What factors impact value</li>
+          <li>Whether now is the right time to sell</li>
+        </ul>
+
+        <p class="mrx-ai-hero__promise">Tommy helps you get answers before you make a decision.</p>
 
         <div class="mrx-ai-hero__actions" aria-label="AI calls to action">
           <a class="mrx-ai-button mrx-ai-button--primary" href="#mrx-ai-chat" data-cta-name="home-ai-primary-chat">
             <span aria-hidden="true">▣</span>
-            <span><strong>Talk to MRX AI</strong><small>Start your owner profile</small></span>
+            <span><strong>Find Out What Your Minerals May Be Worth</strong></span>
           </a>
           <a class="mrx-ai-button mrx-ai-button--secondary" href="/book" data-cta-name="home-ai-secondary-book">
             <span aria-hidden="true">◇</span>
-            <span><strong>Book Review</strong><small>Free underwriter review</small></span>
+            <span><strong>I Received An Offer</strong></span>
           </a>
         </div>
 
-        <div class="mrx-ai-hero__chips" aria-label="Common owner situations">
-          <span>Offer in hand</span>
-          <span>Inherited rights</span>
-          <span>Royalty checks</span>
-        </div>
-
-        <div class="mrx-ai-hero__trust" aria-label="MRX trust cues">
-          <div class="mrx-ai-hero__avatar-stack" aria-hidden="true">
-            <span>TX</span><span>DCF</span><span>AI</span><span>MRX</span>
-          </div>
-          <div>
-            <strong>Confidential, no-pressure review path</strong>
-            <p>No card. No obligation. No clawback clauses.</p>
-          </div>
-        </div>
       </div>
 
       <aside class="mrx-ai-chat" id="mrx-ai-chat" aria-label="MRX AI interaction preview">
@@ -99,14 +97,15 @@ const pathways = [
             aria-hidden="true"
           />
           <div>
-            <strong>Tommy · MRX Underwriter™</strong>
-            <p><span></span> Building your owner profile</p>
+            <strong>Tommy™</strong>
+            <p>MRX Underwriter</p>
+            <p><span></span> Online Now</p>
           </div>
           <button type="button" class="mrx-ai-chat__more" aria-label="More MRX AI options">⋮</button>
         </div>
 
         <div class="mrx-ai-chat__bubble" data-ai-response>
-          Hi, I’m Tommy with MRX. Tell me what you want help with and I’ll start organizing the facts an underwriter would need: location, ownership type, documents, royalty history, and offer terms.
+          <strong>Hi, I’m <span>Tommy</span>.</strong><br /><br />Most mineral owners don’t need another sales pitch. They need answers.<br /><br /><b>What’s your biggest question?</b>
         </div>
 
         <div class="mrx-ai-chat__quick" aria-label="Start a conversation with MRX AI">
@@ -121,17 +120,21 @@ const pathways = [
 
         <form class="mrx-ai-chat__form" data-ai-form>
           <label class="sr-only" for="mrx-ai-answer">Ask the MRX AI Guide</label>
-          <input id="mrx-ai-answer" name="answer" type="text" autocomplete="off" placeholder="Type your mineral rights question..." />
+          <input id="mrx-ai-answer" name="answer" type="text" autocomplete="off" placeholder="Ask Tommy anything about your mineral rights..." />
           <button type="submit" aria-label="Send question to MRX AI">➤</button>
         </form>
-        <p class="mrx-ai-chat__note">This preview does not provide legal, tax, or certified valuation advice. It prepares a better review conversation.</p>
+        <div class="mrx-ai-chat__review">
+          <strong>Ready for a professional review?</strong>
+          <span>Talk with an MRX Underwriter about your specific property.</span>
+          <a href="/book" data-cta-name="home-ai-card-book">Book Free Mineral Review →</a>
+        </div>
       </aside>
     </div>
 
     <div class="mrx-ai-hero__benefits" aria-label="AI-first mineral rights benefits">
       {proofItems.map((item) => (
         <article>
-          <span aria-hidden="true">▥</span>
+          <span aria-hidden="true">{item.icon}</span>
           <div>
             <strong>{item.title}</strong>
             <p>{item.text}</p>
@@ -178,14 +181,14 @@ const pathways = [
 
 <style>
   .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
-  .mrx-ai-hero { position: relative; overflow: hidden; min-height: 880px; background: #03111f; color: #f8fbff; }
-  .mrx-ai-hero__background-image { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 38% top; opacity: .92; }
-  .mrx-ai-hero::before { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(3, 17, 31, .92) 0%, rgba(3, 17, 31, .72) 42%, rgba(3, 17, 31, .38) 72%, rgba(3, 17, 31, .12) 100%), radial-gradient(circle at 76% 48%, rgba(196, 132, 28, .18), transparent 24%); }
-  .mrx-ai-hero::after { content: ''; position: absolute; inset: auto 0 0; height: 42%; background: linear-gradient(0deg, rgba(3, 17, 31, 1), transparent); }
+  .mrx-ai-hero { position: relative; overflow: hidden; min-height: 820px; background: #f7f3ea; color: #061A33; }
+  .mrx-ai-hero__background-image { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 31% top; opacity: .98; }
+  .mrx-ai-hero::before { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(247,243,234,.02) 0%, rgba(247,243,234,.12) 21%, rgba(247,243,234,.9) 35%, rgba(247,243,234,.82) 55%, rgba(6,26,51,.12) 68%, rgba(6,26,51,.3) 100%); }
+  .mrx-ai-hero::after { content: ''; position: absolute; inset: auto 0 0; height: 18%; background: linear-gradient(0deg, rgba(6,26,51,.48), transparent); }
   .mrx-ai-hero__glow { position: absolute; border-radius: 999px; filter: blur(58px); opacity: .5; pointer-events: none; }
   .mrx-ai-hero__glow--one { width: 320px; height: 320px; background: rgba(216, 149, 31, .22); right: 9%; top: 20%; }
   .mrx-ai-hero__glow--two { width: 360px; height: 360px; background: rgba(42, 77, 122, .44); left: -8%; bottom: 20%; }
-  .mrx-ai-hero__shell { position: relative; z-index: 1; width: min(100% - 2rem, 1440px); margin: 0 auto; padding: 1.25rem 0 2.5rem; }
+  .mrx-ai-hero__shell { position: relative; z-index: 1; width: min(100% - 2rem, 1440px); margin: 0 auto; padding: 1.25rem 0 0; }
   .mrx-ai-hero__nav { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-bottom: 1rem; border-bottom: 1px solid rgba(216, 225, 236, .16); }
   .mrx-ai-hero__brand { display: inline-flex; align-items: center; gap: .8rem; color: inherit; text-decoration: none; }
   .mrx-ai-hero__brand strong, .mrx-ai-chat__head strong { display: block; font-size: 1rem; }
@@ -194,16 +197,22 @@ const pathways = [
   .mrx-ai-hero__links { display: flex; gap: clamp(1rem, 4vw, 3.4rem); font-weight: 700; }
   .mrx-ai-hero__links a, .mrx-ai-hero__nav-cta { color: rgba(248,251,255,.9); text-decoration: none; }
   .mrx-ai-hero__nav-cta { border-radius: 999px; background: #c4841c; padding: .9rem 1.4rem; box-shadow: 0 18px 50px rgba(196,132,28,.24); }
-  .mrx-ai-hero__grid { display: grid; grid-template-columns: minmax(0, 1.02fr) minmax(360px, .78fr); gap: clamp(2rem, 7vw, 7rem); align-items: center; min-height: 680px; padding: clamp(3rem, 8vw, 7rem) 0 3rem; }
+  .mrx-ai-hero__grid { display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(380px, .92fr); gap: clamp(1.8rem, 4vw, 4.5rem); align-items: center; min-height: 640px; padding: clamp(2rem, 5vw, 4.2rem) 0 1.8rem; }
+  .mrx-ai-hero__copy { max-width: 650px; margin-left: clamp(16rem, 27vw, 25rem); text-shadow: 0 2px 20px rgba(255,255,255,.92); }
   .mrx-ai-hero__kicker, .mrx-ai-section__intro p, .mrx-ai-engine > div > p:first-child { color: #f9c777; text-transform: uppercase; letter-spacing: .13em; font-weight: 900; font-size: .84rem; }
-  .mrx-ai-hero h1 { max-width: 850px; margin: 1.4rem 0 1.5rem; color: #fff; font-size: clamp(3.4rem, 8vw, 8.4rem); line-height: .95; letter-spacing: -.075em; }
-  .mrx-ai-hero__lede { max-width: 680px; color: rgba(248,251,255,.82); font-size: clamp(1.1rem, 2vw, 1.45rem); line-height: 1.55; }
+  .mrx-ai-hero__kicker { display: inline-flex; border-radius: 999px; background: #061A33; padding: .55rem 1rem; color: #fff; box-shadow: 0 10px 26px rgba(6,26,51,.18); }
+  .mrx-ai-hero h1 { max-width: 640px; margin: 1rem 0 1.2rem; color: #061A33; font-size: clamp(2.8rem, 4.8vw, 5.4rem); line-height: .94; letter-spacing: -.06em; }
+  .mrx-ai-hero__lede { max-width: 610px; color: #061A33; font-size: clamp(1rem, 1.25vw, 1.3rem); font-weight: 800; line-height: 1.45; }
+  .mrx-ai-hero__checks { display: grid; gap: .42rem; margin: .9rem 0 0; padding: 0; list-style: none; color: #061A33; font-weight: 800; }
+  .mrx-ai-hero__checks li { display: flex; gap: .55rem; align-items: center; }
+  .mrx-ai-hero__checks li::before { content: '✓'; display: grid; place-items: center; width: 1.25rem; height: 1.25rem; border-radius: 50%; background: #D6A23A; color: #061A33; font-size: .82rem; font-weight: 900; }
+  .mrx-ai-hero__promise { margin: 1.25rem 0 0; max-width: 560px; color: #061A33; font-size: 1.08rem; font-weight: 900; line-height: 1.45; }
   .mrx-ai-hero__actions { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2.2rem; }
-  .mrx-ai-button { display: inline-flex; align-items: center; gap: .9rem; min-height: 68px; padding: .9rem 1.5rem; border-radius: 22px; text-decoration: none; border: 1px solid rgba(255,255,255,.22); color: #fff; }
+  .mrx-ai-button { display: inline-flex; align-items: center; justify-content: space-between; gap: .9rem; min-height: 68px; padding: .9rem 1.5rem; border-radius: 14px; text-decoration: none; border: 1px solid rgba(255,255,255,.22); color: #fff; }
   .mrx-ai-button strong { display: block; font-size: 1.04rem; }
   .mrx-ai-button small { display: block; color: rgba(248,251,255,.72); margin-top: .2rem; }
-  .mrx-ai-button--primary { background: #b97816; border-color: rgba(249,199,119,.5); box-shadow: 0 22px 60px rgba(196,132,28,.22); }
-  .mrx-ai-button--secondary { background: rgba(255,255,255,.04); }
+  .mrx-ai-button--primary { background: #D6A23A; border-color: rgba(6,26,51,.2); color: #061A33; box-shadow: 0 22px 60px rgba(196,132,28,.22); }
+  .mrx-ai-button--secondary { background: #061A33; border-color: rgba(214,162,58,.78); color: #fff; }
   .mrx-ai-hero__chips { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 1.8rem; }
   .mrx-ai-hero__chips span { border: 1px solid rgba(216,225,236,.22); border-radius: 999px; padding: .75rem 1rem; color: rgba(248,251,255,.82); background: rgba(255,255,255,.035); }
   .mrx-ai-hero__trust { display: flex; gap: 1rem; align-items: center; margin-top: 2.2rem; }
@@ -211,25 +220,30 @@ const pathways = [
   .mrx-ai-hero__avatar-stack { display: flex; }
   .mrx-ai-hero__avatar-stack span { display: grid; place-items: center; width: 48px; height: 48px; margin-left: -10px; border-radius: 50%; border: 2px solid rgba(255,255,255,.18); background: #0a2540; color: #f9c777; font-size: .78rem; font-weight: 900; }
   .mrx-ai-hero__avatar-stack span:first-child { margin-left: 0; }
-  .mrx-ai-chat { display: flex; flex-direction: column; min-height: 0; height: min(700px, calc(100svh - 88px)); border: 1px solid rgba(249,199,119,.38); border-radius: 28px; background: rgba(3,17,31,.9); box-shadow: 0 28px 100px rgba(0,0,0,.38); padding: clamp(1rem, 2vw, 1.6rem); backdrop-filter: blur(18px); overflow: hidden; }
+  .mrx-ai-chat { display: flex; flex-direction: column; min-height: 0; max-width: 580px; border: 2px solid rgba(214,162,58,.85); border-radius: 30px; background: rgba(6,26,51,.96); box-shadow: 0 28px 100px rgba(0,0,0,.38); padding: clamp(1rem, 2vw, 1.6rem); backdrop-filter: blur(18px); overflow: hidden; }
   .mrx-ai-chat__head { display: grid; grid-template-columns: 64px 1fr auto; gap: 1rem; align-items: center; }
+  .mrx-ai-chat__head strong { color: #fff; }
   .mrx-ai-chat__avatar { width: 64px; height: 64px; border-radius: 50%; border: 1px solid rgba(249,199,119,.5); object-fit: cover; object-position: center top; box-shadow: 0 12px 32px rgba(0,0,0,.28); }
   .mrx-ai-chat__head p span { display: inline-block; width: 9px; height: 9px; margin-right: .35rem; background: #2a8d4f; border-radius: 50%; }
   .mrx-ai-chat__more { width: 48px; height: 48px; border-radius: 50%; border: 1px solid rgba(216,225,236,.24); background: rgba(255,255,255,.05); color: #fff; font-size: 1.5rem; }
-  .mrx-ai-chat__bubble { flex: 1 1 auto; min-height: 0; margin-top: 1.5rem; border-radius: 18px; background: rgba(216,225,236,.12); padding: 1.1rem 1.25rem; color: rgba(248,251,255,.9); line-height: 1.55; overflow-y: auto; }
-  .mrx-ai-chat__quick { flex: 1 1 auto; min-height: 0; display: grid; gap: .75rem; margin-top: 1.1rem; overflow-y: auto; padding-right: .2rem; }
+  .mrx-ai-chat__bubble { margin-top: 1.2rem; border-radius: 20px; background: rgba(216,225,236,.08); border: 1px solid rgba(255,255,255,.12); padding: 1.25rem; color: rgba(248,251,255,.94); line-height: 1.55; }
+  .mrx-ai-chat__bubble span { color: #D6A23A; }
+  .mrx-ai-chat__quick { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .75rem; margin-top: 1.1rem; padding-right: .2rem; }
   .mrx-ai-chat__quick[hidden] { display: none; }
-  .mrx-ai-chat__quick button { display: grid; grid-template-columns: 28px 1fr auto; align-items: center; gap: .75rem; width: 100%; border: 1px solid rgba(216,225,236,.2); border-radius: 16px; background: rgba(255,255,255,.035); color: #fff; padding: .95rem 1rem; text-align: left; cursor: pointer; }
+  .mrx-ai-chat__quick button { display: grid; grid-template-columns: 34px 1fr; align-items: center; gap: .75rem; width: 100%; min-height: 68px; border: 1px solid rgba(214,162,58,.42); border-radius: 12px; background: rgba(255,255,255,.035); color: #fff; padding: .8rem .9rem; text-align: left; cursor: pointer; }
   .mrx-ai-chat__quick span, .mrx-ai-chat__quick em { color: #f9c777; font-style: normal; }
   .mrx-ai-chat__form { display: grid; grid-template-columns: 1fr 52px; align-items: center; gap: .5rem; margin-top: 1rem; border: 1px solid rgba(216,225,236,.22); border-radius: 18px; padding: .55rem; }
   .mrx-ai-chat__form input { min-width: 0; background: transparent; border: 0; color: #fff; padding: .8rem; font: inherit; outline: 0; }
   .mrx-ai-chat__form button { width: 48px; height: 48px; border: 0; border-radius: 50%; background: #c4841c; color: #fff; cursor: pointer; }
-  .mrx-ai-chat__note { margin: .85rem .25rem 0; color: rgba(248,251,255,.58); font-size: .82rem; line-height: 1.5; }
-  .mrx-ai-hero__benefits { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid rgba(216,225,236,.18); border-radius: 24px; overflow: hidden; background: rgba(255,255,255,.035); }
-  .mrx-ai-hero__benefits article { display: flex; gap: 1rem; padding: 1.4rem; border-right: 1px solid rgba(216,225,236,.16); }
+  .mrx-ai-chat__review { margin-top: 1rem; text-align: center; color: rgba(248,251,255,.88); }
+  .mrx-ai-chat__review strong { display: block; color: #D6A23A; }
+  .mrx-ai-chat__review span { display: block; margin-top: .25rem; font-size: .9rem; }
+  .mrx-ai-chat__review a { display: flex; justify-content: center; align-items: center; min-height: 56px; margin-top: .8rem; border: 1px solid #D6A23A; border-radius: 12px; color: #fff; text-decoration: none; font-weight: 900; }
+  .mrx-ai-hero__benefits { display: grid; grid-template-columns: repeat(4, 1fr); margin: 0 calc(50% - 50vw); padding: 1.35rem max(1rem, calc((100vw - 1200px)/2)); border: 0; background: rgba(255,255,255,.94); color: #061A33; box-shadow: 0 -1px 0 rgba(6,26,51,.08); }
+  .mrx-ai-hero__benefits article { display: flex; justify-content: center; gap: 1rem; padding: .7rem 1.4rem; border-right: 1px solid rgba(6,26,51,.14); }
   .mrx-ai-hero__benefits article:last-child { border-right: 0; }
-  .mrx-ai-hero__benefits span { color: #f9c777; font-size: 1.8rem; }
-  .mrx-ai-hero__benefits p { margin: .35rem 0 0; color: rgba(248,251,255,.68); line-height: 1.45; }
+  .mrx-ai-hero__benefits span { color: #D6A23A; font-size: 2.3rem; line-height: 1; }
+  .mrx-ai-hero__benefits p { margin: .2rem 0 0; color: rgba(6,26,51,.72); line-height: 1.35; }
   .mrx-ai-section, .mrx-ai-engine { width: min(100% - 2rem, 1200px); margin: 0 auto; padding: clamp(4rem, 8vw, 7rem) 0; }
   .mrx-ai-section__intro { max-width: 780px; }
   .mrx-ai-section__intro h2, .mrx-ai-engine h2 { margin: .4rem 0 1rem; color: #071d31; font-size: clamp(2.4rem, 5vw, 5rem); line-height: .98; letter-spacing: -.06em; }
@@ -244,7 +258,7 @@ const pathways = [
   .mrx-ai-engine__panel { border-radius: 28px; background: #071d31; color: #fff; padding: 1.3rem; box-shadow: 0 26px 70px rgba(7,29,49,.2); }
   .mrx-ai-engine__panel div { padding: 1rem; border: 1px solid rgba(216,225,236,.16); border-radius: 16px; margin-bottom: .75rem; background: rgba(255,255,255,.04); }
   .mrx-ai-engine__panel span { display: block; color: #f9c777; text-transform: uppercase; letter-spacing: .1em; font-size: .72rem; font-weight: 900; margin-bottom: .35rem; }
-  @media (max-width: 960px) { .mrx-ai-hero__links { display: none; } .mrx-ai-hero__grid, .mrx-ai-engine { grid-template-columns: 1fr; } .mrx-ai-hero__benefits, .mrx-ai-pathways { grid-template-columns: 1fr; } .mrx-ai-hero__benefits article { border-right: 0; border-bottom: 1px solid rgba(216,225,236,.16); } }
+  @media (max-width: 960px) { .mrx-ai-hero__links { display: none; } .mrx-ai-hero__grid, .mrx-ai-engine { grid-template-columns: 1fr; } .mrx-ai-hero__copy { margin-left: 0; max-width: 720px; padding-top: 28rem; } .mrx-ai-hero__benefits, .mrx-ai-pathways { grid-template-columns: 1fr; } .mrx-ai-hero__benefits article { border-right: 0; border-bottom: 1px solid rgba(216,225,236,.16); } }
   @media (max-width: 640px) { .mrx-ai-hero { min-height: auto; } .mrx-ai-hero__nav-cta { display: none; } .mrx-ai-hero__brand small { display: none; } .mrx-ai-hero h1 { font-size: clamp(3rem, 18vw, 4.5rem); } .mrx-ai-button { width: 100%; } .mrx-ai-chat__head { grid-template-columns: 52px 1fr auto; } .mrx-ai-chat__bot { width: 52px; height: 52px; } }
 </style>
 
