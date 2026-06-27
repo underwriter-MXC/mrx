@@ -11,7 +11,7 @@ export const localBusiness: LocalBusiness = {
   '@id': `${SITE.url}/#local`,
   name: SITE.name,
   url: SITE.url,
-  image: `${SITE.url}/logo.svg`,
+  image: `${SITE.url}/assets/brand/mrx-logo-color.png`,
   areaServed: [
     { '@type': 'State', name: 'Texas' },
     { '@type': 'AdministrativeArea', name: 'Texas' },

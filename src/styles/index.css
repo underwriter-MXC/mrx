@@ -50,6 +50,12 @@
     font-weight: var(--fw-bold);
   }
 
+  .header__brand img {
+    display: block;
+    width: min(220px, 52vw);
+    height: auto;
+  }
+
   .header__nav {
     display: none;
     align-items: center;

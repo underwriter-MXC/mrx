@@ -40,8 +40,7 @@ const pathways = [
   <div class="mrx-ai-hero__shell">
     <nav class="mrx-ai-hero__nav" aria-label="AI homepage navigation">
       <a class="mrx-ai-hero__brand" href="/" aria-label="Mineral Rights Xchange home">
-        <img src="/logo.svg" alt="" width="64" height="64" aria-hidden="true" />
-        <span><strong>Mineral Rights</strong><em>Xchange</em></span>
+        <img src="/assets/brand/mrx-logo-color.png" alt="" width="400" height="100" aria-hidden="true" />
       </a>
       <div class="mrx-ai-hero__links" aria-label="Primary links">
         <a href="#mrx-ai-chat">What Are My Minerals Worth?</a>
@@ -184,40 +183,37 @@ const pathways = [
 
 <style>
   .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
-  .mrx-ai-hero { position: relative; overflow: hidden; min-height: 850px; background: #f3eee4; color: #061A33; }
-  .mrx-ai-hero__background-image { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 31% top; opacity: 1; }
-  .mrx-ai-hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 49% 39%, rgba(255,255,255,.96) 0%, rgba(255,255,255,.88) 23%, rgba(247,243,234,.58) 40%, rgba(247,243,234,.08) 61%, rgba(6,26,51,.28) 100%), linear-gradient(90deg, rgba(247,243,234,.01) 0%, rgba(247,243,234,.06) 25%, rgba(247,243,234,.28) 43%, rgba(247,243,234,.06) 60%, rgba(6,26,51,.26) 100%); }
-  .mrx-ai-hero::after { content: ''; position: absolute; inset: auto 0 0; height: 18%; background: linear-gradient(0deg, rgba(6,26,51,.38), transparent); }
+  .mrx-ai-hero { position: relative; overflow: hidden; min-height: 100svh; background: #f3eee4; color: #061A33; }
+  .mrx-ai-hero__background-image { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% top; opacity: 1; }
+  .mrx-ai-hero::before { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(255,255,255,.72) 0%, rgba(255,255,255,.54) 25%, rgba(255,255,255,.12) 43%, rgba(255,255,255,0) 58%, rgba(6,26,51,.16) 100%), linear-gradient(0deg, rgba(6,26,51,.22) 0%, rgba(6,26,51,0) 26%); }
+  .mrx-ai-hero::after { content: ''; position: absolute; inset: auto 0 0; height: 14%; background: linear-gradient(0deg, rgba(6,26,51,.22), transparent); }
   .mrx-ai-hero__glow { position: absolute; border-radius: 999px; filter: blur(58px); opacity: .5; pointer-events: none; }
   .mrx-ai-hero__glow--one { width: 320px; height: 320px; background: rgba(216, 149, 31, .22); right: 9%; top: 20%; }
   .mrx-ai-hero__glow--two { width: 360px; height: 360px; background: rgba(42, 77, 122, .44); left: -8%; bottom: 20%; }
-  .mrx-ai-hero__shell { position: relative; z-index: 1; width: min(100% - 2rem, 1480px); margin: 0 auto; padding: 1rem 0 0; opacity: 1; pointer-events: auto; overflow: visible; }
-  .mrx-ai-hero__nav { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: clamp(1rem, 2vw, 2.2rem); padding: .8rem .95rem .8rem 1rem; border: 1px solid rgba(6,26,51,.1); border-radius: 0 0 28px 28px; background: rgba(255,255,255,.97); box-shadow: 0 18px 55px rgba(6,26,51,.12); backdrop-filter: blur(18px); }
-  .mrx-ai-hero__brand { display: inline-flex; align-items: center; gap: .7rem; min-width: max-content; color: #061A33; text-decoration: none; }
-  .mrx-ai-hero__brand img { width: 58px; height: 58px; object-fit: contain; }
-  .mrx-ai-hero__brand span { display: grid; gap: 0; line-height: .95; }
-  .mrx-ai-hero__brand strong { display: block; font-size: 1rem; letter-spacing: -.03em; }
-  .mrx-ai-hero__brand em { display: block; color: #C8A24A; font-size: 1.35rem; font-style: normal; font-weight: 900; letter-spacing: -.05em; }
+  .mrx-ai-hero__shell { position: relative; z-index: 1; width: min(100% - 3.5rem, 1476px); min-height: 100svh; margin: 0 auto; padding: clamp(.9rem, 1.6vw, 1.55rem) 0 0; opacity: 1; pointer-events: auto; overflow: visible; display: flex; flex-direction: column; }
+  .mrx-ai-hero__nav { display: grid; grid-template-columns: 270px 1fr 265px; align-items: center; gap: clamp(1rem, 2vw, 2.2rem); min-height: 84px; padding: .72rem 1rem .72rem 1.25rem; border: 1px solid rgba(6,26,51,.08); border-radius: 20px; background: rgba(255,255,255,.97); box-shadow: 0 18px 55px rgba(6,26,51,.12); backdrop-filter: blur(18px); }
+  .mrx-ai-hero__brand { display: inline-flex; align-items: center; min-width: max-content; color: #061A33; text-decoration: none; }
+  .mrx-ai-hero__brand img { display: block; width: clamp(198px, 15.8vw, 250px); height: auto; object-fit: contain; }
   .mrx-ai-chat__head strong { display: block; font-size: 1rem; }
   .mrx-ai-chat__head p { display: block; margin: .1rem 0 0; color: rgba(248,251,255,.7); font-size: .82rem; }
-  .mrx-ai-hero__links { display: flex; justify-content: center; align-items: center; gap: clamp(.75rem, 1.8vw, 1.9rem); font-size: clamp(.78rem, .78vw, .98rem); font-weight: 800; }
+  .mrx-ai-hero__links { display: flex; justify-content: center; align-items: center; gap: clamp(.75rem, 1.65vw, 1.85rem); font-size: clamp(.82rem, .86vw, 1rem); font-weight: 900; text-align: center; line-height: 1.35; }
   .mrx-ai-hero__links a, .mrx-ai-hero__nav-cta { color: #061A33; text-decoration: none; }
   .mrx-ai-hero__nav-cta { display: inline-flex; align-items: center; justify-content: center; gap: .55rem; min-height: 54px; border-radius: 999px; background: #061A33; padding: .85rem 1.15rem; color: #fff; box-shadow: 0 18px 44px rgba(6,26,51,.18); font-weight: 900; white-space: nowrap; }
   .mrx-ai-hero__nav-cta .mrx-ai-icon { width: 1.35rem; height: 1.35rem; }
   .mrx-ai-icon { display: block; width: 1.65rem; height: 1.65rem; object-fit: contain; }
   .mrx-ai-icon--large { width: 3rem; height: 3rem; }
-  .mrx-ai-hero__grid { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(390px, .82fr); gap: clamp(1.4rem, 3vw, 3.8rem); align-items: center; min-height: 655px; padding: clamp(2.1rem, 4.4vw, 3.9rem) 0 1.75rem; }
-  .mrx-ai-hero__copy { max-width: 690px; margin-left: clamp(15.5rem, 27vw, 24.5rem); padding: clamp(1.05rem, 1.8vw, 1.55rem); border-radius: 34px; background: linear-gradient(90deg, rgba(255,255,255,.82), rgba(255,255,255,.58) 58%, rgba(255,255,255,.16)); box-shadow: 0 18px 70px rgba(255,255,255,.5); text-shadow: 0 2px 0 rgba(255,255,255,.92), 0 14px 38px rgba(255,255,255,.86); }
+  .mrx-ai-hero__grid { display: grid; grid-template-columns: minmax(0, .94fr) minmax(430px, .58fr); gap: clamp(1.25rem, 2.4vw, 3rem); align-items: center; flex: 1 1 auto; min-height: 0; padding: clamp(1.35rem, 2.2vw, 2.1rem) 0 clamp(.85rem, 1.25vw, 1.1rem); }
+  .mrx-ai-hero__copy { max-width: 530px; margin-left: clamp(.25rem, 1.3vw, 1.7rem); padding: 0; border-radius: 0; background: transparent; box-shadow: none; text-shadow: 0 2px 0 rgba(255,255,255,.74), 0 12px 30px rgba(255,255,255,.64), 0 0 28px rgba(255,255,255,.48); }
   .mrx-ai-hero__kicker, .mrx-ai-section__intro p, .mrx-ai-engine > div > p:first-child { color: #f9c777; text-transform: uppercase; letter-spacing: .13em; font-weight: 900; font-size: .84rem; }
   .mrx-ai-hero__kicker { display: inline-flex; border-radius: 999px; background: #061A33; padding: .55rem 1rem; color: #fff; box-shadow: 0 10px 26px rgba(6,26,51,.18); }
-  .mrx-ai-hero h1 { max-width: 690px; margin: 1rem 0 1.1rem; color: #061A33; font-family: Georgia, 'Times New Roman', serif; font-size: clamp(3.1rem, 5.35vw, 6.35rem); line-height: .88; letter-spacing: -.075em; text-wrap: balance; }
-  .mrx-ai-hero__lede { max-width: 610px; color: #061A33; font-size: clamp(1rem, 1.18vw, 1.22rem); font-weight: 900; line-height: 1.42; }
-  .mrx-ai-hero__checks { display: grid; gap: .42rem; margin: .9rem 0 0; padding: 0; list-style: none; color: #061A33; font-weight: 800; }
-  .mrx-ai-hero__checks li { display: flex; gap: .55rem; align-items: center; }
-  .mrx-ai-hero__checks li::before { content: ''; display: grid; place-items: center; width: 1.25rem; height: 1.25rem; border-radius: 50%; background: url('/assets/mrx-homepage-v4/icons/hmpg-v6-exact/check-bullet.png') center / 1.25rem 1.25rem no-repeat; color: #061A33; font-size: .82rem; font-weight: 900; }
-  .mrx-ai-hero__promise { margin: 1.25rem 0 0; max-width: 560px; color: #061A33; font-size: 1.08rem; font-weight: 900; line-height: 1.45; }
-  .mrx-ai-hero__actions { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2.2rem; }
-  .mrx-ai-button { display: inline-flex; align-items: center; justify-content: space-between; gap: .9rem; min-height: 68px; padding: .9rem 1.5rem; border-radius: 14px; text-decoration: none; border: 1px solid rgba(255,255,255,.22); color: #fff; }
+  .mrx-ai-hero h1 { max-width: 540px; margin: .68rem 0 .8rem; color: #061A33; font-family: Georgia, 'Times New Roman', serif; font-size: clamp(3.6rem, 5.05vw, 5.6rem); line-height: .88; letter-spacing: -.075em; text-wrap: balance; }
+  .mrx-ai-hero__lede { max-width: 470px; margin: 0; color: #061A33; font-size: clamp(1rem, 1.16vw, 1.22rem); font-weight: 900; line-height: 1.25; }
+  .mrx-ai-hero__checks { display: grid; gap: .48rem; margin: .78rem 0 0; padding: 0; list-style: none; color: #061A33; font-weight: 850; }
+  .mrx-ai-hero__checks li { display: flex; gap: .55rem; align-items: center; font-size: clamp(.94rem, 1.05vw, 1.08rem); }
+  .mrx-ai-hero__checks li::before { content: ''; display: grid; place-items: center; flex: 0 0 auto; width: 1.22rem; height: 1.22rem; border-radius: 50%; background: url('/assets/mrx-homepage-v4/icons/hmpg-v6-exact/check-bullet.png') center / 1.22rem 1.22rem no-repeat; color: #061A33; font-size: .82rem; font-weight: 900; }
+  .mrx-ai-hero__promise { display: none; }
+  .mrx-ai-hero__actions { display: flex; flex-wrap: wrap; gap: .82rem; margin-top: 1.35rem; }
+  .mrx-ai-button { display: inline-flex; align-items: center; justify-content: center; gap: .85rem; min-height: 70px; padding: .76rem 1.15rem; border-radius: 10px; text-decoration: none; border: 1px solid rgba(255,255,255,.22); color: #fff; }
   .mrx-ai-button strong { display: block; font-size: 1.04rem; }
   .mrx-ai-button small { display: block; color: rgba(248,251,255,.72); margin-top: .2rem; }
   .mrx-ai-button--primary { background: #D6A23A; border-color: rgba(6,26,51,.2); color: #061A33; box-shadow: 0 22px 60px rgba(196,132,28,.22); }
@@ -229,27 +225,29 @@ const pathways = [
   .mrx-ai-hero__avatar-stack { display: flex; }
   .mrx-ai-hero__avatar-stack span { display: grid; place-items: center; width: 48px; height: 48px; margin-left: -10px; border-radius: 50%; border: 2px solid rgba(255,255,255,.18); background: #0a2540; color: #f9c777; font-size: .78rem; font-weight: 900; }
   .mrx-ai-hero__avatar-stack span:first-child { margin-left: 0; }
-  .mrx-ai-chat { display: flex; flex-direction: column; min-height: 0; max-width: 560px; border: 2px solid rgba(214,162,58,.88); border-radius: 30px; background: rgba(6,26,51,.97); box-shadow: 0 28px 100px rgba(0,0,0,.42); padding: clamp(1rem, 1.8vw, 1.45rem); backdrop-filter: blur(18px); overflow: hidden; }
-  .mrx-ai-chat__head { display: grid; grid-template-columns: 64px 1fr auto; gap: 1rem; align-items: center; }
-  .mrx-ai-chat__head strong { color: #fff; }
-  .mrx-ai-chat__avatar { width: 64px; height: 64px; border-radius: 50%; border: 1px solid rgba(249,199,119,.5); object-fit: cover; object-position: center top; box-shadow: 0 12px 32px rgba(0,0,0,.28); }
+  .mrx-ai-chat { display: flex; flex-direction: column; min-height: 0; max-width: 512px; justify-self: end; border: 2px solid rgba(214,162,58,.88); border-radius: 30px; background: rgba(6,26,51,.97); box-shadow: 0 28px 100px rgba(0,0,0,.42); padding: clamp(.92rem, 1.35vw, 1.18rem); backdrop-filter: blur(18px); overflow: hidden; }
+  .mrx-ai-chat__head { display: grid; grid-template-columns: 60px 1fr auto; gap: .85rem; align-items: center; }
+  .mrx-ai-chat__head strong { color: #fff; font-size: 1.3rem; }
+  .mrx-ai-chat__avatar { width: 60px; height: 60px; border-radius: 50%; border: 1px solid rgba(249,199,119,.5); object-fit: cover; object-position: center top; box-shadow: 0 12px 32px rgba(0,0,0,.28); }
   .mrx-ai-chat__head p span { display: inline-block; width: 9px; height: 9px; margin-right: .35rem; background: #2a8d4f; border-radius: 50%; }
-  .mrx-ai-chat__more { width: 48px; height: 48px; border-radius: 50%; border: 1px solid rgba(216,225,236,.24); background: rgba(255,255,255,.05); color: #fff; font-size: 1.5rem; }
-  .mrx-ai-chat__bubble { margin-top: 1.2rem; border-radius: 20px; background: rgba(216,225,236,.08); border: 1px solid rgba(255,255,255,.12); padding: 1.25rem; color: rgba(248,251,255,.94); line-height: 1.55; }
+  .mrx-ai-chat__more { width: 44px; height: 44px; border-radius: 50%; border: 1px solid rgba(216,225,236,.24); background: rgba(255,255,255,.05); color: #fff; font-size: 1.4rem; }
+  .mrx-ai-chat__bubble { margin-top: .82rem; border-radius: 18px; background: rgba(216,225,236,.08); border: 1px solid rgba(255,255,255,.12); padding: 1rem; color: rgba(248,251,255,.94); line-height: 1.42; }
   .mrx-ai-chat__bubble span { color: #D6A23A; }
-  .mrx-ai-chat__quick { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .75rem; margin-top: 1.1rem; padding-right: .2rem; }
+  .mrx-ai-chat__quick { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .55rem; margin-top: .82rem; padding-right: .2rem; }
   .mrx-ai-chat__quick[hidden] { display: none; }
-  .mrx-ai-chat__quick button { display: grid; grid-template-columns: 34px 1fr; align-items: center; gap: .75rem; width: 100%; min-height: 68px; border: 1px solid rgba(214,162,58,.42); border-radius: 12px; background: rgba(255,255,255,.035); color: #fff; padding: .8rem .9rem; text-align: left; cursor: pointer; }
+  .mrx-ai-chat__quick button { display: grid; grid-template-columns: 30px 1fr; align-items: center; gap: .58rem; width: 100%; min-height: 58px; border: 1px solid rgba(214,162,58,.42); border-radius: 12px; background: rgba(255,255,255,.035); color: #fff; padding: .62rem .68rem; text-align: left; cursor: pointer; }
+  .mrx-ai-chat__quick button strong { font-size: .86rem; line-height: 1.15; }
   .mrx-ai-chat__quick span, .mrx-ai-chat__quick em { color: #f9c777; font-style: normal; }
-  .mrx-ai-chat__form { display: grid; grid-template-columns: 1fr 52px; align-items: center; gap: .5rem; margin-top: 1rem; border: 1px solid rgba(216,225,236,.22); border-radius: 18px; padding: .55rem; }
-  .mrx-ai-chat__form input { min-width: 0; background: transparent; border: 0; color: #fff; padding: .8rem; font: inherit; outline: 0; }
-  .mrx-ai-chat__form button { width: 48px; height: 48px; border: 0; border-radius: 50%; background: #c4841c; color: #fff; cursor: pointer; }
-  .mrx-ai-chat__review { margin-top: 1rem; text-align: center; color: rgba(248,251,255,.88); }
+  .mrx-ai-chat__quick .mrx-ai-icon { width: 1.42rem; height: 1.42rem; }
+  .mrx-ai-chat__form { display: grid; grid-template-columns: 1fr 46px; align-items: center; gap: .45rem; margin-top: .78rem; border: 1px solid rgba(216,225,236,.22); border-radius: 16px; padding: .42rem; }
+  .mrx-ai-chat__form input { min-width: 0; background: transparent; border: 0; color: #fff; padding: .68rem; font: inherit; outline: 0; }
+  .mrx-ai-chat__form button { width: 44px; height: 44px; border: 0; border-radius: 50%; background: #c4841c; color: #fff; cursor: pointer; }
+  .mrx-ai-chat__review { margin-top: .78rem; text-align: center; color: rgba(248,251,255,.88); }
   .mrx-ai-chat__review strong { display: block; color: #D6A23A; }
   .mrx-ai-chat__review span { display: block; margin-top: .25rem; font-size: .9rem; }
-  .mrx-ai-chat__review a { display: flex; justify-content: center; align-items: center; min-height: 56px; margin-top: .8rem; border: 1px solid #D6A23A; border-radius: 12px; color: #fff; text-decoration: none; font-weight: 900; }
-  .mrx-ai-hero__benefits { display: grid; grid-template-columns: repeat(4, 1fr); margin: 0 calc(50% - 50vw); padding: 1.35rem max(1rem, calc((100vw - 1200px)/2)); border: 0; background: rgba(255,255,255,.94); color: #061A33; box-shadow: 0 -1px 0 rgba(6,26,51,.08); }
-  .mrx-ai-hero__benefits article { display: flex; justify-content: center; gap: 1rem; padding: .7rem 1.4rem; border-right: 1px solid rgba(6,26,51,.14); }
+  .mrx-ai-chat__review a { display: flex; justify-content: center; align-items: center; min-height: 50px; margin-top: .65rem; border: 1px solid #D6A23A; border-radius: 12px; color: #fff; text-decoration: none; font-weight: 900; }
+  .mrx-ai-hero__benefits { display: grid; grid-template-columns: repeat(4, 1fr); margin: 0 calc(50% - 50vw); padding: .82rem max(1rem, calc((100vw - 1200px)/2)); border: 0; background: rgba(255,255,255,.96); color: #061A33; box-shadow: 0 -1px 0 rgba(6,26,51,.08); }
+  .mrx-ai-hero__benefits article { display: flex; justify-content: center; align-items: center; gap: .72rem; min-height: 66px; padding: .35rem 1.1rem; border-right: 1px solid rgba(6,26,51,.14); }
   .mrx-ai-hero__benefits article:last-child { border-right: 0; }
   .mrx-ai-hero__benefits span { color: #D6A23A; font-size: 2.3rem; line-height: 1; }
   .mrx-ai-hero__benefits p { margin: .2rem 0 0; color: rgba(6,26,51,.72); line-height: 1.35; }
@@ -267,8 +265,9 @@ const pathways = [
   .mrx-ai-engine__panel { border-radius: 28px; background: #071d31; color: #fff; padding: 1.3rem; box-shadow: 0 26px 70px rgba(7,29,49,.2); }
   .mrx-ai-engine__panel div { padding: 1rem; border: 1px solid rgba(216,225,236,.16); border-radius: 16px; margin-bottom: .75rem; background: rgba(255,255,255,.04); }
   .mrx-ai-engine__panel span { display: block; color: #f9c777; text-transform: uppercase; letter-spacing: .1em; font-size: .72rem; font-weight: 900; margin-bottom: .35rem; }
-  @media (max-width: 960px) { .mrx-ai-hero__links { display: none; } .mrx-ai-hero__grid, .mrx-ai-engine { grid-template-columns: 1fr; } .mrx-ai-hero__copy { margin-left: 0; max-width: 720px; padding-top: 28rem; } .mrx-ai-hero__benefits, .mrx-ai-pathways { grid-template-columns: 1fr; } .mrx-ai-hero__benefits article { border-right: 0; border-bottom: 1px solid rgba(216,225,236,.16); } }
-  @media (max-width: 640px) { .mrx-ai-hero { min-height: auto; } .mrx-ai-hero__nav-cta { display: none; } .mrx-ai-hero__brand small { display: none; } .mrx-ai-hero h1 { font-size: clamp(3rem, 18vw, 4.5rem); } .mrx-ai-button { width: 100%; } .mrx-ai-chat__head { grid-template-columns: 52px 1fr auto; } .mrx-ai-chat__bot { width: 52px; height: 52px; } }
+  @media (max-width: 1180px) { .mrx-ai-hero__nav { grid-template-columns: auto 1fr auto; } .mrx-ai-hero__links { gap: .75rem; font-size: .78rem; } .mrx-ai-hero__grid { grid-template-columns: minmax(0, .9fr) minmax(380px, .7fr); } .mrx-ai-hero h1 { font-size: clamp(3.1rem, 4.8vw, 4.6rem); } }
+  @media (max-width: 960px) { .mrx-ai-hero { min-height: auto; } .mrx-ai-hero__shell { width: min(100% - 2rem, 760px); min-height: auto; } .mrx-ai-hero__links { display: none; } .mrx-ai-hero__nav { grid-template-columns: 1fr auto; } .mrx-ai-hero__grid, .mrx-ai-engine { grid-template-columns: 1fr; } .mrx-ai-hero__copy { margin-left: 0; max-width: 720px; padding-top: 22rem; } .mrx-ai-chat { justify-self: stretch; max-width: none; } .mrx-ai-hero__benefits, .mrx-ai-pathways { grid-template-columns: 1fr; } .mrx-ai-hero__benefits article { border-right: 0; border-bottom: 1px solid rgba(216,225,236,.16); } }
+  @media (max-width: 640px) { .mrx-ai-hero__shell { width: min(100% - 1rem, 100%); } .mrx-ai-hero__nav { border-radius: 14px; } .mrx-ai-hero__nav-cta { display: none; } .mrx-ai-hero__brand img { width: min(215px, 74vw); } .mrx-ai-hero h1 { font-size: clamp(3rem, 17vw, 4.4rem); } .mrx-ai-button { width: 100%; } .mrx-ai-chat__head { grid-template-columns: 52px 1fr auto; } .mrx-ai-chat__avatar { width: 52px; height: 52px; } }
 </style>
 
 <script is:inline>

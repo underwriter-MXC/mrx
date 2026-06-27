@@ -13,7 +13,7 @@ export const organization: Organization = {
   name: SITE.name,
   alternateName: SITE.shortName,
   url: SITE.url,
-  logo: `${SITE.url}/logo.svg`,
+  logo: `${SITE.url}/assets/brand/mrx-logo-color.png`,
   description: SITE.description,
   foundingDate: String(SITE.foundedYear),
   // sameAs populated in stage 11 if Daryl wants socials.
@@ -24,7 +24,7 @@ export const professionalService: ProfessionalService = {
   '@type': 'ProfessionalService',
   '@id': `${SITE.url}/#service`,
   name: SITE.name,
-  image: `${SITE.url}/logo.svg`,
+  image: `${SITE.url}/assets/brand/mrx-logo-color.png`,
   url: SITE.url,
   telephone: SITE.phone || undefined,
   priceRange: '$$',
