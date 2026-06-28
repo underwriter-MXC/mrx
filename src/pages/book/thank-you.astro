@@ -34,6 +34,12 @@ export const prerender = true;
     const payloads = [
       { event: 'mrx_book_submit', lead_type: 'book_review', form_action: '/api/book', value: 0, currency: 'USD' },
       { event: 'generate_lead', lead_type: 'book_review', form_action: '/api/book' },
+      {
+        event: 'calendar_booked',
+        calendar_id: 'native-book-form',
+        calendar_source: 'book_thank_you',
+        lead_type: 'book_review',
+      },
       { event: 'form_submit', mrx_form: 'book' },
     ];
     payloads.forEach((payload) => {
