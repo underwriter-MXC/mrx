@@ -2,6 +2,9 @@
  * Typed env var access. Per Architecture Plan §9, the contract is:
  *
  *   PUBLIC_GTM_ID          (client-visible; GTM container)
+ *   PUBLIC_MRX_GHL_CALENDAR_URL (client-visible; direct GHL calendar URL for homepage CTAs)
+ *   PUBLIC_MRX_PHONE_TEL   (client-visible; tel:+... click-to-call CTA, optional)
+ *   PUBLIC_MRX_PHONE_LABEL (client-visible; accessible label for the phone CTA, optional)
  *   MRX_GHL_API_KEY        (secret; GHL API token, stage 08)
  *   MRX_GHL_LOCATION_ID    (secret; GHL sub-account location)
  *   MRX_GHL_CALENDAR_URL   (secret; calendar URL /book redirects to)
@@ -15,6 +18,9 @@
 export type PublicEnv = {
   PUBLIC_GTM_ID?: string;
   PUBLIC_SITE_URL?: string;
+  PUBLIC_MRX_GHL_CALENDAR_URL?: string;
+  PUBLIC_MRX_PHONE_TEL?: string;
+  PUBLIC_MRX_PHONE_LABEL?: string;
 };
 
 export type ServerEnv = {
@@ -30,6 +36,9 @@ export function publicEnv(): PublicEnv {
   return {
     PUBLIC_GTM_ID: import.meta.env.PUBLIC_GTM_ID as string | undefined,
     PUBLIC_SITE_URL: import.meta.env.PUBLIC_SITE_URL as string | undefined,
+    PUBLIC_MRX_GHL_CALENDAR_URL: import.meta.env.PUBLIC_MRX_GHL_CALENDAR_URL as string | undefined,
+    PUBLIC_MRX_PHONE_TEL: import.meta.env.PUBLIC_MRX_PHONE_TEL as string | undefined,
+    PUBLIC_MRX_PHONE_LABEL: import.meta.env.PUBLIC_MRX_PHONE_LABEL as string | undefined,
   };
 }
 
