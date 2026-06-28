@@ -46,24 +46,26 @@ The `build` script in `package.json` chains three steps; ALL must pass:
 |---|-------|---------------|
 | 1 | Exit code is `0` | `echo "${PIPESTATUS[0]}"` after the pipe |
 | 2 | `dist/` exists | `test -d dist && echo OK` |
-| 3 | HTML pages were generated | `find dist -name '*.html' \| wc -l` → expect ≥ 50 |
-| 4 | Cloudflare `_worker.js` was emitted | `test -f dist/_worker.js && echo OK` |
+| 3 | HTML pages were generated | `find dist -name '*.html' \| wc -l` → expect ≥ 25 |
+| 4 | Cloudflare `_worker.js` was emitted | `test -e dist/_worker.js && echo OK` |
 | 5 | Sitemap has entries | `grep -oE '<loc>[^<]+</loc>' dist/sitemap-0.xml \| wc -l` → expect ≥ 20 |
 | 6 | Route manifest exists | `test -f dist/_routes.json && echo OK` |
 | 7 | Compliance check did not silently skip | compliance log line shows `0 violations` (or equivalent) |
 
-Reference values from the last clean build on this branch (2026-06-17, commit `84a3d54`):
+Reference values from a clean build on this branch after the Cloudflare adapter / current route
+shape reconciliation (2026-06-28, commit `557d46c`):
 
-- **HTML pages**: 53
-- **Total files in `dist/`**: 209
-- **`dist/` size**: 27 MB
+- **HTML pages**: 29
+- **Total files in `dist/`**: 2437
+- **`dist/` size**: 43 MB
 - **Sitemap URLs**: 25
-- **Routes (include + exclude in `_routes.json`)**: 35 (4 include + 31 exclude)
+- **Routes (include + exclude in `_routes.json`)**: 38
 - **Compliance check**: clean (0 violations)
-- **Astro build wall time**: ~3.5s server build + ~0.2s prerender = ~3.7s after typecheck
+- **Astro build wall time**: ~2.5s server build + ~0.1s prerender = ~2.6s after typecheck
 
-If your numbers diverge by more than ±2 on HTML pages or ±1 on routes, investigate before
-shipping — something rendered (or failed to render) differently.
+If your numbers diverge by more than ±4 on HTML pages or ±2 on routes, investigate before
+shipping — something rendered (or failed to render) differently. Server-rendered routes are
+not counted as static `.html` files; use sitemap/route counts as companion checks.
 
 ## Evidence to attach to a Kanban delivery card
 

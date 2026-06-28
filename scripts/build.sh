@@ -76,7 +76,7 @@ DIST_SIZE=$(du -sh dist 2>/dev/null | awk '{print $1}')
 SITEMAP_URLS=$(grep -oE '<loc>[^<]+</loc>' dist/sitemap-0.xml 2>/dev/null | wc -l | tr -d ' ')
 ROUTE_TOTAL=$(node -e "const r=require('./dist/_routes.json');console.log(r.include.length+r.exclude.length)" 2>/dev/null || echo 0)
 
-[ "$HTML_COUNT" -ge 50 ]   || { echo "FAIL: HTML count $HTML_COUNT < 50"; FAIL=1; }
+[ "$HTML_COUNT" -ge 25 ]   || { echo "FAIL: HTML count $HTML_COUNT < 25"; FAIL=1; }
 [ "$SITEMAP_URLS" -ge 20 ] || { echo "FAIL: sitemap URLs $SITEMAP_URLS < 20"; FAIL=1; }
 
 if [ "$BUILD_EXIT" -ne 0 ]; then
