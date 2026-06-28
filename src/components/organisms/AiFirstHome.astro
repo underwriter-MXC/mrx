@@ -34,6 +34,29 @@ const pathways = [
     fetchpriority="high"
     aria-hidden="true"
   />
+  <img
+    class="mrx-ai-hero__mockup-image"
+    src="/assets/mrx-homepage-v4/backgrounds/tommy-latest-mockup-20260627.jpg"
+    alt=""
+    width="1536"
+    height="1024"
+    loading="eager"
+    fetchpriority="high"
+    aria-hidden="true"
+  />
+  <div class="mrx-ai-hero__hotspots" aria-label="Homepage hero quick links">
+    <a class="mrx-ai-hero__hotspot mrx-ai-hero__hotspot--home" href="/">Mineral Rights Xchange home</a>
+    <a class="mrx-ai-hero__hotspot mrx-ai-hero__hotspot--worth" href="#mrx-ai-chat">What Are My Minerals Worth?</a>
+    <a class="mrx-ai-hero__hotspot mrx-ai-hero__hotspot--offer-nav" href="#mrx-ai-chat">I Received An Offer</a>
+    <a class="mrx-ai-hero__hotspot mrx-ai-hero__hotspot--inherited" href="#mrx-ai-chat">Inherited Mineral Rights</a>
+    <a class="mrx-ai-hero__hotspot mrx-ai-hero__hotspot--learning" href="/blog">Learning Center</a>
+    <a class="mrx-ai-hero__hotspot mrx-ai-hero__hotspot--about" href="/about">About MRX</a>
+    <a class="mrx-ai-hero__hotspot mrx-ai-hero__hotspot--faq" href="/faq">FAQ</a>
+    <a class="mrx-ai-hero__hotspot mrx-ai-hero__hotspot--book-nav" href="/book">Book Free Mineral Review</a>
+    <a class="mrx-ai-hero__hotspot mrx-ai-hero__hotspot--primary" href="#mrx-ai-chat">Find Out What Your Minerals May Be Worth</a>
+    <a class="mrx-ai-hero__hotspot mrx-ai-hero__hotspot--offer" href="/book">I Received An Offer</a>
+    <a class="mrx-ai-hero__hotspot mrx-ai-hero__hotspot--chat-book" href="/book">Book Free Mineral Review</a>
+  </div>
   <div class="mrx-ai-hero__glow mrx-ai-hero__glow--one" aria-hidden="true"></div>
   <div class="mrx-ai-hero__glow mrx-ai-hero__glow--two" aria-hidden="true"></div>
 
@@ -185,6 +208,8 @@ const pathways = [
   .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
   .mrx-ai-hero { position: relative; overflow: hidden; min-height: 100svh; background: #f3eee4; color: #061A33; }
   .mrx-ai-hero__background-image { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% top; opacity: 1; }
+  .mrx-ai-hero__mockup-image { display: none; }
+  .mrx-ai-hero__hotspots { display: none; }
   .mrx-ai-hero::before { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(255,255,255,.72) 0%, rgba(255,255,255,.54) 25%, rgba(255,255,255,.12) 43%, rgba(255,255,255,0) 58%, rgba(6,26,51,.16) 100%), linear-gradient(0deg, rgba(6,26,51,.22) 0%, rgba(6,26,51,0) 26%); }
   .mrx-ai-hero::after { content: ''; position: absolute; inset: auto 0 0; height: 14%; background: linear-gradient(0deg, rgba(6,26,51,.22), transparent); }
   .mrx-ai-hero__glow { position: absolute; border-radius: 999px; filter: blur(58px); opacity: .5; pointer-events: none; }
@@ -265,6 +290,27 @@ const pathways = [
   .mrx-ai-engine__panel { border-radius: 28px; background: #071d31; color: #fff; padding: 1.3rem; box-shadow: 0 26px 70px rgba(7,29,49,.2); }
   .mrx-ai-engine__panel div { padding: 1rem; border: 1px solid rgba(216,225,236,.16); border-radius: 16px; margin-bottom: .75rem; background: rgba(255,255,255,.04); }
   .mrx-ai-engine__panel span { display: block; color: #f9c777; text-transform: uppercase; letter-spacing: .1em; font-size: .72rem; font-weight: 900; margin-bottom: .35rem; }
+  @media (min-width: 961px) {
+    .mrx-ai-hero { min-height: auto; aspect-ratio: 3 / 2; }
+    .mrx-ai-hero__background-image, .mrx-ai-hero__glow, .mrx-ai-hero::before, .mrx-ai-hero::after { display: none; }
+    .mrx-ai-hero__mockup-image { display: block; position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+    .mrx-ai-hero__hotspots { display: block; position: absolute; inset: 0; z-index: 3; }
+    .mrx-ai-hero__hotspot { position: absolute; overflow: hidden; color: transparent; text-indent: -999rem; border-radius: 12px; }
+    .mrx-ai-hero__hotspot:focus-visible { outline: 3px solid #f9c777; outline-offset: 3px; background: rgba(249,199,119,.16); }
+    .mrx-ai-hero__hotspot--home { left: 2.6%; top: 1.7%; width: 16.6%; height: 7.5%; }
+    .mrx-ai-hero__hotspot--worth { left: 23.8%; top: 3.3%; width: 9.6%; height: 5%; }
+    .mrx-ai-hero__hotspot--offer-nav { left: 35.6%; top: 3.3%; width: 8.7%; height: 5%; }
+    .mrx-ai-hero__hotspot--inherited { left: 46.1%; top: 3.3%; width: 9.7%; height: 5%; }
+    .mrx-ai-hero__hotspot--learning { left: 57.3%; top: 3.3%; width: 8.5%; height: 5%; }
+    .mrx-ai-hero__hotspot--about { left: 66.9%; top: 3.3%; width: 6.3%; height: 5%; }
+    .mrx-ai-hero__hotspot--faq { left: 73.8%; top: 3.3%; width: 4.5%; height: 5%; }
+    .mrx-ai-hero__hotspot--book-nav { left: 80%; top: 1.9%; width: 17.2%; height: 6.7%; border-radius: 18px; }
+    .mrx-ai-hero__hotspot--primary { left: 3.9%; top: 69.3%; width: 15.9%; height: 7%; }
+    .mrx-ai-hero__hotspot--offer { left: 20.8%; top: 69.3%; width: 10.4%; height: 7%; }
+    .mrx-ai-hero__hotspot--chat-book { left: 64.7%; top: 73.9%; width: 31.3%; height: 5%; }
+    .mrx-ai-hero__shell { position: absolute; inset: 0; width: 100%; min-height: 0; padding: 0; pointer-events: none; }
+    .mrx-ai-hero__nav, .mrx-ai-hero__grid, .mrx-ai-hero__benefits { opacity: 0; pointer-events: none; }
+  }
   @media (max-width: 1180px) { .mrx-ai-hero__nav { grid-template-columns: auto 1fr auto; } .mrx-ai-hero__links { gap: .75rem; font-size: .78rem; } .mrx-ai-hero__grid { grid-template-columns: minmax(0, .9fr) minmax(380px, .7fr); } .mrx-ai-hero h1 { font-size: clamp(3.1rem, 4.8vw, 4.6rem); } }
   @media (max-width: 960px) { .mrx-ai-hero { min-height: auto; } .mrx-ai-hero__shell { width: min(100% - 2rem, 760px); min-height: auto; } .mrx-ai-hero__links { display: none; } .mrx-ai-hero__nav { grid-template-columns: 1fr auto; } .mrx-ai-hero__grid, .mrx-ai-engine { grid-template-columns: 1fr; } .mrx-ai-hero__copy { margin-left: 0; max-width: 720px; padding-top: 22rem; } .mrx-ai-chat { justify-self: stretch; max-width: none; } .mrx-ai-hero__benefits, .mrx-ai-pathways { grid-template-columns: 1fr; } .mrx-ai-hero__benefits article { border-right: 0; border-bottom: 1px solid rgba(216,225,236,.16); } }
   @media (max-width: 640px) { .mrx-ai-hero__shell { width: min(100% - 1rem, 100%); } .mrx-ai-hero__nav { border-radius: 14px; } .mrx-ai-hero__nav-cta { display: none; } .mrx-ai-hero__brand img { width: min(215px, 74vw); } .mrx-ai-hero h1 { font-size: clamp(3rem, 17vw, 4.4rem); } .mrx-ai-button { width: 100%; } .mrx-ai-chat__head { grid-template-columns: 52px 1fr auto; } .mrx-ai-chat__avatar { width: 52px; height: 52px; } }
