@@ -29,6 +29,14 @@ export const prerender = true;
   />
   <script is:inline>
     window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({ event: 'form_submit', mrx_form: 'free-guide' });
+    const payloads = [
+      { event: 'mrx_free_guide_submit', lead_type: 'free_guide', form_action: '/api/free-guide', value: 0, currency: 'USD' },
+      { event: 'generate_lead', lead_type: 'free_guide', form_action: '/api/free-guide' },
+      { event: 'form_submit', mrx_form: 'free-guide' },
+    ];
+    payloads.forEach((payload) => {
+      if (typeof window.__mrxPush === 'function') window.__mrxPush(payload);
+      else window.dataLayer.push(payload);
+    });
   </script>
 </BaseLayout>

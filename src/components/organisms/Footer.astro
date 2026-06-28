@@ -31,6 +31,7 @@ import { NAV, SITE } from '../../lib/site';
         <h3 class="footer__heading">Legal</h3>
         <ul class="footer__links">
           {NAV.footer.legal.map((l) => <li><a href={l.href}>{l.label}</a></li>)}
+          <li><a href={`mailto:${SITE.email}`}>Email MRX</a></li>
         </ul>
       </div>
     </div>

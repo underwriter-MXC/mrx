@@ -31,6 +31,14 @@ export const prerender = true;
   />
   <script is:inline>
     window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({ event: 'form_submit', mrx_form: 'book' });
+    const payloads = [
+      { event: 'mrx_book_submit', lead_type: 'book_review', form_action: '/api/book', value: 0, currency: 'USD' },
+      { event: 'generate_lead', lead_type: 'book_review', form_action: '/api/book' },
+      { event: 'form_submit', mrx_form: 'book' },
+    ];
+    payloads.forEach((payload) => {
+      if (typeof window.__mrxPush === 'function') window.__mrxPush(payload);
+      else window.dataLayer.push(payload);
+    });
   </script>
 </BaseLayout>

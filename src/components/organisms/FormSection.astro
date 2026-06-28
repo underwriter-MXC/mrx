@@ -96,10 +96,28 @@ const action = form === 'book' ? '/api/book' : '/api/free-guide';
       const pageTitle = form.querySelector<HTMLInputElement>('input[name="page_title"]');
       if (pageTitle) pageTitle.value = document.title;
 
-      // dataLayer: form_submit event
       const formName = (form.querySelector('input[name="consent"]')?.closest('form')?.getAttribute('action') ?? '').includes('free-guide') ? 'free-guide' : 'book';
+      const eventName = formName === 'book' ? 'mrx_book_submit' : 'mrx_free_guide_submit';
+      const payload = {
+        event: eventName,
+        lead_type: formName === 'book' ? 'book_review' : 'free_guide',
+        form_id: form.getAttribute('aria-label') || formName,
+        form_action: form.getAttribute('action') || '',
+        value: 0,
+        currency: 'USD',
+      };
       window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push({ event: 'form_submit', mrx_form: formName });
+      const mrxPush = (window as any).__mrxPush;
+      if (typeof mrxPush === 'function') {
+        mrxPush(payload);
+        mrxPush({ event: 'generate_lead', lead_type: payload.lead_type, form_action: payload.form_action });
+        // Backward-compatible event name used by earlier GA4 setup.
+        mrxPush({ event: 'form_submit', mrx_form: formName });
+      } else {
+        window.dataLayer.push(payload);
+        window.dataLayer.push({ event: 'generate_lead', lead_type: payload.lead_type, form_action: payload.form_action });
+        window.dataLayer.push({ event: 'form_submit', mrx_form: formName });
+      }
     });
   }
   document.querySelectorAll<HTMLFormElement>('form[method="POST"]').forEach(attachUtmCopy);

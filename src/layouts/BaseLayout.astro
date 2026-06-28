@@ -69,9 +69,8 @@ const {
       define:vars={{ pageType, pageCategory }}
     >
       // GTM/GA4 dataLayer init (per SEO plan §6.2). The GTM container
-      // itself is loaded only if PUBLIC_GTM_ID is set; the dataLayer
-      // shim is always on so the form_submit / cta_click / view_faq_block
-      // pushes work regardless.
+      // itself is loaded only if PUBLIC_GTM_ID is set; the dataLayer shim
+      // stays on so conversion events are testable even before GTM fires.
       window.dataLayer = window.dataLayer || [];
       window.dataLayer.push({
         'gtm.start': Date.now(),
@@ -79,7 +78,85 @@ const {
         mrx_page_type: pageType,
         mrx_page_category: pageCategory || null,
       });
-      function __mrxPush(payload) { window.dataLayer.push(payload); }
+
+      function __mrxEventId(name) {
+        var rand = Math.random().toString(36).slice(2);
+        var ts = Date.now().toString(36);
+        return 'mrx_' + name + '_' + ts + '_' + rand;
+      }
+
+      function __mrxParams(extra) {
+        var url = new URL(window.location.href);
+        return Object.assign({
+          event_id: __mrxEventId((extra && extra.event) || 'event'),
+          page_location: window.location.href,
+          page_path: window.location.pathname,
+          page_title: document.title,
+          page_category: pageCategory || null,
+          mrx_page_type: pageType,
+          mrx_page_category: pageCategory || null,
+          utm_source: url.searchParams.get('utm_source') || undefined,
+          utm_medium: url.searchParams.get('utm_medium') || undefined,
+          utm_campaign: url.searchParams.get('utm_campaign') || undefined,
+          utm_term: url.searchParams.get('utm_term') || undefined,
+          utm_content: url.searchParams.get('utm_content') || undefined,
+          gclid_present: url.searchParams.has('gclid'),
+          fbclid_present: url.searchParams.has('fbclid'),
+        }, extra || {});
+      }
+
+      function __mrxPush(payload) { window.dataLayer.push(__mrxParams(payload)); }
+      window.__mrxPush = __mrxPush;
+
+      document.addEventListener('DOMContentLoaded', function () {
+        // Recommended MRX page view event used by GTM/GA4/Meta mappings.
+        __mrxPush({ event: 'mrx_page_view' });
+
+        // Treat the native /book page as the current booking/calendar view
+        // surface until a dedicated embedded calendar is added.
+        if (window.location.pathname.replace(/\/$/, '') === '/book') {
+          __mrxPush({
+            event: 'calendar_view',
+            calendar_id: 'native-book-form',
+            calendar_source: 'book_page',
+          });
+        }
+
+        document.querySelectorAll('a[data-cta-name]').forEach(function (link) {
+          link.addEventListener('click', function () {
+            var name = link.getAttribute('data-cta-name') || 'unknown';
+            var href = link.getAttribute('href') || '';
+            __mrxPush({
+              event: 'book_cta_click',
+              cta_name: name,
+              link_text: (link.textContent || '').trim(),
+              link_url: href,
+            });
+            // Backward-compatible event name used by older MRX dashboards.
+            __mrxPush({ event: 'cta_click', mrx_cta_name: name, mrx_href: href });
+          });
+        });
+
+        document.querySelectorAll('a[href^="tel:"]').forEach(function (link) {
+          link.addEventListener('click', function () {
+            __mrxPush({
+              event: 'phone_click',
+              link_text: (link.textContent || '').trim(),
+              link_url: link.getAttribute('href') || '',
+            });
+          });
+        });
+
+        document.querySelectorAll('a[href^="mailto:"]').forEach(function (link) {
+          link.addEventListener('click', function () {
+            __mrxPush({
+              event: 'mailto_click',
+              link_text: (link.textContent || '').trim(),
+              link_url: link.getAttribute('href') || '',
+            });
+          });
+        });
+      });
     </script>
     {
       import.meta.env.PUBLIC_GTM_ID && (
