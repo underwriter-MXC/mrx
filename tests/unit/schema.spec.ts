@@ -14,7 +14,7 @@ describe('site-level JSON-LD graph', () => {
     const org = siteGraph.find((n) => n['@type'] === 'Organization') as any;
     expect(org?.name).toBeTruthy();
     expect(org?.url).toBeTruthy();
-    expect(org?.logo).toMatch(/\.svg$/);
+    expect(org?.logo).toBe('https://mineralrightsxchange.com/assets/brand/mrx-logo-color.png');
   });
 
   it('WebPage carries the site-wide SpeakableSpecification', () => {
