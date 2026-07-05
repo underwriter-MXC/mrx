@@ -97,6 +97,11 @@ console.log(`[postbuild-sitemap] Rewrote priority on ${rewritten} <url> entries 
 
 if (SITEMAP_INDEX) {
   const sitemapXml = join(dirname(SITEMAP_INDEX), 'sitemap.xml');
+  const canonicalSitemapIndex = join(dirname(SITEMAP_INDEX), 'sitemap_index.xml');
   await copyFile(SITEMAP_INDEX, sitemapXml);
+  await copyFile(SITEMAP_INDEX, canonicalSitemapIndex);
   console.log(`[postbuild-sitemap] Copied sitemap index to ${sitemapXml} for Search Console compatibility`);
+  console.log(
+    `[postbuild-sitemap] Copied sitemap index to ${canonicalSitemapIndex} for canonical MRX crawler access`,
+  );
 }

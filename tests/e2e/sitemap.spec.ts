@@ -1,8 +1,8 @@
 import { test, expect } from '@playwright/test';
 
 test.describe('sitemap', () => {
-  test('sitemap-index.xml is served and references sitemap-0.xml', async ({ request }) => {
-    const r = await request.get('/sitemap-index.xml');
+  test('sitemap_index.xml is served and references sitemap-0.xml', async ({ request }) => {
+    const r = await request.get('/sitemap_index.xml');
     expect(r.status()).toBe(200);
     const body = await r.text();
     expect(body).toMatch(/<sitemapindex/i);

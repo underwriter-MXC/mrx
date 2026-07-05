@@ -7,6 +7,6 @@ test.describe('robots.txt', () => {
     const body = await r.text();
     expect(body).toMatch(/User-agent:\s*\*/i);
     expect(body).toMatch(/Disallow:\s*\/blog\/drafts\//i);
-    expect(body).toMatch(/Sitemap:\s*https:\/\/mineralrightsxchange\.com\/sitemap-index\.xml/i);
+    expect(body).toMatch(/Sitemap:\s*https:\/\/mineralrightsxchange\.com\/sitemap_index\.xml/i);
   });
 });
