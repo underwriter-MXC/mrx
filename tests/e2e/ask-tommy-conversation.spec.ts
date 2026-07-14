@@ -161,6 +161,32 @@ test.describe('Ask Tommy conversational experience', () => {
 test.describe('Ask Tommy mobile conversation', () => {
   test.use({ viewport: { width: 390, height: 844 } });
 
+  test('shows the Ask Tommy panel before the hero copy and keeps its main input above the fold', async ({
+    page,
+  }) => {
+    await page.goto('/');
+    const preview = page.locator('.mrx-chat-preview');
+    const askInput = page.locator('.mrx-chat-preview__input');
+    await expect(preview).toBeVisible();
+    await expect(askInput).toBeVisible();
+    const layout = await page.evaluate(() => {
+      const bounds = (selector: string) =>
+        document.querySelector(selector)?.getBoundingClientRect().toJSON() as DOMRect;
+      return {
+        preview: bounds('.mrx-chat-preview'),
+        copy: bounds('.mrx-home-hero__copy'),
+        askInput: bounds('.mrx-chat-preview__input'),
+        viewportHeight: window.innerHeight,
+        pageWidth: document.documentElement.scrollWidth,
+        viewportWidth: document.documentElement.clientWidth,
+      };
+    });
+    expect(layout.preview.top).toBeLessThan(layout.copy.top);
+    expect(layout.preview.top).toBeLessThan(layout.viewportHeight / 2);
+    expect(layout.askInput.bottom).toBeLessThan(layout.viewportHeight);
+    expect(layout.pageWidth).toBeLessThanOrEqual(layout.viewportWidth);
+  });
+
   test('uses the full mobile viewport without horizontal overflow', async ({ page }) => {
     await page.goto('/');
     await page.locator('[data-open-home-chat]').first().click();

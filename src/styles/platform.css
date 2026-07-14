@@ -1263,22 +1263,57 @@
   }
 }
 
-@media (max-width: 760px) {
+@media (max-width: 900px) {
   .mrx-home-hero {
     padding-top: 0;
   }
 
   .mrx-home-hero__media {
-    height: clamp(310px, 76vw, 500px);
+    height: clamp(190px, 48vw, 260px);
   }
 
   .mrx-home-hero__media img {
-    object-position: 26% center;
+    object-position: 26% 32%;
   }
 
   .mrx-home-hero__grid {
     grid-template-columns: 1fr;
     margin-top: -24px;
+  }
+
+  .mrx-chat-preview {
+    display: flex;
+    grid-row: 1;
+    flex-direction: column;
+  }
+
+  .mrx-home-hero__copy {
+    grid-row: 2;
+  }
+
+  .mrx-chat-preview__head {
+    order: 1;
+  }
+
+  .mrx-chat-preview__bubble {
+    order: 2;
+  }
+
+  .mrx-chat-preview__input {
+    order: 3;
+    margin-bottom: 0.62rem;
+  }
+
+  .mrx-chat-preview__prompts {
+    order: 4;
+  }
+
+  .mrx-chat-preview__review {
+    order: 5;
+  }
+
+  .mrx-chat-preview__disclosure {
+    order: 6;
   }
 
   .mrx-home-hero__copy {
@@ -1323,6 +1358,19 @@
   }
 
   .mrx-chat-preview__prompts {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .mrx-chat-preview__prompts button {
+    grid-template-columns: minmax(0, 1fr) auto;
+    min-height: 64px;
+    gap: 0.28rem;
+    padding: 0.5rem;
+    font-size: 0.67rem;
+    line-height: 1.18;
+  }
+
+  .mrx-chat-preview__prompts img {
+    display: none;
   }
 }
