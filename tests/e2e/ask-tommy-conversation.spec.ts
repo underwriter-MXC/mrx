@@ -59,17 +59,17 @@ test.describe('Ask Tommy conversational experience', () => {
           ok: true,
           options: [
             {
-              id: '2026-07-14T21:00:00.000Z',
-              start: '2026-07-14T21:00:00.000Z',
-              end: '2026-07-14T21:30:00.000Z',
-              label: 'Tuesday, Jul 14 at 5:00 PM',
+              id: '2030-07-16T21:00:00.000Z',
+              start: '2030-07-16T21:00:00.000Z',
+              end: '2030-07-16T21:30:00.000Z',
+              label: 'Tuesday, Jul 16 at 5:00 PM',
               timezone: 'America/New_York',
             },
             {
-              id: '2026-07-14T22:00:00.000Z',
-              start: '2026-07-14T22:00:00.000Z',
-              end: '2026-07-14T22:30:00.000Z',
-              label: 'Tuesday, Jul 14 at 6:00 PM',
+              id: '2030-07-16T22:00:00.000Z',
+              start: '2030-07-16T22:00:00.000Z',
+              end: '2030-07-16T22:30:00.000Z',
+              label: 'Tuesday, Jul 16 at 6:00 PM',
               timezone: 'America/New_York',
             },
           ],
@@ -111,7 +111,7 @@ test.describe('Ask Tommy conversational experience', () => {
     ).toBeVisible();
     await page.locator('[data-reply="tomorrow-evening"]').click();
     await expect(page.getByText('I found these openings.')).toBeVisible();
-    await page.locator('[data-reply="2026-07-14T22:00:00.000Z"]').click();
+    await page.locator('[data-reply="2030-07-16T22:00:00.000Z"]').click();
 
     await expect(page.getByText('What first name should I put on the appointment?')).toBeVisible();
     await expect(page.getByTestId('tommy-composer-input')).toHaveAttribute(
@@ -140,7 +140,7 @@ test.describe('Ask Tommy conversational experience', () => {
     await expect(page.getByText('May MRX also text the appointment confirmation')).toBeVisible();
     await page.locator('[data-reply="yes"]').click();
 
-    await expect(page.getByText('You’re booked for Tuesday, Jul 14 at 6:00 PM.')).toBeVisible();
+    await expect(page.getByText('You’re booked for Tuesday, Jul 16 at 6:00 PM.')).toBeVisible();
     await expect(page.getByText('sent the confirmation by email and text')).toBeVisible();
     await expect(page.getByText('What specifically can we help you with?')).toBeVisible();
     await expect(page.getByText('Review an offer or understand what affects value')).toBeVisible();
@@ -155,6 +155,21 @@ test.describe('Ask Tommy conversational experience', () => {
       'Tell Angela what you need help with…',
     );
     await expect(page.locator('[data-reply="I received an offer"]')).toHaveCount(0);
+    await expect(page.getByRole('button', { name: 'Talk to a live underwriter' })).toHaveCount(0);
+    await expect(page.getByTestId('tommy-appointment-status')).toHaveText('✓ Call booked');
+
+    await page.evaluate(() =>
+      window.dispatchEvent(new CustomEvent('mrx:open-chat', { detail: { booking: true } })),
+    );
+    await expect(page.getByText('I won’t book another one.').last()).toBeVisible();
+    await expect(page.getByText('already have a phone appointment booked')).toBeVisible();
+
+    await page.reload();
+    await expect(page.getByTestId('tommy-appointment-status')).toHaveText('✓ Call booked');
+    await page.evaluate(() =>
+      window.dispatchEvent(new CustomEvent('mrx:open-chat', { detail: { booking: true } })),
+    );
+    await expect(page.getByText('I won’t book another one.').last()).toBeVisible();
   });
 });
 

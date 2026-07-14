@@ -26,6 +26,10 @@ type AppointmentOption = {
   label: string;
   timezone: string;
 };
+type BookedAppointment = AppointmentOption & {
+  appointmentId: string;
+  savedAt: string;
+};
 type DeliveryChannel = 'email' | 'sms';
 type ConversationStep =
   | 'loading'
@@ -73,6 +77,7 @@ const personaLabels: Record<Persona, string> = {
 };
 
 const tommyAvatar = '/assets/mrx-homepage-v4/avatars/tommy-hermes-128.webp';
+const bookedAppointmentStorageKey = 'mrx_upcoming_appointment';
 const personaAvatar = (persona: Persona = 'tommy') =>
   persona === 'tommy' ? tommyAvatar : `/assets/team/${persona}-128.webp`;
 
@@ -167,6 +172,34 @@ function absoluteLink(citation: Citation | undefined) {
     : new URL('/learning-center/', window.location.origin).toString();
 }
 
+function restoreBookedAppointment(): BookedAppointment | null {
+  if (typeof window === 'undefined') return null;
+  try {
+    const stored = window.localStorage.getItem(bookedAppointmentStorageKey);
+    if (!stored) return null;
+    const appointment = JSON.parse(stored) as Partial<BookedAppointment>;
+    const expiry = Date.parse(appointment.end || appointment.start || '');
+    if (
+      !appointment.appointmentId ||
+      !appointment.id ||
+      !appointment.start ||
+      !appointment.end ||
+      !appointment.label ||
+      !appointment.timezone ||
+      !appointment.savedAt ||
+      !Number.isFinite(expiry) ||
+      expiry <= Date.now()
+    ) {
+      window.localStorage.removeItem(bookedAppointmentStorageKey);
+      return null;
+    }
+    return appointment as BookedAppointment;
+  } catch {
+    window.localStorage.removeItem(bookedAppointmentStorageKey);
+    return null;
+  }
+}
+
 class ChatErrorBoundary extends Component<{ children: ReactNode }, { failed: boolean }> {
   state = { failed: false };
   static getDerivedStateFromError() {
@@ -208,6 +241,7 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
   const [deliveryConsentIndex, setDeliveryConsentIndex] = useState(0);
   const [options, setOptions] = useState<AppointmentOption[]>([]);
   const [selectedOption, setSelectedOption] = useState<AppointmentOption | null>(null);
+  const [bookedAppointment, setBookedAppointment] = useState<BookedAppointment | null>(null);
   const [booking, setBooking] = useState(false);
   const [uploading, setUploading] = useState(false);
   const [pendingPrompt, setPendingPrompt] = useState('');
@@ -250,6 +284,8 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
     let cancelled = false;
     void (async () => {
       try {
+        const restoredAppointment = restoreBookedAppointment();
+        if (!cancelled && restoredAppointment) setBookedAppointment(restoredAppointment);
         await fetch('/api/chat/session', { method: 'POST' });
         const response = await fetch('/api/chat/session');
         if (!response.ok) return;
@@ -573,6 +609,15 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
     setActivePersona('angela');
     setOptions([]);
     setSelectedOption(null);
+    if (bookedAppointment) {
+      setStep('booking-help');
+      await guideSay(
+        `You already have a phone appointment booked for ${bookedAppointment.label}. I won’t book another one. What specifically would you like the MRX team to be ready to help with?`,
+        'angela',
+        260,
+      );
+      return;
+    }
     setStep('booking-timezone');
     await guideSay(
       `Hi${profile.firstName ? `, ${profile.firstName}` : ''}—I’m Angela, the MRX scheduling guide. I’m here to help set up a phone conversation with the MRX team about your mineral rights. I’ll check the live MRX calendar and offer a few real openings. I have your time zone as ${timezoneLabel(profile.timezone)}. Is that right?`,
@@ -700,6 +745,16 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
       const confirmations = result.notifications?.length
         ? ` I also sent the confirmation by ${result.notifications.map((channel: DeliveryChannel) => (channel === 'email' ? 'email' : 'text')).join(' and ')} as requested.`
         : ' Your confirmation is here on screen.';
+      const confirmedAppointment: BookedAppointment = {
+        ...selectedOption,
+        appointmentId: result.appointmentId,
+        savedAt: new Date().toISOString(),
+      };
+      setBookedAppointment(confirmedAppointment);
+      window.localStorage.setItem(
+        bookedAppointmentStorageKey,
+        JSON.stringify(confirmedAppointment),
+      );
       setStep('booking-help');
       await guideSay(
         `You’re booked for ${selectedOption.label}.${confirmations} We’ll call ${nextProfile.phone}.`,
@@ -1107,7 +1162,7 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
       return lastAnswer
         ? [
             { label: 'Send me this answer', value: 'send', kind: 'primary' },
-            { label: 'Talk to a live underwriter', value: 'book' },
+            ...(bookedAppointment ? [] : [{ label: 'Talk to a live underwriter', value: 'book' }]),
           ]
         : starters.map(([label]) => ({ label, value: label }));
     if (step === 'delivery-channel')
@@ -1145,7 +1200,16 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
     if (step === 'booking-slots')
       return options.map((option) => ({ label: option.label, value: option.id, kind: 'primary' }));
     return [];
-  }, [step, typingPersona, sending, booking, lastAnswer, options, profile.timezone]);
+  }, [
+    step,
+    typingPersona,
+    sending,
+    booking,
+    bookedAppointment,
+    lastAnswer,
+    options,
+    profile.timezone,
+  ]);
 
   const placeholder: Record<ConversationStep, string> = {
     loading: 'Connecting…',
@@ -1267,7 +1331,11 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
               {!!quickReplies.length && (
                 <div className="tommy-quick-replies" aria-label="Suggested replies">
                   {step === 'open' && lastAnswer && (
-                    <p>Want me to send this answer, or help you set up a phone conversation?</p>
+                    <p>
+                      {bookedAppointment
+                        ? 'Want me to send this answer? Your phone conversation is already booked.'
+                        : 'Want me to send this answer, or help you set up a phone conversation?'}
+                    </p>
                   )}
                   {quickReplies.map((reply) => (
                     <button
@@ -1331,9 +1399,19 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
                   />
                   {uploading ? 'Uploading…' : 'Attach a document'}
                 </label>
-                <button type="button" onClick={beginBooking}>
-                  Talk to a live underwriter
-                </button>
+                {bookedAppointment ? (
+                  <span
+                    className="tommy-appointment-status"
+                    data-testid="tommy-appointment-status"
+                    title={bookedAppointment.label}
+                  >
+                    ✓ Call booked
+                  </span>
+                ) : (
+                  <button type="button" onClick={beginBooking}>
+                    Talk to a live underwriter
+                  </button>
+                )}
               </div>
               <p>
                 Tommy remembers this conversation on this device. Contact details are only used with
