@@ -156,6 +156,7 @@
   margin-top: 0;
   padding-block: 0 2rem;
   background: linear-gradient(150deg, #061827, #0a2942);
+  color: #fff;
 }
 .footer__cta {
   display: flex;
@@ -183,7 +184,7 @@
 }
 .footer__cta > div > p:last-child {
   margin-top: 0.4rem;
-  color: #b9c8d2;
+  color: #fff;
 }
 .footer__grid {
   gap: clamp(2rem, 5vw, 4.5rem);
@@ -201,6 +202,7 @@
   height: auto;
 }
 .footer__tagline {
+  color: #fff;
   font-size: 0.92rem;
 }
 .footer__email {
@@ -211,6 +213,14 @@
   text-decoration: none;
 }
 .footer__email:hover {
+  color: #fff;
+}
+.footer__heading,
+.footer__links a,
+.footer__bottom {
+  color: #fff;
+}
+.footer__links a:hover {
   color: #f2c66f;
 }
 .footer__ask {
@@ -250,10 +260,10 @@
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 12px;
   background: rgba(255, 255, 255, 0.04);
-  color: #9fb0bb;
+  color: #fff;
 }
 .footer .mrx-disclaimer-footer::before {
-  color: #d4dee4;
+  color: #fff;
 }
 .footer__bottom {
   margin-top: 1.5rem;
