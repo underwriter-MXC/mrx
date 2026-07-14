@@ -14,12 +14,10 @@ export default defineConfig({
   projects: [
     { name: 'chromium', use: { ...devices['Desktop Chrome'] } },
   ],
-  webServer: process.env.CI
-    ? undefined
-    : {
-        command: 'pnpm dev --host 127.0.0.1',
-        port: 4321,
-        timeout: 60_000,
-        reuseExistingServer: true,
-      },
+  webServer: {
+    command: 'pnpm dev --host 127.0.0.1',
+    port: 4321,
+    timeout: 120_000,
+    reuseExistingServer: !process.env.CI,
+  },
 });
