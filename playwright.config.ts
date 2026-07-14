@@ -8,7 +8,7 @@ export default defineConfig({
   workers: process.env.CI ? 2 : undefined,
   reporter: 'list',
   use: {
-    baseURL: process.env.PLAYWRIGHT_BASE_URL || 'http://localhost:4321',
+    baseURL: process.env.PLAYWRIGHT_BASE_URL || 'http://127.0.0.1:4321',
     trace: 'on-first-retry',
   },
   projects: [
@@ -17,7 +17,7 @@ export default defineConfig({
   webServer: process.env.CI
     ? undefined
     : {
-        command: 'pnpm dev',
+        command: 'pnpm dev --host 127.0.0.1',
         port: 4321,
         timeout: 60_000,
         reuseExistingServer: true,

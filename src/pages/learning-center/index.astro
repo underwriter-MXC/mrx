@@ -1,0 +1,24 @@
+---
+import { getCollection, getEntry } from 'astro:content';
+import MarketingLayout from '../../layouts/MarketingLayout.astro';
+import LearningCenter from '../../components/react/LearningCenter';
+export const prerender = false;
+const posts = await getCollection('posts', (post) => !post.data.draft);
+const categories = await getCollection('categories');
+const categoryMap = new Map(categories.map((category) => [category.data.slug, category.data.label]));
+const items = await Promise.all(posts.map(async (post) => {
+  const author = await getEntry(post.data.author);
+  return { slug: post.id.replace(/\.mdx?$/,''), title: post.data.title, description: post.data.description, excerpt: post.data.excerpt, category: post.data.category, categoryLabel: categoryMap.get(post.data.category) || post.data.category.replaceAll('-',' '), tags: post.data.tags, author: author?.data.name || 'MRX Editorial Team', publishedAt: post.data.published_at, readingMinutes: Math.max(1, Math.round(post.body.split(/\s+/).length / 220)) };
+}));
+const hasQuery = [...Astro.url.searchParams.keys()].length > 0;
+const initialFilters = {
+  q: Astro.url.searchParams.get('q') || '',
+  category: Astro.url.searchParams.get('category') || '',
+  tag: Astro.url.searchParams.get('tag') || '',
+  author: Astro.url.searchParams.get('author') || '',
+};
+---
+<MarketingLayout title="Mineral Rights Learning Center · MRX" description="Search plain-language mineral-rights guides by question, category, tag, and real organizational author. Find reviewed explanations or ask Tommy directly." path="/learning-center/" pageType="blog" pageCategory="learning-center" noindex={hasQuery} breadcrumbs={[{name:'Home',path:'/'},{name:'Learning Center',path:'/learning-center/'}]}>
+  <section class="mrx-page-hero"><div class="container"><p class="mrx-eyebrow">Reviewed mineral-owner education</p><h1 style="max-width:900px">Find the answer that matches your question.</h1><p style="max-width:760px">Search in plain language, narrow by topic, or ask Tommy when the library does not yet address your situation closely.</p></div></section>
+  <section class="mrx-section"><div class="container"><LearningCenter client:load posts={items} initialFilters={initialFilters} /></div></section>
+</MarketingLayout>

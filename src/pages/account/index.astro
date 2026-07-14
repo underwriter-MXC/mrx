@@ -1,0 +1,8 @@
+---
+import MarketingLayout from '../../layouts/MarketingLayout.astro';
+import AccountHub from '../../components/react/AccountHub';
+export const prerender = false;
+---
+<MarketingLayout title="Your Private MRX Owner Account" description="Return to your private Mineral Rights Xchange conversations, cited answers, appointments, communication preferences, and securely uploaded documents." path="/account/" pageType="utility" pageCategory="account" noindex={true} breadcrumbs={[{name:'Home',path:'/'},{name:'Account',path:'/account/'}]}>
+  <section class="mrx-section mrx-section--sand"><div class="container"><AccountHub client:load supabaseUrl={import.meta.env.PUBLIC_SUPABASE_URL} supabaseAnonKey={import.meta.env.PUBLIC_SUPABASE_ANON_KEY} /></div></section>
+</MarketingLayout>

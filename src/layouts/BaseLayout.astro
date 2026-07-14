@@ -14,6 +14,7 @@ import Seo from '../components/seo/Seo.astro';
 import type { Crumb } from '../structured-data/breadcrumb';
 import { initDataLayer } from '../lib/analytics';
 import { SITE } from '../lib/site';
+import AskTommy from '../components/react/AskTommy';
 
 interface Props {
   title: string;
@@ -112,13 +113,13 @@ const {
         // Recommended MRX page view event used by GTM/GA4/Meta mappings.
         __mrxPush({ event: 'mrx_page_view' });
 
-        // Treat the native /book page as the current booking/calendar view
-        // surface until a dedicated embedded calendar is added.
+        // /book starts the conversational Angela booking flow. Availability
+        // remains inside the assistant rather than exposing a public calendar.
         if (window.location.pathname.replace(/\/$/, '') === '/book') {
           __mrxPush({
-            event: 'calendar_view',
-            calendar_id: 'native-book-form',
-            calendar_source: 'book_page',
+            event: 'booking_assistant_view',
+            booking_surface: 'angela_conversation',
+            booking_source: 'book_page',
           });
         }
 
@@ -177,5 +178,11 @@ const {
       </main>
       <Footer />
     </div>
+    <AskTommy
+      client:load
+      supabaseUrl={import.meta.env.PUBLIC_SUPABASE_URL}
+      supabaseAnonKey={import.meta.env.PUBLIC_SUPABASE_ANON_KEY}
+      hideLauncher={pageType === 'home'}
+    />
   </body>
 </html>

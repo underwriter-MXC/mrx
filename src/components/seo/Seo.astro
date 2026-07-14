@@ -50,7 +50,7 @@ const og = ogImage ?? buildOgImage(path, SITE.url);
 const robotsContent = noindex ? 'noindex, nofollow' : (robots ?? 'index, follow, max-image-preview:large, max-snippet:-1');
 
 const graph = buildPageGraph([
-  ...siteGraph,
+  ...siteGraph(path, finalTitle),
   ...(breadcrumbs ? [breadcrumbList(breadcrumbs)] : []),
   ...jsonLd,
 ]);

@@ -7,7 +7,6 @@
  * currentPath prop).
  */
 import { NAV, SITE } from '../../lib/site';
-import Icon from '../atoms/Icon.astro';
 
 interface Props {
   currentPath?: string;
@@ -20,30 +19,42 @@ const { currentPath = '/' } = Astro.props;
   <div class="container">
     <div class="header__inner">
       <a class="header__brand" href="/" aria-label={`${SITE.name} home`}>
-        <img src="/assets/brand/mrx-logo-color.png" alt="" width="400" height="100" aria-hidden="true" />
+        <img
+          src="/assets/brand/mrx-logo-color.png"
+          alt=""
+          width="400"
+          height="100"
+          aria-hidden="true"
+        />
       </a>
       <nav class="header__nav" aria-label="Primary">
         {
           NAV.primary.map((item) => (
-            <a
-              href={item.href}
-              aria-current={currentPath === item.href ? 'page' : undefined}
-            >
+            <a href={item.href} aria-current={currentPath === item.href ? 'page' : undefined}>
               {item.label}
             </a>
           ))
         }
       </nav>
-      <div class="row">
-        <a class="header__cta" href="/book" data-cta-name="header-book">Book Free Review</a>
+      <div class="header__actions">
+        <button class="header__ask" type="button" data-open-tommy data-cta-name="header-ask-tommy">
+          <img
+            src="/assets/mrx-homepage-v4/avatars/tommy-hermes-128.webp"
+            alt=""
+            width="128"
+            height="128"
+          />
+          <span><strong>Ask Tommy</strong><small>Straight answers, 24/7</small></span>
+        </button>
         <button
           class="header__toggle"
-          aria-label="Toggle menu"
+          aria-label="Open navigation menu"
           aria-expanded="false"
           aria-controls="mobile-nav"
           data-mobile-toggle
         >
-          <Icon name="chevron-down" size={24} />
+          <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"
+          ></span>
         </button>
       </div>
     </div>
@@ -52,16 +63,21 @@ const { currentPath = '/' } = Astro.props;
         {
           NAV.primary.map((item) => (
             <li>
-              <a
-                href={item.href}
-                aria-current={currentPath === item.href ? 'page' : undefined}
-              >
+              <a href={item.href} aria-current={currentPath === item.href ? 'page' : undefined}>
                 {item.label}
               </a>
             </li>
           ))
         }
-        <li><a class="header__cta" href="/book" data-cta-name="mobile-book">Book Free Review</a></li>
+        <li>
+          <button class="mobile-nav__ask" type="button" data-open-tommy
+            ><img
+              src="/assets/mrx-homepage-v4/avatars/tommy-hermes-128.webp"
+              alt=""
+              width="128"
+              height="128"
+            /> Ask Tommy for help</button>
+        </li>
       </ul>
     </nav>
   </div>
@@ -79,4 +95,11 @@ const { currentPath = '/' } = Astro.props;
       btn.setAttribute('aria-expanded', open ? 'false' : 'true');
     });
   }
+  document.querySelectorAll<HTMLElement>('[data-open-tommy]').forEach((trigger) => {
+    trigger.addEventListener('click', () => {
+      window.dispatchEvent(new CustomEvent('mrx:open-chat'));
+      nav?.setAttribute('data-open', 'false');
+      btn?.setAttribute('aria-expanded', 'false');
+    });
+  });
 </script>

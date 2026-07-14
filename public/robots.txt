@@ -1,7 +1,17 @@
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /api/
+Disallow: /account/
+Disallow: /knowledge/
+Disallow: /blog/drafts/
+
 User-agent: *
 Allow: /
-Disallow: /blog/drafts/
-Disallow: /staging/
 Disallow: /api/
+Disallow: /account/
+Disallow: /book/thank-you/
+Disallow: /free-guide/thank-you/
+Disallow: /knowledge/
+Disallow: /blog/drafts/
 
-Sitemap: https://mineralrightsxchange.com/sitemap_index.xml
+Sitemap: https://mineralrightsxchange.com/sitemap-index.xml

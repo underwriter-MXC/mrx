@@ -1,0 +1,13 @@
+---
+import { getCollection } from 'astro:content';
+import MarketingLayout from '../../layouts/MarketingLayout.astro';
+import JsonLd from '../../components/seo/JsonLd.astro';
+import { SITE } from '../../lib/site';
+const posts = (await getCollection('posts', (post) => !post.data.draft)).sort((a,b)=>new Date(b.data.published_at).getTime()-new Date(a.data.published_at).getTime());
+export const prerender = true;
+---
+<MarketingLayout title="MRX Editorial Team and Review Standards" description="See the Mineral Rights Xchange editorial organization, review standards, update practices, article sources, and the guides currently attributed to MRX." path="/authors/mrx-editorial-team/" pageType="marketing" pageCategory="about" breadcrumbs={[{name:'Home',path:'/'},{name:'Authors',path:'/authors/mrx-editorial-team/'}]}>
+  <JsonLd data={{ '@type': 'Organization', '@id': `${SITE.url}/authors/mrx-editorial-team/#author`, name: 'MRX Editorial Team', url: `${SITE.url}/authors/mrx-editorial-team/`, parentOrganization: { '@id': `${SITE.url}/#org` } }} />
+  <section class="mrx-page-hero"><div class="container mrx-author-card"><p class="mrx-eyebrow">Real organizational authorship</p><h1>MRX Editorial Team</h1><p>Mineral Rights Xchange is the organizational author for the current launch library. AI guide profiles do not claim human authorship. Named human authors and reviewers will receive individual profiles only after their identities, credentials, and review responsibilities are verified for publication.</p><p><a href="/methodology">Read the published methodology and limitations →</a></p></div></section>
+  <section class="mrx-section"><div class="container"><div class="mrx-section-heading"><h2>Published guides</h2><p>Every article shows its publication date, review status, sources where applicable, and the standard informational limitations.</p></div><div class="mrx-intent-grid">{posts.map((post)=>{const slug=post.id.replace(/\.mdx?$/,'');return <a class="mrx-intent-card" href={`/blog/${slug}/`}><span>{post.data.category.replaceAll('-',' ')}</span><h3>{post.data.title}</h3><p>{post.data.excerpt}</p><strong>Read guide →</strong></a>})}</div></div></section>
+</MarketingLayout>

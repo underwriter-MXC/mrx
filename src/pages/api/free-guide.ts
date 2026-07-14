@@ -9,6 +9,11 @@ import type { APIRoute } from 'astro';
 import { LeadFormSchema } from '../../lib/form';
 import { submitToGHL } from '../../lib/ghl';
 
+export const GET: APIRoute = async () => new Response(JSON.stringify({ ok: false, error: 'method_not_allowed' }), {
+  status: 405,
+  headers: { 'Content-Type': 'application/json', Allow: 'POST' },
+});
+
 export const POST: APIRoute = async (ctx) => {
   const formData = await ctx.request.formData();
   const raw = Object.fromEntries(formData.entries());

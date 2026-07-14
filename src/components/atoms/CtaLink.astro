@@ -6,8 +6,6 @@
  *
  * Use this for every primary or secondary CTA on a marketing page.
  */
-import Button from './Button.astro';
-
 interface Props {
   ctaName: string;
   href: string;
@@ -28,13 +26,6 @@ if (!ctaName || ctaName.trim() === '') {
 }
 ---
 
-<Button
-  href={href}
-  variant={variant}
-  size={size}
-  class={className}
->
-  <a data-cta-name={ctaName} href={href} class:list={['btn', `btn--${variant}`, size !== 'md' ? `btn--${size}` : '', className]}>
-    <slot />
-  </a>
-</Button>
+<a data-cta-name={ctaName} href={href} class:list={['btn', `btn--${variant}`, size !== 'md' ? `btn--${size}` : '', className]}>
+  <slot />
+</a>

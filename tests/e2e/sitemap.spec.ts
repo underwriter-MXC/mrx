@@ -1,31 +1,30 @@
 import { test, expect } from '@playwright/test';
+import { readFileSync } from 'node:fs';
+import { join } from 'node:path';
 
-test.describe('sitemap', () => {
-  test('sitemap_index.xml is served and references sitemap-0.xml', async ({ request }) => {
-    const r = await request.get('/sitemap_index.xml');
-    expect(r.status()).toBe(200);
-    const body = await r.text();
+const sitemapDir = join(process.cwd(), 'dist', 'client');
+
+test.describe('production sitemaps', () => {
+  test('publishes a segmented public-content index', () => {
+    const body = readFileSync(join(sitemapDir, 'sitemap-index.xml'), 'utf-8');
     expect(body).toMatch(/<sitemapindex/i);
-    expect(body).toMatch(/sitemap-0\.xml/);
-  });
-
-  test('sitemap-0.xml lists at least the 9 marketing pages', async ({ request }) => {
-    const r = await request.get('/sitemap-0.xml');
-    expect(r.status()).toBe(200);
-    const body = await r.text();
-    for (const path of ['/', '/how-it-works', '/about', '/faq', '/free-guide', '/book', '/methodology', '/sell-mineral-rights', '/privacy-policy']) {
-      expect(body, `path ${path} should be in sitemap-0.xml`).toContain(path);
+    for (const segment of ['core', 'articles', 'authors', 'team', 'states']) {
+      expect(body).toContain(`sitemap-${segment}.xml`);
     }
   });
 
-  test('homepage is priority 1.0 and thank-you pages are deprioritized', async ({ request }) => {
-    const r = await request.get('/sitemap-0.xml');
-    const body = await r.text();
-    // Homepage URL gets priority 1.0 (highest crawl weight).
+  test('core sitemap lists the owner journeys and excludes private utility pages', () => {
+    const body = readFileSync(join(sitemapDir, 'sitemap-core.xml'), 'utf-8');
+    for (const path of ['/', '/mineral-rights-value/', '/offer-review/', '/inherited-mineral-rights/', '/learning-center/', '/book/', '/privacy-policy/']) {
+      expect(body, `path ${path} should be in the core sitemap`).toContain(path);
+    }
+    expect(body).not.toContain('/account/');
+    expect(body).not.toContain('/thank-you/');
+  });
+
+  test('homepage has highest priority and public legal content remains lower priority', () => {
+    const body = readFileSync(join(sitemapDir, 'sitemap-core.xml'), 'utf-8');
     expect(body).toMatch(/<loc>https:\/\/mineralrightsxchange\.com\/<\/loc>[\s\S]*?<priority>1\.0<\/priority>/);
-    // Thank-you pages get 0.3 (lowest, still indexable for analytics).
-    expect(body).toMatch(/<loc>https:\/\/mineralrightsxchange\.com\/book\/thank-you\/<\/loc>[\s\S]*?<priority>0\.3<\/priority>/);
-    // Privacy policy gets 0.4.
     expect(body).toMatch(/<loc>https:\/\/mineralrightsxchange\.com\/privacy-policy\/<\/loc>[\s\S]*?<priority>0\.4<\/priority>/);
   });
 });

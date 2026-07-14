@@ -16,7 +16,7 @@
  *
  * astro.config.mjs calls this from the `astro:build:done` hook.
  */
-import { copyFile, readFile, writeFile } from 'node:fs/promises';
+import { readFile, writeFile } from 'node:fs/promises';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { existsSync } from 'node:fs';
@@ -47,6 +47,11 @@ const CORE_PAGES = new Set([
   '/faq',
   '/free-guide',
   '/book',
+  '/mineral-rights-value',
+  '/offer-review',
+  '/inherited-mineral-rights',
+  '/learning-center',
+  '/team',
 ]);
 
 const THANK_YOU_SUFFIX = '/thank-you';
@@ -95,13 +100,41 @@ const out = text.replace(
 await writeFile(SITEMAP, out, 'utf-8');
 console.log(`[postbuild-sitemap] Rewrote priority on ${rewritten} <url> entries in ${SITEMAP}`);
 
-if (SITEMAP_INDEX) {
-  const sitemapXml = join(dirname(SITEMAP_INDEX), 'sitemap.xml');
-  const canonicalSitemapIndex = join(dirname(SITEMAP_INDEX), 'sitemap_index.xml');
-  await copyFile(SITEMAP_INDEX, sitemapXml);
-  await copyFile(SITEMAP_INDEX, canonicalSitemapIndex);
-  console.log(`[postbuild-sitemap] Copied sitemap index to ${sitemapXml} for Search Console compatibility`);
-  console.log(
-    `[postbuild-sitemap] Copied sitemap index to ${canonicalSitemapIndex} for canonical MRX crawler access`,
-  );
+const blocks = out.match(/<url>[\s\S]*?<\/url>/g) ?? [];
+const groups = new Map([
+  ['core', []],
+  ['articles', []],
+  ['authors', []],
+  ['team', []],
+  ['states', []],
+]);
+
+function groupFor(block) {
+  const loc = block.match(/<loc>([^<]+)<\/loc>/)?.[1];
+  if (!loc) return 'core';
+  const path = new URL(loc).pathname;
+  if (path.startsWith('/authors/')) return 'authors';
+  if (path.startsWith('/team/')) return 'team';
+  if (path.startsWith('/mineral-rights/')) return 'states';
+  if (path.startsWith('/blog/') && !path.startsWith('/blog/category/')) return 'articles';
+  return 'core';
 }
+
+for (const block of blocks) groups.get(groupFor(block)).push(block);
+const outputDir = dirname(SITEMAP);
+const segmentNames = [];
+for (const [group, urls] of groups) {
+  if (!urls.length) continue;
+  const name = `sitemap-${group}.xml`;
+  const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.join('\n')}\n</urlset>\n`;
+  await writeFile(join(outputDir, name), xml, 'utf-8');
+  segmentNames.push(name);
+}
+
+const lastmod = new Date().toISOString();
+const index = `<?xml version="1.0" encoding="UTF-8"?>\n<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${segmentNames.map((name) => `<sitemap><loc>https://mineralrightsxchange.com/${name}</loc><lastmod>${lastmod}</lastmod></sitemap>`).join('\n')}\n</sitemapindex>\n`;
+const indexPath = SITEMAP_INDEX ?? join(outputDir, 'sitemap-index.xml');
+await writeFile(indexPath, index, 'utf-8');
+await writeFile(join(outputDir, 'sitemap.xml'), index, 'utf-8');
+await writeFile(join(outputDir, 'sitemap_index.xml'), index, 'utf-8');
+console.log(`[postbuild-sitemap] Wrote segmented sitemap index with ${segmentNames.length} public-content segments`);

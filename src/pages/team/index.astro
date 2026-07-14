@@ -1,0 +1,9 @@
+---
+import MarketingLayout from '../../layouts/MarketingLayout.astro';
+import { guides } from '../../data/guides';
+export const prerender = true;
+---
+<MarketingLayout title="Meet the MRX AI Guide Team Directory" description="Meet the fictional MRX AI Guides for offers, ownership research, geology, production, legal-information routing, scheduling, and owner education." path="/team/" pageType="marketing" pageCategory="about" breadcrumbs={[{name:'Home',path:'/'},{name:'MRX AI Guides',path:'/team/'}]}>
+  <section class="mrx-page-hero"><div class="container"><p class="mrx-eyebrow">Clearly defined roles</p><h1 style="max-width:900px">A whole team of AI guides—without pretending they are people.</h1><p style="max-width:760px">MRX AI Guides are fictional educational interfaces. Each has a focused role, an original MRX voice, and a visible boundary. Real articles remain attributed to real people or the MRX editorial organization.</p></div></section>
+  <section class="mrx-directory"><div class="container"><div class="mrx-directory-grid">{guides.map((guide) => <a class="mrx-directory-card" href={`/team/${guide.slug}/`}><img src={guide.image} alt={`${guide.name}, ${guide.role}`} width="256" height="256" loading="lazy" /><div><small>{guide.status === 'active' ? 'Active chat guide' : 'Directory profile'}</small><h2>{guide.name}</h2><strong>{guide.shortRole}</strong><p>{guide.summary}</p></div></a>)}</div></div></section>
+</MarketingLayout>

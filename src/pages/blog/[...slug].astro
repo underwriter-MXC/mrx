@@ -4,7 +4,7 @@ export const prerender = true;
 /**
  * Post detail. Renders /blog/[...slug]. Posts come from src/content/posts/.
  */
-import { getCollection, type CollectionEntry } from 'astro:content';
+import { getCollection, getEntry, type CollectionEntry } from 'astro:content';
 import PostLayout from '../../layouts/PostLayout.astro';
 import Prose from '../../components/prose/Prose.astro';
 import AuthorByline from '../../components/molecules/AuthorByline.astro';
@@ -34,11 +34,14 @@ const { Content } = await post.render();
 const slug = post.id.replace(/\.mdx?$/, '');
 
 // Article JSON-LD (per SEO plan §2.4)
-const authorUrlId = `${SITE.url}/about/#author-${post.data.author}`;
+const authorEntry = await getEntry(post.data.author);
+const authorName = authorEntry?.data.name ?? 'MRX Editorial Team';
+const authorHref = '/authors/mrx-editorial-team/';
+const authorUrlId = `${SITE.url}${authorHref}#author`;
 const heroImageUrl = post.data.hero_image.src.startsWith('http')
   ? post.data.hero_image.src
   : `${SITE.url}${post.data.hero_image.src}`;
-const articleJsonLd = article({ ...post.data, slug }, authorUrlId, heroImageUrl);
+const articleJsonLd = article({ ...post.data, slug }, authorUrlId, heroImageUrl, authorName);
 
 // Internal linking (per SEO plan §4): surface related posts in the
 // same category, excluding the current post. Cap at 3 to keep the
@@ -67,8 +70,10 @@ const related = allPosts
   <section class="container container--prose section--sm">
     <h1 style="font-size: var(--fs-4xl); line-height: var(--lh-tight); margin-bottom: var(--space-4);">{post.data.title}</h1>
     <AuthorByline
-      authorName="Mineral Rights Xchange"
+      authorName={authorName}
+      authorHref={authorHref}
       publishedAt={post.data.published_at}
+      reviewedAt={post.data.reviewed_at}
       readingMinutes={Math.max(1, Math.round(post.body.split(/\s+/).length / 220))}
     />
     <Text class="text--lead" style="margin-top: var(--space-4); margin-bottom: var(--space-6); font-style: italic;">{post.data.excerpt}</Text>

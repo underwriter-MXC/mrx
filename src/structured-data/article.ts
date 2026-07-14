@@ -11,6 +11,7 @@ export function article(
   post: PostsFrontmatter,
   authorUrlId: string,
   heroImageUrl: string,
+  authorName = 'MRX Editorial Team',
 ): Article {
   return {
     '@type': 'Article',
@@ -20,7 +21,12 @@ export function article(
     image: [heroImageUrl],
     datePublished: post.published_at,
     dateModified: post.updated_at ?? post.published_at,
-    author: { '@id': authorUrlId },
+    author: {
+      '@type': 'Organization',
+      '@id': authorUrlId,
+      name: authorName,
+      url: authorUrlId.replace(/#author$/, ''),
+    },
     publisher: { '@id': `${SITE.url}/#org` },
     mainEntityOfPage: {
       '@type': 'WebPage',

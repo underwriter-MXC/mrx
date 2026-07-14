@@ -1,12 +1,13 @@
 /**
  * Astro content collection schemas.
  *
- * The 5 collections per `Astro Architecture Plan.md` §4:
+ * Public-content collections:
  *   - pages:    9 MDX marketing/legal pages with the §9 sign-off rubric
  *   - posts:    MDX blog posts migrated from WordPress
  *   - categories: typed TS array (not MDX)
  *   - testimonials: JSON; empty [] until W-1 is resolved
- *   - team:     MDX; the `/about/team` route is NOT in MVP scope
+ *   - authors:  verified people or the real MRX editorial organization
+ *   - team:     legacy staff records retained separately from fictional AI guides
  *
  * The `pages` and `posts` schemas carry the `compliance_signoff` block
  * (or its post-equivalent fields) so the build's sign-off frontmatter
@@ -107,7 +108,7 @@ const posts = defineCollection({
       published_at: z.string().min(10),
       updated_at: z.string().optional(),
       draft: z.boolean().optional().default(false),
-      author: reference('team'),
+      author: reference('authors'),
       category: PostsCategory,
       tags: z.array(z.string()).optional().default([]),
       hero_image: z.object({ src: z.string(), alt: z.string().min(3) }),
@@ -117,6 +118,10 @@ const posts = defineCollection({
       money_figure_sourced: z.boolean(),
       reviewed_at: z.string().min(10),
       reviewed_by: reviewId,
+      reviewers: z.array(z.string()).optional().default([]),
+      states: z.array(z.string()).optional().default([]),
+      sources: z.array(z.object({ label: z.string(), href: z.string().url() })).optional().default([]),
+      persona_topics: z.array(z.string()).optional().default([]),
     })
     .refine(
       (data) => {
@@ -179,10 +184,23 @@ const team = defineCollection({
   }),
 });
 
+const authors = defineCollection({
+  type: 'content',
+  schema: z.object({
+    name: z.string(),
+    kind: z.enum(['organization', 'person']),
+    title: z.string(),
+    description: z.string(),
+    credentials: z.array(z.string()).optional().default([]),
+    review_scope: z.array(z.string()).optional().default([]),
+  }),
+});
+
 export const collections = {
   pages,
   posts,
   categories,
   testimonials,
+  authors,
   team,
 };

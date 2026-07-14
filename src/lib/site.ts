@@ -8,9 +8,9 @@
 export const SITE = {
   name: 'Mineral Rights Xchange',
   shortName: 'MRX',
-  tagline: 'Transparent Texas mineral rights underwriter reviews',
+  tagline: 'Straight answers for mineral owners nationwide',
   description:
-    'A free, no-pressure underwriter review for Texas mineral rights owners. Transparent DCF methodology, no clawback clauses, no teaser numbers. Get the facts before you sign.',
+    'Free, no-pressure mineral-rights education for owners comparing offers, inherited interests, royalties, and sell-or-hold decisions across the United States.',
   url: 'https://mineralrightsxchange.com',
   locale: 'en-US',
   email: 'review@mineralrightsxchange.com',
@@ -22,28 +22,32 @@ export const SITE = {
 
 export const NAV = {
   primary: [
-    { label: 'How It Works', href: '/how-it-works' },
-    { label: 'Methodology', href: '/methodology' },
-    { label: 'Sell Mineral Rights', href: '/sell-mineral-rights' },
-    { label: 'About', href: '/about' },
-    { label: 'FAQ', href: '/faq' },
+    { label: 'Value My Minerals', href: '/mineral-rights-value/' },
+    { label: 'Review My Offer', href: '/offer-review/' },
+    { label: 'Inherited Rights', href: '/inherited-mineral-rights/' },
+    { label: 'Learning Center', href: '/learning-center/' },
+    { label: 'About MRX', href: '/about' },
   ],
   footer: {
     company: [
       { label: 'About', href: '/about' },
+      { label: 'Meet the AI Guides', href: '/team/' },
       { label: 'Methodology', href: '/methodology' },
       { label: 'How It Works', href: '/how-it-works' },
     ],
     resources: [
-      { label: 'FAQ', href: '/faq' },
-      { label: 'Free Guide', href: '/free-guide' },
-      { label: 'Blog', href: '/blog' },
+      { label: 'Value My Minerals', href: '/mineral-rights-value/' },
+      { label: 'Review My Offer', href: '/offer-review/' },
+      { label: 'Inherited Rights', href: '/inherited-mineral-rights/' },
+      { label: 'Learning Center', href: '/learning-center/' },
     ],
     legal: [
       { label: 'Privacy Policy', href: '/privacy-policy' },
+      { label: 'Terms & AI Disclosure', href: '/terms/' },
+      { label: 'Communication Preferences', href: '/communication-preferences/' },
     ],
     cta: [
-      { label: 'Book Free Review', href: '/book', variant: 'primary' as const },
+      { label: 'Ask Tommy', href: '#ask-tommy', variant: 'primary' as const },
     ],
   },
   cta: {

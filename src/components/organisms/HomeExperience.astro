@@ -1,0 +1,414 @@
+---
+import { getCollection } from 'astro:content';
+import { activeGuides } from '../../data/guides';
+import { stateGuides } from '../../data/states';
+
+const posts = (await getCollection('posts', (post) => !post.data.draft))
+  .sort((a, b) => new Date(b.data.published_at).getTime() - new Date(a.data.published_at).getTime())
+  .slice(0, 3);
+
+const assetRoot = '/assets/mrx-homepage-v4/hermes';
+
+const prompts = [
+  {
+    label: 'What are my minerals worth?',
+    prompt: 'What are my mineral rights worth, and what information do you need to estimate value?',
+    icon: 'icon-market.png',
+  },
+  {
+    label: 'I received an offer. Is it fair?',
+    prompt:
+      'I received an offer for my mineral rights. Can you help me understand if it might be fair?',
+    icon: 'icon-offer.png',
+  },
+  {
+    label: 'I inherited mineral rights. What now?',
+    prompt: 'I inherited mineral rights and I’m not sure what I own. What should I do first?',
+    icon: 'icon-inherited.png',
+  },
+  {
+    label: 'I receive royalties. Should I sell?',
+    prompt:
+      'I receive royalty checks. Can you help me understand whether I should keep them or consider selling?',
+    icon: 'icon-royalty-checks.png',
+  },
+];
+
+const commitments = [
+  { label: 'Free', icon: 'icon-shield.png' },
+  { label: 'Confidential', icon: 'icon-lock.png' },
+  { label: 'No obligation', icon: 'icon-check.png' },
+  { label: 'No pressure', icon: 'icon-nopressure.png' },
+];
+
+const benefits = [
+  {
+    title: 'Avoid selling too cheap',
+    copy: 'Understand what can impact value before accepting an offer.',
+    icon: 'icon-market.png',
+  },
+  {
+    title: 'Understand what you own',
+    copy: 'Many owners are not sure how much acreage or royalty interest they have.',
+    icon: 'icon-ownership.png',
+  },
+  {
+    title: 'Compare the whole offer',
+    copy: 'See how headline price, title review, terms, and contingencies fit together.',
+    icon: 'icon-offer.png',
+  },
+  {
+    title: 'Learn what buyers know',
+    copy: 'Production, permits, operators, and future development can affect value.',
+    icon: 'icon-royalty-checks.png',
+  },
+  {
+    title: 'Get answers first',
+    copy: 'Ask the important questions with no pressure and no obligation.',
+    icon: 'icon-shield.png',
+  },
+];
+
+const commonQuestions = [
+  'What are my minerals worth?',
+  'Is my offer fair?',
+  'What do I actually own?',
+  'Should I sell now or wait?',
+  'How much future income am I giving up?',
+  'What information do you need?',
+];
+---
+
+<div class="mrx-home">
+  <section class="mrx-home-hero" aria-labelledby="home-title">
+    <picture class="mrx-home-hero__media" aria-hidden="true">
+      <source
+        type="image/avif"
+        srcset="/assets/mrx-homepage-v4/backgrounds/hero-tommy-left-layout-768.avif 768w, /assets/mrx-homepage-v4/backgrounds/hero-tommy-left-layout-1280.avif 1280w, /assets/mrx-homepage-v4/backgrounds/hero-tommy-left-layout-1536.avif 1536w"
+        sizes="100vw"
+      />
+      <source
+        type="image/webp"
+        srcset="/assets/mrx-homepage-v4/backgrounds/hero-tommy-left-layout-768.webp 768w, /assets/mrx-homepage-v4/backgrounds/hero-tommy-left-layout-1280.webp 1280w, /assets/mrx-homepage-v4/backgrounds/hero-tommy-left-layout-1536.webp 1536w"
+        sizes="100vw"
+      />
+      <img
+        src="/assets/mrx-homepage-v4/backgrounds/hero-tommy-left-layout.png"
+        alt=""
+        width="1536"
+        height="1024"
+        fetchpriority="high"
+        decoding="async"
+      />
+    </picture>
+    <div class="container mrx-home-hero__grid">
+      <div class="mrx-home-hero__portrait-spacer" aria-hidden="true"></div>
+      <div class="mrx-home-hero__copy">
+        <p class="mrx-eyebrow">Free nationwide mineral-rights guidance</p>
+        <h1 id="home-title">Got a mineral rights offer? Get straight answers before you sign.</h1>
+        <p class="mrx-home-hero__lede">
+          Ask Tommy what may affect its value, whether the offer deserves a closer look, and what to
+          check next—without pressure to sell.
+        </p>
+        <div class="mrx-home-actions">
+          <button class="mrx-primary" type="button" data-open-home-chat
+            >Ask Tommy <span aria-hidden="true">→</span></button
+          >
+          <button
+            class="mrx-secondary"
+            type="button"
+            data-home-prompt="I received an offer for my mineral rights. Can you help me understand if it might be fair?"
+            >I have an offer <span aria-hidden="true">→</span></button
+          >
+        </div>
+        <div class="mrx-proof-row" aria-label="MRX service commitments">
+          {
+            commitments.map((item) => (
+              <span>
+                <img src={`${assetRoot}/icons/${item.icon}`} alt="" width="256" height="256" />
+                {item.label}
+              </span>
+            ))
+          }
+        </div>
+      </div>
+      <aside class="mrx-chat-preview" aria-label="Ask Tommy conversation starters">
+        <div class="mrx-chat-preview__head">
+          <img
+            src="/assets/mrx-homepage-v4/avatars/tommy-hermes-256.webp"
+            alt=""
+            width="256"
+            height="256"
+          />
+          <span
+            ><strong>Tommy™</strong><small>Fictional MRX AI Guide</small><em
+              ><i aria-hidden="true"></i> Here now</em
+            ></span
+          >
+        </div>
+        <div class="mrx-chat-preview__bubble">
+          <strong>Hi, I’m Tommy.</strong><span>Tell me what happened, and we’ll take it one question at a time.</span
+          ><b>What would you like help with?</b>
+        </div>
+        <div class="mrx-chat-preview__prompts">
+          {
+            prompts.map((item) => (
+              <button type="button" data-home-prompt={item.prompt}>
+                <>
+                  <img src={`${assetRoot}/icons/${item.icon}`} alt="" width="256" height="256" />
+                  <span>{item.label}</span>
+                  <b aria-hidden="true">→</b>
+                </>
+              </button>
+            ))
+          }
+        </div>
+        <button class="mrx-chat-preview__input" type="button" data-open-home-chat
+          ><span>Ask Tommy anything about your mineral rights…</span><b aria-hidden="true">→</b
+          ></button
+        >
+        <div class="mrx-chat-preview__review">
+          <strong>Ready for a professional review?</strong><span
+            >Ask Angela to find three phone-call times with the MRX team.</span
+          ><button type="button" data-home-booking
+            >Book a free mineral review <b aria-hidden="true">→</b></button>
+        </div>
+        <p class="mrx-chat-preview__disclosure">
+          Educational information, not a certified appraisal or individualized legal, tax, or
+          financial advice.
+        </p>
+      </aside>
+    </div>
+  </section>
+
+  <section class="mrx-benefits" aria-labelledby="why-tommy-title">
+    <div class="container">
+      <h2 id="why-tommy-title">Why mineral owners ask Tommy first</h2>
+      <div class="mrx-benefits__grid">
+        {
+          benefits.map((benefit) => (
+            <article>
+              <>
+                <img
+                  src={`${assetRoot}/icons/${benefit.icon}`}
+                  alt=""
+                  width="256"
+                  height="256"
+                  loading="lazy"
+                />
+                <div>
+                  <>
+                    <h3>{benefit.title}</h3>
+                    <p>{benefit.copy}</p>
+                  </>
+                </div>
+              </>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="mrx-common-questions" aria-labelledby="common-questions-title">
+    <div class="container">
+      <h2 id="common-questions-title">Common questions mineral owners ask Tommy</h2>
+      <div>
+        {
+          commonQuestions.map((question) => (
+            <button type="button" data-home-prompt={question}>
+              {question}
+              <span aria-hidden="true">→</span>
+            </button>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="mrx-section">
+    <div class="container">
+      <div class="mrx-section-heading">
+        <p class="mrx-eyebrow">Start where you are</p><h2>
+          One big decision. Three common starting points.
+        </h2><p>
+          You do not need to know the industry language. Choose the situation that looks most like
+          yours.
+        </p>
+      </div>
+      <div class="mrx-intent-grid">
+        <a class="mrx-intent-card" href="/mineral-rights-value/"
+          ><span>Understand value factors</span><h3>“What might my minerals be worth?”</h3><p>
+            See how location, ownership, production, development timing, market assumptions, and
+            transaction terms fit together.
+          </p><strong>Value my minerals →</strong></a
+        >
+        <a class="mrx-intent-card" href="/offer-review/"
+          ><span>Compare the whole offer</span><h3>“Is this offer fair—or just a headline?”</h3><p>
+            Check what is included, what can change, what happens during title review, and which
+            terms affect the real comparison.
+          </p><strong>Review my offer →</strong></a
+        >
+        <a class="mrx-intent-card" href="/inherited-mineral-rights/"
+          ><span>Organize the first steps</span><h3>“I inherited mineral rights. What now?”</h3><p>
+            Build a practical document list and identify the state, county, operator, ownership, and
+            professional questions that matter next.
+          </p><strong>Start with inherited rights →</strong></a
+        >
+      </div>
+    </div>
+  </section>
+
+  <section class="mrx-section mrx-section--dark">
+    <div class="container">
+      <div class="mrx-section-heading">
+        <p class="mrx-eyebrow">How MRX answers</p><h2>
+          Answers first. Contact information later.
+        </h2><p>
+          Tommy begins with the question you brought. The right MRX AI Guide can then help organize
+          the next layer.
+        </p>
+      </div>
+      <div class="mrx-process">
+        <article>
+          <h3>Ask the real question</h3><p>
+            Describe the offer, inheritance, royalty check, call, letter, or concern in your own
+            words.
+          </p>
+        </article><article>
+          <h3>Separate knowns from unknowns</h3><p>
+            MRX identifies what the current facts support and what still needs verification.
+          </p>
+        </article><article>
+          <h3>See the sources</h3><p>
+            Factual answers link to reviewed MRX guides and authoritative public resources where
+            available.
+          </p>
+        </article><article>
+          <h3>Choose a next step</h3><p>
+            Keep researching, attach a private document, or let Angela conversationally book a phone
+            call.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="mrx-section">
+    <div class="container">
+      <div class="mrx-section-heading">
+        <p class="mrx-eyebrow">The active MRX guide team</p><h2>
+          Different questions need different lenses.
+        </h2><p>
+          These are fictional AI guides with clearly defined educational roles and limits—not human
+          employees or licensed professionals.
+        </p>
+      </div>
+      <div class="mrx-team-grid">
+        {
+          activeGuides.map((guide) => (
+            <a class="mrx-team-card" href={`/team/${guide.slug}/`}>
+              <>
+                <img
+                  src={guide.image}
+                  alt={`${guide.name}, ${guide.role}`}
+                  width="256"
+                  height="256"
+                  loading="lazy"
+                />
+                <span>
+                  <>
+                    <strong>{guide.name}</strong>
+                    <small>{guide.shortRole}</small>
+                  </>
+                </span>
+              </>
+            </a>
+          ))
+        }
+      </div>
+      <p style="margin-top:1.2rem"><a href="/team/">Meet every MRX AI Guide →</a></p>
+    </div>
+  </section>
+
+  <section class="mrx-section mrx-section--sand">
+    <div class="container">
+      <div class="mrx-section-heading">
+        <p class="mrx-eyebrow">Reviewed explanations</p><h2>
+          Learn before the next call or letter arrives.
+        </h2><p>
+          MRX guides are written and reviewed under the real MRX editorial organization. AI profiles
+          recommend content; they are not presented as article authors.
+        </p>
+      </div>
+      <div class="mrx-intent-grid">
+        {
+          posts.map((post) => {
+            const slug = post.id.replace(/\.mdx?$/, '');
+            return (
+              <a class="mrx-intent-card" href={`/blog/${slug}/`}>
+                <>
+                  <span>{post.data.category.replaceAll('-', ' ')}</span>
+                  <h3>{post.data.title}</h3>
+                  <p>{post.data.excerpt}</p>
+                  <strong>Read the guide →</strong>
+                </>
+              </a>
+            );
+          })
+        }
+      </div>
+      <p style="margin-top:1.2rem"><a href="/learning-center/">Search the Learning Center →</a></p>
+    </div>
+  </section>
+
+  <section class="mrx-section">
+    <div class="container">
+      <div class="mrx-section-heading">
+        <p class="mrx-eyebrow">Nationwide starting point</p><h2>
+          Mineral-rights questions change by state.
+        </h2><p>
+          MRX serves owners nationwide and begins with deeper public-resource guides in ten
+          producing states.
+        </p>
+      </div>
+      <div class="mrx-state-grid">
+        {
+          stateGuides.map((state) => (
+            <a href={`/mineral-rights/${state.slug}/`}>
+              <span>{state.abbreviation}</span>
+              {state.name}
+              <b>→</b>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+</div>
+
+<script>
+  document
+    .querySelectorAll<HTMLElement>('[data-open-home-chat]')
+    .forEach((button) =>
+      button.addEventListener('click', () =>
+        window.dispatchEvent(new CustomEvent('mrx:open-chat')),
+      ),
+    );
+  document
+    .querySelectorAll<HTMLElement>('[data-home-prompt]')
+    .forEach((button) =>
+      button.addEventListener('click', () =>
+        window.dispatchEvent(
+          new CustomEvent('mrx:open-chat', { detail: { prompt: button.dataset.homePrompt } }),
+        ),
+      ),
+    );
+  document
+    .querySelectorAll<HTMLElement>('[data-home-booking]')
+    .forEach((button) =>
+      button.addEventListener('click', () =>
+        window.dispatchEvent(new CustomEvent('mrx:open-chat', { detail: { booking: true } })),
+      ),
+    );
+</script>

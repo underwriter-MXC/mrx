@@ -2,6 +2,7 @@
 import { defineConfig } from 'astro/config';
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
+import react from '@astrojs/react';
 import cloudflare from '@astrojs/cloudflare';
 import node from '@astrojs/node';
 import vercel from '@astrojs/vercel';
@@ -45,11 +46,7 @@ const sitemapPriorityIntegration = {
 export default defineConfig({
   site: SITE,
   output: 'server',
-  // Public lead-capture POST routes are intentionally form-postable behind the
-  // production reverse proxy. Same-origin checks are enforced by the proxy
-  // host/canonical domain rather than Astro's adapter-level development guard,
-  // which rejects localhost/Hetzner proxy submissions before route validation.
-  security: { checkOrigin: false },
+  security: { checkOrigin: true },
   adapter: isHetzner
     ? node({ mode: 'standalone' })
     : isVercel
@@ -57,11 +54,20 @@ export default defineConfig({
       : cloudflare({ platformProxy: { enabled: true } }),
   integrations: [
     mdx(),
+    react(),
     sitemap({
       changefreq: 'weekly',
       priority: 0.7,
       lastmod: new Date(),
-      filter: (page) => !page.includes('/blog/drafts/') && !page.includes('/api/'),
+      filter: (page) => {
+        const pathname = new URL(page).pathname;
+        return !pathname.includes('/blog/drafts/')
+          && !pathname.includes('/api/')
+          && !pathname.startsWith('/account')
+          && !pathname.includes('/thank-you')
+          && pathname !== '/404/'
+          && pathname !== '/500/';
+      },
     }),
     sitemapPriorityIntegration,
   ],

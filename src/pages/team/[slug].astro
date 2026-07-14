@@ -1,0 +1,13 @@
+---
+import MarketingLayout from '../../layouts/MarketingLayout.astro';
+import { guides, type Guide } from '../../data/guides';
+export const prerender = true;
+export function getStaticPaths() { return guides.map((guide) => ({ params: { slug: guide.slug }, props: { guide } })); }
+const { guide } = Astro.props as { guide: Guide };
+const seoTitle = `Meet ${guide.name}: ${guide.shortRole.replace('professional-', '')} | MRX AI Guide`;
+const seoDescription = `${guide.name} is a fictional MRX AI Guide for ${guide.helpsWith.slice(0, 3).join(', ').toLowerCase()}. See the role, limitations, and how to ask for focused help.`;
+---
+<MarketingLayout title={seoTitle} description={seoDescription} path={`/team/${guide.slug}/`} pageType="marketing" pageCategory="about" breadcrumbs={[{name:'Home',path:'/'},{name:'MRX AI Guides',path:'/team/'},{name:guide.name,path:`/team/${guide.slug}/`}]}>
+  <section class="mrx-section"><div class="container mrx-guide-profile"><img src={guide.image.replace('-256','-512')} alt={`${guide.name}, ${guide.role}`} width="512" height="512" /><div><p class="mrx-guide-label">{guide.status === 'active' ? 'Active fictional MRX AI Guide' : 'Fictional MRX AI Guide directory profile'}</p><h1>{guide.name}</h1><p style="font-size:1.15rem;color:#8a5d18;font-weight:800">{guide.role}</p><p style="margin-top:1rem;font-size:1.05rem;color:#4d606c">{guide.summary}</p><h2>What {guide.name} can help organize</h2><ul>{guide.helpsWith.map((item) => <li>✓ {item}</li>)}</ul><h2>How {guide.name} speaks</h2><blockquote style="margin-top:.7rem;padding:1rem;border-left:4px solid var(--mrx-gold);background:#fff">“{guide.greeting}”</blockquote><div class="mrx-guide-disclosure"><strong>Visible limit</strong><p>{guide.limits}</p></div>{guide.status === 'active' ? <button class="mrx-primary" style="margin-top:1.2rem" type="button" data-guide-prompt={`I would like ${guide.name} to help with ${guide.shortRole.toLowerCase()}.`}>Ask {guide.name}</button> : <p style="margin-top:1.2rem"><a href="/team/tommy/">Start with Tommy, the active first-response guide →</a></p>}</div></div></section>
+</MarketingLayout>
+<script>document.querySelector<HTMLElement>('[data-guide-prompt]')?.addEventListener('click',(event)=>{const prompt=(event.currentTarget as HTMLElement).dataset.guidePrompt;window.dispatchEvent(new CustomEvent('mrx:open-chat',{detail:{prompt}}));});</script>

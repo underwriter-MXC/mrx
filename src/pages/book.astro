@@ -1,21 +1,52 @@
 ---
-import { getEntry } from 'astro:content';
 import MarketingLayout from '../layouts/MarketingLayout.astro';
-
-const entry = await getEntry('pages', 'book');
-if (!entry) throw new Error('pages/book.mdx is missing.');
-const { Content } = await entry.render();
 export const prerender = true;
 ---
 
 <MarketingLayout
-  title={entry.data.title}
-  description={entry.data.description}
+  title="Book a Mineral-Rights Phone Call · MRX"
+  description="Ask questions first, then let Angela offer three available MRX phone-call times in a private conversation. No public calendar and no obligation."
   path="/book"
   pageType="marketing"
   pageCategory="book"
-  breadcrumbs={[{ name: 'Home', path: '/' }, { name: 'Book a Review', path: '/book' }]}
-  faq={entry.data.faq}
+  breadcrumbs={[{ name: 'Home', path: '/' }, { name: 'Book a Phone Call', path: '/book' }]}
 >
-  <Content />
+  <section class="mrx-page-hero">
+    <div class="container mrx-page-hero__grid">
+      <div>
+        <p class="mrx-eyebrow">Private phone appointment</p>
+        <h1>Choose a phone time with Angela.</h1>
+        <p>Tell Angela your timezone and the part of day that works. She will check live availability, offer three valid choices, and confirm the time here—without sending you through a public calendar.</p>
+        <div class="mrx-home-actions">
+          <button class="mrx-primary" type="button" data-book-with-angela>Find three phone times</button>
+          <a class="mrx-secondary" href="/learning-center/">Read reviewed guidance first</a>
+        </div>
+      </div>
+      <aside class="mrx-answer-card">
+        <h2>What Angela will ask for</h2>
+        <ul>
+          <li>Your timezone and general timing preference</li>
+          <li>Your selected phone-call time</li>
+          <li>Name, email, and phone number for this appointment</li>
+          <li>Separate choices for email, SMS, marketing texts, and calls</li>
+        </ul>
+        <small>Declining text messages does not prevent booking. You control every communication choice.</small>
+      </aside>
+    </div>
+  </section>
+  <section class="mrx-section">
+    <div class="container mrx-prose-grid">
+      <div>
+        <section><h2>You can ask a question before you book</h2><p>Tommy gives a useful first answer without requiring contact information. If a call would help, Angela handles the appointment details and passes along a concise summary so you do not have to start over.</p></section>
+        <section><h2>Phone appointments are free</h2><p>There is no qualification score at launch and no obligation to sell. MRX may be a buyer in a transaction that results from a review; if so, that relationship will be disclosed in writing before an agreement is signed.</p></section>
+      </div>
+      <aside class="mrx-side-cta"><p class="mrx-eyebrow">Ready when you are</p><h3>Angela will show three available times.</h3><p>Choose the one that works, confirm your contact details, and select the communication channels you want.</p><button type="button" data-book-with-angela>Open appointment assistant</button></aside>
+    </div>
+  </section>
 </MarketingLayout>
+
+<script>
+  document.querySelectorAll<HTMLElement>('[data-book-with-angela]').forEach((button) => button.addEventListener('click', () => {
+    window.dispatchEvent(new CustomEvent('mrx:open-chat', { detail: { booking: true } }));
+  }));
+</script>

@@ -1,0 +1,15 @@
+---
+interface Props {
+  eyebrow: string;
+  title: string;
+  lede: string;
+  answerTitle: string;
+  answerPoints: string[];
+  sections: Array<{ title: string; paragraphs: string[]; bullets?: string[] }>;
+  prompt: string;
+}
+const { eyebrow, title, lede, answerTitle, answerPoints, sections, prompt } = Astro.props;
+---
+<section class="mrx-page-hero"><div class="container mrx-page-hero__grid"><div><p class="mrx-eyebrow">{eyebrow}</p><h1>{title}</h1><p>{lede}</p><div class="mrx-home-actions"><button class="mrx-primary" type="button" data-intent-prompt={prompt}>Ask Tommy about my situation</button><a class="mrx-secondary" href="/learning-center/">Search reviewed guides</a></div></div><aside class="mrx-answer-card"><h2>{answerTitle}</h2><ul>{answerPoints.map((point) => <li>{point}</li>)}</ul><small>General educational information. Specific ownership, title, tax, and legal questions may require a qualified professional in the applicable state.</small></aside></div></section>
+<section class="mrx-section"><div class="container mrx-prose-grid"><div>{sections.map((section) => <section><h2>{section.title}</h2>{section.paragraphs.map((paragraph) => <p>{paragraph}</p>)}{section.bullets && <ul>{section.bullets.map((item) => <li>{item}</li>)}</ul>}</section>)}</div><aside class="mrx-side-cta"><p class="mrx-eyebrow">Ask before you sign</p><h3>Tommy starts with your question—not a sales form.</h3><p>You can stay anonymous for the first answer. A name and email are requested only if you want to save the conversation.</p><button type="button" data-intent-prompt={prompt}>Ask Tommy</button></aside></div></section>
+<script>document.querySelectorAll<HTMLElement>('[data-intent-prompt]').forEach((button) => button.addEventListener('click', () => window.dispatchEvent(new CustomEvent('mrx:open-chat', { detail: { prompt: button.dataset.intentPrompt } }))));</script>

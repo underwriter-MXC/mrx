@@ -1,29 +1,12 @@
 ---
-/**
- * Homepage. Renders the index.mdx from src/content/pages/.
- *
- * Per Architecture Plan §2.1, the marketing pages live in the `pages`
- * content collection so they share a single content model. The
- * src/pages/index.astro file is a thin loader.
- */
-import { getEntry } from 'astro:content';
-import MarketingLayout from '../layouts/MarketingLayout.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import HomeExperience from '../components/organisms/HomeExperience.astro';
 
-const entry = await getEntry('pages', 'index');
-if (!entry) throw new Error('pages/index.mdx is missing — this is a build-breaking error.');
-const { Content: Body } = await entry.render();
+const title = 'Mineral Rights Answers Before You Sign · MRX';
+const description = 'Got a mineral-rights offer? Ask Tommy for free, no-pressure educational help with value factors, inherited rights, royalties, and what to check next.';
 export const prerender = true;
 ---
 
-<MarketingLayout
-  title={entry.data.title}
-  description={entry.data.description}
-  path="/"
-  pageType="home"
-  pageCategory="homepage"
-  breadcrumbs={[{ name: 'Home', path: '/' }]}
-  faq={entry.data.faq}
-  hideHeader={true}
->
-  <Body />
-</MarketingLayout>
+<BaseLayout title={title} description={description} path="/" pageType="home" pageCategory="homepage">
+  <HomeExperience />
+</BaseLayout>
