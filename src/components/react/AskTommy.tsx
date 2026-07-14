@@ -44,7 +44,8 @@ type ConversationStep =
   | 'booking-phone'
   | 'booking-call-consent'
   | 'booking-email-consent'
-  | 'booking-sms-consent';
+  | 'booking-sms-consent'
+  | 'booking-help';
 
 type ProfileDraft = {
   firstName: string;
@@ -699,11 +700,16 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
       const confirmations = result.notifications?.length
         ? ` I also sent the confirmation by ${result.notifications.map((channel: DeliveryChannel) => (channel === 'email' ? 'email' : 'text')).join(' and ')} as requested.`
         : ' Your confirmation is here on screen.';
-      setStep('open');
+      setStep('booking-help');
       await guideSay(
         `You’re booked for ${selectedOption.label}.${confirmations} We’ll call ${nextProfile.phone}.`,
         'angela',
         260,
+      );
+      await guideSay(
+        'What specifically can we help you with?\n\n• Review an offer or understand what affects value\n• Sort out inherited mineral rights or royalty questions\n• Talk through whether selling now or waiting fits your goals\n\nTell me in your own words.',
+        'angela',
+        220,
       );
       track('appointment_booked', {
         timezone: selectedOption.timezone,
@@ -1034,6 +1040,11 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
       await guideSay(`May MRX call ${text} for this specific appointment?`, 'angela');
       return;
     }
+    if (step === 'booking-help') {
+      setStep('open');
+      await sendMessage(text);
+      return;
+    }
     await sendMessage(text);
   }
 
@@ -1154,6 +1165,7 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
     'booking-call-consent': 'Yes or no…',
     'booking-email-consent': 'Yes or no…',
     'booking-sms-consent': 'Yes or no…',
+    'booking-help': 'Tell Angela what you need help with…',
   };
   const composerInputId = `tommy-question-${step}`;
   const isEmailStep = step === 'delivery-email' || step === 'booking-email';

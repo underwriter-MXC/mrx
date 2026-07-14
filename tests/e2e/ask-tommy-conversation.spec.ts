@@ -142,6 +142,19 @@ test.describe('Ask Tommy conversational experience', () => {
 
     await expect(page.getByText('You’re booked for Tuesday, Jul 14 at 6:00 PM.')).toBeVisible();
     await expect(page.getByText('sent the confirmation by email and text')).toBeVisible();
+    await expect(page.getByText('What specifically can we help you with?')).toBeVisible();
+    await expect(page.getByText('Review an offer or understand what affects value')).toBeVisible();
+    await expect(
+      page.getByText('Sort out inherited mineral rights or royalty questions'),
+    ).toBeVisible();
+    await expect(
+      page.getByText('Talk through whether selling now or waiting fits your goals'),
+    ).toBeVisible();
+    await expect(page.getByTestId('tommy-composer-input')).toHaveAttribute(
+      'placeholder',
+      'Tell Angela what you need help with…',
+    );
+    await expect(page.locator('[data-reply="I received an offer"]')).toHaveCount(0);
   });
 });
 
