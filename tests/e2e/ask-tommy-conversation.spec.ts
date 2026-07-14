@@ -98,9 +98,7 @@ test.describe('Ask Tommy conversational experience', () => {
     });
 
     await page.goto('/?book=1');
-    await page
-      .locator('[data-testid="ask-tommy-open"][data-chat-ready="true"]')
-      .waitFor({ state: 'visible' });
+    await expect(page.getByTestId('ask-tommy-dialog')).toBeVisible();
     await expect(page.getByText('I’m Angela, the MRX scheduling guide.')).toBeVisible();
     await expect(
       page.getByText('I’ll check the live MRX calendar and offer a few real openings.'),
@@ -116,8 +114,18 @@ test.describe('Ask Tommy conversational experience', () => {
     await page.locator('[data-reply="2026-07-14T22:00:00.000Z"]').click();
 
     await expect(page.getByText('What first name should I put on the appointment?')).toBeVisible();
+    await expect(page.getByTestId('tommy-composer-input')).toHaveAttribute(
+      'name',
+      'mrx-chat-booking-name',
+    );
     await reply(page, 'Daryl');
     await expect(page.getByText('What email should I use for appointment details?')).toBeVisible();
+    await expect(page.getByTestId('tommy-composer-input')).toHaveAttribute(
+      'name',
+      'mrx-chat-booking-email',
+    );
+    await expect(page.getByTestId('tommy-composer-input')).toHaveAttribute('autocomplete', 'off');
+    await expect(page.getByTestId('tommy-composer-input')).toHaveAttribute('inputmode', 'email');
     await reply(page, 'daryl@example.com');
     await expect(
       page.getByText('What phone number should the live MRX underwriter call?'),

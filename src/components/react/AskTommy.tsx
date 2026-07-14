@@ -1155,6 +1155,10 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
     'booking-email-consent': 'Yes or no…',
     'booking-sms-consent': 'Yes or no…',
   };
+  const composerInputId = `tommy-question-${step}`;
+  const isEmailStep = step === 'delivery-email' || step === 'booking-email';
+  const isPhoneStep = step === 'delivery-phone' || step === 'booking-phone';
+  const isNameStep = step === 'intro-name' || step === 'booking-name';
 
   return (
     <>
@@ -1222,11 +1226,7 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
                       {!!message.citations?.length && (
                         <details className="tommy-citations">
                           <summary>Source used</summary>
-                          <a
-                            href={message.citations[0].url}
-                            target="_blank"
-                            rel="noreferrer"
-                          >
+                          <a href={message.citations[0].url} target="_blank" rel="noreferrer">
                             {message.citations[0].title}
                           </a>
                         </details>
@@ -1275,14 +1275,26 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
               <div ref={endRef} />
             </div>
             <footer className="tommy-composer">
-              <form onSubmit={handleComposer}>
-                <label className="visually-hidden" htmlFor="tommy-question">
+              <form onSubmit={handleComposer} autoComplete="off">
+                <label className="visually-hidden" htmlFor={composerInputId}>
                   Reply to {personaLabels[activePersona]}
                 </label>
                 <input
-                  id="tommy-question"
+                  key={composerInputId}
+                  id={composerInputId}
+                  name={`mrx-chat-${step}`}
                   data-testid="tommy-composer-input"
                   ref={inputRef}
+                  type="text"
+                  inputMode={isEmailStep ? 'email' : isPhoneStep ? 'tel' : 'text'}
+                  autoComplete="off"
+                  aria-autocomplete="none"
+                  autoCapitalize={
+                    isNameStep ? 'words' : isEmailStep || isPhoneStep ? 'none' : 'sentences'
+                  }
+                  autoCorrect={isEmailStep || isPhoneStep ? 'off' : 'on'}
+                  spellCheck={!isEmailStep && !isPhoneStep}
+                  enterKeyHint="send"
                   value={input}
                   onChange={(event) => setInput(event.target.value)}
                   placeholder={placeholder[step]}
