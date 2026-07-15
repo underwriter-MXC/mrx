@@ -1,6 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
-import { activeGuides } from '../../data/guides';
+import { activeGuides, getGuide } from '../../data/guides';
 import { stateGuides } from '../../data/states';
 
 const posts = (await getCollection('posts', (post) => !post.data.draft))
@@ -8,6 +8,7 @@ const posts = (await getCollection('posts', (post) => !post.data.draft))
   .slice(0, 3);
 
 const assetRoot = '/assets/mrx-homepage-v4/hermes';
+const tommyGuide = getGuide('tommy')!;
 
 const prompts = [
   {
@@ -141,13 +142,14 @@ const commonQuestions = [
             height="256"
           />
           <span
-            ><strong>Tommy™</strong><small>Fictional MRX AI Guide</small><em
+            ><strong>Tommy™</strong><small>{tommyGuide.chatRole}</small><em
               ><i aria-hidden="true"></i> Here now</em
             ></span
           >
         </div>
         <div class="mrx-chat-preview__bubble">
-          <strong>Hi, I’m Tommy.</strong><span>Tell me what happened, and we’ll take it one question at a time.</span
+          <strong>Hi, I’m Tommy.</strong><span
+            >Tell me what happened, and we’ll take it one question at a time.</span
           ><b>What would you like help with?</b>
         </div>
         <div class="mrx-chat-preview__prompts">
@@ -171,7 +173,8 @@ const commonQuestions = [
           <strong>Ready for a professional review?</strong><span
             >Ask Angela to find three phone-call times with the MRX team.</span
           ><button type="button" data-home-booking
-            >Book a free mineral review <b aria-hidden="true">→</b></button>
+            >Book a free mineral review <b aria-hidden="true">→</b></button
+          >
         </div>
         <p class="mrx-chat-preview__disclosure">
           Educational information, not a certified appraisal or individualized legal, tax, or

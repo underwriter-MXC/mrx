@@ -8,6 +8,7 @@ import {
   type ReactNode,
 } from 'react';
 import { createClient, type SupabaseClient } from '@supabase/supabase-js';
+import { getGuide, getGuideChatLabel } from '../../data/guides';
 import './AskTommy.css';
 
 type Persona = 'tommy' | 'cooper' | 'charlie' | 'dale' | 'rebecca' | 'angela';
@@ -75,6 +76,8 @@ const personaLabels: Record<Persona, string> = {
   rebecca: 'Rebecca',
   angela: 'Angela',
 };
+
+const personaRole = (persona: Persona) => getGuide(persona)?.chatRole ?? 'MRX Guide';
 
 const tommyAvatar = '/assets/mrx-homepage-v4/avatars/tommy-hermes-128.webp';
 const bookedAppointmentStorageKey = 'mrx_upcoming_appointment';
@@ -1279,7 +1282,7 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
               </span>
               <div>
                 <strong id="tommy-title">Talking with {personaLabels[activePersona]}</strong>
-                <span>Fictional MRX AI Guide · Here now</span>
+                <span>{personaRole(activePersona)} · Here now</span>
               </div>
               <button type="button" onClick={() => setOpen(false)} aria-label="Close Ask Tommy">
                 ×
@@ -1295,7 +1298,7 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
                   <div className="tommy-message-row" key={message.id}>
                     <img src={personaAvatar(message.persona || 'tommy')} alt="" />
                     <article className="tommy-message tommy-message--assistant">
-                      <small>{personaLabels[message.persona || 'tommy']} · MRX AI Guide</small>
+                      <small>{getGuideChatLabel(message.persona || 'tommy')}</small>
                       <p>
                         {message.content || (sending ? 'Thinking through what you shared…' : '')}
                       </p>

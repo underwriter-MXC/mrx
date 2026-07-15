@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState, type FormEvent } from 'react';
 import { createClient, type Session } from '@supabase/supabase-js';
+import { getGuideChatLabel } from '../../data/guides';
 import './AccountHub.css';
 
 interface Props { supabaseUrl?: string; supabaseAnonKey?: string }
@@ -77,7 +78,7 @@ export default function AccountHub({ supabaseUrl, supabaseAnonKey }: Props) {
     <header><div><p className="account-kicker">Private owner account</p><h2>Welcome back</h2><p>{session.user.email}</p></div><button type="button" onClick={() => supabase.auth.signOut()}>Sign out</button></header>
     {status && <p className="account-status">{status}</p>}
     <section><div className="account-section-head"><div><h3>Conversations</h3><p>Your saved questions, cited answers, and appointment history.</p></div><button type="button" onClick={() => window.dispatchEvent(new CustomEvent('mrx:open-chat'))}>Ask Tommy</button></div>
-      {!conversations.length ? <p className="account-empty">No saved conversations yet.</p> : <div className="account-list">{conversations.map((conversation) => <details key={conversation.id}><summary><span>{conversation.title || conversation.summary || 'Mineral-rights conversation'}</span><time>{new Date(conversation.updated_at).toLocaleDateString()}</time></summary><div>{conversation.messages?.map((message) => <article key={message.id}><small>{message.role === 'assistant' ? `${message.persona || 'tommy'} · MRX AI Guide` : 'You'}</small><p>{message.content}</p></article>)}</div></details>)}</div>}
+      {!conversations.length ? <p className="account-empty">No saved conversations yet.</p> : <div className="account-list">{conversations.map((conversation) => <details key={conversation.id}><summary><span>{conversation.title || conversation.summary || 'Mineral-rights conversation'}</span><time>{new Date(conversation.updated_at).toLocaleDateString()}</time></summary><div>{conversation.messages?.map((message) => <article key={message.id}><small>{message.role === 'assistant' ? getGuideChatLabel(message.persona || 'tommy') : 'You'}</small><p>{message.content}</p></article>)}</div></details>)}</div>}
     </section>
     <section><div className="account-section-head"><div><h3>Private documents</h3><p>Original files remain private and are never copied into GoHighLevel.</p></div></div>
       {!attachments.length ? <p className="account-empty">No private documents attached.</p> : <div className="account-files">{attachments.map((file) => <div key={file.id}><span><strong>{file.original_name}</strong><small>{Math.round(file.size_bytes / 1024)} KB · {file.status}</small></span><button type="button" onClick={() => deleteAttachment(file.id)}>Delete</button></div>)}</div>}
