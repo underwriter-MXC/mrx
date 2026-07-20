@@ -19,7 +19,7 @@ export async function moderateText(input: string) {
   return { flagged: Boolean(data.results?.[0]?.flagged) };
 }
 
-function systemInstructions(
+export function systemInstructions(
   persona: PersonaSlug,
   citations: KnowledgeCitation[],
   context?: { firstName?: string; location?: string },
@@ -48,14 +48,16 @@ Reviewed MRX sources:
 ${sources}`;
 }
 
-export async function createOpenAIStream(args: {
+export type AIStreamArgs = {
   message: string;
   persona: PersonaSlug;
   citations: KnowledgeCitation[];
   context?: { firstName?: string; location?: string };
   history?: Array<{ role: 'user' | 'assistant'; content: string }>;
   previousResponseId?: string;
-}) {
+};
+
+export async function createOpenAIStream(args: AIStreamArgs) {
   const key = import.meta.env.OPENAI_API_KEY;
   if (!key) return null;
   const response = await fetch(`${API_URL}/responses`, {

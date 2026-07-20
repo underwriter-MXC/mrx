@@ -48,3 +48,17 @@ export function safeError(error: unknown) {
   console.error('[MRX API]', error instanceof Error ? error.message : 'unknown error');
   return json({ ok: false, error: 'request_failed' }, { status: 500 });
 }
+
+export function bearerToken(request: Request) {
+  const authorization = request.headers.get('authorization') ?? '';
+  return authorization.startsWith('Bearer ') ? authorization.slice(7) : '';
+}
+
+export function tokensMatch(provided: string, expected: string) {
+  if (!provided || !expected || provided.length !== expected.length) return false;
+  let difference = 0;
+  for (let index = 0; index < provided.length; index += 1) {
+    difference |= provided.charCodeAt(index) ^ expected.charCodeAt(index);
+  }
+  return difference === 0;
+}
