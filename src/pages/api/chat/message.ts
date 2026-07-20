@@ -2,7 +2,7 @@ import type { APIRoute } from 'astro';
 import { getCollection } from 'astro:content';
 import { z } from 'zod';
 import { routeGuide } from '../../../data/guides';
-import { createOpenAIStream, fallbackAnswer, moderateText } from '../../../lib/platform/openai';
+import { createAIStream, extractAITextDelta, fallbackAnswer, moderateText } from '../../../lib/platform/ai';
 import { saveMessage } from '../../../lib/platform/supabase';
 import { assertRateLimit, assertSameOrigin, clientKey, safeError } from '../../../lib/platform/security';
 import type { ChatRequest, KnowledgeCitation, StreamEvent } from '../../../lib/platform/types';
@@ -12,12 +12,12 @@ const RequestSchema = z.object({
   path: z.string().max(500).optional(),
   conversationId: z.string().max(100).optional(),
   context: z.object({
-    firstName: z.string().max(80).optional(),
-    location: z.string().max(200).optional(),
+      firstName: z.string().max(80).optional(),
+      location: z.string().max(200).optional(),
   }).optional(),
   history: z.array(z.object({
-    role: z.enum(['user', 'assistant']),
-    content: z.string().max(4_000),
+        role: z.enum(['user', 'assistant']),
+        content: z.string().max(4_000),
   })).max(8).optional(),
 });
 
@@ -70,7 +70,7 @@ export const POST: APIRoute = async (context) => {
     const moderation = await moderateText(message);
     if (moderation.flagged) {
       return new Response(encode({ type: 'error', code: 'message_blocked', message: 'That message could not be processed. Please rephrase it as a mineral-rights question.' }), {
-        status: 200,
+          status: 200,
         headers: { 'Content-Type': 'text/event-stream', 'Cache-Control': 'no-cache, no-transform' },
       });
     }
@@ -90,7 +90,7 @@ export const POST: APIRoute = async (context) => {
             send({ type: 'persona.handoff', from: 'tommy', to: persona.slug as any, reason: `${persona.name} focuses on ${persona.shortRole.toLowerCase()}.` });
           }
           citations.forEach((citation) => send({ type: 'citation', citation }));
-          const upstream = await createOpenAIStream({
+          const upstream = await createAIStream({
             message,
             persona: persona.slug as any,
             citations,
@@ -119,9 +119,10 @@ export const POST: APIRoute = async (context) => {
                 if (raw === '[DONE]') continue;
                 try {
                   const event = JSON.parse(raw);
-                  if (event.type === 'response.output_text.delta' && event.delta) {
-                    fullText += event.delta;
-                    send({ type: 'message.delta', delta: event.delta, persona: persona.slug as any });
+                  const delta = extractAITextDelta(event);
+                  if (delta) {
+                    fullText += delta;
+                    send({ type: 'message.delta', delta, persona: persona.slug as any });
                   }
                 } catch {
                   // Ignore incomplete upstream event lines; the next frame continues the stream.
