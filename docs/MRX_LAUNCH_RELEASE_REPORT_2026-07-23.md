@@ -20,6 +20,7 @@
 - `CI=1 pnpm check:seo:rendered` — pass (112 rendered HTML pages).
 - `pnpm check-compliance` — pass; `pnpm check:copy` — pass; `pnpm db:validate` — pass (10 migration files / 260 statements).
 - `CI=1 MRX_SKIP_RELEASE_GATE=1 pnpm build:vercel` — pass. The normal build remains correctly blocked without legal signoff receipts.
+- `CI=1 MRX_SKIP_RELEASE_GATE=1 pnpm test:e2e` — **112 passed** (desktop/mobile Playwright suite, 3.1 minutes).
 - `pnpm verify:document-worker` — pass: health OK, unauthorized request rejected, clean OCR ready, malware/EICAR rejected, three signed callbacks verified.
 - Live read-only checks: canonical home, robots, and sitemap return 200; sitemap contains no private routes; dated legacy URLs return 308 to canonical; `/account/`, `/owner-intake/`, and `/staff/` are `noindex, nofollow`; Cloudflare/Vercel headers are present.
 
