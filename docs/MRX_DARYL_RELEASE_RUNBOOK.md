@@ -10,7 +10,7 @@ Use this runbook to clear the remaining authority-dependent gates. Do not paste 
 
 ## 2. Add legal and editorial receipts
 
-In GitHub, open **Settings → Environments → production → Environment variables** and add the approved receipt/reference values (not secrets) for:
+In GitHub, open **Settings → Secrets and variables → Actions → Variables** and add the approved receipt/reference values (not secrets) as repository-level variables. The workflow reads these values in its release-gate job:
 
 - `MRX_LEGAL_SIGNOFF_1031`
 - `MRX_LEGAL_SIGNOFF_AI_VOICE`
@@ -18,14 +18,17 @@ In GitHub, open **Settings → Environments → production → Environment varia
 - `MRX_LEGAL_SIGNOFF_SELLER_BUYER`
 - `MRX_EDITORIAL_SIGNOFF_UNDERWRITER_FAIR_VALUE`
 
-Set `MRX_ENFORCE_LEGAL_SIGNOFFS=true`. Each value must identify a real approved receipt; never invent one. Stop if any approval is missing.
+The production workflow forces `MRX_ENFORCE_LEGAL_SIGNOFFS=true`; do not add a bypass or override. Each value must identify a real approved receipt; never invent one. Stop if any approval is missing.
 
 ## 3. Configure deployment credentials
 
-In the same GitHub **production** environment, enter these directly:
+In the same Actions settings, add these as repository-level variables:
 
-- Variables: `VERCEL_ORG_ID`, `VERCEL_PROJECT_ID`, `SUPABASE_PROJECT_REF`.
-- Secrets: `VERCEL_TOKEN`, `SUPABASE_ACCESS_TOKEN`, `SUPABASE_DB_PASSWORD`.
+- `VERCEL_ORG_ID`, `VERCEL_PROJECT_ID`, `SUPABASE_PROJECT_REF`.
+
+Then open **Settings → Environments → production → Environment secrets** and enter:
+
+- `VERCEL_TOKEN`, `SUPABASE_ACCESS_TOKEN`, `SUPABASE_DB_PASSWORD`.
 
 Use least-privilege project-scoped credentials. Confirm the values are masked and never appear in workflow logs.
 
