@@ -12,9 +12,17 @@ interface Props {
   variant?: 'primary' | 'secondary' | 'ghost';
   size?: 'sm' | 'md' | 'lg';
   class?: string;
+  openTommy?: boolean;
 }
 
-const { ctaName, href, variant = 'primary', size = 'md', class: className } = Astro.props;
+const {
+  ctaName,
+  href,
+  variant = 'primary',
+  size = 'md',
+  class: className,
+  openTommy = false,
+} = Astro.props;
 
 if (!ctaName || ctaName.trim() === '') {
   // Build-time safety: emit a marker in the DOM that the §9 test scans
@@ -26,6 +34,11 @@ if (!ctaName || ctaName.trim() === '') {
 }
 ---
 
-<a data-cta-name={ctaName} href={href} class:list={['btn', `btn--${variant}`, size !== 'md' ? `btn--${size}` : '', className]}>
+<a
+  data-cta-name={ctaName}
+  data-open-tommy={openTommy || undefined}
+  href={href}
+  class:list={['btn', `btn--${variant}`, size !== 'md' ? `btn--${size}` : '', className]}
+>
   <slot />
 </a>

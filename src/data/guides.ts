@@ -225,15 +225,105 @@ export function getGuideChatLabel(slug: string) {
   return `${guide.name} ${guide.chatRole}`;
 }
 
-export function routeGuide(question: string): Guide {
+type GuideRoute = {
+  guide: Guide;
+  from: Guide;
+  shouldHandoff: boolean;
+  reason: string | null;
+  handoffMessage: string | null;
+};
+
+const guideRoutes: Array<{
+  terms: string[];
+  slug: string;
+  reason: string;
+}> = [
+  {
+    terms: ['book', 'appointment', 'call me', 'schedule', 'talk to someone', 'talk with someone'],
+    slug: 'angela',
+    reason: 'scheduling and next steps',
+  },
+  {
+    terms: [
+      'deed',
+      'probate',
+      'inherited',
+      'county record',
+      'division order',
+      'ownership',
+      'legal description',
+      'parcel',
+      'county clerk',
+    ],
+    slug: 'cooper',
+    reason: 'ownership and county records',
+  },
+  {
+    terms: [
+      'formation',
+      'basin',
+      'geology',
+      'geologic',
+      'seismic',
+      'acre spacing',
+      'well spacing',
+      'nearby well',
+      'oil field',
+      'shale play',
+    ],
+    slug: 'charlie',
+    reason: 'geology and basin context',
+  },
+  {
+    terms: [
+      'production',
+      'decline',
+      'royalty check',
+      'barrel',
+      'mcf',
+      'engineering',
+      'production history',
+    ],
+    slug: 'dale',
+    reason: 'production and royalty history',
+  },
+  {
+    terms: [
+      'contract',
+      'clause',
+      'legal',
+      'tax',
+      'attorney',
+      'closing document',
+      'agreement terms',
+    ],
+    slug: 'rebecca',
+    reason: 'agreement terms and professional routing',
+  },
+  {
+    terms: ['offer', 'value', 'worth', 'sell', 'selling', 'hold', 'buyer', 'price'],
+    slug: 'tommy',
+    reason: 'offer and value context',
+  },
+];
+
+export function routeGuideDecision(question: string, currentGuideSlug = 'tommy'): GuideRoute {
   const normalized = question.toLowerCase();
-  const routes: Array<[string[], string]> = [
-    [['book', 'appointment', 'call me', 'schedule', 'talk to someone'], 'angela'],
-    [['deed', 'probate', 'inherited', 'county record', 'division order', 'ownership'], 'cooper'],
-    [['formation', 'basin', 'geology', 'seismic', 'acre spacing', 'nearby well'], 'charlie'],
-    [['production', 'decline', 'royalty check', 'barrel', 'mcf', 'engineering'], 'dale'],
-    [['contract', 'clause', 'legal', 'tax', 'attorney', 'closing document'], 'rebecca'],
-  ];
-  const match = routes.find(([terms]) => terms.some((term) => normalized.includes(term)));
-  return getGuide(match?.[1] ?? 'tommy') ?? guides[0];
+  const current = activeGuides.find((guide) => guide.slug === currentGuideSlug) ?? guides[0];
+  const match = guideRoutes.find((route) => route.terms.some((term) => normalized.includes(term)));
+  const guide = match ? (getGuide(match.slug) ?? current) : current;
+  const shouldHandoff = guide.slug !== current.slug;
+  return {
+    guide,
+    from: current,
+    shouldHandoff,
+    reason: shouldHandoff ? (match?.reason ?? guide.shortRole.toLowerCase()) : null,
+    handoffMessage: shouldHandoff
+      ? `${guide.name} is the right MRX guide for ${match?.reason ?? guide.shortRole.toLowerCase()}. I am bringing ${guide.name} into the conversation, and ${guide.name} can use what you have already shared.`
+      : null,
+  };
+}
+
+export function routeGuide(question: string, currentGuideSlug = 'tommy'): Guide {
+  return routeGuideDecision(question, currentGuideSlug).guide;
 }

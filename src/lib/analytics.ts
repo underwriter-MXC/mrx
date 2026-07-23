@@ -14,7 +14,14 @@ export type DataLayerEvent =
   | { event: 'view_cta_hero'; mrx_cta_name: string }
   | { event: 'cta_click'; mrx_cta_name: string; mrx_href: string }
   | { event: 'form_submit'; mrx_form: 'book' | 'free-guide' }
-  | { event: 'appointment_booked'; mrx_calendar_event_id?: string };
+  | { event: 'booking_opened'; source?: string }
+  | { event: 'slot_displayed'; option_count: number; timezone?: string }
+  | { event: 'appointment_booked'; mrx_calendar_event_id?: string }
+  | { event: 'intake_started'; source?: string }
+  | { event: 'intake_completed'; mineral_interest_id?: string }
+  | { event: 'document_received'; document_type?: string; status?: string }
+  | { event: 'case_ready'; profile_id?: string }
+  | { event: 'appointment_held'; mrx_calendar_event_id?: string };
 
 declare global {
   interface Window {

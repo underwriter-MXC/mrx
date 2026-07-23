@@ -9,7 +9,7 @@ import { join } from 'node:path';
  *
  * Mirrors the slice logic in src/pages/blog/category/[category].astro.
  */
-const SUFFIX = ` Read step-by-step guides and a free, no-pressure underwriter review from MRX.`;
+const SUFFIX = ` Read step-by-step articles and a free, no-pressure underwriter review from MRX.`;
 const TRIM = (desc: string): string => {
   const composed = `${desc}${SUFFIX}`;
   if (composed.length <= 160) return composed;
@@ -29,11 +29,14 @@ describe('blog/category description length budget', () => {
     'mineral-rights',
   ]) {
     it(`category "${slug}" composes a description <= 160 chars`, () => {
-      const raw = JSON.parse(
-        readFileSync(join(CATEGORIES_DIR, `${slug}.json`), 'utf-8'),
-      ) as { description: string };
+      const raw = JSON.parse(readFileSync(join(CATEGORIES_DIR, `${slug}.json`), 'utf-8')) as {
+        description: string;
+      };
       const composed = TRIM(raw.description);
-      expect(composed.length, `category "${slug}" description length: ${composed.length}`).toBeLessThanOrEqual(160);
+      expect(
+        composed.length,
+        `category "${slug}" description length: ${composed.length}`,
+      ).toBeLessThanOrEqual(160);
       // Sanity: the description must always end with the canonical suffix.
       expect(composed).toContain(SUFFIX);
     });

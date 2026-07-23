@@ -9,10 +9,17 @@ interface Props {
   title: string;
   body: string;
   primaryCta: { label: string; href: string; ctaName: string };
-  secondaryCta?: { label: string; href: string; ctaName: string };
+  secondaryCta?: { label: string; href: string; ctaName: string; openTommy?: boolean };
+  reassurance?: string;
 }
 
-const { title, body, primaryCta, secondaryCta } = Astro.props;
+const {
+  title,
+  body,
+  primaryCta,
+  secondaryCta,
+  reassurance = 'No card required. No obligation. Confidential review.',
+} = Astro.props;
 ---
 
 <section class="container">
@@ -30,12 +37,28 @@ const { title, body, primaryCta, secondaryCta } = Astro.props;
             href={secondaryCta.href}
             variant="ghost"
             size="lg"
+            openTommy={secondaryCta.openTommy}
           >
             {secondaryCta.label}
           </CtaLink>
         )
       }
     </div>
-    <p class="text text--sm" style="color: var(--color-ink-300); margin-top: var(--space-3);">No card required. No obligation. Confidential review.</p>
+    <p class="text text--sm" style="color: var(--color-ink-300); margin-top: var(--space-3);">
+      {reassurance}
+    </p>
   </div>
 </section>
+
+<style>
+  .cta-block :global(.btn--ghost) {
+    color: var(--color-white);
+    border-color: var(--color-white);
+  }
+
+  .cta-block :global(.btn--ghost:hover),
+  .cta-block :global(.btn--ghost:focus-visible) {
+    background: var(--color-white);
+    color: var(--color-brand-900);
+  }
+</style>

@@ -1,0 +1,395 @@
+---
+import type {
+  LearningCenterAuthor,
+  LearningCenterCategory,
+  LearningCenterItem,
+} from '../../lib/learning-center';
+import PaginationNav from '../seo/PaginationNav.astro';
+import '../../components/react/LearningCenter.css';
+
+interface Props {
+  posts: LearningCenterItem[];
+  allPosts: LearningCenterItem[];
+  categories: LearningCenterCategory[];
+  authors: LearningCenterAuthor[];
+  currentPage: number;
+  lastPage: number;
+  totalItems: number;
+  pageSize: number;
+}
+
+const { posts, allPosts, categories, authors, currentPage, lastPage, totalItems, pageSize } =
+  Astro.props;
+const start = totalItems === 0 ? 0 : (currentPage - 1) * pageSize + 1;
+const end = Math.min(currentPage * pageSize, totalItems);
+const currentPageSlugs = new Set(posts.map((post) => post.slug));
+const normalizeLearningFilterText = (value: string) =>
+  value
+    .normalize('NFKD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .replace(/[^\p{L}\p{N}]+/gu, ' ')
+    .trim()
+    .replace(/\s+/g, ' ');
+---
+
+<div class="learning-browser" data-static-archive>
+  <form class="learning-tools" action="/learning-center/" method="get" data-learning-filters>
+    <div class="learning-search">
+      <label for="learning-search-input">Search questions and articles</label>
+      <input
+        id="learning-search-input"
+        name="q"
+        type="search"
+        placeholder="Try “royalty checks”, “1031”, or “title defects”"
+        autocomplete="off"
+        aria-describedby="learning-search-help"
+        data-learning-search
+      />
+      <p id="learning-search-help">
+        Combine a question or keyword with topic and author filters. Results update as you type.
+      </p>
+    </div>
+    <div class="learning-selects">
+      <label class="visually-hidden" for="learning-topic-select">Topic</label>
+      <select id="learning-topic-select" name="topic" aria-label="Topic" data-learning-topic>
+        <option value="">All topics</option>
+        {categories.map((category) => <option value={category.slug}>{category.label}</option>)}
+      </select>
+      <label class="visually-hidden" for="learning-author-select">Author</label>
+      <select id="learning-author-select" name="author" aria-label="Author" data-learning-author>
+        <option value="">All authors</option>
+        {authors.map((author) => <option value={author.slug}>{author.name}</option>)}
+      </select>
+      <button type="reset" data-learning-reset>Reset filters</button>
+    </div>
+  </form>
+  <nav class="learning-filters" aria-label="Browse Learning Center topics">
+    <div class="learning-filter-group">
+      <strong>Topic</strong>
+      <div>
+        <a class="active" aria-current="page" href="/learning-center/">All</a>
+        {
+          categories.map((category) => (
+            <a href={`/blog/category/${category.slug}/`}>{category.label}</a>
+          ))
+        }
+      </div>
+    </div>
+  </nav>
+  <div class="learning-results-head" aria-live="polite" aria-atomic="true">
+    <p
+      role="status"
+      data-learning-summary
+      data-default-summary={`Showing ${start} through ${end} of ${totalItems} published articles`}
+    >
+      Showing <strong>{start} through {end}</strong> of <strong>{totalItems}</strong> published articles
+    </p>
+    {
+      lastPage > 1 && (
+        <p>
+          Page {currentPage} of {lastPage}
+        </p>
+      )
+    }
+  </div>
+  {
+    allPosts.length ? (
+      <div class="learning-results" data-learning-results>
+        {allPosts.map((post, index) => (
+          <article
+            class="learning-card"
+            data-learning-card
+            data-learning-page-card={currentPageSlugs.has(post.slug) ? 'true' : 'false'}
+            data-learning-category={post.category}
+            data-learning-author-slug={post.authorSlug}
+            data-learning-text={normalizeLearningFilterText(
+              [
+                post.slug,
+                post.title,
+                post.excerpt,
+                post.description,
+                post.categoryLabel,
+                post.author,
+                ...post.tags,
+              ].join(' '),
+            )}
+            hidden={!currentPageSlugs.has(post.slug)}
+          >
+            <a
+              class="learning-card__image"
+              href={`/blog/${post.slug}/`}
+              aria-label={`Read ${post.title}`}
+              data-article-slug={post.slug}
+              data-article-source="learning_center_image"
+            >
+              <img
+                src={post.heroImage}
+                alt={post.heroAlt}
+                width="1600"
+                height="900"
+                loading={currentPageSlugs.has(post.slug) && index < 3 ? 'eager' : 'lazy'}
+                decoding="async"
+              />
+            </a>
+            <div class="learning-card__body">
+              <div class="learning-card__meta">
+                <a href={`/blog/category/${post.category}/`}>{post.categoryLabel}</a>
+                <span>{post.readingMinutes} min read</span>
+              </div>
+              <h2>
+                <a
+                  href={`/blog/${post.slug}/`}
+                  data-article-slug={post.slug}
+                  data-article-source="learning_center"
+                >
+                  {post.title}
+                </a>
+              </h2>
+              <p>{post.excerpt}</p>
+              <footer>
+                <span>
+                  By <a href={`/authors/${post.authorSlug}/`}>{post.author}</a>
+                </span>
+                <time datetime={post.publishedAt}>
+                  {new Date(post.publishedAt).toLocaleDateString('en-US', {
+                    year: 'numeric',
+                    month: 'short',
+                    day: 'numeric',
+                  })}
+                </time>
+                <a href={`/blog/${post.slug}/`}>Read article →</a>
+              </footer>
+            </div>
+          </article>
+        ))}
+      </div>
+    ) : (
+      <div class="learning-empty">
+        <h2>No published articles yet</h2>
+        <p>Check back after the next editorial release.</p>
+      </div>
+    )
+  }
+  <div class="learning-empty" data-learning-empty hidden>
+    <h2>No matching articles</h2>
+    <p>Try a broader question, choose all topics, or clear the author filter.</p>
+    <button type="button" data-learning-empty-reset>Clear filters</button>
+  </div>
+  <PaginationNav basePath="/learning-center/" currentPage={currentPage} lastPage={lastPage} />
+</div>
+
+<script>
+  const filterRoot = document.querySelector<HTMLFormElement>('[data-learning-filters]');
+  const results = document.querySelector<HTMLElement>('[data-learning-results]');
+  const summary = document.querySelector<HTMLElement>('[data-learning-summary]');
+  const empty = document.querySelector<HTMLElement>('[data-learning-empty]');
+  const pagination = document.querySelector<HTMLElement>('[aria-label="Pagination"]');
+
+  if (filterRoot && results && summary && empty) {
+    const search = filterRoot.querySelector<HTMLInputElement>('[data-learning-search]');
+    const topic = filterRoot.querySelector<HTMLSelectElement>('[data-learning-topic]');
+    const author = filterRoot.querySelector<HTMLSelectElement>('[data-learning-author]');
+    const resetButtons = document.querySelectorAll<HTMLElement>(
+      '[data-learning-reset], [data-learning-empty-reset]',
+    );
+    const cards = Array.from(results.querySelectorAll<HTMLElement>('[data-learning-card]'));
+    const defaultSummary = summary.dataset.defaultSummary || summary.textContent || '';
+
+    const normalized = (value: string | undefined) =>
+      (value || '')
+        .normalize('NFKD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .toLowerCase()
+        .replace(/[^\p{L}\p{N}]+/gu, ' ')
+        .trim()
+        .replace(/\s+/g, ' ');
+    const questionStopWords = new Set([
+      'a',
+      'an',
+      'and',
+      'are',
+      'as',
+      'at',
+      'be',
+      'can',
+      'could',
+      'did',
+      'do',
+      'does',
+      'for',
+      'from',
+      'how',
+      'i',
+      'if',
+      'in',
+      'is',
+      'it',
+      'me',
+      'my',
+      'of',
+      'on',
+      'or',
+      'our',
+      'should',
+      'that',
+      'the',
+      'their',
+      'them',
+      'they',
+      'this',
+      'to',
+      'was',
+      'we',
+      'what',
+      'when',
+      'where',
+      'which',
+      'who',
+      'why',
+      'will',
+      'with',
+      'would',
+      'you',
+      'your',
+    ]);
+    const genericDomainTerms = new Set([
+      'gas',
+      'mineral',
+      'minerals',
+      'oil',
+      'owner',
+      'owners',
+      'right',
+      'rights',
+      'texas',
+    ]);
+    const activeFilters = () => Boolean(normalized(search?.value) || topic?.value || author?.value);
+
+    // Hydrate controls from query params on load so deep links + refresh work.
+    const params = new URLSearchParams(window.location.search);
+    const initialQuery = params.get('q') ?? '';
+    const initialTopic = params.get('topic') ?? '';
+    const initialAuthor = params.get('author') ?? '';
+    if (search && initialQuery) search.value = initialQuery;
+    if (topic && initialTopic) topic.value = initialTopic;
+    if (author && initialAuthor) author.value = initialAuthor;
+
+    const writeUrl = () => {
+      const next = new URLSearchParams();
+      const q = normalized(search?.value);
+      if (q) next.set('q', search?.value?.trim() ?? q);
+      if (topic?.value) next.set('topic', topic.value);
+      if (author?.value) next.set('author', author.value);
+      const qs = next.toString();
+      const url = qs ? `${window.location.pathname}?${qs}` : window.location.pathname;
+      window.history.replaceState(null, '', url);
+    };
+
+    const renderSummary = (visible: number) => {
+      if (!activeFilters()) {
+        summary.textContent = defaultSummary;
+        return;
+      }
+      const label = visible === 1 ? 'article' : 'articles';
+      summary.textContent = `${visible} matching ${label} in the published library`;
+    };
+    const applyFilters = () => {
+      const query = normalized(search?.value);
+      const rawQueryTerms = query.split(/\s+/).filter(Boolean);
+      const meaningfulQueryTerms = rawQueryTerms.filter((term) => !questionStopWords.has(term));
+      const specificQueryTerms = meaningfulQueryTerms.filter((term) => !genericDomainTerms.has(term));
+      const queryTerms = specificQueryTerms.length
+        ? specificQueryTerms
+        : meaningfulQueryTerms.length
+          ? meaningfulQueryTerms
+          : rawQueryTerms;
+      const selectedTopic = topic?.value || '';
+      const selectedAuthor = author?.value || '';
+      let visible = 0;
+      const filtering = activeFilters();
+
+      cards.forEach((card) => {
+        const searchableText = card.dataset.learningText || '';
+        const matchedTerms = queryTerms.filter((term) => {
+          if (searchableText.includes(term)) return true;
+          return term.length > 3 && term.endsWith('s') && searchableText.includes(term.slice(0, -1));
+        }).length;
+        const minimumMatches =
+          queryTerms.length <= 2 ? queryTerms.length : Math.ceil(queryTerms.length * 0.6);
+        const matchesQuery = !queryTerms.length || matchedTerms >= minimumMatches;
+        const matchesTopic = !selectedTopic || card.dataset.learningCategory === selectedTopic;
+        const matchesAuthor = !selectedAuthor || card.dataset.learningAuthorSlug === selectedAuthor;
+        const matches = filtering
+          ? matchesQuery && matchesTopic && matchesAuthor
+          : card.dataset.learningPageCard === 'true';
+        card.hidden = !matches;
+        if (matches) visible += 1;
+      });
+
+      renderSummary(visible);
+      results.hidden = filtering && visible === 0;
+      empty.hidden = !filtering || visible > 0;
+      if (pagination) pagination.hidden = filtering;
+      writeUrl();
+    };
+
+    // Debounce search input (~120ms) for keystroke storms, but apply selects
+    // + reset + Esc immediately.
+    let debounceHandle: number | undefined;
+    const debouncedApply = () => {
+      if (debounceHandle !== undefined) window.clearTimeout(debounceHandle);
+      debounceHandle = window.setTimeout(applyFilters, 120);
+    };
+
+    filterRoot.addEventListener('input', (event) => {
+      const target = event.target as Element | null;
+      if (target instanceof HTMLInputElement && target === search) {
+        debouncedApply();
+      } else {
+        applyFilters();
+      }
+    });
+    filterRoot.addEventListener('change', applyFilters);
+    filterRoot.addEventListener('submit', (event) => {
+      event.preventDefault();
+      if (debounceHandle !== undefined) window.clearTimeout(debounceHandle);
+      applyFilters();
+    });
+    filterRoot.addEventListener('reset', () => window.setTimeout(applyFilters, 0));
+
+    // Esc clears all three controls and the URL.
+    filterRoot.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') {
+        if (debounceHandle !== undefined) window.clearTimeout(debounceHandle);
+        filterRoot.reset();
+        applyFilters();
+      }
+    });
+
+    resetButtons.forEach((button) =>
+      button.addEventListener('click', () => {
+        if (debounceHandle !== undefined) window.clearTimeout(debounceHandle);
+        filterRoot.reset();
+        applyFilters();
+      }),
+    );
+
+    // Apply initial state (hydrated from URL above) on first paint.
+    applyFilters();
+  }
+
+  document.addEventListener('click', (event) => {
+    const link = (event.target as Element | null)?.closest<HTMLAnchorElement>(
+      'a[data-article-slug]',
+    );
+    const push = (window as Window & { __mrxPush?: (payload: Record<string, unknown>) => void })
+      .__mrxPush;
+    if (!link || typeof push !== 'function') return;
+    push({
+      event: 'article_click',
+      article_slug: link.dataset.articleSlug,
+      source: link.dataset.articleSource,
+    });
+  });
+</script>

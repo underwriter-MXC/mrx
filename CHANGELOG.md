@@ -5,6 +5,7 @@ All notable changes to the MRX public website are documented here. The format fo
 ## [0.1.0] - 2026-06-11 — MVP
 
 ### Added
+
 - Initial Astro 5 + Cloudflare Pages scaffold.
 - 9 marketing pages: `/`, `/how-it-works`, `/about`, `/faq`, `/free-guide`, `/book`, `/privacy-policy`, `/methodology`, `/sell-mineral-rights`.
 - 2 hybrid Cloudflare Functions for `/api/book` (POST) and `/api/free-guide` (POST); env-var contract reserved for stage 08 (GHL).
@@ -25,10 +26,12 @@ All notable changes to the MRX public website are documented here. The format fo
 - GitHub Actions: `ci.yml` (PR + push to main: lint, typecheck, test, build, deploy-preview) and `deploy.yml` (main → Cloudflare Pages production).
 
 ### Compliance
+
 - All 7 HIGH-severity items from `project-pack/04-compliance/MRX Compliance Review.md` §5 resolved in the page frontmatter (W-1, Q-1, Q-3, L-2..L-9, L-6, P-1). See page `compliance_signoff` blocks.
 - §7 disclaimer carries the MRX-as-buyer disclosure (compliance review §7, last sentence).
 - Per-page sign-off rubric populated on every shipping page with `reviewed_by: 'mrx_compliance-stage06-initial'` and `reviewed_at: 2026-06-11`.
 
 ### Out of scope (deferred to follow-up cards)
+
 - CMS layer, team page route, i18n, blog search, comments, paid pixels, AI chatbot (Ava persona).
 - Full WP migration of 101 published posts (only 5+ migrated for the MVP scaffold; the script handles the rest idempotently).

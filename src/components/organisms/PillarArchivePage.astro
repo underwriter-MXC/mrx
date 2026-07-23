@@ -1,0 +1,106 @@
+---
+/**
+ * Shared continuation-page renderer for all nine canonical MRX pillars.
+ * Route files own getStaticPaths because Astro requires that export at the
+ * page boundary; this component owns the common archive markup and metadata.
+ */
+import MarketingLayout from '../../layouts/MarketingLayout.astro';
+import { ARTICLE_PILLARS } from '../../lib/content-graph';
+import type { ArticlePillar } from '../../lib/astro/content';
+import { getPillarInventoryPage, pillarArchivePath } from '../../lib/pillar-inventory';
+import PillarInventory from './PillarInventory.astro';
+import PillarNavGrid from './PillarNavGrid.astro';
+
+interface Props {
+  pillarId: ArticlePillar;
+  currentPage: number;
+  title: string;
+  description: string;
+}
+
+const { pillarId, currentPage, title, description } = Astro.props;
+if (!Number.isInteger(currentPage) || currentPage < 2) {
+  throw new RangeError(`Pillar archive page ${currentPage} is out of range.`);
+}
+
+const pillar = ARTICLE_PILLARS[pillarId];
+const inventory = await getPillarInventoryPage(pillarId, currentPage);
+if (currentPage > inventory.lastPage) {
+  throw new RangeError(
+    `Pillar archive page ${currentPage} is outside ${pillar.path} page range 1-${inventory.lastPage}.`,
+  );
+}
+const previousPath = currentPage === 2 ? pillar.path : pillarArchivePath(pillar, currentPage - 1);
+const nextPath =
+  currentPage < inventory.lastPage ? pillarArchivePath(pillar, currentPage + 1) : undefined;
+---
+
+<MarketingLayout
+  title={`${title} · Page ${currentPage} of ${inventory.lastPage}`}
+  description={description}
+  path={pillarArchivePath(pillar, currentPage)}
+  pageType="blog"
+  pageCategory="learning-center-pillar"
+  breadcrumbs={[
+    { name: 'Home', path: '/' },
+    { name: 'Learning Center', path: '/learning-center/' },
+    { name: pillar.label, path: pillar.path },
+    { name: `Page ${currentPage}`, path: pillarArchivePath(pillar, currentPage) },
+  ]}
+  previousPath={previousPath}
+  nextPath={nextPath}
+>
+  <section class="container pillar-archive-head" aria-labelledby="pillar-archive-title">
+    <p class="pillar-archive-head__eyebrow">{pillar.label} archive</p>
+    <h1 id="pillar-archive-title">
+      Page {currentPage} of {inventory.lastPage} · {pillar.label}
+    </h1>
+    <p>
+      The full {pillar.label.toLowerCase()} archive across {inventory.totalPosts} reviewed articles. Use
+      the pagination below to move between pages; the canonical hub at
+      <a href={pillar.path}>{pillar.path}</a> returns to topic-organized browsing.
+    </p>
+  </section>
+  <PillarInventory
+    inventory={inventory}
+    eyebrow={`Page ${currentPage} of ${inventory.lastPage}`}
+    heading={`Reviewed ${pillar.label.toLowerCase()} articles`}
+    ctaHref={pillar.path}
+    ctaLabel={`Return to the ${pillar.label.toLowerCase()} hub →`}
+  />
+  <PillarNavGrid
+    currentPillarId={pillar.id}
+    heading="Switch to another pillar"
+    eyebrow="Cross-pillar nav"
+  />
+</MarketingLayout>
+
+<style>
+  .pillar-archive-head {
+    padding-block: clamp(2rem, 4vw, 3.5rem);
+  }
+
+  .pillar-archive-head__eyebrow {
+    margin: 0 0 var(--space-2, 0.5rem);
+    color: var(--color-accent-700, #b06a00);
+    font-size: var(--fs-xs, 0.78rem);
+    font-weight: 800;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+  }
+
+  .pillar-archive-head h1 {
+    margin: 0 0 var(--space-3, 0.85rem);
+    color: var(--color-brand-900, #071e34);
+    font-size: clamp(1.7rem, 3.1vw, 2.5rem);
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+  }
+
+  .pillar-archive-head p {
+    max-width: 70ch;
+    margin: 0;
+    color: var(--color-ink-600, #4f626f);
+    line-height: 1.55;
+  }
+</style>

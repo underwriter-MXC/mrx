@@ -1,0 +1,20 @@
+---
+import PillarArchivePage from '../../../components/organisms/PillarArchivePage.astro';
+import { getPillarArchiveStaticPaths } from '../../../lib/pillar-inventory';
+
+export const prerender = true;
+const PILLAR_ID = 'mrx-methodology' as const;
+
+export async function getStaticPaths() {
+  return getPillarArchiveStaticPaths('mrx-methodology');
+}
+
+const currentPage = Number(Astro.params.page);
+---
+
+<PillarArchivePage
+  pillarId={PILLAR_ID}
+  currentPage={currentPage}
+  title="MRX Methodology and Transparency Articles"
+  description="Browse the full MRX methodology archive: how reviews work, which assumptions are stated, how evidence is handled, and where professional advice begins."
+/>

@@ -1,0 +1,31 @@
+---
+import LearningCenterPage from '../../../components/organisms/LearningCenterPage.astro';
+import { archivePageNumbers, paginateArchive } from '../../../lib/archive-pagination';
+import {
+  getLearningCenterData,
+  type LearningCenterAuthor,
+  type LearningCenterCategory,
+  type LearningCenterItem,
+} from '../../../lib/learning-center';
+
+export const prerender = true;
+
+export async function getStaticPaths() {
+  const { items, categories, authors } = await getLearningCenterData();
+  return archivePageNumbers(items.length).map((page) => ({
+    params: { page: String(page) },
+    props: { page: paginateArchive(items, page), allItems: items, categories, authors },
+  }));
+}
+
+interface Props {
+  page: ReturnType<typeof paginateArchive<LearningCenterItem>>;
+  allItems: LearningCenterItem[];
+  categories: LearningCenterCategory[];
+  authors: LearningCenterAuthor[];
+}
+
+const { page, allItems, categories, authors } = Astro.props;
+---
+
+<LearningCenterPage {...page} allItems={allItems} categories={categories} authors={authors} />

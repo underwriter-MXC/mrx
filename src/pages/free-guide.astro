@@ -14,8 +14,375 @@ export const prerender = true;
   path="/free-guide"
   pageType="marketing"
   pageCategory="free-guide"
-  breadcrumbs={[{ name: 'Home', path: '/' }, { name: 'Free Guide', path: '/free-guide' }]}
+  breadcrumbs={[
+    { name: 'Home', path: '/' },
+    { name: 'Free Guide', path: '/free-guide' },
+  ]}
   faq={entry.data.faq}
 >
   <Content />
 </MarketingLayout>
+
+<style is:global>
+  body[data-page-category='free-guide'] .hero__inner {
+    gap: clamp(2rem, 5vw, 4.5rem);
+  }
+
+  body[data-page-category='free-guide'] .guide-hero {
+    padding-block: clamp(2rem, 5vw, 4.5rem);
+  }
+
+  body[data-page-category='free-guide'] .guide-hero__inner {
+    grid-template-columns: minmax(0, 0.92fr) minmax(360px, 0.7fr);
+    align-items: start;
+  }
+
+  body[data-page-category='free-guide'] .guide-hero__copy {
+    padding-top: clamp(0rem, 2vw, 1.25rem);
+  }
+
+  body[data-page-category='free-guide'] .guide-hero__form {
+    position: sticky;
+    top: calc(var(--space-5) + 4rem);
+  }
+
+  body[data-page-category='free-guide'] .guide-hero__form h2 {
+    margin-bottom: var(--space-2);
+    color: var(--color-brand-900);
+    font-size: clamp(1.45rem, 2.4vw, 2rem);
+  }
+
+  body[data-page-category='free-guide'] .guide-hero__form > p {
+    color: var(--color-ink-700);
+  }
+
+  body[data-page-category='free-guide'] .guide-hero__badge {
+    display: inline-flex;
+    margin-bottom: var(--space-3);
+    padding: 0.35rem 0.65rem;
+    border-radius: var(--radius-pill);
+    background: var(--color-accent-100);
+    color: var(--color-brand-900);
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-semibold);
+  }
+
+  body[data-page-category='free-guide'] .hero__card {
+    border-top: 4px solid var(--color-accent-500);
+  }
+
+  body[data-page-category='free-guide'] .hero__card h3 {
+    color: var(--color-brand-900);
+  }
+
+  body[data-page-category='free-guide'] .hero__card li {
+    display: grid;
+    grid-template-columns: 1.25rem minmax(0, 1fr);
+    align-items: start;
+    gap: var(--space-2);
+    line-height: var(--lh-snug);
+  }
+
+  body[data-page-category='free-guide'] .hero__card li svg {
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-top: 0.08rem;
+    color: var(--color-accent-600);
+  }
+
+  body[data-page-category='free-guide'] .btn {
+    text-decoration: none;
+  }
+
+  body[data-page-category='free-guide'] .btn--primary {
+    background: var(--color-accent-500);
+    color: var(--color-brand-900);
+  }
+
+  body[data-page-category='free-guide'] .btn--ghost {
+    color: var(--color-brand-900);
+  }
+
+  body[data-page-category='free-guide'] .guide-benefits > h2,
+  body[data-page-category='free-guide'] .guide-faq > h2,
+  body[data-page-category='free-guide'] .guide-form-shell > h2 {
+    color: var(--color-brand-900);
+    font-size: clamp(1.7rem, 3vw, 2.25rem);
+  }
+
+  body[data-page-category='free-guide'] .guide-benefits__grid {
+    gap: var(--space-5);
+    margin-top: var(--space-8);
+  }
+
+  body[data-page-category='free-guide'] .guide-benefits__item {
+    display: grid;
+    grid-template-columns: 2rem minmax(0, 1fr);
+    align-items: start;
+    gap: var(--space-3);
+    min-height: 100%;
+    padding: clamp(1.25rem, 2.5vw, 1.75rem);
+    border: 1px solid var(--color-ink-100);
+    border-radius: var(--radius-lg);
+    background: var(--color-white);
+    box-shadow: var(--shadow-sm);
+  }
+
+  body[data-page-category='free-guide'] .guide-benefits__item > svg {
+    width: 2rem;
+    height: 2rem;
+    padding: 0.4rem;
+    border-radius: 50%;
+    background: var(--color-accent-100);
+    color: var(--color-accent-700);
+  }
+
+  body[data-page-category='free-guide'] .guide-benefits__item h3 {
+    margin-bottom: var(--space-2);
+    color: var(--color-brand-900);
+    font-size: var(--fs-lg);
+    line-height: var(--lh-snug);
+  }
+
+  body[data-page-category='free-guide'] .guide-benefits__item .text {
+    color: var(--color-ink-700);
+  }
+
+  body[data-page-category='free-guide'] .guide-form-section {
+    background:
+      radial-gradient(circle at top left, rgba(215, 154, 43, 0.1), transparent 32rem),
+      var(--color-bg-alt);
+  }
+
+  body[data-page-category='free-guide'] .guide-form-shell {
+    max-width: 760px;
+  }
+
+  body[data-page-category='free-guide'] .form__intro,
+  body[data-page-category='free-guide'] .form__consents {
+    grid-column: 1 / -1;
+  }
+
+  body[data-page-category='free-guide'] .form__intro {
+    padding: var(--space-3);
+    border: 1px solid var(--color-accent-200);
+    border-radius: var(--radius-md);
+    background: var(--color-accent-50, #fff8e8);
+    color: var(--color-brand-900);
+    font-size: var(--fs-sm);
+    line-height: var(--lh-snug);
+  }
+
+  body[data-page-category='free-guide'] .form__consent-heading {
+    margin-bottom: var(--space-3);
+    color: var(--color-brand-900);
+    font-size: var(--fs-base);
+  }
+
+  body[data-page-category='free-guide'] .form__check {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-2);
+    margin-bottom: var(--space-3);
+    color: var(--color-ink-800);
+    font-size: var(--fs-sm);
+    line-height: var(--lh-snug);
+  }
+
+  body[data-page-category='free-guide'] .form__check a,
+  body[data-page-category='free-guide'] .form__help a {
+    color: var(--color-brand-900);
+    font-weight: var(--fw-semibold);
+    text-decoration: underline;
+  }
+
+  body[data-page-category='free-guide'] .form--compact {
+    margin-top: var(--space-4);
+  }
+
+  body[data-page-category='free-guide'] .guide-form-shell > h2,
+  body[data-page-category='free-guide'] .guide-form-shell__intro {
+    text-align: center;
+  }
+
+  body[data-page-category='free-guide'] .guide-form-shell__intro {
+    max-width: 62ch;
+    margin: var(--space-3) auto var(--space-6);
+    color: var(--color-ink-700);
+    font-size: var(--fs-base);
+  }
+
+  body[data-page-category='free-guide'] .guide-form-shell .form,
+  body[data-page-category='free-guide'] .guide-hero__form .form {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-3);
+    max-width: none;
+    padding: clamp(1rem, 2.2vw, 1.35rem);
+    border: 1px solid var(--color-ink-100);
+    border-radius: var(--radius-lg);
+    background: var(--color-white);
+    box-shadow: var(--shadow-md);
+  }
+
+  body[data-page-category='free-guide'] .guide-hero__form .form--compact {
+    box-shadow: none;
+    padding: 0;
+    border: 0;
+  }
+
+  body[data-page-category='free-guide'] .guide-form-shell .form__field,
+  body[data-page-category='free-guide'] .guide-form-shell .form__submit,
+  body[data-page-category='free-guide'] .guide-form-shell .form > .form__help,
+  body[data-page-category='free-guide'] .guide-form-shell .form__optional-consents,
+  body[data-page-category='free-guide'] .guide-hero__form .form__field,
+  body[data-page-category='free-guide'] .guide-hero__form .form__submit,
+  body[data-page-category='free-guide'] .guide-hero__form .form > .form__help,
+  body[data-page-category='free-guide'] .guide-hero__form .form__optional-consents {
+    grid-column: 1 / -1;
+  }
+
+  body[data-page-category='free-guide'] .guide-form-shell .form__field:has(#free-guide-firstName),
+  body[data-page-category='free-guide'] .guide-form-shell .form__field:has(#free-guide-lastName),
+  body[data-page-category='free-guide'] .guide-hero__form .form__field:has(#free-guide-firstName),
+  body[data-page-category='free-guide'] .guide-hero__form .form__field:has(#free-guide-lastName) {
+    grid-column: auto;
+  }
+
+  body[data-page-category='free-guide'] .guide-form-shell .form__label,
+  body[data-page-category='free-guide'] .guide-hero__form .form__label {
+    color: var(--color-brand-900);
+  }
+
+  body[data-page-category='free-guide'] .guide-form-shell .form__input,
+  body[data-page-category='free-guide'] .guide-form-shell .form__textarea,
+  body[data-page-category='free-guide'] .guide-hero__form .form__input,
+  body[data-page-category='free-guide'] .guide-hero__form .form__textarea {
+    width: 100%;
+    border-color: var(--color-ink-300);
+    background: var(--color-white);
+  }
+
+  body[data-page-category='free-guide'] .guide-form-shell .form__input,
+  body[data-page-category='free-guide'] .guide-hero__form .form__input {
+    min-height: 2.8rem;
+  }
+
+  body[data-page-category='free-guide'] .guide-form-shell input[type='checkbox'],
+  body[data-page-category='free-guide'] .guide-hero__form input[type='checkbox'] {
+    flex: 0 0 auto;
+    width: 1.1rem;
+    height: 1.1rem;
+    accent-color: var(--color-brand-800);
+  }
+
+  body[data-page-category='free-guide'] .guide-form-shell .form__submit,
+  body[data-page-category='free-guide'] .guide-hero__form .form__submit {
+    margin-top: var(--space-1);
+  }
+
+  body[data-page-category='free-guide'] .guide-form-shell .form__submit .btn,
+  body[data-page-category='free-guide'] .guide-hero__form .form__submit .btn {
+    width: 100%;
+    min-height: 3.25rem;
+    padding: var(--space-4) var(--space-6);
+    border: 2px solid transparent;
+    border-radius: var(--radius-pill);
+    background: var(--color-accent-500);
+    color: var(--color-brand-900);
+    font-weight: var(--fw-semibold);
+  }
+
+  body[data-page-category='free-guide'] .guide-form-shell .form__submit .btn:hover,
+  body[data-page-category='free-guide'] .guide-hero__form .form__submit .btn:hover {
+    background: var(--color-accent-600);
+  }
+
+  body[data-page-category='free-guide'] .form__optional-consents {
+    padding: var(--space-3);
+    border: 1px solid var(--color-ink-100);
+    border-radius: var(--radius-md);
+    background: var(--color-bg-alt);
+  }
+
+  body[data-page-category='free-guide'] .form__optional-consents summary {
+    cursor: pointer;
+    color: var(--color-brand-900);
+    font-weight: var(--fw-semibold);
+  }
+
+  body[data-page-category='free-guide'] .guide-faq > h2 {
+    margin-bottom: var(--space-6);
+    text-align: center;
+  }
+
+  body[data-page-category='free-guide'] .guide-faq .faq__item {
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+  }
+
+  body[data-page-category='free-guide'] .cta-block {
+    max-width: 960px;
+    margin: var(--space-10) auto;
+    padding: clamp(2rem, 5vw, 3.5rem) clamp(1.5rem, 5vw, 4rem);
+    background: var(--color-brand-900);
+  }
+
+  body[data-page-category='free-guide'] .cta-block h2 {
+    margin-bottom: var(--space-3);
+    color: var(--color-white);
+  }
+
+  body[data-page-category='free-guide'] .cta-block p {
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  body[data-page-category='free-guide'] .cta-block > p:not(.text--sm) {
+    margin-bottom: var(--space-6);
+  }
+
+  body[data-page-category='free-guide'] .cta-block .row {
+    justify-content: center;
+  }
+
+  body[data-page-category='free-guide'] .cta-block .text--sm {
+    margin-top: var(--space-3);
+    color: var(--color-ink-300);
+  }
+
+  @media (max-width: 820px) {
+    body[data-page-category='free-guide'] .guide-hero__inner {
+      grid-template-columns: 1fr;
+    }
+
+    body[data-page-category='free-guide'] .guide-hero__form {
+      position: static;
+      order: -1;
+    }
+  }
+
+  @media (max-width: 639px) {
+    body[data-page-category='free-guide'] .hero__ctas,
+    body[data-page-category='free-guide'] .hero__ctas .btn {
+      width: 100%;
+    }
+
+    body[data-page-category='free-guide'] .guide-hero {
+      padding-top: var(--space-4);
+    }
+
+    body[data-page-category='free-guide'] .guide-benefits__grid {
+      margin-top: var(--space-6);
+    }
+
+    body[data-page-category='free-guide'] .guide-form-shell .form {
+      grid-template-columns: 1fr;
+    }
+
+    body[data-page-category='free-guide'] .guide-form-shell .form__field:has(#free-guide-firstName),
+    body[data-page-category='free-guide'] .guide-form-shell .form__field:has(#free-guide-lastName) {
+      grid-column: 1;
+    }
+  }
+</style>

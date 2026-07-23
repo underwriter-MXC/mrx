@@ -6,45 +6,45 @@
 
 .prose {
   font-family: var(--font-sans);
-  font-size: var(--fs-lg);
+  font-size: var(--fs-base);
   line-height: var(--lh-loose);
   color: var(--color-ink-800);
   max-width: var(--container-prose);
 }
 
 .prose > * + * {
-  margin-top: var(--space-5);
+  margin-top: var(--space-4);
 }
 
 .prose h2 {
-  font-size: var(--fs-3xl);
-  margin-top: var(--space-12);
-  margin-bottom: var(--space-4);
+  font-size: var(--fs-2xl);
+  margin-top: var(--space-8);
+  margin-bottom: var(--space-3);
   color: var(--color-brand-900);
 }
 
 .prose h3 {
-  font-size: var(--fs-2xl);
-  margin-top: var(--space-10);
-  margin-bottom: var(--space-3);
+  font-size: var(--fs-xl);
+  margin-top: var(--space-6);
+  margin-bottom: var(--space-2);
   color: var(--color-brand-800);
 }
 
 .prose h4 {
-  font-size: var(--fs-xl);
-  margin-top: var(--space-8);
+  font-size: var(--fs-lg);
+  margin-top: var(--space-6);
   margin-bottom: var(--space-2);
   color: var(--color-brand-800);
 }
 
 .prose p {
-  font-size: var(--fs-lg);
+  font-size: var(--fs-base);
   line-height: var(--lh-loose);
 }
 
 .prose p[data-answer-first='true'] {
   /* Visually identical; structural marker for AEO + snippet test. */
-  font-size: var(--fs-xl);
+  font-size: var(--fs-lg);
   color: var(--color-ink-900);
 }
 
@@ -108,16 +108,16 @@
 .prose hr {
   border: 0;
   border-top: 1px solid var(--color-ink-200);
-  margin-block: var(--space-12);
+  margin-block: var(--space-8);
 }
 
 .prose img {
   border-radius: var(--radius-md);
-  margin-block: var(--space-6);
+  margin-block: var(--space-5);
 }
 
 .prose figure {
-  margin-block: var(--space-8);
+  margin-block: var(--space-6);
 }
 
 .prose figcaption {

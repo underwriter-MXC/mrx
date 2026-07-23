@@ -1,6 +1,7 @@
 ---
 import { getEntry } from 'astro:content';
 import MarketingLayout from '../layouts/MarketingLayout.astro';
+import MethodologyBottomSection from '../components/organisms/MethodologyBottomSection.astro';
 
 const entry = await getEntry('pages', 'methodology');
 if (!entry) throw new Error('pages/methodology.mdx is missing.');
@@ -14,9 +15,13 @@ export const prerender = true;
   path="/methodology"
   pageType="marketing"
   pageCategory="methodology"
-  breadcrumbs={[{ name: 'Home', path: '/' }, { name: 'Methodology', path: '/methodology' }]}
+  breadcrumbs={[
+    { name: 'Home', path: '/' },
+    { name: 'Methodology', path: '/methodology' },
+  ]}
   faq={entry.data.faq}
   disclaimerTop={entry.data.disclaimer_top}
 >
   <Content />
+  <MethodologyBottomSection />
 </MarketingLayout>

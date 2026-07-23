@@ -185,7 +185,7 @@ Minimum Vercel env vars already identified by the MRX runbook:
 ```bash
 PUBLIC_GTM_ID=GT-WFMD2MXW
 MRX_GHL_LOCATION_ID=jjYm9OmYrCzClPff91X7
-MRX_GHL_CALENDAR_URL=https://api.leadconnectorhq.com/widget/booking/lg3KcWfsKrR2pCWS6AeL
+MRX_GHL_CALENDAR_URL=https://api.leadconnectorhq.com/widget/booking/mEqrbWIelaS7o5TMsqUX
 ```
 
 Sensitive env vars must be placed in Vercel/GitHub/env files, never committed or pasted in chat:

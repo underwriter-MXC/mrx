@@ -1,34 +1,95 @@
 ---
-const ghlCalendarUrl = import.meta.env.PUBLIC_MRX_GHL_CALENDAR_URL || 'https://api.leadconnectorhq.com/widget/booking/lg3KcWfsKrR2pCWS6AeL';
+const ghlCalendarUrl =
+  import.meta.env.PUBLIC_MRX_GHL_CALENDAR_URL ||
+  'https://api.leadconnectorhq.com/widget/booking/mEqrbWIelaS7o5TMsqUX';
 const phoneTel = import.meta.env.PUBLIC_MRX_PHONE_TEL || '';
 const phoneHref = phoneTel ? (phoneTel.startsWith('tel:') ? phoneTel : `tel:${phoneTel}`) : '';
 const phoneLabel = import.meta.env.PUBLIC_MRX_PHONE_LABEL || 'Call MRX';
 
 const quickStarts = [
-  { icon: '/assets/mrx-homepage-v4/icons/from-scratch/value-dollar-scratch.png', label: 'What are my minerals worth?', prompt: 'I want to understand what my mineral rights may be worth.' },
-  { icon: '/assets/mrx-homepage-v4/icons/from-scratch/offer-document-scratch.png', label: 'I received an offer. Is it fair?', prompt: 'I received an offer for my mineral rights and want help understanding whether it is fair.' },
-  { icon: '/assets/mrx-homepage-v4/icons/from-scratch/gift-inherited-scratch.png', label: 'I inherited mineral rights. What now?', prompt: 'I inherited mineral rights and need help figuring out what documents and details matter first.' },
-  { icon: '/assets/mrx-homepage-v4/icons/from-scratch/royalty-droplet-scratch.png', label: 'I receive royalties. Should I sell?', prompt: 'I receive royalty checks and want help deciding whether I should sell.' },
-  { icon: '/assets/mrx-homepage-v4/icons/from-scratch/map-pin-scratch.png', label: 'What information do you need?', prompt: 'What information does MRX need to review my mineral rights?' },
-  { icon: '/assets/mrx-homepage-v4/icons/from-scratch/trend-up-scratch.png', label: 'Should I sell now or wait?', prompt: 'I want help thinking through whether I should sell now or wait.' },
+  {
+    icon: '/assets/mrx-homepage-v4/icons/from-scratch/value-dollar-scratch.png',
+    label: 'What are my minerals worth?',
+    prompt: 'I want to understand what my mineral rights may be worth.',
+  },
+  {
+    icon: '/assets/mrx-homepage-v4/icons/from-scratch/offer-document-scratch.png',
+    label: 'I received an offer. Is it fair?',
+    prompt:
+      'I received an offer for my mineral rights and want help understanding whether it is fair.',
+  },
+  {
+    icon: '/assets/mrx-homepage-v4/icons/from-scratch/gift-inherited-scratch.png',
+    label: 'I inherited mineral rights. What now?',
+    prompt:
+      'I inherited mineral rights and need help figuring out what documents and details matter first.',
+  },
+  {
+    icon: '/assets/mrx-homepage-v4/icons/from-scratch/royalty-droplet-scratch.png',
+    label: 'I receive royalties. Should I sell?',
+    prompt: 'I receive royalty checks and want help deciding whether I should sell.',
+  },
+  {
+    icon: '/assets/mrx-homepage-v4/icons/from-scratch/map-pin-scratch.png',
+    label: 'What information do you need?',
+    prompt: 'What information does MRX need to review my mineral rights?',
+  },
+  {
+    icon: '/assets/mrx-homepage-v4/icons/from-scratch/trend-up-scratch.png',
+    label: 'Should I sell now or wait?',
+    prompt: 'I want help thinking through whether I should sell now or wait.',
+  },
 ];
 
 const proofItems = [
-  { icon: '/assets/mrx-homepage-v4/icons/from-scratch/trust-shield-scratch.png', title: 'Free', text: 'No cost. No catch.' },
-  { icon: '/assets/mrx-homepage-v4/icons/from-scratch/lock-scratch.png', title: 'Confidential', text: 'Your information stays private.' },
-  { icon: '/assets/mrx-homepage-v4/icons/from-scratch/circle-check-scratch.png', title: 'No Obligation', text: 'You’re never obligated to sell.' },
-  { icon: '/assets/mrx-homepage-v4/icons/from-scratch/hands-no-pressure-scratch.png', title: 'No Pressure', text: 'Answers first, pressure never.' },
+  {
+    icon: '/assets/mrx-homepage-v4/icons/from-scratch/trust-shield-scratch.png',
+    title: 'Free',
+    text: 'No cost. No catch.',
+  },
+  {
+    icon: '/assets/mrx-homepage-v4/icons/from-scratch/lock-scratch.png',
+    title: 'Confidential',
+    text: 'Your information stays private.',
+  },
+  {
+    icon: '/assets/mrx-homepage-v4/icons/from-scratch/circle-check-scratch.png',
+    title: 'No Obligation',
+    text: 'You’re never obligated to sell.',
+  },
+  {
+    icon: '/assets/mrx-homepage-v4/icons/from-scratch/hands-no-pressure-scratch.png',
+    title: 'No Pressure',
+    text: 'Answers first, pressure never.',
+  },
 ];
 
 const pathways = [
-  { title: 'Offer review', text: 'Compare the headline number with the assumptions behind it before signing anything.' },
-  { title: 'Royalty check questions', text: 'Understand what recent checks, production history, and decline context may imply.' },
-  { title: 'Inherited minerals', text: 'Walk through documents, county/operator basics, probate questions, and when to escalate.' },
-  { title: 'Book a review', text: 'Move from AI intake to the MRX underwriter calendar only when the owner is ready.' },
+  {
+    title: 'Offer review',
+    text: 'Compare the headline number with the assumptions behind it before signing anything.',
+  },
+  {
+    title: 'Royalty check questions',
+    text: 'Understand what recent checks, production history, and decline context may imply.',
+  },
+  {
+    title: 'Inherited minerals',
+    text: 'Walk through documents, county/operator basics, probate questions, and when to escalate.',
+  },
+  {
+    title: 'Book a review',
+    text: 'Move from AI intake to the MRX underwriter calendar only when the owner is ready.',
+  },
 ];
 ---
 
-<section class="mrx-ai-hero" aria-labelledby="mrx-ai-hero-title" data-ghl-calendar={ghlCalendarUrl} data-phone-tel={phoneTel}>
+<section
+  class="mrx-ai-hero"
+  aria-labelledby="mrx-ai-hero-title"
+  data-ghl-calendar={ghlCalendarUrl}
+  data-phone-tel={phoneTel}
+>
   <img
     class="mrx-ai-hero__background-image"
     src="/assets/mrx-homepage-v4/backgrounds/from-scratch/oilfield-sunset-background-scratch.jpg"
@@ -54,7 +115,12 @@ const pathways = [
   <div class="mrx-ai-hero__shell">
     <nav class="mrx-ai-hero__nav" aria-label="AI homepage navigation">
       <a class="mrx-ai-hero__brand" href="/" aria-label="Mineral Rights Xchange home">
-        <img src="/assets/brand/mrx-logo-color.png" alt="Mineral Rights Xchange" width="400" height="100" />
+        <img
+          src="/assets/brand/mrx-logo-color.png"
+          alt="Mineral Rights Xchange"
+          width="400"
+          height="100"
+        />
       </a>
       <div class="mrx-ai-hero__links" aria-label="Primary links">
         <a href="#mrx-ai-chat">What Are My Minerals Worth?</a>
@@ -65,11 +131,39 @@ const pathways = [
         <a href="/faq">FAQ</a>
       </div>
       <div class="mrx-ai-hero__nav-actions">
-        <a class="mrx-ai-hero__phone" href={phoneHref || '#mrx-ai-chat'} aria-label={phoneHref ? phoneLabel : 'Phone number not configured; ask Tommy or book online'} data-cta-name="home-ai-nav-call" data-phone-configured={phoneHref ? 'true' : 'false'}>
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.8 19.8 0 0 1 11.19 19 19.5 19.5 0 0 1 5 12.81 19.8 19.8 0 0 1 2.08 4.18 2 2 0 0 1 4.06 2h3a2 2 0 0 1 2 1.72c.13.96.35 1.89.65 2.78a2 2 0 0 1-.45 2.11L8 9.88a16 16 0 0 0 6.12 6.12l1.27-1.27a2 2 0 0 1 2.11-.45c.89.3 1.82.52 2.78.65A2 2 0 0 1 22 16.92Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <a
+          class="mrx-ai-hero__phone"
+          href={phoneHref || '#mrx-ai-chat'}
+          aria-label={phoneHref
+            ? phoneLabel
+            : 'Phone number not configured; ask Tommy or book online'}
+          data-cta-name="home-ai-nav-call"
+          data-phone-configured={phoneHref ? 'true' : 'false'}
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true"
+            ><path
+              d="M22 16.92v3a2 2 0 0 1-2.18 2A19.8 19.8 0 0 1 11.19 19 19.5 19.5 0 0 1 5 12.81 19.8 19.8 0 0 1 2.08 4.18 2 2 0 0 1 4.06 2h3a2 2 0 0 1 2 1.72c.13.96.35 1.89.65 2.78a2 2 0 0 1-.45 2.11L8 9.88a16 16 0 0 0 6.12 6.12l1.27-1.27a2 2 0 0 1 2.11-.45c.89.3 1.82.52 2.78.65A2 2 0 0 1 22 16.92Z"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"></path></svg
+          >
         </a>
-        <a class="mrx-ai-hero__nav-cta" href={ghlCalendarUrl} data-cta-name="home-ai-nav-book" target="_blank" rel="noopener">
-          <img class="mrx-ai-icon" src="/assets/mrx-homepage-v4/icons/from-scratch/calendar-scratch.png" alt="" aria-hidden="true" loading="eager" />
+        <a
+          class="mrx-ai-hero__nav-cta"
+          href={ghlCalendarUrl}
+          data-cta-name="home-ai-nav-book"
+          target="_blank"
+          rel="noopener"
+        >
+          <img
+            class="mrx-ai-icon"
+            src="/assets/mrx-homepage-v4/icons/from-scratch/calendar-scratch.png"
+            alt=""
+            aria-hidden="true"
+            loading="eager"
+          />
           Book Free Mineral Review
         </a>
       </div>
@@ -78,7 +172,9 @@ const pathways = [
     <div class="mrx-ai-hero__grid">
       <div class="mrx-ai-hero__copy">
         <p class="mrx-ai-hero__kicker">Meet Tommy™</p>
-        <h1 id="mrx-ai-hero-title">Don’t Sell Your Mineral Rights Until You Know What They’re Really Worth.</h1>
+        <h1 id="mrx-ai-hero-title">
+          Don’t Sell Your Mineral Rights Until You Know What They’re Really Worth.
+        </h1>
         <p class="mrx-ai-hero__lede">
           Before accepting an offer, talk with Tommy, MRX AI Underwriter.
         </p>
@@ -91,12 +187,34 @@ const pathways = [
         </ul>
 
         <div class="mrx-ai-hero__actions" aria-label="AI calls to action">
-          <a class="mrx-ai-button mrx-ai-button--primary" href="#mrx-ai-chat" data-cta-name="home-ai-primary-chat">
-            <img class="mrx-ai-icon" src="/assets/mrx-homepage-v4/icons/from-scratch/search-review-scratch.png" alt="" aria-hidden="true" loading="lazy" />
+          <a
+            class="mrx-ai-button mrx-ai-button--primary"
+            href="#mrx-ai-chat"
+            data-cta-name="home-ai-primary-chat"
+          >
+            <img
+              class="mrx-ai-icon"
+              src="/assets/mrx-homepage-v4/icons/from-scratch/search-review-scratch.png"
+              alt=""
+              aria-hidden="true"
+              loading="lazy"
+            />
             <span><strong>Find Out What Your Minerals May Be Worth</strong></span>
           </a>
-          <a class="mrx-ai-button mrx-ai-button--secondary" href={ghlCalendarUrl} target="_blank" rel="noopener" data-cta-name="home-ai-secondary-book">
-            <img class="mrx-ai-icon" src="/assets/mrx-homepage-v4/icons/from-scratch/offer-document-scratch.png" alt="" aria-hidden="true" loading="lazy" />
+          <a
+            class="mrx-ai-button mrx-ai-button--secondary"
+            href={ghlCalendarUrl}
+            target="_blank"
+            rel="noopener"
+            data-cta-name="home-ai-secondary-book"
+          >
+            <img
+              class="mrx-ai-icon"
+              src="/assets/mrx-homepage-v4/icons/from-scratch/offer-document-scratch.png"
+              alt=""
+              aria-hidden="true"
+              loading="lazy"
+            />
             <span><strong>I Received An Offer</strong></span>
           </a>
         </div>
@@ -118,46 +236,76 @@ const pathways = [
             <p>MRX AI Underwriter</p>
             <p><span></span> Online Now</p>
           </div>
-          <button type="button" class="mrx-ai-chat__more" aria-label="More MRX AI options">⋮</button>
+          <button type="button" class="mrx-ai-chat__more" aria-label="More MRX AI options">⋮</button
+          >
         </div>
 
         <div class="mrx-ai-chat__bubble" data-ai-response aria-live="polite">
-          <strong>Hi, I’m <span>Tommy</span>.</strong><br /><br />Most mineral owners don’t need another sales pitch. They need answers.<br /><br /><b>What’s your biggest question?</b>
+          <strong>Hi, I’m <span>Tommy</span>.</strong><br /><br />Most mineral owners don’t need
+          another sales pitch. They need answers.<br /><br /><b>What’s your biggest question?</b>
         </div>
 
         <div class="mrx-ai-chat__quick" aria-label="Start a conversation with MRX AI">
-          {quickStarts.map((item) => (
-            <button type="button" data-ai-prompt={item.prompt}>
-              <span><img class="mrx-ai-icon" src={item.icon} alt="" aria-hidden="true" loading="lazy" /></span>
-              <strong>{item.label}</strong>
-              <em>→</em>
-            </button>
-          ))}
+          {
+            quickStarts.map((item) => (
+              <button type="button" data-ai-prompt={item.prompt}>
+                <span>
+                  <img
+                    class="mrx-ai-icon"
+                    src={item.icon}
+                    alt=""
+                    aria-hidden="true"
+                    loading="lazy"
+                  />
+                </span>
+                <strong>{item.label}</strong>
+                <em>→</em>
+              </button>
+            ))
+          }
         </div>
 
         <form class="mrx-ai-chat__form" data-ai-form>
           <label class="sr-only" for="mrx-ai-answer">Ask Tommy about your mineral rights</label>
-          <input id="mrx-ai-answer" name="answer" type="text" autocomplete="off" placeholder="Ask Tommy anything about your mineral rights..." />
+          <input
+            id="mrx-ai-answer"
+            name="answer"
+            type="text"
+            autocomplete="off"
+            placeholder="Ask Tommy anything about your mineral rights..."
+          />
           <button type="submit" aria-label="Send question to MRX AI">➜</button>
         </form>
         <div class="mrx-ai-chat__review">
           <strong>Ready for a professional review?</strong>
           <span>Talk with an MRX Underwriter about your needs.</span>
-          <a href={ghlCalendarUrl} target="_blank" rel="noopener" data-cta-name="home-ai-card-book"><img class="mrx-ai-icon" src="/assets/mrx-homepage-v4/icons/from-scratch/calendar-scratch.png" alt="" aria-hidden="true" loading="lazy" />Book Free Mineral Review →</a>
+          <a href={ghlCalendarUrl} target="_blank" rel="noopener" data-cta-name="home-ai-card-book"
+            ><img
+              class="mrx-ai-icon"
+              src="/assets/mrx-homepage-v4/icons/from-scratch/calendar-scratch.png"
+              alt=""
+              aria-hidden="true"
+              loading="lazy"
+            />Book Free Mineral Review →</a
+          >
         </div>
       </aside>
     </div>
 
     <div class="mrx-ai-hero__benefits" aria-label="AI-first mineral rights benefits">
-      {proofItems.map((item) => (
-        <article>
-          <span aria-hidden="true"><img class="mrx-ai-icon mrx-ai-icon--large" src={item.icon} alt="" loading="lazy" /></span>
-          <div>
-            <strong>{item.title}</strong>
-            <p>{item.text}</p>
-          </div>
-        </article>
-      ))}
+      {
+        proofItems.map((item) => (
+          <article>
+            <span aria-hidden="true">
+              <img class="mrx-ai-icon mrx-ai-icon--large" src={item.icon} alt="" loading="lazy" />
+            </span>
+            <div>
+              <strong>{item.title}</strong>
+              <p>{item.text}</p>
+            </div>
+          </article>
+        ))
+      }
     </div>
   </div>
 </section>
@@ -166,16 +314,21 @@ const pathways = [
   <div class="mrx-ai-section__intro">
     <p>Focused funnel</p>
     <h2 id="mrx-ai-flow-title">Everything drives owners into the AI conversation.</h2>
-    <span>The page behaves like intake, education, and routing — not a static brochure.</span>
+    <span>The page behaves like intake, education, and routing, not a static brochure.</span>
   </div>
   <div class="mrx-ai-pathways">
-    {pathways.map((item) => (
-      <a href="#mrx-ai-chat" data-cta-name={`home-ai-path-${item.title.toLowerCase().replaceAll(' ', '-')}`}>
-        <strong>{item.title}</strong>
-        <p>{item.text}</p>
-        <span>Ask the AI →</span>
-      </a>
-    ))}
+    {
+      pathways.map((item) => (
+        <a
+          href="#mrx-ai-chat"
+          data-cta-name={`home-ai-path-${item.title.toLowerCase().replaceAll(' ', '-')}`}
+        >
+          <strong>{item.title}</strong>
+          <p>{item.text}</p>
+          <span>Ask the AI →</span>
+        </a>
+      ))
+    }
   </div>
 </section>
 
@@ -184,94 +337,659 @@ const pathways = [
     <p>GHL handoff engine</p>
     <h2 id="mrx-ai-engine-title">From AI intake to GHL calendar, CRM, and underwriter handoff.</h2>
     <p>
-      Tommy’s job is to answer the owner’s first question, collect context, and move qualified owners into the GHL calendar. The site uses the verified MRX GHL calendar path for booking and the existing GHL contact API path for form submissions.
+      Tommy’s job is to answer the owner’s first question, collect context, and move qualified
+      owners into the GHL calendar. The site uses the verified MRX GHL calendar path for booking and
+      the existing GHL contact API path for form submissions.
     </p>
-    <a class="mrx-ai-button mrx-ai-button--primary mrx-ai-engine__cta" href={ghlCalendarUrl} target="_blank" rel="noopener" data-cta-name="home-ai-engine-book">Book Free Review</a>
+    <a
+      class="mrx-ai-button mrx-ai-button--primary mrx-ai-engine__cta"
+      href={ghlCalendarUrl}
+      target="_blank"
+      rel="noopener"
+      data-cta-name="home-ai-engine-book">Book Free Review</a
+    >
   </div>
   <div class="mrx-ai-engine__panel" aria-label="GHL-ready owner profile preview">
-    <div><span>Situation</span><strong>Offer review / inherited rights / royalty check question</strong></div>
+    <div>
+      <span>Situation</span><strong>Offer review / inherited rights / royalty check question</strong
+      >
+    </div>
     <div><span>Location</span><strong>State, county, operator when known</strong></div>
-    <div><span>Documents</span><strong>Offer, lease, division order, royalty statement</strong></div>
-    <div><span>Next step</span><strong>Tommy summary → GHL calendar → underwriter review</strong></div>
+    <div>
+      <span>Documents</span><strong>Offer, lease, division order, royalty statement</strong>
+    </div>
+    <div>
+      <span>Next step</span><strong>Tommy summary → GHL calendar → underwriter review</strong>
+    </div>
   </div>
 </section>
 
 <style>
-  .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
-  .mrx-ai-hero { position: relative; overflow: hidden; min-height: 100svh; background: #201915; color: #061A33; }
-  .mrx-ai-hero__background-image { position: absolute; inset: 0; z-index: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; filter: saturate(1.04) contrast(1.02); }
-  .mrx-ai-hero__shade { position: absolute; inset: 0; z-index: 1; background: linear-gradient(90deg, rgba(255,241,213,.86) 0%, rgba(255,235,192,.56) 28%, rgba(255,214,135,.12) 48%, rgba(9,26,45,.12) 61%, rgba(9,26,45,.4) 100%); pointer-events: none; }
-  .mrx-ai-hero__tommy { position: absolute; z-index: 2; left: 44.5%; bottom: -3%; width: min(27vw, 500px); max-height: 82svh; object-fit: contain; object-position: center bottom; transform: translateX(-50%); filter: drop-shadow(0 28px 40px rgba(0,0,0,.34)); pointer-events: none; }
-  .mrx-ai-hero__shell { position: relative; z-index: 3; width: min(100% - 3rem, 1500px); min-height: 100svh; margin: 0 auto; padding: clamp(1rem, 2vw, 1.65rem) 0 0; display: flex; flex-direction: column; }
-  .mrx-ai-hero__nav { display: grid; grid-template-columns: 290px 1fr auto; align-items: center; gap: clamp(1rem, 2vw, 2.2rem); min-height: 84px; padding: .72rem .9rem .72rem 1.25rem; border: 1px solid rgba(6,26,51,.08); border-radius: 24px; background: rgba(255,255,255,.96); box-shadow: 0 18px 55px rgba(6,26,51,.14); backdrop-filter: blur(18px); }
-  .mrx-ai-hero__brand { display: inline-flex; align-items: center; min-width: max-content; color: #061A33; text-decoration: none; }
-  .mrx-ai-hero__brand img { display: block; width: clamp(215px, 16vw, 270px); height: auto; object-fit: contain; }
-  .mrx-ai-hero__links { display: flex; justify-content: center; align-items: center; gap: clamp(.8rem, 1.55vw, 1.8rem); font-size: clamp(.84rem, .9vw, 1rem); font-weight: 900; text-align: center; line-height: 1.35; }
-  .mrx-ai-hero__links a, .mrx-ai-hero__nav-cta { color: #061A33; text-decoration: none; }
-  .mrx-ai-hero__nav-actions { display: inline-flex; align-items: center; gap: .75rem; }
-  .mrx-ai-hero__phone { display: inline-grid; place-items: center; width: 54px; height: 54px; border-radius: 999px; background: #061A33; color: #fff; box-shadow: 0 18px 44px rgba(6,26,51,.18); }
-  .mrx-ai-hero__phone[data-phone-configured="false"] { opacity: .55; }
-  .mrx-ai-hero__phone svg { width: 25px; height: 25px; }
-  .mrx-ai-hero__nav-cta { display: inline-flex; align-items: center; justify-content: center; gap: .55rem; min-height: 58px; border-radius: 18px; background: #061A33; padding: .85rem 1.25rem; color: #fff; box-shadow: 0 18px 44px rgba(6,26,51,.18); font-weight: 900; white-space: nowrap; }
-  .mrx-ai-icon { display: block; width: 1.65rem; height: 1.65rem; object-fit: contain; }
-  .mrx-ai-icon--large { width: 3.2rem; height: 3.2rem; }
-  .mrx-ai-hero__grid { display: grid; grid-template-columns: minmax(460px, .86fr) minmax(480px, .72fr); gap: clamp(11rem, 17vw, 20rem); align-items: center; flex: 1 1 auto; min-height: 0; padding: clamp(1.4rem, 2.2vw, 2rem) 0 clamp(1rem, 1.5vw, 1.25rem); }
-  .mrx-ai-hero__copy { max-width: 560px; padding-left: clamp(.4rem, 1vw, 1rem); text-shadow: 0 2px 0 rgba(255,255,255,.74), 0 12px 30px rgba(255,255,255,.64), 0 0 28px rgba(255,255,255,.48); }
-  .mrx-ai-hero__kicker, .mrx-ai-section__intro p, .mrx-ai-engine > div > p:first-child { color: #f9c777; text-transform: uppercase; letter-spacing: .13em; font-weight: 900; font-size: .84rem; }
-  .mrx-ai-hero__kicker { display: inline-flex; border-radius: 999px; background: #061A33; padding: .58rem 1rem; color: #fff; box-shadow: 0 10px 26px rgba(6,26,51,.2); }
-  .mrx-ai-hero h1 { max-width: 600px; margin: .8rem 0 1rem; color: #061A33; font-family: Georgia, 'Times New Roman', serif; font-size: clamp(3.7rem, 5.15vw, 5.8rem); line-height: .91; letter-spacing: -.068em; text-wrap: balance; }
-  .mrx-ai-hero__lede { max-width: 500px; margin: 0; color: #061A33; font-size: clamp(1rem, 1.16vw, 1.22rem); font-weight: 900; line-height: 1.32; }
-  .mrx-ai-hero__checks { display: grid; gap: .55rem; margin: 1rem 0 0; padding: 0; list-style: none; color: #061A33; font-weight: 850; }
-  .mrx-ai-hero__checks li { display: flex; gap: .65rem; align-items: center; font-size: clamp(.96rem, 1.05vw, 1.12rem); }
-  .mrx-ai-hero__checks li::before { content: ''; display: grid; place-items: center; flex: 0 0 auto; width: 1.35rem; height: 1.35rem; border-radius: 50%; background: url('/assets/mrx-homepage-v4/icons/from-scratch/check-bullet-scratch.png') center / 1.35rem 1.35rem no-repeat; }
-  .mrx-ai-hero__actions { display: flex; flex-wrap: wrap; gap: .9rem; margin-top: 1.6rem; }
-  .mrx-ai-button { display: inline-flex; align-items: center; justify-content: center; gap: .85rem; min-height: 72px; padding: .8rem 1.15rem; border-radius: 13px; text-decoration: none; border: 1px solid rgba(255,255,255,.22); color: #fff; }
-  .mrx-ai-button strong { display: block; font-size: 1.04rem; }
-  .mrx-ai-button--primary { background: #D6A23A; border-color: rgba(6,26,51,.2); color: #061A33; box-shadow: 0 22px 60px rgba(196,132,28,.22); }
-  .mrx-ai-button--secondary { background: #061A33; border-color: rgba(214,162,58,.78); color: #fff; }
-  .mrx-ai-chat { display: flex; flex-direction: column; min-height: 0; width: min(34vw, 520px); max-width: 520px; justify-self: end; border: 2px solid rgba(214,162,58,.88); border-radius: 30px; background: rgba(6,26,51,.97); box-shadow: 0 28px 100px rgba(0,0,0,.42); padding: clamp(1rem, 1.35vw, 1.25rem); backdrop-filter: blur(18px); overflow: hidden; }
-  .mrx-ai-chat__head { display: grid; grid-template-columns: 64px 1fr auto; gap: .9rem; align-items: center; }
-  .mrx-ai-chat__head strong { display: block; color: #fff; font-size: 1.45rem; }
-  .mrx-ai-chat__head p { display: block; margin: .1rem 0 0; color: rgba(248,251,255,.76); font-size: .9rem; }
-  .mrx-ai-chat__avatar { width: 64px; height: 64px; border-radius: 50%; border: 1px solid rgba(249,199,119,.5); object-fit: cover; object-position: center top; box-shadow: 0 12px 32px rgba(0,0,0,.28); }
-  .mrx-ai-chat__head p span { display: inline-block; width: 9px; height: 9px; margin-right: .35rem; background: #2a8d4f; border-radius: 50%; }
-  .mrx-ai-chat__more { width: 48px; height: 48px; border-radius: 50%; border: 1px solid rgba(216,225,236,.24); background: rgba(255,255,255,.05); color: #fff; font-size: 1.5rem; }
-  .mrx-ai-chat__bubble { margin-top: 1rem; border-radius: 18px; background: rgba(216,225,236,.08); border: 1px solid rgba(255,255,255,.12); padding: 1.05rem; color: rgba(248,251,255,.94); line-height: 1.45; white-space: pre-line; }
-  .mrx-ai-chat__bubble span { color: #D6A23A; }
-  .mrx-ai-chat__quick { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .65rem; margin-top: .9rem; }
-  .mrx-ai-chat__quick[hidden] { display: none; }
-  .mrx-ai-chat__quick button { display: grid; grid-template-columns: 34px 1fr; align-items: center; gap: .62rem; width: 100%; min-height: 62px; border: 1px solid rgba(214,162,58,.42); border-radius: 13px; background: rgba(255,255,255,.035); color: #fff; padding: .68rem .72rem; text-align: left; cursor: pointer; }
-  .mrx-ai-chat__quick button strong { font-size: .88rem; line-height: 1.18; }
-  .mrx-ai-chat__quick span, .mrx-ai-chat__quick em { color: #f9c777; font-style: normal; }
-  .mrx-ai-chat__quick .mrx-ai-icon { width: 1.5rem; height: 1.5rem; }
-  .mrx-ai-chat__form { display: grid; grid-template-columns: 1fr 52px; align-items: center; gap: .5rem; margin-top: .88rem; border: 1px solid rgba(216,225,236,.22); border-radius: 16px; padding: .45rem; }
-  .mrx-ai-chat__form input { min-width: 0; background: transparent; border: 0; color: #fff; padding: .75rem; font: inherit; outline: 0; }
-  .mrx-ai-chat__form button { width: 50px; height: 50px; border: 0; border-radius: 50%; background: #c4841c; color: #fff; cursor: pointer; font-size: 1.5rem; }
-  .mrx-ai-chat__review { margin-top: 1rem; text-align: center; color: rgba(248,251,255,.88); }
-  .mrx-ai-chat__review strong { display: block; color: #D6A23A; }
-  .mrx-ai-chat__review span { display: block; margin-top: .25rem; font-size: .92rem; }
-  .mrx-ai-chat__review a { display: flex; justify-content: center; align-items: center; gap: .6rem; min-height: 54px; margin-top: .75rem; border: 1px solid #D6A23A; border-radius: 14px; color: #fff; text-decoration: none; font-weight: 900; }
-  .mrx-ai-hero__benefits { display: grid; grid-template-columns: repeat(4, 1fr); margin: 0 0 1.15rem; padding: 1rem 1.6rem; border-radius: 24px; background: rgba(255,255,255,.96); color: #061A33; box-shadow: 0 22px 70px rgba(6,26,51,.16); }
-  .mrx-ai-hero__benefits article { display: flex; justify-content: center; align-items: center; gap: .8rem; min-height: 72px; padding: .35rem 1.1rem; border-right: 1px solid rgba(6,26,51,.14); }
-  .mrx-ai-hero__benefits article:last-child { border-right: 0; }
-  .mrx-ai-hero__benefits p { margin: .2rem 0 0; color: rgba(6,26,51,.72); line-height: 1.35; }
-  .mrx-ai-section, .mrx-ai-engine { width: min(100% - 2rem, 1200px); margin: 0 auto; padding: clamp(4rem, 8vw, 7rem) 0; }
-  .mrx-ai-section__intro { max-width: 780px; }
-  .mrx-ai-section__intro h2, .mrx-ai-engine h2 { margin: .4rem 0 1rem; color: #071d31; font-size: clamp(2.4rem, 5vw, 5rem); line-height: .98; letter-spacing: -.06em; }
-  .mrx-ai-section__intro span, .mrx-ai-engine p { color: #4a505e; font-size: 1.12rem; line-height: 1.6; }
-  .mrx-ai-pathways { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-top: 2.2rem; }
-  .mrx-ai-pathways a { min-height: 260px; display: flex; flex-direction: column; justify-content: flex-end; gap: .8rem; padding: 1.3rem; border-radius: 24px; background: linear-gradient(160deg, #fff, #f1eee5); border: 1px solid #e6e8eb; color: #071d31; text-decoration: none; box-shadow: 0 12px 34px rgba(10,15,26,.06); }
-  .mrx-ai-pathways strong { font-size: 1.35rem; }
-  .mrx-ai-pathways p { color: #4a505e; margin: 0; }
-  .mrx-ai-pathways span { color: #a86e12; font-weight: 800; }
-  .mrx-ai-engine { display: grid; grid-template-columns: 1fr .8fr; gap: 2rem; align-items: center; }
-  .mrx-ai-engine__cta { margin-top: 1.5rem; color: #061A33; }
-  .mrx-ai-engine__panel { border-radius: 28px; background: #071d31; color: #fff; padding: 1.3rem; box-shadow: 0 26px 70px rgba(7,29,49,.2); }
-  .mrx-ai-engine__panel div { padding: 1rem; border: 1px solid rgba(216,225,236,.16); border-radius: 16px; margin-bottom: .75rem; background: rgba(255,255,255,.04); }
-  .mrx-ai-engine__panel span { display: block; color: #f9c777; text-transform: uppercase; letter-spacing: .1em; font-size: .72rem; font-weight: 900; margin-bottom: .35rem; }
-  @media (max-width: 1280px) { .mrx-ai-hero__grid { grid-template-columns: minmax(0, .9fr) minmax(420px, .75fr); gap: clamp(7rem, 12vw, 12rem); } .mrx-ai-hero h1 { font-size: clamp(3rem, 4.8vw, 4.8rem); } .mrx-ai-hero__tommy { width: min(30vw, 460px); left: 43.5%; } }
-  @media (max-width: 1080px) { .mrx-ai-hero__links { display: none; } .mrx-ai-hero__nav { grid-template-columns: 1fr auto; } .mrx-ai-hero__grid, .mrx-ai-engine { grid-template-columns: 1fr; gap: 2rem; } .mrx-ai-hero__copy { max-width: 720px; } .mrx-ai-hero__tommy { opacity: .32; left: 72%; width: min(46vw, 420px); } .mrx-ai-chat { justify-self: stretch; width: auto; max-width: none; } .mrx-ai-hero__benefits, .mrx-ai-pathways { grid-template-columns: 1fr 1fr; } .mrx-ai-hero__benefits article:nth-child(2) { border-right: 0; } }
-  @media (max-width: 720px) { .mrx-ai-hero__shell { width: min(100% - 1rem, 100%); } .mrx-ai-hero__nav { border-radius: 16px; padding: .7rem; } .mrx-ai-hero__brand img { width: min(215px, 62vw); } .mrx-ai-hero__nav-cta { display: none; } .mrx-ai-hero__phone { width: 48px; height: 48px; } .mrx-ai-hero h1 { font-size: clamp(3rem, 16vw, 4.2rem); } .mrx-ai-hero__actions, .mrx-ai-button { width: 100%; } .mrx-ai-chat__quick, .mrx-ai-hero__benefits, .mrx-ai-pathways { grid-template-columns: 1fr; } .mrx-ai-hero__benefits article { border-right: 0; border-bottom: 1px solid rgba(6,26,51,.12); } .mrx-ai-hero__benefits article:last-child { border-bottom: 0; } }
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+  .mrx-ai-hero {
+    position: relative;
+    overflow: hidden;
+    min-height: 100svh;
+    background: #201915;
+    color: #061a33;
+  }
+  .mrx-ai-hero__background-image {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: saturate(1.04) contrast(1.02);
+  }
+  .mrx-ai-hero__shade {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(
+      90deg,
+      rgba(255, 241, 213, 0.86) 0%,
+      rgba(255, 235, 192, 0.56) 28%,
+      rgba(255, 214, 135, 0.12) 48%,
+      rgba(9, 26, 45, 0.12) 61%,
+      rgba(9, 26, 45, 0.4) 100%
+    );
+    pointer-events: none;
+  }
+  .mrx-ai-hero__tommy {
+    position: absolute;
+    z-index: 2;
+    left: 44.5%;
+    bottom: -3%;
+    width: min(27vw, 500px);
+    max-height: 82svh;
+    object-fit: contain;
+    object-position: center bottom;
+    transform: translateX(-50%);
+    filter: drop-shadow(0 28px 40px rgba(0, 0, 0, 0.34));
+    pointer-events: none;
+  }
+  .mrx-ai-hero__shell {
+    position: relative;
+    z-index: 3;
+    width: min(100% - 3rem, 1500px);
+    min-height: 100svh;
+    margin: 0 auto;
+    padding: clamp(1rem, 2vw, 1.65rem) 0 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .mrx-ai-hero__nav {
+    display: grid;
+    grid-template-columns: 290px 1fr auto;
+    align-items: center;
+    gap: clamp(1rem, 2vw, 2.2rem);
+    min-height: 84px;
+    padding: 0.72rem 0.9rem 0.72rem 1.25rem;
+    border: 1px solid rgba(6, 26, 51, 0.08);
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.96);
+    box-shadow: 0 18px 55px rgba(6, 26, 51, 0.14);
+    backdrop-filter: blur(18px);
+  }
+  .mrx-ai-hero__brand {
+    display: inline-flex;
+    align-items: center;
+    min-width: max-content;
+    color: #061a33;
+    text-decoration: none;
+  }
+  .mrx-ai-hero__brand img {
+    display: block;
+    width: clamp(215px, 16vw, 270px);
+    height: auto;
+    object-fit: contain;
+  }
+  .mrx-ai-hero__links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: clamp(0.8rem, 1.55vw, 1.8rem);
+    font-size: clamp(0.84rem, 0.9vw, 1rem);
+    font-weight: 900;
+    text-align: center;
+    line-height: 1.35;
+  }
+  .mrx-ai-hero__links a,
+  .mrx-ai-hero__nav-cta {
+    color: #061a33;
+    text-decoration: none;
+  }
+  .mrx-ai-hero__nav-actions {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .mrx-ai-hero__phone {
+    display: inline-grid;
+    place-items: center;
+    width: 54px;
+    height: 54px;
+    border-radius: 999px;
+    background: #061a33;
+    color: #fff;
+    box-shadow: 0 18px 44px rgba(6, 26, 51, 0.18);
+  }
+  .mrx-ai-hero__phone[data-phone-configured='false'] {
+    opacity: 0.55;
+  }
+  .mrx-ai-hero__phone svg {
+    width: 25px;
+    height: 25px;
+  }
+  .mrx-ai-hero__nav-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.55rem;
+    min-height: 58px;
+    border-radius: 18px;
+    background: #061a33;
+    padding: 0.85rem 1.25rem;
+    color: #fff;
+    box-shadow: 0 18px 44px rgba(6, 26, 51, 0.18);
+    font-weight: 900;
+    white-space: nowrap;
+  }
+  .mrx-ai-icon {
+    display: block;
+    width: 1.65rem;
+    height: 1.65rem;
+    object-fit: contain;
+  }
+  .mrx-ai-icon--large {
+    width: 3.2rem;
+    height: 3.2rem;
+  }
+  .mrx-ai-hero__grid {
+    display: grid;
+    grid-template-columns: minmax(460px, 0.86fr) minmax(480px, 0.72fr);
+    gap: clamp(11rem, 17vw, 20rem);
+    align-items: center;
+    flex: 1 1 auto;
+    min-height: 0;
+    padding: clamp(1.4rem, 2.2vw, 2rem) 0 clamp(1rem, 1.5vw, 1.25rem);
+  }
+  .mrx-ai-hero__copy {
+    max-width: 560px;
+    padding-left: clamp(0.4rem, 1vw, 1rem);
+    text-shadow:
+      0 2px 0 rgba(255, 255, 255, 0.74),
+      0 12px 30px rgba(255, 255, 255, 0.64),
+      0 0 28px rgba(255, 255, 255, 0.48);
+  }
+  .mrx-ai-hero__kicker,
+  .mrx-ai-section__intro p,
+  .mrx-ai-engine > div > p:first-child {
+    color: #f9c777;
+    text-transform: uppercase;
+    letter-spacing: 0.13em;
+    font-weight: 900;
+    font-size: 0.84rem;
+  }
+  .mrx-ai-hero__kicker {
+    display: inline-flex;
+    border-radius: 999px;
+    background: #061a33;
+    padding: 0.58rem 1rem;
+    color: #fff;
+    box-shadow: 0 10px 26px rgba(6, 26, 51, 0.2);
+  }
+  .mrx-ai-hero h1 {
+    max-width: 600px;
+    margin: 0.8rem 0 1rem;
+    color: #061a33;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: clamp(3.7rem, 5.15vw, 5.8rem);
+    line-height: 0.91;
+    letter-spacing: -0.068em;
+    text-wrap: balance;
+  }
+  .mrx-ai-hero__lede {
+    max-width: 500px;
+    margin: 0;
+    color: #061a33;
+    font-size: clamp(1rem, 1.16vw, 1.22rem);
+    font-weight: 900;
+    line-height: 1.32;
+  }
+  .mrx-ai-hero__checks {
+    display: grid;
+    gap: 0.55rem;
+    margin: 1rem 0 0;
+    padding: 0;
+    list-style: none;
+    color: #061a33;
+    font-weight: 850;
+  }
+  .mrx-ai-hero__checks li {
+    display: flex;
+    gap: 0.65rem;
+    align-items: center;
+    font-size: clamp(0.96rem, 1.05vw, 1.12rem);
+  }
+  .mrx-ai-hero__checks li::before {
+    content: '';
+    display: grid;
+    place-items: center;
+    flex: 0 0 auto;
+    width: 1.35rem;
+    height: 1.35rem;
+    border-radius: 50%;
+    background: url('/assets/mrx-homepage-v4/icons/from-scratch/check-bullet-scratch.png') center /
+      1.35rem 1.35rem no-repeat;
+  }
+  .mrx-ai-hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.9rem;
+    margin-top: 1.6rem;
+  }
+  .mrx-ai-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.85rem;
+    min-height: 72px;
+    padding: 0.8rem 1.15rem;
+    border-radius: 13px;
+    text-decoration: none;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    color: #fff;
+  }
+  .mrx-ai-button strong {
+    display: block;
+    font-size: 1.04rem;
+  }
+  .mrx-ai-button--primary {
+    background: #d6a23a;
+    border-color: rgba(6, 26, 51, 0.2);
+    color: #061a33;
+    box-shadow: 0 22px 60px rgba(196, 132, 28, 0.22);
+  }
+  .mrx-ai-button--secondary {
+    background: #061a33;
+    border-color: rgba(214, 162, 58, 0.78);
+    color: #fff;
+  }
+  .mrx-ai-chat {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    width: min(34vw, 520px);
+    max-width: 520px;
+    justify-self: end;
+    border: 2px solid rgba(214, 162, 58, 0.88);
+    border-radius: 30px;
+    background: rgba(6, 26, 51, 0.97);
+    box-shadow: 0 28px 100px rgba(0, 0, 0, 0.42);
+    padding: clamp(1rem, 1.35vw, 1.25rem);
+    backdrop-filter: blur(18px);
+    overflow: hidden;
+  }
+  .mrx-ai-chat__head {
+    display: grid;
+    grid-template-columns: 64px 1fr auto;
+    gap: 0.9rem;
+    align-items: center;
+  }
+  .mrx-ai-chat__head strong {
+    display: block;
+    color: #fff;
+    font-size: 1.45rem;
+  }
+  .mrx-ai-chat__head p {
+    display: block;
+    margin: 0.1rem 0 0;
+    color: rgba(248, 251, 255, 0.76);
+    font-size: 0.9rem;
+  }
+  .mrx-ai-chat__avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    border: 1px solid rgba(249, 199, 119, 0.5);
+    object-fit: cover;
+    object-position: center top;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.28);
+  }
+  .mrx-ai-chat__head p span {
+    display: inline-block;
+    width: 9px;
+    height: 9px;
+    margin-right: 0.35rem;
+    background: #2a8d4f;
+    border-radius: 50%;
+  }
+  .mrx-ai-chat__more {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 1px solid rgba(216, 225, 236, 0.24);
+    background: rgba(255, 255, 255, 0.05);
+    color: #fff;
+    font-size: 1.5rem;
+  }
+  .mrx-ai-chat__bubble {
+    margin-top: 1rem;
+    border-radius: 18px;
+    background: rgba(216, 225, 236, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    padding: 1.05rem;
+    color: rgba(248, 251, 255, 0.94);
+    line-height: 1.45;
+    white-space: pre-line;
+  }
+  .mrx-ai-chat__bubble span {
+    color: #d6a23a;
+  }
+  .mrx-ai-chat__quick {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.65rem;
+    margin-top: 0.9rem;
+  }
+  .mrx-ai-chat__quick[hidden] {
+    display: none;
+  }
+  .mrx-ai-chat__quick button {
+    display: grid;
+    grid-template-columns: 34px 1fr;
+    align-items: center;
+    gap: 0.62rem;
+    width: 100%;
+    min-height: 62px;
+    border: 1px solid rgba(214, 162, 58, 0.42);
+    border-radius: 13px;
+    background: rgba(255, 255, 255, 0.035);
+    color: #fff;
+    padding: 0.68rem 0.72rem;
+    text-align: left;
+    cursor: pointer;
+  }
+  .mrx-ai-chat__quick button strong {
+    font-size: 0.88rem;
+    line-height: 1.18;
+  }
+  .mrx-ai-chat__quick span,
+  .mrx-ai-chat__quick em {
+    color: #f9c777;
+    font-style: normal;
+  }
+  .mrx-ai-chat__quick .mrx-ai-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+  .mrx-ai-chat__form {
+    display: grid;
+    grid-template-columns: 1fr 52px;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.88rem;
+    border: 1px solid rgba(216, 225, 236, 0.22);
+    border-radius: 16px;
+    padding: 0.45rem;
+  }
+  .mrx-ai-chat__form input {
+    min-width: 0;
+    background: transparent;
+    border: 0;
+    color: #fff;
+    padding: 0.75rem;
+    font: inherit;
+    outline: 0;
+  }
+  .mrx-ai-chat__form button {
+    width: 50px;
+    height: 50px;
+    border: 0;
+    border-radius: 50%;
+    background: #c4841c;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1.5rem;
+  }
+  .mrx-ai-chat__review {
+    margin-top: 1rem;
+    text-align: center;
+    color: rgba(248, 251, 255, 0.88);
+  }
+  .mrx-ai-chat__review strong {
+    display: block;
+    color: #d6a23a;
+  }
+  .mrx-ai-chat__review span {
+    display: block;
+    margin-top: 0.25rem;
+    font-size: 0.92rem;
+  }
+  .mrx-ai-chat__review a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.6rem;
+    min-height: 54px;
+    margin-top: 0.75rem;
+    border: 1px solid #d6a23a;
+    border-radius: 14px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 900;
+  }
+  .mrx-ai-hero__benefits {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin: 0 0 1.15rem;
+    padding: 1rem 1.6rem;
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.96);
+    color: #061a33;
+    box-shadow: 0 22px 70px rgba(6, 26, 51, 0.16);
+  }
+  .mrx-ai-hero__benefits article {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.8rem;
+    min-height: 72px;
+    padding: 0.35rem 1.1rem;
+    border-right: 1px solid rgba(6, 26, 51, 0.14);
+  }
+  .mrx-ai-hero__benefits article:last-child {
+    border-right: 0;
+  }
+  .mrx-ai-hero__benefits p {
+    margin: 0.2rem 0 0;
+    color: rgba(6, 26, 51, 0.72);
+    line-height: 1.35;
+  }
+  .mrx-ai-section,
+  .mrx-ai-engine {
+    width: min(100% - 2rem, 1200px);
+    margin: 0 auto;
+    padding: clamp(4rem, 8vw, 7rem) 0;
+  }
+  .mrx-ai-section__intro {
+    max-width: 780px;
+  }
+  .mrx-ai-section__intro h2,
+  .mrx-ai-engine h2 {
+    margin: 0.4rem 0 1rem;
+    color: #071d31;
+    font-size: clamp(2.4rem, 5vw, 5rem);
+    line-height: 0.98;
+    letter-spacing: -0.06em;
+  }
+  .mrx-ai-section__intro span,
+  .mrx-ai-engine p {
+    color: #4a505e;
+    font-size: 1.12rem;
+    line-height: 1.6;
+  }
+  .mrx-ai-pathways {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-top: 2.2rem;
+  }
+  .mrx-ai-pathways a {
+    min-height: 260px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 0.8rem;
+    padding: 1.3rem;
+    border-radius: 24px;
+    background: linear-gradient(160deg, #fff, #f1eee5);
+    border: 1px solid #e6e8eb;
+    color: #071d31;
+    text-decoration: none;
+    box-shadow: 0 12px 34px rgba(10, 15, 26, 0.06);
+  }
+  .mrx-ai-pathways strong {
+    font-size: 1.35rem;
+  }
+  .mrx-ai-pathways p {
+    color: #4a505e;
+    margin: 0;
+  }
+  .mrx-ai-pathways span {
+    color: #a86e12;
+    font-weight: 800;
+  }
+  .mrx-ai-engine {
+    display: grid;
+    grid-template-columns: 1fr 0.8fr;
+    gap: 2rem;
+    align-items: center;
+  }
+  .mrx-ai-engine__cta {
+    margin-top: 1.5rem;
+    color: #061a33;
+  }
+  .mrx-ai-engine__panel {
+    border-radius: 28px;
+    background: #071d31;
+    color: #fff;
+    padding: 1.3rem;
+    box-shadow: 0 26px 70px rgba(7, 29, 49, 0.2);
+  }
+  .mrx-ai-engine__panel div {
+    padding: 1rem;
+    border: 1px solid rgba(216, 225, 236, 0.16);
+    border-radius: 16px;
+    margin-bottom: 0.75rem;
+    background: rgba(255, 255, 255, 0.04);
+  }
+  .mrx-ai-engine__panel span {
+    display: block;
+    color: #f9c777;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.72rem;
+    font-weight: 900;
+    margin-bottom: 0.35rem;
+  }
+  @media (max-width: 1280px) {
+    .mrx-ai-hero__grid {
+      grid-template-columns: minmax(0, 0.9fr) minmax(420px, 0.75fr);
+      gap: clamp(7rem, 12vw, 12rem);
+    }
+    .mrx-ai-hero h1 {
+      font-size: clamp(3rem, 4.8vw, 4.8rem);
+    }
+    .mrx-ai-hero__tommy {
+      width: min(30vw, 460px);
+      left: 43.5%;
+    }
+  }
+  @media (max-width: 1080px) {
+    .mrx-ai-hero__links {
+      display: none;
+    }
+    .mrx-ai-hero__nav {
+      grid-template-columns: 1fr auto;
+    }
+    .mrx-ai-hero__grid,
+    .mrx-ai-engine {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+    .mrx-ai-hero__copy {
+      max-width: 720px;
+    }
+    .mrx-ai-hero__tommy {
+      opacity: 0.32;
+      left: 72%;
+      width: min(46vw, 420px);
+    }
+    .mrx-ai-chat {
+      justify-self: stretch;
+      width: auto;
+      max-width: none;
+    }
+    .mrx-ai-hero__benefits,
+    .mrx-ai-pathways {
+      grid-template-columns: 1fr 1fr;
+    }
+    .mrx-ai-hero__benefits article:nth-child(2) {
+      border-right: 0;
+    }
+  }
+  @media (max-width: 720px) {
+    .mrx-ai-hero__shell {
+      width: min(100% - 1rem, 100%);
+    }
+    .mrx-ai-hero__nav {
+      border-radius: 16px;
+      padding: 0.7rem;
+    }
+    .mrx-ai-hero__brand img {
+      width: min(215px, 62vw);
+    }
+    .mrx-ai-hero__nav-cta {
+      display: none;
+    }
+    .mrx-ai-hero__phone {
+      width: 48px;
+      height: 48px;
+    }
+    .mrx-ai-hero h1 {
+      font-size: clamp(3rem, 16vw, 4.2rem);
+    }
+    .mrx-ai-hero__actions,
+    .mrx-ai-button {
+      width: 100%;
+    }
+    .mrx-ai-chat__quick,
+    .mrx-ai-hero__benefits,
+    .mrx-ai-pathways {
+      grid-template-columns: 1fr;
+    }
+    .mrx-ai-hero__benefits article {
+      border-right: 0;
+      border-bottom: 1px solid rgba(6, 26, 51, 0.12);
+    }
+    .mrx-ai-hero__benefits article:last-child {
+      border-bottom: 0;
+    }
+  }
 </style>
 
 <script is:inline>
@@ -284,18 +1002,49 @@ const pathways = [
       const quickActions = document.querySelector('.mrx-ai-chat__quick');
       const prompts = document.querySelectorAll('[data-ai-prompt]');
       const input = aiForm?.querySelector('input');
-      const bookLinks = document.querySelectorAll('[data-cta-name^="home-ai"][href*="api.leadconnectorhq.com"], [data-cta-name="home-ai-card-book"]');
-      bookLinks.forEach((link) => link.addEventListener('click', () => {
-        window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push({ event: 'mrx_calendar_click', source: link.getAttribute('data-cta-name') || 'home-ai' });
-      }));
+      const bookLinks = document.querySelectorAll(
+        '[data-cta-name^="home-ai"][href*="api.leadconnectorhq.com"], [data-cta-name="home-ai-card-book"]',
+      );
+      bookLinks.forEach((link) =>
+        link.addEventListener('click', () => {
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({
+            event: 'mrx_calendar_click',
+            source: link.getAttribute('data-cta-name') || 'home-ai',
+          });
+        }),
+      );
       const routeFor = (clean) => {
         const text = clean.toLowerCase();
-        if (/inherit|heir|probate|deed|title|record|owner/.test(text)) return ['Cooper', 'MRX Research™', 'verify ownership records, county context, and document gaps'];
-        if (/lease|clause|contract|legal|tax|1031/.test(text)) return ['Rebecca', 'MRX Legal™', 'flag lease, tax, and contract questions to review with qualified advisors'];
-        if (/production|decline|well|operator|royalty|check/.test(text)) return ['Dale', 'MRX Engineering™', 'organize production history, operator facts, and royalty-check context'];
-        if (/market|timing|hold|sell now|wait|strategy/.test(text)) return ['Monty', 'MRX Strategy™', 'compare timing, basin context, and decision tradeoffs'];
-        return ['Tommy', 'MRX Underwriter™', 'prepare a directional offer-review and valuation-driver summary'];
+        if (/inherit|heir|probate|deed|title|record|owner/.test(text))
+          return [
+            'Cooper',
+            'MRX Research™',
+            'verify ownership records, county context, and document gaps',
+          ];
+        if (/lease|clause|contract|legal|tax|1031/.test(text))
+          return [
+            'Rebecca',
+            'MRX Legal™',
+            'flag lease, tax, and contract questions to review with qualified advisors',
+          ];
+        if (/production|decline|well|operator|royalty|check/.test(text))
+          return [
+            'Dale',
+            'MRX Engineering™',
+            'organize production history, operator facts, and royalty-check context',
+          ];
+        if (/market|timing|hold|sell now|wait|strategy/.test(text))
+          return [
+            'Monty',
+            'MRX Strategy™',
+            'compare timing, basin context, and decision tradeoffs',
+          ];
+        return [
+          'Tommy',
+          'MRX Underwriter™',
+          'prepare a directional offer-review and valuation-driver summary',
+        ];
       };
       const replyFor = (text) => {
         if (!response) return;
@@ -307,9 +1056,17 @@ const pathways = [
         if (quickActions) quickActions.hidden = true;
         input?.focus();
         window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push({ event: 'mrx_ai_interaction', mrx_ai_prompt: clean || 'empty', mrx_ai_agent: agent, mrx_ai_role: role, conversion_goal: 'ghl_calendar_booking' });
+        window.dataLayer.push({
+          event: 'mrx_ai_interaction',
+          mrx_ai_prompt: clean || 'empty',
+          mrx_ai_agent: agent,
+          mrx_ai_role: role,
+          conversion_goal: 'ghl_calendar_booking',
+        });
       };
-      prompts.forEach((button) => button.addEventListener('click', () => replyFor(button.getAttribute('data-ai-prompt'))));
+      prompts.forEach((button) =>
+        button.addEventListener('click', () => replyFor(button.getAttribute('data-ai-prompt'))),
+      );
       aiForm?.addEventListener('submit', (event) => {
         event.preventDefault();
         replyFor(input?.value || '');

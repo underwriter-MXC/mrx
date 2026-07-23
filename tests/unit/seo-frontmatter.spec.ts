@@ -1,5 +1,12 @@
 import { describe, it, expect } from 'vitest';
-import { TITLE_MIN, TITLE_MAX, DESC_MIN, DESC_MAX, validateTitle, validateDescription } from '../../src/lib/seo';
+import {
+  TITLE_MIN,
+  TITLE_MAX,
+  DESC_MIN,
+  DESC_MAX,
+  validateTitle,
+  validateDescription,
+} from '../../src/lib/seo';
 
 describe('seo metadata validators', () => {
   it('title length budget: 30-60', () => {
@@ -30,7 +37,8 @@ describe('seo metadata validators', () => {
   });
 
   it('validates a healthy description', () => {
-    const d = 'A free, no-pressure underwriter review of your Texas mineral rights. Transparent DCF methodology, plain-language output, no clawback clauses, no teaser numbers.';
+    const d =
+      'A free, no-pressure underwriter review of your Texas mineral rights. Transparent DCF methodology, plain-language output, no clawback clauses, no teaser numbers.';
     expect(d.length).toBeLessThanOrEqual(160);
     const r = validateDescription(d);
     expect(r.ok).toBe(true);

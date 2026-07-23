@@ -1,0 +1,927 @@
+[
+  {
+    "name": "otto_get_project_issues",
+    "arguments": {
+      "project_identifier": "e4bab8bb-717e-480c-8dea-1de1b8596eb7",
+      "issue_types": [
+        "page_title",
+        "meta_description",
+        "images",
+        "h1_under_20_over_70",
+        "h2_under_20_over_70",
+        "missing_headings",
+        "meta_keywords",
+        "links",
+        "canonical_link",
+        "internal_link_suggestions",
+        "missing_keywords",
+        "nlp_terms",
+        "nlp_faq",
+        "twitter_title",
+        "twitter_description",
+        "twitter_site_property",
+        "twitter_card",
+        "og_description",
+        "og_title",
+        "og_url",
+        "custom_content",
+        "html_lang_missing"
+      ],
+      "page_size": 50
+    },
+    "ok": true,
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"results\": [\n    {\n      \"issue_type\": \"page_title\",\n      \"result\": {\n        \"total_count\": 1,\n        \"page\": 1,\n        \"page_size\": 1,\n        \"has_more\": false,\n        \"columns\": [\n          \"otto_url_id\",\n          \"url\",\n          \"is_deployed\",\n          \"recommendation_present\"\n        ],\n        \"rows\": [\n          [\n            277185136,\n            \"/\",\n            true,\n            true\n          ]\n        ],\n        \"deployed_count\": 1,\n        \"not_deployed_count\": 0\n      }\n    },\n    {\n      \"issue_type\": \"meta_description\",\n      \"result\": {\n        \"total_count\": 1,\n        \"page\": 1,\n        \"page_size\": 1,\n        \"has_more\": false,\n        \"columns\": [\n          \"otto_url_id\",\n          \"url\",\n          \"is_deployed\",\n          \"recommendation_present\"\n        ],\n        \"rows\": [\n          [\n            277185136,\n            \"/\",\n            true,\n            true\n          ]\n        ],\n        \"deployed_count\": 1,\n        \"not_deployed_count\": 0\n      }\n    },\n    {\n      \"issue_type\": \"images\",\n      \"result\": {\n        \"total_count\": 1,\n        \"page\": 1,\n        \"page_size\": 50,\n        \"has_more\": false,\n        \"columns\": [\n          \"image_url\",\n          \"current_alt\",\n          \"recommended_alt\",\n          \"is_deployed\",\n          \"found_in\",\n          \"item_index\"\n        ],\n        \"rows\": [\n          [\n            \"https://images.unsplash.com/photo-1692155469916-67f9557b78ab?w=1920&h=1080&fit=crop\",\n            \"Texas oil field with windmill and power lines at dusk — mineral rights landscape\",\n            \"Windmill silhouette against a vibrant Texas sunset, with power lines and oil infrastructure in the background, symbolizi…\",\n            true,\n            \"https://mineralrightsxchange.com/\",\n            2023706973\n          ]\n        ],\n        \"hostname\": \"mineralrightsxchange.com\",\n        \"deployed_count\": 1,\n        \"has_recommendation_count\": 1,\n        \"missing_alt_count\": 0\n      }\n    },\n    {\n      \"issue_type\": \"h1_under_20_over_70\",\n      \"result\": {\n        \"total_count\": 0,\n        \"page\": 1,\n        \"page_size\": 0,\n        \"has_more\": false,\n        \"columns\": [\n          \"otto_url_id\",\n          \"url\",\n          \"is_deployed\",\n          \"recommendation_present\"\n        ],\n        \"rows\": [],\n        \"deployed_count\": 0,\n        \"not_deployed_count\": 0\n      }\n    },\n    {\n      \"issue_type\": \"h2_under_20_over_70\",\n      \"result\": {\n        \"total_count\": 1,\n        \"page\": 1,\n        \"page_size\": 1,\n        \"has_more\": false,\n        \"columns\": [\n          \"otto_url_id\",\n          \"url\",\n          \"is_deployed\",\n          \"recommendation_present\"\n        ],\n        \"rows\": [\n          [\n            277185136,\n            \"/\",\n            true,\n            true\n          ]\n        ],\n        \"deployed_count\": 1,\n        \"not_deployed_count\": 0\n      }\n    },\n    {\n      \"issue_type\": \"missing_headings\",\n      \"result\": {\n        \"total_count\": 0,\n        \"page\": 1,\n        \"page_size\": 0,\n        \"has_more\": false,\n        \"columns\": [\n          \"otto_url_id\",\n          \"url\",\n          \"is_deployed\",\n          \"recommendation_present\"\n        ],\n        \"rows\": [],\n        \"deployed_count\": 0,\n        \"not_deployed_count\": 0\n      }\n    },\n    {\n      \"issue_type\": \"meta_keywords\",\n      \"result\": {\n        \"total_count\": 0,\n        \"page\": 1,\n        \"page_size\": 0,\n        \"has_more\": false,\n        \"columns\": [\n          \"otto_url_id\",\n          \"url\",\n          \"is_deployed\",\n          \"recommendation_present\"\n        ],\n        \"rows\": [],\n        \"deployed_count\": 0,\n        \"not_deployed_count\": 0\n      }\n    },\n    {\n      \"issue_type\": \"links\",\n      \"result\": {\n        \"total_count\": 0,\n        \"page\": 1,\n        \"page_size\": 0,\n        \"has_more\": false,\n        \"columns\": [\n          \"otto_url_id\",\n          \"url\",\n          \"is_deployed\",\n          \"recommendation_present\"\n        ],\n        \"rows\": [],\n        \"deployed_count\": 0,\n        \"not_deployed_count\": 0\n      }\n    },\n    {\n      \"issue_type\": \"canonical_link\",\n      \"result\": {\n        \"total_count\": 1,\n        \"page\": 1,\n        \"page_size\": 1,\n        \"has_more\": false,\n        \"columns\": [\n          \"otto_url_id\",\n          \"url\",\n          \"is_deployed\",\n          \"recommendation_present\"\n        ],\n        \"rows\": [\n          [\n            277185136,\n            \"/\",\n            true,\n            true\n          ]\n        ],\n        \"deployed_count\": 1,\n        \"not_deployed_count\": 0\n      }\n    },\n    {\n      \"issue_type\": \"internal_link_suggestions\",\n      \"result\": {\n        \"total_count\": 0,\n        \"page\": 1,\n        \"page_size\": 0,\n        \"has_more\": false,\n        \"columns\": [\n          \"otto_url_id\",\n          \"url\",\n          \"is_deployed\",\n          \"recommendation_present\"\n        ],\n        \"rows\": [],\n        \"deployed_count\": 0,\n        \"not_deployed_count\": 0\n      }\n    },\n    {\n      \"issue_type\": \"missing_keywords\",\n      \"result\": {\n        \"total_count\": 0,\n        \"page\": 1,\n        \"page_size\": 0,\n        \"has_more\": false,\n        \"columns\": [\n          \"otto_url_id\",\n          \"url\",\n          \"is_deployed\",\n          \"recommendation_present\"\n        ],\n        \"rows\": [],\n        \"deployed_count\": 0,\n        \"not_deployed_count\": 0\n      }\n    },\n    {\n      \"issue_type\": \"nlp_terms\",\n      \"result\": {\n        \"total_count\": 0,\n        \"page\": 1,\n        \"page_size\": 0,\n        \"has_more\": false,\n        \"columns\": [\n          \"url\",\n          \"keywords\",\n          \"approved_terms\",\n          \"unapproved_terms\",\n          \"item_total\",\n          \"item_deployed\"\n        ],\n        \"rows\": [],\n        \"total_items\": 0,\n        \"total_deployed\": 0\n      }\n    },\n    {\n      \"issue_type\": \"nlp_faq\",\n      \"result\": {\n        \"total_count\": 0,\n        \"page\": 1,\n        \"page_size\": 0,\n        \"has_more\": false,\n        \"columns\": [\n          \"url\",\n          \"keywords\",\n          \"approved_terms\",\n          \"unapproved_terms\",\n          \"item_total\",\n          \"item_deployed\"\n        ],\n        \"rows\": [],\n        \"total_items\": 0,\n        \"total_deployed\": 0\n      }\n    },\n    {\n      \"issue_type\": \"twitter_title\",\n      \"result\": {\n        \"total_count\": 0,\n        \"page\": 1,\n        \"page_size\": 0,\n        \"has_more\": false,\n        \"columns\": [\n          \"otto_url_id\",\n          \"url\",\n          \"is_deployed\",\n          \"recommendation_present\"\n        ],\n        \"rows\": [],\n        \"deployed_count\": 0,\n        \"not_deployed_count\": 0\n      }\n    },\n    {\n      \"issue_type\": \"twitter_description\",\n      \"result\": {\n        \"total_count\": 1,\n        \"page\": 1,\n        \"page_size\": 1,\n        \"has_more\": false,\n        \"columns\": [\n          \"otto_url_id\",\n          \"url\",\n          \"is_deployed\",\n          \"recommendation_present\"\n        ],\n        \"rows\": [\n          [\n            277185136,\n            \"/\",\n            true,\n            true\n          ]\n        ],\n        \"deployed_count\": 1,\n        \"not_deployed_count\": 0\n      }\n    },\n    {\n      \"issue_type\": \"twitter_site_property\",\n      \"result\": {\n        \"total_count\": 1,\n        \"page\": 1,\n        \"page_size\": 1,\n        \"has_more\": false,\n        \"columns\": [\n          \"otto_url_id\",\n          \"url\",\n          \"is_deployed\",\n          \"recommendation_present\"\n        ],\n        \"rows\": [\n          [\n            277185136,\n            \"/\",\n            true,\n            true\n          ]\n        ],\n        \"deployed_count\": 1,\n        \"not_deployed_count\": 0\n      }\n    },\n    {\n      \"issue_type\": \"twitter_card\",\n      \"result\": {\n        \"total_count\": 0,\n        \"page\": 1,\n        \"page_size\": 0,\n        \"has_more\": false,\n        \"columns\": [\n          \"otto_url_id\",\n          \"url\",\n          \"is_deployed\",\n          \"recommendation_present\"\n        ],\n        \"rows\": [],\n        \"deployed_count\": 0,\n        \"not_deployed_count\": 0\n      }\n    },\n    {\n      \"issue_type\": \"og_description\",\n      \"result\": {\n        \"total_count\": 0,\n        \"page\": 1,\n        \"page_size\": 0,\n        \"has_more\": false,\n        \"columns\": [\n          \"otto_url_id\",\n          \"url\",\n          \"is_deployed\",\n          \"recommendation_present\"\n        ],\n        \"rows\": [],\n        \"deployed_count\": 0,\n        \"not_deployed_count\": 0\n      }\n    },\n    {\n      \"issue_type\": \"og_title\",\n      \"result\": {\n        \"total_count\": 0,\n        \"page\": 1,\n        \"page_size\": 0,\n        \"has_more\": false,\n        \"columns\": [\n          \"otto_url_id\",\n          \"url\",\n          \"is_deployed\",\n          \"recommendation_present\"\n        ],\n        \"rows\": [],\n        \"deployed_count\": 0,\n        \"not_deployed_count\": 0\n      }\n    },\n    {\n      \"issue_type\": \"og_url\",\n      \"result\": {\n        \"total_count\": 0,\n        \"page\": 1,\n        \"page_size\": 0,\n        \"has_more\": false,\n        \"columns\": [\n          \"otto_url_id\",\n          \"url\",\n          \"is_deployed\",\n          \"recommendation_present\"\n        ],\n        \"rows\": [],\n        \"deployed_count\": 0,\n        \"not_deployed_count\": 0\n      }\n    },\n    {\n      \"issue_type\": \"custom_content\",\n      \"result\": {\n        \"total_count\": 1,\n        \"page\": 1,\n        \"page_size\": 1,\n        \"has_more\": false,\n        \"columns\": [\n          \"otto_url_id\",\n          \"url\",\n          \"is_deployed\",\n          \"recommendation_present\"\n        ],\n        \"rows\": [\n          [\n            277185136,\n            \"/\",\n            false,\n            false\n          ]\n        ],\n        \"deployed_count\": 0,\n        \"not_deployed_count\": 1\n      }\n    },\n    {\n      \"issue_type\": \"html_lang_missing\",\n      \"result\": {\n        \"total_count\": 0,\n        \"page\": 1,\n        \"page_size\": 0,\n        \"has_more\": false,\n        \"columns\": [\n          \"otto_url_id\",\n          \"url\",\n          \"is_deployed\",\n          \"recommendation_present\"\n        ],\n        \"rows\": [],\n        \"deployed_count\": 0,\n        \"not_deployed_count\": 0\n      }\n    }\n  ]\n}"
+        }
+      ],
+      "structuredContent": {
+        "result": {
+          "results": [
+            {
+              "issue_type": "page_title",
+              "result": {
+                "total_count": 1,
+                "page": 1,
+                "page_size": 1,
+                "has_more": false,
+                "columns": ["otto_url_id", "url", "is_deployed", "recommendation_present"],
+                "rows": [[277185136, "/", true, true]],
+                "deployed_count": 1,
+                "not_deployed_count": 0
+              }
+            },
+            {
+              "issue_type": "meta_description",
+              "result": {
+                "total_count": 1,
+                "page": 1,
+                "page_size": 1,
+                "has_more": false,
+                "columns": ["otto_url_id", "url", "is_deployed", "recommendation_present"],
+                "rows": [[277185136, "/", true, true]],
+                "deployed_count": 1,
+                "not_deployed_count": 0
+              }
+            },
+            {
+              "issue_type": "images",
+              "result": {
+                "total_count": 1,
+                "page": 1,
+                "page_size": 50,
+                "has_more": false,
+                "columns": [
+                  "image_url",
+                  "current_alt",
+                  "recommended_alt",
+                  "is_deployed",
+                  "found_in",
+                  "item_index"
+                ],
+                "rows": [
+                  [
+                    "https://images.unsplash.com/photo-1692155469916-67f9557b78ab?w=1920&h=1080&fit=crop",
+                    "Texas oil field with windmill and power lines at dusk — mineral rights landscape",
+                    "Windmill silhouette against a vibrant Texas sunset, with power lines and oil infrastructure in the background, symbolizi…",
+                    true,
+                    "https://mineralrightsxchange.com/",
+                    2023706973
+                  ]
+                ],
+                "hostname": "mineralrightsxchange.com",
+                "deployed_count": 1,
+                "has_recommendation_count": 1,
+                "missing_alt_count": 0
+              }
+            },
+            {
+              "issue_type": "h1_under_20_over_70",
+              "result": {
+                "total_count": 0,
+                "page": 1,
+                "page_size": 0,
+                "has_more": false,
+                "columns": ["otto_url_id", "url", "is_deployed", "recommendation_present"],
+                "rows": [],
+                "deployed_count": 0,
+                "not_deployed_count": 0
+              }
+            },
+            {
+              "issue_type": "h2_under_20_over_70",
+              "result": {
+                "total_count": 1,
+                "page": 1,
+                "page_size": 1,
+                "has_more": false,
+                "columns": ["otto_url_id", "url", "is_deployed", "recommendation_present"],
+                "rows": [[277185136, "/", true, true]],
+                "deployed_count": 1,
+                "not_deployed_count": 0
+              }
+            },
+            {
+              "issue_type": "missing_headings",
+              "result": {
+                "total_count": 0,
+                "page": 1,
+                "page_size": 0,
+                "has_more": false,
+                "columns": ["otto_url_id", "url", "is_deployed", "recommendation_present"],
+                "rows": [],
+                "deployed_count": 0,
+                "not_deployed_count": 0
+              }
+            },
+            {
+              "issue_type": "meta_keywords",
+              "result": {
+                "total_count": 0,
+                "page": 1,
+                "page_size": 0,
+                "has_more": false,
+                "columns": ["otto_url_id", "url", "is_deployed", "recommendation_present"],
+                "rows": [],
+                "deployed_count": 0,
+                "not_deployed_count": 0
+              }
+            },
+            {
+              "issue_type": "links",
+              "result": {
+                "total_count": 0,
+                "page": 1,
+                "page_size": 0,
+                "has_more": false,
+                "columns": ["otto_url_id", "url", "is_deployed", "recommendation_present"],
+                "rows": [],
+                "deployed_count": 0,
+                "not_deployed_count": 0
+              }
+            },
+            {
+              "issue_type": "canonical_link",
+              "result": {
+                "total_count": 1,
+                "page": 1,
+                "page_size": 1,
+                "has_more": false,
+                "columns": ["otto_url_id", "url", "is_deployed", "recommendation_present"],
+                "rows": [[277185136, "/", true, true]],
+                "deployed_count": 1,
+                "not_deployed_count": 0
+              }
+            },
+            {
+              "issue_type": "internal_link_suggestions",
+              "result": {
+                "total_count": 0,
+                "page": 1,
+                "page_size": 0,
+                "has_more": false,
+                "columns": ["otto_url_id", "url", "is_deployed", "recommendation_present"],
+                "rows": [],
+                "deployed_count": 0,
+                "not_deployed_count": 0
+              }
+            },
+            {
+              "issue_type": "missing_keywords",
+              "result": {
+                "total_count": 0,
+                "page": 1,
+                "page_size": 0,
+                "has_more": false,
+                "columns": ["otto_url_id", "url", "is_deployed", "recommendation_present"],
+                "rows": [],
+                "deployed_count": 0,
+                "not_deployed_count": 0
+              }
+            },
+            {
+              "issue_type": "nlp_terms",
+              "result": {
+                "total_count": 0,
+                "page": 1,
+                "page_size": 0,
+                "has_more": false,
+                "columns": [
+                  "url",
+                  "keywords",
+                  "approved_terms",
+                  "unapproved_terms",
+                  "item_total",
+                  "item_deployed"
+                ],
+                "rows": [],
+                "total_items": 0,
+                "total_deployed": 0
+              }
+            },
+            {
+              "issue_type": "nlp_faq",
+              "result": {
+                "total_count": 0,
+                "page": 1,
+                "page_size": 0,
+                "has_more": false,
+                "columns": [
+                  "url",
+                  "keywords",
+                  "approved_terms",
+                  "unapproved_terms",
+                  "item_total",
+                  "item_deployed"
+                ],
+                "rows": [],
+                "total_items": 0,
+                "total_deployed": 0
+              }
+            },
+            {
+              "issue_type": "twitter_title",
+              "result": {
+                "total_count": 0,
+                "page": 1,
+                "page_size": 0,
+                "has_more": false,
+                "columns": ["otto_url_id", "url", "is_deployed", "recommendation_present"],
+                "rows": [],
+                "deployed_count": 0,
+                "not_deployed_count": 0
+              }
+            },
+            {
+              "issue_type": "twitter_description",
+              "result": {
+                "total_count": 1,
+                "page": 1,
+                "page_size": 1,
+                "has_more": false,
+                "columns": ["otto_url_id", "url", "is_deployed", "recommendation_present"],
+                "rows": [[277185136, "/", true, true]],
+                "deployed_count": 1,
+                "not_deployed_count": 0
+              }
+            },
+            {
+              "issue_type": "twitter_site_property",
+              "result": {
+                "total_count": 1,
+                "page": 1,
+                "page_size": 1,
+                "has_more": false,
+                "columns": ["otto_url_id", "url", "is_deployed", "recommendation_present"],
+                "rows": [[277185136, "/", true, true]],
+                "deployed_count": 1,
+                "not_deployed_count": 0
+              }
+            },
+            {
+              "issue_type": "twitter_card",
+              "result": {
+                "total_count": 0,
+                "page": 1,
+                "page_size": 0,
+                "has_more": false,
+                "columns": ["otto_url_id", "url", "is_deployed", "recommendation_present"],
+                "rows": [],
+                "deployed_count": 0,
+                "not_deployed_count": 0
+              }
+            },
+            {
+              "issue_type": "og_description",
+              "result": {
+                "total_count": 0,
+                "page": 1,
+                "page_size": 0,
+                "has_more": false,
+                "columns": ["otto_url_id", "url", "is_deployed", "recommendation_present"],
+                "rows": [],
+                "deployed_count": 0,
+                "not_deployed_count": 0
+              }
+            },
+            {
+              "issue_type": "og_title",
+              "result": {
+                "total_count": 0,
+                "page": 1,
+                "page_size": 0,
+                "has_more": false,
+                "columns": ["otto_url_id", "url", "is_deployed", "recommendation_present"],
+                "rows": [],
+                "deployed_count": 0,
+                "not_deployed_count": 0
+              }
+            },
+            {
+              "issue_type": "og_url",
+              "result": {
+                "total_count": 0,
+                "page": 1,
+                "page_size": 0,
+                "has_more": false,
+                "columns": ["otto_url_id", "url", "is_deployed", "recommendation_present"],
+                "rows": [],
+                "deployed_count": 0,
+                "not_deployed_count": 0
+              }
+            },
+            {
+              "issue_type": "custom_content",
+              "result": {
+                "total_count": 1,
+                "page": 1,
+                "page_size": 1,
+                "has_more": false,
+                "columns": ["otto_url_id", "url", "is_deployed", "recommendation_present"],
+                "rows": [[277185136, "/", false, false]],
+                "deployed_count": 0,
+                "not_deployed_count": 1
+              }
+            },
+            {
+              "issue_type": "html_lang_missing",
+              "result": {
+                "total_count": 0,
+                "page": 1,
+                "page_size": 0,
+                "has_more": false,
+                "columns": ["otto_url_id", "url", "is_deployed", "recommendation_present"],
+                "rows": [],
+                "deployed_count": 0,
+                "not_deployed_count": 0
+              }
+            }
+          ]
+        }
+      },
+      "isError": false
+    }
+  },
+  {
+    "name": "llmv_get_overview",
+    "arguments": {
+      "domain": "mineralrightsxchange.com",
+      "view": ["brand", "topics", "queries", "sentiment"],
+      "from_date": "2026-06-20",
+      "to_date": "2026-07-17",
+      "page_size": 50
+    },
+    "ok": true,
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"domain\": \"mineralrightsxchange.com\",\n  \"views\": {\n    \"brand\": {\n      \"domain\": \"mineralrightsxchange.com\",\n      \"overall_visibility\": 4.706,\n      \"visibility_change\": -3.9400000000000004,\n      \"visibility_previous\": 8.646,\n      \"sentiment_score\": 59.4,\n      \"sentiment_change\": -3.700000000000003,\n      \"sentiment_previous\": 63.1,\n      \"total_mentions\": 44,\n      \"previous_mentions\": 25,\n      \"filter_platforms\": [\n        \"ChatGPT\",\n        \"Gemini\",\n        \"Google AI Mode\",\n        \"Perplexity\",\n        \"Copilot\"\n      ],\n      \"platform_breakdown\": [\n        {\n          \"platform\": \"ChatGPT\",\n          \"visibility_score\": 6.0,\n          \"sentiment_score\": 71.0,\n          \"topics_label\": \"1/18\"\n        },\n        {\n          \"platform\": \"Gemini\",\n          \"visibility_score\": 6.0,\n          \"sentiment_score\": 69.0,\n          \"topics_label\": \"1/18\"\n        },\n        {\n          \"platform\": \"Perplexity\",\n          \"visibility_score\": 6.0,\n          \"sentiment_score\": 49.0,\n          \"topics_label\": \"1/18\"\n        },\n        {\n          \"platform\": \"Copilot\",\n          \"visibility_score\": 6.0,\n          \"sentiment_score\": 55.0,\n          \"topics_label\": \"1/18\"\n        },\n        {\n          \"platform\": \"Google AI Mode\",\n          \"visibility_score\": 17.0,\n          \"sentiment_score\": 67.0,\n          \"topics_label\": \"3/18\"\n        }\n      ]\n    },\n    \"topics\": {\n      \"total_count\": 13,\n      \"page\": 1,\n      \"page_size\": 50,\n      \"has_more\": false,\n      \"domain\": \"mineralrightsxchange.com\",\n      \"items\": [\n        {\n          \"title\": \"1031 exchange for mineral rights\",\n          \"visibility_score\": 6.0,\n          \"rank\": 5.0,\n          \"share_of_voice\": 0.0,\n          \"search_volume\": 0\n        },\n        {\n          \"title\": \"DCF methodology for mineral rights\",\n          \"visibility_score\": 0.0,\n          \"rank\": null,\n          \"share_of_voice\": 0.0,\n          \"search_volume\": 0\n        },\n        {\n          \"title\": \"free underwriter review\",\n          \"visibility_score\": 13.0,\n          \"rank\": 1.0,\n          \"share_of_voice\": 4.0,\n          \"search_volume\": 0\n        },\n        {\n          \"title\": \"inherited mineral rights\",\n          \"visibility_score\": 0.0,\n          \"rank\": null,\n          \"share_of_voice\": 0.0,\n          \"search_volume\": 0\n        },\n        {\n          \"title\": \"Leasing mineral rights\",\n          \"visibility_score\": 50.0,\n          \"rank\": 1.0,\n          \"share_of_voice\": 6.0,\n          \"search_volume\": 0\n        },\n        {\n          \"title\": \"Mineral rights listings\",\n          \"visibility_score\": 0.0,\n          \"rank\": null,\n          \"share_of_voice\": 0.0,\n          \"search_volume\": 2000\n        },\n        {\n          \"title\": \"Mineral rights marketplace\",\n          \"visibility_score\": 0.0,\n          \"rank\": null,\n          \"share_of_voice\": 0.0,\n          \"search_volume\": 0\n        },\n        {\n          \"title\": \"mineral rights valuation\",\n          \"visibility_score\": 0.0,\n          \"rank\": null,\n          \"share_of_voice\": 0.0,\n          \"search_volume\": 0\n        },\n        {\n          \"title\": \"Mineral rights valuation\",\n          \"visibility_score\": 0.0,\n          \"rank\": null,\n          \"share_of_voice\": 0.0,\n          \"search_volume\": 0\n        },\n        {\n          \"title\": \"predatory mineral rights offers\",\n          \"visibility_score\": 0.0,\n          \"rank\": null,\n          \"share_of_voice\": 0.0,\n          \"search_volume\": 0\n        },\n        {\n          \"title\": \"Royalty interests trading\",\n          \"visibility_score\": 0.0,\n          \"rank\": null,\n          \"share_of_voice\": 0.0,\n          \"search_volume\": 0\n        },\n        {\n          \"title\": \"selling mineral rights\",\n          \"visibility_score\": 0.0,\n          \"rank\": null,\n          \"share_of_voice\": 0.0,\n          \"search_volume\": 0\n        },\n        {\n          \"title\": \"Texas mineral rights\",\n          \"visibility_score\": 0.0,\n          \"rank\": null,\n          \"share_of_voice\": 0.0,\n          \"search_volume\": 0\n        }\n      ]\n    },\n    \"queries\": {\n      \"total_count\": 34,\n      \"page\": 1,\n      \"page_size\": 50,\n      \"has_more\": false,\n      \"domain\": \"mineralrightsxchange.com\",\n      \"query_type_filter\": \"broad\",\n      \"items\": [\n        {\n          \"title\": \"are mineral rights eligible for 1031 exchange\",\n          \"query_type\": \"broad\",\n          \"visibility_score\": 0.0,\n          \"rank\": null,\n          \"share_of_voice\": 0.0\n        },\n        {\n          \"title\": \"best companies to sell mineral rights to in Texas\",\n          \"query_type\": \"broad\",\n          \"visibility_score\": 0.0,\n          \"rank\": null,\n          \"share_of_voice\": 0.0\n        },\n        {\n          \"title\": \"best mineral rights leasing platform for owners\",\n          \"query_type\": \"broad\",\n          \"visibility_score\": 0.0,\n          \"rank\": null,\n          \"share_of_voice\": 0.0\n        },\n        {\n          \"title\": \"best mineral rights marketplace for sellers\",\n          \"query_type\": \"broad\",\n          \"visibility_score\": 0.0,\n          \"rank\": null,\n          \"share_of_voice\": 0.0\n        },\n        {\n          \"title\": \"best platform to trade mineral royalty interests\",\n          \"query_type\": \"broad\",\n          \"visibility_score\": 0.0,\n          \"rank\": null,\n          \"share_of_voice\": 0.0\n        },\n        {\n          \"title\": \"can I do a 1031 exchange with mineral rights\",\n          \"query_type\": \"broad\",\n          \"visibility_score\": 20.0,\n          \"rank\": 5.0,\n          \"share_of_voice\": 0.0\n        },\n        {\n          \"title\": \"comparison of mineral rights listing marketplaces\",\n          \"query_type\": \"broad\",\n          \"visibility_score\": 0.0,\n          \"rank\": null,\n          \"share_of_voice\": 0.0\n        },\n        {\n          \"title\": \"DCF vs income multiple for mineral rights appraisal\",\n          \"query_type\": \"broad\",\n          \"visibility_score\": 0.0,\n          \"rank\": null,\n          \"share_of_voice\": 0.0\n        },\n        {\n          \"title\": \"Free mineral rights underwriter assessment Texas\",\n          \"query_type\": \"broad\",\n          \"visibility_score\": 20.0,\n          \"rank\": 1.0,\n          \"share_of_voice\": 6.0\n        },\n        {\n          \"title\": \"how are mineral rights valued\",\n          \"query_type\": \"broad\",\n          \"visibility_score\": 0.0,\n          \"rank\": null,\n          \"share_of_voice\": 0.0\n        },\n        {\n          \"title\": \"how does a mineral rights exchange platform work\",\n          \"query_type\": \"broad\",\n          \"visibility_score\": 100.0,\n          \"rank\": 1.0,\n          \"share_of_voice\": 13.0\n        },\n        {\n          \"title\": \"how does a mineral rights marketplace work\",\n          \"query_type\": \"broad\",\n          \"visibility_score\": 0.0,\n          \"rank\": null,\n          \"share_of_voice\": 0.0\n        },\n        {\n          \"title\": \"how does royalty interests trading work\",\n          \"query_type\": \"broad\",\n          \"visibility_score\": 0.0,\n          \"rank\": null,\n          \"share_of_voice\": 0.0\n        },\n        {\n          \"title\": \"how do I find out what inherited mineral rights are worth\",\n          \"query_type\": \"broad\",\n          \"visibility_score\": 0.0,\n          \"rank\": null,\n          \"share_of_voice\": 0.0\n        },\n        {\n          \"title\": \"how do I get a fair assessment of my Texas mineral rights value\",\n          \"query_type\": \"broad\",\n          \"visibility_score\": 0.0,\n          \"rank\": null,\n          \"share_of_voice\": 0.0\n        },\n        {\n          \"title\": \"how do I know if a mineral rights offer is fair\",\n          \"query_type\": \"broad\",\n          \"visibility_score\": 0.0,\n          \"rank\": null,\n          \"share_of_voice\": 0.0\n        },\n        {\n          \"title\": \"how do I sell my mineral rights in Texas\",\n          \"query_type\": \"broad\",\n          \"visibility_score\": 0.0,\n          \"rank\": null,\n          \"share_of_voice\": 0.0\n        },\n        {\n          \"title\": \"how much are my mineral rights worth\",\n          \"query_type\": \"broad\",\n          \"visibility_score\": 0.0,\n          \"rank\": null,\n          \"share_of_voice\": 0.0\n        },\n        {\n          \"title\": \"how to defer capital gains tax when selling mineral rights\",\n          \"query_type\": \"broad\",\n          \"visibility_score\": 0.0,\n          \"rank\": null,\n          \"share_of_voice\": 0.0\n        },\n        {\n          \"title\": \"how to evaluate mineral rights listings\",\n          \"query_type\": \"broad\",\n          \"visibility_score\": 0.0,\n          \"rank\": null,\n          \"share_of_voice\": 0.0\n        },\n        {\n          \"title\": \"How to use discounted cash flow to value mineral rights\",\n          \"query_type\": \"broad\",\n          \"visibility_score\": 0.0,\n          \"rank\": null,\n          \"share_of_voice\": 0.0\n        },\n        {\n          \"title\": \"how to value mineral royalties for sale\",\n          \"query_type\": \"broad\",\n          \"visibility_score\": 0.0,\n          \"rank\": null,\n          \"share_of_voice\": 0.0\n        },\n        {\n          \"title\": \"I inherited mineral rights in Texas what should I do\",\n          \"query_type\": \"broad\",\n          \"visibility_score\": 0.0,\n          \"rank\": null,\n          \"share_of_voice\": 0.0\n        },\n        {\n          \"title\": \"mineral rights marketplace online for owners\",\n          \"query_type\": \"broad\",\n          \"visibility_score\": 0.0,\n          \"rank\": null,\n          \"share_of_voice\": 0.0\n        },\n        {\n          \"title\": \"No obligation mineral rights valuation Texas\",\n          \"query_type\": \"broad\",\n          \"visibility_score\": 20.0,\n          \"rank\": 1.0,\n          \"share_of_voice\": 6.0\n        },\n        {\n          \"title\": \"should I sell my mineral rights or keep them\",\n          \"query_type\": \"broad\",\n          \"visibility_score\": 0.0,\n          \"rank\": null,\n          \"share_of_voice\": 0.0\n        },\n        {\n          \"title\": \"what are red flags in mineral rights purchase agreements\",\n          \"query_type\": \"broad\",\n          \"visibility_score\": 0.0,\n          \"rank\": null,\n          \"share_of_voice\": 0.0\n        },\n        {\n          \"title\": \"what happens to mineral rights when someone dies in Texas\",\n          \"query_type\": \"broad\",\n          \"visibility_score\": 0.0,\n          \"rank\": null,\n          \"share_of_voice\": 0.0\n        },\n        {\n          \"title\": \"what is a clawback clause in a mineral rights sale\",\n          \"query_type\": \"broad\",\n          \"visibility_score\": 0.0,\n          \"rank\": null,\n          \"share_of_voice\": 0.0\n        },\n        {\n          \"title\": \"what is a fair price for mineral rights\",\n          \"query_type\": \"broad\",\n          \"visibility_score\": 0.0,\n          \"rank\": null,\n          \"share_of_voice\": 0.0\n        },\n        {\n          \"title\": \"What is DCF methodology for mineral rights valuation?\",\n          \"query_type\": \"broad\",\n          \"visibility_score\": 0.0,\n          \"rank\": null,\n          \"share_of_voice\": 0.0\n        },\n        {\n          \"title\": \"what is the process for selling mineral rights\",\n          \"query_type\": \"broad\",\n          \"visibility_score\": 0.0,\n          \"rank\": null,\n          \"share_of_voice\": 0.0\n        },\n        {\n          \"title\": \"Where can I get a free mineral rights review?\",\n          \"query_type\": \"broad\",\n          \"visibility_score\": 0.0,\n          \"rank\": null,\n          \"share_of_voice\": 0.0\n        },\n        {\n          \"title\": \"who buys mineral rights in Texas\",\n          \"query_type\": \"broad\",\n          \"visibility_score\": 0.0,\n          \"rank\": null,\n          \"share_of_voice\": 0.0\n        }\n      ]\n    },\n    \"sentiment\": {\n      \"total_count\": 5,\n      \"page\": 1,\n      \"page_size\": 50,\n      \"has_more\": false,\n      \"domain\": \"mineralrightsxchange.com\",\n      \"items\": [\n        {\n          \"title\": \"Mineral rights listings\",\n          \"mentions\": 8,\n          \"sentiment_score\": 72.0,\n          \"top_domains\": [\n            \"mineralrightsxchange.com\",\n            \"usmineralexchange.com\",\n            \"buckheadenergy.com\",\n            \"mineralrightmarketplace.com\",\n            \"pheasantenergy.com\"\n          ]\n        },\n        {\n          \"title\": \"Mineral rights valuation\",\n          \"mentions\": 9,\n          \"sentiment_score\": 62.0,\n          \"top_domains\": [\n            \"mineralrightsxchange.com\",\n            \"offthemrkt.com\",\n            \"buckheadenergy.com\",\n            \"linkedin.com\",\n            \"enverus.com\"\n          ]\n        },\n        {\n          \"title\": \"Mineral rights marketplace\",\n          \"mentions\": 15,\n          \"sentiment_score\": 61.0,\n          \"top_domains\": [\n            \"mineralrightsxchange.com\",\n            \"usmineralexchange.com\",\n            \"mineralrightsforum.com\",\n            \"texasmineralgroup.com\",\n            \"linkedin.com\"\n          ]\n        },\n        {\n          \"title\": \"Royalty interests trading\",\n          \"mentions\": 6,\n          \"sentiment_score\": 52.0,\n          \"top_domains\": [\n            \"usmineralexchange.com\",\n            \"mineralrightsxchange.com\",\n            \"linkedin.com\",\n            \"energyfieldinvest.com\",\n            \"hartenergy.com\"\n          ]\n        },\n        {\n          \"title\": \"Leasing mineral rights\",\n          \"mentions\": 4,\n          \"sentiment_score\": 50.0,\n          \"top_domains\": [\n            \"usmineralexchange.com\",\n            \"mineralrightsxchange.com\",\n            \"linkedin.com\",\n            \"mineralrightsforum.com\",\n            \"rigzone.com\"\n          ]\n        }\n      ]\n    }\n  }\n}"
+        }
+      ],
+      "structuredContent": {
+        "result": {
+          "domain": "mineralrightsxchange.com",
+          "views": {
+            "brand": {
+              "domain": "mineralrightsxchange.com",
+              "overall_visibility": 4.706,
+              "visibility_change": -3.9400000000000004,
+              "visibility_previous": 8.646,
+              "sentiment_score": 59.4,
+              "sentiment_change": -3.700000000000003,
+              "sentiment_previous": 63.1,
+              "total_mentions": 44,
+              "previous_mentions": 25,
+              "filter_platforms": ["ChatGPT", "Gemini", "Google AI Mode", "Perplexity", "Copilot"],
+              "platform_breakdown": [
+                {
+                  "platform": "ChatGPT",
+                  "visibility_score": 6,
+                  "sentiment_score": 71,
+                  "topics_label": "1/18"
+                },
+                {
+                  "platform": "Gemini",
+                  "visibility_score": 6,
+                  "sentiment_score": 69,
+                  "topics_label": "1/18"
+                },
+                {
+                  "platform": "Perplexity",
+                  "visibility_score": 6,
+                  "sentiment_score": 49,
+                  "topics_label": "1/18"
+                },
+                {
+                  "platform": "Copilot",
+                  "visibility_score": 6,
+                  "sentiment_score": 55,
+                  "topics_label": "1/18"
+                },
+                {
+                  "platform": "Google AI Mode",
+                  "visibility_score": 17,
+                  "sentiment_score": 67,
+                  "topics_label": "3/18"
+                }
+              ]
+            },
+            "topics": {
+              "total_count": 13,
+              "page": 1,
+              "page_size": 50,
+              "has_more": false,
+              "domain": "mineralrightsxchange.com",
+              "items": [
+                {
+                  "title": "1031 exchange for mineral rights",
+                  "visibility_score": 6,
+                  "rank": 5,
+                  "share_of_voice": 0,
+                  "search_volume": 0
+                },
+                {
+                  "title": "DCF methodology for mineral rights",
+                  "visibility_score": 0,
+                  "rank": null,
+                  "share_of_voice": 0,
+                  "search_volume": 0
+                },
+                {
+                  "title": "free underwriter review",
+                  "visibility_score": 13,
+                  "rank": 1,
+                  "share_of_voice": 4,
+                  "search_volume": 0
+                },
+                {
+                  "title": "inherited mineral rights",
+                  "visibility_score": 0,
+                  "rank": null,
+                  "share_of_voice": 0,
+                  "search_volume": 0
+                },
+                {
+                  "title": "Leasing mineral rights",
+                  "visibility_score": 50,
+                  "rank": 1,
+                  "share_of_voice": 6,
+                  "search_volume": 0
+                },
+                {
+                  "title": "Mineral rights listings",
+                  "visibility_score": 0,
+                  "rank": null,
+                  "share_of_voice": 0,
+                  "search_volume": 2000
+                },
+                {
+                  "title": "Mineral rights marketplace",
+                  "visibility_score": 0,
+                  "rank": null,
+                  "share_of_voice": 0,
+                  "search_volume": 0
+                },
+                {
+                  "title": "mineral rights valuation",
+                  "visibility_score": 0,
+                  "rank": null,
+                  "share_of_voice": 0,
+                  "search_volume": 0
+                },
+                {
+                  "title": "Mineral rights valuation",
+                  "visibility_score": 0,
+                  "rank": null,
+                  "share_of_voice": 0,
+                  "search_volume": 0
+                },
+                {
+                  "title": "predatory mineral rights offers",
+                  "visibility_score": 0,
+                  "rank": null,
+                  "share_of_voice": 0,
+                  "search_volume": 0
+                },
+                {
+                  "title": "Royalty interests trading",
+                  "visibility_score": 0,
+                  "rank": null,
+                  "share_of_voice": 0,
+                  "search_volume": 0
+                },
+                {
+                  "title": "selling mineral rights",
+                  "visibility_score": 0,
+                  "rank": null,
+                  "share_of_voice": 0,
+                  "search_volume": 0
+                },
+                {
+                  "title": "Texas mineral rights",
+                  "visibility_score": 0,
+                  "rank": null,
+                  "share_of_voice": 0,
+                  "search_volume": 0
+                }
+              ]
+            },
+            "queries": {
+              "total_count": 34,
+              "page": 1,
+              "page_size": 50,
+              "has_more": false,
+              "domain": "mineralrightsxchange.com",
+              "query_type_filter": "broad",
+              "items": [
+                {
+                  "title": "are mineral rights eligible for 1031 exchange",
+                  "query_type": "broad",
+                  "visibility_score": 0,
+                  "rank": null,
+                  "share_of_voice": 0
+                },
+                {
+                  "title": "best companies to sell mineral rights to in Texas",
+                  "query_type": "broad",
+                  "visibility_score": 0,
+                  "rank": null,
+                  "share_of_voice": 0
+                },
+                {
+                  "title": "best mineral rights leasing platform for owners",
+                  "query_type": "broad",
+                  "visibility_score": 0,
+                  "rank": null,
+                  "share_of_voice": 0
+                },
+                {
+                  "title": "best mineral rights marketplace for sellers",
+                  "query_type": "broad",
+                  "visibility_score": 0,
+                  "rank": null,
+                  "share_of_voice": 0
+                },
+                {
+                  "title": "best platform to trade mineral royalty interests",
+                  "query_type": "broad",
+                  "visibility_score": 0,
+                  "rank": null,
+                  "share_of_voice": 0
+                },
+                {
+                  "title": "can I do a 1031 exchange with mineral rights",
+                  "query_type": "broad",
+                  "visibility_score": 20,
+                  "rank": 5,
+                  "share_of_voice": 0
+                },
+                {
+                  "title": "comparison of mineral rights listing marketplaces",
+                  "query_type": "broad",
+                  "visibility_score": 0,
+                  "rank": null,
+                  "share_of_voice": 0
+                },
+                {
+                  "title": "DCF vs income multiple for mineral rights appraisal",
+                  "query_type": "broad",
+                  "visibility_score": 0,
+                  "rank": null,
+                  "share_of_voice": 0
+                },
+                {
+                  "title": "Free mineral rights underwriter assessment Texas",
+                  "query_type": "broad",
+                  "visibility_score": 20,
+                  "rank": 1,
+                  "share_of_voice": 6
+                },
+                {
+                  "title": "how are mineral rights valued",
+                  "query_type": "broad",
+                  "visibility_score": 0,
+                  "rank": null,
+                  "share_of_voice": 0
+                },
+                {
+                  "title": "how does a mineral rights exchange platform work",
+                  "query_type": "broad",
+                  "visibility_score": 100,
+                  "rank": 1,
+                  "share_of_voice": 13
+                },
+                {
+                  "title": "how does a mineral rights marketplace work",
+                  "query_type": "broad",
+                  "visibility_score": 0,
+                  "rank": null,
+                  "share_of_voice": 0
+                },
+                {
+                  "title": "how does royalty interests trading work",
+                  "query_type": "broad",
+                  "visibility_score": 0,
+                  "rank": null,
+                  "share_of_voice": 0
+                },
+                {
+                  "title": "how do I find out what inherited mineral rights are worth",
+                  "query_type": "broad",
+                  "visibility_score": 0,
+                  "rank": null,
+                  "share_of_voice": 0
+                },
+                {
+                  "title": "how do I get a fair assessment of my Texas mineral rights value",
+                  "query_type": "broad",
+                  "visibility_score": 0,
+                  "rank": null,
+                  "share_of_voice": 0
+                },
+                {
+                  "title": "how do I know if a mineral rights offer is fair",
+                  "query_type": "broad",
+                  "visibility_score": 0,
+                  "rank": null,
+                  "share_of_voice": 0
+                },
+                {
+                  "title": "how do I sell my mineral rights in Texas",
+                  "query_type": "broad",
+                  "visibility_score": 0,
+                  "rank": null,
+                  "share_of_voice": 0
+                },
+                {
+                  "title": "how much are my mineral rights worth",
+                  "query_type": "broad",
+                  "visibility_score": 0,
+                  "rank": null,
+                  "share_of_voice": 0
+                },
+                {
+                  "title": "how to defer capital gains tax when selling mineral rights",
+                  "query_type": "broad",
+                  "visibility_score": 0,
+                  "rank": null,
+                  "share_of_voice": 0
+                },
+                {
+                  "title": "how to evaluate mineral rights listings",
+                  "query_type": "broad",
+                  "visibility_score": 0,
+                  "rank": null,
+                  "share_of_voice": 0
+                },
+                {
+                  "title": "How to use discounted cash flow to value mineral rights",
+                  "query_type": "broad",
+                  "visibility_score": 0,
+                  "rank": null,
+                  "share_of_voice": 0
+                },
+                {
+                  "title": "how to value mineral royalties for sale",
+                  "query_type": "broad",
+                  "visibility_score": 0,
+                  "rank": null,
+                  "share_of_voice": 0
+                },
+                {
+                  "title": "I inherited mineral rights in Texas what should I do",
+                  "query_type": "broad",
+                  "visibility_score": 0,
+                  "rank": null,
+                  "share_of_voice": 0
+                },
+                {
+                  "title": "mineral rights marketplace online for owners",
+                  "query_type": "broad",
+                  "visibility_score": 0,
+                  "rank": null,
+                  "share_of_voice": 0
+                },
+                {
+                  "title": "No obligation mineral rights valuation Texas",
+                  "query_type": "broad",
+                  "visibility_score": 20,
+                  "rank": 1,
+                  "share_of_voice": 6
+                },
+                {
+                  "title": "should I sell my mineral rights or keep them",
+                  "query_type": "broad",
+                  "visibility_score": 0,
+                  "rank": null,
+                  "share_of_voice": 0
+                },
+                {
+                  "title": "what are red flags in mineral rights purchase agreements",
+                  "query_type": "broad",
+                  "visibility_score": 0,
+                  "rank": null,
+                  "share_of_voice": 0
+                },
+                {
+                  "title": "what happens to mineral rights when someone dies in Texas",
+                  "query_type": "broad",
+                  "visibility_score": 0,
+                  "rank": null,
+                  "share_of_voice": 0
+                },
+                {
+                  "title": "what is a clawback clause in a mineral rights sale",
+                  "query_type": "broad",
+                  "visibility_score": 0,
+                  "rank": null,
+                  "share_of_voice": 0
+                },
+                {
+                  "title": "what is a fair price for mineral rights",
+                  "query_type": "broad",
+                  "visibility_score": 0,
+                  "rank": null,
+                  "share_of_voice": 0
+                },
+                {
+                  "title": "What is DCF methodology for mineral rights valuation?",
+                  "query_type": "broad",
+                  "visibility_score": 0,
+                  "rank": null,
+                  "share_of_voice": 0
+                },
+                {
+                  "title": "what is the process for selling mineral rights",
+                  "query_type": "broad",
+                  "visibility_score": 0,
+                  "rank": null,
+                  "share_of_voice": 0
+                },
+                {
+                  "title": "Where can I get a free mineral rights review?",
+                  "query_type": "broad",
+                  "visibility_score": 0,
+                  "rank": null,
+                  "share_of_voice": 0
+                },
+                {
+                  "title": "who buys mineral rights in Texas",
+                  "query_type": "broad",
+                  "visibility_score": 0,
+                  "rank": null,
+                  "share_of_voice": 0
+                }
+              ]
+            },
+            "sentiment": {
+              "total_count": 5,
+              "page": 1,
+              "page_size": 50,
+              "has_more": false,
+              "domain": "mineralrightsxchange.com",
+              "items": [
+                {
+                  "title": "Mineral rights listings",
+                  "mentions": 8,
+                  "sentiment_score": 72,
+                  "top_domains": [
+                    "mineralrightsxchange.com",
+                    "usmineralexchange.com",
+                    "buckheadenergy.com",
+                    "mineralrightmarketplace.com",
+                    "pheasantenergy.com"
+                  ]
+                },
+                {
+                  "title": "Mineral rights valuation",
+                  "mentions": 9,
+                  "sentiment_score": 62,
+                  "top_domains": [
+                    "mineralrightsxchange.com",
+                    "offthemrkt.com",
+                    "buckheadenergy.com",
+                    "linkedin.com",
+                    "enverus.com"
+                  ]
+                },
+                {
+                  "title": "Mineral rights marketplace",
+                  "mentions": 15,
+                  "sentiment_score": 61,
+                  "top_domains": [
+                    "mineralrightsxchange.com",
+                    "usmineralexchange.com",
+                    "mineralrightsforum.com",
+                    "texasmineralgroup.com",
+                    "linkedin.com"
+                  ]
+                },
+                {
+                  "title": "Royalty interests trading",
+                  "mentions": 6,
+                  "sentiment_score": 52,
+                  "top_domains": [
+                    "usmineralexchange.com",
+                    "mineralrightsxchange.com",
+                    "linkedin.com",
+                    "energyfieldinvest.com",
+                    "hartenergy.com"
+                  ]
+                },
+                {
+                  "title": "Leasing mineral rights",
+                  "mentions": 4,
+                  "sentiment_score": 50,
+                  "top_domains": [
+                    "usmineralexchange.com",
+                    "mineralrightsxchange.com",
+                    "linkedin.com",
+                    "mineralrightsforum.com",
+                    "rigzone.com"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      },
+      "isError": false
+    }
+  },
+  {
+    "name": "gsc_get_pages",
+    "arguments": {
+      "property": "https://mineralrightsxchange.com/",
+      "period1_start": "2026-05-23",
+      "period1_end": "2026-06-19",
+      "period2_start": "2026-06-20",
+      "period2_end": "2026-07-17",
+      "page_size": 25,
+      "sort_by": "-current_clicks"
+    },
+    "ok": true,
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"success\": false, \"tool_name\": \"gsc_get_pages\", \"error_type\": \"client\", \"error_code\": null, \"status_code\": 403, \"service_name\": \"GSC\", \"message\": \"GSC client error: The Google account connected to this project does not have access to the selected Google Search Console property (https://mineralrightsxchange.com/). To view data on the homepage, you need permission to this property in Google Search Console.\", \"is_transient\": false, \"quota_name\": null, \"details\": {\"detail\": \"The Google account connected to this project does not have access to the selected Google Search Console property (https://mineralrightsxchange.com/). To view data on the homepage, you need permission to this property in Google Search Console.\"}}"
+        }
+      ],
+      "structuredContent": {
+        "success": false,
+        "tool_name": "gsc_get_pages",
+        "error_type": "client",
+        "error_code": null,
+        "status_code": 403,
+        "service_name": "GSC",
+        "message": "GSC client error: The Google account connected to this project does not have access to the selected Google Search Console property (https://mineralrightsxchange.com/). To view data on the homepage, you need permission to this property in Google Search Console.",
+        "is_transient": false,
+        "quota_name": null,
+        "details": {
+          "detail": "The Google account connected to this project does not have access to the selected Google Search Console property (https://mineralrightsxchange.com/). To view data on the homepage, you need permission to this property in Google Search Console."
+        }
+      },
+      "isError": true
+    }
+  },
+  {
+    "name": "gsc_get_keyword_performance",
+    "arguments": {
+      "selected_property": "https://mineralrightsxchange.com/",
+      "period1_start": "2026-05-23",
+      "period1_end": "2026-06-19",
+      "period2_start": "2026-06-20",
+      "period2_end": "2026-07-17",
+      "page_size": 50,
+      "sort_by": "-current_clicks"
+    },
+    "ok": true,
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"success\": false, \"tool_name\": \"gsc_get_keyword_performance\", \"error_type\": \"client\", \"error_code\": null, \"status_code\": 403, \"service_name\": \"GSC\", \"message\": \"GSC client error: The Google account connected to this project does not have access to the selected Google Search Console property (https://mineralrightsxchange.com/). To view data on the homepage, you need permission to this property in Google Search Console.\", \"is_transient\": false, \"quota_name\": null, \"details\": {\"detail\": \"The Google account connected to this project does not have access to the selected Google Search Console property (https://mineralrightsxchange.com/). To view data on the homepage, you need permission to this property in Google Search Console.\"}}"
+        }
+      ],
+      "structuredContent": {
+        "success": false,
+        "tool_name": "gsc_get_keyword_performance",
+        "error_type": "client",
+        "error_code": null,
+        "status_code": 403,
+        "service_name": "GSC",
+        "message": "GSC client error: The Google account connected to this project does not have access to the selected Google Search Console property (https://mineralrightsxchange.com/). To view data on the homepage, you need permission to this property in Google Search Console.",
+        "is_transient": false,
+        "quota_name": null,
+        "details": {
+          "detail": "The Google account connected to this project does not have access to the selected Google Search Console property (https://mineralrightsxchange.com/). To view data on the homepage, you need permission to this property in Google Search Console."
+        }
+      },
+      "isError": true
+    }
+  }
+]

@@ -1,0 +1,20 @@
+---
+import PillarArchivePage from '../../../components/organisms/PillarArchivePage.astro';
+import { getPillarArchiveStaticPaths } from '../../../lib/pillar-inventory';
+
+export const prerender = true;
+const PILLAR_ID = 'inherited-mineral-rights' as const;
+
+export async function getStaticPaths() {
+  return getPillarArchiveStaticPaths('inherited-mineral-rights');
+}
+
+const currentPage = Number(Astro.params.page);
+---
+
+<PillarArchivePage
+  pillarId={PILLAR_ID}
+  currentPage={currentPage}
+  title="Inherited Mineral Rights Articles · MRX"
+  description="Browse the full MRX inherited-mineral-rights archive: estate and probate records, ownership questions, royalty documents, and decisions heirs may face."
+/>

@@ -22,11 +22,15 @@ const formattedDate = new Date(testimonial.date).toLocaleDateString('en-US', {
 });
 ---
 
-<article class="post-card" aria-label={`Review from ${testimonial.first_name} ${testimonial.last_initial}`}>
+<article
+  class="post-card"
+  aria-label={`Review from ${testimonial.first_name} ${testimonial.last_initial}`}
+>
   <div class="post-card__body">
     <p class="post-card__excerpt">&ldquo;{testimonial.body}&rdquo;</p>
     <p class="post-card__meta">
-      — {testimonial.first_name} {testimonial.last_initial}, {testimonial.state}, {formattedDate}
+      {testimonial.first_name}
+      {testimonial.last_initial}, {testimonial.state}, {formattedDate}
     </p>
   </div>
 </article>

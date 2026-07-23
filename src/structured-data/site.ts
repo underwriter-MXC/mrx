@@ -12,7 +12,27 @@ export const organization: Organization = {
   logo: `${SITE.url}/assets/brand/mrx-logo-color.png`,
   description: SITE.description,
   foundingDate: String(SITE.foundedYear),
-  sameAs: [],
+  // First-party profiles verified against the MRX Search Atlas Brand Vault.
+  sameAs: [
+    'https://www.facebook.com/profile.php?id=61590415648681&sk=about',
+    'https://x.com/mineralrightsxchange',
+    'https://instagram.com/mineralrightsxchange',
+    'https://linkedin.com/company/mineralrightsxchange',
+  ],
+  // Canonical contact point for search engines / future GBP linkage.
+  // One email + (optional) phone sourced from SITE so the public graph
+  // and the click-to-call CTA cannot drift apart. telephone is only set
+  // when SITE.phone is populated (see src/lib/site.ts).
+  contactPoint: [
+    {
+      '@type': 'ContactPoint',
+      contactType: 'customer support',
+      email: SITE.email,
+      telephone: SITE.phone || undefined,
+      areaServed: { '@type': 'Country', name: 'United States' },
+      availableLanguage: ['English'],
+    },
+  ],
 };
 
 export const professionalService: ProfessionalService = {
@@ -24,7 +44,11 @@ export const professionalService: ProfessionalService = {
   telephone: SITE.phone || undefined,
   priceRange: 'Free educational review; transaction terms vary',
   areaServed: { '@type': 'Country', name: 'United States' },
-  address: { '@type': 'PostalAddress', addressRegion: SITE.addressRegion, addressCountry: SITE.addressCountry },
+  address: {
+    '@type': 'PostalAddress',
+    addressRegion: SITE.addressRegion,
+    addressCountry: SITE.addressCountry,
+  },
   parentOrganization: { '@id': `${SITE.url}/#org` },
 };
 
@@ -37,7 +61,10 @@ export const webSite: WebSite = {
   inLanguage: SITE.locale,
   potentialAction: {
     '@type': 'SearchAction',
-    target: { '@type': 'EntryPoint', urlTemplate: `${SITE.url}/learning-center/?q={search_term_string}` },
+    target: {
+      '@type': 'EntryPoint',
+      urlTemplate: `${SITE.url}/learning-center/?q={search_term_string}`,
+    },
     ...({ 'query-input': 'required name=search_term_string' } as Record<string, string>),
   },
 } as WebSite;

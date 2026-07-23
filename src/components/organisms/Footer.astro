@@ -36,7 +36,11 @@ import { NAV, SITE } from '../../lib/site';
           /></a
         >
         <p class="footer__tagline">{SITE.tagline}</p>
-        <a class="footer__email" href={`mailto:${SITE.email}`}>{SITE.email}</a>
+        <a
+          class="footer__email"
+          href={`mailto:${SITE.email}`}
+          aria-label={`Email the MRX underwriter team at ${SITE.email}`}>{SITE.email}</a
+        >
       </div>
       <div>
         <h3 class="footer__heading">Explore MRX</h3>

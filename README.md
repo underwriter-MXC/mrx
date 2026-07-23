@@ -1,6 +1,6 @@
 # Mineral Rights Xchange — Public Website
 
-The official public website for [Mineral Rights Xchange](https://mineralrightsxchange.com), built on Astro 5 with Cloudflare Pages.
+The official public website for [Mineral Rights Xchange](https://mineralrightsxchange.com), built on Astro 5 and deployed to Vercel behind Cloudflare DNS/proxying.
 
 ## What this site is
 
@@ -8,10 +8,10 @@ A free, transparent underwriter review service for Texas mineral rights owners. 
 
 ## Stack
 
-- **Astro 5** with `output: 'static'` and `@astrojs/cloudflare` adapter (directory mode)
+- **Astro 5** with server output and target-specific Vercel, Cloudflare, and Node adapters
 - **MDX** for marketing pages and blog posts
 - **TypeScript** strict
-- **Cloudflare Pages** hosting (Cloudflare Web Analytics + GTM/GA4 client-side)
+- **Vercel** production hosting behind **Cloudflare** DNS/proxying (Google tag/GA4 client-side)
 - **Playwright** for E2E, **Vitest** for unit
 - **pnpm** package manager, **Node 20** LTS
 
@@ -32,7 +32,7 @@ The compliance check is the first step of `pnpm build`. It fails the build if an
 
 ## Deploy
 
-Push to `main` → Cloudflare Pages production. Stage 09 (`devops-engineer`) owns the deploy card and the Cloudflare configuration.
+Pushes to `main` run the production release workflow. Compliance, editorial, migration, lint, typecheck, unit, Vercel production-build, and non-destructive Playwright gates must pass before the verified commit is deployed to the linked Vercel project. The workflow then verifies the Vercel deployment URL plus the Cloudflare-fronted apex and `www` aliases. Cloudflare Pages is not an active deployment target.
 
 ## Project structure
 

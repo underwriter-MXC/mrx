@@ -11,6 +11,7 @@
       "@structured-data/*": ["src/structured-data/*"]
     },
     "verbatimModuleSyntax": true,
+    "resolveJsonModule": true,
     "allowJs": true,
     "jsx": "preserve",
     "types": ["@astrojs/cloudflare"]

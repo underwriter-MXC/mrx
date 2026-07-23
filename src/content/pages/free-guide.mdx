@@ -1,10 +1,10 @@
 ---
-title: 'Free Texas Mineral Rights Value Guide · MRX'
-description: 'A free guide for Texas mineral rights owners: how valuation works, questions to ask before signing, and how to prepare for a review. No card required.'
+title: 'How to Find Out What Mineral Rights You Own | MRX'
+description: 'A free records checklist for tracing mineral ownership through deeds, probate, operators, royalty statements, county records, and state oil and gas sources.'
 slug: 'free-guide'
 category: 'free-guide'
-hero_kicker: 'Free Texas mineral rights guide'
-h1: 'Free Texas mineral rights value guide'
+hero_kicker: 'Free mineral ownership guide'
+h1: 'How to Find Out What Your Mineral Rights Are'
 primary_cta:
   label: 'Email Me the Free Guide'
   href: '#guide-form'
@@ -16,9 +16,9 @@ secondary_cta:
 disclaimer_top: false
 faq:
   - question: 'Will I be added to a marketing list?'
-    answer: 'We will email you the guide. We may send a brief follow-up to ask if the guide was useful and whether you would like a free review, but you can opt out at any time. We do not sell or share contact data with third parties.'
+    answer: 'We will email you the guide you request. Marketing emails, texts, and AI-generated or prerecorded calls are optional, separate choices and are not required to receive the guide. You can opt out at any time. We do not sell contact data.'
   - question: 'Is the guide general information or advice?'
-    answer: 'General educational information, not legal, tax, or valuation advice. Verify any specific situation with a Texas-licensed attorney and CPA.'
+    answer: 'General educational information, not a title opinion or individualized legal, tax, engineering, or valuation guidance. Verify ownership and transaction-specific questions with qualified professionals in the state where the interest is located.'
 compliance_signoff:
   no_disallowed_phrases: true
   no_named_competitor: true
@@ -32,7 +32,6 @@ compliance_signoff:
   reviewed_at: '2026-06-11T00:00:00Z'
 ---
 
-import Hero from '../../components/molecules/Hero.astro';
 import CtaBlock from '../../components/molecules/CtaBlock.astro';
 import FaqBlock from '../../components/molecules/FaqBlock.astro';
 import FormSection from '../../components/organisms/FormSection.astro';
@@ -40,58 +39,109 @@ import Text from '../../components/atoms/Text.astro';
 import Heading from '../../components/atoms/Heading.astro';
 import Icon from '../../components/atoms/Icon.astro';
 
-<Hero
-  kicker={frontmatter.hero_kicker}
-  h1={frontmatter.h1}
-  lede="Use this guide to understand the core factors that influence mineral rights value before you speak with a buyer: royalty income, decline curves, operator quality, basin activity, lease terms, and offer structure. The guide is general educational information, not legal, tax, or valuation advice."
-  primaryCta={frontmatter.primary_cta}
-  secondaryCta={frontmatter.secondary_cta}
-/>
+<section class="hero guide-hero" aria-labelledby="hero-h1" id="guide-form">
+  <div class="container">
+    <div class="hero__inner guide-hero__inner">
+      <div class="guide-hero__copy">
+        <span class="hero__kicker">{frontmatter.hero_kicker}</span>
+        <h1 id="hero-h1">{frontmatter.h1}</h1>
+        <p class="hero__lede">
+          Use this step-by-step records checklist to connect an owner name, county, deed or probate
+          record, operator information, and royalty statements into a clearer ownership trail. It
+          also shows which questions to organize before discussing value or signing an offer.
+        </p>
+        <div class="hero__ctas">
+          <a
+            class="btn btn--ghost btn--lg"
+            href={frontmatter.secondary_cta.href}
+            data-cta-name={frontmatter.secondary_cta.ctaName}
+          >
+            {frontmatter.secondary_cta.label}
+          </a>
+        </div>
+      </div>
+      <aside class="hero__card guide-hero__form" aria-label="Email me the free guide">
+        <p class="guide-hero__badge">Free guide by email</p>
+        <h2>Email me the guide</h2>
+        <p>
+          The required checkbox is only for sending the requested guide. Other contact choices are
+          optional and separate.
+        </p>
+        <FormSection
+          form="free-guide"
+          submitLabel="Email me the guide"
+          legend="How to Find Out What Your Mineral Rights Are"
+          compact={true}
+        />
+      </aside>
+    </div>
+  </div>
+</section>
 
-<section class="container section">
-  <Heading level={2} size="3xl">What the guide covers</Heading>
-  <div class="grid grid--2" style="margin-top: var(--space-8); gap: var(--space-6);">
-    <article style="display: flex; gap: var(--space-3); align-items: flex-start;">
+<section class="container section guide-benefits">
+  <Heading level={2} size="3xl">
+    {'What the guide covers'}
+  </Heading>
+  <div class="grid grid--2 guide-benefits__grid">
+    <article class="guide-benefits__item">
       <Icon name="check" size={28} class="hero__icon-inline" />
       <div>
-        <Heading level={3} size="md">How underwriters look at recent check stubs and production history</Heading>
-        <Text>What a single royalty check actually tells you, what it does not, and how production history sharpens the picture over a 12-24 month window.</Text>
+        <Heading level={3} size="md">
+          {'A five-part mineral ownership search'}
+        </Heading>
+        <Text>
+          {
+            'Start with the person or entity name, identify the state and county, gather documents, connect the legal description, and separate confirmed facts from useful clues.'
+          }
+        </Text>
       </div>
     </article>
-    <article style="display: flex; gap: var(--space-3); align-items: flex-start;">
+    <article class="guide-benefits__item">
       <Icon name="check" size={28} class="hero__icon-inline" />
       <div>
-        <Heading level={3} size="md">Why headline multiples can be misleading without decline-curve context</Heading>
-        <Text>A high headline number based on a 1-month check behaves very differently from one based on a 24-month average. We walk through the difference.</Text>
+        <Heading level={3} size="md">
+          {'Where to look for ownership records'}
+        </Heading>
+        <Text>
+          {
+            'A practical checklist for county clerk or recorder files, operator records, state oil and gas regulators, tax offices, and family or estate files.'
+          }
+        </Text>
       </div>
     </article>
-    <article style="display: flex; gap: var(--space-3); align-items: flex-start;">
+    <article class="guide-benefits__item">
       <Icon name="check" size={28} class="hero__icon-inline" />
       <div>
-        <Heading level={3} size="md">Questions to ask before signing an offer, letter of intent, or purchase agreement</Heading>
-        <Text>Plain-language questions that surface the assumptions and clauses that change what a number actually means.</Text>
+        <Heading level={3} size="md">
+          {'What a royalty statement can and cannot confirm'}
+        </Heading>
+        <Text>
+          {
+            'Capture the owner number, operator, lease or well, production month, decimal interest, deductions, and payment history without treating a check stub as a complete title conclusion.'
+          }
+        </Text>
       </div>
     </article>
-    <article style="display: flex; gap: var(--space-3); align-items: flex-start;">
+    <article class="guide-benefits__item">
       <Icon name="check" size={28} class="hero__icon-inline" />
       <div>
-        <Heading level={3} size="md">How Mineral Rights Xchange approaches the underwriter review</Heading>
-        <Text>What we look at, what we do not, and what we recommend verifying with a Texas-licensed attorney and CPA before any transaction.</Text>
+        <Heading level={3} size="md">
+          {'How to assemble a useful review packet'}
+        </Heading>
+        <Text>
+          {
+            'Organize the best deed, probate, lease, division-order, operator, royalty, and offer documents you have, with sensitive personal data redacted.'
+          }
+        </Text>
       </div>
     </article>
   </div>
 </section>
 
-<section class="section section--alt" id="guide-form">
-  <div class="container container--narrow">
-    <Heading level={2} size="3xl">Email me the guide</Heading>
-    <Text class="text--lead" style="margin-top: var(--space-3); margin-bottom: var(--space-6);">The guide is general educational information, not legal, tax, or valuation advice. We do not collect a card. You can opt out at any time.</Text>
-    <FormSection form="free-guide" submitLabel="Email me the guide" legend="Free Texas mineral rights value guide" />
-  </div>
-</section>
-
-<section class="container section">
-  <Heading level={2} size="3xl">Frequently asked</Heading>
+<section class="container container--narrow section guide-faq">
+  <Heading level={2} size="3xl">
+    {'Frequently asked'}
+  </Heading>
   <FaqBlock pairs={frontmatter.faq} id="fg-faq" />
 </section>
 

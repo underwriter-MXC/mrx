@@ -1,0 +1,262 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import MarketingLayout from '../../layouts/MarketingLayout.astro';
+import { getGuide } from '../../data/guides';
+import { archivePagePath, type ArchivePage } from '../../lib/archive-pagination';
+import { SITE } from '../../lib/site';
+import JsonLd from '../seo/JsonLd.astro';
+import PaginationNav from '../seo/PaginationNav.astro';
+
+interface Props extends ArchivePage<CollectionEntry<'posts'>> {
+  author: CollectionEntry<'authors'>;
+}
+
+const { author, items, currentPage, lastPage, totalItems } = Astro.props;
+const slug = author.id.replace(/\.mdx?$/, '');
+const guide = getGuide(slug);
+const basePath = `/authors/${slug}/`;
+const path = archivePagePath(basePath, currentPage);
+const authorUrl = `${SITE.url}${basePath}`;
+const isEditorialTeam = author.data.kind === 'organization';
+const pageSuffix = currentPage === 1 ? '' : ` · Page ${currentPage}`;
+const authorBaseTitle = `${author.data.name}, ${author.data.title}`;
+const title = isEditorialTeam
+  ? `MRX Publication and Review Standards${pageSuffix}`
+  : currentPage > 1
+    ? `${author.data.name} Mineral Rights Articles${pageSuffix} · MRX`
+    : authorBaseTitle.length < 30
+      ? `${authorBaseTitle} Articles`
+      : authorBaseTitle;
+const description = isEditorialTeam
+  ? `See how MRX sources, reviews, updates, and publishes mineral-rights education, then browse ${totalItems} reviewed Learning Center articles${currentPage === 1 ? ' today.' : `; page ${currentPage} of ${lastPage}.`}`
+  : `${author.data.description}${currentPage === 1 ? '' : ` Page ${currentPage} of ${lastPage}.`}`;
+const previousPath = currentPage > 1 ? archivePagePath(basePath, currentPage - 1) : undefined;
+const nextPath = currentPage < lastPage ? archivePagePath(basePath, currentPage + 1) : undefined;
+---
+
+<MarketingLayout
+  title={title}
+  description={description.slice(0, 160)}
+  path={path}
+  previousPath={previousPath}
+  nextPath={nextPath}
+  pageType="blog"
+  pageCategory="learning-center"
+  breadcrumbs={[
+    { name: 'Home', path: '/' },
+    { name: 'Learning Center', path: '/learning-center/' },
+    { name: author.data.name, path: basePath },
+    ...(currentPage > 1 ? [{ name: `Page ${currentPage}`, path }] : []),
+  ]}
+>
+  <JsonLd
+    slot="structured-data"
+    data={{
+      '@type': 'Organization',
+      '@id': `${authorUrl}#author`,
+      name: author.data.name,
+      description: author.data.description,
+      url: authorUrl,
+      parentOrganization: { '@id': `${SITE.url}/#org` },
+    }}
+  />
+
+  <section class="mrx-page-hero author-hero">
+    <div
+      class="container author-hero__grid"
+      class:list={{ 'author-hero__grid--editorial': !guide }}
+    >
+      {
+        guide && (
+          <img
+            src={guide.image}
+            alt={`${guide.name}, fictional ${guide.chatRole}`}
+            width="256"
+            height="256"
+          />
+        )
+      }
+      <div>
+        <p class="mrx-eyebrow">
+          {isEditorialTeam ? 'Publication responsibility' : 'MRX Learning Center author'}
+        </p>
+        <h1>{author.data.name}</h1>
+        <strong>{author.data.title}</strong>
+        <p>{author.data.description}</p>
+        {
+          isEditorialTeam ? (
+            <small>
+              MRX is responsible for Learning Center sourcing, review, updates, and publication.
+              Individual guide bylines are fictional AI identities, not human professionals.
+            </small>
+          ) : (
+            <small>
+              {author.data.name} is a fictional MRX AI Guide and educational author identity. MRX is
+              responsible for article sourcing, review, updates, and publication.
+            </small>
+          )
+        }
+        {
+          guide ? (
+            <a href={`/team/${guide.slug}/`}>Meet {guide.name} →</a>
+          ) : (
+            <a href="/methodology/">Read the published methodology and limitations →</a>
+          )
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="mrx-section author-articles">
+    <div class="container">
+      <div class="mrx-section-heading">
+        <p class="mrx-eyebrow">Author archive</p>
+        <h2>
+          {
+            isEditorialTeam
+              ? `${totalItems} Learning Center ${totalItems === 1 ? 'article' : 'articles'}`
+              : `${totalItems} ${totalItems === 1 ? 'article' : 'articles'} by ${author.data.name}`
+          }
+        </h2>
+        {
+          lastPage > 1 && (
+            <p>
+              Page {currentPage} of {lastPage}
+            </p>
+          )
+        }
+      </div>
+      <div class="author-articles__grid">
+        {
+          items.map((post) => {
+            const postSlug = post.id.replace(/\.mdx?$/, '');
+            return (
+              <article>
+                <span>{post.data.category.replaceAll('-', ' ')}</span>
+                <h3>
+                  <a href={`/blog/${postSlug}/`}>{post.data.title}</a>
+                </h3>
+                <p>{post.data.excerpt}</p>
+                <a href={`/blog/${postSlug}/`}>Read article →</a>
+              </article>
+            );
+          })
+        }
+      </div>
+      <PaginationNav basePath={basePath} currentPage={currentPage} lastPage={lastPage} />
+    </div>
+  </section>
+</MarketingLayout>
+
+<style>
+  .author-hero__grid {
+    display: grid;
+    grid-template-columns: 180px minmax(0, 720px);
+    gap: clamp(1.2rem, 3vw, 2.5rem);
+    align-items: center;
+  }
+
+  .author-hero__grid--editorial {
+    grid-template-columns: minmax(0, 760px);
+  }
+
+  .author-hero img {
+    width: 180px;
+    height: 180px;
+    border: 3px solid #d79a2b;
+    border-radius: 24px;
+    object-fit: cover;
+  }
+
+  .author-hero strong {
+    display: block;
+    margin-top: 0.45rem;
+    color: #8a5d18;
+  }
+
+  .author-hero p:not(.mrx-eyebrow) {
+    margin-top: 0.65rem;
+  }
+
+  .author-hero small {
+    display: block;
+    max-width: 72ch;
+    margin-top: 0.65rem;
+    color: #60717c;
+    line-height: 1.5;
+  }
+
+  .author-hero a {
+    display: inline-block;
+    margin-top: 0.75rem;
+    font-weight: 800;
+  }
+
+  .author-articles__grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.9rem;
+    margin-top: 1rem;
+  }
+
+  .author-articles article {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    padding: 1rem;
+    border: 1px solid #d9e0e4;
+    border-radius: 15px;
+    background: #fff;
+  }
+
+  .author-articles article > span {
+    color: #8a5d18;
+    font-size: 0.65rem;
+    font-weight: 850;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .author-articles h3 {
+    margin-top: 0.4rem;
+    font-size: 1.15rem;
+    line-height: 1.15;
+  }
+
+  .author-articles h3 a {
+    color: #071e34;
+    text-decoration: none;
+  }
+
+  .author-articles article > p {
+    margin: 0.55rem 0 0.8rem;
+    color: #60717c;
+    font-size: 0.84rem;
+    line-height: 1.48;
+  }
+
+  .author-articles article > a {
+    margin-top: auto;
+    color: #774e13;
+    font-size: 0.78rem;
+    font-weight: 850;
+  }
+
+  @media (max-width: 900px) {
+    .author-articles__grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 650px) {
+    .author-hero__grid,
+    .author-articles__grid {
+      grid-template-columns: 1fr;
+    }
+
+    .author-hero img {
+      width: 130px;
+      height: 130px;
+    }
+  }
+</style>

@@ -1,26 +1,37 @@
 ---
 /**
  * BaseLayout. The global shell. Used by every page (MarketingLayout
- * and PostLayout extend it).
+ * and specialized page layouts extend it).
  *
  * Per `Astro Architecture Plan.md` §3. This is the global layout that
  * emits <html>, <head>, header, and footer (with §7 disclaimer).
- * MarketingLayout and PostLayout pass children through.
+ * MarketingLayout and ArticleLayout pass children through.
  */
 import '../styles/index.css';
 import Header from '../components/organisms/Header.astro';
 import Footer from '../components/organisms/Footer.astro';
 import Seo from '../components/seo/Seo.astro';
 import type { Crumb } from '../structured-data/breadcrumb';
-import { initDataLayer } from '../lib/analytics';
 import { SITE } from '../lib/site';
 import AskTommy from '../components/react/AskTommy';
+import type { ArticleMeasurementContext } from '../lib/ga4-measurement';
 
 interface Props {
   title: string;
   description: string;
   path: string;
   ogImage?: string;
+  ogImageAlt?: string;
+  ogImageWidth?: number;
+  ogImageHeight?: number;
+  ogImageType?: string;
+  publishedTime?: string;
+  modifiedTime?: string;
+  articleSection?: string;
+  articleAuthor?: string;
+  appendBrand?: boolean;
+  previousPath?: string;
+  nextPath?: string;
   noindex?: boolean;
   robots?: string;
   jsonLd?: object[];
@@ -28,6 +39,13 @@ interface Props {
   pageType: 'home' | 'marketing' | 'blog' | 'post' | 'utility';
   pageCategory?: string;
   hideHeader?: boolean;
+  /**
+   * Low-cardinality article measurement context. Only the seven registered
+   * taxonomy fields are allowed; never PII, document/user values, or raw
+   * referrers. Pass `null` for routes that are not part of the Learning
+   * Center program so `mrx_page_view` does not get a `content_group`.
+   */
+  measurement?: ArticleMeasurementContext | null;
 }
 
 const {
@@ -35,6 +53,17 @@ const {
   description,
   path,
   ogImage,
+  ogImageAlt,
+  ogImageWidth,
+  ogImageHeight,
+  ogImageType,
+  publishedTime,
+  modifiedTime,
+  articleSection,
+  articleAuthor,
+  appendBrand,
+  previousPath,
+  nextPath,
   noindex = false,
   robots,
   jsonLd = [],
@@ -42,7 +71,21 @@ const {
   pageType,
   pageCategory,
   hideHeader = false,
+  measurement = null,
 } = Astro.props;
+
+// MRX's Google tag ID is public configuration, not a secret. Keep the
+// production fallback fail-on so analytics cannot silently disappear when a
+// deployment target omits its build-time environment variable. The legacy
+// PUBLIC_GTM_ID name remains supported for existing deployment settings.
+const googleTagId =
+  import.meta.env.PUBLIC_GOOGLE_TAG_ID || import.meta.env.PUBLIC_GTM_ID || 'GT-WFMD2MXW';
+
+// Pre-compute the dataLayer-side measurement payload. Only seven
+// low-cardinality taxonomy fields plus the taxonomy_version pin. Never
+// PII, document/user values, or raw referrer. The `null` case (non-article
+// pages) collapses to `null` so mrx_page_view is unchanged.
+const measurementJson = measurement ? JSON.stringify(measurement) : 'null';
 ---
 
 <!doctype html>
@@ -54,12 +97,29 @@ const {
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="alternate" type="application/rss+xml" title={`${SITE.name} Blog`} href="/blog/rss.xml" />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title={`${SITE.name} Blog`}
+      href="/blog/rss.xml"
+    />
     <Seo
       title={title}
       description={description}
       path={path}
       ogImage={ogImage}
+      ogType={pageType === 'post' ? 'article' : 'website'}
+      ogImageAlt={ogImageAlt}
+      ogImageWidth={ogImageWidth}
+      ogImageHeight={ogImageHeight}
+      ogImageType={ogImageType}
+      publishedTime={publishedTime}
+      modifiedTime={modifiedTime}
+      articleSection={articleSection}
+      articleAuthor={articleAuthor}
+      appendBrand={appendBrand}
+      previousPath={previousPath}
+      nextPath={nextPath}
       noindex={noindex}
       robots={robots}
       jsonLd={jsonLd}
@@ -67,18 +127,119 @@ const {
     />
     <script
       is:inline
-      define:vars={{ pageType, pageCategory }}
+      define:vars={{ pageType, pageCategory, googleTagId, measurement: measurementJson }}
     >
-      // GTM/GA4 dataLayer init (per SEO plan §6.2). The GTM container
-      // itself is loaded only if PUBLIC_GTM_ID is set; the dataLayer shim
-      // stays on so conversion events are testable even before GTM fires.
+      // Google tag / GA4 dataLayer init (per SEO plan §6.2).
       window.dataLayer = window.dataLayer || [];
+      window.gtag =
+        window.gtag ||
+        function () {
+          window.dataLayer.push(arguments);
+        };
+      window.gtag('js', new Date());
+      window.gtag('config', googleTagId);
       window.dataLayer.push({
         'gtm.start': Date.now(),
         event: 'gtm.js',
         mrx_page_type: pageType,
         mrx_page_category: pageCategory || null,
       });
+
+      // Article taxonomy payload from the layout, or null on non-article
+      // pages. Only seven low-cardinality fields; never PII.
+      var __mrxMeasurement =
+        typeof measurement === 'string' && measurement !== 'null' ? JSON.parse(measurement) : null;
+      // Strings used by the inline CTA classifier. These are literal enums
+      // from src/lib/ga4-measurement.ts. Kept in sync with the TS source.
+      var __MRX_CTA_LOCATIONS = [
+        'header',
+        'inline',
+        'sidebar',
+        'closing',
+        'related',
+        'footer',
+        'other',
+      ];
+      var __MRX_SCROLL_DEPTHS = ['p25', 'p50', 'p75', 'p90'];
+
+      function __mrxMeasurementPayload(extra) {
+        if (!__mrxMeasurement) return extra || {};
+        var out = {
+          taxonomy_version: __mrxMeasurement.taxonomy_version,
+          content_group: __mrxMeasurement.content_group,
+        };
+        [
+          'content_program',
+          'content_cluster',
+          'content_intent',
+          'content_author',
+          'content_guide',
+          'content_batch',
+        ].forEach(function (key) {
+          var value = __mrxMeasurement[key];
+          if (value !== null && value !== undefined && value !== '') {
+            out[key] = value;
+          }
+        });
+        if (extra && typeof extra === 'object') {
+          for (var k in extra) {
+            if (Object.prototype.hasOwnProperty.call(extra, k)) out[k] = extra[k];
+          }
+        }
+        return out;
+      }
+
+      function __mrxClassifyCtaAction(href, name) {
+        var haystack = ((href || '') + ' ' + (name || '')).toLowerCase();
+        if (!haystack.trim()) return 'other';
+        if (/\/book(\/|$|\?)/.test(haystack)) return 'book_review';
+        if (/\/free-guide(\/|$|\?)/.test(haystack)) return 'free_guide';
+        if (/^tel:/.test(haystack)) return 'phone';
+        if (/^mailto:/.test(haystack)) return 'email';
+        if (name && /cta-(related|related-article)/.test(name)) return 'related_article';
+        return 'other';
+      }
+
+      function __mrxClassifyCtaLocation(role) {
+        if (!role) return 'other';
+        var lowered = String(role).toLowerCase();
+        if (__MRX_CTA_LOCATIONS.indexOf(lowered) !== -1) return lowered;
+        return 'other';
+      }
+
+      function __mrxSanitizeLinkUrl(href) {
+        if (!href) return '';
+        var trimmed = String(href).trim();
+        if (!trimmed) return '';
+        // Drop unsafe / PII-bearing schemes outright. The categorical
+        // cta_action (phone/email) already carries the click intent, so
+        // GA4 never needs the raw target.
+        if (/^(mailto|tel|javascript):/i.test(trimmed)) return '';
+        if (trimmed.charAt(0) === '#') return '';
+        var noQuery = trimmed.split('?')[0] || '';
+        return noQuery.split('#')[0] || '';
+      }
+
+      // Build a privacy-safe `page_location` from window.location. Always
+      // origin + pathname only; query string and fragment are stripped so
+      // PII-bearing parameters (e.g. ?email=, utm_term with PII) cannot
+      // leak into the dataLayer.
+      function __mrxSafePageLocation() {
+        try {
+          var url = new URL(window.location.href);
+          return url.origin + url.pathname;
+        } catch (err) {
+          return '';
+        }
+      }
+
+      // True only when the layout passed a measurement context. Article
+      // events are stricter than legacy marketing events because the MRX
+      // 1,000-program traffic is high-volume and PII-bearing, but every
+      // sitewide event still uses a query-free page_location.
+      function __mrxHasArticleContext() {
+        return !!__mrxMeasurement;
+      }
 
       function __mrxEventId(name) {
         var rand = Math.random().toString(36).slice(2);
@@ -87,31 +248,132 @@ const {
       }
 
       function __mrxParams(extra) {
-        var url = new URL(window.location.href);
-        return Object.assign({
+        var articleCtx = __mrxHasArticleContext();
+        // page_location is always privacy-safe origin+pathname (no query, no
+        // hash). Query params may contain owner email, document names, legal
+        // descriptions, or other private account data.
+        var pageLocation = __mrxSafePageLocation();
+        var base = {
           event_id: __mrxEventId((extra && extra.event) || 'event'),
-          page_location: window.location.href,
+          page_location: pageLocation,
           page_path: window.location.pathname,
           page_title: document.title,
           page_category: pageCategory || null,
           mrx_page_type: pageType,
           mrx_page_category: pageCategory || null,
-          utm_source: url.searchParams.get('utm_source') || undefined,
-          utm_medium: url.searchParams.get('utm_medium') || undefined,
-          utm_campaign: url.searchParams.get('utm_campaign') || undefined,
-          utm_term: url.searchParams.get('utm_term') || undefined,
-          utm_content: url.searchParams.get('utm_content') || undefined,
-          gclid_present: url.searchParams.has('gclid'),
-          fbclid_present: url.searchParams.has('fbclid'),
-        }, extra || {});
+        };
+        if (!articleCtx) {
+          // Legacy marketing events keep raw UTM and click IDs; GTM/GA4
+          // already surface these as built-in traffic-source dimensions
+          // there.
+          var url = new URL(window.location.href);
+          base.utm_source = url.searchParams.get('utm_source') || undefined;
+          base.utm_medium = url.searchParams.get('utm_medium') || undefined;
+          base.utm_campaign = url.searchParams.get('utm_campaign') || undefined;
+          base.utm_term = url.searchParams.get('utm_term') || undefined;
+          base.utm_content = url.searchParams.get('utm_content') || undefined;
+          base.gclid_present = url.searchParams.has('gclid');
+          base.fbclid_present = url.searchParams.has('fbclid');
+        }
+        return Object.assign(base, extra || {});
       }
 
-      function __mrxPush(payload) { window.dataLayer.push(__mrxParams(payload)); }
+      function __mrxPush(payload) {
+        window.dataLayer.push(__mrxParams(payload));
+      }
       window.__mrxPush = __mrxPush;
+      window.__mrxMeasurement = __mrxMeasurement;
+      window.__mrxChatQueue = window.__mrxChatQueue || [];
+      window.__mrxChatReady = false;
+      window.__mrxChatOpenRequested = window.__mrxChatOpenRequested || false;
+      window.__mrxChatRequestSequence = window.__mrxChatRequestSequence || 0;
+      window.__mrxChatLastRequest = window.__mrxChatLastRequest || null;
+      if (!window.__mrxChatBridgeInstalled) {
+        window.__mrxChatBridgeInstalled = true;
+        window.addEventListener('mrx:open-chat', function (event) {
+          var request = {
+            detail: (event && event.detail) || {},
+            sequence: window.__mrxChatRequestSequence + 1,
+          };
+          window.__mrxChatRequestSequence = request.sequence;
+          window.__mrxChatOpenRequested = true;
+          window.__mrxChatLastRequest = request;
+          if (!window.__mrxChatReady) {
+            window.__mrxChatQueue.push(request);
+          }
+        });
+      }
+
+      // Find the closest data-article-section ancestor so the canonical
+      // article_cta_click can carry the same cta_location enum used by
+      // the GTM/GA4 mapping.
+      function __mrxFindArticleSection(el) {
+        var node = el;
+        while (node && node !== document.body) {
+          if (node.dataset && node.dataset.articleSection) {
+            return String(node.dataset.articleSection);
+          }
+          node = node.parentNode;
+        }
+        return '';
+      }
+
+      // Article scroll tracker. Fires the canonical article_scroll event
+      // once per threshold (p25/p50/p75/p90) of the article content
+      // element. Per taxonomy §4.2: do not infer from GA4's automatic
+      // 90%-only enhanced measurement; this hook is the threshold-level
+      // source of truth.
+      (function () {
+        if (!__mrxMeasurement) return;
+        if (typeof window.IntersectionObserver === 'undefined') return;
+        var article = document.querySelector('[data-article-layout]');
+        if (!article) return;
+        var fired = {};
+        function pct() {
+          var rect = article.getBoundingClientRect();
+          var viewport = window.innerHeight || document.documentElement.clientHeight;
+          var visible = Math.max(0, Math.min(rect.bottom, viewport) - Math.max(rect.top, 0));
+          if (rect.height <= 0) return 0;
+          return Math.min(1, (visible + Math.max(0, -rect.top)) / rect.height);
+        }
+        function check() {
+          var ratio = pct();
+          __MRX_SCROLL_DEPTHS.forEach(function (label) {
+            if (fired[label]) return;
+            var threshold =
+              label === 'p25' ? 0.25 : label === 'p50' ? 0.5 : label === 'p75' ? 0.75 : 0.9;
+            if (ratio >= threshold) {
+              fired[label] = true;
+              var payload = __mrxMeasurementPayload({
+                event: 'article_scroll',
+                scroll_depth: label,
+              });
+              window.dataLayer.push(__mrxParams(payload));
+            }
+          });
+        }
+        var raf = null;
+        function onScroll() {
+          if (raf) return;
+          raf = window.requestAnimationFrame(function () {
+            raf = null;
+            check();
+          });
+        }
+        window.addEventListener('scroll', onScroll, { passive: true });
+        window.addEventListener('resize', onScroll, { passive: true });
+        check();
+      })();
 
       document.addEventListener('DOMContentLoaded', function () {
         // Recommended MRX page view event used by GTM/GA4/Meta mappings.
-        __mrxPush({ event: 'mrx_page_view' });
+        // When the layout passes a measurement context, merge the seven
+        // taxonomy fields onto the page view so launch-dashboard filters
+        // and content_group rollups see the article from the first event.
+        var pageViewExtra = __mrxMeasurement
+          ? __mrxMeasurementPayload({ event: 'mrx_page_view' })
+          : { event: 'mrx_page_view' };
+        __mrxPush(pageViewExtra);
 
         // /book starts the conversational Angela booking flow. Availability
         // remains inside the assistant rather than exposing a public calendar.
@@ -127,49 +389,82 @@ const {
           link.addEventListener('click', function () {
             var name = link.getAttribute('data-cta-name') || 'unknown';
             var href = link.getAttribute('href') || '';
+            var sectionRole = __mrxFindArticleSection(link);
+            // When an article measurement context exists, sanitize the
+            // legacy `book_cta_click` / `cta_click` hrefs through the same
+            // privacy filter used for `article_cta_click`. Outside of
+            // articles (legacy marketing pages), the raw href is preserved
+            // for backward compatibility.
+            var legacyHref = __mrxHasArticleContext() ? __mrxSanitizeLinkUrl(href) : href;
+            // Legacy compat events (kept so existing MRX dashboards continue
+            // to receive the same signals). These are emitted on every CTA
+            // click, not just articles.
             __mrxPush({
               event: 'book_cta_click',
               cta_name: name,
               link_text: (link.textContent || '').trim(),
-              link_url: href,
+              link_url: legacyHref,
             });
             // Backward-compatible event name used by older MRX dashboards.
-            __mrxPush({ event: 'cta_click', mrx_cta_name: name, mrx_href: href });
+            __mrxPush({ event: 'cta_click', mrx_cta_name: name, mrx_href: legacyHref });
+            // Canonical article-origin event per taxonomy §4.3. Only fires
+            // when the layout provided a measurement context, so non-article
+            // pages do not emit article_cta_click.
+            if (__mrxMeasurement) {
+              var payload = __mrxMeasurementPayload({
+                event: 'article_cta_click',
+                cta_name: name,
+                cta_action: __mrxClassifyCtaAction(href, name),
+                cta_location: __mrxClassifyCtaLocation(sectionRole),
+                link_url: __mrxSanitizeLinkUrl(href),
+              });
+              window.dataLayer.push(__mrxParams(payload));
+            }
           });
         });
 
         document.querySelectorAll('a[href^="tel:"]').forEach(function (link) {
           link.addEventListener('click', function () {
+            var articleCtx = __mrxHasArticleContext();
+            var href = link.getAttribute('href') || '';
             __mrxPush({
               event: 'phone_click',
-              link_text: (link.textContent || '').trim(),
-              link_url: link.getAttribute('href') || '',
+              link_text: articleCtx ? 'phone' : (link.textContent || '').trim(),
+              link_url: articleCtx ? __mrxSanitizeLinkUrl(href) : href,
             });
           });
         });
 
-        document.querySelectorAll('a[href^="mailto:"], a[href*="/cdn-cgi/l/email-protection"]').forEach(function (link) {
-          link.addEventListener('click', function () {
-            __mrxPush({
-              event: 'mailto_click',
-              link_text: (link.textContent || '').trim(),
-              link_url: link.getAttribute('href') || '',
+        document
+          .querySelectorAll('a[href^="mailto:"], a[href*="/cdn-cgi/l/email-protection"]')
+          .forEach(function (link) {
+            link.addEventListener('click', function () {
+              var articleCtx = __mrxHasArticleContext();
+              var href = link.getAttribute('href') || '';
+              __mrxPush({
+                event: 'mailto_click',
+                link_text: articleCtx ? 'email' : (link.textContent || '').trim(),
+                link_url: articleCtx ? __mrxSanitizeLinkUrl(href) : href,
+              });
             });
           });
-        });
       });
     </script>
-    {
-      import.meta.env.PUBLIC_GTM_ID && (
-        <script
-          is:inline
-          async
-          src={`https://www.googletagmanager.com/gtm.js?id=${import.meta.env.PUBLIC_GTM_ID}`}
-        />
-      )
-    }
+    <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${googleTagId}`}
+    ></script>
   </head>
-  <body>
+  <body
+    data-page-type={pageType}
+    data-page-category={pageCategory}
+    data-content-group={measurement?.content_group ?? null}
+    data-content-program={measurement?.content_program ?? null}
+    data-content-cluster={measurement?.content_cluster ?? null}
+    data-content-intent={measurement?.content_intent ?? null}
+    data-content-author={measurement?.content_author ?? null}
+    data-content-guide={measurement?.content_guide ?? null}
+    data-content-batch={measurement?.content_batch ?? null}
+    data-taxonomy-version={measurement?.taxonomy_version ?? null}
+  >
     <a class="skip-link" href="#main">Skip to main content</a>
     <div class="page">
       {!hideHeader && <Header currentPath={path} />}
@@ -179,7 +474,7 @@ const {
       <Footer />
     </div>
     <AskTommy
-      client:load
+      client:idle
       supabaseUrl={import.meta.env.PUBLIC_SUPABASE_URL}
       supabaseAnonKey={import.meta.env.PUBLIC_SUPABASE_ANON_KEY}
       hideLauncher={pageType === 'home'}

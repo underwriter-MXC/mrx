@@ -1,0 +1,120 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://mineralrightsxchange.com/#org",
+      "name": "Mineral Rights Xchange",
+      "alternateName": "MRX",
+      "url": "https://mineralrightsxchange.com/",
+      "logo": "https://mineralrightsxchange.com/assets/brand/mrx-logo-color.png",
+      "description": "Free, no-pressure mineral-rights education for owners comparing offers, inherited interests, royalties, and sell-or-hold decisions across the United States.",
+      "foundingDate": "2026",
+      "sameAs": [],
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "contactType": "customer support",
+          "email": "underwriter@mineralrightsxchange.com",
+          "areaServed": { "@type": "Country", "name": "United States" },
+          "availableLanguage": ["English"]
+        }
+      ]
+    },
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://mineralrightsxchange.com/#local",
+      "name": "Mineral Rights Xchange",
+      "url": "https://mineralrightsxchange.com/",
+      "image": "https://mineralrightsxchange.com/assets/brand/mrx-logo-color.png",
+      "description": "Free, no-pressure mineral-rights education for owners comparing offers, inherited interests, royalties, and sell-or-hold decisions across the United States.",
+      "areaServed": { "@type": "Country", "name": "United States" },
+      "address": {
+        "@type": "PostalAddress",
+        "addressRegion": "TX",
+        "addressCountry": "US"
+      },
+      "parentOrganization": { "@id": "https://mineralrightsxchange.com/#org" }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://mineralrightsxchange.com/how-it-works/#faq",
+      "url": "https://mineralrightsxchange.com/how-it-works/",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What if I do not have all the documents?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "That is normal. Tell MRX what you have and the team can help identify the next records to request. Many owners start with a royalty check stub or an offer letter."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is the underwriter review a certified appraisal?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. MRX describes the review as general educational information and a directional discussion, not a certified appraisal, legal opinion, tax opinion, or promise of a sale price."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "Article",
+      "@id": "https://mineralrightsxchange.com/blog/what-to-bring-to-your-underwriter-review-call-essential-documents-and-preparation-guide/#article",
+      "headline": "What to Bring to Your Underwriter Review Call",
+      "description": "A preparation guide for mineral owners collecting royalty statements, deeds, leases, offer letters, probate documents, and questions before a free underwriter review.",
+      "image": ["https://mineralrightsxchange.com/assets/brand/mrx-underwriter-review-og.png"],
+      "datePublished": "2026-01-01",
+      "dateModified": "2026-01-01",
+      "author": {
+        "@type": "Organization",
+        "@id": "https://mineralrightsxchange.com/authors/mrx-editorial-team/#author",
+        "name": "MRX Editorial Team",
+        "url": "https://mineralrightsxchange.com/authors/mrx-editorial-team/"
+      },
+      "publisher": { "@id": "https://mineralrightsxchange.com/#org" },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://mineralrightsxchange.com/blog/what-to-bring-to-your-underwriter-review-call-essential-documents-and-preparation-guide/"
+      },
+      "articleSection": "selling-process",
+      "inLanguage": "en-US",
+      "isPartOf": { "@id": "https://mineralrightsxchange.com/#site" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://mineralrightsxchange.com/blog/what-to-bring-to-your-underwriter-review-call-essential-documents-and-preparation-guide/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://mineralrightsxchange.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://mineralrightsxchange.com/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "What to Bring to Your Underwriter Review Call",
+          "item": "https://mineralrightsxchange.com/blog/what-to-bring-to-your-underwriter-review-call-essential-documents-and-preparation-guide/"
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://mineralrightsxchange.com/team/#tommy",
+      "name": "Tommy",
+      "alternateName": "MRX Offer and Value Guide",
+      "description": "A clearly labeled MRX AI guide persona for general mineral-owner education; not a human employee, licensed professional, certified appraiser, attorney, or tax advisor.",
+      "url": "https://mineralrightsxchange.com/team/",
+      "image": "https://mineralrightsxchange.com/assets/team/tommy-256.webp",
+      "worksFor": { "@id": "https://mineralrightsxchange.com/#org" }
+    }
+  ]
+}

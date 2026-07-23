@@ -1,5 +1,9 @@
-import { describe, expect, it } from 'vitest';
-import { extractAvailabilitySlots, formatAvailabilitySlots } from '../../src/lib/platform/ghl';
+import { describe, expect, it, vi } from 'vitest';
+import {
+  extractAvailabilitySlots,
+  formatAvailabilitySlots,
+  upsertContact,
+} from '../../src/lib/platform/ghl';
 
 describe('conversational appointment availability', () => {
   const now = new Date('2026-07-13T16:00:00.000Z');
@@ -57,5 +61,32 @@ describe('conversational appointment availability', () => {
     );
     expect(result).toHaveLength(1);
     expect(result[0].end).toBe('2026-07-14T20:30:00.000Z');
+  });
+
+  it('blocks a TEST owner at the central contact-upsert boundary before any provider call', async () => {
+    const fetchSpy = vi.spyOn(globalThis, 'fetch');
+    await expect(
+      upsertContact({
+        firstName: 'Dawson01',
+        lastName: 'TEST',
+        email: 'mrx-dawson-01-test@example.com',
+        phone: '+14325550101',
+        permissions: {
+          email: false,
+          sms: false,
+          marketingSms: false,
+          call: false,
+          aiVoice: false,
+        },
+        disclosureVersion: 'test',
+        sourceUrl: 'https://mrx-preview.vercel.app/account/',
+        ownerMetadata: {
+          isTest: true,
+          testRunId: '00000000-0000-4000-8000-000000000001',
+        },
+      }),
+    ).rejects.toThrow('test_profile_outbound_suppressed');
+    expect(fetchSpy).not.toHaveBeenCalled();
+    fetchSpy.mockRestore();
   });
 });

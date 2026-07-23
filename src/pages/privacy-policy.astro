@@ -14,7 +14,10 @@ export const prerender = true;
   path="/privacy-policy"
   pageType="utility"
   pageCategory="legal"
-  breadcrumbs={[{ name: 'Home', path: '/' }, { name: 'Privacy Policy', path: '/privacy-policy' }]}
+  breadcrumbs={[
+    { name: 'Home', path: '/' },
+    { name: 'Privacy Policy', path: '/privacy-policy' },
+  ]}
   disclaimerTop={entry.data.disclaimer_top}
 >
   <Content />

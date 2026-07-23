@@ -51,38 +51,70 @@ import Text from '../../components/atoms/Text.astro';
 
 <section class="container section">
   {frontmatter.aeo_cited_answer && (
-    <CitedAnswer text={frontmatter.aeo_cited_answer_text} sources={frontmatter.aeo_cited_answer_sources} />
+    <CitedAnswer
+      text={frontmatter.aeo_cited_answer_text}
+      sources={frontmatter.aeo_cited_answer_sources}
+    />
   )}
 </section>
 
 <section class="section section--alt">
   <div class="container">
-    <Heading level={2} size="3xl" id="how-it-works-overview">How the AI-first review path works</Heading>
-    <Text class="text--lead" style="margin-top: var(--space-3); margin-bottom: var(--space-10); max-width: 64ch;">The page now starts the owner in a useful interaction instead of forcing them to read everything before taking action.</Text>
+    <Heading level={2} size="3xl" id="how-it-works-overview">
+      How the AI-first review path works
+    </Heading>
+    <Text
+      class="text--lead"
+      style="margin-top: var(--space-3); margin-bottom: var(--space-10); max-width: 64ch;"
+    >
+      The page now starts the owner in a useful interaction instead of forcing them to read
+      everything before taking action.
+    </Text>
     <ol class="process-steps" style="list-style: none;">
       <li class="process-step">
         <div class="process-step__title">Start with a situation</div>
-        <p class="process-step__text">Offer in hand, inherited rights, royalty check question, lease confusion, or a general mineral rights question.</p>
+        <p class="process-step__text">
+          Offer in hand, inherited rights, royalty check question, lease confusion, or a general
+          mineral rights question.
+        </p>
       </li>
       <li class="process-step">
         <div class="process-step__title">Build an owner profile</div>
-        <p class="process-step__text">The AI asks for state, county, operator, ownership type, documents, offer status, and preferred contact method.</p>
+        <p class="process-step__text">
+          The AI asks for state, county, operator, ownership type, documents, offer status, and
+          preferred contact method.
+        </p>
       </li>
       <li class="process-step">
         <div class="process-step__title">Explain what matters</div>
-        <p class="process-step__text">Plain-language guidance covers production history, royalty income, decline context, offer assumptions, and missing documents.</p>
+        <p class="process-step__text">
+          Plain-language guidance covers production history, royalty income, decline context, offer
+          assumptions, and missing documents.
+        </p>
       </li>
       <li class="process-step">
         <div class="process-step__title">Route to GHL when ready</div>
-        <p class="process-step__text">The visitor can move into the existing MRX GHL form or calendar with better context already prepared.</p>
+        <p class="process-step__text">
+          The visitor can move into the existing MRX GHL form or calendar with better context
+          already prepared.
+        </p>
       </li>
     </ol>
   </div>
 </section>
 
 <section class="container section">
-  <Heading level={2} size="3xl" id="faq-preview">Questions owners can ask first</Heading>
-  <Text class="text--lead" style="margin-top: var(--space-3); margin-bottom: var(--space-8);">The AI-first version keeps MRX educational and interactive while preserving the free underwriter review path.</Text>
+  <Heading level={2} size="3xl" id="faq-preview">
+    Questions owners can ask first
+  </Heading>
+  <Text class="text--lead" style="margin-top: var(--space-3); margin-bottom: var(--space-8);">
+    The AI-first version keeps MRX educational and interactive while preserving the free underwriter
+    review path.
+  </Text>
   <FaqBlock pairs={frontmatter.faq} id="home-faq" />
-  <p style="margin-top: var(--space-4);"><a href="/faq" data-cta-name="home-faq-more">See the full FAQ →</a></p>
+  <p style="margin-top: var(--space-4);">
+    <a href="/faq" data-cta-name="home-faq-more">
+      See the full FAQ →
+    </a>
+  </p>
 </section>

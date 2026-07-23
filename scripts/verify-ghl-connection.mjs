@@ -6,11 +6,19 @@
  * creating contacts, messages, or appointments.
  */
 
-const token = process.env.GHL_PRIVATE_INTEGRATION_TOKEN || process.env.MRX_GHL_API_KEY;
+const token =
+  process.env.GHL_PRIVATE_INTEGRATION_TOKEN || process.env.MRX_GHL_API_KEY || process.env.GHL_API_TOKEN;
 const locationId = process.env.GHL_LOCATION_ID || process.env.MRX_GHL_LOCATION_ID;
 const calendarId =
-  process.env.GHL_CALENDAR_ID || process.env.MRX_GHL_CALENDAR_ID || 'lg3KcWfsKrR2pCWS6AeL';
-const missing = [!token && 'GHL_PRIVATE_INTEGRATION_TOKEN'].filter(Boolean);
+  process.env.GHL_CALENDAR_ID || process.env.MRX_GHL_CALENDAR_ID || 'mEqrbWIelaS7o5TMsqUX';
+const assignedUserId = process.env.GHL_ASSIGNED_USER_ID;
+const emailFrom = (
+  process.env.GHL_EMAIL_FROM || 'underwriter@mineralrightsxchange.com'
+).toLowerCase();
+const missing = [
+  !token && 'GHL_PRIVATE_INTEGRATION_TOKEN or MRX_GHL_API_KEY or GHL_API_TOKEN',
+  !assignedUserId && 'GHL_ASSIGNED_USER_ID',
+].filter(Boolean);
 
 if (missing.length) {
   console.error(`Ask Tommy live booking is not configured. Missing: ${missing.join(', ')}`);
@@ -38,6 +46,10 @@ try {
     `${base}/calendars/${encodeURIComponent(calendarId)}`,
     'Calendar lookup',
   );
+  const assignedUser = await checkedJson(
+    `${base}/users/${encodeURIComponent(assignedUserId)}`,
+    'Assigned underwriter lookup',
+  );
   const start = Date.now();
   const end = start + 7 * 24 * 60 * 60 * 1_000;
   const availabilityUrl = new URL(`${base}/calendars/${encodeURIComponent(calendarId)}/free-slots`);
@@ -61,8 +73,11 @@ try {
   if (locationId && resolvedCalendar.locationId && resolvedCalendar.locationId !== locationId) {
     throw new Error('The configured calendar belongs to a different HighLevel location.');
   }
+  if (String(assignedUser.email || '').toLowerCase() !== emailFrom) {
+    throw new Error('The configured HighLevel appointment owner does not match GHL_EMAIL_FROM.');
+  }
   console.log(
-    `HighLevel connection verified: ${resolvedCalendar.name || 'MRX calendar'}; ${slotCount} slots found in the next 7 days.`,
+    `HighLevel connection verified: ${resolvedCalendar.name || 'MRX calendar'}; appointment owner ${emailFrom}; ${slotCount} slots found in the next 7 days.`,
   );
 } catch (error) {
   console.error(error instanceof Error ? error.message : 'HighLevel connection check failed.');

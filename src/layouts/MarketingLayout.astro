@@ -1,11 +1,12 @@
 ---
 /**
- * MarketingLayout. For the 9 marketing/legal pages. Adds the Hero,
- * optional disclaimer_top, optional FAQ block slot, and CTA slot.
+ * MarketingLayout. For marketing/legal pages. Adds the Hero,
+ * optional FAQ block slot, and CTA slot.
  * Inherits everything from BaseLayout.
+ * Accepts disclaimerTop for frontmatter compatibility, but the global
+ * top disclosure banner is intentionally no longer rendered here.
  */
 import BaseLayout from './BaseLayout.astro';
-import Disclaimer from '../components/molecules/Disclaimer.astro';
 import type { Crumb } from '../structured-data/breadcrumb';
 import type { FaqPair } from '../lib/astro/content';
 import { faqPage } from '../structured-data/faq';
@@ -19,8 +20,10 @@ interface Props {
   robots?: string;
   pageType?: 'home' | 'marketing' | 'blog' | 'post' | 'utility';
   pageCategory?: string;
+  previousPath?: string;
+  nextPath?: string;
   breadcrumbs?: Crumb[];
-  /** When true, renders the §7 disclaimer at the top of the article body. */
+  /** Deprecated: retained for frontmatter compatibility; top disclosures are no longer rendered. */
   disclaimerTop?: boolean;
   /** Optional FAQ pairs that should emit FAQPage JSON-LD. */
   faq?: FaqPair[];
@@ -36,8 +39,9 @@ const {
   robots,
   pageType = 'marketing',
   pageCategory,
+  previousPath,
+  nextPath,
   breadcrumbs,
-  disclaimerTop = false,
   faq,
   hideHeader = false,
 } = Astro.props;
@@ -54,10 +58,11 @@ const extraJsonLd = faq && faq.length > 0 ? [faqPage(faq)] : [];
   robots={robots}
   pageType={pageType}
   pageCategory={pageCategory}
+  previousPath={previousPath}
+  nextPath={nextPath}
   breadcrumbs={breadcrumbs}
   jsonLd={extraJsonLd}
   hideHeader={hideHeader}
 >
-  {disclaimerTop && <div class="container section--sm"><Disclaimer variant="top" /></div>}
   <slot />
 </BaseLayout>

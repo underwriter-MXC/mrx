@@ -12,9 +12,26 @@ interface Props {
   lede: string;
   primaryCta: { label: string; href: string; ctaName: string };
   secondaryCta?: { label: string; href: string; ctaName: string };
+  cardHeading?: string;
+  cardItems?: string[];
+  cardFootnote?: string;
 }
 
-const { kicker, h1, lede, primaryCta, secondaryCta } = Astro.props;
+const {
+  kicker,
+  h1,
+  lede,
+  primaryCta,
+  secondaryCta,
+  cardHeading = 'What the review covers',
+  cardItems = [
+    'Production history and royalty income',
+    'Decline-curve context',
+    'Offer-clause review (no clawback pressure)',
+    'Plain-language next steps',
+  ],
+  cardFootnote = 'No card required. No obligation. Confidential.',
+} = Astro.props;
 ---
 
 <section class="hero" aria-labelledby="hero-h1">
@@ -25,12 +42,7 @@ const { kicker, h1, lede, primaryCta, secondaryCta } = Astro.props;
         <h1 id="hero-h1">{h1}</h1>
         <p class="hero__lede">{lede}</p>
         <div class="hero__ctas">
-          <CtaLink
-            ctaName={primaryCta.ctaName}
-            href={primaryCta.href}
-            variant="primary"
-            size="lg"
-          >
+          <CtaLink ctaName={primaryCta.ctaName} href={primaryCta.href} variant="primary" size="lg">
             {primaryCta.label}
             <Icon name="arrow-right" size={20} />
           </CtaLink>
@@ -49,14 +61,19 @@ const { kicker, h1, lede, primaryCta, secondaryCta } = Astro.props;
         </div>
       </div>
       <aside class="hero__card" aria-label="What to expect">
-        <h3>What the review covers</h3>
+        <h2>{cardHeading}</h2>
         <ul class="stack stack--sm">
-          <li><Icon name="check" size={20} class="hero__icon-inline" /> Production history and royalty income</li>
-          <li><Icon name="check" size={20} /> Decline-curve context</li>
-          <li><Icon name="check" size={20} /> Offer-clause review (no clawback pressure)</li>
-          <li><Icon name="check" size={20} /> Plain-language next steps</li>
+          {
+            cardItems.map((item) => (
+              <li>
+                <Icon name="check" size={20} class="hero__icon-inline" /> {item}
+              </li>
+            ))
+          }
         </ul>
-        <p class="text text--sm text--muted" style="margin-top: var(--space-3);">No card required. No obligation. Confidential.</p>
+        <p class="text text--sm text--muted" style="margin-top: var(--space-3);">
+          {cardFootnote}
+        </p>
       </aside>
     </div>
   </div>

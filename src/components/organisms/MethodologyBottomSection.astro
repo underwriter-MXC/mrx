@@ -1,0 +1,270 @@
+---
+/**
+ * MethodologyBottomSection: hand-curated bottom-of-page section for the
+ * published methodology route. This deliberately replaces the generic
+ * count-driven pillar inventory on /methodology/ so the page never renders
+ * a zero-count empty state while the mrx-methodology pillar archive remains
+ * empty. Links must stay limited to live, already-published production URLs.
+ */
+import CtaLink from '../atoms/CtaLink.astro';
+import Heading from '../atoms/Heading.astro';
+import Text from '../atoms/Text.astro';
+
+const curatedGuides = [
+  {
+    title: 'How Are Mineral Rights Valued?',
+    href: '/blog/how-are-mineral-rights-valued/',
+    eyebrow: 'Valuation inputs',
+    summary:
+      'A plain-language walk-through of the DCF inputs behind a directional range: production history, decline-curve context, royalty terms, and the discount rate we apply to expected royalty income.',
+  },
+  {
+    title: 'How to Compare Mineral Rights Buyers in Texas',
+    href: '/blog/how-to-compare-mineral-rights-buyers-in-texas/',
+    eyebrow: 'Comparing offers',
+    summary:
+      'What to look at beyond the headline price: buyer process, funding certainty, clawbacks, post-close obligations, and why agreement terms change what an offer actually means.',
+  },
+  {
+    title: 'Documents Needed to Sell Texas Mineral Rights',
+    href: '/blog/what-documents-do-you-need-to-sell-mineral-rights-in-texas/',
+    eyebrow: 'Preparing for review',
+    summary:
+      'A short checklist of the royalty statements, leases, division orders, deeds, and title records that let an underwriter state every assumption in the written review.',
+  },
+  {
+    title: 'What Is a Clawback Clause in a Mineral Rights Sale',
+    href: '/blog/what-is-a-clawback-clause-in-a-mineral-rights-sale/',
+    eyebrow: 'Reading offer terms',
+    summary:
+      'Plain-language explanation of survival periods, carve-outs, notice-and-cure rights, and the conditions under which a buyer can re-open a deal after closing.',
+  },
+];
+---
+
+<section
+  class="methodology-bottom methodology-bottom--cta"
+  aria-labelledby="methodology-bottom-title"
+>
+  <div class="container">
+    <div class="methodology-bottom__cta" data-methodology-final-cta>
+      <p class="methodology-bottom__eyebrow">Apply the published methodology</p>
+      <Heading id="methodology-bottom-title" level={2} size="3xl">
+        See the assumptions behind your mineral-rights range
+      </Heading>
+      <Text class="methodology-bottom__lede" variant="lead">
+        Share your royalty records, ownership documents, or an offer letter. MRX will prepare a
+        free, confidential underwriter review and return a directional range with the inputs and
+        assumptions stated, explicitly not a certified appraisal, legal opinion, or tax opinion.
+      </Text>
+      <div class="methodology-bottom__actions" aria-label="Methodology review actions">
+        <CtaLink ctaName="meth-bottom-underwriter-review" href="/book/" variant="primary" size="lg">
+          Request an Underwriter Review
+        </CtaLink>
+        <CtaLink ctaName="meth-bottom-offer-review" href="/offer-review/" variant="ghost" size="lg">
+          Compare an Existing Offer
+        </CtaLink>
+      </div>
+      <p class="methodology-bottom__reassurance">
+        No card required. No obligation. Confidential review.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section
+  class="methodology-bottom methodology-bottom--editorial"
+  aria-labelledby="methodology-reading-list"
+>
+  <div class="container">
+    <div class="methodology-bottom__editorial" data-methodology-curated-guides>
+      <div class="methodology-bottom__editorial-head">
+        <p class="methodology-bottom__eyebrow">Methodology reading list</p>
+        <Heading id="methodology-reading-list" level={2} size="2xl">
+          Read the live articles behind the review inputs
+        </Heading>
+        <Text variant="muted">
+          These published MRX articles explain the practical inputs behind valuation, offer
+          comparison, documentation, and agreement terms. Draft or held content is intentionally
+          excluded.
+        </Text>
+      </div>
+
+      <ul class="methodology-bottom__grid" role="list" aria-labelledby="methodology-reading-list">
+        {
+          curatedGuides.map((guide) => (
+            <li class="methodology-bottom__card" data-methodology-curated-card={guide.href}>
+              <article>
+                <p class="methodology-bottom__card-eyebrow">{guide.eyebrow}</p>
+                <Heading level={3} size="md">
+                  {guide.title}
+                </Heading>
+                <p>{guide.summary}</p>
+                <a
+                  class="methodology-bottom__read-link"
+                  href={guide.href}
+                  data-cta-name={`meth-curated-${guide.href.split('/').filter(Boolean).pop()}`}
+                  aria-label={`Read ${guide.title}`}
+                >
+                  Read the article →
+                </a>
+              </article>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </div>
+</section>
+
+<style>
+  .methodology-bottom {
+    padding-block: clamp(3rem, 6vw, 5.5rem);
+    border-top: 1px solid var(--color-ink-100, #d9e0e4);
+    background:
+      radial-gradient(circle at top left, rgba(176, 106, 0, 0.16), transparent 34rem),
+      var(--color-bg-alt, #f6f3ec);
+  }
+
+  .methodology-bottom--editorial {
+    padding-top: 0;
+    border-top: 0;
+    background: var(--color-bg-alt, #f6f3ec);
+  }
+
+  .methodology-bottom__cta {
+    overflow: hidden;
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: var(--radius-lg, 18px);
+    padding: clamp(1.5rem, 4vw, 3rem);
+    color: var(--color-white, #fff);
+    background:
+      linear-gradient(135deg, rgba(176, 106, 0, 0.2), transparent 46%),
+      var(--color-brand-900, #071e34);
+    box-shadow: 0 24px 70px rgba(7, 30, 52, 0.18);
+  }
+
+  .methodology-bottom__cta :global(.heading),
+  .methodology-bottom__cta :global(.text) {
+    color: inherit;
+  }
+
+  .methodology-bottom__eyebrow,
+  .methodology-bottom__card-eyebrow {
+    margin: 0 0 var(--space-2, 0.5rem);
+    color: var(--color-accent-500, #d18a22);
+    font-size: var(--fs-xs, 0.78rem);
+    font-weight: 800;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+  }
+
+  .methodology-bottom__lede {
+    max-width: 72ch;
+    margin-top: var(--space-3, 0.85rem);
+  }
+
+  .methodology-bottom__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3, 0.85rem);
+    margin-top: var(--space-6, 2rem);
+  }
+
+  .methodology-bottom__actions :global(.btn--ghost) {
+    border-color: rgba(255, 255, 255, 0.72);
+    color: var(--color-white, #fff);
+  }
+
+  .methodology-bottom__actions :global(.btn--ghost:hover),
+  .methodology-bottom__actions :global(.btn--ghost:focus-visible) {
+    border-color: var(--color-white, #fff);
+    color: var(--color-brand-900, #071e34);
+    background: var(--color-white, #fff);
+  }
+
+  .methodology-bottom__reassurance {
+    margin: var(--space-4, 1rem) 0 0;
+    color: var(--color-ink-200, #c9d4da);
+    font-size: var(--fs-sm, 0.9rem);
+  }
+
+  .methodology-bottom__editorial {
+    display: grid;
+    gap: var(--space-6, 2rem);
+  }
+
+  .methodology-bottom__editorial-head {
+    max-width: 68ch;
+  }
+
+  .methodology-bottom__editorial-head :global(.text) {
+    margin-top: var(--space-3, 0.85rem);
+  }
+
+  .methodology-bottom__grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: var(--space-4, 1rem);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .methodology-bottom__card article {
+    display: flex;
+    min-height: 100%;
+    flex-direction: column;
+    gap: var(--space-3, 0.85rem);
+    border: 1px solid var(--color-ink-100, #d9e0e4);
+    border-radius: var(--radius-lg, 16px);
+    padding: var(--space-5, 1.25rem);
+    background: var(--color-white, #fff);
+  }
+
+  .methodology-bottom__card :global(.heading) {
+    margin: 0;
+  }
+
+  .methodology-bottom__card p:not(.methodology-bottom__card-eyebrow) {
+    margin: 0;
+    color: var(--color-ink-600, #4f626f);
+    font-size: 0.94rem;
+    line-height: 1.55;
+  }
+
+  .methodology-bottom__read-link {
+    margin-top: auto;
+    color: var(--color-brand-900, #071e34);
+    font-weight: 800;
+  }
+
+  .methodology-bottom__read-link:focus-visible {
+    outline: 3px solid var(--color-accent-500, #d18a22);
+    outline-offset: 0.2rem;
+    border-radius: 0.25rem;
+  }
+
+  @media (max-width: 1100px) {
+    .methodology-bottom__grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 640px) {
+    .methodology-bottom__actions {
+      align-items: stretch;
+      flex-direction: column;
+    }
+
+    .methodology-bottom__actions :global(.btn) {
+      justify-content: center;
+      width: 100%;
+    }
+
+    .methodology-bottom__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

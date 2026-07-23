@@ -1,0 +1,28 @@
+---
+import MarketingLayout from '../layouts/MarketingLayout.astro';
+import AccountHub from '../components/react/AccountHub';
+export const prerender = false;
+---
+
+<MarketingLayout
+  title="Guided Mineral Owner Intake"
+  description="Start a secure MRX owner intake, add multiple mineral properties, upload supporting documents, and prepare for Senior Underwriter review."
+  path="/owner-intake/"
+  pageType="utility"
+  pageCategory="account"
+  noindex={true}
+  breadcrumbs={[
+    { name: 'Home', path: '/' },
+    { name: 'Owner Intake', path: '/owner-intake/' },
+  ]}
+>
+  <section class="mrx-section mrx-section--sand">
+    <div class="container">
+      <AccountHub
+        client:load
+        supabaseUrl={import.meta.env.PUBLIC_SUPABASE_URL}
+        supabaseAnonKey={import.meta.env.PUBLIC_SUPABASE_ANON_KEY}
+      />
+    </div>
+  </section>
+</MarketingLayout>

@@ -1,25 +1,42 @@
 ---
 /**
  * PostLayout. For /blog/[...slug] and the 2 blog index/category pages.
- * Adds article-specific metadata, sidebar, related posts, and the
- * top-of-page §7 disclaimer when frontmatter disclaimer_top: true.
+ * Adds article-specific metadata, sidebar, and related posts.
+ * Accepts disclaimerTop for frontmatter compatibility, but the global
+ * top disclosure banner is intentionally no longer rendered here.
  */
 import BaseLayout from './BaseLayout.astro';
-import Disclaimer from '../components/molecules/Disclaimer.astro';
 import type { Crumb } from '../structured-data/breadcrumb';
+import type { ArticleMeasurementContext } from '../lib/ga4-measurement';
 
 interface Props {
   title: string;
   description: string;
   path: string;
   ogImage?: string;
+  ogImageAlt?: string;
+  ogImageWidth?: number;
+  ogImageHeight?: number;
+  ogImageType?: string;
+  publishedTime?: string;
+  modifiedTime?: string;
+  articleSection?: string;
+  articleAuthor?: string;
   noindex?: boolean;
   robots?: string;
+  appendBrand?: boolean;
   pageType?: 'home' | 'marketing' | 'blog' | 'post' | 'utility';
   pageCategory?: string;
   breadcrumbs?: Crumb[];
-  /** When true (driven by post.frontmatter.disclaimer_top), render the §7 disclaimer at the top. */
+  /** Deprecated: retained for frontmatter compatibility; top disclosures are no longer rendered. */
   disclaimerTop?: boolean;
+  /**
+   * Pre-resolved GA4 measurement context for staged pilot routes. Routes
+   * pass `null` when the post is missing required taxonomy fields; the
+   * resolver in src/lib/ga4-measurement.ts already returns null in that
+   * case so the dataLayer does not emit invalid values.
+   */
+  measurement?: ArticleMeasurementContext | null;
 }
 
 const {
@@ -27,12 +44,21 @@ const {
   description,
   path,
   ogImage,
+  ogImageAlt,
+  ogImageWidth,
+  ogImageHeight,
+  ogImageType,
+  publishedTime,
+  modifiedTime,
+  articleSection,
+  articleAuthor,
   noindex,
   robots,
+  appendBrand,
   pageType = 'post',
   pageCategory,
   breadcrumbs,
-  disclaimerTop = false,
+  measurement = null,
 } = Astro.props;
 ---
 
@@ -41,12 +67,21 @@ const {
   description={description}
   path={path}
   ogImage={ogImage}
+  ogImageAlt={ogImageAlt}
+  ogImageWidth={ogImageWidth}
+  ogImageHeight={ogImageHeight}
+  ogImageType={ogImageType}
+  publishedTime={publishedTime}
+  modifiedTime={modifiedTime}
+  articleSection={articleSection}
+  articleAuthor={articleAuthor}
   noindex={noindex}
   robots={robots}
+  appendBrand={appendBrand}
   pageType={pageType}
   pageCategory={pageCategory}
   breadcrumbs={breadcrumbs}
+  measurement={measurement}
 >
-  {disclaimerTop && <div class="container section--sm"><Disclaimer variant="top" /></div>}
   <slot />
 </BaseLayout>

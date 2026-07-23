@@ -38,6 +38,8 @@ const ROOTS = [
 // the rule itself, the test fixtures, the lexicon JSON).
 const ALLOWLIST_FILES = new Set([
   join(ROOT, 'src', 'lib', 'disclaimer.ts'),
+  // Runtime phrase-matching rules are implementation, not public claims.
+  join(ROOT, 'src', 'lib', 'platform', 'style.ts'),
   join(ROOT, 'compliance', 'disclaimer.ts'),
   join(ROOT, 'compliance', 'disallowed.json'),
   join(ROOT, 'compliance', 'named-competitors.json'),
@@ -150,7 +152,8 @@ async function* walk(dir) {
   for (const entry of entries) {
     const full = join(dir, entry.name);
     if (entry.isDirectory()) {
-      if (entry.name === 'node_modules' || entry.name === 'dist' || entry.name === '.astro') continue;
+      if (entry.name === 'node_modules' || entry.name === 'dist' || entry.name === '.astro')
+        continue;
       yield* walk(full);
     } else if (entry.isFile()) {
       const ext = entry.name.slice(entry.name.lastIndexOf('.'));

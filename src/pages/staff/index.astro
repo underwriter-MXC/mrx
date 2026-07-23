@@ -1,0 +1,28 @@
+---
+import MarketingLayout from '../../layouts/MarketingLayout.astro';
+import StaffPortal from '../../components/react/StaffPortal';
+export const prerender = false;
+---
+
+<MarketingLayout
+  title="Protected MRX Staff Portal"
+  description="Role- and assignment-protected MRX owner case review."
+  path="/staff/"
+  pageType="utility"
+  pageCategory="staff"
+  noindex={true}
+  breadcrumbs={[
+    { name: 'Home', path: '/' },
+    { name: 'Staff', path: '/staff/' },
+  ]}
+>
+  <section class="mrx-section mrx-section--sand staff-portal-section">
+    <div class="container staff-portal-container">
+      <StaffPortal
+        client:load
+        supabaseUrl={import.meta.env.PUBLIC_SUPABASE_URL}
+        supabaseAnonKey={import.meta.env.PUBLIC_SUPABASE_ANON_KEY}
+      />
+    </div>
+  </section>
+</MarketingLayout>

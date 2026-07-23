@@ -1,7 +1,9 @@
 import { test, expect } from '@playwright/test';
 
 test.describe('form posts', () => {
-  test('POST /api/book with valid form data redirects (303) or returns 200', async ({ request }) => {
+  test('POST /api/book with valid form data stays inside the E2E GHL write kill switch', async ({
+    request,
+  }) => {
     const formData = new URLSearchParams();
     formData.append('firstName', 'Test');
     formData.append('lastName', 'Owner');
@@ -12,7 +14,8 @@ test.describe('form posts', () => {
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       maxRedirects: 0,
     });
-    expect([200, 303]).toContain(r.status());
+    expect(r.status()).toBe(303);
+    expect(r.headers()['location']).toMatch(/^\/book\/thank-you\/?$/);
   });
 
   test('POST /api/book without consent returns 400', async ({ request }) => {

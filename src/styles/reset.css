@@ -30,10 +30,19 @@ html {
 
 body {
   min-height: 100vh;
-  line-height: 1.55;
+  font-size: var(--fs-base);
+  line-height: var(--lh-base);
   font-family: var(--font-sans);
   background: var(--color-bg);
   color: var(--color-ink-900);
+}
+
+@media (max-width: 700px) {
+  input,
+  textarea,
+  select {
+    font-size: 1rem;
+  }
 }
 
 img,

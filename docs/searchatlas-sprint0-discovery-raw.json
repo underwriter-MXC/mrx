@@ -1,0 +1,758 @@
+[
+  {
+    "name": "se_list_sites",
+    "arguments": {
+      "search": "mineralrightsxchange.com",
+      "page_size": 10
+    },
+    "ok": true,
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"total_count\": 1,\n  \"page\": 1,\n  \"page_size\": 10,\n  \"has_more\": false,\n  \"columns\": [\n    \"id\",\n    \"domain\",\n    \"country_code\",\n    \"keywords\",\n    \"traffic\",\n    \"backlinks\",\n    \"domain_power\",\n    \"dashboard_url\"\n  ],\n  \"rows\": [\n    [\n      702293,\n      \"mineralrightsxchange.com\",\n      \"\",\n      11,\n      0,\n      25,\n      1,\n      \"https://dashboard.searchatlas.com/site-explorer/detail/702293?domain=mineralrightsxchange.com\"\n    ]\n  ],\n  \"search\": \"mineralrightsxchange.com\"\n}"
+        }
+      ],
+      "structuredContent": {
+        "total_count": 1,
+        "page": 1,
+        "page_size": 10,
+        "has_more": false,
+        "columns": [
+          "id",
+          "domain",
+          "country_code",
+          "keywords",
+          "traffic",
+          "backlinks",
+          "domain_power",
+          "dashboard_url"
+        ],
+        "rows": [
+          [
+            702293,
+            "mineralrightsxchange.com",
+            "",
+            11,
+            0,
+            25,
+            1,
+            "https://dashboard.searchatlas.com/site-explorer/detail/702293?domain=mineralrightsxchange.com"
+          ]
+        ],
+        "search": "mineralrightsxchange.com"
+      },
+      "isError": false
+    }
+  },
+  {
+    "name": "otto_find_project_by_hostname",
+    "arguments": {
+      "hostname": "mineralrightsxchange.com"
+    },
+    "ok": true,
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"total_count\": 1,\n  \"page\": 1,\n  \"page_size\": 10,\n  \"has_more\": false,\n  \"columns\": [\n    \"hostname\",\n    \"uuid\",\n    \"seo_score\",\n    \"total_pages\",\n    \"found_issues\",\n    \"deployed_fixes\",\n    \"pixel_status\",\n    \"status\"\n  ],\n  \"rows\": [\n    [\n      \"mineralrightsxchange.com\",\n      \"e4bab8bb-717e-480c-8dea-1de1b8596eb7\",\n      93.0,\n      1,\n      8,\n      8,\n      \"Cloudflare Worker\",\n      \"engaged\"\n    ]\n  ]\n}"
+        }
+      ],
+      "structuredContent": {
+        "result": {
+          "total_count": 1,
+          "page": 1,
+          "page_size": 10,
+          "has_more": false,
+          "columns": [
+            "hostname",
+            "uuid",
+            "seo_score",
+            "total_pages",
+            "found_issues",
+            "deployed_fixes",
+            "pixel_status",
+            "status"
+          ],
+          "rows": [
+            [
+              "mineralrightsxchange.com",
+              "e4bab8bb-717e-480c-8dea-1de1b8596eb7",
+              93,
+              1,
+              8,
+              8,
+              "Cloudflare Worker",
+              "engaged"
+            ]
+          ]
+        }
+      },
+      "isError": false
+    }
+  },
+  {
+    "name": "otto_list_projects",
+    "arguments": {
+      "search": "mineralrightsxchange.com",
+      "page_size": 10
+    },
+    "ok": true,
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"total_count\": 1,\n  \"page\": 1,\n  \"page_size\": 10,\n  \"has_more\": false,\n  \"columns\": [\n    \"hostname\",\n    \"uuid\",\n    \"seo_score\",\n    \"total_pages\",\n    \"found_issues\",\n    \"deployed_fixes\",\n    \"pixel_status\",\n    \"status\"\n  ],\n  \"rows\": [\n    [\n      \"mineralrightsxchange.com\",\n      \"e4bab8bb-717e-480c-8dea-1de1b8596eb7\",\n      93.0,\n      1,\n      8,\n      8,\n      \"Cloudflare Worker\",\n      \"engaged\"\n    ]\n  ]\n}"
+        }
+      ],
+      "structuredContent": {
+        "result": {
+          "total_count": 1,
+          "page": 1,
+          "page_size": 10,
+          "has_more": false,
+          "columns": [
+            "hostname",
+            "uuid",
+            "seo_score",
+            "total_pages",
+            "found_issues",
+            "deployed_fixes",
+            "pixel_status",
+            "status"
+          ],
+          "rows": [
+            [
+              "mineralrightsxchange.com",
+              "e4bab8bb-717e-480c-8dea-1de1b8596eb7",
+              93,
+              1,
+              8,
+              8,
+              "Cloudflare Worker",
+              "engaged"
+            ]
+          ]
+        }
+      },
+      "isError": false
+    }
+  },
+  {
+    "name": "krt_list_projects",
+    "arguments": {
+      "search": "mineralrightsxchange.com",
+      "page_size": 10,
+      "detail": true
+    },
+    "ok": true,
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"total\": 1,\n  \"page\": 1,\n  \"page_size\": 10,\n  \"search\": \"mineralrightsxchange.com\",\n  \"items\": [\n    {\n      \"id\": 79292,\n      \"name\": \"Mineral Rights Xchange | Nationwide + Texas\",\n      \"url\": \"mineralrightsxchange.com\",\n      \"type\": \"domain\",\n      \"keyword_count\": 133,\n      \"language\": \"en\",\n      \"precise_location\": \"texas, united states\",\n      \"updated_at\": null\n    }\n  ]\n}"
+        }
+      ],
+      "structuredContent": {
+        "total": 1,
+        "page": 1,
+        "page_size": 10,
+        "search": "mineralrightsxchange.com",
+        "items": [
+          {
+            "id": 79292,
+            "name": "Mineral Rights Xchange | Nationwide + Texas",
+            "url": "mineralrightsxchange.com",
+            "type": "domain",
+            "keyword_count": 133,
+            "language": "en",
+            "precise_location": "texas, united states",
+            "updated_at": null
+          }
+        ]
+      },
+      "isError": false
+    }
+  },
+  {
+    "name": "cg_list_projects",
+    "arguments": {
+      "page_size": 20,
+      "slim": false
+    },
+    "ok": true,
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"total_count\": 4,\n  \"page\": 1,\n  \"page_size\": 20,\n  \"has_more\": false,\n  \"items\": [\n    {\n      \"id\": \"35342\",\n      \"name\": \"Falk Prosthetics & Orthotics, Inc.\",\n      \"domain\": \"falkprosthetics.com\",\n      \"status\": \"\",\n      \"article_count\": null,\n      \"created_at\": \"2026-03-20\"\n    },\n    {\n      \"id\": \"39516\",\n      \"name\": \"cosmicupdates.com\",\n      \"domain\": \"cosmicupdates.com\",\n      \"status\": \"\",\n      \"article_count\": null,\n      \"created_at\": \"2026-06-03\"\n    },\n    {\n      \"id\": \"39003\",\n      \"name\": \"Mineral Rights Xchange | Free Underwriter Review\",\n      \"domain\": \"mineralrightsxchange.com\",\n      \"status\": \"\",\n      \"article_count\": null,\n      \"created_at\": \"2026-05-23\"\n    },\n    {\n      \"id\": \"38618\",\n      \"name\": \"The Tarotologist\",\n      \"domain\": \"tarotologist.com\",\n      \"status\": \"\",\n      \"article_count\": null,\n      \"created_at\": \"2026-05-14\"\n    }\n  ]\n}"
+        }
+      ],
+      "structuredContent": {
+        "total_count": 4,
+        "page": 1,
+        "page_size": 20,
+        "has_more": false,
+        "items": [
+          {
+            "id": "35342",
+            "name": "Falk Prosthetics & Orthotics, Inc.",
+            "domain": "falkprosthetics.com",
+            "status": "",
+            "article_count": null,
+            "created_at": "2026-03-20"
+          },
+          {
+            "id": "39516",
+            "name": "cosmicupdates.com",
+            "domain": "cosmicupdates.com",
+            "status": "",
+            "article_count": null,
+            "created_at": "2026-06-03"
+          },
+          {
+            "id": "39003",
+            "name": "Mineral Rights Xchange | Free Underwriter Review",
+            "domain": "mineralrightsxchange.com",
+            "status": "",
+            "article_count": null,
+            "created_at": "2026-05-23"
+          },
+          {
+            "id": "38618",
+            "name": "The Tarotologist",
+            "domain": "tarotologist.com",
+            "status": "",
+            "article_count": null,
+            "created_at": "2026-05-14"
+          }
+        ]
+      },
+      "isError": false
+    }
+  },
+  {
+    "name": "cg_search_topical_maps",
+    "arguments": {
+      "search": "mineral rights",
+      "search_by": "keyword",
+      "page_size": 20,
+      "slim": false
+    },
+    "ok": true,
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"total_count\": 11,\n  \"page\": 1,\n  \"page_size\": 20,\n  \"has_more\": false,\n  \"items\": [\n    {\n      \"map_id\": 261165,\n      \"topic\": \"mineral rights valuation\",\n      \"domain\": \"https://mineralrightsxchange.com/mineral-rights-value/\",\n      \"clusters_count\": 10\n    },\n    {\n      \"map_id\": 261164,\n      \"topic\": \"mineral rights offer review\",\n      \"domain\": \"https://mineralrightsxchange.com/offer-review/\",\n      \"clusters_count\": 10\n    },\n    {\n      \"map_id\": 261163,\n      \"topic\": \"Texas mineral rights counties\",\n      \"domain\": \"https://mineralrightsxchange.com/mineral-rights/texas/\",\n      \"clusters_count\": 10\n    },\n    {\n      \"map_id\": 261162,\n      \"topic\": \"mineral rights title lease ownership\",\n      \"domain\": \"https://mineralrightsxchange.com/learning-center/title-lease-ownership/\",\n      \"clusters_count\": 10\n    },\n    {\n      \"map_id\": 261161,\n      \"topic\": \"mineral rights taxes and 1031 exchanges\",\n      \"domain\": \"https://mineralrightsxchange.com/learning-center/mineral-rights-taxes/\",\n      \"clusters_count\": 10\n    },\n    {\n      \"map_id\": 261159,\n      \"topic\": \"inherited mineral rights\",\n      \"domain\": \"https://mineralrightsxchange.com/inherited-mineral-rights/\",\n      \"clusters_count\": 10\n    },\n    {\n      \"map_id\": 256286,\n      \"topic\": \"how to sell my mineral rights\",\n      \"domain\": \"mineralrightsxchange.com\",\n      \"clusters_count\": 1\n    },\n    {\n      \"map_id\": 255581,\n      \"topic\": \"mineral rights\",\n      \"domain\": \"https://mineralrightsxchange.com/\",\n      \"clusters_count\": 6\n    },\n    {\n      \"map_id\": 254654,\n      \"topic\": \"sell mineral rights in texas\",\n      \"domain\": \"mineralrightsxchange.com\",\n      \"clusters_count\": 10\n    },\n    {\n      \"map_id\": 254639,\n      \"topic\": \"Sell My Mineral Rights\",\n      \"domain\": \"www.mineralrightsxchange.com\",\n      \"clusters_count\": 5\n    },\n    {\n      \"map_id\": 252927,\n      \"topic\": \"sell Texas mineral rights\",\n      \"domain\": \"https://mineralrightsxchange.com\",\n      \"clusters_count\": 5\n    }\n  ]\n}"
+        }
+      ],
+      "structuredContent": {
+        "result": {
+          "total_count": 11,
+          "page": 1,
+          "page_size": 20,
+          "has_more": false,
+          "items": [
+            {
+              "map_id": 261165,
+              "topic": "mineral rights valuation",
+              "domain": "https://mineralrightsxchange.com/mineral-rights-value/",
+              "clusters_count": 10
+            },
+            {
+              "map_id": 261164,
+              "topic": "mineral rights offer review",
+              "domain": "https://mineralrightsxchange.com/offer-review/",
+              "clusters_count": 10
+            },
+            {
+              "map_id": 261163,
+              "topic": "Texas mineral rights counties",
+              "domain": "https://mineralrightsxchange.com/mineral-rights/texas/",
+              "clusters_count": 10
+            },
+            {
+              "map_id": 261162,
+              "topic": "mineral rights title lease ownership",
+              "domain": "https://mineralrightsxchange.com/learning-center/title-lease-ownership/",
+              "clusters_count": 10
+            },
+            {
+              "map_id": 261161,
+              "topic": "mineral rights taxes and 1031 exchanges",
+              "domain": "https://mineralrightsxchange.com/learning-center/mineral-rights-taxes/",
+              "clusters_count": 10
+            },
+            {
+              "map_id": 261159,
+              "topic": "inherited mineral rights",
+              "domain": "https://mineralrightsxchange.com/inherited-mineral-rights/",
+              "clusters_count": 10
+            },
+            {
+              "map_id": 256286,
+              "topic": "how to sell my mineral rights",
+              "domain": "mineralrightsxchange.com",
+              "clusters_count": 1
+            },
+            {
+              "map_id": 255581,
+              "topic": "mineral rights",
+              "domain": "https://mineralrightsxchange.com/",
+              "clusters_count": 6
+            },
+            {
+              "map_id": 254654,
+              "topic": "sell mineral rights in texas",
+              "domain": "mineralrightsxchange.com",
+              "clusters_count": 10
+            },
+            {
+              "map_id": 254639,
+              "topic": "Sell My Mineral Rights",
+              "domain": "www.mineralrightsxchange.com",
+              "clusters_count": 5
+            },
+            {
+              "map_id": 252927,
+              "topic": "sell Texas mineral rights",
+              "domain": "https://mineralrightsxchange.com",
+              "clusters_count": 5
+            }
+          ]
+        }
+      },
+      "isError": false
+    }
+  },
+  {
+    "name": "dkn_get_overview",
+    "arguments": {
+      "project": "mineralrightsxchange.com",
+      "page_size": 10
+    },
+    "ok": true,
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"hostname\": \"\",\n  \"project_uuid\": \"\",\n  \"dkn_id\": null,\n  \"total_nodes\": 0,\n  \"generated_count\": 0,\n  \"pending_count\": 0,\n  \"failed_count\": 0,\n  \"completion_pct\": 0.0,\n  \"domain_content_score\": null,\n  \"items\": [],\n  \"found\": false\n}"
+        }
+      ],
+      "structuredContent": {
+        "hostname": "",
+        "project_uuid": "",
+        "dkn_id": null,
+        "total_nodes": 0,
+        "generated_count": 0,
+        "pending_count": 0,
+        "failed_count": 0,
+        "completion_pct": 0,
+        "domain_content_score": null,
+        "items": [],
+        "found": false
+      },
+      "isError": false
+    }
+  },
+  {
+    "name": "dkn_get_filter_options",
+    "arguments": {
+      "project": "mineralrightsxchange.com"
+    },
+    "ok": true,
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"project\": \"mineralrightsxchange.com\",\n  \"categories\": [],\n  \"article_statuses\": [\n    \"Pending Creation\",\n    \"In Progress\",\n    \"Generated\",\n    \"Failed\"\n  ],\n  \"message\": null\n}"
+        }
+      ],
+      "structuredContent": {
+        "result": {
+          "project": "mineralrightsxchange.com",
+          "categories": [],
+          "article_statuses": ["Pending Creation", "In Progress", "Generated", "Failed"],
+          "message": null
+        }
+      },
+      "isError": false
+    }
+  },
+  {
+    "name": "dkn_list_nodes",
+    "arguments": {
+      "project": "mineralrightsxchange.com",
+      "fetch_all": true
+    },
+    "ok": true,
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"total_count\": 0,\n  \"page\": 1,\n  \"page_size\": 0,\n  \"has_more\": false,\n  \"items\": [],\n  \"hostname\": \"mineralrightsxchange.com\",\n  \"dkn_id\": null,\n  \"message\": \"No DKN nodes found matching the specified filters.\"\n}"
+        }
+      ],
+      "structuredContent": {
+        "total_count": 0,
+        "page": 1,
+        "page_size": 0,
+        "has_more": false,
+        "items": [],
+        "hostname": "mineralrightsxchange.com",
+        "dkn_id": null,
+        "message": "No DKN nodes found matching the specified filters."
+      },
+      "isError": false
+    }
+  },
+  {
+    "name": "bv_list",
+    "arguments": {
+      "hostname": "mineralrightsxchange.com",
+      "page_size": 10
+    },
+    "ok": true,
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"total_count\": 1,\n  \"page\": 1,\n  \"page_size\": 10,\n  \"has_more\": false,\n  \"items\": [\n    {\n      \"name\": \"Mineral Rights Xchange\",\n      \"hostname\": \"mineralrightsxchange.com\",\n      \"uuid\": \"cc79230e-b938-496e-bef1-1f23a0e7e1ce\",\n      \"status\": \"active\",\n      \"articles_count\": 297,\n      \"sources_count\": 2,\n      \"content_count\": 299,\n      \"is_indexed\": true\n    }\n  ]\n}"
+        }
+      ],
+      "structuredContent": {
+        "total_count": 1,
+        "page": 1,
+        "page_size": 10,
+        "has_more": false,
+        "items": [
+          {
+            "name": "Mineral Rights Xchange",
+            "hostname": "mineralrightsxchange.com",
+            "uuid": "cc79230e-b938-496e-bef1-1f23a0e7e1ce",
+            "status": "active",
+            "articles_count": 297,
+            "sources_count": 2,
+            "content_count": 299,
+            "is_indexed": true
+          }
+        ]
+      },
+      "isError": false
+    }
+  },
+  {
+    "name": "bv_get_details",
+    "arguments": {
+      "identifier": "mineralrightsxchange.com",
+      "view": ["profile", "business_info", "embedded_kg", "overview"]
+    },
+    "ok": true,
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"uuid\": \"cc79230e-b938-496e-bef1-1f23a0e7e1ce\",\n  \"hostname\": \"mineralrightsxchange.com\",\n  \"views\": {\n    \"profile\": {\n      \"uuid\": \"cc79230e-b938-496e-bef1-1f23a0e7e1ce\",\n      \"name\": \"Mineral Rights Xchange\",\n      \"hostname\": \"mineralrightsxchange.com\",\n      \"status\": \"active\",\n      \"otto_project_id\": \"99913\",\n      \"business\": {\n        \"business_name\": \"Mineral Rights Xchange\",\n        \"website\": \"https://mineralrightsxchange.com\",\n        \"description\": \"Mineral Rights Xchange (MRX) provides free, no-pressure mineral-rights education and directional underwriter assessments…\",\n        \"niche\": \"Mineral rights education and underwriter reviews\",\n        \"target_audience\": \"Unknown\",\n        \"city\": \"Midland\",\n        \"state\": \"TX\",\n        \"country\": \"US\"\n      },\n      \"selected_voice\": \"Professional & Credible\",\n      \"embedded_kg\": {\n        \"author_name\": \"MRX Editorial Team\",\n        \"social_platforms\": [\n          \"facebook\",\n          \"twitter\",\n          \"linkedin\",\n          \"instagram\"\n        ],\n        \"social_profile_count\": 4,\n        \"top_page_count\": 17\n      },\n      \"readiness\": {\n        \"is_indexed\": true,\n        \"index_status\": \"ready\",\n        \"document_count\": 1,\n        \"last_build_time\": null,\n        \"articles_count\": 297,\n        \"sources_count\": 2,\n        \"content_count\": 299,\n        \"processed_count\": 1,\n        \"processing_count\": 0,\n        \"failed_count\": 0\n      },\n      \"unavailable_facets\": []\n    },\n    \"business_info\": {\n      \"brand_vault_uuid\": \"cc79230e-b938-496e-bef1-1f23a0e7e1ce\",\n      \"business_name\": \"Mineral Rights Xchange\",\n      \"website\": \"https://mineralrightsxchange.com\",\n      \"description\": \"Mineral Rights Xchange (MRX) provides free, no-pressure mineral-rights education and directional underwriter assessments for owners across the United States who are comparing offers, inherited interests, royalties, production, and sell-or-hold decisions. Assessments use available public records, production data, owner-provided documents, and stated assumptions. They are not certified appraisals or legal, tax, title, accounting, engineering, or investment advice. MRX may be a buyer in a transaction resulting from a review and discloses that relationship in writing before an agreement is signed.\",\n      \"description_truncated\": false,\n      \"uvp\": \"MineralRightsXchange is the most trusted online marketplace for mineral rights, offering a secure and transparent platform. It provides unparalleled access to diverse listings, expert support, and a streamlined transaction process, ensuring fair market value and peace of mind for both buyers and sellers.\",\n      \"uvp_truncated\": false,\n      \"brand_identity\": \"MineralRightsXchange is a brand committed to revolutionizing the mineral rights industry through transparency, efficiency, and security. It fosters a community built on trust, expertise, and innovation, empowering individuals and companies to transact with confidence. The tone is professional, reliable, and forward-thinking.\",\n      \"brand_identity_truncated\": false,\n      \"revenue_model\": \"MineralRightsXchange operates as an online marketplace connecting buyers and sellers of mineral rights. The business earns revenue by charging a small commission fee to sellers only upon the successful sale of their listed mineral rights. Listing properties and browsing listings are free for users.\",\n      \"revenue_model_truncated\": false,\n      \"email\": \"underwriter@mineralrightsxchange.com\",\n      \"phone\": \"+1 (432) 400-6198\",\n      \"street_address\": \"200 N Loraine St Suite 1450\",\n      \"city\": \"Midland\",\n      \"state\": \"TX\",\n      \"postal_code\": \"79701\",\n      \"country\": \"US\",\n      \"language_code\": \"en\",\n      \"number_of_employees\": null,\n      \"vat_id\": null,\n      \"tax_id\": null,\n      \"iso_6523_code\": null,\n      \"serp_location_text\": \"Texas, United States\"\n    },\n    \"embedded_kg\": {\n      \"hostname\": \"mineralrightsxchange.com\",\n      \"author_first_name\": \"MRX\",\n      \"author_last_name\": \"Editorial Team\",\n      \"social_profiles\": {\n        \"facebook_url\": \"https://www.facebook.com/profile.php?id=61590415648681&sk=about\",\n        \"twitter_url\": \"https://x.com/mineralrightsxchange\",\n        \"linkedin_url\": \"https://linkedin.com/company/mineralrightsxchange\",\n        \"instagram_url\": \"https://instagram.com/mineralrightsxchange\"\n      },\n      \"top_pages\": [\n        {\n          \"url\": \"https://mineralrightsxchange.com/\",\n          \"keywords\": [\n            \"mineral rights education\",\n            \"mineral rights offer review\",\n            \"free mineral rights review\"\n          ],\n          \"uuid\": \"08478586-db18-4d77-92b9-d69768bfcb08\"\n        },\n        {\n          \"url\": \"https://mineralrightsxchange.com/free-guide\",\n          \"keywords\": [\n            \"before you sign anything mineral rights guide\",\n            \"mineral rights valuation guide\",\n            \"underwriter guide mineral rights worth\"\n          ],\n          \"uuid\": \"73de8c94-4f22-4396-91eb-4080c30f9908\"\n        },\n        {\n          \"url\": \"https://mineralrightsxchange.com/1031-exchange\",\n          \"keywords\": [\n            \"1031 exchange mineral rights\",\n            \"sell mineral rights tax deferred\",\n            \"1031 exchange Texas royalty interests\"\n          ],\n          \"uuid\": \"82b2efa2-836c-4033-98ce-d7600b8f5642\"\n        },\n        {\n          \"url\": \"https://mineralrightsxchange.com/estate-heir\",\n          \"keywords\": [\n            \"inherited Texas mineral rights\",\n            \"probate mineral rights\",\n            \"family inherited Texas mineral rights\"\n          ],\n          \"uuid\": \"cfa7cf6a-b1d1-4736-9643-14182c1b48e8\"\n        },\n        {\n          \"url\": \"https://mineralrightsxchange.com/suspicious-seller\",\n          \"keywords\": [\n            \"is my mineral rights offer fair\",\n            \"mineral rights offer review\",\n            \"second opinion mineral rights\"\n          ],\n          \"uuid\": \"f92238b2-afd7-4549-9190-5fae165fe219\"\n        },\n        {\n          \"url\": \"https://mineralrightsxchange.com/confused-inheritor\",\n          \"keywords\": [\n            \"Texas mineral rights out of state owner\",\n            \"what are my mineral rights worth\",\n            \"inherited oil rights Texas\"\n          ],\n          \"uuid\": \"0daca118-e88b-4ea1-b7cd-553674987f69\"\n        },\n        {\n          \"url\": \"https://mineralrightsxchange.com/cash-strapped-owner\",\n          \"keywords\": [\n            \"sell mineral rights fast\",\n            \"cash out mineral rights\",\n            \"mineral rights lump sum\"\n          ],\n          \"uuid\": \"1b036432-85bf-4fdc-b03e-cdf00fec2465\"\n        },\n        {\n          \"url\": \"https://mineralrightsxchange.com/suspense-funds\",\n          \"keywords\": [\n            \"royalty check stopped coming\",\n            \"mineral rights suspense funds\",\n            \"unclaimed royalty payments Texas\"\n          ],\n          \"uuid\": \"f34a873e-244f-458c-b90c-99d2a0667566\"\n        },\n        {\n          \"url\": \"https://mineralrightsxchange.com/how-it-works\",\n          \"keywords\": [\n            \"how mineral rights underwriter review works\",\n            \"mineral rights acquisition process\",\n            \"how to sell mineral rights step by step\"\n          ],\n          \"uuid\": \"8ad66748-c9c1-4672-be47-84ac9e41e117\"\n        },\n        {\n          \"url\": \"https://mineralrightsxchange.com/book\",\n          \"keywords\": [\n            \"book mineral rights underwriter review\",\n            \"free mineral rights consultation\",\n            \"schedule mineral rights assessment\"\n          ],\n          \"uuid\": \"e42eba55-7344-4907-8b17-7b060c1ad2e9\"\n        },\n        {\n          \"url\": \"https://mineralrightsxchange.com/mineral-rights-value/\",\n          \"keywords\": [\n            \"mineral rights value\",\n            \"what are mineral rights worth\",\n            \"mineral rights valuation factors\"\n          ],\n          \"uuid\": \"3f4b1d09-4663-4aeb-bddd-87e79dc6ec27\"\n        },\n        {\n          \"url\": \"https://mineralrightsxchange.com/offer-review/\",\n          \"keywords\": [\n            \"mineral rights offer review\",\n            \"is my mineral rights offer fair\",\n            \"compare mineral rights offers\"\n          ],\n          \"uuid\": \"8d2ce363-4e77-4c59-bd0a-742308cabadc\"\n        },\n        {\n          \"url\": \"https://mineralrightsxchange.com/inherited-mineral-rights/\",\n          \"keywords\": [\n            \"inherited mineral rights\",\n            \"mineral rights inheritance\",\n            \"what to do with inherited mineral rights\"\n          ],\n          \"uuid\": \"b26ced02-0511-418f-9bd0-25cde36ed804\"\n        },\n        {\n          \"url\": \"https://mineralrightsxchange.com/learning-center/\",\n          \"keywords\": [\n            \"mineral rights guides\",\n            \"mineral rights education\",\n            \"mineral rights learning center\"\n          ],\n          \"uuid\": \"8ebfb0cf-247c-4e3e-9962-23d00a4ecbc6\"\n        },\n        {\n          \"url\": \"https://mineralrightsxchange.com/methodology/\",\n          \"keywords\": [\n            \"mineral rights valuation methodology\",\n            \"directional underwriter assessment\",\n            \"mineral rights review assumptions\"\n          ],\n          \"uuid\": \"3e203a70-dae1-42b6-a280-e3e8aa08dfcb\"\n        },\n        {\n          \"url\": \"https://mineralrightsxchange.com/mineral-rights/texas/\",\n          \"keywords\": [\n            \"Texas mineral rights\",\n            \"Texas mineral rights value\",\n            \"Texas royalty owners\"\n          ],\n          \"uuid\": \"278283d0-edec-47f0-ab20-8a5d3fbc3e2b\"\n        },\n        {\n          \"url\": \"https://mineralrightsxchange.com/team/\",\n          \"keywords\": [\n            \"MRX AI guides\",\n            \"mineral rights guide team\",\n            \"mineral rights AI\"\n          ],\n          \"uuid\": \"ab041eba-6abd-4981-bf4b-7148bba02fbb\"\n        }\n      ]\n    },\n    \"overview\": {\n      \"hostname\": \"mineralrightsxchange.com\",\n      \"is_indexed\": true,\n      \"articles_count\": 297,\n      \"content_count\": 299,\n      \"metrics\": {\n        \"total_words\": 9423,\n        \"total_pages\": 2,\n        \"total_images\": 32,\n        \"total_videos\": 0,\n        \"images_breakdown\": {\n          \"site_audit\": 26,\n          \"user_uploaded\": 6\n        },\n        \"videos_breakdown\": {\n          \"site_audit\": 0,\n          \"user_uploaded\": 0\n        },\n        \"total_sources\": 2,\n        \"processed_count\": 1,\n        \"processing_count\": 0,\n        \"failed_count\": 0,\n        \"last_processed_at\": \"2026-05-23T02:39:49.260020Z\"\n      }\n    }\n  }\n}"
+        }
+      ],
+      "structuredContent": {
+        "result": {
+          "uuid": "cc79230e-b938-496e-bef1-1f23a0e7e1ce",
+          "hostname": "mineralrightsxchange.com",
+          "views": {
+            "profile": {
+              "uuid": "cc79230e-b938-496e-bef1-1f23a0e7e1ce",
+              "name": "Mineral Rights Xchange",
+              "hostname": "mineralrightsxchange.com",
+              "status": "active",
+              "otto_project_id": "99913",
+              "business": {
+                "business_name": "Mineral Rights Xchange",
+                "website": "https://mineralrightsxchange.com",
+                "description": "Mineral Rights Xchange (MRX) provides free, no-pressure mineral-rights education and directional underwriter assessments…",
+                "niche": "Mineral rights education and underwriter reviews",
+                "target_audience": "Unknown",
+                "city": "Midland",
+                "state": "TX",
+                "country": "US"
+              },
+              "selected_voice": "Professional & Credible",
+              "embedded_kg": {
+                "author_name": "MRX Editorial Team",
+                "social_platforms": ["facebook", "twitter", "linkedin", "instagram"],
+                "social_profile_count": 4,
+                "top_page_count": 17
+              },
+              "readiness": {
+                "is_indexed": true,
+                "index_status": "ready",
+                "document_count": 1,
+                "last_build_time": null,
+                "articles_count": 297,
+                "sources_count": 2,
+                "content_count": 299,
+                "processed_count": 1,
+                "processing_count": 0,
+                "failed_count": 0
+              },
+              "unavailable_facets": []
+            },
+            "business_info": {
+              "brand_vault_uuid": "cc79230e-b938-496e-bef1-1f23a0e7e1ce",
+              "business_name": "Mineral Rights Xchange",
+              "website": "https://mineralrightsxchange.com",
+              "description": "Mineral Rights Xchange (MRX) provides free, no-pressure mineral-rights education and directional underwriter assessments for owners across the United States who are comparing offers, inherited interests, royalties, production, and sell-or-hold decisions. Assessments use available public records, production data, owner-provided documents, and stated assumptions. They are not certified appraisals or legal, tax, title, accounting, engineering, or investment advice. MRX may be a buyer in a transaction resulting from a review and discloses that relationship in writing before an agreement is signed.",
+              "description_truncated": false,
+              "uvp": "MineralRightsXchange is the most trusted online marketplace for mineral rights, offering a secure and transparent platform. It provides unparalleled access to diverse listings, expert support, and a streamlined transaction process, ensuring fair market value and peace of mind for both buyers and sellers.",
+              "uvp_truncated": false,
+              "brand_identity": "MineralRightsXchange is a brand committed to revolutionizing the mineral rights industry through transparency, efficiency, and security. It fosters a community built on trust, expertise, and innovation, empowering individuals and companies to transact with confidence. The tone is professional, reliable, and forward-thinking.",
+              "brand_identity_truncated": false,
+              "revenue_model": "MineralRightsXchange operates as an online marketplace connecting buyers and sellers of mineral rights. The business earns revenue by charging a small commission fee to sellers only upon the successful sale of their listed mineral rights. Listing properties and browsing listings are free for users.",
+              "revenue_model_truncated": false,
+              "email": "underwriter@mineralrightsxchange.com",
+              "phone": "+1 (432) 400-6198",
+              "street_address": "200 N Loraine St Suite 1450",
+              "city": "Midland",
+              "state": "TX",
+              "postal_code": "79701",
+              "country": "US",
+              "language_code": "en",
+              "number_of_employees": null,
+              "vat_id": null,
+              "tax_id": null,
+              "iso_6523_code": null,
+              "serp_location_text": "Texas, United States"
+            },
+            "embedded_kg": {
+              "hostname": "mineralrightsxchange.com",
+              "author_first_name": "MRX",
+              "author_last_name": "Editorial Team",
+              "social_profiles": {
+                "facebook_url": "https://www.facebook.com/profile.php?id=61590415648681&sk=about",
+                "twitter_url": "https://x.com/mineralrightsxchange",
+                "linkedin_url": "https://linkedin.com/company/mineralrightsxchange",
+                "instagram_url": "https://instagram.com/mineralrightsxchange"
+              },
+              "top_pages": [
+                {
+                  "url": "https://mineralrightsxchange.com/",
+                  "keywords": [
+                    "mineral rights education",
+                    "mineral rights offer review",
+                    "free mineral rights review"
+                  ],
+                  "uuid": "08478586-db18-4d77-92b9-d69768bfcb08"
+                },
+                {
+                  "url": "https://mineralrightsxchange.com/free-guide",
+                  "keywords": [
+                    "before you sign anything mineral rights guide",
+                    "mineral rights valuation guide",
+                    "underwriter guide mineral rights worth"
+                  ],
+                  "uuid": "73de8c94-4f22-4396-91eb-4080c30f9908"
+                },
+                {
+                  "url": "https://mineralrightsxchange.com/1031-exchange",
+                  "keywords": [
+                    "1031 exchange mineral rights",
+                    "sell mineral rights tax deferred",
+                    "1031 exchange Texas royalty interests"
+                  ],
+                  "uuid": "82b2efa2-836c-4033-98ce-d7600b8f5642"
+                },
+                {
+                  "url": "https://mineralrightsxchange.com/estate-heir",
+                  "keywords": [
+                    "inherited Texas mineral rights",
+                    "probate mineral rights",
+                    "family inherited Texas mineral rights"
+                  ],
+                  "uuid": "cfa7cf6a-b1d1-4736-9643-14182c1b48e8"
+                },
+                {
+                  "url": "https://mineralrightsxchange.com/suspicious-seller",
+                  "keywords": [
+                    "is my mineral rights offer fair",
+                    "mineral rights offer review",
+                    "second opinion mineral rights"
+                  ],
+                  "uuid": "f92238b2-afd7-4549-9190-5fae165fe219"
+                },
+                {
+                  "url": "https://mineralrightsxchange.com/confused-inheritor",
+                  "keywords": [
+                    "Texas mineral rights out of state owner",
+                    "what are my mineral rights worth",
+                    "inherited oil rights Texas"
+                  ],
+                  "uuid": "0daca118-e88b-4ea1-b7cd-553674987f69"
+                },
+                {
+                  "url": "https://mineralrightsxchange.com/cash-strapped-owner",
+                  "keywords": [
+                    "sell mineral rights fast",
+                    "cash out mineral rights",
+                    "mineral rights lump sum"
+                  ],
+                  "uuid": "1b036432-85bf-4fdc-b03e-cdf00fec2465"
+                },
+                {
+                  "url": "https://mineralrightsxchange.com/suspense-funds",
+                  "keywords": [
+                    "royalty check stopped coming",
+                    "mineral rights suspense funds",
+                    "unclaimed royalty payments Texas"
+                  ],
+                  "uuid": "f34a873e-244f-458c-b90c-99d2a0667566"
+                },
+                {
+                  "url": "https://mineralrightsxchange.com/how-it-works",
+                  "keywords": [
+                    "how mineral rights underwriter review works",
+                    "mineral rights acquisition process",
+                    "how to sell mineral rights step by step"
+                  ],
+                  "uuid": "8ad66748-c9c1-4672-be47-84ac9e41e117"
+                },
+                {
+                  "url": "https://mineralrightsxchange.com/book",
+                  "keywords": [
+                    "book mineral rights underwriter review",
+                    "free mineral rights consultation",
+                    "schedule mineral rights assessment"
+                  ],
+                  "uuid": "e42eba55-7344-4907-8b17-7b060c1ad2e9"
+                },
+                {
+                  "url": "https://mineralrightsxchange.com/mineral-rights-value/",
+                  "keywords": [
+                    "mineral rights value",
+                    "what are mineral rights worth",
+                    "mineral rights valuation factors"
+                  ],
+                  "uuid": "3f4b1d09-4663-4aeb-bddd-87e79dc6ec27"
+                },
+                {
+                  "url": "https://mineralrightsxchange.com/offer-review/",
+                  "keywords": [
+                    "mineral rights offer review",
+                    "is my mineral rights offer fair",
+                    "compare mineral rights offers"
+                  ],
+                  "uuid": "8d2ce363-4e77-4c59-bd0a-742308cabadc"
+                },
+                {
+                  "url": "https://mineralrightsxchange.com/inherited-mineral-rights/",
+                  "keywords": [
+                    "inherited mineral rights",
+                    "mineral rights inheritance",
+                    "what to do with inherited mineral rights"
+                  ],
+                  "uuid": "b26ced02-0511-418f-9bd0-25cde36ed804"
+                },
+                {
+                  "url": "https://mineralrightsxchange.com/learning-center/",
+                  "keywords": [
+                    "mineral rights guides",
+                    "mineral rights education",
+                    "mineral rights learning center"
+                  ],
+                  "uuid": "8ebfb0cf-247c-4e3e-9962-23d00a4ecbc6"
+                },
+                {
+                  "url": "https://mineralrightsxchange.com/methodology/",
+                  "keywords": [
+                    "mineral rights valuation methodology",
+                    "directional underwriter assessment",
+                    "mineral rights review assumptions"
+                  ],
+                  "uuid": "3e203a70-dae1-42b6-a280-e3e8aa08dfcb"
+                },
+                {
+                  "url": "https://mineralrightsxchange.com/mineral-rights/texas/",
+                  "keywords": [
+                    "Texas mineral rights",
+                    "Texas mineral rights value",
+                    "Texas royalty owners"
+                  ],
+                  "uuid": "278283d0-edec-47f0-ab20-8a5d3fbc3e2b"
+                },
+                {
+                  "url": "https://mineralrightsxchange.com/team/",
+                  "keywords": ["MRX AI guides", "mineral rights guide team", "mineral rights AI"],
+                  "uuid": "ab041eba-6abd-4981-bf4b-7148bba02fbb"
+                }
+              ]
+            },
+            "overview": {
+              "hostname": "mineralrightsxchange.com",
+              "is_indexed": true,
+              "articles_count": 297,
+              "content_count": 299,
+              "metrics": {
+                "total_words": 9423,
+                "total_pages": 2,
+                "total_images": 32,
+                "total_videos": 0,
+                "images_breakdown": {
+                  "site_audit": 26,
+                  "user_uploaded": 6
+                },
+                "videos_breakdown": {
+                  "site_audit": 0,
+                  "user_uploaded": 0
+                },
+                "total_sources": 2,
+                "processed_count": 1,
+                "processing_count": 0,
+                "failed_count": 0,
+                "last_processed_at": "2026-05-23T02:39:49.260020Z"
+              }
+            }
+          }
+        }
+      },
+      "isError": false
+    }
+  },
+  {
+    "name": "llmv_list_projects",
+    "arguments": {
+      "search": "mineralrightsxchange.com",
+      "page_size": 10,
+      "detail": true
+    },
+    "ok": true,
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"total_count\": 1,\n  \"page\": 1,\n  \"page_size\": 10,\n  \"has_more\": false,\n  \"items\": [\n    {\n      \"id\": \"b03cfba8-e79b-475b-a4a3-280cceb970ed\",\n      \"domain\": \"mineralrightsxchange.com\",\n      \"status\": \"\",\n      \"country_code\": \"US\",\n      \"tracking_type\": \"\",\n      \"is_user_tracked\": true,\n      \"topics_count\": 18,\n      \"queries_count\": 49,\n      \"created_at\": \"2026-05-08\",\n      \"platform_progress\": null\n    }\n  ]\n}"
+        }
+      ],
+      "structuredContent": {
+        "total_count": 1,
+        "page": 1,
+        "page_size": 10,
+        "has_more": false,
+        "items": [
+          {
+            "id": "b03cfba8-e79b-475b-a4a3-280cceb970ed",
+            "domain": "mineralrightsxchange.com",
+            "status": "",
+            "country_code": "US",
+            "tracking_type": "",
+            "is_user_tracked": true,
+            "topics_count": 18,
+            "queries_count": 49,
+            "created_at": "2026-05-08",
+            "platform_progress": null
+          }
+        ]
+      },
+      "isError": false
+    }
+  }
+]

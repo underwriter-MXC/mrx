@@ -21,12 +21,12 @@
 .header__inner {
   display: grid;
   grid-template-columns: minmax(190px, 235px) minmax(0, 1fr) auto;
-  min-height: 76px;
-  padding-block: 0.55rem;
+  min-height: 68px;
+  padding-block: 0.4rem;
   gap: clamp(1rem, 2vw, 2rem);
 }
 .header__brand img {
-  width: min(210px, 45vw);
+  width: min(190px, 45vw);
 }
 .header__nav {
   justify-self: center;
@@ -36,7 +36,7 @@
   position: relative;
   padding: 0.55rem 0.08rem;
   color: #294456;
-  font-size: clamp(0.72rem, 0.78vw, 0.84rem);
+  font-size: clamp(0.68rem, 0.72vw, 0.78rem);
   font-weight: 700;
   text-decoration: none;
   white-space: nowrap;
@@ -65,6 +65,19 @@
   align-items: center;
   gap: 0.5rem;
 }
+.header__account {
+  color: #173e58;
+  font-size: 0.76rem;
+  font-weight: 800;
+  white-space: nowrap;
+  text-decoration: none;
+}
+.header__account:hover,
+.header__account[aria-current='page'] {
+  color: #9a6719;
+  text-decoration: underline;
+  text-underline-offset: 0.22rem;
+}
 .header__ask {
   display: flex;
   align-items: center;
@@ -75,7 +88,9 @@
   color: #fff;
   padding: 0.34rem 0.78rem 0.34rem 0.34rem;
   box-shadow: 0 8px 20px rgba(7, 30, 52, 0.14);
-  transition: transform 0.18s ease, background 0.18s ease;
+  transition:
+    transform 0.18s ease,
+    background 0.18s ease;
 }
 .header__ask:hover {
   background: #0d3452;
@@ -137,6 +152,9 @@
   }
 }
 @media (max-width: 520px) {
+  .header__account {
+    display: none;
+  }
   .header__ask span {
     display: none;
   }
@@ -163,7 +181,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 2rem;
-  padding: clamp(2rem, 4vw, 3rem) 0;
+  padding: clamp(1.5rem, 3vw, 2.2rem) 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.13);
 }
 .footer__cta > div {
@@ -179,7 +197,7 @@
 }
 .footer__cta h2 {
   color: #fff;
-  font-size: clamp(1.7rem, 3vw, 2.55rem);
+  font-size: clamp(1.5rem, 2.6vw, 2.15rem);
   letter-spacing: -0.035em;
 }
 .footer__cta > div > p:last-child {
@@ -189,7 +207,7 @@
 .footer__grid {
   gap: clamp(2rem, 5vw, 4.5rem);
   grid-template-columns: 1.5fr repeat(3, 1fr);
-  padding-top: clamp(2.5rem, 5vw, 4rem);
+  padding-top: clamp(1.8rem, 3.8vw, 3rem);
 }
 .footer__logo {
   display: block;
@@ -255,7 +273,7 @@
   opacity: 0.76;
 }
 .footer .mrx-disclaimer-footer {
-  margin-top: 2.75rem;
+  margin-top: 1.8rem;
   padding: 1rem 1.1rem;
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 12px;
@@ -440,7 +458,7 @@
   background: #fffaf0;
 }
 .mrx-section {
-  padding: clamp(3.5rem, 7vw, 6.5rem) 0;
+  padding: clamp(2.25rem, 4.5vw, 4rem) 0;
 }
 .mrx-section--dark {
   background: var(--mrx-navy);
@@ -455,16 +473,16 @@
 }
 .mrx-section-heading {
   max-width: 760px;
-  margin-bottom: 2rem;
+  margin-bottom: 1.25rem;
 }
 .mrx-section-heading h2 {
-  font-size: clamp(2rem, 4.6vw, 3.8rem);
+  font-size: clamp(1.75rem, 3.6vw, 3rem);
   letter-spacing: -0.035em;
 }
 .mrx-section-heading p:last-child {
   margin-top: 0.7rem;
   color: #5a6c76;
-  font-size: 1.02rem;
+  font-size: 0.94rem;
 }
 .mrx-section--dark .mrx-section-heading p:last-child {
   color: #b9c7d0;
@@ -478,8 +496,8 @@
 }
 .mrx-intent-card {
   display: grid;
-  min-height: 270px;
-  padding: 1.4rem;
+  min-height: 220px;
+  padding: 1.1rem;
   border: 1px solid var(--mrx-line);
   border-radius: 18px;
   background: #fff;
@@ -502,7 +520,7 @@
 }
 .mrx-intent-card h3 {
   margin: 0.55rem 0;
-  font-size: 1.55rem;
+  font-size: 1.32rem;
 }
 .mrx-intent-card p {
   align-self: start;
@@ -581,24 +599,24 @@
   color: #96651a;
 }
 .mrx-page-hero {
-  padding: clamp(3.5rem, 7vw, 6.5rem) 0;
+  padding: clamp(1.8rem, 3.8vw, 3.25rem) 0;
   background: linear-gradient(145deg, #fffaf1, #ece6d9);
   border-bottom: 1px solid var(--mrx-line);
 }
 .mrx-page-hero__grid {
   display: grid;
   grid-template-columns: 1fr 0.65fr;
-  gap: 3rem;
+  gap: clamp(1.25rem, 3vw, 2.25rem);
   align-items: center;
 }
 .mrx-page-hero h1 {
-  font-size: clamp(2.6rem, 6vw, 5rem);
+  font-size: clamp(2.15rem, 4.8vw, 4.15rem);
   letter-spacing: -0.045em;
 }
 .mrx-page-hero p:not(.mrx-eyebrow) {
-  margin: 1rem 0;
+  margin: 0.7rem 0;
   color: #50636f;
-  font-size: 1.08rem;
+  font-size: 0.98rem;
 }
 .mrx-answer-card {
   padding: 1.3rem;
@@ -631,12 +649,12 @@
   gap: clamp(2rem, 6vw, 5rem);
 }
 .mrx-prose-grid h2 {
-  font-size: clamp(1.7rem, 3.6vw, 2.6rem);
-  margin-bottom: 0.8rem;
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  margin-bottom: 0.6rem;
 }
 .mrx-prose-grid p + .mrx-prose-grid h2,
 .mrx-prose-grid ul + .mrx-prose-grid h2 {
-  margin-top: 2rem;
+  margin-top: 1.4rem;
 }
 .mrx-prose-grid ul {
   display: grid;
@@ -675,7 +693,7 @@
   font-weight: 850;
 }
 .mrx-directory {
-  padding: clamp(3rem, 6vw, 5rem) 0;
+  padding: clamp(2.2rem, 4vw, 3.5rem) 0;
 }
 .mrx-directory-grid {
   display: grid;
@@ -724,7 +742,7 @@
   object-fit: cover;
 }
 .mrx-guide-profile h1 {
-  font-size: clamp(2.8rem, 6vw, 5rem);
+  font-size: clamp(2.25rem, 4.8vw, 4rem);
 }
 .mrx-guide-profile .mrx-guide-label {
   color: #99681b;
@@ -753,7 +771,7 @@
   background: #fff;
 }
 .mrx-author-card h1 {
-  font-size: clamp(2.4rem, 5vw, 4rem);
+  font-size: clamp(2.05rem, 4vw, 3.35rem);
 }
 @media (max-width: 1050px) {
   .mrx-home-hero__grid,
@@ -818,8 +836,10 @@
 /* Hermes homepage imagery layer. The artwork remains a real responsive image;
    all copy, prompts, controls, and disclosures stay semantic and interactive. */
 .mrx-home-hero {
-  min-height: 680px;
-  padding: clamp(2.5rem, 4.5vw, 4.25rem) 0;
+  --mrx-home-hero-image-position: center top;
+
+  min-height: 610px;
+  padding: clamp(1.75rem, 3.5vw, 3rem) 0;
   isolation: isolate;
   background: #d6923b;
 }
@@ -836,7 +856,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center center;
+  object-position: var(--mrx-home-hero-image-position);
 }
 
 .mrx-home-hero .container {
@@ -868,7 +888,7 @@
 .mrx-home-hero h1 {
   max-width: 13ch;
   color: #071e34;
-  font-size: clamp(2.45rem, 3.3vw, 3.75rem);
+  font-size: clamp(2.2rem, 3vw, 3.35rem);
   line-height: 1;
   letter-spacing: -0.043em;
 }
@@ -1118,7 +1138,7 @@
 }
 
 .mrx-benefits {
-  padding: clamp(2rem, 4vw, 3.4rem) 0;
+  padding: clamp(1.6rem, 3vw, 2.6rem) 0;
   border-bottom: 1px solid var(--mrx-line);
   background: #fffdf8;
 }
@@ -1128,10 +1148,10 @@
 }
 
 .mrx-benefits h2 {
-  max-width: 13ch;
+  max-width: none;
   margin-bottom: 1.35rem;
   color: #071e34;
-  font-size: clamp(2rem, 3.4vw, 3.2rem);
+  font-size: clamp(1.75rem, 3vw, 2.75rem);
   letter-spacing: -0.035em;
 }
 
@@ -1232,10 +1252,6 @@
     height: clamp(430px, 60vw, 620px);
   }
 
-  .mrx-home-hero__media img {
-    object-position: center center;
-  }
-
   .mrx-home-hero__grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 1rem;
@@ -1265,15 +1281,13 @@
 
 @media (max-width: 900px) {
   .mrx-home-hero {
+    --mrx-home-hero-image-position: 26% top;
+
     padding-top: 0;
   }
 
   .mrx-home-hero__media {
     height: clamp(190px, 48vw, 260px);
-  }
-
-  .mrx-home-hero__media img {
-    object-position: 26% 32%;
   }
 
   .mrx-home-hero__grid {

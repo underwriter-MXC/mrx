@@ -13,11 +13,16 @@ export const SITE = {
     'Free, no-pressure mineral-rights education for owners comparing offers, inherited interests, royalties, and sell-or-hold decisions across the United States.',
   url: 'https://mineralrightsxchange.com',
   locale: 'en-US',
-  email: 'review@mineralrightsxchange.com',
+  email: 'underwriter@mineralrightsxchange.com',
   phone: '', // Reserved; populated when MRX has a published business phone.
   addressRegion: 'TX',
   addressCountry: 'US',
   foundedYear: 2026,
+  // Twitter / X handle for the `twitter:site` meta tag. Leave undefined
+  // until Daryl confirms first-party ownership of the @mineralrightsxchange
+  // X profile; Seo.astro suppresses the `<meta name="twitter:site">` tag
+  // when this is undefined so we never publish a guessed handle.
+  twitterSite: undefined as string | undefined,
 } as const;
 
 export const NAV = {
@@ -34,8 +39,10 @@ export const NAV = {
       { label: 'Meet the AI Guides', href: '/team/' },
       { label: 'Methodology', href: '/methodology' },
       { label: 'How It Works', href: '/how-it-works' },
+      { label: 'Contact Us', href: '/contact/' },
     ],
     resources: [
+      { label: 'Submit Property Details', href: '/owner-intake/' },
       { label: 'Value My Minerals', href: '/mineral-rights-value/' },
       { label: 'Review My Offer', href: '/offer-review/' },
       { label: 'Inherited Rights', href: '/inherited-mineral-rights/' },
@@ -46,9 +53,7 @@ export const NAV = {
       { label: 'Terms & AI Disclosure', href: '/terms/' },
       { label: 'Communication Preferences', href: '/communication-preferences/' },
     ],
-    cta: [
-      { label: 'Ask Tommy', href: '#ask-tommy', variant: 'primary' as const },
-    ],
+    cta: [{ label: 'Ask Tommy', href: '#ask-tommy', variant: 'primary' as const }],
   },
   cta: {
     book: { label: 'Book My Free Review', href: '/book' },

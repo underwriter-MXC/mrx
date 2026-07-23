@@ -1,0 +1,36 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import AuthorArchivePage from '../../components/organisms/AuthorArchivePage.astro';
+import { paginateArchive } from '../../lib/archive-pagination';
+import { isPublishedPost } from '../../lib/content-graph';
+
+export const prerender = true;
+
+export async function getStaticPaths() {
+  const authors = await getCollection('authors', (author) => author.data.kind === 'ai-guide');
+  return authors.map((author) => ({
+    params: { slug: author.id.replace(/\.mdx?$/, '') },
+    props: { author },
+  }));
+}
+
+interface Props {
+  author: CollectionEntry<'authors'>;
+}
+
+const { author } = Astro.props;
+const authorId = author.id.replace(/\.mdx?$/, '');
+const posts = (
+  await getCollection(
+    'posts',
+    (post) => isPublishedPost(post) && post.data.author.id.replace(/\.mdx?$/, '') === authorId,
+  )
+).sort(
+  (a, b) =>
+    new Date(b.data.published_at).getTime() - new Date(a.data.published_at).getTime() ||
+    a.id.localeCompare(b.id),
+);
+const page = paginateArchive(posts, 1);
+---
+
+<AuthorArchivePage {...page} author={author} />

@@ -160,7 +160,7 @@ Homepage:
 Booking:
 
 - `/book/` continues to POST `/api/book`, upsert to GHL, then redirect to `MRX_GHL_CALENDAR_URL`.
-- GHL calendar source of truth: `https://api.leadconnectorhq.com/widget/booking/lg3KcWfsKrR2pCWS6AeL`.
+- GHL calendar source of truth: `https://api.leadconnectorhq.com/widget/booking/mEqrbWIelaS7o5TMsqUX`.
 - Form path remains the fallback if public calendar env is unavailable.
 
 AI chat:

@@ -1,0 +1,31 @@
+---
+/**
+ * StaticPillarInventory organism: downward article list for the 6
+ * static marketing/state pillar routes that don't already render a
+ * PillarHubPage (sell-mineral-rights, mineral-rights-value, offer-review,
+ * inherited-mineral-rights, texas-mineral-rights, mrx-methodology).
+ *
+ * Renders the same PillarInventory contract on top of a thin wrapper
+ * so the existing page hero/CTA stays untouched and the inventory
+ * sits below the primary content.
+ *
+ * Every canonical static pillar now has a count-driven `/page/{n}/` route.
+ * PillarInventory therefore keeps its default automatic pagination. When the
+ * fail-closed public inventory fits on page one, it emits no continuation
+ * links; when it grows past 12, every link resolves to a generated route.
+ */
+import PillarInventory from './PillarInventory.astro';
+import type { PillarInventoryPage } from '../../lib/pillar-inventory';
+
+interface Props {
+  inventory: PillarInventoryPage;
+}
+
+const { inventory } = Astro.props;
+---
+
+<PillarInventory
+  inventory={inventory}
+  eyebrow={`${inventory.pillar.label} articles`}
+  heading={`${inventory.totalPosts} reviewed ${inventory.pillar.label.toLowerCase()} articles`}
+/>

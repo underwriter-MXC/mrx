@@ -1,0 +1,47 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import AuthorArchivePage from '../../../../components/organisms/AuthorArchivePage.astro';
+import {
+  archivePageNumbers,
+  paginateArchive,
+  type ArchivePage,
+} from '../../../../lib/archive-pagination';
+import { isPublishedPost } from '../../../../lib/content-graph';
+
+export const prerender = true;
+
+export async function getStaticPaths() {
+  const [authors, posts] = await Promise.all([
+    getCollection('authors'),
+    getCollection('posts', isPublishedPost),
+  ]);
+
+  return authors.flatMap((author) => {
+    const authorId = author.id.replace(/\.mdx?$/, '');
+    const authorPosts = posts
+      .filter(
+        (post) =>
+          author.data.kind === 'organization' ||
+          post.data.author.id.replace(/\.mdx?$/, '') === authorId,
+      )
+      .sort(
+        (a, b) =>
+          new Date(b.data.published_at).getTime() - new Date(a.data.published_at).getTime() ||
+          a.id.localeCompare(b.id),
+      );
+    return archivePageNumbers(authorPosts.length).map((page) => ({
+      params: { slug: authorId, page: String(page) },
+      props: { author, page: paginateArchive(authorPosts, page) },
+    }));
+  });
+}
+
+interface Props {
+  author: CollectionEntry<'authors'>;
+  page: ArchivePage<CollectionEntry<'posts'>>;
+}
+
+const { author, page } = Astro.props;
+---
+
+<AuthorArchivePage {...page} author={author} />

@@ -1,0 +1,356 @@
+---
+/**
+ * Universal closing CTA for Learning Center articles. It gives owners a
+ * low-friction way to ask a question and a direct path to an underwriter review.
+ */
+import CtaLink from '../atoms/CtaLink.astro';
+
+interface Props {
+  articleTitle: string;
+  reviewCta: { label: string; href: string; ctaName: string };
+  askCtaName: string;
+  tommyPrompt?: string;
+}
+
+const { articleTitle, reviewCta, askCtaName, tommyPrompt: promptOverride } = Astro.props;
+const tommyPrompt =
+  promptOverride ??
+  `I just read "${articleTitle}." Help me understand what it means for my mineral rights and what information you need from me.`;
+---
+
+<section class="article-closing-cta" data-article-closing-cta aria-labelledby="article-next-step">
+  <div class="container">
+    <div class="article-closing-cta__panel">
+      <div class="article-closing-cta__copy">
+        <p class="article-closing-cta__eyebrow">A practical next step</p>
+        <h2 id="article-next-step">Put your mineral rights in context.</h2>
+        <p class="article-closing-cta__lede">
+          Every mineral interest, royalty history, and written offer is different. Start with a
+          question, or share what you have for a free underwriter review.
+        </p>
+        <ul class="article-closing-cta__assurances" aria-label="Review assurances">
+          <li>Free</li>
+          <li>Confidential</li>
+          <li>No obligation to sell</li>
+        </ul>
+      </div>
+
+      <div class="article-closing-cta__actions" aria-label="Choose your next step">
+        <p class="article-closing-cta__action-label">Ready for a closer look?</p>
+
+        <CtaLink
+          ctaName={reviewCta.ctaName}
+          href={reviewCta.href}
+          variant="primary"
+          size="lg"
+          class="article-closing-cta__review"
+        >
+          {reviewCta.label}
+          <span aria-hidden="true">→</span>
+        </CtaLink>
+        <p class="article-closing-cta__note">
+          Get a directional range with the assumptions clearly stated.
+        </p>
+
+        <div class="article-closing-cta__divider"><span>or start with a question</span></div>
+
+        <div class="article-closing-cta__tommy">
+          <img
+            src="/assets/mrx-homepage-v4/avatars/tommy-hermes-128.webp"
+            alt=""
+            width="128"
+            height="128"
+            loading="lazy"
+            decoding="async"
+          />
+          <div>
+            <strong>Not ready to share documents?</strong>
+            <span>Tommy can help you figure out what matters first.</span>
+          </div>
+        </div>
+
+        <button
+          class="article-closing-cta__ask"
+          type="button"
+          data-article-cta-chat
+          data-tommy-prompt={tommyPrompt}
+          data-cta-name={askCtaName}
+        >
+          Ask Tommy first <span aria-hidden="true">→</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll<HTMLElement>('[data-article-cta-chat]').forEach((button) => {
+    button.addEventListener('click', () => {
+      window.dispatchEvent(
+        new CustomEvent('mrx:open-chat', { detail: { prompt: button.dataset.tommyPrompt } }),
+      );
+    });
+  });
+</script>
+
+<style>
+  .article-closing-cta {
+    margin-bottom: -1px;
+    padding-top: clamp(2.5rem, 5.5vw, 5rem);
+    padding-bottom: 0;
+    border-top: 1px solid #ded6c6;
+    background:
+      radial-gradient(circle at 12% 18%, rgba(215, 154, 43, 0.14), transparent 28%),
+      linear-gradient(to bottom, #f4f0e7 0 calc(100% - 88px), #061827 calc(100% - 88px) 100%);
+  }
+
+  .article-closing-cta__panel {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1.18fr) minmax(340px, 0.82fr);
+    gap: clamp(2rem, 5vw, 5rem);
+    align-items: center;
+    overflow: hidden;
+    padding: clamp(1.6rem, 4vw, 3.5rem);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-bottom: 0;
+    border-radius: clamp(20px, 2.5vw, 28px) clamp(20px, 2.5vw, 28px) 0 0;
+    background:
+      radial-gradient(circle at 7% 16%, rgba(245, 166, 35, 0.13), transparent 31%),
+      linear-gradient(142deg, #0b304c 0%, #071e34 56%, #061827 100%);
+    box-shadow: 0 -16px 50px rgba(7, 30, 52, 0.13);
+  }
+
+  .article-closing-cta__panel::before {
+    position: absolute;
+    inset: 0 0 auto;
+    height: 4px;
+    background: linear-gradient(90deg, #f5a623, #d8951f 45%, rgba(216, 149, 31, 0));
+    content: '';
+  }
+
+  .article-closing-cta__copy {
+    max-width: 670px;
+  }
+
+  .article-closing-cta__eyebrow {
+    margin-bottom: 0.65rem;
+    color: #f1bd58;
+    font-size: 0.72rem;
+    font-weight: 850;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+  }
+
+  .article-closing-cta h2 {
+    max-width: 14ch;
+    color: #fff;
+    font-size: clamp(2rem, 4vw, 3.45rem);
+    line-height: 1.02;
+    letter-spacing: -0.045em;
+    text-wrap: balance;
+  }
+
+  .article-closing-cta__lede {
+    max-width: 58ch;
+    margin-top: 1rem;
+    color: #d7e2eb;
+    font-size: clamp(0.98rem, 1.3vw, 1.1rem);
+    line-height: 1.58;
+  }
+
+  .article-closing-cta__assurances {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem 1.15rem;
+    margin-top: 1.25rem;
+    color: #f2f6f8;
+    font-size: 0.76rem;
+    font-weight: 800;
+  }
+
+  .article-closing-cta__assurances li {
+    display: flex;
+    align-items: center;
+    gap: 0.42rem;
+  }
+
+  .article-closing-cta__assurances li::before {
+    display: grid;
+    width: 17px;
+    height: 17px;
+    place-items: center;
+    border-radius: 50%;
+    background: #e3a837;
+    color: #071e34;
+    content: '✓';
+    font-size: 0.68rem;
+  }
+
+  .article-closing-cta__actions {
+    min-width: 0;
+    padding: clamp(1.1rem, 2.5vw, 1.5rem);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.075);
+    box-shadow: 0 16px 38px rgba(0, 0, 0, 0.17);
+    backdrop-filter: blur(10px);
+  }
+
+  .article-closing-cta__action-label {
+    margin-bottom: 0.75rem;
+    color: #fff;
+    font-size: 0.76rem;
+    font-weight: 850;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .article-closing-cta__tommy {
+    display: grid;
+    grid-template-columns: 52px minmax(0, 1fr);
+    gap: 0.75rem;
+    align-items: center;
+    margin-bottom: 0.85rem;
+  }
+
+  .article-closing-cta__tommy img {
+    width: 52px;
+    height: 52px;
+    border: 2px solid #d79a2b;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .article-closing-cta__tommy div {
+    display: grid;
+    gap: 0.1rem;
+  }
+
+  .article-closing-cta__tommy strong {
+    color: #fff;
+    font-size: 0.88rem;
+  }
+
+  .article-closing-cta__tommy span {
+    color: #c8d5de;
+    font-size: 0.72rem;
+    line-height: 1.4;
+  }
+
+  .article-closing-cta__ask,
+  .article-closing-cta :global(.article-closing-cta__review) {
+    display: flex;
+    width: 100%;
+    min-height: 50px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    border-radius: 999px;
+    padding: 0.82rem 1.1rem;
+    font-size: 0.88rem;
+    font-weight: 800;
+    line-height: 1.2;
+    text-align: left;
+  }
+
+  .article-closing-cta__ask {
+    border: 1px solid rgba(255, 255, 255, 0.78);
+    background: #fff;
+    color: #071e34;
+    transition:
+      background 160ms ease,
+      transform 160ms ease;
+  }
+
+  .article-closing-cta__ask:hover {
+    background: #f5f1e8;
+    transform: translateY(-1px);
+  }
+
+  .article-closing-cta :global(.article-closing-cta__review) {
+    border-width: 1px;
+    color: #071e34;
+    text-decoration: none;
+    box-shadow: 0 9px 24px rgba(245, 166, 35, 0.18);
+  }
+
+  .article-closing-cta__divider {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    margin-block: 0.85rem;
+    color: #b9c8d2;
+    font-size: 0.65rem;
+    font-weight: 750;
+    text-transform: uppercase;
+  }
+
+  .article-closing-cta__divider::before,
+  .article-closing-cta__divider::after {
+    height: 1px;
+    flex: 1;
+    background: rgba(255, 255, 255, 0.16);
+    content: '';
+  }
+
+  .article-closing-cta__note {
+    margin-top: 0.7rem;
+    color: #c7d3dc;
+    font-size: 0.68rem;
+    line-height: 1.4;
+    text-align: center;
+  }
+
+  @media (max-width: 900px) {
+    .article-closing-cta__panel {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    .article-closing-cta h2 {
+      max-width: 18ch;
+    }
+  }
+
+  @media (max-width: 520px) {
+    .article-closing-cta {
+      padding-top: 1.75rem;
+      padding-bottom: 0;
+      background:
+        radial-gradient(circle at 12% 18%, rgba(215, 154, 43, 0.14), transparent 28%),
+        linear-gradient(to bottom, #f4f0e7 0 calc(100% - 46px), #061827 calc(100% - 46px) 100%);
+    }
+
+    .article-closing-cta__panel {
+      padding: 1.4rem 1rem 1.25rem;
+      border-radius: 18px 18px 0 0;
+    }
+
+    .article-closing-cta h2 {
+      font-size: clamp(1.85rem, 9.4vw, 2.35rem);
+    }
+
+    .article-closing-cta__assurances {
+      display: grid;
+      gap: 0.45rem;
+    }
+
+    .article-closing-cta__actions {
+      padding: 1rem;
+    }
+
+    .article-closing-cta__ask,
+    .article-closing-cta :global(.article-closing-cta__review) {
+      min-height: 48px;
+      padding: 0.75rem 0.9rem;
+      font-size: 0.82rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .article-closing-cta__ask {
+      transition: none;
+    }
+  }
+</style>

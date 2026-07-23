@@ -1,8 +1,628 @@
 ---
 import MarketingLayout from '../layouts/MarketingLayout.astro';
-import IntentPage from '../components/organisms/IntentPage.astro';
+import StaticPillarInventory from '../components/organisms/StaticPillarInventory.astro';
+import { getPillarInventoryPage } from '../lib/pillar-inventory';
+
 export const prerender = true;
+
+const checklistPrompt =
+  'Please send me the comprehensive inherited mineral rights checklist and help me understand what I should gather first.';
+const situationPrompt =
+  'I inherited mineral rights. Help me understand what I may own, what records matter, and what I should do first.';
+const inventory = await getPillarInventoryPage('inherited-mineral-rights');
 ---
-<MarketingLayout title="Inherited Mineral Rights: First Steps · MRX" description="Inherited mineral rights? Organize probate records, deeds, division orders, royalty statements, county details, and operator information before deciding." path="/inherited-mineral-rights/" pageType="marketing" pageCategory="seller-intent" breadcrumbs={[{name:'Home',path:'/'},{name:'Inherited Rights',path:'/inherited-mineral-rights/'}]}>
-  <IntentPage eyebrow="Build the paper trail" title="Inherited mineral rights? Start with the records, not an offer." lede="You do not need every document on day one. Begin with the person who owned the interest, how it passed, where it is located, and any operator or royalty information already in the family files." answerTitle="Useful starting documents" answerPoints={['Will, trust, probate order, affidavit, or estate records','Recorded deeds, assignments, leases, and division orders','Recent royalty statements, tax forms, and operator letters','State, county, legal description, well, and operator details']} prompt="I inherited mineral rights and need help figuring out the first steps and documents." sections={[{title:'Connect the prior owner to the current heirs',paragraphs:['The required path depends on the state, county, estate process, and how the interest was titled. Cooper can help organize the documents and public-record questions, but title conclusions belong with a qualified professional.']},{title:'Contact the operator carefully',paragraphs:['If royalties are being held or ownership has changed, an operator may request transfer documents and tax information. Ask for the operator’s written owner-relations requirements and keep a record of what was submitted.'],bullets:['Do not send original estate documents when a certified or ordinary copy is sufficient.','Confirm contact information through the operator’s official website or public filings.','Track suspense balances, ownership decimals, and effective dates.']},{title:'Do not let an unsolicited offer define the research',paragraphs:['An offer can be a reason to investigate, but it does not establish ownership or value by itself. First determine what the estate may own and which facts can be verified.']}]}/>
+
+<MarketingLayout
+  title="Inherited Mineral Rights: Documents and First Steps · MRX"
+  description="Inherited mineral rights? Learn which estate, ownership, lease, operator, production, and royalty records to gather before evaluating value or an offer."
+  path="/inherited-mineral-rights/"
+  pageType="marketing"
+  pageCategory="seller-intent"
+  breadcrumbs={[
+    { name: 'Home', path: '/' },
+    { name: 'Inherited Rights', path: '/inherited-mineral-rights/' },
+  ]}
+>
+  <section class="inherited-hero" aria-labelledby="inherited-title">
+    <div class="container inherited-hero__grid">
+      <div class="inherited-hero__copy">
+        <p class="mrx-eyebrow">Inherited mineral rights</p>
+        <h1 id="inherited-title">Start with the records. Then talk about value.</h1>
+        <p class="inherited-hero__lede">
+          You do not need every document on day one. Begin with who owned the interest, how it
+          passed to you, where it is located, and any lease, operator, production, or royalty
+          information already in the family files.
+        </p>
+        <div class="inherited-actions">
+          <button class="mrx-primary" type="button" data-chat-prompt={situationPrompt}>
+            Ask Tommy what to do first
+          </button>
+          <a class="mrx-secondary" href="#starting-documents">See the starting documents</a>
+        </div>
+        <ul class="inherited-proof" aria-label="MRX inherited-rights guidance">
+          <li>Free first answer</li>
+          <li>No obligation</li>
+          <li>Nationwide education</li>
+        </ul>
+      </div>
+
+      <aside class="tommy-checklist" aria-labelledby="tommy-checklist-title">
+        <div class="tommy-checklist__identity">
+          <picture>
+            <source srcset="/assets/team/tommy-256.avif" type="image/avif" />
+            <source srcset="/assets/team/tommy-256.webp" type="image/webp" />
+            <img
+              src="/assets/team/tommy-256.jpg"
+              alt="Tommy, fictional MRX Offer and Value Guide"
+              width="256"
+              height="256"
+            />
+          </picture>
+          <div>
+            <strong>Tommy</strong>
+            <span>MRX Offer and Value Guide</span>
+            <small>Fictional MRX AI Guide</small>
+          </div>
+        </div>
+
+        <div class="tommy-checklist__message">
+          <p id="tommy-checklist-title">
+            Would you like me to send you a comprehensive checklist so you can be prepared to find
+            out what your mineral rights may be worth?
+          </p>
+        </div>
+
+        <div class="tommy-checklist__warning">
+          <strong>Why these records matter</strong>
+          <p>
+            Without enough information about ownership, location, acreage, leases, production, and
+            royalties, a buyer cannot support an accurate answer about what your interest may be
+            worth. Be cautious when someone quotes a firm number before asking for the records that
+            show what you own.
+          </p>
+        </div>
+
+        <button class="tommy-checklist__button" type="button" data-chat-prompt={checklistPrompt}>
+          Send me the comprehensive checklist
+          <span aria-hidden="true">→</span>
+        </button>
+        <small class="tommy-checklist__note">
+          Tommy will first help you understand the list. You can choose whether to save or receive
+          it afterward.
+        </small>
+      </aside>
+    </div>
+  </section>
+
+  <section class="inherited-documents" id="starting-documents" aria-labelledby="documents-title">
+    <div class="container">
+      <div class="inherited-section-head">
+        <div>
+          <p class="mrx-eyebrow">Build the paper trail</p>
+          <h2 id="documents-title">Useful records to look for first</h2>
+        </div>
+        <p>
+          Start with what is available. Missing records can often be identified after the owner,
+          county, operator, and property details are organized.
+        </p>
+      </div>
+
+      <div class="document-grid">
+        <article>
+          <span>01</span>
+          <h3>Inheritance and estate</h3>
+          <ul>
+            <li>Will, trust, or probate order</li>
+            <li>Affidavit of heirship or estate records</li>
+            <li>Prior owner’s full legal name</li>
+          </ul>
+        </article>
+        <article>
+          <span>02</span>
+          <h3>Ownership and property</h3>
+          <ul>
+            <li>Recorded deeds and assignments</li>
+            <li>Lease or division order</li>
+            <li>State, county, and legal description</li>
+          </ul>
+        </article>
+        <article>
+          <span>03</span>
+          <h3>Production and payments</h3>
+          <ul>
+            <li>Recent royalty statements</li>
+            <li>Operator letters and tax forms</li>
+            <li>Well names or owner numbers</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="inherited-steps" aria-labelledby="steps-title">
+    <div class="container inherited-steps__grid">
+      <div>
+        <p class="mrx-eyebrow">A practical first pass</p>
+        <h2 id="steps-title">Organize the inheritance before comparing offers.</h2>
+        <p>
+          An offer can be a reason to investigate, but it does not establish ownership or value by
+          itself. First connect the prior owner to the current heirs and identify the property that
+          may be involved.
+        </p>
+        <button class="mrx-primary" type="button" data-chat-prompt={situationPrompt}>
+          Talk through my situation
+        </button>
+      </div>
+      <ol>
+        <li>
+          <span>1</span>
+          <div>
+            <strong>Identify the prior owner</strong>
+            <p>Record the full legal name and how the interest passed through the estate.</p>
+          </div>
+        </li>
+        <li>
+          <span>2</span>
+          <div>
+            <strong>Locate the mineral interest</strong>
+            <p>Start with the state, county, legal description, operator, lease, or well.</p>
+          </div>
+        </li>
+        <li>
+          <span>3</span>
+          <div>
+            <strong>Verify before you decide</strong>
+            <p>Compare the written records, payment history, and complete offer terms.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="inherited-boundary">
+    <div class="container">
+      <strong>Important boundary</strong>
+      <p>
+        MRX provides general educational information. Ownership, title, probate, tax, and legal
+        conclusions may require a qualified professional in the state where the minerals are
+        located.
+      </p>
+    </div>
+  </section>
+  <StaticPillarInventory inventory={inventory} />
 </MarketingLayout>
+
+<script>
+  document.querySelectorAll<HTMLElement>('[data-chat-prompt]').forEach((button) => {
+    button.addEventListener('click', () => {
+      window.dispatchEvent(
+        new CustomEvent('mrx:open-chat', { detail: { prompt: button.dataset.chatPrompt } }),
+      );
+    });
+  });
+</script>
+
+<style>
+  .inherited-hero {
+    padding: clamp(1.2rem, 2.5vw, 2.35rem) 0;
+    border-bottom: 1px solid var(--mrx-line);
+    background:
+      radial-gradient(circle at 84% 16%, rgba(215, 154, 43, 0.17), transparent 28%),
+      linear-gradient(145deg, #fffaf1, #ece6d9);
+  }
+
+  .inherited-hero__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(390px, 0.78fr);
+    gap: clamp(1.25rem, 3.2vw, 3.2rem);
+    align-items: center;
+  }
+
+  .inherited-hero h1 {
+    max-width: 800px;
+    font-size: clamp(2.2rem, 4.35vw, 4rem);
+    line-height: 0.95;
+    letter-spacing: -0.052em;
+    text-wrap: balance;
+  }
+
+  .inherited-hero__lede {
+    max-width: 720px;
+    margin: 1rem 0 0;
+    color: #4f626f;
+    font-size: clamp(0.94rem, 1.15vw, 1.04rem);
+    line-height: 1.58;
+  }
+
+  .inherited-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+    margin-top: 1.25rem;
+  }
+
+  .inherited-actions > * {
+    min-height: 48px;
+  }
+
+  .inherited-proof {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem 1.25rem;
+    margin-top: 1rem;
+    color: #425967;
+    font-size: 0.79rem;
+    font-weight: 800;
+  }
+
+  .inherited-proof li::before {
+    content: '✓';
+    margin-right: 0.35rem;
+    color: #287250;
+  }
+
+  .tommy-checklist {
+    overflow: hidden;
+    border: 1px solid rgba(215, 154, 43, 0.75);
+    border-radius: 24px;
+    padding: 1.15rem;
+    color: #fff;
+    background: linear-gradient(145deg, #071e34, #0b304c);
+    box-shadow: 0 25px 65px rgba(7, 30, 52, 0.2);
+  }
+
+  .tommy-checklist__identity {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  .tommy-checklist__identity picture,
+  .tommy-checklist__identity img {
+    width: 62px;
+    height: 62px;
+    flex: 0 0 62px;
+    border-radius: 50%;
+  }
+
+  .tommy-checklist__identity img {
+    object-fit: cover;
+    border: 2px solid var(--mrx-gold);
+  }
+
+  .tommy-checklist__identity div {
+    display: grid;
+    gap: 0.05rem;
+  }
+
+  .tommy-checklist__identity strong {
+    font-family: var(--mrx-serif);
+    font-size: 1.22rem;
+  }
+
+  .tommy-checklist__identity span {
+    color: #fff;
+    font-size: 0.84rem;
+    font-weight: 750;
+  }
+
+  .tommy-checklist__identity small {
+    color: #b7c6d3;
+    font-size: 0.69rem;
+  }
+
+  .tommy-checklist__message {
+    position: relative;
+    margin-top: 0.85rem;
+    border-radius: 16px;
+    padding: 0.95rem 1rem;
+    color: #132c42;
+    background: #fffaf1;
+  }
+
+  .tommy-checklist__message::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: 22px;
+    width: 17px;
+    height: 17px;
+    transform: rotate(45deg);
+    background: #fffaf1;
+  }
+
+  .tommy-checklist__message p {
+    position: relative;
+    margin: 0;
+    font-family: var(--mrx-serif);
+    font-size: clamp(1.08rem, 1.55vw, 1.28rem);
+    font-weight: 750;
+    line-height: 1.3;
+  }
+
+  .tommy-checklist__warning {
+    margin-top: 0.8rem;
+    border-left: 3px solid var(--mrx-gold);
+    padding: 0.15rem 0 0.15rem 0.8rem;
+  }
+
+  .tommy-checklist__warning strong {
+    color: #f0b44b;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .tommy-checklist__warning p {
+    margin: 0.3rem 0 0;
+    color: #e1e9ef;
+    font-size: 0.82rem;
+    line-height: 1.47;
+  }
+
+  .tommy-checklist__button {
+    display: flex;
+    width: 100%;
+    min-height: 48px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 0.9rem;
+    border-radius: 999px;
+    padding: 0.72rem 1rem;
+    color: #071e34;
+    background: var(--mrx-gold);
+    font-weight: 850;
+  }
+
+  .tommy-checklist__button:hover {
+    background: #efb43d;
+  }
+
+  .tommy-checklist__button span {
+    font-size: 1.25rem;
+  }
+
+  .tommy-checklist__note {
+    display: block;
+    margin: 0.65rem 0.25rem 0;
+    color: #aebfcd;
+    font-size: 0.69rem;
+    line-height: 1.4;
+  }
+
+  .inherited-documents {
+    padding: clamp(2rem, 3.7vw, 3.5rem) 0;
+    background: #fff;
+  }
+
+  .inherited-section-head {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(280px, 0.58fr);
+    gap: 2rem;
+    align-items: end;
+    margin-bottom: 1.35rem;
+  }
+
+  .inherited-section-head h2,
+  .inherited-steps h2 {
+    max-width: 760px;
+    font-size: clamp(1.75rem, 3.1vw, 2.85rem);
+    line-height: 1;
+    letter-spacing: -0.035em;
+  }
+
+  .inherited-section-head > p,
+  .inherited-steps__grid > div > p:not(.mrx-eyebrow) {
+    color: #566976;
+    line-height: 1.6;
+  }
+
+  .document-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.9rem;
+  }
+
+  .document-grid article {
+    min-height: 220px;
+    border: 1px solid var(--mrx-line);
+    border-radius: 18px;
+    padding: 1.15rem;
+    background: #f9f5ec;
+  }
+
+  .document-grid article > span {
+    color: #a66f17;
+    font-size: 0.76rem;
+    font-weight: 900;
+    letter-spacing: 0.1em;
+  }
+
+  .document-grid h3 {
+    margin-top: 0.55rem;
+    font-size: 1.3rem;
+  }
+
+  .document-grid ul {
+    display: grid;
+    gap: 0.55rem;
+    margin-top: 0.8rem;
+    color: #4b5f6c;
+    font-size: 0.92rem;
+    line-height: 1.4;
+  }
+
+  .document-grid li {
+    position: relative;
+    padding-left: 1rem;
+  }
+
+  .document-grid li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--mrx-gold);
+  }
+
+  .inherited-steps {
+    padding: clamp(2.1rem, 4vw, 3.8rem) 0;
+    color: #fff;
+    background: linear-gradient(145deg, #071e34, #0b304c);
+  }
+
+  .inherited-steps__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 0.88fr) minmax(380px, 0.72fr);
+    gap: clamp(2rem, 5vw, 5rem);
+    align-items: center;
+  }
+
+  .inherited-steps .mrx-eyebrow {
+    color: #efb13d;
+  }
+
+  .inherited-steps h2 {
+    color: #fff;
+  }
+
+  .inherited-steps__grid > div > p:not(.mrx-eyebrow) {
+    margin: 1rem 0 1.2rem;
+    color: #c5d2dc;
+  }
+
+  .inherited-steps .mrx-primary {
+    color: #071e34;
+    background: var(--mrx-gold);
+  }
+
+  .inherited-steps ol {
+    display: grid;
+    gap: 0.7rem;
+  }
+
+  .inherited-steps li {
+    display: grid;
+    grid-template-columns: 42px 1fr;
+    gap: 0.8rem;
+    align-items: start;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 15px;
+    padding: 0.85rem;
+    background: rgba(255, 255, 255, 0.06);
+  }
+
+  .inherited-steps li > span {
+    display: grid;
+    width: 38px;
+    height: 38px;
+    place-items: center;
+    border-radius: 50%;
+    color: #071e34;
+    background: var(--mrx-gold);
+    font-weight: 900;
+  }
+
+  .inherited-steps li strong {
+    color: #fff;
+  }
+
+  .inherited-steps li p {
+    margin-top: 0.2rem;
+    color: #bdccd8;
+    font-size: 0.87rem;
+    line-height: 1.5;
+  }
+
+  .inherited-boundary {
+    padding: 1.2rem 0;
+    border-bottom: 1px solid var(--mrx-line);
+    background: #f9f5ec;
+  }
+
+  .inherited-boundary .container {
+    display: flex;
+    gap: 1rem;
+    align-items: baseline;
+  }
+
+  .inherited-boundary strong {
+    flex: 0 0 auto;
+    color: #8a5d18;
+  }
+
+  .inherited-boundary p {
+    color: #60727e;
+    font-size: 0.82rem;
+    line-height: 1.5;
+  }
+
+  @media (max-width: 980px) {
+    .inherited-hero__grid,
+    .inherited-steps__grid {
+      grid-template-columns: 1fr;
+    }
+
+    .tommy-checklist {
+      max-width: 720px;
+    }
+  }
+
+  @media (max-width: 760px) {
+    .inherited-hero {
+      padding-top: 1.35rem;
+    }
+
+    .inherited-hero h1 {
+      font-size: clamp(2.1rem, 10.5vw, 2.95rem);
+    }
+
+    .inherited-section-head,
+    .document-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .inherited-section-head {
+      gap: 0.85rem;
+    }
+
+    .document-grid article {
+      min-height: auto;
+    }
+
+    .inherited-boundary .container {
+      display: grid;
+      gap: 0.3rem;
+    }
+  }
+
+  @media (max-width: 520px) {
+    .inherited-actions {
+      display: grid;
+    }
+
+    .inherited-actions > * {
+      width: 100%;
+    }
+
+    .inherited-proof {
+      display: grid;
+      gap: 0.38rem;
+    }
+
+    .tommy-checklist {
+      margin-inline: -0.2rem;
+      border-radius: 20px;
+      padding: 1rem;
+    }
+
+    .tommy-checklist__identity picture,
+    .tommy-checklist__identity img {
+      width: 54px;
+      height: 54px;
+      flex-basis: 54px;
+    }
+  }
+</style>

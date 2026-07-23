@@ -5,12 +5,13 @@
 interface Props {
   authorName: string;
   authorHref?: string;
+  authorRole?: string;
   publishedAt: string;
   reviewedAt?: string;
   readingMinutes?: number;
 }
 
-const { authorName, authorHref, publishedAt, reviewedAt, readingMinutes } = Astro.props;
+const { authorName, authorHref, authorRole, publishedAt, reviewedAt, readingMinutes } = Astro.props;
 const formatted = new Date(publishedAt).toLocaleDateString('en-US', {
   month: 'long',
   day: 'numeric',
@@ -19,14 +20,58 @@ const formatted = new Date(publishedAt).toLocaleDateString('en-US', {
 ---
 
 <p class="byline">
-  <span class="byline__author">{authorHref ? <a href={authorHref}>{authorName}</a> : authorName}</span>
+  <span class="byline__author">
+    By {authorHref ? <a href={authorHref}>{authorName}</a> : authorName}
+    {authorRole && <small>{authorRole}</small>}
+  </span>
   <span aria-hidden="true">·</span>
   <time datetime={publishedAt}>{formatted}</time>
-  {readingMinutes && (
-    <>
-      <span aria-hidden="true">·</span>
-      <span>{readingMinutes} min read</span>
-    </>
-  )}
-  {reviewedAt && <><span aria-hidden="true">·</span><span>Reviewed {new Date(reviewedAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</span></>}
+  {
+    readingMinutes && (
+      <>
+        <span aria-hidden="true">·</span>
+        <span>{readingMinutes} min read</span>
+      </>
+    )
+  }
+  {
+    reviewedAt && (
+      <>
+        <>
+          <span aria-hidden="true">·</span>
+          <span>
+            Reviewed{' '}
+            {new Date(reviewedAt).toLocaleDateString('en-US', {
+              month: 'short',
+              day: 'numeric',
+              year: 'numeric',
+            })}
+          </span>
+        </>
+      </>
+    )
+  }
 </p>
+
+<style>
+  .byline__author {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.25rem;
+    color: #344c5c;
+    font-weight: 700;
+  }
+
+  .byline__author small {
+    color: #7c591f;
+    font-size: 0.72em;
+    font-weight: 750;
+  }
+
+  @media (max-width: 650px) {
+    .byline__author {
+      width: 100%;
+      flex-wrap: wrap;
+    }
+  }
+</style>

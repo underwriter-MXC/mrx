@@ -1,0 +1,215 @@
+{
+  "observed_at": "2026-07-20T05:06:36Z",
+  "policy": "docs/MRX_SEARCH_ATLAS_REMEDIATION_POLICY.md#3.5",
+  "llm_access_attempts": [
+    {
+      "engine": "Perplexity",
+      "url": "https://www.perplexity.ai/search?q=best%20place%20to%20sell%20mineral%20rights",
+      "prompt": "best place to sell mineral rights",
+      "status": "blocked",
+      "evidence": "Cloudflare security verification / bot protection; no public answer accessible without human challenge."
+    },
+    {
+      "engine": "ChatGPT public web",
+      "url": "https://chatgpt.com/?q=best%20place%20to%20sell%20mineral%20rights",
+      "prompt": "best place to sell mineral rights",
+      "status": "blocked",
+      "evidence": "Cloudflare security challenge before any response; no logged-in or private retrieval attempted."
+    },
+    {
+      "engine": "Google AI Overview",
+      "url": "https://www.google.com/search?q=best+place+to+sell+mineral+rights",
+      "prompt": "best place to sell mineral rights",
+      "status": "blocked",
+      "evidence": "Google sorry/challenge page; no SERP/AI Overview returned to browser session."
+    },
+    {
+      "engine": "Bing / Copilot-adjacent search",
+      "url": "https://www.bing.com/search?q=best+place+to+sell+mineral+rights",
+      "prompt": "best place to sell mineral rights",
+      "status": "blocked",
+      "evidence": "Bing presented Cloudflare/human verification challenge before results."
+    },
+    {
+      "engine": "Duck.ai public chat fallback",
+      "url": "https://duck.ai/?q=best%20place%20to%20sell%20mineral%20rights",
+      "prompt": "best place to sell mineral rights",
+      "status": "blocked",
+      "evidence": "Duck.ai loaded, then required image CAPTCHA (\u201cselect all squares containing a duck\u201d) before response generation."
+    }
+  ],
+  "prompt_clusters": [
+    {
+      "cluster": "BOFU seller/buyer selection",
+      "prompts": [
+        "best place to sell mineral rights",
+        "best company to sell mineral rights to",
+        "who buys mineral rights directly",
+        "mineral rights buyer comparison 2026"
+      ],
+      "risk": "Buckhead has a direct 2026 buyer-comparison page with Article + FAQPage schema; US Mineral Exchange owns marketplace wording.",
+      "mrx_action": "Create/strengthen MRX direct-underwriter vs marketplace vs broker comparison answer page with FAQ/schema and llms-full excerpts."
+    },
+    {
+      "cluster": "Offer review / fairness",
+      "prompts": [
+        "is my mineral rights offer fair",
+        "should I accept a mineral rights offer letter",
+        "mineral rights offer review",
+        "how to compare mineral rights offers"
+      ],
+      "risk": "MRX has an offer-review URL locally, but live public fetch returned Vercel Security Checkpoint in this environment, reducing crawler citation readiness.",
+      "mrx_action": "Ensure /offer-review/ is publicly crawlable and contains concise cited-answer blocks, valuation-factor schema, and no individualized guarantee language."
+    },
+    {
+      "cluster": "Valuation / methodology",
+      "prompts": [
+        "how are mineral rights valued",
+        "mineral rights valuation Texas",
+        "what affects mineral rights value",
+        "DCF mineral rights valuation explained"
+      ],
+      "risk": "Enverus owns data-authority language; USME and Buckhead have seller education.",
+      "mrx_action": "Promote MRX methodology as owner-readable valuation framework; cite public regulators/data sources and include answer blocks."
+    },
+    {
+      "cluster": "Inherited rights / documents",
+      "prompts": [
+        "inherited mineral rights what to do",
+        "documents needed to sell mineral rights",
+        "how to find inherited mineral rights",
+        "probate mineral rights Texas"
+      ],
+      "risk": "US Mineral Exchange has a required-documents article with Article/WebPage/Breadcrumb/Organization schema; TexasFile owns records lookup utility.",
+      "mrx_action": "Build MRX document checklist hub connecting deeds, probate, division orders, check stubs, county clerk/RRC records, and review booking CTA."
+    },
+    {
+      "cluster": "Texas/county/operator long-tail",
+      "prompts": [
+        "Reeves County Texas mineral rights",
+        "sell Permian Basin mineral rights",
+        "EOG Resources mineral rights owner",
+        "Texas county mineral ownership data"
+      ],
+      "risk": "Buckhead has Reeves County page with Organization, FAQPage, Dataset, BreadcrumbList schema and llms links; TexasFile owns records/data pages.",
+      "mrx_action": "Ship Texas-first county/operator vertical slices with real public-source links and Dataset/FAQ/Breadcrumb schema."
+    },
+    {
+      "cluster": "Auction vs direct buyer vs marketplace",
+      "prompts": [
+        "auction vs sell mineral rights direct",
+        "EnergyNet alternative mineral rights",
+        "mineral rights broker vs buyer",
+        "marketplace vs direct mineral rights buyer"
+      ],
+      "risk": "EnergyNet/USME marketplace positioning and Buckhead comparison content can absorb comparison-intent prompts.",
+      "mrx_action": "Draft neutral comparison pages; avoid naming prohibited competitors in customer-facing copy unless compliance approves."
+    },
+    {
+      "cluster": "Manage vs sell / portfolio software",
+      "prompts": [
+        "manage or sell mineral rights",
+        "mineral management software vs selling",
+        "mineral tracker alternative",
+        "family office mineral rights management"
+      ],
+      "risk": "MineralTracker and MineralWare own management SaaS terminology.",
+      "mrx_action": "Create \u201cmanage, hold, lease, or sell\u201d decision-tree content and route management-intent visitors to educational review."
+    }
+  ],
+  "competitor_move_log": [
+    {
+      "competitor": "Buckhead Energy",
+      "url": "https://www.buckheadenergy.com/llms.md",
+      "observed_status": "200 text/markdown; 8,151 bytes",
+      "move_type": "AEO/LLM surface",
+      "evidence": "Public llms.md exposes company overview and citation-friendly markdown.",
+      "risk": "High: directly targets answer-engine ingestion."
+    },
+    {
+      "competitor": "Buckhead Energy",
+      "url": "https://www.buckheadenergy.com/mineral-rights/texas/reeves",
+      "observed_status": "200 html; title \u201cReeves County, Texas Mineral Rights | Buckhead Energy\u201d",
+      "move_type": "programmatic county SEO + schema",
+      "evidence": "Meta description targets Reeves County/Delaware Basin; JSON-LD types observed: Organization, FAQPage, Dataset, BreadcrumbList; page links llms/sitemap surfaces.",
+      "risk": "High: overlaps MRX Texas-first county plan."
+    },
+    {
+      "competitor": "Buckhead Energy",
+      "url": "https://www.buckheadenergy.com/2026/mineral-rights-buyer-comparison",
+      "observed_status": "200 html; title \u201cBest Company to Sell Mineral Rights To: How to Compare Buyers (2026)\u201d",
+      "move_type": "fresh BOFU buyer-comparison content",
+      "evidence": "Meta description targets \u201cbest company to sell mineral rights\u201d; JSON-LD types: Organization, BreadcrumbList, Article, FAQPage.",
+      "risk": "High: likely absorbs \u201cbest buyer/company\u201d LLM prompts."
+    },
+    {
+      "competitor": "US Mineral Exchange",
+      "url": "https://www.usmineralexchange.com/",
+      "observed_status": "200 html",
+      "move_type": "seller marketplace authority",
+      "evidence": "Title \u201cSell Mineral Rights at US Mineral Exchange\u201d; description emphasizes trust and maximum value.",
+      "risk": "Medium-high: strong seller-intent homepage."
+    },
+    {
+      "competitor": "US Mineral Exchange",
+      "url": "https://www.usmineralexchange.com/blog/sell-mineral-rights/required-documents-to-list-mineral-rights/",
+      "observed_status": "200 html; large content page",
+      "move_type": "document-prep education",
+      "evidence": "Title \u201cRequired documents to list mineral rights\u201d; schema includes Article/WebPage/ImageObject/BreadcrumbList/WebSite/Organization/Person/Service/Product.",
+      "risk": "High: directly overlaps inherited/documents prompt cluster."
+    },
+    {
+      "competitor": "Enverus",
+      "url": "https://www.enverus.com/products/minerals-marketplace/",
+      "observed_status": "200 html",
+      "move_type": "data-authority minerals marketplace",
+      "evidence": "Title \u201cEnverus Minerals Marketplace: Buy & Sell Mineral Rights\u201d; H1 \u201cWhere Mineral Interests Meet Real Market Demand\u201d; schema graph includes BreadcrumbList, Organization, WebPage, WebSite.",
+      "risk": "Medium: enterprise authority; less owner-empathy but strong citation authority."
+    },
+    {
+      "competitor": "TexasFile",
+      "url": "https://www.texasfile.com/",
+      "observed_status": "200 html",
+      "move_type": "records/data utility",
+      "evidence": "Title \u201cTexas Land Records and County Records\u201d; description includes county clerk records, real estate records, mineral ownership data.",
+      "risk": "Medium: owns research/data-intent citations."
+    },
+    {
+      "competitor": "MineralTracker",
+      "url": "https://www.mineraltracker.com/",
+      "observed_status": "200 html",
+      "move_type": "management SaaS positioning",
+      "evidence": "Title \u201cHome | Mineral Tracker | Mineral Management Software\u201d; H1 \u201cTake Control of Your Minerals\u201d.",
+      "risk": "Low-medium: management-intent, not immediate sell intent."
+    },
+    {
+      "competitor": "SS&C MineralWare",
+      "url": "https://www.sscmineralware.com/",
+      "observed_status": "200 html",
+      "move_type": "institutional mineral management",
+      "evidence": "Canonical present; H1s include asset clarity, revenue/JIB monitoring, estate/succession planning. Title/meta appear generic placeholders.",
+      "risk": "Low-medium: management/institutional niche; SEO metadata weakness."
+    },
+    {
+      "competitor": "MineralRightsXchange",
+      "url": "https://mineralrightsxchange.com/ and /llms.txt",
+      "observed_status": "403 Vercel Security Checkpoint in public curl/browser environment",
+      "move_type": "own-site crawl/citation blocker",
+      "evidence": "Home, llms.txt, and llms-full.txt returned Vercel Security Checkpoint HTML with no JSON-LD/title/page content available to this run.",
+      "risk": "Critical: answer engines may fail to cite MRX if security checkpoint affects crawlers."
+    }
+  ],
+  "citation_gaps": [
+    "MRX public pages and llms files returned 403 Vercel Security Checkpoint to this run",
+    "Buckhead public llms.md + schema-rich county/comparison pages are ahead of MRX public accessibility",
+    "US Mineral Exchange document-prep article has rich schema for inherited/documents prompts",
+    "Enverus/TexasFile remain strong data-authority citation candidates"
+  ],
+  "human_only_gates": [
+    "CAPTCHA/security challenges for Perplexity, ChatGPT public web, Google Search/AI Overview, Bing, Brave, DuckDuckGo/Duck.ai: do not solve; G-05 human-only proof-of-presence gate.",
+    "Logged-in ChatGPT/Perplexity/Copilot/Gemini research: not attempted; G-05/G-03 human-only gate.",
+    "Paid competitor-intel subscriptions/SearchAtlas paid actions: not used; human-only gate per lane policy.",
+    "Production changes to MRX Vercel/security/robots/llms exposure: not performed; G-01/G-03 gate for web/dev owner approval."
+  ],
+  "next_owners": ["mrx_webdev", "mrx_seo_content", "mrx_seo_audit", "mrx_searchatlas_seo"]
+}

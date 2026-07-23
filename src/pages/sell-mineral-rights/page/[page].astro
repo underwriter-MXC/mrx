@@ -1,0 +1,20 @@
+---
+import PillarArchivePage from '../../../components/organisms/PillarArchivePage.astro';
+import { getPillarArchiveStaticPaths } from '../../../lib/pillar-inventory';
+
+export const prerender = true;
+const PILLAR_ID = 'sell-mineral-rights' as const;
+
+export async function getStaticPaths() {
+  return getPillarArchiveStaticPaths('sell-mineral-rights');
+}
+
+const currentPage = Number(Astro.params.page);
+---
+
+<PillarArchivePage
+  pillarId={PILLAR_ID}
+  currentPage={currentPage}
+  title="Selling Mineral Rights Articles · MRX"
+  description="Browse the full MRX selling-mineral-rights archive: preparation, transaction steps, offer decisions, closing, and practical owner questions."
+/>

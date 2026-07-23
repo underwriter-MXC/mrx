@@ -1,0 +1,277 @@
+---
+import type { Guide } from '../../data/guides';
+
+interface Props {
+  authorName: string;
+  authorHref: string;
+  authorDescription: string;
+  guide: Guide;
+  articleTitle: string;
+}
+
+const { authorName, authorHref, authorDescription, guide, articleTitle } = Astro.props;
+const guidePrompt = `I am reading "${articleTitle}". I would like ${guide.name} to help me understand what applies to my situation.`;
+---
+
+<aside class="article-author-box" aria-labelledby="article-author-title">
+  <div class="article-author-box__head">
+    <div>
+      <p class="mrx-eyebrow">Article author</p>
+      <h2 id="article-author-title">About {guide.name}</h2>
+    </div>
+    <span>Fictional MRX AI Guide</span>
+  </div>
+
+  <div class="article-author-box__profile">
+    <picture>
+      <source srcset={`/assets/team/${guide.slug}-256.avif`} type="image/avif" />
+      <source srcset={`/assets/team/${guide.slug}-256.webp`} type="image/webp" />
+      <img
+        src={`/assets/team/${guide.slug}-256.jpg`}
+        alt={`${guide.name}, fictional ${guide.chatRole}`}
+        width="256"
+        height="256"
+        loading="lazy"
+        decoding="async"
+      />
+    </picture>
+
+    <div class="article-author-box__bio">
+      <span>MRX Guide Author</span>
+      <h3>{guide.name}</h3>
+      <strong>{guide.chatRole}</strong>
+      <p>{guide.summary}</p>
+      <div class="article-author-box__actions">
+        <a href={`/team/${guide.slug}/`}>Read {guide.name}'s bio →</a>
+        <button type="button" data-article-guide-chat data-guide-prompt={guidePrompt}>
+          Ask {guide.name} about this article
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="article-author-box__publisher">
+    <div>
+      <span>Author archive</span>
+      <a href={authorHref}>More from {authorName}</a>
+    </div>
+    <p>{authorDescription}</p>
+    <small>
+      {authorName} is a fictional MRX AI Guide. MRX maintains organizational responsibility for article
+      sourcing, review, updates, and publication.
+    </small>
+  </footer>
+</aside>
+
+<script>
+  document.querySelectorAll<HTMLElement>('[data-article-guide-chat]').forEach((button) => {
+    button.addEventListener('click', () => {
+      window.dispatchEvent(
+        new CustomEvent('mrx:open-chat', { detail: { prompt: button.dataset.guidePrompt } }),
+      );
+    });
+  });
+</script>
+
+<style>
+  .article-author-box {
+    margin-bottom: var(--space-8);
+    overflow: hidden;
+    border: 1px solid #d8e0e5;
+    border-radius: clamp(16px, 2vw, 22px);
+    background: #fff;
+    box-shadow: 0 14px 38px rgba(7, 30, 52, 0.07);
+  }
+
+  .article-author-box__head {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    align-items: end;
+    padding: 0.9rem 1.15rem;
+    border-bottom: 1px solid #d8e0e5;
+  }
+
+  .article-author-box__head .mrx-eyebrow {
+    margin: 0;
+  }
+
+  .article-author-box__head h2 {
+    margin-top: 0.18rem;
+    font-size: clamp(1.35rem, 2.4vw, 1.85rem);
+    line-height: 1.08;
+  }
+
+  .article-author-box__head > span {
+    border: 1px solid #d6bd87;
+    border-radius: 999px;
+    padding: 0.32rem 0.62rem;
+    color: #77531c;
+    background: #fff8e9;
+    font-size: 0.64rem;
+    font-weight: 850;
+  }
+
+  .article-author-box__profile {
+    display: grid;
+    grid-template-columns: 158px minmax(0, 1fr);
+    gap: 1.25rem;
+    padding: 1.15rem;
+    background: linear-gradient(145deg, #fffaf1, #f1e8d7);
+  }
+
+  .article-author-box__profile picture,
+  .article-author-box__profile img {
+    width: 158px;
+    height: 158px;
+    border-radius: 18px;
+  }
+
+  .article-author-box__profile img {
+    border: 2px solid #d79a2b;
+    object-fit: cover;
+  }
+
+  .article-author-box__bio > span,
+  .article-author-box__publisher span {
+    color: #8a5d18;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.67rem;
+    font-weight: 900;
+  }
+
+  .article-author-box__bio h3 {
+    margin-top: 0.22rem;
+    font-size: clamp(1.45rem, 2.5vw, 2rem);
+    line-height: 1;
+  }
+
+  .article-author-box__bio strong {
+    display: block;
+    margin-top: 0.2rem;
+    color: #8a5d18;
+    font-size: 0.91rem;
+  }
+
+  .article-author-box__bio p {
+    max-width: 720px;
+    margin-top: 0.55rem;
+    color: #526571;
+    font-size: 0.9rem;
+    line-height: 1.52;
+  }
+
+  .article-author-box__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+    margin-top: 0.8rem;
+  }
+
+  .article-author-box__actions a,
+  .article-author-box__actions button {
+    display: inline-flex;
+    min-height: 40px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    padding: 0.5rem 0.85rem;
+    font-size: 0.75rem;
+    font-weight: 850;
+    text-decoration: none;
+  }
+
+  .article-author-box__actions a {
+    color: #fff;
+    background: #071e34;
+  }
+
+  .article-author-box__actions button {
+    border: 1px solid #071e34;
+    color: #071e34;
+    background: transparent;
+  }
+
+  .article-author-box__publisher {
+    display: grid;
+    grid-template-columns: minmax(190px, 0.36fr) minmax(0, 0.9fr);
+    gap: 0.55rem 1.2rem;
+    padding: 0.85rem 1.15rem;
+    border-top: 1px solid #d8e0e5;
+    background: #fff;
+  }
+
+  .article-author-box__publisher div {
+    display: grid;
+    gap: 0.08rem;
+  }
+
+  .article-author-box__publisher a {
+    color: #071e34;
+    font-size: 0.88rem;
+    font-weight: 850;
+  }
+
+  .article-author-box__publisher p {
+    color: #60717c;
+    font-size: 0.75rem;
+    line-height: 1.48;
+  }
+
+  .article-author-box__publisher small {
+    grid-column: 1 / -1;
+    color: #70808a;
+    font-size: 0.65rem;
+    line-height: 1.45;
+  }
+
+  @media (max-width: 650px) {
+    .article-author-box__head {
+      display: grid;
+      align-items: start;
+    }
+
+    .article-author-box__head > span {
+      width: fit-content;
+    }
+
+    .article-author-box__profile {
+      grid-template-columns: 88px minmax(0, 1fr);
+      gap: 0.8rem;
+      padding: 0.9rem;
+    }
+
+    .article-author-box__profile picture,
+    .article-author-box__profile img {
+      width: 88px;
+      height: 88px;
+      border-radius: 13px;
+    }
+
+    .article-author-box__actions,
+    .article-author-box__publisher {
+      grid-template-columns: 1fr;
+    }
+
+    .article-author-box__actions {
+      display: grid;
+    }
+
+    .article-author-box__publisher small {
+      grid-column: auto;
+    }
+  }
+
+  @media (max-width: 400px) {
+    .article-author-box__profile {
+      grid-template-columns: 72px minmax(0, 1fr);
+    }
+
+    .article-author-box__profile picture,
+    .article-author-box__profile img {
+      width: 72px;
+      height: 72px;
+    }
+  }
+</style>

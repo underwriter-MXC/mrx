@@ -21,14 +21,13 @@ interface Props {
 const { text, sources } = Astro.props;
 ---
 
-<aside class="cited-answer" data-cited-answer="true" aria-label="Cited answer">
+<aside class="cited-answer" data-cited-answer="true" role="note" aria-label="Cited answer">
   <div class="cited-answer__label">Cited answer</div>
-  <p class="cited-answer__body">{text}</p>
+  <p class="cited-answer__body" data-answer-first="true">{text}</p>
   {
     sources.length > 0 && (
       <div class="cited-answer__sources">
-        <strong>Sources:</strong>
-        {' '}
+        <strong>Sources:</strong>{' '}
         {sources.map((s, i) => (
           <>
             <a href={s.href}>{s.label}</a>

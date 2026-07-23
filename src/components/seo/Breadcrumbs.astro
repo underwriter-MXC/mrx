@@ -18,7 +18,11 @@ const { items } = Astro.props;
     {
       items.map((c, i) => (
         <li class="row" style="gap: var(--space-2);">
-          {i > 0 && <span class="breadcrumbs__sep" aria-hidden="true">/</span>}
+          {i > 0 && (
+            <span class="breadcrumbs__sep" aria-hidden="true">
+              /
+            </span>
+          )}
           {i === items.length - 1 ? (
             <span aria-current="page">{c.name}</span>
           ) : (

@@ -13,7 +13,7 @@ export const prerender = true;
 
 <BaseLayout
   title="Booking received · Mineral Rights Xchange"
-  description="Your Texas mineral rights underwriter review booking has been received. An underwriter will follow up within 1 business day with a directional value range."
+  description="Your Texas mineral rights underwriter review booking has been received. An underwriter will follow up to discuss the next steps and available documents."
   path="/book/thank-you"
   noindex={true}
   pageType="utility"
@@ -21,18 +21,35 @@ export const prerender = true;
 >
   <section class="container container--narrow section" style="text-align: center;">
     <Heading level={1} size="3xl">Booking received</Heading>
-    <Text class="text--lead" style="margin-top: var(--space-4);">An underwriter will follow up within 1 business day. In the meantime, you can read the published methodology or download the free guide.</Text>
+    <Text class="text--lead" style="margin-top: var(--space-4);"
+      >An underwriter will follow up as availability permits. In the meantime, you can read the
+      published methodology or download the free guide.</Text
+    >
   </section>
   <CtaBlock
     title="What to do next"
     body="While you wait, you can read the published methodology or download the free guide."
-    primaryCta={{ label: 'See the Methodology', href: '/methodology', ctaName: 'book-thank-you-methodology' }}
-    secondaryCta={{ label: 'Download the Free Guide', href: '/free-guide', ctaName: 'book-thank-you-guide' }}
+    primaryCta={{
+      label: 'See the Methodology',
+      href: '/methodology',
+      ctaName: 'book-thank-you-methodology',
+    }}
+    secondaryCta={{
+      label: 'Download the Free Guide',
+      href: '/free-guide',
+      ctaName: 'book-thank-you-guide',
+    }}
   />
   <script is:inline>
     window.dataLayer = window.dataLayer || [];
     const payloads = [
-      { event: 'mrx_book_submit', lead_type: 'book_review', form_action: '/api/book', value: 0, currency: 'USD' },
+      {
+        event: 'mrx_book_submit',
+        lead_type: 'book_review',
+        form_action: '/api/book',
+        value: 0,
+        currency: 'USD',
+      },
       { event: 'generate_lead', lead_type: 'book_review', form_action: '/api/book' },
       {
         event: 'calendar_booked',

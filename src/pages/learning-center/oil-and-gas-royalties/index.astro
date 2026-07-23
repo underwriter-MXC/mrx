@@ -1,0 +1,111 @@
+---
+import { getCollection } from 'astro:content';
+import PillarHubPage from '../../../components/organisms/PillarHubPage.astro';
+import MarketingLayout from '../../../layouts/MarketingLayout.astro';
+import { ARTICLE_PILLARS, isPublishedPost, resolvePillar } from '../../../lib/content-graph';
+import { getPillarInventoryPage } from '../../../lib/pillar-inventory';
+import { groupPillarPosts, postSearchText } from '../../../lib/pillar-hubs';
+
+export const prerender = true;
+
+const PILLAR_ID = 'oil-and-gas-royalties' as const;
+const pillar = ARTICLE_PILLARS[PILLAR_ID];
+const posts = (await getCollection('posts', isPublishedPost))
+  .filter((post) => resolvePillar(post).id === PILLAR_ID)
+  .sort(
+    (a, b) =>
+      new Date(b.data.published_at).getTime() - new Date(a.data.published_at).getTime() ||
+      a.id.localeCompare(b.id),
+  );
+
+const topics = groupPillarPosts(posts, [
+  {
+    id: 'read-royalty-statements',
+    title: 'Read royalty statements',
+    description:
+      'Decode the property, production period, volume, price, deductions, ownership inputs, and adjustments shown on a payment statement.',
+    matches: (post) => /statement|decode|interpret|breakdown/.test(postSearchText(post)),
+  },
+  {
+    id: 'track-royalty-payments',
+    title: 'Track payments and changes',
+    description:
+      'Understand how royalty payments are assembled and which records to compare when a check changes or looks inconsistent.',
+    matches: (post) => /payment|inconsistent|check/.test(postSearchText(post)),
+  },
+  {
+    id: 'connect-ownership-and-value',
+    title: 'Connect ownership and value',
+    description:
+      'Relate royalty information to inherited interests, net mineral acres, royalty acres, and the factors that can affect value.',
+    matches: () => true,
+  },
+]);
+
+const inventory = await getPillarInventoryPage(PILLAR_ID);
+
+const sources = [
+  {
+    label: 'ONRR: Sample Explanation of Payment for oil and gas transactions',
+    href: 'https://onrr.gov/document/ExplanationOfQtrlyStatementSection_12-2024.pdf',
+  },
+  {
+    label: 'Railroad Commission of Texas: Production Data',
+    href: 'https://www.rrc.texas.gov/oil-and-gas/research-and-statistics/production-data/',
+  },
+  {
+    label: 'Railroad Commission of Texas: Research Queries',
+    href: 'https://www.rrc.texas.gov/resource-center/research/research-queries/',
+  },
+];
+
+const faq = [
+  {
+    question: 'What should I compare on an oil and gas royalty statement?',
+    answer:
+      'Start with the payor and property identifiers, production or sales month, product, volume, price, deductions, adjustments, and the ownership or royalty factors shown. Statement formats vary, so compare the entries with the lease, division order, prior statements, and available production records.',
+  },
+  {
+    question: 'Does a royalty check prove what my mineral rights are worth?',
+    answer:
+      'No. A check documents a payment for a period; it does not establish a stand-alone market value. Ownership, lease terms, production history, pricing, costs, well performance, location, and buyer assumptions can all matter.',
+  },
+  {
+    question: 'What should I do if a royalty payment changes unexpectedly?',
+    answer:
+      'Keep the current and prior statements, identify the specific line items that changed, and ask the payor for an explanation. Public production data may add context, but it does not replace the lease, division order, payment detail, or title records.',
+  },
+];
+---
+
+<MarketingLayout
+  title="Oil and Gas Royalties: Owner Articles · MRX"
+  description="Learn how royalty statements, ownership decimals, production records, deductions, and payment changes fit together before evaluating mineral rights."
+  path={pillar.path}
+  pageType="marketing"
+  pageCategory="learning-center-pillar"
+  breadcrumbs={[
+    { name: 'Home', path: '/' },
+    { name: 'Learning Center', path: '/learning-center/' },
+    { name: 'Oil and Gas Royalties', path: pillar.path },
+  ]}
+  faq={faq}
+>
+  <PillarHubPage
+    eyebrow="Oil and gas royalties"
+    title="Make sense of royalty statements and payments."
+    lede="Follow the payment from production records to the statement in your hand, then connect it to the documents that describe your interest."
+    directAnswer="An oil and gas royalty payment is one piece of the ownership record, not a complete valuation or title conclusion. Start with the payor, owner and property identifiers, production or sales month, product, volume, price, deductions, adjustments, and the decimal or ownership factors shown on the statement. Formats differ by payor and interest type, so compare several statements rather than relying on one check. Then place the payment beside the controlling documents you have, such as the lease and division order, and compare available state production records for the same property and period. A payment can change because production, commodity price, deductions, adjustments, ownership inputs, or timing changed; the statement alone may not tell you which explanation applies. Ask the payor to explain a specific line item when the records do not reconcile. If the question turns on title, lease interpretation, taxes, or a disputed ownership decimal, the relevant documents should be reviewed by the qualified professional appropriate to that issue."
+    sources={sources}
+    topics={topics}
+    faqs={faq}
+    inventory={inventory}
+    cta={{
+      title: 'Bring one statement and one clear question.',
+      body: 'Tommy can help you organize what the statement says and which record to look for next. You choose whether to continue or request a confidential human review.',
+      label: 'Ask about my royalty statement',
+      prompt:
+        'Help me understand an oil and gas royalty statement or payment change. Start by telling me which non-sensitive fields to compare and which records may matter next.',
+    }}
+  />
+</MarketingLayout>

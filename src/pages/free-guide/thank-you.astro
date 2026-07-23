@@ -7,6 +7,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import CtaBlock from '../../components/molecules/CtaBlock.astro';
 import Heading from '../../components/atoms/Heading.astro';
 import Text from '../../components/atoms/Text.astro';
+import { GUIDE_DOWNLOAD_PATH, GUIDE_TITLE } from '../../lib/form';
 export const prerender = true;
 ---
 
@@ -20,7 +21,19 @@ export const prerender = true;
 >
   <section class="container container--narrow section" style="text-align: center;">
     <Heading level={1} size="3xl">The guide is on the way</Heading>
-    <Text class="text--lead" style="margin-top: var(--space-4);">Check your inbox in a few minutes. The guide is general educational information, not legal, tax, or valuation advice.</Text>
+    <Text class="text--lead" style="margin-top: var(--space-4);"
+      >Check your inbox in a few minutes. The guide is general educational information, not legal,
+      tax, or valuation advice.</Text
+    >
+    <p style="margin-top: var(--space-5);">
+      <a
+        class="btn btn--primary btn--lg"
+        href={GUIDE_DOWNLOAD_PATH}
+        data-cta-name="fg-thank-you-open-guide"
+      >
+        Open {GUIDE_TITLE}
+      </a>
+    </p>
   </section>
   <CtaBlock
     title="Want a transparent review?"
@@ -30,7 +43,13 @@ export const prerender = true;
   <script is:inline>
     window.dataLayer = window.dataLayer || [];
     const payloads = [
-      { event: 'mrx_free_guide_submit', lead_type: 'free_guide', form_action: '/api/free-guide', value: 0, currency: 'USD' },
+      {
+        event: 'mrx_free_guide_submit',
+        lead_type: 'free_guide',
+        form_action: '/api/free-guide',
+        value: 0,
+        currency: 'USD',
+      },
       { event: 'generate_lead', lead_type: 'free_guide', form_action: '/api/free-guide' },
       { event: 'form_submit', mrx_form: 'free-guide' },
     ];

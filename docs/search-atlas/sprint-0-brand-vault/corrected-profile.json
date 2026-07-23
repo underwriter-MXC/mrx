@@ -1,0 +1,25 @@
+{
+  "artifact": "MRX SearchAtlas Brand Vault correction payload",
+  "status": "prepared_not_published",
+  "prepared_at_utc": "2026-07-23T00:00:00Z",
+  "canonical_domain": "https://mineralrightsxchange.com",
+  "source_evidence": [
+    "src/lib/site.ts",
+    "src/content/team/organization.mdx",
+    "src/data/guides.ts",
+    "docs/search-atlas/sprint-0-brand-vault/brand-vault-entity-map.md"
+  ],
+  "business_name": "Mineral Rights Xchange",
+  "description": "Mineral Rights Xchange provides free, no-pressure mineral-rights education and directional underwriter assessments for U.S. owners comparing offers, inherited interests, royalties, production, and sell-or-hold decisions. Reviews use available public records, production data, owner-provided documents, and stated assumptions. They are not certified appraisals or legal, tax, title, accounting, engineering, or investment advice. MRX may be a buyer in a transaction resulting from a review and discloses that relationship in writing before an agreement is signed.",
+  "target_audience": "United States mineral-rights owners and heirs who are organizing ownership records, reviewing an offer, understanding royalty or production information, or deciding whether to sell or hold.",
+  "value_proposition": "MRX helps mineral-rights owners understand their records, organize a situation-specific review, and prepare questions for a Senior Underwriter without requiring a commitment to sell.",
+  "revenue_model": "MRX provides education and underwriter reviews at no charge to the owner. MRX may purchase an interest after a review; any buyer relationship and transaction terms are disclosed in writing before an agreement is signed. No marketplace listing, seller commission, or fee claim is asserted by this payload.",
+  "unsupported_claims_removed": [
+    "most trusted online marketplace",
+    "unparalleled access",
+    "fair market value guarantee",
+    "seller commission model",
+    "target audience unknown"
+  ],
+  "publish_gate": "A SearchAtlas or Brand Vault administrator must apply this payload after mrx_ceo/Daryl confirms the facts. No external record was modified by this repository change."
+}

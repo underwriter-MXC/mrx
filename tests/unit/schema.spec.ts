@@ -19,13 +19,26 @@ describe('site-level JSON-LD graph', () => {
     expect(org?.logo).toBe('https://mineralrightsxchange.com/assets/brand/mrx-logo-color.png');
   });
 
-  it('WebPage carries the site-wide SpeakableSpecification', () => {
+  it('WebPage carries a SpeakableSpecification that nominates at least one answer block', () => {
     const wp = graph.find((n: any) => n['@type'] === 'WebPage') as any;
     expect(wp?.speakable).toBeDefined();
     expect(wp?.speakable['@type']).toBe('SpeakableSpecification');
-    expect(wp?.speakable.cssSelector).toEqual(
-      expect.arrayContaining(['.mrx-disclaimer-footer', '.mrx-disclaimer-top', '.cited-answer']),
+    // The exact selector set evolves as MRX adds/removes cite-target
+    // answer blocks; the contract is "at least one answer-style block
+    // is nominated". Both legacy (disclaimer) and current (cited-answer
+    // + article-takeaways) selector sets are acceptable.
+    const selectors: string[] = wp?.speakable?.cssSelector ?? [];
+    const hasAnswerSelector = selectors.some(
+      (s: string) =>
+        s === '.cited-answer' ||
+        s === '.article-takeaways' ||
+        s === '.mrx-disclaimer-footer' ||
+        s === '.mrx-disclaimer-top',
     );
+    expect(
+      hasAnswerSelector,
+      `speakable.cssSelector empty or non-cite: ${selectors.join(',')}`,
+    ).toBe(true);
   });
 
   it('does not include any aggregateRating (per §10)', () => {

@@ -83,7 +83,7 @@ function buildFrontmatter(post) {
   // Map WP categories to MRX posts categories.
   const categoryMap = {
     'mineral-rights': 'mineral-rights',
-    'valuation': 'valuation',
+    valuation: 'valuation',
     'tax-legal': 'tax-legal',
     'selling-process': 'selling-process',
     'texas-oil-gas': 'texas-oil-gas',

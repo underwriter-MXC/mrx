@@ -1,0 +1,726 @@
+{
+  "artifact_type": "mrx_sell_search_leadership_registry",
+  "version": "1.0.0",
+  "approved_strategy_date": "2026-07-22",
+  "program_owner": "chestyorchestrator",
+  "decision_owner": "mrx_ceo",
+  "independent_verifier": "codex",
+  "north_star": {
+    "primary": "organic_search_cluster_leadership",
+    "head_term_target_position": 3,
+    "portfolio_top_10_share_target": 0.6,
+    "business_kpi": "qualified_organic_seller_leads"
+  },
+  "positioning": {
+    "market_sequence": [
+      "texas",
+      "new-mexico",
+      "oklahoma",
+      "north-dakota",
+      "colorado",
+      "wyoming",
+      "pennsylvania",
+      "west-virginia",
+      "ohio",
+      "louisiana"
+    ],
+    "service_model": "review_first_may_be_buyer_with_written_disclosure",
+    "link_policy": "earned_only_no_purchase_or_exchange"
+  },
+  "release_gates": {
+    "baseline_release": "mrx1000-release-10",
+    "baseline_release_date": "2026-07-22",
+    "index_coverage_deadline": "2026-08-21",
+    "minimum_index_coverage": 0.8,
+    "gsc_required": true,
+    "current_index_status": "unverified_gsc_not_connected",
+    "next_25_publication_status": "held",
+    "texas_commercial_route_status": "held",
+    "hold_reason": "Google Search Console index coverage for the July 22 release has not been verified at or above 80 percent.",
+    "next_50_requirements": {
+      "prior_batches_meeting_index_coverage": 2,
+      "minimum_index_coverage": 0.8,
+      "minimum_nonbranded_impression_share_within_60_days": 0.6
+    }
+  },
+  "public_route_ownership": [
+    {
+      "url": "/sell-mineral-rights/",
+      "intent": "national_commercial_sell",
+      "primary_keyword": "sell mineral rights",
+      "status": "live"
+    },
+    {
+      "url": "/sell-mineral-rights/texas/",
+      "intent": "texas_commercial_sell",
+      "primary_keyword": "sell Texas mineral rights",
+      "status": "held_pending_index_gate"
+    },
+    {
+      "url": "/blog/how-to-sell-mineral-rights-in-texas/",
+      "intent": "texas_informational_process",
+      "primary_keyword": "how to sell mineral rights in Texas",
+      "status": "live"
+    },
+    {
+      "url": "/offer-review/",
+      "intent": "offer_review_and_comparison",
+      "primary_keyword": "mineral rights offer review",
+      "status": "live"
+    },
+    {
+      "url": "/mineral-rights-value/",
+      "intent": "value_and_methodology",
+      "primary_keyword": "mineral rights value",
+      "status": "live"
+    },
+    {
+      "url": "/mineral-rights/texas/",
+      "intent": "texas_ownership_records_and_production",
+      "primary_keyword": "Texas mineral rights",
+      "status": "live"
+    },
+    {
+      "url": "/inherited-mineral-rights/",
+      "intent": "inherited_and_estate_owner",
+      "primary_keyword": "inherited mineral rights",
+      "status": "live"
+    }
+  ],
+  "tracked_queries": [
+    {
+      "id": "Q001",
+      "query": "sell mineral rights",
+      "market": "US",
+      "intent": "transactional",
+      "canonical_owner_url": "/sell-mineral-rights/",
+      "priority": "P0"
+    },
+    {
+      "id": "Q002",
+      "query": "sell Texas mineral rights",
+      "market": "TX",
+      "intent": "transactional",
+      "canonical_owner_url": "/sell-mineral-rights/texas/",
+      "priority": "P0"
+    },
+    {
+      "id": "Q003",
+      "query": "how to sell mineral rights",
+      "market": "US",
+      "intent": "informational",
+      "canonical_owner_url": "/sell-mineral-rights/",
+      "priority": "P0"
+    },
+    {
+      "id": "Q004",
+      "query": "sell my mineral rights",
+      "market": "US",
+      "intent": "transactional",
+      "canonical_owner_url": "/sell-mineral-rights/",
+      "priority": "P0"
+    },
+    {
+      "id": "Q005",
+      "query": "mineral rights buyers",
+      "market": "US",
+      "intent": "commercial-investigation",
+      "canonical_owner_url": "/blog/companies-that-buy-mineral-rights-business-models-compared/",
+      "priority": "P0"
+    },
+    {
+      "id": "Q006",
+      "query": "mineral rights buyer",
+      "market": "US",
+      "intent": "commercial-investigation",
+      "canonical_owner_url": "/blog/who-buys-mineral-rights/",
+      "priority": "P0"
+    },
+    {
+      "id": "Q007",
+      "query": "companies that buy mineral rights",
+      "market": "US",
+      "intent": "commercial-investigation",
+      "canonical_owner_url": "/blog/companies-that-buy-mineral-rights-business-models-compared/",
+      "priority": "P0"
+    },
+    {
+      "id": "Q008",
+      "query": "who buys mineral rights",
+      "market": "US",
+      "intent": "commercial-investigation",
+      "canonical_owner_url": "/blog/who-buys-mineral-rights/",
+      "priority": "P0"
+    },
+    {
+      "id": "Q009",
+      "query": "cash for mineral rights",
+      "market": "US",
+      "intent": "transactional",
+      "canonical_owner_url": "/blog/cash-for-mineral-rights-pre-sale-checklist/",
+      "priority": "P0"
+    },
+    {
+      "id": "Q010",
+      "query": "sell oil and gas mineral rights",
+      "market": "US",
+      "intent": "transactional",
+      "canonical_owner_url": "/sell-mineral-rights/",
+      "priority": "P1"
+    },
+    {
+      "id": "Q011",
+      "query": "sell oil and gas royalties",
+      "market": "US",
+      "intent": "transactional",
+      "canonical_owner_url": "/blog/selling-mineral-rights-vs-selling-a-royalty-interest/",
+      "priority": "P1"
+    },
+    {
+      "id": "Q012",
+      "query": "sell inherited mineral rights",
+      "market": "US",
+      "intent": "transactional",
+      "canonical_owner_url": "/blog/how-to-sell-inherited-mineral-rights/",
+      "priority": "P0"
+    },
+    {
+      "id": "Q013",
+      "query": "should I sell my mineral rights",
+      "market": "US",
+      "intent": "commercial-investigation",
+      "canonical_owner_url": "/blog/should-i-sell-my-mineral-rights/",
+      "priority": "P0"
+    },
+    {
+      "id": "Q014",
+      "query": "how much do mineral rights sell for",
+      "market": "US",
+      "intent": "commercial-investigation",
+      "canonical_owner_url": "/mineral-rights-value/",
+      "priority": "P1"
+    },
+    {
+      "id": "Q015",
+      "query": "mineral rights offer review",
+      "market": "US",
+      "intent": "transactional",
+      "canonical_owner_url": "/offer-review/",
+      "priority": "P0"
+    },
+    {
+      "id": "Q016",
+      "query": "compare mineral rights offers",
+      "market": "US",
+      "intent": "commercial-investigation",
+      "canonical_owner_url": "/offer-review/",
+      "priority": "P0"
+    },
+    {
+      "id": "Q017",
+      "query": "is my mineral rights offer fair",
+      "market": "US",
+      "intent": "commercial-investigation",
+      "canonical_owner_url": "/blog/is-my-mineral-rights-offer-fair/",
+      "priority": "P0"
+    },
+    {
+      "id": "Q018",
+      "query": "mineral rights cash offer",
+      "market": "US",
+      "intent": "transactional",
+      "canonical_owner_url": "/blog/cash-for-mineral-rights-pre-sale-checklist/",
+      "priority": "P0"
+    },
+    {
+      "id": "Q019",
+      "query": "mineral rights buyer offer",
+      "market": "US",
+      "intent": "commercial-investigation",
+      "canonical_owner_url": "/offer-review/",
+      "priority": "P1"
+    },
+    {
+      "id": "Q020",
+      "query": "mineral rights purchase agreement",
+      "market": "US",
+      "intent": "informational",
+      "canonical_owner_url": "/blog/mineral-rights-purchase-agreement-explained/",
+      "priority": "P1"
+    },
+    {
+      "id": "Q021",
+      "query": "mineral rights offer scams",
+      "market": "US",
+      "intent": "informational",
+      "canonical_owner_url": "/blog/mineral-rights-offer-scams-and-warning-signs/",
+      "priority": "P1"
+    },
+    {
+      "id": "Q022",
+      "query": "lowball mineral rights offer",
+      "market": "US",
+      "intent": "commercial-investigation",
+      "canonical_owner_url": "/blog/is-my-mineral-rights-offer-fair/",
+      "priority": "P1"
+    },
+    {
+      "id": "Q023",
+      "query": "mineral rights closing costs",
+      "market": "US",
+      "intent": "informational",
+      "canonical_owner_url": "/blog/closing-costs-and-fees-when-selling-mineral-rights-in-texas/",
+      "priority": "P1"
+    },
+    {
+      "id": "Q024",
+      "query": "negotiate mineral rights sale",
+      "market": "US",
+      "intent": "commercial-investigation",
+      "canonical_owner_url": "/blog/how-to-negotiate-a-mineral-rights-sale/",
+      "priority": "P1"
+    },
+    {
+      "id": "Q025",
+      "query": "sell mineral rights Texas",
+      "market": "TX",
+      "intent": "transactional",
+      "canonical_owner_url": "/sell-mineral-rights/texas/",
+      "priority": "P0"
+    },
+    {
+      "id": "Q026",
+      "query": "selling mineral rights in Texas",
+      "market": "TX",
+      "intent": "transactional",
+      "canonical_owner_url": "/sell-mineral-rights/texas/",
+      "priority": "P0"
+    },
+    {
+      "id": "Q027",
+      "query": "how to sell mineral rights in Texas",
+      "market": "TX",
+      "intent": "informational",
+      "canonical_owner_url": "/blog/how-to-sell-mineral-rights-in-texas/",
+      "priority": "P0"
+    },
+    {
+      "id": "Q028",
+      "query": "mineral rights buyers Texas",
+      "market": "TX",
+      "intent": "commercial-investigation",
+      "canonical_owner_url": "/blog/how-to-find-a-reputable-mineral-rights-buyer-in-texas/",
+      "priority": "P0"
+    },
+    {
+      "id": "Q029",
+      "query": "Texas mineral rights buyer",
+      "market": "TX",
+      "intent": "commercial-investigation",
+      "canonical_owner_url": "/blog/how-to-find-a-reputable-mineral-rights-buyer-in-texas/",
+      "priority": "P0"
+    },
+    {
+      "id": "Q030",
+      "query": "companies that buy mineral rights in Texas",
+      "market": "TX",
+      "intent": "commercial-investigation",
+      "canonical_owner_url": "/blog/how-to-find-a-reputable-mineral-rights-buyer-in-texas/",
+      "priority": "P1"
+    },
+    {
+      "id": "Q031",
+      "query": "sell inherited mineral rights Texas",
+      "market": "TX",
+      "intent": "transactional",
+      "canonical_owner_url": "/blog/what-texas-heirs-should-know-before-selling/",
+      "priority": "P0"
+    },
+    {
+      "id": "Q032",
+      "query": "Texas mineral rights cash offer",
+      "market": "TX",
+      "intent": "transactional",
+      "canonical_owner_url": "/sell-mineral-rights/texas/",
+      "priority": "P1"
+    },
+    {
+      "id": "Q033",
+      "query": "Texas mineral rights offer review",
+      "market": "TX",
+      "intent": "transactional",
+      "canonical_owner_url": "/offer-review/",
+      "priority": "P0"
+    },
+    {
+      "id": "Q034",
+      "query": "Texas mineral rights sale process",
+      "market": "TX",
+      "intent": "informational",
+      "canonical_owner_url": "/blog/how-to-sell-mineral-rights-in-texas/",
+      "priority": "P1"
+    },
+    {
+      "id": "Q035",
+      "query": "sell Permian Basin mineral rights",
+      "market": "TX",
+      "intent": "transactional",
+      "canonical_owner_url": "/blog/sell-permian-basin-mineral-rights/",
+      "priority": "P1"
+    },
+    {
+      "id": "Q036",
+      "query": "Permian Basin mineral rights buyers",
+      "market": "TX",
+      "intent": "commercial-investigation",
+      "canonical_owner_url": "/blog/sell-permian-basin-mineral-rights/",
+      "priority": "P1"
+    },
+    {
+      "id": "Q037",
+      "query": "sell Midland Basin mineral rights",
+      "market": "TX",
+      "intent": "transactional",
+      "canonical_owner_url": "/blog/sell-midland-basin-mineral-rights/",
+      "priority": "P1"
+    },
+    {
+      "id": "Q038",
+      "query": "sell Eagle Ford mineral rights",
+      "market": "TX",
+      "intent": "transactional",
+      "canonical_owner_url": "/blog/sell-eagle-ford-mineral-rights/",
+      "priority": "P1"
+    },
+    {
+      "id": "Q039",
+      "query": "sell mineral rights Midland County, Texas",
+      "market": "TX",
+      "intent": "local",
+      "canonical_owner_url": "/mineral-rights/texas/midland-county/",
+      "priority": "P1"
+    },
+    {
+      "id": "Q040",
+      "query": "sell mineral rights Martin County, Texas",
+      "market": "TX",
+      "intent": "local",
+      "canonical_owner_url": "/mineral-rights/texas/martin-county/",
+      "priority": "P1"
+    },
+    {
+      "id": "Q041",
+      "query": "sell mineral rights Reeves County, Texas",
+      "market": "TX",
+      "intent": "local",
+      "canonical_owner_url": "/mineral-rights/texas/reeves-county/",
+      "priority": "P1"
+    },
+    {
+      "id": "Q042",
+      "query": "sell mineral rights Pecos County, Texas",
+      "market": "TX",
+      "intent": "local",
+      "canonical_owner_url": "/mineral-rights/texas/pecos-county/",
+      "priority": "P1"
+    },
+    {
+      "id": "Q043",
+      "query": "sell mineral rights Howard County, Texas",
+      "market": "TX",
+      "intent": "local",
+      "canonical_owner_url": "/mineral-rights/texas/howard-county/",
+      "priority": "P1"
+    },
+    {
+      "id": "Q044",
+      "query": "sell mineral rights Loving County, Texas",
+      "market": "TX",
+      "intent": "local",
+      "canonical_owner_url": "/mineral-rights/texas/loving-county/",
+      "priority": "P1"
+    },
+    {
+      "id": "Q045",
+      "query": "sell mineral rights Winkler County, Texas",
+      "market": "TX",
+      "intent": "local",
+      "canonical_owner_url": "/mineral-rights/texas/winkler-county/",
+      "priority": "P1"
+    },
+    {
+      "id": "Q046",
+      "query": "sell mineral rights Upton County, Texas",
+      "market": "TX",
+      "intent": "local",
+      "canonical_owner_url": "/mineral-rights/texas/upton-county/",
+      "priority": "P1"
+    },
+    {
+      "id": "Q047",
+      "query": "sell mineral rights Glasscock County, Texas",
+      "market": "TX",
+      "intent": "local",
+      "canonical_owner_url": "/mineral-rights/texas/glasscock-county/",
+      "priority": "P1"
+    },
+    {
+      "id": "Q048",
+      "query": "sell mineral rights Andrews County, Texas",
+      "market": "TX",
+      "intent": "local",
+      "canonical_owner_url": "/mineral-rights/texas/andrews-county/",
+      "priority": "P1"
+    },
+    {
+      "id": "Q049",
+      "query": "sell mineral rights Ector County, Texas",
+      "market": "TX",
+      "intent": "local",
+      "canonical_owner_url": "/mineral-rights/texas/ector-county/",
+      "priority": "P1"
+    },
+    {
+      "id": "Q050",
+      "query": "sell mineral rights Ward County, Texas",
+      "market": "TX",
+      "intent": "local",
+      "canonical_owner_url": "/mineral-rights/texas/ward-county/",
+      "priority": "P1"
+    }
+  ],
+  "next_25": [
+    {
+      "order": 1,
+      "slug": "can-you-sell-part-of-your-mineral-rights",
+      "title": "Can You Sell Part of Your Mineral Rights?",
+      "source_program_row_ids": ["MRX1000-0001"],
+      "release_status": "held"
+    },
+    {
+      "order": 2,
+      "slug": "how-long-does-it-take-to-sell-mineral-rights-in-texas",
+      "title": "How Long Does It Take to Sell Mineral Rights in Texas?",
+      "source_program_row_ids": ["MRX1000-0002"],
+      "release_status": "held"
+    },
+    {
+      "order": 3,
+      "slug": "what-happens-after-you-sell-your-mineral-rights-in-texas",
+      "title": "What Happens After You Sell Mineral Rights in Texas?",
+      "source_program_row_ids": ["MRX1000-0004"],
+      "release_status": "held"
+    },
+    {
+      "order": 4,
+      "slug": "how-to-find-a-reputable-mineral-rights-buyer-in-texas",
+      "title": "How to Find a Reputable Mineral Rights Buyer in Texas",
+      "source_program_row_ids": ["MRX1000-0303"],
+      "release_status": "held"
+    },
+    {
+      "order": 5,
+      "slug": "how-to-get-multiple-offers-for-texas-mineral-rights",
+      "title": "How to Get Multiple Offers for Texas Mineral Rights",
+      "source_program_row_ids": ["MRX1000-0304"],
+      "release_status": "held"
+    },
+    {
+      "order": 6,
+      "slug": "how-to-negotiate-a-mineral-rights-sale",
+      "title": "How to Negotiate a Mineral Rights Sale",
+      "source_program_row_ids": ["MRX1000-0310"],
+      "release_status": "held"
+    },
+    {
+      "order": 7,
+      "slug": "risks-and-tradeoffs-of-selling-to-a-direct-buyer",
+      "title": "Risks and Tradeoffs of Selling to a Direct Buyer",
+      "source_program_row_ids": ["MRX1000-0315"],
+      "release_status": "held"
+    },
+    {
+      "order": 8,
+      "slug": "mineral-rights-offer-scams-and-warning-signs",
+      "title": "Mineral Rights Offer Scams and Warning Signs",
+      "source_program_row_ids": ["MRX1000-0318"],
+      "release_status": "held"
+    },
+    {
+      "order": 9,
+      "slug": "what-factors-determine-a-mineral-rights-offer",
+      "title": "What Factors Determine a Mineral Rights Offer?",
+      "source_program_row_ids": ["MRX1000-0319"],
+      "release_status": "held"
+    },
+    {
+      "order": 10,
+      "slug": "what-texas-heirs-should-know-before-selling",
+      "title": "What Texas Heirs Should Know Before Selling",
+      "source_program_row_ids": ["MRX1000-0431"],
+      "release_status": "held"
+    },
+    {
+      "order": 11,
+      "slug": "closing-costs-and-fees-when-selling-mineral-rights-in-texas",
+      "title": "Closing Costs and Fees When Selling Texas Mineral Rights",
+      "source_program_row_ids": ["MRX1000-0630"],
+      "release_status": "held"
+    },
+    {
+      "order": 12,
+      "slug": "title-curative-before-a-mineral-rights-sale",
+      "title": "Title Curative Before a Mineral Rights Sale",
+      "source_program_row_ids": ["MRX1000-0637"],
+      "release_status": "held"
+    },
+    {
+      "order": 13,
+      "slug": "mineral-rights-purchase-agreement-explained",
+      "title": "Mineral Rights Purchase Agreement Explained",
+      "source_program_row_ids": ["MRX1000-0642"],
+      "release_status": "held"
+    },
+    {
+      "order": 14,
+      "slug": "is-my-mineral-rights-offer-fair",
+      "title": "Is My Mineral Rights Offer Fair?",
+      "source_program_row_ids": [
+        "MRX1000-0301",
+        "MRX1000-0306",
+        "MRX1000-0308",
+        "MRX1000-0309",
+        "MRX1000-0311",
+        "MRX1000-0316"
+      ],
+      "source_disposition": "merge_into_one_canonical",
+      "release_status": "held"
+    },
+    {
+      "order": 15,
+      "slug": "should-i-sell-my-mineral-rights",
+      "title": "Should I Sell My Mineral Rights?",
+      "source_program_row_ids": [],
+      "release_status": "planning"
+    },
+    {
+      "order": 16,
+      "slug": "never-sell-mineral-rights-when-selling-can-and-cannot-make-sense",
+      "title": "Never Sell Mineral Rights: When Selling Can and Cannot Make Sense",
+      "source_program_row_ids": [],
+      "release_status": "planning"
+    },
+    {
+      "order": 17,
+      "slug": "cash-for-mineral-rights-pre-sale-checklist",
+      "title": "Cash for Mineral Rights: Pre-Sale Checklist",
+      "source_program_row_ids": ["MRX1000-0013", "MRX1000-0014"],
+      "source_disposition": "merge_into_one_canonical",
+      "release_status": "planning"
+    },
+    {
+      "order": 18,
+      "slug": "who-buys-mineral-rights",
+      "title": "Who Buys Mineral Rights?",
+      "source_program_row_ids": [],
+      "release_status": "planning"
+    },
+    {
+      "order": 19,
+      "slug": "companies-that-buy-mineral-rights-business-models-compared",
+      "title": "Companies That Buy Mineral Rights: Business Models Compared",
+      "source_program_row_ids": [],
+      "release_status": "planning"
+    },
+    {
+      "order": 20,
+      "slug": "direct-buyer-vs-broker-vs-marketplace",
+      "title": "Direct Buyer vs. Broker vs. Marketplace",
+      "source_program_row_ids": [],
+      "release_status": "planning"
+    },
+    {
+      "order": 21,
+      "slug": "selling-mineral-rights-vs-selling-a-royalty-interest",
+      "title": "Selling Mineral Rights vs. Selling a Royalty Interest",
+      "source_program_row_ids": [],
+      "release_status": "planning"
+    },
+    {
+      "order": 22,
+      "slug": "selling-producing-vs-non-producing-mineral-rights",
+      "title": "Selling Producing vs. Non-Producing Mineral Rights",
+      "source_program_row_ids": [],
+      "release_status": "planning"
+    },
+    {
+      "order": 23,
+      "slug": "when-is-the-best-time-to-sell-mineral-rights",
+      "title": "When Is the Best Time to Sell Mineral Rights?",
+      "source_program_row_ids": [],
+      "release_status": "planning"
+    },
+    {
+      "order": 24,
+      "slug": "how-to-sell-inherited-mineral-rights",
+      "title": "How to Sell Inherited Mineral Rights",
+      "source_program_row_ids": [],
+      "release_status": "planning"
+    },
+    {
+      "order": 25,
+      "slug": "what-to-do-when-a-buyer-reduces-the-offer-after-title-review",
+      "title": "What to Do When a Buyer Reduces the Offer After Title Review",
+      "source_program_row_ids": [],
+      "release_status": "planning"
+    }
+  ],
+  "consolidations": [
+    {
+      "source_program_row_ids": ["MRX1000-0003"],
+      "canonical_url": "/blog/how-to-sell-mineral-rights-in-texas/",
+      "disposition": "merge_unique_supported_material_do_not_publish_competing_url"
+    }
+  ],
+  "authority_assets": [
+    {
+      "id": "A01",
+      "name": "Texas Mineral Seller Handbook and Document Checklist",
+      "status": "briefing",
+      "public_release": "held_pending_review"
+    },
+    {
+      "id": "A02",
+      "name": "Mineral Offer Clause Library",
+      "status": "briefing",
+      "public_release": "held_pending_review"
+    },
+    {
+      "id": "A03",
+      "name": "Texas Mineral Seller Atlas",
+      "status": "data_source_design",
+      "public_release": "held_pending_review"
+    },
+    {
+      "id": "A04",
+      "name": "Quarterly Texas Mineral Owner and Seller Report",
+      "status": "data_source_design",
+      "public_release": "held_pending_review"
+    }
+  ],
+  "lifecycle_fields": [
+    "canonical_query_owner",
+    "market",
+    "intent",
+    "release_wave",
+    "source_receipts",
+    "editorial_review_receipt",
+    "compliance_review_receipt",
+    "seo_aeo_review_receipt",
+    "gsc_index_status",
+    "current_rank",
+    "referring_domains",
+    "qualified_leads",
+    "refresh_due_date"
+  ]
+}

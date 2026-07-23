@@ -40,7 +40,10 @@ async function* walk(dir) {
     const full = join(dir, entry.name);
     if (entry.isDirectory()) {
       yield* walk(full);
-    } else if (entry.isFile() && /\.(ts|js|mjs|json|astro|mdx|env|yaml|yml|toml)$/i.test(entry.name)) {
+    } else if (
+      entry.isFile() &&
+      /\.(ts|js|mjs|json|astro|mdx|env|yaml|yml|toml)$/i.test(entry.name)
+    ) {
       yield full;
     }
   }
@@ -59,7 +62,11 @@ for await (const file of walk(ROOT)) {
       const line = text.slice(lineStart, lineEnd === -1 ? text.length : lineEnd);
       if (/YOUR_API_KEY|YOUR_|PLACEHOLDER|EXAMPLE/.test(line)) continue;
       if (/MRX_GHL_|MRX_PDF_|MRX_CONTACT_/.test(line) && /="?$/i.test(line.trim())) continue;
-      violations.push({ file: relative(ROOT, file), rule: 'secret_like_string', match: m[0].slice(0, 40) + '...' });
+      violations.push({
+        file: relative(ROOT, file),
+        rule: 'secret_like_string',
+        match: m[0].slice(0, 40) + '...',
+      });
     }
   }
 }

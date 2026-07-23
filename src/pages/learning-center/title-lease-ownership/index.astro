@@ -1,0 +1,113 @@
+---
+import { getCollection } from 'astro:content';
+import PillarHubPage from '../../../components/organisms/PillarHubPage.astro';
+import MarketingLayout from '../../../layouts/MarketingLayout.astro';
+import { ARTICLE_PILLARS, isPublishedPost, resolvePillar } from '../../../lib/content-graph';
+import { getPillarInventoryPage } from '../../../lib/pillar-inventory';
+import { groupPillarPosts, postSearchText } from '../../../lib/pillar-hubs';
+
+export const prerender = true;
+
+const PILLAR_ID = 'title-lease-ownership' as const;
+const pillar = ARTICLE_PILLARS[PILLAR_ID];
+const posts = (await getCollection('posts', isPublishedPost))
+  .filter((post) => resolvePillar(post).id === PILLAR_ID)
+  .sort(
+    (a, b) =>
+      new Date(b.data.published_at).getTime() - new Date(a.data.published_at).getTime() ||
+      a.id.localeCompare(b.id),
+  );
+
+const topics = groupPillarPosts(posts, [
+  {
+    id: 'verify-mineral-ownership',
+    title: 'Verify mineral ownership',
+    description:
+      'Start with the owner name, county, legal description, and recorded conveyances, including any inheritance or surface-versus-mineral split in the chain.',
+    matches: (post) =>
+      /find out|own mineral|surface rights|separate from surface/.test(postSearchText(post)),
+  },
+  {
+    id: 'understand-interest-types',
+    title: 'Understand the interest',
+    description:
+      'Distinguish mineral interests, royalty interests, working interests, overriding royalties, and surface rights before comparing documents or offers.',
+    matches: (post) => /types of mineral|what are mineral rights/.test(postSearchText(post)),
+  },
+  {
+    id: 'read-leases-and-division-orders',
+    title: 'Read leases and transaction documents',
+    description:
+      'Place leases, held-by-production terms, division orders, and sale documents in the ownership record without treating any single document as the full title history.',
+    matches: () => true,
+  },
+]);
+
+const inventory = await getPillarInventoryPage(PILLAR_ID);
+
+const sources = [
+  {
+    label: 'Texas State Library: Land and Property History Research',
+    href: 'https://www.tsl.texas.gov/ref/propertyresearch',
+  },
+  {
+    label: 'Bureau of Land Management: Federal Land Records',
+    href: 'https://www.blm.gov/services/land-records',
+  },
+  {
+    label: 'Railroad Commission of Texas: Oil and Gas Well Records',
+    href: 'https://www.rrc.texas.gov/oil-and-gas/research-and-statistics/obtaining-commission-records/oil-and-gas-well-records/',
+  },
+];
+
+const faq = [
+  {
+    question: 'What is the first record to check for mineral ownership?',
+    answer:
+      'Begin with a recorded deed or other conveyance tied to the owner name and property, then trace the relevant chain rather than relying on one document in isolation. In Texas, real-property records are maintained in the county where the property is located.',
+  },
+  {
+    question: 'Does a division order prove mineral title?',
+    answer:
+      'A division order can show how a payor is directing proceeds, but it should not be treated as the complete chain of title. Compare it with recorded instruments, the lease, operator records, and any title work relevant to the property.',
+  },
+  {
+    question: 'Can public well or production data confirm what I own?',
+    answer:
+      'Public well and production records can help identify operations and activity, but they generally do not resolve a private chain of title or interpret a lease. Ownership conclusions should be based on the controlling records and appropriate professional review.',
+  },
+];
+---
+
+<MarketingLayout
+  title="Mineral Title, Leases, and Ownership · MRX"
+  description="Learn which deeds, leases, division orders, county records, and production documents help establish a mineral interest before a sale or transfer."
+  path={pillar.path}
+  pageType="marketing"
+  pageCategory="learning-center-pillar"
+  breadcrumbs={[
+    { name: 'Home', path: '/' },
+    { name: 'Learning Center', path: '/learning-center/' },
+    { name: 'Title, Leases, and Ownership', path: pillar.path },
+  ]}
+  disclaimerTop={true}
+  faq={faq}
+>
+  <PillarHubPage
+    eyebrow="Title, leases, and ownership"
+    title="Follow the documents that describe the mineral interest."
+    lede="Learn what each record can show, what it cannot settle by itself, and how deeds, leases, division orders, and operating records fit together."
+    directAnswer="Mineral ownership is established through the controlling record chain, not by a royalty check, tax notice, well listing, or purchase offer standing alone. Begin with the owner’s full legal name, the state and county, the legal description, and any recorded deed, assignment, probate instrument, or other conveyance tied to the property. Trace what each document transferred and what it reserved, then place the lease and any amendments, division orders, operator correspondence, and payment records beside that chain. Public well and production data can help identify activity, but it does not replace private title records or interpret a contract. Federal land records can be useful where a federal interest is involved, while private real-property records are generally researched through the applicable local recording office; in Texas, the county maintains those records. A missing link, conflicting description, heirship issue, or disputed decimal may require title work or legal analysis in the property’s jurisdiction. Before signing a lease, deed, or purchase agreement, verify that the named parties, interest, property description, consideration, and reservations match the transaction you intend."
+    sources={sources}
+    topics={topics}
+    faqs={faq}
+    inventory={inventory}
+    cta={{
+      title: 'Start by naming the document you have.',
+      body: 'Tommy can help you identify what that document may show and which record usually comes next. You can stay at the educational stage unless you choose a confidential review.',
+      label: 'Organize my ownership documents',
+      prompt:
+        'Help me organize mineral ownership, lease, or division-order documents. Start by asking what document I have and avoid making a title or legal conclusion.',
+    }}
+  />
+</MarketingLayout>

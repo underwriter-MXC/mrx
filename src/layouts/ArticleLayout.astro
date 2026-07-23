@@ -1,0 +1,513 @@
+---
+/**
+ * ArticleLayout is the single visual template for every Learning Center article.
+ * Keep article chrome here so new MDX posts inherit the same compact header,
+ * reading column, guide panel, related-content area, and closing CTA.
+ */
+import BaseLayout from './BaseLayout.astro';
+import AuthorByline from '../components/molecules/AuthorByline.astro';
+import ArticleTeamBox from '../components/molecules/ArticleTeamBox.astro';
+import ArticleSidebarCta from '../components/molecules/ArticleSidebarCta.astro';
+import Prose from '../components/prose/Prose.astro';
+import ArticleClosingCta from '../components/molecules/ArticleClosingCta.astro';
+import Breadcrumbs from '../components/seo/Breadcrumbs.astro';
+import type { Guide } from '../data/guides';
+import type { Crumb } from '../structured-data/breadcrumb';
+import type { ArticleMeasurementContext } from '../lib/ga4-measurement';
+import type { ResolvedInternalLinks } from '../lib/content-graph';
+
+interface Props {
+  title: string;
+  description: string;
+  path: string;
+  pageCategory: string;
+  breadcrumbs: Crumb[];
+  articleTitle: string;
+  excerpt: string;
+  heroImage: {
+    src: string;
+    alt: string;
+    width?: number;
+    height?: number;
+    mime_type?: string;
+    social_src?: string;
+    social_alt?: string;
+    social_width?: number;
+    social_height?: number;
+    social_mime_type?: string;
+  };
+  authorName: string;
+  authorHref: string;
+  authorDescription: string;
+  publishedAt: string;
+  reviewedAt?: string;
+  updatedAt?: string;
+  readingMinutes: number;
+  guide: Guide;
+  /** Deprecated: retained for frontmatter compatibility; top disclosures are no longer rendered. */
+  disclaimerTop?: boolean;
+  ogImage?: string;
+  noindex?: boolean;
+  robots?: string;
+  primaryCta: { label: string; href: string; ctaName: string };
+  askCtaName: string;
+  answerSummary?: string;
+  keyTakeaways?: string[];
+  faq?: { question: string; answer: string }[];
+  sources?: { label: string; href: string }[];
+  tommyPrompt?: string;
+  /**
+   * Pre-resolved GA4 measurement context. The route (blog/[...slug].astro
+   * or staged/[slug].astro) computes this once from frontmatter/manifest
+   * and forwards it. Passing `undefined` means the layout is not part of
+   * the Learning Center program; passing `null` means the values were
+   * missing or invalid and resolved to legacy/null per the resolver.
+   */
+  measurement?: ArticleMeasurementContext | null;
+  /**
+   * Crawlable contextual navigation (MRX1000 internal_links triangle).
+   * Hub = parent pillar; sibling = a same-cluster article or pillar path;
+   * conversion = /book/. Renders as plain <a href> tags so crawlers can
+   * follow the triangle without any JS gating.
+   */
+  internalLinks?: ResolvedInternalLinks;
+}
+
+const {
+  title,
+  description,
+  path,
+  pageCategory,
+  breadcrumbs,
+  articleTitle,
+  excerpt,
+  heroImage,
+  authorName,
+  authorHref,
+  authorDescription,
+  publishedAt,
+  reviewedAt,
+  updatedAt,
+  readingMinutes,
+  guide,
+  ogImage,
+  noindex,
+  robots,
+  primaryCta,
+  askCtaName,
+  answerSummary,
+  keyTakeaways = [],
+  faq = [],
+  sources = [],
+  tommyPrompt,
+  measurement = null,
+  internalLinks,
+} = Astro.props;
+const articleCtaPrefix = primaryCta.ctaName.replace(/-cta-review$/, '');
+const dedicatedSocialImage = !ogImage && Boolean(heroImage.social_src);
+const socialImage = ogImage ?? heroImage.social_src ?? heroImage.src;
+const socialImageType = dedicatedSocialImage
+  ? (heroImage.social_mime_type ??
+    (heroImage.social_src?.match(/\.jpe?g(?:\?|$)/i)
+      ? 'image/jpeg'
+      : heroImage.social_src?.match(/\.png(?:\?|$)/i)
+        ? 'image/png'
+        : heroImage.social_src?.match(/\.avif(?:\?|$)/i)
+          ? 'image/avif'
+          : 'image/webp'))
+  : (heroImage.mime_type ?? 'image/webp');
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  path={path}
+  ogImage={socialImage}
+  ogImageAlt={dedicatedSocialImage ? (heroImage.social_alt ?? heroImage.alt) : heroImage.alt}
+  ogImageWidth={dedicatedSocialImage ? (heroImage.social_width ?? 1200) : (heroImage.width ?? 1600)}
+  ogImageHeight={dedicatedSocialImage
+    ? (heroImage.social_height ?? 630)
+    : (heroImage.height ?? 900)}
+  ogImageType={socialImageType}
+  publishedTime={publishedAt}
+  modifiedTime={updatedAt ?? reviewedAt ?? publishedAt}
+  articleSection={pageCategory}
+  articleAuthor={authorName}
+  noindex={noindex}
+  robots={robots}
+  pageType="post"
+  pageCategory={pageCategory}
+  breadcrumbs={breadcrumbs}
+  measurement={measurement}
+>
+  <slot name="structured-data" />
+  <article class="article-page" data-article-layout data-article-section="content">
+    <Breadcrumbs items={breadcrumbs} />
+
+    <header class="article-page__header" data-article-section="header">
+      <div class="container article-page__header-grid">
+        <div class="article-page__intro">
+          <p class="article-page__eyebrow">MRX Learning Center</p>
+          <h1>{articleTitle}</h1>
+          <p class="article-page__excerpt">{excerpt}</p>
+          <AuthorByline
+            authorName={authorName}
+            authorHref={authorHref}
+            authorRole={guide.name === authorName ? guide.chatRole : undefined}
+            publishedAt={publishedAt}
+            reviewedAt={reviewedAt}
+            readingMinutes={readingMinutes}
+          />
+        </div>
+
+        <figure class="article-hero-image">
+          <img
+            src={heroImage.src}
+            alt={heroImage.alt}
+            width={heroImage.width ?? 1600}
+            height={heroImage.height ?? 900}
+            loading="eager"
+            decoding="async"
+            fetchpriority="high"
+          />
+        </figure>
+      </div>
+    </header>
+
+    <div class="container article-page__body-grid">
+      <div class="article-page__content" aria-label="Article content" data-article-section="inline">
+        <Prose>
+          {
+            answerSummary && (
+              <section class="article-answer cited-answer" aria-labelledby="article-answer-heading">
+                <h2 id="article-answer-heading">Direct answer</h2>
+                <p>{answerSummary}</p>
+              </section>
+            )
+          }
+          {
+            keyTakeaways.length > 0 && (
+              <section class="article-takeaways" aria-labelledby="article-takeaways-heading">
+                <h2 id="article-takeaways-heading">Key takeaways</h2>
+                <ul>
+                  {keyTakeaways.map((takeaway) => (
+                    <li>{takeaway}</li>
+                  ))}
+                </ul>
+              </section>
+            )
+          }
+          <slot />
+          {
+            faq.length > 0 && (
+              <section class="article-faq" aria-labelledby="article-faq-heading">
+                <h2 id="article-faq-heading">Frequently asked questions</h2>
+                {faq.map((item) => (
+                  <details>
+                    <summary>{item.question}</summary>
+                    <p>{item.answer}</p>
+                  </details>
+                ))}
+              </section>
+            )
+          }
+          {
+            sources.length > 0 && (
+              <section class="article-sources" aria-labelledby="article-sources-heading">
+                <h2 id="article-sources-heading">Sources</h2>
+                <ul>
+                  {sources.map((source) => (
+                    <li>
+                      <a href={source.href} rel="noopener noreferrer">
+                        {source.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            )
+          }
+        </Prose>
+
+        {
+          internalLinks && (
+            <nav
+              class="article-context-nav"
+              aria-label="Continue exploring this topic"
+              data-article-internal-links
+            >
+              <p class="article-context-nav__eyebrow">Continue exploring</p>
+              <ul>
+                <li>
+                  <a href={internalLinks.hub.href} data-article-link="hub">
+                    {internalLinks.hub.label}
+                  </a>
+                </li>
+                <li>
+                  <a href={internalLinks.sibling.href} data-article-link="sibling">
+                    {internalLinks.sibling.label}
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href={internalLinks.conversion.href}
+                    data-article-link="conversion"
+                    data-cta-name={internalLinks.conversion.name}
+                  >
+                    {internalLinks.conversion.label}
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          )
+        }
+      </div>
+
+      <aside class="article-page__sidebar" aria-label="Article team" data-article-section="sidebar">
+        <ArticleTeamBox
+          authorName={authorName}
+          authorHref={authorHref}
+          authorDescription={authorDescription}
+          guide={guide}
+          articleTitle={articleTitle}
+        />
+        <ArticleSidebarCta ctaNamePrefix={articleCtaPrefix} />
+      </aside>
+    </div>
+
+    {
+      Astro.slots.has('related') && (
+        <section
+          class="container article-page__related"
+          aria-labelledby="related-posts-heading"
+          data-article-section="related"
+        >
+          <slot name="related" />
+        </section>
+      )
+    }
+
+    <ArticleClosingCta
+      articleTitle={articleTitle}
+      reviewCta={primaryCta}
+      askCtaName={askCtaName}
+      tommyPrompt={tommyPrompt}
+    />
+  </article>
+</BaseLayout>
+
+<style>
+  .article-page__disclaimer {
+    padding-top: clamp(0.75rem, 1.5vw, 1.15rem);
+  }
+
+  .article-page :global(.breadcrumbs) {
+    padding-block: 0.65rem;
+    font-size: 0.76rem;
+  }
+
+  .article-context-nav {
+    margin-top: 1.6rem;
+    padding: 1rem 1.1rem;
+    border: 1px solid var(--color-ink-100);
+    border-radius: 14px;
+    background: #fffaf1;
+  }
+
+  .article-context-nav__eyebrow {
+    margin: 0 0 0.45rem;
+    color: #8a5d18;
+    font-size: 0.7rem;
+    font-weight: 850;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .article-context-nav ul {
+    display: grid;
+    gap: 0.45rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .article-context-nav a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: var(--color-brand-900);
+    font-size: 0.94rem;
+    font-weight: 650;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .article-context-nav a:hover {
+    color: var(--color-brand-700);
+  }
+
+  .article-answer,
+  .article-takeaways,
+  .article-faq,
+  .article-sources {
+    margin-block: 1.4rem;
+    padding: 1.1rem 1.2rem;
+    border: 1px solid var(--color-ink-100);
+    border-radius: 14px;
+    background: #fffaf1;
+  }
+
+  .article-page__header {
+    padding: clamp(1.35rem, 2.8vw, 2.6rem) 0;
+    border-bottom: 1px solid var(--color-ink-100);
+    background: linear-gradient(145deg, #fffaf1 0%, #f0eadf 100%);
+  }
+
+  .article-page__header-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(360px, 0.72fr);
+    gap: clamp(1.4rem, 4vw, 4rem);
+    align-items: center;
+  }
+
+  .article-page__intro {
+    min-width: 0;
+  }
+
+  .article-page__eyebrow {
+    margin-bottom: 0.55rem;
+    color: #8a5d18;
+    font-size: 0.68rem;
+    font-weight: 850;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .article-page h1 {
+    max-width: 19ch;
+    font-size: clamp(2.15rem, 4.2vw, 3.75rem);
+    line-height: 0.98;
+    letter-spacing: -0.04em;
+    text-wrap: balance;
+  }
+
+  .article-page__excerpt {
+    max-width: 62ch;
+    margin-top: 0.8rem;
+    color: var(--color-ink-700);
+    font-size: clamp(0.96rem, 1.25vw, 1.1rem);
+    line-height: 1.5;
+  }
+
+  .article-page__intro :global(.byline) {
+    flex-wrap: wrap;
+    gap: 0.35rem 0.65rem;
+    margin-top: 0.9rem;
+    font-size: 0.74rem;
+  }
+
+  .article-hero-image {
+    overflow: hidden;
+    margin: 0;
+    border: 1px solid rgba(7, 30, 52, 0.12);
+    border-radius: clamp(14px, 2vw, 20px);
+    background: var(--color-brand-900);
+    box-shadow: 0 16px 38px rgba(7, 30, 52, 0.12);
+  }
+
+  .article-hero-image img {
+    display: block;
+    width: 100%;
+    height: clamp(220px, 28vw, 360px);
+    object-fit: cover;
+  }
+
+  .article-page__body-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(310px, 380px);
+    gap: clamp(1.5rem, 4vw, 3.5rem);
+    align-items: start;
+    padding-block: clamp(1.6rem, 3.5vw, 3rem);
+  }
+
+  .article-page__content {
+    min-width: 0;
+  }
+
+  .article-page__content :global(.prose) {
+    max-width: 760px;
+  }
+
+  .article-page__sidebar {
+    position: static;
+    display: grid;
+    gap: 1rem;
+  }
+
+  .article-page__sidebar :global(.article-author-box) {
+    margin-bottom: 0;
+  }
+
+  .article-page__sidebar :global(.article-author-box__profile) {
+    grid-template-columns: 92px minmax(0, 1fr);
+    gap: 0.85rem;
+    padding: 0.9rem;
+  }
+
+  .article-page__sidebar :global(.article-author-box__profile picture),
+  .article-page__sidebar :global(.article-author-box__profile img) {
+    width: 92px;
+    height: 92px;
+    border-radius: 13px;
+  }
+
+  .article-page__sidebar :global(.article-author-box__publisher) {
+    grid-template-columns: 1fr;
+  }
+
+  .article-page__related {
+    padding-block: clamp(1.2rem, 2.7vw, 2.2rem);
+    border-top: 1px solid var(--color-ink-100);
+  }
+
+  @media (max-width: 980px) {
+    .article-page__header-grid,
+    .article-page__body-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .article-page__header-grid {
+      gap: 1.25rem;
+    }
+
+    .article-page h1 {
+      max-width: 23ch;
+    }
+
+    .article-hero-image {
+      max-width: 760px;
+    }
+
+    .article-page__sidebar {
+      position: static;
+    }
+  }
+
+  @media (max-width: 650px) {
+    .article-page__header {
+      padding: 1.1rem 0 1.2rem;
+    }
+
+    .article-page h1 {
+      font-size: clamp(2rem, 10vw, 2.65rem);
+    }
+
+    .article-page__body-grid {
+      padding-block: 1.35rem;
+    }
+
+    .article-page__intro :global(.byline) {
+      align-items: flex-start;
+    }
+  }
+</style>

@@ -19,6 +19,8 @@ export default [
   {
     ignores: [
       'dist/**',
+      '.worktrees/**',
+      '**/dist/**',
       '.astro/**',
       '.vercel/**',
       'node_modules/**',

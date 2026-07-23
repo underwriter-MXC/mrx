@@ -1,0 +1,20 @@
+---
+import PillarArchivePage from '../../../../components/organisms/PillarArchivePage.astro';
+import { getPillarArchiveStaticPaths } from '../../../../lib/pillar-inventory';
+
+export const prerender = true;
+const PILLAR_ID = 'title-lease-ownership' as const;
+
+export async function getStaticPaths() {
+  return getPillarArchiveStaticPaths('title-lease-ownership');
+}
+
+const currentPage = Number(Astro.params.page);
+---
+
+<PillarArchivePage
+  pillarId={PILLAR_ID}
+  currentPage={currentPage}
+  title="Title, Leases, and Ownership · MRX"
+  description="Browse the full MRX mineral-rights title, lease, and ownership archive: deeds, conveyances, division orders, surface-versus-mineral splits, and lease interpretation."
+/>

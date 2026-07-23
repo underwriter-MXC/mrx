@@ -1,11 +1,20 @@
 ---
 /**
  * Seo organism. The single <head> injector. Composes title, description,
- * canonical, OG, Twitter card, JSON-LD graph. Renders once per layout.
+ * canonical, OG, Twitter card, hreflang, JSON-LD graph. Renders once per layout.
  *
  * Per `SEO AEO Sitemap Schema Plan.md` §1.1, §2.6.
  */
-import { buildTitle, validateTitle, validateDescription, buildCanonical, buildOgImage } from '../../lib/seo';
+import {
+  buildTitle,
+  validateTitle,
+  validateDescription,
+  buildCanonical,
+  buildOgImage,
+  OG_IMAGE_WIDTH,
+  OG_IMAGE_HEIGHT,
+  OG_IMAGE_TYPE,
+} from '../../lib/seo';
 import { SITE } from '../../lib/site';
 import { jsonLdStringify, buildPageGraph } from '../../lib/jsonld';
 import { siteGraph } from '../../structured-data/site';
@@ -17,11 +26,22 @@ interface Props {
   description: string;
   path: string;
   ogImage?: string;
+  ogType?: 'website' | 'article';
+  ogImageAlt?: string;
+  ogImageWidth?: number;
+  ogImageHeight?: number;
+  ogImageType?: string;
+  publishedTime?: string;
+  modifiedTime?: string;
+  articleSection?: string;
+  articleAuthor?: string;
+  appendBrand?: boolean;
+  previousPath?: string;
+  nextPath?: string;
   robots?: string;
   noindex?: boolean;
   jsonLd?: object[];
   breadcrumbs?: Crumb[];
-  faqPairs?: { question: string; answer: string }[];
 }
 
 const {
@@ -29,16 +49,30 @@ const {
   description,
   path,
   ogImage,
+  ogType = 'website',
+  ogImageAlt,
+  ogImageWidth = OG_IMAGE_WIDTH,
+  ogImageHeight = OG_IMAGE_HEIGHT,
+  ogImageType = OG_IMAGE_TYPE,
+  publishedTime,
+  modifiedTime,
+  articleSection,
+  articleAuthor,
+  appendBrand = true,
+  previousPath,
+  nextPath,
   robots,
   noindex = false,
   jsonLd = [],
   breadcrumbs,
-  faqPairs,
 } = Astro.props;
 
 // Final title: if the frontmatter title already includes "Mineral Rights Xchange"
 // or its short form "MRX", use it as-is. Otherwise append the brand.
-const finalTitle = title.includes(SITE.name) || title.includes(SITE.shortName) ? title : buildTitle([title]);
+const finalTitle =
+  !appendBrand || title.includes(SITE.name) || title.includes(SITE.shortName)
+    ? title
+    : buildTitle([title]);
 const tOk = validateTitle(finalTitle);
 const dOk = validateDescription(description);
 
@@ -46,8 +80,14 @@ if (!tOk.ok) console.warn(`[Seo] ${path}: ${tOk.reason}`);
 if (!dOk.ok) console.warn(`[Seo] ${path}: ${dOk.reason}`);
 
 const canonical = buildCanonical(path, SITE.url);
-const og = ogImage ?? buildOgImage(path, SITE.url);
-const robotsContent = noindex ? 'noindex, nofollow' : (robots ?? 'index, follow, max-image-preview:large, max-snippet:-1');
+const og = ogImage
+  ? ogImage.startsWith('http')
+    ? ogImage
+    : new URL(ogImage, `${SITE.url}/`).toString()
+  : buildOgImage(path, SITE.url);
+const robotsContent =
+  robots ??
+  (noindex ? 'noindex, nofollow' : 'index, follow, max-image-preview:large, max-snippet:-1');
 
 const graph = buildPageGraph([
   ...siteGraph(path, finalTitle),
@@ -60,22 +100,48 @@ const graph = buildPageGraph([
 <meta name="description" content={description} />
 <meta name="robots" content={robotsContent} />
 <link rel="canonical" href={canonical} />
+{previousPath && <link rel="prev" href={buildCanonical(previousPath, SITE.url)} />}
+{nextPath && <link rel="next" href={buildCanonical(nextPath, SITE.url)} />}
 
-<meta property="og:type" content="website" />
+<link rel="alternate" hreflang="en-US" href={canonical} />
+<link rel="alternate" hreflang="x-default" href={canonical} />
+
+<meta property="og:type" content={ogType} />
 <meta property="og:title" content={finalTitle} />
 <meta property="og:description" content={description} />
 <meta property="og:url" content={canonical} />
 <meta property="og:image" content={og} />
+<meta property="og:image:alt" content={ogImageAlt ?? finalTitle} />
+<meta property="og:image:width" content={String(ogImageWidth)} />
+<meta property="og:image:height" content={String(ogImageHeight)} />
+<meta property="og:image:type" content={ogImageType} />
 <meta property="og:site_name" content={SITE.name} />
 <meta property="og:locale" content={SITE.locale} />
+{
+  ogType === 'article' && publishedTime && (
+    <meta property="article:published_time" content={publishedTime} />
+  )
+}
+{
+  ogType === 'article' && modifiedTime && (
+    <meta property="article:modified_time" content={modifiedTime} />
+  )
+}
+{
+  ogType === 'article' && articleSection && (
+    <meta property="article:section" content={articleSection} />
+  )
+}
+{
+  ogType === 'article' && articleAuthor && (
+    <meta property="article:author" content={articleAuthor} />
+  )
+}
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content={finalTitle} />
 <meta name="twitter:description" content={description} />
 <meta name="twitter:image" content={og} />
+<meta name="twitter:image:alt" content={ogImageAlt ?? finalTitle} />
 
-<script
-  is:inline
-  type="application/ld+json"
-  set:html={jsonLdStringify(graph)}
-/>
+<script is:inline type="application/ld+json" set:html={jsonLdStringify(graph)} />

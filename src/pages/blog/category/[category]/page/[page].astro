@@ -1,0 +1,47 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import CategoryArchivePage from '../../../../../components/organisms/CategoryArchivePage.astro';
+import {
+  archivePageNumbers,
+  paginateArchive,
+  type ArchivePage,
+} from '../../../../../lib/archive-pagination';
+import { isPublishedPost } from '../../../../../lib/content-graph';
+
+export const prerender = true;
+
+export async function getStaticPaths() {
+  const [categories, posts] = await Promise.all([
+    getCollection('categories'),
+    getCollection('posts', isPublishedPost),
+  ]);
+
+  return categories.flatMap((category) => {
+    const categoryPosts = posts
+      .filter((post) => post.data.category === category.data.id)
+      .sort(
+        (a, b) =>
+          new Date(b.data.published_at).getTime() - new Date(a.data.published_at).getTime() ||
+          a.id.localeCompare(b.id),
+      );
+    return archivePageNumbers(categoryPosts.length).map((page) => ({
+      params: { category: category.data.slug, page: String(page) },
+      props: {
+        category,
+        categories,
+        page: paginateArchive(categoryPosts, page),
+      },
+    }));
+  });
+}
+
+interface Props {
+  category: CollectionEntry<'categories'>;
+  categories: CollectionEntry<'categories'>[];
+  page: ArchivePage<CollectionEntry<'posts'>>;
+}
+
+const { category, categories, page } = Astro.props;
+---
+
+<CategoryArchivePage {...page} category={category} categories={categories} />

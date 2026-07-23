@@ -1,0 +1,149 @@
+---
+/**
+ * PillarNavGrid organism: visible grid of all 9 MRX1000 canonical
+ * pillar URLs. Used in the Learning Center index and as a footer-style
+ * cross-pillar navigation on every pillar surface so a reader never
+ * has to backtrack to the Learning Center hub to reach a sibling
+ * pillar.
+ *
+ * Every entry renders as a plain anchor so crawlers follow without JS.
+ * Active pillar (when supplied) is flagged with `aria-current="page"`.
+ */
+import { ARTICLE_PILLARS } from '../../lib/content-graph';
+
+interface Props {
+  currentPillarId?: string;
+  heading?: string;
+  eyebrow?: string;
+  compact?: boolean;
+}
+
+const { currentPillarId, heading, eyebrow, compact = false } = Astro.props;
+const pillars = Object.values(ARTICLE_PILLARS);
+const defaultHeading = 'Browse by topic';
+const defaultEyebrow = 'Pillar navigation';
+---
+
+<nav
+  class:list={['pillar-nav-grid', compact && 'pillar-nav-grid--compact']}
+  aria-label="MRX pillar navigation"
+  data-pillar-nav
+>
+  <div class="container">
+    {eyebrow && <p class="pillar-nav-grid__eyebrow">{eyebrow}</p>}
+    {heading && <h2 class="pillar-nav-grid__heading">{heading ?? defaultHeading}</h2>}
+    <ul class="pillar-nav-grid__list" role="list">
+      {
+        pillars.map((pillar) => {
+          const isActive = currentPillarId === pillar.id;
+          return (
+            <li>
+              <a
+                href={pillar.path}
+                aria-current={isActive ? 'page' : undefined}
+                data-pillar-link={pillar.id}
+              >
+                <strong>{pillar.label}</strong>
+                {compact ? null : <span>{pillar.defaultCta}</span>}
+              </a>
+            </li>
+          );
+        })
+      }
+    </ul>
+  </div>
+</nav>
+
+<style>
+  .pillar-nav-grid {
+    padding-block: clamp(2rem, 4vw, 3.25rem);
+    background: var(--color-bg-alt, #f6f3ec);
+    border-block: 1px solid var(--color-ink-100, #d9e0e4);
+  }
+
+  .pillar-nav-grid__eyebrow {
+    margin: 0 0 var(--space-2, 0.4rem);
+    color: var(--color-accent-700, #b06a00);
+    font-size: var(--fs-xs, 0.78rem);
+    font-weight: 800;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+  }
+
+  .pillar-nav-grid__heading {
+    margin: 0 0 var(--space-4, 1.1rem);
+    color: var(--color-brand-900, #071e34);
+    font-size: clamp(1.4rem, 2.4vw, 1.9rem);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+  }
+
+  .pillar-nav-grid__list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--space-3, 0.85rem);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .pillar-nav-grid__list a {
+    display: flex;
+    min-height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: var(--space-2, 0.5rem);
+    padding: var(--space-4, 1rem);
+    border: 1px solid var(--color-ink-100, #d9e0e4);
+    border-radius: var(--radius-md, 12px);
+    background: var(--color-white, #fff);
+    color: var(--color-brand-900, #071e34);
+    text-decoration: none;
+  }
+
+  .pillar-nav-grid__list a:hover {
+    border-color: var(--color-brand-300, #4d7a98);
+    box-shadow: 0 1px 6px rgba(7, 30, 52, 0.08);
+  }
+
+  .pillar-nav-grid__list a[aria-current='page'] {
+    border-color: var(--color-accent-500, #d79a2b);
+    background: linear-gradient(180deg, #fff7e8 0%, #fff 100%);
+  }
+
+  .pillar-nav-grid__list strong {
+    font-size: 0.98rem;
+    font-weight: 800;
+  }
+
+  .pillar-nav-grid__list span {
+    color: var(--color-ink-600, #4f626f);
+    font-size: 0.82rem;
+    line-height: 1.4;
+  }
+
+  .pillar-nav-grid--compact .pillar-nav-grid__list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.5rem;
+  }
+
+  .pillar-nav-grid--compact .pillar-nav-grid__list a {
+    padding: 0.6rem 0.8rem;
+  }
+
+  .pillar-nav-grid--compact .pillar-nav-grid__list strong {
+    font-size: 0.86rem;
+  }
+
+  @media (max-width: 900px) {
+    .pillar-nav-grid__list {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 540px) {
+    .pillar-nav-grid__list {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

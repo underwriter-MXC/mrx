@@ -20,7 +20,7 @@
 
 .grid {
   display: grid;
-  gap: var(--space-6);
+  gap: var(--space-5);
 }
 
 .grid--2 {
@@ -63,7 +63,7 @@
 }
 
 .stack--lg {
-  gap: var(--space-8);
+  gap: var(--space-6);
 }
 
 .stack--sm {
@@ -86,15 +86,15 @@
 }
 
 .section {
-  padding-block: var(--space-16);
+  padding-block: clamp(2.25rem, 4.5vw, 3.5rem);
 }
 
 .section--lg {
-  padding-block: var(--space-24);
+  padding-block: clamp(3rem, 6vw, 4.5rem);
 }
 
 .section--sm {
-  padding-block: var(--space-12);
+  padding-block: clamp(1.4rem, 3vw, 2.25rem);
 }
 
 .section--alt {

@@ -39,7 +39,8 @@ async function* walk(dir) {
 for await (const file of walk(DIST)) {
   scanned++;
   const text = await readFile(file, 'utf-8');
-  const matches = text.match(/<script[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/g) ?? [];
+  const matches =
+    text.match(/<script[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/g) ?? [];
   for (const block of matches) {
     const body = block.replace(/^<script[^>]*>/, '').replace(/<\/script>$/, '');
     let parsed;

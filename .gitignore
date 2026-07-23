@@ -43,5 +43,17 @@ coverage/
 # local MCP/database and crawler scratch artifacts
 sqlite_mcp_server.db
 knowledge/vercel-academy/raw/
+
+# Reproducible release evidence and local QA output. Keep these files on the
+# operator workstation, but do not let generated runs pollute source commits.
+artifacts/
+reports/
+output/
+tmp/
+.worktrees/
+qa-methodology-screenshots/
+qa-searchatlas-*.json
+qa-searchatlas-*.md
+supabase/.temp/
 .env*
 !.env.example

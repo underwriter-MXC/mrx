@@ -23,6 +23,7 @@ test.describe('smoke', () => {
       const footer = await page.locator('.mrx-disclaimer-footer').first();
       await expect(footer).toBeVisible();
       await expect(footer).toContainText(/not certified appraisals/i);
+      await expect(page.locator('.mrx-disclaimer-top')).toHaveCount(0);
     });
   }
 
@@ -36,5 +37,6 @@ test.describe('smoke', () => {
     expect(response?.status()).toBe(200);
     const footer = await page.locator('.mrx-disclaimer-footer').first();
     await expect(footer).toBeVisible();
+    await expect(page.locator('.mrx-disclaimer-top')).toHaveCount(0);
   });
 });

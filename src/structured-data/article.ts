@@ -1,7 +1,7 @@
 /**
  * Per-post Article JSON-LD factory. Per SEO plan §2.4. Every blog post
  * emits an Article node with author, dates, hero image, and a
- * SpeakableSpecification that points at the §7 disclaimer.
+ * SpeakableSpecification that points at the visible answer-first blocks.
  */
 import type { Article, SpeakableSpecification } from 'schema-dts';
 import type { PostsFrontmatter } from '../lib/astro/content';
@@ -12,10 +12,13 @@ export function article(
   authorUrlId: string,
   heroImageUrl: string,
   authorName = 'MRX Editorial Team',
+  canonicalPath = `/blog/${post.slug}/`,
 ): Article {
+  const path = canonicalPath.startsWith('/') ? canonicalPath : `/${canonicalPath}`;
+  const canonicalUrl = new URL(path.endsWith('/') ? path : `${path}/`, `${SITE.url}/`).toString();
   return {
     '@type': 'Article',
-    '@id': `${SITE.url}/blog/${post.slug}/#article`,
+    '@id': `${canonicalUrl}#article`,
     headline: post.title,
     description: post.description,
     image: [heroImageUrl],
@@ -30,7 +33,7 @@ export function article(
     publisher: { '@id': `${SITE.url}/#org` },
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': `${SITE.url}/blog/${post.slug}/`,
+      '@id': `${canonicalUrl}#page`,
     },
     articleSection: post.category,
     inLanguage: SITE.locale,
@@ -40,17 +43,10 @@ export function article(
 }
 
 export function speakable(): SpeakableSpecification {
-  // CSS selectors point at the §7 disclaimer (per SEO plan §2.5) and
-  // the AEO "Cited answer" blocks rendered by <CitedAnswer />. The
-  // Speakable scope protects MRX from being quoted out of context,
-  // and signals answer engines (Bing, Perplexity, Google AI Overviews,
-  // ChatGPT search, etc.) that these blocks are safe to cite.
+  // Only direct-answer and takeaway blocks are nominated. Disclaimers remain
+  // visible but are not the primary text answer engines should quote.
   return {
     '@type': 'SpeakableSpecification',
-    cssSelector: [
-      '.mrx-disclaimer-footer',
-      '.mrx-disclaimer-top',
-      '.cited-answer',
-    ],
+    cssSelector: ['.cited-answer', '.article-takeaways'],
   };
 }

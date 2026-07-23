@@ -47,7 +47,12 @@ if (!disallowedSection) {
 
 const phraseLines = disallowedSection[0].split('\n').filter((l) => l.startsWith('- '));
 const phrases = phraseLines
-  .map((l) => l.slice(2).split(/\s*\(([^)]+)\)/)[0].trim())
+  .map((l) =>
+    l
+      .slice(2)
+      .split(/\s*\(([^)]+)\)/)[0]
+      .trim(),
+  )
   .filter(Boolean);
 
 const dateMatch = text.match(/^Date:\s*(\d{4}-\d{2}-\d{2})/m);

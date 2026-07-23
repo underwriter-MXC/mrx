@@ -1,0 +1,100 @@
+{
+  "artifact": "MRX Sprint 0 Brand Vault entity map",
+  "task_id": "t_eee35875",
+  "generated_at_utc": "2026-07-20T05:07:59Z",
+  "policy_source": "docs/MRX_SEARCH_ATLAS_REMEDIATION_POLICY.md#3.3",
+  "canonical_domain": "https://mineralrightsxchange.com",
+  "source_handles": [
+    "src/lib/site.ts:8-21",
+    "src/structured-data/site.ts:6-84",
+    "src/structured-data/localbusiness.ts:1-59",
+    "src/structured-data/article.ts:10-52",
+    "src/structured-data/breadcrumb.ts:9-18",
+    "src/structured-data/faq.ts:9-21",
+    "src/content/team/organization.mdx:1-14",
+    "src/content/authors/mrx-editorial-team.mdx:1-13",
+    "src/data/guides.ts:18-140"
+  ],
+  "entities": [
+    {
+      "entity_id": "mrx:org:mineral-rights-xchange",
+      "schema_type": "Organization",
+      "proposed_jsonld_id": "https://mineralrightsxchange.com/#org",
+      "canonical_url": "https://mineralrightsxchange.com/",
+      "name": "Mineral Rights Xchange",
+      "alternate_names": ["MRX"],
+      "source_of_truth": "src/lib/site.ts and src/content/team/organization.mdx",
+      "status": "active-draft-map",
+      "publish_gate": "Do not add sameAs/social/profile links until mrx_ceo/Daryl confirms first-party ownership."
+    },
+    {
+      "entity_id": "mrx:site:mineralrightsxchange.com",
+      "schema_type": "WebSite",
+      "proposed_jsonld_id": "https://mineralrightsxchange.com/#site",
+      "canonical_url": "https://mineralrightsxchange.com/",
+      "name": "Mineral Rights Xchange",
+      "source_of_truth": "src/structured-data/site.ts webSite",
+      "status": "active-draft-map"
+    },
+    {
+      "entity_id": "mrx:service:national-underwriter-review",
+      "schema_type": "ProfessionalService",
+      "proposed_jsonld_id": "https://mineralrightsxchange.com/#service",
+      "canonical_url": "https://mineralrightsxchange.com/",
+      "name": "Mineral Rights Xchange",
+      "area_served": "United States",
+      "source_of_truth": "src/structured-data/site.ts professionalService",
+      "status": "active-draft-map",
+      "publish_gate": "No phone, street address, GBP, or service-area tightening until Daryl confirms."
+    },
+    {
+      "entity_id": "mrx:local:service-area-business",
+      "schema_type": "LocalBusiness",
+      "proposed_jsonld_id": "https://mineralrightsxchange.com/#local",
+      "canonical_url": "https://mineralrightsxchange.com/",
+      "name": "Mineral Rights Xchange",
+      "area_served": "United States",
+      "source_of_truth": "src/structured-data/localbusiness.ts",
+      "status": "dormant-draft-only",
+      "publish_gate": "Human-only: confirm GBP activation, canonical phone, physical office vs service-area mode, and whether street address may be public."
+    },
+    {
+      "entity_id": "mrx:publisher:editorial-team",
+      "schema_type": "Organization",
+      "proposed_jsonld_id": "https://mineralrightsxchange.com/authors/mrx-editorial-team/#author",
+      "canonical_url": "https://mineralrightsxchange.com/authors/mrx-editorial-team/",
+      "name": "MRX Editorial Team",
+      "source_of_truth": "src/content/authors/mrx-editorial-team.mdx",
+      "status": "active-draft-map"
+    },
+    {
+      "entity_id": "mrx:ai-guide:tommy",
+      "schema_type": "Person draft for clearly labeled AI guide persona",
+      "proposed_jsonld_id": "https://mineralrightsxchange.com/team/#tommy",
+      "canonical_url": "https://mineralrightsxchange.com/team/",
+      "name": "Tommy",
+      "source_of_truth": "src/data/guides.ts:20-39",
+      "status": "draft-only",
+      "publish_gate": "Human-only/legal review: avoid implying Tommy is a human, licensed professional, or employee; prefer Organization author unless approved."
+    },
+    {
+      "entity_id": "mrx:ai-guide:angela",
+      "schema_type": "Person draft for clearly labeled AI guide persona",
+      "proposed_jsonld_id": "https://mineralrightsxchange.com/team/#angela",
+      "canonical_url": "https://mineralrightsxchange.com/team/",
+      "name": "Angela",
+      "source_of_truth": "src/data/guides.ts:125-139",
+      "status": "draft-only",
+      "publish_gate": "Human-only/legal review: avoid implying Angela is a human, licensed professional, employee, or outbound caller until Voice AI approvals exist."
+    }
+  ],
+  "human_only_gates": [
+    "GBP edits or GBP activation",
+    "Wikidata edits",
+    "Brand Vault / Knowledge Graph record creation or update",
+    "Publishing JSON-LD into production",
+    "Adding sameAs links without first-party ownership confirmation",
+    "Adding phone/street-address/service-area facts without Daryl confirmation",
+    "Representing AI guides as real people without legal/compliance approval"
+  ]
+}

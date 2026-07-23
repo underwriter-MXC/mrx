@@ -46,6 +46,7 @@ const sitemapPriorityIntegration = {
 export default defineConfig({
   site: SITE,
   output: 'server',
+  build: { inlineStylesheets: 'always' },
   security: { checkOrigin: true },
   adapter: isHetzner
     ? node({ mode: 'standalone' })
@@ -61,12 +62,18 @@ export default defineConfig({
       lastmod: new Date(),
       filter: (page) => {
         const pathname = new URL(page).pathname;
-        return !pathname.includes('/blog/drafts/')
-          && !pathname.includes('/api/')
-          && !pathname.startsWith('/account')
-          && !pathname.includes('/thank-you')
-          && pathname !== '/404/'
-          && pathname !== '/500/';
+        return (
+          !pathname.includes('/blog/drafts/') &&
+          !pathname.includes('/api/') &&
+          !pathname.startsWith('/account') &&
+          !pathname.startsWith('/communication-preferences') &&
+          !pathname.startsWith('/owner-intake') &&
+          !pathname.startsWith('/staff') &&
+          !pathname.startsWith('/staged/') &&
+          !pathname.includes('/thank-you') &&
+          pathname !== '/404/' &&
+          pathname !== '/500/'
+        );
       },
     }),
     sitemapPriorityIntegration,

@@ -10,32 +10,44 @@ interface Row {
   description: string;
   weight: 'high' | 'medium' | 'low';
   source: string;
+  whyItMoves?: string;
+  id?: string;
 }
 
 interface Props {
   rows: Row[];
+  caption?: string;
 }
 
-const { rows } = Astro.props;
+const { rows, caption = 'DCF factors and their weight in the methodology review.' } = Astro.props;
 ---
 
 <table class="methodology-table" aria-label="DCF methodology factors">
+  <caption class="sr-only">{caption}</caption>
   <thead>
     <tr>
       <th scope="col">Factor</th>
       <th scope="col">What we look at</th>
       <th scope="col">Influence</th>
       <th scope="col">Source / reference</th>
+      {rows.some((row) => row.whyItMoves) && <th scope="col">Why it moves the range</th>}
     </tr>
   </thead>
   <tbody>
     {
       rows.map((row) => (
         <tr>
-          <th scope="row">{row.factor}</th>
+          <th scope="row" id={row.id}>
+            {row.factor}
+          </th>
           <td>{row.description}</td>
-          <td>{row.weight}</td>
+          <td>
+            <span class="methodology-table__weight" data-weight={row.weight}>
+              {row.weight}
+            </span>
+          </td>
           <td>{row.source}</td>
+          {rows.some((item) => item.whyItMoves) && <td>{row.whyItMoves}</td>}
         </tr>
       ))
     }

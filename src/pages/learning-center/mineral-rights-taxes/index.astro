@@ -1,0 +1,113 @@
+---
+import { getCollection } from 'astro:content';
+import PillarHubPage from '../../../components/organisms/PillarHubPage.astro';
+import MarketingLayout from '../../../layouts/MarketingLayout.astro';
+import { ARTICLE_PILLARS, isPublishedPost, resolvePillar } from '../../../lib/content-graph';
+import { getPillarInventoryPage } from '../../../lib/pillar-inventory';
+import { groupPillarPosts, postSearchText } from '../../../lib/pillar-hubs';
+
+export const prerender = true;
+
+const PILLAR_ID = 'mineral-rights-taxes' as const;
+const pillar = ARTICLE_PILLARS[PILLAR_ID];
+const posts = (await getCollection('posts', isPublishedPost))
+  .filter((post) => resolvePillar(post).id === PILLAR_ID)
+  .sort(
+    (a, b) =>
+      new Date(b.data.published_at).getTime() - new Date(a.data.published_at).getTime() ||
+      a.id.localeCompare(b.id),
+  );
+
+const topics = groupPillarPosts(posts, [
+  {
+    id: 'explore-1031-exchanges',
+    title: 'Explore 1031 exchanges',
+    description:
+      'Learn the core eligibility, structure, timing, documentation, and comparison questions to take to a qualified tax adviser and intermediary.',
+    matches: (post) => /1031|like-kind|exchange/.test(postSearchText(post)),
+  },
+  {
+    id: 'understand-sale-taxes-and-costs',
+    title: 'Understand sale taxes and costs',
+    description:
+      'Prepare for federal reporting, capital-gains, severance-tax, closing-cost, and transaction-cost conversations without using a general article to decide individual treatment.',
+    matches: (post) =>
+      /capital gains|federal tax return|severance tax|closing cost/.test(postSearchText(post)),
+  },
+  {
+    id: 'prepare-transaction-records',
+    title: 'Prepare transaction and ownership records',
+    description:
+      'Organize the ownership, inheritance, title, purchase-agreement, and sale documents that can change which questions apply to a transaction.',
+    matches: () => true,
+  },
+]);
+
+const inventory = await getPillarInventoryPage(PILLAR_ID);
+
+const sources = [
+  {
+    label: 'IRS: Like-kind exchanges: real estate tax tips',
+    href: 'https://www.irs.gov/businesses/small-businesses-self-employed/like-kind-exchanges-real-estate-tax-tips',
+  },
+  {
+    label: 'IRS: Instructions for Form 8824',
+    href: 'https://www.irs.gov/instructions/i8824',
+  },
+  {
+    label: 'IRS Publication 544: Sales and Other Dispositions of Assets',
+    href: 'https://www.irs.gov/publications/p544',
+  },
+];
+
+const faq = [
+  {
+    question: 'Do mineral rights automatically qualify for a 1031 exchange?',
+    answer:
+      'No automatic rule should be assumed. The IRS limits Section 1031 to qualifying real property held for business or investment and excludes property held primarily for sale. Whether a particular mineral interest and transaction qualify depends on the facts and structure, so confirm eligibility before signing.',
+  },
+  {
+    question: 'When should I ask about a 1031 exchange?',
+    answer:
+      'Ask before entering a binding sale or moving sale proceeds. The identity of the taxpayer, transaction structure, use of an intermediary, replacement property, and statutory deadlines can matter. A late review may leave fewer options.',
+  },
+  {
+    question: 'What records help with mineral-rights tax planning?',
+    answer:
+      'Gather acquisition or inheritance records, basis information if available, deeds and assignments, the proposed purchase agreement, closing estimates, payment history, prior tax reporting, and details about any replacement property being considered. A tax adviser may request additional records.',
+  },
+];
+---
+
+<MarketingLayout
+  title="Mineral Rights Taxes and 1031 Exchanges · MRX"
+  description="Understand mineral-rights sale taxes, reporting questions, and 1031 exchange considerations using current IRS sources before choosing a transaction path."
+  path={pillar.path}
+  pageType="marketing"
+  pageCategory="learning-center-pillar"
+  breadcrumbs={[
+    { name: 'Home', path: '/' },
+    { name: 'Learning Center', path: '/learning-center/' },
+    { name: 'Taxes and 1031 Exchanges', path: pillar.path },
+  ]}
+  disclaimerTop={true}
+  faq={faq}
+>
+  <PillarHubPage
+    eyebrow="Mineral rights taxes and 1031 exchanges"
+    title="Prepare the tax questions before choosing a transaction."
+    lede="Use current IRS sources to understand the vocabulary, records, and timing questions that belong in a conversation with your tax and legal professionals."
+    directAnswer="Tax treatment is not determined by the phrase “mineral rights sale” alone. It can depend on what interest is transferred, how and when it was acquired, its basis, how it was held, the transaction documents, and the seller’s individual circumstances. For a potential Section 1031 exchange, the IRS states that the exchange rules apply to qualifying real property held for business or investment and not to real property held primarily for sale. That means eligibility should be confirmed for the particular mineral interest and transaction before a binding sale, not inferred from a general article. Transaction sequencing also matters: the taxpayer, intermediary, proceeds, replacement property, reporting, and deadlines must be addressed within the applicable rules. Start by collecting acquisition or inheritance records, deeds and assignments, basis support, payment history, the proposed agreement, closing estimates, and any replacement-property information. Use IRS guidance to prepare questions, then have a qualified tax professional and, where appropriate, legal counsel evaluate the actual facts. MRX educational content does not provide an individualized conclusion about tax treatment."
+    sources={sources}
+    topics={topics}
+    faqs={faq}
+    inventory={inventory}
+    cta={{
+      title: 'Organize the facts before speaking with your adviser.',
+      body: 'Tommy can help you build a document list and a focused set of questions. No tax conclusion is required to start, and you decide whether to request further review.',
+      label: 'Prepare my adviser questions',
+      prompt:
+        'Help me prepare questions and a document checklist for a mineral-rights tax or 1031 exchange conversation. Do not give me an individualized conclusion about tax treatment.',
+    }}
+  />
+</MarketingLayout>

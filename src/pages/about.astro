@@ -1,10 +1,14 @@
 ---
 import { getEntry } from 'astro:content';
 import MarketingLayout from '../layouts/MarketingLayout.astro';
+import FaqBlock from '../components/molecules/FaqBlock.astro';
+import { activeGuides, guides } from '../data/guides';
 
 const entry = await getEntry('pages', 'about');
 if (!entry) throw new Error('pages/about.mdx is missing.');
-const { Content } = await entry.render();
+
+const faq = entry.data.faq ?? [];
+const directoryGuides = guides.filter((guide) => guide.status === 'directory');
 export const prerender = true;
 ---
 
@@ -14,8 +18,819 @@ export const prerender = true;
   path="/about"
   pageType="marketing"
   pageCategory="about"
-  breadcrumbs={[{ name: 'Home', path: '/' }, { name: 'About', path: '/about' }]}
-  faq={entry.data.faq}
+  breadcrumbs={[
+    { name: 'Home', path: '/' },
+    { name: 'About MRX', path: '/about' },
+  ]}
+  faq={faq}
 >
-  <Content />
+  <section class="mrx-about-hero" aria-labelledby="about-title">
+    <div class="container mrx-about-hero__grid">
+      <div class="mrx-about-hero__copy">
+        <p class="mrx-eyebrow">About Mineral Rights Xchange</p>
+        <h1 id="about-title">Straight answers, backed by the right team.</h1>
+        <p class="mrx-about-hero__lede">
+          MRX helps mineral owners make sense of offers, inherited interests, royalty checks,
+          ownership records, and sell-or-hold questions without starting with another sales pitch.
+        </p>
+        <div class="mrx-about-actions">
+          <button class="mrx-primary" type="button" data-about-chat>Ask Tommy a question</button>
+          <a class="mrx-secondary" href="/team/">Meet every MRX guide</a>
+        </div>
+        <ul class="mrx-about-trust" aria-label="MRX guidance commitments">
+          <li>Free guidance</li>
+          <li>Private by design</li>
+          <li>No obligation</li>
+          <li>Nationwide education</li>
+        </ul>
+      </div>
+
+      <aside class="mrx-about-router" aria-label="MRX guide team">
+        <div class="mrx-about-router__head">
+          <span>Start with Tommy</span>
+          <strong>One question. The right specialist.</strong>
+        </div>
+        <div class="mrx-about-router__team">
+          {
+            activeGuides.map((guide) => (
+              <a href={`/team/${guide.slug}/`} aria-label={`Meet ${guide.name}, ${guide.chatRole}`}>
+                <picture>
+                  <source srcset={`/assets/team/${guide.slug}-128.avif`} type="image/avif" />
+                  <source srcset={`/assets/team/${guide.slug}-128.webp`} type="image/webp" />
+                  <img src={`/assets/team/${guide.slug}-128.jpg`} alt="" width="128" height="128" />
+                </picture>
+                <span>
+                  <strong>{guide.name}</strong>
+                  <small>{guide.shortRole}</small>
+                </span>
+              </a>
+            ))
+          }
+        </div>
+        <p>
+          Every character shown is a fictional MRX AI Guide. Guides organize questions, explain
+          general information, and can serve as clearly labeled Learning Center author identities.
+          They are not human employees or licensed professionals.
+        </p>
+      </aside>
+    </div>
+  </section>
+
+  <section class="mrx-about-purpose">
+    <div class="container">
+      <div class="mrx-about-heading">
+        <div>
+          <p class="mrx-eyebrow">Why MRX exists</p>
+          <h2>A big decision should not depend on a headline number.</h2>
+        </div>
+        <p>
+          Mineral owners are often contacted before they have the records, production context, or
+          plain-language explanations needed to evaluate what they were offered. MRX helps organize
+          the facts first, then makes the next step easier to understand.
+        </p>
+      </div>
+      <div class="mrx-about-principles">
+        <article>
+          <span>01</span>
+          <h3>Start with the owner’s question</h3>
+          <p>
+            Ask about an offer, inheritance, royalty payment, deed, lease, well, or decision. Tommy
+            gives a useful first response before asking for contact information.
+          </p>
+        </article>
+        <article>
+          <span>02</span>
+          <h3>Separate facts from assumptions</h3>
+          <p>
+            MRX keeps known details, missing information, and working assumptions distinct so an
+            owner can see what still needs to be verified.
+          </p>
+        </article>
+        <article>
+          <span>03</span>
+          <h3>Keep the owner in control</h3>
+          <p>
+            Owners choose whether to save a conversation, share documents, receive updates, book a
+            phone call, sell, hold, or take more time.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="mrx-about-team" aria-labelledby="guide-team-title">
+    <div class="container">
+      <div class="mrx-about-team__head">
+        <div>
+          <p class="mrx-eyebrow">The active MRX guide team</p>
+          <h2 id="guide-team-title">Different questions need different kinds of context.</h2>
+        </div>
+        <p>
+          Tommy is the first point of contact. When a question becomes more specific, he can route
+          the conversation to the guide designed for that subject.
+        </p>
+      </div>
+
+      <div class="mrx-about-guide-grid">
+        {
+          activeGuides.map((guide) => (
+            <a class="mrx-about-guide" href={`/team/${guide.slug}/`}>
+              <picture>
+                <source srcset={`/assets/team/${guide.slug}-256.avif`} type="image/avif" />
+                <source srcset={`/assets/team/${guide.slug}-256.webp`} type="image/webp" />
+                <img
+                  src={`/assets/team/${guide.slug}-256.jpg`}
+                  alt={`${guide.name}, fictional ${guide.chatRole}`}
+                  width="256"
+                  height="256"
+                  loading="lazy"
+                />
+              </picture>
+              <div>
+                <small>Fictional MRX AI Guide</small>
+                <h3>{guide.name}</h3>
+                <strong>{guide.chatRole}</strong>
+                <p>{guide.summary}</p>
+                <span>View guide profile →</span>
+              </div>
+            </a>
+          ))
+        }
+      </div>
+
+      <div class="mrx-about-directory-note">
+        <div>
+          <strong>More guide profiles are already in the directory.</strong>
+          <p>
+            {directoryGuides.map((guide) => guide.name).join(', ')} have defined future roles and can
+            be activated later without changing the public team structure.
+          </p>
+        </div>
+        <a href="/team/">View the full team directory</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="mrx-about-workflow">
+    <div class="container mrx-about-workflow__grid">
+      <div>
+        <p class="mrx-eyebrow">AI guidance with human support</p>
+        <h2>
+          The guides organize the conversation. People remain responsible for professional work.
+        </h2>
+        <p>
+          Ask Tommy can remember an owner’s questions and route subjects to the appropriate MRX
+          guide. When an owner requests a phone conversation, Angela checks availability and hands
+          the organized context to the MRX team.
+        </p>
+        <button type="button" data-about-chat>Start with Tommy</button>
+      </div>
+      <ol>
+        <li>
+          <span>1</span>
+          <div>
+            <strong>Ask in plain language</strong>
+            <p>Begin with the situation, not a complicated intake form.</p>
+          </div>
+        </li>
+        <li>
+          <span>2</span>
+          <div>
+            <strong>Build the useful context</strong>
+            <p>Location, ownership, production, documents, offer terms, and goals are organized.</p>
+          </div>
+        </li>
+        <li>
+          <span>3</span>
+          <div>
+            <strong>Bring in the right help</strong>
+            <p>
+              MRX staff and qualified attorneys, CPAs, title professionals, or other specialists
+              handle work that requires people or professional judgment.
+            </p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="mrx-about-boundaries">
+    <div class="container mrx-about-boundaries__grid">
+      <div>
+        <p class="mrx-eyebrow">Clear boundaries</p>
+        <h2>Useful information without pretending it is something else.</h2>
+      </div>
+      <div class="mrx-about-boundary-list">
+        <p>
+          MRX AI Guides provide general educational information only. Any formal valuation, legal,
+          tax, title, accounting, reserve, or engineering conclusion requires an appropriately
+          qualified person. MRX does not promise value or future production.
+        </p>
+        <p>
+          Reviewed articles are attributed to the MRX team guide responsible for that explanation,
+          while MRX retains responsibility for sourcing, review, updates, and publication. Private
+          owner documents and complete conversations remain separate from public educational
+          content.
+        </p>
+        <a href="/methodology/">Read the MRX methodology</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="mrx-about-faq">
+    <div class="container mrx-about-faq__grid">
+      <div>
+        <p class="mrx-eyebrow">Common questions</p>
+        <h2>Know what MRX is before you share anything.</h2>
+        <a href="/faq/">See every frequently asked question</a>
+      </div>
+      <FaqBlock pairs={faq} id="about-faq" />
+    </div>
+  </section>
+
+  <section class="mrx-about-cta">
+    <div class="container">
+      <div>
+        <p class="mrx-eyebrow">Start with one question</p>
+        <h2>Tell Tommy what happened.</h2>
+        <p>You can get a useful first response without booking a call or agreeing to sell.</p>
+      </div>
+      <div class="mrx-about-actions">
+        <button class="mrx-primary" type="button" data-about-chat>Ask Tommy</button>
+        <a class="mrx-secondary" href="/book/">Book a phone conversation</a>
+      </div>
+    </div>
+  </section>
 </MarketingLayout>
+
+<script>
+  document.querySelectorAll<HTMLElement>('[data-about-chat]').forEach((button) => {
+    button.addEventListener('click', () => {
+      window.dispatchEvent(new CustomEvent('mrx:open-chat'));
+    });
+  });
+</script>
+
+<style>
+  .mrx-about-hero {
+    padding: clamp(1.4rem, 3vw, 2.8rem) 0;
+    border-bottom: 1px solid var(--mrx-line);
+    background:
+      radial-gradient(circle at 82% 18%, rgba(215, 154, 43, 0.16), transparent 30%),
+      linear-gradient(145deg, #fffaf1, #ece6d9);
+  }
+
+  .mrx-about-hero__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(430px, 0.8fr);
+    gap: clamp(1.25rem, 3.5vw, 3.5rem);
+    align-items: center;
+  }
+
+  .mrx-about-hero h1 {
+    max-width: 760px;
+    font-size: clamp(2.3rem, 4.5vw, 4.3rem);
+    line-height: 0.92;
+    letter-spacing: -0.055em;
+  }
+
+  .mrx-about-hero__lede {
+    max-width: 700px;
+    margin: 1.1rem 0 0;
+    color: #4f626f;
+    font-size: clamp(0.94rem, 1.2vw, 1.06rem);
+    line-height: 1.62;
+  }
+
+  .mrx-about-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+    margin-top: 1.35rem;
+  }
+
+  .mrx-about-actions > * {
+    min-height: 48px;
+  }
+
+  .mrx-about-trust {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.15rem;
+    margin-top: 1.15rem;
+    color: #425967;
+    font-size: 0.78rem;
+    font-weight: 750;
+  }
+
+  .mrx-about-trust li {
+    display: flex;
+    align-items: center;
+    gap: 0.38rem;
+  }
+
+  .mrx-about-trust li::before {
+    content: '✓';
+    display: grid;
+    width: 19px;
+    height: 19px;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--mrx-navy);
+    color: var(--mrx-gold);
+    font-size: 0.66rem;
+  }
+
+  .mrx-about-router {
+    overflow: hidden;
+    border: 1px solid rgba(215, 154, 43, 0.58);
+    border-radius: 22px;
+    background: var(--mrx-navy);
+    color: #fff;
+    box-shadow: 0 26px 65px rgba(7, 30, 52, 0.2);
+  }
+
+  .mrx-about-router__head {
+    display: grid;
+    gap: 0.2rem;
+    padding: 1.2rem 1.25rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.13);
+  }
+
+  .mrx-about-router__head span {
+    color: #e8ba60;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.67rem;
+    font-weight: 800;
+  }
+
+  .mrx-about-router__head strong {
+    font-family: var(--mrx-serif);
+    font-size: 1.4rem;
+  }
+
+  .mrx-about-router__team {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1px;
+    background: rgba(255, 255, 255, 0.13);
+  }
+
+  .mrx-about-router__team a {
+    display: grid;
+    grid-template-columns: 48px minmax(0, 1fr);
+    align-items: center;
+    gap: 0.65rem;
+    min-width: 0;
+    padding: 0.75rem;
+    background: #0a2943;
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .mrx-about-router__team a:hover {
+    background: #103955;
+  }
+
+  .mrx-about-router__team img {
+    display: block;
+    width: 48px;
+    height: 48px;
+    border: 2px solid var(--mrx-gold);
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .mrx-about-router__team span {
+    display: grid;
+    min-width: 0;
+  }
+
+  .mrx-about-router__team strong {
+    font-size: 0.82rem;
+  }
+
+  .mrx-about-router__team small {
+    overflow: hidden;
+    color: #b9c9d3;
+    font-size: 0.62rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .mrx-about-router > p {
+    margin: 0;
+    padding: 0.9rem 1.25rem 1.05rem;
+    color: #b8c7d0;
+    font-size: 0.7rem;
+    line-height: 1.5;
+  }
+
+  .mrx-about-purpose,
+  .mrx-about-team,
+  .mrx-about-boundaries,
+  .mrx-about-faq {
+    padding: clamp(2.25rem, 4.5vw, 4rem) 0;
+  }
+
+  .mrx-about-heading,
+  .mrx-about-team__head,
+  .mrx-about-boundaries__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(320px, 0.72fr);
+    gap: clamp(2rem, 6vw, 6rem);
+    align-items: end;
+  }
+
+  .mrx-about-heading h2,
+  .mrx-about-team__head h2,
+  .mrx-about-workflow h2,
+  .mrx-about-boundaries h2,
+  .mrx-about-faq h2,
+  .mrx-about-cta h2 {
+    max-width: 780px;
+    font-size: clamp(1.85rem, 3.4vw, 3.1rem);
+    line-height: 0.98;
+    letter-spacing: -0.04em;
+  }
+
+  .mrx-about-heading > p,
+  .mrx-about-team__head > p {
+    color: #536773;
+    line-height: 1.7;
+  }
+
+  .mrx-about-principles {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+    margin-top: 1.35rem;
+  }
+
+  .mrx-about-principles article {
+    min-height: 210px;
+    padding: 1.1rem;
+    border: 1px solid var(--mrx-line);
+    border-radius: 18px;
+    background: #fff;
+    box-shadow: 0 12px 32px rgba(7, 30, 52, 0.05);
+  }
+
+  .mrx-about-principles article > span {
+    color: #a66e16;
+    font-family: var(--mrx-serif);
+    font-size: 1.7rem;
+    font-weight: 800;
+  }
+
+  .mrx-about-principles h3 {
+    margin-top: 1rem;
+    font-size: 1.22rem;
+  }
+
+  .mrx-about-principles p {
+    margin-top: 0.65rem;
+    color: #566974;
+    line-height: 1.6;
+  }
+
+  .mrx-about-team {
+    background: #f4f1e9;
+  }
+
+  .mrx-about-guide-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+    margin-top: 1.35rem;
+  }
+
+  .mrx-about-guide {
+    display: grid;
+    grid-template-columns: 112px minmax(0, 1fr);
+    overflow: hidden;
+    min-width: 0;
+    border: 1px solid #d7dee2;
+    border-radius: 17px;
+    background: #fff;
+    color: var(--mrx-navy);
+    text-decoration: none;
+    box-shadow: 0 10px 28px rgba(7, 30, 52, 0.05);
+    transition:
+      transform 0.18s ease,
+      box-shadow 0.18s ease;
+  }
+
+  .mrx-about-guide:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 38px rgba(7, 30, 52, 0.1);
+  }
+
+  .mrx-about-guide picture,
+  .mrx-about-guide img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .mrx-about-guide img {
+    display: block;
+    min-height: 205px;
+    object-fit: cover;
+  }
+
+  .mrx-about-guide > div {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .mrx-about-guide small {
+    color: #95651c;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    font-size: 0.57rem;
+    font-weight: 800;
+  }
+
+  .mrx-about-guide h3 {
+    margin-top: 0.3rem;
+    font-size: 1.28rem;
+  }
+
+  .mrx-about-guide strong {
+    color: #9a671c;
+    font-size: 0.7rem;
+  }
+
+  .mrx-about-guide p {
+    margin-top: 0.5rem;
+    color: #5b6d77;
+    font-size: 0.72rem;
+    line-height: 1.48;
+  }
+
+  .mrx-about-guide > div > span {
+    margin-top: auto;
+    padding-top: 0.7rem;
+    color: #754d12;
+    font-size: 0.68rem;
+    font-weight: 800;
+  }
+
+  .mrx-about-directory-note {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 1rem;
+    padding: 1.1rem 1.25rem;
+    border: 1px solid #d7dee2;
+    border-radius: 15px;
+    background: #fff;
+  }
+
+  .mrx-about-directory-note p {
+    margin-top: 0.2rem;
+    color: #60717c;
+    font-size: 0.78rem;
+  }
+
+  .mrx-about-directory-note a {
+    flex: 0 0 auto;
+    color: #754d12;
+    font-weight: 800;
+  }
+
+  .mrx-about-workflow {
+    padding: clamp(2.25rem, 4.5vw, 4rem) 0;
+    background: var(--mrx-navy);
+    color: #dbe4e9;
+  }
+
+  .mrx-about-workflow__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(420px, 0.75fr);
+    gap: clamp(2.5rem, 7vw, 7rem);
+    align-items: center;
+  }
+
+  .mrx-about-workflow h2 {
+    color: #fff;
+  }
+
+  .mrx-about-workflow .mrx-eyebrow {
+    color: #e9b957;
+  }
+
+  .mrx-about-workflow h2 + p {
+    margin-top: 1rem;
+    color: #b9c8d1;
+    line-height: 1.7;
+  }
+
+  .mrx-about-workflow button {
+    margin-top: 1.2rem;
+    border: 1px solid var(--mrx-gold);
+    border-radius: 11px;
+    background: var(--mrx-gold);
+    color: var(--mrx-navy);
+    padding: 0.8rem 1.1rem;
+    font-weight: 800;
+  }
+
+  .mrx-about-workflow ol {
+    display: grid;
+    gap: 0.7rem;
+  }
+
+  .mrx-about-workflow li {
+    display: grid;
+    grid-template-columns: 42px minmax(0, 1fr);
+    gap: 0.85rem;
+    padding: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .mrx-about-workflow li > span {
+    display: grid;
+    width: 42px;
+    height: 42px;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--mrx-gold);
+    color: var(--mrx-navy);
+    font-family: var(--mrx-serif);
+    font-weight: 800;
+  }
+
+  .mrx-about-workflow li strong {
+    color: #fff;
+  }
+
+  .mrx-about-workflow li p {
+    margin-top: 0.25rem;
+    color: #bdcbd3;
+    font-size: 0.82rem;
+    line-height: 1.5;
+  }
+
+  .mrx-about-boundaries__grid {
+    align-items: start;
+  }
+
+  .mrx-about-boundary-list {
+    display: grid;
+    gap: 1rem;
+    padding: 1.4rem;
+    border: 1px solid var(--mrx-line);
+    border-left: 4px solid var(--mrx-gold);
+    border-radius: 15px;
+    background: #fffaf0;
+  }
+
+  .mrx-about-boundary-list p {
+    color: #4f626d;
+    line-height: 1.65;
+  }
+
+  .mrx-about-boundary-list a,
+  .mrx-about-faq a {
+    color: #754d12;
+    font-weight: 800;
+  }
+
+  .mrx-about-faq {
+    border-top: 1px solid var(--mrx-line);
+    background: #f4f1e9;
+  }
+
+  .mrx-about-faq__grid {
+    display: grid;
+    grid-template-columns: minmax(280px, 0.6fr) minmax(0, 1fr);
+    gap: clamp(2rem, 6vw, 6rem);
+    align-items: start;
+  }
+
+  .mrx-about-faq h2 + a {
+    display: inline-block;
+    margin-top: 1rem;
+  }
+
+  .mrx-about-faq :global(.faq) {
+    margin: 0;
+  }
+
+  .mrx-about-cta {
+    padding: clamp(1.8rem, 3.5vw, 3rem) 0;
+    background: #fff;
+  }
+
+  .mrx-about-cta .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .mrx-about-cta h2 {
+    font-size: clamp(1.75rem, 3vw, 2.7rem);
+  }
+
+  .mrx-about-cta h2 + p {
+    margin-top: 0.55rem;
+    color: #5a6c76;
+  }
+
+  @media (max-width: 1100px) {
+    .mrx-about-hero__grid,
+    .mrx-about-workflow__grid {
+      grid-template-columns: 1fr;
+    }
+
+    .mrx-about-router {
+      max-width: 720px;
+    }
+
+    .mrx-about-guide-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 800px) {
+    .mrx-about-heading,
+    .mrx-about-team__head,
+    .mrx-about-boundaries__grid,
+    .mrx-about-faq__grid {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    .mrx-about-principles {
+      grid-template-columns: 1fr;
+    }
+
+    .mrx-about-principles article {
+      min-height: 0;
+    }
+
+    .mrx-about-directory-note,
+    .mrx-about-cta .container {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+  }
+
+  @media (max-width: 620px) {
+    .mrx-about-hero {
+      padding: 1.6rem 0 2rem;
+    }
+
+    .mrx-about-hero h1 {
+      font-size: clamp(2.2rem, 11vw, 3rem);
+    }
+
+    .mrx-about-actions {
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+
+    .mrx-about-actions > * {
+      width: 100%;
+    }
+
+    .mrx-about-router__team,
+    .mrx-about-guide-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .mrx-about-guide {
+      grid-template-columns: 104px minmax(0, 1fr);
+    }
+
+    .mrx-about-guide img {
+      min-height: 210px;
+    }
+
+    .mrx-about-workflow__grid {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    .mrx-about-purpose,
+    .mrx-about-team,
+    .mrx-about-workflow,
+    .mrx-about-boundaries,
+    .mrx-about-faq {
+      padding: 2.15rem 0;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .mrx-about-guide {
+      transition: none;
+    }
+  }
+</style>

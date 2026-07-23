@@ -1,0 +1,126 @@
+---
+import MarketingLayout from '../../layouts/MarketingLayout.astro';
+import { archivePagePath, type ArchivePage } from '../../lib/archive-pagination';
+import type {
+  LearningCenterAuthor,
+  LearningCenterCategory,
+  LearningCenterItem,
+} from '../../lib/learning-center';
+import LearningCenterArchive from './LearningCenterArchive.astro';
+import PillarNavGrid from './PillarNavGrid.astro';
+
+interface Props extends ArchivePage<LearningCenterItem> {
+  categories: LearningCenterCategory[];
+  authors: LearningCenterAuthor[];
+  allItems: LearningCenterItem[];
+}
+
+const { items, categories, authors, allItems, currentPage, lastPage, totalItems, pageSize } =
+  Astro.props;
+const path = archivePagePath('/learning-center/', currentPage);
+const pageSuffix = currentPage === 1 ? '' : ` · Page ${currentPage}`;
+const previousPath =
+  currentPage > 1 ? archivePagePath('/learning-center/', currentPage - 1) : undefined;
+const nextPath =
+  currentPage < lastPage ? archivePagePath('/learning-center/', currentPage + 1) : undefined;
+---
+
+<MarketingLayout
+  title={`Mineral Rights Learning Center${pageSuffix} · MRX`}
+  description={`Browse practical MRX mineral-rights articles about offers, ownership, royalties, inherited rights, taxes, and selling decisions for mineral owners${currentPage === 1 ? '.' : `; page ${currentPage} of ${lastPage}.`}`}
+  path={path}
+  previousPath={previousPath}
+  nextPath={nextPath}
+  pageType="blog"
+  pageCategory="learning-center"
+  breadcrumbs={[
+    { name: 'Home', path: '/' },
+    { name: 'Learning Center', path: '/learning-center/' },
+    ...(currentPage > 1 ? [{ name: `Page ${currentPage}`, path }] : []),
+  ]}
+>
+  <section class="mrx-page-hero learning-center-hero">
+    <div class="container">
+      <p class="mrx-eyebrow">Reviewed mineral-owner education</p>
+      <h1>Straight answers about mineral rights.</h1>
+      <p>
+        Browse practical articles about offers, ownership, royalties, inherited rights, and selling
+        decisions.
+      </p>
+    </div>
+  </section>
+  <section class="mrx-section learning-center-section">
+    <div class="container">
+      <LearningCenterArchive
+        posts={items}
+        allPosts={allItems}
+        categories={categories}
+        authors={authors}
+        currentPage={currentPage}
+        lastPage={lastPage}
+        totalItems={totalItems}
+        pageSize={pageSize}
+      />
+    </div>
+  </section>
+  <PillarNavGrid eyebrow="Browse by topic" heading="All nine MRX1000 pillars in one place" />
+</MarketingLayout>
+
+<style>
+  .learning-center-hero {
+    padding: clamp(1.1rem, 2vw, 1.65rem) 0;
+  }
+
+  .learning-center-hero .container {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
+    gap: 0.55rem clamp(1.5rem, 4vw, 4rem);
+    align-items: end;
+  }
+
+  .learning-center-hero .mrx-eyebrow {
+    grid-column: 1 / -1;
+  }
+
+  .learning-center-hero h1 {
+    max-width: 760px;
+    font-size: clamp(2.1rem, 3.5vw, 3.35rem);
+    line-height: 0.96;
+  }
+
+  .learning-center-hero p:not(.mrx-eyebrow) {
+    max-width: 560px;
+    margin: 0 0 0.15rem;
+    font-size: clamp(0.9rem, 1.25vw, 1.02rem);
+    line-height: 1.5;
+  }
+
+  .learning-center-section {
+    padding: clamp(0.8rem, 1.5vw, 1.15rem) 0 clamp(3.5rem, 7vw, 6.5rem);
+  }
+
+  @media (max-width: 800px) {
+    .learning-center-hero .container {
+      grid-template-columns: 1fr;
+      gap: 0.45rem;
+    }
+
+    .learning-center-hero .mrx-eyebrow {
+      grid-column: auto;
+    }
+
+    .learning-center-hero p:not(.mrx-eyebrow) {
+      margin-top: 0.1rem;
+    }
+  }
+
+  @media (max-width: 650px) {
+    .learning-center-hero {
+      padding: 1rem 0 0.9rem;
+    }
+
+    .learning-center-hero h1 {
+      font-size: clamp(2rem, 10vw, 2.6rem);
+    }
+  }
+</style>

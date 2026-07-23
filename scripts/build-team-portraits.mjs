@@ -23,11 +23,22 @@ const portraits = [
 await mkdir(output, { recursive: true });
 for (const [name, source, crop] of portraits) {
   for (const size of [128, 256, 512]) {
-    const image = sharp(source).extract(crop).resize(size, size, { fit: 'cover', position: 'attention' });
+    const image = sharp(source)
+      .extract(crop)
+      .resize(size, size, { fit: 'cover', position: 'attention' });
     await Promise.all([
-      image.clone().webp({ quality: 84 }).toFile(join(output, `${name}-${size}.webp`)),
-      image.clone().avif({ quality: 56 }).toFile(join(output, `${name}-${size}.avif`)),
-      image.clone().jpeg({ quality: 86, progressive: true }).toFile(join(output, `${name}-${size}.jpg`)),
+      image
+        .clone()
+        .webp({ quality: 84 })
+        .toFile(join(output, `${name}-${size}.webp`)),
+      image
+        .clone()
+        .avif({ quality: 56 })
+        .toFile(join(output, `${name}-${size}.avif`)),
+      image
+        .clone()
+        .jpeg({ quality: 86, progressive: true })
+        .toFile(join(output, `${name}-${size}.jpg`)),
     ]);
   }
 }

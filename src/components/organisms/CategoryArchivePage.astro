@@ -1,0 +1,91 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import MarketingLayout from '../../layouts/MarketingLayout.astro';
+import { archivePagePath, type ArchivePage } from '../../lib/archive-pagination';
+import Heading from '../atoms/Heading.astro';
+import Text from '../atoms/Text.astro';
+import CtaBlock from '../molecules/CtaBlock.astro';
+import PaginationNav from '../seo/PaginationNav.astro';
+import CategoryNav from './CategoryNav.astro';
+import PostGrid from './PostGrid.astro';
+
+interface Props extends ArchivePage<CollectionEntry<'posts'>> {
+  category: CollectionEntry<'categories'>;
+  categories: CollectionEntry<'categories'>[];
+}
+
+const { category, categories, items, currentPage, lastPage, totalItems } = Astro.props;
+const basePath = `/blog/category/${category.data.slug}/`;
+const path = archivePagePath(basePath, currentPage);
+const pageSuffix = currentPage === 1 ? '' : ` · Page ${currentPage}`;
+const title = `${category.data.label} · Texas Mineral Rights${pageSuffix} · MRX`;
+const rawDescription = `Browse ${totalItems} reviewed MRX articles about ${category.data.label.toLowerCase()}. ${category.data.description}${currentPage === 1 ? '' : ` Page ${currentPage} of ${lastPage}.`}`;
+const description =
+  rawDescription.length <= 160
+    ? rawDescription
+    : `${rawDescription
+        .slice(0, 159)
+        .replace(/\s+\S*$/, '')
+        .replace(/[\s,;:]+$/, '')}.`;
+const previousPath = currentPage > 1 ? archivePagePath(basePath, currentPage - 1) : undefined;
+const nextPath = currentPage < lastPage ? archivePagePath(basePath, currentPage + 1) : undefined;
+---
+
+<MarketingLayout
+  title={title}
+  description={description}
+  path={path}
+  previousPath={previousPath}
+  nextPath={nextPath}
+  pageType="blog"
+  pageCategory={category.data.id}
+  breadcrumbs={[
+    { name: 'Home', path: '/' },
+    { name: 'Learning Center', path: '/learning-center/' },
+    { name: category.data.label, path: basePath },
+    ...(currentPage > 1 ? [{ name: `Page ${currentPage}`, path }] : []),
+  ]}
+>
+  <section class="container section--sm">
+    <Heading level={1} size="4xl">{category.data.label}</Heading>
+    <Text class="text--lead" style="margin-top: var(--space-3); max-width: 60ch;">
+      {category.data.description}
+    </Text>
+    <Text style="margin-top: var(--space-3);">
+      {totalItems} published {totalItems === 1 ? 'article' : 'articles'} · Page {currentPage} of {
+        lastPage
+      }
+    </Text>
+  </section>
+  <CategoryNav categories={categories} currentSlug={category.data.slug} />
+  {
+    items.length === 0 ? (
+      <section class="container section">
+        <Text>No posts in this category yet. Check back shortly.</Text>
+      </section>
+    ) : (
+      <>
+        <PostGrid posts={items} />
+        <div class="container archive-pagination-wrap">
+          <PaginationNav basePath={basePath} currentPage={currentPage} lastPage={lastPage} />
+        </div>
+      </>
+    )
+  }
+  <CtaBlock
+    title="Want a transparent review of your specific situation?"
+    body="A free, confidential underwriter review. The output is a directional range with the assumptions stated. No card. No obligation."
+    primaryCta={{
+      label: 'Book My Free Review',
+      href: '/book',
+      ctaName: `cat-${category.data.slug}-cta-book`,
+    }}
+  />
+</MarketingLayout>
+
+<style>
+  .archive-pagination-wrap {
+    margin-top: calc(var(--space-8) * -1);
+    padding-bottom: var(--space-10);
+  }
+</style>

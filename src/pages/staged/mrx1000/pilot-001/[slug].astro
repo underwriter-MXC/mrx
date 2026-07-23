@@ -1,0 +1,168 @@
+---
+export const prerender = true;
+
+import { getCollection, getEntry, type CollectionEntry } from 'astro:content';
+import PostLayout from '../../../../layouts/PostLayout.astro';
+import Prose from '../../../../components/prose/Prose.astro';
+import AuthorByline from '../../../../components/molecules/AuthorByline.astro';
+import CtaBlock from '../../../../components/molecules/CtaBlock.astro';
+import JsonLd from '../../../../components/seo/JsonLd.astro';
+import PostCard from '../../../../components/organisms/PostCard.astro';
+import Heading from '../../../../components/atoms/Heading.astro';
+import Text from '../../../../components/atoms/Text.astro';
+import { article } from '../../../../structured-data/article';
+import { SITE } from '../../../../lib/site';
+import { isMrx1000PilotPost, pilotStagePath } from '../../../../lib/mrx1000-pilot';
+import { resolveArticleMeasurementContext } from '../../../../lib/ga4-measurement';
+import { getGuide } from '../../../../data/guides';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('posts', isMrx1000PilotPost);
+  return posts.map((post) => ({
+    params: { slug: post.id.replace(/\.mdx?$/, '') },
+    props: { post, allPosts: posts },
+  }));
+}
+
+interface Props {
+  post: CollectionEntry<'posts'>;
+  allPosts: CollectionEntry<'posts'>[];
+}
+
+const { post, allPosts } = Astro.props;
+const { Content } = await post.render();
+const slug = post.id.replace(/\.mdx?$/, '');
+const stagePath = pilotStagePath(slug);
+const authorEntry = await getEntry(post.data.author);
+const authorName = authorEntry?.data.name ?? 'MRX Editorial Team';
+const authorHref = '/authors/mrx-editorial-team/';
+const authorUrlId = `${SITE.url}${authorHref}#author`;
+const heroImageUrl = post.data.hero_image.src.startsWith('http')
+  ? post.data.hero_image.src
+  : `${SITE.url}${post.data.hero_image.src}`;
+const articleJsonLd = article(
+  { ...post.data, slug },
+  authorUrlId,
+  heroImageUrl,
+  authorName,
+  stagePath,
+);
+const related = allPosts
+  .filter(
+    (candidate) =>
+      candidate.id !== post.id && candidate.data.content_cluster === post.data.content_cluster,
+  )
+  .slice(0, 3);
+// Article GA4 measurement context for the staged pilot route. The route
+// always sets `noindex: true` on the layout, which forces the resolver's
+// content_group to `staged` per the mrx1000-ga4-v1.1.0 release-state
+// rule. Missing or invalid frontmatter values collapse to null so the
+// dataLayer never emits an off-enum dimension.
+const authorSlug = authorEntry?.id.replace(/\.mdx?$/, '') ?? 'mrx-editorial-team';
+const pilotGuide = getGuide(post.data.featured_guide ?? '');
+const measurement = resolveArticleMeasurementContext({
+  noindex: true,
+  contentProgram: post.data.content_program ?? null,
+  contentCluster: post.data.content_cluster ?? null,
+  contentIntent: post.data.content_intent ?? null,
+  contentAuthor: authorSlug,
+  contentGuide: pilotGuide?.slug ?? null,
+  contentBatch: post.data.content_batch ?? 'pilot-001',
+});
+---
+
+<PostLayout
+  title={post.data.title}
+  description={post.data.description}
+  path={stagePath}
+  ogImage={post.data.hero_image.social_src ?? post.data.hero_image.src}
+  ogImageAlt={post.data.hero_image.social_alt ?? post.data.hero_image.alt}
+  ogImageWidth={post.data.hero_image.social_width ?? post.data.hero_image.width}
+  ogImageHeight={post.data.hero_image.social_height ?? post.data.hero_image.height}
+  ogImageType={post.data.hero_image.social_mime_type ?? post.data.hero_image.mime_type}
+  publishedTime={post.data.published_at}
+  modifiedTime={post.data.updated_at ?? post.data.reviewed_at}
+  articleSection={post.data.category}
+  articleAuthor={authorName}
+  noindex={true}
+  robots="noindex, follow"
+  appendBrand={false}
+  pageType="post"
+  pageCategory={post.data.category}
+  breadcrumbs={[
+    { name: 'Home', path: '/' },
+    { name: 'MRX1000 staged QA', path: '/staged/mrx1000/pilot-001/' },
+    { name: post.data.title, path: stagePath },
+  ]}
+  disclaimerTop={post.data.disclaimer_top}
+  measurement={measurement}
+>
+  <JsonLd data={articleJsonLd} />
+
+  <section class="container container--prose section--sm" data-mrx1000-stage="pilot-001">
+    <p class="text--small">
+      <strong>Internal noindex-stage QA:</strong> not approved for public release or indexing.
+    </p>
+    <h1
+      style="font-size: var(--fs-4xl); line-height: var(--lh-tight); margin-bottom: var(--space-4);"
+    >
+      {post.data.title}
+    </h1>
+    <AuthorByline
+      authorName={authorName}
+      authorHref={authorHref}
+      publishedAt={post.data.published_at}
+      reviewedAt={post.data.reviewed_at}
+      readingMinutes={Math.max(1, Math.round(post.body.split(/\s+/).length / 220))}
+    />
+    <Text
+      class="text--lead"
+      style="margin-top: var(--space-4); margin-bottom: var(--space-6); font-style: italic;"
+      >{post.data.excerpt}</Text
+    >
+  </section>
+
+  <section class="container container--prose section--sm">
+    <Prose><Content /></Prose>
+  </section>
+
+  <section class="container container--prose section--sm" aria-labelledby="pilot-links-heading">
+    <Heading level={2} size="2xl" id="pilot-links-heading">Continue your review</Heading>
+    <ul>
+      <li><a href={post.data.internal_links?.hub}>Review the topic hub</a></li>
+      <li><a href={post.data.internal_links?.sibling}>Compare a related MRX guide</a></li>
+    </ul>
+  </section>
+
+  {
+    related.length > 0 && (
+      <section class="container section--sm" aria-labelledby="related-pilot-heading">
+        <Heading level={2} size="2xl" id="related-pilot-heading">
+          Related staged guides
+        </Heading>
+        <div class="grid grid--3" style="margin-top: var(--space-6); gap: var(--space-5);">
+          {related.map((candidate) => {
+            const candidateSlug = candidate.id.replace(/\.mdx?$/, '');
+            return (
+              <PostCard
+                post={{ ...candidate.data, slug: candidateSlug }}
+                href={pilotStagePath(candidateSlug)}
+              />
+            );
+          })}
+        </div>
+      </section>
+    )
+  }
+
+  <CtaBlock
+    title="Want a transparent review of your specific situation?"
+    body="Book a free, confidential underwriter review. The output is directional and states the assumptions used."
+    primaryCta={{ label: 'Book My Free Review', href: '/book/', ctaName: `pilot-${slug}-cta-book` }}
+    secondaryCta={{
+      label: 'Get the Free Guide',
+      href: '/free-guide/',
+      ctaName: `pilot-${slug}-cta-guide`,
+    }}
+  />
+</PostLayout>

@@ -2,6 +2,49 @@
   "buildCommand": "pnpm build:vercel",
   "installCommand": "pnpm install --frozen-lockfile",
   "framework": "astro",
+  "redirects": [
+    {
+      "source": "/2026/06/02/:slug",
+      "destination": "/blog/:slug/",
+      "permanent": true
+    },
+    {
+      "source": "/2026/06/02/:slug/",
+      "destination": "/blog/:slug/",
+      "permanent": true
+    },
+    {
+      "source": "/2026/06/03/:slug",
+      "destination": "/blog/:slug/",
+      "permanent": true
+    },
+    {
+      "source": "/2026/06/03/:slug/",
+      "destination": "/blog/:slug/",
+      "permanent": true
+    },
+    {
+      "source": "/1031-exchanger",
+      "destination": "/1031-exchange/",
+      "permanent": true
+    },
+    {
+      "source": "/1031-exchanger/",
+      "destination": "/1031-exchange/",
+      "permanent": true
+    },
+    {
+      "source": "/contact-us",
+      "destination": "/contact/",
+      "permanent": true
+    }
+  ],
+  "crons": [
+    {
+      "path": "/api/maintenance/retention",
+      "schedule": "17 4 * * *"
+    }
+  ],
   "headers": [
     {
       "source": "/api/(.*)",

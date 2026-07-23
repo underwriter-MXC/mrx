@@ -1,0 +1,159 @@
+---
+/** Compact review CTA shown beneath the author box on every article. */
+import CtaLink from '../atoms/CtaLink.astro';
+
+interface Props {
+  ctaNamePrefix: string;
+}
+
+const { ctaNamePrefix } = Astro.props;
+---
+
+<section class="article-sidebar-cta" aria-labelledby="article-sidebar-review-title">
+  <p class="article-sidebar-cta__eyebrow">Free owner review</p>
+  <h2 id="article-sidebar-review-title">Want a closer look at your mineral rights?</h2>
+  <p class="article-sidebar-cta__body">
+    A free, confidential underwriter review. The output is a directional range with the assumptions
+    stated.
+  </p>
+
+  <div class="article-sidebar-cta__actions">
+    <CtaLink
+      ctaName={`${ctaNamePrefix}-sidebar-review`}
+      href="/book"
+      variant="primary"
+      class="article-sidebar-cta__primary"
+    >
+      Book My Free Review <span aria-hidden="true">→</span>
+    </CtaLink>
+    <CtaLink
+      ctaName={`${ctaNamePrefix}-sidebar-guide`}
+      href="/free-guide"
+      variant="ghost"
+      class="article-sidebar-cta__secondary"
+    >
+      Get the Free Guide <span aria-hidden="true">→</span>
+    </CtaLink>
+  </div>
+
+  <ul class="article-sidebar-cta__assurances" aria-label="Review assurances">
+    <li>No card</li>
+    <li>No obligation</li>
+    <li>Confidential</li>
+  </ul>
+</section>
+
+<style>
+  .article-sidebar-cta {
+    position: relative;
+    overflow: hidden;
+    padding: 1.25rem;
+    border: 1px solid rgba(255, 255, 255, 0.13);
+    border-radius: 18px;
+    background:
+      radial-gradient(circle at 100% 0, rgba(245, 166, 35, 0.14), transparent 38%),
+      linear-gradient(145deg, #0b304c, #061827);
+    color: #fff;
+    box-shadow: 0 14px 38px rgba(7, 30, 52, 0.12);
+  }
+
+  .article-sidebar-cta::before {
+    position: absolute;
+    inset: 0 0 auto;
+    height: 3px;
+    background: linear-gradient(90deg, #f5a623, #d8951f 55%, transparent);
+    content: '';
+  }
+
+  .article-sidebar-cta__eyebrow {
+    margin-bottom: 0.45rem;
+    color: #f1bd58;
+    font-size: 0.66rem;
+    font-weight: 850;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .article-sidebar-cta h2 {
+    color: #fff;
+    font-size: clamp(1.3rem, 2vw, 1.55rem);
+    line-height: 1.08;
+    letter-spacing: -0.025em;
+    text-wrap: balance;
+  }
+
+  .article-sidebar-cta__body {
+    margin-top: 0.7rem;
+    color: #d3dee6;
+    font-size: 0.78rem;
+    line-height: 1.52;
+  }
+
+  .article-sidebar-cta__actions {
+    display: grid;
+    gap: 0.55rem;
+    margin-top: 1rem;
+  }
+
+  .article-sidebar-cta :global(.article-sidebar-cta__primary),
+  .article-sidebar-cta :global(.article-sidebar-cta__secondary) {
+    display: flex;
+    width: 100%;
+    min-height: 43px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    border-width: 1px;
+    padding: 0.68rem 0.85rem;
+    font-size: 0.78rem;
+    font-weight: 800;
+    line-height: 1.2;
+    text-decoration: none;
+  }
+
+  .article-sidebar-cta :global(.article-sidebar-cta__secondary) {
+    border-color: rgba(255, 255, 255, 0.68);
+    color: #fff;
+  }
+
+  .article-sidebar-cta :global(.article-sidebar-cta__secondary:hover) {
+    border-color: #fff;
+    background: #fff;
+    color: #071e34;
+  }
+
+  .article-sidebar-cta__assurances {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem 0.7rem;
+    margin-top: 0.8rem;
+    color: #bfcdd7;
+    font-size: 0.63rem;
+    font-weight: 700;
+  }
+
+  .article-sidebar-cta__assurances li {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+  }
+
+  .article-sidebar-cta__assurances li::before {
+    color: #f1bd58;
+    content: '✓';
+    font-weight: 900;
+  }
+
+  @media (max-width: 980px) {
+    .article-sidebar-cta {
+      max-width: 620px;
+    }
+  }
+
+  @media (max-width: 520px) {
+    .article-sidebar-cta {
+      max-width: none;
+      padding: 1.1rem;
+    }
+  }
+</style>

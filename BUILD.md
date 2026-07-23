@@ -36,21 +36,21 @@ The `build` script in `package.json` chains three steps; ALL must pass:
 
 ## Environment requirements
 
-- **Node.js** ≥ 20.0.0 (see `engines.node` in `package.json`)
+- **Node.js** 20.x (CI uses 20.19.5; Vercel applies current security patches within Node 20)
 - **pnpm** (the repo's package manager). Install with `npm i -g pnpm` or `corepack enable`.
 - Internet access for first install (registry fetches).
 
 ## Acceptance criteria (the build is "done" only when ALL of these are true)
 
-| # | Check | How to verify |
-|---|-------|---------------|
-| 1 | Exit code is `0` | `echo "${PIPESTATUS[0]}"` after the pipe |
-| 2 | `dist/` exists | `test -d dist && echo OK` |
-| 3 | HTML pages were generated | `find dist -name '*.html' \| wc -l` → expect ≥ 25 |
-| 4 | Cloudflare `_worker.js` was emitted | `test -e dist/_worker.js && echo OK` |
-| 5 | Sitemap has entries | `grep -oE '<loc>[^<]+</loc>' dist/sitemap-0.xml \| wc -l` → expect ≥ 20 |
-| 6 | Route manifest exists | `test -f dist/_routes.json && echo OK` |
-| 7 | Compliance check did not silently skip | compliance log line shows `0 violations` (or equivalent) |
+| #   | Check                                  | How to verify                                                           |
+| --- | -------------------------------------- | ----------------------------------------------------------------------- |
+| 1   | Exit code is `0`                       | `echo "${PIPESTATUS[0]}"` after the pipe                                |
+| 2   | `dist/` exists                         | `test -d dist && echo OK`                                               |
+| 3   | HTML pages were generated              | `find dist -name '*.html' \| wc -l` → expect ≥ 25                       |
+| 4   | Cloudflare `_worker.js` was emitted    | `test -e dist/_worker.js && echo OK`                                    |
+| 5   | Sitemap has entries                    | `grep -oE '<loc>[^<]+</loc>' dist/sitemap-0.xml \| wc -l` → expect ≥ 20 |
+| 6   | Route manifest exists                  | `test -f dist/_routes.json && echo OK`                                  |
+| 7   | Compliance check did not silently skip | compliance log line shows `0 violations` (or equivalent)                |
 
 Reference values from a clean build on this branch after the Cloudflare adapter / current route
 shape reconciliation (2026-06-28, commit `557d46c`):

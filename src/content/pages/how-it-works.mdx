@@ -18,7 +18,7 @@ faq:
   - question: 'What if I do not have all the documents?'
     answer: 'That is normal. Tell us what you have and we will help you figure out what to ask for. Many owners start with a royalty check stub or an offer letter; we can usually work forward from there.'
   - question: 'How long does the review take?'
-    answer: 'Most reviews wrap in 3-7 business days once we have the key documents in hand. If your situation is more complex (multi-county, multi-operator, contested title), it can take a bit longer; we will tell you up front.'
+    answer: 'Timing varies based on document availability, title complexity, the number of counties or operators involved, and the questions that arise during review. We will keep you informed as the review progresses.'
   - question: 'Do I have to sell after the review?'
     answer: 'No. The review is genuinely free, with no obligation. If you decide to hold, we still consider the conversation a good use of our time.'
 compliance_signoff:
@@ -75,32 +75,71 @@ import Icon from '../../components/atoms/Icon.astro';
 
 <section class="section section--alt">
   <div class="container">
-    <Heading level={2} size="3xl">The opposite of pressure sales</Heading>
-    <Text class="text--lead" style="margin-top: var(--space-3); margin-bottom: var(--space-8); max-width: 60ch;">The review is a working conversation, not a closing attempt. We will tell you when an offer is reasonable and when it is not. We will also tell you when the better answer is to hold and see what the next year of production looks like.</Text>
+    <Heading level={2} size="3xl">
+      The opposite of pressure sales
+    </Heading>
+    <Text
+      class="text--lead"
+      style="margin-top: var(--space-3); margin-bottom: var(--space-8); max-width: 60ch;"
+    >
+      The review is a working conversation, not a closing attempt. We will tell you when an offer is
+      reasonable and when it is not. We will also tell you when the better answer is to hold and see
+      what the next year of production looks like.
+    </Text>
     <div class="grid grid--3">
-      <article class="card" style="background: var(--color-white); padding: var(--space-5); border-radius: var(--radius-md);">
+      <article
+        class="card"
+        style="background: var(--color-white); padding: var(--space-5); border-radius: var(--radius-md);"
+      >
         <Icon name="lock" size={28} class="hero__icon-inline" />
-        <Heading level={3} size="md">No teaser numbers</Heading>
-        <Text>We do not lead with a single number on a website or in an email. The review produces a range with the assumptions stated, never a one-line promise.</Text>
+        <Heading level={3} size="md">
+          No teaser numbers
+        </Heading>
+        <Text>
+          We do not lead with a single number on a website or in an email. The review produces a
+          range with the assumptions stated, never a one-line promise.
+        </Text>
       </article>
-      <article class="card" style="background: var(--color-white); padding: var(--space-5); border-radius: var(--radius-md);">
+      <article
+        class="card"
+        style="background: var(--color-white); padding: var(--space-5); border-radius: var(--radius-md);"
+      >
         <Icon name="shield" size={28} class="hero__icon-inline" />
-        <Heading level={3} size="md">No clawback clauses</Heading>
-        <Text>Our purchase documents do not re-open the deal after you sign. We disclose that relationship in writing before any agreement.</Text>
+        <Heading level={3} size="md">
+          No clawback clauses
+        </Heading>
+        <Text>
+          Our purchase documents do not re-open the deal after you sign. We disclose that
+          relationship in writing before any agreement.
+        </Text>
       </article>
-      <article class="card" style="background: var(--color-white); padding: var(--space-5); border-radius: var(--radius-md);">
+      <article
+        class="card"
+        style="background: var(--color-white); padding: var(--space-5); border-radius: var(--radius-md);"
+      >
         <Icon name="doc" size={28} class="hero__icon-inline" />
-        <Heading level={3} size="md">No black box</Heading>
-        <Text>Our DCF methodology is published. If we cannot show our work, the number is not worth your time.</Text>
+        <Heading level={3} size="md">
+          No black box
+        </Heading>
+        <Text>
+          Our DCF methodology is published. If we cannot show our work, the number is not worth your
+          time.
+        </Text>
       </article>
     </div>
   </div>
 </section>
 
 <section class="container section">
-  <Heading level={2} size="3xl">Frequently asked</Heading>
+  <Heading level={2} size="3xl">
+    Frequently asked
+  </Heading>
   <FaqBlock pairs={frontmatter.faq} id="hiw-faq" />
-  <p style="margin-top: var(--space-4);"><a href="/faq" data-cta-name="hiw-faq-more">See the full FAQ →</a></p>
+  <p style="margin-top: var(--space-4);">
+    <a href="/faq" data-cta-name="hiw-faq-more">
+      See the full FAQ →
+    </a>
+  </p>
 </section>
 
 <CtaBlock

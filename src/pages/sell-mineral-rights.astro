@@ -1,10 +1,13 @@
 ---
 import { getEntry } from 'astro:content';
 import MarketingLayout from '../layouts/MarketingLayout.astro';
+import StaticPillarInventory from '../components/organisms/StaticPillarInventory.astro';
+import { getPillarInventoryPage } from '../lib/pillar-inventory';
 
 const entry = await getEntry('pages', 'sell-mineral-rights');
 if (!entry) throw new Error('pages/sell-mineral-rights.mdx is missing.');
 const { Content } = await entry.render();
+const inventory = await getPillarInventoryPage('sell-mineral-rights');
 export const prerender = true;
 ---
 
@@ -14,8 +17,12 @@ export const prerender = true;
   path="/sell-mineral-rights"
   pageType="marketing"
   pageCategory="seller-intent"
-  breadcrumbs={[{ name: 'Home', path: '/' }, { name: 'Sell Mineral Rights', path: '/sell-mineral-rights' }]}
+  breadcrumbs={[
+    { name: 'Home', path: '/' },
+    { name: 'Sell Mineral Rights', path: '/sell-mineral-rights' },
+  ]}
   faq={entry.data.faq}
 >
   <Content />
+  <StaticPillarInventory inventory={inventory} />
 </MarketingLayout>

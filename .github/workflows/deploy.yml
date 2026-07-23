@@ -1,57 +1,112 @@
-name: Deploy
+name: Production Release (Vercel behind Cloudflare)
 
 on:
   push:
     branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: mrx-production-release
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+env:
+  VERCEL_ORG_ID: ${{ vars.VERCEL_ORG_ID }}
+  VERCEL_PROJECT_ID: ${{ vars.VERCEL_PROJECT_ID }}
+  MRX_ENFORCE_LEGAL_SIGNOFFS: 'true'
+  MRX_LEGAL_SIGNOFF_1031: ${{ vars.MRX_LEGAL_SIGNOFF_1031 }}
+  MRX_LEGAL_SIGNOFF_AI_VOICE: ${{ vars.MRX_LEGAL_SIGNOFF_AI_VOICE }}
+  MRX_LEGAL_SIGNOFF_RECORDING: ${{ vars.MRX_LEGAL_SIGNOFF_RECORDING }}
+  MRX_LEGAL_SIGNOFF_SELLER_BUYER: ${{ vars.MRX_LEGAL_SIGNOFF_SELLER_BUYER }}
+  MRX_EDITORIAL_SIGNOFF_UNDERWRITER_FAIR_VALUE: ${{ vars.MRX_EDITORIAL_SIGNOFF_UNDERWRITER_FAIR_VALUE }}
 
 jobs:
-  deploy:
+  release-gates:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
-    needs: build-ok
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
 
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          version: 9
-
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
-
-      - name: Build
-        run: pnpm build
-
-      - name: Deploy to Cloudflare Pages
-        uses: cloudflare/pages-action@v1
-        with:
-          apiToken: ${{ secrets.CF_API_TOKEN }}
-          accountId: ${{ secrets.CF_ACCOUNT_ID }}
-          projectName: mineral-rights-xchange
-          directory: dist
-          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
-        env:
-          PUBLIC_GTM_ID: ${{ vars.PUBLIC_GTM_ID }}
-
-  build-ok:
-    runs-on: ubuntu-latest
-    timeout-minutes: 15
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '20'
       - uses: pnpm/action-setup@v4
         with:
-          version: 9
+          version: 9.15.9
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20.19.5'
+          cache: pnpm
+
       - run: pnpm install --frozen-lockfile
-      - run: pnpm check-compliance
-      - run: pnpm typecheck
-      - run: pnpm test
-      - run: pnpm build
+      - name: Compliance and editorial checks
+        run: |
+          pnpm check-compliance
+          pnpm check:copy
+          pnpm content:check-headings
+          pnpm check:legal-release
+      - name: Database migration validation
+        run: pnpm db:validate
+      - name: Lint and typecheck
+        run: |
+          pnpm lint
+          pnpm typecheck
+      - name: Unit tests
+        run: pnpm test
+      - name: Document worker clean-file and EICAR verification
+        run: |
+          docker build --pull -t mrx-document-worker:validation workers/documents
+          pnpm verify:document-worker
+      - name: Production build
+        run: pnpm build:vercel
+      - name: Rendered SEO and accessibility checks
+        run: pnpm check:seo:rendered
+      - name: Non-destructive end-to-end tests
+        run: |
+          node scripts/stage-playwright-build-artifacts.mjs
+          pnpm exec playwright install --with-deps chromium
+          pnpm exec playwright test
+
+  deploy-vercel:
+    needs: release-gates
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    environment: production
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9.15.9
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20.19.5'
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+      - name: Apply verified Supabase migrations
+        env:
+          SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+          SUPABASE_DB_PASSWORD: ${{ secrets.SUPABASE_DB_PASSWORD }}
+          SUPABASE_PROJECT_REF: ${{ vars.SUPABASE_PROJECT_REF }}
+        run: |
+          test -n "${SUPABASE_ACCESS_TOKEN}"
+          test -n "${SUPABASE_DB_PASSWORD}"
+          test -n "${SUPABASE_PROJECT_REF}"
+          pnpm dlx supabase@2.109.1 link --project-ref="${SUPABASE_PROJECT_REF}" --password="${SUPABASE_DB_PASSWORD}"
+          pnpm dlx supabase@2.109.1 db push --linked --password="${SUPABASE_DB_PASSWORD}" --dry-run
+          pnpm dlx supabase@2.109.1 db push --linked --password="${SUPABASE_DB_PASSWORD}" --yes
+      - name: Pull the confirmed Vercel production configuration
+        run: pnpm dlx vercel@56.5.0 pull --yes --environment=production --token="${{ secrets.VERCEL_TOKEN }}"
+      - name: Build the verified commit for Vercel
+        run: pnpm dlx vercel@56.5.0 build --prod --token="${{ secrets.VERCEL_TOKEN }}"
+      - name: Publish the prebuilt production artifact
+        id: deploy
+        run: |
+          deployment_url="$(pnpm dlx vercel@56.5.0 deploy --prebuilt --prod --token="${{ secrets.VERCEL_TOKEN }}")"
+          echo "deployment_url=${deployment_url}" >> "$GITHUB_OUTPUT"
+      - name: Verify Vercel origin and Cloudflare-fronted production aliases
+        env:
+          MRX_DEPLOYMENT_URL: ${{ steps.deploy.outputs.deployment_url }}
+        run: node scripts/verify-production-release.mjs

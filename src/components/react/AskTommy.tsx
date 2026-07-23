@@ -6,19 +6,40 @@ import {
   useState,
   type ErrorInfo,
   type ReactNode,
+  type SyntheticEvent,
 } from 'react';
 import { createClient, type SupabaseClient } from '@supabase/supabase-js';
 import { getGuide, getGuideChatLabel } from '../../data/guides';
+import {
+  CONSENT_DISCLOSURES,
+  CONSENT_VERSION,
+  isHumanCallChannelEnabled,
+} from '../../lib/platform/consent';
+import { normalizeMrxText } from '../../lib/platform/style';
+import { guideReplyDelay, remainingGuideReplyDelay } from '../../lib/platform/timing';
+import { fallbackConversationAnswer } from '../../lib/platform/conversation';
 import './AskTommy.css';
 
 type Persona = 'tommy' | 'cooper' | 'charlie' | 'dale' | 'rebecca' | 'angela';
 type Citation = { id: string; title: string; url: string; excerpt: string };
+type LocationCard = {
+  label: string;
+  url: string;
+  latitude: number;
+  longitude: number;
+  precision: string;
+  confidence: number | null;
+  source: string;
+  basin?: string | null;
+  note?: string | null;
+};
 type Message = {
   id: string;
   role: 'user' | 'assistant';
   content: string;
   persona?: Persona;
   citations?: Citation[];
+  locationCard?: LocationCard;
 };
 type AppointmentOption = {
   id: string;
@@ -32,10 +53,21 @@ type BookedAppointment = AppointmentOption & {
   savedAt: string;
 };
 type DeliveryChannel = 'email' | 'sms';
+type RequestedUpdateChannel = 'email' | 'sms' | 'call' | 'aiVoice';
+
+function requestedUpdatePrompt(channel: RequestedUpdateChannel) {
+  return `${CONSENT_DISCLOSURES[channel]} Do you agree?`;
+}
 type ConversationStep =
   | 'loading'
   | 'intro-name'
-  | 'intro-location'
+  | 'intro-last-name'
+  | 'intro-email'
+  | 'intro-phone'
+  | 'intro-email-consent'
+  | 'intro-sms-consent'
+  | 'intro-call-consent'
+  | 'intro-ai-voice-consent'
   | 'open'
   | 'delivery-channel'
   | 'delivery-email'
@@ -50,6 +82,7 @@ type ConversationStep =
   | 'booking-call-consent'
   | 'booking-email-consent'
   | 'booking-sms-consent'
+  | 'booking-ai-voice-consent'
   | 'booking-help';
 
 type ProfileDraft = {
@@ -59,7 +92,13 @@ type ProfileDraft = {
   phone: string;
   location: string;
   timezone: string;
-  permissions: { email: boolean; sms: boolean; marketingSms: boolean; call: boolean };
+  permissions: {
+    email: boolean;
+    sms: boolean;
+    marketingSms: boolean;
+    call: boolean;
+    aiVoice: boolean;
+  };
 };
 
 interface Props {
@@ -78,24 +117,33 @@ const personaLabels: Record<Persona, string> = {
 };
 
 const personaRole = (persona: Persona) => getGuide(persona)?.chatRole ?? 'MRX Guide';
+const minimumGuideReplyMs = guideReplyDelay(
+  import.meta.env.PROD,
+  import.meta.env.PUBLIC_CHAT_MIN_RESPONSE_DELAY_MS,
+);
 
 const tommyAvatar = '/assets/mrx-homepage-v4/avatars/tommy-hermes-128.webp';
 const bookedAppointmentStorageKey = 'mrx_upcoming_appointment';
-const personaAvatar = (persona: Persona = 'tommy') =>
-  persona === 'tommy' ? tommyAvatar : `/assets/team/${persona}-128.webp`;
+const personas: Persona[] = ['tommy', 'cooper', 'charlie', 'dale', 'rebecca', 'angela'];
+const isPersona = (value: unknown): value is Persona =>
+  typeof value === 'string' && personas.includes(value as Persona);
+const personaAvatar = (persona: unknown = 'tommy') => {
+  const safePersona = isPersona(persona) ? persona : 'tommy';
+  return safePersona === 'tommy' ? tommyAvatar : `/assets/team/${safePersona}-128.webp`;
+};
 
-const starters = [
-  [
-    'I received an offer',
-    'I received an offer for my mineral rights. What should I check before I respond?',
-  ],
-  ['What affects value?', 'What factors may affect what my mineral rights are worth?'],
-  ['I inherited minerals', 'I inherited mineral rights and do not know what to do first.'],
-  [
-    'Should I sell or wait?',
-    'I receive royalties. How can I think through selling now versus waiting?',
-  ],
-];
+function asLocationCard(value: unknown): LocationCard | undefined {
+  if (!value || typeof value !== 'object') return undefined;
+  const card = value as Partial<LocationCard>;
+  return typeof card.label === 'string' && typeof card.url === 'string'
+    ? (card as LocationCard)
+    : undefined;
+}
+
+function recoverAvatar(event: SyntheticEvent<HTMLImageElement>) {
+  const image = event.currentTarget;
+  if (image.getAttribute('src') !== tommyAvatar) image.src = tommyAvatar;
+}
 
 const initialProfile = (): ProfileDraft => ({
   firstName: '',
@@ -104,7 +152,7 @@ const initialProfile = (): ProfileDraft => ({
   phone: '',
   location: '',
   timezone: Intl.DateTimeFormat().resolvedOptions().timeZone || 'America/Chicago',
-  permissions: { email: false, sms: false, marketingSms: false, call: false },
+  permissions: { email: false, sms: false, marketingSms: false, call: false, aiVoice: false },
 });
 
 const bookingTimezones = [
@@ -203,6 +251,34 @@ function restoreBookedAppointment(): BookedAppointment | null {
   }
 }
 
+function restoreServerAppointment(value: any): BookedAppointment | null {
+  const start = typeof value?.starts_at === 'string' ? value.starts_at : '';
+  const end = typeof value?.ends_at === 'string' ? value.ends_at : '';
+  const timezone = typeof value?.timezone === 'string' ? value.timezone : 'America/Chicago';
+  if (value?.status !== 'confirmed' || !start || !end || Date.parse(end) <= Date.now()) return null;
+  const startsAt = new Date(start);
+  const dateLabel = new Intl.DateTimeFormat('en-US', {
+    weekday: 'long',
+    month: 'short',
+    day: 'numeric',
+    timeZone: timezone,
+  }).format(startsAt);
+  const timeLabel = new Intl.DateTimeFormat('en-US', {
+    hour: 'numeric',
+    minute: '2-digit',
+    timeZone: timezone,
+  }).format(startsAt);
+  return {
+    id: start,
+    appointmentId: value.ghl_appointment_id || value.id,
+    start,
+    end,
+    timezone,
+    label: `${dateLabel} at ${timeLabel}`,
+    savedAt: value.created_at || new Date().toISOString(),
+  };
+}
+
 class ChatErrorBoundary extends Component<{ children: ReactNode }, { failed: boolean }> {
   state = { failed: false };
   static getDerivedStateFromError() {
@@ -249,38 +325,208 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
   const [uploading, setUploading] = useState(false);
   const [pendingPrompt, setPendingPrompt] = useState('');
   const [bookingRequested, setBookingRequested] = useState(false);
+  const [documentUploadsEnabled, setDocumentUploadsEnabled] = useState(false);
+  const [documentProcessingEnabled, setDocumentProcessingEnabled] = useState(false);
+  const [ownerAuthenticated, setOwnerAuthenticated] = useState(false);
+  const [accountPromptDismissed, setAccountPromptDismissed] = useState(false);
   const endRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
   const introStarted = useRef(false);
+  const responseStartedAt = useRef<number | null>(null);
   const supabase = useMemo<SupabaseClient | null>(
-    () => (supabaseUrl && supabaseAnonKey ? createClient(supabaseUrl, supabaseAnonKey) : null),
+    () =>
+      typeof window !== 'undefined' && supabaseUrl && supabaseAnonKey
+        ? createClient(supabaseUrl, supabaseAnonKey)
+        : null,
     [supabaseUrl, supabaseAnonKey],
   );
 
-  function addUserMessage(content: string) {
-    setMessages((current) => [...current, { id: crypto.randomUUID(), role: 'user', content }]);
+  async function authHeaders(json = true) {
+    const headers: Record<string, string> = {};
+    if (json) headers['Content-Type'] = 'application/json';
+    const { data } = (await supabase?.auth.getSession()) ?? { data: { session: null } };
+    if (data.session?.access_token) headers.Authorization = `Bearer ${data.session.access_token}`;
+    return headers;
   }
 
-  async function guideSay(content: string, persona: Persona = activePersona, delay = 460) {
+  async function persistVisibleMessage(
+    role: 'user' | 'assistant' | 'system',
+    content: string,
+    persona?: Persona,
+    eventType:
+      | 'message'
+      | 'handoff'
+      | 'profile_prompt'
+      | 'appointment'
+      | 'consent'
+      | 'notice' = 'message',
+  ) {
+    try {
+      await fetch('/api/chat/events', {
+        method: 'POST',
+        headers: await authHeaders(),
+        body: JSON.stringify({ role, content, persona, eventType }),
+      });
+    } catch {
+      // Keep the conversation usable during a temporary persistence outage.
+    }
+  }
+
+  function addUserMessage(content: string, persist = true) {
+    setMessages((current) => [...current, { id: crypto.randomUUID(), role: 'user', content }]);
+    if (persist) void persistVisibleMessage('user', content);
+  }
+
+  function beginGuideResponseWindow() {
+    const startedAt = performance.now();
+    responseStartedAt.current = startedAt;
+    return startedAt;
+  }
+
+  async function guideSay(
+    content: string,
+    persona: Persona = activePersona,
+    delay = minimumGuideReplyMs,
+    immediate = false,
+  ) {
+    const visibleContent = normalizeMrxText(content);
+    const startedAt = responseStartedAt.current ?? performance.now();
     setTypingPersona(persona);
-    await new Promise((resolve) => window.setTimeout(resolve, delay));
+    const remainingDelay = immediate
+      ? 0
+      : remainingGuideReplyDelay(minimumGuideReplyMs, delay, startedAt, performance.now());
+    if (remainingDelay > 0)
+      await new Promise((resolve) => window.setTimeout(resolve, remainingDelay));
     setMessages((current) => [
       ...current,
-      { id: crypto.randomUUID(), role: 'assistant', content, persona },
+      { id: crypto.randomUUID(), role: 'assistant', content: visibleContent, persona },
     ]);
+    void persistVisibleMessage(
+      'assistant',
+      visibleContent,
+      persona,
+      step.startsWith('intro-')
+        ? 'profile_prompt'
+        : persona === 'angela'
+          ? 'appointment'
+          : immediate
+            ? 'notice'
+            : 'message',
+    );
     setTypingPersona(null);
   }
 
-  async function saveIntroFact(fact: { firstName?: string; location?: string }) {
+  function guideError(content: string, persona: Persona = activePersona) {
+    return guideSay(content, persona, 0, true);
+  }
+
+  async function refreshConversationSnapshot() {
+    const response = await fetch('/api/chat/session', { headers: await authHeaders(false) });
+    if (!response.ok) return null;
+    const data = await response.json();
+    const restored: Message[] = Array.isArray(data.messages)
+      ? data.messages
+          .filter((message: any) => message.role !== 'system')
+          .map((message: any) => ({
+            id: message.id,
+            role: message.role,
+            content: message.content,
+            persona: message.persona,
+            citations: message.citations,
+            locationCard: asLocationCard(message.metadata?.locationCards?.[0]),
+          }))
+      : [];
+    setMessages(restored);
+    const restoredAnswer = [...restored]
+      .reverse()
+      .find((message) => message.role === 'assistant' && message.content);
+    if (restoredAnswer) setLastAnswer(restoredAnswer);
+    return data;
+  }
+
+  async function pollDocumentRead(attachmentId: string, fileName: string) {
+    for (let attempt = 0; attempt < 24; attempt += 1) {
+      await new Promise((resolve) => window.setTimeout(resolve, attempt < 3 ? 2_500 : 5_000));
+      try {
+        const response = await fetch(`/api/chat/attachments/${attachmentId}`, {
+          headers: await authHeaders(false),
+        });
+        if (!response.ok) continue;
+        const data = await response.json();
+        if (data.attachment?.status === 'ready') {
+          await refreshConversationSnapshot();
+          setNotice(
+            `${fileName} has been read. Review the summary I added above before relying on it.`,
+          );
+          return;
+        }
+        if (data.attachment?.status === 'rejected' || data.attachment?.status === 'failed') {
+          setNotice(
+            `${fileName} could not be read after the security scan. Please try a clearer PDF, JPEG, or PNG.`,
+          );
+          return;
+        }
+      } catch {
+        // Keep polling during temporary network hiccups.
+      }
+    }
+    setNotice(
+      `${fileName} is still processing. I’ll use it after the document-read summary appears.`,
+    );
+  }
+
+  async function saveIntroFact(fact: { firstName?: string; lastName?: string; location?: string }) {
     try {
       await fetch('/api/chat/facts', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: await authHeaders(),
         body: JSON.stringify(fact),
       });
     } catch {
       // The live conversation remains useful when persistence is unavailable.
     }
+  }
+
+  async function saveIdentity(
+    payload:
+      | { action: 'name'; firstName: string; lastName: string }
+      | { action: 'email'; email: string; redirectTo: string }
+      | { action: 'phone'; phone: string | null },
+  ) {
+    const response = await fetch('/api/chat/identity', {
+      method: 'POST',
+      headers: await authHeaders(),
+      body: JSON.stringify(payload),
+    });
+    const result = await response.json();
+    if (!response.ok) throw new Error(result.error || 'identity_not_saved');
+    return result;
+  }
+
+  async function saveRequestedUpdatePermissions(
+    nextProfile: ProfileDraft,
+    channels?: RequestedUpdateChannel[],
+  ) {
+    const response = await fetch('/api/chat/permissions', {
+      method: 'POST',
+      headers: await authHeaders(),
+      body: JSON.stringify({
+        email: nextProfile.email,
+        phone: nextProfile.phone || null,
+        permissions: {
+          email: nextProfile.permissions.email,
+          sms: nextProfile.permissions.sms,
+          call: nextProfile.permissions.call,
+          aiVoice: nextProfile.permissions.aiVoice,
+        },
+        channels,
+        sourceUrl: location.href,
+      }),
+    });
+    const result = await response.json();
+    if (!response.ok) throw new Error(result.error || 'permissions_not_saved');
+    return result;
   }
 
   useEffect(() => {
@@ -289,25 +535,48 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
       try {
         const restoredAppointment = restoreBookedAppointment();
         if (!cancelled && restoredAppointment) setBookedAppointment(restoredAppointment);
-        await fetch('/api/chat/session', { method: 'POST' });
-        const response = await fetch('/api/chat/session');
+        const headers = await authHeaders(false);
+        await fetch('/api/chat/session', { method: 'POST', headers });
+        const response = await fetch('/api/chat/session', { headers });
         if (!response.ok) return;
         const data = await response.json();
         if (cancelled) return;
+        setOwnerAuthenticated(Boolean(data.authenticated));
         const restored: Message[] = Array.isArray(data.messages)
-          ? data.messages.map((message: any) => ({
-              id: message.id,
-              role: message.role,
-              content: message.content,
-              persona: message.persona,
-              citations: message.citations,
-            }))
+          ? data.messages
+              .filter((message: any) => message.role !== 'system')
+              .map((message: any) => ({
+                id: message.id,
+                role: message.role,
+                content: message.content,
+                persona: message.persona,
+                citations: message.citations,
+                locationCard: asLocationCard(message.metadata?.locationCards?.[0]),
+              }))
           : [];
         setMessages(restored);
+        if (restored.length) setTypingPersona(null);
+        setDocumentUploadsEnabled(Boolean(data.documentUploadsEnabled));
+        setDocumentProcessingEnabled(Boolean(data.documentProcessingEnabled));
+        if (!restoredAppointment && Array.isArray(data.appointments)) {
+          const serverAppointment = data.appointments
+            .map(restoreServerAppointment)
+            .find((appointment: BookedAppointment | null) => appointment !== null);
+          if (serverAppointment) {
+            setBookedAppointment(serverAppointment);
+            window.localStorage.setItem(
+              bookedAppointmentStorageKey,
+              JSON.stringify(serverAppointment),
+            );
+          }
+        }
         const restoredAnswer = [...restored]
           .reverse()
           .find((message) => message.role === 'assistant' && message.content);
-        if (restoredAnswer) setLastAnswer(restoredAnswer);
+        if (restoredAnswer) {
+          setLastAnswer(restoredAnswer);
+          if (isPersona(restoredAnswer.persona)) setActivePersona(restoredAnswer.persona);
+        }
         setProfile((current) => ({
           ...current,
           firstName: data.profile?.first_name || current.firstName,
@@ -316,9 +585,20 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
           phone: data.profile?.phone || current.phone,
           timezone: data.profile?.timezone || current.timezone,
           location:
-            typeof data.ownerFacts?.location === 'string'
-              ? data.ownerFacts.location
-              : current.location,
+            typeof data.ownerFacts?.mineral_location === 'string'
+              ? data.ownerFacts.mineral_location
+              : data.interests?.[0]
+                ? [data.interests[0].city, data.interests[0].county, data.interests[0].state]
+                    .filter(Boolean)
+                    .join(', ')
+                : current.location,
+          permissions: {
+            email: Boolean(data.permissions?.email),
+            sms: Boolean(data.permissions?.sms),
+            aiVoice: Boolean(data.permissions?.aiVoice),
+            marketingSms: Boolean(data.permissions?.marketingSms),
+            call: Boolean(data.permissions?.call),
+          },
         }));
         if (restored.length) {
           introStarted.current = true;
@@ -328,22 +608,62 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
         if (!cancelled) setSessionReady(true);
       }
     })();
-    const listener = (event: Event) => {
-      const detail = (event as CustomEvent<{ prompt?: string; booking?: boolean }>).detail;
+    type ChatOpenDetail = { prompt?: string; booking?: boolean };
+    type ChatOpenRequest = { detail: ChatOpenDetail; sequence: number };
+    const browserWindow = window as typeof window & {
+      __mrxChatReady?: boolean;
+      __mrxChatQueue?: Array<ChatOpenRequest | ChatOpenDetail>;
+      __mrxChatOpenRequested?: boolean;
+      __mrxChatLastRequest?: ChatOpenRequest | null;
+    };
+    const handledSequences = new Set<number>();
+    const handleOpenRequest = (detail: ChatOpenDetail = {}, sequence?: number) => {
+      if (sequence && handledSequences.has(sequence)) return;
+      if (sequence) handledSequences.add(sequence);
+      beginGuideResponseWindow();
+      if (!introStarted.current || detail?.prompt || detail?.booking)
+        setTypingPersona(detail?.booking ? 'angela' : 'tommy');
       setOpen(true);
       if (detail?.prompt) setPendingPrompt(detail.prompt);
       if (detail?.booking) setBookingRequested(true);
       track('ask_tommy_open', { source: detail?.prompt ? 'prefilled_prompt' : 'site_cta' });
     };
+    const listener = (event: Event) => {
+      const detail = (event as CustomEvent<ChatOpenDetail>).detail ?? {};
+      handleOpenRequest(detail, browserWindow.__mrxChatLastRequest?.sequence);
+    };
     window.addEventListener('mrx:open-chat', listener);
+    browserWindow.__mrxChatReady = true;
+    const queuedRequests = browserWindow.__mrxChatQueue?.splice(0) ?? [];
+    queuedRequests.forEach((request) => {
+      if ('detail' in request && 'sequence' in request) {
+        handleOpenRequest(request.detail, request.sequence);
+      } else {
+        handleOpenRequest(request);
+      }
+    });
+    if (browserWindow.__mrxChatOpenRequested) {
+      handleOpenRequest(
+        browserWindow.__mrxChatLastRequest?.detail ?? {},
+        browserWindow.__mrxChatLastRequest?.sequence,
+      );
+    }
     const params = new URLSearchParams(window.location.search);
-    if (params.get('ask') === '1') setOpen(true);
+    if (params.get('ask') === '1') {
+      browserWindow.__mrxChatOpenRequested = true;
+      setOpen(true);
+    }
     if (params.get('book') === '1') {
+      browserWindow.__mrxChatOpenRequested = true;
+      introStarted.current = true;
+      beginGuideResponseWindow();
+      setTypingPersona('angela');
       setOpen(true);
       setBookingRequested(true);
     }
     return () => {
       cancelled = true;
+      browserWindow.__mrxChatReady = false;
       window.removeEventListener('mrx:open-chat', listener);
     };
   }, []);
@@ -359,12 +679,8 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
     )
       return;
     introStarted.current = true;
-    setStep('intro-name');
-    void guideSay(
-      'Hi, I’m Tommy. I’m here to help you make sense of your mineral rights without another sales pitch. Before we get into it, what should I call you?',
-      'tommy',
-      520,
-    );
+    setStep('open');
+    void guideSay('How may I help you?', 'tommy', 520);
   }, [open, sessionReady, messages.length, pendingPrompt, bookingRequested]);
 
   useEffect(() => {
@@ -393,33 +709,39 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
   async function sendMessage(forced?: string) {
     const text = (forced ?? input).trim();
     if (!text || sending) return;
+    const submittedAt = beginGuideResponseWindow();
+    const revealAt = submittedAt + minimumGuideReplyMs;
     const history = messages.slice(-8).map(({ role, content }) => ({ role, content }));
     setInput('');
     setSending(true);
+    setTypingPersona(activePersona);
     setNotice('');
-    addUserMessage(text);
+    addUserMessage(text, false);
     track('chat_question', {
       question_length: text.length,
       has_owner_location: Boolean(profile.location),
     });
     const assistantId = crypto.randomUUID();
-    let currentPersona: Persona = 'tommy';
+    let currentPersona: Persona = activePersona;
+    let rawResponseText = '';
     let responseText = '';
     const citations: Citation[] = [];
     setMessages((current) => [
       ...current,
       { id: assistantId, role: 'assistant', content: '', persona: currentPersona, citations },
     ]);
+    let immediateError = '';
     try {
       const response = await fetch('/api/chat/message', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: await authHeaders(),
         body: JSON.stringify({
           message: text,
           path: location.pathname,
           context: {
             firstName: profile.firstName || undefined,
             location: profile.location || undefined,
+            currentPersona: activePersona,
           },
           history,
         }),
@@ -440,33 +762,137 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
             .find((line) => line.startsWith('data: '))
             ?.slice(6);
           if (!raw) continue;
-          const event = JSON.parse(raw);
-          if (event.type === 'message.delta') {
-            currentPersona = event.persona;
-            responseText += event.delta;
-          } else if (event.type === 'citation') {
-            citations.push(event.citation);
-          } else if (event.type === 'persona.handoff') {
-            currentPersona = event.to;
-            setActivePersona(event.to);
-            track('specialist_handoff', { from: event.from, to: event.to });
-          } else if (event.type === 'error') {
-            setNotice(event.message);
+          let event: Record<string, unknown>;
+          try {
+            event = JSON.parse(raw) as Record<string, unknown>;
+          } catch {
+            continue;
           }
-          setMessages((current) =>
-            current.map((message) =>
-              message.id === assistantId
-                ? {
-                    ...message,
-                    content: responseText,
-                    persona: currentPersona,
-                    citations: [...citations],
-                  }
-                : message,
-            ),
-          );
+          if (event.type === 'message.delta') {
+            if (isPersona(event.persona)) currentPersona = event.persona;
+            if (typeof event.delta === 'string') {
+              rawResponseText += event.delta;
+              responseText = normalizeMrxText(rawResponseText);
+            }
+          } else if (event.type === 'message.replace') {
+            if (isPersona(event.persona)) currentPersona = event.persona;
+            if (typeof event.content === 'string') {
+              rawResponseText = event.content;
+              responseText = normalizeMrxText(rawResponseText);
+            }
+          } else if (event.type === 'citation') {
+            const citation = event.citation as Citation | undefined;
+            if (citation?.id && citation.title && citation.url) citations.push(citation);
+          } else if (event.type === 'persona.handoff') {
+            if (isPersona(event.to)) {
+              const from = isPersona(event.from) ? event.from : currentPersona;
+              const handoffContent =
+                typeof event.message === 'string' ? normalizeMrxText(event.message) : '';
+              if (handoffContent) {
+                const handoffId = `${assistantId}-handoff`;
+                setMessages((current) =>
+                  current.some((message) => message.id === handoffId)
+                    ? current
+                    : current.flatMap((message) =>
+                        message.id === assistantId
+                          ? [
+                              {
+                                id: handoffId,
+                                role: 'assistant' as const,
+                                content: handoffContent,
+                                persona: from,
+                              },
+                              message,
+                            ]
+                          : [message],
+                      ),
+                );
+              }
+              currentPersona = event.to;
+              setActivePersona(event.to);
+              setTypingPersona(event.to);
+              track('specialist_handoff', { from: event.from, to: event.to });
+            }
+          } else if (event.type === 'geography.resolved') {
+            const geography = event.geography as {
+              status?: string;
+              scope?: string;
+              city?: string | null;
+              county?: string | null;
+              state?: string | null;
+              counties?: Array<{ name?: string }>;
+              precision?: string;
+            };
+            if (geography.scope === 'mineral_interest') {
+              const resolvedLocation = [geography.city, geography.county, geography.state]
+                .filter(Boolean)
+                .join(', ');
+              if (resolvedLocation) {
+                setProfile((current) => ({ ...current, location: resolvedLocation }));
+              }
+            }
+            track('geography_resolved', {
+              scope: geography.scope,
+              status: geography.status,
+              precision: geography.precision,
+              county_count: geography.counties?.length ?? 0,
+            });
+          } else if (event.type === 'location.card') {
+            const card = asLocationCard(event.card);
+            if (card) {
+              setMessages((current) =>
+                current.map((message) =>
+                  message.id === assistantId ? { ...message, locationCard: card } : message,
+                ),
+              );
+              track('location_card_view', { precision: card.precision, source: card.source });
+            }
+          } else if (event.type === 'error') {
+            if (typeof event.message === 'string') {
+              immediateError = normalizeMrxText(event.message);
+              setNotice(immediateError);
+              setTypingPersona(null);
+            }
+          }
+          if (performance.now() >= revealAt) {
+            setTypingPersona(null);
+            setMessages((current) =>
+              current.map((message) =>
+                message.id === assistantId
+                  ? {
+                      ...message,
+                      content: responseText,
+                      persona: currentPersona,
+                      citations: [...citations],
+                    }
+                  : message,
+              ),
+            );
+          }
         }
       }
+      if (immediateError) {
+        setMessages((current) => current.filter((message) => message.id !== assistantId));
+        setStep('open');
+        return;
+      }
+      if (!responseText.trim()) throw new Error('empty_answer');
+      const remainingDelay = revealAt - performance.now();
+      if (remainingDelay > 0)
+        await new Promise((resolve) => window.setTimeout(resolve, remainingDelay));
+      setTypingPersona(null);
+      setMessages((current) =>
+        current.map((message) =>
+          message.id === assistantId
+            ? {
+                ...message,
+                content: responseText,
+                persona: currentPersona,
+                citations: [...citations],
+              }
+            : message,
+        ),
+      );
       const answer = {
         id: assistantId,
         role: 'assistant' as const,
@@ -478,14 +904,24 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
       setStep('open');
       if (citations.length) track('cited_answer_view', { citation_count: citations.length });
     } catch {
-      const content =
-        'I could not reach the answer service just now. Please try again, or I can help you request a phone conversation.';
+      const remainingDelay = revealAt - performance.now();
+      if (remainingDelay > 0)
+        await new Promise((resolve) => window.setTimeout(resolve, remainingDelay));
+      const content = fallbackConversationAnswer(text, undefined, history);
+      setTypingPersona(null);
       setMessages((current) =>
-        current.map((message) => (message.id === assistantId ? { ...message, content } : message)),
+        current.map((message) =>
+          message.id === assistantId
+            ? { ...message, content, persona: currentPersona, citations: [] }
+            : message,
+        ),
       );
+      setNotice('');
       setLastAnswer({ id: assistantId, role: 'assistant', content, persona: currentPersona });
+      void persistVisibleMessage('assistant', content, currentPersona, 'notice');
       setStep('open');
     } finally {
+      setTypingPersona(null);
       setSending(false);
     }
   }
@@ -493,7 +929,7 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
   async function beginDelivery() {
     if (!lastAnswer?.content) {
       await guideSay(
-        'Ask me your mineral-rights question first. Once I answer, I can send the related information to your email or phone—with your permission.',
+        'Ask me your mineral-rights question first. Once I answer, I can send the related information to your email or phone with your permission.',
         'tommy',
       );
       return;
@@ -569,12 +1005,12 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
     try {
       const response = await fetch('/api/chat/delivery', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: await authHeaders(),
         body: JSON.stringify({
           profile: {
             ...nextProfile,
             firstName: nextProfile.firstName || 'Owner',
-            disclosureVersion: '2026-07-13-draft',
+            disclosureVersion: CONSENT_VERSION,
             sourceUrl: location.href,
           },
           channels: granted,
@@ -590,7 +1026,7 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
       setStep('open');
       setTypingPersona(null);
       await guideSay(
-        `Done—MRX sent it by ${sentLabels.join(' and ')}. You can keep asking questions here anytime.`,
+        `Done. MRX sent it by ${sentLabels.join(' and ')}. You can keep asking questions here anytime.`,
         'tommy',
         260,
       );
@@ -600,15 +1036,19 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
     } catch {
       setTypingPersona(null);
       setStep('open');
-      await guideSay(
-        'I saved your choices, but the MRX delivery connection is not ready yet. Nothing was sent. The answer is still available here.',
+      await guideError(
+        'I couldn’t send that just now, so nothing left the site. Your answer is still here, and you can try sending it again in a moment.',
         'tommy',
-        260,
       );
     }
   }
 
   async function beginBooking() {
+    beginGuideResponseWindow();
+    track('booking_opened', {
+      source: bookedAppointment ? 'existing_appointment' : 'ask_tommy',
+    });
+    setTypingPersona('angela');
     setActivePersona('angela');
     setOptions([]);
     setSelectedOption(null);
@@ -623,7 +1063,7 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
     }
     setStep('booking-timezone');
     await guideSay(
-      `Hi${profile.firstName ? `, ${profile.firstName}` : ''}—I’m Angela, the MRX scheduling guide. I’m here to help set up a phone conversation with the MRX team about your mineral rights. I’ll check the live MRX calendar and offer a few real openings. I have your time zone as ${timezoneLabel(profile.timezone)}. Is that right?`,
+      `Hi${profile.firstName ? `, ${profile.firstName}` : ''}. I’m Angela, the MRX scheduling guide. I’m here to help set up a phone conversation with the MRX team about your mineral rights. I’ll check the live MRX calendar and offer a few real openings. I have your time zone as ${timezoneLabel(profile.timezone)}. Is that right?`,
       'angela',
       420,
     );
@@ -632,7 +1072,7 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
   async function askBookingWindow(timezone: string) {
     setStep('booking-window');
     await guideSay(
-      `Perfect—I’ll show every appointment in ${timezoneLabel(timezone)}. What works better for you: tomorrow afternoon, tomorrow evening, or the next available time?`,
+      `Perfect. I’ll show every appointment in ${timezoneLabel(timezone)}. What works better for you: tomorrow afternoon, tomorrow evening, or the next available time?`,
       'angela',
       260,
     );
@@ -657,13 +1097,14 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
       setTypingPersona(null);
       if (!response.ok || !result.options?.length) {
         setStep('booking-window');
-        const calendarMessage =
-          result.error === 'booking_not_configured'
-            ? 'I’m sorry—I can’t reach MRX’s live appointment calendar right now, so I won’t make up a time. You can try again in a moment or keep talking with Tommy. No appointment has been created.'
-            : !response.ok
-              ? 'I’m having trouble reaching the MRX calendar right now, so I didn’t create an appointment. Would you like to try the next available times again?'
-              : `I don’t see a ${preference === 'any' ? 'matching' : preference} opening ${day === 'tomorrow' ? 'tomorrow' : 'in the current window'}. Would you like me to check another part of the day or show the next available times?`;
-        await guideSay(calendarMessage, 'angela', 260);
+        const infrastructureFailure = result.error === 'booking_not_configured' || !response.ok;
+        const calendarMessage = infrastructureFailure
+          ? result.error === 'booking_not_configured'
+            ? 'I’m sorry. I can’t reach MRX’s live appointment calendar right now, so I won’t make up a time. You can try again in a moment or keep talking with Tommy. No appointment has been created.'
+            : 'I’m having trouble reaching the MRX calendar right now, so I didn’t create an appointment. Would you like to try the next available times again?'
+          : `I don’t see a ${preference === 'any' ? 'matching' : preference} opening ${day === 'tomorrow' ? 'tomorrow' : 'in the current window'}. Would you like me to check another part of the day or show the next available times?`;
+        if (infrastructureFailure) await guideError(calendarMessage, 'angela');
+        else await guideSay(calendarMessage, 'angela', 260);
         return;
       }
       setOptions(result.options);
@@ -678,14 +1119,19 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
         preference,
         day,
       });
+      track('slot_displayed', {
+        option_count: result.options.length,
+        timezone: profile.timezone,
+        preference,
+        day,
+      });
     } catch {
       setNotice('');
       setTypingPersona(null);
       setStep('booking-window');
-      await guideSay(
+      await guideError(
         'I couldn’t reach the MRX calendar just now, so I didn’t create an appointment. You can try the next available times again or keep talking with Tommy.',
         'angela',
-        260,
       );
     }
   }
@@ -703,7 +1149,7 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
     } else {
       setStep('booking-email');
       await guideSay(
-        `Great, ${profile.firstName}. I’ll hold ${option.label} while we finish. What email should I use for appointment details? You can say “skip” if you prefer phone only.`,
+        `Great, ${profile.firstName}. I’ll hold ${option.label} while we finish. What email should I use for your appointment details and secure MRX member access?`,
         'angela',
       );
     }
@@ -712,14 +1158,14 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
   async function askBookingEmail() {
     setStep('booking-email');
     await guideSay(
-      'What email should I use for appointment details? You can say “skip” if you prefer phone only.',
+      'What email should I use for your appointment details and secure MRX member access?',
       'angela',
     );
   }
 
   async function askBookingPhone() {
     setStep('booking-phone');
-    await guideSay('What phone number should the live MRX underwriter call?', 'angela');
+    await guideSay('What phone number should a senior MRX underwriter team member call?', 'angela');
   }
 
   async function confirmAppointment(nextProfile: ProfileDraft) {
@@ -729,11 +1175,11 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
     try {
       const response = await fetch('/api/appointments', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: await authHeaders(),
         body: JSON.stringify({
           profile: {
             ...nextProfile,
-            disclosureVersion: '2026-07-13-draft',
+            disclosureVersion: CONSENT_VERSION,
             sourceUrl: location.href,
           },
           option: selectedOption,
@@ -748,6 +1194,12 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
       const confirmations = result.notifications?.length
         ? ` I also sent the confirmation by ${result.notifications.map((channel: DeliveryChannel) => (channel === 'email' ? 'email' : 'text')).join(' and ')} as requested.`
         : ' Your confirmation is here on screen.';
+      const memberAccessMessage =
+        result.memberAccess?.status === 'active'
+          ? ' Your MRX owner account is ready.'
+          : result.memberAccess?.status === 'link_sent'
+            ? ` I also sent a secure owner-account sign-in link to ${nextProfile.email}.`
+            : ' Your appointment is saved, and you can use the owner account once your email sign-in connection is available.';
       const confirmedAppointment: BookedAppointment = {
         ...selectedOption,
         appointmentId: result.appointmentId,
@@ -760,28 +1212,32 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
       );
       setStep('booking-help');
       await guideSay(
-        `You’re booked for ${selectedOption.label}.${confirmations} We’ll call ${nextProfile.phone}.`,
+        `You’re booked for ${selectedOption.label}.${confirmations}${memberAccessMessage} We’ll call ${nextProfile.phone}.`,
         'angela',
         260,
       );
-      await guideSay(
-        'What specifically can we help you with?\n\n• Review an offer or understand what affects value\n• Sort out inherited mineral rights or royalty questions\n• Talk through whether selling now or waiting fits your goals\n\nTell me in your own words.',
-        'angela',
-        220,
-      );
+      await guideSay('How may I help you?', 'angela', 220);
       track('appointment_booked', {
         timezone: selectedOption.timezone,
         email_permission: nextProfile.permissions.email,
         sms_permission: nextProfile.permissions.sms,
       });
       setSelectedOption(null);
+      const requestedIntakeUrl = new URL(
+        result.memberAccess?.redirectTo || '/account/?welcome=appointment',
+        window.location.origin,
+      );
+      window.location.assign(
+        requestedIntakeUrl.origin === window.location.origin
+          ? requestedIntakeUrl.toString()
+          : '/account/?welcome=appointment',
+      );
     } catch {
       setTypingPersona(null);
       setStep('open');
-      await guideSay(
+      await guideError(
         'I couldn’t confirm that time, so no appointment was created. We can try the calendar again when you’re ready.',
         'angela',
-        260,
       );
     } finally {
       setBooking(false);
@@ -790,20 +1246,20 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
 
   async function handleQuickReply(value: string, label?: string) {
     if (typingPersona || sending || booking) return;
-    if (step === 'intro-name' && value === 'skip') {
-      addUserMessage('I’d rather skip that for now.');
-      setStep('intro-location');
+    beginGuideResponseWindow();
+    setTypingPersona(activePersona);
+    if (step === 'intro-phone' && value === 'skip') {
+      addUserMessage('Skip phone for now.');
+      try {
+        await saveIdentity({ action: 'phone', phone: null });
+      } catch {
+        // Optional phone can be skipped even during a persistence outage.
+      }
+      const next = { ...profile, phone: '' };
+      setProfile(next);
+      setStep('intro-email-consent');
       await guideSay(
-        'That’s completely fine. What state and county are the mineral rights in? If you’re not sure yet, just say so.',
-        'tommy',
-      );
-      return;
-    }
-    if (step === 'intro-location' && value === 'unknown') {
-      addUserMessage('I’m not sure yet.');
-      setStep('open');
-      await guideSay(
-        'No problem—we can figure that out later. What brought you here today?',
+        `No problem. May MRX email ${next.email} with the information or case updates you specifically request? This is optional.`,
         'tommy',
       );
       return;
@@ -811,8 +1267,6 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
     if (step === 'open') {
       if (value === 'send') return beginDelivery();
       if (value === 'book') return beginBooking();
-      const starter = starters.find(([starterLabel]) => starterLabel === label);
-      if (starter) return sendMessage(starter[1]);
       return;
     }
     if (step === 'delivery-channel') {
@@ -843,6 +1297,113 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
       if (nextIndex < deliveryRequested.length)
         return promptDeliveryConsent(deliveryRequested, nextIndex);
       return finishDelivery(nextGranted);
+    }
+    if (step === 'intro-email-consent') {
+      const allowed = value === 'yes';
+      addUserMessage(allowed ? 'Yes, email my requested updates.' : 'No email updates.');
+      const next = {
+        ...profile,
+        permissions: { ...profile.permissions, email: allowed },
+      };
+      setProfile(next);
+      if (!next.phone) {
+        try {
+          await saveRequestedUpdatePermissions(next);
+        } catch {
+          setNotice('I could not save those communication choices just now.');
+        }
+        setStep('open');
+        await guideSay(
+          'I saved your choice. Without a phone number, MRX will not text or place a GHL Voice AI update call. What would you like to ask next?',
+          'tommy',
+        );
+        return;
+      }
+      setStep('intro-sms-consent');
+      await guideSay(
+        `May MRX text ${next.phone} with links or case updates you specifically request? Message and data rates may apply. Reply STOP to opt out or HELP for help.`,
+        'tommy',
+      );
+      return;
+    }
+    if (step === 'intro-sms-consent') {
+      const allowed = value === 'yes';
+      addUserMessage(allowed ? 'Yes, text my requested updates.' : 'No text updates.');
+      const next = {
+        ...profile,
+        permissions: { ...profile.permissions, sms: allowed },
+      };
+      setProfile(next);
+      if (!isHumanCallChannelEnabled()) {
+        // Human-call channel is gated until compliance signs off on the
+        // disclosure. Defer the call question and persist the remaining three
+        // channel choices immediately. No call consent receipt is written.
+        const deferred = { ...next, permissions: { ...next.permissions, call: false } };
+        setProfile(deferred);
+        addUserMessage("I'll come back to that after MRX publishes the human-call disclosure.");
+        try {
+          await saveRequestedUpdatePermissions(deferred, ['email', 'sms', 'aiVoice']);
+        } catch {
+          setNotice('I could not save those communication choices just now.');
+        }
+        setStep('open');
+        await guideSay(
+          'I saved your email, text, and AI-voice choices. MRX has not yet published its human-call disclosure, so I will come back to that one separately. What would you like to ask next?',
+          'tommy',
+        );
+        return;
+      }
+      setStep('intro-call-consent');
+      await guideSay(
+        `May an MRX team member call ${next.phone} with the mineral-rights case updates you specifically request? This is optional and may be revoked at any time.`,
+        'tommy',
+      );
+      return;
+    }
+    if (step === 'intro-call-consent') {
+      const allowed = value === 'yes';
+      addUserMessage(
+        allowed
+          ? 'Yes, a human MRX team member may call with my requested updates.'
+          : 'No human phone calls.',
+      );
+      const next = {
+        ...profile,
+        permissions: { ...profile.permissions, call: allowed },
+      };
+      setProfile(next);
+      setStep('intro-ai-voice-consent');
+      await guideSay(
+        `May MRX use GoHighLevel Voice AI to call ${next.phone} with an AI-generated voice and give the mineral-rights case updates you specifically request? This is optional, is not required to receive help, and may be revoked at any time.`,
+        'tommy',
+      );
+      return;
+    }
+    if (step === 'intro-ai-voice-consent') {
+      const allowed = value === 'yes';
+      addUserMessage(
+        allowed
+          ? 'Yes, GHL Voice AI may give my requested case updates.'
+          : 'No GHL Voice AI calls.',
+      );
+      const next = {
+        ...profile,
+        permissions: { ...profile.permissions, aiVoice: allowed },
+      };
+      setProfile(next);
+      try {
+        await saveRequestedUpdatePermissions(next);
+      } catch {
+        setNotice('I could not save those communication choices just now.');
+      }
+      setStep('open');
+      await guideSay(
+        allowed
+          ? 'I saved your choices. MRX must verify your phone number before any GHL Voice AI update, and you can revoke permission at any time. What would you like to ask next?'
+          : 'I saved your choices. MRX will not use GHL Voice AI to call you. What would you like to ask next?',
+        'tommy',
+      );
+      return;
     }
     if (step === 'booking-timezone') {
       const timezone = value === 'timezone-confirm' ? profile.timezone : value;
@@ -925,6 +1486,30 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
         permissions: { ...profile.permissions, sms: allowed, marketingSms: false },
       };
       setProfile(next);
+      setStep('booking-ai-voice-consent');
+      await guideSay(
+        `May Angela, MRX’s AI scheduling guide, use GoHighLevel Voice AI to call ${next.phone} with an AI-generated voice for the appointment or document updates you request? MRX will identify itself. This AI-voice permission is optional, may be revoked at any time, and is not required to book or use website help.`,
+        'angela',
+      );
+      return;
+    }
+    if (step === 'booking-ai-voice-consent') {
+      const allowed = value === 'yes';
+      addUserMessage(
+        allowed
+          ? 'Yes, Angela may use GHL Voice AI for appointment or document reminders.'
+          : 'No GHL Voice AI reminders, please.',
+      );
+      track('communication_permission', {
+        channel: 'aiVoice',
+        granted: allowed,
+        purpose: 'appointment_and_document_followup',
+      });
+      const next = {
+        ...profile,
+        permissions: { ...profile.permissions, aiVoice: allowed },
+      };
+      setProfile(next);
       return confirmAppointment(next);
     }
   }
@@ -933,35 +1518,93 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
     event.preventDefault();
     const text = input.trim();
     if (!text || typingPersona || sending || booking) return;
+    beginGuideResponseWindow();
+    setTypingPersona(activePersona);
     setInput('');
     if (step === 'intro-name') {
-      if (isSkip(text)) return handleQuickReply('skip');
       const firstName = firstNameFrom(text);
       if (!firstName) {
-        await guideSay('I didn’t catch the name. What should I call you?', 'tommy', 260);
+        await guideError('I didn’t catch the name. What should I call you?', 'tommy');
         return;
       }
       addUserMessage(text);
       const next = { ...profile, firstName };
       setProfile(next);
       void saveIntroFact({ firstName });
-      setStep('intro-location');
+      setStep('intro-last-name');
+      await guideSay(`Thanks, ${firstName}. What’s your last name?`, 'tommy');
+      return;
+    }
+    if (step === 'intro-last-name') {
+      const lastName = text.replace(/[^a-zA-ZÀ-ÿ' -]/g, '').trim();
+      if (!lastName) {
+        await guideError('What last name should I save with your conversation?', 'tommy');
+        return;
+      }
+      addUserMessage(text);
+      const next = { ...profile, lastName };
+      setProfile(next);
+      try {
+        await saveIdentity({ action: 'name', firstName: next.firstName, lastName });
+      } catch {
+        setNotice('I could not save your name just now, but we can keep talking.');
+      }
+      setStep('intro-email');
       await guideSay(
-        `Nice to meet you, ${firstName}. Where are you joining me from—and what state and county are the mineral rights in? It’s okay if those are different places.`,
+        'What email should I use for your secure sign-in link? Verifying it lets you return to this private history from another device as your questions and documents build over time.',
         'tommy',
       );
       return;
     }
-    if (step === 'intro-location') {
-      if (isSkip(text)) return handleQuickReply('unknown');
+    if (step === 'intro-email') {
+      if (!/^\S+@\S+\.\S+$/.test(text)) {
+        await guideError('That email looks incomplete. Please check it and try again.', 'tommy');
+        return;
+      }
       addUserMessage(text);
-      setProfile((current) => ({ ...current, location: text }));
-      void saveIntroFact({ location: text });
-      setStep('open');
-      await guideSay(
-        `Thanks${profile.firstName ? `, ${profile.firstName}` : ''}. What can I help you understand today?`,
-        'tommy',
-      );
+      setProfile((current) => ({ ...current, email: text }));
+      try {
+        await saveIdentity({
+          action: 'email',
+          email: text,
+          redirectTo: `${location.origin}${location.pathname}?ask=1`,
+        });
+        await guideSay(
+          `I sent a secure sign-in link to ${text}. You can keep talking here while you verify it. A phone number is optional. Would you like to add one for future follow-up?`,
+          'tommy',
+        );
+      } catch {
+        await guideError(
+          'I could not send the verification link just now. We can keep talking, but this history will stay on this browser until your email is verified. Would you like to add an optional phone number?',
+          'tommy',
+        );
+      }
+      setStep('intro-phone');
+      return;
+    }
+    if (step === 'intro-phone') {
+      if (isSkip(text)) return handleQuickReply('skip');
+      if (text.replace(/\D/g, '').length < 10) {
+        await guideError(
+          'That number looks incomplete. Include the area code, or choose “Skip phone.”',
+          'tommy',
+        );
+        return;
+      }
+      addUserMessage(text);
+      try {
+        await saveIdentity({ action: 'phone', phone: text });
+        const next = { ...profile, phone: text };
+        setProfile(next);
+        setStep('intro-email-consent');
+        await guideSay(
+          `Got it. Saving the number does not give MRX permission to contact you. May MRX email ${next.email} with the information or case updates you specifically request? This is optional.`,
+          'tommy',
+        );
+      } catch {
+        await guideError('I could not save that number. We can keep talking here.', 'tommy');
+        setStep('open');
+      }
       return;
     }
     if (step === 'delivery-channel') {
@@ -971,15 +1614,14 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
       if (lower.includes('text') || lower.includes('sms') || lower.includes('phone'))
         return handleQuickReply('sms', 'Text it');
       if (isSkip(text)) return handleQuickReply('cancel', 'Never mind');
-      await guideSay('Choose email, text message, both, or say “never mind.”', 'tommy', 260);
+      await guideError('Choose email, text message, both, or say “never mind.”', 'tommy');
       return;
     }
     if (step === 'delivery-email') {
       if (!/^\S+@\S+\.\S+$/.test(text)) {
-        await guideSay(
+        await guideError(
           'That email address doesn’t look complete. Please check it and try again.',
           'tommy',
-          260,
         );
         return;
       }
@@ -997,10 +1639,9 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
     }
     if (step === 'delivery-phone') {
       if (text.replace(/\D/g, '').length < 7) {
-        await guideSay(
+        await guideError(
           'That phone number looks incomplete. Please include the area code.',
           'tommy',
-          260,
         );
         return;
       }
@@ -1012,9 +1653,14 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
     }
     if (
       step === 'delivery-consent' ||
+      step === 'intro-email-consent' ||
+      step === 'intro-sms-consent' ||
+      step === 'intro-call-consent' ||
+      step === 'intro-ai-voice-consent' ||
       step === 'booking-call-consent' ||
       step === 'booking-email-consent' ||
-      step === 'booking-sms-consent'
+      step === 'booking-sms-consent' ||
+      step === 'booking-ai-voice-consent'
     ) {
       return handleQuickReply(isYes(text) ? 'yes' : 'no');
     }
@@ -1022,10 +1668,9 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
       if (isYes(text)) return handleQuickReply('timezone-confirm');
       const timezone = timezoneFromText(text);
       if (!timezone) {
-        await guideSay(
+        await guideError(
           'I want to make sure I show the right times. You can say Eastern, Central, Mountain, Pacific, Alaska, Hawaii, or Arizona.',
           'angela',
-          260,
         );
         return;
       }
@@ -1047,13 +1692,13 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
             text.toLowerCase(),
       );
       if (matched) return selectAppointment(matched);
-      await guideSay('Choose one of the available times shown below.', 'angela', 260);
+      await guideError('Choose one of the available times shown below.', 'angela');
       return;
     }
     if (step === 'booking-name') {
       const firstName = firstNameFrom(text);
       if (!firstName) {
-        await guideSay('What first name should I place on the appointment?', 'angela', 260);
+        await guideError('What first name should I place on the appointment?', 'angela');
         return;
       }
       addUserMessage(text);
@@ -1064,16 +1709,16 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
     }
     if (step === 'booking-email') {
       if (isSkip(text)) {
-        addUserMessage('Skip email—I prefer phone only.');
-        setProfile((current) => ({ ...current, email: '' }));
-        await askBookingPhone();
+        await guideError(
+          'An email is needed to create your secure MRX member access and keep the appointment connected to your profile. What email should I use?',
+          'angela',
+        );
         return;
       }
       if (!/^\S+@\S+\.\S+$/.test(text)) {
-        await guideSay(
-          'That email address doesn’t look complete. Try again, or say “skip.”',
+        await guideError(
+          'That email address doesn’t look complete. Please check it and try again.',
           'angela',
-          260,
         );
         return;
       }
@@ -1084,10 +1729,9 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
     }
     if (step === 'booking-phone') {
       if (text.replace(/\D/g, '').length < 7) {
-        await guideSay(
+        await guideError(
           'That phone number looks incomplete. Please include the area code.',
           'angela',
-          260,
         );
         return;
       }
@@ -1107,7 +1751,8 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
   }
 
   async function uploadFile(file?: File) {
-    if (!file || !supabase)
+    if (!file) return;
+    if (!supabase)
       return setNotice('Sign in to your MRX account before uploading a private document.');
     if (
       !['application/pdf', 'image/jpeg', 'image/png'].includes(file.type) ||
@@ -1121,11 +1766,26 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
       setUploading(false);
       return setNotice('Sign in to your MRX account before uploading a private document.');
     }
+    const consented = window.confirm(
+      'Allow MRX to securely scan, read, redact sensitive identifiers from, and analyze this document to help answer your mineral-rights questions?',
+    );
+    if (!consented) {
+      setUploading(false);
+      return setNotice('Nothing was uploaded.');
+    }
     try {
       const signedResponse = await fetch('/api/chat/attachments/sign', {
         method: 'POST',
         headers: { Authorization: `Bearer ${accessToken}`, 'Content-Type': 'application/json' },
-        body: JSON.stringify({ filename: file.name, mimeType: file.type, size: file.size }),
+        body: JSON.stringify({
+          filename: file.name,
+          mimeType: file.type,
+          size: file.size,
+          documentType: 'other',
+          documentProcessingConsent: true,
+          disclosureVersion: '2026-07-15-draft',
+          sourceUrl: location.href,
+        }),
       });
       const signed = await signedResponse.json();
       if (!signedResponse.ok) throw new Error(signed.error);
@@ -1139,14 +1799,21 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
         body: JSON.stringify({ attachmentId: signed.attachmentId }),
       });
       const result = await complete.json();
+      if (!complete.ok) throw new Error(result.error || 'processing_not_started');
       setNotice(
-        result.status === 'ready'
-          ? `${file.name} is securely attached.`
-          : `${file.name} was received and is awaiting its security scan.`,
+        result.status === 'quarantined'
+          ? `${file.name} is saved to your private MRX profile and is waiting for its security scan.`
+          : `${file.name} was received and queued for its security scan. I’ll add a document-read summary here as soon as extraction finishes.`,
       );
+      void pollDocumentRead(signed.attachmentId, file.name);
       track('file_uploaded', {
         mime_type: file.type,
         size_bytes: file.size,
+        status: result.status,
+      });
+      track('document_received', {
+        document_type: 'other',
+        mime_type: file.type,
         status: result.status,
       });
     } catch {
@@ -1156,18 +1823,36 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
     }
   }
 
+  async function beginDocumentUpload() {
+    if (!documentProcessingEnabled) {
+      setNotice(
+        'Secure document processing is temporarily unavailable. No file was selected or uploaded. Please try again later.',
+      );
+      return;
+    }
+    if (!supabase || !documentUploadsEnabled) {
+      window.location.assign('/account/?upload=1');
+      return;
+    }
+    const { data } = await supabase.auth.getSession();
+    if (!data.session) {
+      window.location.assign('/account/?upload=1');
+      return;
+    }
+    fileInputRef.current?.click();
+  }
+
   const quickReplies = useMemo(() => {
     if (typingPersona || sending || booking)
       return [] as Array<{ label: string; value: string; kind?: string }>;
-    if (step === 'intro-name') return [{ label: 'Skip for now', value: 'skip' }];
-    if (step === 'intro-location') return [{ label: 'I’m not sure yet', value: 'unknown' }];
+    if (step === 'intro-phone') return [{ label: 'Skip phone', value: 'skip' }];
     if (step === 'open')
       return lastAnswer
         ? [
             { label: 'Send me this answer', value: 'send', kind: 'primary' },
             ...(bookedAppointment ? [] : [{ label: 'Talk to a live underwriter', value: 'book' }]),
           ]
-        : starters.map(([label]) => ({ label, value: label }));
+        : [];
     if (step === 'delivery-channel')
       return [
         { label: 'Email it', value: 'email' },
@@ -1177,9 +1862,14 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
       ];
     if (
       step === 'delivery-consent' ||
+      step === 'intro-email-consent' ||
+      step === 'intro-sms-consent' ||
+      step === 'intro-call-consent' ||
+      step === 'intro-ai-voice-consent' ||
       step === 'booking-call-consent' ||
       step === 'booking-email-consent' ||
-      step === 'booking-sms-consent'
+      step === 'booking-sms-consent' ||
+      step === 'booking-ai-voice-consent'
     )
       return [
         { label: 'Yes', value: 'yes', kind: 'primary' },
@@ -1188,7 +1878,7 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
     if (step === 'booking-timezone')
       return [
         {
-          label: `Yes—${timezoneLabel(profile.timezone)}`,
+          label: `Yes, ${timezoneLabel(profile.timezone)}`,
           value: 'timezone-confirm',
           kind: 'primary',
         },
@@ -1217,7 +1907,13 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
   const placeholder: Record<ConversationStep, string> = {
     loading: 'Connecting…',
     'intro-name': 'Type your first name…',
-    'intro-location': 'State and county…',
+    'intro-last-name': 'Type your last name…',
+    'intro-email': 'Your email address…',
+    'intro-phone': 'Phone number or “skip”…',
+    'intro-email-consent': 'Yes or no…',
+    'intro-sms-consent': 'Yes or no…',
+    'intro-call-consent': 'Yes or no…',
+    'intro-ai-voice-consent': 'Yes or no…',
     open: 'Ask Tommy anything about your minerals…',
     'delivery-channel': 'Email, text, or both…',
     'delivery-email': 'Your email address…',
@@ -1227,17 +1923,31 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
     'booking-window': 'Afternoon or evening…',
     'booking-slots': 'Choose a time…',
     'booking-name': 'Your first name…',
-    'booking-email': 'Email or “skip”…',
+    'booking-email': 'Your email address…',
     'booking-phone': 'Phone number with area code…',
     'booking-call-consent': 'Yes or no…',
     'booking-email-consent': 'Yes or no…',
     'booking-sms-consent': 'Yes or no…',
+    'booking-ai-voice-consent': 'Yes or no…',
     'booking-help': 'Tell Angela what you need help with…',
   };
   const composerInputId = `tommy-question-${step}`;
-  const isEmailStep = step === 'delivery-email' || step === 'booking-email';
-  const isPhoneStep = step === 'delivery-phone' || step === 'booking-phone';
-  const isNameStep = step === 'intro-name' || step === 'booking-name';
+  const isEmailStep =
+    step === 'intro-email' || step === 'delivery-email' || step === 'booking-email';
+  const isPhoneStep =
+    step === 'intro-phone' || step === 'delivery-phone' || step === 'booking-phone';
+  const isNameStep = step === 'intro-name' || step === 'intro-last-name' || step === 'booking-name';
+  const showAccountPrompt =
+    step === 'open' &&
+    Boolean(lastAnswer?.content) &&
+    !ownerAuthenticated &&
+    !accountPromptDismissed;
+
+  function closeChat() {
+    const browserWindow = window as typeof window & { __mrxChatOpenRequested?: boolean };
+    browserWindow.__mrxChatOpenRequested = false;
+    setOpen(false);
+  }
 
   return (
     <>
@@ -1248,6 +1958,12 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
           data-chat-ready={sessionReady ? 'true' : 'false'}
           type="button"
           onClick={() => {
+            const browserWindow = window as typeof window & {
+              __mrxChatOpenRequested?: boolean;
+            };
+            browserWindow.__mrxChatOpenRequested = true;
+            beginGuideResponseWindow();
+            if (!introStarted.current) setTypingPersona('tommy');
             setOpen(true);
             track('ask_tommy_open', { source: 'floating_button' });
           }}
@@ -1266,7 +1982,7 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
       {open && (
         <div
           className="tommy-backdrop"
-          onMouseDown={(event) => event.target === event.currentTarget && setOpen(false)}
+          onMouseDown={(event) => event.target === event.currentTarget && closeChat()}
         >
           <section
             className="tommy-panel"
@@ -1277,14 +1993,14 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
           >
             <header className="tommy-panel__head">
               <span className="tommy-avatar">
-                <img src={personaAvatar(activePersona)} alt="" />
+                <img src={personaAvatar(activePersona)} alt="" onError={recoverAvatar} />
                 <i aria-hidden="true" />
               </span>
               <div>
                 <strong id="tommy-title">Talking with {personaLabels[activePersona]}</strong>
                 <span>{personaRole(activePersona)} · Here now</span>
               </div>
-              <button type="button" onClick={() => setOpen(false)} aria-label="Close Ask Tommy">
+              <button type="button" onClick={closeChat} aria-label="Close Ask Tommy">
                 ×
               </button>
             </header>
@@ -1293,37 +2009,52 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
               advice.
             </div>
             <div className="tommy-messages" aria-live="polite">
-              {messages.map((message) =>
-                message.role === 'assistant' ? (
-                  <div className="tommy-message-row" key={message.id}>
-                    <img src={personaAvatar(message.persona || 'tommy')} alt="" />
-                    <article className="tommy-message tommy-message--assistant">
-                      <small>{getGuideChatLabel(message.persona || 'tommy')}</small>
-                      <p>
-                        {message.content || (sending ? 'Thinking through what you shared…' : '')}
-                      </p>
-                      {!!message.citations?.length && (
-                        <details className="tommy-citations">
-                          <summary>Source used</summary>
-                          <a href={message.citations[0].url} target="_blank" rel="noreferrer">
-                            {message.citations[0].title}
+              {messages
+                .filter((message) => message.role === 'user' || Boolean(message.content))
+                .map((message) =>
+                  message.role === 'assistant' ? (
+                    <div className="tommy-message-row" key={message.id}>
+                      <img src={personaAvatar(message.persona)} alt="" onError={recoverAvatar} />
+                      <article className="tommy-message tommy-message--assistant">
+                        <small>{getGuideChatLabel(message.persona || 'tommy')}</small>
+                        <p>{message.content}</p>
+                        {!!message.citations?.length && (
+                          <details className="tommy-citations">
+                            <summary>Source used</summary>
+                            <a href={message.citations[0].url} target="_blank" rel="noreferrer">
+                              {message.citations[0].title}
+                            </a>
+                          </details>
+                        )}
+                        {message.locationCard && (
+                          <a
+                            className="tommy-location-card"
+                            href={message.locationCard.url}
+                            target="_blank"
+                            rel="noreferrer"
+                          >
+                            <strong>Open map for {message.locationCard.label}</strong>
+                            <span>
+                              {message.locationCard.precision} location
+                              {message.locationCard.basin ? ` · ${message.locationCard.basin}` : ''}
+                            </span>
+                            {message.locationCard.note && <em>{message.locationCard.note}</em>}
                           </a>
-                        </details>
-                      )}
+                        )}
+                      </article>
+                    </div>
+                  ) : (
+                    <article key={message.id} className="tommy-message tommy-message--user">
+                      <p>{message.content}</p>
                     </article>
-                  </div>
-                ) : (
-                  <article key={message.id} className="tommy-message tommy-message--user">
-                    <p>{message.content}</p>
-                  </article>
-                ),
-              )}
+                  ),
+                )}
               {typingPersona && (
                 <div
                   className="tommy-message-row tommy-message-row--typing"
                   aria-label={`${personaLabels[typingPersona]} is typing`}
                 >
-                  <img src={`/assets/team/${typingPersona}-128.webp`} alt="" />
+                  <img src={personaAvatar(typingPersona)} alt="" onError={recoverAvatar} />
                   <div className="tommy-typing">
                     <span />
                     <span />
@@ -1354,6 +2085,27 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
                   ))}
                 </div>
               )}
+              {showAccountPrompt && (
+                <aside className="tommy-account-prompt" data-testid="tommy-account-prompt">
+                  <div>
+                    <strong>
+                      Keep this conversation and any mineral-rights documents together
+                    </strong>
+                    <p>
+                      Create or log in to one secure MRX owner profile so your paperwork, uploaded
+                      documents, saved questions, and property details are there when you return.
+                      Shared records can support a more exact underwriter review or assessment, but
+                      MRX does not guarantee a value, quote, offer, or outcome.
+                    </p>
+                  </div>
+                  <span>
+                    <a href="/account/?welcome=conversation">Log in or create an account</a>
+                    <button type="button" onClick={() => setAccountPromptDismissed(true)}>
+                      Keep chatting for now
+                    </button>
+                  </span>
+                </aside>
+              )}
               {notice && <p className="tommy-notice">{notice}</p>}
               <div ref={endRef} />
             </div>
@@ -1382,7 +2134,7 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
                   onChange={(event) => setInput(event.target.value)}
                   placeholder={placeholder[step]}
                   maxLength={4000}
-                  disabled={step === 'loading'}
+                  disabled={step === 'loading' || Boolean(typingPersona) || sending || booking}
                 />
                 <button
                   type="submit"
@@ -1392,26 +2144,55 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
                   ↑
                 </button>
               </form>
-              <div>
-                <label className="tommy-upload">
-                  <input
-                    type="file"
-                    accept=".pdf,.jpg,.jpeg,.png"
-                    onChange={(event) => uploadFile(event.target.files?.[0])}
-                    disabled={uploading}
-                  />
-                  {uploading ? 'Uploading…' : 'Attach a document'}
-                </label>
+              <div className="tommy-composer__actions">
+                <input
+                  ref={fileInputRef}
+                  className="tommy-file-input"
+                  type="file"
+                  accept=".pdf,.jpg,.jpeg,.png"
+                  onChange={(event) => {
+                    const file = event.currentTarget.files?.[0];
+                    event.currentTarget.value = '';
+                    void uploadFile(file);
+                  }}
+                  disabled={uploading || !documentProcessingEnabled}
+                  tabIndex={-1}
+                />
+                <button
+                  type="button"
+                  className="tommy-footer-action tommy-footer-action--document"
+                  data-testid="tommy-document-button"
+                  onClick={beginDocumentUpload}
+                  disabled={uploading || !documentProcessingEnabled}
+                  title={
+                    documentProcessingEnabled
+                      ? 'Upload a private document for security scanning'
+                      : 'Secure document processing is temporarily unavailable'
+                  }
+                >
+                  {uploading
+                    ? 'Uploading…'
+                    : documentProcessingEnabled
+                      ? 'Upload a document'
+                      : 'Document uploads unavailable'}
+                </button>
                 {bookedAppointment ? (
-                  <span
-                    className="tommy-appointment-status"
+                  <button
+                    type="button"
+                    className="tommy-footer-action tommy-appointment-status"
                     data-testid="tommy-appointment-status"
                     title={bookedAppointment.label}
+                    onClick={() => window.location.assign('/account/')}
                   >
                     ✓ Call booked
-                  </span>
+                  </button>
                 ) : (
-                  <button type="button" onClick={beginBooking}>
+                  <button
+                    type="button"
+                    className="tommy-footer-action tommy-footer-action--appointment"
+                    onClick={beginBooking}
+                    disabled={Boolean(typingPersona) || booking}
+                  >
                     Talk to a live underwriter
                   </button>
                 )}

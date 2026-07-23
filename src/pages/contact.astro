@@ -1,0 +1,364 @@
+---
+import MarketingLayout from '../layouts/MarketingLayout.astro';
+import { SITE } from '../lib/site';
+
+export const prerender = true;
+
+const emailHref = `mailto:${SITE.email}?subject=${encodeURIComponent('Question for the MRX underwriter team')}`;
+---
+
+<MarketingLayout
+  title="Contact Mineral Rights Xchange"
+  description="Contact the Mineral Rights Xchange underwriter team, ask Tommy a mineral-rights question, or arrange a scheduled phone conversation."
+  path="/contact/"
+  pageType="marketing"
+  pageCategory="contact"
+  breadcrumbs={[
+    { name: 'Home', path: '/' },
+    { name: 'Contact Us', path: '/contact/' },
+  ]}
+>
+  <div class="contact-page">
+    <section class="contact-hero" aria-labelledby="contact-title">
+      <div class="container contact-hero__grid">
+        <div>
+          <p class="mrx-eyebrow">Contact Mineral Rights Xchange</p>
+          <h1 id="contact-title">Start with the question that brought you here.</h1>
+          <p class="contact-hero__lede">
+            Reach the MRX underwriter team by email, ask Tommy for immediate educational help, or
+            arrange a scheduled phone conversation. There is no obligation to sell.
+          </p>
+        </div>
+        <aside class="contact-hero__note" aria-label="MRX contact guidance">
+          <span>Serving mineral owners nationwide</span>
+          <strong>Clear next steps, without the pressure.</strong>
+          <p>
+            General questions are welcome. For legal, tax, title, or accounting conclusions, MRX
+            will encourage you to speak with an appropriately qualified professional.
+          </p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="contact-options" aria-labelledby="contact-options-title">
+      <div class="container">
+        <div class="contact-options__heading">
+          <p class="mrx-eyebrow">Choose the best route</p>
+          <h2 id="contact-options-title">Three simple ways to get in touch.</h2>
+        </div>
+
+        <div class="contact-options__grid">
+          <article class="contact-card contact-card--featured">
+            <span class="contact-card__number" aria-hidden="true">01</span>
+            <p class="contact-card__label">Email the underwriter team</p>
+            <h3>Send a general question</h3>
+            <p>
+              Use email for questions about MRX, an article, an existing conversation, or the next
+              step in the review process.
+            </p>
+            <address>
+              <a href={emailHref}>{SITE.email}</a>
+            </address>
+          </article>
+
+          <article class="contact-card">
+            <span class="contact-card__number" aria-hidden="true">02</span>
+            <p class="contact-card__label">Ask online</p>
+            <h3>Start with Tommy</h3>
+            <p>
+              Ask a mineral-rights question in plain language and get educational guidance before
+              deciding whether you need a phone conversation.
+            </p>
+            <button type="button" data-contact-chat>Ask Tommy a question</button>
+          </article>
+
+          <article class="contact-card">
+            <span class="contact-card__number" aria-hidden="true">03</span>
+            <p class="contact-card__label">Talk by phone</p>
+            <h3>Arrange a conversation</h3>
+            <p>
+              Tell Angela your timezone and preferred part of the day. She will show available times
+              for a scheduled phone conversation.
+            </p>
+            <a href="/book/">Find a phone time</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-expectations" aria-labelledby="contact-expectations-title">
+      <div class="container contact-expectations__grid">
+        <div>
+          <p class="mrx-eyebrow">Before you send anything</p>
+          <h2 id="contact-expectations-title">Keep sensitive records in the private workflow.</h2>
+        </div>
+        <div>
+          <p>
+            Please do not email Social Security numbers, bank details, tax identification numbers,
+            or unredacted identity documents. Ask Tommy first or use your private MRX account when
+            the team requests documents for a review.
+          </p>
+          <div class="contact-expectations__links">
+            <a href="/account/">Open your private account</a>
+            <a href="/privacy-policy">Read the privacy policy</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</MarketingLayout>
+
+<script>
+  document.querySelectorAll<HTMLElement>('[data-contact-chat]').forEach((button) => {
+    button.addEventListener('click', () => {
+      window.dispatchEvent(new CustomEvent('mrx:open-chat'));
+    });
+  });
+</script>
+
+<style>
+  .contact-page {
+    color: var(--mrx-navy);
+    background: var(--mrx-cream);
+  }
+
+  .contact-hero {
+    padding: clamp(2.4rem, 5vw, 5.2rem) 0;
+    border-bottom: 1px solid var(--mrx-line);
+    background:
+      radial-gradient(circle at 85% 18%, rgba(215, 154, 43, 0.18), transparent 29%),
+      linear-gradient(145deg, #fffaf1, #ece6d9);
+  }
+
+  .contact-hero__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.65fr);
+    gap: clamp(2rem, 6vw, 5rem);
+    align-items: center;
+  }
+
+  .contact-hero h1 {
+    max-width: 830px;
+    font-size: clamp(2.45rem, 5.4vw, 5rem);
+    line-height: 0.94;
+    letter-spacing: -0.055em;
+  }
+
+  .contact-hero__lede {
+    max-width: 720px;
+    margin-top: 1.2rem;
+    color: #4d626f;
+    font-size: clamp(1rem, 1.35vw, 1.13rem);
+    line-height: 1.68;
+  }
+
+  .contact-hero__note {
+    display: grid;
+    gap: 0.65rem;
+    padding: clamp(1.35rem, 3vw, 2rem);
+    border: 1px solid rgba(215, 154, 43, 0.58);
+    border-radius: 22px;
+    background: var(--mrx-navy);
+    color: #fff;
+    box-shadow: 0 26px 65px rgba(7, 30, 52, 0.18);
+  }
+
+  .contact-hero__note span,
+  .contact-card__label {
+    color: var(--mrx-gold);
+    font-size: 0.72rem;
+    font-weight: 850;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .contact-hero__note strong {
+    font-family: var(--font-serif);
+    font-size: clamp(1.45rem, 2.4vw, 2rem);
+    line-height: 1.05;
+  }
+
+  .contact-hero__note p {
+    color: #d7e0e6;
+    font-size: 0.9rem;
+    line-height: 1.62;
+  }
+
+  .contact-options {
+    padding: clamp(2.8rem, 6vw, 5.5rem) 0;
+  }
+
+  .contact-options__heading {
+    max-width: 760px;
+    margin-bottom: 1.6rem;
+  }
+
+  .contact-options__heading h2,
+  .contact-expectations h2 {
+    font-size: clamp(1.9rem, 3.7vw, 3.35rem);
+    line-height: 1;
+    letter-spacing: -0.045em;
+  }
+
+  .contact-options__grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  .contact-card {
+    display: flex;
+    min-height: 340px;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: clamp(1.25rem, 2.6vw, 1.8rem);
+    border: 1px solid var(--mrx-line);
+    border-radius: 20px;
+    background: #fff;
+    box-shadow: 0 16px 38px rgba(7, 30, 52, 0.065);
+  }
+
+  .contact-card--featured {
+    border-color: rgba(215, 154, 43, 0.65);
+    background: #fffaf0;
+  }
+
+  .contact-card__number {
+    display: grid;
+    width: 38px;
+    height: 38px;
+    margin-bottom: 1.2rem;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--mrx-navy);
+    color: var(--mrx-gold);
+    font-size: 0.72rem;
+    font-weight: 850;
+  }
+
+  .contact-card h3 {
+    margin: 0.5rem 0 0.75rem;
+    font-size: clamp(1.4rem, 2.2vw, 1.85rem);
+  }
+
+  .contact-card > p:not(.contact-card__label) {
+    color: #536773;
+    line-height: 1.62;
+  }
+
+  .contact-card address {
+    max-width: 100%;
+    margin-top: auto;
+    font-style: normal;
+  }
+
+  .contact-card a,
+  .contact-card button {
+    margin-top: auto;
+    color: #8a5b13;
+    font-size: 0.88rem;
+    font-weight: 850;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.28rem;
+    overflow-wrap: anywhere;
+  }
+
+  .contact-card button {
+    border: 0;
+    background: transparent;
+    padding: 0;
+  }
+
+  .contact-card a:hover,
+  .contact-card button:hover {
+    color: var(--mrx-navy);
+  }
+
+  .contact-expectations {
+    padding: clamp(2.6rem, 5vw, 4.8rem) 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    background: var(--mrx-navy);
+    color: #fff;
+  }
+
+  .contact-expectations__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(320px, 1fr);
+    gap: clamp(2rem, 6vw, 5rem);
+    align-items: start;
+  }
+
+  .contact-expectations .mrx-eyebrow {
+    color: var(--mrx-gold);
+  }
+
+  .contact-expectations h2 {
+    color: #fff;
+  }
+
+  .contact-expectations__grid > div:last-child > p {
+    color: #d7e0e6;
+    line-height: 1.7;
+  }
+
+  .contact-expectations__links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 1.25rem;
+    margin-top: 1.3rem;
+  }
+
+  .contact-expectations__links a {
+    color: #f2c66f;
+    font-weight: 800;
+    text-underline-offset: 0.25rem;
+  }
+
+  .contact-expectations__links a:hover {
+    color: #fff;
+  }
+
+  @media (max-width: 920px) {
+    .contact-hero__grid,
+    .contact-expectations__grid {
+      grid-template-columns: 1fr;
+    }
+
+    .contact-options__grid {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .contact-card--featured {
+      grid-column: 1 / -1;
+    }
+  }
+
+  @media (max-width: 620px) {
+    .contact-hero {
+      padding: 2rem 0 2.4rem;
+    }
+
+    .contact-hero h1 {
+      font-size: clamp(2.3rem, 12vw, 3.3rem);
+    }
+
+    .contact-options__grid {
+      grid-template-columns: 1fr;
+    }
+
+    .contact-card--featured {
+      grid-column: auto;
+    }
+
+    .contact-card {
+      min-height: 0;
+    }
+
+    .contact-card a,
+    .contact-card button,
+    .contact-card address {
+      margin-top: 1.25rem;
+    }
+  }
+</style>

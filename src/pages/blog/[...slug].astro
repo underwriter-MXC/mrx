@@ -5,109 +5,148 @@ export const prerender = true;
  * Post detail. Renders /blog/[...slug]. Posts come from src/content/posts/.
  */
 import { getCollection, getEntry, type CollectionEntry } from 'astro:content';
-import PostLayout from '../../layouts/PostLayout.astro';
-import Prose from '../../components/prose/Prose.astro';
-import AuthorByline from '../../components/molecules/AuthorByline.astro';
-import CtaBlock from '../../components/molecules/CtaBlock.astro';
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
 import JsonLd from '../../components/seo/JsonLd.astro';
 import PostCard from '../../components/organisms/PostCard.astro';
 import Heading from '../../components/atoms/Heading.astro';
 import { article } from '../../structured-data/article';
 import { SITE } from '../../lib/site';
 import Text from '../../components/atoms/Text.astro';
+import { getGuide } from '../../data/guides';
+import {
+  articleCta,
+  isPublishedPost,
+  relatedPosts,
+  resolveInternalLinks,
+  resolvePillar,
+} from '../../lib/content-graph';
+import { faqPage } from '../../structured-data/faq';
+import { buildArticleTitle } from '../../lib/seo';
+import { resolveArticleMeasurementContext } from '../../lib/ga4-measurement';
 
 export async function getStaticPaths() {
-  const posts = await getCollection('posts', (p) => !p.data.draft);
+  const posts = await getCollection('posts', isPublishedPost);
   return posts.map((post) => ({
     params: { slug: post.id.replace(/\.mdx?$/, '') },
-    props: { post, allPosts: posts },
+    props: {
+      post,
+      related: relatedPosts(post, posts, 4),
+      internalLinks: resolveInternalLinks(post, posts),
+    },
   }));
 }
 
 interface Props {
   post: CollectionEntry<'posts'>;
-  allPosts: CollectionEntry<'posts'>[];
+  related: CollectionEntry<'posts'>[];
+  internalLinks: import('../../lib/content-graph').ResolvedInternalLinks;
 }
 
-const { post, allPosts } = Astro.props;
+const { post, related, internalLinks } = Astro.props;
 const { Content } = await post.render();
 const slug = post.id.replace(/\.mdx?$/, '');
 
 // Article JSON-LD (per SEO plan §2.4)
 const authorEntry = await getEntry(post.data.author);
 const authorName = authorEntry?.data.name ?? 'MRX Editorial Team';
-const authorHref = '/authors/mrx-editorial-team/';
-const authorUrlId = `${SITE.url}${authorHref}#author`;
+const authorSlug = authorEntry?.id.replace(/\.mdx?$/, '') ?? 'mrx-editorial-team';
+const authorHref = `/authors/${authorSlug}/`;
+const authorDescription =
+  authorEntry?.data.description ??
+  'The Mineral Rights Xchange editorial organization responsible for publication and review.';
+const articleGuide =
+  getGuide(authorSlug) ?? getGuide(post.data.featured_guide) ?? getGuide('tommy');
+if (!articleGuide) throw new Error('The default MRX topic guide is missing.');
+const editorialAuthor = await getEntry('authors', 'mrx-editorial-team');
+const editorialAuthorName = editorialAuthor?.data.name ?? 'MRX Editorial Team';
+const editorialAuthorUrlId = `${SITE.url}/authors/mrx-editorial-team/#author`;
 const heroImageUrl = post.data.hero_image.src.startsWith('http')
   ? post.data.hero_image.src
   : `${SITE.url}${post.data.hero_image.src}`;
-const articleJsonLd = article({ ...post.data, slug }, authorUrlId, heroImageUrl, authorName);
-
-// Internal linking (per SEO plan §4): surface related posts in the
-// same category, excluding the current post. Cap at 3 to keep the
-// section scannable.
-const related = allPosts
-  .filter((p) => p.id !== post.id && p.data.category === post.data.category && !p.data.draft)
-  .sort((a, b) => new Date(b.data.published_at).getTime() - new Date(a.data.published_at).getTime())
-  .slice(0, 3);
+const articleJsonLd = article(
+  { ...post.data, slug },
+  editorialAuthorUrlId,
+  heroImageUrl,
+  editorialAuthorName,
+);
+const pillar = resolvePillar(post);
+const cta = articleCta(post);
+const seoTitle = buildArticleTitle(post.data.title, post.data.seo_title);
+// Article GA4 measurement context. The public /blog/[...slug] route only
+// renders published posts (see isPublishedPost above); noindex-stage pilot
+// rows never reach this route. The resolver collapses unknown values to
+// null per the mrx1000-ga4-v1.1.0 contract.
+const measurement = resolveArticleMeasurementContext({
+  noindex: post.data.noindex === true,
+  contentProgram: post.data.content_program ?? null,
+  contentCluster: post.data.content_cluster ?? null,
+  contentIntent: post.data.content_intent ?? post.data.search_intent ?? null,
+  contentAuthor: authorSlug,
+  contentGuide: articleGuide?.slug ?? null,
+  contentBatch: post.data.content_batch ?? null,
+});
 ---
 
-<PostLayout
-  title={`${post.data.title} · MRX`}
+<ArticleLayout
+  title={seoTitle}
   description={post.data.description}
   path={`/blog/${slug}/`}
-  pageType="post"
   pageCategory={post.data.category}
+  articleTitle={post.data.title}
+  excerpt={post.data.excerpt}
+  heroImage={post.data.hero_image}
+  authorName={authorName}
+  authorHref={authorHref}
+  authorDescription={authorDescription}
+  publishedAt={post.data.published_at}
+  reviewedAt={post.data.reviewed_at}
+  updatedAt={post.data.updated_at}
+  readingMinutes={Math.max(1, Math.round(post.body.split(/\s+/).length / 220))}
+  guide={articleGuide}
   breadcrumbs={[
     { name: 'Home', path: '/' },
-    { name: 'Blog', path: '/blog' },
+    { name: 'Learning Center', path: '/learning-center/' },
+    { name: pillar.label, path: pillar.path },
     { name: post.data.title, path: `/blog/${slug}/` },
   ]}
   disclaimerTop={post.data.disclaimer_top}
+  primaryCta={{
+    label: cta.label,
+    href: cta.href,
+    ctaName: `post-${slug}-cta-review`,
+  }}
+  askCtaName={`post-${slug}-cta-ask-tommy`}
+  internalLinks={internalLinks}
+  answerSummary={post.data.answer_summary}
+  keyTakeaways={post.data.key_takeaways}
+  faq={post.data.faq}
+  sources={post.data.sources}
+  tommyPrompt={cta.prompt}
+  measurement={measurement}
 >
-  <JsonLd data={articleJsonLd} />
-
-  <section class="container container--prose section--sm">
-    <h1 style="font-size: var(--fs-4xl); line-height: var(--lh-tight); margin-bottom: var(--space-4);">{post.data.title}</h1>
-    <AuthorByline
-      authorName={authorName}
-      authorHref={authorHref}
-      publishedAt={post.data.published_at}
-      reviewedAt={post.data.reviewed_at}
-      readingMinutes={Math.max(1, Math.round(post.body.split(/\s+/).length / 220))}
-    />
-    <Text class="text--lead" style="margin-top: var(--space-4); margin-bottom: var(--space-6); font-style: italic;">{post.data.excerpt}</Text>
-  </section>
-
-  <section class="container container--prose section--sm">
-    <Prose>
-      <Content />
-    </Prose>
-  </section>
+  <JsonLd slot="structured-data" data={articleJsonLd} />
+  {post.data.faq.length > 0 && <JsonLd slot="structured-data" data={faqPage(post.data.faq)} />}
+  <Content />
 
   {
     related.length > 0 && (
-      <section class="container section--sm" aria-labelledby="related-posts-heading">
-        <Heading level={2} size="2xl" id="related-posts-heading">Related guides</Heading>
-        <Text class="text--lead" style="margin-top: var(--space-2); max-width: 60ch;">
+      <Fragment slot="related">
+        <Heading level={2} size="2xl" id="related-posts-heading">
+          Related articles
+        </Heading>
+        <Text
+          class="text--lead"
+          style="margin-top: var(--space-2); max-width: 60ch; font-size: var(--fs-base);"
+        >
           More plain-language explainers in the same topic area.
         </Text>
-        <div class="grid grid--3" style="margin-top: var(--space-6); gap: var(--space-5);">
+        <div class="grid grid--3" style="margin-top: var(--space-4); gap: var(--space-4);">
           {related.map((p) => {
             const pSlug = p.id.replace(/\.mdx?$/, '');
-            return (
-              <PostCard post={{ ...p.data, slug: pSlug }} href={`/blog/${pSlug}/`} />
-            );
+            return <PostCard post={{ ...p.data, slug: pSlug }} href={`/blog/${pSlug}/`} />;
           })}
         </div>
-      </section>
+      </Fragment>
     )
   }
-
-  <CtaBlock
-    title="Want a transparent review of your specific situation?"
-    body="A free, confidential underwriter review. The output is a directional range with the assumptions stated. No card. No obligation."
-    primaryCta={{ label: 'Book My Free Review', href: '/book', ctaName: `post-${slug}-cta-book` }}
-    secondaryCta={{ label: 'Get the Free Guide', href: '/free-guide', ctaName: `post-${slug}-cta-guide` }}
-  />
-</PostLayout>
+</ArticleLayout>

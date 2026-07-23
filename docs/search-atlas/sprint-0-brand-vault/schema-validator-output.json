@@ -1,0 +1,1327 @@
+{
+  "raw_response": {
+    "errors": [],
+    "html": "<html><head><script type=\"application/ld+json\">{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"Organization\",\"@id\":\"https://mineralrightsxchange.com/#org\",\"name\":\"Mineral Rights Xchange\",\"alternateName\":\"MRX\",\"url\":\"https://mineralrightsxchange.com/\",\"logo\":\"https://mineralrightsxchange.com/assets/brand/mrx-logo-color.png\",\"description\":\"Free, no-pressure mineral-rights education for owners comparing offers, inherited interests, royalties, and sell-or-hold decisions across the United States.\",\"foundingDate\":\"2026\",\"sameAs\":[],\"contactPoint\":[{\"@type\":\"ContactPoint\",\"contactType\":\"customer support\",\"email\":\"review@mineralrightsxchange.com\",\"areaServed\":{\"@type\":\"Country\",\"name\":\"United States\"},\"availableLanguage\":[\"English\"]}]},{\"@type\":\"LocalBusiness\",\"@id\":\"https://mineralrightsxchange.com/#local\",\"name\":\"Mineral Rights Xchange\",\"url\":\"https://mineralrightsxchange.com/\",\"image\":\"https://mineralrightsxchange.com/assets/brand/mrx-logo-color.png\",\"description\":\"Free, no-pressure mineral-rights education for owners comparing offers, inherited interests, royalties, and sell-or-hold decisions across the United States.\",\"areaServed\":{\"@type\":\"Country\",\"name\":\"United States\"},\"address\":{\"@type\":\"PostalAddress\",\"addressRegion\":\"TX\",\"addressCountry\":\"US\"},\"parentOrganization\":{\"@id\":\"https://mineralrightsxchange.com/#org\"}},{\"@type\":\"FAQPage\",\"@id\":\"https://mineralrightsxchange.com/how-it-works/#faq\",\"url\":\"https://mineralrightsxchange.com/how-it-works/\",\"mainEntity\":[{\"@type\":\"Question\",\"name\":\"What if I do not have all the documents?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"That is normal. Tell MRX what you have and the team can help identify the next records to request. Many owners start with a royalty check stub or an offer letter.\"}},{\"@type\":\"Question\",\"name\":\"Is the underwriter review a certified appraisal?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"No. MRX describes the review as general educational information and a directional discussion, not a certified appraisal, legal opinion, tax opinion, or promise of a sale price.\"}}]},{\"@type\":\"Article\",\"@id\":\"https://mineralrightsxchange.com/blog/what-to-bring-to-your-underwriter-review-call-essential-documents-and-preparation-guide/#article\",\"headline\":\"What to Bring to Your Underwriter Review Call\",\"description\":\"A preparation guide for mineral owners collecting royalty statements, deeds, leases, offer letters, probate documents, and questions before a free underwriter review.\",\"image\":[\"https://mineralrightsxchange.com/assets/brand/mrx-underwriter-review-og.png\"],\"datePublished\":\"2026-01-01\",\"dateModified\":\"2026-01-01\",\"author\":{\"@type\":\"Organization\",\"@id\":\"https://mineralrightsxchange.com/authors/mrx-editorial-team/#author\",\"name\":\"MRX Editorial Team\",\"url\":\"https://mineralrightsxchange.com/authors/mrx-editorial-team/\"},\"publisher\":{\"@id\":\"https://mineralrightsxchange.com/#org\"},\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"https://mineralrightsxchange.com/blog/what-to-bring-to-your-underwriter-review-call-essential-documents-and-preparation-guide/\"},\"articleSection\":\"selling-process\",\"inLanguage\":\"en-US\",\"isPartOf\":{\"@id\":\"https://mineralrightsxchange.com/#site\"}},{\"@type\":\"BreadcrumbList\",\"@id\":\"https://mineralrightsxchange.com/blog/what-to-bring-to-your-underwriter-review-call-essential-documents-and-preparation-guide/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://mineralrightsxchange.com/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Blog\",\"item\":\"https://mineralrightsxchange.com/blog/\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"What to Bring to Your Underwriter Review Call\",\"item\":\"https://mineralrightsxchange.com/blog/what-to-bring-to-your-underwriter-review-call-essential-documents-and-preparation-guide/\"}]},{\"@type\":\"Person\",\"@id\":\"https://mineralrightsxchange.com/team/#tommy\",\"name\":\"Tommy\",\"alternateName\":\"MRX Offer and Value Guide\",\"description\":\"A clearly labeled MRX AI guide persona for general mineral-owner education; not a human employee, licensed professional, certified appraiser, attorney, or tax advisor.\",\"url\":\"https://mineralrightsxchange.com/team/\",\"image\":\"https://mineralrightsxchange.com/assets/team/tommy-256.webp\",\"worksFor\":{\"@id\":\"https://mineralrightsxchange.com/#org\"}}]}</script></head><body>MRX schema draft validation artifact for task t_eee35875.</body></html>",
+    "isRendered": false,
+    "numObjects": 6,
+    "totalNumErrors": 0,
+    "totalNumWarnings": 0,
+    "tripleGroups": [
+      {
+        "nodes": [
+          {
+            "errors": [],
+            "idProperty": {
+              "begin": 774,
+              "end": 815,
+              "errors": [],
+              "pred": "urn:spore:url",
+              "value": "https://mineralrightsxchange.com/#local"
+            },
+            "nodeProperties": [
+              {
+                "begin": 1151,
+                "end": 1193,
+                "errors": [],
+                "pred": "areaServed",
+                "target": {
+                  "errors": [],
+                  "nodeProperties": [],
+                  "numErrors": 0,
+                  "numWarnings": 0,
+                  "properties": [
+                    {
+                      "begin": 1177,
+                      "end": 1192,
+                      "errors": [],
+                      "pred": "name",
+                      "value": "United States"
+                    }
+                  ],
+                  "typeGroup": "Country",
+                  "types": [
+                    {
+                      "begin": 1160,
+                      "end": 1169,
+                      "errors": [],
+                      "pred": "itemtype",
+                      "value": "Country"
+                    }
+                  ]
+                }
+              },
+              {
+                "begin": 1204,
+                "end": 1272,
+                "errors": [],
+                "pred": "address",
+                "target": {
+                  "errors": [],
+                  "nodeProperties": [
+                    {
+                      "begin": 1267,
+                      "end": 1271,
+                      "errors": [],
+                      "pred": "addressCountry",
+                      "target": {
+                        "errors": [],
+                        "nodeProperties": [],
+                        "numErrors": 0,
+                        "numWarnings": 0,
+                        "properties": [
+                          {
+                            "begin": 1267,
+                            "end": 1271,
+                            "errors": [],
+                            "pred": "name",
+                            "value": "US"
+                          }
+                        ],
+                        "typeGroup": "Country",
+                        "types": [
+                          {
+                            "begin": 1267,
+                            "end": 1271,
+                            "errors": [],
+                            "pred": "itemtype",
+                            "value": "Country"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "numErrors": 0,
+                  "numWarnings": 0,
+                  "properties": [
+                    {
+                      "begin": 1245,
+                      "end": 1249,
+                      "errors": [],
+                      "pred": "addressRegion",
+                      "value": "TX"
+                    }
+                  ],
+                  "typeGroup": "PostalAddress",
+                  "types": [
+                    {
+                      "begin": 1213,
+                      "end": 1228,
+                      "errors": [],
+                      "pred": "itemtype",
+                      "value": "PostalAddress"
+                    }
+                  ]
+                }
+              },
+              {
+                "begin": 1294,
+                "end": 1341,
+                "errors": [],
+                "pred": "parentOrganization",
+                "target": {
+                  "errors": [],
+                  "idProperty": {
+                    "begin": 120,
+                    "end": 159,
+                    "errors": [],
+                    "pred": "urn:spore:url",
+                    "value": "https://mineralrightsxchange.com/#org"
+                  },
+                  "nodeProperties": [
+                    {
+                      "begin": 553,
+                      "end": 740,
+                      "errors": [],
+                      "pred": "contactPoint",
+                      "target": {
+                        "errors": [],
+                        "nodeProperties": [
+                          {
+                            "begin": 665,
+                            "end": 707,
+                            "errors": [],
+                            "pred": "areaServed",
+                            "target": {
+                              "errors": [],
+                              "nodeProperties": [],
+                              "numErrors": 0,
+                              "numWarnings": 0,
+                              "properties": [
+                                {
+                                  "begin": 691,
+                                  "end": 706,
+                                  "errors": [],
+                                  "pred": "name",
+                                  "value": "United States"
+                                }
+                              ],
+                              "typeGroup": "Country",
+                              "types": [
+                                {
+                                  "begin": 674,
+                                  "end": 683,
+                                  "errors": [],
+                                  "pred": "itemtype",
+                                  "value": "Country"
+                                }
+                              ]
+                            }
+                          }
+                        ],
+                        "numErrors": 0,
+                        "numWarnings": 0,
+                        "properties": [
+                          {
+                            "begin": 591,
+                            "end": 609,
+                            "errors": [],
+                            "pred": "contactType",
+                            "value": "customer support"
+                          },
+                          {
+                            "begin": 618,
+                            "end": 651,
+                            "errors": [],
+                            "pred": "email",
+                            "value": "review@mineralrightsxchange.com"
+                          },
+                          {
+                            "begin": 729,
+                            "end": 738,
+                            "errors": [],
+                            "pred": "availableLanguage",
+                            "value": "English"
+                          }
+                        ],
+                        "typeGroup": "ContactPoint",
+                        "types": [
+                          {
+                            "begin": 562,
+                            "end": 576,
+                            "errors": [],
+                            "pred": "itemtype",
+                            "value": "ContactPoint"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "numErrors": 0,
+                  "numWarnings": 0,
+                  "properties": [
+                    {
+                      "begin": 167,
+                      "end": 191,
+                      "errors": [],
+                      "pred": "name",
+                      "value": "Mineral Rights Xchange"
+                    },
+                    {
+                      "begin": 208,
+                      "end": 213,
+                      "errors": [],
+                      "pred": "alternateName",
+                      "value": "MRX"
+                    },
+                    {
+                      "begin": 220,
+                      "end": 255,
+                      "errors": [],
+                      "pred": "url",
+                      "value": "https://mineralrightsxchange.com/"
+                    },
+                    {
+                      "begin": 263,
+                      "end": 329,
+                      "errors": [],
+                      "pred": "logo",
+                      "value": "https://mineralrightsxchange.com/assets/brand/mrx-logo-color.png"
+                    },
+                    {
+                      "begin": 344,
+                      "end": 502,
+                      "errors": [],
+                      "pred": "description",
+                      "value": "Free, no-pressure mineral-rights education for owners comparing offers, inherited interests, royalties, and sell-or-hold decisions across the United States."
+                    },
+                    {
+                      "begin": 518,
+                      "end": 524,
+                      "errors": [],
+                      "pred": "foundingDate",
+                      "value": "2026"
+                    }
+                  ],
+                  "typeGroup": "Organization",
+                  "types": [
+                    {
+                      "begin": 99,
+                      "end": 113,
+                      "errors": [],
+                      "pred": "itemtype",
+                      "value": "Organization"
+                    }
+                  ]
+                }
+              }
+            ],
+            "numErrors": 0,
+            "numWarnings": 0,
+            "properties": [
+              {
+                "begin": 823,
+                "end": 847,
+                "errors": [],
+                "pred": "name",
+                "value": "Mineral Rights Xchange"
+              },
+              {
+                "begin": 854,
+                "end": 889,
+                "errors": [],
+                "pred": "url",
+                "value": "https://mineralrightsxchange.com/"
+              },
+              {
+                "begin": 898,
+                "end": 964,
+                "errors": [],
+                "pred": "image",
+                "value": "https://mineralrightsxchange.com/assets/brand/mrx-logo-color.png"
+              },
+              {
+                "begin": 979,
+                "end": 1137,
+                "errors": [],
+                "pred": "description",
+                "value": "Free, no-pressure mineral-rights education for owners comparing offers, inherited interests, royalties, and sell-or-hold decisions across the United States."
+              }
+            ],
+            "typeGroup": "LocalBusiness",
+            "types": [
+              {
+                "begin": 752,
+                "end": 767,
+                "errors": [],
+                "pred": "itemtype",
+                "value": "LocalBusiness"
+              }
+            ]
+          }
+        ],
+        "numErrors": 0,
+        "numNodesWithError": 0,
+        "numNodesWithWarning": 0,
+        "numWarnings": 0,
+        "ownerSet": {},
+        "type": "LocalBusiness"
+      },
+      {
+        "nodes": [
+          {
+            "errors": [],
+            "idProperty": {
+              "begin": 3211,
+              "end": 3350,
+              "errors": [],
+              "pred": "urn:spore:url",
+              "value": "https://mineralrightsxchange.com/blog/what-to-bring-to-your-underwriter-review-call-essential-documents-and-preparation-guide/#breadcrumb"
+            },
+            "nodeProperties": [
+              {
+                "begin": 3370,
+                "end": 3460,
+                "errors": [],
+                "pred": "itemListElement",
+                "target": {
+                  "errors": [],
+                  "nodeProperties": [
+                    {
+                      "begin": 3424,
+                      "end": 3459,
+                      "errors": [],
+                      "pred": "item",
+                      "target": {
+                        "errors": [],
+                        "idProperty": {
+                          "begin": 3424,
+                          "end": 3459,
+                          "errors": [],
+                          "pred": "urn:spore:url",
+                          "value": "https://mineralrightsxchange.com/"
+                        },
+                        "nodeProperties": [],
+                        "numErrors": 0,
+                        "numWarnings": 0,
+                        "properties": [],
+                        "typeGroup": "Thing",
+                        "types": [
+                          {
+                            "begin": 3424,
+                            "end": 3459,
+                            "errors": [],
+                            "pred": "itemtype",
+                            "value": "Thing"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "numErrors": 0,
+                  "numWarnings": 0,
+                  "properties": [
+                    {
+                      "begin": 3401,
+                      "end": 3402,
+                      "errors": [],
+                      "pred": "position",
+                      "value": "1"
+                    },
+                    {
+                      "begin": 3410,
+                      "end": 3416,
+                      "errors": [],
+                      "pred": "name",
+                      "value": "Home"
+                    }
+                  ],
+                  "typeGroup": "ListItem",
+                  "types": [
+                    {
+                      "begin": 3379,
+                      "end": 3389,
+                      "errors": [],
+                      "pred": "itemtype",
+                      "value": "ListItem"
+                    }
+                  ]
+                }
+              },
+              {
+                "begin": 3461,
+                "end": 3556,
+                "errors": [],
+                "pred": "itemListElement",
+                "target": {
+                  "errors": [],
+                  "nodeProperties": [
+                    {
+                      "begin": 3515,
+                      "end": 3555,
+                      "errors": [],
+                      "pred": "item",
+                      "target": {
+                        "errors": [],
+                        "idProperty": {
+                          "begin": 3515,
+                          "end": 3555,
+                          "errors": [],
+                          "pred": "urn:spore:url",
+                          "value": "https://mineralrightsxchange.com/blog/"
+                        },
+                        "nodeProperties": [],
+                        "numErrors": 0,
+                        "numWarnings": 0,
+                        "properties": [],
+                        "typeGroup": "Thing",
+                        "types": [
+                          {
+                            "begin": 3515,
+                            "end": 3555,
+                            "errors": [],
+                            "pred": "itemtype",
+                            "value": "Thing"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "numErrors": 0,
+                  "numWarnings": 0,
+                  "properties": [
+                    {
+                      "begin": 3492,
+                      "end": 3493,
+                      "errors": [],
+                      "pred": "position",
+                      "value": "2"
+                    },
+                    {
+                      "begin": 3501,
+                      "end": 3507,
+                      "errors": [],
+                      "pred": "name",
+                      "value": "Blog"
+                    }
+                  ],
+                  "typeGroup": "ListItem",
+                  "types": [
+                    {
+                      "begin": 3470,
+                      "end": 3480,
+                      "errors": [],
+                      "pred": "itemtype",
+                      "value": "ListItem"
+                    }
+                  ]
+                }
+              },
+              {
+                "begin": 3557,
+                "end": 3781,
+                "errors": [],
+                "pred": "itemListElement",
+                "target": {
+                  "errors": [],
+                  "nodeProperties": [
+                    {
+                      "begin": 3652,
+                      "end": 3780,
+                      "errors": [],
+                      "pred": "item",
+                      "target": {
+                        "errors": [],
+                        "idProperty": {
+                          "begin": 3652,
+                          "end": 3780,
+                          "errors": [],
+                          "pred": "urn:spore:url",
+                          "value": "https://mineralrightsxchange.com/blog/what-to-bring-to-your-underwriter-review-call-essential-documents-and-preparation-guide/"
+                        },
+                        "nodeProperties": [],
+                        "numErrors": 0,
+                        "numWarnings": 0,
+                        "properties": [],
+                        "typeGroup": "Thing",
+                        "types": [
+                          {
+                            "begin": 3652,
+                            "end": 3780,
+                            "errors": [],
+                            "pred": "itemtype",
+                            "value": "Thing"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "numErrors": 0,
+                  "numWarnings": 0,
+                  "properties": [
+                    {
+                      "begin": 3588,
+                      "end": 3589,
+                      "errors": [],
+                      "pred": "position",
+                      "value": "3"
+                    },
+                    {
+                      "begin": 3597,
+                      "end": 3644,
+                      "errors": [],
+                      "pred": "name",
+                      "value": "What to Bring to Your Underwriter Review Call"
+                    }
+                  ],
+                  "typeGroup": "ListItem",
+                  "types": [
+                    {
+                      "begin": 3566,
+                      "end": 3576,
+                      "errors": [],
+                      "pred": "itemtype",
+                      "value": "ListItem"
+                    }
+                  ]
+                }
+              }
+            ],
+            "numErrors": 0,
+            "numWarnings": 0,
+            "properties": [],
+            "typeGroup": "BreadcrumbList",
+            "types": [
+              {
+                "begin": 3188,
+                "end": 3204,
+                "errors": [],
+                "pred": "itemtype",
+                "value": "BreadcrumbList"
+              }
+            ]
+          }
+        ],
+        "numErrors": 0,
+        "numNodesWithError": 0,
+        "numNodesWithWarning": 0,
+        "numWarnings": 0,
+        "ownerSet": {},
+        "type": "BreadcrumbList"
+      },
+      {
+        "nodes": [
+          {
+            "errors": [],
+            "idProperty": {
+              "begin": 2097,
+              "end": 2233,
+              "errors": [],
+              "pred": "urn:spore:url",
+              "value": "https://mineralrightsxchange.com/blog/what-to-bring-to-your-underwriter-review-call-essential-documents-and-preparation-guide/#article"
+            },
+            "nodeProperties": [
+              {
+                "begin": 2630,
+                "end": 2827,
+                "errors": [],
+                "pred": "author",
+                "target": {
+                  "errors": [],
+                  "idProperty": {
+                    "begin": 2660,
+                    "end": 2729,
+                    "errors": [],
+                    "pred": "urn:spore:url",
+                    "value": "https://mineralrightsxchange.com/authors/mrx-editorial-team/#author"
+                  },
+                  "nodeProperties": [],
+                  "numErrors": 0,
+                  "numWarnings": 0,
+                  "properties": [
+                    {
+                      "begin": 2737,
+                      "end": 2757,
+                      "errors": [],
+                      "pred": "name",
+                      "value": "MRX Editorial Team"
+                    },
+                    {
+                      "begin": 2764,
+                      "end": 2826,
+                      "errors": [],
+                      "pred": "url",
+                      "value": "https://mineralrightsxchange.com/authors/mrx-editorial-team/"
+                    }
+                  ],
+                  "typeGroup": "Organization",
+                  "types": [
+                    {
+                      "begin": 2639,
+                      "end": 2653,
+                      "errors": [],
+                      "pred": "itemtype",
+                      "value": "Organization"
+                    }
+                  ]
+                }
+              },
+              {
+                "begin": 2840,
+                "end": 2887,
+                "errors": [],
+                "pred": "publisher",
+                "target": {
+                  "errors": [],
+                  "idProperty": {
+                    "begin": 120,
+                    "end": 159,
+                    "errors": [],
+                    "pred": "urn:spore:url",
+                    "value": "https://mineralrightsxchange.com/#org"
+                  },
+                  "nodeProperties": [
+                    {
+                      "begin": 553,
+                      "end": 740,
+                      "errors": [],
+                      "pred": "contactPoint",
+                      "target": {
+                        "errors": [],
+                        "nodeProperties": [
+                          {
+                            "begin": 665,
+                            "end": 707,
+                            "errors": [],
+                            "pred": "areaServed",
+                            "target": {
+                              "errors": [],
+                              "nodeProperties": [],
+                              "numErrors": 0,
+                              "numWarnings": 0,
+                              "properties": [
+                                {
+                                  "begin": 691,
+                                  "end": 706,
+                                  "errors": [],
+                                  "pred": "name",
+                                  "value": "United States"
+                                }
+                              ],
+                              "typeGroup": "Country",
+                              "types": [
+                                {
+                                  "begin": 674,
+                                  "end": 683,
+                                  "errors": [],
+                                  "pred": "itemtype",
+                                  "value": "Country"
+                                }
+                              ]
+                            }
+                          }
+                        ],
+                        "numErrors": 0,
+                        "numWarnings": 0,
+                        "properties": [
+                          {
+                            "begin": 591,
+                            "end": 609,
+                            "errors": [],
+                            "pred": "contactType",
+                            "value": "customer support"
+                          },
+                          {
+                            "begin": 618,
+                            "end": 651,
+                            "errors": [],
+                            "pred": "email",
+                            "value": "review@mineralrightsxchange.com"
+                          },
+                          {
+                            "begin": 729,
+                            "end": 738,
+                            "errors": [],
+                            "pred": "availableLanguage",
+                            "value": "English"
+                          }
+                        ],
+                        "typeGroup": "ContactPoint",
+                        "types": [
+                          {
+                            "begin": 562,
+                            "end": 576,
+                            "errors": [],
+                            "pred": "itemtype",
+                            "value": "ContactPoint"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "numErrors": 0,
+                  "numWarnings": 0,
+                  "properties": [
+                    {
+                      "begin": 167,
+                      "end": 191,
+                      "errors": [],
+                      "pred": "name",
+                      "value": "Mineral Rights Xchange"
+                    },
+                    {
+                      "begin": 208,
+                      "end": 213,
+                      "errors": [],
+                      "pred": "alternateName",
+                      "value": "MRX"
+                    },
+                    {
+                      "begin": 220,
+                      "end": 255,
+                      "errors": [],
+                      "pred": "url",
+                      "value": "https://mineralrightsxchange.com/"
+                    },
+                    {
+                      "begin": 263,
+                      "end": 329,
+                      "errors": [],
+                      "pred": "logo",
+                      "value": "https://mineralrightsxchange.com/assets/brand/mrx-logo-color.png"
+                    },
+                    {
+                      "begin": 344,
+                      "end": 502,
+                      "errors": [],
+                      "pred": "description",
+                      "value": "Free, no-pressure mineral-rights education for owners comparing offers, inherited interests, royalties, and sell-or-hold decisions across the United States."
+                    },
+                    {
+                      "begin": 518,
+                      "end": 524,
+                      "errors": [],
+                      "pred": "foundingDate",
+                      "value": "2026"
+                    }
+                  ],
+                  "typeGroup": "Organization",
+                  "types": [
+                    {
+                      "begin": 99,
+                      "end": 113,
+                      "errors": [],
+                      "pred": "itemtype",
+                      "value": "Organization"
+                    }
+                  ]
+                }
+              },
+              {
+                "begin": 2907,
+                "end": 3061,
+                "errors": [],
+                "pred": "mainEntityOfPage",
+                "target": {
+                  "errors": [],
+                  "idProperty": {
+                    "begin": 2932,
+                    "end": 3060,
+                    "errors": [],
+                    "pred": "urn:spore:url",
+                    "value": "https://mineralrightsxchange.com/blog/what-to-bring-to-your-underwriter-review-call-essential-documents-and-preparation-guide/"
+                  },
+                  "nodeProperties": [],
+                  "numErrors": 0,
+                  "numWarnings": 0,
+                  "properties": [],
+                  "typeGroup": "WebPage",
+                  "types": [
+                    {
+                      "begin": 2916,
+                      "end": 2925,
+                      "errors": [],
+                      "pred": "itemtype",
+                      "value": "WebPage"
+                    }
+                  ]
+                }
+              }
+            ],
+            "numErrors": 0,
+            "numWarnings": 0,
+            "properties": [
+              {
+                "begin": 2245,
+                "end": 2292,
+                "errors": [],
+                "pred": "headline",
+                "value": "What to Bring to Your Underwriter Review Call"
+              },
+              {
+                "begin": 2307,
+                "end": 2475,
+                "errors": [],
+                "pred": "description",
+                "value": "A preparation guide for mineral owners collecting royalty statements, deeds, leases, offer letters, probate documents, and questions before a free underwriter review."
+              },
+              {
+                "begin": 2485,
+                "end": 2562,
+                "errors": [],
+                "pred": "image",
+                "value": "https://mineralrightsxchange.com/assets/brand/mrx-underwriter-review-og.png"
+              },
+              {
+                "begin": 2580,
+                "end": 2592,
+                "errors": [],
+                "pred": "datePublished",
+                "value": "2026-01-01"
+              },
+              {
+                "begin": 2608,
+                "end": 2620,
+                "errors": [],
+                "pred": "dateModified",
+                "value": "2026-01-01"
+              },
+              {
+                "begin": 3079,
+                "end": 3096,
+                "errors": [],
+                "pred": "articleSection",
+                "value": "selling-process"
+              },
+              {
+                "begin": 3110,
+                "end": 3117,
+                "errors": [],
+                "pred": "inLanguage",
+                "value": "en-US"
+              },
+              {
+                "begin": 3129,
+                "end": 3177,
+                "errors": [],
+                "pred": "isPartOf",
+                "value": "https://mineralrightsxchange.com/#site"
+              }
+            ],
+            "typeGroup": "Article",
+            "types": [
+              {
+                "begin": 2081,
+                "end": 2090,
+                "errors": [],
+                "pred": "itemtype",
+                "value": "Article"
+              }
+            ]
+          }
+        ],
+        "numErrors": 0,
+        "numNodesWithError": 0,
+        "numNodesWithWarning": 0,
+        "numWarnings": 0,
+        "ownerSet": {},
+        "type": "Article"
+      },
+      {
+        "nodes": [
+          {
+            "errors": [],
+            "idProperty": {
+              "begin": 3136,
+              "end": 3176,
+              "errors": [],
+              "pred": "urn:spore:url",
+              "value": "https://mineralrightsxchange.com/#site"
+            },
+            "nodeProperties": [],
+            "numErrors": 0,
+            "numWarnings": 0,
+            "properties": [],
+            "typeGroup": "CreativeWork",
+            "types": [
+              {
+                "begin": 3129,
+                "end": 3177,
+                "errors": [],
+                "pred": "itemtype",
+                "value": "CreativeWork"
+              }
+            ]
+          }
+        ],
+        "numErrors": 0,
+        "numNodesWithError": 0,
+        "numNodesWithWarning": 0,
+        "numWarnings": 0,
+        "ownerSet": {},
+        "type": "CreativeWork"
+      },
+      {
+        "nodes": [
+          {
+            "errors": [],
+            "idProperty": {
+              "begin": 3808,
+              "end": 3854,
+              "errors": [],
+              "pred": "urn:spore:url",
+              "value": "https://mineralrightsxchange.com/team/#tommy"
+            },
+            "nodeProperties": [
+              {
+                "begin": 4226,
+                "end": 4273,
+                "errors": [],
+                "pred": "worksFor",
+                "target": {
+                  "errors": [],
+                  "idProperty": {
+                    "begin": 120,
+                    "end": 159,
+                    "errors": [],
+                    "pred": "urn:spore:url",
+                    "value": "https://mineralrightsxchange.com/#org"
+                  },
+                  "nodeProperties": [
+                    {
+                      "begin": 553,
+                      "end": 740,
+                      "errors": [],
+                      "pred": "contactPoint",
+                      "target": {
+                        "errors": [],
+                        "nodeProperties": [
+                          {
+                            "begin": 665,
+                            "end": 707,
+                            "errors": [],
+                            "pred": "areaServed",
+                            "target": {
+                              "errors": [],
+                              "nodeProperties": [],
+                              "numErrors": 0,
+                              "numWarnings": 0,
+                              "properties": [
+                                {
+                                  "begin": 691,
+                                  "end": 706,
+                                  "errors": [],
+                                  "pred": "name",
+                                  "value": "United States"
+                                }
+                              ],
+                              "typeGroup": "Country",
+                              "types": [
+                                {
+                                  "begin": 674,
+                                  "end": 683,
+                                  "errors": [],
+                                  "pred": "itemtype",
+                                  "value": "Country"
+                                }
+                              ]
+                            }
+                          }
+                        ],
+                        "numErrors": 0,
+                        "numWarnings": 0,
+                        "properties": [
+                          {
+                            "begin": 591,
+                            "end": 609,
+                            "errors": [],
+                            "pred": "contactType",
+                            "value": "customer support"
+                          },
+                          {
+                            "begin": 618,
+                            "end": 651,
+                            "errors": [],
+                            "pred": "email",
+                            "value": "review@mineralrightsxchange.com"
+                          },
+                          {
+                            "begin": 729,
+                            "end": 738,
+                            "errors": [],
+                            "pred": "availableLanguage",
+                            "value": "English"
+                          }
+                        ],
+                        "typeGroup": "ContactPoint",
+                        "types": [
+                          {
+                            "begin": 562,
+                            "end": 576,
+                            "errors": [],
+                            "pred": "itemtype",
+                            "value": "ContactPoint"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "numErrors": 0,
+                  "numWarnings": 0,
+                  "properties": [
+                    {
+                      "begin": 167,
+                      "end": 191,
+                      "errors": [],
+                      "pred": "name",
+                      "value": "Mineral Rights Xchange"
+                    },
+                    {
+                      "begin": 208,
+                      "end": 213,
+                      "errors": [],
+                      "pred": "alternateName",
+                      "value": "MRX"
+                    },
+                    {
+                      "begin": 220,
+                      "end": 255,
+                      "errors": [],
+                      "pred": "url",
+                      "value": "https://mineralrightsxchange.com/"
+                    },
+                    {
+                      "begin": 263,
+                      "end": 329,
+                      "errors": [],
+                      "pred": "logo",
+                      "value": "https://mineralrightsxchange.com/assets/brand/mrx-logo-color.png"
+                    },
+                    {
+                      "begin": 344,
+                      "end": 502,
+                      "errors": [],
+                      "pred": "description",
+                      "value": "Free, no-pressure mineral-rights education for owners comparing offers, inherited interests, royalties, and sell-or-hold decisions across the United States."
+                    },
+                    {
+                      "begin": 518,
+                      "end": 524,
+                      "errors": [],
+                      "pred": "foundingDate",
+                      "value": "2026"
+                    }
+                  ],
+                  "typeGroup": "Organization",
+                  "types": [
+                    {
+                      "begin": 99,
+                      "end": 113,
+                      "errors": [],
+                      "pred": "itemtype",
+                      "value": "Organization"
+                    }
+                  ]
+                }
+              }
+            ],
+            "numErrors": 0,
+            "numWarnings": 0,
+            "properties": [
+              {
+                "begin": 3862,
+                "end": 3869,
+                "errors": [],
+                "pred": "name",
+                "value": "Tommy"
+              },
+              {
+                "begin": 3886,
+                "end": 3913,
+                "errors": [],
+                "pred": "alternateName",
+                "value": "MRX Offer and Value Guide"
+              },
+              {
+                "begin": 3928,
+                "end": 4097,
+                "errors": [],
+                "pred": "description",
+                "value": "A clearly labeled MRX AI guide persona for general mineral-owner education; not a human employee, licensed professional, certified appraiser, attorney, or tax advisor."
+              },
+              {
+                "begin": 4104,
+                "end": 4144,
+                "errors": [],
+                "pred": "url",
+                "value": "https://mineralrightsxchange.com/team/"
+              },
+              {
+                "begin": 4153,
+                "end": 4214,
+                "errors": [],
+                "pred": "image",
+                "value": "https://mineralrightsxchange.com/assets/team/tommy-256.webp"
+              }
+            ],
+            "typeGroup": "Person",
+            "types": [
+              {
+                "begin": 3793,
+                "end": 3801,
+                "errors": [],
+                "pred": "itemtype",
+                "value": "Person"
+              }
+            ]
+          }
+        ],
+        "numErrors": 0,
+        "numNodesWithError": 0,
+        "numNodesWithWarning": 0,
+        "numWarnings": 0,
+        "ownerSet": {},
+        "type": "Person"
+      },
+      {
+        "nodes": [
+          {
+            "errors": [],
+            "idProperty": {
+              "begin": 1368,
+              "end": 1420,
+              "errors": [],
+              "pred": "urn:spore:url",
+              "value": "https://mineralrightsxchange.com/how-it-works/#faq"
+            },
+            "nodeProperties": [
+              {
+                "begin": 1490,
+                "end": 1768,
+                "errors": [],
+                "pred": "mainEntity",
+                "target": {
+                  "errors": [],
+                  "nodeProperties": [
+                    {
+                      "begin": 1577,
+                      "end": 1767,
+                      "errors": [],
+                      "pred": "acceptedAnswer",
+                      "target": {
+                        "errors": [],
+                        "nodeProperties": [],
+                        "numErrors": 0,
+                        "numWarnings": 0,
+                        "properties": [
+                          {
+                            "begin": 1602,
+                            "end": 1766,
+                            "errors": [],
+                            "pred": "text",
+                            "value": "That is normal. Tell MRX what you have and the team can help identify the next records to request. Many owners start with a royalty check stub or an offer letter."
+                          }
+                        ],
+                        "typeGroup": "Answer",
+                        "types": [
+                          {
+                            "begin": 1586,
+                            "end": 1594,
+                            "errors": [],
+                            "pred": "itemtype",
+                            "value": "Answer"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "numErrors": 0,
+                  "numWarnings": 0,
+                  "properties": [
+                    {
+                      "begin": 1517,
+                      "end": 1559,
+                      "errors": [],
+                      "pred": "name",
+                      "value": "What if I do not have all the documents?"
+                    }
+                  ],
+                  "typeGroup": "Question",
+                  "types": [
+                    {
+                      "begin": 1499,
+                      "end": 1509,
+                      "errors": [],
+                      "pred": "itemtype",
+                      "value": "Question"
+                    }
+                  ]
+                }
+              },
+              {
+                "begin": 1769,
+                "end": 2069,
+                "errors": [],
+                "pred": "mainEntity",
+                "target": {
+                  "errors": [],
+                  "nodeProperties": [
+                    {
+                      "begin": 1864,
+                      "end": 2068,
+                      "errors": [],
+                      "pred": "acceptedAnswer",
+                      "target": {
+                        "errors": [],
+                        "nodeProperties": [],
+                        "numErrors": 0,
+                        "numWarnings": 0,
+                        "properties": [
+                          {
+                            "begin": 1889,
+                            "end": 2067,
+                            "errors": [],
+                            "pred": "text",
+                            "value": "No. MRX describes the review as general educational information and a directional discussion, not a certified appraisal, legal opinion, tax opinion, or promise of a sale price."
+                          }
+                        ],
+                        "typeGroup": "Answer",
+                        "types": [
+                          {
+                            "begin": 1873,
+                            "end": 1881,
+                            "errors": [],
+                            "pred": "itemtype",
+                            "value": "Answer"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "numErrors": 0,
+                  "numWarnings": 0,
+                  "properties": [
+                    {
+                      "begin": 1796,
+                      "end": 1846,
+                      "errors": [],
+                      "pred": "name",
+                      "value": "Is the underwriter review a certified appraisal?"
+                    }
+                  ],
+                  "typeGroup": "Question",
+                  "types": [
+                    {
+                      "begin": 1778,
+                      "end": 1788,
+                      "errors": [],
+                      "pred": "itemtype",
+                      "value": "Question"
+                    }
+                  ]
+                }
+              }
+            ],
+            "numErrors": 0,
+            "numWarnings": 0,
+            "properties": [
+              {
+                "begin": 1427,
+                "end": 1475,
+                "errors": [],
+                "pred": "url",
+                "value": "https://mineralrightsxchange.com/how-it-works/"
+              }
+            ],
+            "typeGroup": "FAQPage",
+            "types": [
+              {
+                "begin": 1352,
+                "end": 1361,
+                "errors": [],
+                "pred": "itemtype",
+                "value": "FAQPage"
+              }
+            ]
+          }
+        ],
+        "numErrors": 0,
+        "numNodesWithError": 0,
+        "numNodesWithWarning": 0,
+        "numWarnings": 0,
+        "ownerSet": {},
+        "type": "FAQPage"
+      }
+    ]
+  },
+  "summary": {
+    "content_type": "application/json; charset=utf-8",
+    "fetchError": null,
+    "generated_at_utc": "2026-07-20T05:09:54Z",
+    "http_status": 200,
+    "isRendered": false,
+    "numObjects": 6,
+    "request_method": "POST html field containing draft JSON-LD only; no production publish or third-party record mutation",
+    "task_id": "t_eee35875",
+    "tester": "https://validator.schema.org/validate",
+    "totalNumErrors": 0,
+    "totalNumWarnings": 0,
+    "types_seen": [
+      "Article",
+      "BreadcrumbList",
+      "CreativeWork",
+      "FAQPage",
+      "LocalBusiness",
+      "Person"
+    ]
+  }
+}

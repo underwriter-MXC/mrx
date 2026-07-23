@@ -18,11 +18,24 @@ export const TITLE_MIN = 30;
 export const TITLE_MAX = 60;
 export const DESC_MIN = 130;
 export const DESC_MAX = 160;
+export const OG_IMAGE_WIDTH = 1200;
+export const OG_IMAGE_HEIGHT = 630;
+export const OG_IMAGE_TYPE = 'image/png';
 
 export function buildTitle(parts: string[], brand = 'Mineral Rights Xchange'): string {
   // Pattern: "[Value Prop] · [Brand]" (per SEO plan §1.1)
   const full = parts.filter(Boolean).join(' · ');
   return full.includes(brand) ? full : `${full} · ${brand}`;
+}
+
+/**
+ * Build the final article <title> without changing the visible article H1.
+ * Article titles use the compact short brand so a focused SEO title can keep
+ * the complete result inside the 60-character search-result budget.
+ */
+export function buildArticleTitle(visibleTitle: string, seoTitle?: string): string {
+  const base = (seoTitle || visibleTitle).trim();
+  return /\bMRX\b|Mineral Rights Xchange/i.test(base) ? base : `${base} · MRX`;
 }
 
 export function validateTitle(title: string): { ok: boolean; reason?: string } {
@@ -52,6 +65,10 @@ export function buildCanonical(path: string, baseUrl: string): string {
   return `${baseUrl}${clean.replace(/\/$/, '')}/`;
 }
 
-export function buildOgImage(_path: string, baseUrl: string, defaultOg = '/assets/brand/mrx-underwriter-review-og.png'): string {
+export function buildOgImage(
+  _path: string,
+  baseUrl: string,
+  defaultOg = '/assets/brand/mrx-underwriter-review-og.png',
+): string {
   return `${baseUrl}${defaultOg}`;
 }

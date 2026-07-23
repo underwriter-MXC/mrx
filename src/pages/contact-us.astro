@@ -1,0 +1,7 @@
+---
+// Keep this route server-rendered so both the canonical domain and direct
+// Vercel traffic receive a real HTTP redirect instead of a static meta refresh.
+export const prerender = false;
+
+return Astro.redirect('/contact/', 301);
+---

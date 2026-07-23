@@ -13,6 +13,18 @@ interface Props {
 }
 
 const { currentPath = '/' } = Astro.props;
+
+const homeIntentPrompts: Record<string, string> = {
+  '/mineral-rights-value/':
+    'I want to understand what my mineral rights may be worth and which details matter most.',
+  '/offer-review/':
+    'I received an offer for my mineral rights and want help understanding whether it is fair.',
+  '/inherited-mineral-rights/':
+    'I inherited mineral rights and need help figuring out what documents and details matter first.',
+};
+
+const getHomeIntentPrompt = (href: string) =>
+  currentPath === '/' ? homeIntentPrompts[href] : undefined;
 ---
 
 <header class="header" role="banner">
@@ -30,14 +42,35 @@ const { currentPath = '/' } = Astro.props;
       <nav class="header__nav" aria-label="Primary">
         {
           NAV.primary.map((item) => (
-            <a href={item.href} aria-current={currentPath === item.href ? 'page' : undefined}>
+            <a
+              href={item.href}
+              aria-current={currentPath === item.href ? 'page' : undefined}
+              aria-haspopup={getHomeIntentPrompt(item.href) ? 'dialog' : undefined}
+              data-tommy-prompt={getHomeIntentPrompt(item.href)}
+            >
               {item.label}
             </a>
           ))
         }
       </nav>
       <div class="header__actions">
-        <button class="header__ask" type="button" data-open-tommy data-cta-name="header-ask-tommy">
+        <a
+          class="header__account"
+          href="/owner-intake/"
+          aria-current={currentPath === '/owner-intake/' ? 'page' : undefined}>Submit details</a
+        >
+        <a
+          class="header__account"
+          href="/account/"
+          aria-current={currentPath === '/account/' ? 'page' : undefined}>Log In</a
+        >
+        <button
+          class="header__ask"
+          type="button"
+          aria-label="Ask Tommy for mineral-rights help"
+          data-open-tommy
+          data-cta-name="header-ask-tommy"
+        >
           <img
             src="/assets/mrx-homepage-v4/avatars/tommy-hermes-128.webp"
             alt=""
@@ -63,12 +96,29 @@ const { currentPath = '/' } = Astro.props;
         {
           NAV.primary.map((item) => (
             <li>
-              <a href={item.href} aria-current={currentPath === item.href ? 'page' : undefined}>
+              <a
+                href={item.href}
+                aria-current={currentPath === item.href ? 'page' : undefined}
+                aria-haspopup={getHomeIntentPrompt(item.href) ? 'dialog' : undefined}
+                data-tommy-prompt={getHomeIntentPrompt(item.href)}
+              >
                 {item.label}
               </a>
             </li>
           ))
         }
+        <li>
+          <a
+            href="/owner-intake/"
+            aria-current={currentPath === '/owner-intake/' ? 'page' : undefined}
+            >Submit property details</a
+          >
+        </li>
+        <li>
+          <a href="/account/" aria-current={currentPath === '/account/' ? 'page' : undefined}
+            >Log In</a
+          >
+        </li>
         <li>
           <button class="mobile-nav__ask" type="button" data-open-tommy
             ><img
@@ -76,7 +126,8 @@ const { currentPath = '/' } = Astro.props;
               alt=""
               width="128"
               height="128"
-            /> Ask Tommy for help</button>
+            /> Ask Tommy for help</button
+          >
         </li>
       </ul>
     </nav>
@@ -84,8 +135,7 @@ const { currentPath = '/' } = Astro.props;
 </header>
 
 <script>
-  // Tiny client-side toggle. The site ships zero JS by default; this
-  // ~10 lines is the entire client JS payload on the marketing surface.
+  // Keep the mobile menu and homepage assistant entry points lightweight.
   const btn = document.querySelector<HTMLButtonElement>('[data-mobile-toggle]');
   const nav = document.getElementById('mobile-nav');
   if (btn && nav) {
@@ -98,6 +148,15 @@ const { currentPath = '/' } = Astro.props;
   document.querySelectorAll<HTMLElement>('[data-open-tommy]').forEach((trigger) => {
     trigger.addEventListener('click', () => {
       window.dispatchEvent(new CustomEvent('mrx:open-chat'));
+      nav?.setAttribute('data-open', 'false');
+      btn?.setAttribute('aria-expanded', 'false');
+    });
+  });
+  document.querySelectorAll<HTMLAnchorElement>('[data-tommy-prompt]').forEach((trigger) => {
+    trigger.addEventListener('click', (event) => {
+      event.preventDefault();
+      const prompt = trigger.dataset.tommyPrompt;
+      window.dispatchEvent(new CustomEvent('mrx:open-chat', { detail: { prompt } }));
       nav?.setAttribute('data-open', 'false');
       btn?.setAttribute('aria-expanded', 'false');
     });

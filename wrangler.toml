@@ -1,18 +1,25 @@
-name = "mineral-rights-xchange"
+# Legacy local/preview Cloudflare Pages configuration only.
+# Production is Vercel behind Cloudflare and is released by
+# .github/workflows/deploy.yml; do not use `wrangler pages deploy` for
+# production. Keep this file only for explicitly authorized local fallback
+# verification until the Cloudflare account is retired.
+name = "mineral-rights-xchange-legacy-preview"
 compatibility_date = "2026-06-01"
 pages_build_output_dir = "./dist"
 
-# Cloudflare Pages + Functions: the 2 hybrid POST routes in src/pages/api/
-# are mounted at /api/book and /api/free-guide via @astrojs/cloudflare
+# Legacy Cloudflare Pages + Functions fallback: API routes are mounted via
+# @astrojs/cloudflare only when DEPLOY_TARGET=cloudflare is explicitly set.
 # directory mode. Stage 08 (GHL) sets the actual secrets via:
 #   wrangler pages secret put MRX_GHL_API_KEY
 #   wrangler pages secret put MRX_GHL_LOCATION_ID
 #   wrangler pages secret put MRX_GHL_CALENDAR_URL
 #   wrangler pages secret put MRX_PDF_URL
 #   wrangler pages secret put MRX_CONTACT_NOTIFY_EMAIL
-# Stage 09 (deploy) sets PUBLIC_GTM_ID via Cloudflare Pages env (not secret).
+# Stage 09 (deploy) may override PUBLIC_GOOGLE_TAG_ID via Cloudflare Pages env
+# (not secret). The application also carries the verified production ID as a
+# fail-on fallback so analytics cannot disappear on an unset build target.
 
 # Reserved env-var names per Astro Architecture Plan §9.
 # DO NOT commit real values; this file is committed but secrets are not.
 [vars]
-# PUBLIC_GTM_ID = "GTM-PLACEHOLDER"
+# PUBLIC_GOOGLE_TAG_ID = "GT-PLACEHOLDER"

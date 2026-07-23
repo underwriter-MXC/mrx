@@ -11,7 +11,8 @@ interface Props {
 const { language = 'text' } = Astro.props;
 ---
 
-<pre class={`code-block code-block--${language}`}><code class={`language-${language}`}><slot /></code></pre>
+<pre
+  class={`code-block code-block--${language}`}><code class={`language-${language}`}><slot /></code></pre>
 
 <style>
   .code-block {

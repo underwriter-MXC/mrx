@@ -1,0 +1,198 @@
+{
+  "task_id": "t_6de8d495",
+  "generated_at_utc": "2026-07-20T05:09:25.537768+00:00",
+  "scope": "Read-only crawl coverage inventory plus robots/redirect recommendations for mineralrightsxchange.com. No robots, Cloudflare, Vercel, nginx, DNS, GSC, or production settings were changed.",
+  "evidence_sources": [
+    {
+      "type": "policy",
+      "path": "docs/MRX_SEARCH_ATLAS_REMEDIATION_POLICY.md"
+    },
+    {
+      "type": "local_robots",
+      "path": "public/robots.txt"
+    },
+    {
+      "type": "local_build_sitemaps",
+      "path": "dist/sitemap*.xml"
+    },
+    {
+      "type": "local_qa_export",
+      "path": "qa-search-atlas-live-http.json"
+    },
+    {
+      "type": "source",
+      "path": "astro.config.mjs"
+    },
+    {
+      "type": "source",
+      "path": "scripts/postbuild-sitemap.mjs"
+    },
+    {
+      "type": "source",
+      "path": "vercel.json"
+    },
+    {
+      "type": "tests",
+      "path": "tests/e2e/robots.spec.ts and tests/e2e/sitemap.spec.ts"
+    },
+    {
+      "type": "public_curl",
+      "notes": "robots.txt, sitemap_index.xml, sitemap-index.xml, sitemap.xml, llms.txt, and homepage checked with default, Googlebot, Bingbot, and Mozilla user agents"
+    }
+  ],
+  "inventory_summary": {
+    "crawl_exports_found": 0,
+    "dedicated_log_files_found": 0,
+    "content_posts_total": 125,
+    "published_posts_estimate": 125,
+    "content_pages": 9,
+    "state_guides": 10,
+    "owner_situation_pages": 8,
+    "category_pages": 7,
+    "author_pages": 7,
+    "team_pages": 12,
+    "dist_sitemap_index_segments": 5,
+    "dist_segment_url_counts": {
+      "sitemap-core.xml": 31,
+      "sitemap-articles.xml": 126,
+      "sitemap-authors.xml": 7,
+      "sitemap-team.xml": 12,
+      "sitemap-states.xml": 10,
+      "sitemap-0.xml": 186
+    }
+  },
+  "coverage_gaps": [
+    {
+      "id": "CG-01",
+      "severity": "critical",
+      "area": "live crawl access",
+      "finding": "Production public curl returns Vercel Security Checkpoint 403 for robots.txt, sitemap_index.xml, sitemap-index.xml, sitemap.xml, llms.txt, and core HTML pages. Googlebot and Bingbot user-agent checks also returned 403 challenge.",
+      "impact": "Search engines, SearchAtlas, OTTO, llms.txt consumers, and simple monitoring crawlers may be unable to fetch the public crawl-control and content surfaces.",
+      "evidence": [
+        "curl output showed x-vercel-mitigated: challenge and HTTP 403 for root robots/sitemaps",
+        "qa-search-atlas-live-http.json records status 403 for robots, llms files, sitemap variants, core URLs, and Vercel Security Checkpoint titles/previews"
+      ],
+      "recommendation": "Human/Vercel/Cloudflare gate: remove or scope the Vercel Security Checkpoint so robots.txt, sitemap files, llms.txt, llms-full.txt, and public canonical pages are fetchable without JavaScript challenge; verify with Googlebot/Bingbot/default curl returning 200 or intentional 301 only. Do not bypass via agent mutation."
+    },
+    {
+      "id": "CG-02",
+      "severity": "high",
+      "area": "robots sitemap directive",
+      "finding": "public/robots.txt points to https://mineralrightsxchange.com/sitemap-index.xml, while MRX growth ops says the canonical sitemap is https://mineralrightsxchange.com/sitemap_index.xml and the e2e robots spec expects sitemap_index.xml.",
+      "impact": "Crawlers may discover and cache the hyphenated alias instead of the agreed canonical underscore sitemap. The local test intent and policy memory are out of sync with the file currently in public/robots.txt.",
+      "evidence": ["public/robots.txt line 17", "tests/e2e/robots.spec.ts line 12"],
+      "recommendation": "Repo-side draft for mrx_webdev: update robots directive to sitemap_index.xml, then after human approval publish/deploy."
+    },
+    {
+      "id": "CG-03",
+      "severity": "high",
+      "area": "sitemap alias hygiene",
+      "finding": "dist currently contains sitemap_index.xml, sitemap-index.xml, and sitemap.xml. scripts/postbuild-sitemap.mjs writes all three aliases, while tests/e2e/sitemap.spec.ts expects only sitemap_index.xml in dist/client and the mrx-growth-ops skill says not to rely on legacy sitemap.xml.",
+      "impact": "Duplicate sitemap entrypoints dilute canonical hygiene and can reintroduce the legacy sitemap.xml path that Search Console previously showed with errors/warnings.",
+      "evidence": [
+        "dist/sitemap_index.xml exists",
+        "dist/sitemap-index.xml exists",
+        "dist/sitemap.xml exists",
+        "scripts/postbuild-sitemap.mjs lines 132-135"
+      ],
+      "recommendation": "Repo-side draft for mrx_webdev: generate one canonical sitemap_index.xml; if legacy/hyphen paths must remain for compatibility, serve 301 redirects to sitemap_index.xml only after Daryl approves routing changes."
+    },
+    {
+      "id": "CG-04",
+      "severity": "medium",
+      "area": "redirected URLs in sitemap",
+      "finding": "dist/sitemap-core.xml includes both /1031-exchange/ and /1031-exchanger/. Source /1031-exchanger.astro redirects to /1031-exchange/ and vercel.json also defines a permanent redirect from /1031-exchanger to /1031-exchange/.",
+      "impact": "A redirect-source URL in the sitemap can waste crawl budget and send mixed canonical signals.",
+      "evidence": [
+        "dist/sitemap-core.xml lines 4-5",
+        "src/pages/1031-exchanger.astro line 2",
+        "vercel.json lines 5-10"
+      ],
+      "recommendation": "Repo-side draft for mrx_webdev: exclude /1031-exchanger/ from sitemap generation and keep only /1031-exchange/ as the sitemap URL."
+    },
+    {
+      "id": "CG-05",
+      "severity": "medium",
+      "area": "build output location/test drift",
+      "finding": "Current dist sitemap files are at dist/*.xml, while tests/e2e/sitemap.spec.ts checks dist/client/*.xml. The script is written to handle both dist and dist/client, but the current generated output does not match the test path expectation.",
+      "impact": "Verification may fail or miss the actual sitemap output depending on adapter/build target, weakening deployment confidence.",
+      "evidence": [
+        "local dist_sitemaps list shows dist/sitemap*.xml",
+        "tests/e2e/sitemap.spec.ts line 5 sets sitemapDir = dist/client"
+      ],
+      "recommendation": "Repo-side draft for mrx_webdev: align sitemap tests with the active Vercel build output path or make the tests probe both dist and dist/client like scripts/postbuild-sitemap.mjs does."
+    },
+    {
+      "id": "CG-06",
+      "severity": "low",
+      "area": "robots disallow/noindex alignment",
+      "finding": "No private account/staff/thank-you URLs were present in generated sitemap files. Account/staff pages have noindex and API/blog draft headers add X-Robots-Tag noindex. Robots disallow includes /book/thank-you/ and /free-guide/thank-you/.",
+      "impact": "This part appears aligned; keep as a regression watch item because thank-you pages are intentionally excluded from crawl/index surfaces.",
+      "evidence": [
+        "dist sitemap scan showed contains_thank_you/account/staff false",
+        "src/pages/account/index.astro",
+        "src/pages/staff/index.astro",
+        "src/pages/book/thank-you.astro",
+        "src/pages/free-guide/thank-you.astro",
+        "vercel.json headers"
+      ],
+      "recommendation": "No live change. Keep noindex/disallow exclusions and verify after the checkpoint issue is resolved."
+    }
+  ],
+  "robots_redirect_recommendations": [
+    {
+      "id": "RR-01",
+      "priority": "P0",
+      "owner": "Daryl + Vercel/Cloudflare admin",
+      "type": "human-only live routing/security",
+      "recommendation": "Disable/scope Vercel Security Checkpoint or add an approved production bypass for robots.txt, sitemap*.xml, llms*.txt, and public canonical HTML so crawlers receive fetchable responses.",
+      "risk": "High if applied incorrectly; must be done by human/admin, not agent."
+    },
+    {
+      "id": "RR-02",
+      "priority": "P1",
+      "owner": "mrx_webdev",
+      "type": "repo draft",
+      "recommendation": "Change public/robots.txt Sitemap directive from sitemap-index.xml to sitemap_index.xml.",
+      "risk": "Low as repo change, but production publish remains human/deploy gate."
+    },
+    {
+      "id": "RR-03",
+      "priority": "P1",
+      "owner": "mrx_webdev",
+      "type": "repo draft",
+      "recommendation": "Stop generating duplicate sitemap.xml and sitemap-index.xml aliases unless they are explicitly redirected to sitemap_index.xml by approved routing.",
+      "risk": "Medium because Search Console may already know old URLs; sequence with GSC cleanup after deploy."
+    },
+    {
+      "id": "RR-04",
+      "priority": "P2",
+      "owner": "mrx_webdev",
+      "type": "repo draft",
+      "recommendation": "Exclude redirect source /1031-exchanger/ from sitemap; keep /1031-exchange/ only.",
+      "risk": "Low."
+    },
+    {
+      "id": "RR-05",
+      "priority": "P2",
+      "owner": "mrx_webdev",
+      "type": "verification",
+      "recommendation": "Align sitemap e2e tests with actual build output path and canonical underscore sitemap policy.",
+      "risk": "Low."
+    },
+    {
+      "id": "RR-06",
+      "priority": "P2",
+      "owner": "mrx_gsc after human approval",
+      "type": "human-only GSC",
+      "recommendation": "After production returns 200 for sitemap_index.xml, verify GSC only has sitemap_index.xml submitted and remove legacy sitemap.xml only with Daryl approval.",
+      "risk": "Human-only GSC mutation gate."
+    }
+  ],
+  "human_only_gates": [
+    "G-01/G-03: Editing robots.txt, Cloudflare Page Rules, Vercel security/routing settings, DNS, or nginx rules is human-only unless explicitly approved.",
+    "G-01/G-03: Submitting/removing sitemaps in Google Search Console is human-only.",
+    "Merge-to-main and production deployment for repo fixes is human-only."
+  ],
+  "next_owner_handoff": "mrx_webdev should draft repo-side fixes for robots/sitemap generation/test drift; Daryl/Vercel/Cloudflare admin must handle live Security Checkpoint/routing bypass; mrx_gsc verifies/submits only after human approval and a successful live 200 fetch for sitemap_index.xml."
+}

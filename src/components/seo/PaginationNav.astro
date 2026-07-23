@@ -1,0 +1,235 @@
+---
+/**
+ * PaginationNav: compact crawlable page-number region for an archive.
+ *
+ * Visibility rules (bounded link count for crawlers and humans):
+ *   1. Always emit First/Last, Previous/Next, and current-page links.
+ *   2. Show pages `currentPage ± 2` plus quarter/midpoint landmarks on
+ *      large archives, so a 42-page archive exposes page 21 directly.
+ *   3. Replace gaps with crawlable midpoint jumps instead of inert or
+ *      self-referential ellipses.
+ *   4. Emit rel="prev"/rel="next" on the direction anchors; emit
+ *      rel="canonical" via MarketingLayout's path prop; PaginationNav
+ *      never owns the canonical link.
+ *
+ * The page-number set stays at ten or fewer entries regardless of archive
+ * size, before a bounded number of gap-jump links are inserted.
+ */
+import {
+  archiveGapTarget,
+  archivePagePath,
+  visibleArchivePages,
+} from '../../lib/archive-pagination';
+
+interface Props {
+  basePath: string;
+  currentPage: number;
+  lastPage: number;
+}
+
+const { basePath, currentPage, lastPage } = Astro.props;
+
+const visible = visibleArchivePages(currentPage, lastPage);
+---
+
+{
+  lastPage > 1 && (
+    <nav class="archive-pagination" aria-label="Article archive pages" data-archive-pagination>
+      {currentPage > 1 ? (
+        <a
+          class="archive-pagination__direction"
+          rel="prev"
+          href={archivePagePath(basePath, currentPage - 1)}
+          data-archive-direction="prev"
+        >
+          ← Previous
+        </a>
+      ) : (
+        <span class="archive-pagination__direction" aria-disabled="true">
+          ← Previous
+        </span>
+      )}
+
+      {currentPage > 1 && (
+        <a
+          class="archive-pagination__edge"
+          href={archivePagePath(basePath, 1)}
+          aria-label="First page"
+          data-archive-edge="first"
+        >
+          « First
+        </a>
+      )}
+
+      <ol>
+        {visible.map((page, index) => {
+          const previous = visible[index - 1];
+          if (previous && page - previous > 1) {
+            const target = archiveGapTarget(previous, page);
+            return [
+              target ? (
+                <li class="archive-pagination__gap">
+                  <a
+                    href={archivePagePath(basePath, target)}
+                    aria-label={`Jump to page ${target}`}
+                    data-archive-gap
+                  >
+                    …
+                  </a>
+                </li>
+              ) : (
+                <li class="archive-pagination__gap" aria-hidden="true">
+                  …
+                </li>
+              ),
+              <li>
+                <a
+                  href={archivePagePath(basePath, page)}
+                  aria-current={page === currentPage ? 'page' : undefined}
+                  aria-label={`Page ${page}`}
+                  data-archive-page={page}
+                >
+                  {page}
+                </a>
+              </li>,
+            ];
+          }
+          return (
+            <li>
+              <a
+                href={archivePagePath(basePath, page)}
+                aria-current={page === currentPage ? 'page' : undefined}
+                aria-label={`Page ${page}`}
+                data-archive-page={page}
+              >
+                {page}
+              </a>
+            </li>
+          );
+        })}
+      </ol>
+
+      {currentPage < lastPage && (
+        <a
+          class="archive-pagination__edge"
+          href={archivePagePath(basePath, lastPage)}
+          aria-label="Last page"
+          data-archive-edge="last"
+        >
+          Last »
+        </a>
+      )}
+
+      {currentPage < lastPage ? (
+        <a
+          class="archive-pagination__direction"
+          rel="next"
+          href={archivePagePath(basePath, currentPage + 1)}
+          data-archive-direction="next"
+        >
+          Next →
+        </a>
+      ) : (
+        <span class="archive-pagination__direction" aria-disabled="true">
+          Next →
+        </span>
+      )}
+    </nav>
+  )
+}
+
+<style>
+  .archive-pagination {
+    display: grid;
+    grid-template-columns: auto auto minmax(0, 1fr) auto auto;
+    gap: 0.45rem 0.75rem;
+    align-items: center;
+    margin-top: clamp(1.5rem, 3vw, 2.5rem);
+  }
+
+  .archive-pagination ol {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .archive-pagination a,
+  .archive-pagination span {
+    display: inline-flex;
+    min-width: 2.65rem;
+    min-height: 2.65rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    font-size: 0.82rem;
+    font-weight: 800;
+  }
+
+  .archive-pagination a {
+    border: 1px solid #c9d4da;
+    color: #183d54;
+    background: #fff;
+    text-decoration: none;
+  }
+
+  .archive-pagination a:hover,
+  .archive-pagination a:focus-visible {
+    border-color: #8b9da7;
+    background: #eef3f4;
+  }
+
+  .archive-pagination a[aria-current='page'] {
+    border-color: #071e34;
+    color: #fff;
+    background: #071e34;
+  }
+
+  .archive-pagination__edge {
+    padding-inline: 0.7rem;
+    font-size: 0.78rem;
+  }
+
+  .archive-pagination__direction {
+    padding-inline: 0.85rem;
+  }
+
+  .archive-pagination__direction[aria-disabled='true'] {
+    color: #82919a;
+  }
+
+  .archive-pagination__gap {
+    color: #60717c;
+    padding: 0 0.2rem;
+  }
+
+  .archive-pagination__gap a {
+    min-width: 2rem;
+    border-color: transparent;
+    background: transparent;
+    font-weight: 700;
+  }
+
+  @media (max-width: 720px) {
+    .archive-pagination {
+      grid-template-columns: 1fr 1fr;
+    }
+    .archive-pagination ol {
+      grid-column: 1 / -1;
+      grid-row: 1;
+    }
+    .archive-pagination__edge,
+    .archive-pagination__direction {
+      grid-row: 2;
+      justify-self: stretch;
+    }
+    .archive-pagination__direction:last-of-type,
+    .archive-pagination__edge:last-of-type {
+      justify-self: end;
+    }
+  }
+</style>

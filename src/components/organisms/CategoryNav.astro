@@ -15,7 +15,11 @@ const { categories, currentSlug } = Astro.props;
 
 <nav class="container" aria-label="Blog categories" style="padding-block: var(--space-6);">
   <ul class="row">
-    <li><Tag><a href="/blog" style="color: inherit; text-decoration: none;">All</a></Tag></li>
+    <li>
+      <Tag>
+        <a href="/learning-center/" style="color: inherit; text-decoration: none;">All</a>
+      </Tag>
+    </li>
     {
       categories.map((c) => (
         <li>

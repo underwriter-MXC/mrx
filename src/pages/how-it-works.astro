@@ -14,7 +14,10 @@ export const prerender = true;
   path="/how-it-works"
   pageType="marketing"
   pageCategory="process"
-  breadcrumbs={[{ name: 'Home', path: '/' }, { name: 'How It Works', path: '/how-it-works' }]}
+  breadcrumbs={[
+    { name: 'Home', path: '/' },
+    { name: 'How It Works', path: '/how-it-works' },
+  ]}
   faq={entry.data.faq}
 >
   <Content />

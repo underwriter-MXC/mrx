@@ -1,7 +1,42 @@
 ---
 import MarketingLayout from '../layouts/MarketingLayout.astro';
+import { SITE } from '../lib/site';
 export const prerender = true;
 ---
-<MarketingLayout title="MRX Communication Preferences and Consent" description="Manage Mineral Rights Xchange email, appointment-text, optional marketing-text, and requested-call preferences or contact MRX about a consent record." path="/communication-preferences/" pageType="utility" pageCategory="legal" breadcrumbs={[{name:'Home',path:'/'},{name:'Communication Preferences',path:'/communication-preferences/'}]}>
-  <section class="mrx-section"><div class="container container--prose"><p class="mrx-eyebrow">You stay in control</p><h1>Communication preferences</h1><p>MRX records email, appointment-text, optional marketing-text, and requested-call choices separately. Marketing text permission is optional and is not required to ask Tommy or book a phone call.</p><h2>Text messages</h2><p>Reply STOP to an MRX text to opt out of that text program. Reply HELP for assistance. Message frequency varies, and message and data rates may apply.</p><h2>Email and calls</h2><p>Use the unsubscribe link in an MRX marketing email, update your preference during a conversation, or email <a href="mailto:review@mineralrightsxchange.com">review@mineralrightsxchange.com</a>. A requested appointment call may still occur unless the appointment is cancelled.</p><h2>Review your stored choices</h2><p>Sign in to your <a href="/account/">private MRX account</a> or contact MRX to request a copy or correction of a permission record.</p></div></section>
+
+<MarketingLayout
+  title="MRX Communication Preferences and Consent"
+  description="Manage Mineral Rights Xchange email, SMS, human appointment call, AI voice update, and optional marketing SMS preferences or review a consent record."
+  path="/communication-preferences/"
+  noindex={true}
+  robots="noindex, nofollow"
+  pageType="utility"
+  pageCategory="legal"
+  breadcrumbs={[
+    { name: 'Home', path: '/' },
+    { name: 'Communication Preferences', path: '/communication-preferences/' },
+  ]}
+>
+  <section class="mrx-section">
+    <div class="container container--prose">
+      <p class="mrx-eyebrow">You stay in control</p><h1>Communication preferences</h1><p>
+        MRX records requested email updates, requested SMS updates, human appointment calls, GHL
+        AI-generated voice updates, and optional marketing SMS choices separately. Declining any
+        channel does not prevent you from asking Tommy for website help.
+      </p><h2>Text messages</h2><p>
+        Reply STOP to an MRX text to opt out of that text program. Reply HELP for assistance.
+        Message frequency varies, and message and data rates may apply.
+      </p><h2>Email, human calls, and GHL AI voice</h2><p>
+        GHL AI-generated voice permission is limited to mineral-rights case updates you requested.
+        It is optional, requires a verified phone number, and can be revoked at any time. GHL Voice
+        AI delivery remains disabled until MRX completes opt-out, recording-policy, and legal
+        review. A requested human appointment call may still occur unless the appointment is
+        cancelled.
+      </p><h2>Review your stored choices</h2><p>
+        Sign in to your <a href="/account/">private MRX account</a> to review or revoke requested-update
+        permissions, or email <a href={`mailto:${SITE.email}`}>{SITE.email}</a> to request a copy or correction
+        of a permission record.
+      </p>
+    </div>
+  </section>
 </MarketingLayout>

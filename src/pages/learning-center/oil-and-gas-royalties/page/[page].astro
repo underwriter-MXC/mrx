@@ -1,0 +1,20 @@
+---
+import PillarArchivePage from '../../../../components/organisms/PillarArchivePage.astro';
+import { getPillarArchiveStaticPaths } from '../../../../lib/pillar-inventory';
+
+export const prerender = true;
+const PILLAR_ID = 'oil-and-gas-royalties' as const;
+
+export async function getStaticPaths() {
+  return getPillarArchiveStaticPaths('oil-and-gas-royalties');
+}
+
+const currentPage = Number(Astro.params.page);
+---
+
+<PillarArchivePage
+  pillarId={PILLAR_ID}
+  currentPage={currentPage}
+  title="Oil and Gas Royalties: Owner Articles · MRX"
+  description="Browse the full MRX mineral-rights royalty archive: payment statements, ownership records, production context, and the documents behind each check."
+/>

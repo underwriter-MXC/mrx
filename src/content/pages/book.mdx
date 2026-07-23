@@ -57,14 +57,14 @@ import Icon from '../../components/atoms/Icon.astro';
       <Text class="text--lead" style="margin-top: var(--space-3); margin-bottom: var(--space-6);">Your free underwriter review is a working conversation, not a sales call. Here is what it looks like.</Text>
       <ol class="stack" style="list-style: decimal; padding-left: var(--space-6);">
         <li><strong>Submit the form.</strong> About 60 seconds. Just your name, email, and a sentence on what is in hand.</li>
-        <li><strong>We follow up.</strong> An underwriter reaches out within 1 business day to gather any documents you have.</li>
+        <li><strong>We follow up.</strong> An underwriter reaches out to gather any documents you have. Timing depends on availability and the complexity of your situation.</li>
         <li><strong>The review.</strong> We read the documents, walk through production, decline-curve context, and offer terms (if any). Plain language.</li>
         <li><strong>You get a directional range.</strong> Written, with the assumptions stated. No teaser number.</li>
         <li><strong>You decide.</strong> Sell, hold, or take more time. The decision stays yours.</li>
       </ol>
       <Heading level={3} size="lg" class="heading" style="margin-top: var(--space-8);">If you have these, bring them</Heading>
       <ul class="stack stack--sm" style="list-style: disc; padding-left: var(--space-6);">
-        <li>A recent royalty check stub or 1099-DIV/royalty statement</li>
+        <li>A recent royalty check stub, royalty statement, or Form 1099-MISC showing royalties in Box 2</li>
         <li>A copy of any offer letter or letter of intent you have received</li>
         <li>Your lease or division order (if you have one)</li>
         <li>County, section, and depth-of-rights information if you have it</li>
@@ -77,14 +77,21 @@ import Icon from '../../components/atoms/Icon.astro';
       <Text class="text--muted" style="margin-top: var(--space-2); margin-bottom: var(--space-4);">No card required. No obligation. Confidential.</Text>
       <FormSection form="book" submitLabel="Submit My Booking" legend="Book a free Texas mineral rights underwriter review" />
     </aside>
+
   </div>
 </section>
 
 <section class="section section--alt">
   <div class="container">
-    <Heading level={2} size="3xl">Frequently asked</Heading>
+    <Heading level={2} size="3xl">
+      Frequently asked
+    </Heading>
     <FaqBlock pairs={frontmatter.faq} id="book-faq" />
-    <p style="margin-top: var(--space-4);"><a href="/faq" data-cta-name="book-faq-more">See the full FAQ →</a></p>
+    <p style="margin-top: var(--space-4);">
+      <a href="/faq" data-cta-name="book-faq-more">
+        See the full FAQ →
+      </a>
+    </p>
   </div>
 </section>
 

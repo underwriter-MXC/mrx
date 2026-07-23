@@ -1,0 +1,20 @@
+---
+import PillarArchivePage from '../../../components/organisms/PillarArchivePage.astro';
+import { getPillarArchiveStaticPaths } from '../../../lib/pillar-inventory';
+
+export const prerender = true;
+const PILLAR_ID = 'mineral-rights-value' as const;
+
+export async function getStaticPaths() {
+  return getPillarArchiveStaticPaths('mineral-rights-value');
+}
+
+const currentPage = Number(Astro.params.page);
+---
+
+<PillarArchivePage
+  pillarId={PILLAR_ID}
+  currentPage={currentPage}
+  title="Mineral Rights Value Articles · MRX"
+  description="Browse the full MRX mineral-rights value archive: valuation methods, production and royalty inputs, market context, and the assumptions behind a range."
+/>

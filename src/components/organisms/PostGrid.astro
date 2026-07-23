@@ -18,11 +18,10 @@ const withSlug = (p: CollectionEntry<'posts'>) => ({
 
 <section class="container section">
   <div class="grid grid--3">
-    {posts.map((p) => (
-      <PostCard
-        post={withSlug(p)}
-        href={`/blog/${p.id.replace(/\.mdx?$/, '')}/`}
-      />
-    ))}
+    {
+      posts.map((p) => (
+        <PostCard post={withSlug(p)} href={`/blog/${p.id.replace(/\.mdx?$/, '')}/`} />
+      ))
+    }
   </div>
 </section>
