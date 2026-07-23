@@ -5,8 +5,9 @@ Use this runbook to clear the remaining authority-dependent gates. Do not paste 
 ## 1. Confirm the release candidate
 
 1. Open the MRX repository and switch to `integration/mrx-launch-20260722-aa3986533`.
-2. Confirm the application release is `6fdeff755246d7b621e343e2d4f7a017663c0dbf` and the current branch HEAD is `ec87de96a9af62101104e4b9ba745ef21e0cdea4`.
-3. Do not include unrelated worktree edits in the production merge: icon-library, knowledge, creative, and QA-export changes are intentionally preserved outside the release commits.
+2. Confirm the application release commit `6fdeff755246d7b621e343e2d4f7a017663c0dbf` is an ancestor of the current branch tip: `git merge-base --is-ancestor 6fdeff755246d7b621e343e2d4f7a017663c0dbf HEAD`.
+3. Record the output of `git rev-parse HEAD` as the exact SHA to deploy. This keeps the instruction correct when evidence-only documentation commits are added.
+4. Do not include unrelated worktree edits in the production merge: icon-library, knowledge, creative, and QA-export changes are intentionally preserved outside the release commits.
 
 ## 2. Add legal and editorial receipts
 
