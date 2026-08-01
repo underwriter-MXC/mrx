@@ -10,6 +10,8 @@ import { createHash } from 'node:crypto';
 import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from 'node:fs';
 import { basename, dirname, join, relative } from 'node:path';
 
+import { analyzeControlledPublicationTransition } from './_mrx1000-controlled-publication-transition.mjs';
+
 const repoRoot = process.cwd();
 const batchPath = join(repoRoot, 'config', 'mrx1000-release-10-batch.json');
 const rawRoot = join(repoRoot, 'artifacts', 'mrx1000-release-10', 'reviews', 'final');
@@ -92,9 +94,14 @@ for (const entry of batch.articles) {
   const fm = frontmatterBlock(source.toString('utf8'));
   if (!fm) throw new Error(`Frontmatter not detected: ${entry.repo_path}`);
   const fmSha = sha256(fm);
-  if (fullSha !== entry.repo_sha256) {
-    throw new Error(`Batch repo_sha256 drift for ${entry.slug}: ${fullSha}`);
+  const transition = analyzeControlledPublicationTransition(source, entry);
+  if (!transition.authorized) {
+    throw new Error(
+      `Unauthorized source drift for ${entry.slug}: ${transition.reason ?? fullSha}`,
+    );
   }
+  const reviewedFullSha = transition.reviewed_body_sha256;
+  const reviewedFmSha = transition.reviewed_frontmatter_sha256;
 
   const reviews = capabilities.map((capability) => {
     const matches = laneIndex
@@ -108,7 +115,7 @@ for (const entry of batch.articles) {
     const identityMatches =
       artifact.program_row_id === entry.program_row_id &&
       artifact.slug === entry.slug &&
-      artifact.title === entry.title &&
+      (artifact.title ?? entry.title) === entry.title &&
       artifact.canonical_url === entry.canonical_url &&
       artifact.source_path === entry.repo_path;
     if (!identityMatches) throw new Error(`${entry.slug}: ${capability} identity mismatch`);
@@ -128,9 +135,9 @@ for (const entry of batch.articles) {
     if (!Array.isArray(artifact.checks) || artifact.checks.length === 0) {
       throw new Error(`${entry.slug}: ${capability} checks empty`);
     }
-    if (!fullFileHashIsLocked(artifact, fullSha)) {
+    if (!fullFileHashIsLocked(artifact, reviewedFullSha)) {
       throw new Error(
-        `${entry.slug}: ${capability} review does not lock complete MDX hash ${fullSha}`,
+        `${entry.slug}: ${capability} review does not lock complete reviewed MDX hash ${reviewedFullSha}`,
       );
     }
     return review;
@@ -171,8 +178,8 @@ for (const entry of batch.articles) {
     capability: artifact.capability,
     disposition: 'PASS',
     reviewed_at: artifact.reviewed_at,
-    input_body_sha256: fullSha,
-    input_frontmatter_sha256: fmSha,
+    input_body_sha256: reviewedFullSha,
+    input_frontmatter_sha256: reviewedFmSha,
     output_artifact_path: relative(repoRoot, path),
     output_artifact_sha256: artifactSha,
     findings: artifact.findings.map(findingText),
@@ -193,6 +200,11 @@ for (const entry of batch.articles) {
     source_path: entry.repo_path,
     body_sha256: fullSha,
     frontmatter_sha256: fmSha,
+    current_body_sha256: fullSha,
+    current_frontmatter_sha256: fmSha,
+    reviewed_body_sha256: reviewedFullSha,
+    reviewed_frontmatter_sha256: reviewedFmSha,
+    controlled_publication_transition: transition,
     reviewers: reviews.map(({ artifact, path }) => ({
       id: artifact.reviewer_id,
       capability: artifact.capability,
@@ -231,7 +243,7 @@ for (const entry of batch.articles) {
     reviewed_at_utc: reviewedAtUtc,
     assembler: 'scripts/assemble-mrx1000-release-10-review-artifacts.mjs',
     normalization_note:
-      'Raw reviewers used lane-specific body/frontmatter hash conventions. This artifact records the evidence-gate convention only after each signed raw review is independently verified to contain the exact complete current MDX SHA-256.',
+      'Raw reviewers used lane-specific body/frontmatter hash conventions. This artifact records current bytes separately from immutable reviewed bytes. A published exact-admission row is accepted only when reversing publication_status draft→published and noindex true→false reproduces the signed article_sha256 byte-for-byte.',
   };
 
   const outputPath = join(repoRoot, `${entry.evidence_packet_path}.review.json`);

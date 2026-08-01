@@ -4,6 +4,8 @@ import { createHash } from 'node:crypto';
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname, join, relative, resolve } from 'node:path';
 
+import { analyzeControlledPublicationTransition } from './_mrx1000-controlled-publication-transition.mjs';
+
 const root = resolve(
   process.argv.find((arg) => arg.startsWith('--tree='))?.slice('--tree='.length) ??
     process.env.MRX_TREE ??
@@ -33,6 +35,15 @@ function bool(block, key) {
   return scalar(block, key) === 'true';
 }
 
+function exactDraftAdmissionReady(block, entry) {
+  return Boolean(
+    bool(block, 'noindex') === true &&
+      scalar(block, 'publication_status') === 'draft' &&
+      entry.admission_status === 'admitted_exact' &&
+      entry.finalization_state === 'draft_noindex_admitted',
+  );
+}
+
 function verifySidecar(path) {
   const sidecar = `${path}.sha256`;
   if (!existsSync(path) || !existsSync(sidecar)) return false;
@@ -55,14 +66,32 @@ function main() {
     const bodySha = sha256(bodyBytes);
     const fmSha = sha256(Buffer.from(`${fm}\n`, 'utf8'));
     const assets = assetsBySlug.get(entry.slug);
+    const transition = analyzeControlledPublicationTransition(bodyBytes, entry);
+    const heroAsset = assets?.assets?.find((asset) => asset.kind === 'hero') ?? null;
+    const socialAsset = assets?.assets?.find((asset) => asset.kind === 'social') ?? null;
+    const exactWave2 = entry.admission_status === 'admitted_exact';
+    const exactHeroReady = !exactWave2 || Boolean(
+      heroAsset?.public_path === entry.hero_path &&
+        socialAsset?.public_path === entry.hero_path &&
+        heroAsset?.sha256 === (entry.hero_asset_sha256 ?? entry.hero_sha256) &&
+        socialAsset?.sha256 === (entry.hero_asset_sha256 ?? entry.hero_sha256) &&
+        heroAsset?.observed_width === 1200 &&
+        heroAsset?.observed_height === 630 &&
+        heroAsset?.observed_mime_type === 'image/webp',
+    );
+    const frontmatterReady =
+      (bool(fm, 'draft') === false &&
+        bool(fm, 'noindex') === false &&
+        scalar(fm, 'publication_status') === 'published') ||
+      exactDraftAdmissionReady(fm, entry);
     const releaseReady = Boolean(
       scalar(fm, 'title') === entry.title &&
-        bool(fm, 'draft') === false &&
-        bool(fm, 'noindex') === false &&
-        scalar(fm, 'publication_status') === 'published' &&
+        frontmatterReady &&
+        transition.authorized &&
         assets?.disposition === 'PASS' &&
         assets?.body_sha256 === bodySha &&
-        assets?.frontmatter_sha256 === fmSha,
+        assets?.frontmatter_sha256 === fmSha &&
+        exactHeroReady,
     );
     rows.push({
       program_row_id: entry.program_row_id,
@@ -77,16 +106,43 @@ function main() {
       rollback_reference: `rollback:${entry.slug}`,
       release_owner: 'chestyorchestrator',
       disposition: releaseReady ? 'READY' : 'HOLD',
+      source_frontmatter_state: {
+        draft: bool(fm, 'draft'),
+        noindex: bool(fm, 'noindex'),
+        publication_status: scalar(fm, 'publication_status'),
+        exact_admission_pre_flip_ready: exactDraftAdmissionReady(fm, entry),
+      },
+      controlled_publication_transition: transition,
+      canonical_hero_identity: {
+        public_path: heroAsset?.public_path ?? null,
+        sha256: heroAsset?.sha256 ?? null,
+        alt_text: heroAsset?.alt_text ?? null,
+        width: heroAsset?.observed_width ?? null,
+        height: heroAsset?.observed_height ?? null,
+        mime_type: heroAsset?.observed_mime_type ?? null,
+        hero_social_same_asset:
+          Boolean(heroAsset && socialAsset) &&
+          heroAsset.public_path === socialAsset.public_path &&
+          heroAsset.sha256 === socialAsset.sha256,
+      },
       rollback: {
-        prior_public_state: 'not_in_production_article_sitemap',
+        prior_public_state:
+          entry.admission_status === 'admitted_exact'
+            ? 'not_in_production_article_sitemap'
+            : 'verified_public_before_wave2',
         restore_frontmatter: {
-          draft: true,
-          publication_status: 'draft',
-          noindex: true,
-          reviewed_by: 'mrx_compliance-pending-release-10',
+          draft: false,
+          publication_status:
+            entry.admission_status === 'admitted_exact' ? 'draft' : 'published',
+          noindex: entry.admission_status === 'admitted_exact',
+          reviewed_by: scalar(fm, 'reviewed_by') || null,
         },
+        reviewed_source_sha256: transition.reviewed_body_sha256,
+        current_source_sha256: transition.current_body_sha256,
         procedure:
-          'Restore the pre-release frontmatter state for this exact source path, rebuild through every release gate, redeploy the previous verified Vercel production deployment, and verify the URL is absent from article sitemap and LLM indexes.',
+          entry.admission_status === 'admitted_exact'
+            ? 'Restore only publication_status to draft and noindex to true for this exact source path; verify the restored file SHA-256 equals reviewed_source_sha256; rebuild through every release gate; redeploy the previous verified Vercel production deployment; and verify the URL is absent from article sitemap and LLM indexes.'
+            : 'Redeploy the previous verified Vercel production deployment and verify the incumbent article remains public.',
       },
     });
   }
@@ -98,6 +154,14 @@ function main() {
     batch_config_sha256: sha256(batchBytes),
     asset_evidence_path: relative(root, assetPath),
     asset_evidence_sha256: sha256(assetBytes),
+    hero_rebinding_authority: {
+      decision_id:
+        batch.decision_authority?.batch_admission_hero_rebinding_addendum_id ?? null,
+      path:
+        batch.decision_authority?.batch_admission_hero_rebinding_addendum_path ?? null,
+      sha256:
+        batch.decision_authority?.batch_admission_hero_rebinding_addendum_sha256 ?? null,
+    },
     production_registry: {
       confirmed_active_targets_at_preflight: ['vercel-origin-via-cloudflare-apex'],
       canonical_origin: 'https://mineralrightsxchange.com',

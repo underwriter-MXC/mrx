@@ -23,7 +23,7 @@
  *      (today: zero) matches the UUID v4/v5 shape, and the current
  *      authoritative expected persisted count is 0 for both.
  *  P8. The four preservation classes partition the 1,000 rows into
- *      19 + 109 + 25 + 847 = 1,000 after verified release-10 publication.
+ *      34 + 94 + 25 + 847 = 1,000 after the exact-25 release transition.
  *  P9. `frontmatter_noindex` and `publication_gate_nonpublic` are
  *      tracked as separate fields; nonpublic incumbents are explicitly
  *      held via `publication_gate_nonpublic=true` even when frontmatter
@@ -36,28 +36,38 @@
  * P13. The report documents the pilot-aware invariant, the preservation
  *      classes, and the SearchAtlas-vs-Content-Genius distinction.
  */
-import { describe, it, expect, beforeAll } from 'vitest';
+import { describe, it, expect, beforeAll, afterAll } from 'vitest';
 import { spawnSync } from 'node:child_process';
 import { createHash } from 'node:crypto';
-import { readFileSync, existsSync, readdirSync, statSync } from 'node:fs';
+import {
+  readFileSync,
+  existsSync,
+  readdirSync,
+  statSync,
+  mkdtempSync,
+  rmSync,
+} from 'node:fs';
+import { tmpdir } from 'node:os';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const MRX_ROOT = path.resolve(HERE, '..', '..');
 const SCRIPT = path.join(MRX_ROOT, 'scripts/build-mrx-1000-content-ledger.mjs');
-const JSON_OUT = path.join(MRX_ROOT, 'config/mrx-1000-canonical-content-ledger.json');
-const CSV_OUT = path.join(MRX_ROOT, 'config/mrx-1000-canonical-content-ledger.csv');
+const CANONICAL_JSON = path.join(MRX_ROOT, 'config/mrx-1000-canonical-content-ledger.json');
+const CANONICAL_CSV = path.join(MRX_ROOT, 'config/mrx-1000-canonical-content-ledger.csv');
+const EXPECTED_D04_JSON_SHA256 =
+  '897de9c3aa0f40bc32f63638f2fd847e9788b7100a1c97d6ffbe23f226957559';
+const EXPECTED_D04_CSV_SHA256 =
+  '027691327d6c7cb93a2ab93340275e48c9ccfa21caf01fe3a01d0830e4b8006a';
+const TEST_OUTPUT_DIR = mkdtempSync(path.join(tmpdir(), 'mrx1000-ledger-idempotency-'));
+const JSON_OUT = path.join(TEST_OUTPUT_DIR, 'mrx-1000-canonical-content-ledger.json');
+const CSV_OUT = path.join(TEST_OUTPUT_DIR, 'mrx-1000-canonical-content-ledger.csv');
 const POST_PUBLICATION_VERIFICATION = path.join(
   MRX_ROOT,
   'artifacts/mrx1000-release-10/release/post-publication-verification.json',
 );
-const REPORT_OUT = path.join(
-  MRX_ROOT,
-  '..',
-  'program-plans',
-  'mrx-1000-canonical-content-ledger-report.md',
-);
+const REPORT_OUT = path.join(TEST_OUTPUT_DIR, 'mrx-1000-canonical-content-ledger-report.md');
 const PILOT_MANIFEST = path.join(MRX_ROOT, 'config/mrx-1000-pilot-batch-001.json');
 const POSTS_DIR = path.join(MRX_ROOT, 'src/content/posts');
 
@@ -184,7 +194,16 @@ interface Ledger {
 const UUID_V4_V5_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
 
 function runGenerator(): void {
-  const r = spawnSync('node', [SCRIPT], { cwd: MRX_ROOT, encoding: 'utf8' });
+  const r = spawnSync(process.execPath, [SCRIPT], {
+    cwd: MRX_ROOT,
+    encoding: 'utf8',
+    env: {
+      ...process.env,
+      MRX1000_LEDGER_OUTPUT_DIR: TEST_OUTPUT_DIR,
+      MRX1000_LEDGER_REPORT_PATH: REPORT_OUT,
+      MRX1000_LEDGER_PRIOR_PATH: CANONICAL_JSON,
+    },
+  });
   if (r.status !== 0) {
     throw new Error(
       `build-mrx-1000-content-ledger.mjs exited ${r.status}\nstdout:\n${r.stdout}\nstderr:\n${r.stderr}`,
@@ -211,6 +230,8 @@ describe('MRX1000 canonical ledger generator (pilot-aware + idempotent)', () => 
   let expectedReleaseDeploymentId: string;
 
   beforeAll(() => {
+    expect(sha256File(CANONICAL_JSON)).toBe(EXPECTED_D04_JSON_SHA256);
+    expect(sha256File(CANONICAL_CSV)).toBe(EXPECTED_D04_CSV_SHA256);
     manifest = JSON.parse(readFileSync(PILOT_MANIFEST, 'utf8')) as PilotManifest;
     expectedReleaseDeploymentId = JSON.parse(
       readFileSync(POST_PUBLICATION_VERIFICATION, 'utf8'),
@@ -245,6 +266,12 @@ describe('MRX1000 canonical ledger generator (pilot-aware + idempotent)', () => 
     };
     fingerprintFirst = ledger.content_fingerprint_sha256;
     generatedAtFirst = ledger.generated_at;
+  });
+
+  afterAll(() => {
+    expect(sha256File(CANONICAL_JSON)).toBe(EXPECTED_D04_JSON_SHA256);
+    expect(sha256File(CANONICAL_CSV)).toBe(EXPECTED_D04_CSV_SHA256);
+    rmSync(TEST_OUTPUT_DIR, { recursive: true, force: true });
   });
 
   it('reports pilot-aware policy and a deterministic generated_at method', () => {
@@ -400,10 +427,10 @@ describe('MRX1000 canonical ledger generator (pilot-aware + idempotent)', () => 
     expect(totalAuthoritativeUuids).toBe(0);
   });
 
-  it('preservation classes partition the 1,000 rows as 19 + 109 + 25 + 847 after the verified release', () => {
+  it('preservation classes partition the 1,000 rows as 34 + 94 + 25 + 847 after the exact-25 release', () => {
     const counts = ledger.verification.preservation_classification_counts;
-    expect(counts.live_public_published_route).toBe(19);
-    expect(counts.incumbent_draft_nonpublic_held).toBe(109);
+    expect(counts.live_public_published_route).toBe(34);
+    expect(counts.incumbent_draft_nonpublic_held).toBe(94);
     expect(counts.pilot_draft_noindex_stage).toBe(25);
     expect(counts.planning_only_inventory).toBe(847);
     expect(ledger.verification.aggregate_eq_1000).toBe(true);
@@ -413,12 +440,12 @@ describe('MRX1000 canonical ledger generator (pilot-aware + idempotent)', () => 
         counts.pilot_draft_noindex_stage +
         counts.planning_only_inventory,
     ).toBe(1000);
-    // The remaining 109 incumbent drafts stay fail-closed. The released 10
-    // moved to the live-public bucket only after production verification.
+    // The remaining 94 incumbent drafts stay fail-closed. The exact 25-row
+    // release set is now publication-shaped under its signed admission gate.
     const drafts = ledger.articles.filter(
       (r) => r.preservation_classification === 'incumbent_draft_nonpublic_held',
     );
-    expect(drafts.length).toBe(109);
+    expect(drafts.length).toBe(94);
     for (const row of drafts) {
       expect(row.publication_gate_nonpublic).toBe(true);
     }
@@ -436,8 +463,21 @@ describe('MRX1000 canonical ledger generator (pilot-aware + idempotent)', () => 
           row.index_status === 'published_indexable_pending_search_engine_index_confirmation',
       ),
     ).toBe(true);
+    const pendingProductionVerification = ledger.articles.filter(
+      (row) => row.normalized_status === 'authorized_release_candidate_pending_gate_and_deployment',
+    );
+    expect(pendingProductionVerification).toHaveLength(15);
+    expect(
+      pendingProductionVerification.every(
+        (row) =>
+          row.preservation_classification === 'live_public_published_route' &&
+          row.publication_gate_nonpublic === false &&
+          row.production_verification_sha256 == null &&
+          row.deployment_id == null,
+      ),
+    ).toBe(true);
     const ordinaryHeldDrafts = drafts;
-    expect(ordinaryHeldDrafts).toHaveLength(109);
+    expect(ordinaryHeldDrafts).toHaveLength(94);
     expect(
       ordinaryHeldDrafts.every(
         (row) =>
@@ -445,17 +485,18 @@ describe('MRX1000 canonical ledger generator (pilot-aware + idempotent)', () => 
           row.publication_state === 'draft_workspace_article',
       ),
     ).toBe(true);
-    // The 9 legacy routes and 10 verified release routes are all live-public,
+    // The 9 legacy routes and 25 admitted release routes are all live-public,
     // while retaining distinct normalized statuses for provenance.
     const live = ledger.articles.filter(
       (r) => r.preservation_classification === 'live_public_published_route',
     );
-    expect(live.length).toBe(19);
+    expect(live.length).toBe(34);
     for (const row of live) {
       expect(row.publication_gate_nonpublic).toBe(false);
       expect([
         'live_public_published_route_existing_route_verified',
         'live_public_published_route_release_10_verified',
+        'authorized_release_candidate_pending_gate_and_deployment',
       ]).toContain(row.normalized_status);
     }
   });
@@ -474,12 +515,12 @@ describe('MRX1000 canonical ledger generator (pilot-aware + idempotent)', () => 
         }
       }
     }
-    // We expect 981 nonpublic rows: 109 held incumbents, 25 pilots, and
-    // 847 planning-only rows. The 10 verified release rows are live-public.
-    expect(nonpublicRows).toBe(109 + 25 + 847);
+    // We expect 966 nonpublic rows: 94 held incumbents, 25 pilots, and
+    // 847 planning-only rows. The exact 25 release rows are live-public.
+    expect(nonpublicRows).toBe(94 + 25 + 847);
     // The 25 pilots explicitly declare frontmatter `noindex: true`.
     expect(nonpublicRowsWithFrontmatterNoindexTrue).toBe(25);
-    expect(nonpublicRowsWithFrontmatterNoindexFalse).toBe(109 + 847);
+    expect(nonpublicRowsWithFrontmatterNoindexFalse).toBe(94 + 847);
     // `noindex_required` is the derived disjunction; nonpublic rows keep the
     // safe downstream default of `true` regardless of the frontmatter fact.
     for (const row of ledger.articles) {
@@ -605,7 +646,7 @@ describe('MRX1000 canonical ledger generator (pilot-aware + idempotent)', () => 
     expect(report).toContain('live_public_published_route');
     expect(report).toContain('pilot_draft_noindex_stage');
     expect(report).toContain('planning_only_inventory');
-    expect(report).toContain('19 + 109 + 25 + 847 = 1,000');
+    expect(report).toContain('34 + 94 + 25 + 847 = 1,000');
     expect(report).toContain('SearchAtlas map evidence');
     expect(report).toContain('workflow_status_evidence_is_non_creation');
   });

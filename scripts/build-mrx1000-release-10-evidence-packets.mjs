@@ -56,6 +56,11 @@ import { dirname, join, relative, resolve } from 'node:path';
 
 import process from 'node:process';
 
+import {
+  analyzeControlledPublicationTransition,
+  transitionProofMatches,
+} from './_mrx1000-controlled-publication-transition.mjs';
+
 // Allow override via --tree=<abs-path> (used by tests) or MRX_TREE
 // environment variable. Default behavior is unchanged: cwd if it
 // contains config/mrx1000-release-10-batch.json, else script-parent.
@@ -119,7 +124,7 @@ function verifySidecar(path) {
  * Returns { disposition: 'PASS', reviewers: [...] } on success or
  *         { disposition: 'HOLD', reason: '...' } on any mismatch.
  */
-function ingestReviewArtifact({ artifactPath, bodySha, fmSha, entry }) {
+function ingestReviewArtifact({ artifactPath, bodySha, fmSha, entry, transition }) {
   if (!existsSync(artifactPath)) {
     return { disposition: 'HOLD', reason: 'no_review_artifact_file' };
   }
@@ -155,6 +160,18 @@ function ingestReviewArtifact({ artifactPath, bodySha, fmSha, entry }) {
   }
   if (artifact.frontmatter_sha256?.toLowerCase() !== fmSha.toLowerCase()) {
     return { disposition: 'HOLD', reason: 'review_artifact_frontmatter_sha256_mismatch' };
+  }
+  if (!transition?.authorized) {
+    return { disposition: 'HOLD', reason: `source_transition_invalid:${transition?.reason ?? 'unknown'}` };
+  }
+  if (
+    artifact.reviewed_body_sha256?.toLowerCase() !== transition.reviewed_body_sha256 ||
+    artifact.reviewed_frontmatter_sha256?.toLowerCase() !== transition.reviewed_frontmatter_sha256 ||
+    artifact.current_body_sha256?.toLowerCase() !== transition.current_body_sha256 ||
+    artifact.current_frontmatter_sha256?.toLowerCase() !== transition.current_frontmatter_sha256 ||
+    !transitionProofMatches(artifact.controlled_publication_transition, transition)
+  ) {
+    return { disposition: 'HOLD', reason: 'review_artifact_controlled_transition_mismatch' };
   }
   const passes = artifact.passes ?? {};
   const passDispositions = {
@@ -211,8 +228,8 @@ function ingestReviewArtifact({ artifactPath, bodySha, fmSha, entry }) {
         !pass.reviewer_id ||
         !requiredCaps.includes(pass.capability) ||
         pass.disposition !== 'PASS' ||
-        pass.input_body_sha256?.toLowerCase() !== bodySha.toLowerCase() ||
-        pass.input_frontmatter_sha256?.toLowerCase() !== fmSha.toLowerCase() ||
+        pass.input_body_sha256?.toLowerCase() !== transition.reviewed_body_sha256 ||
+        pass.input_frontmatter_sha256?.toLowerCase() !== transition.reviewed_frontmatter_sha256 ||
         !/^\d{4}-\d{2}-\d{2}T/.test(pass.reviewed_at ?? '') ||
         !pass.output_artifact_path ||
         !/^[a-f0-9]{64}$/i.test(pass.output_artifact_sha256 ?? '') ||
@@ -244,6 +261,7 @@ function ingestReviewArtifact({ artifactPath, bodySha, fmSha, entry }) {
     reviewed_at_utc: artifact.reviewed_at_utc ?? null,
     review_artifact_path: relative(repoRoot, artifactPath),
     review_artifact_sha256: observedArtifactSha,
+    controlled_publication_transition: transition,
   };
 }
 
@@ -255,6 +273,19 @@ function buildPacket({ entry, bodyPath, materializedAt, assetEvidence, publicati
   const bodySha = bodyExists ? sha256(bodySource) : null;
   const fm = bodySource ? frontmatterBlock(bodySource.toString('utf8')) : null;
   const fmSha = fm ? sha256(fm) : null;
+  const transition = bodySource
+    ? analyzeControlledPublicationTransition(bodySource, entry)
+    : {
+        authorized: false,
+        state: 'invalid',
+        reason: 'body_md_not_found',
+        reviewed_body_sha256: entry.article_sha256 ?? entry.repo_sha256 ?? null,
+        reviewed_frontmatter_sha256: null,
+        current_body_sha256: null,
+        current_frontmatter_sha256: null,
+        normalized_body_sha256: null,
+        changes: [],
+      };
 
   // Fail-closed default: HOLD. Hash identity is supporting evidence
   // only and does not satisfy editorial/factual/compliance review.
@@ -284,14 +315,15 @@ function buildPacket({ entry, bodyPath, materializedAt, assetEvidence, publicati
       bodySha,
       fmSha,
       entry,
+      transition,
     });
     if (ingested.disposition === 'PASS') {
       reviewers = ingested.reviewers.map((r) => ({
         id: r.id,
         capability: r.capability,
         verdict: 'PASS',
-        reviewed_body_sha256: bodySha,
-        reviewed_frontmatter_sha256: fmSha,
+        reviewed_body_sha256: transition.reviewed_body_sha256,
+        reviewed_frontmatter_sha256: transition.reviewed_frontmatter_sha256,
         reviewed_at: typeof r.reviewed_at === 'string' ? r.reviewed_at : null,
         findings_ref: typeof r.findings_ref === 'string' ? r.findings_ref : null,
         review_run_id: typeof r.review_run_id === 'string' ? r.review_run_id : null,
@@ -363,8 +395,12 @@ function buildPacket({ entry, bodyPath, materializedAt, assetEvidence, publicati
     frontmatter_sha256: fmSha ?? '0'.repeat(64),
     body_path_declared: entry.repo_path,
     body_sha256_declared: entry.repo_sha256 ?? null,
+    reviewed_body_sha256_declared: entry.article_sha256 ?? entry.repo_sha256 ?? null,
     body_path_resolved_exists: bodyExists,
     body_sha256_matches_declared: bodyExists && entry.repo_sha256 === bodySha,
+    body_sha256_matches_declared_or_authorized_transition:
+      bodyExists && transition.authorized,
+    controlled_publication_transition: transition,
     editorial_disposition: reviewers.length >= 3 || (reviewers.length >= 2 && reviewers.some((r) => r.capability === 'editorial'))
       ? disposition
       : 'HOLD',
@@ -414,6 +450,7 @@ function buildPacket({ entry, bodyPath, materializedAt, assetEvidence, publicati
       'Evidence packet materialized by the canonical lifecycle dashboard machinery (D-2026-0721-21).',
       'Hash identity is supporting evidence only; it does not satisfy editorial, factual/citation, or compliance review.',
       'Disposition remains HOLD until a durable, hash-matched review artifact is ingested covering editorial, factual_citation, and compliance capabilities with at least two distinct reviewer identities.',
+      'For exact-admission publication, current deployed bytes may differ from reviewed bytes only by publication_status draft→published and noindex true→false; reversing those two fields must reproduce article_sha256 byte-for-byte.',
       'The hold_reason field explains the precise reason the packet was not promoted; PASS is never inferred from MDX existence or hash match alone.',
     ],
   };
@@ -512,6 +549,10 @@ function main() {
       body_sha256_declared: entry.repo_sha256,
       body_sha256_observed: packet.body_sha256,
       body_sha256_matches_declared: packet.body_sha256_matches_declared,
+      body_sha256_matches_declared_or_authorized_transition:
+        packet.body_sha256_matches_declared_or_authorized_transition,
+      controlled_publication_transition_state:
+        packet.controlled_publication_transition?.state ?? null,
     });
     written.push({
       path: entry.evidence_packet_path,

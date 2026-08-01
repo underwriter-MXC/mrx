@@ -28,10 +28,20 @@
 
 import { afterEach, beforeEach, describe, expect, it } from 'vitest';
 import { spawnSync } from 'node:child_process';
-import { existsSync, mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
+import {
+  existsSync,
+  mkdirSync,
+  mkdtempSync,
+  readFileSync,
+  rmSync,
+  symlinkSync,
+  writeFileSync,
+} from 'node:fs';
 import { createHash } from 'node:crypto';
 import { join, resolve } from 'node:path';
 import { tmpdir } from 'node:os';
+
+import { analyzeControlledPublicationTransition } from '../../scripts/_mrx1000-controlled-publication-transition.mjs';
 
 const repoRoot = resolve(__dirname, '..', '..');
 
@@ -40,7 +50,7 @@ function sha256Hex(buffer: Buffer | string): string {
 }
 
 function runNode(args: string[], opts: { env?: Record<string, string>; cwd?: string } = {}) {
-  return spawnSync('node', args, {
+  return spawnSync(process.execPath, args, {
     cwd: opts.cwd ?? repoRoot,
     env: { ...process.env, ...(opts.env ?? {}) } as NodeJS.ProcessEnv,
     encoding: 'utf8',
@@ -85,6 +95,114 @@ function runCheckAndRead(args: string[] = []): CheckRunResult {
   };
 }
 
+function sortDeep(value: unknown): unknown {
+  if (Array.isArray(value)) return value.map(sortDeep);
+  if (value && typeof value === 'object') {
+    return Object.fromEntries(
+      Object.keys(value as Record<string, unknown>)
+        .sort()
+        .map((key) => [key, sortDeep((value as Record<string, unknown>)[key])]),
+    );
+  }
+  return value;
+}
+
+function exactSlateSha(rows: unknown[]): string {
+  return sha256Hex(JSON.stringify(sortDeep(rows)));
+}
+
+function runTamperedExactGate(
+  mutate: (batch: Record<string, any>) => void,
+  opts: { mutateGscJson?: (receipt: Record<string, any>) => void } = {},
+): CheckRunResult {
+  const tree = mkdtempSync(join(tmpdir(), 'mrx-exact-gate-'));
+  try {
+    mkdirSync(join(tree, 'config'), { recursive: true });
+    mkdirSync(join(tree, 'reports'), { recursive: true });
+    mkdirSync(join(tree, 'reports', 'mrx1000-release-10-lifecycle'), { recursive: true });
+    symlinkSync(join(repoRoot, 'src'), join(tree, 'src'), 'dir');
+    symlinkSync(join(repoRoot, 'artifacts'), join(tree, 'artifacts'), 'dir');
+    if (existsSync(join(repoRoot, 'dist'))) {
+      symlinkSync(join(repoRoot, 'dist'), join(tree, 'dist'), 'dir');
+    }
+    symlinkSync(
+      join(repoRoot, 'config', 'mrx-1000-canonical-content-ledger.json'),
+      join(tree, 'config', 'mrx-1000-canonical-content-ledger.json'),
+      'file',
+    );
+    for (const name of [
+      'mrx1000-wave2-pre-release-qa.json',
+      'mrx1000-wave2-pre-release-qa.json.sha256',
+      'mrx1000-wave2-pre-release-qa.md',
+      'mrx1000-wave2-pre-release-qa.md.sha256',
+      'mrx1000-wave2-release-manifest-20260801T003929Z.json',
+      'mrx1000-wave2-release-manifest-20260801T003929Z.json.sha256',
+      'mrx1000-wave2-rollback-packet-20260801T003929Z.json',
+      'mrx1000-wave2-rollback-packet-20260801T003929Z.json.sha256',
+      'mrx1000-wave2-final2-gates.log',
+      'mrx1000-wave2-final2-gates.log.sha256',
+      'mrx1000-wave2-creative-revalidate-9x8-20260801T021210Z',
+    ]) {
+      const source = join(repoRoot, 'reports', name);
+      if (existsSync(source)) {
+        symlinkSync(source, join(tree, 'reports', name), name.includes('.') ? 'file' : 'dir');
+      }
+    }
+    for (const name of [
+      'gsc-url-inspection-2026-07-31.json',
+      'gsc-url-inspection-2026-07-31.json.sha256',
+      'gsc-url-inspection-2026-07-31.md',
+      'gsc-url-inspection-2026-07-31.md.sha256',
+    ]) {
+      const source = join(repoRoot, 'reports', 'mrx1000-release-10-lifecycle', name);
+      const target = join(tree, 'reports', 'mrx1000-release-10-lifecycle', name);
+      if (!existsSync(source)) continue;
+      if (name === 'gsc-url-inspection-2026-07-31.json' && opts.mutateGscJson) {
+        const receipt = JSON.parse(readFileSync(source, 'utf8'));
+        opts.mutateGscJson(receipt);
+        const bytes = `${JSON.stringify(receipt, null, 2)}\n`;
+        writeFileSync(target, bytes);
+        writeFileSync(`${target}.sha256`, `${sha256Hex(bytes)}  ${name}\n`);
+        continue;
+      }
+      if (name === 'gsc-url-inspection-2026-07-31.json.sha256' && opts.mutateGscJson) {
+        continue;
+      }
+      symlinkSync(source, target, 'file');
+    }
+    const batch = JSON.parse(
+      readFileSync(join(repoRoot, 'config', 'mrx1000-release-10-batch.json'), 'utf8'),
+    );
+    mutate(batch);
+    batch.policy.exact_admitted_slate_sha256 = exactSlateSha(batch.articles);
+    writeFileSync(
+      join(tree, 'config', 'mrx1000-release-10-batch.json'),
+      `${JSON.stringify(batch, null, 2)}\n`,
+    );
+    const result = runScript('scripts/check-mrx1000-release-gates.mjs', [
+      `--tree=${tree}`,
+      '--expected-decision-sha=d78eba9cd8ce17b50a70331f6c5a3cb3bd4f4537f7c2ea9d3d0084fc6c1562c7',
+    ]);
+    const jsonPath = join(tree, 'reports', 'mrx1000-release-10-lifecycle', 'check-gates.json');
+    const mdPath = join(tree, 'reports', 'mrx1000-release-10-lifecycle', 'check-gates.md');
+    if (!existsSync(jsonPath)) {
+      throw new Error(
+        `Tampered gate did not write its report (exit=${result.status}). stdout=${result.stdout} stderr=${result.stderr}`,
+      );
+    }
+    return {
+      exitCode: result.status,
+      stdout: result.stdout,
+      stderr: result.stderr,
+      jsonPath,
+      mdPath,
+      payload: JSON.parse(readFileSync(jsonPath, 'utf8')),
+    };
+  } finally {
+    rmSync(tree, { recursive: true, force: true });
+  }
+}
+
 describe('scripts/build-mrx1000-release-10-evidence-packets.mjs', () => {
   let workTree: string | null = null;
 
@@ -99,7 +217,13 @@ describe('scripts/build-mrx1000-release-10-evidence-packets.mjs', () => {
     }
   });
 
-  function makeTree(opts: { withReviewArtifact?: boolean; bodyOverrideBytes?: Buffer } = {}) {
+  function makeTree(
+    opts: {
+      withReviewArtifact?: boolean;
+      bodyOverrideBytes?: Buffer;
+      controlledTransition?: boolean;
+    } = {},
+  ) {
     const tree = workTree!;
     mkdirSync(join(tree, 'config'), { recursive: true });
     mkdirSync(join(tree, 'src/content/posts'), { recursive: true });
@@ -111,14 +235,30 @@ describe('scripts/build-mrx1000-release-10-evidence-packets.mjs', () => {
     mkdirSync(join(tree, 'reports'), { recursive: true });
     const bodyPath = 'src/content/posts/sample-article.mdx';
     const body = Buffer.from(
-      `---\ntitle: Sample\npublication_status: published\ncanonical_slug: sample-article\n---\n\n# sample\n`,
+      `---\ntitle: Sample\ndraft: false\npublication_status: published\nnoindex: false\ncanonical_slug: sample-article\n---\n\n# sample\n`,
       'utf8',
     );
     const bodyOverride = opts.bodyOverrideBytes ?? body;
+    const reviewedBody = opts.controlledTransition
+      ? Buffer.from(
+          bodyOverride
+            .toString('utf8')
+            .replace('publication_status: published', 'publication_status: draft')
+            .replace('noindex: false', 'noindex: true'),
+          'utf8',
+        )
+      : bodyOverride;
     writeFileSync(join(tree, bodyPath), bodyOverride);
     const bodySha = sha256Hex(bodyOverride);
     const frontmatterBlock = bodyOverride.toString('utf8').match(/^---\r?\n([\s\S]*?)\r?\n---/);
     const fmSha = sha256Hex(Buffer.from((frontmatterBlock?.[1] ?? '') + '\n', 'utf8'));
+    const reviewedSha = sha256Hex(reviewedBody);
+    const reviewedFrontmatterBlock = reviewedBody
+      .toString('utf8')
+      .match(/^---\r?\n([\s\S]*?)\r?\n---/);
+    const reviewedFmSha = sha256Hex(
+      Buffer.from((reviewedFrontmatterBlock?.[1] ?? '') + '\n', 'utf8'),
+    );
     const assetEvidence = {
       rows: [
         {
@@ -192,7 +332,14 @@ describe('scripts/build-mrx1000-release-10-evidence-packets.mjs', () => {
               evidence_packet_path: 'artifacts/mrx1000-release-10/evidence/sample-article.json',
               evidence_packet_path_required: true,
               repo_path: bodyPath,
-              repo_sha256: bodySha,
+              repo_sha256: reviewedSha,
+              ...(opts.controlledTransition
+                ? {
+                    article_sha256: reviewedSha,
+                    admission_status: 'admitted_exact',
+                    finalization_state: 'draft_noindex_admitted',
+                  }
+                : {}),
             },
           ],
         },
@@ -211,8 +358,8 @@ describe('scripts/build-mrx1000-release-10-evidence-packets.mjs', () => {
           capability,
           disposition: 'PASS',
           reviewed_at: '2026-07-21T12:00:00Z',
-          input_body_sha256: bodySha,
-          input_frontmatter_sha256: fmSha,
+          input_body_sha256: reviewedSha,
+          input_frontmatter_sha256: reviewedFmSha,
           output_artifact_path: outputPath,
           output_artifact_sha256: sha256Hex(outputText),
           findings: [`${capability} checks completed`],
@@ -256,6 +403,20 @@ describe('scripts/build-mrx1000-release-10-evidence-packets.mjs', () => {
         },
         body_sha256: bodySha,
         frontmatter_sha256: fmSha,
+        current_body_sha256: bodySha,
+        current_frontmatter_sha256: fmSha,
+        reviewed_body_sha256: reviewedSha,
+        reviewed_frontmatter_sha256: reviewedFmSha,
+        controlled_publication_transition: analyzeControlledPublicationTransition(bodyOverride, {
+          repo_sha256: reviewedSha,
+          ...(opts.controlledTransition
+            ? {
+                article_sha256: reviewedSha,
+                admission_status: 'admitted_exact',
+                finalization_state: 'draft_noindex_admitted',
+              }
+            : {}),
+        }),
         claim_to_source: [
           {
             claim: 'numeric claim about RRC data',
@@ -293,7 +454,7 @@ describe('scripts/build-mrx1000-release-10-evidence-packets.mjs', () => {
       );
     }
 
-    return { tree, bodySha, fmSha };
+    return { tree, bodySha, fmSha, reviewedSha, reviewedFmSha };
   }
 
   it('defaults every disposition to HOLD when no review artifact is present', () => {
@@ -360,6 +521,30 @@ describe('scripts/build-mrx1000-release-10-evidence-packets.mjs', () => {
     expect(packet.review_artifact_sha256).toMatch(/^[0-9a-f]{64}$/);
   });
 
+  it('preserves PASS after the exact byte-proven publication_status/noindex transition', () => {
+    const { tree, bodySha, reviewedSha } = makeTree({
+      withReviewArtifact: true,
+      controlledTransition: true,
+    });
+    const r = runScript(
+      'scripts/build-mrx1000-release-10-evidence-packets.mjs',
+      [`--tree=${tree}`],
+      { cwd: tree },
+    );
+    expect(r.status).toBe(0);
+    const packetPath = join(tree, 'artifacts/mrx1000-release-10/evidence/sample-article.json');
+    const packet = JSON.parse(readFileSync(packetPath, 'utf8'));
+    expect(packet.editorial_disposition).toBe('PASS');
+    expect(packet.body_sha256).toBe(bodySha);
+    expect(packet.reviewed_body_sha256_declared).toBe(reviewedSha);
+    expect(packet.body_sha256_matches_declared).toBe(false);
+    expect(packet.body_sha256_matches_declared_or_authorized_transition).toBe(true);
+    expect(packet.controlled_publication_transition.state).toBe(
+      'controlled_publication_transition',
+    );
+    expect(packet.controlled_publication_transition.normalized_body_sha256).toBe(reviewedSha);
+  });
+
   it('produces byte-identical HOLD packets and manifests on unchanged reruns', () => {
     const { tree } = makeTree();
     const first = runScript(
@@ -385,12 +570,21 @@ describe('scripts/build-mrx1000-release-10-evidence-packets.mjs', () => {
 
 describe('scripts/check-mrx1000-release-gates.mjs', () => {
   beforeEach(() => {
-    // Wipe any leftover side-effects between tests.
+    // Wipe only the check-gates outputs between tests; keep bound lifecycle
+    // evidence fixtures (for example the GSC inspection receipts) intact.
     const outDir = join(repoRoot, 'reports', 'mrx1000-release-10-lifecycle');
-    if (existsSync(outDir)) rmSync(outDir, { recursive: true, force: true });
+    for (const filename of [
+      'check-gates.json',
+      'check-gates.json.sha256',
+      'check-gates.md',
+      'check-gates.md.sha256',
+    ]) {
+      const path = join(outDir, filename);
+      if (existsSync(path)) rmSync(path, { force: true });
+    }
   });
 
-  it('writes JSON+MD reports and passes the exact authorized 10 after final approval', () => {
+  it('writes JSON+MD reports and passes the exact authorized 25 after final approval', () => {
     const r = runCheckAndRead();
     expect(existsSync(r.jsonPath)).toBe(true);
     expect(existsSync(r.mdPath)).toBe(true);
@@ -403,8 +597,8 @@ describe('scripts/check-mrx1000-release-gates.mjs', () => {
       packets_failing: number;
     };
     expect(evidence).toMatchObject({
-      packets_required: 10,
-      packets_passing: 10,
+      packets_required: 25,
+      packets_passing: 25,
       packets_failing: 0,
     });
     const informational = (r.payload.informational_findings as string[]) || [];
@@ -417,11 +611,16 @@ describe('scripts/check-mrx1000-release-gates.mjs', () => {
       authorized_release_total: number;
       observed_release_total: number;
     };
-    expect(cap.authorized_release_total).toBe(10);
-    // The exact ten sources are publication-shaped so the final review hashes
-    // cover deployed bytes. They count against the cap, while the decision and
-    // evidence gates below still prevent any production release.
-    expect(cap.observed_release_total).toBe(10);
+    expect(cap.authorized_release_total).toBe(25);
+    // The exact authorized set is fully flipped, so all 25 admitted rows are
+    // observed as public-live while remaining exactly at the signed cap. The
+    // immutable ledger still records the exact 15 as held, so this also pins
+    // the runtime controlled-transition override wiring used during builds.
+    expect(cap.observed_release_total).toBe(25);
+    const inputs = r.payload.inputs as {
+      ledger: { runtime_publication_overrides: unknown[] };
+    };
+    expect(inputs.ledger.runtime_publication_overrides).toHaveLength(15);
     const policy = r.payload.policy as Record<string, unknown>;
     expect(policy.authorization_decision_disposition).toBe('APPROVED');
     expect(policy.release_authorized).toBe(true);
@@ -450,6 +649,176 @@ describe('scripts/check-mrx1000-release-gates.mjs', () => {
     expect(r.exitCode).toBe(0);
     const blocking = r.payload.blocking_findings as string[];
     expect(blocking.some((f) => f.includes(slug) && f.includes('not PASS'))).toBe(false);
+  });
+
+  it('--expected-decision-sha binds to the exact batch-admission decision in exact mode', () => {
+    const r = runCheckAndRead([
+      '--expected-decision-sha=d78eba9cd8ce17b50a70331f6c5a3cb3bd4f4537f7c2ea9d3d0084fc6c1562c7',
+    ]);
+    expect(r.exitCode).toBe(0);
+    const blocking = (r.payload.blocking_findings as string[]) || [];
+    expect(
+      blocking.some((f) => f.includes('Batch-admission decision SHA-256 does not match')),
+    ).toBe(false);
+    const exact = ((r.payload.inputs as Record<string, unknown>).exact_admission ?? {}) as Record<
+      string,
+      unknown
+    >;
+    expect((exact.configured_exact_count as number) ?? 0).toBe(25);
+  });
+
+  it('fails closed when the retained production baseline manifest binding is stale', () => {
+    const r = runTamperedExactGate((batch) => {
+      batch.release_evidence_bindings.retained_production_baseline_manifest_json.sha256 =
+        '0'.repeat(64);
+    });
+    expect(r.exitCode).toBe(2);
+    const blocking = r.payload.blocking_findings as string[];
+    expect(
+      blocking.some((finding) =>
+        finding.includes(
+          'Bound release evidence SHA-256 mismatch for retained_production_baseline_manifest_json',
+        ),
+      ),
+    ).toBe(true);
+  });
+
+  it('fails closed when all mandatory GSC recovery authority and receipt bindings are omitted', () => {
+    const r = runTamperedExactGate((batch) => {
+      delete batch.decision_authority.batch_admission_gsc_recovery_addendum_id;
+      delete batch.decision_authority.batch_admission_gsc_recovery_addendum_path;
+      delete batch.decision_authority.batch_admission_gsc_recovery_addendum_sha256;
+      delete batch.release_evidence_bindings.gsc_url_inspection_json;
+      delete batch.release_evidence_bindings.gsc_url_inspection_md;
+    });
+    expect(r.exitCode).toBe(2);
+    const blocking = r.payload.blocking_findings as string[];
+    expect(blocking.some((finding) => finding.includes('requires GSC recovery addendum ID'))).toBe(
+      true,
+    );
+    expect(
+      blocking.some((finding) =>
+        finding.includes(
+          'Missing required exact-admission release evidence binding: gsc_url_inspection_json',
+        ),
+      ),
+    ).toBe(true);
+  });
+
+  it('fails closed when one mandatory GSC receipt binding is omitted', () => {
+    const r = runTamperedExactGate((batch) => {
+      delete batch.release_evidence_bindings.gsc_url_inspection_md;
+    });
+    expect(r.exitCode).toBe(2);
+    const blocking = r.payload.blocking_findings as string[];
+    expect(
+      blocking.some((finding) =>
+        finding.includes(
+          'Missing required exact-admission release evidence binding: gsc_url_inspection_md',
+        ),
+      ),
+    ).toBe(true);
+    expect(
+      blocking.some((finding) =>
+        finding.includes('GSC replacement receipt markdown SHA-256 binding is missing'),
+      ),
+    ).toBe(true);
+  });
+
+  it('binds GSC receipt rows to the immutable pre-edit identity and order', () => {
+    const r = runTamperedExactGate(() => {}, {
+      mutateGscJson: (receipt) => {
+        [receipt.records[0], receipt.records[1]] = [receipt.records[1], receipt.records[0]];
+      },
+    });
+    expect(r.exitCode).toBe(2);
+    const blocking = r.payload.blocking_findings as string[];
+    expect(
+      blocking.some((finding) =>
+        finding.includes('GSC replacement receipt immutable row identity/order mismatch at rank 1'),
+      ),
+    ).toBe(true);
+  });
+
+  it('rejects substituted GSC receipt row identity', () => {
+    const r = runTamperedExactGate(() => {}, {
+      mutateGscJson: (receipt) => {
+        receipt.records[0].program_row_id = 'MRX1000-9999';
+      },
+    });
+    expect(r.exitCode).toBe(2);
+    const blocking = r.payload.blocking_findings as string[];
+    expect(
+      blocking.some((finding) =>
+        finding.includes('GSC replacement receipt immutable row identity/order mismatch at rank 1'),
+      ),
+    ).toBe(true);
+  });
+
+  it('rejects bad GSC HTTPS, fetch, robots, and canonical evidence', () => {
+    const r = runTamperedExactGate(() => {}, {
+      mutateGscJson: (receipt) => {
+        receipt.records[0].https = 'no';
+        receipt.records[0].page_fetch_state = 'FAILED';
+        receipt.records[0].robots_txt_state = 'BLOCKED';
+        receipt.records[0].google_canonical = 'https://example.com/wrong/';
+        receipt.records[0].user_canonical = 'https://example.com/wrong/';
+      },
+    });
+    expect(r.exitCode).toBe(2);
+    const blocking = r.payload.blocking_findings as string[];
+    expect(blocking.some((finding) => finding.includes('must prove https=yes'))).toBe(true);
+    expect(
+      blocking.some((finding) => finding.includes('must prove page_fetch_state=SUCCESSFUL')),
+    ).toBe(true);
+    expect(
+      blocking.some((finding) => finding.includes('must prove robots_txt_state=ALLOWED')),
+    ).toBe(true);
+    expect(blocking.some((finding) => finding.includes('Google canonical mismatch'))).toBe(true);
+    expect(blocking.some((finding) => finding.includes('user canonical mismatch'))).toBe(true);
+  });
+
+  it.each([
+    [
+      'stale decision binding',
+      (batch: Record<string, any>) => {
+        batch.decision_authority.batch_admission_decision_sha256 = '0'.repeat(64);
+      },
+      'Batch-admission decision SHA-256 mismatch',
+    ],
+    [
+      'substituted row',
+      (batch: Record<string, any>) => {
+        batch.articles[10].title = `${batch.articles[10].title} Substituted`;
+      },
+      'Exact-admission decision binding mismatch',
+    ],
+    [
+      'reordered rows',
+      (batch: Record<string, any>) => {
+        [batch.articles[10], batch.articles[11]] = [batch.articles[11], batch.articles[10]];
+      },
+      'Exact-admission decision binding mismatch',
+    ],
+    [
+      'row 26 overscope',
+      (batch: Record<string, any>) => {
+        batch.articles.push({ ...batch.articles[24], selection_rank: 26 });
+      },
+      'Exact-admission row count mismatch',
+    ],
+    [
+      '24-row underscope',
+      (batch: Record<string, any>) => {
+        batch.articles.pop();
+      },
+      'Exact-admission row count mismatch',
+    ],
+  ])('rejects %s', (_name, mutate, expectedFinding) => {
+    const r = runTamperedExactGate(mutate);
+    expect(r.exitCode).toBe(2);
+    const blocking = r.payload.blocking_findings as string[];
+    expect(blocking.some((finding) => finding.includes(expectedFinding))).toBe(true);
   });
 
   it('--strict mode demotes informational findings into blocking findings', () => {
@@ -491,6 +860,6 @@ describe('scripts/check-mrx1000-release-gates.mjs', () => {
   it('never lowers the cap or overwrites the authorized batch', () => {
     const r = runCheckAndRead();
     const cap = r.payload.cap as { authorized_release_total: number };
-    expect(cap.authorized_release_total).toBe(10);
+    expect(cap.authorized_release_total).toBe(25);
   });
 });

@@ -47,6 +47,8 @@ import type {
 
 const HEX64 = 'a'.repeat(64);
 const HEX64_B = 'b'.repeat(64);
+const HEX64_C = 'c'.repeat(64);
+const HEX64_D = 'd'.repeat(64);
 
 /* ---------- fixtures ---------- */
 
@@ -405,6 +407,76 @@ describe('evaluateEvidencePacket', () => {
     const verdict = evaluateEvidencePacket(evidencePacket());
     expect(verdict.ok).toBe(true);
     expect(verdict.failures).toEqual([]);
+  });
+
+  it('keeps reviews bound to pre-flip bytes during the exact authorized publication transition', () => {
+    const packet = evidencePacket({
+      body_sha256: HEX64_C,
+      frontmatter_sha256: HEX64_D,
+      body_sha256_matches_declared_or_authorized_transition: true,
+      controlled_publication_transition: {
+        authorized: true,
+        state: 'controlled_publication_transition',
+        exact_admission: true,
+        reviewed_body_sha256: HEX64,
+        reviewed_frontmatter_sha256: HEX64_B,
+        current_body_sha256: HEX64_C,
+        current_frontmatter_sha256: HEX64_D,
+        normalized_body_sha256: HEX64,
+        changes: [
+          { field: 'publication_status', from: 'draft', to: 'published' },
+          { field: 'noindex', from: true, to: false },
+        ],
+      },
+      asset_manifest: {
+        ...evidencePacket().asset_manifest,
+        frontmatter_sha256: HEX64_D,
+      },
+      publication_manifest: {
+        ...evidencePacket().publication_manifest,
+        body_sha256: HEX64_C,
+        frontmatter_sha256: HEX64_D,
+      },
+    });
+
+    expect(evaluateEvidencePacket(packet)).toEqual({ ok: true, failures: [] });
+  });
+
+  it('rejects a claimed publication transition with any extra or reordered change', () => {
+    const packet = evidencePacket({
+      body_sha256: HEX64_C,
+      frontmatter_sha256: HEX64_D,
+      body_sha256_matches_declared_or_authorized_transition: true,
+      controlled_publication_transition: {
+        authorized: true,
+        state: 'controlled_publication_transition',
+        exact_admission: true,
+        reviewed_body_sha256: HEX64,
+        reviewed_frontmatter_sha256: HEX64_B,
+        current_body_sha256: HEX64_C,
+        current_frontmatter_sha256: HEX64_D,
+        normalized_body_sha256: HEX64,
+        changes: [
+          { field: 'noindex', from: true, to: false },
+          { field: 'publication_status', from: 'draft', to: 'published' },
+        ],
+      },
+      asset_manifest: {
+        ...evidencePacket().asset_manifest,
+        frontmatter_sha256: HEX64_D,
+      },
+      publication_manifest: {
+        ...evidencePacket().publication_manifest,
+        body_sha256: HEX64_C,
+        frontmatter_sha256: HEX64_D,
+      },
+    });
+
+    const verdict = evaluateEvidencePacket(packet);
+    expect(verdict.ok).toBe(false);
+    expect(verdict.failures).toContain(
+      'review_manifest must contain three hash-locked PASS review passes',
+    );
   });
 
   it('fails closed when any required key is missing', () => {

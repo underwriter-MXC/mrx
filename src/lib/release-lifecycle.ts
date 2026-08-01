@@ -401,10 +401,26 @@ export type GateEvidencePacket = {
   factual_citation_disposition: 'PASS' | 'FAIL' | 'HOLD' | null;
   /** Compliance + publication-risk pass disposition; must equal `"PASS"`. */
   compliance_disposition: 'PASS' | 'FAIL' | 'HOLD' | null;
-  /** SHA-256 of the reviewed body, mandatory. */
+  /** SHA-256 of the current release body, mandatory. */
   body_sha256: string;
-  /** SHA-256 of the reviewed frontmatter, mandatory. */
+  /** SHA-256 of the current release frontmatter, mandatory. */
   frontmatter_sha256: string;
+  /**
+   * Byte-exact proof that current bytes are either the reviewed bytes or
+   * differ only by the authorized publication_status/noindex transition.
+   */
+  controlled_publication_transition?: {
+    authorized: boolean;
+    state: 'reviewed_bytes_current' | 'controlled_publication_transition' | 'invalid';
+    exact_admission: boolean;
+    reviewed_body_sha256: string | null;
+    reviewed_frontmatter_sha256: string | null;
+    current_body_sha256: string | null;
+    current_frontmatter_sha256: string | null;
+    normalized_body_sha256: string | null;
+    changes: Array<{ field: string; from: string | boolean; to: string | boolean }>;
+  };
+  body_sha256_matches_declared_or_authorized_transition?: boolean;
   /** Two or more named reviewers with role separation, mandatory. */
   reviewers: Array<{ id: string; capability: string; verdict: 'PASS' | 'FAIL' | 'HOLD'; }>;
   /** At least one named, dated authoritative source URL, mandatory. */
@@ -887,11 +903,66 @@ const REQUIRED_PACKET_KEYS: ReadonlyArray<keyof GateEvidencePacket> = [
 
 const HEX_64 = /^[0-9a-f]{64}$/i;
 
+function reviewedHashesForPacket(packet: GateEvidencePacket): {
+  body_sha256: string;
+  frontmatter_sha256: string;
+} {
+  const transition = packet.controlled_publication_transition;
+  const exactChanges = [
+    { field: 'publication_status', from: 'draft', to: 'published' },
+    { field: 'noindex', from: true, to: false },
+  ];
+  const currentHashesMatch =
+    transition?.current_body_sha256 === packet.body_sha256 &&
+    transition?.current_frontmatter_sha256 === packet.frontmatter_sha256;
+  const reviewedHashesAreValid =
+    HEX_64.test(transition?.reviewed_body_sha256 ?? '') &&
+    HEX_64.test(transition?.reviewed_frontmatter_sha256 ?? '') &&
+    transition?.normalized_body_sha256 === transition?.reviewed_body_sha256;
+
+  if (
+    transition?.authorized === true &&
+    transition.state === 'reviewed_bytes_current' &&
+    currentHashesMatch &&
+    reviewedHashesAreValid &&
+    transition.reviewed_body_sha256 === packet.body_sha256 &&
+    transition.reviewed_frontmatter_sha256 === packet.frontmatter_sha256 &&
+    Array.isArray(transition.changes) &&
+    transition.changes.length === 0
+  ) {
+    return {
+      body_sha256: transition.reviewed_body_sha256 ?? packet.body_sha256,
+      frontmatter_sha256: transition.reviewed_frontmatter_sha256 ?? packet.frontmatter_sha256,
+    };
+  }
+
+  if (
+    transition?.authorized === true &&
+    transition.state === 'controlled_publication_transition' &&
+    transition.exact_admission === true &&
+    currentHashesMatch &&
+    reviewedHashesAreValid &&
+    packet.body_sha256_matches_declared_or_authorized_transition === true &&
+    JSON.stringify(transition.changes) === JSON.stringify(exactChanges)
+  ) {
+    return {
+      body_sha256: transition.reviewed_body_sha256 ?? packet.body_sha256,
+      frontmatter_sha256: transition.reviewed_frontmatter_sha256 ?? packet.frontmatter_sha256,
+    };
+  }
+
+  return {
+    body_sha256: packet.body_sha256,
+    frontmatter_sha256: packet.frontmatter_sha256,
+  };
+}
+
 export function evaluateEvidencePacket(packet: GateEvidencePacket): {
   ok: boolean;
   failures: string[];
 } {
   const failures: string[] = [];
+  const reviewedHashes = reviewedHashesForPacket(packet);
   for (const key of REQUIRED_PACKET_KEYS) {
     if (packet[key] == null) {
       failures.push(`missing required key \`${key}\``);
@@ -960,8 +1031,8 @@ export function evaluateEvidencePacket(packet: GateEvidencePacket): {
         (pass) =>
           pass.capability === capability &&
           pass.disposition === 'PASS' &&
-          pass.input_body_sha256 === packet.body_sha256 &&
-          pass.input_frontmatter_sha256 === packet.frontmatter_sha256 &&
+          pass.input_body_sha256 === reviewedHashes.body_sha256 &&
+          pass.input_frontmatter_sha256 === reviewedHashes.frontmatter_sha256 &&
           /^\d{4}-\d{2}-\d{2}T/.test(pass.reviewed_at ?? '') &&
           !!pass.output_artifact_path &&
           HEX_64.test(pass.output_artifact_sha256 ?? '') &&

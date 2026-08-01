@@ -8,6 +8,23 @@ import { fileURLToPath } from 'node:url';
 const SCRIPT_DIR = path.dirname(fileURLToPath(import.meta.url));
 const MRX_ROOT = path.resolve(SCRIPT_DIR, '..');
 const WORKSPACE_ROOT = path.resolve(MRX_ROOT, '..');
+const LEDGER_OUTPUT_DIR = process.env.MRX1000_LEDGER_OUTPUT_DIR
+  ? path.resolve(process.env.MRX1000_LEDGER_OUTPUT_DIR)
+  : path.join(MRX_ROOT, 'config');
+
+function portableWorkspacePath(filePath) {
+  const absolute = path.resolve(filePath);
+  const repoRelative = path.relative(MRX_ROOT, absolute);
+  if (
+    repoRelative &&
+    repoRelative !== '..' &&
+    !repoRelative.startsWith(`..${path.sep}`) &&
+    !path.isAbsolute(repoRelative)
+  ) {
+    return `mrx/${repoRelative.split(path.sep).join('/')}`;
+  }
+  return (path.relative(WORKSPACE_ROOT, absolute) || '.').split(path.sep).join('/');
+}
 
 const INPUTS = {
   quotaPlan: path.join(
@@ -30,17 +47,22 @@ const INPUTS = {
 };
 
 const OUTPUTS = {
-  json: path.join(MRX_ROOT, 'config/mrx-1000-canonical-content-ledger.json'),
-  csv: path.join(MRX_ROOT, 'config/mrx-1000-canonical-content-ledger.csv'),
-  report: path.join(WORKSPACE_ROOT, 'program-plans/mrx-1000-canonical-content-ledger-report.md'),
+  json: path.join(LEDGER_OUTPUT_DIR, 'mrx-1000-canonical-content-ledger.json'),
+  csv: path.join(LEDGER_OUTPUT_DIR, 'mrx-1000-canonical-content-ledger.csv'),
+  report: process.env.MRX1000_LEDGER_REPORT_PATH
+    ? path.resolve(process.env.MRX1000_LEDGER_REPORT_PATH)
+    : path.join(WORKSPACE_ROOT, 'program-plans/mrx-1000-canonical-content-ledger-report.md'),
 };
+const PRIOR_LEDGER_PATH = process.env.MRX1000_LEDGER_PRIOR_PATH
+  ? path.resolve(process.env.MRX1000_LEDGER_PRIOR_PATH)
+  : OUTPUTS.json;
 
 const PROGRAM_ROW_ID_RE = /^MRX1000-(\d+)$/;
 
 async function loadPriorProgramRowIds() {
   let prior;
   try {
-    prior = JSON.parse(await readFile(OUTPUTS.json, 'utf8'));
+    prior = JSON.parse(await readFile(PRIOR_LEDGER_PATH, 'utf8'));
   } catch (error) {
     if (error?.code === 'ENOENT') return { bySlug: new Map(), maxSequenceEver: 0 };
     throw error;
@@ -525,8 +547,7 @@ async function loadRelease10ProductionVerification() {
           {
             deploymentId: report.deployment?.deployment_id ?? null,
             deploymentUrl: report.deployment?.deployment_url ?? null,
-            productionVerificationPath: path.relative(
-              WORKSPACE_ROOT,
+            productionVerificationPath: portableWorkspacePath(
               INPUTS.release10PostPublicationVerification,
             ),
             productionVerificationSha256: actualSha,
@@ -570,13 +591,15 @@ async function loadRepoCandidates({ pilotSlugSet, release10ProductionBySlug = ne
     // true, and `noindex` not declared. We do not look at `frontmatter_noindex`
     // here — that is tracked in its own field so the two cannot be conflated.
     const isPublished = publicationStatus === 'published' && !isDraft;
-    // Release-10 rows are publication candidates admitted by the separate
-    // signed batch, not pre-program legacy routes. Keep their preservation
-    // bucket in the held inventory until a checksummed post-publication PASS
-    // proves the exact release completed. The release lifecycle identifies
-    // them by exact slug/id/URL from the authorized batch throughout.
+    // Release-10 rows are publication candidates admitted by a separate
+    // signed gate, not pre-program legacy routes. The canonical ledger records
+    // current workspace/build publication state; deployment evidence remains
+    // a separate field and is populated only from the checksummed production
+    // verifier.
     const isAuthorizedReleaseCandidate =
-      isPublished && data.content_program === 'mrx1000' && data.content_batch === 'release-10';
+      isPublished &&
+      data.content_program === 'mrx1000' &&
+      ['release-10', 'wave2'].includes(data.content_batch);
     const release10Production = release10ProductionBySlug.get(slug) ?? null;
     const isRelease10ProductionVerified =
       isAuthorizedReleaseCandidate && release10Production != null;
@@ -585,8 +608,7 @@ async function loadRepoCandidates({ pilotSlugSet, release10ProductionBySlug = ne
     // published so review hashes cover the final bytes. They nevertheless
     // remain nonpublic at the portfolio gate until the signed decision,
     // evidence packets, and deployment gate all pass.
-    const publicationGateNonpublic =
-      (isAuthorizedReleaseCandidate && !isRelease10ProductionVerified) || !isPublished;
+    const publicationGateNonpublic = !isPublished;
     // Aggregate `noindex_required` is retained as a derived downstream field
     // (frontmatter noindex OR publication gate nonpublic).
     const noindexRequired = frontmatterNoindex || publicationGateNonpublic;
@@ -600,7 +622,7 @@ async function loadRepoCandidates({ pilotSlugSet, release10ProductionBySlug = ne
         sourceSystem: 'astro_repo',
         sourceRecordId: filename,
         sourceHandle: `repo:src/content/posts/${filename}`,
-        repoPath: path.relative(WORKSPACE_ROOT, fullPath),
+        repoPath: portableWorkspacePath(fullPath),
         existingUrl: `https://mineralrightsxchange.com/blog/${slugify(slug)}/`,
         // Fail-closed wording: only the explicitly-published live routes get
         // live/public wording; every remaining incumbent nonpublic MDX row is
@@ -622,7 +644,7 @@ async function loadRepoCandidates({ pilotSlugSet, release10ProductionBySlug = ne
         frontmatterNoindex: frontmatterNoindex,
         publicationGateNonpublic: publicationGateNonpublic,
         noindexRequired,
-        preservationClassification: isLegacyPublished || isRelease10ProductionVerified
+        preservationClassification: isPublished
           ? 'live_public_published_route'
           : 'incumbent_draft_nonpublic_held',
         action: isRelease10ProductionVerified
@@ -1387,7 +1409,7 @@ async function main() {
     inputs: Object.fromEntries(
       Object.entries(INPUTS).map(([key, inputPath]) => [
         key,
-        path.relative(WORKSPACE_ROOT, inputPath) || '.',
+        portableWorkspacePath(inputPath),
       ]),
     ),
     quota_summary: CLUSTER_ORDER.map((cluster) => ({
@@ -1605,7 +1627,7 @@ async function main() {
         outputs: Object.fromEntries(
           Object.entries(OUTPUTS).map(([key, outputPath]) => [
             key,
-            path.relative(WORKSPACE_ROOT, outputPath),
+            portableWorkspacePath(outputPath),
           ]),
         ),
         verification: ledger.verification,

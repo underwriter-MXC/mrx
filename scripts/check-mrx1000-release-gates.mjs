@@ -40,8 +40,11 @@
  *                              "10_to_25" and "25_to_50", each matching the
  *                              EarnedScaleGateObservation contract declared
  *                              in src/lib/release-lifecycle.ts.
- *   --expected-decision-sha    When present, the successor decision SHA-256
+ *   --expected-decision-sha    When present, the controlling decision SHA-256
  *                              must equal this value or the check fails.
+ *                              In exact-admission mode this binds to the
+ *                              batch-admission decision; otherwise it binds
+ *                              to the successor release/index decision.
  *   --require-pass-on-articles When present, every authorized-admitted slug
  *                              listed (comma-separated) must have an
  *                              evidence packet with PASS on every
@@ -62,6 +65,10 @@ import {
   legacyLiveRowsFromLedger,
   parseReleaseDecisionArtifact,
 } from './_release-lifecycle-embedded.mjs';
+import {
+  analyzeControlledPublicationTransition,
+  transitionProofMatches,
+} from './_mrx1000-controlled-publication-transition.mjs';
 
 // Allow override via --tree=<abs-path> (used by tests) or MRX_TREE
 // environment variable. Otherwise default to the script's parent dir.
@@ -73,7 +80,8 @@ function pickRepoRoot(argv) {
     }
   }
   const envTree = process.env.MRX_TREE;
-  if (envTree && existsSync(join(envTree, 'config', 'mrx1000-release-10-batch.json'))) return resolve(envTree);
+  if (envTree && existsSync(join(envTree, 'config', 'mrx1000-release-10-batch.json')))
+    return resolve(envTree);
   const cwd = process.cwd();
   if (existsSync(join(cwd, 'config', 'mrx1000-release-10-batch.json'))) return cwd;
   return resolve(import.meta.dirname, '..');
@@ -85,12 +93,20 @@ const repoRoot = pickRepoRoot([...process.argv]);
 /* ---------- arg parsing ---------- */
 
 function parseArgs(argv) {
-  const out = { strict: false, observations: null, expectedDecisionSha: null, requirePassOnArticles: [] };
+  const out = {
+    strict: false,
+    observations: null,
+    expectedDecisionSha: null,
+    requirePassOnArticles: [],
+  };
   for (const raw of argv.slice(2)) {
     if (raw === '--strict') out.strict = true;
     else if (raw === '--help' || raw === '-h') out.help = true;
-    else if (raw.startsWith('--observations=')) out.observations = raw.slice('--observations='.length);
-    else if (raw.startsWith('--expected-decision-sha=')) out.expectedDecisionSha = raw.slice('--expected-decision-sha='.length).toLowerCase();
+    else if (raw.startsWith('--observations='))
+      out.observations = raw.slice('--observations='.length);
+    else if (raw.startsWith('--tree=')) out.tree = raw.slice('--tree='.length);
+    else if (raw.startsWith('--expected-decision-sha='))
+      out.expectedDecisionSha = raw.slice('--expected-decision-sha='.length).toLowerCase();
     else if (raw.startsWith('--require-pass-on-articles=')) {
       out.requirePassOnArticles = raw
         .slice('--require-pass-on-articles='.length)
@@ -113,7 +129,8 @@ function use() {
     'Flags:',
     '  --strict                                  treat any informational finding as blocking',
     '  --observations=path/to/observations.json  override scale-gate observation source',
-    '  --expected-decision-sha=<hex64>           verify successor decision SHA-256',
+    '  --tree=/absolute/path                    verify an alternate complete tree (tests/audits)',
+    '  --expected-decision-sha=<hex64>           verify controlling decision SHA-256',
     '  --require-pass-on-articles=s1,s2,...      require PASS evidence packets for these slugs',
     '  --help | -h                               print this message',
   ].join('\n');
@@ -140,12 +157,370 @@ function sha256File(path) {
 function verifySidecar(path) {
   const sidecarPath = `${path}.sha256`;
   if (!existsSync(path) || !existsSync(sidecarPath)) return false;
-  const expected = readFileSync(sidecarPath, 'utf8').trim().match(/^([a-f0-9]{64})(?:\s|$)/i)?.[1];
+  const expected = readFileSync(sidecarPath, 'utf8')
+    .trim()
+    .match(/^([a-f0-9]{64})(?:\s|$)/i)?.[1];
   return expected?.toLowerCase() === sha256File(path);
 }
 
+function sortDeep(value) {
+  if (Array.isArray(value)) return value.map(sortDeep);
+  if (value && typeof value === 'object') {
+    return Object.fromEntries(
+      Object.keys(value)
+        .sort()
+        .map((key) => [key, sortDeep(value[key])]),
+    );
+  }
+  return value;
+}
+
+function canonicalizeExactSlate(rows) {
+  return JSON.stringify(sortDeep(rows));
+}
+
+function parseDecisionIdFromText(text) {
+  return (
+    text.match(/^Decision ID:\s*(.+)$/m)?.[1]?.trim() ??
+    text.match(/^\- Addendum ID:\s*\*\*(.+?)\*\*$/m)?.[1]?.trim() ??
+    null
+  );
+}
+
+function parseExactDecisionRows(text) {
+  const rows = [];
+  const pattern =
+    /^\|\s*(MRX1000-\d{4})\s*\|\s*`([^`]+)`\s*\|\s*([^|]+?)\s*\|\s*`([a-f0-9]{64})`\s*\|\s*`([a-f0-9]{64})`\s*\|\s*(\d+)\s*\|\s*$/gim;
+  for (const match of text.matchAll(pattern)) {
+    rows.push({
+      program_row_id: match[1],
+      slug: match[2],
+      title: match[3].trim(),
+      article_sha256: match[4].toLowerCase(),
+      hero_sha256: match[5].toLowerCase(),
+      word_count: Number(match[6]),
+    });
+  }
+  return rows;
+}
+
+function parseExactHeroRebindingAddendumRows(text) {
+  const rows = [];
+  const pattern =
+    /^\|\s*(MRX1000-\d{4})\s*\|\s*`([^`]+)`\s*\|\s*([^|]+?)\s*\|\s*`([a-f0-9]{64})`\s*\|\s*`([a-f0-9]{64})`\s*\|\s*`([a-f0-9]{64})`\s*\|\s*$/gim;
+  for (const match of text.matchAll(pattern)) {
+    rows.push({
+      program_row_id: match[1],
+      slug: match[2],
+      title: match[3].trim(),
+      article_sha256: match[4].toLowerCase(),
+      prior_hero_sha256: match[5].toLowerCase(),
+      corrected_hero_sha256: match[6].toLowerCase(),
+    });
+  }
+  return rows;
+}
+
+function validateBoundGscRecoveryEvidence({
+  gscJson,
+  addendumText,
+  expectedJsonSha,
+  expectedMdSha,
+  expectedBatchSha,
+  expectedRows,
+}) {
+  const findings = [];
+  const addendum = String(addendumText ?? '');
+  const expectedReceiptRows = Array.isArray(expectedRows) ? expectedRows : [];
+  const records = Array.isArray(gscJson?.records) ? gscJson.records : [];
+  if (!/^[a-f0-9]{64}$/i.test(expectedJsonSha ?? '')) {
+    findings.push('GSC replacement receipt JSON SHA-256 binding is missing or malformed.');
+  } else if (!addendum.includes(expectedJsonSha)) {
+    findings.push('GSC recovery addendum does not bind the configured JSON receipt SHA-256.');
+  }
+  if (!/^[a-f0-9]{64}$/i.test(expectedMdSha ?? '')) {
+    findings.push('GSC replacement receipt markdown SHA-256 binding is missing or malformed.');
+  } else if (!addendum.includes(expectedMdSha)) {
+    findings.push('GSC recovery addendum does not bind the configured markdown receipt SHA-256.');
+  }
+  if (!/^[a-f0-9]{64}$/i.test(expectedBatchSha ?? '')) {
+    findings.push(
+      'GSC replacement receipt pre-edit batch SHA-256 binding is missing or malformed.',
+    );
+  }
+  if (!gscJson || typeof gscJson !== 'object') {
+    findings.push('GSC replacement receipt JSON is missing or unreadable.');
+    return findings;
+  }
+  if (!/Parent decision:\s*\*\*D-2026-0801-10\*\*/.test(addendum)) {
+    findings.push('GSC recovery addendum parent decision binding is missing or malformed.');
+  }
+  if (!/Related prior addendum:\s*\*\*D-2026-0801-10A\*\*/.test(addendum)) {
+    findings.push('GSC recovery addendum prior addendum binding is missing or malformed.');
+  }
+  if (expectedReceiptRows.length !== 10) {
+    findings.push(
+      `GSC replacement receipt expected-row binding mismatch: expected 10 immutable pre-edit rows, got ${expectedReceiptRows.length}.`,
+    );
+  }
+  if (records.length !== 10) {
+    findings.push(
+      `GSC replacement receipt record count mismatch: expected 10, got ${records.length}.`,
+    );
+  }
+  if (gscJson.batch_article_count !== 10) {
+    findings.push(
+      `GSC replacement receipt batch_article_count mismatch: expected 10, got ${gscJson.batch_article_count ?? '(missing)'}.`,
+    );
+  }
+  if (gscJson.summary?.urls_inspected !== 10) {
+    findings.push(
+      `GSC replacement receipt summary URL count mismatch: expected 10, got ${gscJson.summary?.urls_inspected ?? '(missing)'}.`,
+    );
+  }
+  if (gscJson.property !== 'sc-domain:mineralrightsxchange.com') {
+    findings.push(
+      `GSC replacement receipt property mismatch: expected sc-domain:mineralrightsxchange.com, got ${gscJson.property ?? '(missing)'}.`,
+    );
+  }
+  if (gscJson.scope !== 'https://www.googleapis.com/auth/webmasters.readonly') {
+    findings.push(
+      `GSC replacement receipt scope mismatch: expected https://www.googleapis.com/auth/webmasters.readonly, got ${gscJson.scope ?? '(missing)'}.`,
+    );
+  }
+  if (gscJson.request_indexing_mutation_used !== false) {
+    findings.push('GSC replacement receipt must prove request_indexing_mutation_used=false.');
+  }
+  if (gscJson.batch_sha256 !== expectedBatchSha) {
+    findings.push(
+      `GSC replacement receipt batch SHA-256 mismatch: expected ${expectedBatchSha ?? '(missing)'}, got ${gscJson.batch_sha256 ?? '(missing)'}.`,
+    );
+  }
+  if (records.some((row) => row.raw_verdict !== 'PASS')) {
+    findings.push('GSC replacement receipt contains non-PASS raw verdicts.');
+  }
+  if (records.some((row) => row.indexing_state !== 'INDEXING_ALLOWED')) {
+    findings.push('GSC replacement receipt contains non-INDEXING_ALLOWED indexing states.');
+  }
+  if (records.some((row) => row.property !== 'sc-domain:mineralrightsxchange.com')) {
+    findings.push('GSC replacement receipt contains a row with the wrong property binding.');
+  }
+  if (records.some((row) => row.scope !== 'https://www.googleapis.com/auth/webmasters.readonly')) {
+    findings.push('GSC replacement receipt contains a row with the wrong scope binding.');
+  }
+  if (records.some((row) => row.request_indexing_mutation_used !== false)) {
+    findings.push('GSC replacement receipt contains a row that used request indexing mutation.');
+  }
+  for (let index = 0; index < Math.min(records.length, expectedReceiptRows.length); index += 1) {
+    const row = records[index] ?? {};
+    const expected = expectedReceiptRows[index] ?? {};
+    const rank = index + 1;
+    if (
+      row.selection_rank !== expected.selection_rank ||
+      row.program_row_id !== expected.program_row_id ||
+      row.slug !== expected.slug ||
+      row.url !== expected.canonical_url
+    ) {
+      findings.push(
+        `GSC replacement receipt immutable row identity/order mismatch at rank ${rank}.`,
+      );
+    }
+    if (row.https !== 'yes') {
+      findings.push(`GSC replacement receipt row ${rank} must prove https=yes.`);
+    }
+    if (row.page_fetch_state !== 'SUCCESSFUL') {
+      findings.push(`GSC replacement receipt row ${rank} must prove page_fetch_state=SUCCESSFUL.`);
+    }
+    if (row.robots_txt_state !== 'ALLOWED') {
+      findings.push(`GSC replacement receipt row ${rank} must prove robots_txt_state=ALLOWED.`);
+    }
+    if (row.google_canonical !== expected.canonical_url) {
+      findings.push(`GSC replacement receipt row ${rank} Google canonical mismatch.`);
+    }
+    if (row.user_canonical !== expected.canonical_url) {
+      findings.push(`GSC replacement receipt row ${rank} user canonical mismatch.`);
+    }
+  }
+  return findings;
+}
+
+function validateRetainedProductionBaseline({ manifest }) {
+  const findings = [];
+  const expectedSourceDeploymentId = 'dpl_DR7ixaGADvYsw11rpnWQG1tovP1A';
+  const expectedCurrentDeploymentId = 'dpl_EQeTHD5K938sjeXWXijfmvNBTQKK';
+  const expectedFiles = new Map([
+    [
+      'src/content/posts/how-are-mineral-rights-valued.mdx',
+      {
+        sha256: '92cee8f919a22f411d50db91aae52e373005a29d868f758e69fbe2943230493f',
+        role: 'page_source',
+        page_url: 'https://mineralrightsxchange.com/blog/how-are-mineral-rights-valued/',
+        expected_h1: 'How Are Mineral Rights Valued?',
+        hero_path: '/assets/articles/how-are-mineral-rights-valued.webp',
+        hero_sha256: 'aa4365c573d7b18df34c06d019b9e46fd51ae4a93f436b6dbbce9207ef4af515',
+      },
+    ],
+    [
+      'src/content/posts/texas-severance-tax-what-mineral-rights-owners-need-to-know.mdx',
+      {
+        sha256: '3ef3e42e3365cbb2f5fdfcb00b44074ca6685c98191c34e3580e7d39fd9516ab',
+        role: 'page_source',
+        page_url:
+          'https://mineralrightsxchange.com/blog/texas-severance-tax-what-mineral-rights-owners-need-to-know/',
+        expected_h1: 'Texas Severance Tax: What Owners Need to Know',
+        hero_path: '/assets/articles/texas-severance-tax-what-owners-need-to-know.webp',
+        hero_sha256: 'd560562f42ff23abda3dd44af392cea7adcb49ac8cd9db0191bfecc1b546d838',
+      },
+    ],
+    [
+      'public/assets/articles/how-are-mineral-rights-valued.webp',
+      {
+        sha256: 'aa4365c573d7b18df34c06d019b9e46fd51ae4a93f436b6dbbce9207ef4af515',
+        role: 'hero_asset',
+        page_url: 'https://mineralrightsxchange.com/blog/how-are-mineral-rights-valued/',
+      },
+    ],
+    [
+      'public/assets/articles/texas-severance-tax-what-owners-need-to-know.webp',
+      {
+        sha256: 'd560562f42ff23abda3dd44af392cea7adcb49ac8cd9db0191bfecc1b546d838',
+        role: 'hero_asset',
+        page_url:
+          'https://mineralrightsxchange.com/blog/texas-severance-tax-what-mineral-rights-owners-need-to-know/',
+      },
+    ],
+  ]);
+  const expectedRoutes = new Map([
+    [
+      'how-are-mineral-rights-valued',
+      {
+        page_url: 'https://mineralrightsxchange.com/blog/how-are-mineral-rights-valued/',
+        expected_h1: 'How Are Mineral Rights Valued?',
+        hero_path: '/assets/articles/how-are-mineral-rights-valued.webp',
+        hero_sha256: 'aa4365c573d7b18df34c06d019b9e46fd51ae4a93f436b6dbbce9207ef4af515',
+      },
+    ],
+    [
+      'texas-severance-tax-what-mineral-rights-owners-need-to-know',
+      {
+        page_url:
+          'https://mineralrightsxchange.com/blog/texas-severance-tax-what-mineral-rights-owners-need-to-know/',
+        expected_h1: 'Texas Severance Tax: What Owners Need to Know',
+        hero_path: '/assets/articles/texas-severance-tax-what-owners-need-to-know.webp',
+        hero_sha256: 'd560562f42ff23abda3dd44af392cea7adcb49ac8cd9db0191bfecc1b546d838',
+      },
+    ],
+  ]);
+  if (!manifest || typeof manifest !== 'object') {
+    return ['Retained production baseline manifest is missing or unreadable.'];
+  }
+  if (manifest.artifact_type !== 'mrx1000_retained_production_baseline') {
+    findings.push('Retained production baseline manifest artifact_type is missing or incorrect.');
+  }
+  if (manifest.source_authority?.source_deployment_id !== expectedSourceDeploymentId) {
+    findings.push('Retained production baseline source deployment ID is missing or incorrect.');
+  }
+  if (manifest.source_authority?.current_active_deployment_id !== expectedCurrentDeploymentId) {
+    findings.push('Retained production baseline current deployment ID is missing or incorrect.');
+  }
+  const files = Array.isArray(manifest.files) ? manifest.files : [];
+  if (files.length !== expectedFiles.size) {
+    findings.push(
+      `Retained production baseline file count mismatch: expected ${expectedFiles.size}, got ${files.length}.`,
+    );
+  }
+  for (const [relPath, expected] of expectedFiles.entries()) {
+    const manifestEntry = files.find((entry) => entry?.path === relPath);
+    if (!manifestEntry) {
+      findings.push(`Retained production baseline manifest is missing ${relPath}.`);
+      continue;
+    }
+    if ((manifestEntry.sha256 ?? '').toLowerCase() !== expected.sha256) {
+      findings.push(
+        `Retained production baseline manifest SHA mismatch for ${relPath}: expected ${expected.sha256}, got ${manifestEntry.sha256 ?? '(missing)'}.`,
+      );
+    }
+    for (const field of ['role', 'page_url', 'expected_h1', 'hero_path', 'hero_sha256']) {
+      if (expected[field] !== undefined && manifestEntry[field] !== expected[field]) {
+        findings.push(`Retained production baseline manifest ${field} mismatch for ${relPath}.`);
+      }
+    }
+    const absPath = join(repoRoot, relPath);
+    if (!existsSync(absPath)) {
+      findings.push(`Retained production baseline file is missing on disk: ${relPath}.`);
+      continue;
+    }
+    const observedSha = sha256File(absPath);
+    if (observedSha !== expected.sha256) {
+      findings.push(
+        `Retained production baseline on-disk SHA mismatch for ${relPath}: expected ${expected.sha256}, got ${observedSha}.`,
+      );
+    }
+  }
+  const retainedRoutes = Array.isArray(manifest.retained_routes) ? manifest.retained_routes : [];
+  if (retainedRoutes.length !== 2) {
+    findings.push(
+      `Retained production baseline route count mismatch: expected 2, got ${retainedRoutes.length}.`,
+    );
+  }
+  for (const [slug, expected] of expectedRoutes.entries()) {
+    const route = retainedRoutes.find((entry) => entry?.slug === slug);
+    if (!route) {
+      findings.push(`Retained production baseline route is missing ${slug}.`);
+      continue;
+    }
+    for (const [field, value] of Object.entries(expected)) {
+      if (route[field] !== value) {
+        findings.push(`Retained production baseline route ${field} mismatch for ${slug}.`);
+      }
+    }
+  }
+  return findings;
+}
+
+function loadBoundPreEditBatch(snapshotRelPath, expectedSha) {
+  const relPath =
+    snapshotRelPath ?? 'artifacts/mrx1000-release-10/release/bound-pre-edit-batch.json';
+  const absPath = join(repoRoot, relPath);
+  if (!existsSync(absPath)) {
+    return {
+      available: false,
+      path: relPath,
+      sidecar_verified: false,
+      sha256: null,
+      batch: null,
+      matches_expected: null,
+    };
+  }
+
+  try {
+    const bytes = readFileSync(absPath);
+    const observedSha = sha256(bytes);
+    return {
+      available: true,
+      path: relPath,
+      sidecar_verified: verifySidecar(absPath),
+      sha256: observedSha,
+      batch: JSON.parse(bytes.toString('utf8')),
+      matches_expected: expectedSha ? observedSha === expectedSha : null,
+    };
+  } catch {
+    return {
+      available: false,
+      path: relPath,
+      sidecar_verified: false,
+      sha256: null,
+      batch: null,
+      matches_expected: null,
+    };
+  }
+}
+
 function normalizeUrl(value) {
-  return String(value ?? '').trim().replace(/\/+$/, '').toLowerCase();
+  return String(value ?? '')
+    .trim()
+    .replace(/\/+$/, '')
+    .toLowerCase();
 }
 
 function listSitemapUrls() {
@@ -163,13 +538,20 @@ function listSitemapUrls() {
   return urls;
 }
 
-function deriveStagesForLedger(ledgerArticles, sitemapUrls, admittedLookup, legacyLookup) {
+function deriveStagesForLedger(
+  ledgerArticles,
+  sitemapUrls,
+  admittedLookup,
+  legacyLookup,
+  publicationOverrides = new Map(),
+) {
   const rows = [];
   for (const article of ledgerArticles) {
+    const override = publicationOverrides.get(article.canonical_slug) ?? null;
     const frontmatter = {
-      publication_status: article.publication_status ?? null,
-      draft: !!article.draft,
-      noindex: !!article.frontmatter_noindex,
+      publication_status: override?.publication_status ?? article.publication_status ?? null,
+      draft: override?.draft ?? !!article.draft,
+      noindex: override?.noindex ?? !!article.frontmatter_noindex,
       canonical_slug: article.canonical_slug ?? null,
       pillar: article.pillar ?? null,
       cluster: article.cluster ?? null,
@@ -258,45 +640,555 @@ function buildCheck() {
     policy: batch.policy,
   };
 
-  const shortlistRel = batch.decision_authority?.batch_source_admitted_shortlist_path;
-  const shortlistPath = shortlistRel ? join(repoRoot, shortlistRel) : null;
-  if (!shortlistPath || !existsSync(shortlistPath)) {
-    blocking.push(`Missing controlling admitted shortlist: ${shortlistRel ?? '(unset)'}.`);
-  } else {
-    const shortlistSha = sha256File(shortlistPath);
-    const shortlist = readJson(shortlistPath);
-    const admitted = shortlist.admitted_shortlist ?? [];
-    const admittedBySlug = new Map(admitted.map((entry) => [entry.slug, entry]));
-    const configuredSlugs = new Set((batch.articles ?? []).map((entry) => entry.slug));
-    const shortlistSlugs = new Set(admitted.map((entry) => entry.slug));
-    inputs.admitted_shortlist = {
-      path: shortlistRel,
-      sha256: shortlistSha,
-      expected_sha256:
-        batch.decision_authority?.batch_source_admitted_shortlist_sha256 ?? null,
-      configured_slug_count: configuredSlugs.size,
-      admitted_slug_count: shortlistSlugs.size,
+  const exactCount = batch.policy?.exact_admitted_count ?? null;
+  const exactSlateSha = batch.policy?.exact_admitted_slate_sha256 ?? null;
+  const exactAdmissionEnabled = Number.isInteger(exactCount) && exactCount > 0;
+  const verifiedReleaseEvidence = {};
+  if (exactAdmissionEnabled) {
+    const observedCount = batch.articles?.length ?? 0;
+    const observedSlateSha = sha256(
+      Buffer.from(canonicalizeExactSlate(batch.articles ?? []), 'utf8'),
+    );
+    inputs.exact_admission = {
+      enabled: true,
+      configured_exact_count: exactCount,
+      configured_cap: batch.policy?.authorization_cap_released_articles ?? null,
+      configured_exact_slate_sha256: exactSlateSha,
+      observed_article_count: observedCount,
+      observed_exact_slate_sha256: observedSlateSha,
     };
-    if (shortlistSha !== batch.decision_authority?.batch_source_admitted_shortlist_sha256) {
+    if (batch.policy?.authorization_cap_released_articles !== exactCount) {
       blocking.push(
-        `Controlling admitted shortlist SHA-256 mismatch: expected ${batch.decision_authority?.batch_source_admitted_shortlist_sha256 ?? '(unset)'}, got ${shortlistSha}.`,
+        `Exact-admission cap mismatch: authorization_cap_released_articles=${batch.policy?.authorization_cap_released_articles ?? '(unset)'} but exact_admitted_count=${exactCount}.`,
       );
     }
-    if (
-      configuredSlugs.size !== shortlistSlugs.size ||
-      [...configuredSlugs].some((slug) => !shortlistSlugs.has(slug))
-    ) {
-      blocking.push('Configured release-10 slugs do not exactly match the controlling shortlist.');
+    if (observedCount !== exactCount) {
+      blocking.push(
+        `Exact-admission row count mismatch: expected exactly ${exactCount} rows, observed ${observedCount}.`,
+      );
     }
-    for (const entry of batch.articles ?? []) {
-      const source = admittedBySlug.get(entry.slug);
+    if (exactSlateSha !== observedSlateSha) {
+      blocking.push(
+        `Exact-admission slate SHA-256 mismatch: expected ${exactSlateSha ?? '(unset)'}, got ${observedSlateSha}.`,
+      );
+    }
+
+    const admissionDecisionRel = batch.decision_authority?.batch_admission_decision_path;
+    const admissionDecisionPath = admissionDecisionRel
+      ? join(repoRoot, admissionDecisionRel)
+      : null;
+    const configuredAdmissionDecisionId =
+      batch.decision_authority?.batch_admission_decision_id ?? null;
+    const configuredAdmissionDecisionSha =
+      batch.decision_authority?.batch_admission_decision_sha256 ?? null;
+    inputs.exact_admission.decision = {
+      id: configuredAdmissionDecisionId,
+      path: admissionDecisionRel ?? null,
+      expected_sha256: configuredAdmissionDecisionSha,
+      observed_sha256: null,
+    };
+    let admissionDecisionText = null;
+    let admissionDecisionRows = [];
+    let heroRebindingRows = [];
+    if (!admissionDecisionPath || !existsSync(admissionDecisionPath)) {
+      blocking.push(
+        `Missing batch-admission decision artifact: ${admissionDecisionRel ?? '(unset)'}.`,
+      );
+    } else {
+      admissionDecisionText = readText(admissionDecisionPath);
+      const admissionDecisionSha = sha256File(admissionDecisionPath);
+      const admissionDecisionId = parseDecisionIdFromText(admissionDecisionText);
+      admissionDecisionRows = parseExactDecisionRows(admissionDecisionText);
+      inputs.exact_admission.decision.observed_sha256 = admissionDecisionSha;
+      inputs.exact_admission.decision.observed_id = admissionDecisionId;
+      inputs.exact_admission.decision.bound_exact_rows = admissionDecisionRows.length;
+      if (configuredAdmissionDecisionSha !== admissionDecisionSha) {
+        blocking.push(
+          `Batch-admission decision SHA-256 mismatch: expected ${configuredAdmissionDecisionSha ?? '(unset)'}, got ${admissionDecisionSha}.`,
+        );
+      }
+      if (configuredAdmissionDecisionId !== admissionDecisionId) {
+        blocking.push(
+          `Batch-admission decision ID mismatch: expected ${configuredAdmissionDecisionId ?? '(unset)'}, got ${admissionDecisionId ?? '(missing)'}.`,
+        );
+      }
       if (
-        !source ||
-        source.program_row_id !== entry.source_shortlist_program_row_id
+        args.expectedDecisionSha &&
+        admissionDecisionSha !== args.expectedDecisionSha.toLowerCase()
       ) {
         blocking.push(
-          `Shortlist provenance mismatch for ${entry.slug}: source_shortlist_program_row_id must match the controlling shortlist.`,
+          `Batch-admission decision SHA-256 does not match --expected-decision-sha (got ${admissionDecisionSha}).`,
         );
+      }
+      if (!verifySidecar(admissionDecisionPath)) {
+        blocking.push(
+          `Batch-admission decision SHA-256 sidecar is missing or stale for ${admissionDecisionRel}.`,
+        );
+      }
+    }
+
+    const heroRebindingRel =
+      batch.decision_authority?.batch_admission_hero_rebinding_addendum_path ?? null;
+    const heroRebindingPath = heroRebindingRel ? join(repoRoot, heroRebindingRel) : null;
+    const configuredHeroRebindingId =
+      batch.decision_authority?.batch_admission_hero_rebinding_addendum_id ?? null;
+    const configuredHeroRebindingSha =
+      batch.decision_authority?.batch_admission_hero_rebinding_addendum_sha256 ?? null;
+    inputs.exact_admission.hero_rebinding_addendum = {
+      id: configuredHeroRebindingId,
+      path: heroRebindingRel,
+      expected_sha256: configuredHeroRebindingSha,
+      observed_id: null,
+      observed_sha256: null,
+      bound_exact_rows: 0,
+    };
+    if (heroRebindingRel || configuredHeroRebindingId || configuredHeroRebindingSha) {
+      if (!heroRebindingPath || !existsSync(heroRebindingPath)) {
+        blocking.push(
+          `Missing hero-rebinding addendum artifact: ${heroRebindingRel ?? '(unset)'}.`,
+        );
+      } else {
+        const heroRebindingText = readText(heroRebindingPath);
+        const heroRebindingSha = sha256File(heroRebindingPath);
+        const heroRebindingId =
+          heroRebindingText.match(/^\- Addendum ID:\s*\*\*(.+?)\*\*$/m)?.[1]?.trim() ??
+          parseDecisionIdFromText(heroRebindingText);
+        heroRebindingRows = parseExactHeroRebindingAddendumRows(heroRebindingText);
+        inputs.exact_admission.hero_rebinding_addendum.observed_sha256 = heroRebindingSha;
+        inputs.exact_admission.hero_rebinding_addendum.observed_id = heroRebindingId;
+        inputs.exact_admission.hero_rebinding_addendum.bound_exact_rows = heroRebindingRows.length;
+        if (configuredHeroRebindingSha !== heroRebindingSha) {
+          blocking.push(
+            `Hero-rebinding addendum SHA-256 mismatch: expected ${configuredHeroRebindingSha ?? '(unset)'}, got ${heroRebindingSha}.`,
+          );
+        }
+        if (configuredHeroRebindingId !== heroRebindingId) {
+          blocking.push(
+            `Hero-rebinding addendum ID mismatch: expected ${configuredHeroRebindingId ?? '(unset)'}, got ${heroRebindingId ?? '(missing)'}.`,
+          );
+        }
+        if (!verifySidecar(heroRebindingPath)) {
+          blocking.push(
+            `Hero-rebinding addendum SHA-256 sidecar is missing or stale for ${heroRebindingRel}.`,
+          );
+        }
+      }
+    }
+
+    const gscRecoveryRel =
+      batch.decision_authority?.batch_admission_gsc_recovery_addendum_path ?? null;
+    const gscRecoveryPath = gscRecoveryRel ? join(repoRoot, gscRecoveryRel) : null;
+    const configuredGscRecoveryId =
+      batch.decision_authority?.batch_admission_gsc_recovery_addendum_id ?? null;
+    const configuredGscRecoverySha =
+      batch.decision_authority?.batch_admission_gsc_recovery_addendum_sha256 ?? null;
+    inputs.exact_admission.gsc_recovery_addendum = {
+      id: configuredGscRecoveryId,
+      path: gscRecoveryRel,
+      expected_sha256: configuredGscRecoverySha,
+      observed_id: null,
+      observed_sha256: null,
+    };
+    let gscRecoveryText = null;
+    if (configuredGscRecoveryId !== 'D-2026-0801-10B') {
+      blocking.push('Exact admission requires GSC recovery addendum ID D-2026-0801-10B.');
+    }
+    if (!gscRecoveryRel) {
+      blocking.push('Exact admission requires a GSC recovery addendum path.');
+    }
+    if (!/^[a-f0-9]{64}$/i.test(configuredGscRecoverySha ?? '')) {
+      blocking.push('Exact admission requires a valid GSC recovery addendum SHA-256.');
+    }
+    if (!gscRecoveryPath || !existsSync(gscRecoveryPath)) {
+      blocking.push(`Missing GSC recovery addendum artifact: ${gscRecoveryRel ?? '(unset)'}.`);
+    } else {
+      gscRecoveryText = readText(gscRecoveryPath);
+      const gscRecoverySha = sha256File(gscRecoveryPath);
+      const gscRecoveryId = parseDecisionIdFromText(gscRecoveryText);
+      inputs.exact_admission.gsc_recovery_addendum.observed_sha256 = gscRecoverySha;
+      inputs.exact_admission.gsc_recovery_addendum.observed_id = gscRecoveryId;
+      if (configuredGscRecoverySha !== gscRecoverySha) {
+        blocking.push(
+          `GSC recovery addendum SHA-256 mismatch: expected ${configuredGscRecoverySha ?? '(unset)'}, got ${gscRecoverySha}.`,
+        );
+      }
+      if (configuredGscRecoveryId !== gscRecoveryId) {
+        blocking.push(
+          `GSC recovery addendum ID mismatch: expected ${configuredGscRecoveryId ?? '(unset)'}, got ${gscRecoveryId ?? '(missing)'}.`,
+        );
+      }
+      if (!verifySidecar(gscRecoveryPath)) {
+        blocking.push(
+          `GSC recovery addendum SHA-256 sidecar is missing or stale for ${gscRecoveryRel}.`,
+        );
+      }
+    }
+
+    const releaseEvidenceBindings = batch.release_evidence_bindings ?? {};
+    for (const requiredBinding of [
+      'gsc_url_inspection_json',
+      'gsc_url_inspection_md',
+      'retained_production_baseline_manifest_json',
+    ]) {
+      if (!releaseEvidenceBindings[requiredBinding]) {
+        blocking.push(
+          `Missing required exact-admission release evidence binding: ${requiredBinding}.`,
+        );
+      }
+    }
+    inputs.exact_admission.release_evidence_bindings = {};
+    for (const [key, binding] of Object.entries(releaseEvidenceBindings)) {
+      const relPath = binding?.path ?? null;
+      const expectedSha = binding?.sha256 ?? null;
+      const absPath = relPath ? join(repoRoot, relPath) : null;
+      const exists = !!absPath && existsSync(absPath);
+      const observedSha = exists ? sha256File(absPath) : null;
+      inputs.exact_admission.release_evidence_bindings[key] = {
+        path: relPath,
+        expected_sha256: expectedSha,
+        observed_sha256: observedSha,
+        sidecar_verified: exists ? verifySidecar(absPath) : false,
+      };
+      if (!exists) {
+        blocking.push(`Missing bound release evidence artifact ${key}: ${relPath ?? '(unset)'}.`);
+        continue;
+      }
+      if (observedSha !== expectedSha) {
+        blocking.push(
+          `Bound release evidence SHA-256 mismatch for ${key}: expected ${expectedSha ?? '(unset)'}, got ${observedSha}.`,
+        );
+      }
+      if (!verifySidecar(absPath)) {
+        blocking.push(`Bound release evidence sidecar is missing or stale for ${relPath}.`);
+      }
+      if (key.endsWith('_json')) {
+        verifiedReleaseEvidence[key] = readJson(absPath);
+      }
+    }
+
+    const boundPreEdit = loadBoundPreEditBatch(
+      batch.decision_authority?.batch_admission_bound_pre_edit_batch_path ?? null,
+      batch.decision_authority?.batch_admission_bound_pre_edit_batch_sha256 ?? null,
+    );
+    inputs.exact_admission.pre_edit_batch = {
+      available: boundPreEdit.available,
+      path: boundPreEdit.path,
+      sidecar_verified: boundPreEdit.sidecar_verified,
+      expected_sha256:
+        batch.decision_authority?.batch_admission_bound_pre_edit_batch_sha256 ?? null,
+      observed_sha256: boundPreEdit.sha256,
+      matches_expected: boundPreEdit.matches_expected,
+    };
+    if (!boundPreEdit.available || !boundPreEdit.batch) {
+      blocking.push(
+        `Exact-admission pre-edit batch snapshot is missing or unreadable: ${boundPreEdit.path ?? '(unset)'}.`,
+      );
+    } else {
+      const gscBindingJson = releaseEvidenceBindings.gsc_url_inspection_json ?? null;
+      const gscBindingMd = releaseEvidenceBindings.gsc_url_inspection_md ?? null;
+      blocking.push(
+        ...validateBoundGscRecoveryEvidence({
+          gscJson: verifiedReleaseEvidence.gsc_url_inspection_json ?? null,
+          addendumText: gscRecoveryText,
+          expectedJsonSha: gscBindingJson?.sha256 ?? null,
+          expectedMdSha: gscBindingMd?.sha256 ?? null,
+          expectedBatchSha:
+            batch.decision_authority?.batch_admission_bound_pre_edit_batch_sha256 ?? null,
+          expectedRows: boundPreEdit.batch.articles ?? [],
+        }),
+      );
+      blocking.push(
+        ...validateRetainedProductionBaseline({
+          manifest: verifiedReleaseEvidence.retained_production_baseline_manifest_json ?? null,
+        }),
+      );
+      if (!boundPreEdit.sidecar_verified) {
+        blocking.push(
+          `Exact-admission pre-edit batch sidecar is missing or stale for ${boundPreEdit.path}.`,
+        );
+      }
+      if (boundPreEdit.matches_expected === false) {
+        blocking.push(
+          `Exact-admission pre-edit batch SHA-256 mismatch: expected ${batch.decision_authority?.batch_admission_bound_pre_edit_batch_sha256 ?? '(unset)'}, got ${boundPreEdit.sha256}.`,
+        );
+      }
+      const preservedRows = batch.articles.slice(0, boundPreEdit.batch.articles.length);
+      if (
+        canonicalizeExactSlate(preservedRows) !==
+        canonicalizeExactSlate(boundPreEdit.batch.articles ?? [])
+      ) {
+        blocking.push(
+          'Existing authorized rows 1..10 are not preserved verbatim from the bound pre-edit batch.',
+        );
+      }
+
+      const expectedAppendedCount = exactCount - (boundPreEdit.batch.articles?.length ?? 0);
+      const appendedRows = batch.articles.slice(boundPreEdit.batch.articles.length);
+      inputs.exact_admission.appended_rows = {
+        expected_count: expectedAppendedCount,
+        observed_count: appendedRows.length,
+      };
+      if (expectedAppendedCount <= 0) {
+        blocking.push(
+          `Exact-admission append count must be positive; got ${expectedAppendedCount}.`,
+        );
+      }
+      if (admissionDecisionRows.length !== expectedAppendedCount) {
+        blocking.push(
+          `Batch-admission decision exact-row count mismatch: expected ${expectedAppendedCount}, got ${admissionDecisionRows.length}.`,
+        );
+      }
+      if (appendedRows.length !== expectedAppendedCount) {
+        blocking.push(
+          `Exact-admission appended row count mismatch: expected ${expectedAppendedCount}, got ${appendedRows.length}.`,
+        );
+      }
+      const heroRebindingConfigured =
+        Boolean(heroRebindingRel) ||
+        Boolean(configuredHeroRebindingId) ||
+        Boolean(configuredHeroRebindingSha);
+      if (heroRebindingConfigured && heroRebindingRows.length !== expectedAppendedCount) {
+        blocking.push(
+          `Hero-rebinding addendum exact-row count mismatch: expected ${expectedAppendedCount}, got ${heroRebindingRows.length}.`,
+        );
+      }
+
+      const wave2QaRows = verifiedReleaseEvidence.wave2_pre_release_qa_json?.rows ?? [];
+      const wave2ManifestRows = verifiedReleaseEvidence.wave2_release_manifest_json?.rows ?? [];
+      const creativeQa = verifiedReleaseEvidence.wave2_creative_revalidation_json ?? null;
+      const creativeQaRows = creativeQa?.rows ?? [];
+      const creativeRemediation = verifiedReleaseEvidence.wave2_creative_remediation_json ?? null;
+      const creativeRemediationRows = creativeRemediation?.rows ?? [];
+      const qaBySlug = new Map(wave2QaRows.map((row) => [row.slug, row]));
+      const manifestBySlug = new Map(wave2ManifestRows.map((row) => [row.slug, row]));
+      const creativeQaBySlug = new Map(creativeQaRows.map((row) => [row.slug, row]));
+      const creativeRemediationBySlug = new Map(
+        creativeRemediationRows.map((row) => [row.slug, row]),
+      );
+      if (
+        creativeRemediation?.summary?.article_count !== expectedAppendedCount ||
+        creativeRemediation?.summary?.passing_article_count !== expectedAppendedCount ||
+        creativeRemediation?.summary?.exact_sha_duplicate_count !== 0 ||
+        Number(creativeRemediation?.summary?.minimum_production_9x8_hamming_distance ?? 0) < 9 ||
+        creativeRemediation?.summary?.exact_titles_visible_at_all_three_sizes !== true ||
+        creativeRemediation?.summary?.all_assets_pass !== true ||
+        creativeRemediation?.summary?.disposition !== 'PASS'
+      ) {
+        blocking.push(
+          'Wave 2 creative remediation packet is missing, stale, incomplete, or not PASS for all exact-admission rows.',
+        );
+      }
+      if (
+        creativeQa?.final_disposition !== 'PASS' ||
+        creativeQa?.summary?.article_count !== expectedAppendedCount ||
+        creativeQa?.summary?.pass_count !== expectedAppendedCount ||
+        creativeQa?.summary?.hold_count !== 0 ||
+        creativeQa?.summary?.all_pass !== true ||
+        creativeQa?.summary?.exact_sha_duplicates_found !== 0 ||
+        Number(creativeQa?.summary?.minimum_nearest_nonself_hamming_distance ?? 0) < 9 ||
+        creativeQa?.comparison_universe?.image_count !== 142
+      ) {
+        blocking.push(
+          'Fresh Wave 2 creative revalidation summary is missing, stale, incomplete, or not PASS across the 142-image 9x8 comparison universe.',
+        );
+      }
+      const observedAppendRows = [];
+      for (let index = 0; index < appendedRows.length; index += 1) {
+        const entry = appendedRows[index];
+        const bound = admissionDecisionRows[index] ?? null;
+        const heroRebinding = heroRebindingRows[index] ?? null;
+        const qa = qaBySlug.get(entry.slug) ?? null;
+        const manifest = manifestBySlug.get(entry.slug) ?? null;
+        const creativeQaRow = creativeQaBySlug.get(entry.slug) ?? null;
+        const creativeRemediationRow = creativeRemediationBySlug.get(entry.slug) ?? null;
+        const observed = {
+          selection_rank: entry.selection_rank,
+          program_row_id: entry.program_row_id,
+          slug: entry.slug,
+          title: entry.title,
+          article_sha256:
+            (entry.article_sha256 ?? entry.repo_sha256 ?? null)?.toLowerCase?.() ?? null,
+          hero_sha256:
+            (entry.hero_asset_sha256 ?? entry.hero_sha256 ?? null)?.toLowerCase?.() ?? null,
+          finalization_state: entry.finalization_state ?? null,
+          admission_status: entry.admission_status ?? null,
+        };
+        observedAppendRows.push(observed);
+        if (observed.selection_rank !== boundPreEdit.batch.articles.length + index + 1) {
+          blocking.push(
+            `Exact-admission selection rank mismatch for ${entry.slug}: expected ${boundPreEdit.batch.articles.length + index + 1}, got ${observed.selection_rank}.`,
+          );
+        }
+        if (observed.finalization_state !== 'draft_noindex_admitted') {
+          blocking.push(
+            `Exact-admission finalization_state mismatch for ${entry.slug}: expected draft_noindex_admitted.`,
+          );
+        }
+        if (observed.admission_status !== 'admitted_exact') {
+          blocking.push(
+            `Exact-admission admission_status mismatch for ${entry.slug}: expected admitted_exact.`,
+          );
+        }
+        if (!bound) {
+          blocking.push(
+            `Exact-admission row ${entry.slug} is missing from the signed batch-admission decision ordering.`,
+          );
+          continue;
+        }
+        if (
+          heroRebinding &&
+          (heroRebinding.program_row_id !== bound.program_row_id ||
+            heroRebinding.slug !== bound.slug ||
+            heroRebinding.title !== bound.title ||
+            heroRebinding.article_sha256 !== bound.article_sha256 ||
+            heroRebinding.prior_hero_sha256 !== bound.hero_sha256)
+        ) {
+          blocking.push(
+            `Hero-rebinding addendum mismatch for ${entry.slug}: it must preserve the parent decision row identity/article hash and supersede only the hero SHA-256.`,
+          );
+        }
+        const expectedHeroSha = heroRebinding?.corrected_hero_sha256 ?? bound.hero_sha256;
+        if (
+          observed.program_row_id !== bound.program_row_id ||
+          observed.slug !== bound.slug ||
+          observed.title !== bound.title ||
+          observed.article_sha256 !== bound.article_sha256 ||
+          observed.hero_sha256 !== expectedHeroSha
+        ) {
+          blocking.push(
+            `Exact-admission decision binding mismatch for ${entry.slug}: program_row_id/slug/title/article_sha256 must match D-2026-0801-10 in exact order and hero_sha256 must match the controlling CEO binding${heroRebinding ? ' (D-2026-0801-10A corrected hero addendum)' : ''}.`,
+          );
+        }
+        if (!qa) {
+          blocking.push(
+            `Exact-admission QA binding missing for ${entry.slug} in wave2_pre_release_qa_json.`,
+          );
+        } else if (
+          qa.row_id !== observed.program_row_id ||
+          qa.slug !== observed.slug ||
+          qa.title !== observed.title ||
+          qa.article_sha256?.toLowerCase() !== observed.article_sha256 ||
+          qa.asset?.sha256?.toLowerCase() !== bound.hero_sha256 ||
+          qa.final_status !== 'PASS'
+        ) {
+          blocking.push(
+            `Historical exact-admission QA binding mismatch for ${entry.slug}: row/article identity must match D-2026-0801-10 and its asset SHA must match the parent decision's prior hero.`,
+          );
+        }
+        if (!manifest) {
+          blocking.push(
+            `Exact-admission manifest binding missing for ${entry.slug} in wave2_release_manifest_json.`,
+          );
+        } else if (
+          manifest.row_id !== observed.program_row_id ||
+          manifest.slug !== observed.slug ||
+          manifest.title !== observed.title ||
+          manifest.asset?.sha256?.toLowerCase() !== bound.hero_sha256 ||
+          manifest.status !== 'PASS'
+        ) {
+          blocking.push(
+            `Historical exact-admission manifest binding mismatch for ${entry.slug}: row identity and prior hero must match D-2026-0801-10.`,
+          );
+        }
+        const metadataChecks = creativeQaRow?.metadata_checks ?? {};
+        const duplicateChecks = creativeQaRow?.duplicate_checks ?? {};
+        const visualChecks = creativeQaRow?.visual_checks ?? {};
+        if (!creativeQaRow) {
+          blocking.push(`Fresh creative revalidation row missing for ${entry.slug}.`);
+        } else if (
+          creativeQaRow.program_row_id !== observed.program_row_id ||
+          creativeQaRow.slug !== observed.slug ||
+          creativeQaRow.title !== observed.title ||
+          creativeQaRow.body_sha256?.toLowerCase() !== observed.article_sha256 ||
+          creativeQaRow.asset?.sha256?.toLowerCase() !== observed.hero_sha256 ||
+          creativeQaRow.hero_path_from_batch !== entry.hero_path ||
+          creativeQaRow.same_hero_social_schema_path !== true ||
+          creativeQaRow.final_disposition !== 'PASS' ||
+          creativeQaRow.asset?.observed_width !== 1200 ||
+          creativeQaRow.asset?.observed_height !== 630 ||
+          creativeQaRow.asset?.observed_mime_type !== 'image/webp' ||
+          Object.values(metadataChecks).some((value) => value !== true) ||
+          duplicateChecks.exact_sha_duplicates_absent !== true ||
+          duplicateChecks.nearest_nonself_distance_gte_9 !== true ||
+          visualChecks.exact_title_visible_in_1200x630 !== true ||
+          visualChecks.exact_title_visible_in_600x315 !== true ||
+          visualChecks.exact_title_visible_in_300x158 !== true ||
+          visualChecks.tiny_metadata_absent !== true ||
+          visualChecks.truncation_absent !== true ||
+          visualChecks.overlap_absent !== true ||
+          visualChecks.clipping_absent !== true ||
+          visualChecks.generic_duplicate_composition_absent !== true ||
+          visualChecks.closing_costs_table_inside_frame === false
+        ) {
+          blocking.push(
+            `Fresh creative revalidation mismatch for ${entry.slug}: current hero identity, visual title, dimensions/MIME/alt metadata, and 9x8 uniqueness must all match D-2026-0801-10A.`,
+          );
+        }
+        if (
+          !creativeRemediationRow ||
+          creativeRemediationRow.program_row_id !== observed.program_row_id ||
+          creativeRemediationRow.slug !== observed.slug ||
+          creativeRemediationRow.title !== observed.title ||
+          creativeRemediationRow.asset_public_path !== entry.hero_path ||
+          creativeRemediationRow.sha256?.toLowerCase() !== observed.hero_sha256 ||
+          creativeRemediationRow.observed_width !== 1200 ||
+          creativeRemediationRow.observed_height !== 630 ||
+          creativeRemediationRow.observed_mime_type !== 'image/webp' ||
+          creativeRemediationRow.disposition !== 'PASS' ||
+          Object.values(creativeRemediationRow.checks ?? {}).some((value) => value !== true) ||
+          creativeRemediationRow.visual_checks?.['1200x630'] !== 'PASS' ||
+          creativeRemediationRow.visual_checks?.['600x315'] !== 'PASS' ||
+          creativeRemediationRow.visual_checks?.['300x158'] !== 'PASS'
+        ) {
+          blocking.push(
+            `Creative remediation binding mismatch for ${entry.slug}: exact current hero/title/metadata/uniqueness proof must be PASS.`,
+          );
+        }
+      }
+      inputs.exact_admission.observed_append_rows = observedAppendRows;
+    }
+    informational.push(
+      'Controlling shortlist exact-match enforcement is superseded by exact_admitted_count + exact_admitted_slate_sha256 + batch admission decision bindings for this batch.',
+    );
+  } else {
+    const shortlistRel = batch.decision_authority?.batch_source_admitted_shortlist_path;
+    const shortlistPath = shortlistRel ? join(repoRoot, shortlistRel) : null;
+    if (!shortlistPath || !existsSync(shortlistPath)) {
+      blocking.push(`Missing controlling admitted shortlist: ${shortlistRel ?? '(unset)'}.`);
+    } else {
+      const shortlistSha = sha256File(shortlistPath);
+      const shortlist = readJson(shortlistPath);
+      const admitted = shortlist.admitted_shortlist ?? [];
+      const admittedBySlug = new Map(admitted.map((entry) => [entry.slug, entry]));
+      const configuredSlugs = new Set((batch.articles ?? []).map((entry) => entry.slug));
+      const shortlistSlugs = new Set(admitted.map((entry) => entry.slug));
+      inputs.admitted_shortlist = {
+        path: shortlistRel,
+        sha256: shortlistSha,
+        expected_sha256: batch.decision_authority?.batch_source_admitted_shortlist_sha256 ?? null,
+        configured_slug_count: configuredSlugs.size,
+        admitted_slug_count: shortlistSlugs.size,
+      };
+      if (shortlistSha !== batch.decision_authority?.batch_source_admitted_shortlist_sha256) {
+        blocking.push(
+          `Controlling admitted shortlist SHA-256 mismatch: expected ${batch.decision_authority?.batch_source_admitted_shortlist_sha256 ?? '(unset)'}, got ${shortlistSha}.`,
+        );
+      }
+      if (
+        configuredSlugs.size !== shortlistSlugs.size ||
+        [...configuredSlugs].some((slug) => !shortlistSlugs.has(slug))
+      ) {
+        blocking.push(
+          'Configured release-10 slugs do not exactly match the controlling shortlist.',
+        );
+      }
+      for (const entry of batch.articles ?? []) {
+        const source = admittedBySlug.get(entry.slug);
+        if (!source || source.program_row_id !== entry.source_shortlist_program_row_id) {
+          blocking.push(
+            `Shortlist provenance mismatch for ${entry.slug}: source_shortlist_program_row_id must match the controlling shortlist.`,
+          );
+        }
       }
     }
   }
@@ -323,16 +1215,28 @@ function buildCheck() {
       index_authorized: decision.index_authorized,
     };
     if (decision.signed === false) {
-      blocking.push(`Successor decision SHA-256 mismatch: expected ${batch.decision_authority?.successor_gate_decision_sha256 ?? '(unset)'}, got ${sha}.`);
+      blocking.push(
+        `Successor decision SHA-256 mismatch: expected ${batch.decision_authority?.successor_gate_decision_sha256 ?? '(unset)'}, got ${sha}.`,
+      );
     }
-    if (args.expectedDecisionSha && sha !== args.expectedDecisionSha.toLowerCase()) {
-      blocking.push(`Successor decision SHA-256 does not match --expected-decision-sha (got ${sha}).`);
+    if (
+      !exactAdmissionEnabled &&
+      args.expectedDecisionSha &&
+      sha !== args.expectedDecisionSha.toLowerCase()
+    ) {
+      blocking.push(
+        `Successor decision SHA-256 does not match --expected-decision-sha (got ${sha}).`,
+      );
     }
     if (decision.disposition !== 'APPROVED') {
-      blocking.push(`Successor decision disposition is ${decision.disposition}; only APPROVED dispositions can authorize release.`);
+      blocking.push(
+        `Successor decision disposition is ${decision.disposition}; only APPROVED dispositions can authorize release.`,
+      );
     }
     if (!decision.release_authorized || !decision.index_authorized) {
-      blocking.push(`Successor decision does not authorize release and/or indexing (release_authorized=${decision.release_authorized}, index_authorized=${decision.index_authorized}).`);
+      blocking.push(
+        `Successor decision does not authorize release and/or indexing (release_authorized=${decision.release_authorized}, index_authorized=${decision.index_authorized}).`,
+      );
     }
   } else {
     blocking.push(`Missing successor decision artifact: ${decisionRel ?? '(unset)'}.`);
@@ -352,7 +1256,7 @@ function buildCheck() {
   }));
   const authorizedBatch = {
     authorization_cap_released_articles:
-      batch.policy?.authorization_cap_released_articles ?? batch.articles?.length ?? 10,
+      batch.policy?.authorization_cap_released_articles ?? batch.articles?.length ?? 0,
     articles: authorizedArticles,
     decision_authority: {
       capping_decision_id: batch.decision_authority?.capping_decision_id ?? '',
@@ -360,11 +1264,12 @@ function buildCheck() {
       capping_decision_sha256: batch.decision_authority?.capping_decision_sha256 ?? '',
       successor_gate_decision_id: batch.decision_authority?.successor_gate_decision_id ?? '',
       successor_gate_decision_path: batch.decision_authority?.successor_gate_decision_path ?? '',
-      successor_gate_decision_sha256: batch.decision_authority?.successor_gate_decision_sha256 ?? '',
+      successor_gate_decision_sha256:
+        batch.decision_authority?.successor_gate_decision_sha256 ?? '',
     },
     policy: {
       authorization_cap_released_articles:
-        batch.policy?.authorization_cap_released_articles ?? batch.articles?.length ?? 10,
+        batch.policy?.authorization_cap_released_articles ?? batch.articles?.length ?? 0,
       fail_closed: batch.policy?.fail_closed !== false,
       earned_scale_gates: batch.policy?.earned_scale_gates ?? [],
     },
@@ -407,7 +1312,9 @@ function buildCheck() {
     );
   }
   if (ledger.identity_registry?.strategy !== 'preserve_program_row_id_by_canonical_slug') {
-    blocking.push('Canonical ledger does not declare stable program-row identity by canonical slug.');
+    blocking.push(
+      'Canonical ledger does not declare stable program-row identity by canonical slug.',
+    );
   }
 
   const ledgerBySlug = new Map(
@@ -443,11 +1350,47 @@ function buildCheck() {
   }
   inputs.ledger.authorized_batch_identity_mismatches = identityMismatches;
 
+  // D-2026-0801-10 requires the signed D-04 ledger bytes to remain immutable.
+  // Publication state for the exact 15 is therefore derived from each current
+  // MDX only after the byte-exact controlled-frontmatter transition proves
+  // valid; identity, title, URL, pillar, and cluster continue to come from D-04.
+  const publicationOverrides = new Map();
+  const publicationOverrideSummary = [];
+  for (const entry of batch.articles ?? []) {
+    if (entry.admission_status !== 'admitted_exact') continue;
+    const sourcePath = entry.repo_path ? join(repoRoot, entry.repo_path) : null;
+    const sourceBytes = sourcePath && existsSync(sourcePath) ? readFileSync(sourcePath) : null;
+    const transition = sourceBytes
+      ? analyzeControlledPublicationTransition(sourceBytes, entry)
+      : null;
+    if (!transition?.authorized) {
+      blocking.push(
+        `Exact-admission runtime publication state cannot be derived for ${entry.slug}: ${transition?.reason ?? 'source_missing'}.`,
+      );
+      continue;
+    }
+    const isPublished = transition.state === 'controlled_publication_transition';
+    publicationOverrides.set(entry.slug, {
+      publication_status: isPublished ? 'published' : 'draft',
+      draft: false,
+      noindex: !isPublished,
+    });
+    publicationOverrideSummary.push({
+      program_row_id: entry.program_row_id,
+      slug: entry.slug,
+      state: transition.state,
+      current_body_sha256: transition.current_body_sha256,
+      normalized_body_sha256: transition.normalized_body_sha256,
+    });
+  }
+  inputs.ledger.runtime_publication_overrides = publicationOverrideSummary;
+
   const rows = deriveStagesForLedger(
     ledger.articles ?? [],
     sitemapUrls,
     admittedLookup,
     legacyLookup,
+    publicationOverrides,
   );
 
   // --- 4. Evidence packets ---
@@ -468,7 +1411,9 @@ function buildCheck() {
         compliance: 'MISSING',
         hold_reason: 'packet_file_missing',
       });
-      blocking.push(`Evidence packet missing for ${entry.slug}; expected at ${entry.evidence_packet_path}.`);
+      blocking.push(
+        `Evidence packet missing for ${entry.slug}; expected at ${entry.evidence_packet_path}.`,
+      );
       continue;
     }
     if (!verifySidecar(packetPath)) {
@@ -477,19 +1422,41 @@ function buildCheck() {
     }
     const packet = readJson(packetPath);
     evidenceBySlug.set(entry.slug, packet);
-    const bodyPath = join(repoRoot, batch.articles.find((article) => article.slug === entry.slug)?.repo_path ?? '');
+    const bodyPath = join(
+      repoRoot,
+      batch.articles.find((article) => article.slug === entry.slug)?.repo_path ?? '',
+    );
     const bodySha = existsSync(bodyPath) ? sha256File(bodyPath) : null;
+    const batchEntry = batch.articles.find((article) => article.slug === entry.slug) ?? null;
+    const sourceBytes = existsSync(bodyPath) ? readFileSync(bodyPath) : null;
+    const transition =
+      sourceBytes && batchEntry
+        ? analyzeControlledPublicationTransition(sourceBytes, batchEntry)
+        : null;
     const identityFailures = [];
     if (packet.program_row_id !== entry.program_row_id) identityFailures.push('program_row_id');
     if (packet.slug !== entry.slug) identityFailures.push('slug');
     if (packet.title !== entry.title) identityFailures.push('title');
-    if (normalizeUrl(packet.canonical_url) !== normalizeUrl(entry.canonical_url)) identityFailures.push('canonical_url');
-    if (packet.body_path_declared !== batch.articles.find((article) => article.slug === entry.slug)?.repo_path) {
+    if (normalizeUrl(packet.canonical_url) !== normalizeUrl(entry.canonical_url))
+      identityFailures.push('canonical_url');
+    if (
+      packet.body_path_declared !==
+      batch.articles.find((article) => article.slug === entry.slug)?.repo_path
+    ) {
       identityFailures.push('body_path_declared');
     }
     if (packet.body_sha256 !== bodySha) identityFailures.push('body_sha256');
+    if (
+      !transition?.authorized ||
+      packet.body_sha256_matches_declared_or_authorized_transition !== true ||
+      !transitionProofMatches(packet.controlled_publication_transition, transition)
+    ) {
+      identityFailures.push('controlled_publication_transition');
+    }
     if (identityFailures.length) {
-      blocking.push(`Evidence packet identity/hash mismatch for ${entry.slug}: ${identityFailures.join(', ')}.`);
+      blocking.push(
+        `Evidence packet identity/hash mismatch for ${entry.slug}: ${identityFailures.join(', ')}.`,
+      );
     }
     const ed = packet.editorial_disposition ?? 'MISSING';
     const fc = packet.factual_citation_disposition ?? 'MISSING';
@@ -510,8 +1477,10 @@ function buildCheck() {
       compliance: cm,
       hold_reason: packet.hold_reason ?? null,
     });
-    if (packet.body_sha256_matches_declared === false) {
-      blocking.push(`Body SHA-256 for ${entry.slug} does not match the authorized batch repo_sha256.`);
+    if (packet.body_sha256_matches_declared_or_authorized_transition !== true) {
+      blocking.push(
+        `Body SHA-256 for ${entry.slug} matches neither the reviewed bytes nor the exact controlled publication transition.`,
+      );
     }
   }
   inputs.evidence = {
@@ -531,8 +1500,14 @@ function buildCheck() {
         blocking.push(`--require-pass-on-articles referenced unknown slug: ${slug}.`);
         continue;
       }
-      if (summary.editorial !== 'PASS' || summary.factual_citation !== 'PASS' || summary.compliance !== 'PASS') {
-        blocking.push(`Required slug ${slug} evidence packet is not PASS (editorial=${summary.editorial}, factual_citation=${summary.factual_citation}, compliance=${summary.compliance}).`);
+      if (
+        summary.editorial !== 'PASS' ||
+        summary.factual_citation !== 'PASS' ||
+        summary.compliance !== 'PASS'
+      ) {
+        blocking.push(
+          `Required slug ${slug} evidence packet is not PASS (editorial=${summary.editorial}, factual_citation=${summary.factual_citation}, compliance=${summary.compliance}).`,
+        );
       }
     }
   }
@@ -625,11 +1600,33 @@ function renderMarkdown(result) {
   lines.push('## Evidence packets');
   lines.push('');
   const ev = result.result.evidence;
+  const evInputs = result.result.inputs.evidence ?? {};
   lines.push(`- packets_required: ${ev.packets_required}`);
   lines.push(`- packets_present: ${ev.packets_present}`);
   lines.push(`- packets_passing: ${ev.packets_passing}`);
-  lines.push(`- packets_hold_or_failing: ${ev.packets_hold_or_failing}`);
-  lines.push(`- packets_missing: ${ev.packets_missing}`);
+  lines.push(
+    `- packets_hold_or_failing: ${evInputs.packets_hold_or_failing ?? ev.packets_failing}`,
+  );
+  lines.push(
+    `- packets_missing: ${evInputs.packets_missing ?? Math.max(0, ev.packets_required - ev.packets_present)}`,
+  );
+  if (result.result.inputs.exact_admission?.enabled) {
+    lines.push('');
+    lines.push('## Exact admission bindings');
+    lines.push('');
+    lines.push(
+      `- exact_admitted_count: ${result.result.inputs.exact_admission.configured_exact_count}`,
+    );
+    lines.push(
+      `- observed_article_count: ${result.result.inputs.exact_admission.observed_article_count}`,
+    );
+    lines.push(
+      `- exact_admitted_slate_sha256: \`${result.result.inputs.exact_admission.configured_exact_slate_sha256 ?? '(unset)'}\``,
+    );
+    lines.push(
+      `- observed_exact_slate_sha256: \`${result.result.inputs.exact_admission.observed_exact_slate_sha256 ?? '(unset)'}\``,
+    );
+  }
   lines.push('');
   lines.push('## Earned scale gates');
   for (const g of result.result.earned_scale_gates) {
@@ -648,7 +1645,9 @@ function renderMarkdown(result) {
   lines.push('');
   lines.push('## User-approved thresholds');
   for (const t of result.result.inputs.user_approved_thresholds ?? []) {
-    lines.push(`- ${t.threshold} = ${t.value}${t.window_days != null ? ` within ${t.window_days} days` : ''}${t.applies_to ? ` — ${t.applies_to}` : ''}`);
+    lines.push(
+      `- ${t.threshold} = ${t.value}${t.window_days != null ? ` within ${t.window_days} days` : ''}${t.applies_to ? ` — ${t.applies_to}` : ''}`,
+    );
   }
   if (!(result.result.inputs.user_approved_thresholds ?? []).length) {
     lines.push('_None registered in batch._');
@@ -685,8 +1684,16 @@ function main() {
   const mdText = renderMarkdown(built);
   writeFileSync(jsonPath, jsonText, 'utf8');
   writeFileSync(mdPath, mdText, 'utf8');
-  writeFileSync(`${jsonPath}.sha256`, `${sha256(Buffer.from(jsonText, 'utf8'))}  ${relative(repoRoot, jsonPath)}\n`, 'utf8');
-  writeFileSync(`${mdPath}.sha256`, `${sha256(Buffer.from(mdText, 'utf8'))}  ${relative(repoRoot, mdPath)}\n`, 'utf8');
+  writeFileSync(
+    `${jsonPath}.sha256`,
+    `${sha256(Buffer.from(jsonText, 'utf8'))}  ${relative(repoRoot, jsonPath)}\n`,
+    'utf8',
+  );
+  writeFileSync(
+    `${mdPath}.sha256`,
+    `${sha256(Buffer.from(mdText, 'utf8'))}  ${relative(repoRoot, mdPath)}\n`,
+    'utf8',
+  );
   console.log(`Wrote ${relative(repoRoot, jsonPath)}`);
   console.log(`Wrote ${relative(repoRoot, mdPath)}`);
   console.log(

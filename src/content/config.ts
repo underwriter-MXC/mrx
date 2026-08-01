@@ -16,6 +16,8 @@
  */
 import { defineCollection, reference, z } from 'astro:content';
 
+import { buildArticleTitle, validateTitle } from '../lib/seo';
+
 const reviewId = z
   .string()
   .regex(/^mrx_compliance-/, 'reviewed_by must start with mrx_compliance-');
@@ -338,12 +340,19 @@ const posts = defineCollection({
         }
       }
 
-      if (data.title.length < 30 || data.title.length > 60) {
-        ctx.addIssue({
-          code: z.ZodIssueCode.custom,
-          message: 'mrx1000 title must be 30-60 characters',
-          path: ['title'],
-        });
+      // Search-result limits apply when the document is actually eligible to
+      // render and index. Draft/noindex staging shells have no public <title>
+      // and must not block an otherwise valid production build.
+      if (data.publication_status === 'published' && data.noindex !== true) {
+        const finalSeoTitle = buildArticleTitle(data.title, data.seo_title);
+        const titleValidation = validateTitle(finalSeoTitle);
+        if (!titleValidation.ok) {
+          ctx.addIssue({
+            code: z.ZodIssueCode.custom,
+            message: titleValidation.reason ?? 'mrx1000 final SEO title must be 30-60 characters',
+            path: ['seo_title'],
+          });
+        }
       }
       if (data.has_footer_disclaimer !== true) {
         ctx.addIssue({

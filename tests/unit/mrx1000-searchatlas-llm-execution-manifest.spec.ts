@@ -303,7 +303,7 @@ function parseCsvLine(line: string): string[] {
 }
 
 function runGenerator(outputDir: string, ledgerPath: string, readinessPath: string): void {
-  const result = spawnSync('node', [SCRIPT], {
+  const result = spawnSync(process.execPath, [SCRIPT], {
     cwd: MRX_ROOT,
     encoding: 'utf8',
     maxBuffer: 2 * 1024 * 1024,
@@ -439,15 +439,15 @@ describe('MRX1000 SearchAtlas + ordered LLM execution manifest', () => {
     );
   });
 
-  it('preserves the 19 + 109 + 25 + 847 post-release canonical-state partition', () => {
+  it('projects the current 34 + 94 + 25 + 847 workspace-state partition', () => {
     expect(manifest.aggregate.by_canonical_inventory_state).toEqual({
-      incumbent_draft_nonpublic_held: 109,
-      live_public_published_route: 19,
+      incumbent_draft_nonpublic_held: 94,
+      live_public_published_route: 34,
       pilot_draft_noindex_stage: 25,
       planning_only_inventory: 847,
     });
     expect(manifest.aggregate.repo_mdx_present).toBe(153);
-    expect(manifest.aggregate.workspace_public_route_configured).toBe(19);
+    expect(manifest.aggregate.workspace_public_route_configured).toBe(34);
     expect(
       manifest.rows.every(
         (row) => !row.authoritative_current_state.repo.production_live_verified_in_this_local_build,
@@ -463,8 +463,8 @@ describe('MRX1000 SearchAtlas + ordered LLM execution manifest', () => {
       pilot_workspace_shells_marked_as_review_candidates: 0,
       pilot_rows_with_validated_distinct_review_candidate: 1,
       by_review_candidate_state: {
-        CHECKSUMMED_EXISTING_PUBLIC_ARTICLE_READY_FOR_LLM_REVIEW: 19,
-        CHECKSUMMED_HELD_SUBSTANTIVE_DRAFT_READY_FOR_LLM_REVIEW: 109,
+        CHECKSUMMED_EXISTING_PUBLIC_ARTICLE_READY_FOR_LLM_REVIEW: 34,
+        CHECKSUMMED_HELD_SUBSTANTIVE_DRAFT_READY_FOR_LLM_REVIEW: 94,
         NO_CHECKSUMMED_REVIEW_CANDIDATE_PILOT_QA_SHELL_ONLY: 24,
         NO_WORKSPACE_CONTENT_CANDIDATE: 847,
         ROW2_REMEDIATED_NOINDEX_CANDIDATE_VALIDATED_FOR_ORDERED_LLM_REVIEW: 1,

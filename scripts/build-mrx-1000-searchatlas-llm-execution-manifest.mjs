@@ -18,6 +18,7 @@ import { existsSync, readFileSync } from 'node:fs';
 import { mkdir, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { projectLedgerArticlesForRuntime } from './_mrx1000-runtime-publication-projection.mjs';
 
 const SCRIPT_DIR = path.dirname(fileURLToPath(import.meta.url));
 const MRX_ROOT = path.resolve(SCRIPT_DIR, '..');
@@ -1264,7 +1265,7 @@ ${inventoryTable}
 ## Review-candidate safety boundary
 
 - Workspace MDX existence is inventory evidence, not review-candidate proof.
-- The 109 held incumbent drafts and 19 verified public articles qualify as checksummed LLM review candidates only because their canonical identity, substantive body, review metadata, source path/SHA, publication state, and readiness-row identity all agree.
+- The immutable canonical ledger is preserved, while the current workspace publication view projects only byte-proven exact-admission transitions. It therefore records **${a.by_canonical_inventory_state.incumbent_draft_nonpublic_held || 0}** held incumbents and **${a.by_canonical_inventory_state.live_public_published_route || 0}** public workspace articles. Checksummed review-candidate status still requires canonical identity, substantive body, review metadata, source path/SHA, publication state, and readiness-row identity to agree.
 - All 25 pilot workspace MDX files are explicit QA shells without final article copy. Their workspace paths are never review candidates and every shell has \`workspace_mdx_is_review_candidate=false\`.
 - A pilot row may become reviewable only through a distinct candidate whose exact path, file SHA, body SHA, identity, containment state, and readiness evidence validate together.
 - Row 2 distinct-candidate state: \`${row2Candidate.special_candidate_validation.state}\`. Checksummed review candidate present: \`${row2Candidate.checksummed_review_candidate_present}\`. Rejection reasons: ${
@@ -1322,6 +1323,7 @@ export function buildManifest() {
     Object.entries(OPTIONAL_INPUTS).map(([key, file]) => [key, readOptionalBytes(file)]),
   );
   const ledger = JSON.parse(inputBytes.ledger.toString('utf8'));
+  const runtimeArticles = projectLedgerArticlesForRuntime(ledger.articles ?? [], MRX_ROOT).articles;
   const readiness = JSON.parse(inputBytes.readiness.toString('utf8'));
   const contentGeniusExport = JSON.parse(inputBytes.contentGeniusExport.toString('utf8'));
   const pilotManifest = JSON.parse(inputBytes.pilotManifest.toString('utf8'));
@@ -1474,17 +1476,17 @@ export function buildManifest() {
   invariant(pilotManifestById.size === EXPECTED.batchSize, 'pilot manifest must contain 25 rows');
 
   const readinessById = new Map(readiness.rows.map((row) => [row.program_row_id, row]));
-  const uniqueIds = new Set(ledger.articles.map((row) => row.program_row_id));
-  const uniqueSlugs = new Set(ledger.articles.map((row) => row.canonical_slug));
+  const uniqueIds = new Set(runtimeArticles.map((row) => row.program_row_id));
+  const uniqueSlugs = new Set(runtimeArticles.map((row) => row.canonical_slug));
   invariant(uniqueIds.size === EXPECTED.rowCount, 'program row ids must be unique');
   invariant(uniqueSlugs.size === EXPECTED.rowCount, 'canonical slugs must be unique');
 
-  const batchAssignments = assignBatches(ledger.articles);
-  const row2Ledger = ledger.articles.find((row) => row.pilot_article_id === 'MRX1000-PILOT-001-02');
+  const batchAssignments = assignBatches(runtimeArticles);
+  const row2Ledger = runtimeArticles.find((row) => row.pilot_article_id === 'MRX1000-PILOT-001-02');
   invariant(row2Ledger, 'pilot row 2 is missing from the canonical ledger');
   const row2Remediation = validateRow2RemediatedCandidate(optionalInputBytes, row2Ledger);
   const row2ReviewException = row2OrderedReviewException(optionalInputBytes, row2Remediation);
-  const rows = ledger.articles
+  const rows = runtimeArticles
     .slice()
     .sort(
       (a, b) =>
@@ -1725,11 +1727,11 @@ export function buildManifest() {
   );
   invariant(
     aggregate.repo_mdx_present === 153 &&
-      aggregate.by_canonical_inventory_state.live_public_published_route === 19 &&
-      aggregate.by_canonical_inventory_state.incumbent_draft_nonpublic_held === 109 &&
+      aggregate.by_canonical_inventory_state.live_public_published_route === 34 &&
+      aggregate.by_canonical_inventory_state.incumbent_draft_nonpublic_held === 94 &&
       aggregate.by_canonical_inventory_state.pilot_draft_noindex_stage === 25 &&
       aggregate.by_canonical_inventory_state.planning_only_inventory === 847,
-    'canonical preservation partition must be 19 + 109 + 25 + 847',
+    'runtime publication projection must be 34 + 94 + 25 + 847',
   );
   invariant(
     aggregate.planning_searchatlas_map_id_count === 294 &&

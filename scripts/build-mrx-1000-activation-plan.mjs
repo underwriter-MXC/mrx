@@ -14,6 +14,7 @@ import { createHash } from 'node:crypto';
 import { existsSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { projectLedgerArticlesForRuntime } from './_mrx1000-runtime-publication-projection.mjs';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 export const MRX_ROOT = resolve(HERE, '..');
@@ -261,10 +262,11 @@ export function buildActivationPlan(ledger, d11Text) {
   );
   validateApprovedConversionRoutes();
   validatePillarRoutes();
+  const runtimeArticles = projectLedgerArticlesForRuntime(ledger.articles, MRX_ROOT).articles;
 
   const d11 = readD11Evidence(d11Text);
   const rowsByCluster = new Map();
-  for (const article of ledger.articles) {
+  for (const article of runtimeArticles) {
     assert(
       CLUSTER_PILLARS[article.cluster],
       `${article.program_row_id}: unmapped cluster ${article.cluster}`,
@@ -281,7 +283,7 @@ export function buildActivationPlan(ledger, d11Text) {
     );
   }
 
-  const rows = ledger.articles
+  const rows = runtimeArticles
     .map((article) => {
       const pillar = CLUSTER_PILLARS[article.cluster];
       assert(article.pillar === pillar.pillar, `${article.program_row_id}: ledger pillar mismatch`);

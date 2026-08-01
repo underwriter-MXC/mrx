@@ -6,6 +6,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { format as formatWithPrettier } from 'prettier';
 import sharp from 'sharp';
+import { projectLedgerArticlesForRuntime } from './_mrx1000-runtime-publication-projection.mjs';
 
 const SCRIPT_DIR = path.dirname(fileURLToPath(import.meta.url));
 const MRX_ROOT = path.resolve(SCRIPT_DIR, '..');
@@ -670,6 +671,7 @@ async function loadCurrentAssetEvidence(row, inputParts) {
   const socialAltText =
     frontmatterNestedScalar(frontmatter, 'hero_image', 'social_alt') ?? altText;
   const description = frontmatterScalar(frontmatter, 'description');
+  const seoTitle = frontmatterScalar(frontmatter, 'seo_title');
   const onDiskPath = publicPathOnDisk(assetPath);
   const onDisk = onDiskPath ? await exists(onDiskPath) : false;
   let assetSha256 = null;
@@ -709,6 +711,7 @@ async function loadCurrentAssetEvidence(row, inputParts) {
     social_alt_text: socialAltText,
     alt_text: altText,
     description,
+    seo_title: seoTitle,
     on_disk: onDisk,
     sha256: assetSha256,
     format,
@@ -881,12 +884,27 @@ async function buildRow(
       currentSocialAltText.length <= 125 &&
       currentSocialAltText.length >= 30,
   );
-  const currentAssetUsable = Boolean(
+  const legacyHeroUsable = Boolean(
     currentEvidence?.on_disk &&
     currentEvidence.format === 'webp' &&
     currentEvidence.width === 1600 &&
     currentEvidence.height === 900 &&
-    (socialReusesHero || dedicatedSocialAssetUsable) &&
+    (socialReusesHero || dedicatedSocialAssetUsable)
+  );
+  const ownerPolicyHeroUsable = Boolean(
+    currentEvidence?.on_disk &&
+    currentEvidence.format === 'webp' &&
+    currentEvidence.width === 1200 &&
+    currentEvidence.height === 630 &&
+    socialReusesHero &&
+    currentEvidence.social_on_disk &&
+    currentEvidence.social_format === 'webp' &&
+    currentEvidence.social_width === 1200 &&
+    currentEvidence.social_height === 630 &&
+    currentEvidence.social_sha256 === currentEvidence.sha256
+  );
+  const currentAssetUsable = Boolean(
+    (legacyHeroUsable || ownerPolicyHeroUsable) &&
     currentPathUnique &&
     currentContentUnique &&
     currentEvidence.article_match.pass &&
@@ -921,7 +939,9 @@ async function buildRow(
   const altText = preserveCurrentAsset
     ? currentAltText
     : generatedAltText(shareSeoTitle, semantics);
-  const shareTitle = publicRow ? row.canonical_title : shareSeoTitle;
+  const shareTitle = publicRow
+    ? (currentEvidence?.seo_title || row.canonical_title)
+    : shareSeoTitle;
   const shareDescription = publicRow
     ? currentDescription
     : generatedShareDescription(shareTitle, semantics);
@@ -1117,7 +1137,7 @@ ${coverageTable}
 
 ## Asset and share architecture
 
-Every article owns one final 1600×900 WebP hero. A verified dedicated 1200×630 JPEG social asset is preserved when present; otherwise the unique hero is reused for Open Graph, Twitter/X, LinkedIn, and messaging previews. The per-row rule is \`${plan.asset_architecture.social_asset_reuse_rule}\`. Reuse across different rows is prohibited and currently has zero collisions.
+Every article owns one final WebP hero. Preserved legacy heroes remain 1600×900, while current owner-policy release assets use one 1200×630 WebP for the visible hero and all social metadata. A verified dedicated legacy 1200×630 JPEG social asset is preserved when present. The per-row rule is \`${plan.asset_architecture.social_asset_reuse_rule}\`. Reuse across different rows is prohibited and currently has zero collisions.
 
 Each row includes title/keyword/intent-derived object, action, location, risk, and decision cues. A semantic signature is computed from those cues; the generator fails unless all 1,000 signatures are unique and every appropriateness check passes. Each row also includes concise alt text, a distinct share SEO title of 60 characters or fewer, a complete 130–160-character share description, 16:9 and 1.91:1 crop guidance, prohibited motifs/claims, and four independent state dimensions: \`brief_ready\`, \`asset_generated\`, \`on_disk\`, and \`published\`.
 
@@ -1166,9 +1186,11 @@ async function main() {
     throw new Error('Canonical ledger must contain exactly 1,000 verified rows');
   }
 
+  const runtime = projectLedgerArticlesForRuntime(ledger.articles, MRX_ROOT);
+  const runtimeArticles = runtime.articles;
   const inputParts = [ledgerBytes.toString('utf8'), d11Bytes.toString('utf8')];
   const currentEvidenceByRow = new Map();
-  for (const row of ledger.articles) {
+  for (const row of runtimeArticles) {
     const evidence = await loadCurrentAssetEvidence(row, inputParts);
     if (evidence) currentEvidenceByRow.set(row.program_row_id, evidence);
   }
@@ -1199,9 +1221,9 @@ async function main() {
       );
     }
   }
-  const shareTitles = buildUniqueShareTitles(ledger.articles);
+  const shareTitles = buildUniqueShareTitles(runtimeArticles);
   const rows = [];
-  for (const row of ledger.articles) {
+  for (const row of runtimeArticles) {
     rows.push(
       await buildRow(
         row,
@@ -1312,18 +1334,18 @@ async function main() {
     verification.share_description_outside_130_160_count === 0,
     verification.share_description_ellipsis_count === 0,
     verification.share_description_incomplete_sentence_count === 0,
-    verification.existing_public_asset_verified_count === 19,
-    verification.asset_generated_count === 19 + verification.held_current_asset_preserved_count,
-    verification.on_disk_count === 19 + verification.held_current_asset_preserved_count,
-    verification.published_count === 19,
-    verification.release_blocked_count === 981,
-    verification.held_count === 109,
-    verification.held_current_asset_observed_count === 109,
+    verification.existing_public_asset_verified_count === 34,
+    verification.asset_generated_count === 34 + verification.held_current_asset_preserved_count,
+    verification.on_disk_count === 34 + verification.held_current_asset_preserved_count,
+    verification.published_count === 34,
+    verification.release_blocked_count === 966,
+    verification.held_count === 94,
+    verification.held_current_asset_observed_count === 94,
     verification.held_current_asset_preserved_count ===
       verification.held_current_asset_usable_count,
     verification.held_current_asset_preserved_count +
       verification.held_replacement_required_count ===
-      109,
+      94,
     verification.pilot_count === 25,
     verification.pilot_shared_placeholder_current_count === 25,
     verification.pilot_unique_replacement_path_count === 25,
@@ -1362,7 +1384,7 @@ async function main() {
       one_unique_hero_per_article: true,
       final_distinct_asset_path_count: 1010,
       hero_target_format: 'webp',
-      hero_target_dimensions: '1600x900',
+      hero_target_dimensions: 'legacy 1600x900; owner-policy release 1200x630',
       dedicated_social_target_format: 'jpeg',
       dedicated_social_target_dimensions: '1200x630',
       social_asset_reuse_rule: REUSE_RULE,

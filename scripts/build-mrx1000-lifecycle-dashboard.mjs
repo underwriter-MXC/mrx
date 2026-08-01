@@ -35,6 +35,7 @@ import {
   legacyLiveRowsFromLedger,
   parseReleaseDecisionArtifact,
 } from './_release-lifecycle-embedded.mjs';
+import { projectLedgerArticlesForRuntime } from './_mrx1000-runtime-publication-projection.mjs';
 
 function pickRepoRoot(argv) {
   for (const arg of argv) {
@@ -183,7 +184,7 @@ function buildDashboard() {
     content_genius_article_uuid: a.content_genius_article_uuid ?? null,
   }));
   const authorizedBatch = {
-    authorization_cap_released_articles: batch.policy?.authorization_cap_released_articles ?? batch.articles?.length ?? 10,
+    authorization_cap_released_articles: batch.policy?.authorization_cap_released_articles ?? batch.articles?.length ?? 0,
     articles: authorizedArticles,
     decision_authority: {
       capping_decision_id: batch.decision_authority?.capping_decision_id ?? '',
@@ -194,7 +195,7 @@ function buildDashboard() {
       successor_gate_decision_sha256: batch.decision_authority?.successor_gate_decision_sha256 ?? '',
     },
     policy: {
-      authorization_cap_released_articles: batch.policy?.authorization_cap_released_articles ?? batch.articles?.length ?? 10,
+      authorization_cap_released_articles: batch.policy?.authorization_cap_released_articles ?? batch.articles?.length ?? 0,
       fail_closed: batch.policy?.fail_closed !== false,
       earned_scale_gates: batch.policy?.earned_scale_gates ?? [],
     },
@@ -216,6 +217,8 @@ function buildDashboard() {
     });
   }
   const ledger = readJson(ledgerPath);
+  const runtime = projectLedgerArticlesForRuntime(ledger.articles ?? [], repoRoot);
+  const runtimeArticles = runtime.articles;
   const legacyRows = legacyLiveRowsFromLedger(ledger.articles ?? []);
   const legacyLookup = buildPublicLiveLegacyLookup(legacyRows);
   const sitemapUrls = listSitemapUrls();
@@ -225,8 +228,11 @@ function buildDashboard() {
     total_rows: ledger.articles?.length ?? 0,
     legacy_live_rows: legacyRows.length,
     sitemap_indexed_urls: sitemapUrls.size,
+    runtime_publication_override_count: [...runtime.projection.bySlug.values()].filter(
+      (entry) => entry.published,
+    ).length,
   };
-  const rows = deriveStagesForLedger(ledger.articles ?? [], sitemapUrls, admittedLookup, legacyLookup);
+  const rows = deriveStagesForLedger(runtimeArticles, sitemapUrls, admittedLookup, legacyLookup);
 
   // --- 5. Load per-article evidence packets ---
   const evidenceBySlug = new Map();

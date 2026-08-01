@@ -41,7 +41,7 @@ describe('canonical sitemap discovery', () => {
     expect(astroConfig).toContain("!pathname.startsWith('/communication-preferences')");
   });
 
-  it('publishes no empty pillar continuation routes while every public pillar fits page one', () => {
+  it('publishes only the populated continuation pages required by the public article count', () => {
     const postsDirectory = join(process.cwd(), 'src', 'content', 'posts');
     const publicPostCount = readdirSync(postsDirectory)
       .filter((file) => file.endsWith('.mdx'))
@@ -52,7 +52,8 @@ describe('canonical sitemap discovery', () => {
           !/^draft:\s*true\s*$/m.test(source) &&
           !/^noindex:\s*true\s*$/m.test(source),
       ).length;
-    expect(archivePageNumbers(publicPostCount)).toEqual([]);
+    expect(publicPostCount).toBe(34);
+    expect(archivePageNumbers(publicPostCount)).toEqual([2]);
 
     const continuationRoute = readFileSync(
       join(process.cwd(), 'src', 'pages', 'blog', 'category', '[category]', 'page', '[page].astro'),

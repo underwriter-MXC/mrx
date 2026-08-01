@@ -1,6 +1,7 @@
 export type ParsedPostFrontmatter = {
   slug: string;
   title: string;
+  seoTitle: string;
   description: string;
   draft: boolean;
   noindex: boolean;
@@ -63,6 +64,7 @@ export function parsePostFrontmatter(source: string, slug: string): ParsedPostFr
   return {
     slug,
     title: scalar(frontmatter, 'title'),
+    seoTitle: scalar(frontmatter, 'seo_title'),
     description: scalar(frontmatter, 'description'),
     draft: asBoolean(scalar(frontmatter, 'draft')),
     noindex: asBoolean(scalar(frontmatter, 'noindex')),
