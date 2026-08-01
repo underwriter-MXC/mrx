@@ -4,7 +4,9 @@ import path from 'node:path';
 
 import { legacyLiveRowsFromLedger } from './_release-lifecycle-embedded.mjs';
 import {
+  countElementsWithClass,
   parseCsvEnv,
+  readTagAttribute,
   resolveDeployment,
   resolveDeploymentExpectations,
   validateDeploymentMetadata,
@@ -48,14 +50,11 @@ const decodeHtml = (value = '') =>
 const stripTags = (value = '') =>
   decodeHtml(value.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim());
 
-const tagAttribute = (tag, name) =>
-  decodeHtml(tag?.match(new RegExp(`\\b${name}=["']([^"']*)["']`, 'i'))?.[1] ?? '');
-
 const extractMetaContent = (html, attribute, value) => {
   for (const match of html.matchAll(/<meta\b[^>]*>/gi)) {
     const tag = match[0];
-    if (tagAttribute(tag, attribute).toLowerCase() === value.toLowerCase()) {
-      return tagAttribute(tag, 'content') || null;
+    if (readTagAttribute(tag, attribute).toLowerCase() === value.toLowerCase()) {
+      return readTagAttribute(tag, 'content') || null;
     }
   }
   return null;
@@ -74,9 +73,9 @@ const countMatches = (value, expression) => [...value.matchAll(expression)].leng
 const extractCanonical = (html) => {
   for (const match of html.matchAll(/<link\b[^>]*>/gi)) {
     const tag = match[0];
-    if (!/\brel=["'][^"']*canonical[^"']*["']/i.test(tag)) continue;
-    const href = tag.match(/\bhref=["']([^"']+)["']/i)?.[1];
-    if (href) return decodeHtml(href);
+    if (!readTagAttribute(tag, 'rel').split(/\s+/).includes('canonical')) continue;
+    const href = readTagAttribute(tag, 'href');
+    if (href) return href;
   }
   return null;
 };
@@ -257,10 +256,10 @@ for (const article of batch.articles) {
   const imageDimensions = webpDimensions(imageResponse.bytes);
   const observedImageSha256 = sha256(imageResponse.bytes);
   const observedHero = {
-    visible_src: tagAttribute(heroTag, 'src') || null,
-    visible_alt: tagAttribute(heroTag, 'alt') || null,
-    visible_width: Number.parseInt(tagAttribute(heroTag, 'width'), 10) || null,
-    visible_height: Number.parseInt(tagAttribute(heroTag, 'height'), 10) || null,
+    visible_src: readTagAttribute(heroTag, 'src') || null,
+    visible_alt: readTagAttribute(heroTag, 'alt') || null,
+    visible_width: Number.parseInt(readTagAttribute(heroTag, 'width'), 10) || null,
+    visible_height: Number.parseInt(readTagAttribute(heroTag, 'height'), 10) || null,
     og_image: extractMetaContent(html, 'property', 'og:image'),
     og_image_alt: extractMetaContent(html, 'property', 'og:image:alt'),
     og_image_width:
@@ -322,9 +321,8 @@ for (const article of batch.articles) {
       imageDimensions?.width === expectedHeroWidth &&
       imageDimensions?.height === expectedHeroHeight &&
       observedImageSha256 === (article.hero_asset_sha256 ?? article.hero_sha256),
-    footer_disclosure_once:
-      countMatches(html, /mrx-disclaimer-footer/g) === 1,
-    top_disclosure_absent: countMatches(html, /mrx-disclaimer-top/g) === 0,
+    footer_disclosure_once: countElementsWithClass(html, 'mrx-disclaimer-footer') === 1,
+    top_disclosure_absent: countElementsWithClass(html, 'mrx-disclaimer-top') === 0,
     analytics_present:
       /googletagmanager\.com\/gtag\/js\?id=(?:G|GT)-/i.test(html) &&
       /gtag\(['"]config['"],\s*(?:googleTagId|['"](?:G|GT)-)/i.test(html),
@@ -390,8 +388,8 @@ for (const route of retainedProductionBaselineManifest.retained_routes ?? []) {
   const imageDimensions = webpDimensions(imageResponse.bytes);
   const observedImageSha256 = sha256(imageResponse.bytes);
   const observedHero = {
-    visible_src: tagAttribute(heroTag, 'src') || null,
-    visible_alt: tagAttribute(heroTag, 'alt') || null,
+    visible_src: readTagAttribute(heroTag, 'src') || null,
+    visible_alt: readTagAttribute(heroTag, 'alt') || null,
     og_image: extractMetaContent(html, 'property', 'og:image'),
     twitter_image: extractMetaContent(html, 'name', 'twitter:image'),
     schema_image: schemaImageUrl,
@@ -452,8 +450,10 @@ if (process.env.MRX_BROWSER_VERIFICATION_JSON) {
 
 const interfaceAssertions = {
   homepage_http_200: home.response.status === 200,
-  homepage_top_disclosure_absent: countMatches(home.text, /mrx-disclaimer-top/g) === 0,
-  homepage_footer_disclosure_once: countMatches(home.text, /mrx-disclaimer-footer/g) === 1,
+  homepage_top_disclosure_absent:
+    countElementsWithClass(home.text, 'mrx-disclaimer-top') === 0,
+  homepage_footer_disclosure_once:
+    countElementsWithClass(home.text, 'mrx-disclaimer-footer') === 1,
   www_redirects_to_apex:
     !primaryRedirectAlias ||
     ([301, 302, 307, 308].includes(wwwResponse.status) &&

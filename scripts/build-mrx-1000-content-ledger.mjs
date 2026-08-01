@@ -37,6 +37,7 @@ const INPUTS = {
     MRX_ROOT,
     'artifacts/mrx1000-release-10/release/post-publication-verification.json',
   ),
+  release10Batch: path.join(MRX_ROOT, 'config/mrx1000-release-10-batch.json'),
   mapRegistry: path.join(MRX_ROOT, 'config/searchatlas-topical-map-registry.json'),
   legacySearchAtlasMaps:
     process.env.MRX_SEARCHATLAS_MAP_EXPORT ??
@@ -509,7 +510,10 @@ async function loadPilotSlugs() {
 
 async function loadRelease10ProductionVerification() {
   try {
-    const bytes = await readFile(INPUTS.release10PostPublicationVerification);
+    const [bytes, batchBytes] = await Promise.all([
+      readFile(INPUTS.release10PostPublicationVerification),
+      readFile(INPUTS.release10Batch),
+    ]);
     const sidecar = await readFile(
       `${INPUTS.release10PostPublicationVerification}.sha256`,
       'utf8',
@@ -522,18 +526,33 @@ async function loadRelease10ProductionVerification() {
       );
     }
     const report = JSON.parse(bytes.toString('utf8'));
+    const batch = JSON.parse(batchBytes.toString('utf8'));
+    const expectedArticleCount = batch.articles?.length;
     if (
+      !Number.isInteger(expectedArticleCount) ||
+      expectedArticleCount <= 0 ||
       report.summary?.overall_disposition !== 'PASS' ||
-      report.summary?.expected_articles !== 10 ||
-      report.summary?.passing_articles !== 10 ||
+      report.summary?.expected_articles !== expectedArticleCount ||
+      report.summary?.passing_articles !== expectedArticleCount ||
       report.summary?.failing_articles !== 0 ||
       report.interface_results?.disposition !== 'PASS'
     ) {
-      throw new Error('Release-10 post-publication verification is present but not a 10/10 PASS.');
+      throw new Error(
+        `Release-10 post-publication verification is present but not an exact ${expectedArticleCount ?? '(invalid batch)'}/${expectedArticleCount ?? '(invalid batch)'} PASS.`,
+      );
     }
     const rows = report.article_results ?? [];
-    if (rows.length !== 10 || rows.some((row) => row.disposition !== 'PASS')) {
-      throw new Error('Release-10 post-publication article results are not exactly 10 PASS rows.');
+    const batchSlugs = new Set(batch.articles.map((article) => article.slug));
+    const resultSlugs = new Set(rows.map((row) => row.slug));
+    if (
+      rows.length !== expectedArticleCount ||
+      rows.some((row) => row.disposition !== 'PASS') ||
+      resultSlugs.size !== expectedArticleCount ||
+      [...batchSlugs].some((slug) => !resultSlugs.has(slug))
+    ) {
+      throw new Error(
+        `Release-10 post-publication article results are not the exact ${expectedArticleCount}-row admitted batch with PASS on every row.`,
+      );
     }
     const verifiedAt = report.generated_at_utc;
     const refreshDue = new Date(Date.parse(verifiedAt) + 90 * 24 * 60 * 60 * 1000)

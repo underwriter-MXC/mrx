@@ -5,6 +5,34 @@ export function parseCsvEnv(env, name, fallback = '') {
     .filter(Boolean);
 }
 
+function decodeHtmlAttribute(value = '') {
+  return value
+    .replace(/&amp;/g, '&')
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;|&apos;/g, "'")
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&#(\d+);/g, (_, code) => String.fromCodePoint(Number(code)))
+    .replace(/&#x([0-9a-f]+);/gi, (_, code) => String.fromCodePoint(parseInt(code, 16)));
+}
+
+export function readTagAttribute(tag, name) {
+  const safeName = String(name).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const match = String(tag ?? '').match(
+    new RegExp(`\\b${safeName}\\s*=\\s*(["'])([\\s\\S]*?)\\1`, 'i'),
+  );
+  return decodeHtmlAttribute(match?.[2] ?? '');
+}
+
+export function countElementsWithClass(html, className) {
+  let count = 0;
+  for (const match of String(html ?? '').matchAll(/<[a-z][^>]*>/gi)) {
+    const classes = readTagAttribute(match[0], 'class').split(/\s+/).filter(Boolean);
+    if (classes.includes(className)) count += 1;
+  }
+  return count;
+}
+
 export function resolveDeployment(env = process.env) {
   return {
     provider: env.MRX_DEPLOY_PROVIDER ?? 'unknown',

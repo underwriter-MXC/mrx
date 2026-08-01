@@ -130,6 +130,17 @@ describe('published article image guardrails', () => {
 });
 
 describe('article share metadata wiring', () => {
+  it('renders the complete canonical hero asset without cropping title pixels', () => {
+    const articleLayout = readFileSync(
+      join(repoRoot, 'src', 'layouts', 'ArticleLayout.astro'),
+      'utf8',
+    );
+
+    expect(articleLayout).toMatch(
+      /\.article-hero-image img\s*\{[\s\S]*?width:\s*100%;[\s\S]*?height:\s*auto;[\s\S]*?object-fit:\s*contain;/,
+    );
+  });
+
   it('passes the article title, description, and hero/social image through ArticleLayout to Seo', () => {
     const blogRoute = readFileSync(
       join(repoRoot, 'src', 'pages', 'blog', '[...slug].astro'),

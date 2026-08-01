@@ -1,15 +1,34 @@
 import { describe, expect, it } from 'vitest';
 
 import {
+  countElementsWithClass,
   isHttpsUrl,
   normalizeHttpUrl,
   parseCsvEnv,
+  readTagAttribute,
   resolveDeployment,
   resolveDeploymentExpectations,
   validateDeploymentMetadata,
 } from '../../scripts/_mrx1000-production-verification.mjs';
 
 describe('mrx1000 production verification helpers', () => {
+  it('reads quoted attributes without truncating apostrophes in the value', () => {
+    const tag = `<img alt="A Landowner's Guide educational illustration" src='/hero.webp'>`;
+
+    expect(readTagAttribute(tag, 'alt')).toBe(
+      "A Landowner's Guide educational illustration",
+    );
+    expect(readTagAttribute(tag, 'src')).toBe('/hero.webp');
+  });
+
+  it('counts disclosure class tokens without counting inline CSS selectors', () => {
+    const html = `<style>.mrx-disclaimer-top{display:none}.mrx-disclaimer-footer{color:#fff}</style>
+      <footer class="site-footer mrx-disclaimer-footer"></footer>`;
+
+    expect(countElementsWithClass(html, 'mrx-disclaimer-top')).toBe(0);
+    expect(countElementsWithClass(html, 'mrx-disclaimer-footer')).toBe(1);
+  });
+
   it('parses CSV environment variables without empty entries', () => {
     expect(
       parseCsvEnv(

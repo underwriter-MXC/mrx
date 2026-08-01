@@ -452,7 +452,7 @@ describe('MRX1000 canonical ledger generator (pilot-aware + idempotent)', () => 
     const verifiedRelease10 = ledger.articles.filter(
       (row) => row.normalized_status === 'live_public_published_route_release_10_verified',
     );
-    expect(verifiedRelease10).toHaveLength(10);
+    expect(verifiedRelease10).toHaveLength(25);
     expect(
       verifiedRelease10.every(
         (row) =>
@@ -466,16 +466,7 @@ describe('MRX1000 canonical ledger generator (pilot-aware + idempotent)', () => 
     const pendingProductionVerification = ledger.articles.filter(
       (row) => row.normalized_status === 'authorized_release_candidate_pending_gate_and_deployment',
     );
-    expect(pendingProductionVerification).toHaveLength(15);
-    expect(
-      pendingProductionVerification.every(
-        (row) =>
-          row.preservation_classification === 'live_public_published_route' &&
-          row.publication_gate_nonpublic === false &&
-          row.production_verification_sha256 == null &&
-          row.deployment_id == null,
-      ),
-    ).toBe(true);
+    expect(pendingProductionVerification).toHaveLength(0);
     const ordinaryHeldDrafts = drafts;
     expect(ordinaryHeldDrafts).toHaveLength(94);
     expect(
