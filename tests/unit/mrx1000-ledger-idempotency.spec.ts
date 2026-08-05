@@ -23,7 +23,7 @@
  *      (today: zero) matches the UUID v4/v5 shape, and the current
  *      authoritative expected persisted count is 0 for both.
  *  P8. The four preservation classes partition the 1,000 rows into
- *      34 + 94 + 25 + 847 = 1,000 after the exact-25 release transition.
+ *      39 + 89 + 25 + 847 = 1,000 after the first continuous-publication wave.
  *  P9. `frontmatter_noindex` and `publication_gate_nonpublic` are
  *      tracked as separate fields; nonpublic incumbents are explicitly
  *      held via `publication_gate_nonpublic=true` even when frontmatter
@@ -56,10 +56,10 @@ const MRX_ROOT = path.resolve(HERE, '..', '..');
 const SCRIPT = path.join(MRX_ROOT, 'scripts/build-mrx-1000-content-ledger.mjs');
 const CANONICAL_JSON = path.join(MRX_ROOT, 'config/mrx-1000-canonical-content-ledger.json');
 const CANONICAL_CSV = path.join(MRX_ROOT, 'config/mrx-1000-canonical-content-ledger.csv');
-const EXPECTED_D04_JSON_SHA256 =
-  '897de9c3aa0f40bc32f63638f2fd847e9788b7100a1c97d6ffbe23f226957559';
-const EXPECTED_D04_CSV_SHA256 =
-  '027691327d6c7cb93a2ab93340275e48c9ccfa21caf01fe3a01d0830e4b8006a';
+const EXPECTED_CANONICAL_JSON_SHA256 =
+  'b6604b3497645a4a118cb117daa985bd653168dc7e7d450255a9524b3420e425';
+const EXPECTED_CANONICAL_CSV_SHA256 =
+  'daf0a7b46e3f8217851164fc88eaef1805969142c353b6bd3b955158cfc2b8a5';
 const TEST_OUTPUT_DIR = mkdtempSync(path.join(tmpdir(), 'mrx1000-ledger-idempotency-'));
 const JSON_OUT = path.join(TEST_OUTPUT_DIR, 'mrx-1000-canonical-content-ledger.json');
 const CSV_OUT = path.join(TEST_OUTPUT_DIR, 'mrx-1000-canonical-content-ledger.csv');
@@ -230,8 +230,8 @@ describe('MRX1000 canonical ledger generator (pilot-aware + idempotent)', () => 
   let expectedReleaseDeploymentId: string;
 
   beforeAll(() => {
-    expect(sha256File(CANONICAL_JSON)).toBe(EXPECTED_D04_JSON_SHA256);
-    expect(sha256File(CANONICAL_CSV)).toBe(EXPECTED_D04_CSV_SHA256);
+    expect(sha256File(CANONICAL_JSON)).toBe(EXPECTED_CANONICAL_JSON_SHA256);
+    expect(sha256File(CANONICAL_CSV)).toBe(EXPECTED_CANONICAL_CSV_SHA256);
     manifest = JSON.parse(readFileSync(PILOT_MANIFEST, 'utf8')) as PilotManifest;
     expectedReleaseDeploymentId = JSON.parse(
       readFileSync(POST_PUBLICATION_VERIFICATION, 'utf8'),
@@ -269,8 +269,8 @@ describe('MRX1000 canonical ledger generator (pilot-aware + idempotent)', () => 
   });
 
   afterAll(() => {
-    expect(sha256File(CANONICAL_JSON)).toBe(EXPECTED_D04_JSON_SHA256);
-    expect(sha256File(CANONICAL_CSV)).toBe(EXPECTED_D04_CSV_SHA256);
+    expect(sha256File(CANONICAL_JSON)).toBe(EXPECTED_CANONICAL_JSON_SHA256);
+    expect(sha256File(CANONICAL_CSV)).toBe(EXPECTED_CANONICAL_CSV_SHA256);
     rmSync(TEST_OUTPUT_DIR, { recursive: true, force: true });
   });
 
@@ -427,10 +427,10 @@ describe('MRX1000 canonical ledger generator (pilot-aware + idempotent)', () => 
     expect(totalAuthoritativeUuids).toBe(0);
   });
 
-  it('preservation classes partition the 1,000 rows as 34 + 94 + 25 + 847 after the exact-25 release', () => {
+  it('preservation classes partition the 1,000 rows as 39 + 89 + 25 + 847 after continuous wave 1', () => {
     const counts = ledger.verification.preservation_classification_counts;
-    expect(counts.live_public_published_route).toBe(34);
-    expect(counts.incumbent_draft_nonpublic_held).toBe(94);
+    expect(counts.live_public_published_route).toBe(39);
+    expect(counts.incumbent_draft_nonpublic_held).toBe(89);
     expect(counts.pilot_draft_noindex_stage).toBe(25);
     expect(counts.planning_only_inventory).toBe(847);
     expect(ledger.verification.aggregate_eq_1000).toBe(true);
@@ -440,19 +440,19 @@ describe('MRX1000 canonical ledger generator (pilot-aware + idempotent)', () => 
         counts.pilot_draft_noindex_stage +
         counts.planning_only_inventory,
     ).toBe(1000);
-    // The remaining 94 incumbent drafts stay fail-closed. The exact 25-row
-    // release set is now publication-shaped under its signed admission gate.
+    // The remaining 89 incumbent drafts stay fail-closed. Thirty rows have
+    // independently cleared the continuous quality gate and production checks.
     const drafts = ledger.articles.filter(
       (r) => r.preservation_classification === 'incumbent_draft_nonpublic_held',
     );
-    expect(drafts.length).toBe(94);
+    expect(drafts.length).toBe(89);
     for (const row of drafts) {
       expect(row.publication_gate_nonpublic).toBe(true);
     }
     const verifiedRelease10 = ledger.articles.filter(
       (row) => row.normalized_status === 'live_public_published_route_release_10_verified',
     );
-    expect(verifiedRelease10).toHaveLength(25);
+    expect(verifiedRelease10).toHaveLength(30);
     expect(
       verifiedRelease10.every(
         (row) =>
@@ -468,7 +468,7 @@ describe('MRX1000 canonical ledger generator (pilot-aware + idempotent)', () => 
     );
     expect(pendingProductionVerification).toHaveLength(0);
     const ordinaryHeldDrafts = drafts;
-    expect(ordinaryHeldDrafts).toHaveLength(94);
+    expect(ordinaryHeldDrafts).toHaveLength(89);
     expect(
       ordinaryHeldDrafts.every(
         (row) =>
@@ -476,12 +476,12 @@ describe('MRX1000 canonical ledger generator (pilot-aware + idempotent)', () => 
           row.publication_state === 'draft_workspace_article',
       ),
     ).toBe(true);
-    // The 9 legacy routes and 25 admitted release routes are all live-public,
+    // The 9 legacy routes and 30 quality-cleared release routes are all live-public,
     // while retaining distinct normalized statuses for provenance.
     const live = ledger.articles.filter(
       (r) => r.preservation_classification === 'live_public_published_route',
     );
-    expect(live.length).toBe(34);
+    expect(live.length).toBe(39);
     for (const row of live) {
       expect(row.publication_gate_nonpublic).toBe(false);
       expect([
@@ -506,12 +506,12 @@ describe('MRX1000 canonical ledger generator (pilot-aware + idempotent)', () => 
         }
       }
     }
-    // We expect 966 nonpublic rows: 94 held incumbents, 25 pilots, and
-    // 847 planning-only rows. The exact 25 release rows are live-public.
-    expect(nonpublicRows).toBe(94 + 25 + 847);
+    // We expect 961 nonpublic rows: 89 held incumbents, 25 pilots, and
+    // 847 planning-only rows. The 30 quality-cleared release rows are live-public.
+    expect(nonpublicRows).toBe(89 + 25 + 847);
     // The 25 pilots explicitly declare frontmatter `noindex: true`.
     expect(nonpublicRowsWithFrontmatterNoindexTrue).toBe(25);
-    expect(nonpublicRowsWithFrontmatterNoindexFalse).toBe(94 + 847);
+    expect(nonpublicRowsWithFrontmatterNoindexFalse).toBe(89 + 847);
     // `noindex_required` is the derived disjunction; nonpublic rows keep the
     // safe downstream default of `true` regardless of the frontmatter fact.
     for (const row of ledger.articles) {
@@ -637,7 +637,7 @@ describe('MRX1000 canonical ledger generator (pilot-aware + idempotent)', () => 
     expect(report).toContain('live_public_published_route');
     expect(report).toContain('pilot_draft_noindex_stage');
     expect(report).toContain('planning_only_inventory');
-    expect(report).toContain('34 + 94 + 25 + 847 = 1,000');
+    expect(report).toContain('39 + 89 + 25 + 847 = 1,000');
     expect(report).toContain('SearchAtlas map evidence');
     expect(report).toContain('workflow_status_evidence_is_non_creation');
   });

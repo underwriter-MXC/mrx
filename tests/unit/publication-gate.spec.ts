@@ -52,7 +52,7 @@ describe('article publication gate', () => {
     });
     expect(publishedAndNoindex).toEqual([]);
   });
-  it('keeps only legacy-live and exact authorized-batch articles publication-shaped', () => {
+  it('keeps only legacy-live and authorized-batch articles publication-shaped', () => {
     const articleFiles = readdirSync(postsDir).filter((file) => file.endsWith('.mdx'));
     const statuses = articleFiles.map((file) => {
       const source = readFileSync(join(postsDir, file), 'utf8');
@@ -69,7 +69,7 @@ describe('article publication gate', () => {
     expect(articleFiles).toHaveLength(153);
     expect(statuses.every(({ status }) => status === 'draft' || status === 'published')).toBe(true);
     expect(published).toEqual(approvedPublicationShapedSlugs);
-    expect(statuses.filter(({ status }) => status === 'draft')).toHaveLength(119);
+    expect(statuses.filter(({ status }) => status === 'draft')).toHaveLength(114);
   });
 
   it('uses the same publication predicate for public discovery surfaces', () => {

@@ -13,10 +13,9 @@
  *      referenced by multiple rows, and counts use UNIQUE row cardinality
  *      (not hero+social double-counted).
  *   5. Sitemap eligibility is gated on the fail-closed published state.
- *   6. Release / index authorization tracks a single signed D-2026-0720-11
- *      artifact (Daryl's authored copy outside the mrx working tree is honored
- *      only when its SHA-256 matches the recorded fingerprint, and disposition
- *      HOLD forces release_authorized=false and index_authorized=false).
+ *   6. Release / index authorization tracks checksum-bound owner decision
+ *      D-2026-0804-16, which removes numerical and elapsed-time blockers while
+ *      preserving article-specific quality gates.
  *   7. Output is byte-deterministic aside from the generated_at timestamp.
  *   8. SearchAtlas map evidence joins exactly the 25 pilot ledger rows.
  *   9. The 269 ledger-side title UUID planning handles are tracked separately
@@ -26,9 +25,8 @@
  *      authoritative local artifact names a row.
  *  11. Texas dynamic pillar route (/mineral-rights/texas/) is recognized via
  *      src/pages/mineral-rights/[state].astro + src/data/states.ts coverage.
- *  12. The 9 legacy rows plus the exact 25 release-batch rows are preserved as
- *      public_live_known_route in the current local sitemap, independently of
- *      the legacy D11 authorization snapshot tracked by this matrix.
+ *  12. The 9 legacy rows plus 30 quality-cleared release rows are preserved as
+ *      public_live_known_route in the current local sitemap.
  */
 import { describe, it, expect, beforeAll } from 'vitest';
 import { spawnSync } from 'node:child_process';
@@ -82,6 +80,12 @@ const D11_EXTERNAL_PATH = path.join(
   'mrx-1000-ceo-decision-no-spend-capacity.md',
 );
 const D11_EXPECTED_SHA256 = '46a9d02548e97a794d1cdaa919682bb159bcfbeabb5b9d8e559431c6ca34091d';
+const OWNER_DECISION_PATH = path.join(
+  MRX_ROOT,
+  'docs/governance/mrx1000-owner-continuous-publication-directive-2026-08-04.md',
+);
+const OWNER_DECISION_EXPECTED_SHA256 =
+  'edc1d4602149558ff6d2b960416839b8caf97593f5fd8fe6ea91b56617d1425f';
 
 function runGenerator() {
   const r = spawnSync('node', [SCRIPT], { cwd: MRX_ROOT, encoding: 'utf8' });
@@ -331,9 +335,9 @@ describe('MRX1000 readiness matrix', () => {
     }
   });
 
-  it('preserves the 9 legacy and exact 25 release-batch routes as public_live_known_route', () => {
+  it('preserves the 9 legacy and 30 quality-cleared routes as public_live_known_route', () => {
     const liveRoutes = matrix.rows.filter((r) => r.public_live_known_route);
-    expect(liveRoutes.length).toBe(34);
+    expect(liveRoutes.length).toBe(39);
     for (const row of liveRoutes) {
       expect(row.publication_status).toBe('published');
       expect(row.sitemap.currently_included).toBe(true);
@@ -342,24 +346,30 @@ describe('MRX1000 readiness matrix', () => {
     expect(matrix.aggregate.public_live_claim_count).toBe(0);
   });
 
-  it('release / index authorization is gated on signed D-2026-0720-11', () => {
+  it('release / index authorization follows owner decision D-2026-0804-16', () => {
     expect(matrix.release_decision).not.toBeNull();
-    expect(matrix.release_decision.decision_id).toBe('D-2026-0720-11');
+    expect(matrix.release_decision.decision_id).toBe('D-2026-0804-16');
     expect(matrix.release_decision.signed).toBe(true);
-    expect(matrix.release_decision.disposition).toBe('HOLD');
-    expect(matrix.release_decision.authorization_cap_new_mrx1000_rows).toBe(0);
-    expect(matrix.release_decision.release_authorized).toBe(false);
-    expect(matrix.release_decision.index_authorized).toBe(false);
-    expect(matrix.release_decision.signed_artifact_sha256).toBe(D11_EXPECTED_SHA256);
+    expect(matrix.release_decision.disposition).toBe(
+      'APPROVED_CONTINUOUS_QUALITY_GATED_ARTICLE_PUBLICATION',
+    );
+    expect(matrix.release_decision.authorization_cap_new_mrx1000_rows).toBeNull();
+    expect(matrix.release_decision.numerical_release_cap_applies).toBe(false);
+    expect(matrix.release_decision.elapsed_time_gate_applies).toBe(false);
+    expect(matrix.release_decision.release_authorized).toBe(true);
+    expect(matrix.release_decision.index_authorized).toBe(true);
+    expect(matrix.release_decision.signed_artifact_sha256).toBe(OWNER_DECISION_EXPECTED_SHA256);
     expect(matrix.release_decision.signed_artifact_sha256_verified).toBe(true);
     for (const row of matrix.rows) {
-      expect(row.release_index.release_authorized).toBe(false);
-      expect(row.release_index.index_authorized).toBe(false);
-      expect(row.release_index.decision_id).toBe('D-2026-0720-11');
-      expect(row.release_index.authorization_cap_new_mrx1000_rows).toBe(0);
+      expect(row.release_index.release_authorized).toBe(true);
+      expect(row.release_index.index_authorized).toBe(true);
+      expect(row.release_index.decision_id).toBe('D-2026-0804-16');
+      expect(row.release_index.authorization_cap_new_mrx1000_rows).toBeNull();
+      expect(row.release_index.numerical_release_cap_applies).toBe(false);
+      expect(row.release_index.elapsed_time_gate_applies).toBe(false);
     }
-    expect(matrix.aggregate.release_authorized).toBe(0);
-    expect(matrix.aggregate.index_authorized).toBe(0);
+    expect(matrix.aggregate.release_authorized).toBe(1000);
+    expect(matrix.aggregate.index_authorized).toBe(1000);
   });
 
   it('records the signed D11 vendor inventory snapshot without treating it as public live or authorization', () => {
@@ -382,7 +392,7 @@ describe('MRX1000 readiness matrix', () => {
     for (const row of matrix.rows.filter((r) => r.sitemap.currently_included)) {
       expect(sitemap).toContain(row.sitemap.public_url.toLowerCase().replace(/\/$/, ''));
     }
-    expect(matrix.aggregate.sitemap_currently_included).toBe(34);
+    expect(matrix.aggregate.sitemap_currently_included).toBe(39);
   });
 
   it('separates Content Genius exact-title records from ledger-created UUID evidence', () => {
@@ -406,10 +416,10 @@ describe('MRX1000 readiness matrix', () => {
       ARCHIVED: 0,
       FAILED: 0,
     });
-    expect(matrix.aggregate.content_genius_exact_title_match_rows).toBe(157);
-    expect(matrix.aggregate.content_genius_exact_title_unambiguous_rows).toBe(151);
+    expect(matrix.aggregate.content_genius_exact_title_match_rows).toBe(153);
+    expect(matrix.aggregate.content_genius_exact_title_unambiguous_rows).toBe(147);
     expect(matrix.aggregate.content_genius_exact_title_ambiguous_rows).toBe(6);
-    expect(matrix.aggregate.content_genius_exact_title_total_records).toBe(164);
+    expect(matrix.aggregate.content_genius_exact_title_total_records).toBe(160);
     expect(matrix.aggregate.ledger_content_genius_article_uuid_count).toBe(0);
 
     const row1 = matrix.rows.find(
@@ -500,8 +510,7 @@ describe('MRX1000 readiness matrix', () => {
   });
 
   it('honors the outside-workspace D-2026-0720-11 only when its SHA-256 matches the recorded fingerprint', () => {
-    // The D11 file lives outside mrx (one level up at program-plans/). Its
-    // SHA-256 was confirmed by Daryl in kanban comment 1784539239.
+    // D11 remains historical vendor-inventory evidence, not release authority.
     expect(existsSync(D11_EXTERNAL_PATH)).toBe(true);
     const sha = createHash('sha256').update(readFileSync(D11_EXTERNAL_PATH)).digest('hex');
     expect(sha).toBe(D11_EXPECTED_SHA256);
@@ -553,9 +562,9 @@ describe('MRX1000 readiness matrix', () => {
     expect(summary).toContain('# MRX1000 readiness matrix');
     expect(summary).toContain('authoritative_local_artifact_only');
     expect(summary).toContain('no inference');
-    expect(summary).toContain('D-2026-0720-11');
-    expect(summary).toContain('disposition=HOLD');
-    expect(summary).toContain('cap=0');
+    expect(summary).toContain('D-2026-0804-16');
+    expect(summary).toContain('APPROVED_CONTINUOUS_QUALITY_GATED_ARTICLE_PUBLICATION');
+    expect(summary).toContain('numerical_cap=false');
     expect(summary).toContain('public_live_known_route');
   });
 
@@ -611,28 +620,38 @@ describe('MRX1000 readiness matrix — load-bearing fact regressions', () => {
     }
   });
 
-  it('signed D-2026-0720-11 is the release decision with the recorded path, SHA-256, and signed=true', () => {
-    expect(matrix.release_decision).toBeTruthy();
-    expect(matrix.release_decision.decision_id).toBe('D-2026-0720-11');
-    expect(matrix.release_decision.signed_artifact).toBe(
-      '../program-plans/mrx-1000-ceo-decision-no-spend-capacity.md',
+  it('D-2026-0804-16 is the release decision with the recorded path, SHA-256, and signed=true', () => {
+    expect(existsSync(OWNER_DECISION_PATH)).toBe(true);
+    expect(createHash('sha256').update(readFileSync(OWNER_DECISION_PATH)).digest('hex')).toBe(
+      OWNER_DECISION_EXPECTED_SHA256,
     );
-    expect(matrix.release_decision.signed_artifact_sha256).toBe(D11_EXPECTED_SHA256);
+    expect(matrix.release_decision).toBeTruthy();
+    expect(matrix.release_decision.decision_id).toBe('D-2026-0804-16');
+    expect(matrix.release_decision.signed_artifact).toBe(
+      'docs/governance/mrx1000-owner-continuous-publication-directive-2026-08-04.md',
+    );
+    expect(matrix.release_decision.signed_artifact_sha256).toBe(OWNER_DECISION_EXPECTED_SHA256);
     expect(matrix.release_decision.signed_artifact_sha256_verified).toBe(true);
   });
 
-  it('release disposition forces cap=0, release=false, indexing=false', () => {
-    expect(matrix.release_decision.disposition).toBe('HOLD');
-    expect(matrix.release_decision.authorization_cap_new_mrx1000_rows).toBe(0);
-    expect(matrix.release_decision.release_authorized).toBe(false);
-    expect(matrix.release_decision.index_authorized).toBe(false);
+  it('release disposition removes numerical and elapsed-time blockers', () => {
+    expect(matrix.release_decision.disposition).toBe(
+      'APPROVED_CONTINUOUS_QUALITY_GATED_ARTICLE_PUBLICATION',
+    );
+    expect(matrix.release_decision.authorization_cap_new_mrx1000_rows).toBeNull();
+    expect(matrix.release_decision.numerical_release_cap_applies).toBe(false);
+    expect(matrix.release_decision.elapsed_time_gate_applies).toBe(false);
+    expect(matrix.release_decision.release_authorized).toBe(true);
+    expect(matrix.release_decision.index_authorized).toBe(true);
     for (const row of matrix.rows) {
-      expect(row.release_index.authorization_cap_new_mrx1000_rows).toBe(0);
-      expect(row.release_index.release_authorized).toBe(false);
-      expect(row.release_index.index_authorized).toBe(false);
+      expect(row.release_index.authorization_cap_new_mrx1000_rows).toBeNull();
+      expect(row.release_index.numerical_release_cap_applies).toBe(false);
+      expect(row.release_index.elapsed_time_gate_applies).toBe(false);
+      expect(row.release_index.release_authorized).toBe(true);
+      expect(row.release_index.index_authorized).toBe(true);
     }
-    expect(matrix.aggregate.release_authorized).toBe(0);
-    expect(matrix.aggregate.index_authorized).toBe(0);
+    expect(matrix.aggregate.release_authorized).toBe(1000);
+    expect(matrix.aggregate.index_authorized).toBe(1000);
   });
 
   it('safeReaddir distinguishes an absent optional directory (returns []) from a present one (returns entries), and propagates non-ENOENT errors', () => {
@@ -707,9 +726,9 @@ describe('MRX1000 readiness matrix — load-bearing fact regressions', () => {
     expect(matrix.aggregate.pillar_route_missing).toBe(0);
   });
 
-  it('9 legacy and exact 25 release-batch rows are eligible in the current local sitemap', () => {
+  it('9 legacy and 30 quality-cleared release rows are eligible in the current local sitemap', () => {
     const live = matrix.rows.filter((r) => r.public_live_known_route);
-    expect(live.length).toBe(34);
+    expect(live.length).toBe(39);
     const legacyIds = [
       'MRX1000-0151',
       'MRX1000-0154',
@@ -748,7 +767,7 @@ describe('MRX1000 readiness matrix — load-bearing fact regressions', () => {
     }
   });
 
-  it('sitemap inclusion is parsed from one selected adapter output and matches the 34 local live rows', () => {
+  it('sitemap inclusion is parsed from one selected adapter output and matches the 39 local live rows', () => {
     const selected = selectCanonicalArticlesSitemap(CANONICAL_ARTICLES_SITEMAP_CANDIDATES);
     expect(selected).not.toBeNull();
     expect(matrix.inputs.sitemap_xml_files_indexed).toEqual([
@@ -756,7 +775,7 @@ describe('MRX1000 readiness matrix — load-bearing fact regressions', () => {
     ]);
     const sitemap = readFileSync(selected as string, 'utf8');
     const sitemapLower = sitemap.toLowerCase();
-    expect(matrix.aggregate.sitemap_currently_included).toBe(34);
+    expect(matrix.aggregate.sitemap_currently_included).toBe(39);
     for (const row of matrix.rows.filter((r) => r.sitemap.currently_included)) {
       expect(sitemapLower).toContain(row.sitemap.public_url.toLowerCase().replace(/\/$/, ''));
     }
@@ -764,20 +783,18 @@ describe('MRX1000 readiness matrix — load-bearing fact regressions', () => {
 
   it('public article-route counts are independent of release authorization', () => {
     // public_live_known_route comes from dist sitemap only; release_authorized
-    // comes from D-2026-0720-11 disposition. They must be reported separately.
+    // comes from D-2026-0804-16. They remain distinct measurements.
     const live = matrix.rows.filter((r) => r.public_live_known_route);
     const released = matrix.rows.filter((r) => r.release_index.release_authorized);
     const indexed = matrix.rows.filter((r) => r.release_index.index_authorized);
-    expect(live.length).toBe(34);
-    expect(released.length).toBe(0);
-    expect(indexed.length).toBe(0);
-    expect(matrix.aggregate.public_live_known_route).toBe(34);
-    expect(matrix.aggregate.release_authorized).toBe(0);
-    expect(matrix.aggregate.index_authorized).toBe(0);
-    // No row carries both live_known and release_authorized in the current
-    // snapshot — but more importantly, the two fields must be independent.
+    expect(live.length).toBe(39);
+    expect(released.length).toBe(1000);
+    expect(indexed.length).toBe(1000);
+    expect(matrix.aggregate.public_live_known_route).toBe(39);
+    expect(matrix.aggregate.release_authorized).toBe(1000);
+    expect(matrix.aggregate.index_authorized).toBe(1000);
     for (const row of live) {
-      expect(row.release_index.release_authorized).toBe(false);
+      expect(row.release_index.release_authorized).toBe(true);
     }
   });
 
@@ -790,7 +807,7 @@ describe('MRX1000 readiness matrix — load-bearing fact regressions', () => {
     expect(snapshot.by_status.NOT_BEGUN).toBe(29);
     expect(snapshot.public_inventory_claimed).toBe(false);
     expect(snapshot.release_authorization_claimed).toBe(false);
-    expect(snapshot.source).toBe('signed_d11_capacity_baseline');
+    expect(snapshot.source).toBe('historical_signed_d11_capacity_baseline_not_release_authority');
     // Independent read of the signed artifact
     const d11Text = readFileSync(D11_EXTERNAL_PATH, 'utf8');
     const d11Sha = createHash('sha256').update(d11Text).digest('hex');
@@ -826,10 +843,10 @@ describe('MRX1000 readiness matrix — load-bearing fact regressions', () => {
     const cg = matrix.searchatlas_evidence.content_genius_export;
     expect(cg.list_item_count).toBeGreaterThan(0);
     expect(cg.detail_found_count).toBeGreaterThan(0);
-    expect(matrix.aggregate.content_genius_exact_title_match_rows).toBe(157);
-    expect(matrix.aggregate.content_genius_exact_title_unambiguous_rows).toBe(151);
+    expect(matrix.aggregate.content_genius_exact_title_match_rows).toBe(153);
+    expect(matrix.aggregate.content_genius_exact_title_unambiguous_rows).toBe(147);
     expect(matrix.aggregate.content_genius_exact_title_ambiguous_rows).toBe(6);
-    expect(matrix.aggregate.content_genius_exact_title_total_records).toBe(164);
+    expect(matrix.aggregate.content_genius_exact_title_total_records).toBe(160);
 
     const row1 = matrix.rows.find(
       (r) => r.title === 'Mineral Rights Offers Explained for Inherited Properties',

@@ -22,9 +22,13 @@ const JSON_OUT = path.join(MRX_ROOT, 'config/mrx-1000-hero-share-creative-briefs
 const CSV_OUT = path.join(MRX_ROOT, 'config/mrx-1000-hero-share-creative-briefs.csv');
 const REPORT_OUT = path.join(MRX_ROOT, 'reports/mrx-1000-hero-share-creative-briefs.md');
 const LEDGER_JSON = path.join(MRX_ROOT, 'config/mrx-1000-canonical-content-ledger.json');
-const D11 = path.join(WORKSPACE_ROOT, 'program-plans/mrx-1000-ceo-decision-no-spend-capacity.md');
+const OWNER_DECISION = path.join(
+  MRX_ROOT,
+  'docs/governance/mrx1000-owner-continuous-publication-directive-2026-08-04.md',
+);
 const POSTS_DIR = path.join(MRX_ROOT, 'src/content/posts');
-const EXPECTED_D11_SHA = '46a9d02548e97a794d1cdaa919682bb159bcfbeabb5b9d8e559431c6ca34091d';
+const EXPECTED_OWNER_DECISION_SHA =
+  'edc1d4602149558ff6d2b960416839b8caf97593f5fd8fe6ea91b56617d1425f';
 const REUSE_RULE =
   'article_specific_hero_with_verified_dedicated_social_asset_when_present_otherwise_same_asset_reuse';
 
@@ -102,7 +106,8 @@ interface CreativePlan {
     sha256: string;
     signed: boolean;
     disposition: string;
-    present_authorization_cap: number;
+    numerical_release_cap_applies: boolean;
+    elapsed_time_gate_applies: boolean;
     generation_authorized: boolean;
     publication_authorized: boolean;
     indexing_authorized: boolean;
@@ -176,7 +181,7 @@ describe('MRX 1,000-row hero/share creative-brief generator', () => {
     const articlePaths = readdirSync(POSTS_DIR)
       .filter((name) => name.endsWith('.mdx'))
       .map((name) => path.join(POSTS_DIR, name));
-    const guardPaths = [isolatedLedgerPath, D11, ...articlePaths];
+    const guardPaths = [isolatedLedgerPath, OWNER_DECISION, ...articlePaths];
 
     guardedBefore = snapshotFiles(guardPaths);
     isolatedOutputs = {
@@ -308,11 +313,11 @@ describe('MRX 1,000-row hero/share creative-brief generator', () => {
     }
   });
 
-  it('preserves the 34 current public-workspace heroes and their frontmatter metadata', () => {
+  it('preserves the 39 current public-workspace heroes and their frontmatter metadata', () => {
     const publicRows = plan.rows.filter(
       (row) => row.preservation_classification === 'live_public_published_route',
     );
-    expect(publicRows).toHaveLength(34);
+    expect(publicRows).toHaveLength(39);
 
     for (const row of publicRows) {
       expect(row.repo_path).not.toBeNull();
@@ -340,11 +345,11 @@ describe('MRX 1,000-row hero/share creative-brief generator', () => {
     }
   });
 
-  it('audits all 94 held incumbents while preserving their usable existing assets', () => {
+  it('audits all 89 held incumbents while preserving their usable existing assets', () => {
     const heldRows = plan.rows.filter(
       (row) => row.preservation_classification === 'incumbent_draft_nonpublic_held',
     );
-    expect(heldRows).toHaveLength(94);
+    expect(heldRows).toHaveLength(89);
 
     for (const row of heldRows) {
       expect(row.repo_path).not.toBeNull();
@@ -387,11 +392,11 @@ describe('MRX 1,000-row hero/share creative-brief generator', () => {
         expect(row.planned_replacement_required, row.program_row_id).toBe(true);
         expect(row.asset_generated, row.program_row_id).toBe(false);
         expect(row.on_disk, row.program_row_id).toBe(false);
-        expect(row.release_status, row.program_row_id).toContain('blocked_d11_cap_zero');
+        expect(row.release_status, row.program_row_id).toContain('quality_blocked');
       }
     }
 
-    expect(heldRows.filter((row) => row.current_asset_usable)).toHaveLength(94);
+    expect(heldRows.filter((row) => row.current_asset_usable)).toHaveLength(89);
     expect(heldRows.filter((row) => row.planned_replacement_required)).toHaveLength(0);
   });
 
@@ -417,29 +422,30 @@ describe('MRX 1,000-row hero/share creative-brief generator', () => {
       expect(row.on_disk, row.program_row_id).toBe(false);
       expect(row.published, row.program_row_id).toBe(false);
       expect(row.release_blocked, row.program_row_id).toBe(true);
-      expect(row.release_status, row.program_row_id).toContain('blocked_d11_cap_zero');
+      expect(row.release_status, row.program_row_id).toContain('quality_blocked');
     }
   });
 
-  it('keeps generation, release, indexing, deployment, and spend fail-closed under signed D11', () => {
-    expect(sha256File(D11)).toBe(EXPECTED_D11_SHA);
+  it('removes numerical blockers while retaining article-specific quality gates', () => {
+    expect(sha256File(OWNER_DECISION)).toBe(EXPECTED_OWNER_DECISION_SHA);
     expect(plan.controlling_decision).toEqual({
-      decision_id: 'D-2026-0720-11',
-      path: 'program-plans/mrx-1000-ceo-decision-no-spend-capacity.md',
-      sha256: EXPECTED_D11_SHA,
+      decision_id: 'D-2026-0804-16',
+      path: 'docs/governance/mrx1000-owner-continuous-publication-directive-2026-08-04.md',
+      sha256: EXPECTED_OWNER_DECISION_SHA,
       signed: true,
-      disposition: 'HOLD_ZERO_NEW_ROWS_NO_SPEND_CAPACITY_GATE',
-      present_authorization_cap: 0,
-      generation_authorized: false,
-      publication_authorized: false,
-      indexing_authorized: false,
-      deployment_authorized: false,
+      disposition: 'APPROVED_CONTINUOUS_QUALITY_GATED_ARTICLE_PUBLICATION',
+      numerical_release_cap_applies: false,
+      elapsed_time_gate_applies: false,
+      generation_authorized: true,
+      publication_authorized: true,
+      indexing_authorized: true,
+      deployment_authorized: true,
       spend_authorized: false,
     });
     expect(plan.rows.filter((row) => row.asset_generated)).toHaveLength(128);
     expect(plan.rows.filter((row) => row.on_disk)).toHaveLength(128);
-    expect(plan.rows.filter((row) => row.published)).toHaveLength(34);
-    expect(plan.rows.filter((row) => row.release_blocked)).toHaveLength(966);
+    expect(plan.rows.filter((row) => row.published)).toHaveLength(39);
+    expect(plan.rows.filter((row) => row.release_blocked)).toHaveLength(961);
     expect(plan.scope_attestation).toMatchObject({
       local_only: true,
       images_generated_or_edited: false,
@@ -464,9 +470,9 @@ describe('MRX 1,000-row hero/share creative-brief generator', () => {
     expect(report).toMatch(/\| Final hero path collisions\s+\|\s+0 \|/);
     expect(report).toMatch(/\| Unique semantic signatures\s+\|\s+1000 \|/);
     expect(report).toMatch(/\| Semantic appropriateness failures\s+\|\s+0 \|/);
-    expect(report).toMatch(/\| Held current assets preserved\s+\|\s+94 \|/);
+    expect(report).toMatch(/\| Held current assets preserved\s+\|\s+89 \|/);
     expect(report).toMatch(/\| Held assets still requiring replacement\s+\|\s+0 \|/);
-    expect(report).toMatch(/\| Pilot rows still release-blocked\s+\|\s+25 \|/);
-    expect(report).toContain(EXPECTED_D11_SHA);
+    expect(report).toMatch(/\| Pilot rows still quality-blocked\s+\|\s+25 \|/);
+    expect(report).toContain(EXPECTED_OWNER_DECISION_SHA);
   });
 });

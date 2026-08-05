@@ -4,7 +4,7 @@
  * Build the local-only MRX1000 internal-link and conversion activation plan.
  *
  * This generator is intentionally additive. It reads the canonical content
- * ledger and the signed D11 capacity decision, then writes JSON/CSV/report
+ * ledger and the signed D16 continuous-publication decision, then writes JSON/CSV/report
  * sidecars. It never edits content, the canonical ledger, or a production
  * surface. Planned future article URLs are valid targets when they resolve to
  * another row in the canonical ledger.
@@ -19,11 +19,11 @@ import { projectLedgerArticlesForRuntime } from './_mrx1000-runtime-publication-
 const HERE = dirname(fileURLToPath(import.meta.url));
 export const MRX_ROOT = resolve(HERE, '..');
 export const LEDGER_PATH = join(MRX_ROOT, 'config', 'mrx-1000-canonical-content-ledger.json');
-export const D11_PATH = resolve(
+export const OWNER_DECISION_PATH = resolve(
   MRX_ROOT,
-  '..',
-  'program-plans',
-  'mrx-1000-ceo-decision-no-spend-capacity.md',
+  'docs',
+  'governance',
+  'mrx1000-owner-continuous-publication-directive-2026-08-04.md',
 );
 export const JSON_OUT = join(MRX_ROOT, 'config', 'mrx-1000-content-activation-plan.json');
 export const CSV_OUT = join(MRX_ROOT, 'config', 'mrx-1000-content-activation-plan.csv');
@@ -31,8 +31,8 @@ export const REPORT_OUT = join(MRX_ROOT, 'reports', 'mrx-1000-content-activation
 
 const SITE_ORIGIN = 'https://mineralrightsxchange.com';
 const PLAN_VERSION = 'mrx1000-content-activation-v1.1.0';
-export const EXPECTED_D11_SHA256 =
-  '46a9d02548e97a794d1cdaa919682bb159bcfbeabb5b9d8e559431c6ca34091d';
+export const EXPECTED_OWNER_DECISION_SHA256 =
+  'edc1d4602149558ff6d2b960416839b8caf97593f5fd8fe6ea91b56617d1425f';
 
 export const CLUSTER_PILLARS = Object.freeze({
   'sell-mineral-rights-decision-process': Object.freeze({
@@ -178,38 +178,40 @@ function internalArticleUrl(article) {
   return parsed.pathname;
 }
 
-function readD11Evidence(d11Text) {
-  const decisionSha256 = sha256(d11Text);
+function readOwnerDecisionEvidence(decisionText) {
+  const decisionSha256 = sha256(decisionText);
   assert(
-    decisionSha256 === EXPECTED_D11_SHA256,
-    `D11 SHA-256 mismatch: expected ${EXPECTED_D11_SHA256}, found ${decisionSha256}`,
+    decisionSha256 === EXPECTED_OWNER_DECISION_SHA256,
+    `Owner decision SHA-256 mismatch: expected ${EXPECTED_OWNER_DECISION_SHA256}, found ${decisionSha256}`,
   );
   assert(
-    d11Text.includes('Decision id | **D-2026-0720-11**'),
-    'D11 decision id is missing or changed',
+    decisionText.includes('Decision ID: D-2026-0804-16'),
+    'Owner decision id is missing or changed',
   );
   assert(
-    d11Text.includes('**Present authorization cap:** `0`.'),
-    'D11 present authorization cap is not explicitly 0',
+    decisionText.includes('Disposition: APPROVED — CONTINUOUS QUALITY-GATED ARTICLE PUBLICATION'),
+    'Owner continuous-publication disposition is missing or changed',
   );
   assert(
-    d11Text.includes('**Signed disposition:** `HOLD_ZERO_NEW_ROWS_NO_SPEND_CAPACITY_GATE`.'),
-    'D11 signed HOLD disposition is missing or changed',
+    decisionText.includes('release_authorized: true'),
+    'Owner release authorization is missing or changed',
   );
   assert(
-    d11Text.includes('Spend posture | **NO-SPEND.'),
-    'D11 no-spend posture is missing or changed',
+    decisionText.includes('Article count and elapsed time do not.'),
+    'Owner numerical-cap supersession is missing or changed',
   );
 
   return {
-    decision_id: 'D-2026-0720-11',
-    signed_disposition: 'HOLD_ZERO_NEW_ROWS_NO_SPEND_CAPACITY_GATE',
-    authorization_cap_new_rows: 0,
+    decision_id: 'D-2026-0804-16',
+    signed_disposition: 'APPROVED_CONTINUOUS_QUALITY_GATED_ARTICLE_PUBLICATION',
+    numerical_release_cap_applies: false,
+    elapsed_time_gate_applies: false,
     spend_authorized: false,
-    publication_authorized: false,
+    publication_authorized: true,
+    index_authorized: true,
     decision_sha256: decisionSha256,
     decision_sha256_verified: true,
-    source_path: '../program-plans/mrx-1000-ceo-decision-no-spend-capacity.md',
+    source_path: 'docs/governance/mrx1000-owner-continuous-publication-directive-2026-08-04.md',
   };
 }
 
@@ -244,7 +246,7 @@ function validatePillarRoutes() {
  * Build a deterministic sidecar plan from an already-parsed canonical ledger.
  * Exported for focused invariant tests; no files are written here.
  */
-export function buildActivationPlan(ledger, d11Text) {
+export function buildActivationPlan(ledger, ownerDecisionText) {
   assert(Array.isArray(ledger.articles), 'canonical ledger articles must be an array');
   assert(
     ledger.articles.length === 1000,
@@ -264,7 +266,7 @@ export function buildActivationPlan(ledger, d11Text) {
   validatePillarRoutes();
   const runtimeArticles = projectLedgerArticlesForRuntime(ledger.articles, MRX_ROOT).articles;
 
-  const d11 = readD11Evidence(d11Text);
+  const ownerDecision = readOwnerDecisionEvidence(ownerDecisionText);
   const rowsByCluster = new Map();
   for (const article of runtimeArticles) {
     assert(
@@ -382,8 +384,10 @@ export function buildActivationPlan(ledger, d11Text) {
           rendered_triangle_verified: false,
           live_status: 'not_published_or_verified_by_this_plan',
           live_triangle_verified: false,
-          release_status: 'blocked_by_d11_cap_0',
-          authorization_cap_new_rows: 0,
+          release_status: sourceRouteLive
+            ? 'released_under_d16_continuous_quality_gate'
+            : 'eligible_for_continuous_quality_review_not_yet_cleared',
+          numerical_release_cap_applies: false,
         },
       };
     })
@@ -444,8 +448,9 @@ export function buildActivationPlan(ledger, d11Text) {
     approved_primary_cta_destination_count: new Set(rows.map((row) => row.primary_cta.url)).size,
     approved_appointment_cta_destination_count: new Set(rows.map((row) => row.appointment_cta.url))
       .size,
-    d11_authorization_cap_new_rows: d11.authorization_cap_new_rows,
-    d11_sha256_verified: d11.decision_sha256_verified,
+    owner_decision_sha256_verified: ownerDecision.decision_sha256_verified,
+    numerical_release_cap_applies: ownerDecision.numerical_release_cap_applies,
+    continuous_quality_gating_active: ownerDecision.publication_authorized,
     canonical_ledger_fingerprint_verified:
       ledger.content_fingerprint_sha256 === computedLedgerFingerprint,
     all_invariants_pass:
@@ -464,9 +469,11 @@ export function buildActivationPlan(ledger, d11Text) {
       rows.filter((row) => row.appointment_cta.distinct_from_primary_cta).length === 375 &&
       rows.every((row) => row.evidence.rendered_triangle_verified === false) &&
       rows.every((row) => row.evidence.live_triangle_verified === false) &&
-      d11.decision_sha256_verified === true &&
+      ownerDecision.decision_sha256_verified === true &&
       ledger.content_fingerprint_sha256 === computedLedgerFingerprint &&
-      d11.authorization_cap_new_rows === 0,
+      ownerDecision.numerical_release_cap_applies === false &&
+      ownerDecision.elapsed_time_gate_applies === false &&
+      ownerDecision.publication_authorized === true,
   };
   assert(verification.all_invariants_pass, 'activation-plan invariants failed');
 
@@ -487,7 +494,7 @@ export function buildActivationPlan(ledger, d11Text) {
   const fingerprintPayload = {
     plan_version: PLAN_VERSION,
     source_ledger_fingerprint_sha256: computedLedgerFingerprint,
-    d11_decision_sha256: d11.decision_sha256,
+    owner_decision_sha256: ownerDecision.decision_sha256,
     rows,
   };
 
@@ -503,7 +510,7 @@ export function buildActivationPlan(ledger, d11Text) {
       canonical_ledger_fingerprint_sha256: computedLedgerFingerprint,
       canonical_ledger_fingerprint_verified: true,
       canonical_ledger_generated_at: ledger.generated_at,
-      d11,
+      owner_decision: ownerDecision,
     },
     policy: {
       local_sidecar_only: true,
@@ -513,8 +520,10 @@ export function buildActivationPlan(ledger, d11Text) {
       spends_or_mutates_vendor_state: false,
       planned_future_canonical_rows_are_valid_sibling_targets: true,
       planned_status_is_not_rendered_or_live_evidence: true,
-      d11_cap_0_preserved: true,
-      d11_exact_sha256_required: EXPECTED_D11_SHA256,
+      continuous_quality_gated_publication: true,
+      numerical_release_cap_applies: false,
+      elapsed_time_gate_applies: false,
+      owner_decision_exact_sha256_required: EXPECTED_OWNER_DECISION_SHA256,
       canonical_ledger_fingerprint_recomputed: true,
       sibling_selection: 'same_cluster_next_by_program_row_id_cyclic',
       primary_cta_selection:
@@ -586,7 +595,7 @@ export function renderCsv(plan) {
     'live_status',
     'live_triangle_verified',
     'release_status',
-    'authorization_cap_new_rows',
+    'numerical_release_cap_applies',
   ];
   const values = (row) => [
     row.program_row_id,
@@ -639,7 +648,7 @@ export function renderCsv(plan) {
     row.evidence.live_status,
     row.evidence.live_triangle_verified,
     row.evidence.release_status,
-    row.evidence.authorization_cap_new_rows,
+    row.evidence.numerical_release_cap_applies,
   ];
   return `${columns.join(',')}\n${plan.rows.map((row) => values(row).map(csvValue).join(',')).join('\n')}\n`;
 }
@@ -681,8 +690,9 @@ export function renderReport(plan) {
     `- Cross-cluster sibling targets: **${v.cross_cluster_sibling_target_count}**\n` +
     `- Noncanonical/non-trailing URLs: **${v.noncanonical_or_nontrailing_url_count}**\n` +
     `- Canonical-ledger row fingerprint verified: **${v.canonical_ledger_fingerprint_verified ? 'PASS' : 'FAIL'}**\n` +
-    `- Exact signed D11 SHA-256 verified: **${v.d11_sha256_verified ? 'PASS' : 'FAIL'}**\n` +
-    `- D11 authorization cap: **${v.d11_authorization_cap_new_rows}**\n` +
+    `- Exact owner decision SHA-256 verified: **${v.owner_decision_sha256_verified ? 'PASS' : 'FAIL'}**\n` +
+    `- Numerical release cap applies: **${v.numerical_release_cap_applies}**\n` +
+    `- Continuous quality gating active: **${v.continuous_quality_gating_active}**\n` +
     `- All invariants pass: **${v.all_invariants_pass ? 'PASS' : 'FAIL'}**\n\n` +
     `## Primary CTA distribution\n\n` +
     `${markdownCountList(plan.distributions.by_primary_cta_url)}\n\n` +
@@ -692,8 +702,8 @@ export function renderReport(plan) {
     `${markdownCountList(plan.distributions.by_appointment_cta_placement)}\n\n` +
     `## Pillar distribution\n\n` +
     `${markdownCountList(plan.distributions.by_pillar)}\n\n` +
-    `## Release gate preserved\n\n` +
-    `D11 \`${plan.inputs.d11.decision_id}\` remains \`${plan.inputs.d11.signed_disposition}\` with a present authorization cap of **${plan.inputs.d11.authorization_cap_new_rows}** new rows and no spend/publication authorization. The exact signed decision SHA-256 was verified as \`${plan.inputs.d11.decision_sha256}\`.\n\n` +
+    `## Continuous quality gate\n\n` +
+    `Owner decision \`${plan.inputs.owner_decision.decision_id}\` is \`${plan.inputs.owner_decision.signed_disposition}\`. It removes numerical release caps and elapsed-time gates while preserving article-specific editorial, factual, compliance, creative, build, rollback, and production-verification requirements. The exact decision SHA-256 was verified as \`${plan.inputs.owner_decision.decision_sha256}\`.\n\n` +
     `Canonical-ledger row fingerprint verified as \`${plan.inputs.canonical_ledger_fingerprint_sha256}\`.\n\n` +
     `Activation-plan content fingerprint: \`${plan.content_fingerprint_sha256}\`.\n`
   );
@@ -701,9 +711,9 @@ export function renderReport(plan) {
 
 export function main() {
   const ledgerText = readFileSync(LEDGER_PATH, 'utf8');
-  const d11Text = readFileSync(D11_PATH, 'utf8');
+  const ownerDecisionText = readFileSync(OWNER_DECISION_PATH, 'utf8');
   const ledger = JSON.parse(ledgerText);
-  const plan = buildActivationPlan(ledger, d11Text);
+  const plan = buildActivationPlan(ledger, ownerDecisionText);
   writeFileSync(JSON_OUT, `${JSON.stringify(plan, null, 2)}\n`, 'utf8');
   writeFileSync(CSV_OUT, renderCsv(plan), 'utf8');
   writeFileSync(REPORT_OUT, renderReport(plan), 'utf8');
@@ -713,7 +723,7 @@ export function main() {
       `${plan.verification.appointment_cta_planned_count} appointment CTAs planned; ` +
       `${plan.verification.rendered_triangle_verified_count} rendered verified; ` +
       `${plan.verification.live_triangle_verified_count} live verified; ` +
-      `D11 cap ${plan.verification.d11_authorization_cap_new_rows}.\n`,
+      `numerical release cap ${plan.verification.numerical_release_cap_applies}.\n`,
   );
 }
 

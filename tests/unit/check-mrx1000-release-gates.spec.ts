@@ -10,9 +10,10 @@
  *
  *   - the script writes both the JSON and the Markdown report and exits
  *     non-zero when the canonical gate surfaces blocking findings;
- *   - the script surfaces the user-approved scale-gate thresholds (80%
- *     index coverage for 10->25 / 25->50; \u226560% non-branded impressions
- *     for continuing 50-article batches) as registered thresholds;
+ *   - the script preserves the historical exact-25 bindings while accepting
+ *     later rows only through continuous, quality-gated admission;
+ *   - the owner directive removes article-count, observation-window, and
+ *     missing cap-lift-decision blockers without weakening quality evidence;
  *   - the script honors --strict and --require-pass-on-articles;
  *   - the evidence-packets script never inverts HOLD to PASS without a
  *     durable signed review-artifact file whose hashes match
@@ -122,6 +123,7 @@ function runTamperedExactGate(
     mkdirSync(join(tree, 'reports', 'mrx1000-release-10-lifecycle'), { recursive: true });
     symlinkSync(join(repoRoot, 'src'), join(tree, 'src'), 'dir');
     symlinkSync(join(repoRoot, 'artifacts'), join(tree, 'artifacts'), 'dir');
+    symlinkSync(join(repoRoot, 'docs'), join(tree, 'docs'), 'dir');
     if (existsSync(join(repoRoot, 'dist'))) {
       symlinkSync(join(repoRoot, 'dist'), join(tree, 'dist'), 'dir');
     }
@@ -584,7 +586,7 @@ describe('scripts/check-mrx1000-release-gates.mjs', () => {
     }
   });
 
-  it('writes JSON+MD reports and passes the exact authorized 25 after final approval', () => {
+  it('writes JSON+MD reports and passes all 30 continuously admitted rows after final approval', () => {
     const r = runCheckAndRead();
     expect(existsSync(r.jsonPath)).toBe(true);
     expect(existsSync(r.mdPath)).toBe(true);
@@ -597,49 +599,40 @@ describe('scripts/check-mrx1000-release-gates.mjs', () => {
       packets_failing: number;
     };
     expect(evidence).toMatchObject({
-      packets_required: 25,
-      packets_passing: 25,
+      packets_required: 30,
+      packets_passing: 30,
       packets_failing: 0,
     });
     const informational = (r.payload.informational_findings as string[]) || [];
-    expect(informational.some((f) => f.includes('Future earned scale-gate'))).toBe(true);
+    expect(informational.some((f) => f.includes('Numerical scale gates are superseded'))).toBe(
+      true,
+    );
   });
 
-  it('surfaces the cap and observed_release_total from the authorized batch', () => {
+  it('treats 1,000 as program scope and observes the 30 quality-cleared public rows', () => {
     const r = runCheckAndRead();
     const cap = r.payload.cap as {
       authorized_release_total: number;
       observed_release_total: number;
     };
-    expect(cap.authorized_release_total).toBe(25);
-    // The exact authorized set is fully flipped, so all 25 admitted rows are
-    // observed as public-live while remaining exactly at the signed cap. The
-    // immutable ledger still records the exact 15 as held, so this also pins
-    // the runtime controlled-transition override wiring used during builds.
-    expect(cap.observed_release_total).toBe(25);
+    expect(cap.authorized_release_total).toBe(1000);
+    expect(cap.observed_release_total).toBe(30);
     const inputs = r.payload.inputs as {
       ledger: { runtime_publication_overrides: unknown[] };
     };
-    expect(inputs.ledger.runtime_publication_overrides).toHaveLength(15);
+    expect(inputs.ledger.runtime_publication_overrides).toHaveLength(20);
     const policy = r.payload.policy as Record<string, unknown>;
     expect(policy.authorization_decision_disposition).toBe('APPROVED');
     expect(policy.release_authorized).toBe(true);
     expect(policy.index_authorized).toBe(true);
   });
 
-  it('lists user-approved thresholds (80% index coverage; \u226560% non-branded impressions)', () => {
+  it('does not register numerical scale thresholds after the owner supersession', () => {
     const r = runCheckAndRead();
     const thresholds = r.payload.inputs
       ? (r.payload.inputs as Record<string, unknown>).user_approved_thresholds
       : [];
-    expect(Array.isArray(thresholds)).toBe(true);
-    const arr = thresholds as Array<{ threshold: string; value: number }>;
-    const index80 = arr.find((t) => t.threshold === 'minimum_index_coverage_pct_within_window');
-    expect(index80?.value).toBe(80);
-    const nonBranded = arr.find(
-      (t) => t.threshold === 'minimum_non_branded_impressions_pct_within_window',
-    );
-    expect(nonBranded?.value).toBe(60);
+    expect(thresholds).toEqual([]);
   });
 
   it('--require-pass-on-articles accepts an authorized packet only when it is PASS', () => {
@@ -651,7 +644,7 @@ describe('scripts/check-mrx1000-release-gates.mjs', () => {
     expect(blocking.some((f) => f.includes(slug) && f.includes('not PASS'))).toBe(false);
   });
 
-  it('--expected-decision-sha binds to the exact batch-admission decision in exact mode', () => {
+  it('--expected-decision-sha keeps the historical exact-25 admission binding intact', () => {
     const r = runCheckAndRead([
       '--expected-decision-sha=d78eba9cd8ce17b50a70331f6c5a3cb3bd4f4537f7c2ea9d3d0084fc6c1562c7',
     ]);
@@ -664,7 +657,8 @@ describe('scripts/check-mrx1000-release-gates.mjs', () => {
       string,
       unknown
     >;
-    expect((exact.configured_exact_count as number) ?? 0).toBe(25);
+    expect((exact.configured_exact_count as number) ?? 0).toBe(30);
+    expect(exact.admission_mode).toBe('continuous_quality_gated');
   });
 
   it('fails closed when the retained production baseline manifest binding is stale', () => {
@@ -801,14 +795,14 @@ describe('scripts/check-mrx1000-release-gates.mjs', () => {
       'Exact-admission decision binding mismatch',
     ],
     [
-      'row 26 overscope',
+      'row 31 without an admitted-count update',
       (batch: Record<string, any>) => {
-        batch.articles.push({ ...batch.articles[24], selection_rank: 26 });
+        batch.articles.push({ ...batch.articles[29], selection_rank: 31 });
       },
       'Exact-admission row count mismatch',
     ],
     [
-      '24-row underscope',
+      '29-row underscope',
       (batch: Record<string, any>) => {
         batch.articles.pop();
       },
@@ -828,7 +822,7 @@ describe('scripts/check-mrx1000-release-gates.mjs', () => {
     expect(blocking.some((f) => f.startsWith('[strict]'))).toBe(true);
   });
 
-  it('reports but does not use a missing future scale decision as a current-cap blocker', () => {
+  it('ignores historical scale observations because no numerical scale gates remain', () => {
     const obs = join(tmpdir(), `mrx-obs-${Date.now()}.json`);
     writeFileSync(
       obs,
@@ -850,16 +844,18 @@ describe('scripts/check-mrx1000-release-gates.mjs', () => {
     );
     const r = runCheckAndRead([`--observations=${obs}`]);
     expect(r.exitCode).toBe(0);
-    const blocking = r.payload.blocking_findings as string[];
-    expect(blocking.some((f) => f.includes('signed D-2026-0721-22'))).toBe(false);
+    const inputs = r.payload.inputs as Record<string, unknown>;
+    expect(inputs.user_approved_thresholds).toEqual([]);
     const informational = r.payload.informational_findings as string[];
-    expect(informational.some((f) => f.includes('signed D-2026-0721-22'))).toBe(true);
+    expect(informational.some((f) => f.includes('Numerical scale gates are superseded'))).toBe(
+      true,
+    );
     rmSync(obs, { force: true });
   });
 
-  it('never lowers the cap or overwrites the authorized batch', () => {
+  it('uses the declared 1,000-row program size instead of a staged release cap', () => {
     const r = runCheckAndRead();
     const cap = r.payload.cap as { authorized_release_total: number };
-    expect(cap.authorized_release_total).toBe(25);
+    expect(cap.authorized_release_total).toBe(1000);
   });
 });

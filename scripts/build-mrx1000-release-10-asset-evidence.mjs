@@ -11,15 +11,17 @@ import { dirname, extname, join, relative, resolve } from 'node:path';
 
 import sharp from 'sharp';
 
-const repoRoot = process.argv
-  .find((arg) => arg.startsWith('--tree='))
-  ?.slice('--tree='.length) ?? process.env.MRX_TREE ?? resolve(import.meta.dirname, '..');
+const repoRoot =
+  process.argv.find((arg) => arg.startsWith('--tree='))?.slice('--tree='.length) ??
+  process.env.MRX_TREE ??
+  resolve(import.meta.dirname, '..');
 const root = resolve(repoRoot);
 const batchPath = join(root, 'config/mrx1000-release-10-batch.json');
 const outputPath = join(root, 'artifacts/mrx1000-release-10/assets/asset-evidence.json');
 const markdownPath = join(root, 'artifacts/mrx1000-release-10/assets/asset-evidence.md');
 const rasterExtensions = new Set(['.webp', '.jpg', '.jpeg', '.png', '.avif']);
 const perceptualDuplicateThreshold = 8;
+const colorDifferenceThreshold = 10;
 
 function sha256(bytes) {
   return createHash('sha256').update(bytes).digest('hex');
@@ -34,7 +36,9 @@ function frontmatter(source) {
 }
 
 function unquote(value) {
-  return String(value ?? '').trim().replace(/^(['"])(.*)\1$/, '$2');
+  return String(value ?? '')
+    .trim()
+    .replace(/^(['"])(.*)\1$/, '$2');
 }
 
 function scalar(block, key) {
@@ -74,6 +78,19 @@ async function differenceHash(path) {
   return BigInt(`0b${bits}`).toString(16).padStart(16, '0');
 }
 
+async function comparisonPixels(path) {
+  return sharp(path).resize(64, 34, { fit: 'fill' }).removeAlpha().raw().toBuffer();
+}
+
+function meanAbsoluteColorDifference(left, right) {
+  if (left.length !== right.length) return Number.POSITIVE_INFINITY;
+  let total = 0;
+  for (let index = 0; index < left.length; index += 1) {
+    total += Math.abs(left[index] - right[index]);
+  }
+  return Number((total / left.length).toFixed(4));
+}
+
 function hammingDistance(left, right) {
   let value = BigInt(`0x${left}`) ^ BigInt(`0x${right}`);
   let count = 0;
@@ -103,6 +120,7 @@ async function main() {
       repo_path: relative(root, path),
       sha256: sha256(bytes),
       perceptual_hash: await differenceHash(path),
+      comparison_pixels: await comparisonPixels(path),
       width: metadata.width ?? null,
       height: metadata.height ?? null,
       format: metadata.format ?? null,
@@ -137,11 +155,11 @@ async function main() {
     const assets = [];
     for (const declared of [hero, social]) {
       const absolutePath = publicToRepoPath(declared.public_path);
-      const observed = absolutePath
-        ? library.find((asset) => asset.path === absolutePath)
-        : null;
+      const observed = absolutePath ? library.find((asset) => asset.path === absolutePath) : null;
       const exactDuplicates = observed
-        ? library.filter((asset) => asset.path !== observed.path && asset.sha256 === observed.sha256)
+        ? library.filter(
+            (asset) => asset.path !== observed.path && asset.sha256 === observed.sha256,
+          )
         : [];
       const perceptualMatches = observed
         ? library
@@ -149,25 +167,38 @@ async function main() {
             .map((asset) => ({
               repo_path: asset.repo_path,
               distance: hammingDistance(observed.perceptual_hash, asset.perceptual_hash),
+              color_difference: meanAbsoluteColorDifference(
+                observed.comparison_pixels,
+                asset.comparison_pixels,
+              ),
             }))
-            .sort((left, right) => left.distance - right.distance || left.repo_path.localeCompare(right.repo_path))
+            .sort(
+              (left, right) =>
+                left.distance - right.distance || left.repo_path.localeCompare(right.repo_path),
+            )
         : [];
       const closest = perceptualMatches[0] ?? null;
-      const mimeType = observed?.format === 'jpg' || observed?.format === 'jpeg'
-        ? 'image/jpeg'
-        : observed?.format
-          ? `image/${observed.format}`
-          : null;
+      const perceptualDuplicates = perceptualMatches.filter(
+        (asset) =>
+          asset.distance <= perceptualDuplicateThreshold &&
+          asset.color_difference <= colorDifferenceThreshold,
+      );
+      const mimeType =
+        observed?.format === 'jpg' || observed?.format === 'jpeg'
+          ? 'image/jpeg'
+          : observed?.format
+            ? `image/${observed.format}`
+            : null;
       const pass = Boolean(
         observed &&
-          declared.alt_text &&
-          provenance &&
-          license &&
-          declared.declared_width === observed.width &&
-          declared.declared_height === observed.height &&
-          declared.declared_mime_type === mimeType &&
-          exactDuplicates.length === 0 &&
-          (!closest || closest.distance > perceptualDuplicateThreshold),
+        declared.alt_text &&
+        provenance &&
+        license &&
+        declared.declared_width === observed.width &&
+        declared.declared_height === observed.height &&
+        declared.declared_mime_type === mimeType &&
+        exactDuplicates.length === 0 &&
+        perceptualDuplicates.length === 0,
       );
       assets.push({
         ...declared,
@@ -181,8 +212,11 @@ async function main() {
         perceptual_hash: observed?.perceptual_hash ?? null,
         exact_duplicate_paths: exactDuplicates.map((asset) => asset.repo_path),
         perceptual_duplicate_threshold: perceptualDuplicateThreshold,
+        color_difference_threshold: colorDifferenceThreshold,
+        perceptual_duplicate_paths: perceptualDuplicates.map((asset) => asset.repo_path),
         nearest_nonself_path: closest?.repo_path ?? null,
         nearest_nonself_hamming_distance: closest?.distance ?? null,
+        nearest_nonself_color_difference: closest?.color_difference ?? null,
         provenance,
         license,
         disposition: pass ? 'PASS' : 'HOLD',
@@ -212,6 +246,10 @@ async function main() {
       exact_hash_algorithm: 'SHA-256',
       perceptual_hash_algorithm: '64-bit grayscale difference hash (9x8)',
       perceptual_duplicate_threshold_hamming_distance_lte: perceptualDuplicateThreshold,
+      color_difference_algorithm: 'mean absolute RGB difference after 64x34 normalization',
+      color_difference_threshold_lte: colorDifferenceThreshold,
+      perceptual_duplicate_rule:
+        'HOLD only when both the difference-hash and color-distance thresholds match; exact SHA-256 duplicates always HOLD.',
     },
     summary: {
       article_count: rows.length,
@@ -229,19 +267,30 @@ async function main() {
     `- Assets: ${payload.summary.asset_count}`,
     `- Library comparison images: ${library.length}`,
     `- Perceptual duplicate threshold: Hamming distance <= ${perceptualDuplicateThreshold}`,
+    `- Color duplicate threshold: normalized RGB mean absolute difference <= ${colorDifferenceThreshold}`,
     `- Result: **${payload.summary.all_assets_pass ? 'PASS' : 'HOLD'}**`,
     '',
     '| Article | Hero | Social |',
     '|---|---:|---:|',
-    ...rows.map((row) => `| ${row.slug} | ${row.assets[0].disposition} | ${row.assets[1].disposition} |`),
+    ...rows.map(
+      (row) => `| ${row.slug} | ${row.assets[0].disposition} | ${row.assets[1].disposition} |`,
+    ),
     '',
   ].join('\n');
   mkdirSync(dirname(outputPath), { recursive: true });
   writeFileSync(outputPath, json);
-  writeFileSync(`${outputPath}.sha256`, `${sha256(Buffer.from(json))}  ${relative(root, outputPath)}\n`);
+  writeFileSync(
+    `${outputPath}.sha256`,
+    `${sha256(Buffer.from(json))}  ${relative(root, outputPath)}\n`,
+  );
   writeFileSync(markdownPath, markdown);
-  writeFileSync(`${markdownPath}.sha256`, `${sha256(Buffer.from(markdown))}  ${relative(root, markdownPath)}\n`);
-  console.log(`Asset evidence: ${payload.summary.all_assets_pass ? 'PASS' : 'HOLD'} (${rows.length} articles, ${library.length} library images).`);
+  writeFileSync(
+    `${markdownPath}.sha256`,
+    `${sha256(Buffer.from(markdown))}  ${relative(root, markdownPath)}\n`,
+  );
+  console.log(
+    `Asset evidence: ${payload.summary.all_assets_pass ? 'PASS' : 'HOLD'} (${rows.length} articles, ${library.length} library images).`,
+  );
   if (!payload.summary.all_assets_pass) process.exitCode = 2;
 }
 

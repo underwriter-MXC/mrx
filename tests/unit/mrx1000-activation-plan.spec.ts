@@ -12,7 +12,7 @@ import { fileURLToPath } from 'node:url';
 import { beforeAll, describe, expect, it } from 'vitest';
 
 import {
-  EXPECTED_D11_SHA256,
+  EXPECTED_OWNER_DECISION_SHA256,
   buildActivationPlan,
   canonicalLedgerRowFingerprint,
   renderCsv,
@@ -22,11 +22,11 @@ import {
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(HERE, '..', '..');
 const LEDGER_PATH = path.join(ROOT, 'config', 'mrx-1000-canonical-content-ledger.json');
-const D11_PATH = path.resolve(
+const OWNER_DECISION_PATH = path.resolve(
   ROOT,
-  '..',
-  'program-plans',
-  'mrx-1000-ceo-decision-no-spend-capacity.md',
+  'docs',
+  'governance',
+  'mrx1000-owner-continuous-publication-directive-2026-08-04.md',
 );
 const JSON_OUT = path.join(ROOT, 'config', 'mrx-1000-content-activation-plan.json');
 const CSV_OUT = path.join(ROOT, 'config', 'mrx-1000-content-activation-plan.csv');
@@ -69,7 +69,7 @@ type PlanRow = {
     live_status: string;
     live_triangle_verified: boolean;
     release_status: string;
-    authorization_cap_new_rows: number;
+    numerical_release_cap_applies: boolean;
   };
 };
 
@@ -83,9 +83,11 @@ type Plan = {
   inputs: {
     canonical_ledger_fingerprint_sha256: string;
     canonical_ledger_fingerprint_verified: boolean;
-    d11: {
-      authorization_cap_new_rows: number;
+    owner_decision: {
+      numerical_release_cap_applies: boolean;
+      elapsed_time_gate_applies: boolean;
       spend_authorized: boolean;
+      publication_authorized: boolean;
       decision_sha256: string;
       decision_sha256_verified: boolean;
     };
@@ -106,7 +108,7 @@ function sha256(value: string) {
 
 describe('MRX1000 deterministic content activation plan', () => {
   let ledger: Ledger;
-  let d11Text: string;
+  let ownerDecisionText: string;
   let plan: Plan;
   let expectedJson: string;
   let expectedCsv: string;
@@ -114,8 +116,8 @@ describe('MRX1000 deterministic content activation plan', () => {
 
   beforeAll(() => {
     ledger = JSON.parse(readFileSync(LEDGER_PATH, 'utf8')) as Ledger;
-    d11Text = readFileSync(D11_PATH, 'utf8');
-    plan = buildActivationPlan(ledger, d11Text) as Plan;
+    ownerDecisionText = readFileSync(OWNER_DECISION_PATH, 'utf8');
+    plan = buildActivationPlan(ledger, ownerDecisionText) as Plan;
     expectedJson = `${JSON.stringify(plan, null, 2)}\n`;
     expectedCsv = renderCsv(plan);
     expectedReport = renderReport(plan);
@@ -147,19 +149,19 @@ describe('MRX1000 deterministic content activation plan', () => {
     alteredLedger.articles[0].canonical_title = `${String(
       alteredLedger.articles[0].canonical_title,
     )} altered`;
-    expect(() => buildActivationPlan(alteredLedger, d11Text)).toThrow(
+    expect(() => buildActivationPlan(alteredLedger, ownerDecisionText)).toThrow(
       /canonical ledger fingerprint mismatch/,
     );
   });
 
-  it('pins the exact signed D11 bytes and fails any hash drift', () => {
-    expect(sha256(d11Text)).toBe(EXPECTED_D11_SHA256);
-    expect(plan.inputs.d11.decision_sha256).toBe(EXPECTED_D11_SHA256);
-    expect(plan.inputs.d11.decision_sha256_verified).toBe(true);
-    expect(plan.verification.d11_sha256_verified).toBe(true);
-    expect(() => buildActivationPlan(ledger, `${d11Text}\nunsigned alteration\n`)).toThrow(
-      /D11 SHA-256 mismatch/,
-    );
+  it('pins the exact owner decision bytes and fails any hash drift', () => {
+    expect(sha256(ownerDecisionText)).toBe(EXPECTED_OWNER_DECISION_SHA256);
+    expect(plan.inputs.owner_decision.decision_sha256).toBe(EXPECTED_OWNER_DECISION_SHA256);
+    expect(plan.inputs.owner_decision.decision_sha256_verified).toBe(true);
+    expect(plan.verification.owner_decision_sha256_verified).toBe(true);
+    expect(() =>
+      buildActivationPlan(ledger, `${ownerDecisionText}\nunsigned alteration\n`),
+    ).toThrow(/Owner decision SHA-256 mismatch/);
   });
 
   it('assigns a real same-cluster sibling without self-links', () => {
@@ -267,24 +269,42 @@ describe('MRX1000 deterministic content activation plan', () => {
     }
   });
 
-  it('preserves source-publication evidence and D11 cap 0 separately', () => {
+  it('preserves source-publication evidence while removing numerical release blockers', () => {
     expect(plan.distributions.by_source_preservation_classification).toEqual({
-      incumbent_draft_nonpublic_held: 94,
-      live_public_published_route: 34,
+      incumbent_draft_nonpublic_held: 89,
+      live_public_published_route: 39,
       pilot_draft_noindex_stage: 25,
       planning_only_inventory: 847,
     });
-    expect(plan.rows.filter((row) => row.source_route_live)).toHaveLength(34);
-    expect(plan.inputs.d11.authorization_cap_new_rows).toBe(0);
-    expect(plan.inputs.d11.spend_authorized).toBe(false);
-    expect(plan.policy.d11_cap_0_preserved).toBe(true);
-    expect(plan.rows.every((row) => row.evidence.release_status === 'blocked_by_d11_cap_0')).toBe(
+    expect(plan.rows.filter((row) => row.source_route_live)).toHaveLength(39);
+    expect(plan.inputs.owner_decision.numerical_release_cap_applies).toBe(false);
+    expect(plan.inputs.owner_decision.elapsed_time_gate_applies).toBe(false);
+    expect(plan.inputs.owner_decision.spend_authorized).toBe(false);
+    expect(plan.inputs.owner_decision.publication_authorized).toBe(true);
+    expect(plan.policy.numerical_release_cap_applies).toBe(false);
+    expect(plan.rows.every((row) => row.evidence.numerical_release_cap_applies === false)).toBe(
       true,
     );
+    expect(
+      plan.rows
+        .filter((row) => row.source_route_live)
+        .every(
+          (row) => row.evidence.release_status === 'released_under_d16_continuous_quality_gate',
+        ),
+    ).toBe(true);
+    expect(
+      plan.rows
+        .filter((row) => !row.source_route_live)
+        .every(
+          (row) =>
+            row.evidence.release_status ===
+            'eligible_for_continuous_quality_review_not_yet_cleared',
+        ),
+    ).toBe(true);
   });
 
   it('is byte-deterministic entirely in memory', () => {
-    const rerun = buildActivationPlan(structuredClone(ledger), d11Text) as Plan;
+    const rerun = buildActivationPlan(structuredClone(ledger), ownerDecisionText) as Plan;
     expect(`${JSON.stringify(rerun, null, 2)}\n`).toBe(expectedJson);
     expect(renderCsv(rerun)).toBe(expectedCsv);
     expect(renderReport(rerun)).toBe(expectedReport);

@@ -28,8 +28,10 @@ function replaceSingleFrontmatterScalar(frontmatter, key, from, to) {
  *   noindex: true -> false
  *
  * The proof is byte-exact: reversing those two scalars must reproduce the
- * immutable article_sha256 signed by D-2026-0801-10. Any other source or
- * frontmatter mutation therefore fails closed.
+ * immutable article_sha256 captured by the controlling admission record.
+ * Historical exact-admission rows remain bound to D-2026-0801-10; continuous
+ * quality-gated rows are admitted under D-2026-0804-16. Any other source
+ * or frontmatter mutation therefore fails closed.
  */
 export function analyzeControlledPublicationTransition(source, entry) {
   const currentBytes = Buffer.isBuffer(source) ? source : Buffer.from(source);
@@ -39,9 +41,11 @@ export function analyzeControlledPublicationTransition(source, entry) {
   const currentFrontmatterSha256 = currentFrontmatterBytes
     ? sha256Bytes(currentFrontmatterBytes)
     : null;
-  const reviewedBodySha256 = String(entry?.article_sha256 ?? entry?.repo_sha256 ?? '').toLowerCase();
+  const reviewedBodySha256 = String(
+    entry?.article_sha256 ?? entry?.repo_sha256 ?? '',
+  ).toLowerCase();
   const exactAdmission =
-    entry?.admission_status === 'admitted_exact' &&
+    ['admitted_exact', 'admitted_quality_gated'].includes(entry?.admission_status) &&
     entry?.finalization_state === 'draft_noindex_admitted' &&
     HEX64.test(reviewedBodySha256);
 
@@ -147,6 +151,8 @@ export function transitionProofMatches(left, right) {
     'current_frontmatter_sha256',
     'normalized_body_sha256',
   ];
-  return keys.every((key) => left?.[key] === right?.[key]) &&
-    JSON.stringify(left?.changes ?? []) === JSON.stringify(right?.changes ?? []);
+  return (
+    keys.every((key) => left?.[key] === right?.[key]) &&
+    JSON.stringify(left?.changes ?? []) === JSON.stringify(right?.changes ?? [])
+  );
 }

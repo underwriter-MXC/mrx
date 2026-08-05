@@ -17,12 +17,8 @@
  *   - mrx/tmp/mrx1000-f9-*-readonly-*.json     (SearchAtlas authoritative
  *                                              local artifacts; map_handle +
  *                                              title_uuid evidence only)
- *   - reports/mrx1000-releases/D-2026-0720-11* (signed release artifact; if
- *                                              absent we also try the absolute
- *                                              outside-workspace path that
- *                                              Daryl authored at
- *                                              program-plans/, but only when
- *                                              it matches the expected SHA-256)
+ *   - docs/governance/mrx1000-owner-continuous-publication-directive-2026-08-04.md
+ *                                              (checksum-bound owner release policy)
  *   - reports/llm-aeo-evals/.../captures/      (LLM verdict evidence)
  *
  * Outputs (deterministic aside from generated_at):
@@ -34,13 +30,10 @@
  * actually exists on disk. We do not infer; we do not look up via the network;
  * we do not query SearchAtlas/CMS/GSC/GA4; we do not publish or index anything.
  *
- * D-2026-0720-11 release / index authorization must be a signed artifact
- * naming the decision id. If a signed D-2026-0720-11 artifact is found in
- * reports/mrx1000-releases/ we honor it; if it lives outside the mrx working
- * directory (Daryl's authored copy at program-plans/) we honor it ONLY when
- * its SHA-256 matches the expected fingerprint recorded here. Either way the
- * matrix reports the disposition verbatim (HOLD = release_authorized=false,
- * index_authorized=false). Cap of zero is recorded from the artifact.
+ * D-2026-0804-16 authorizes continuous quality-gated release and indexing.
+ * Its exact owner-directive bytes are checksum-bound here. Numerical counts
+ * and elapsed time are never readiness gates; article-specific quality
+ * evidence remains independently fail closed.
  */
 
 import { createHash } from 'node:crypto';
@@ -87,6 +80,11 @@ const INPUTS = {
   // which Daryl confirmed in kanban comment 1784539239.
   d11ExternalPath: path.join(PROGRAM_PLANS_ROOT, 'mrx-1000-ceo-decision-no-spend-capacity.md'),
   d11ExpectedSha256: '46a9d02548e97a794d1cdaa919682bb159bcfbeabb5b9d8e559431c6ca34091d',
+  ownerDecisionPath: path.join(
+    MRX_ROOT,
+    'docs/governance/mrx1000-owner-continuous-publication-directive-2026-08-04.md',
+  ),
+  ownerDecisionExpectedSha256: 'edc1d4602149558ff6d2b960416839b8caf97593f5fd8fe6ea91b56617d1425f',
   // Cloudflare/server builds emit the client surface under dist/client;
   // static/alternate adapters may emit it directly under dist. Prefer the
   // active default, then fail over to the flat adapter path. Never union both:
@@ -405,78 +403,57 @@ function classifyAeoLlm(row, capturesRoot) {
   return result;
 }
 
-// Parse a signed D-2026-0720-11 release artifact and return a structured
-// release_decision record. Returns null if the artifact is absent, the hash
-// does not match the expected fingerprint (for the external path), or it does
-// not name D-2026-0720-11.
+// Parse the checksum-bound D-2026-0804-16 owner release policy. D11 is read
+// only for its historical vendor-inventory snapshot, never as a live gate.
 function detectReleaseDecision() {
-  const candidates = [];
-  // 1. Inside mrx working tree (reports/mrx1000-releases/).
-  if (existsSync(INPUTS.releasesDir)) {
-    for (const ent of safeReaddir(INPUTS.releasesDir)) {
-      if (!ent.isFile()) continue;
-      candidates.push({
-        path: path.join(INPUTS.releasesDir, ent.name),
-        requireSha256Match: false,
-      });
-    }
+  if (!existsSync(INPUTS.ownerDecisionPath)) return null;
+  const buf = readFileSync(INPUTS.ownerDecisionPath);
+  const text = buf.toString('utf8');
+  const checksum = sha256(buf);
+  if (
+    checksum !== INPUTS.ownerDecisionExpectedSha256 ||
+    !text.includes('Decision ID: D-2026-0804-16') ||
+    !text.includes('release_authorized: true') ||
+    !text.includes('index_authorized: true') ||
+    !text.includes('Article count and elapsed time do not.')
+  ) {
+    return null;
   }
-  // 2. Outside-workspace authored copy (Daryl's program-plans dir).
+  let vendorInventorySnapshot = null;
   if (existsSync(INPUTS.d11ExternalPath)) {
-    candidates.push({
-      path: INPUTS.d11ExternalPath,
-      requireSha256Match: true,
-      expectedSha256: INPUTS.d11ExpectedSha256,
-    });
-  }
-  for (const cand of candidates) {
-    const buf = readFileSync(cand.path);
-    const text = buf.toString('utf8');
-    if (!text.includes('D-2026-0720-11')) continue;
-    const checksum = sha256(buf);
-    if (cand.requireSha256Match && checksum !== cand.expectedSha256) continue;
-    // Extract cap, release_authorized, index_authorized disposition.
-    // The D-2026-0720-11 artifact phrases the cap as either
-    // "PRESENT AUTHORIZATION CAP = N NEW ROWS" or "Present authorization cap: N".
-    const capMatch =
-      text.match(/PRESENT AUTHORIZATION CAP\s*[=:]\s*(\d+)/i) ||
-      text.match(/authorization cap[^.\n]*?\bis\s+`?(\d+)`?/i);
-    const hold = /Disposition\s*[:=]\s*HOLD/i.test(text) || /\bHOLD\b/i.test(text);
-    const releaseAuth =
-      !hold && /release_authorized\s*:\s*true|public_release_authorized\s*:\s*true/i.test(text);
-    const indexAuth =
-      !hold && /index_authorized\s*:\s*true|indexing_authorized\s*:\s*true/i.test(text);
-    const inventoryMatch = text.match(
+    const d11Buf = readFileSync(INPUTS.d11ExternalPath);
+    const d11Text = d11Buf.toString('utf8');
+    const inventoryMatch = d11Text.match(
       /Content Genius inventory\s*\|\s*\*\*(\d+)\*\*\s*total:\s*\*\*(\d+)\s+NEEDS_REVIEW\s*\/\s*(\d+)\s+COMPLETED\s*\/\s*(\d+)\s+NOT_BEGUN\*\*/i,
     );
-    return {
-      decision_id: 'D-2026-0720-11',
-      signed: true,
-      signed_artifact: path.relative(MRX_ROOT, cand.path),
-      signed_artifact_sha256: checksum,
-      signed_artifact_sha256_verified: cand.requireSha256Match
-        ? checksum === cand.expectedSha256
-        : true,
-      disposition: hold ? 'HOLD' : 'APPROVED',
-      authorization_cap_new_mrx1000_rows: capMatch ? Number(capMatch[1]) : null,
-      release_authorized: releaseAuth,
-      index_authorized: indexAuth,
-      vendor_inventory_snapshot: inventoryMatch
-        ? {
-            source: 'signed_d11_capacity_baseline',
-            total: Number(inventoryMatch[1]),
-            by_status: {
-              NEEDS_REVIEW: Number(inventoryMatch[2]),
-              COMPLETED: Number(inventoryMatch[3]),
-              NOT_BEGUN: Number(inventoryMatch[4]),
-            },
-            public_inventory_claimed: false,
-            release_authorization_claimed: false,
-          }
-        : null,
-    };
+    if (sha256(d11Buf) === INPUTS.d11ExpectedSha256 && inventoryMatch) {
+      vendorInventorySnapshot = {
+        source: 'historical_signed_d11_capacity_baseline_not_release_authority',
+        total: Number(inventoryMatch[1]),
+        by_status: {
+          NEEDS_REVIEW: Number(inventoryMatch[2]),
+          COMPLETED: Number(inventoryMatch[3]),
+          NOT_BEGUN: Number(inventoryMatch[4]),
+        },
+        public_inventory_claimed: false,
+        release_authorization_claimed: false,
+      };
+    }
   }
-  return null;
+  return {
+    decision_id: 'D-2026-0804-16',
+    signed: true,
+    signed_artifact: path.relative(MRX_ROOT, INPUTS.ownerDecisionPath),
+    signed_artifact_sha256: checksum,
+    signed_artifact_sha256_verified: true,
+    disposition: 'APPROVED_CONTINUOUS_QUALITY_GATED_ARTICLE_PUBLICATION',
+    authorization_cap_new_mrx1000_rows: null,
+    numerical_release_cap_applies: false,
+    elapsed_time_gate_applies: false,
+    release_authorized: true,
+    index_authorized: true,
+    vendor_inventory_snapshot: vendorInventorySnapshot,
+  };
 }
 
 function loadContentGeniusExport() {
@@ -706,7 +683,7 @@ async function main() {
     }
   }
 
-  // Detect D-2026-0720-11 signed release artifact (inside or outside workspace).
+  // Detect checksum-bound D-2026-0804-16 owner release policy.
   const releaseDecision = detectReleaseDecision();
   const releaseAuthorizedAll = !!releaseDecision?.release_authorized;
   const indexAuthorizedAll = !!releaseDecision?.index_authorized;
@@ -931,6 +908,8 @@ async function main() {
         disposition: releaseDecision?.disposition ?? null,
         authorization_cap_new_mrx1000_rows:
           releaseDecision?.authorization_cap_new_mrx1000_rows ?? null,
+        numerical_release_cap_applies: releaseDecision?.numerical_release_cap_applies ?? null,
+        elapsed_time_gate_applies: releaseDecision?.elapsed_time_gate_applies ?? null,
         release_authorized: releaseAuthorizedAll,
         index_authorized: indexAuthorizedAll,
       },
@@ -1122,8 +1101,8 @@ async function main() {
     '- paid_api_calls_made = false',
     `- release_decision = ${
       releaseDecision
-        ? `${releaseDecision.decision_id} disposition=${releaseDecision.disposition} cap=${releaseDecision.authorization_cap_new_mrx1000_rows} signed_artifact=${releaseDecision.signed_artifact} sha256=${releaseDecision.signed_artifact_sha256}`
-        : 'no signed D-2026-0720-11 artifact on disk'
+        ? `${releaseDecision.decision_id} disposition=${releaseDecision.disposition} numerical_cap=${releaseDecision.numerical_release_cap_applies} elapsed_time_gate=${releaseDecision.elapsed_time_gate_applies} signed_artifact=${releaseDecision.signed_artifact} sha256=${releaseDecision.signed_artifact_sha256}`
+        : 'no checksum-verified D-2026-0804-16 owner directive on disk'
     }`,
     '',
     '## Aggregate counts',
@@ -1143,7 +1122,7 @@ async function main() {
     `- SEO+AEO frontmatter partial or missing: ${aggregate.seo_aeo_partial_or_missing}`,
     '',
     '## SearchAtlas evidence (authoritative local artifacts only)',
-    `- current vendor inventory snapshot from signed D11: ${releaseDecision?.vendor_inventory_snapshot?.total ?? 'n/a'} = ${releaseDecision?.vendor_inventory_snapshot?.by_status?.NEEDS_REVIEW ?? 'n/a'} NEEDS_REVIEW + ${releaseDecision?.vendor_inventory_snapshot?.by_status?.COMPLETED ?? 'n/a'} COMPLETED + ${releaseDecision?.vendor_inventory_snapshot?.by_status?.NOT_BEGUN ?? 'n/a'} NOT_BEGUN (vendor inventory, not public live or authorization)`,
+    `- historical vendor inventory snapshot from signed D11: ${releaseDecision?.vendor_inventory_snapshot?.total ?? 'n/a'} = ${releaseDecision?.vendor_inventory_snapshot?.by_status?.NEEDS_REVIEW ?? 'n/a'} NEEDS_REVIEW + ${releaseDecision?.vendor_inventory_snapshot?.by_status?.COMPLETED ?? 'n/a'} COMPLETED + ${releaseDecision?.vendor_inventory_snapshot?.by_status?.NOT_BEGUN ?? 'n/a'} NOT_BEGUN (vendor inventory only; D11 is not current release authority)`,
     `- readonly artifacts indexed: ${aggregate.readonly_artifacts_indexed}`,
     `- readonly distinct map_ids: ${aggregate.readonly_distinct_map_ids}`,
     `- artifact distinct generic UUID count: ${aggregate.artifact_distinct_generic_uuid_count} (non-semantic UUID scan across f9-* readonly artifacts; not a title-UUID count and not article-created proof)`,
@@ -1177,7 +1156,8 @@ async function main() {
     `- signed_artifact: ${releaseDecision?.signed_artifact ?? 'n/a'}`,
     `- signed_artifact_sha256: ${releaseDecision?.signed_artifact_sha256 ?? 'n/a'}`,
     `- disposition: ${releaseDecision?.disposition ?? 'n/a'}`,
-    `- authorization_cap_new_mrx1000_rows: ${releaseDecision?.authorization_cap_new_mrx1000_rows ?? 'n/a'}`,
+    `- numerical_release_cap_applies: ${releaseDecision?.numerical_release_cap_applies ?? 'n/a'}`,
+    `- elapsed_time_gate_applies: ${releaseDecision?.elapsed_time_gate_applies ?? 'n/a'}`,
     `- release_authorized per row: ${aggregate.release_authorized}`,
     `- index_authorized per row: ${aggregate.index_authorized}`,
     '',
@@ -1190,16 +1170,16 @@ async function main() {
     '',
     '## Notes',
     '- No row is marked as publicly live or SearchAtlas-created unless an authoritative local artifact exists on disk; see `aggregate.public_live_claim_count = 0` and `aggregate.searchatlas_created_claim_count = 0`.',
-    '- `public_live_known_route` is a SEPARATE field: it is true whenever a public URL for this row appears in the selected canonical article sitemap (`dist/client/sitemap-articles.xml` for the active Cloudflare build, with `dist/sitemap-articles.xml` as the alternate-adapter fallback), independent of release authorization. It is preserved even when D-2026-0720-11 disposition is HOLD.',
+    '- `public_live_known_route` is a SEPARATE field: it is true whenever a public URL for this row appears in the selected canonical article sitemap (`dist/client/sitemap-articles.xml` for the active Cloudflare build, with `dist/sitemap-articles.xml` as the alternate-adapter fallback).',
     "- `artifact_distinct_generic_uuid_count` (298) is a non-semantic count of UUID-like strings found across f9-* readonly artifacts; it is not a title-UUID count, and 0 of the scanned UUIDs match any ledger row's `searchatlas_title_uuid`.",
     '- LLM readiness is recorded only from local LLM/AEO capture files under `reports/llm-aeo-evals/**/captures/`; no verdict = no claim.',
-    "- Release / index authorization derives from a single signed `D-2026-0720-11` artifact. We honor Daryl's authored copy at `program-plans/mrx-1000-ceo-decision-no-spend-capacity.md` only when its SHA-256 matches the recorded fingerprint.",
+    '- Release / index authorization derives from checksum-bound owner directive `D-2026-0804-16`; numerical counts and elapsed time are not gates.',
     '- GA4 readiness reflects the site-level code capability (BaseLayout loads gtag.js). It is NOT a claim about observed analytics traffic.',
   ];
   await writeFile(OUTPUTS.summary, `${summaryLines.join('\n')}\n`, 'utf8');
 
   process.stdout.write(
-    `mrx1000-readiness-matrix: rows=${rows.length} repo_mdx=${aggregate.repo_mdx_present} hero_collisions=${collisionGroups.length} release_decision=${releaseDecision ? releaseDecision.decision_id : 'none'} cap=${releaseDecision?.authorization_cap_new_mrx1000_rows ?? 'n/a'}\n`,
+    `mrx1000-readiness-matrix: rows=${rows.length} repo_mdx=${aggregate.repo_mdx_present} hero_collisions=${collisionGroups.length} release_decision=${releaseDecision ? releaseDecision.decision_id : 'none'} numerical_cap=${releaseDecision?.numerical_release_cap_applies ?? 'n/a'}\n`,
   );
 }
 

@@ -6,8 +6,8 @@
  *
  * This script performs no network calls and no vendor/CMS/release writes. It
  * reads already-captured evidence, assigns deterministic 25-row execution
- * batches, and fails every row closed under signed D-2026-0720-11 (cap 0) and
- * the recorded unavailability of exact Claude Opus 4.6.
+ * batches, and keeps each row fail closed on its own identity, content, and
+ * review evidence. D-2026-0804-16 removes numerical and elapsed-time blockers.
  *
  * Inputs are read-only. The existing canonical ledger and readiness matrix are
  * deliberately not modified.
@@ -32,6 +32,10 @@ const CANONICAL_INPUTS = {
     'reports/searchatlas-cg-reconciliation-t_0c427a87/content-genius-export-raw-by-status.json',
   ),
   d11: path.join(PROGRAM_PLANS_ROOT, 'mrx-1000-ceo-decision-no-spend-capacity.md'),
+  ownerDecision: path.join(
+    MRX_ROOT,
+    'docs/governance/mrx1000-owner-continuous-publication-directive-2026-08-04.md',
+  ),
   claudeFramework: path.join(PROGRAM_PLANS_ROOT, 'mrx-1000-f3-claude-opus-verdict-framework.md'),
   row1Canary: path.join(
     MRX_ROOT,
@@ -111,6 +115,9 @@ const EXPECTED = {
   d11Sha256: '46a9d02548e97a794d1cdaa919682bb159bcfbeabb5b9d8e559431c6ca34091d',
   d11DecisionId: 'D-2026-0720-11',
   d11Disposition: 'HOLD_ZERO_NEW_ROWS_NO_SPEND_CAPACITY_GATE',
+  ownerDecisionSha256: 'edc1d4602149558ff6d2b960416839b8caf97593f5fd8fe6ea91b56617d1425f',
+  ownerDecisionId: 'D-2026-0804-16',
+  ownerDecisionDisposition: 'APPROVED_CONTINUOUS_QUALITY_GATED_ARTICLE_PUBLICATION',
   row1CanarySha256: '942490dbdaf8cbacc79b655dad967f6577cf77efb7b665184dadacf048f3bef5',
   pilotManifestSha256: 'e6922a750847b82a9c8592dcc18c0d2b12ab4addcd9eea3bd39dc8cf7dc40d2a',
   d10Row2CanarySha256: '4fd80d8f3316d06b5b8bd58d028d9c24b0fb4523c1cad0c58a9a2163dbbb6000',
@@ -127,7 +134,6 @@ const EXPECTED = {
   row2PreservedRawRecordedSha256:
     'fa7664878de826d1fb7723d4b50dc2d2c65f5dbb72857307b39432093bc07e9e',
   row2PreservedRawRecordedBytes: 13698,
-  authorizationCap: 0,
   vendorSnapshot: {
     total: 299,
     by_status: { NEEDS_REVIEW: 200, COMPLETED: 70, NOT_BEGUN: 29 },
@@ -623,7 +629,7 @@ function row2OrderedReviewException(optionalInputBytes, row2Remediation) {
     p6_order_locked: true,
     p7_per_surface_hash_run_model_and_verdict_evidence_recorded: false,
     p8_consolidated_report_not_yet_filed: true,
-    d11_generation_cap_zero_preserved: true,
+    owner_continuous_publication_policy_bound: true,
     nonpublic_noindex_no_spend_boundary_preserved: true,
   };
   const blockers = [];
@@ -936,7 +942,7 @@ function searchAtlasAction(row, repo, vendor) {
   if (repo.mdx_exists) {
     return 'reconcile_workspace_draft_and_search_vendor_identity_before_any_creation';
   }
-  return 'search_vendor_identity_then_conditionally_create_after_new_authorization';
+  return 'search_vendor_identity_then_conditionally_create_after_identity_and_quality_preflight';
 }
 
 function makeReviewStages(candidate, orderedReviewException) {
@@ -974,7 +980,7 @@ function makeReviewStages(candidate, orderedReviewException) {
         predecessor_pass_observed: false,
         exact_model_id_must_be_recorded: true,
         exact_required_model_available: definition.required_exact_model_id == null ? null : false,
-        d11_release_gate_satisfied: false,
+        program_release_authorization_satisfied: true,
         row2_d12_exception_preconditions_satisfied:
           orderedReviewException?.preconditions_satisfied_now ?? null,
         row2_d12_audit_ready_now:
@@ -997,11 +1003,10 @@ function makeReviewStages(candidate, orderedReviewException) {
 
 function stopConditions(candidate, vendor, orderedReviewException) {
   const reasons = [
-    'SIGNED_D11_AUTHORIZATION_CAP_ZERO',
     'EXACT_CLAUDE_OPUS_4_6_UNAVAILABLE',
     'ORDERED_LLM_REVIEW_SEQUENCE_NOT_COMPLETE',
     'LOCAL_ONLY_MANIFEST_EXTERNAL_DISPATCH_NOT_PERFORMED',
-    'RELEASE_AND_INDEX_AUTHORIZATION_FALSE',
+    'ARTICLE_SPECIFIC_QUALITY_CLEARANCE_NOT_COMPLETE',
   ];
   if (!candidate.checksummed_review_candidate_present) {
     reasons.push('NO_CHECKSUMMED_REVIEW_CANDIDATE');
@@ -1174,8 +1179,11 @@ function buildCsv(rows) {
       'index_submission_eligible_now',
       (r) => r.release_index_eligibility.index_submission_eligible_now,
     ],
-    ['d11_decision_id', (r) => r.release_index_eligibility.decision_id],
-    ['d11_authorization_cap', (r) => r.release_index_eligibility.authorization_cap_new_rows],
+    ['owner_decision_id', (r) => r.release_index_eligibility.decision_id],
+    [
+      'numerical_release_cap_applies',
+      (r) => r.release_index_eligibility.numerical_release_cap_applies,
+    ],
     ['stop_conditions', (r) => r.stop_conditions],
   ];
   return `${[
@@ -1248,7 +1256,7 @@ function buildReport(manifest) {
 
 **FAIL-CLOSED / LOCAL-ONLY / NO EXTERNAL WRITES.** This artifact assigns and reconciles work; it does not claim that 1,000 articles were created, reviewed, released, live, indexed, or submitted.
 
-Signed **${manifest.release_gate.decision_id}** is checksum-verified at \`${manifest.release_gate.signed_artifact_sha256}\` and sets the current authorization cap to **0 new rows**. Exact **Claude Opus 4.6** (\`${manifest.model_gate.exact_claude_model_id}\`) is unavailable in the captured local framework evidence, and substitution remains forbidden for every release/index transition and every row outside the single D12 exception. Therefore all 1,000 rows remain blocked from SearchAtlas creation, release, and indexing.
+Owner decision **${manifest.release_gate.decision_id}** is checksum-verified at \`${manifest.release_gate.signed_artifact_sha256}\` and removes numerical release caps and elapsed-time gates. Exact **Claude Opus 4.6** (\`${manifest.model_gate.exact_claude_model_id}\`) is unavailable in the captured legacy framework evidence, and the ordered-review sequence recorded by this local artifact is incomplete. Rows remain individually ineligible for an action until their identity, content, and substantive quality evidence is complete; article count is not a blocker.
 
 ## Deterministic inventory
 
@@ -1256,7 +1264,7 @@ ${inventoryTable}
 
 ## SearchAtlas evidence boundary
 
-- Signed D11 vendor snapshot: **299 = 200 NEEDS_REVIEW + 70 COMPLETED + 29 NOT_BEGUN**.
+- Historical signed D11 vendor snapshot: **299 = 200 NEEDS_REVIEW + 70 COMPLETED + 29 NOT_BEGUN**. D11 is inventory provenance, not current release authority.
 - Composition: **297** records in the captured raw Content Genius export plus **2** separately validated canary artifacts.
 - Exact-title reconciliation assigns **${a.vendor_exact_title_candidate_records}** candidate records to **${a.vendor_exact_title_match_rows}** ledger rows. The remaining vendor inventory is not silently assigned to canonical rows.
 - A topical-map \`searchatlas_map_id\` or \`searchatlas_title_uuid\` is retained only as a planning handle and is never treated as Content Genius article-creation proof.
@@ -1285,11 +1293,11 @@ ${inventoryTable}
     .map((reason) => `\`${reason}\``)
     .join(', ')}.
 - Current formal audit evidence is checksum-pinned and returns compliance \`${row2.ordered_review_exception.formal_audits.compliance.verdict}\` and SEO/AEO \`${row2.ordered_review_exception.formal_audits.seo_aeo.verdict}\`. The restored raw draft is ${row2.ordered_review_exception.corrected_recorded_raw_provenance.current_bytes} bytes at \`${row2.ordered_review_exception.corrected_recorded_raw_provenance.current_sha256}\`, exactly matching the D10/D14 recorded raw provenance.
-- The exception does not change D11 \`cap=0\`, authorize SearchAtlas generation, or weaken exact \`claude-opus-4-6\` for any future noindex-to-indexable, release, or index transition. The other 999 rows retain the unmodified default sequence and no-substitution rule.
+- The exception does not itself authorize a SearchAtlas write or weaken the recorded review sequence. D-2026-0804-16 separately removes the former numerical cap; the other 999 rows retain their article-specific identity, content, and review requirements.
 
 ## Execution order
 
-Batch \`MRX1000-SA-BATCH-001\` preserves the 25 existing pilot rows in \`pilot_article_id\` order. Batches 002-040 contain the remaining 975 rows in canonical \`program_row_id\` order. JSON and CSV rows are physically emitted in \`execution_sequence\` order 1-1000, so the pilot batch is first for sequential consumers. Every batch has exactly 25 rows. All SearchAtlas actions are currently \`HOLD_D11_ZERO_CAP_NO_EXTERNAL_WRITE\`.
+Batch \`MRX1000-SA-BATCH-001\` preserves the 25 existing pilot rows in \`pilot_article_id\` order. Batches 002-040 contain the remaining 975 rows in canonical \`program_row_id\` order. JSON and CSV rows are physically emitted in \`execution_sequence\` order 1-1000, so the pilot batch is first for sequential consumers. Every batch has exactly 25 rows. This local manifest performs no external writes; rows wait on identity, content, and review evidence rather than a numerical release cap.
 
 The ordered answer-engine sequence is:
 
@@ -1305,7 +1313,7 @@ The sequence above is the default for 999 rows. Row 2 alone uses the four-surfac
 
 ## Fail-closed stop conditions
 
-Every row stops on D11 cap 0, exact-Claude unavailability, an incomplete ordered review sequence, local-only no-dispatch posture, and false release/index authorization. Rows without an independently validated candidate also stop on \`NO_CHECKSUMMED_REVIEW_CANDIDATE\`; row-specific stops additionally cover ambiguous Content Genius identities and unproven canonical row-to-UUID bindings.
+Every row stops on its incomplete ordered review sequence and this artifact's local-only no-dispatch posture. Rows without an independently validated candidate also stop on \`NO_CHECKSUMMED_REVIEW_CANDIDATE\`; row-specific stops additionally cover ambiguous Content Genius identities and unproven canonical row-to-UUID bindings. D-2026-0804-16 supplies program-level release/index authority, but no row may skip its substantive quality evidence.
 
 ## Read-only input provenance
 
@@ -1328,12 +1336,17 @@ export function buildManifest() {
   const contentGeniusExport = JSON.parse(inputBytes.contentGeniusExport.toString('utf8'));
   const pilotManifest = JSON.parse(inputBytes.pilotManifest.toString('utf8'));
   const d11Text = inputBytes.d11.toString('utf8');
+  const ownerDecisionText = inputBytes.ownerDecision.toString('utf8');
   const d12Text = inputBytes.d12Row2OrderedReview.toString('utf8');
   const d14Text = inputBytes.d14Row2SourceHashCorrection.toString('utf8');
   const d15Text = inputBytes.d15Row2FinalRecovery.toString('utf8');
   const claudeFrameworkText = inputBytes.claudeFramework.toString('utf8');
 
   invariant(sha256(inputBytes.d11) === EXPECTED.d11Sha256, 'signed D11 checksum mismatch');
+  invariant(
+    sha256(inputBytes.ownerDecision) === EXPECTED.ownerDecisionSha256,
+    'owner decision checksum mismatch',
+  );
   invariant(
     sha256(inputBytes.row1Canary) === EXPECTED.row1CanarySha256,
     'row-1 canary checksum mismatch',
@@ -1364,6 +1377,13 @@ export function buildManifest() {
   invariant(
     /299[^\n]*200 NEEDS_REVIEW[^\n]*70 COMPLETED[^\n]*29 NOT_BEGUN/i.test(d11Text),
     'D11 299-row vendor snapshot missing',
+  );
+  invariant(
+    ownerDecisionText.includes(EXPECTED.ownerDecisionId) &&
+      ownerDecisionText.includes('release_authorized: true') &&
+      ownerDecisionText.includes('index_authorized: true') &&
+      ownerDecisionText.includes('Article count and elapsed time do not.'),
+    'owner continuous-publication decision is incomplete',
   );
   invariant(
     claudeFrameworkText.includes(EXPECTED.exactClaudeModelId) &&
@@ -1417,23 +1437,25 @@ export function buildManifest() {
     readiness.rows?.length === EXPECTED.rowCount,
     'readiness matrix must contain 1,000 rows',
   );
-  invariant(readiness.release_decision?.signed === true, 'readiness D11 must be signed');
+  invariant(readiness.release_decision?.signed === true, 'readiness owner decision must be signed');
   invariant(
-    readiness.release_decision?.signed_artifact_sha256 === EXPECTED.d11Sha256 &&
+    readiness.release_decision?.decision_id === EXPECTED.ownerDecisionId &&
+      readiness.release_decision?.signed_artifact_sha256 === EXPECTED.ownerDecisionSha256 &&
       readiness.release_decision?.signed_artifact_sha256_verified === true,
-    'readiness D11 checksum evidence is invalid',
+    'readiness owner-decision checksum evidence is invalid',
   );
   invariant(
-    readiness.release_decision?.authorization_cap_new_mrx1000_rows === EXPECTED.authorizationCap,
-    'readiness authorization cap must be zero',
+    readiness.release_decision?.numerical_release_cap_applies === false &&
+      readiness.release_decision?.elapsed_time_gate_applies === false,
+    'readiness must not impose numerical or elapsed-time release blockers',
   );
   invariant(
-    readiness.release_decision?.release_authorized === false,
-    'release must be unauthorized',
+    readiness.release_decision?.release_authorized === true,
+    'program release must be authorized',
   );
   invariant(
-    readiness.release_decision?.index_authorized === false,
-    'indexing must be unauthorized',
+    readiness.release_decision?.index_authorized === true,
+    'program indexing must be authorized',
   );
   invariant(
     JSON.stringify(readiness.release_decision.vendor_inventory_snapshot?.by_status) ===
@@ -1541,16 +1563,17 @@ export function buildManifest() {
         searchatlas_execution: {
           ...assignment,
           action_needed: searchAtlasAction(ledgerRow, repo, vendor),
-          execution_state: 'HOLD_D11_ZERO_CAP_NO_EXTERNAL_WRITE',
+          execution_state: 'WAITING_FOR_IDENTITY_CONTENT_AND_REVIEW_GATES_NO_EXTERNAL_WRITE',
           execution_eligible_now: false,
           creation_needed_proven: false,
           searchatlas_created_claimed: false,
           external_write_performed: false,
           prerequisite_gates: {
-            signed_d11_sha256_verified: true,
-            positive_row_authorization_required: true,
-            positive_row_authorization_observed: false,
-            read_only_quota_preflight_required_after_future_authorization: true,
+            owner_decision_sha256_verified: true,
+            program_release_authorization_observed: true,
+            article_specific_quality_clearance_required: true,
+            article_specific_quality_clearance_observed: false,
+            read_only_quota_preflight_required_before_external_write: true,
             canonical_identity_reconciliation_required: true,
             checksummed_content_candidate_required_before_review: true,
             checksummed_content_candidate_present: candidate.checksummed_review_candidate_present,
@@ -1590,9 +1613,13 @@ export function buildManifest() {
             : null,
         },
         release_index_eligibility: {
-          decision_id: EXPECTED.d11DecisionId,
-          signed_artifact_sha256: EXPECTED.d11Sha256,
-          authorization_cap_new_rows: EXPECTED.authorizationCap,
+          decision_id: EXPECTED.ownerDecisionId,
+          signed_artifact_sha256: EXPECTED.ownerDecisionSha256,
+          authorization_cap_new_rows: null,
+          numerical_release_cap_applies: false,
+          elapsed_time_gate_applies: false,
+          program_release_authorized: true,
+          program_index_authorized: true,
           release_action_eligible_now: false,
           index_submission_eligible_now: false,
           sitemap_addition_eligible_now: false,
@@ -1602,10 +1629,10 @@ export function buildManifest() {
           exact_claude_opus_4_6_required_before_release_or_index_transition: true,
           release_or_index_model_substitution_allowed: false,
           reason_codes: [
-            'D11_AUTHORIZATION_CAP_ZERO',
             'ORDERED_LLM_REVIEWS_NOT_COMPLETE',
             'EXACT_CLAUDE_OPUS_4_6_UNAVAILABLE',
-            'NO_EXTERNAL_RELEASE_OR_INDEX_WRITE_AUTHORIZED',
+            'ARTICLE_SPECIFIC_QUALITY_CLEARANCE_NOT_COMPLETE',
+            'NO_EXTERNAL_RELEASE_OR_INDEX_ACTION_PERFORMED',
           ],
         },
         stop_conditions: stops,
@@ -1727,11 +1754,11 @@ export function buildManifest() {
   );
   invariant(
     aggregate.repo_mdx_present === 153 &&
-      aggregate.by_canonical_inventory_state.live_public_published_route === 34 &&
-      aggregate.by_canonical_inventory_state.incumbent_draft_nonpublic_held === 94 &&
+      aggregate.by_canonical_inventory_state.live_public_published_route === 39 &&
+      aggregate.by_canonical_inventory_state.incumbent_draft_nonpublic_held === 89 &&
       aggregate.by_canonical_inventory_state.pilot_draft_noindex_stage === 25 &&
       aggregate.by_canonical_inventory_state.planning_only_inventory === 847,
-    'runtime publication projection must be 34 + 94 + 25 + 847',
+    'runtime publication projection must be 39 + 89 + 25 + 847',
   );
   invariant(
     aggregate.planning_searchatlas_map_id_count === 294 &&
@@ -1750,12 +1777,12 @@ export function buildManifest() {
     `review-candidate safety partition disagrees with substantive workspace and validated row-2 evidence: checksummed=${aggregate.checksummed_review_candidate_rows}, without=${aggregate.rows_without_checksummed_review_candidate}, pilot_shells=${aggregate.pilot_workspace_qa_shell_rows}, pilot_candidates=${aggregate.pilot_workspace_shells_marked_as_review_candidates}, validated_row2=${Number(row2Remediation.validated)}`,
   );
   invariant(
-    aggregate.vendor_exact_title_match_rows === 157 &&
-      aggregate.vendor_unambiguous_candidate_rows === 151 &&
+    aggregate.vendor_exact_title_match_rows === 153 &&
+      aggregate.vendor_unambiguous_candidate_rows === 147 &&
       aggregate.vendor_ambiguous_candidate_rows === 6 &&
-      aggregate.vendor_exact_title_candidate_records === 164 &&
-      aggregate.unique_vendor_exact_title_candidate_uuids === 164 &&
-      aggregate.vendor_candidate_records_reverified_against_source === 164 &&
+      aggregate.vendor_exact_title_candidate_records === 160 &&
+      aggregate.unique_vendor_exact_title_candidate_uuids === 160 &&
+      aggregate.vendor_candidate_records_reverified_against_source === 160 &&
       aggregate.artifact_bound_content_genius_uuid_rows === 2,
     'Content Genius exact-title reconciliation counts changed',
   );
@@ -1790,12 +1817,15 @@ export function buildManifest() {
   invariant(
     rows.every(
       (row) =>
-        row.release_index_eligibility.authorization_cap_new_rows === 0 &&
+        row.release_index_eligibility.authorization_cap_new_rows == null &&
+        row.release_index_eligibility.numerical_release_cap_applies === false &&
+        row.release_index_eligibility.elapsed_time_gate_applies === false &&
+        row.release_index_eligibility.program_release_authorized === true &&
         row.release_index_eligibility
           .exact_claude_opus_4_6_required_before_release_or_index_transition === true &&
         row.release_index_eligibility.release_or_index_model_substitution_allowed === false,
     ),
-    'D11 cap-zero or exact-Opus release/index gate was weakened',
+    'owner release authority or exact-Opus review contract was weakened',
   );
 
   const inputEvidence = Object.fromEntries(
@@ -1846,16 +1876,18 @@ export function buildManifest() {
     external_writes_performed: false,
     inputs: inputEvidence,
     release_gate: {
-      decision_id: EXPECTED.d11DecisionId,
-      signed_artifact: rel(INPUTS.d11),
-      signed_artifact_sha256: EXPECTED.d11Sha256,
+      decision_id: EXPECTED.ownerDecisionId,
+      signed_artifact: rel(INPUTS.ownerDecision),
+      signed_artifact_sha256: EXPECTED.ownerDecisionSha256,
       signed_artifact_sha256_verified: true,
-      signed_disposition: EXPECTED.d11Disposition,
-      authorization_cap_new_rows: EXPECTED.authorizationCap,
-      release_authorized: false,
-      index_authorized: false,
+      signed_disposition: EXPECTED.ownerDecisionDisposition,
+      authorization_cap_new_rows: null,
+      numerical_release_cap_applies: false,
+      elapsed_time_gate_applies: false,
+      release_authorized: true,
+      index_authorized: true,
       vendor_inventory_snapshot: {
-        source: 'signed_D-2026-0720-11_capacity_baseline',
+        source: 'historical_signed_D-2026-0720-11_capacity_baseline_not_release_authority',
         ...EXPECTED.vendorSnapshot,
         composition: {
           raw_content_genius_export_records: EXPECTED.rawExportCount,

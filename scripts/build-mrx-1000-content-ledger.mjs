@@ -59,6 +59,30 @@ const PRIOR_LEDGER_PATH = process.env.MRX1000_LEDGER_PRIOR_PATH
   : OUTPUTS.json;
 
 const PROGRAM_ROW_ID_RE = /^MRX1000-(\d+)$/;
+const SUPERSEDED_CANONICAL_SLUGS = new Set([
+  'ensuring-transparency-how-we-avoid-predatory-tactics-in-mineral-rights-assessments',
+  'transparency-in-mineral-rights-how-we-compare-to-other-services',
+  'why-mineralrightsxchange-is-your-most-reliable-choice-for-transparent-mineral-rights-acquisition',
+  'why-mineralrightsxchange-offers-unique-advantages-over-competing-mineral-rights-acquisition-services',
+]);
+const SUCCESSOR_CANONICAL_SLUGS = new Map([
+  [
+    'ensuring-transparency-how-we-avoid-predatory-tactics-in-mineral-rights-assessments',
+    'transparent-mineral-rights-reviews-questions-that-help-owners-avoid-pressure',
+  ],
+  [
+    'transparency-in-mineral-rights-how-we-compare-to-other-services',
+    'how-to-compare-mineral-rights-review-services-transparently',
+  ],
+  [
+    'why-mineralrightsxchange-is-your-most-reliable-choice-for-transparent-mineral-rights-acquisition',
+    'why-mineralrightsxchange-focuses-on-transparent-mineral-rights-acquisition',
+  ],
+  [
+    'why-mineralrightsxchange-offers-unique-advantages-over-competing-mineral-rights-acquisition-services',
+    'how-mineralrightsxchange-approaches-mineral-rights-acquisition',
+  ],
+]);
 
 async function loadPriorProgramRowIds() {
   let prior;
@@ -80,6 +104,8 @@ async function loadPriorProgramRowIds() {
     if (bySlug.has(slug)) throw new Error(`Prior ledger repeats canonical slug: ${slug}`);
     if (seenIds.has(id)) throw new Error(`Prior ledger repeats program_row_id: ${id}`);
     bySlug.set(slug, id);
+    const successorSlug = SUCCESSOR_CANONICAL_SLUGS.get(slug);
+    if (successorSlug) bySlug.set(successorSlug, id);
     seenIds.add(id);
     maxSequenceEver = Math.max(maxSequenceEver, Number(match[1]));
   }
@@ -514,11 +540,11 @@ async function loadRelease10ProductionVerification() {
       readFile(INPUTS.release10PostPublicationVerification),
       readFile(INPUTS.release10Batch),
     ]);
-    const sidecar = await readFile(
-      `${INPUTS.release10PostPublicationVerification}.sha256`,
-      'utf8',
-    );
-    const expectedSha = sidecar.trim().match(/^([a-f0-9]{64})(?:\s|$)/i)?.[1]?.toLowerCase();
+    const sidecar = await readFile(`${INPUTS.release10PostPublicationVerification}.sha256`, 'utf8');
+    const expectedSha = sidecar
+      .trim()
+      .match(/^([a-f0-9]{64})(?:\s|$)/i)?.[1]
+      ?.toLowerCase();
     const actualSha = createHash('sha256').update(bytes).digest('hex');
     if (expectedSha !== actualSha) {
       throw new Error(
@@ -615,11 +641,12 @@ async function loadRepoCandidates({ pilotSlugSet, release10ProductionBySlug = ne
     // current workspace/build publication state; deployment evidence remains
     // a separate field and is populated only from the checksummed production
     // verifier.
+    const release10Production = release10ProductionBySlug.get(slug) ?? null;
     const isAuthorizedReleaseCandidate =
       isPublished &&
       data.content_program === 'mrx1000' &&
-      ['release-10', 'wave2'].includes(data.content_batch);
-    const release10Production = release10ProductionBySlug.get(slug) ?? null;
+      (['release-10', 'wave2', 'wave3'].includes(data.content_batch) ||
+        release10Production != null);
     const isRelease10ProductionVerified =
       isAuthorizedReleaseCandidate && release10Production != null;
     const isLegacyPublished = isPublished && !isAuthorizedReleaseCandidate;
@@ -649,17 +676,17 @@ async function loadRepoCandidates({ pilotSlugSet, release10ProductionBySlug = ne
         normalizedStatus: isRelease10ProductionVerified
           ? 'live_public_published_route_release_10_verified'
           : isAuthorizedReleaseCandidate
-          ? 'authorized_release_candidate_pending_gate_and_deployment'
-          : isLegacyPublished
-            ? 'live_public_published_route_existing_route_verified'
-          : 'incumbent_draft_nonpublic_publication_held',
+            ? 'authorized_release_candidate_pending_gate_and_deployment'
+            : isLegacyPublished
+              ? 'live_public_published_route_existing_route_verified'
+              : 'incumbent_draft_nonpublic_publication_held',
         publicationState: isRelease10ProductionVerified
           ? 'released_public_article'
           : isAuthorizedReleaseCandidate
-          ? 'authorized_release_candidate'
-          : isLegacyPublished
-            ? 'incumbent_workspace_article'
-            : 'draft_workspace_article',
+            ? 'authorized_release_candidate'
+            : isLegacyPublished
+              ? 'incumbent_workspace_article'
+              : 'draft_workspace_article',
         frontmatterNoindex: frontmatterNoindex,
         publicationGateNonpublic: publicationGateNonpublic,
         noindexRequired,
@@ -669,24 +696,24 @@ async function loadRepoCandidates({ pilotSlugSet, release10ProductionBySlug = ne
         action: isRelease10ProductionVerified
           ? 'retain_verified_live_route_measure_index_coverage_and_refresh'
           : isAuthorizedReleaseCandidate
-          ? 'release_only_after_exact_batch_gate_and_production_verification'
-          : isLegacyPublished
-            ? 'retain_existing_live_canonical_url_no_new_release_action_authorized'
-          : 'retain_path_hold_publication_until_gate_passes',
+            ? 'release_only_after_exact_batch_gate_and_production_verification'
+            : isLegacyPublished
+              ? 'retain_existing_live_canonical_url_no_new_release_action_authorized'
+              : 'retain_path_hold_publication_until_gate_passes',
         actionReason: isRelease10ProductionVerified
           ? 'Release-10 passed the signed batch gate, production deployment, and independent post-publication verification. Preserve the canonical URL and measure the earned 10-to-25 scale gate.'
           : isAuthorizedReleaseCandidate
-          ? 'The source is prepared for the exact release-10 build, but publication remains controlled by the signed batch, matching evidence, production deployment, and independent verification.'
-          : isLegacyPublished
-            ? 'Existing Astro URL is already public and remains the incumbent owner. This ledger authorizes no additional publication or indexing action.'
-          : 'Existing Astro MDX is fail-closed (nonpublic publication_status). Publication is held until program gates pass.',
+            ? 'The source is prepared for the exact release-10 build, but publication remains controlled by the signed batch, matching evidence, production deployment, and independent verification.'
+            : isLegacyPublished
+              ? 'Existing Astro URL is already public and remains the incumbent owner. This ledger authorizes no additional publication or indexing action.'
+              : 'Existing Astro MDX is fail-closed (nonpublic publication_status). Publication is held until program gates pass.',
         complianceStatus: isRelease10ProductionVerified
           ? 'release_10_capability_reviews_passed_production_verified'
           : isAuthorizedReleaseCandidate
-          ? 'release_10_hash_locked_review_required'
-          : isLegacyPublished
-            ? 'existing_review_metadata_present_revalidation_required'
-          : 'draft_pending_review_metadata_present_revalidation_required',
+            ? 'release_10_hash_locked_review_required'
+            : isLegacyPublished
+              ? 'existing_review_metadata_present_revalidation_required'
+              : 'draft_pending_review_metadata_present_revalidation_required',
         schemaStatus: 'article_schema_path_present_revalidation_required',
         internalLinkRole: 'incumbent_supporting_article',
         nextOwner: isRelease10ProductionVerified ? 'mrx_growth_measurement' : 'mrx_editorial',
@@ -1289,6 +1316,8 @@ async function main() {
     loadFactoryCandidates(),
   ]);
   const editorialGap = loadEditorialGapCandidates();
+  const withoutSupersededIdentities = (rows) =>
+    rows.filter((row) => !SUPERSEDED_CANONICAL_SLUGS.has(row.canonical_slug));
   const quotas = Object.fromEntries(
     quotaPlan.cluster_quotas.map((item) => [item.cluster_id, item.quota]),
   );
@@ -1320,9 +1349,9 @@ async function main() {
   const { selected, counts, rejected } = selectLedger(quotas, {
     repo,
     pilot: pilotRows,
-    searchatlas,
-    editorialGap,
-    factory,
+    searchatlas: withoutSupersededIdentities(searchatlas),
+    editorialGap: withoutSupersededIdentities(editorialGap),
+    factory: withoutSupersededIdentities(factory),
   });
   const clusterIndex = Object.fromEntries(CLUSTER_ORDER.map((cluster, index) => [cluster, index]));
   selected.sort(
@@ -1426,10 +1455,7 @@ async function main() {
       },
     },
     inputs: Object.fromEntries(
-      Object.entries(INPUTS).map(([key, inputPath]) => [
-        key,
-        portableWorkspacePath(inputPath),
-      ]),
+      Object.entries(INPUTS).map(([key, inputPath]) => [key, portableWorkspacePath(inputPath)]),
     ),
     quota_summary: CLUSTER_ORDER.map((cluster) => ({
       cluster,
@@ -1495,7 +1521,7 @@ async function main() {
             .length +
           selected.filter((row) => row.preservation_classification === 'planning_only_inventory')
             .length ===
-          1000,
+        1000,
       // Evidence-taxonomy counts. Current authoritative expected counts:
       //   searchatlas_record_id_non_null_uuid_count        = 0
       //   content_genius_article_uuid_non_null_count       = 0

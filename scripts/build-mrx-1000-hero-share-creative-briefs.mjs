@@ -16,7 +16,10 @@ const INPUTS = {
   ledger: process.env.MRX1000_HERO_SHARE_LEDGER_PATH
     ? path.resolve(process.env.MRX1000_HERO_SHARE_LEDGER_PATH)
     : path.join(MRX_ROOT, 'config/mrx-1000-canonical-content-ledger.json'),
-  d11: path.join(WORKSPACE_ROOT, 'program-plans/mrx-1000-ceo-decision-no-spend-capacity.md'),
+  ownerDecision: path.join(
+    MRX_ROOT,
+    'docs/governance/mrx1000-owner-continuous-publication-directive-2026-08-04.md',
+  ),
 };
 
 const ISOLATED_OUTPUT_DIR = process.env.MRX1000_HERO_SHARE_OUTPUT_DIR
@@ -34,7 +37,7 @@ const OUTPUTS = ISOLATED_OUTPUT_DIR
       report: path.join(MRX_ROOT, 'reports/mrx-1000-hero-share-creative-briefs.md'),
     };
 
-const D11_SHA256 = '46a9d02548e97a794d1cdaa919682bb159bcfbeabb5b9d8e559431c6ca34091d';
+const OWNER_DECISION_SHA256 = 'edc1d4602149558ff6d2b960416839b8caf97593f5fd8fe6ea91b56617d1425f';
 const PUBLIC_CLASS = 'live_public_published_route';
 const HELD_CLASS = 'incumbent_draft_nonpublic_held';
 const PILOT_CLASS = 'pilot_draft_noindex_stage';
@@ -668,8 +671,7 @@ async function loadCurrentAssetEvidence(row, inputParts) {
   const socialAssetPath =
     frontmatterNestedScalar(frontmatter, 'hero_image', 'social_src') ?? assetPath;
   const altText = frontmatterNestedScalar(frontmatter, 'hero_image', 'alt');
-  const socialAltText =
-    frontmatterNestedScalar(frontmatter, 'hero_image', 'social_alt') ?? altText;
+  const socialAltText = frontmatterNestedScalar(frontmatter, 'hero_image', 'social_alt') ?? altText;
   const description = frontmatterScalar(frontmatter, 'description');
   const seoTitle = frontmatterScalar(frontmatter, 'seo_title');
   const onDiskPath = publicPathOnDisk(assetPath);
@@ -700,9 +702,7 @@ async function loadCurrentAssetEvidence(row, inputParts) {
     socialFormat = socialMetadata.format ?? null;
     socialWidth = socialMetadata.width ?? null;
     socialHeight = socialMetadata.height ?? null;
-    inputParts.push(
-      `${row.program_row_id}:current-social-asset-sha256:${socialAssetSha256}`,
-    );
+    inputParts.push(`${row.program_row_id}:current-social-asset-sha256:${socialAssetSha256}`);
   }
   return {
     repo_file: repoFile,
@@ -874,22 +874,22 @@ async function buildRow(
   const socialReusesHero = currentAssetPath === currentSocialAssetPath;
   const dedicatedSocialAssetUsable = Boolean(
     !socialReusesHero &&
-      currentEvidence?.social_on_disk &&
-      currentEvidence.social_format === 'jpeg' &&
-      currentEvidence.social_width === 1200 &&
-      currentEvidence.social_height === 630 &&
-      currentSocialPathUnique &&
-      currentSocialContentUnique &&
-      currentSocialAltText &&
-      currentSocialAltText.length <= 125 &&
-      currentSocialAltText.length >= 30,
+    currentEvidence?.social_on_disk &&
+    currentEvidence.social_format === 'jpeg' &&
+    currentEvidence.social_width === 1200 &&
+    currentEvidence.social_height === 630 &&
+    currentSocialPathUnique &&
+    currentSocialContentUnique &&
+    currentSocialAltText &&
+    currentSocialAltText.length <= 125 &&
+    currentSocialAltText.length >= 30,
   );
   const legacyHeroUsable = Boolean(
     currentEvidence?.on_disk &&
     currentEvidence.format === 'webp' &&
     currentEvidence.width === 1600 &&
     currentEvidence.height === 900 &&
-    (socialReusesHero || dedicatedSocialAssetUsable)
+    (socialReusesHero || dedicatedSocialAssetUsable),
   );
   const ownerPolicyHeroUsable = Boolean(
     currentEvidence?.on_disk &&
@@ -901,7 +901,7 @@ async function buildRow(
     currentEvidence.social_format === 'webp' &&
     currentEvidence.social_width === 1200 &&
     currentEvidence.social_height === 630 &&
-    currentEvidence.social_sha256 === currentEvidence.sha256
+    currentEvidence.social_sha256 === currentEvidence.sha256,
   );
   const currentAssetUsable = Boolean(
     (legacyHeroUsable || ownerPolicyHeroUsable) &&
@@ -939,9 +939,7 @@ async function buildRow(
   const altText = preserveCurrentAsset
     ? currentAltText
     : generatedAltText(shareSeoTitle, semantics);
-  const shareTitle = publicRow
-    ? (currentEvidence?.seo_title || row.canonical_title)
-    : shareSeoTitle;
+  const shareTitle = publicRow ? currentEvidence?.seo_title || row.canonical_title : shareSeoTitle;
   const shareDescription = publicRow
     ? currentDescription
     : generatedShareDescription(shareTitle, semantics);
@@ -1041,12 +1039,12 @@ async function buildRow(
     published_status: publicRow ? 'existing_public_route_unchanged' : 'not_published',
     release_blocked: releaseBlocked,
     release_status: publicRow
-      ? 'existing_public_route_no_release_action_required'
+      ? 'released_under_d16_continuous_quality_gate'
       : pilotRow
-        ? 'blocked_d11_cap_zero_and_unique_placeholder_replacement_required'
+        ? 'quality_blocked_unique_placeholder_replacement_required'
         : heldRow && preserveCurrentAsset
-          ? 'blocked_d11_cap_zero_existing_asset_preserved_no_release_authorized'
-          : 'blocked_d11_cap_zero_no_generation_or_release_authorized',
+          ? 'eligible_for_continuous_quality_review_existing_asset_preserved'
+          : 'quality_blocked_asset_generation_or_replacement_required',
     planned_replacement_required: !preserveCurrentAsset,
     current_asset_path: currentAssetPath,
     current_social_asset_path: currentSocialAssetPath,
@@ -1106,7 +1104,7 @@ function buildReport(plan) {
       ['Existing public routes represented', v.published_count],
       ['Pilot shared placeholders observed', v.pilot_shared_placeholder_current_count],
       ['Pilot unique replacement paths assigned', v.pilot_unique_replacement_path_count],
-      ['Pilot rows still release-blocked', v.pilot_release_blocked_count],
+      ['Pilot rows still quality-blocked', v.pilot_release_blocked_count],
     ],
     [1],
   );
@@ -1123,13 +1121,14 @@ function buildReport(plan) {
 
 Generated deterministically from the canonical 1,000-row ledger. This is a local-only creative plan. It generated no images, changed no article frontmatter, made no external call, and performed no publication, indexing, deployment, or spend action.
 
-## Controlling release boundary
+## Controlling release policy
 
 - Signed decision: \`${plan.controlling_decision.decision_id}\`
 - Verified decision SHA-256: \`${plan.controlling_decision.sha256}\`
-- Present authorization cap: **${plan.controlling_decision.present_authorization_cap} new rows**
+- Numerical release cap applies: **${plan.controlling_decision.numerical_release_cap_applies}**
+- Elapsed-time release gate applies: **${plan.controlling_decision.elapsed_time_gate_applies}**
 - Disposition: \`${plan.controlling_decision.disposition}\`
-- Result: all ${v.release_blocked_count} nonpublic rows remain release-blocked. A ready creative brief is not an asset, a publication approval, or generation authorization.
+- Result: article count and elapsed time do not block release. The ${v.release_blocked_count} nonpublic rows still require their own substantive quality evidence; a ready creative brief alone does not clear those gates.
 
 ## Coverage and collision results
 
@@ -1149,11 +1148,11 @@ These verified assets were not regenerated or edited. Their current frontmatter 
 
 ## Held incumbent assets audited and preserved
 
-All ${v.held_count} held incumbent MDX rows were read and checked against their current hero/social frontmatter and on-disk files. ${v.held_current_asset_preserved_count} current assets passed all checks: unique path, unique file SHA-256, matching hero/social path, 1600×900 WebP format, article-match token evidence, and concise alt text. They remain nonpublic and release-blocked under D11. ${v.held_replacement_required_count} held assets still require replacement.
+All ${v.held_count} held incumbent MDX rows were read and checked against their current hero/social frontmatter and on-disk files. ${v.held_current_asset_preserved_count} current assets passed all checks: unique path, unique file SHA-256, matching hero/social path, approved dimensions, article-match token evidence, and concise alt text. They remain nonpublic until their article-specific quality gates pass; no numerical cap or waiting period applies. ${v.held_replacement_required_count} held assets still require replacement.
 
 ## Pilot placeholder replacement boundary
 
-All 25 pilot rows still point at the shared staging placeholder \`/assets/brand/mrx-underwriter-review-og.png\` in their untouched source frontmatter. This plan assigns each pilot a unique replacement path under \`/assets/articles/mrx1000/\`, but every pilot remains \`asset_generated=false\`, \`on_disk=false\`, \`published=false\`, and \`release_blocked=true\` until a later signed decision and all required gates authorize generation and release.
+All 25 pilot rows still point at the shared staging placeholder \`/assets/brand/mrx-underwriter-review-og.png\` in their untouched source frontmatter. This plan assigns each pilot a unique replacement path under \`/assets/articles/mrx1000/\`, but every pilot remains \`asset_generated=false\`, \`on_disk=false\`, \`published=false\`, and \`release_blocked=true\` until its creative and article-specific quality gates pass. No later numerical cap-lift decision is required.
 
 ## Determinism
 
@@ -1165,20 +1164,23 @@ All 25 pilot rows still point at the shared staging placeholder \`/assets/brand/
 }
 
 async function main() {
-  const [ledgerBytes, d11Bytes] = await Promise.all([
+  const [ledgerBytes, ownerDecisionBytes] = await Promise.all([
     readFile(INPUTS.ledger),
-    readFile(INPUTS.d11),
+    readFile(INPUTS.ownerDecision),
   ]);
-  const d11Sha = sha256(d11Bytes);
-  if (d11Sha !== D11_SHA256) {
-    throw new Error(`D11 checksum changed: expected ${D11_SHA256}, received ${d11Sha}`);
+  const ownerDecisionSha = sha256(ownerDecisionBytes);
+  if (ownerDecisionSha !== OWNER_DECISION_SHA256) {
+    throw new Error(
+      `Owner decision checksum changed: expected ${OWNER_DECISION_SHA256}, received ${ownerDecisionSha}`,
+    );
   }
-  const d11Text = d11Bytes.toString('utf8');
+  const ownerDecisionText = ownerDecisionBytes.toString('utf8');
   if (
-    !d11Text.includes('**Present authorization cap:** `0`.') ||
-    !d11Text.includes('**Signed disposition:** `HOLD_ZERO_NEW_ROWS_NO_SPEND_CAPACITY_GATE`.')
+    !ownerDecisionText.includes('Decision ID: D-2026-0804-16') ||
+    !ownerDecisionText.includes('release_authorized: true') ||
+    !ownerDecisionText.includes('Article count and elapsed time do not.')
   ) {
-    throw new Error('D11 no longer proves the signed zero-row authorization cap');
+    throw new Error('Owner decision no longer proves continuous quality-gated publication');
   }
 
   const ledger = JSON.parse(ledgerBytes.toString('utf8'));
@@ -1188,7 +1190,7 @@ async function main() {
 
   const runtime = projectLedgerArticlesForRuntime(ledger.articles, MRX_ROOT);
   const runtimeArticles = runtime.articles;
-  const inputParts = [ledgerBytes.toString('utf8'), d11Bytes.toString('utf8')];
+  const inputParts = [ledgerBytes.toString('utf8'), ownerDecisionBytes.toString('utf8')];
   const currentEvidenceByRow = new Map();
   for (const row of runtimeArticles) {
     const evidence = await loadCurrentAssetEvidence(row, inputParts);
@@ -1334,18 +1336,18 @@ async function main() {
     verification.share_description_outside_130_160_count === 0,
     verification.share_description_ellipsis_count === 0,
     verification.share_description_incomplete_sentence_count === 0,
-    verification.existing_public_asset_verified_count === 34,
-    verification.asset_generated_count === 34 + verification.held_current_asset_preserved_count,
-    verification.on_disk_count === 34 + verification.held_current_asset_preserved_count,
-    verification.published_count === 34,
-    verification.release_blocked_count === 966,
-    verification.held_count === 94,
-    verification.held_current_asset_observed_count === 94,
+    verification.existing_public_asset_verified_count === 39,
+    verification.asset_generated_count === 39 + verification.held_current_asset_preserved_count,
+    verification.on_disk_count === 39 + verification.held_current_asset_preserved_count,
+    verification.published_count === 39,
+    verification.release_blocked_count === 961,
+    verification.held_count === 89,
+    verification.held_current_asset_observed_count === 89,
     verification.held_current_asset_preserved_count ===
       verification.held_current_asset_usable_count,
     verification.held_current_asset_preserved_count +
       verification.held_replacement_required_count ===
-      94,
+      89,
     verification.pilot_count === 25,
     verification.pilot_shared_placeholder_current_count === 25,
     verification.pilot_unique_replacement_path_count === 25,
@@ -1368,16 +1370,17 @@ async function main() {
       row_count: 1000,
     },
     controlling_decision: {
-      decision_id: 'D-2026-0720-11',
-      path: 'program-plans/mrx-1000-ceo-decision-no-spend-capacity.md',
-      sha256: d11Sha,
+      decision_id: 'D-2026-0804-16',
+      path: 'docs/governance/mrx1000-owner-continuous-publication-directive-2026-08-04.md',
+      sha256: ownerDecisionSha,
       signed: true,
-      disposition: 'HOLD_ZERO_NEW_ROWS_NO_SPEND_CAPACITY_GATE',
-      present_authorization_cap: 0,
-      generation_authorized: false,
-      publication_authorized: false,
-      indexing_authorized: false,
-      deployment_authorized: false,
+      disposition: 'APPROVED_CONTINUOUS_QUALITY_GATED_ARTICLE_PUBLICATION',
+      numerical_release_cap_applies: false,
+      elapsed_time_gate_applies: false,
+      generation_authorized: true,
+      publication_authorized: true,
+      indexing_authorized: true,
+      deployment_authorized: true,
       spend_authorized: false,
     },
     asset_architecture: {

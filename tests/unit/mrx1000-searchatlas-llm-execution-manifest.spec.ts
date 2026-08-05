@@ -22,6 +22,10 @@ const REPORT_OUT = path.join(MRX_ROOT, 'reports/mrx-1000-searchatlas-llm-executi
 const LEDGER = path.join(MRX_ROOT, 'config/mrx-1000-canonical-content-ledger.json');
 const READINESS = path.join(MRX_ROOT, 'reports/mrx-1000-readiness-matrix.json');
 const D11 = path.join(WORKSPACE_ROOT, 'program-plans/mrx-1000-ceo-decision-no-spend-capacity.md');
+const OWNER_DECISION = path.join(
+  MRX_ROOT,
+  'docs/governance/mrx1000-owner-continuous-publication-directive-2026-08-04.md',
+);
 const D12 = path.join(
   WORKSPACE_ROOT,
   'program-plans/mrx-1000-ceo-decision-exact-claude-gate-and-narrow-no-spend-row2-review.md',
@@ -181,7 +185,10 @@ interface ManifestRow {
     exact_claude_substitution_scope: string | null;
   };
   release_index_eligibility: {
-    authorization_cap_new_rows: number;
+    authorization_cap_new_rows: number | null;
+    numerical_release_cap_applies: boolean;
+    elapsed_time_gate_applies: boolean;
+    program_release_authorized: boolean;
     release_action_eligible_now: boolean;
     index_submission_eligible_now: boolean;
     production_live_verified_in_this_local_build: boolean;
@@ -213,7 +220,9 @@ interface Manifest {
     decision_id: string;
     signed_artifact_sha256: string;
     signed_artifact_sha256_verified: boolean;
-    authorization_cap_new_rows: number;
+    authorization_cap_new_rows: number | null;
+    numerical_release_cap_applies: boolean;
+    elapsed_time_gate_applies: boolean;
     release_authorized: boolean;
     index_authorized: boolean;
     vendor_inventory_snapshot: {
@@ -329,6 +338,7 @@ function snapshotProtectedInputs(
     ledger_snapshot: sha256(ledgerPath),
     readiness_snapshot: sha256(readinessPath),
     d11: sha256(D11),
+    owner_decision: sha256(OWNER_DECISION),
     d12: sha256(D12),
     d14: sha256(D14),
   };
@@ -439,15 +449,15 @@ describe('MRX1000 SearchAtlas + ordered LLM execution manifest', () => {
     );
   });
 
-  it('projects the current 34 + 94 + 25 + 847 workspace-state partition', () => {
+  it('projects the current 39 + 89 + 25 + 847 workspace-state partition', () => {
     expect(manifest.aggregate.by_canonical_inventory_state).toEqual({
-      incumbent_draft_nonpublic_held: 94,
-      live_public_published_route: 34,
+      incumbent_draft_nonpublic_held: 89,
+      live_public_published_route: 39,
       pilot_draft_noindex_stage: 25,
       planning_only_inventory: 847,
     });
     expect(manifest.aggregate.repo_mdx_present).toBe(153);
-    expect(manifest.aggregate.workspace_public_route_configured).toBe(34);
+    expect(manifest.aggregate.workspace_public_route_configured).toBe(39);
     expect(
       manifest.rows.every(
         (row) => !row.authoritative_current_state.repo.production_live_verified_in_this_local_build,
@@ -463,8 +473,8 @@ describe('MRX1000 SearchAtlas + ordered LLM execution manifest', () => {
       pilot_workspace_shells_marked_as_review_candidates: 0,
       pilot_rows_with_validated_distinct_review_candidate: 1,
       by_review_candidate_state: {
-        CHECKSUMMED_EXISTING_PUBLIC_ARTICLE_READY_FOR_LLM_REVIEW: 34,
-        CHECKSUMMED_HELD_SUBSTANTIVE_DRAFT_READY_FOR_LLM_REVIEW: 94,
+        CHECKSUMMED_EXISTING_PUBLIC_ARTICLE_READY_FOR_LLM_REVIEW: 39,
+        CHECKSUMMED_HELD_SUBSTANTIVE_DRAFT_READY_FOR_LLM_REVIEW: 89,
         NO_CHECKSUMMED_REVIEW_CANDIDATE_PILOT_QA_SHELL_ONLY: 24,
         NO_WORKSPACE_CONTENT_CANDIDATE: 847,
         ROW2_REMEDIATED_NOINDEX_CANDIDATE_VALIDATED_FOR_ORDERED_LLM_REVIEW: 1,
@@ -578,14 +588,16 @@ describe('MRX1000 SearchAtlas + ordered LLM execution manifest', () => {
     }
   });
 
-  it('records signed D11 vendor inventory as 299 = 297 export + 2 canaries and cap 0', () => {
+  it('uses D16 release authority while preserving the historical D11 vendor inventory', () => {
     expect(manifest.release_gate).toMatchObject({
-      decision_id: 'D-2026-0720-11',
-      signed_artifact_sha256: '46a9d02548e97a794d1cdaa919682bb159bcfbeabb5b9d8e559431c6ca34091d',
+      decision_id: 'D-2026-0804-16',
+      signed_artifact_sha256: 'edc1d4602149558ff6d2b960416839b8caf97593f5fd8fe6ea91b56617d1425f',
       signed_artifact_sha256_verified: true,
-      authorization_cap_new_rows: 0,
-      release_authorized: false,
-      index_authorized: false,
+      authorization_cap_new_rows: null,
+      numerical_release_cap_applies: false,
+      elapsed_time_gate_applies: false,
+      release_authorized: true,
+      index_authorized: true,
       vendor_inventory_snapshot: {
         total: 299,
         by_status: { NEEDS_REVIEW: 200, COMPLETED: 70, NOT_BEGUN: 29 },
@@ -626,12 +638,12 @@ describe('MRX1000 SearchAtlas + ordered LLM execution manifest', () => {
       planning_searchatlas_map_id_count: 294,
       planning_searchatlas_title_uuid_count: 269,
       persisted_ledger_content_genius_article_uuid_count: 0,
-      vendor_exact_title_match_rows: 157,
-      vendor_unambiguous_candidate_rows: 151,
+      vendor_exact_title_match_rows: 153,
+      vendor_unambiguous_candidate_rows: 147,
       vendor_ambiguous_candidate_rows: 6,
-      vendor_exact_title_candidate_records: 164,
-      unique_vendor_exact_title_candidate_uuids: 164,
-      vendor_candidate_records_reverified_against_source: 164,
+      vendor_exact_title_candidate_records: 160,
+      unique_vendor_exact_title_candidate_uuids: 160,
+      vendor_candidate_records_reverified_against_source: 160,
       artifact_bound_content_genius_uuid_rows: 2,
     });
     expect(
@@ -848,7 +860,7 @@ describe('MRX1000 SearchAtlas + ordered LLM execution manifest', () => {
     });
     for (const row of manifest.rows) {
       expect(row.searchatlas_execution).toMatchObject({
-        execution_state: 'HOLD_D11_ZERO_CAP_NO_EXTERNAL_WRITE',
+        execution_state: 'WAITING_FOR_IDENTITY_CONTENT_AND_REVIEW_GATES_NO_EXTERNAL_WRITE',
         execution_eligible_now: false,
         creation_needed_proven: false,
         searchatlas_created_claimed: false,
@@ -862,7 +874,10 @@ describe('MRX1000 SearchAtlas + ordered LLM execution manifest', () => {
         row.authoritative_current_state.pilot_article_id === 'MRX1000-PILOT-001-02',
       );
       expect(row.release_index_eligibility).toMatchObject({
-        authorization_cap_new_rows: 0,
+        authorization_cap_new_rows: null,
+        numerical_release_cap_applies: false,
+        elapsed_time_gate_applies: false,
+        program_release_authorized: true,
         release_action_eligible_now: false,
         index_submission_eligible_now: false,
         production_live_verified_in_this_local_build: false,
@@ -872,10 +887,9 @@ describe('MRX1000 SearchAtlas + ordered LLM execution manifest', () => {
       });
       expect(row.stop_conditions).toEqual(
         expect.arrayContaining([
-          'SIGNED_D11_AUTHORIZATION_CAP_ZERO',
           'EXACT_CLAUDE_OPUS_4_6_UNAVAILABLE',
           'ORDERED_LLM_REVIEW_SEQUENCE_NOT_COMPLETE',
-          'RELEASE_AND_INDEX_AUTHORIZATION_FALSE',
+          'ARTICLE_SPECIFIC_QUALITY_CLEARANCE_NOT_COMPLETE',
         ]),
       );
     }
@@ -931,6 +945,8 @@ describe('MRX1000 SearchAtlas + ordered LLM execution manifest', () => {
     expect(report).toContain('currently available named Claude-family model');
     expect(report).toContain('Row 2 is **audit-ready now**');
     expect(report).toContain('compliance `PASS` and SEO/AEO `PASS`');
-    expect(report).toContain('The other 999 rows retain the unmodified default sequence');
+    expect(report).toContain(
+      'the other 999 rows retain their article-specific identity, content, and review requirements',
+    );
   });
 });

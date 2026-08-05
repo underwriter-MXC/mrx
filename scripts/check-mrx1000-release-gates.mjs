@@ -3,7 +3,8 @@
  * scripts/check-mrx1000-release-gates.mjs
  *
  * Fail-closed release-gate check for the MRX1000 release-10 program
- * declared by D-2026-0721-21.
+ * declared by D-2026-0721-21 and superseded for numerical scale policy by
+ * D-2026-0804-16.
  *
  *   Inputs (all required unless noted):
  *     - config/mrx1000-release-10-batch.json          (authorized batch)
@@ -20,9 +21,8 @@
  *     - .sha256 sidecars for both files
  *
  *   Exit codes:
- *     0 — all fail-closed invariants pass (cap OK, no unauthorized
- *         publications, evidence fully PASS, scale-gate observations
- *         do not yet satisfy a higher cap → no premature authorization).
+ *     0 — all fail-closed invariants pass (program scope OK, no unauthorized
+ *         publications, and evidence fully PASS).
  *     2 — any blocking finding present; remediation required.
  *     1 — usage error (bad flag, missing input the operator must supply).
  *
@@ -642,6 +642,7 @@ function buildCheck() {
 
   const exactCount = batch.policy?.exact_admitted_count ?? null;
   const exactSlateSha = batch.policy?.exact_admitted_slate_sha256 ?? null;
+  const continuousQualityGated = batch.policy?.admission_mode === 'continuous_quality_gated';
   const exactAdmissionEnabled = Number.isInteger(exactCount) && exactCount > 0;
   const verifiedReleaseEvidence = {};
   if (exactAdmissionEnabled) {
@@ -656,10 +657,23 @@ function buildCheck() {
       configured_exact_slate_sha256: exactSlateSha,
       observed_article_count: observedCount,
       observed_exact_slate_sha256: observedSlateSha,
+      admission_mode: batch.policy?.admission_mode ?? 'historical_exact_batch',
     };
-    if (batch.policy?.authorization_cap_released_articles !== exactCount) {
+    if (
+      !continuousQualityGated &&
+      batch.policy?.authorization_cap_released_articles !== exactCount
+    ) {
       blocking.push(
         `Exact-admission cap mismatch: authorization_cap_released_articles=${batch.policy?.authorization_cap_released_articles ?? '(unset)'} but exact_admitted_count=${exactCount}.`,
+      );
+    }
+    if (
+      continuousQualityGated &&
+      (!Number.isInteger(batch.policy?.authorization_cap_released_articles) ||
+        batch.policy.authorization_cap_released_articles < exactCount)
+    ) {
+      blocking.push(
+        `Continuous quality-gated program scope is smaller than the admitted manifest: scope=${batch.policy?.authorization_cap_released_articles ?? '(unset)'}, admitted=${exactCount}.`,
       );
     }
     if (observedCount !== exactCount) {
@@ -671,6 +685,49 @@ function buildCheck() {
       blocking.push(
         `Exact-admission slate SHA-256 mismatch: expected ${exactSlateSha ?? '(unset)'}, got ${observedSlateSha}.`,
       );
+    }
+
+    if (continuousQualityGated) {
+      const ownerDecisionRel =
+        batch.decision_authority?.owner_continuous_publication_decision_path ?? null;
+      const ownerDecisionPath = ownerDecisionRel ? join(repoRoot, ownerDecisionRel) : null;
+      const expectedOwnerDecisionId =
+        batch.decision_authority?.owner_continuous_publication_decision_id ?? null;
+      const expectedOwnerDecisionSha =
+        batch.decision_authority?.owner_continuous_publication_decision_sha256 ?? null;
+      const observedOwnerDecisionSha =
+        ownerDecisionPath && existsSync(ownerDecisionPath) ? sha256File(ownerDecisionPath) : null;
+      const ownerDecisionText =
+        ownerDecisionPath && existsSync(ownerDecisionPath) ? readText(ownerDecisionPath) : '';
+      const observedOwnerDecisionId = parseDecisionIdFromText(ownerDecisionText);
+      inputs.exact_admission.owner_continuous_publication_decision = {
+        id: expectedOwnerDecisionId,
+        path: ownerDecisionRel,
+        expected_sha256: expectedOwnerDecisionSha,
+        observed_id: observedOwnerDecisionId,
+        observed_sha256: observedOwnerDecisionSha,
+      };
+      if (!ownerDecisionPath || !existsSync(ownerDecisionPath)) {
+        blocking.push(
+          `Missing owner continuous-publication decision: ${ownerDecisionRel ?? '(unset)'}.`,
+        );
+      } else {
+        if (expectedOwnerDecisionId !== observedOwnerDecisionId) {
+          blocking.push(
+            `Owner continuous-publication decision ID mismatch: expected ${expectedOwnerDecisionId ?? '(unset)'}, got ${observedOwnerDecisionId ?? '(missing)'}.`,
+          );
+        }
+        if (expectedOwnerDecisionSha !== observedOwnerDecisionSha) {
+          blocking.push(
+            `Owner continuous-publication decision SHA-256 mismatch: expected ${expectedOwnerDecisionSha ?? '(unset)'}, got ${observedOwnerDecisionSha}.`,
+          );
+        }
+        if (!/Article count is not a publication gate\./.test(ownerDecisionText)) {
+          blocking.push(
+            'Owner continuous-publication decision is missing its controlling article-count statement.',
+          );
+        }
+      }
     }
 
     const admissionDecisionRel = batch.decision_authority?.batch_admission_decision_path;
@@ -922,8 +979,16 @@ function buildCheck() {
         );
       }
 
-      const expectedAppendedCount = exactCount - (boundPreEdit.batch.articles?.length ?? 0);
-      const appendedRows = batch.articles.slice(boundPreEdit.batch.articles.length);
+      const continuousStartRank = Number(
+        batch.policy?.continuous_quality_gated_from_selection_rank ?? exactCount + 1,
+      );
+      const historicalExactCount = continuousQualityGated ? continuousStartRank - 1 : exactCount;
+      const expectedAppendedCount =
+        historicalExactCount - (boundPreEdit.batch.articles?.length ?? 0);
+      const appendedRows = batch.articles.slice(
+        boundPreEdit.batch.articles.length,
+        historicalExactCount,
+      );
       inputs.exact_admission.appended_rows = {
         expected_count: expectedAppendedCount,
         observed_count: appendedRows.length,
@@ -1146,9 +1211,87 @@ function buildCheck() {
         }
       }
       inputs.exact_admission.observed_append_rows = observedAppendRows;
+
+      if (continuousQualityGated) {
+        const continuousRows = batch.articles.slice(historicalExactCount);
+        const expectedContinuousCount = exactCount - historicalExactCount;
+        inputs.exact_admission.continuous_quality_gated_rows = {
+          start_selection_rank: continuousStartRank,
+          expected_count: expectedContinuousCount,
+          observed_count: continuousRows.length,
+          rows: [],
+        };
+        if (continuousStartRank < 1 || historicalExactCount < 25) {
+          blocking.push(
+            `Invalid continuous quality-gated start rank: ${continuousStartRank}. Historical exact-25 bindings must remain intact.`,
+          );
+        }
+        if (continuousRows.length !== expectedContinuousCount) {
+          blocking.push(
+            `Continuous quality-gated row count mismatch: expected ${expectedContinuousCount}, got ${continuousRows.length}.`,
+          );
+        }
+        const ids = new Set();
+        const slugs = new Set();
+        const canonicals = new Set();
+        for (let index = 0; index < continuousRows.length; index += 1) {
+          const entry = continuousRows[index];
+          const expectedRank = continuousStartRank + index;
+          const sourcePath = entry.repo_path ? join(repoRoot, entry.repo_path) : null;
+          const source = sourcePath && existsSync(sourcePath) ? readFileSync(sourcePath) : null;
+          const transition = source ? analyzeControlledPublicationTransition(source, entry) : null;
+          inputs.exact_admission.continuous_quality_gated_rows.rows.push({
+            selection_rank: entry.selection_rank ?? null,
+            program_row_id: entry.program_row_id ?? null,
+            slug: entry.slug ?? null,
+            admission_status: entry.admission_status ?? null,
+            finalization_state: entry.finalization_state ?? null,
+            source_exists: Boolean(source),
+            source_transition_authorized: transition?.authorized === true,
+            source_transition_state: transition?.state ?? null,
+          });
+          if (entry.selection_rank !== expectedRank) {
+            blocking.push(
+              `Continuous quality-gated selection rank mismatch for ${entry.slug}: expected ${expectedRank}, got ${entry.selection_rank}.`,
+            );
+          }
+          if (entry.admission_status !== 'admitted_quality_gated') {
+            blocking.push(`Continuous quality-gated admission status mismatch for ${entry.slug}.`);
+          }
+          if (entry.finalization_state !== 'draft_noindex_admitted') {
+            blocking.push(
+              `Continuous quality-gated finalization state mismatch for ${entry.slug}.`,
+            );
+          }
+          if (!source || transition?.authorized !== true) {
+            blocking.push(
+              `Continuous quality-gated reviewed bytes are missing or drifted for ${entry.slug}: ${transition?.reason ?? 'source_missing'}.`,
+            );
+          }
+          if (!entry.evidence_packet_path_required || !entry.evidence_packet_path) {
+            blocking.push(
+              `Continuous quality-gated evidence packet declaration missing for ${entry.slug}.`,
+            );
+          }
+          for (const [value, set, label] of [
+            [entry.program_row_id, ids, 'program_row_id'],
+            [entry.slug, slugs, 'slug'],
+            [entry.canonical_url, canonicals, 'canonical_url'],
+          ]) {
+            if (!value || set.has(value)) {
+              blocking.push(
+                `Continuous quality-gated ${label} is missing or duplicated for ${entry.slug ?? '(unknown)'}.`,
+              );
+            }
+            set.add(value);
+          }
+        }
+      }
     }
     informational.push(
-      'Controlling shortlist exact-match enforcement is superseded by exact_admitted_count + exact_admitted_slate_sha256 + batch admission decision bindings for this batch.',
+      continuousQualityGated
+        ? 'Numerical scale gates are superseded by D-2026-0804-16. Historical exact-25 bindings remain verified; later rows are admitted continuously only with complete quality evidence.'
+        : 'Controlling shortlist exact-match enforcement is superseded by exact_admitted_count + exact_admitted_slate_sha256 + batch admission decision bindings for this batch.',
     );
   } else {
     const shortlistRel = batch.decision_authority?.batch_source_admitted_shortlist_path;
@@ -1350,14 +1493,15 @@ function buildCheck() {
   }
   inputs.ledger.authorized_batch_identity_mismatches = identityMismatches;
 
-  // D-2026-0801-10 requires the signed D-04 ledger bytes to remain immutable.
-  // Publication state for the exact 15 is therefore derived from each current
-  // MDX only after the byte-exact controlled-frontmatter transition proves
-  // valid; identity, title, URL, pillar, and cluster continue to come from D-04.
+  // Publication state for hash-locked exact-admission and later continuous
+  // quality-gated rows is derived from each current MDX only after the
+  // byte-exact controlled-frontmatter transition proves valid. The historical
+  // D-04 ledger remains the identity authority until post-publication
+  // verification refreshes its production state.
   const publicationOverrides = new Map();
   const publicationOverrideSummary = [];
   for (const entry of batch.articles ?? []) {
-    if (entry.admission_status !== 'admitted_exact') continue;
+    if (!['admitted_exact', 'admitted_quality_gated'].includes(entry.admission_status)) continue;
     const sourcePath = entry.repo_path ? join(repoRoot, entry.repo_path) : null;
     const sourceBytes = sourcePath && existsSync(sourcePath) ? readFileSync(sourcePath) : null;
     const transition = sourceBytes
