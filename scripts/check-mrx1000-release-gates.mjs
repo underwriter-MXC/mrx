@@ -1844,6 +1844,9 @@ function main() {
     `Cap: ${built.result.cap.authorized_release_total} (observed ${built.result.cap.observed_release_total}, remaining ${built.result.cap.cap_remaining}); packets passing ${built.result.evidence.packets_passing}/${built.result.evidence.packets_required}; blocking findings ${built.result.blocking_findings.length}.`,
   );
   if (built.blockingCount > 0) {
+    for (const finding of built.result.blocking_findings) {
+      console.error(`BLOCKING: ${finding}`);
+    }
     process.exit(2);
   }
 }
