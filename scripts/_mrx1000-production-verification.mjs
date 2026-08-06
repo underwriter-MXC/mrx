@@ -100,8 +100,16 @@ export function validateDeploymentMetadata(
   const inspectContainsProject =
     inspectProjectSlug.length === 0 ||
     inspectProjectSlug.every((segment) => inspectPath.includes(`/${segment}`) || inspectPath.includes(segment));
+  const deploymentId =
+    typeof deployment.deployment_id === 'string' ? deployment.deployment_id.trim().toLowerCase() : '';
+  const inspectPathSegments = inspectPath.split('/').filter(Boolean);
+  const acceptedInspectDeploymentIds = deploymentId
+    ? [deploymentId, deploymentId.replace(/^dpl_/, '')]
+    : [];
   const inspectContainsDeploymentId =
-    !deployment.deployment_id || !inspectUrl || inspectUrl.toLowerCase().includes(deployment.deployment_id.toLowerCase());
+    !deployment.deployment_id ||
+    !inspectUrl ||
+    acceptedInspectDeploymentIds.some((candidate) => inspectPathSegments.includes(candidate));
 
   return {
     provider_present: Boolean(provider && provider !== 'unknown'),

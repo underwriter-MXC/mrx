@@ -50,15 +50,15 @@
   "identity_authority": {
     "scope_key": "canonical_slug",
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_sha256": "e6b87cda5a3248441492a1441464d433e4d02cd546dc6f95c2901443995ac005",
-    "canonical_ledger_generated_at": "2026-07-20T09:30:28.998Z",
+    "canonical_ledger_sha256": "ec7fc63c2f8169ab544fbcb96054e4f570fc2aa1336a5c9949d92278bcbd4a8d",
+    "canonical_ledger_generated_at": "2026-07-20T10:30:53.047Z",
     "successor_ledger_decision_id": "D-2026-0723-LEDGER-04",
     "successor_ledger_decision_path": "artifacts/mrx1000-release-10/decisions/mrx-ceo-ledger-provenance-successor-20260723-04.md",
     "successor_ledger_decision_sha256": "09eca24bcd0e71563f2ac4197f564eec0ccb43a5ee955216da5c4a2543d04978",
     "program_row_id_strategy": "preserve_program_row_id_by_canonical_slug",
     "source_shortlist_identity_field": "source_shortlist_program_row_id",
-    "reconciled_at_utc": "2026-07-23T13:55:00Z",
-    "note": "The controlling shortlist authorizes these exact canonical slugs. Historical row IDs remain provenance; current IDs are reconciled to the deterministic predeployment Wave 8 ledger, which records 79 configured public routes, 70 admitted MRX1000 articles, and no claim of Wave 8 production verification before deployment."
+    "reconciled_at_utc": "2026-08-06T11:57:05Z",
+    "note": "The controlling shortlist authorizes these exact canonical slugs. Historical row IDs remain provenance; current IDs are reconciled to the deterministic post-publication Wave 8 ledger after deployment dpl_BuhPMTDQ2tgeaiPttciBPhkkx821, with 79 public article routes and 70 live-verified MRX1000 articles."
   },
   "policy": {
     "authorization_cap_released_articles": 1000,

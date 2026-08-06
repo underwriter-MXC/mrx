@@ -701,7 +701,7 @@ async function loadRepoCandidates({ pilotSlugSet, release10ProductionBySlug = ne
               ? 'retain_existing_live_canonical_url_no_new_release_action_authorized'
               : 'retain_path_hold_publication_until_gate_passes',
         actionReason: isRelease10ProductionVerified
-          ? 'Release-10 passed the signed batch gate, production deployment, and independent post-publication verification. Preserve the canonical URL and measure the earned 10-to-25 scale gate.'
+          ? 'Release-10 passed the signed batch gate, production deployment, and independent post-publication verification. Preserve the canonical URL; measurement informs refresh and prioritization, not a numerical release gate.'
           : isAuthorizedReleaseCandidate
             ? 'The source is prepared for the exact release-10 build, but publication remains controlled by the signed batch, matching evidence, production deployment, and independent verification.'
             : isLegacyPublished

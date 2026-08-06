@@ -57,9 +57,9 @@ const SCRIPT = path.join(MRX_ROOT, 'scripts/build-mrx-1000-content-ledger.mjs');
 const CANONICAL_JSON = path.join(MRX_ROOT, 'config/mrx-1000-canonical-content-ledger.json');
 const CANONICAL_CSV = path.join(MRX_ROOT, 'config/mrx-1000-canonical-content-ledger.csv');
 const EXPECTED_CANONICAL_JSON_SHA256 =
-  'e6b87cda5a3248441492a1441464d433e4d02cd546dc6f95c2901443995ac005';
+  'ec7fc63c2f8169ab544fbcb96054e4f570fc2aa1336a5c9949d92278bcbd4a8d';
 const EXPECTED_CANONICAL_CSV_SHA256 =
-  '48f692533f61bf365d43160ec8b99a29c524ee815805fe0fd1b6a2f7789c46c6';
+  '053e059afcce2a1716948a889732a1ee5698448769177702fd185b840401651c';
 const TEST_OUTPUT_DIR = mkdtempSync(path.join(tmpdir(), 'mrx1000-ledger-idempotency-'));
 const JSON_OUT = path.join(TEST_OUTPUT_DIR, 'mrx-1000-canonical-content-ledger.json');
 const CSV_OUT = path.join(TEST_OUTPUT_DIR, 'mrx-1000-canonical-content-ledger.csv');
@@ -461,7 +461,9 @@ describe('MRX1000 canonical ledger generator (pilot-aware + idempotent)', () => 
           row.publication_gate_nonpublic === false &&
           row.production_verification_sha256 &&
           row.deployment_id === expectedReleaseDeploymentId &&
-          row.index_status === 'published_indexable_pending_search_engine_index_confirmation',
+          row.index_status === 'published_indexable_pending_search_engine_index_confirmation' &&
+          row.action_reason.includes('not a numerical release gate') &&
+          !row.action_reason.includes('10-to-25'),
       ),
     ).toBe(true);
     const pendingProductionVerification = ledger.articles.filter(

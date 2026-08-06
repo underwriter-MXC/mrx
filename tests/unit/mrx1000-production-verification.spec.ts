@@ -147,6 +147,26 @@ describe('mrx1000 production verification helpers', () => {
     expect(Object.values(assertions).every(Boolean)).toBe(true);
   });
 
+  it('accepts the Vercel dashboard inspect path that omits the dpl_ prefix', () => {
+    const assertions = validateDeploymentMetadata(
+      resolveDeployment({
+        MRX_DEPLOY_PROVIDER: 'vercel',
+        MRX_DEPLOY_PROJECT: 'team-mrx/mrx-web',
+        MRX_DEPLOYMENT_ID: 'dpl_BuhPMTDQ2tgeaiPttciBPhkkx821',
+        MRX_DEPLOYMENT_URL: 'https://mrx-146cwpkcw-team-mrx.vercel.app',
+        MRX_DEPLOYMENT_INSPECT_URL:
+          'https://vercel.com/team-mrx/mrx-web/BuhPMTDQ2tgeaiPttciBPhkkx821',
+        MRX_DEPLOYED_ALIAS: 'https://mineralrightsxchange.com',
+      }),
+      'https://mineralrightsxchange.com',
+      resolveDeploymentExpectations({
+        MRX_EXPECTED_DEPLOY_PROVIDER: 'vercel',
+        MRX_EXPECTED_DEPLOY_PROJECT: 'team-mrx/mrx-web',
+      }),
+    );
+    expect(Object.values(assertions).every(Boolean)).toBe(true);
+  });
+
   it('normalizes and validates https URLs', () => {
     expect(isHttpsUrl('https://mineralrightsxchange.com')).toBe(true);
     expect(isHttpsUrl('http://mineralrightsxchange.com')).toBe(false);
