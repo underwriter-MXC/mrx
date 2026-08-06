@@ -1,15 +1,15 @@
 {
   "artifact_type": "mrx1000_content_activation_plan",
   "plan_version": "mrx1000-content-activation-v1.1.0",
-  "generated_at": "2026-07-20T23:00:26.707Z",
+  "generated_at": "2026-07-20T08:34:08.474Z",
   "generated_at_method": "canonical_ledger_generated_at",
   "generator": "scripts/build-mrx-1000-activation-plan.mjs",
-  "content_fingerprint_sha256": "b36fca3a2f1ef4a6f31df32f150f26174c51f496ca29963ad51bae2b6693de70",
+  "content_fingerprint_sha256": "134421297e3a91f21e2906ef097f9712d000b33ae78c6cbc3a091e9d9fa74575",
   "inputs": {
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_fingerprint_sha256": "a73076071c26b06f0ee6e4683659254c7d2da11ad335c0ca0e34c4ac56b28dd7",
+    "canonical_ledger_fingerprint_sha256": "d47d19f5bfca1811c81f54d92c5c7dde1c622c37de93f6b3612addb06cb3e4e7",
     "canonical_ledger_fingerprint_verified": true,
-    "canonical_ledger_generated_at": "2026-07-20T23:00:26.707Z",
+    "canonical_ledger_generated_at": "2026-07-20T08:34:08.474Z",
     "owner_decision": {
       "decision_id": "D-2026-0804-16",
       "signed_disposition": "APPROVED_CONTINUOUS_QUALITY_GATED_ARTICLE_PUBLICATION",
@@ -114,8 +114,8 @@
       "contextual_inline": 350
     },
     "by_source_preservation_classification": {
-      "incumbent_draft_nonpublic_held": 79,
-      "live_public_published_route": 49,
+      "incumbent_draft_nonpublic_held": 69,
+      "live_public_published_route": 59,
       "pilot_draft_noindex_stage": 25,
       "planning_only_inventory": 847
     }
@@ -27043,8 +27043,8 @@
         "target_title": "Mineral Rights Inheritance in Texas: What Heirs Need to Know Before Selling",
         "url": "/blog/mineral-rights-inheritance-in-texas-what-heirs-need-to-know-before-selling/",
         "relationship": "same_cluster_next_by_program_row_id_cyclic",
-        "target_source_preservation_classification": "incumbent_draft_nonpublic_held",
-        "target_route_live": false,
+        "target_source_preservation_classification": "live_public_published_route",
+        "target_route_live": true,
         "status": "planned_local_only"
       },
       "primary_cta": {
@@ -27094,8 +27094,8 @@
       "pillar": "inherited-mineral-rights",
       "search_intent": "informational",
       "funnel_stage": "education",
-      "source_preservation_classification": "incumbent_draft_nonpublic_held",
-      "source_route_live": false,
+      "source_preservation_classification": "live_public_published_route",
+      "source_route_live": true,
       "pillar_link": {
         "url": "/inherited-mineral-rights/",
         "route_evidence": "src/pages/inherited-mineral-rights.astro",
@@ -27144,7 +27144,7 @@
         "rendered_triangle_verified": false,
         "live_status": "not_published_or_verified_by_this_plan",
         "live_triangle_verified": false,
-        "release_status": "eligible_for_continuous_quality_review_not_yet_cleared",
+        "release_status": "released_under_d16_continuous_quality_gate",
         "numerical_release_cap_applies": false
       }
     },
@@ -27295,8 +27295,8 @@
         "target_title": "Understanding Royalty Checks After Inheriting Mineral Rights",
         "url": "/blog/understanding-royalty-checks-after-inheriting-mineral-rights/",
         "relationship": "same_cluster_next_by_program_row_id_cyclic",
-        "target_source_preservation_classification": "incumbent_draft_nonpublic_held",
-        "target_route_live": false,
+        "target_source_preservation_classification": "live_public_published_route",
+        "target_route_live": true,
         "status": "planned_local_only"
       },
       "primary_cta": {
@@ -27346,8 +27346,8 @@
       "pillar": "inherited-mineral-rights",
       "search_intent": "informational",
       "funnel_stage": "education",
-      "source_preservation_classification": "incumbent_draft_nonpublic_held",
-      "source_route_live": false,
+      "source_preservation_classification": "live_public_published_route",
+      "source_route_live": true,
       "pillar_link": {
         "url": "/inherited-mineral-rights/",
         "route_evidence": "src/pages/inherited-mineral-rights.astro",
@@ -27396,7 +27396,7 @@
         "rendered_triangle_verified": false,
         "live_status": "not_published_or_verified_by_this_plan",
         "live_triangle_verified": false,
-        "release_status": "eligible_for_continuous_quality_review_not_yet_cleared",
+        "release_status": "released_under_d16_continuous_quality_gate",
         "numerical_release_cap_applies": false
       }
     },
@@ -33079,8 +33079,8 @@
       "pillar": "oil-and-gas-royalties",
       "search_intent": "informational",
       "funnel_stage": "education",
-      "source_preservation_classification": "incumbent_draft_nonpublic_held",
-      "source_route_live": false,
+      "source_preservation_classification": "live_public_published_route",
+      "source_route_live": true,
       "pillar_link": {
         "url": "/learning-center/oil-and-gas-royalties/",
         "route_evidence": "src/pages/learning-center/oil-and-gas-royalties/index.astro",
@@ -33129,7 +33129,7 @@
         "rendered_triangle_verified": false,
         "live_status": "not_published_or_verified_by_this_plan",
         "live_triangle_verified": false,
-        "release_status": "eligible_for_continuous_quality_review_not_yet_cleared",
+        "release_status": "released_under_d16_continuous_quality_gate",
         "numerical_release_cap_applies": false
       }
     },
@@ -39454,8 +39454,8 @@
         "target_title": "Capital Gains Tax on Mineral Rights Sales in Texas: What Sellers Need to Know",
         "url": "/blog/capital-gains-tax-on-mineral-rights-sales-in-texas-what-sellers-need-to-know/",
         "relationship": "same_cluster_next_by_program_row_id_cyclic",
-        "target_source_preservation_classification": "incumbent_draft_nonpublic_held",
-        "target_route_live": false,
+        "target_source_preservation_classification": "live_public_published_route",
+        "target_route_live": true,
         "status": "planned_local_only"
       },
       "primary_cta": {
@@ -39505,8 +39505,8 @@
       "pillar": "mineral-rights-taxes",
       "search_intent": "informational",
       "funnel_stage": "education",
-      "source_preservation_classification": "incumbent_draft_nonpublic_held",
-      "source_route_live": false,
+      "source_preservation_classification": "live_public_published_route",
+      "source_route_live": true,
       "pillar_link": {
         "url": "/learning-center/mineral-rights-taxes/",
         "route_evidence": "src/pages/learning-center/mineral-rights-taxes/index.astro",
@@ -39555,7 +39555,7 @@
         "rendered_triangle_verified": false,
         "live_status": "not_published_or_verified_by_this_plan",
         "live_triangle_verified": false,
-        "release_status": "eligible_for_continuous_quality_review_not_yet_cleared",
+        "release_status": "released_under_d16_continuous_quality_gate",
         "numerical_release_cap_applies": false
       }
     },
@@ -45754,8 +45754,8 @@
         "target_title": "How to Decode Your Royalty Check Statement",
         "url": "/blog/how-to-decode-your-royalty-check-statement/",
         "relationship": "same_cluster_next_by_program_row_id_cyclic",
-        "target_source_preservation_classification": "incumbent_draft_nonpublic_held",
-        "target_route_live": false,
+        "target_source_preservation_classification": "live_public_published_route",
+        "target_route_live": true,
         "status": "planned_local_only"
       },
       "primary_cta": {
@@ -55078,8 +55078,8 @@
         "target_title": "Net Mineral Acres vs. Royalty Acres: What Texas Mineral Rights Owners Need to Know",
         "url": "/blog/net-mineral-acres-vs-royalty-acres-what-texas-mineral-rights-owners-need-to-know/",
         "relationship": "same_cluster_next_by_program_row_id_cyclic",
-        "target_source_preservation_classification": "incumbent_draft_nonpublic_held",
-        "target_route_live": false,
+        "target_source_preservation_classification": "live_public_published_route",
+        "target_route_live": true,
         "status": "planned_local_only"
       },
       "primary_cta": {
@@ -55192,8 +55192,8 @@
       "pillar": "title-lease-ownership",
       "search_intent": "informational",
       "funnel_stage": "education",
-      "source_preservation_classification": "incumbent_draft_nonpublic_held",
-      "source_route_live": false,
+      "source_preservation_classification": "live_public_published_route",
+      "source_route_live": true,
       "pillar_link": {
         "url": "/learning-center/title-lease-ownership/",
         "route_evidence": "src/pages/learning-center/title-lease-ownership/index.astro",
@@ -55242,7 +55242,7 @@
         "rendered_triangle_verified": false,
         "live_status": "not_published_or_verified_by_this_plan",
         "live_triangle_verified": false,
-        "release_status": "eligible_for_continuous_quality_review_not_yet_cleared",
+        "release_status": "released_under_d16_continuous_quality_gate",
         "numerical_release_cap_applies": false
       }
     },
@@ -55393,8 +55393,8 @@
         "target_title": "What Is a Division Order and Why Does It Matter for Mineral Rights Owners?",
         "url": "/blog/what-is-a-division-order-and-why-does-it-matter-for-mineral-rights-owners/",
         "relationship": "same_cluster_next_by_program_row_id_cyclic",
-        "target_source_preservation_classification": "incumbent_draft_nonpublic_held",
-        "target_route_live": false,
+        "target_source_preservation_classification": "live_public_published_route",
+        "target_route_live": true,
         "status": "planned_local_only"
       },
       "primary_cta": {
@@ -55507,8 +55507,8 @@
       "pillar": "title-lease-ownership",
       "search_intent": "informational",
       "funnel_stage": "education",
-      "source_preservation_classification": "incumbent_draft_nonpublic_held",
-      "source_route_live": false,
+      "source_preservation_classification": "live_public_published_route",
+      "source_route_live": true,
       "pillar_link": {
         "url": "/learning-center/title-lease-ownership/",
         "route_evidence": "src/pages/learning-center/title-lease-ownership/index.astro",
@@ -55519,8 +55519,8 @@
         "target_title": "What Is a Held-by-Production Lease and How Does It Affect Your Mineral Rights?",
         "url": "/blog/what-is-a-held-by-production-lease-and-how-does-it-affect-your-mineral-rights/",
         "relationship": "same_cluster_next_by_program_row_id_cyclic",
-        "target_source_preservation_classification": "incumbent_draft_nonpublic_held",
-        "target_route_live": false,
+        "target_source_preservation_classification": "live_public_published_route",
+        "target_route_live": true,
         "status": "planned_local_only"
       },
       "primary_cta": {
@@ -55557,7 +55557,7 @@
         "rendered_triangle_verified": false,
         "live_status": "not_published_or_verified_by_this_plan",
         "live_triangle_verified": false,
-        "release_status": "eligible_for_continuous_quality_review_not_yet_cleared",
+        "release_status": "released_under_d16_continuous_quality_gate",
         "numerical_release_cap_applies": false
       }
     },
@@ -55570,8 +55570,8 @@
       "pillar": "title-lease-ownership",
       "search_intent": "informational",
       "funnel_stage": "education",
-      "source_preservation_classification": "incumbent_draft_nonpublic_held",
-      "source_route_live": false,
+      "source_preservation_classification": "live_public_published_route",
+      "source_route_live": true,
       "pillar_link": {
         "url": "/learning-center/title-lease-ownership/",
         "route_evidence": "src/pages/learning-center/title-lease-ownership/index.astro",
@@ -55582,8 +55582,8 @@
         "target_title": "What Is an Oil and Gas Lease and How Does It Affect Your Mineral Rights?",
         "url": "/blog/what-is-an-oil-and-gas-lease-and-how-does-it-affect-your-mineral-rights/",
         "relationship": "same_cluster_next_by_program_row_id_cyclic",
-        "target_source_preservation_classification": "incumbent_draft_nonpublic_held",
-        "target_route_live": false,
+        "target_source_preservation_classification": "live_public_published_route",
+        "target_route_live": true,
         "status": "planned_local_only"
       },
       "primary_cta": {
@@ -55620,7 +55620,7 @@
         "rendered_triangle_verified": false,
         "live_status": "not_published_or_verified_by_this_plan",
         "live_triangle_verified": false,
-        "release_status": "eligible_for_continuous_quality_review_not_yet_cleared",
+        "release_status": "released_under_d16_continuous_quality_gate",
         "numerical_release_cap_applies": false
       }
     },
@@ -55633,8 +55633,8 @@
       "pillar": "title-lease-ownership",
       "search_intent": "informational",
       "funnel_stage": "education",
-      "source_preservation_classification": "incumbent_draft_nonpublic_held",
-      "source_route_live": false,
+      "source_preservation_classification": "live_public_published_route",
+      "source_route_live": true,
       "pillar_link": {
         "url": "/learning-center/title-lease-ownership/",
         "route_evidence": "src/pages/learning-center/title-lease-ownership/index.astro",
@@ -55683,7 +55683,7 @@
         "rendered_triangle_verified": false,
         "live_status": "not_published_or_verified_by_this_plan",
         "live_triangle_verified": false,
-        "release_status": "eligible_for_continuous_quality_review_not_yet_cleared",
+        "release_status": "released_under_d16_continuous_quality_gate",
         "numerical_release_cap_applies": false
       }
     },
@@ -59803,8 +59803,8 @@
         "target_title": "Can I Still Get a Valid Underwriter Review if I Have Competing Mineral Rights Offers?",
         "url": "/blog/can-i-still-get-a-valid-underwriter-review-if-i-have-competing-mineral-rights-offers/",
         "relationship": "same_cluster_next_by_program_row_id_cyclic",
-        "target_source_preservation_classification": "incumbent_draft_nonpublic_held",
-        "target_route_live": false,
+        "target_source_preservation_classification": "live_public_published_route",
+        "target_route_live": true,
         "status": "planned_local_only"
       },
       "primary_cta": {
@@ -59854,8 +59854,8 @@
       "pillar": "mrx-methodology",
       "search_intent": "commercial-investigation",
       "funnel_stage": "consideration",
-      "source_preservation_classification": "incumbent_draft_nonpublic_held",
-      "source_route_live": false,
+      "source_preservation_classification": "live_public_published_route",
+      "source_route_live": true,
       "pillar_link": {
         "url": "/methodology/",
         "route_evidence": "src/pages/methodology.astro",
@@ -59904,7 +59904,7 @@
         "rendered_triangle_verified": false,
         "live_status": "not_published_or_verified_by_this_plan",
         "live_triangle_verified": false,
-        "release_status": "eligible_for_continuous_quality_review_not_yet_cleared",
+        "release_status": "released_under_d16_continuous_quality_gate",
         "numerical_release_cap_applies": false
       }
     },
@@ -61378,8 +61378,8 @@
         "target_title": "What to Bring to Your Underwriter Review Call: Essential Documents and Preparation Guide",
         "url": "/blog/what-to-bring-to-your-underwriter-review-call-essential-documents-and-preparation-guide/",
         "relationship": "same_cluster_next_by_program_row_id_cyclic",
-        "target_source_preservation_classification": "incumbent_draft_nonpublic_held",
-        "target_route_live": false,
+        "target_source_preservation_classification": "live_public_published_route",
+        "target_route_live": true,
         "status": "planned_local_only"
       },
       "primary_cta": {
@@ -61429,8 +61429,8 @@
       "pillar": "mrx-methodology",
       "search_intent": "commercial-investigation",
       "funnel_stage": "consideration",
-      "source_preservation_classification": "incumbent_draft_nonpublic_held",
-      "source_route_live": false,
+      "source_preservation_classification": "live_public_published_route",
+      "source_route_live": true,
       "pillar_link": {
         "url": "/methodology/",
         "route_evidence": "src/pages/methodology.astro",
@@ -61479,7 +61479,7 @@
         "rendered_triangle_verified": false,
         "live_status": "not_published_or_verified_by_this_plan",
         "live_triangle_verified": false,
-        "release_status": "eligible_for_continuous_quality_review_not_yet_cleared",
+        "release_status": "released_under_d16_continuous_quality_gate",
         "numerical_release_cap_applies": false
       }
     },

@@ -23,7 +23,7 @@
  *      (today: zero) matches the UUID v4/v5 shape, and the current
  *      authoritative expected persisted count is 0 for both.
  *  P8. The four preservation classes partition the 1,000 rows into
- *      49 + 79 + 25 + 847 = 1,000 after the current continuous-publication wave.
+ *      59 + 69 + 25 + 847 = 1,000 after the current continuous-publication wave.
  *  P9. `frontmatter_noindex` and `publication_gate_nonpublic` are
  *      tracked as separate fields; nonpublic incumbents are explicitly
  *      held via `publication_gate_nonpublic=true` even when frontmatter
@@ -57,9 +57,9 @@ const SCRIPT = path.join(MRX_ROOT, 'scripts/build-mrx-1000-content-ledger.mjs');
 const CANONICAL_JSON = path.join(MRX_ROOT, 'config/mrx-1000-canonical-content-ledger.json');
 const CANONICAL_CSV = path.join(MRX_ROOT, 'config/mrx-1000-canonical-content-ledger.csv');
 const EXPECTED_CANONICAL_JSON_SHA256 =
-  '393db9d62f2b332481eb1d47588673626c85dd107eb1a232ca9ce1096b21c987';
+  '4ec401d66c6cdf48440a8e87154705cc811097e6f0e2b92a6c67df804ae69ede';
 const EXPECTED_CANONICAL_CSV_SHA256 =
-  'ff3b493adcabe1fbc49f1309464f67d5c457bfa302c24360c3510dd04f206e08';
+  'c8762020410ef3f53f9b229d75d0d8a3f3ad5a95387a59ad39f0a037963ad901';
 const TEST_OUTPUT_DIR = mkdtempSync(path.join(tmpdir(), 'mrx1000-ledger-idempotency-'));
 const JSON_OUT = path.join(TEST_OUTPUT_DIR, 'mrx-1000-canonical-content-ledger.json');
 const CSV_OUT = path.join(TEST_OUTPUT_DIR, 'mrx-1000-canonical-content-ledger.csv');
@@ -427,10 +427,10 @@ describe('MRX1000 canonical ledger generator (pilot-aware + idempotent)', () => 
     expect(totalAuthoritativeUuids).toBe(0);
   });
 
-  it('preservation classes partition the 1,000 rows as 49 + 79 + 25 + 847 after the current continuous wave', () => {
+  it('preservation classes partition the 1,000 rows as 59 + 69 + 25 + 847 after the current continuous wave', () => {
     const counts = ledger.verification.preservation_classification_counts;
-    expect(counts.live_public_published_route).toBe(49);
-    expect(counts.incumbent_draft_nonpublic_held).toBe(79);
+    expect(counts.live_public_published_route).toBe(59);
+    expect(counts.incumbent_draft_nonpublic_held).toBe(69);
     expect(counts.pilot_draft_noindex_stage).toBe(25);
     expect(counts.planning_only_inventory).toBe(847);
     expect(ledger.verification.aggregate_eq_1000).toBe(true);
@@ -440,20 +440,20 @@ describe('MRX1000 canonical ledger generator (pilot-aware + idempotent)', () => 
         counts.pilot_draft_noindex_stage +
         counts.planning_only_inventory,
     ).toBe(1000);
-    // The remaining 79 incumbent drafts stay fail-closed. Forty rows have
+    // The remaining 69 incumbent drafts stay fail-closed. Fifty rows have
     // independently cleared the continuous quality gate; production verification
     // is attached after a successful deployment.
     const drafts = ledger.articles.filter(
       (r) => r.preservation_classification === 'incumbent_draft_nonpublic_held',
     );
-    expect(drafts.length).toBe(79);
+    expect(drafts.length).toBe(69);
     for (const row of drafts) {
       expect(row.publication_gate_nonpublic).toBe(true);
     }
     const verifiedRelease10 = ledger.articles.filter(
       (row) => row.normalized_status === 'live_public_published_route_release_10_verified',
     );
-    expect(verifiedRelease10).toHaveLength(expectedReleaseDeploymentId ? 40 : 0);
+    expect(verifiedRelease10).toHaveLength(expectedReleaseDeploymentId ? 50 : 0);
     expect(
       verifiedRelease10.every(
         (row) =>
@@ -469,7 +469,7 @@ describe('MRX1000 canonical ledger generator (pilot-aware + idempotent)', () => 
     );
     expect(pendingProductionVerification).toHaveLength(expectedReleaseDeploymentId ? 0 : 30);
     const ordinaryHeldDrafts = drafts;
-    expect(ordinaryHeldDrafts).toHaveLength(79);
+    expect(ordinaryHeldDrafts).toHaveLength(69);
     expect(
       ordinaryHeldDrafts.every(
         (row) =>
@@ -477,12 +477,12 @@ describe('MRX1000 canonical ledger generator (pilot-aware + idempotent)', () => 
           row.publication_state === 'draft_workspace_article',
       ),
     ).toBe(true);
-    // The 9 legacy routes and 40 quality-cleared release routes are all live-public,
+    // The 9 legacy routes and 50 quality-cleared release routes are all live-public,
     // while retaining distinct normalized statuses for provenance.
     const live = ledger.articles.filter(
       (r) => r.preservation_classification === 'live_public_published_route',
     );
-    expect(live.length).toBe(49);
+    expect(live.length).toBe(59);
     for (const row of live) {
       expect(row.publication_gate_nonpublic).toBe(false);
       expect([
@@ -507,12 +507,12 @@ describe('MRX1000 canonical ledger generator (pilot-aware + idempotent)', () => 
         }
       }
     }
-    // We expect 951 nonpublic rows: 79 held incumbents, 25 pilots, and
-    // 847 planning-only rows. The 40 quality-cleared release rows are live-public.
-    expect(nonpublicRows).toBe(79 + 25 + 847);
+    // We expect 941 nonpublic rows: 69 held incumbents, 25 pilots, and
+    // 847 planning-only rows. The 50 quality-cleared release rows are live-public.
+    expect(nonpublicRows).toBe(69 + 25 + 847);
     // The 25 pilots explicitly declare frontmatter `noindex: true`.
     expect(nonpublicRowsWithFrontmatterNoindexTrue).toBe(25);
-    expect(nonpublicRowsWithFrontmatterNoindexFalse).toBe(79 + 847);
+    expect(nonpublicRowsWithFrontmatterNoindexFalse).toBe(69 + 847);
     // `noindex_required` is the derived disjunction; nonpublic rows keep the
     // safe downstream default of `true` regardless of the frontmatter fact.
     for (const row of ledger.articles) {
@@ -638,7 +638,7 @@ describe('MRX1000 canonical ledger generator (pilot-aware + idempotent)', () => 
     expect(report).toContain('live_public_published_route');
     expect(report).toContain('pilot_draft_noindex_stage');
     expect(report).toContain('planning_only_inventory');
-    expect(report).toContain('49 + 79 + 25 + 847 = 1,000');
+    expect(report).toContain('59 + 69 + 25 + 847 = 1,000');
     expect(report).toContain('SearchAtlas map evidence');
     expect(report).toContain('workflow_status_evidence_is_non_creation');
   });

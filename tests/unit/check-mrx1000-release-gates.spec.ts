@@ -586,7 +586,7 @@ describe('scripts/check-mrx1000-release-gates.mjs', () => {
     }
   });
 
-  it('writes JSON+MD reports and passes all 40 continuously admitted rows after final approval', () => {
+  it('writes JSON+MD reports and passes all 50 continuously admitted rows after final approval', () => {
     const r = runCheckAndRead();
     expect(existsSync(r.jsonPath)).toBe(true);
     expect(existsSync(r.mdPath)).toBe(true);
@@ -599,8 +599,8 @@ describe('scripts/check-mrx1000-release-gates.mjs', () => {
       packets_failing: number;
     };
     expect(evidence).toMatchObject({
-      packets_required: 40,
-      packets_passing: 40,
+      packets_required: 50,
+      packets_passing: 50,
       packets_failing: 0,
     });
     const informational = (r.payload.informational_findings as string[]) || [];
@@ -609,18 +609,18 @@ describe('scripts/check-mrx1000-release-gates.mjs', () => {
     );
   });
 
-  it('treats 1,000 as program scope and observes the 40 quality-cleared public rows', () => {
+  it('treats 1,000 as program scope and observes the 50 quality-cleared public rows', () => {
     const r = runCheckAndRead();
     const cap = r.payload.cap as {
       authorized_release_total: number;
       observed_release_total: number;
     };
     expect(cap.authorized_release_total).toBe(1000);
-    expect(cap.observed_release_total).toBe(40);
+    expect(cap.observed_release_total).toBe(50);
     const inputs = r.payload.inputs as {
       ledger: { runtime_publication_overrides: unknown[] };
     };
-    expect(inputs.ledger.runtime_publication_overrides).toHaveLength(30);
+    expect(inputs.ledger.runtime_publication_overrides).toHaveLength(40);
     const policy = r.payload.policy as Record<string, unknown>;
     expect(policy.authorization_decision_disposition).toBe('APPROVED');
     expect(policy.release_authorized).toBe(true);
@@ -657,7 +657,7 @@ describe('scripts/check-mrx1000-release-gates.mjs', () => {
       string,
       unknown
     >;
-    expect((exact.configured_exact_count as number) ?? 0).toBe(40);
+    expect((exact.configured_exact_count as number) ?? 0).toBe(50);
     expect(exact.admission_mode).toBe('continuous_quality_gated');
   });
 
