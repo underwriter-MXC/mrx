@@ -586,7 +586,7 @@ describe('scripts/check-mrx1000-release-gates.mjs', () => {
     }
   });
 
-  it('writes JSON+MD reports and passes all 80 continuously admitted rows after final approval', () => {
+  it('writes JSON+MD reports and passes all 90 continuously admitted rows after final approval', () => {
     const r = runCheckAndRead();
     expect(existsSync(r.jsonPath)).toBe(true);
     expect(existsSync(r.mdPath)).toBe(true);
@@ -599,8 +599,8 @@ describe('scripts/check-mrx1000-release-gates.mjs', () => {
       packets_failing: number;
     };
     expect(evidence).toMatchObject({
-      packets_required: 80,
-      packets_passing: 80,
+      packets_required: 90,
+      packets_passing: 90,
       packets_failing: 0,
     });
     const informational = (r.payload.informational_findings as string[]) || [];
@@ -620,7 +620,7 @@ describe('scripts/check-mrx1000-release-gates.mjs', () => {
     const inputs = r.payload.inputs as {
       ledger: { runtime_publication_overrides: unknown[] };
     };
-    expect(inputs.ledger.runtime_publication_overrides).toHaveLength(70);
+    expect(inputs.ledger.runtime_publication_overrides).toHaveLength(80);
     const policy = r.payload.policy as Record<string, unknown>;
     expect(policy.authorization_decision_disposition).toBe('APPROVED');
     expect(policy.release_authorized).toBe(true);
@@ -657,7 +657,7 @@ describe('scripts/check-mrx1000-release-gates.mjs', () => {
       string,
       unknown
     >;
-    expect((exact.configured_exact_count as number) ?? 0).toBe(80);
+    expect((exact.configured_exact_count as number) ?? 0).toBe(90);
     expect(exact.admission_mode).toBe('continuous_quality_gated');
   });
 
