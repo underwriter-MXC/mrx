@@ -13,10 +13,5 @@ test-results/
 # Planning artifacts are not part of the public Vercel site. Keep only the
 # hash-bound governance receipts required by the fail-closed release gate.
 docs/*
-!docs/governance/
-docs/governance/*
-!docs/governance/mrx1000-owner-continuous-publication-directive-2026-08-04.md
-!docs/governance/mrx1000-wave5-selection-decision-2026-08-06.md
-!docs/governance/mrx1000-wave6-selection-decision-2026-08-06.md
-!docs/governance/mrx1000-wave7-selection-decision-2026-08-06.md
+!docs/governance
 scripts/audit-staged-content.mjs
