@@ -271,12 +271,12 @@ describe('MRX1000 deterministic content activation plan', () => {
 
   it('preserves source-publication evidence while removing numerical release blockers', () => {
     expect(plan.distributions.by_source_preservation_classification).toEqual({
-      incumbent_draft_nonpublic_held: 89,
-      live_public_published_route: 39,
+      incumbent_draft_nonpublic_held: 84,
+      live_public_published_route: 44,
       pilot_draft_noindex_stage: 25,
       planning_only_inventory: 847,
     });
-    expect(plan.rows.filter((row) => row.source_route_live)).toHaveLength(39);
+    expect(plan.rows.filter((row) => row.source_route_live)).toHaveLength(44);
     expect(plan.inputs.owner_decision.numerical_release_cap_applies).toBe(false);
     expect(plan.inputs.owner_decision.elapsed_time_gate_applies).toBe(false);
     expect(plan.inputs.owner_decision.spend_authorized).toBe(false);

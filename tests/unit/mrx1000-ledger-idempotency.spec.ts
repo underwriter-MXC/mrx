@@ -23,7 +23,7 @@
  *      (today: zero) matches the UUID v4/v5 shape, and the current
  *      authoritative expected persisted count is 0 for both.
  *  P8. The four preservation classes partition the 1,000 rows into
- *      39 + 89 + 25 + 847 = 1,000 after the first continuous-publication wave.
+ *      44 + 84 + 25 + 847 = 1,000 after the current continuous-publication wave.
  *  P9. `frontmatter_noindex` and `publication_gate_nonpublic` are
  *      tracked as separate fields; nonpublic incumbents are explicitly
  *      held via `publication_gate_nonpublic=true` even when frontmatter
@@ -227,15 +227,15 @@ describe('MRX1000 canonical ledger generator (pilot-aware + idempotent)', () => 
   let md5First: { json: string; csv: string; report: string };
   let fingerprintFirst: string;
   let generatedAtFirst: string;
-  let expectedReleaseDeploymentId: string;
+  let expectedReleaseDeploymentId: string | null;
 
   beforeAll(() => {
     expect(sha256File(CANONICAL_JSON)).toBe(EXPECTED_CANONICAL_JSON_SHA256);
     expect(sha256File(CANONICAL_CSV)).toBe(EXPECTED_CANONICAL_CSV_SHA256);
     manifest = JSON.parse(readFileSync(PILOT_MANIFEST, 'utf8')) as PilotManifest;
-    expectedReleaseDeploymentId = JSON.parse(
-      readFileSync(POST_PUBLICATION_VERIFICATION, 'utf8'),
-    ).deployment.deployment_id;
+    expectedReleaseDeploymentId = existsSync(POST_PUBLICATION_VERIFICATION)
+      ? JSON.parse(readFileSync(POST_PUBLICATION_VERIFICATION, 'utf8')).deployment.deployment_id
+      : null;
     pilotSlugSet = new Set(manifest.articles.map((a) => a.slug));
     onDiskMdxSlugs = new Set(
       readdirSync(POSTS_DIR)
@@ -427,10 +427,10 @@ describe('MRX1000 canonical ledger generator (pilot-aware + idempotent)', () => 
     expect(totalAuthoritativeUuids).toBe(0);
   });
 
-  it('preservation classes partition the 1,000 rows as 39 + 89 + 25 + 847 after continuous wave 1', () => {
+  it('preservation classes partition the 1,000 rows as 44 + 84 + 25 + 847 after the current continuous wave', () => {
     const counts = ledger.verification.preservation_classification_counts;
-    expect(counts.live_public_published_route).toBe(39);
-    expect(counts.incumbent_draft_nonpublic_held).toBe(89);
+    expect(counts.live_public_published_route).toBe(44);
+    expect(counts.incumbent_draft_nonpublic_held).toBe(84);
     expect(counts.pilot_draft_noindex_stage).toBe(25);
     expect(counts.planning_only_inventory).toBe(847);
     expect(ledger.verification.aggregate_eq_1000).toBe(true);
@@ -440,19 +440,20 @@ describe('MRX1000 canonical ledger generator (pilot-aware + idempotent)', () => 
         counts.pilot_draft_noindex_stage +
         counts.planning_only_inventory,
     ).toBe(1000);
-    // The remaining 89 incumbent drafts stay fail-closed. Thirty rows have
-    // independently cleared the continuous quality gate and production checks.
+    // The remaining 84 incumbent drafts stay fail-closed. Thirty-five rows have
+    // independently cleared the continuous quality gate; production verification
+    // is attached after a successful deployment.
     const drafts = ledger.articles.filter(
       (r) => r.preservation_classification === 'incumbent_draft_nonpublic_held',
     );
-    expect(drafts.length).toBe(89);
+    expect(drafts.length).toBe(84);
     for (const row of drafts) {
       expect(row.publication_gate_nonpublic).toBe(true);
     }
     const verifiedRelease10 = ledger.articles.filter(
       (row) => row.normalized_status === 'live_public_published_route_release_10_verified',
     );
-    expect(verifiedRelease10).toHaveLength(30);
+    expect(verifiedRelease10).toHaveLength(expectedReleaseDeploymentId ? 35 : 0);
     expect(
       verifiedRelease10.every(
         (row) =>
@@ -466,9 +467,9 @@ describe('MRX1000 canonical ledger generator (pilot-aware + idempotent)', () => 
     const pendingProductionVerification = ledger.articles.filter(
       (row) => row.normalized_status === 'authorized_release_candidate_pending_gate_and_deployment',
     );
-    expect(pendingProductionVerification).toHaveLength(0);
+    expect(pendingProductionVerification).toHaveLength(expectedReleaseDeploymentId ? 0 : 30);
     const ordinaryHeldDrafts = drafts;
-    expect(ordinaryHeldDrafts).toHaveLength(89);
+    expect(ordinaryHeldDrafts).toHaveLength(84);
     expect(
       ordinaryHeldDrafts.every(
         (row) =>
@@ -476,12 +477,12 @@ describe('MRX1000 canonical ledger generator (pilot-aware + idempotent)', () => 
           row.publication_state === 'draft_workspace_article',
       ),
     ).toBe(true);
-    // The 9 legacy routes and 30 quality-cleared release routes are all live-public,
+    // The 9 legacy routes and 35 quality-cleared release routes are all live-public,
     // while retaining distinct normalized statuses for provenance.
     const live = ledger.articles.filter(
       (r) => r.preservation_classification === 'live_public_published_route',
     );
-    expect(live.length).toBe(39);
+    expect(live.length).toBe(44);
     for (const row of live) {
       expect(row.publication_gate_nonpublic).toBe(false);
       expect([
@@ -506,12 +507,12 @@ describe('MRX1000 canonical ledger generator (pilot-aware + idempotent)', () => 
         }
       }
     }
-    // We expect 961 nonpublic rows: 89 held incumbents, 25 pilots, and
-    // 847 planning-only rows. The 30 quality-cleared release rows are live-public.
-    expect(nonpublicRows).toBe(89 + 25 + 847);
+    // We expect 956 nonpublic rows: 84 held incumbents, 25 pilots, and
+    // 847 planning-only rows. The 35 quality-cleared release rows are live-public.
+    expect(nonpublicRows).toBe(84 + 25 + 847);
     // The 25 pilots explicitly declare frontmatter `noindex: true`.
     expect(nonpublicRowsWithFrontmatterNoindexTrue).toBe(25);
-    expect(nonpublicRowsWithFrontmatterNoindexFalse).toBe(89 + 847);
+    expect(nonpublicRowsWithFrontmatterNoindexFalse).toBe(84 + 847);
     // `noindex_required` is the derived disjunction; nonpublic rows keep the
     // safe downstream default of `true` regardless of the frontmatter fact.
     for (const row of ledger.articles) {
@@ -637,7 +638,7 @@ describe('MRX1000 canonical ledger generator (pilot-aware + idempotent)', () => 
     expect(report).toContain('live_public_published_route');
     expect(report).toContain('pilot_draft_noindex_stage');
     expect(report).toContain('planning_only_inventory');
-    expect(report).toContain('39 + 89 + 25 + 847 = 1,000');
+    expect(report).toContain('44 + 84 + 25 + 847 = 1,000');
     expect(report).toContain('SearchAtlas map evidence');
     expect(report).toContain('workflow_status_evidence_is_non_creation');
   });

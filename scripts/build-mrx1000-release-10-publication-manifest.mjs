@@ -39,7 +39,7 @@ function exactDraftAdmissionReady(block, entry) {
   return Boolean(
     bool(block, 'noindex') === true &&
       scalar(block, 'publication_status') === 'draft' &&
-      entry.admission_status === 'admitted_exact' &&
+      ['admitted_exact', 'admitted_quality_gated'].includes(entry.admission_status) &&
       entry.finalization_state === 'draft_noindex_admitted',
   );
 }
@@ -58,6 +58,14 @@ function main() {
   const assetBytes = readFileSync(assetPath);
   const assetEvidence = JSON.parse(assetBytes.toString('utf8'));
   const assetsBySlug = new Map(assetEvidence.rows.map((row) => [row.slug, row]));
+  const priorVerifiedArticleCount = batch.policy?.prior_verified_article_count;
+  if (
+    !Number.isInteger(priorVerifiedArticleCount) ||
+    priorVerifiedArticleCount < 0 ||
+    priorVerifiedArticleCount >= batch.articles.length
+  ) {
+    throw new Error('The prior verified article count is missing or invalid.');
+  }
   const rows = [];
   for (const entry of batch.articles ?? []) {
     const articlePath = join(root, entry.repo_path);
@@ -69,8 +77,11 @@ function main() {
     const transition = analyzeControlledPublicationTransition(bodyBytes, entry);
     const heroAsset = assets?.assets?.find((asset) => asset.kind === 'hero') ?? null;
     const socialAsset = assets?.assets?.find((asset) => asset.kind === 'social') ?? null;
-    const exactWave2 = entry.admission_status === 'admitted_exact';
-    const exactHeroReady = !exactWave2 || Boolean(
+    const hashLockedAdmission = ['admitted_exact', 'admitted_quality_gated'].includes(
+      entry.admission_status,
+    );
+    const currentWaveAdmission = entry.selection_rank > priorVerifiedArticleCount;
+    const exactHeroReady = !hashLockedAdmission || Boolean(
       heroAsset?.public_path === entry.hero_path &&
         socialAsset?.public_path === entry.hero_path &&
         heroAsset?.sha256 === (entry.hero_asset_sha256 ?? entry.hero_sha256) &&
@@ -127,20 +138,20 @@ function main() {
       },
       rollback: {
         prior_public_state:
-          entry.admission_status === 'admitted_exact'
+          currentWaveAdmission
             ? 'not_in_production_article_sitemap'
-            : 'verified_public_before_wave2',
+            : 'verified_public_before_current_wave',
         restore_frontmatter: {
           draft: false,
           publication_status:
-            entry.admission_status === 'admitted_exact' ? 'draft' : 'published',
-          noindex: entry.admission_status === 'admitted_exact',
+            currentWaveAdmission ? 'draft' : 'published',
+          noindex: currentWaveAdmission,
           reviewed_by: scalar(fm, 'reviewed_by') || null,
         },
         reviewed_source_sha256: transition.reviewed_body_sha256,
         current_source_sha256: transition.current_body_sha256,
         procedure:
-          entry.admission_status === 'admitted_exact'
+          currentWaveAdmission
             ? 'Restore only publication_status to draft and noindex to true for this exact source path; verify the restored file SHA-256 equals reviewed_source_sha256; rebuild through every release gate; redeploy the previous verified Vercel production deployment; and verify the URL is absent from article sitemap and LLM indexes.'
             : 'Redeploy the previous verified Vercel production deployment and verify the incumbent article remains public.',
       },

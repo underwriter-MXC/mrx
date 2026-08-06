@@ -52,7 +52,7 @@ describe('canonical sitemap discovery', () => {
           !/^draft:\s*true\s*$/m.test(source) &&
           !/^noindex:\s*true\s*$/m.test(source),
       ).length;
-    expect(publicPostCount).toBe(39);
+    expect(publicPostCount).toBe(44);
     expect(archivePageNumbers(publicPostCount)).toEqual([2]);
 
     const continuationRoute = readFileSync(

@@ -449,15 +449,15 @@ describe('MRX1000 SearchAtlas + ordered LLM execution manifest', () => {
     );
   });
 
-  it('projects the current 39 + 89 + 25 + 847 workspace-state partition', () => {
+  it('projects the current 44 + 84 + 25 + 847 workspace-state partition', () => {
     expect(manifest.aggregate.by_canonical_inventory_state).toEqual({
-      incumbent_draft_nonpublic_held: 89,
-      live_public_published_route: 39,
+      incumbent_draft_nonpublic_held: 84,
+      live_public_published_route: 44,
       pilot_draft_noindex_stage: 25,
       planning_only_inventory: 847,
     });
     expect(manifest.aggregate.repo_mdx_present).toBe(153);
-    expect(manifest.aggregate.workspace_public_route_configured).toBe(39);
+    expect(manifest.aggregate.workspace_public_route_configured).toBe(44);
     expect(
       manifest.rows.every(
         (row) => !row.authoritative_current_state.repo.production_live_verified_in_this_local_build,
@@ -473,8 +473,8 @@ describe('MRX1000 SearchAtlas + ordered LLM execution manifest', () => {
       pilot_workspace_shells_marked_as_review_candidates: 0,
       pilot_rows_with_validated_distinct_review_candidate: 1,
       by_review_candidate_state: {
-        CHECKSUMMED_EXISTING_PUBLIC_ARTICLE_READY_FOR_LLM_REVIEW: 39,
-        CHECKSUMMED_HELD_SUBSTANTIVE_DRAFT_READY_FOR_LLM_REVIEW: 89,
+        CHECKSUMMED_EXISTING_PUBLIC_ARTICLE_READY_FOR_LLM_REVIEW: 44,
+        CHECKSUMMED_HELD_SUBSTANTIVE_DRAFT_READY_FOR_LLM_REVIEW: 84,
         NO_CHECKSUMMED_REVIEW_CANDIDATE_PILOT_QA_SHELL_ONLY: 24,
         NO_WORKSPACE_CONTENT_CANDIDATE: 847,
         ROW2_REMEDIATED_NOINDEX_CANDIDATE_VALIDATED_FOR_ORDERED_LLM_REVIEW: 1,

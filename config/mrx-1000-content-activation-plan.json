@@ -4,7 +4,7 @@
   "generated_at": "2026-07-20T03:58:41.625Z",
   "generated_at_method": "canonical_ledger_generated_at",
   "generator": "scripts/build-mrx-1000-activation-plan.mjs",
-  "content_fingerprint_sha256": "e60f8df96f0167fd4531c8ddae46212883a542ed9374b2b99d683358d290fd99",
+  "content_fingerprint_sha256": "3ae30ee4aee4a03c86297e3f2b6f791a1fb7919fe024cc90009d5c2e0bf0682a",
   "inputs": {
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
     "canonical_ledger_fingerprint_sha256": "a73076071c26b06f0ee6e4683659254c7d2da11ad335c0ca0e34c4ac56b28dd7",
@@ -114,8 +114,8 @@
       "contextual_inline": 350
     },
     "by_source_preservation_classification": {
-      "incumbent_draft_nonpublic_held": 89,
-      "live_public_published_route": 39,
+      "incumbent_draft_nonpublic_held": 84,
+      "live_public_published_route": 44,
       "pilot_draft_noindex_stage": 25,
       "planning_only_inventory": 847
     }
@@ -9781,8 +9781,8 @@
         "target_title": "Key Factors That Determine Your Mineral Rights Assessment Pricing Range",
         "url": "/blog/key-factors-that-determine-your-mineral-rights-assessment-pricing-range/",
         "relationship": "same_cluster_next_by_program_row_id_cyclic",
-        "target_source_preservation_classification": "incumbent_draft_nonpublic_held",
-        "target_route_live": false,
+        "target_source_preservation_classification": "live_public_published_route",
+        "target_route_live": true,
         "status": "planned_local_only"
       },
       "primary_cta": {
@@ -9832,8 +9832,8 @@
       "pillar": "mineral-rights-value",
       "search_intent": "informational",
       "funnel_stage": "consideration",
-      "source_preservation_classification": "incumbent_draft_nonpublic_held",
-      "source_route_live": false,
+      "source_preservation_classification": "live_public_published_route",
+      "source_route_live": true,
       "pillar_link": {
         "url": "/mineral-rights-value/",
         "route_evidence": "src/pages/mineral-rights-value.astro",
@@ -9882,7 +9882,7 @@
         "rendered_triangle_verified": false,
         "live_status": "not_published_or_verified_by_this_plan",
         "live_triangle_verified": false,
-        "release_status": "eligible_for_continuous_quality_review_not_yet_cleared",
+        "release_status": "released_under_d16_continuous_quality_gate",
         "numerical_release_cap_applies": false
       }
     },
@@ -19105,8 +19105,8 @@
         "target_title": "How to Identify and Avoid Hidden Fees in Your Mineral Rights Assessment Process",
         "url": "/blog/how-to-identify-and-avoid-hidden-fees-in-your-mineral-rights-assessment-process/",
         "relationship": "same_cluster_next_by_program_row_id_cyclic",
-        "target_source_preservation_classification": "incumbent_draft_nonpublic_held",
-        "target_route_live": false,
+        "target_source_preservation_classification": "live_public_published_route",
+        "target_route_live": true,
         "status": "planned_local_only"
       },
       "primary_cta": {
@@ -19156,8 +19156,8 @@
       "pillar": "offer-review",
       "search_intent": "commercial-investigation",
       "funnel_stage": "decision",
-      "source_preservation_classification": "incumbent_draft_nonpublic_held",
-      "source_route_live": false,
+      "source_preservation_classification": "live_public_published_route",
+      "source_route_live": true,
       "pillar_link": {
         "url": "/offer-review/",
         "route_evidence": "src/pages/offer-review.astro",
@@ -19206,7 +19206,7 @@
         "rendered_triangle_verified": false,
         "live_status": "not_published_or_verified_by_this_plan",
         "live_triangle_verified": false,
-        "release_status": "eligible_for_continuous_quality_review_not_yet_cleared",
+        "release_status": "released_under_d16_continuous_quality_gate",
         "numerical_release_cap_applies": false
       }
     },
@@ -19546,8 +19546,8 @@
         "target_title": "How We Protect Mineral Rights Sellers From Predatory Tactics",
         "url": "/blog/how-we-protect-mineral-rights-sellers-from-predatory-tactics/",
         "relationship": "same_cluster_next_by_program_row_id_cyclic",
-        "target_source_preservation_classification": "incumbent_draft_nonpublic_held",
-        "target_route_live": false,
+        "target_source_preservation_classification": "live_public_published_route",
+        "target_route_live": true,
         "status": "planned_local_only"
       },
       "primary_cta": {
@@ -19597,8 +19597,8 @@
       "pillar": "offer-review",
       "search_intent": "commercial-investigation",
       "funnel_stage": "decision",
-      "source_preservation_classification": "incumbent_draft_nonpublic_held",
-      "source_route_live": false,
+      "source_preservation_classification": "live_public_published_route",
+      "source_route_live": true,
       "pillar_link": {
         "url": "/offer-review/",
         "route_evidence": "src/pages/offer-review.astro",
@@ -19647,7 +19647,7 @@
         "rendered_triangle_verified": false,
         "live_status": "not_published_or_verified_by_this_plan",
         "live_triangle_verified": false,
-        "release_status": "eligible_for_continuous_quality_review_not_yet_cleared",
+        "release_status": "released_under_d16_continuous_quality_gate",
         "numerical_release_cap_applies": false
       }
     },
@@ -19735,8 +19735,8 @@
         "target_title": "Risks of Selling Your Mineral Rights to a Direct Buyer: What to Know Before You Sign",
         "url": "/blog/risks-of-selling-your-mineral-rights-to-a-direct-buyer-what-to-know-before-you-sign/",
         "relationship": "same_cluster_next_by_program_row_id_cyclic",
-        "target_source_preservation_classification": "incumbent_draft_nonpublic_held",
-        "target_route_live": false,
+        "target_source_preservation_classification": "live_public_published_route",
+        "target_route_live": true,
         "status": "planned_local_only"
       },
       "primary_cta": {
@@ -19786,8 +19786,8 @@
       "pillar": "offer-review",
       "search_intent": "commercial-investigation",
       "funnel_stage": "decision",
-      "source_preservation_classification": "incumbent_draft_nonpublic_held",
-      "source_route_live": false,
+      "source_preservation_classification": "live_public_published_route",
+      "source_route_live": true,
       "pillar_link": {
         "url": "/offer-review/",
         "route_evidence": "src/pages/offer-review.astro",
@@ -19836,7 +19836,7 @@
         "rendered_triangle_verified": false,
         "live_status": "not_published_or_verified_by_this_plan",
         "live_triangle_verified": false,
-        "release_status": "eligible_for_continuous_quality_review_not_yet_cleared",
+        "release_status": "released_under_d16_continuous_quality_gate",
         "numerical_release_cap_applies": false
       }
     },
@@ -61630,8 +61630,8 @@
         "target_title": "Why Our AI-Powered Mineral Rights Platform Is Different From Other Acquisition Services",
         "url": "/blog/why-our-ai-powered-mineral-rights-platform-is-different-from-other-acquisition-services/",
         "relationship": "same_cluster_next_by_program_row_id_cyclic",
-        "target_source_preservation_classification": "incumbent_draft_nonpublic_held",
-        "target_route_live": false,
+        "target_source_preservation_classification": "live_public_published_route",
+        "target_route_live": true,
         "status": "planned_local_only"
       },
       "primary_cta": {
@@ -61681,8 +61681,8 @@
       "pillar": "mrx-methodology",
       "search_intent": "commercial-investigation",
       "funnel_stage": "consideration",
-      "source_preservation_classification": "incumbent_draft_nonpublic_held",
-      "source_route_live": false,
+      "source_preservation_classification": "live_public_published_route",
+      "source_route_live": true,
       "pillar_link": {
         "url": "/methodology/",
         "route_evidence": "src/pages/methodology.astro",
@@ -61731,7 +61731,7 @@
         "rendered_triangle_verified": false,
         "live_status": "not_published_or_verified_by_this_plan",
         "live_triangle_verified": false,
-        "release_status": "eligible_for_continuous_quality_review_not_yet_cleared",
+        "release_status": "released_under_d16_continuous_quality_gate",
         "numerical_release_cap_applies": false
       }
     },

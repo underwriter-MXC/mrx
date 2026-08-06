@@ -13,8 +13,8 @@ export function loadRuntimePublicationProjection(repoRoot) {
   const batchPath = path.join(repoRoot, 'config', 'mrx1000-release-10-batch.json');
   if (!existsSync(batchPath)) throw new Error(`Release batch missing: ${batchPath}`);
   const batch = JSON.parse(readFileSync(batchPath, 'utf8'));
-  const entries = (batch.articles ?? []).filter(
-    (entry) => entry.admission_status === 'admitted_exact',
+  const entries = (batch.articles ?? []).filter((entry) =>
+    ['admitted_exact', 'admitted_quality_gated'].includes(entry.admission_status),
   );
   const bySlug = new Map();
   for (const entry of entries) {
