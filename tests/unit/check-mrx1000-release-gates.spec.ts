@@ -609,18 +609,33 @@ describe('scripts/check-mrx1000-release-gates.mjs', () => {
     );
   });
 
-  it('treats 1,000 as program scope and observes the 80 quality-cleared public rows', () => {
+  it('treats 1,000 as program scope and observes the 90 quality-cleared public rows', () => {
     const r = runCheckAndRead();
     const cap = r.payload.cap as {
       authorized_release_total: number;
       observed_release_total: number;
     };
     expect(cap.authorized_release_total).toBe(1000);
-    expect(cap.observed_release_total).toBe(80);
+    expect(cap.observed_release_total).toBe(90);
     const inputs = r.payload.inputs as {
-      ledger: { runtime_publication_overrides: unknown[] };
+      ledger: {
+        runtime_publication_overrides: Array<{ slug: string; state: string }>;
+      };
     };
+    // The original ten rows are already represented as public in the
+    // canonical ledger. Ranks 11–90 require byte-proven runtime overrides,
+    // so 80 transition proofs plus that ten-row baseline yield 90 observed.
     expect(inputs.ledger.runtime_publication_overrides).toHaveLength(80);
+    expect(
+      inputs.ledger.runtime_publication_overrides.every(
+        (override) => override.state === 'controlled_publication_transition',
+      ),
+    ).toBe(true);
+    expect(
+      inputs.ledger.runtime_publication_overrides.some(
+        (override) => override.slug === 'understanding-the-value-of-your-mineral-rights',
+      ),
+    ).toBe(true);
     const policy = r.payload.policy as Record<string, unknown>;
     expect(policy.authorization_decision_disposition).toBe('APPROVED');
     expect(policy.release_authorized).toBe(true);

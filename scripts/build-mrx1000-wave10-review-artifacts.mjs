@@ -22,6 +22,34 @@ function frontmatter(source) {
   return `${match[1]}\n`;
 }
 
+function buildReviewedDraftSnapshot(source, slug) {
+  const match = source.match(/^---(\r?\n)([\s\S]*?)\1---/);
+  if (!match) throw new Error(`${slug} frontmatter not detected`);
+
+  let reviewedFrontmatter = match[2];
+  const publicationMatches = [
+    ...reviewedFrontmatter.matchAll(/^publication_status:[\t ]*published[\t ]*$/gm),
+  ];
+  const noindexMatches = [...reviewedFrontmatter.matchAll(/^noindex:[\t ]*false[\t ]*$/gm)];
+  if (publicationMatches.length !== 1 || noindexMatches.length !== 1) {
+    throw new Error(
+      `${slug} must contain exactly one published publication_status and one false noindex scalar`,
+    );
+  }
+
+  reviewedFrontmatter = reviewedFrontmatter
+    .replace(/^publication_status:([\t ]*)published([\t ]*)$/m, 'publication_status:$1draft$2')
+    .replace(/^noindex:([\t ]*)false([\t ]*)$/m, 'noindex:$1true$2');
+  if (!/^draft:[\t ]*false[\t ]*$/m.test(reviewedFrontmatter)) {
+    throw new Error(`${slug} draft must remain false during the controlled publication transition`);
+  }
+
+  return source.replace(
+    /^---(\r?\n)([\s\S]*?)\1---/,
+    (_whole, newline) => `---${newline}${reviewedFrontmatter}${newline}---`,
+  );
+}
+
 function declaredSources(source) {
   const block = source.match(/^sources:\n([\s\S]*?)(?=^[a-z_]+:|^---$)/m)?.[1] ?? '';
   const results = [];
@@ -58,12 +86,19 @@ async function verifySource(url) {
 }
 
 for (const row of rows) {
-  const source = readFileSync(join(repoRoot, row.repo_path), 'utf8');
+  const currentSource = readFileSync(join(repoRoot, row.repo_path), 'utf8');
+  if (
+    !/^publication_status: published$/m.test(currentSource) ||
+    !/^noindex: false$/m.test(currentSource)
+  ) {
+    throw new Error(`${row.slug}: current source is not in published/indexable state`);
+  }
+  const source = buildReviewedDraftSnapshot(currentSource, row.slug);
   const inputBodySha = sha256(source);
   const inputFrontmatterSha = sha256(frontmatter(source));
   if (inputBodySha !== row.repo_sha256) throw new Error(`${row.slug}: batch source hash mismatch`);
-  if (!/^publication_status: published$/m.test(source) || !/^noindex: false$/m.test(source)) {
-    throw new Error(`${row.slug}: source is not in published/indexable review state`);
+  if (!/^publication_status: draft$/m.test(source) || !/^noindex: true$/m.test(source)) {
+    throw new Error(`${row.slug}: reviewed snapshot is not in draft/noindex state`);
   }
   const sources = declaredSources(source);
   if (sources.length < 3) throw new Error(`${row.slug}: fewer than three declared sources`);
@@ -196,7 +231,7 @@ for (const row of rows) {
       'buyer_conflict_disclosure_present_when_relevant',
       'no_guaranteed_result_money_percentage_or_timing_claim',
       'no_unqualified_independence_claim',
-      'published_indexable_review_state_pass',
+      'draft_noindex_review_state_pass',
       'pnpm_check_compliance_pass',
     ],
     sources_inspected: [row.repo_path, row.hero_path, ...sources.map(({ url }) => url)],

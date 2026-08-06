@@ -154,6 +154,34 @@ function wordCount(source) {
   return body.match(/\b[\p{L}\p{N}][\p{L}\p{N}’'-]*\b/gu)?.length ?? 0;
 }
 
+function buildReviewedDraftSnapshot(source, slug) {
+  const match = source.match(/^---(\r?\n)([\s\S]*?)\1---/);
+  if (!match) throw new Error(`${slug} frontmatter not detected`);
+
+  let reviewedFrontmatter = match[2];
+  const publicationMatches = [
+    ...reviewedFrontmatter.matchAll(/^publication_status:[\t ]*published[\t ]*$/gm),
+  ];
+  const noindexMatches = [...reviewedFrontmatter.matchAll(/^noindex:[\t ]*false[\t ]*$/gm)];
+  if (publicationMatches.length !== 1 || noindexMatches.length !== 1) {
+    throw new Error(
+      `${slug} must contain exactly one published publication_status and one false noindex scalar`,
+    );
+  }
+
+  reviewedFrontmatter = reviewedFrontmatter
+    .replace(/^publication_status:([\t ]*)published([\t ]*)$/m, 'publication_status:$1draft$2')
+    .replace(/^noindex:([\t ]*)false([\t ]*)$/m, 'noindex:$1true$2');
+  if (!/^draft:[\t ]*false[\t ]*$/m.test(reviewedFrontmatter)) {
+    throw new Error(`${slug} draft must remain false during the controlled publication transition`);
+  }
+
+  return source.replace(
+    /^---(\r?\n)([\s\S]*?)\1---/,
+    (_whole, newline) => `---${newline}${reviewedFrontmatter}${newline}---`,
+  );
+}
+
 const batch = JSON.parse(await readFile(batchPath, 'utf8'));
 const decisionBytes = await readFile(join(root, decisionPath));
 const retained = batch.articles.filter((article) => article.selection_rank <= 80);
@@ -168,6 +196,7 @@ for (const specification of specifications) {
   if (!/^publication_status:\s*published$/m.test(body) || !/^noindex:\s*false$/m.test(body)) {
     throw new Error(`${specification.slug} must be in quality-gated published/indexable state`);
   }
+  const reviewedBody = buildReviewedDraftSnapshot(body, specification.slug);
   const title = body.match(/^title:\s*['"](.+)['"]$/m)?.[1];
   const heroAlt = body.match(/^  alt:\s*['"](.+)['"]$/m)?.[1];
   const socialAlt = body.match(/^  social_alt:\s*['"](.+)['"]$/m)?.[1];
@@ -180,7 +209,8 @@ for (const specification of specifications) {
   }
 
   const heroBytes = await readFile(join(root, 'public', specification.hero_path.slice(1)));
-  const articleSha = sha256(bodyBytes);
+  const reviewedBodyBytes = Buffer.from(reviewedBody, 'utf8');
+  const articleSha = sha256(reviewedBodyBytes);
   const heroSha = sha256(heroBytes);
   additions.push({
     selection_rank: specification.selection_rank,
@@ -203,7 +233,7 @@ for (const specification of specifications) {
     admission_status: 'admitted_quality_gated',
     finalization_state: 'draft_noindex_admitted',
     searchatlas_content_score: null,
-    searchatlas_word_count: wordCount(body),
+    searchatlas_word_count: wordCount(reviewedBody),
     risk_citation_remediation: [
       'Continuous quality-gated admission under D-2026-0804-16 and MRX1000-W10-SELECT-2026-08-06; no numerical cap or observation-window gate applies.',
       'Publication remains conditional on current editorial, factual/citation, compliance, exact-title asset, build, rollback, deployment, and live-verification evidence.',
