@@ -48,9 +48,9 @@ describe('published article image guardrails', () => {
     const heroPaths = published.map((post) => post.hero.src);
     const explicitlyAllowedVerifiedRemoteSources = new Set<string>();
 
-    // Nine legacy-live posts plus the seventy hash-locked release rows.
+    // Nine legacy-live posts plus the eighty hash-locked release rows.
     // Production publication remains controlled by the separate release gate.
-    expect(published).toHaveLength(79);
+    expect(published).toHaveLength(89);
     expect(new Set(heroPaths).size).toBe(heroPaths.length);
     for (const post of published) {
       expect(post.hero.src, post.slug).toMatch(/^(\/|https:\/\/)/);
@@ -96,10 +96,10 @@ describe('published article image guardrails', () => {
       (post) => imagePolicyViolations(post, { requireDistinctSocial: true }).length > 0,
     );
 
-    expect(mrx1000Posts).toHaveLength(95);
+    expect(mrx1000Posts).toHaveLength(105);
     expect(
       mrx1000Posts.filter((post) => post.publicationStatus === 'published' && post.draft !== true),
-    ).toHaveLength(70);
+    ).toHaveLength(80);
     expect(
       mrx1000Posts.filter(
         (post) => post.publicationStatus === 'draft' && post.draft && post.noindex,
