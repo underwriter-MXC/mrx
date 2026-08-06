@@ -448,8 +448,8 @@ if (process.env.MRX_BROWSER_VERIFICATION_JSON) {
   browserVerification = JSON.parse(process.env.MRX_BROWSER_VERIFICATION_JSON);
 }
 
-const expectedWave8Slugs = batch.articles.slice(-10).map((article) => article.slug);
-const observedWave8Slugs = browserVerification?.wave8?.slugs ?? [];
+const expectedWave9Slugs = batch.articles.slice(-10).map((article) => article.slug);
+const observedWave9Slugs = browserVerification?.wave9?.slugs ?? [];
 
 const interfaceAssertions = {
   homepage_http_200: home.response.status === 200,
@@ -480,17 +480,17 @@ const interfaceAssertions = {
     browserVerification?.homepage?.top_disclosure_count === 0,
   browser_home_footer_disclosure_once:
     browserVerification?.homepage?.footer_disclosure_count === 1,
-  browser_wave8_visual_verification_complete:
-    browserVerification?.wave8?.article_count === 10 &&
-    observedWave8Slugs.length === expectedWave8Slugs.length &&
-    observedWave8Slugs.every((slug, index) => slug === expectedWave8Slugs[index]) &&
-    browserVerification?.wave8?.exact_titles_visible === true &&
-    browserVerification?.wave8?.hero_images_visible === true &&
-    browserVerification?.wave8?.hero_images_natural_1200x630 === true &&
-    browserVerification?.wave8?.exact_alt_text === true &&
-    browserVerification?.wave8?.one_footer_disclosure_each === true &&
-    browserVerification?.wave8?.no_clipping_overlap_or_garbling === true &&
-    browserVerification?.wave8?.no_horizontal_overflow === true,
+  browser_wave9_visual_verification_complete:
+    browserVerification?.wave9?.article_count === 10 &&
+    observedWave9Slugs.length === expectedWave9Slugs.length &&
+    observedWave9Slugs.every((slug, index) => slug === expectedWave9Slugs[index]) &&
+    browserVerification?.wave9?.exact_titles_visible === true &&
+    browserVerification?.wave9?.hero_images_visible === true &&
+    browserVerification?.wave9?.hero_images_natural_1200x630 === true &&
+    browserVerification?.wave9?.exact_alt_text === true &&
+    browserVerification?.wave9?.one_footer_disclosure_each === true &&
+    browserVerification?.wave9?.no_clipping_overlap_or_garbling === true &&
+    browserVerification?.wave9?.no_horizontal_overflow === true,
 };
 
 const deploymentAssertions = {
