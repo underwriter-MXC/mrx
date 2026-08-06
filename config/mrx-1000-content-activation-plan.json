@@ -1,15 +1,15 @@
 {
   "artifact_type": "mrx1000_content_activation_plan",
   "plan_version": "mrx1000-content-activation-v1.1.0",
-  "generated_at": "2026-07-20T01:32:37.177Z",
+  "generated_at": "2026-07-20T08:34:08.474Z",
   "generated_at_method": "canonical_ledger_generated_at",
   "generator": "scripts/build-mrx-1000-activation-plan.mjs",
-  "content_fingerprint_sha256": "3ae30ee4aee4a03c86297e3f2b6f791a1fb7919fe024cc90009d5c2e0bf0682a",
+  "content_fingerprint_sha256": "b36fca3a2f1ef4a6f31df32f150f26174c51f496ca29963ad51bae2b6693de70",
   "inputs": {
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
     "canonical_ledger_fingerprint_sha256": "a73076071c26b06f0ee6e4683659254c7d2da11ad335c0ca0e34c4ac56b28dd7",
     "canonical_ledger_fingerprint_verified": true,
-    "canonical_ledger_generated_at": "2026-07-20T01:32:37.177Z",
+    "canonical_ledger_generated_at": "2026-07-20T08:34:08.474Z",
     "owner_decision": {
       "decision_id": "D-2026-0804-16",
       "signed_disposition": "APPROVED_CONTINUOUS_QUALITY_GATED_ARTICLE_PUBLICATION",
@@ -114,8 +114,8 @@
       "contextual_inline": 350
     },
     "by_source_preservation_classification": {
-      "incumbent_draft_nonpublic_held": 84,
-      "live_public_published_route": 44,
+      "incumbent_draft_nonpublic_held": 79,
+      "live_public_published_route": 49,
       "pilot_draft_noindex_stage": 25,
       "planning_only_inventory": 847
     }
@@ -142,8 +142,8 @@
         "target_title": "How Long Does It Take to Sell Mineral Rights in Texas?",
         "url": "/blog/how-long-does-it-take-to-sell-mineral-rights-in-texas/",
         "relationship": "same_cluster_next_by_program_row_id_cyclic",
-        "target_source_preservation_classification": "incumbent_draft_nonpublic_held",
-        "target_route_live": false,
+        "target_source_preservation_classification": "live_public_published_route",
+        "target_route_live": true,
         "status": "planned_local_only"
       },
       "primary_cta": {
@@ -193,8 +193,8 @@
       "pillar": "sell-mineral-rights",
       "search_intent": "transactional",
       "funnel_stage": "decision",
-      "source_preservation_classification": "incumbent_draft_nonpublic_held",
-      "source_route_live": false,
+      "source_preservation_classification": "live_public_published_route",
+      "source_route_live": true,
       "pillar_link": {
         "url": "/sell-mineral-rights/",
         "route_evidence": "src/pages/sell-mineral-rights.astro",
@@ -205,8 +205,8 @@
         "target_title": "How the Step-by-Step Process of Selling Texas Mineral Rights Works",
         "url": "/blog/how-the-step-by-step-process-of-selling-texas-mineral-rights-works/",
         "relationship": "same_cluster_next_by_program_row_id_cyclic",
-        "target_source_preservation_classification": "incumbent_draft_nonpublic_held",
-        "target_route_live": false,
+        "target_source_preservation_classification": "live_public_published_route",
+        "target_route_live": true,
         "status": "planned_local_only"
       },
       "primary_cta": {
@@ -243,7 +243,7 @@
         "rendered_triangle_verified": false,
         "live_status": "not_published_or_verified_by_this_plan",
         "live_triangle_verified": false,
-        "release_status": "eligible_for_continuous_quality_review_not_yet_cleared",
+        "release_status": "released_under_d16_continuous_quality_gate",
         "numerical_release_cap_applies": false
       }
     },
@@ -256,8 +256,8 @@
       "pillar": "sell-mineral-rights",
       "search_intent": "transactional",
       "funnel_stage": "decision",
-      "source_preservation_classification": "incumbent_draft_nonpublic_held",
-      "source_route_live": false,
+      "source_preservation_classification": "live_public_published_route",
+      "source_route_live": true,
       "pillar_link": {
         "url": "/sell-mineral-rights/",
         "route_evidence": "src/pages/sell-mineral-rights.astro",
@@ -268,8 +268,8 @@
         "target_title": "What Happens After You Sell Your Mineral Rights in Texas?",
         "url": "/blog/what-happens-after-you-sell-your-mineral-rights-in-texas/",
         "relationship": "same_cluster_next_by_program_row_id_cyclic",
-        "target_source_preservation_classification": "incumbent_draft_nonpublic_held",
-        "target_route_live": false,
+        "target_source_preservation_classification": "live_public_published_route",
+        "target_route_live": true,
         "status": "planned_local_only"
       },
       "primary_cta": {
@@ -306,7 +306,7 @@
         "rendered_triangle_verified": false,
         "live_status": "not_published_or_verified_by_this_plan",
         "live_triangle_verified": false,
-        "release_status": "eligible_for_continuous_quality_review_not_yet_cleared",
+        "release_status": "released_under_d16_continuous_quality_gate",
         "numerical_release_cap_applies": false
       }
     },
@@ -319,8 +319,8 @@
       "pillar": "sell-mineral-rights",
       "search_intent": "transactional",
       "funnel_stage": "decision",
-      "source_preservation_classification": "incumbent_draft_nonpublic_held",
-      "source_route_live": false,
+      "source_preservation_classification": "live_public_published_route",
+      "source_route_live": true,
       "pillar_link": {
         "url": "/sell-mineral-rights/",
         "route_evidence": "src/pages/sell-mineral-rights.astro",
@@ -369,7 +369,7 @@
         "rendered_triangle_verified": false,
         "live_status": "not_published_or_verified_by_this_plan",
         "live_triangle_verified": false,
-        "release_status": "eligible_for_continuous_quality_review_not_yet_cleared",
+        "release_status": "released_under_d16_continuous_quality_gate",
         "numerical_release_cap_applies": false
       }
     },
@@ -19420,8 +19420,8 @@
         "target_title": "How to Negotiate a Mineral Rights Sale: What Sellers Need to Know",
         "url": "/blog/how-to-negotiate-a-mineral-rights-sale-what-sellers-need-to-know/",
         "relationship": "same_cluster_next_by_program_row_id_cyclic",
-        "target_source_preservation_classification": "incumbent_draft_nonpublic_held",
-        "target_route_live": false,
+        "target_source_preservation_classification": "live_public_published_route",
+        "target_route_live": true,
         "status": "planned_local_only"
       },
       "primary_cta": {
@@ -19471,8 +19471,8 @@
       "pillar": "offer-review",
       "search_intent": "commercial-investigation",
       "funnel_stage": "decision",
-      "source_preservation_classification": "incumbent_draft_nonpublic_held",
-      "source_route_live": false,
+      "source_preservation_classification": "live_public_published_route",
+      "source_route_live": true,
       "pillar_link": {
         "url": "/offer-review/",
         "route_evidence": "src/pages/offer-review.astro",
@@ -19521,7 +19521,7 @@
         "rendered_triangle_verified": false,
         "live_status": "not_published_or_verified_by_this_plan",
         "live_triangle_verified": false,
-        "release_status": "eligible_for_continuous_quality_review_not_yet_cleared",
+        "release_status": "released_under_d16_continuous_quality_gate",
         "numerical_release_cap_applies": false
       }
     },
@@ -19987,8 +19987,8 @@
         "target_title": "Understanding the Key Factors Influencing Your Mineral Rights Offer Range",
         "url": "/blog/understanding-the-key-factors-influencing-your-mineral-rights-offer-range/",
         "relationship": "same_cluster_next_by_program_row_id_cyclic",
-        "target_source_preservation_classification": "incumbent_draft_nonpublic_held",
-        "target_route_live": false,
+        "target_source_preservation_classification": "live_public_published_route",
+        "target_route_live": true,
         "status": "planned_local_only"
       },
       "primary_cta": {
@@ -20038,8 +20038,8 @@
       "pillar": "offer-review",
       "search_intent": "commercial-investigation",
       "funnel_stage": "decision",
-      "source_preservation_classification": "incumbent_draft_nonpublic_held",
-      "source_route_live": false,
+      "source_preservation_classification": "live_public_published_route",
+      "source_route_live": true,
       "pillar_link": {
         "url": "/offer-review/",
         "route_evidence": "src/pages/offer-review.astro",
@@ -20088,7 +20088,7 @@
         "rendered_triangle_verified": false,
         "live_status": "not_published_or_verified_by_this_plan",
         "live_triangle_verified": false,
-        "release_status": "eligible_for_continuous_quality_review_not_yet_cleared",
+        "release_status": "released_under_d16_continuous_quality_gate",
         "numerical_release_cap_applies": false
       }
     },

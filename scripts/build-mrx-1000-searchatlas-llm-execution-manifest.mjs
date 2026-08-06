@@ -1754,11 +1754,11 @@ export function buildManifest() {
   );
   invariant(
     aggregate.repo_mdx_present === 153 &&
-      aggregate.by_canonical_inventory_state.live_public_published_route === 44 &&
-      aggregate.by_canonical_inventory_state.incumbent_draft_nonpublic_held === 84 &&
+      aggregate.by_canonical_inventory_state.live_public_published_route === 49 &&
+      aggregate.by_canonical_inventory_state.incumbent_draft_nonpublic_held === 79 &&
       aggregate.by_canonical_inventory_state.pilot_draft_noindex_stage === 25 &&
       aggregate.by_canonical_inventory_state.planning_only_inventory === 847,
-    'runtime publication projection must be 44 + 84 + 25 + 847',
+    'runtime publication projection must be 49 + 79 + 25 + 847',
   );
   invariant(
     aggregate.planning_searchatlas_map_id_count === 294 &&

@@ -313,11 +313,11 @@ describe('MRX 1,000-row hero/share creative-brief generator', () => {
     }
   });
 
-  it('preserves the 44 current public-workspace heroes and their frontmatter metadata', () => {
+  it('preserves the 49 current public-workspace heroes and their frontmatter metadata', () => {
     const publicRows = plan.rows.filter(
       (row) => row.preservation_classification === 'live_public_published_route',
     );
-    expect(publicRows).toHaveLength(44);
+    expect(publicRows).toHaveLength(49);
 
     for (const row of publicRows) {
       expect(row.repo_path).not.toBeNull();
@@ -345,11 +345,11 @@ describe('MRX 1,000-row hero/share creative-brief generator', () => {
     }
   });
 
-  it('audits all 84 held incumbents while preserving their usable existing assets', () => {
+  it('audits all 79 held incumbents while preserving their usable existing assets', () => {
     const heldRows = plan.rows.filter(
       (row) => row.preservation_classification === 'incumbent_draft_nonpublic_held',
     );
-    expect(heldRows).toHaveLength(84);
+    expect(heldRows).toHaveLength(79);
 
     for (const row of heldRows) {
       expect(row.repo_path).not.toBeNull();
@@ -396,7 +396,7 @@ describe('MRX 1,000-row hero/share creative-brief generator', () => {
       }
     }
 
-    expect(heldRows.filter((row) => row.current_asset_usable)).toHaveLength(84);
+    expect(heldRows.filter((row) => row.current_asset_usable)).toHaveLength(79);
     expect(heldRows.filter((row) => row.planned_replacement_required)).toHaveLength(0);
   });
 
@@ -444,8 +444,8 @@ describe('MRX 1,000-row hero/share creative-brief generator', () => {
     });
     expect(plan.rows.filter((row) => row.asset_generated)).toHaveLength(128);
     expect(plan.rows.filter((row) => row.on_disk)).toHaveLength(128);
-    expect(plan.rows.filter((row) => row.published)).toHaveLength(44);
-    expect(plan.rows.filter((row) => row.release_blocked)).toHaveLength(956);
+    expect(plan.rows.filter((row) => row.published)).toHaveLength(49);
+    expect(plan.rows.filter((row) => row.release_blocked)).toHaveLength(951);
     expect(plan.scope_attestation).toMatchObject({
       local_only: true,
       images_generated_or_edited: false,
@@ -470,7 +470,7 @@ describe('MRX 1,000-row hero/share creative-brief generator', () => {
     expect(report).toMatch(/\| Final hero path collisions\s+\|\s+0 \|/);
     expect(report).toMatch(/\| Unique semantic signatures\s+\|\s+1000 \|/);
     expect(report).toMatch(/\| Semantic appropriateness failures\s+\|\s+0 \|/);
-    expect(report).toMatch(/\| Held current assets preserved\s+\|\s+84 \|/);
+    expect(report).toMatch(/\| Held current assets preserved\s+\|\s+79 \|/);
     expect(report).toMatch(/\| Held assets still requiring replacement\s+\|\s+0 \|/);
     expect(report).toMatch(/\| Pilot rows still quality-blocked\s+\|\s+25 \|/);
     expect(report).toContain(EXPECTED_OWNER_DECISION_SHA);
