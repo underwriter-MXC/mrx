@@ -1,15 +1,15 @@
 {
   "artifact_type": "mrx1000_content_activation_plan",
   "plan_version": "mrx1000-content-activation-v1.1.0",
-  "generated_at": "2026-07-20T18:34:56.434Z",
+  "generated_at": "2026-07-20T20:35:19.305Z",
   "generated_at_method": "canonical_ledger_generated_at",
   "generator": "scripts/build-mrx-1000-activation-plan.mjs",
-  "content_fingerprint_sha256": "1fbcd8ee52e811d2a0b84711c58775d8d15e4489116d28b6c04b25a6b3837bfd",
+  "content_fingerprint_sha256": "4d23e62be10a8d8a4806954c6da79418f762807b8462651bedc8ba442d427645",
   "inputs": {
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_fingerprint_sha256": "5bc7ddb3d2ea1ad9605af3b22bc6fd4af13e56ead95997973ffebd7cc9f3415f",
+    "canonical_ledger_fingerprint_sha256": "765599b109d2aebddc0b07143497db3cfd3bc3c7a6ebf419ebe0effe7f7d99e3",
     "canonical_ledger_fingerprint_verified": true,
-    "canonical_ledger_generated_at": "2026-07-20T18:34:56.434Z",
+    "canonical_ledger_generated_at": "2026-07-20T20:35:19.305Z",
     "owner_decision": {
       "decision_id": "D-2026-0804-16",
       "signed_disposition": "APPROVED_CONTINUOUS_QUALITY_GATED_ARTICLE_PUBLICATION",
@@ -114,8 +114,8 @@
       "contextual_inline": 350
     },
     "by_source_preservation_classification": {
-      "incumbent_draft_nonpublic_held": 59,
-      "live_public_published_route": 69,
+      "incumbent_draft_nonpublic_held": 49,
+      "live_public_published_route": 79,
       "pilot_draft_noindex_stage": 25,
       "planning_only_inventory": 847
     }
@@ -26779,8 +26779,8 @@
       "pillar": "inherited-mineral-rights",
       "search_intent": "informational",
       "funnel_stage": "education",
-      "source_preservation_classification": "incumbent_draft_nonpublic_held",
-      "source_route_live": false,
+      "source_preservation_classification": "live_public_published_route",
+      "source_route_live": true,
       "pillar_link": {
         "url": "/inherited-mineral-rights/",
         "route_evidence": "src/pages/inherited-mineral-rights.astro",
@@ -26829,7 +26829,7 @@
         "rendered_triangle_verified": false,
         "live_status": "not_published_or_verified_by_this_plan",
         "live_triangle_verified": false,
-        "release_status": "eligible_for_continuous_quality_review_not_yet_cleared",
+        "release_status": "released_under_d16_continuous_quality_gate",
         "numerical_release_cap_applies": false
       }
     },
@@ -26854,8 +26854,8 @@
         "target_title": "How Selling Mineral Rights Affects Your Estate Plan in Texas",
         "url": "/blog/how-selling-mineral-rights-affects-your-estate-plan-in-texas/",
         "relationship": "same_cluster_next_by_program_row_id_cyclic",
-        "target_source_preservation_classification": "incumbent_draft_nonpublic_held",
-        "target_route_live": false,
+        "target_source_preservation_classification": "live_public_published_route",
+        "target_route_live": true,
         "status": "planned_local_only"
       },
       "primary_cta": {
@@ -26905,8 +26905,8 @@
       "pillar": "inherited-mineral-rights",
       "search_intent": "informational",
       "funnel_stage": "education",
-      "source_preservation_classification": "incumbent_draft_nonpublic_held",
-      "source_route_live": false,
+      "source_preservation_classification": "live_public_published_route",
+      "source_route_live": true,
       "pillar_link": {
         "url": "/inherited-mineral-rights/",
         "route_evidence": "src/pages/inherited-mineral-rights.astro",
@@ -26955,7 +26955,7 @@
         "rendered_triangle_verified": false,
         "live_status": "not_published_or_verified_by_this_plan",
         "live_triangle_verified": false,
-        "release_status": "eligible_for_continuous_quality_review_not_yet_cleared",
+        "release_status": "released_under_d16_continuous_quality_gate",
         "numerical_release_cap_applies": false
       }
     },
@@ -27358,8 +27358,8 @@
         "target_title": "Understanding the Probate Process for Mineral Interests",
         "url": "/blog/understanding-the-probate-process-for-mineral-interests/",
         "relationship": "same_cluster_next_by_program_row_id_cyclic",
-        "target_source_preservation_classification": "incumbent_draft_nonpublic_held",
-        "target_route_live": false,
+        "target_source_preservation_classification": "live_public_published_route",
+        "target_route_live": true,
         "status": "planned_local_only"
       },
       "primary_cta": {
@@ -27409,8 +27409,8 @@
       "pillar": "inherited-mineral-rights",
       "search_intent": "informational",
       "funnel_stage": "education",
-      "source_preservation_classification": "incumbent_draft_nonpublic_held",
-      "source_route_live": false,
+      "source_preservation_classification": "live_public_published_route",
+      "source_route_live": true,
       "pillar_link": {
         "url": "/inherited-mineral-rights/",
         "route_evidence": "src/pages/inherited-mineral-rights.astro",
@@ -27459,7 +27459,7 @@
         "rendered_triangle_verified": false,
         "live_status": "not_published_or_verified_by_this_plan",
         "live_triangle_verified": false,
-        "release_status": "eligible_for_continuous_quality_review_not_yet_cleared",
+        "release_status": "released_under_d16_continuous_quality_gate",
         "numerical_release_cap_applies": false
       }
     },
@@ -33028,8 +33028,8 @@
         "target_title": "Can You Put Mineral Rights in a Trust? Texas Estate Planning Explained",
         "url": "/blog/can-you-put-mineral-rights-in-a-trust-texas-estate-planning-explained/",
         "relationship": "same_cluster_next_by_program_row_id_cyclic",
-        "target_source_preservation_classification": "incumbent_draft_nonpublic_held",
-        "target_route_live": false,
+        "target_source_preservation_classification": "live_public_published_route",
+        "target_route_live": true,
         "status": "planned_local_only"
       },
       "primary_cta": {
@@ -33091,8 +33091,8 @@
         "target_title": "How to Interpret Your Mineral Rights Royalty Checks",
         "url": "/blog/how-to-interpret-your-mineral-rights-royalty-checks/",
         "relationship": "same_cluster_next_by_program_row_id_cyclic",
-        "target_source_preservation_classification": "incumbent_draft_nonpublic_held",
-        "target_route_live": false,
+        "target_source_preservation_classification": "live_public_published_route",
+        "target_route_live": true,
         "status": "planned_local_only"
       },
       "primary_cta": {
@@ -33142,8 +33142,8 @@
       "pillar": "oil-and-gas-royalties",
       "search_intent": "informational",
       "funnel_stage": "education",
-      "source_preservation_classification": "incumbent_draft_nonpublic_held",
-      "source_route_live": false,
+      "source_preservation_classification": "live_public_published_route",
+      "source_route_live": true,
       "pillar_link": {
         "url": "/learning-center/oil-and-gas-royalties/",
         "route_evidence": "src/pages/learning-center/oil-and-gas-royalties/index.astro",
@@ -33192,7 +33192,7 @@
         "rendered_triangle_verified": false,
         "live_status": "not_published_or_verified_by_this_plan",
         "live_triangle_verified": false,
-        "release_status": "eligible_for_continuous_quality_review_not_yet_cleared",
+        "release_status": "released_under_d16_continuous_quality_gate",
         "numerical_release_cap_applies": false
       }
     },
@@ -39316,8 +39316,8 @@
       "pillar": "mineral-rights-taxes",
       "search_intent": "informational",
       "funnel_stage": "education",
-      "source_preservation_classification": "incumbent_draft_nonpublic_held",
-      "source_route_live": false,
+      "source_preservation_classification": "live_public_published_route",
+      "source_route_live": true,
       "pillar_link": {
         "url": "/learning-center/mineral-rights-taxes/",
         "route_evidence": "src/pages/learning-center/mineral-rights-taxes/index.astro",
@@ -39366,7 +39366,7 @@
         "rendered_triangle_verified": false,
         "live_status": "not_published_or_verified_by_this_plan",
         "live_triangle_verified": false,
-        "release_status": "eligible_for_continuous_quality_review_not_yet_cleared",
+        "release_status": "released_under_d16_continuous_quality_gate",
         "numerical_release_cap_applies": false
       }
     },
@@ -39391,8 +39391,8 @@
         "target_title": "1031 Exchange vs. Traditional Sales for Mineral Rights",
         "url": "/blog/1031-exchange-vs-traditional-sales-for-mineral-rights/",
         "relationship": "same_cluster_next_by_program_row_id_cyclic",
-        "target_source_preservation_classification": "incumbent_draft_nonpublic_held",
-        "target_route_live": false,
+        "target_source_preservation_classification": "live_public_published_route",
+        "target_route_live": true,
         "status": "planned_local_only"
       },
       "primary_cta": {
@@ -39442,8 +39442,8 @@
       "pillar": "mineral-rights-taxes",
       "search_intent": "informational",
       "funnel_stage": "education",
-      "source_preservation_classification": "incumbent_draft_nonpublic_held",
-      "source_route_live": false,
+      "source_preservation_classification": "live_public_published_route",
+      "source_route_live": true,
       "pillar_link": {
         "url": "/learning-center/mineral-rights-taxes/",
         "route_evidence": "src/pages/learning-center/mineral-rights-taxes/index.astro",
@@ -39492,7 +39492,7 @@
         "rendered_triangle_verified": false,
         "live_status": "not_published_or_verified_by_this_plan",
         "live_triangle_verified": false,
-        "release_status": "eligible_for_continuous_quality_review_not_yet_cleared",
+        "release_status": "released_under_d16_continuous_quality_gate",
         "numerical_release_cap_applies": false
       }
     },
@@ -39769,8 +39769,8 @@
         "target_title": "How to Report a Mineral Rights Sale on Your Federal Tax Return",
         "url": "/blog/how-to-report-a-mineral-rights-sale-on-your-federal-tax-return/",
         "relationship": "same_cluster_next_by_program_row_id_cyclic",
-        "target_source_preservation_classification": "incumbent_draft_nonpublic_held",
-        "target_route_live": false,
+        "target_source_preservation_classification": "live_public_published_route",
+        "target_route_live": true,
         "status": "planned_local_only"
       },
       "primary_cta": {
@@ -39820,8 +39820,8 @@
       "pillar": "mineral-rights-taxes",
       "search_intent": "informational",
       "funnel_stage": "education",
-      "source_preservation_classification": "incumbent_draft_nonpublic_held",
-      "source_route_live": false,
+      "source_preservation_classification": "live_public_published_route",
+      "source_route_live": true,
       "pillar_link": {
         "url": "/learning-center/mineral-rights-taxes/",
         "route_evidence": "src/pages/learning-center/mineral-rights-taxes/index.astro",
@@ -39870,7 +39870,7 @@
         "rendered_triangle_verified": false,
         "live_status": "not_published_or_verified_by_this_plan",
         "live_triangle_verified": false,
-        "release_status": "eligible_for_continuous_quality_review_not_yet_cleared",
+        "release_status": "released_under_d16_continuous_quality_gate",
         "numerical_release_cap_applies": false
       }
     },
@@ -45565,8 +45565,8 @@
         "target_title": "1031 Exchange for Mineral Rights: Does It Qualify and How Does It Work?",
         "url": "/blog/1031-exchange-for-mineral-rights-does-it-qualify-and-how-does-it-work/",
         "relationship": "same_cluster_next_by_program_row_id_cyclic",
-        "target_source_preservation_classification": "incumbent_draft_nonpublic_held",
-        "target_route_live": false,
+        "target_source_preservation_classification": "live_public_published_route",
+        "target_route_live": true,
         "status": "planned_local_only"
       },
       "primary_cta": {
@@ -59866,8 +59866,8 @@
         "target_title": "Can You Discuss Assessment Outcomes With Your Underwriter After Their Review?",
         "url": "/blog/can-you-discuss-assessment-outcomes-with-your-underwriter-after-their-review/",
         "relationship": "same_cluster_next_by_program_row_id_cyclic",
-        "target_source_preservation_classification": "incumbent_draft_nonpublic_held",
-        "target_route_live": false,
+        "target_source_preservation_classification": "live_public_published_route",
+        "target_route_live": true,
         "status": "planned_local_only"
       },
       "primary_cta": {
@@ -59917,8 +59917,8 @@
       "pillar": "mrx-methodology",
       "search_intent": "commercial-investigation",
       "funnel_stage": "consideration",
-      "source_preservation_classification": "incumbent_draft_nonpublic_held",
-      "source_route_live": false,
+      "source_preservation_classification": "live_public_published_route",
+      "source_route_live": true,
       "pillar_link": {
         "url": "/methodology/",
         "route_evidence": "src/pages/methodology.astro",
@@ -59967,7 +59967,7 @@
         "rendered_triangle_verified": false,
         "live_status": "not_published_or_verified_by_this_plan",
         "live_triangle_verified": false,
-        "release_status": "eligible_for_continuous_quality_review_not_yet_cleared",
+        "release_status": "released_under_d16_continuous_quality_gate",
         "numerical_release_cap_applies": false
       }
     },
@@ -60118,8 +60118,8 @@
         "target_title": "Discover Which Types of Texas Mineral Rights Qualify for a Free Underwriter Assessment",
         "url": "/blog/discover-which-types-of-texas-mineral-rights-qualify-for-a-free-underwriter-assessment/",
         "relationship": "same_cluster_next_by_program_row_id_cyclic",
-        "target_source_preservation_classification": "incumbent_draft_nonpublic_held",
-        "target_route_live": false,
+        "target_source_preservation_classification": "live_public_published_route",
+        "target_route_live": true,
         "status": "planned_local_only"
       },
       "primary_cta": {
@@ -60169,8 +60169,8 @@
       "pillar": "mrx-methodology",
       "search_intent": "commercial-investigation",
       "funnel_stage": "consideration",
-      "source_preservation_classification": "incumbent_draft_nonpublic_held",
-      "source_route_live": false,
+      "source_preservation_classification": "live_public_published_route",
+      "source_route_live": true,
       "pillar_link": {
         "url": "/methodology/",
         "route_evidence": "src/pages/methodology.astro",
@@ -60219,7 +60219,7 @@
         "rendered_triangle_verified": false,
         "live_status": "not_published_or_verified_by_this_plan",
         "live_triangle_verified": false,
-        "release_status": "eligible_for_continuous_quality_review_not_yet_cleared",
+        "release_status": "released_under_d16_continuous_quality_gate",
         "numerical_release_cap_applies": false
       }
     },
@@ -60622,8 +60622,8 @@
         "target_title": "How to Get a Free Underwriter Review of Mineral Rights",
         "url": "/blog/how-to-get-a-free-underwriter-review-of-mineral-rights/",
         "relationship": "same_cluster_next_by_program_row_id_cyclic",
-        "target_source_preservation_classification": "incumbent_draft_nonpublic_held",
-        "target_route_live": false,
+        "target_source_preservation_classification": "live_public_published_route",
+        "target_route_live": true,
         "status": "planned_local_only"
       },
       "primary_cta": {
@@ -60673,8 +60673,8 @@
       "pillar": "mrx-methodology",
       "search_intent": "commercial-investigation",
       "funnel_stage": "consideration",
-      "source_preservation_classification": "incumbent_draft_nonpublic_held",
-      "source_route_live": false,
+      "source_preservation_classification": "live_public_published_route",
+      "source_route_live": true,
       "pillar_link": {
         "url": "/methodology/",
         "route_evidence": "src/pages/methodology.astro",
@@ -60723,7 +60723,7 @@
         "rendered_triangle_verified": false,
         "live_status": "not_published_or_verified_by_this_plan",
         "live_triangle_verified": false,
-        "release_status": "eligible_for_continuous_quality_review_not_yet_cleared",
+        "release_status": "released_under_d16_continuous_quality_gate",
         "numerical_release_cap_applies": false
       }
     },

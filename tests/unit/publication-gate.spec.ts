@@ -69,7 +69,7 @@ describe('article publication gate', () => {
     expect(articleFiles).toHaveLength(153);
     expect(statuses.every(({ status }) => status === 'draft' || status === 'published')).toBe(true);
     expect(published).toEqual(approvedPublicationShapedSlugs);
-    expect(statuses.filter(({ status }) => status === 'draft')).toHaveLength(84);
+    expect(statuses.filter(({ status }) => status === 'draft')).toHaveLength(74);
   });
 
   it('uses the same publication predicate for public discovery surfaces', () => {
