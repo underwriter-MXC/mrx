@@ -1,18 +1,18 @@
 {
   "artifact_type": "mrx_article_two_image_retrofit",
   "schema_version": 1,
-  "generated_at_utc": "2026-08-11T19:56:20Z",
+  "generated_at_utc": "2026-08-11T20:45:26Z",
   "policy_source": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
   "summary": {
-    "article_count": 100,
-    "asset_count": 200,
-    "unique_source_art_count": 100,
-    "unique_hero_sha256_count": 100,
-    "unique_inline_sha256_count": 100,
-    "distinct_article_pair_count": 100,
-    "hero_ocr_pass_count": 100,
-    "inline_ocr_pass_count": 100,
-    "exact_filename_identity_count": 100
+    "article_count": 101,
+    "asset_count": 202,
+    "unique_source_art_count": 101,
+    "unique_hero_sha256_count": 101,
+    "unique_inline_sha256_count": 101,
+    "distinct_article_pair_count": 101,
+    "hero_ocr_pass_count": 101,
+    "inline_ocr_pass_count": 101,
+    "exact_filename_identity_count": 101
   },
   "contact_sheets": {
     "hero": [
@@ -164,6 +164,56 @@
           "actual": "1031 exchange\nvs traditional\nsale mineral\nrights",
           "normalized_expected": "1031 exchange vs traditional sale mineral rights",
           "normalized_actual": "1031 exchange vs traditional sale mineral rights",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      }
+    },
+    {
+      "slug": "acreage-contiguity-and-its-role-in-development-potential",
+      "title": "Acreage Contiguity and Its Role in Development Potential",
+      "keyword": "acreage contiguity development potential",
+      "file_path": "src/content/posts/acreage-contiguity-and-its-role-in-development-potential.mdx",
+      "source_public_path": "/assets/articles/hero/acreage-contiguity-and-its-role-in-development-potential.webp",
+      "source_artifact_paths": [
+        "artifacts/mrx1000-wave12-creative-sources/acreage-contiguity-and-its-role-in-development-potential-hero-base.png",
+        "artifacts/mrx1000-wave12-creative-sources/acreage-contiguity-and-its-role-in-development-potential-inline-base.png"
+      ],
+      "generated_at_utc": "2026-08-11T20:38:06.914Z",
+      "hero": {
+        "public_path": "/assets/articles/hero/acreage-contiguity-and-its-role-in-development-potential.webp",
+        "alt": "Adjacent West Texas tracts at sunset with the title “Acreage Contiguity and Its Role in Development Potential”.",
+        "width": 1200,
+        "height": 630,
+        "mime_type": "image/webp",
+        "sha256": "0c1ae24d29ec9cdd9cf3260990af814e0674083a370c3843a5d1888f3c420ade",
+        "perceptual_hash": "0000000011111111000000000111111100000000011111110000000001111111000000100111111101111110001111110111100000111111010010000011111101111111100111110000000000011111000000000001011100000000000001010000000000000000000000000000011000000000000000000000000000000000",
+        "neutralized_art_text_region_count": 0,
+        "ocr": {
+          "expected": "Acreage Contiguity and Its Role in Development Potential",
+          "actual": "Acreage Contiguity\nand Its Role in\nDevelopment Potential",
+          "normalized_expected": "acreage contiguity and its role in development potential",
+          "normalized_actual": "acreage contiguity and its role in development potential",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      },
+      "inline": {
+        "public_path": "/assets/articles/inline/acreage-contiguity-and-its-role-in-development-potential/acreage-contiguity-development-potential.webp",
+        "alt": "Connected terrain-model tiles and one separate tile with the phrase “acreage contiguity development potential”.",
+        "rendered_text": "acreage contiguity development potential",
+        "visual_variant": "wave12-distinct-generated-terrain-model",
+        "width": 1200,
+        "height": 675,
+        "mime_type": "image/webp",
+        "sha256": "f3c1a8b112c8ff2a925032383535f58baf887ba5f5e63e800147c6c0221cf803",
+        "perceptual_hash": "0000111000000000000011111000000000011111000000000111111111000000011111111100000001111111111000000111111111000000011111111111110001111111111111100111111111000000011111111100000011111111110000000000000000000000000000000000000000000000000000000000000000000000",
+        "neutralized_art_text_region_count": 0,
+        "ocr": {
+          "expected": "acreage contiguity development potential",
+          "actual": "acreage contiguity\ndevelopment potential",
+          "normalized_expected": "acreage contiguity development potential",
+          "normalized_actual": "acreage contiguity development potential",
           "uppercase_i_confusable_accepted": false,
           "pass": true
         }

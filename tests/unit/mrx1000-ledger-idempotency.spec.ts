@@ -9,8 +9,8 @@
  *
  *  P1. Reports pilot-aware + deterministic generated_at.
  *  P2. Produces exactly 1,000 rows with the 9 cluster quotas filled.
- *  P3. Pilot slugs are NOT double-counted: `astro_repo` is exactly 128
- *      and `searchatlas_topical_map_pilot` is exactly 25.
+ *  P3. Pilot slugs are NOT double-counted: `astro_repo` matches the
+ *      non-pilot MDX corpus and `searchatlas_topical_map_pilot` is exactly 25.
  *  P4. Every pilot slug from the manifest appears exactly once and maps
  *      to a real on-disk MDX shell.
  *  P5. Each pilot row preserves manifest metadata + clear fail-closed
@@ -57,9 +57,9 @@ const SCRIPT = path.join(MRX_ROOT, 'scripts/build-mrx-1000-content-ledger.mjs');
 const CANONICAL_JSON = path.join(MRX_ROOT, 'config/mrx-1000-canonical-content-ledger.json');
 const CANONICAL_CSV = path.join(MRX_ROOT, 'config/mrx-1000-canonical-content-ledger.csv');
 const EXPECTED_CANONICAL_JSON_SHA256 =
-  'c13741c756de7200a0b54f3034f7e3b06c4aa729c94c13e2bc50f1a8425dd7c2';
+  'b91b3bc568b59da60ccfb1ea9cc0b23439faae29f38545dfdf89308d71c7ff89';
 const EXPECTED_CANONICAL_CSV_SHA256 =
-  'a2d2880eb9725ad63b35dfbe88d9e2dd286b57b3fb233f5461b5b576f96c68ca';
+  '00406d078e98da2d6b45efabd6bb964924b4043c3b698f8ab943c86f728d1c37';
 const TEST_OUTPUT_DIR = mkdtempSync(path.join(tmpdir(), 'mrx1000-ledger-idempotency-'));
 const JSON_OUT = path.join(TEST_OUTPUT_DIR, 'mrx-1000-canonical-content-ledger.json');
 const CSV_OUT = path.join(TEST_OUTPUT_DIR, 'mrx-1000-canonical-content-ledger.csv');
@@ -74,7 +74,9 @@ const RELEASE_BATCH = JSON.parse(
   readFileSync(path.join(MRX_ROOT, 'config/mrx1000-release-10-batch.json'), 'utf8'),
 ) as { articles: unknown[] };
 const EXPECTED_PUBLIC_COUNT = RELEASE_BATCH.articles.length + 9;
-const EXPECTED_HELD_COUNT = 128 - EXPECTED_PUBLIC_COUNT;
+let expectedIncumbentCount = 0;
+let expectedHeldCount = 0;
+let expectedPlanningCount = 0;
 
 interface PilotArticle {
   article_id: string;
@@ -250,6 +252,9 @@ describe('MRX1000 canonical ledger generator (pilot-aware + idempotent)', () => 
         .filter((name) => name.endsWith('.mdx'))
         .map((name) => name.replace(/\.mdx$/, '')),
     );
+    expectedIncumbentCount = onDiskMdxSlugs.size - manifest.articles.length;
+    expectedHeldCount = expectedIncumbentCount - EXPECTED_PUBLIC_COUNT;
+    expectedPlanningCount = 1000 - expectedIncumbentCount - manifest.articles.length;
 
     expect(manifest.articles.length).toBe(25);
     // The 25 pilot slugs must each have an MDX shell on disk. This is a
@@ -296,15 +301,15 @@ describe('MRX1000 canonical ledger generator (pilot-aware + idempotent)', () => 
     expect(ledger.verification.all_quota_checks_pass).toBe(true);
   });
 
-  it('separates 128 incumbents (including held release-10 drafts) from 25 pilot rows with no slug collision', () => {
+  it('separates the growing incumbent corpus from 25 pilot rows with no slug collision', () => {
     // The original bug: pilot slugs exist on disk as MDX QA shells, so a
     // naive `astro_repo` scan would try to add them and then collide with
     // the pilot manifest's required-rows on canonical_slug. The pilot-
-    // aware skip in loadRepoCandidates makes `astro_repo=128` and
-    // `searchatlas_topical_map_pilot=25` instead of `153 + 25` or `153`.
-    expect(ledger.verification.incumbent_repo_count).toBe(128);
+    // aware skip in loadRepoCandidates keeps every non-pilot MDX row under
+    // `astro_repo` while the 25 pilot shells remain manifest-owned rows.
+    expect(ledger.verification.incumbent_repo_count).toBe(expectedIncumbentCount);
     expect(ledger.verification.pilot_001_count).toBe(25);
-    expect(ledger.source_summary['astro_repo']).toBe(128);
+    expect(ledger.source_summary['astro_repo']).toBe(expectedIncumbentCount);
     expect(ledger.source_summary['searchatlas_topical_map_pilot']).toBe(25);
     // No row is in both buckets.
     const astroSlugs = new Set(
@@ -438,9 +443,9 @@ describe('MRX1000 canonical ledger generator (pilot-aware + idempotent)', () => 
   it('preservation classes partition the 1,000 rows after the current continuous wave', () => {
     const counts = ledger.verification.preservation_classification_counts;
     expect(counts.live_public_published_route).toBe(EXPECTED_PUBLIC_COUNT);
-    expect(counts.incumbent_draft_nonpublic_held).toBe(EXPECTED_HELD_COUNT);
+    expect(counts.incumbent_draft_nonpublic_held).toBe(expectedHeldCount);
     expect(counts.pilot_draft_noindex_stage).toBe(25);
-    expect(counts.planning_only_inventory).toBe(847);
+    expect(counts.planning_only_inventory).toBe(expectedPlanningCount);
     expect(ledger.verification.aggregate_eq_1000).toBe(true);
     expect(
       counts.live_public_published_route +
@@ -453,7 +458,7 @@ describe('MRX1000 canonical ledger generator (pilot-aware + idempotent)', () => 
     const drafts = ledger.articles.filter(
       (r) => r.preservation_classification === 'incumbent_draft_nonpublic_held',
     );
-    expect(drafts.length).toBe(EXPECTED_HELD_COUNT);
+    expect(drafts.length).toBe(expectedHeldCount);
     for (const row of drafts) {
       expect(row.publication_gate_nonpublic).toBe(true);
     }
@@ -481,7 +486,7 @@ describe('MRX1000 canonical ledger generator (pilot-aware + idempotent)', () => 
       RELEASE_BATCH.articles.length - expectedReleaseVerifiedCount,
     );
     const ordinaryHeldDrafts = drafts;
-    expect(ordinaryHeldDrafts).toHaveLength(EXPECTED_HELD_COUNT);
+    expect(ordinaryHeldDrafts).toHaveLength(expectedHeldCount);
     expect(
       ordinaryHeldDrafts.every(
         (row) =>
@@ -520,10 +525,12 @@ describe('MRX1000 canonical ledger generator (pilot-aware + idempotent)', () => 
       }
     }
     // Nonpublic rows are held incumbents, pilots, and planning-only rows.
-    expect(nonpublicRows).toBe(EXPECTED_HELD_COUNT + 25 + 847);
+    expect(nonpublicRows).toBe(expectedHeldCount + 25 + expectedPlanningCount);
     // The 25 pilots explicitly declare frontmatter `noindex: true`.
     expect(nonpublicRowsWithFrontmatterNoindexTrue).toBe(25);
-    expect(nonpublicRowsWithFrontmatterNoindexFalse).toBe(EXPECTED_HELD_COUNT + 847);
+    expect(nonpublicRowsWithFrontmatterNoindexFalse).toBe(
+      expectedHeldCount + expectedPlanningCount,
+    );
     // `noindex_required` is the derived disjunction; nonpublic rows keep the
     // safe downstream default of `true` regardless of the frontmatter fact.
     for (const row of ledger.articles) {
@@ -650,7 +657,7 @@ describe('MRX1000 canonical ledger generator (pilot-aware + idempotent)', () => 
     expect(report).toContain('pilot_draft_noindex_stage');
     expect(report).toContain('planning_only_inventory');
     expect(report).toContain(
-      `${EXPECTED_PUBLIC_COUNT} + ${EXPECTED_HELD_COUNT} + 25 + 847 = 1,000`,
+      `${EXPECTED_PUBLIC_COUNT} + ${expectedHeldCount} + 25 + ${expectedPlanningCount} = 1,000`,
     );
     expect(report).toContain('SearchAtlas map evidence');
     expect(report).toContain('workflow_status_evidence_is_non_creation');

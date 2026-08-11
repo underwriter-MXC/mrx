@@ -89,11 +89,19 @@ async function loadPriorProgramRowIds() {
   try {
     prior = JSON.parse(await readFile(PRIOR_LEDGER_PATH, 'utf8'));
   } catch (error) {
-    if (error?.code === 'ENOENT') return { bySlug: new Map(), maxSequenceEver: 0 };
+    if (error?.code === 'ENOENT') {
+      return {
+        bySlug: new Map(),
+        sourceSystemBySlug: new Map(),
+        incumbentRepoCount: 0,
+        maxSequenceEver: 0,
+      };
+    }
     throw error;
   }
 
   const bySlug = new Map();
+  const sourceSystemBySlug = new Map();
   const seenIds = new Set();
   let maxSequenceEver = Number(prior.identity_registry?.max_sequence_ever ?? 0);
   for (const row of prior.articles ?? []) {
@@ -104,12 +112,21 @@ async function loadPriorProgramRowIds() {
     if (bySlug.has(slug)) throw new Error(`Prior ledger repeats canonical slug: ${slug}`);
     if (seenIds.has(id)) throw new Error(`Prior ledger repeats program_row_id: ${id}`);
     bySlug.set(slug, id);
+    sourceSystemBySlug.set(slug, String(row.source_system ?? ''));
     const successorSlug = SUCCESSOR_CANONICAL_SLUGS.get(slug);
-    if (successorSlug) bySlug.set(successorSlug, id);
+    if (successorSlug) {
+      bySlug.set(successorSlug, id);
+      sourceSystemBySlug.set(successorSlug, String(row.source_system ?? ''));
+    }
     seenIds.add(id);
     maxSequenceEver = Math.max(maxSequenceEver, Number(match[1]));
   }
-  return { bySlug, maxSequenceEver };
+  return {
+    bySlug,
+    sourceSystemBySlug,
+    incumbentRepoCount: Number(prior.verification?.incumbent_repo_count ?? 0),
+    maxSequenceEver,
+  };
 }
 
 const CLUSTER_ORDER = [
@@ -456,8 +473,8 @@ function baseRow(candidate) {
     //   `live_public_published_route`         (verified sitemap-published rows)
     //   `incumbent_draft_nonpublic_held`      (nonpublic MDX rows)
     //   `pilot_draft_noindex_stage`           (the 25 MRX1000-PILOT-001 shells)
-    //   `planning_only_inventory`             (the 847 searchatlas/factory/
-    //                                          editorial_gap planning rows)
+    //   `planning_only_inventory`             (remaining searchatlas/factory/
+    //                                          editorial-gap planning rows)
     preservation_classification: candidate.preservationClassification ?? 'planning_only_inventory',
     normalized_status: candidate.normalizedStatus,
     publication_state: candidate.publicationState,
@@ -1275,7 +1292,7 @@ function renderReport({ ledger, quotas, counts, sourceSummary, highSimilarityPai
     `| \`live_public_published_route\` | **${v.preservation_classification_counts?.live_public_published_route ?? 0}** | Existing public routes with \`publication_status=published\`, no \`noindex\`, and no \`draft\`. This ledger authorizes no additional publication or indexing action. |\n` +
     `| \`incumbent_draft_nonpublic_held\` | **${v.preservation_classification_counts?.incumbent_draft_nonpublic_held ?? 0}** | Workspace MDX with \`publication_status=draft\` (no declared \`noindex\`). Fail-closed; cannot be represented as index-ready just because frontmatter \`noindex\` is absent. |\n` +
     `| \`pilot_draft_noindex_stage\` | **${v.preservation_classification_counts?.pilot_draft_noindex_stage ?? 0}** | MRX1000-PILOT-001 QA shells with \`noindex=true\`/\`draft=true\`/\`publication_status=draft\`. |\n` +
-    `| \`planning_only_inventory\` | **${v.preservation_classification_counts?.planning_only_inventory ?? 0}** | SearchAtlas topical-map title handles (269) + factory queue title metadata (556) + editorial-gap synthesis (25). Inventory only; no MDX, no factory body. |\n` +
+    `| \`planning_only_inventory\` | **${v.preservation_classification_counts?.planning_only_inventory ?? 0}** | Remaining SearchAtlas, factory-queue, and editorial-gap inventory with no admitted MDX body. |\n` +
     `| **Total** | **${ledger.articles.length}** | |\n\n` +
     `Aggregate invariant: **${preservationEquation} === 1,000** is enforced at generation time and again by \`tests/unit/mrx1000-ledger-idempotency.spec.ts\`.\n\n` +
     `## Evidence taxonomy\n\n` +
@@ -1324,6 +1341,7 @@ async function main() {
     loadFactoryCandidates(),
   ]);
   const editorialGap = loadEditorialGapCandidates();
+  const priorIdentity = await loadPriorProgramRowIds();
   const withoutSupersededIdentities = (rows) =>
     rows.filter((row) => !SUPERSEDED_CANONICAL_SLUGS.has(row.canonical_slug));
   const quotas = Object.fromEntries(
@@ -1337,9 +1355,13 @@ async function main() {
   if (Object.values(quotas).reduce((sum, value) => sum + value, 0) !== 1000) {
     throw new Error('Canonical quota total must equal 1,000.');
   }
-  if (repo.length !== 128)
+  const newlyMaterializedAdmittedCount = [...release10Production.batchSlugs].filter(
+    (slug) => priorIdentity.sourceSystemBySlug.get(slug) !== 'astro_repo',
+  ).length;
+  const expectedRepoCount = priorIdentity.incumbentRepoCount + newlyMaterializedAdmittedCount;
+  if (priorIdentity.incumbentRepoCount <= 0 || repo.length !== expectedRepoCount)
     throw new Error(
-      `Expected exactly 128 non-pilot incumbent repo posts after pilot-aware skip, found ${repo.length}.`,
+      `Expected ${expectedRepoCount} non-pilot incumbent repo posts from prior-ledger state plus ${newlyMaterializedAdmittedCount} newly materialized admitted rows, found ${repo.length}.`,
     );
   if (pilotRows.length !== 25)
     throw new Error(`Expected 25 pilot rows, found ${pilotRows.length}.`);
@@ -1374,7 +1396,6 @@ async function main() {
   // ID already assigned to a canonical slug and allocate new IDs above the
   // historical high-water mark. Re-sorting or replacing inventory must not
   // silently move an existing article onto a different MRX1000 ID.
-  const priorIdentity = await loadPriorProgramRowIds();
   const usedProgramRowIds = new Set();
   let nextProgramRowSequence = priorIdentity.maxSequenceEver + 1;
   let preservedProgramRowIdCount = 0;
@@ -1501,7 +1522,7 @@ async function main() {
       // from the held incumbent bucket to the live-public bucket without
       // changing the 1,000-row program total:
       //   pilot_draft_noindex_stage          = 25  (MRX1000-PILOT-001)
-      //   planning_only_inventory            = 847 (searchatlas/factory/editorial)
+      //   planning_only_inventory            = remaining searchatlas/factory/editorial rows
       preservation_classification_counts: {
         live_public_published_route: selected.filter(
           (row) => row.preservation_classification === 'live_public_published_route',

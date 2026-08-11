@@ -27,6 +27,9 @@ const LEDGER_COUNTS = (
 ).verification.preservation_classification_counts;
 const PUBLIC_ROW_COUNT = LEDGER_COUNTS.live_public_published_route;
 const HELD_ROW_COUNT = LEDGER_COUNTS.incumbent_draft_nonpublic_held;
+const PILOT_ROW_COUNT = LEDGER_COUNTS.pilot_draft_noindex_stage;
+const PLANNING_ROW_COUNT = LEDGER_COUNTS.planning_only_inventory;
+const INCUMBENT_ROW_COUNT = PUBLIC_ROW_COUNT + HELD_ROW_COUNT;
 const READINESS = path.join(MRX_ROOT, 'reports/mrx-1000-readiness-matrix.json');
 const D11 = path.join(WORKSPACE_ROOT, 'program-plans/mrx-1000-ceo-decision-no-spend-capacity.md');
 const OWNER_DECISION = path.join(
@@ -460,10 +463,10 @@ describe('MRX1000 SearchAtlas + ordered LLM execution manifest', () => {
     expect(manifest.aggregate.by_canonical_inventory_state).toEqual({
       incumbent_draft_nonpublic_held: HELD_ROW_COUNT,
       live_public_published_route: PUBLIC_ROW_COUNT,
-      pilot_draft_noindex_stage: 25,
-      planning_only_inventory: 847,
+      pilot_draft_noindex_stage: PILOT_ROW_COUNT,
+      planning_only_inventory: PLANNING_ROW_COUNT,
     });
-    expect(manifest.aggregate.repo_mdx_present).toBe(153);
+    expect(manifest.aggregate.repo_mdx_present).toBe(INCUMBENT_ROW_COUNT + PILOT_ROW_COUNT);
     expect(manifest.aggregate.workspace_public_route_configured).toBe(PUBLIC_ROW_COUNT);
     expect(
       manifest.rows.every(
@@ -474,16 +477,16 @@ describe('MRX1000 SearchAtlas + ordered LLM execution manifest', () => {
 
   it('distinguishes workspace inventory from a checksummed, readiness-backed LLM candidate', () => {
     expect(manifest.aggregate).toMatchObject({
-      checksummed_review_candidate_rows: 129,
-      rows_without_checksummed_review_candidate: 871,
-      pilot_workspace_qa_shell_rows: 25,
+      checksummed_review_candidate_rows: INCUMBENT_ROW_COUNT + 1,
+      rows_without_checksummed_review_candidate: 1000 - INCUMBENT_ROW_COUNT - 1,
+      pilot_workspace_qa_shell_rows: PILOT_ROW_COUNT,
       pilot_workspace_shells_marked_as_review_candidates: 0,
       pilot_rows_with_validated_distinct_review_candidate: 1,
       by_review_candidate_state: {
         CHECKSUMMED_EXISTING_PUBLIC_ARTICLE_READY_FOR_LLM_REVIEW: PUBLIC_ROW_COUNT,
         CHECKSUMMED_HELD_SUBSTANTIVE_DRAFT_READY_FOR_LLM_REVIEW: HELD_ROW_COUNT,
         NO_CHECKSUMMED_REVIEW_CANDIDATE_PILOT_QA_SHELL_ONLY: 24,
-        NO_WORKSPACE_CONTENT_CANDIDATE: 847,
+        NO_WORKSPACE_CONTENT_CANDIDATE: PLANNING_ROW_COUNT,
         ROW2_REMEDIATED_NOINDEX_CANDIDATE_VALIDATED_FOR_ORDERED_LLM_REVIEW: 1,
       },
     });
@@ -492,7 +495,7 @@ describe('MRX1000 SearchAtlas + ordered LLM execution manifest', () => {
       (row) =>
         row.authoritative_current_state.canonical_inventory_state === 'pilot_draft_noindex_stage',
     );
-    expect(pilots).toHaveLength(25);
+    expect(pilots).toHaveLength(PILOT_ROW_COUNT);
     const nonRow2Pilots = pilots.filter(
       (row) => row.authoritative_current_state.pilot_article_id !== 'MRX1000-PILOT-001-02',
     );
@@ -561,7 +564,7 @@ describe('MRX1000 SearchAtlas + ordered LLM execution manifest', () => {
         row.authoritative_current_state.canonical_inventory_state,
       ),
     );
-    expect(substantive).toHaveLength(128);
+    expect(substantive).toHaveLength(INCUMBENT_ROW_COUNT);
     for (const row of substantive) {
       const candidate = row.authoritative_current_state.review_candidate;
       if (!candidate.checksummed_review_candidate_present) {

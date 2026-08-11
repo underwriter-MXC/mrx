@@ -1,15 +1,15 @@
 {
   "artifact_type": "mrx1000_content_activation_plan",
   "plan_version": "mrx1000-content-activation-v1.1.0",
-  "generated_at": "2026-07-20T02:36:04.846Z",
+  "generated_at": "2026-07-20T03:32:01.361Z",
   "generated_at_method": "canonical_ledger_generated_at",
   "generator": "scripts/build-mrx-1000-activation-plan.mjs",
-  "content_fingerprint_sha256": "c60a2e628bd750d6ebc7af76213270bdd1fb38cde082dc0d7995fd3a5e902b89",
+  "content_fingerprint_sha256": "9762ad551050960c62df021a00d0f2d37782de9b5a997bf9df9fa104678c08bc",
   "inputs": {
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_fingerprint_sha256": "d5f66894f10ca833d8428552eca598202a479ca9280be80d9471e91f755663b2",
+    "canonical_ledger_fingerprint_sha256": "7c3e5e25e88a8012ebff9d432ed14d8595ea4a2f7e1be1e446eefb79a56d397e",
     "canonical_ledger_fingerprint_verified": true,
-    "canonical_ledger_generated_at": "2026-07-20T02:36:04.846Z",
+    "canonical_ledger_generated_at": "2026-07-20T03:32:01.361Z",
     "owner_decision": {
       "decision_id": "D-2026-0804-16",
       "signed_disposition": "APPROVED_CONTINUOUS_QUALITY_GATED_ARTICLE_PUBLICATION",
@@ -115,9 +115,9 @@
     },
     "by_source_preservation_classification": {
       "incumbent_draft_nonpublic_held": 28,
-      "live_public_published_route": 100,
+      "live_public_published_route": 101,
       "pilot_draft_noindex_stage": 25,
-      "planning_only_inventory": 847
+      "planning_only_inventory": 846
     }
   },
   "rows": [
@@ -10600,8 +10600,8 @@
         "target_title": "Acreage Contiguity and Its Role in Development Potential",
         "url": "/blog/acreage-contiguity-and-its-role-in-development-potential/",
         "relationship": "same_cluster_next_by_program_row_id_cyclic",
-        "target_source_preservation_classification": "planning_only_inventory",
-        "target_route_live": false,
+        "target_source_preservation_classification": "live_public_published_route",
+        "target_route_live": true,
         "status": "planned_local_only"
       },
       "primary_cta": {
@@ -10651,8 +10651,8 @@
       "pillar": "mineral-rights-value",
       "search_intent": "informational",
       "funnel_stage": "consideration",
-      "source_preservation_classification": "planning_only_inventory",
-      "source_route_live": false,
+      "source_preservation_classification": "live_public_published_route",
+      "source_route_live": true,
       "pillar_link": {
         "url": "/mineral-rights-value/",
         "route_evidence": "src/pages/mineral-rights-value.astro",
@@ -10701,7 +10701,7 @@
         "rendered_triangle_verified": false,
         "live_status": "not_published_or_verified_by_this_plan",
         "live_triangle_verified": false,
-        "release_status": "eligible_for_continuous_quality_review_not_yet_cleared",
+        "release_status": "released_under_d16_continuous_quality_gate",
         "numerical_release_cap_applies": false
       }
     },

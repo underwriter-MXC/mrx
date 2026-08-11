@@ -1,7 +1,7 @@
 {
   "program": "MRX 1,000 Article SEO+AEO Production Program",
   "artifact_type": "authorized_release_10_batch",
-  "evidence_scaffold_generated_at_utc": "2026-08-11T20:29:54Z",
+  "evidence_scaffold_generated_at_utc": "2026-08-11T21:22:12Z",
   "decision_authority": {
     "successor_gate_decision_id": "D-2026-0804-16",
     "successor_gate_decision_path": "docs/governance/mrx1000-owner-continuous-publication-directive-2026-08-04.md",
@@ -57,13 +57,16 @@
     "two_image_retrofit_decision_sha256": "8931708aafb31667e451bfe7ea21f37730a84d33b3d283168d8729cf57d858b8",
     "wave11_selection_decision_id": "MRX1000-W11-SELECT-2026-08-11",
     "wave11_selection_decision_path": "docs/governance/mrx1000-wave11-selection-decision-2026-08-11.md",
-    "wave11_selection_decision_sha256": "3dd233d12dce11e2ac4f1a868f7d867f802731758f3dfe1d619dfc9c60d080dc"
+    "wave11_selection_decision_sha256": "3dd233d12dce11e2ac4f1a868f7d867f802731758f3dfe1d619dfc9c60d080dc",
+    "wave12_selection_decision_id": "MRX1000-W12-SELECT-2026-08-11",
+    "wave12_selection_decision_path": "docs/governance/mrx1000-wave12-selection-decision-2026-08-11.md",
+    "wave12_selection_decision_sha256": "782deb9740f0838cac166d0107f2c40ebef4500c424c89fdf97d8eb1f05b2616"
   },
   "identity_authority": {
     "scope_key": "canonical_slug",
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_sha256": "c13741c756de7200a0b54f3034f7e3b06c4aa729c94c13e2bc50f1a8425dd7c2",
-    "canonical_ledger_generated_at": "2026-07-20T02:36:04.846Z",
+    "canonical_ledger_sha256": "b91b3bc568b59da60ccfb1ea9cc0b23439faae29f38545dfdf89308d71c7ff89",
+    "canonical_ledger_generated_at": "2026-07-20T03:32:01.361Z",
     "successor_ledger_decision_id": "D-2026-0723-LEDGER-04",
     "successor_ledger_decision_path": "artifacts/mrx1000-release-10/decisions/mrx-ceo-ledger-provenance-successor-20260723-04.md",
     "successor_ledger_decision_sha256": "09eca24bcd0e71563f2ac4197f564eec0ccb43a5ee955216da5c4a2543d04978",
@@ -77,11 +80,11 @@
     "authorization_scope": "declared_program_size_not_a_staged_release_cap",
     "admission_mode": "continuous_quality_gated",
     "continuous_quality_gated_from_selection_rank": 26,
-    "prior_verified_article_count": 90,
+    "prior_verified_article_count": 91,
     "fail_closed": true,
     "earned_scale_gates": [],
-    "exact_admitted_count": 91,
-    "exact_admitted_slate_sha256": "40f59ba8c861340db7c142da332aabb940b32d8f537310863c51262f990fa2a4"
+    "exact_admitted_count": 92,
+    "exact_admitted_slate_sha256": "9a73478a739ed0936877c721acd2cfcb0e3f405c3e1859979fba09b1ed53b9d9"
   },
   "articles": [
     {
@@ -3021,10 +3024,43 @@
       "inline_path": "/assets/articles/inline/how-to-know-if-your-mineral-rights-offer-is-fair/fair-mineral-rights-offer.webp",
       "inline_asset_sha256": "739dd68de3a9356233f31ccffb0a2bd60f47988f71d65931acd5312fe27538e6",
       "inline_rendered_text": "fair mineral rights offer"
+    },
+    {
+      "selection_rank": 92,
+      "program_row_id": "MRX1000-0170",
+      "source_shortlist_program_row_id": "MRX1000-0170",
+      "slug": "acreage-contiguity-and-its-role-in-development-potential",
+      "title": "Acreage Contiguity and Its Role in Development Potential",
+      "source_shortlist_title": "Acreage Contiguity and Its Role in Development Potential",
+      "canonical_url": "https://mineralrightsxchange.com/blog/acreage-contiguity-and-its-role-in-development-potential/",
+      "pillar": "mineral-rights-value",
+      "cluster": "valuation-methodology-drivers",
+      "content_genius_article_uuid": null,
+      "archive_evidence_sha256": "7b344ba33f5ce41781a15e28e0146fa89f6c762969d6332e45661bad1f2a3ea2",
+      "repo_path": "src/content/posts/acreage-contiguity-and-its-role-in-development-potential.mdx",
+      "repo_sha256": "802d78023d2f34a8e546373e038dad0c678891dbf227d7220f2d2f7bb306fc8b",
+      "article_sha256": "802d78023d2f34a8e546373e038dad0c678891dbf227d7220f2d2f7bb306fc8b",
+      "hero_path": "/assets/articles/hero/acreage-contiguity-and-its-role-in-development-potential.webp",
+      "hero_sha256": "0c1ae24d29ec9cdd9cf3260990af814e0674083a370c3843a5d1888f3c420ade",
+      "hero_asset_sha256": "0c1ae24d29ec9cdd9cf3260990af814e0674083a370c3843a5d1888f3c420ade",
+      "admission_status": "admitted_quality_gated",
+      "finalization_state": "draft_noindex_admitted",
+      "searchatlas_content_score": null,
+      "searchatlas_word_count": 1841,
+      "risk_citation_remediation": [
+        "The planning-only canonical row was developed into an original, evidence-bounded owner guide; no factory body text was imported.",
+        "Continuous quality-gated admission under D-2026-0804-16 and MRX1000-W12-SELECT-2026-08-11; no numerical cap or elapsed-time gate applies.",
+        "Publication remains conditional on current editorial, factual-citation, compliance, two-image, metadata, build, rollback, deployment, and live-verification evidence."
+      ],
+      "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/acreage-contiguity-and-its-role-in-development-potential.json",
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/acreage-contiguity-and-its-role-in-development-potential/acreage-contiguity-development-potential.webp",
+      "inline_asset_sha256": "f3c1a8b112c8ff2a925032383535f58baf887ba5f5e63e800147c6c0221cf803",
+      "inline_rendered_text": "acreage contiguity development potential"
     }
   ],
   "admission_audit": {
-    "admitted_article_count": 91,
+    "admitted_article_count": 92,
     "selection_ranks": [
       1,
       2,
@@ -3116,7 +3152,8 @@
       88,
       89,
       90,
-      91
+      91,
+      92
     ],
     "duplicate_program_row_ids": [],
     "duplicate_slugs": [],
@@ -3175,9 +3212,9 @@
   "two_image_policy": {
     "directive": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
     "retrofit_manifest_path": "config/mrx-article-two-image-retrofit.json",
-    "retrofit_manifest_sha256": "3621c575d611e687ac8f8381eb30d87a05fcb5658033c8a723237d562c81fa4c",
-    "public_article_count": 100,
-    "batch_article_count": 91,
+    "retrofit_manifest_sha256": "c6e385012894cf11b3e832c742ba6d1276f569d1390a8346906bf25b9101cb9d",
+    "public_article_count": 101,
+    "batch_article_count": 92,
     "assets_per_article": 2,
     "hero_share_identity_required": true,
     "inline_image_distinct_required": true,

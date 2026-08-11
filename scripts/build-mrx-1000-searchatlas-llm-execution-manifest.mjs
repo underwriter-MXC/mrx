@@ -1753,13 +1753,16 @@ export function buildManifest() {
     'manifest rows must be physically ordered by execution_sequence',
   );
   invariant(
-    aggregate.repo_mdx_present === 153 &&
+    aggregate.repo_mdx_present ===
+      ledger.verification.incumbent_repo_count + ledger.verification.pilot_001_count &&
       aggregate.by_canonical_inventory_state.live_public_published_route +
         aggregate.by_canonical_inventory_state.incumbent_draft_nonpublic_held ===
-        128 &&
-      aggregate.by_canonical_inventory_state.pilot_draft_noindex_stage === 25 &&
-      aggregate.by_canonical_inventory_state.planning_only_inventory === 847,
-    'runtime publication projection must preserve 128 incumbent routes + 25 pilots + 847 planning rows',
+        ledger.verification.incumbent_repo_count &&
+      aggregate.by_canonical_inventory_state.pilot_draft_noindex_stage ===
+        ledger.verification.pilot_001_count &&
+      aggregate.by_canonical_inventory_state.planning_only_inventory ===
+        ledger.verification.preservation_classification_counts.planning_only_inventory,
+    'runtime publication projection must match the current incumbent, pilot, and planning ledger partitions',
   );
   invariant(
     aggregate.planning_searchatlas_map_id_count === 294 &&
@@ -1768,10 +1771,13 @@ export function buildManifest() {
     'planning-handle / persisted-UUID evidence boundary changed',
   );
   invariant(
-    aggregate.checksummed_review_candidate_rows === 128 + Number(row2Remediation.validated) &&
+    aggregate.checksummed_review_candidate_rows ===
+      ledger.verification.incumbent_repo_count + Number(row2Remediation.validated) &&
       aggregate.rows_without_checksummed_review_candidate ===
-        872 - Number(row2Remediation.validated) &&
-      aggregate.pilot_workspace_qa_shell_rows === 25 &&
+        EXPECTED.rowCount -
+          ledger.verification.incumbent_repo_count -
+          Number(row2Remediation.validated) &&
+      aggregate.pilot_workspace_qa_shell_rows === ledger.verification.pilot_001_count &&
       aggregate.pilot_workspace_shells_marked_as_review_candidates === 0 &&
       aggregate.pilot_rows_with_validated_distinct_review_candidate ===
         Number(row2Remediation.validated),

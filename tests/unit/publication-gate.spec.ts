@@ -7,6 +7,9 @@ const postsDir = join(repoRoot, 'src', 'content', 'posts');
 const releaseBatch = JSON.parse(
   readFileSync(join(repoRoot, 'config', 'mrx1000-release-10-batch.json'), 'utf8'),
 ) as { articles: Array<{ slug: string }> };
+const canonicalLedger = JSON.parse(
+  readFileSync(join(repoRoot, 'config', 'mrx-1000-canonical-content-ledger.json'), 'utf8'),
+) as { verification: { incumbent_repo_count: number; pilot_001_count: number } };
 
 const approvedLiveSlugs = [
   'how-title-defects-change-mineral-rights-offer',
@@ -66,7 +69,9 @@ describe('article publication gate', () => {
       .map(({ slug }) => slug)
       .sort();
 
-    expect(articleFiles).toHaveLength(153);
+    expect(articleFiles).toHaveLength(
+      canonicalLedger.verification.incumbent_repo_count + canonicalLedger.verification.pilot_001_count,
+    );
     expect(statuses.every(({ status }) => status === 'draft' || status === 'published')).toBe(true);
     expect(published).toEqual(approvedPublicationShapedSlugs);
     expect(statuses.filter(({ status }) => status === 'draft')).toHaveLength(
