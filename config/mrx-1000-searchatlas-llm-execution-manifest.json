@@ -1,7 +1,7 @@
 {
   "program": "MRX1000",
   "artifact_type": "searchatlas_ordered_llm_local_execution_manifest",
-  "generated_at": "2026-07-20T19:48:06.269Z",
+  "generated_at": "2026-07-20T08:25:37.000Z",
   "deterministic": true,
   "local_only": true,
   "external_services_called": false,
@@ -9,8 +9,8 @@
   "inputs": {
     "ledger": {
       "path": "config/mrx-1000-canonical-content-ledger.json",
-      "sha256": "cb80ced17ca159f8155cbbcd1949bb9376f87660e133babfe6d4c709f5a99517",
-      "bytes": 4437705
+      "sha256": "00c8ae24a63fb7ec15f6b5936192e56a80850eb833ac8b3546f3c670d7e3c186",
+      "bytes": 4438063
     },
     "readiness": {
       "path": "reports/mrx-1000-readiness-matrix.json",
@@ -66960,7 +66960,7 @@
       "primary_keyword": "basis differentials mineral rights cash flow",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -349364,5 +349364,5 @@
       ]
     }
   ],
-  "content_fingerprint_sha256": "d9979aa23fbd91ebb9c5843a3294e51e73adb228ec35dbe23fcc2b3e7e3d689b"
+  "content_fingerprint_sha256": "27dde82fcc651fa6b5e333168eb96c1bd054f241527dd34ebca8dc57c4620f2d"
 }
