@@ -359,6 +359,12 @@ function frontmatterNestedScalar(frontmatter, parent, key) {
   return match ? unquoteYaml(match[1]) : null;
 }
 
+function frontmatterList(frontmatter, key) {
+  const block = frontmatter.match(new RegExp(`^${key}:\\s*\\n((?:[ \\t]+.*(?:\\n|$))*)`, 'm'));
+  if (!block) return [];
+  return [...block[1].matchAll(/^\s+-\s+(.+)$/gm)].map((match) => unquoteYaml(match[1]));
+}
+
 function parseFrontmatter(source, sourcePath) {
   const match = source.match(/^---\s*\n([\s\S]*?)\n---(?:\s*\n|$)/);
   if (!match) throw new Error(`Missing YAML frontmatter in ${sourcePath}`);
@@ -700,6 +706,9 @@ async function loadCurrentAssetEvidence(row, inputParts) {
   const inlineAssetPath = frontmatterNestedScalar(frontmatter, 'inline_image', 'src');
   const inlineAltText = frontmatterNestedScalar(frontmatter, 'inline_image', 'alt');
   const inlineRenderedText = frontmatterNestedScalar(frontmatter, 'inline_image', 'rendered_text');
+  const canonicalTitle = frontmatterScalar(frontmatter, 'title');
+  const primaryKeyword = frontmatterScalar(frontmatter, 'primary_keyword');
+  const supportingKeywords = frontmatterList(frontmatter, 'secondary_keywords');
   const description = frontmatterScalar(frontmatter, 'description');
   const seoTitle = frontmatterScalar(frontmatter, 'seo_title');
   const onDiskPath = publicPathOnDisk(assetPath);
@@ -768,6 +777,9 @@ async function loadCurrentAssetEvidence(row, inputParts) {
     inline_asset_path: inlineAssetPath,
     inline_alt_text: inlineAltText,
     inline_rendered_text: inlineRenderedText,
+    inline_rendered_text_authorized:
+      Boolean(inlineRenderedText) &&
+      [canonicalTitle, primaryKeyword, ...supportingKeywords].includes(inlineRenderedText),
     inline_on_disk: inlineOnDisk,
     inline_sha256: inlineAssetSha256,
     inline_format: inlineFormat,
@@ -951,7 +963,7 @@ async function buildRow(
     twoImageEvidence &&
     twoImageEvidence.slug === row.canonical_slug &&
     twoImageEvidence.title === row.canonical_title &&
-    [row.primary_keyword, row.canonical_title].includes(twoImageEvidence.keyword) &&
+    currentEvidence?.inline_rendered_text_authorized === true &&
     twoImageEvidence.hero?.public_path === currentAssetPath &&
     twoImageEvidence.hero?.sha256 === currentEvidence?.sha256 &&
     twoImageEvidence.hero?.ocr?.pass === true &&
@@ -1348,7 +1360,9 @@ async function main() {
     twoImageRetrofit.summary?.hero_ocr_pass_count !== twoImageRetrofit.rows.length ||
     twoImageRetrofit.summary?.inline_ocr_pass_count !== twoImageRetrofit.rows.length
   ) {
-    throw new Error('Two-image retrofit manifest must prove every current public OCR-verified article row');
+    throw new Error(
+      'Two-image retrofit manifest must prove every current public OCR-verified article row',
+    );
   }
   if (
     !twoImageDecisionText.includes('Decision ID: D-2026-0811-17') ||
