@@ -23,6 +23,10 @@ const articlePath = join(root, articleRelativePath);
 const decisionPath = join(root, decisionRelativePath);
 const creativeManifestPath = join(root, creativeManifestRelativePath);
 const ledgerPath = join(root, 'config/mrx-1000-canonical-content-ledger.json');
+const productionVerificationPath = join(
+  root,
+  'artifacts/mrx1000-release-10/release/post-publication-verification.json',
+);
 
 function sha256(value) {
   return createHash('sha256').update(value).digest('hex');
@@ -279,6 +283,25 @@ batch.evidence_scaffold_generated_at_utc = now;
 const ledger = JSON.parse(ledgerBytes.toString('utf8'));
 batch.identity_authority.canonical_ledger_sha256 = sha256(ledgerBytes);
 batch.identity_authority.canonical_ledger_generated_at = ledger.generated_at;
+const productionVerificationBytes = await readFile(productionVerificationPath).catch(() => null);
+if (productionVerificationBytes) {
+  const productionVerification = JSON.parse(productionVerificationBytes.toString('utf8'));
+  const productionSummary = productionVerification.summary ?? {};
+  const deploymentId = productionVerification.deployment?.deployment_id;
+  if (
+    productionSummary.overall_disposition === 'PASS' &&
+    productionSummary.expected_articles === batch.articles.length &&
+    Number.isInteger(productionSummary.expected_live_blog_count) &&
+    deploymentId
+  ) {
+    batch.identity_authority.reconciled_at_utc = productionVerification.generated_at_utc ?? now;
+    batch.identity_authority.note =
+      'The controlling shortlist authorizes these exact canonical slugs. Historical row IDs remain ' +
+      `provenance; current IDs are reconciled to the deterministic post-publication ledger after deployment ${deploymentId}, ` +
+      `with ${productionSummary.expected_live_blog_count} public article routes and ` +
+      `${productionSummary.expected_articles} live-verified MRX1000 articles.`;
+  }
+}
 batch.decision_authority.wave11_selection_decision_id = 'MRX1000-W11-SELECT-2026-08-11';
 batch.decision_authority.wave11_selection_decision_path = decisionRelativePath;
 batch.decision_authority.wave11_selection_decision_sha256 = sha256(decisionBytes);
