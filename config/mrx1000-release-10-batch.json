@@ -1,7 +1,7 @@
 {
   "program": "MRX 1,000 Article SEO+AEO Production Program",
   "artifact_type": "authorized_release_10_batch",
-  "evidence_scaffold_generated_at_utc": "2026-08-11T23:23:11Z",
+  "evidence_scaffold_generated_at_utc": "2026-08-11T23:38:31Z",
   "decision_authority": {
     "successor_gate_decision_id": "D-2026-0804-16",
     "successor_gate_decision_path": "docs/governance/mrx1000-owner-continuous-publication-directive-2026-08-04.md",
@@ -66,13 +66,16 @@
     "wave13_selection_decision_sha256": "b4facb40cc2677ff4b6b1da99a9d7c0d1d6c38d70a5c7ec37f9b36dea0c81ce0",
     "wave14_selection_decision_id": "MRX1000-W14-SELECT-2026-08-11",
     "wave14_selection_decision_path": "docs/governance/mrx1000-wave14-selection-decision-2026-08-11.md",
-    "wave14_selection_decision_sha256": "2f981ca897ac03b9c7644302adaf834d7ffa44f32e31019472abf7fd17fc7f28"
+    "wave14_selection_decision_sha256": "2f981ca897ac03b9c7644302adaf834d7ffa44f32e31019472abf7fd17fc7f28",
+    "wave15_selection_decision_id": "MRX1000-W15-SELECT-2026-08-11",
+    "wave15_selection_decision_path": "docs/governance/mrx1000-wave15-selection-decision-2026-08-11.md",
+    "wave15_selection_decision_sha256": "c9d458f8c2d9498465ab4a1893a892553051f09f5387c7fefbb7102faf636964"
   },
   "identity_authority": {
     "scope_key": "canonical_slug",
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_sha256": "ed3e541427eb3281207582bc0c97ace3c91e616a5e0cd4d74e57c3f34a73b26c",
-    "canonical_ledger_generated_at": "2026-07-20T15:53:47.446Z",
+    "canonical_ledger_sha256": "1a8b72e4230ac73d9cde670b1176c054dbfc9ce31f197d4be24a6ce2e8daaf0a",
+    "canonical_ledger_generated_at": "2026-07-20T13:32:55.699Z",
     "successor_ledger_decision_id": "D-2026-0723-LEDGER-04",
     "successor_ledger_decision_path": "artifacts/mrx1000-release-10/decisions/mrx-ceo-ledger-provenance-successor-20260723-04.md",
     "successor_ledger_decision_sha256": "09eca24bcd0e71563f2ac4197f564eec0ccb43a5ee955216da5c4a2543d04978",
@@ -86,11 +89,11 @@
     "authorization_scope": "declared_program_size_not_a_staged_release_cap",
     "admission_mode": "continuous_quality_gated",
     "continuous_quality_gated_from_selection_rank": 26,
-    "prior_verified_article_count": 93,
+    "prior_verified_article_count": 94,
     "fail_closed": true,
     "earned_scale_gates": [],
-    "exact_admitted_count": 94,
-    "exact_admitted_slate_sha256": "0b75f53964b58648d6a337e7943b31390cec66ee3a33b4be0055ef3a37113015"
+    "exact_admitted_count": 95,
+    "exact_admitted_slate_sha256": "ec9b06acb87cd0df1d37df21d08416f023414858a91d59786f894e18e7358f19"
   },
   "articles": [
     {
@@ -3129,10 +3132,43 @@
       "inline_path": "/assets/articles/inline/comparable-mineral-sales-what-makes-a-transaction-relevant/mineral-sale-comparability-checklist.webp",
       "inline_asset_sha256": "16e301339af420705dd3832cd246e0beb6ba12e0cbfc3740ecac0eef9108343d",
       "inline_rendered_text": "mineral sale comparability checklist"
+    },
+    {
+      "selection_rank": 95,
+      "program_row_id": "MRX1000-0173",
+      "source_shortlist_program_row_id": "MRX1000-0173",
+      "slug": "converting-monthly-royalty-history-into-a-valuation-baseline",
+      "title": "Converting Monthly Royalty History Into a Valuation Baseline",
+      "source_shortlist_title": "Converting Monthly Royalty History Into a Valuation Baseline",
+      "canonical_url": "https://mineralrightsxchange.com/blog/converting-monthly-royalty-history-into-a-valuation-baseline/",
+      "pillar": "mineral-rights-value",
+      "cluster": "valuation-methodology-drivers",
+      "content_genius_article_uuid": null,
+      "archive_evidence_sha256": "a1bc445e60f06fda5c08c069883b025adf19c880e473f169c34a5b520c3a3b84",
+      "repo_path": "src/content/posts/converting-monthly-royalty-history-into-a-valuation-baseline.mdx",
+      "repo_sha256": "8d931a7aeed170ae9bc473b1b4f90dcf09f335fb8fe05c3b0d85e9141ec9ea41",
+      "article_sha256": "8d931a7aeed170ae9bc473b1b4f90dcf09f335fb8fe05c3b0d85e9141ec9ea41",
+      "hero_path": "/assets/articles/hero/converting-monthly-royalty-history-into-a-valuation-baseline.webp",
+      "hero_sha256": "993a90ffa48d889c5fce2b04ff535f5f1af905d65028ba3345bd7bd44ce5fe5d",
+      "hero_asset_sha256": "993a90ffa48d889c5fce2b04ff535f5f1af905d65028ba3345bd7bd44ce5fe5d",
+      "admission_status": "admitted_quality_gated",
+      "finalization_state": "draft_noindex_admitted",
+      "searchatlas_content_score": null,
+      "searchatlas_word_count": 2331,
+      "risk_citation_remediation": [
+        "The planning-only canonical row was developed into an original, evidence-bounded royalty-history guide; no factory body text was imported.",
+        "Continuous quality-gated admission under D-2026-0804-16 and MRX1000-W15-SELECT-2026-08-11; no numerical cap or elapsed-time gate applies.",
+        "Publication remains conditional on current editorial, factual-citation, compliance, two-image, metadata, build, rollback, deployment, and live-verification evidence."
+      ],
+      "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/converting-monthly-royalty-history-into-a-valuation-baseline.json",
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/converting-monthly-royalty-history-into-a-valuation-baseline/monthly-royalty-history-worksheet.webp",
+      "inline_asset_sha256": "b4aaa07c8d491e9813d558afeaa653b19226be31c843c8abdd2b56730d9fa072",
+      "inline_rendered_text": "monthly royalty history worksheet"
     }
   ],
   "admission_audit": {
-    "admitted_article_count": 94,
+    "admitted_article_count": 95,
     "selection_ranks": [
       1,
       2,
@@ -3227,7 +3263,8 @@
       91,
       92,
       93,
-      94
+      94,
+      95
     ],
     "duplicate_program_row_ids": [],
     "duplicate_slugs": [],
@@ -3286,9 +3323,9 @@
   "two_image_policy": {
     "directive": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
     "retrofit_manifest_path": "config/mrx-article-two-image-retrofit.json",
-    "retrofit_manifest_sha256": "802512b5dab8eae7592be5934f97a6a8989125fb8f65d3f37ee3cdeb2d35dc10",
-    "public_article_count": 103,
-    "batch_article_count": 94,
+    "retrofit_manifest_sha256": "d5a45312b44d4aec6d35dc13104cd7855af1fa9fb6743a5b8fdf51c22b92ab9e",
+    "public_article_count": 104,
+    "batch_article_count": 95,
     "assets_per_article": 2,
     "hero_share_identity_required": true,
     "inline_image_distinct_required": true,
