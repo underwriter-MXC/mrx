@@ -1,15 +1,15 @@
 {
   "artifact_type": "mrx1000_content_activation_plan",
   "plan_version": "mrx1000-content-activation-v1.1.0",
-  "generated_at": "2026-07-20T03:20:25.411Z",
+  "generated_at": "2026-07-20T14:56:10.438Z",
   "generated_at_method": "canonical_ledger_generated_at",
   "generator": "scripts/build-mrx-1000-activation-plan.mjs",
-  "content_fingerprint_sha256": "50a109785b6f233c2fdf2bb2c6452fa5954f13e35224ae234c4c03f2164c3633",
+  "content_fingerprint_sha256": "189d59885b07e6b95fd50c6d5d58e7b195d8f9e9c00ce3e892e53e977644037f",
   "inputs": {
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_fingerprint_sha256": "96db98d2c4ea193f7244cc8494e674a61f08ced32facbabdea8bcaa523e8dd4d",
+    "canonical_ledger_fingerprint_sha256": "85caabca4f50012e62b76c1f712bf1371c88227d890b1d54a5f687be71cda992",
     "canonical_ledger_fingerprint_verified": true,
-    "canonical_ledger_generated_at": "2026-07-20T03:20:25.411Z",
+    "canonical_ledger_generated_at": "2026-07-20T14:56:10.438Z",
     "owner_decision": {
       "decision_id": "D-2026-0804-16",
       "signed_disposition": "APPROVED_CONTINUOUS_QUALITY_GATED_ARTICLE_PUBLICATION",
@@ -115,9 +115,9 @@
     },
     "by_source_preservation_classification": {
       "incumbent_draft_nonpublic_held": 28,
-      "live_public_published_route": 102,
+      "live_public_published_route": 103,
       "pilot_draft_noindex_stage": 25,
-      "planning_only_inventory": 845
+      "planning_only_inventory": 844
     }
   },
   "rows": [
@@ -10726,8 +10726,8 @@
         "target_title": "Comparable Mineral Sales: What Makes a Transaction Relevant?",
         "url": "/blog/comparable-mineral-sales-what-makes-a-transaction-relevant/",
         "relationship": "same_cluster_next_by_program_row_id_cyclic",
-        "target_source_preservation_classification": "planning_only_inventory",
-        "target_route_live": false,
+        "target_source_preservation_classification": "live_public_published_route",
+        "target_route_live": true,
         "status": "planned_local_only"
       },
       "primary_cta": {
@@ -10777,8 +10777,8 @@
       "pillar": "mineral-rights-value",
       "search_intent": "informational",
       "funnel_stage": "consideration",
-      "source_preservation_classification": "planning_only_inventory",
-      "source_route_live": false,
+      "source_preservation_classification": "live_public_published_route",
+      "source_route_live": true,
       "pillar_link": {
         "url": "/mineral-rights-value/",
         "route_evidence": "src/pages/mineral-rights-value.astro",
@@ -10827,7 +10827,7 @@
         "rendered_triangle_verified": false,
         "live_status": "not_published_or_verified_by_this_plan",
         "live_triangle_verified": false,
-        "release_status": "eligible_for_continuous_quality_review_not_yet_cleared",
+        "release_status": "released_under_d16_continuous_quality_gate",
         "numerical_release_cap_applies": false
       }
     },
