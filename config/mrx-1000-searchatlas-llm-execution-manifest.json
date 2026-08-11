@@ -1,7 +1,7 @@
 {
   "program": "MRX1000",
   "artifact_type": "searchatlas_ordered_llm_local_execution_manifest",
-  "generated_at": "2026-07-20T14:56:10.438Z",
+  "generated_at": "2026-07-20T15:53:47.446Z",
   "deterministic": true,
   "local_only": true,
   "external_services_called": false,
@@ -9,13 +9,13 @@
   "inputs": {
     "ledger": {
       "path": "config/mrx-1000-canonical-content-ledger.json",
-      "sha256": "e7f186770fade9f430211a652da904b5375584d1431ab71c41262bf3c3e1f4f1",
-      "bytes": 4438403
+      "sha256": "ed3e541427eb3281207582bc0c97ace3c91e616a5e0cd4d74e57c3f34a73b26c",
+      "bytes": 4438761
     },
     "readiness": {
       "path": "reports/mrx-1000-readiness-matrix.json",
-      "sha256": "b84fbdf4cbe2f3261616bf1ae857afed7d3cc005401528c6bbaddd25a57d7eb0",
-      "bytes": 3402765,
+      "sha256": "d835eaa97ff832b9f39d1d39ffa8f6b9390eeb208c190493551a87a4280faacb",
+      "bytes": 3402793,
       "sha256_method": "canonical_json_with_top_level_generated_at_masked",
       "generated_at_excluded_from_sha256": true
     },
@@ -67328,7 +67328,7 @@
       "primary_keyword": "comparable mineral rights sales",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -349390,5 +349390,5 @@
       ]
     }
   ],
-  "content_fingerprint_sha256": "6731cf854b5f9c878b0a428576f40b2c21fc89ebf3e992a23cbf70fb66798219"
+  "content_fingerprint_sha256": "f32353f97cefdde734eed8fa05a63668bb1ac97cd7c095b65acd357d717b929c"
 }
