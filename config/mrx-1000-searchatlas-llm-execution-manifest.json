@@ -1,7 +1,7 @@
 {
   "program": "MRX1000",
   "artifact_type": "searchatlas_ordered_llm_local_execution_manifest",
-  "generated_at": "2026-07-20T08:25:37.000Z",
+  "generated_at": "2026-07-20T12:41:57.500Z",
   "deterministic": true,
   "local_only": true,
   "external_services_called": false,
@@ -9,8 +9,8 @@
   "inputs": {
     "ledger": {
       "path": "config/mrx-1000-canonical-content-ledger.json",
-      "sha256": "b91b3bc568b59da60ccfb1ea9cc0b23439faae29f38545dfdf89308d71c7ff89",
-      "bytes": 4437060
+      "sha256": "55b49e6f41383fc6564754fb23463653189a7f035013d2afa3c00c4a053425e0",
+      "bytes": 4437418
     },
     "readiness": {
       "path": "reports/mrx-1000-readiness-matrix.json",
@@ -66592,7 +66592,7 @@
       "primary_keyword": "acreage contiguity development potential",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -349338,5 +349338,5 @@
       ]
     }
   ],
-  "content_fingerprint_sha256": "dde56e947175b8ba12995274cf89a585267da07ecbdb693750b836e69fb359f7"
+  "content_fingerprint_sha256": "af0986f5c68dff665ffdc8716fde5809325e7e7d5aa38b23d211e3f92ea6dfff"
 }
