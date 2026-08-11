@@ -1,13 +1,13 @@
 #!/usr/bin/env node
 /**
- * Build deterministic, hash-locked hero/social asset evidence for the
+ * Build deterministic, hash-locked hero/social/in-body asset evidence for the
  * authorized MRX1000 release-10 batch. Exact and perceptual comparisons cover
  * every raster image in public/assets/articles so a release packet cannot
  * approve a missing, stale, or materially duplicated asset.
  */
 import { createHash } from 'node:crypto';
 import { existsSync, mkdirSync, readFileSync, readdirSync, statSync, writeFileSync } from 'node:fs';
-import { dirname, extname, join, relative, resolve } from 'node:path';
+import { basename, dirname, extname, join, relative, resolve } from 'node:path';
 
 import sharp from 'sharp';
 
@@ -17,6 +17,7 @@ const repoRoot =
   resolve(import.meta.dirname, '..');
 const root = resolve(repoRoot);
 const batchPath = join(root, 'config/mrx1000-release-10-batch.json');
+const retrofitManifestPath = join(root, 'config/mrx-article-two-image-retrofit.json');
 const outputPath = join(root, 'artifacts/mrx1000-release-10/assets/asset-evidence.json');
 const markdownPath = join(root, 'artifacts/mrx1000-release-10/assets/asset-evidence.md');
 const rasterExtensions = new Set(['.webp', '.jpg', '.jpeg', '.png', '.avif']);
@@ -38,7 +39,8 @@ function frontmatter(source) {
 function unquote(value) {
   return String(value ?? '')
     .trim()
-    .replace(/^(['"])(.*)\1$/, '$2');
+    .replace(/^(['"])(.*)\1$/, '$2')
+    .replace(/''/g, "'");
 }
 
 function scalar(block, key) {
@@ -48,6 +50,21 @@ function scalar(block, key) {
 function nestedScalar(block, parent, key) {
   const nested = block.match(new RegExp(`^${parent}:\\s*\\n((?:[ \\t]+.*\\n?)*)`, 'm'))?.[1] ?? '';
   return unquote(nested.match(new RegExp(`^[ \\t]+${key}:\\s*(.+)$`, 'm'))?.[1] ?? '');
+}
+
+function renderedTextSlug(value) {
+  return value
+    .normalize('NFKD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[’']/g, '')
+    .replace(/&/g, ' and ')
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+}
+
+function filenameStem(publicPath) {
+  return basename(publicPath, extname(publicPath));
 }
 
 function listRasterFiles(directory) {
@@ -108,8 +125,14 @@ function publicToRepoPath(publicPath) {
 
 async function main() {
   if (!existsSync(batchPath)) throw new Error(`Missing batch config: ${batchPath}`);
+  if (!existsSync(retrofitManifestPath)) {
+    throw new Error(`Missing two-image retrofit manifest: ${retrofitManifestPath}`);
+  }
   const batchBytes = readFileSync(batchPath);
   const batch = JSON.parse(batchBytes.toString('utf8'));
+  const retrofitManifestBytes = readFileSync(retrofitManifestPath);
+  const retrofitManifest = JSON.parse(retrofitManifestBytes.toString('utf8'));
+  const retrofitBySlug = new Map((retrofitManifest.rows ?? []).map((row) => [row.slug, row]));
   const libraryPaths = listRasterFiles(join(root, 'public/assets/articles'));
   const library = [];
   for (const path of libraryPaths) {
@@ -134,6 +157,7 @@ async function main() {
     const bodyBytes = readFileSync(bodyPath);
     const fm = frontmatter(bodyBytes.toString('utf8'));
     const title = scalar(fm, 'title');
+    const retrofitRow = retrofitBySlug.get(entry.slug) ?? null;
     const hero = {
       kind: 'hero',
       public_path: nestedScalar(fm, 'hero_image', 'src'),
@@ -141,6 +165,9 @@ async function main() {
       declared_width: Number(nestedScalar(fm, 'hero_image', 'width')),
       declared_height: Number(nestedScalar(fm, 'hero_image', 'height')),
       declared_mime_type: nestedScalar(fm, 'hero_image', 'mime_type'),
+      rendered_text: title,
+      provenance: nestedScalar(fm, 'hero_image', 'source'),
+      license: nestedScalar(fm, 'hero_image', 'license'),
     };
     const social = {
       kind: 'social',
@@ -149,11 +176,23 @@ async function main() {
       declared_width: Number(nestedScalar(fm, 'hero_image', 'social_width')),
       declared_height: Number(nestedScalar(fm, 'hero_image', 'social_height')),
       declared_mime_type: nestedScalar(fm, 'hero_image', 'social_mime_type'),
+      rendered_text: title,
+      provenance: nestedScalar(fm, 'hero_image', 'source'),
+      license: nestedScalar(fm, 'hero_image', 'license'),
     };
-    const provenance = nestedScalar(fm, 'hero_image', 'source');
-    const license = nestedScalar(fm, 'hero_image', 'license');
+    const inline = {
+      kind: 'inline',
+      public_path: nestedScalar(fm, 'inline_image', 'src'),
+      alt_text: nestedScalar(fm, 'inline_image', 'alt'),
+      rendered_text: nestedScalar(fm, 'inline_image', 'rendered_text'),
+      declared_width: Number(nestedScalar(fm, 'inline_image', 'width')),
+      declared_height: Number(nestedScalar(fm, 'inline_image', 'height')),
+      declared_mime_type: nestedScalar(fm, 'inline_image', 'mime_type'),
+      provenance: nestedScalar(fm, 'inline_image', 'source'),
+      license: nestedScalar(fm, 'inline_image', 'license'),
+    };
     const assets = [];
-    for (const declared of [hero, social]) {
+    for (const declared of [hero, social, inline]) {
       const absolutePath = publicToRepoPath(declared.public_path);
       const observed = absolutePath ? library.find((asset) => asset.path === absolutePath) : null;
       const exactDuplicates = observed
@@ -189,11 +228,31 @@ async function main() {
           : observed?.format
             ? `image/${observed.format}`
             : null;
+      const canonicalSurfaceIdentity =
+        declared.kind === 'inline'
+          ? declared.public_path !== hero.public_path
+          : declared.public_path === hero.public_path;
+      const filenameTextIdentity =
+        Boolean(declared.rendered_text) &&
+        filenameStem(declared.public_path) === renderedTextSlug(declared.rendered_text);
+      const retrofitAsset = declared.kind === 'inline' ? retrofitRow?.inline : retrofitRow?.hero;
+      const ocrVerified = Boolean(
+        retrofitRow?.title === title &&
+          retrofitAsset?.public_path === declared.public_path &&
+          retrofitAsset?.sha256 === observed?.sha256 &&
+          retrofitAsset?.ocr?.pass === true &&
+          (retrofitAsset?.ocr?.normalized_expected ===
+            retrofitAsset?.ocr?.normalized_actual ||
+            retrofitAsset?.ocr?.uppercase_i_confusable_accepted === true),
+      );
       const pass = Boolean(
         observed &&
         declared.alt_text &&
-        provenance &&
-        license &&
+        declared.provenance &&
+        declared.license &&
+        canonicalSurfaceIdentity &&
+        filenameTextIdentity &&
+        ocrVerified &&
         declared.declared_width === observed.width &&
         declared.declared_height === observed.height &&
         declared.declared_mime_type === mimeType &&
@@ -217,8 +276,14 @@ async function main() {
         nearest_nonself_path: closest?.repo_path ?? null,
         nearest_nonself_hamming_distance: closest?.distance ?? null,
         nearest_nonself_color_difference: closest?.color_difference ?? null,
-        provenance,
-        license,
+        canonical_surface_identity: canonicalSurfaceIdentity,
+        filename_text_identity: filenameTextIdentity,
+        ocr_verified: ocrVerified,
+        ocr: retrofitAsset?.ocr ?? null,
+        visual_variant: retrofitAsset?.visual_variant ?? null,
+        rendered_text: declared.rendered_text,
+        provenance: declared.provenance,
+        license: declared.license,
         disposition: pass ? 'PASS' : 'HOLD',
       });
     }
@@ -236,10 +301,12 @@ async function main() {
 
   const payload = {
     artifact_type: 'mrx1000_release_10_asset_evidence',
-    schema_version: '2.0.0',
+    schema_version: '3.0.0',
     generated_at_utc: batch.evidence_scaffold_generated_at_utc,
     batch_config_path: 'config/mrx1000-release-10-batch.json',
     batch_config_sha256: sha256(batchBytes),
+    two_image_retrofit_manifest_path: 'config/mrx-article-two-image-retrofit.json',
+    two_image_retrofit_manifest_sha256: sha256(retrofitManifestBytes),
     comparison_universe: {
       path: 'public/assets/articles/**/*.{webp,jpg,jpeg,png,avif}',
       image_count: library.length,
@@ -270,10 +337,11 @@ async function main() {
     `- Color duplicate threshold: normalized RGB mean absolute difference <= ${colorDifferenceThreshold}`,
     `- Result: **${payload.summary.all_assets_pass ? 'PASS' : 'HOLD'}**`,
     '',
-    '| Article | Hero | Social |',
-    '|---|---:|---:|',
+    '| Article | Hero | Social | In-body |',
+    '|---|---:|---:|---:|',
     ...rows.map(
-      (row) => `| ${row.slug} | ${row.assets[0].disposition} | ${row.assets[1].disposition} |`,
+      (row) =>
+        `| ${row.slug} | ${row.assets[0].disposition} | ${row.assets[1].disposition} | ${row.assets[2].disposition} |`,
     ),
     '',
   ].join('\n');

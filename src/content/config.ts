@@ -16,6 +16,7 @@
  */
 import { defineCollection, reference, z } from 'astro:content';
 
+import { articleImageFilenameMatchesText } from '../lib/article-images';
 import { buildArticleTitle, validateTitle } from '../lib/seo';
 
 const reviewId = z
@@ -150,6 +151,21 @@ const InternalLinkTriangle = z.object({
   conversion: z.literal('/book/'),
 });
 
+const ImageMimeType = z.enum(['image/avif', 'image/webp', 'image/jpeg', 'image/png']);
+
+const InlineArticleImage = z.object({
+  src: z.string().regex(/^\/assets\/articles\/inline\//),
+  alt: z.string().min(3).max(125),
+  rendered_text: z.string().min(2).max(120),
+  width: z.number().int().positive(),
+  height: z.number().int().positive(),
+  mime_type: ImageMimeType,
+  prompt: z.string().optional(),
+  source: z.string().min(3),
+  license: z.string().min(3),
+  perceptual_hash: z.string().optional(),
+});
+
 const posts = defineCollection({
   type: 'content',
   schema: z
@@ -186,19 +202,18 @@ const posts = defineCollection({
         alt: z.string().min(3).max(125),
         width: z.number().int().positive().optional().default(1600),
         height: z.number().int().positive().optional().default(900),
-        mime_type: z.enum(['image/avif', 'image/webp', 'image/jpeg', 'image/png']).optional(),
+        mime_type: ImageMimeType.optional(),
         social_src: z.string().optional(),
         social_alt: z.string().min(3).max(125).optional(),
         social_width: z.number().int().positive().optional(),
         social_height: z.number().int().positive().optional(),
-        social_mime_type: z
-          .enum(['image/avif', 'image/webp', 'image/jpeg', 'image/png'])
-          .optional(),
+        social_mime_type: ImageMimeType.optional(),
         prompt: z.string().optional(),
         source: z.string().optional(),
         license: z.string().optional(),
         perceptual_hash: z.string().optional(),
       }),
+      inline_image: InlineArticleImage.optional(),
       excerpt: z.string().min(40).max(220),
       featured: z.boolean().optional().default(false),
       disclaimer_top: z.boolean(),
@@ -258,6 +273,80 @@ const posts = defineCollection({
           message: 'disclaimer_top must be true for every tax-legal post',
           path: ['disclaimer_top'],
         });
+      }
+
+      const publicArticle =
+        data.publication_status === 'published' && data.draft !== true && data.noindex !== true;
+      if (publicArticle) {
+        if (!articleImageFilenameMatchesText(data.hero_image.src, data.title)) {
+          ctx.addIssue({
+            code: z.ZodIssueCode.custom,
+            message: 'published article hero filename must match the exact rendered title slug',
+            path: ['hero_image', 'src'],
+          });
+        }
+        if (!data.hero_image.src.startsWith('/assets/articles/hero/')) {
+          ctx.addIssue({
+            code: z.ZodIssueCode.custom,
+            message: 'published article hero must use the canonical article hero directory',
+            path: ['hero_image', 'src'],
+          });
+        }
+        if (data.hero_image.social_src !== data.hero_image.src) {
+          ctx.addIssue({
+            code: z.ZodIssueCode.custom,
+            message: 'published article hero and social image must use the same canonical asset',
+            path: ['hero_image', 'social_src'],
+          });
+        }
+        if (
+          data.hero_image.social_alt !== data.hero_image.alt ||
+          data.hero_image.social_width !== data.hero_image.width ||
+          data.hero_image.social_height !== data.hero_image.height ||
+          data.hero_image.social_mime_type !== data.hero_image.mime_type
+        ) {
+          ctx.addIssue({
+            code: z.ZodIssueCode.custom,
+            message: 'published article social metadata must describe the canonical hero asset',
+            path: ['hero_image'],
+          });
+        }
+        if (!data.inline_image) {
+          ctx.addIssue({
+            code: z.ZodIssueCode.custom,
+            message: 'published articles require a distinct text-bearing in-body image',
+            path: ['inline_image'],
+          });
+        } else {
+          if (
+            !articleImageFilenameMatchesText(data.inline_image.src, data.inline_image.rendered_text)
+          ) {
+            ctx.addIssue({
+              code: z.ZodIssueCode.custom,
+              message: 'in-body image filename must match its exact rendered-text slug',
+              path: ['inline_image', 'src'],
+            });
+          }
+          const allowedInlinePhrases = new Set(
+            [data.title, data.primary_keyword, ...data.secondary_keywords].filter(
+              (value): value is string => Boolean(value),
+            ),
+          );
+          if (!allowedInlinePhrases.has(data.inline_image.rendered_text)) {
+            ctx.addIssue({
+              code: z.ZodIssueCode.custom,
+              message: 'in-body rendered text must be the title or a declared article keyword',
+              path: ['inline_image', 'rendered_text'],
+            });
+          }
+          if (data.inline_image.src === data.hero_image.src) {
+            ctx.addIssue({
+              code: z.ZodIssueCode.custom,
+              message: 'in-body image must be a distinct file from the canonical hero/share image',
+              path: ['inline_image', 'src'],
+            });
+          }
+        }
       }
 
       if (data.content_program !== 'mrx1000') return;

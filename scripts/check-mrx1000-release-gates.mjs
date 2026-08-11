@@ -346,133 +346,94 @@ function validateBoundGscRecoveryEvidence({
 
 function validateRetainedProductionBaseline({ manifest }) {
   const findings = [];
-  const expectedSourceDeploymentId = 'dpl_DR7ixaGADvYsw11rpnWQG1tovP1A';
-  const expectedCurrentDeploymentId = 'dpl_EQeTHD5K938sjeXWXijfmvNBTQKK';
-  const expectedFiles = new Map([
-    [
-      'src/content/posts/how-are-mineral-rights-valued.mdx',
-      {
-        sha256: '92cee8f919a22f411d50db91aae52e373005a29d868f758e69fbe2943230493f',
-        role: 'page_source',
-        page_url: 'https://mineralrightsxchange.com/blog/how-are-mineral-rights-valued/',
-        expected_h1: 'How Are Mineral Rights Valued?',
-        hero_path: '/assets/articles/how-are-mineral-rights-valued.webp',
-        hero_sha256: 'aa4365c573d7b18df34c06d019b9e46fd51ae4a93f436b6dbbce9207ef4af515',
-      },
-    ],
-    [
-      'src/content/posts/texas-severance-tax-what-mineral-rights-owners-need-to-know.mdx',
-      {
-        sha256: '3ef3e42e3365cbb2f5fdfcb00b44074ca6685c98191c34e3580e7d39fd9516ab',
-        role: 'page_source',
-        page_url:
-          'https://mineralrightsxchange.com/blog/texas-severance-tax-what-mineral-rights-owners-need-to-know/',
-        expected_h1: 'Texas Severance Tax: What Owners Need to Know',
-        hero_path: '/assets/articles/texas-severance-tax-what-owners-need-to-know.webp',
-        hero_sha256: 'd560562f42ff23abda3dd44af392cea7adcb49ac8cd9db0191bfecc1b546d838',
-      },
-    ],
-    [
-      'public/assets/articles/how-are-mineral-rights-valued.webp',
-      {
-        sha256: 'aa4365c573d7b18df34c06d019b9e46fd51ae4a93f436b6dbbce9207ef4af515',
-        role: 'hero_asset',
-        page_url: 'https://mineralrightsxchange.com/blog/how-are-mineral-rights-valued/',
-      },
-    ],
-    [
-      'public/assets/articles/texas-severance-tax-what-owners-need-to-know.webp',
-      {
-        sha256: 'd560562f42ff23abda3dd44af392cea7adcb49ac8cd9db0191bfecc1b546d838',
-        role: 'hero_asset',
-        page_url:
-          'https://mineralrightsxchange.com/blog/texas-severance-tax-what-mineral-rights-owners-need-to-know/',
-      },
-    ],
-  ]);
-  const expectedRoutes = new Map([
-    [
-      'how-are-mineral-rights-valued',
-      {
-        page_url: 'https://mineralrightsxchange.com/blog/how-are-mineral-rights-valued/',
-        expected_h1: 'How Are Mineral Rights Valued?',
-        hero_path: '/assets/articles/how-are-mineral-rights-valued.webp',
-        hero_sha256: 'aa4365c573d7b18df34c06d019b9e46fd51ae4a93f436b6dbbce9207ef4af515',
-      },
-    ],
-    [
-      'texas-severance-tax-what-mineral-rights-owners-need-to-know',
-      {
-        page_url:
-          'https://mineralrightsxchange.com/blog/texas-severance-tax-what-mineral-rights-owners-need-to-know/',
-        expected_h1: 'Texas Severance Tax: What Owners Need to Know',
-        hero_path: '/assets/articles/texas-severance-tax-what-owners-need-to-know.webp',
-        hero_sha256: 'd560562f42ff23abda3dd44af392cea7adcb49ac8cd9db0191bfecc1b546d838',
-      },
-    ],
-  ]);
   if (!manifest || typeof manifest !== 'object') {
     return ['Retained production baseline manifest is missing or unreadable.'];
   }
   if (manifest.artifact_type !== 'mrx1000_retained_production_baseline') {
     findings.push('Retained production baseline manifest artifact_type is missing or incorrect.');
   }
-  if (manifest.source_authority?.source_deployment_id !== expectedSourceDeploymentId) {
-    findings.push('Retained production baseline source deployment ID is missing or incorrect.');
+  if (!manifest.source_authority?.source_deployment_id) {
+    findings.push('Retained production baseline source deployment ID is missing.');
   }
-  if (manifest.source_authority?.current_active_deployment_id !== expectedCurrentDeploymentId) {
-    findings.push('Retained production baseline current deployment ID is missing or incorrect.');
+  if (manifest.source_authority?.decision_id !== 'D-2026-0811-17') {
+    findings.push('Retained production baseline does not cite the two-image rebind decision.');
   }
   const files = Array.isArray(manifest.files) ? manifest.files : [];
-  if (files.length !== expectedFiles.size) {
-    findings.push(
-      `Retained production baseline file count mismatch: expected ${expectedFiles.size}, got ${files.length}.`,
-    );
+  const retainedRoutes = Array.isArray(manifest.retained_routes) ? manifest.retained_routes : [];
+  if (retainedRoutes.length !== 2) {
+    findings.push(`Retained production baseline route count mismatch: expected 2, got ${retainedRoutes.length}.`);
   }
-  for (const [relPath, expected] of expectedFiles.entries()) {
-    const manifestEntry = files.find((entry) => entry?.path === relPath);
-    if (!manifestEntry) {
-      findings.push(`Retained production baseline manifest is missing ${relPath}.`);
-      continue;
+  if (files.length !== retainedRoutes.length * 3) {
+    findings.push(`Retained production baseline must bind source, hero, and inline files per route.`);
+  }
+  for (const manifestEntry of files) {
+    const relPath = manifestEntry?.path ?? '';
+    const absPath = relPath ? join(repoRoot, relPath) : null;
+    if (!/^[a-f0-9]{64}$/i.test(manifestEntry?.sha256 ?? '')) {
+      findings.push(`Retained production baseline SHA-256 is invalid for ${relPath || '(missing path)'}.`);
     }
-    if ((manifestEntry.sha256 ?? '').toLowerCase() !== expected.sha256) {
-      findings.push(
-        `Retained production baseline manifest SHA mismatch for ${relPath}: expected ${expected.sha256}, got ${manifestEntry.sha256 ?? '(missing)'}.`,
-      );
+    if (!['page_source', 'hero_asset', 'inline_asset'].includes(manifestEntry?.role)) {
+      findings.push(`Retained production baseline role is invalid for ${relPath || '(missing path)'}.`);
     }
-    for (const field of ['role', 'page_url', 'expected_h1', 'hero_path', 'hero_sha256']) {
-      if (expected[field] !== undefined && manifestEntry[field] !== expected[field]) {
-        findings.push(`Retained production baseline manifest ${field} mismatch for ${relPath}.`);
-      }
+    if (!manifestEntry?.page_url) {
+      findings.push(`Retained production baseline page URL is missing for ${relPath || '(missing path)'}.`);
     }
-    const absPath = join(repoRoot, relPath);
-    if (!existsSync(absPath)) {
-      findings.push(`Retained production baseline file is missing on disk: ${relPath}.`);
+    if (!absPath || !existsSync(absPath)) {
+      findings.push(`Retained production baseline file is missing on disk: ${relPath || '(missing path)'}.`);
       continue;
     }
     const observedSha = sha256File(absPath);
-    if (observedSha !== expected.sha256) {
+    if (observedSha !== manifestEntry.sha256) {
       findings.push(
-        `Retained production baseline on-disk SHA mismatch for ${relPath}: expected ${expected.sha256}, got ${observedSha}.`,
+        `Retained production baseline on-disk SHA mismatch for ${relPath}: expected ${manifestEntry.sha256}, got ${observedSha}.`,
       );
     }
   }
-  const retainedRoutes = Array.isArray(manifest.retained_routes) ? manifest.retained_routes : [];
-  if (retainedRoutes.length !== 2) {
-    findings.push(
-      `Retained production baseline route count mismatch: expected 2, got ${retainedRoutes.length}.`,
-    );
-  }
-  for (const [slug, expected] of expectedRoutes.entries()) {
-    const route = retainedRoutes.find((entry) => entry?.slug === slug);
-    if (!route) {
-      findings.push(`Retained production baseline route is missing ${slug}.`);
+  for (const route of retainedRoutes) {
+    if (
+      !route.slug ||
+      !route.page_url ||
+      !route.expected_h1 ||
+      !route.source_path ||
+      !route.hero_path ||
+      !route.inline_path ||
+      !/^[a-f0-9]{64}$/i.test(route.source_sha256 ?? '') ||
+      !/^[a-f0-9]{64}$/i.test(route.hero_sha256 ?? '') ||
+      !/^[a-f0-9]{64}$/i.test(route.inline_sha256 ?? '') ||
+      route.hero_path === route.inline_path ||
+      route.hero_sha256 === route.inline_sha256
+    ) {
+      findings.push(`Retained production baseline route is incomplete for ${route.slug ?? '(missing slug)'}.`);
       continue;
     }
-    for (const [field, value] of Object.entries(expected)) {
-      if (route[field] !== value) {
-        findings.push(`Retained production baseline route ${field} mismatch for ${slug}.`);
+    const expectedBindings = [
+      ['page_source', route.source_path, route.source_sha256],
+      ['hero_asset', `public${route.hero_path}`, route.hero_sha256],
+      ['inline_asset', `public${route.inline_path}`, route.inline_sha256],
+    ];
+    for (const [role, path, hash] of expectedBindings) {
+      const match = files.find(
+        (entry) =>
+          entry.role === role &&
+          entry.path === path &&
+          entry.sha256 === hash &&
+          entry.page_url === route.page_url,
+      );
+      if (!match) {
+        findings.push(`Retained production baseline ${role} binding mismatch for ${route.slug}.`);
       }
+    }
+    const absPath = join(repoRoot, route.source_path);
+    if (!existsSync(absPath)) {
+      findings.push(`Retained production baseline source is missing for ${route.slug}.`);
+      continue;
+    }
+    const source = readText(absPath);
+    if (!source.includes(`title: '${route.expected_h1.replace(/'/g, "''")}'`) &&
+        !source.includes(`title: "${route.expected_h1}"`)) {
+      findings.push(
+        `Retained production baseline title binding mismatch for ${route.slug}.`,
+      );
     }
   }
   return findings;
@@ -645,6 +606,129 @@ function buildCheck() {
   const continuousQualityGated = batch.policy?.admission_mode === 'continuous_quality_gated';
   const exactAdmissionEnabled = Number.isInteger(exactCount) && exactCount > 0;
   const verifiedReleaseEvidence = {};
+  const twoImagePolicy = batch.two_image_policy ?? null;
+  let twoImageRebindActive = false;
+  if (twoImagePolicy) {
+    const twoImageFindings = [];
+    const decisionRel = batch.decision_authority?.two_image_retrofit_decision_path ?? null;
+    const decisionPath = decisionRel ? join(repoRoot, decisionRel) : null;
+    const decisionText = decisionPath && existsSync(decisionPath) ? readText(decisionPath) : '';
+    const decisionSha = decisionPath && existsSync(decisionPath) ? sha256File(decisionPath) : null;
+    const decisionId = parseDecisionIdFromText(decisionText);
+    const retrofitRel = twoImagePolicy.retrofit_manifest_path ?? null;
+    const retrofitPath = retrofitRel ? join(repoRoot, retrofitRel) : null;
+    const retrofitSha = retrofitPath && existsSync(retrofitPath) ? sha256File(retrofitPath) : null;
+    const retrofit = retrofitPath && existsSync(retrofitPath) ? readJson(retrofitPath) : null;
+    const assetEvidenceRel = 'artifacts/mrx1000-release-10/assets/asset-evidence.json';
+    const assetEvidencePath = join(repoRoot, assetEvidenceRel);
+    const assetEvidence = existsSync(assetEvidencePath) ? readJson(assetEvidencePath) : null;
+    const evidenceManifestRel = 'artifacts/mrx1000-release-10/evidence/_manifest.json';
+    const evidenceManifestPath = join(repoRoot, evidenceManifestRel);
+    const evidenceManifest = existsSync(evidenceManifestPath) ? readJson(evidenceManifestPath) : null;
+
+    if (!decisionPath || !existsSync(decisionPath)) {
+      twoImageFindings.push(`Missing two-image retrofit decision: ${decisionRel ?? '(unset)'}.`);
+    } else {
+      if (decisionId !== batch.decision_authority?.two_image_retrofit_decision_id) {
+        twoImageFindings.push('Two-image retrofit decision ID mismatch.');
+      }
+      if (decisionSha !== batch.decision_authority?.two_image_retrofit_decision_sha256) {
+        twoImageFindings.push('Two-image retrofit decision SHA-256 mismatch.');
+      }
+      if (!verifySidecar(decisionPath)) {
+        twoImageFindings.push('Two-image retrofit decision sidecar is missing or stale.');
+      }
+      if (!/authorizes replacement and hash rebinding/i.test(decisionText)) {
+        twoImageFindings.push('Two-image retrofit decision lacks source-and-asset rebind authority.');
+      }
+    }
+    if (!retrofitPath || !existsSync(retrofitPath)) {
+      twoImageFindings.push(`Missing two-image retrofit manifest: ${retrofitRel ?? '(unset)'}.`);
+    } else {
+      if (retrofitSha !== twoImagePolicy.retrofit_manifest_sha256) {
+        twoImageFindings.push('Two-image retrofit manifest SHA-256 mismatch.');
+      }
+      if (
+        retrofit?.summary?.article_count !== 99 ||
+        retrofit?.summary?.asset_count !== 198 ||
+        retrofit?.summary?.unique_source_art_count !== 99 ||
+        retrofit?.summary?.unique_hero_sha256_count !== 99 ||
+        retrofit?.summary?.unique_inline_sha256_count !== 99 ||
+        retrofit?.summary?.distinct_article_pair_count !== 99 ||
+        retrofit?.summary?.hero_ocr_pass_count !== 99 ||
+        retrofit?.summary?.inline_ocr_pass_count !== 99 ||
+        retrofit?.summary?.exact_filename_identity_count !== 99
+      ) {
+        twoImageFindings.push('Two-image retrofit manifest does not prove the complete 99-route corpus.');
+      }
+    }
+    if (!assetEvidence || !verifySidecar(assetEvidencePath)) {
+      twoImageFindings.push('Two-image release asset evidence is missing or has a stale sidecar.');
+    } else if (
+      assetEvidence.summary?.article_count !== 90 ||
+      assetEvidence.summary?.passing_article_count !== 90 ||
+      assetEvidence.summary?.all_assets_pass !== true ||
+      assetEvidence.rows?.length !== 90 ||
+      assetEvidence.rows.some(
+        (row) =>
+          row.disposition !== 'PASS' ||
+          row.assets?.length !== 3 ||
+          !['hero', 'social', 'inline'].every((kind) =>
+            row.assets.some(
+              (asset) =>
+                asset.kind === kind &&
+                asset.disposition === 'PASS' &&
+                asset.ocr_verified === true &&
+                asset.filename_text_identity === true &&
+                asset.canonical_surface_identity === true,
+            ),
+          ),
+      )
+    ) {
+      twoImageFindings.push('Two-image release asset evidence is incomplete or not PASS 90/90.');
+    }
+    if (!evidenceManifest || !verifySidecar(evidenceManifestPath)) {
+      twoImageFindings.push('Two-image evidence-packet manifest is missing or has a stale sidecar.');
+    } else if (
+      evidenceManifest.packets?.length !== 90 ||
+      evidenceManifest.packets.some(
+        (packet) =>
+          packet.editorial_disposition !== 'PASS' ||
+          packet.factual_citation_disposition !== 'PASS' ||
+          packet.compliance_disposition !== 'PASS' ||
+          packet.hold_reason != null,
+      )
+    ) {
+      twoImageFindings.push('Two-image evidence packets are not PASS 90/90.');
+    }
+    if (twoImagePolicy.authorized_source_and_asset_rebinding !== true) {
+      twoImageFindings.push('Two-image policy does not authorize source-and-asset hash rebinding.');
+    }
+    inputs.two_image_retrofit = {
+      decision: {
+        id: decisionId,
+        path: decisionRel,
+        sha256: decisionSha,
+      },
+      manifest: {
+        path: retrofitRel,
+        sha256: retrofitSha,
+        summary: retrofit?.summary ?? null,
+      },
+      asset_evidence: {
+        path: assetEvidenceRel,
+        summary: assetEvidence?.summary ?? null,
+      },
+      evidence_packets: {
+        path: evidenceManifestRel,
+        packet_count: evidenceManifest?.packets?.length ?? 0,
+      },
+      findings: twoImageFindings,
+      disposition: twoImageFindings.length === 0 ? 'PASS' : 'HOLD',
+    };
+    blocking.push(...twoImageFindings);
+    twoImageRebindActive = twoImageFindings.length === 0;
+  }
   if (exactAdmissionEnabled) {
     const observedCount = batch.articles?.length ?? 0;
     const observedSlateSha = sha256(
@@ -971,6 +1055,7 @@ function buildCheck() {
       }
       const preservedRows = batch.articles.slice(0, boundPreEdit.batch.articles.length);
       if (
+        !twoImageRebindActive &&
         canonicalizeExactSlate(preservedRows) !==
         canonicalizeExactSlate(boundPreEdit.batch.articles ?? [])
       ) {
@@ -1031,27 +1116,29 @@ function buildCheck() {
         creativeRemediationRows.map((row) => [row.slug, row]),
       );
       if (
-        creativeRemediation?.summary?.article_count !== expectedAppendedCount ||
-        creativeRemediation?.summary?.passing_article_count !== expectedAppendedCount ||
-        creativeRemediation?.summary?.exact_sha_duplicate_count !== 0 ||
-        Number(creativeRemediation?.summary?.minimum_production_9x8_hamming_distance ?? 0) < 9 ||
-        creativeRemediation?.summary?.exact_titles_visible_at_all_three_sizes !== true ||
-        creativeRemediation?.summary?.all_assets_pass !== true ||
-        creativeRemediation?.summary?.disposition !== 'PASS'
+        !twoImageRebindActive &&
+        (creativeRemediation?.summary?.article_count !== expectedAppendedCount ||
+          creativeRemediation?.summary?.passing_article_count !== expectedAppendedCount ||
+          creativeRemediation?.summary?.exact_sha_duplicate_count !== 0 ||
+          Number(creativeRemediation?.summary?.minimum_production_9x8_hamming_distance ?? 0) < 9 ||
+          creativeRemediation?.summary?.exact_titles_visible_at_all_three_sizes !== true ||
+          creativeRemediation?.summary?.all_assets_pass !== true ||
+          creativeRemediation?.summary?.disposition !== 'PASS')
       ) {
         blocking.push(
           'Wave 2 creative remediation packet is missing, stale, incomplete, or not PASS for all exact-admission rows.',
         );
       }
       if (
-        creativeQa?.final_disposition !== 'PASS' ||
-        creativeQa?.summary?.article_count !== expectedAppendedCount ||
-        creativeQa?.summary?.pass_count !== expectedAppendedCount ||
-        creativeQa?.summary?.hold_count !== 0 ||
-        creativeQa?.summary?.all_pass !== true ||
-        creativeQa?.summary?.exact_sha_duplicates_found !== 0 ||
-        Number(creativeQa?.summary?.minimum_nearest_nonself_hamming_distance ?? 0) < 9 ||
-        creativeQa?.comparison_universe?.image_count !== 142
+        !twoImageRebindActive &&
+        (creativeQa?.final_disposition !== 'PASS' ||
+          creativeQa?.summary?.article_count !== expectedAppendedCount ||
+          creativeQa?.summary?.pass_count !== expectedAppendedCount ||
+          creativeQa?.summary?.hold_count !== 0 ||
+          creativeQa?.summary?.all_pass !== true ||
+          creativeQa?.summary?.exact_sha_duplicates_found !== 0 ||
+          Number(creativeQa?.summary?.minimum_nearest_nonself_hamming_distance ?? 0) < 9 ||
+          creativeQa?.comparison_universe?.image_count !== 142)
       ) {
         blocking.push(
           'Fresh Wave 2 creative revalidation summary is missing, stale, incomplete, or not PASS across the 142-image 9x8 comparison universe.',
@@ -1117,8 +1204,9 @@ function buildCheck() {
           observed.program_row_id !== bound.program_row_id ||
           observed.slug !== bound.slug ||
           observed.title !== bound.title ||
-          observed.article_sha256 !== bound.article_sha256 ||
-          observed.hero_sha256 !== expectedHeroSha
+          (!twoImageRebindActive &&
+            (observed.article_sha256 !== bound.article_sha256 ||
+              observed.hero_sha256 !== expectedHeroSha))
         ) {
           blocking.push(
             `Exact-admission decision binding mismatch for ${entry.slug}: program_row_id/slug/title/article_sha256 must match D-2026-0801-10 in exact order and hero_sha256 must match the controlling CEO binding${heroRebinding ? ' (D-2026-0801-10A corrected hero addendum)' : ''}.`,
@@ -1132,7 +1220,7 @@ function buildCheck() {
           qa.row_id !== observed.program_row_id ||
           qa.slug !== observed.slug ||
           qa.title !== observed.title ||
-          qa.article_sha256?.toLowerCase() !== observed.article_sha256 ||
+          qa.article_sha256?.toLowerCase() !== bound.article_sha256 ||
           qa.asset?.sha256?.toLowerCase() !== bound.hero_sha256 ||
           qa.final_status !== 'PASS'
         ) {
@@ -1158,52 +1246,54 @@ function buildCheck() {
         const metadataChecks = creativeQaRow?.metadata_checks ?? {};
         const duplicateChecks = creativeQaRow?.duplicate_checks ?? {};
         const visualChecks = creativeQaRow?.visual_checks ?? {};
-        if (!creativeQaRow) {
+        if (!twoImageRebindActive && !creativeQaRow) {
           blocking.push(`Fresh creative revalidation row missing for ${entry.slug}.`);
         } else if (
-          creativeQaRow.program_row_id !== observed.program_row_id ||
-          creativeQaRow.slug !== observed.slug ||
-          creativeQaRow.title !== observed.title ||
-          creativeQaRow.body_sha256?.toLowerCase() !== observed.article_sha256 ||
-          creativeQaRow.asset?.sha256?.toLowerCase() !== observed.hero_sha256 ||
-          creativeQaRow.hero_path_from_batch !== entry.hero_path ||
-          creativeQaRow.same_hero_social_schema_path !== true ||
-          creativeQaRow.final_disposition !== 'PASS' ||
-          creativeQaRow.asset?.observed_width !== 1200 ||
-          creativeQaRow.asset?.observed_height !== 630 ||
-          creativeQaRow.asset?.observed_mime_type !== 'image/webp' ||
-          Object.values(metadataChecks).some((value) => value !== true) ||
-          duplicateChecks.exact_sha_duplicates_absent !== true ||
-          duplicateChecks.nearest_nonself_distance_gte_9 !== true ||
-          visualChecks.exact_title_visible_in_1200x630 !== true ||
-          visualChecks.exact_title_visible_in_600x315 !== true ||
-          visualChecks.exact_title_visible_in_300x158 !== true ||
-          visualChecks.tiny_metadata_absent !== true ||
-          visualChecks.truncation_absent !== true ||
-          visualChecks.overlap_absent !== true ||
-          visualChecks.clipping_absent !== true ||
-          visualChecks.generic_duplicate_composition_absent !== true ||
-          visualChecks.closing_costs_table_inside_frame === false
+          !twoImageRebindActive &&
+          (creativeQaRow.program_row_id !== observed.program_row_id ||
+            creativeQaRow.slug !== observed.slug ||
+            creativeQaRow.title !== observed.title ||
+            creativeQaRow.body_sha256?.toLowerCase() !== observed.article_sha256 ||
+            creativeQaRow.asset?.sha256?.toLowerCase() !== observed.hero_sha256 ||
+            creativeQaRow.hero_path_from_batch !== entry.hero_path ||
+            creativeQaRow.same_hero_social_schema_path !== true ||
+            creativeQaRow.final_disposition !== 'PASS' ||
+            creativeQaRow.asset?.observed_width !== 1200 ||
+            creativeQaRow.asset?.observed_height !== 630 ||
+            creativeQaRow.asset?.observed_mime_type !== 'image/webp' ||
+            Object.values(metadataChecks).some((value) => value !== true) ||
+            duplicateChecks.exact_sha_duplicates_absent !== true ||
+            duplicateChecks.nearest_nonself_distance_gte_9 !== true ||
+            visualChecks.exact_title_visible_in_1200x630 !== true ||
+            visualChecks.exact_title_visible_in_600x315 !== true ||
+            visualChecks.exact_title_visible_in_300x158 !== true ||
+            visualChecks.tiny_metadata_absent !== true ||
+            visualChecks.truncation_absent !== true ||
+            visualChecks.overlap_absent !== true ||
+            visualChecks.clipping_absent !== true ||
+            visualChecks.generic_duplicate_composition_absent !== true ||
+            visualChecks.closing_costs_table_inside_frame === false)
         ) {
           blocking.push(
             `Fresh creative revalidation mismatch for ${entry.slug}: current hero identity, visual title, dimensions/MIME/alt metadata, and 9x8 uniqueness must all match D-2026-0801-10A.`,
           );
         }
         if (
-          !creativeRemediationRow ||
-          creativeRemediationRow.program_row_id !== observed.program_row_id ||
-          creativeRemediationRow.slug !== observed.slug ||
-          creativeRemediationRow.title !== observed.title ||
-          creativeRemediationRow.asset_public_path !== entry.hero_path ||
-          creativeRemediationRow.sha256?.toLowerCase() !== observed.hero_sha256 ||
-          creativeRemediationRow.observed_width !== 1200 ||
-          creativeRemediationRow.observed_height !== 630 ||
-          creativeRemediationRow.observed_mime_type !== 'image/webp' ||
-          creativeRemediationRow.disposition !== 'PASS' ||
-          Object.values(creativeRemediationRow.checks ?? {}).some((value) => value !== true) ||
-          creativeRemediationRow.visual_checks?.['1200x630'] !== 'PASS' ||
-          creativeRemediationRow.visual_checks?.['600x315'] !== 'PASS' ||
-          creativeRemediationRow.visual_checks?.['300x158'] !== 'PASS'
+          !twoImageRebindActive &&
+          (!creativeRemediationRow ||
+            creativeRemediationRow.program_row_id !== observed.program_row_id ||
+            creativeRemediationRow.slug !== observed.slug ||
+            creativeRemediationRow.title !== observed.title ||
+            creativeRemediationRow.asset_public_path !== entry.hero_path ||
+            creativeRemediationRow.sha256?.toLowerCase() !== observed.hero_sha256 ||
+            creativeRemediationRow.observed_width !== 1200 ||
+            creativeRemediationRow.observed_height !== 630 ||
+            creativeRemediationRow.observed_mime_type !== 'image/webp' ||
+            creativeRemediationRow.disposition !== 'PASS' ||
+            Object.values(creativeRemediationRow.checks ?? {}).some((value) => value !== true) ||
+            creativeRemediationRow.visual_checks?.['1200x630'] !== 'PASS' ||
+            creativeRemediationRow.visual_checks?.['600x315'] !== 'PASS' ||
+            creativeRemediationRow.visual_checks?.['300x158'] !== 'PASS')
         ) {
           blocking.push(
             `Creative remediation binding mismatch for ${entry.slug}: exact current hero/title/metadata/uniqueness proof must be PASS.`,
@@ -1513,7 +1603,15 @@ function buildCheck() {
       );
       continue;
     }
-    const isPublished = transition.state === 'controlled_publication_transition';
+    const sourceText = sourceBytes?.toString('utf8') ?? '';
+    const reviewedCurrentPublished =
+      twoImageRebindActive &&
+      transition.state === 'reviewed_bytes_current' &&
+      /^publication_status:\s*published\s*$/m.test(sourceText) &&
+      !/^draft:\s*true\s*$/m.test(sourceText) &&
+      !/^noindex:\s*true\s*$/m.test(sourceText);
+    const isPublished =
+      transition.state === 'controlled_publication_transition' || reviewedCurrentPublished;
     publicationOverrides.set(entry.slug, {
       publication_status: isPublished ? 'published' : 'draft',
       draft: false,

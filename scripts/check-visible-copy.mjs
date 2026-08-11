@@ -51,6 +51,11 @@ const contentQualityRules = [
 function inspectFile(path, displayRoot) {
   return readFile(path, 'utf8').then((contents) => {
     const lines = contents.split(/\r?\n/);
+    const extension = extname(path);
+    const frontmatterEnd =
+      !rendered && ['.md', '.mdx'].includes(extension) && lines[0]?.trim() === '---'
+        ? lines.findIndex((line, index) => index > 0 && line.trim() === '---')
+        : -1;
     lines.forEach((line, index) => {
       const location = `${relative(displayRoot.pathname, path)}:${index + 1}`;
       if (/[\u2014\u2013]/.test(line)) failures.push(`${location}: long dash`);
@@ -58,8 +63,13 @@ function inspectFile(path, displayRoot) {
       if (trimmed !== '---' && /(^|\s)---(?=\s|$)/.test(line)) {
         failures.push(`${location}: visible triple-hyphen separator`);
       }
-      if (!contentExtensions.has(extname(path))) return;
+      if (!contentExtensions.has(extension)) return;
+      const inYamlFrontmatter = frontmatterEnd > 0 && index < frontmatterEnd;
       for (const rule of contentQualityRules) {
+        // A doubled apostrophe inside a single-quoted YAML scalar is the
+        // required serialization of one visible apostrophe. Rendered output
+        // is checked separately after the build.
+        if (inYamlFrontmatter && rule.label === 'doubled apostrophe') continue;
         if (rule.pattern.test(line)) failures.push(`${location}: ${rule.label}`);
       }
     });

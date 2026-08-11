@@ -24,11 +24,16 @@ function frontmatter(source) {
 }
 
 function unquote(value) {
-  return String(value ?? '').trim().replace(/^(['"])(.*)\1$/, '$2');
+  return String(value ?? '').trim().replace(/^(['"])(.*)\1$/, '$2').replace(/''/g, "'");
 }
 
 function scalar(block, key) {
   return unquote(block.match(new RegExp(`^${key}:\\s*(.+)$`, 'm'))?.[1] ?? '');
+}
+
+function nestedScalar(block, parent, key) {
+  const nested = block.match(new RegExp(`^${parent}:\\s*\\n((?:[ \\t]+.*\\n?)*)`, 'm'))?.[1] ?? '';
+  return unquote(nested.match(new RegExp(`^[ \\t]+${key}:\\s*(.+)$`, 'm'))?.[1] ?? '');
 }
 
 function bool(block, key) {
@@ -77,6 +82,7 @@ function main() {
     const transition = analyzeControlledPublicationTransition(bodyBytes, entry);
     const heroAsset = assets?.assets?.find((asset) => asset.kind === 'hero') ?? null;
     const socialAsset = assets?.assets?.find((asset) => asset.kind === 'social') ?? null;
+    const inlineAsset = assets?.assets?.find((asset) => asset.kind === 'inline') ?? null;
     const hashLockedAdmission = ['admitted_exact', 'admitted_quality_gated'].includes(
       entry.admission_status,
     );
@@ -90,6 +96,16 @@ function main() {
         heroAsset?.observed_height === 630 &&
         heroAsset?.observed_mime_type === 'image/webp',
     );
+    const exactInlineReady = Boolean(
+      inlineAsset?.public_path === nestedScalar(fm, 'inline_image', 'src') &&
+        inlineAsset?.rendered_text === nestedScalar(fm, 'inline_image', 'rendered_text') &&
+        inlineAsset?.alt_text === nestedScalar(fm, 'inline_image', 'alt') &&
+        inlineAsset?.observed_width === 1200 &&
+        inlineAsset?.observed_height === 675 &&
+        inlineAsset?.observed_mime_type === 'image/webp' &&
+        inlineAsset?.public_path !== heroAsset?.public_path &&
+        inlineAsset?.sha256 !== heroAsset?.sha256,
+    );
     const frontmatterReady =
       (bool(fm, 'draft') === false &&
         bool(fm, 'noindex') === false &&
@@ -102,7 +118,8 @@ function main() {
         assets?.disposition === 'PASS' &&
         assets?.body_sha256 === bodySha &&
         assets?.frontmatter_sha256 === fmSha &&
-        exactHeroReady,
+        exactHeroReady &&
+        exactInlineReady,
     );
     rows.push({
       program_row_id: entry.program_row_id,
@@ -136,6 +153,19 @@ function main() {
           heroAsset.public_path === socialAsset.public_path &&
           heroAsset.sha256 === socialAsset.sha256,
       },
+      inline_image_identity: {
+        public_path: inlineAsset?.public_path ?? null,
+        sha256: inlineAsset?.sha256 ?? null,
+        alt_text: inlineAsset?.alt_text ?? null,
+        rendered_text: inlineAsset?.rendered_text ?? null,
+        width: inlineAsset?.observed_width ?? null,
+        height: inlineAsset?.observed_height ?? null,
+        mime_type: inlineAsset?.observed_mime_type ?? null,
+        distinct_from_hero:
+          Boolean(heroAsset && inlineAsset) &&
+          heroAsset.public_path !== inlineAsset.public_path &&
+          heroAsset.sha256 !== inlineAsset.sha256,
+      },
       rollback: {
         prior_public_state:
           currentWaveAdmission
@@ -159,7 +189,7 @@ function main() {
   }
   const payload = {
     artifact_type: 'mrx1000_release_10_publication_manifest',
-    schema_version: '1.0.0',
+    schema_version: '2.0.0',
     generated_at_utc: batch.evidence_scaffold_generated_at_utc,
     batch_config_path: 'config/mrx1000-release-10-batch.json',
     batch_config_sha256: sha256(batchBytes),

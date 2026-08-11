@@ -20,6 +20,11 @@ const INPUTS = {
     MRX_ROOT,
     'docs/governance/mrx1000-owner-continuous-publication-directive-2026-08-04.md',
   ),
+  twoImageRetrofit: path.join(MRX_ROOT, 'config/mrx-article-two-image-retrofit.json'),
+  twoImageDecision: path.join(
+    MRX_ROOT,
+    'artifacts/mrx1000-release-10/decisions/mrx-owner-two-image-retrofit-authorization-20260811.md',
+  ),
 };
 
 const ISOLATED_OUTPUT_DIR = process.env.MRX1000_HERO_SHARE_OUTPUT_DIR
@@ -42,10 +47,10 @@ const PUBLIC_CLASS = 'live_public_published_route';
 const HELD_CLASS = 'incumbent_draft_nonpublic_held';
 const PILOT_CLASS = 'pilot_draft_noindex_stage';
 const REUSE_RULE =
-  'article_specific_hero_with_verified_dedicated_social_asset_when_present_otherwise_same_asset_reuse';
+  'canonical_exact_title_hero_reused_identically_for_visible_hero_open_graph_twitter_and_featured_share_surfaces';
 
 const GLOBAL_PROHIBITIONS = [
-  'no readable words, logos, watermarks, UI screenshots, signatures, or fake document text',
+  'no readable words other than the one exact required title or keyword phrase; no logos, watermarks, UI screenshots, signatures, or fake document text',
   'no cash piles, floating dollar signs, handshakes, gold bars, gavels, or stock-photo celebration poses',
   'no guaranteed value, guaranteed closing, guaranteed savings, guaranteed production, or investment-return claims',
   'no invented prices, production figures, legal conclusions, tax outcomes, ownership facts, or regulatory seals',
@@ -634,7 +639,27 @@ function generatedAltText(shareTitle, semantics) {
 }
 
 function plannedAssetPath(row) {
-  return `/assets/articles/mrx1000/${row.program_row_id.toLowerCase()}-${row.canonical_slug}.webp`;
+  return `/assets/articles/hero/${renderedImageTextSlug(row.canonical_title)}.webp`;
+}
+
+function renderedImageTextSlug(value) {
+  return value
+    .normalize('NFKD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[’']/g, '')
+    .replace(/&/g, ' and ')
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+}
+
+function plannedInlineAssetPath(row) {
+  return `/assets/articles/inline/${row.canonical_slug}/${renderedImageTextSlug(row.primary_keyword)}.webp`;
+}
+
+function filenameMatchesRenderedText(assetPath, renderedText) {
+  if (!assetPath || !renderedText) return false;
+  return path.basename(assetPath, path.extname(assetPath)) === renderedImageTextSlug(renderedText);
 }
 
 function articleMatchEvidence(row, currentAssetPath, currentAltText) {
@@ -672,6 +697,9 @@ async function loadCurrentAssetEvidence(row, inputParts) {
     frontmatterNestedScalar(frontmatter, 'hero_image', 'social_src') ?? assetPath;
   const altText = frontmatterNestedScalar(frontmatter, 'hero_image', 'alt');
   const socialAltText = frontmatterNestedScalar(frontmatter, 'hero_image', 'social_alt') ?? altText;
+  const inlineAssetPath = frontmatterNestedScalar(frontmatter, 'inline_image', 'src');
+  const inlineAltText = frontmatterNestedScalar(frontmatter, 'inline_image', 'alt');
+  const inlineRenderedText = frontmatterNestedScalar(frontmatter, 'inline_image', 'rendered_text');
   const description = frontmatterScalar(frontmatter, 'description');
   const seoTitle = frontmatterScalar(frontmatter, 'seo_title');
   const onDiskPath = publicPathOnDisk(assetPath);
@@ -686,6 +714,12 @@ async function loadCurrentAssetEvidence(row, inputParts) {
   let socialFormat = null;
   let socialWidth = null;
   let socialHeight = null;
+  const inlineOnDiskPath = publicPathOnDisk(inlineAssetPath);
+  const inlineOnDisk = inlineOnDiskPath ? await exists(inlineOnDiskPath) : false;
+  let inlineAssetSha256 = null;
+  let inlineFormat = null;
+  let inlineWidth = null;
+  let inlineHeight = null;
   if (onDisk && onDiskPath) {
     const assetBytes = await readFile(onDiskPath);
     assetSha256 = sha256(assetBytes);
@@ -703,6 +737,15 @@ async function loadCurrentAssetEvidence(row, inputParts) {
     socialWidth = socialMetadata.width ?? null;
     socialHeight = socialMetadata.height ?? null;
     inputParts.push(`${row.program_row_id}:current-social-asset-sha256:${socialAssetSha256}`);
+  }
+  if (inlineOnDisk && inlineOnDiskPath) {
+    const inlineAssetBytes = await readFile(inlineOnDiskPath);
+    inlineAssetSha256 = sha256(inlineAssetBytes);
+    const inlineMetadata = await sharp(inlineAssetBytes).metadata();
+    inlineFormat = inlineMetadata.format ?? null;
+    inlineWidth = inlineMetadata.width ?? null;
+    inlineHeight = inlineMetadata.height ?? null;
+    inputParts.push(`${row.program_row_id}:current-inline-asset-sha256:${inlineAssetSha256}`);
   }
   return {
     repo_file: repoFile,
@@ -722,6 +765,14 @@ async function loadCurrentAssetEvidence(row, inputParts) {
     social_format: socialFormat,
     social_width: socialWidth,
     social_height: socialHeight,
+    inline_asset_path: inlineAssetPath,
+    inline_alt_text: inlineAltText,
+    inline_rendered_text: inlineRenderedText,
+    inline_on_disk: inlineOnDisk,
+    inline_sha256: inlineAssetSha256,
+    inline_format: inlineFormat,
+    inline_width: inlineWidth,
+    inline_height: inlineHeight,
     article_match: articleMatchEvidence(row, assetPath, altText),
   };
 }
@@ -740,9 +791,15 @@ function buildCsv(rows) {
     'preservation_classification',
     'final_hero_asset_path',
     'final_social_asset_path',
+    'final_inline_asset_path',
     'social_asset_reuse_rule',
+    'hero_rendered_text',
+    'inline_rendered_text',
+    'hero_filename_text_identity',
+    'inline_filename_text_identity',
     'alt_text',
     'social_alt_text',
+    'inline_alt_text',
     'visible_canonical_title',
     'share_seo_title',
     'topic_rule_id',
@@ -757,6 +814,8 @@ function buildCsv(rows) {
     'intent_cue',
     'visual_concept',
     'generation_prompt',
+    'inline_visual_concept',
+    'inline_generation_prompt',
     'focal_point',
     'crop_guidance',
     'share_title',
@@ -779,6 +838,12 @@ function buildCsv(rows) {
     'current_social_asset_path_unique',
     'current_social_asset_content_unique',
     'current_social_asset_sha256',
+    'current_inline_asset_path',
+    'current_inline_asset_on_disk',
+    'current_inline_asset_format',
+    'current_inline_asset_width',
+    'current_inline_asset_height',
+    'current_inline_asset_sha256',
     'current_asset_on_disk',
     'current_asset_format',
     'current_asset_width',
@@ -834,6 +899,7 @@ function markdownTable(headers, rows, rightAlignedColumns = []) {
 async function buildRow(
   row,
   currentEvidence,
+  twoImageEvidence,
   currentPathCounts,
   currentHashCounts,
   currentSocialPathCounts,
@@ -850,13 +916,23 @@ async function buildRow(
   const currentSocialAssetPath = currentEvidence?.social_asset_path ?? null;
   const currentAltText = currentEvidence?.alt_text ?? null;
   const currentSocialAltText = currentEvidence?.social_alt_text ?? currentAltText;
+  const currentInlineAssetPath = currentEvidence?.inline_asset_path ?? null;
+  const currentInlineAltText = currentEvidence?.inline_alt_text ?? null;
+  const currentInlineRenderedText = currentEvidence?.inline_rendered_text ?? null;
   const currentDescription = currentEvidence?.description ?? null;
 
   if (
     publicRow &&
-    (!currentAssetPath || !currentAltText || !currentDescription || !currentEvidence)
+    (!currentAssetPath ||
+      !currentAltText ||
+      !currentDescription ||
+      !currentInlineAssetPath ||
+      !currentInlineAltText ||
+      !currentInlineRenderedText ||
+      !currentEvidence ||
+      !twoImageEvidence)
   ) {
-    throw new Error(`Published source lacks verified share metadata: ${row.program_row_id}`);
+    throw new Error(`Published source lacks verified two-image metadata: ${row.program_row_id}`);
   }
 
   const currentPathUnique = currentAssetPath
@@ -871,6 +947,28 @@ async function buildRow(
   const currentSocialContentUnique = currentEvidence?.social_sha256
     ? currentSocialHashCounts.get(currentEvidence.social_sha256) === 1
     : false;
+  const twoImageEvidenceUsable = Boolean(
+    twoImageEvidence &&
+    twoImageEvidence.slug === row.canonical_slug &&
+    twoImageEvidence.title === row.canonical_title &&
+    [row.primary_keyword, row.canonical_title].includes(twoImageEvidence.keyword) &&
+    twoImageEvidence.hero?.public_path === currentAssetPath &&
+    twoImageEvidence.hero?.sha256 === currentEvidence?.sha256 &&
+    twoImageEvidence.hero?.ocr?.pass === true &&
+    filenameMatchesRenderedText(currentAssetPath, row.canonical_title) &&
+    twoImageEvidence.inline?.public_path === currentInlineAssetPath &&
+    twoImageEvidence.inline?.sha256 === currentEvidence?.inline_sha256 &&
+    twoImageEvidence.inline?.rendered_text === currentInlineRenderedText &&
+    twoImageEvidence.inline?.ocr?.pass === true &&
+    currentEvidence?.inline_on_disk === true &&
+    currentEvidence?.inline_format === 'webp' &&
+    currentEvidence?.inline_width === 1200 &&
+    currentEvidence?.inline_height === 675 &&
+    twoImageEvidence.keyword === currentInlineRenderedText &&
+    filenameMatchesRenderedText(currentInlineAssetPath, currentInlineRenderedText) &&
+    currentAssetPath !== currentInlineAssetPath &&
+    currentEvidence?.sha256 !== currentEvidence?.inline_sha256,
+  );
   const socialReusesHero = currentAssetPath === currentSocialAssetPath;
   const dedicatedSocialAssetUsable = Boolean(
     !socialReusesHero &&
@@ -911,15 +1009,23 @@ async function buildRow(
     currentAltText &&
     currentAltText.length <= 125 &&
     currentAltText.length >= 30 &&
-    !currentAssetPath.includes('/brand/mrx-underwriter-review-og'),
+    !currentAssetPath.includes('/brand/mrx-underwriter-review-og') &&
+    twoImageEvidenceUsable,
   );
   if (publicRow && !currentAssetUsable) {
     throw new Error(`Published hero failed current-asset usability checks: ${row.program_row_id}`);
   }
 
-  const preserveCurrentAsset = publicRow || (heldRow && currentAssetUsable);
+  const preserveCurrentAsset = publicRow && currentAssetUsable;
   const finalHeroAssetPath = preserveCurrentAsset ? currentAssetPath : plannedAssetPath(row);
-  const finalSocialAssetPath = preserveCurrentAsset ? currentSocialAssetPath : finalHeroAssetPath;
+  const finalSocialAssetPath = finalHeroAssetPath;
+  const finalInlineAssetPath = preserveCurrentAsset
+    ? currentInlineAssetPath
+    : plannedInlineAssetPath(row);
+  const inlineRenderedText = preserveCurrentAsset ? currentInlineRenderedText : row.primary_keyword;
+  const inlineAltText = preserveCurrentAsset
+    ? currentInlineAltText
+    : `Mineral-rights illustration highlighting “${row.primary_keyword}”.`;
   const finalOnDiskPath = publicPathOnDisk(finalHeroAssetPath);
   const onDisk = finalOnDiskPath ? await exists(finalOnDiskPath) : false;
   if (preserveCurrentAsset && !onDisk) {
@@ -975,14 +1081,30 @@ async function buildRow(
     pilot_article_id: row.pilot_article_id,
     final_hero_asset_path: finalHeroAssetPath,
     final_social_asset_path: finalSocialAssetPath,
+    final_inline_asset_path: finalInlineAssetPath,
     social_asset_reuse_rule: REUSE_RULE,
+    hero_rendered_text: row.canonical_title,
+    inline_rendered_text: inlineRenderedText,
+    hero_filename_text_identity: filenameMatchesRenderedText(
+      finalHeroAssetPath,
+      row.canonical_title,
+    ),
+    inline_filename_text_identity: filenameMatchesRenderedText(
+      finalInlineAssetPath,
+      inlineRenderedText,
+    ),
     target_format: 'webp',
-    target_width: 1600,
-    target_height: 900,
-    target_aspect_ratio: '16:9',
+    target_width: 1200,
+    target_height: 630,
+    target_aspect_ratio: '1.91:1',
+    inline_target_format: 'webp',
+    inline_target_width: 1200,
+    inline_target_height: 675,
+    inline_target_aspect_ratio: '16:9',
     social_crop_safe_ratio: '1.91:1 centered safe crop',
     alt_text: altText,
-    social_alt_text: publicRow ? currentSocialAltText : altText,
+    social_alt_text: altText,
+    inline_alt_text: inlineAltText,
     visible_canonical_title: row.canonical_title,
     share_seo_title: shareTitle,
     topic_rule_id: semantics.rule_id,
@@ -1010,7 +1132,14 @@ async function buildRow(
       `For this ${row.search_intent} intent, ${semantics.intent_cue}. Use the broader cluster scene only as background support: ${creative.scene}. ` +
       `Use ${camera}; ${composition}; ${lighting}; ${creative.palette}. ` +
       `Preserve realistic hands, paper, maps, equipment, and scale. Keep the frame credible, calm, educational, and human. ` +
-      `Output 1600×900 WebP, with the central 1.91:1 share crop retaining the full focal story. Visual seed: ${visualSeed.slice(0, 16)}.`,
+      `Render exactly “${row.canonical_title}” as clear, high-contrast title text in the image pixels; render no other readable words, letters, or numbers. ` +
+      `Output 1200×630 WebP for identical use as the visible hero, CMS featured/share image, og:image, twitter:image, and Article schema image. Visual seed: ${visualSeed.slice(0, 16)}.`,
+    inline_visual_concept: `A composition distinct from the hero for “${inlineRenderedText}”. Show ${semantics.object_cue}; ${semantics.action_cue}.`,
+    inline_generation_prompt:
+      `Create a distinct 1200×675 WebP in-body editorial image for the finalized title or keyword phrase “${inlineRenderedText}”. ` +
+      `Use a different composition from the hero while preserving the article-specific evidence scene: ${semantics.object_cue}; ${semantics.action_cue}. ` +
+      `Render exactly “${inlineRenderedText}” as clear, high-contrast text in the image pixels; render no other readable words, letters, or numbers. ` +
+      `The output filename must be ${path.basename(finalInlineAssetPath)}.`,
     focal_point: semantics.object_cue,
     crop_guidance:
       `Keep the topic-specific evidence group (${semantics.object_cue}) inside the central 72% width and 70% height. ` +
@@ -1023,17 +1152,19 @@ async function buildRow(
     share_description_plan:
       'Use this article-specific plain-language description for og:description and twitter:description; keep it factual, non-advisory, 130–160 characters, and complete without ellipsis.',
     share_image_plan:
-      'Use final_social_asset_path for og:image and twitter:image. Preserve a verified dedicated share asset when present; otherwise use the unique article hero.',
+      'Use final_hero_asset_path unchanged for the visible hero, CMS featured/share image, og:image, twitter:image, and Article schema image; final_social_asset_path must be identical.',
     prohibited_motifs_and_claims: prohibitions,
     brief_status: briefReady ? 'brief_ready' : 'brief_blocked_semantic_evidence_incomplete',
     brief_ready: briefReady,
     asset_generated: preserveCurrentAsset,
+    inline_asset_generated: preserveCurrentAsset,
     asset_generation_status: publicRow
       ? 'preexisting_verified_public_asset'
       : heldRow && preserveCurrentAsset
         ? 'preexisting_verified_held_asset'
         : 'not_generated_local_plan_only',
     on_disk: onDisk,
+    inline_on_disk: preserveCurrentAsset ? currentEvidence?.inline_on_disk === true : false,
     on_disk_status: onDisk ? 'final_asset_verified_on_disk' : 'final_asset_not_on_disk',
     published: publicRow,
     published_status: publicRow ? 'existing_public_route_unchanged' : 'not_published',
@@ -1065,6 +1196,13 @@ async function buildRow(
     current_asset_match_tokens: currentEvidence?.article_match.matched_tokens ?? [],
     current_asset_usable: currentAssetUsable,
     current_asset_preserved: preserveCurrentAsset,
+    current_inline_asset_path: currentInlineAssetPath,
+    current_inline_asset_on_disk: currentEvidence?.inline_on_disk ?? false,
+    current_inline_asset_format: currentEvidence?.inline_format ?? null,
+    current_inline_asset_width: currentEvidence?.inline_width ?? null,
+    current_inline_asset_height: currentEvidence?.inline_height ?? null,
+    current_inline_asset_sha256: currentEvidence?.inline_sha256 ?? null,
+    two_image_policy_evidence_verified: twoImageEvidenceUsable,
     current_asset_is_shared_pilot_placeholder:
       pilotRow && currentAssetPath === '/assets/brand/mrx-underwriter-review-og.png',
     current_asset_sha256: currentEvidence?.sha256 ?? null,
@@ -1084,8 +1222,14 @@ function buildReport(plan) {
       ['Final hero path collisions', v.final_hero_asset_path_collision_count],
       ['Unique final social paths', v.unique_final_social_asset_path_count],
       ['Final social path collisions', v.final_social_asset_path_collision_count],
+      ['Unique final in-body paths', v.unique_final_inline_asset_path_count],
+      ['Final in-body path collisions', v.final_inline_asset_path_collision_count],
       ['Expected same-row hero/social reuses', v.same_row_hero_social_reuse_count],
       ['Cross-row hero/social collisions', v.cross_row_hero_social_collision_count],
+      ['Hero exact-title filename identities', v.hero_filename_text_identity_count],
+      ['In-body exact-keyword filename identities', v.inline_filename_text_identity_count],
+      ['Hero exact-title prompt requirements', v.hero_exact_title_prompt_count],
+      ['In-body exact-keyword prompt requirements', v.inline_exact_keyword_prompt_count],
       ['Unique alt text values', v.unique_alt_text_count],
       ['Unique visual concepts', v.unique_visual_concept_count],
       ['Unique generation prompts', v.unique_generation_prompt_count],
@@ -1096,6 +1240,10 @@ function buildReport(plan) {
       ['Share descriptions outside 130–160', v.share_description_outside_130_160_count],
       ['Share descriptions with ellipsis', v.share_description_ellipsis_count],
       ['Existing public assets verified on disk', v.existing_public_asset_verified_count],
+      [
+        'Existing public in-body assets verified on disk',
+        v.existing_public_inline_asset_verified_count,
+      ],
       ['Held current assets observed', v.held_current_asset_observed_count],
       ['Held current assets preserved', v.held_current_asset_preserved_count],
       ['Held assets still requiring replacement', v.held_replacement_required_count],
@@ -1109,21 +1257,23 @@ function buildReport(plan) {
     [1],
   );
   const publicAssetTable = markdownTable(
-    ['Row', 'Article', 'Verified current hero and share asset', 'SHA-256'],
+    ['Row', 'Article', 'Verified hero/share asset', 'Verified in-body asset'],
     publicRows.map((row) => [
       row.program_row_id,
       row.canonical_title.replaceAll('|', '\\|'),
       `\`${row.final_hero_asset_path}\``,
-      `\`${row.current_asset_sha256}\``,
+      `\`${row.final_inline_asset_path}\``,
     ]),
   );
-  return `# MRX 1,000-row hero and share creative-brief plan
+  return `# MRX 1,000-row two-image creative-brief plan
 
 Generated deterministically from the canonical 1,000-row ledger. This is a local-only creative plan. It generated no images, changed no article frontmatter, made no external call, and performed no publication, indexing, deployment, or spend action.
 
 ## Controlling release policy
 
 - Signed decision: \`${plan.controlling_decision.decision_id}\`
+- Two-image decision: \`${plan.two_image_policy.decision_id}\`
+- Two-image decision SHA-256: \`${plan.two_image_policy.decision_sha256}\`
 - Verified decision SHA-256: \`${plan.controlling_decision.sha256}\`
 - Numerical release cap applies: **${plan.controlling_decision.numerical_release_cap_applies}**
 - Elapsed-time release gate applies: **${plan.controlling_decision.elapsed_time_gate_applies}**
@@ -1134,25 +1284,25 @@ Generated deterministically from the canonical 1,000-row ledger. This is a local
 
 ${coverageTable}
 
-## Asset and share architecture
+## Two-image asset and share architecture
 
-Every article owns one final WebP hero. Preserved legacy heroes remain 1600×900, while current owner-policy release assets use one 1200×630 WebP for the visible hero and all social metadata. A verified dedicated legacy 1200×630 JPEG social asset is preserved when present. The per-row rule is \`${plan.asset_architecture.social_asset_reuse_rule}\`. Reuse across different rows is prohibited and currently has zero collisions.
+Every article owns one 1200×630 WebP hero with the exact canonical article title rendered in its pixels and one distinct 1200×675 WebP in-body image with the exact primary keyword rendered in its pixels. The hero is reused byte-for-byte for the visible hero, CMS featured/share image, Open Graph, Twitter/X, and Article schema surfaces. Each filename stem is the deterministic slug of the exact rendered text. The per-row rule is \`${plan.asset_architecture.social_asset_reuse_rule}\`. Reuse across different articles is prohibited and currently has zero collisions.
 
 Each row includes title/keyword/intent-derived object, action, location, risk, and decision cues. A semantic signature is computed from those cues; the generator fails unless all 1,000 signatures are unique and every appropriateness check passes. Each row also includes concise alt text, a distinct share SEO title of 60 characters or fewer, a complete 130–160-character share description, 16:9 and 1.91:1 crop guidance, prohibited motifs/claims, and four independent state dimensions: \`brief_ready\`, \`asset_generated\`, \`on_disk\`, and \`published\`.
 
-## ${v.published_count} verified public hero/social sets preserved
+## ${v.published_count} verified public two-image sets preserved
 
 ${publicAssetTable}
 
-These verified assets were not regenerated or edited. Their current frontmatter paths, descriptive alt text, titles, and descriptions are preserved as the final plan values.
+These verified hero/share and in-body assets passed current frontmatter, binary, OCR, exact rendered-text/filename identity, dimensions, MIME, alt, and distinctness checks. Their current paths, titles, keywords, and descriptions are preserved as the final plan values.
 
 ## Held incumbent assets audited and preserved
 
-All ${v.held_count} held incumbent MDX rows were read and checked against their current hero/social frontmatter and on-disk files. ${v.held_current_asset_preserved_count} current assets passed all checks: unique path, unique file SHA-256, matching hero/social path, approved dimensions, article-match token evidence, and concise alt text. They remain nonpublic until their article-specific quality gates pass; no numerical cap or waiting period applies. ${v.held_replacement_required_count} held assets still require replacement.
+All ${v.held_count} held incumbent MDX rows were read and checked against the two-image policy. ${v.held_current_asset_preserved_count} already prove a complete exact-title hero/share plus exact-keyword in-body pair. The remaining ${v.held_replacement_required_count} require policy-compliant two-image generation before publication. They remain nonpublic until their article-specific quality gates pass; no numerical cap or waiting period applies.
 
 ## Pilot placeholder replacement boundary
 
-All 25 pilot rows still point at the shared staging placeholder \`/assets/brand/mrx-underwriter-review-og.png\` in their untouched source frontmatter. This plan assigns each pilot a unique replacement path under \`/assets/articles/mrx1000/\`, but every pilot remains \`asset_generated=false\`, \`on_disk=false\`, \`published=false\`, and \`release_blocked=true\` until its creative and article-specific quality gates pass. No later numerical cap-lift decision is required.
+All 25 pilot rows still point at the shared staging placeholder \`/assets/brand/mrx-underwriter-review-og.png\` in their untouched source frontmatter. This plan assigns each pilot unique hero/share and in-body replacement paths under \`/assets/articles/hero/\` and \`/assets/articles/inline/\`, but every pilot remains \`asset_generated=false\`, \`on_disk=false\`, \`published=false\`, and \`release_blocked=true\` until its creative and article-specific quality gates pass. No later numerical cap-lift decision is required.
 
 ## Determinism
 
@@ -1164,10 +1314,13 @@ All 25 pilot rows still point at the shared staging placeholder \`/assets/brand/
 }
 
 async function main() {
-  const [ledgerBytes, ownerDecisionBytes] = await Promise.all([
-    readFile(INPUTS.ledger),
-    readFile(INPUTS.ownerDecision),
-  ]);
+  const [ledgerBytes, ownerDecisionBytes, twoImageRetrofitBytes, twoImageDecisionBytes] =
+    await Promise.all([
+      readFile(INPUTS.ledger),
+      readFile(INPUTS.ownerDecision),
+      readFile(INPUTS.twoImageRetrofit),
+      readFile(INPUTS.twoImageDecision),
+    ]);
   const ownerDecisionSha = sha256(ownerDecisionBytes);
   if (ownerDecisionSha !== OWNER_DECISION_SHA256) {
     throw new Error(
@@ -1184,13 +1337,34 @@ async function main() {
   }
 
   const ledger = JSON.parse(ledgerBytes.toString('utf8'));
+  const twoImageRetrofit = JSON.parse(twoImageRetrofitBytes.toString('utf8'));
+  const twoImageDecisionText = twoImageDecisionBytes.toString('utf8');
   if (ledger.verification?.row_count !== 1000 || ledger.articles?.length !== 1000) {
     throw new Error('Canonical ledger must contain exactly 1,000 verified rows');
   }
+  if (
+    twoImageRetrofit.summary?.article_count !== 99 ||
+    twoImageRetrofit.summary?.hero_ocr_pass_count !== 99 ||
+    twoImageRetrofit.summary?.inline_ocr_pass_count !== 99
+  ) {
+    throw new Error('Two-image retrofit manifest must prove 99 public OCR-verified article rows');
+  }
+  if (
+    !twoImageDecisionText.includes('Decision ID: D-2026-0811-17') ||
+    !twoImageDecisionText.includes('Every MRX article must use a unique canonical hero/share image')
+  ) {
+    throw new Error('Owner two-image decision no longer proves the 1,000-row image policy');
+  }
+  const twoImageEvidenceBySlug = new Map(twoImageRetrofit.rows.map((row) => [row.slug, row]));
 
   const runtime = projectLedgerArticlesForRuntime(ledger.articles, MRX_ROOT);
   const runtimeArticles = runtime.articles;
-  const inputParts = [ledgerBytes.toString('utf8'), ownerDecisionBytes.toString('utf8')];
+  const inputParts = [
+    ledgerBytes.toString('utf8'),
+    ownerDecisionBytes.toString('utf8'),
+    twoImageRetrofitBytes.toString('utf8'),
+    twoImageDecisionText,
+  ];
   const currentEvidenceByRow = new Map();
   for (const row of runtimeArticles) {
     const evidence = await loadCurrentAssetEvidence(row, inputParts);
@@ -1230,6 +1404,7 @@ async function main() {
       await buildRow(
         row,
         currentEvidenceByRow.get(row.program_row_id) ?? null,
+        twoImageEvidenceBySlug.get(row.canonical_slug) ?? null,
         currentPathCounts,
         currentHashCounts,
         currentSocialPathCounts,
@@ -1241,6 +1416,7 @@ async function main() {
 
   const heroDuplicates = duplicateValues(rows.map((row) => row.final_hero_asset_path));
   const socialDuplicates = duplicateValues(rows.map((row) => row.final_social_asset_path));
+  const inlineDuplicates = duplicateValues(rows.map((row) => row.final_inline_asset_path));
   const crossRowHeroSocialCollisions = rows.filter((row, rowIndex) =>
     rows.some(
       (other, otherIndex) =>
@@ -1258,10 +1434,22 @@ async function main() {
     unique_final_social_asset_path_count: new Set(rows.map((row) => row.final_social_asset_path))
       .size,
     final_social_asset_path_collision_count: socialDuplicates.length,
+    unique_final_inline_asset_path_count: new Set(rows.map((row) => row.final_inline_asset_path))
+      .size,
+    final_inline_asset_path_collision_count: inlineDuplicates.length,
     same_row_hero_social_reuse_count: rows.filter(
       (row) => row.final_hero_asset_path === row.final_social_asset_path,
     ).length,
     cross_row_hero_social_collision_count: crossRowHeroSocialCollisions.length,
+    hero_filename_text_identity_count: rows.filter((row) => row.hero_filename_text_identity).length,
+    inline_filename_text_identity_count: rows.filter((row) => row.inline_filename_text_identity)
+      .length,
+    hero_exact_title_prompt_count: rows.filter((row) =>
+      row.generation_prompt.includes(`Render exactly “${row.canonical_title}”`),
+    ).length,
+    inline_exact_keyword_prompt_count: rows.filter((row) =>
+      row.inline_generation_prompt.includes(`Render exactly “${row.inline_rendered_text}”`),
+    ).length,
     unique_alt_text_count: new Set(rows.map((row) => row.alt_text)).size,
     unique_visual_concept_count: new Set(rows.map((row) => row.visual_concept)).size,
     unique_generation_prompt_count: new Set(rows.map((row) => row.generation_prompt)).size,
@@ -1291,6 +1479,13 @@ async function main() {
     ).length,
     existing_public_asset_verified_count: publicRows.filter(
       (row) => row.asset_generated && row.on_disk && row.current_asset_sha256,
+    ).length,
+    existing_public_inline_asset_verified_count: publicRows.filter(
+      (row) =>
+        row.inline_asset_generated &&
+        row.inline_on_disk &&
+        row.current_inline_asset_sha256 &&
+        row.two_image_policy_evidence_verified,
     ).length,
     asset_generated_count: rows.filter((row) => row.asset_generated).length,
     on_disk_count: rows.filter((row) => row.on_disk).length,
@@ -1322,8 +1517,14 @@ async function main() {
     verification.final_hero_asset_path_collision_count === 0,
     verification.unique_final_social_asset_path_count === 1000,
     verification.final_social_asset_path_collision_count === 0,
-    verification.same_row_hero_social_reuse_count === 990,
+    verification.unique_final_inline_asset_path_count === 1000,
+    verification.final_inline_asset_path_collision_count === 0,
+    verification.same_row_hero_social_reuse_count === 1000,
     verification.cross_row_hero_social_collision_count === 0,
+    verification.hero_filename_text_identity_count === 1000,
+    verification.inline_filename_text_identity_count === 1000,
+    verification.hero_exact_title_prompt_count === 1000,
+    verification.inline_exact_keyword_prompt_count === 1000,
     verification.unique_alt_text_count === 1000,
     verification.unique_visual_concept_count === 1000,
     verification.unique_generation_prompt_count === 1000,
@@ -1337,6 +1538,7 @@ async function main() {
     verification.share_description_ellipsis_count === 0,
     verification.share_description_incomplete_sentence_count === 0,
     verification.existing_public_asset_verified_count === 99,
+    verification.existing_public_inline_asset_verified_count === 99,
     verification.asset_generated_count === 99 + verification.held_current_asset_preserved_count,
     verification.on_disk_count === 99 + verification.held_current_asset_preserved_count,
     verification.published_count === 99,
@@ -1362,7 +1564,7 @@ async function main() {
 
   const rowPlanFingerprint = sha256(`${JSON.stringify(rows)}\n`);
   const plan = {
-    schema_version: 'mrx1000-hero-share-creative-brief-v1.1.0',
+    schema_version: 'mrx1000-two-image-creative-brief-v2.0.0',
     generated_at: ledger.generated_at,
     source_ledger: {
       path: 'mrx/config/mrx-1000-canonical-content-ledger.json',
@@ -1383,16 +1585,33 @@ async function main() {
       deployment_authorized: true,
       spend_authorized: false,
     },
+    two_image_policy: {
+      decision_id: 'D-2026-0811-17',
+      decision_path:
+        'artifacts/mrx1000-release-10/decisions/mrx-owner-two-image-retrofit-authorization-20260811.md',
+      decision_sha256: sha256(twoImageDecisionBytes),
+      current_public_manifest_path: 'config/mrx-article-two-image-retrofit.json',
+      current_public_manifest_sha256: sha256(twoImageRetrofitBytes),
+      exact_title_in_hero_pixels_required: true,
+      hero_share_binary_identity_required: true,
+      exact_keyword_in_inline_pixels_required: true,
+      distinct_inline_image_required: true,
+      filename_rendered_text_identity_required: true,
+      ocr_verification_required: true,
+      applies_to_all_program_rows: true,
+    },
     asset_architecture: {
       one_unique_hero_per_article: true,
-      final_distinct_asset_path_count: 1010,
+      one_distinct_inline_image_per_article: true,
+      final_distinct_asset_path_count: 2000,
       hero_target_format: 'webp',
-      hero_target_dimensions: 'legacy 1600x900; owner-policy release 1200x630',
-      dedicated_social_target_format: 'jpeg',
-      dedicated_social_target_dimensions: '1200x630',
+      hero_target_dimensions: '1200x630',
+      inline_target_format: 'webp',
+      inline_target_dimensions: '1200x675',
+      rendered_text_filename_identity_required: true,
       social_asset_reuse_rule: REUSE_RULE,
-      hero_and_social_same_path_within_row_count: 990,
-      dedicated_social_asset_row_count: 10,
+      hero_and_social_same_path_within_row_count: 1000,
+      dedicated_social_asset_row_count: 0,
       hero_or_social_path_reuse_across_rows_allowed: false,
       open_graph_contract: {
         title: 'share_seo_title -> og:title; visible_canonical_title remains the H1',

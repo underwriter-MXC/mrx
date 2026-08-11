@@ -304,8 +304,8 @@ export function evaluateEvidencePacket(packet) {
     packet.asset_manifest?.frontmatter_sha256 !== packet.frontmatter_sha256 ||
     !HEX_64.test(packet.asset_manifest?.evidence_sha256 ?? '') ||
     !Array.isArray(packet.asset_manifest?.assets) ||
-    packet.asset_manifest.assets.length !== 2 ||
-    !['hero', 'social'].every((kind) =>
+    packet.asset_manifest.assets.length !== 3 ||
+    !['hero', 'social', 'inline'].every((kind) =>
       packet.asset_manifest.assets.some(
         (asset) =>
           asset.kind === kind &&
@@ -315,11 +315,15 @@ export function evaluateEvidencePacket(packet) {
           !!asset.public_path &&
           !!asset.alt_text &&
           !!asset.provenance &&
-          !!asset.license,
+          !!asset.license &&
+          !!asset.rendered_text &&
+          asset.filename_text_identity === true &&
+          asset.canonical_surface_identity === true &&
+          asset.ocr_verified === true,
       ),
     )
   ) {
-    failures.push('asset_manifest must contain hash-locked PASS hero and social assets');
+    failures.push('asset_manifest must contain hash-locked PASS hero, social, and inline assets');
   }
   if (
     packet.publication_manifest?.disposition !== 'READY' ||

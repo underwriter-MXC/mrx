@@ -4,9 +4,10 @@ import { expect, test } from '@playwright/test';
  * Learning Center combined search + topic + author filters on page 1.
  *
  * The form lives at /learning-center/ and progressively enhances the static
- * archive: with JS off the page renders the full article list; with JS on the
- * three controls (`?q=`, `?topic=`, `?author=`) filter cards immediately and
- * write the same query params via history.replaceState.
+ * archive: page cards remain the unfiltered visible baseline while the full
+ * corpus stays in the DOM for immediate search. The three controls (`?q=`,
+ * `?topic=`, `?author=`) filter cards and write the same query params via
+ * history.replaceState.
  */
 test.describe('Learning Center filters', () => {
   test.use({ viewport: { width: 1280, height: 900 } });
@@ -40,6 +41,7 @@ test.describe('Learning Center filters', () => {
 
     const cards = page.locator('[data-learning-card]');
     const total = await cards.count();
+    const pageTotal = await page.locator('[data-learning-page-card="true"]').count();
     expect(total).toBeGreaterThan(2);
 
     // Pick one real card and combine its own title term, topic, and author so
@@ -83,7 +85,7 @@ test.describe('Learning Center filters', () => {
     const visibleAfterReset = await cards.evaluateAll((elements) =>
       elements.filter((el) => !el.hasAttribute('hidden')).length,
     );
-    expect(visibleAfterReset).toBe(total);
+    expect(visibleAfterReset).toBe(pageTotal);
   });
 
   test('Esc clears the controls and the URL', async ({ page }) => {

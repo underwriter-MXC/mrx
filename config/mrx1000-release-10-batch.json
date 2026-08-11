@@ -51,7 +51,10 @@
     "wave9_selection_decision_sha256": "0c7cbdef34e445346a385e452273a746cb9343b8aba1e9c9bf307b46d8086582",
     "wave10_selection_decision_id": "MRX1000-W10-SELECT-2026-08-06",
     "wave10_selection_decision_path": "docs/governance/mrx1000-wave10-selection-decision-2026-08-06.md",
-    "wave10_selection_decision_sha256": "13d98fc401ced09c206b1be5238034f9d555388e628cfce1d84d5ed4e3b78e3f"
+    "wave10_selection_decision_sha256": "13d98fc401ced09c206b1be5238034f9d555388e628cfce1d84d5ed4e3b78e3f",
+    "two_image_retrofit_decision_id": "D-2026-0811-17",
+    "two_image_retrofit_decision_path": "artifacts/mrx1000-release-10/decisions/mrx-owner-two-image-retrofit-authorization-20260811.md",
+    "two_image_retrofit_decision_sha256": "8931708aafb31667e451bfe7ea21f37730a84d33b3d283168d8729cf57d858b8"
   },
   "identity_authority": {
     "scope_key": "canonical_slug",
@@ -75,7 +78,7 @@
     "fail_closed": true,
     "earned_scale_gates": [],
     "exact_admitted_count": 90,
-    "exact_admitted_slate_sha256": "b6979dea2c85940d8743eff003b2b7f79819aa269abf8054039026cd7a11fd24"
+    "exact_admitted_slate_sha256": "a219337c412f4a71a6623c9bb99d8c84468f58b59f9688804728a16e472d3832"
   },
   "articles": [
     {
@@ -91,9 +94,9 @@
       "content_genius_article_uuid": "e0a11372-0e90-407a-ad2c-3cda37b646ae",
       "archive_evidence_sha256": "3f3ee6629ec28fe5c4239a1e168e2e54454fddbfcb7915ddb49281c36823dd55",
       "repo_path": "src/content/posts/texas-railroad-commission-how-to-use-public-records-to-understand-your-mineral-rights.mdx",
-      "repo_sha256": "d5f927ed2178a3764c2d4c93a2a0c1ff9386881dd7e91fbbab64ee9666c3874d",
-      "hero_path": "/assets/articles/texas-railroad-commission-how-to-use-public-records-to-understand-mineral-rights.webp",
-      "hero_sha256": "fb7f9c125b60d564eab1cb8df4ec17fd31e0c931c307325ca91efc0352364259",
+      "repo_sha256": "114a2cbe02be49ae058d0aed9ef477f0b116078e8fb0d8f137250bc60e383a3e",
+      "hero_path": "/assets/articles/hero/texas-railroad-commission-public-records-for-mineral-rights.webp",
+      "hero_sha256": "e4f35d5a7f0872d820cecef40216d609a6649546f9ca407839bb7c2790832a16",
       "admission_status": "admitted_candidate",
       "searchatlas_content_score": 76,
       "searchatlas_word_count": 1235,
@@ -104,7 +107,12 @@
         "Dedicated social/share assets remain pre-release remediation; current evidence only proves existing hero asset existence/hash and does not claim share-asset PASS."
       ],
       "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/texas-railroad-commission-how-to-use-public-records-to-understand-your-mineral-rights.json",
-      "evidence_packet_path_required": true
+      "evidence_packet_path_required": true,
+      "article_sha256": "114a2cbe02be49ae058d0aed9ef477f0b116078e8fb0d8f137250bc60e383a3e",
+      "hero_asset_sha256": "e4f35d5a7f0872d820cecef40216d609a6649546f9ca407839bb7c2790832a16",
+      "inline_path": "/assets/articles/inline/texas-railroad-commission-how-to-use-public-records-to-understand-your-mineral-rights/texas-railroad-commission-public-records-for-mineral-rights.webp",
+      "inline_asset_sha256": "c538a2fb259a3b121628ace30eba93256c1aa55b708058f64033996165965a13",
+      "inline_rendered_text": "Texas Railroad Commission: Public Records for Mineral Rights"
     },
     {
       "selection_rank": 2,
@@ -119,9 +127,9 @@
       "content_genius_article_uuid": "ea529ed5-2d14-467e-91ef-7acaebec84e1",
       "archive_evidence_sha256": "084e9e77c23f750c544070cc448f5be05664c72bcd4a245796d434c8a19a25c9",
       "repo_path": "src/content/posts/texas-oil-and-gas-production-by-county-what-mineral-rights-owners-should-know.mdx",
-      "repo_sha256": "0f2fdd5d9d8c203c828d697c66b63d7926b303690ed29fc9f70f8f3ee35130e3",
-      "hero_path": "/assets/articles/texas-oil-and-gas-production-by-county-what-mineral-rights-owners-should-know.webp",
-      "hero_sha256": "7c35975a515c15599941bc3d870226def772a7d96791a44d5c00abc27599bb8f",
+      "repo_sha256": "2d7dfb3bc44e5c5eef6f4a99f78df38ca9093316600928f4a3f71c3752255f84",
+      "hero_path": "/assets/articles/hero/texas-oil-and-gas-production-by-county-an-owner-primer.webp",
+      "hero_sha256": "dbe04fa863e7e66d46852a6d0e25aa3ca4c89c7ce30fc9bd52fa2629755d4bab",
       "admission_status": "admitted_candidate",
       "searchatlas_content_score": 76,
       "searchatlas_word_count": 1202,
@@ -132,7 +140,12 @@
         "Dedicated social/share assets remain pre-release remediation; current evidence only proves existing hero asset existence/hash and does not claim share-asset PASS."
       ],
       "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/texas-oil-and-gas-production-by-county-what-mineral-rights-owners-should-know.json",
-      "evidence_packet_path_required": true
+      "evidence_packet_path_required": true,
+      "article_sha256": "2d7dfb3bc44e5c5eef6f4a99f78df38ca9093316600928f4a3f71c3752255f84",
+      "hero_asset_sha256": "dbe04fa863e7e66d46852a6d0e25aa3ca4c89c7ce30fc9bd52fa2629755d4bab",
+      "inline_path": "/assets/articles/inline/texas-oil-and-gas-production-by-county-what-mineral-rights-owners-should-know/texas-oil-and-gas-production-by-county-what-mineral-rights-owners-should-know.webp",
+      "inline_asset_sha256": "d33c37db9f9bbab03cd95e21395b3da3c7e2c6f358071cc8e4a9923eb79469c7",
+      "inline_rendered_text": "texas oil and gas production by county what mineral rights owners should know"
     },
     {
       "selection_rank": 3,
@@ -147,9 +160,9 @@
       "content_genius_article_uuid": "76104331-991b-4a22-844a-308f702c3658",
       "archive_evidence_sha256": "d7fd2759fa5381870ac821acddb0d8fde746dba917123528785f6d68c8683b8f",
       "repo_path": "src/content/posts/the-permian-basin-explained-what-texas-mineral-rights-owners-need-to-know.mdx",
-      "repo_sha256": "2222bfcce207523628af97d2759377310c34c9258ca3b7194c5ba001ea07eb84",
-      "hero_path": "/assets/articles/the-permian-basin-what-texas-mineral-rights-owners-need-to-know.webp",
-      "hero_sha256": "2685b9d19a4bc24c03525cc803099ccbc3d6da437030dba86ca8469262de5af2",
+      "repo_sha256": "279b9ab2ca7a4c02e1ca549757f4aba19d9355d92f516631813a5d063a733a7f",
+      "hero_path": "/assets/articles/hero/the-permian-basin-explained-an-owner-overview.webp",
+      "hero_sha256": "40dcd2d279036678d13ca5858e6db938fae2116a647b7feb621b69838b1dcf64",
       "admission_status": "admitted_candidate",
       "searchatlas_content_score": 82,
       "searchatlas_word_count": 1241,
@@ -160,7 +173,12 @@
         "Dedicated social/share assets remain pre-release remediation; current evidence only proves existing hero asset existence/hash and does not claim share-asset PASS."
       ],
       "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/the-permian-basin-explained-what-texas-mineral-rights-owners-need-to-know.json",
-      "evidence_packet_path_required": true
+      "evidence_packet_path_required": true,
+      "article_sha256": "279b9ab2ca7a4c02e1ca549757f4aba19d9355d92f516631813a5d063a733a7f",
+      "hero_asset_sha256": "40dcd2d279036678d13ca5858e6db938fae2116a647b7feb621b69838b1dcf64",
+      "inline_path": "/assets/articles/inline/the-permian-basin-explained-what-texas-mineral-rights-owners-need-to-know/the-permian-basin-explained-what-texas-mineral-rights-owners-need-to-know.webp",
+      "inline_asset_sha256": "7a840edaadfe664ba3ca51c496eef8f2a42c3a33cae32ee0d3bd0f4bfda5dd18",
+      "inline_rendered_text": "the permian basin explained what texas mineral rights owners need to know"
     },
     {
       "selection_rank": 4,
@@ -175,9 +193,9 @@
       "content_genius_article_uuid": "4b7c0ee9-7155-472b-8f65-a4b0ebef62dd",
       "archive_evidence_sha256": "4770636f6f3b765f0d944305264eb1ffebdd19b169229a88cfee4afec688a799",
       "repo_path": "src/content/posts/eagle-ford-shale-how-it-affects-mineral-rights-values-in-south-texas.mdx",
-      "repo_sha256": "9a9ccab212f90c5a5cd2a8b34b926fdc43088000c0cc0731346661a9b769ad47",
-      "hero_path": "/assets/articles/eagle-ford-shale-how-it-affects-mineral-rights-values-in-south-texas.webp",
-      "hero_sha256": "6ef8ada88f4fb7cf448e091fa020aa86b98782e461d1d81590867b467ef9c937",
+      "repo_sha256": "73da1b3423ee4f0b8e680c3786dc5c85745f45fc461cf1b988544b32dbf5febf",
+      "hero_path": "/assets/articles/hero/eagle-ford-shale-and-south-texas-mineral-rights.webp",
+      "hero_sha256": "115270c77e986c5ab250969e25aeff36e0e90eedbb03b65772243560b2a08ecb",
       "admission_status": "admitted_candidate",
       "searchatlas_content_score": 76,
       "searchatlas_word_count": 1326,
@@ -188,7 +206,12 @@
         "Dedicated social/share assets remain pre-release remediation; current evidence only proves existing hero asset existence/hash and does not claim share-asset PASS."
       ],
       "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/eagle-ford-shale-how-it-affects-mineral-rights-values-in-south-texas.json",
-      "evidence_packet_path_required": true
+      "evidence_packet_path_required": true,
+      "article_sha256": "73da1b3423ee4f0b8e680c3786dc5c85745f45fc461cf1b988544b32dbf5febf",
+      "hero_asset_sha256": "115270c77e986c5ab250969e25aeff36e0e90eedbb03b65772243560b2a08ecb",
+      "inline_path": "/assets/articles/inline/eagle-ford-shale-how-it-affects-mineral-rights-values-in-south-texas/eagle-ford-shale-how-it-affects-mineral-rights-values-in-south-texas.webp",
+      "inline_asset_sha256": "0b0ef149ffa911cbac6d43619c19dd097988c71cec0aab41284594bfe1655ea0",
+      "inline_rendered_text": "eagle ford shale how it affects mineral rights values in south texas"
     },
     {
       "selection_rank": 5,
@@ -203,9 +226,9 @@
       "content_genius_article_uuid": "dbdae66c-ca48-4141-8ee9-ce3e9311662f",
       "archive_evidence_sha256": "44d97ab2772d6a5499ba83dd819c1a8abbc82aeb7aabb8bbf0820c109879ec3c",
       "repo_path": "src/content/posts/how-royalty-payments-work-for-texas-mineral-rights-owners.mdx",
-      "repo_sha256": "bc09786e5521baa70535ea11c69d5b1a4dc189200d73fbd1627272538b92b5ff",
-      "hero_path": "/assets/articles/how-royalty-payments-work-for-texas-mineral-rights-owners.webp",
-      "hero_sha256": "285435c05c4a84a1db4aab1eade49e893d248ea5cf08ac5e01df4e8ff0137aa8",
+      "repo_sha256": "38b75311c3ab861c9438506356bd3a5415225210aa332a3d3b853313f714d60f",
+      "hero_path": "/assets/articles/hero/how-royalty-payments-work-for-texas-mineral-owners.webp",
+      "hero_sha256": "0e74de698a30081f6327896138fc861dd0237f9f9d5e3cf23fc4904f03b7136c",
       "admission_status": "admitted_candidate",
       "searchatlas_content_score": 76,
       "searchatlas_word_count": 1338,
@@ -216,7 +239,12 @@
         "Dedicated social/share assets remain pre-release remediation; current evidence only proves existing hero asset existence/hash and does not claim share-asset PASS."
       ],
       "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/how-royalty-payments-work-for-texas-mineral-rights-owners.json",
-      "evidence_packet_path_required": true
+      "evidence_packet_path_required": true,
+      "article_sha256": "38b75311c3ab861c9438506356bd3a5415225210aa332a3d3b853313f714d60f",
+      "hero_asset_sha256": "0e74de698a30081f6327896138fc861dd0237f9f9d5e3cf23fc4904f03b7136c",
+      "inline_path": "/assets/articles/inline/how-royalty-payments-work-for-texas-mineral-rights-owners/how-royalty-payments-work-for-texas-mineral-rights-owners.webp",
+      "inline_asset_sha256": "b3e670ebc7a3da9bc0b32818800490ab8439b6a9019d00b41fc0742560900e04",
+      "inline_rendered_text": "how royalty payments work for texas mineral rights owners"
     },
     {
       "selection_rank": 6,
@@ -231,9 +259,9 @@
       "content_genius_article_uuid": "b0c94cfa-7fe0-4779-9c04-049de5fbfca5",
       "archive_evidence_sha256": "b87a4831789917b1aafc1eae06c7e94ae0d7a8db2bbfb708d8165292a08b7f7c",
       "repo_path": "src/content/posts/how-horizontal-drilling-changed-mineral-rights-values-in-texas.mdx",
-      "repo_sha256": "f09eff4e4065b03ad883e148cabb3381ceafda7aeb4990e6c4de7ec3ffcf8d2c",
-      "hero_path": "/assets/articles/how-horizontal-drilling-changed-mineral-rights-values-in-texas.webp",
-      "hero_sha256": "bbb0f620182a631a32f9c12226524688b18b363ba6d27dd9d91cb4df184d4d1d",
+      "repo_sha256": "878173e23863727fc019e67f7a94a8c7d56606db3488c2e1293eebfc7abb77a2",
+      "hero_path": "/assets/articles/hero/how-horizontal-drilling-affects-texas-mineral-rights-values.webp",
+      "hero_sha256": "23bab0bd8bd6ef151b67fe2fef7f2f488b12a63012d037415e1af9ffdfaaef6a",
       "admission_status": "admitted_candidate",
       "searchatlas_content_score": 76,
       "searchatlas_word_count": 1074,
@@ -244,7 +272,12 @@
         "Dedicated social/share assets remain pre-release remediation; current evidence only proves existing hero asset existence/hash and does not claim share-asset PASS."
       ],
       "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/how-horizontal-drilling-changed-mineral-rights-values-in-texas.json",
-      "evidence_packet_path_required": true
+      "evidence_packet_path_required": true,
+      "article_sha256": "878173e23863727fc019e67f7a94a8c7d56606db3488c2e1293eebfc7abb77a2",
+      "hero_asset_sha256": "23bab0bd8bd6ef151b67fe2fef7f2f488b12a63012d037415e1af9ffdfaaef6a",
+      "inline_path": "/assets/articles/inline/how-horizontal-drilling-changed-mineral-rights-values-in-texas/how-horizontal-drilling-changed-mineral-rights-values-in-texas.webp",
+      "inline_asset_sha256": "9f4dc7dc5c5a8af68ac8ff3d4cd4e2b922800ca0378feda6a6371cd7bc44c3d0",
+      "inline_rendered_text": "how horizontal drilling changed mineral rights values in texas"
     },
     {
       "selection_rank": 7,
@@ -259,9 +292,9 @@
       "content_genius_article_uuid": "b9beb325-1c4f-495f-a17f-6f8983e259a0",
       "archive_evidence_sha256": "5813d1c756918feaacdcbf03a7dd7177f03d9d0a336173fb547d2b6437182894",
       "repo_path": "src/content/posts/how-oil-price-fluctuations-affect-texas-mineral-rights-values.mdx",
-      "repo_sha256": "d85099df50eaaf7c776d576962118bbf94618052f9c93fab334dd7a8fbd8bf37",
-      "hero_path": "/assets/articles/how-oil-price-fluctuations-affect-texas-mineral-rights-values.webp",
-      "hero_sha256": "e670f1581fed76a4cfda6f518b53fda4590116b19c49cc8521551a09f924feac",
+      "repo_sha256": "b5820b1667b6550dea1fc8c54dbd382a194b98612ff6d39dc466a470b777b137",
+      "hero_path": "/assets/articles/hero/oil-prices-and-texas-mineral-rights-value.webp",
+      "hero_sha256": "8c91fd39baed6edc96e5ad8c712f91609e558df787c0a9c4a35f3b9ac1b9d2fb",
       "admission_status": "admitted_candidate",
       "searchatlas_content_score": 79,
       "searchatlas_word_count": 1334,
@@ -272,7 +305,12 @@
         "Dedicated social/share assets remain pre-release remediation; current evidence only proves existing hero asset existence/hash and does not claim share-asset PASS."
       ],
       "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/how-oil-price-fluctuations-affect-texas-mineral-rights-values.json",
-      "evidence_packet_path_required": true
+      "evidence_packet_path_required": true,
+      "article_sha256": "b5820b1667b6550dea1fc8c54dbd382a194b98612ff6d39dc466a470b777b137",
+      "hero_asset_sha256": "8c91fd39baed6edc96e5ad8c712f91609e558df787c0a9c4a35f3b9ac1b9d2fb",
+      "inline_path": "/assets/articles/inline/how-oil-price-fluctuations-affect-texas-mineral-rights-values/how-oil-price-fluctuations-affect-texas-mineral-rights-values.webp",
+      "inline_asset_sha256": "cf4b7d22666099f7942d82709e184690282b19a960b4b7bb9baaab668d04a78e",
+      "inline_rendered_text": "how oil price fluctuations affect texas mineral rights values"
     },
     {
       "selection_rank": 8,
@@ -287,9 +325,9 @@
       "content_genius_article_uuid": "88089bd6-b098-4728-83d9-3dd02fa80392",
       "archive_evidence_sha256": "e94b78bdc386611ef98974c16899be6c2f0b39df356578a20cc2334f418ae49b",
       "repo_path": "src/content/posts/natural-gas-vs-oil-mineral-rights-in-texas-how-production-type-affects-value.mdx",
-      "repo_sha256": "c5da2e76d7695b83ece54bb8816477e4e821d9119396a3dff492bd91996944fe",
-      "hero_path": "/assets/articles/natural-gas-vs-oil-mineral-rights-in-texas-how-production-type-affects-value.webp",
-      "hero_sha256": "9cfada6dea041db287fa51bc0225278e86d348b675903bb04fa48472a9129df6",
+      "repo_sha256": "41948ed883b7e70bfb12f21dcc2e13a20f86a065357dbae03ee93989f1597f59",
+      "hero_path": "/assets/articles/hero/natural-gas-vs-oil-mineral-rights-in-texas.webp",
+      "hero_sha256": "f23325b4166dffc34b5263f6a38d3ffe35348086713d8cedf68faaeecb5fe9f0",
       "admission_status": "admitted_candidate",
       "searchatlas_content_score": 76,
       "searchatlas_word_count": 1106,
@@ -300,7 +338,12 @@
         "Dedicated social/share assets remain pre-release remediation; current evidence only proves existing hero asset existence/hash and does not claim share-asset PASS."
       ],
       "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/natural-gas-vs-oil-mineral-rights-in-texas-how-production-type-affects-value.json",
-      "evidence_packet_path_required": true
+      "evidence_packet_path_required": true,
+      "article_sha256": "41948ed883b7e70bfb12f21dcc2e13a20f86a065357dbae03ee93989f1597f59",
+      "hero_asset_sha256": "f23325b4166dffc34b5263f6a38d3ffe35348086713d8cedf68faaeecb5fe9f0",
+      "inline_path": "/assets/articles/inline/natural-gas-vs-oil-mineral-rights-in-texas-how-production-type-affects-value/natural-gas-vs-oil-mineral-rights-in-texas-how-production-type-affects-value.webp",
+      "inline_asset_sha256": "f3929c951c5d0b0e22671b89c951c2de762edca89c7c7badb12fc7fd0beacf8c",
+      "inline_rendered_text": "natural gas vs oil mineral rights in texas how production type affects value"
     },
     {
       "selection_rank": 9,
@@ -315,9 +358,9 @@
       "content_genius_article_uuid": "e95544eb-7783-4baf-b415-35339778a326",
       "archive_evidence_sha256": "848ed174447f6f4df4138c2beb523fbf29fa472e92321753b7027eaf0992df97",
       "repo_path": "src/content/posts/midland-vs-delaware-basin-how-formation-affects-your-mineral-rights-value.mdx",
-      "repo_sha256": "1e25b30555d0775f080e4fddacedc8578c298b029108412466bbb27805076274",
-      "hero_path": "/assets/articles/midland-vs-delaware-basin-how-formation-affects-mineral-rights-value.webp",
-      "hero_sha256": "a5edc93f11dcb22b0cf318f17892f1c8c77d9f39542dfea8b7b4efe5fe3851c0",
+      "repo_sha256": "bfd3a3423df1c4b07e755fea89b21682dd3c907ec5c5ed1ae8fabb114602b172",
+      "hero_path": "/assets/articles/hero/midland-vs-delaware-basin-mineral-rights.webp",
+      "hero_sha256": "bfa2c66cf19349e675c62475a033430630b7f6ecc92ffa504b5f3dace1a7764f",
       "admission_status": "admitted_candidate",
       "searchatlas_content_score": 73,
       "searchatlas_word_count": 1194,
@@ -328,7 +371,12 @@
         "Dedicated social/share assets remain pre-release remediation; current evidence only proves existing hero asset existence/hash and does not claim share-asset PASS."
       ],
       "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/midland-vs-delaware-basin-how-formation-affects-your-mineral-rights-value.json",
-      "evidence_packet_path_required": true
+      "evidence_packet_path_required": true,
+      "article_sha256": "bfd3a3423df1c4b07e755fea89b21682dd3c907ec5c5ed1ae8fabb114602b172",
+      "hero_asset_sha256": "bfa2c66cf19349e675c62475a033430630b7f6ecc92ffa504b5f3dace1a7764f",
+      "inline_path": "/assets/articles/inline/midland-vs-delaware-basin-how-formation-affects-your-mineral-rights-value/midland-vs-delaware-basin-how-formation-affects-your-mineral-rights-value.webp",
+      "inline_asset_sha256": "45c7ab4378f0e8e50f938f2ac334b707ac2b344ad84ef8aad29d816e1a36e86a",
+      "inline_rendered_text": "midland vs delaware basin how formation affects your mineral rights value"
     },
     {
       "selection_rank": 10,
@@ -343,9 +391,9 @@
       "content_genius_article_uuid": "13c6152c-6d2d-4288-a7f8-0c673ef34dec",
       "archive_evidence_sha256": "476fede81e17d92b8278a06aa022167df81ab087012a5ab78ce32669a34c0769",
       "repo_path": "src/content/posts/how-texas-mineral-rights-are-valued-producing-vs-non-producing-interests.mdx",
-      "repo_sha256": "22fa91755321b17637b3a6e7cc56bfb68dd4d4804158bef590f85df5ab387066",
-      "hero_path": "/assets/articles/how-texas-mineral-rights-are-valued-producing-vs-non-producing-interests.webp",
-      "hero_sha256": "7f63b1b1a4f73a533807decb1dc26200531b203446fef62fa62c60a8961d4cc9",
+      "repo_sha256": "b1e826fe8ecb15e82636af77ee5ad7b8a5dba6c2e483ccb593bf53b4b7e6d0dd",
+      "hero_path": "/assets/articles/hero/texas-mineral-rights-producing-vs-non-producing.webp",
+      "hero_sha256": "679f9331e67f81a15711af4a06177f6f106e02e0b695c7c550b8e6e0299e3539",
       "admission_status": "admitted_candidate",
       "searchatlas_content_score": 76,
       "searchatlas_word_count": 1284,
@@ -356,7 +404,12 @@
         "Dedicated social/share assets remain pre-release remediation; current evidence only proves existing hero asset existence/hash and does not claim share-asset PASS."
       ],
       "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/how-texas-mineral-rights-are-valued-producing-vs-non-producing-interests.json",
-      "evidence_packet_path_required": true
+      "evidence_packet_path_required": true,
+      "article_sha256": "b1e826fe8ecb15e82636af77ee5ad7b8a5dba6c2e483ccb593bf53b4b7e6d0dd",
+      "hero_asset_sha256": "679f9331e67f81a15711af4a06177f6f106e02e0b695c7c550b8e6e0299e3539",
+      "inline_path": "/assets/articles/inline/how-texas-mineral-rights-are-valued-producing-vs-non-producing-interests/how-texas-mineral-rights-are-valued-producing-vs-non-producing-interests.webp",
+      "inline_asset_sha256": "a20e6bb55123311ec4f7e40fe6a811ab37684a9765a37e881f18c2e8527ae5bf",
+      "inline_rendered_text": "how texas mineral rights are valued producing vs non producing interests"
     },
     {
       "selection_rank": 11,
@@ -371,10 +424,10 @@
       "content_genius_article_uuid": null,
       "archive_evidence_sha256": "b24c1e1da727689305355708081b78b301a7b58942e084c44a40738761e6749d",
       "repo_path": "src/content/posts/what-are-mineral-rights-a-complete-guide-for-texas-landowners.mdx",
-      "repo_sha256": "b24c1e1da727689305355708081b78b301a7b58942e084c44a40738761e6749d",
-      "hero_path": "/assets/articles/what-are-mineral-rights-texas-landowners.webp",
-      "hero_sha256": "a58aa883cf9684b7cd9dec63ed34df492f8d9cab670c5037bb5f1f8584ed8d25",
-      "hero_asset_sha256": "a58aa883cf9684b7cd9dec63ed34df492f8d9cab670c5037bb5f1f8584ed8d25",
+      "repo_sha256": "7dd629e87d01bd73edbb3d52fd883f14752cf5e9fff1c353795483ae19d1b58f",
+      "hero_path": "/assets/articles/hero/what-are-mineral-rights-a-complete-guide-for-texas-landowners.webp",
+      "hero_sha256": "5b35390c804cef1739f9e88051eec1aa89e524de572b3e0f27d3bb79625c3708",
+      "hero_asset_sha256": "5b35390c804cef1739f9e88051eec1aa89e524de572b3e0f27d3bb79625c3708",
       "admission_status": "admitted_exact",
       "finalization_state": "draft_noindex_admitted",
       "searchatlas_content_score": null,
@@ -386,7 +439,10 @@
       ],
       "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/what-are-mineral-rights-a-complete-guide-for-texas-landowners.json",
       "evidence_packet_path_required": true,
-      "article_sha256": "b24c1e1da727689305355708081b78b301a7b58942e084c44a40738761e6749d"
+      "article_sha256": "7dd629e87d01bd73edbb3d52fd883f14752cf5e9fff1c353795483ae19d1b58f",
+      "inline_path": "/assets/articles/inline/what-are-mineral-rights-a-complete-guide-for-texas-landowners/what-are-mineral-rights-texas-landowners.webp",
+      "inline_asset_sha256": "e2b03ef54cd95bce881897971e032ba62cb122bfbff8db299fb9a23aed21a4c9",
+      "inline_rendered_text": "what are mineral rights texas landowners"
     },
     {
       "selection_rank": 12,
@@ -401,10 +457,10 @@
       "content_genius_article_uuid": null,
       "archive_evidence_sha256": "6f7fa0ff0d863774c52e81f0167dff79ab59aeb56b13c0eb8dd041c86ad756ab",
       "repo_path": "src/content/posts/how-to-find-out-if-you-own-mineral-rights-in-texas.mdx",
-      "repo_sha256": "6f7fa0ff0d863774c52e81f0167dff79ab59aeb56b13c0eb8dd041c86ad756ab",
-      "hero_path": "/assets/articles/how-to-find-out-if-you-own-mineral-rights-in-texas.webp",
-      "hero_sha256": "185fca9f780564d50575c93a510c065ea7c6ca99e7de14577fb5baf40aad82e5",
-      "hero_asset_sha256": "185fca9f780564d50575c93a510c065ea7c6ca99e7de14577fb5baf40aad82e5",
+      "repo_sha256": "4b4747467baa841dd16e8b8d1f43df6398703adf9b652b1e19add5896240e49c",
+      "hero_path": "/assets/articles/hero/how-to-find-out-if-you-own-mineral-rights-in-texas.webp",
+      "hero_sha256": "6ca5e7e61a97e945b058c8f979d838f4255d11f753d7f1db4ab4c7a339d418a4",
+      "hero_asset_sha256": "6ca5e7e61a97e945b058c8f979d838f4255d11f753d7f1db4ab4c7a339d418a4",
       "admission_status": "admitted_exact",
       "finalization_state": "draft_noindex_admitted",
       "searchatlas_content_score": null,
@@ -416,7 +472,10 @@
       ],
       "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/how-to-find-out-if-you-own-mineral-rights-in-texas.json",
       "evidence_packet_path_required": true,
-      "article_sha256": "6f7fa0ff0d863774c52e81f0167dff79ab59aeb56b13c0eb8dd041c86ad756ab"
+      "article_sha256": "4b4747467baa841dd16e8b8d1f43df6398703adf9b652b1e19add5896240e49c",
+      "inline_path": "/assets/articles/inline/how-to-find-out-if-you-own-mineral-rights-in-texas/how-to-find-out-if-you-own-mineral-rights-in-texas.webp",
+      "inline_asset_sha256": "493d2acc71ce73acac5ada7d3eddd1f4a41f1e62967468559a0ce3e64f636353",
+      "inline_rendered_text": "how to find out if you own mineral rights in texas"
     },
     {
       "selection_rank": 13,
@@ -431,10 +490,10 @@
       "content_genius_article_uuid": null,
       "archive_evidence_sha256": "27528ce4d7a610694f4fe7dc505c7880dc8d6d2f40b2b2c8509c777ef083fcac",
       "repo_path": "src/content/posts/how-to-trust-that-your-mineral-rights-will-be-valued-fairly.mdx",
-      "repo_sha256": "27528ce4d7a610694f4fe7dc505c7880dc8d6d2f40b2b2c8509c777ef083fcac",
-      "hero_path": "/assets/articles/fair-mineral-rights-offer-2.webp",
-      "hero_sha256": "58a456b846f4d7d41149c4363465e8d4a93c4ee5aef3fd483ba9256ccc496340",
-      "hero_asset_sha256": "58a456b846f4d7d41149c4363465e8d4a93c4ee5aef3fd483ba9256ccc496340",
+      "repo_sha256": "fc773de5c8a155bcbcdfcaec1c5e463888396355c12f11defff6d6b2aed4ada9",
+      "hero_path": "/assets/articles/hero/how-to-trust-that-your-mineral-rights-will-be-valued-fairly.webp",
+      "hero_sha256": "b6ca5d8d67345c10c3614b3416de66e8a8b5a3711d7249f0c8e98fdb34822769",
+      "hero_asset_sha256": "b6ca5d8d67345c10c3614b3416de66e8a8b5a3711d7249f0c8e98fdb34822769",
       "admission_status": "admitted_exact",
       "finalization_state": "draft_noindex_admitted",
       "searchatlas_content_score": null,
@@ -446,7 +505,10 @@
       ],
       "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/how-to-trust-that-your-mineral-rights-will-be-valued-fairly.json",
       "evidence_packet_path_required": true,
-      "article_sha256": "27528ce4d7a610694f4fe7dc505c7880dc8d6d2f40b2b2c8509c777ef083fcac"
+      "article_sha256": "fc773de5c8a155bcbcdfcaec1c5e463888396355c12f11defff6d6b2aed4ada9",
+      "inline_path": "/assets/articles/inline/how-to-trust-that-your-mineral-rights-will-be-valued-fairly/fair-mineral-rights-offer.webp",
+      "inline_asset_sha256": "de6d71f358f2d7a91da9149442a638a3d44dbbb72331db6bfd31faaff4eaf2d4",
+      "inline_rendered_text": "fair mineral rights offer"
     },
     {
       "selection_rank": 14,
@@ -461,10 +523,10 @@
       "content_genius_article_uuid": null,
       "archive_evidence_sha256": "3c145fb97ab7e7112b8c80440ec2721fc0fa1f0651cf6442eb874a643b149786",
       "repo_path": "src/content/posts/how-texas-mineral-rights-ownership-works-deeds-conveyances-and-title.mdx",
-      "repo_sha256": "3c145fb97ab7e7112b8c80440ec2721fc0fa1f0651cf6442eb874a643b149786",
-      "hero_path": "/assets/articles/how-texas-mineral-rights-ownership-works-deeds-conveyances-and-title.webp",
-      "hero_sha256": "8e09d28960248de7c59db0acc552a46c894d0dac4bd1264394f15e8613f6314a",
-      "hero_asset_sha256": "8e09d28960248de7c59db0acc552a46c894d0dac4bd1264394f15e8613f6314a",
+      "repo_sha256": "a0e9da4e768fab1c0cf6f4cfceb1c8ede0fbeb3c0d51788c21ff7e4f9f35507e",
+      "hero_path": "/assets/articles/hero/how-texas-mineral-rights-ownership-works-deeds-conveyances-and-title.webp",
+      "hero_sha256": "c8a3442791213a213affce651a54c622fda9dbdf20ceb4f8eebbc34f2ef9485f",
+      "hero_asset_sha256": "c8a3442791213a213affce651a54c622fda9dbdf20ceb4f8eebbc34f2ef9485f",
       "admission_status": "admitted_exact",
       "finalization_state": "draft_noindex_admitted",
       "searchatlas_content_score": null,
@@ -476,7 +538,10 @@
       ],
       "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/how-texas-mineral-rights-ownership-works-deeds-conveyances-and-title.json",
       "evidence_packet_path_required": true,
-      "article_sha256": "3c145fb97ab7e7112b8c80440ec2721fc0fa1f0651cf6442eb874a643b149786"
+      "article_sha256": "a0e9da4e768fab1c0cf6f4cfceb1c8ede0fbeb3c0d51788c21ff7e4f9f35507e",
+      "inline_path": "/assets/articles/inline/how-texas-mineral-rights-ownership-works-deeds-conveyances-and-title/how-texas-mineral-rights-ownership-works-deeds-conveyances-and-title.webp",
+      "inline_asset_sha256": "9cad44c4a2211d3a517443353b60fb38974423ff22c3c90f233fce255bf6d5f2",
+      "inline_rendered_text": "how texas mineral rights ownership works deeds, conveyances, and title"
     },
     {
       "selection_rank": 15,
@@ -491,10 +556,10 @@
       "content_genius_article_uuid": null,
       "archive_evidence_sha256": "c92d82150c14af9b36748e0fd2d3d1416b13995fa09619caeac0b9a1e7452f44",
       "repo_path": "src/content/posts/how-to-find-a-reputable-mineral-rights-buyer-in-texas.mdx",
-      "repo_sha256": "c92d82150c14af9b36748e0fd2d3d1416b13995fa09619caeac0b9a1e7452f44",
-      "hero_path": "/assets/articles/sell-mineral-rights-texas.webp",
-      "hero_sha256": "c25e9582f697dac9340b018fd8bea31f96d136443111d47fec06744a389d242c",
-      "hero_asset_sha256": "c25e9582f697dac9340b018fd8bea31f96d136443111d47fec06744a389d242c",
+      "repo_sha256": "3e82f2f8459cb7cabb57e6f5bbd0fae69889646e738099bd282f2159d4520e1f",
+      "hero_path": "/assets/articles/hero/how-to-find-a-reputable-mineral-rights-buyer-in-texas.webp",
+      "hero_sha256": "183b7693792c706171bc6951a39b1072f53b81a411e29391b865b767dd31be85",
+      "hero_asset_sha256": "183b7693792c706171bc6951a39b1072f53b81a411e29391b865b767dd31be85",
       "admission_status": "admitted_exact",
       "finalization_state": "draft_noindex_admitted",
       "searchatlas_content_score": null,
@@ -506,7 +571,10 @@
       ],
       "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/how-to-find-a-reputable-mineral-rights-buyer-in-texas.json",
       "evidence_packet_path_required": true,
-      "article_sha256": "c92d82150c14af9b36748e0fd2d3d1416b13995fa09619caeac0b9a1e7452f44"
+      "article_sha256": "3e82f2f8459cb7cabb57e6f5bbd0fae69889646e738099bd282f2159d4520e1f",
+      "inline_path": "/assets/articles/inline/how-to-find-a-reputable-mineral-rights-buyer-in-texas/sell-mineral-rights-texas.webp",
+      "inline_asset_sha256": "f49ed6b47d43a0e1a395fddda1d338dfcd4ac4d65311649ae781aed6ae3efa09",
+      "inline_rendered_text": "sell mineral rights texas"
     },
     {
       "selection_rank": 16,
@@ -521,10 +589,10 @@
       "content_genius_article_uuid": null,
       "archive_evidence_sha256": "7c3929b9df488aa0336aa93b110267f7606650bab5c1a9ea3b11d5fc4752b44b",
       "repo_path": "src/content/posts/understanding-our-transparent-approach-to-mineral-rights-reviews-versus-traditional-selling-tactics.mdx",
-      "repo_sha256": "7c3929b9df488aa0336aa93b110267f7606650bab5c1a9ea3b11d5fc4752b44b",
-      "hero_path": "/assets/articles/transparent-approach-to-mineral-rights-reviews-versus-traditional-selling-tactics.webp",
-      "hero_sha256": "736991e4de773e2703ebce9d35312cfd71d3b527fc2137e2b593885ae0c9fec7",
-      "hero_asset_sha256": "736991e4de773e2703ebce9d35312cfd71d3b527fc2137e2b593885ae0c9fec7",
+      "repo_sha256": "ed3e2158abe28b225a9f6e2cd85e0a088d723b55ff4b9b87f14e3d30cecd094c",
+      "hero_path": "/assets/articles/hero/understanding-our-transparent-approach-to-mineral-rights-reviews-versus-traditional-selling-tactics.webp",
+      "hero_sha256": "045a8cd425a37b12b52a2bfa442aafddb47a7f37877143f61a26123648b584f1",
+      "hero_asset_sha256": "045a8cd425a37b12b52a2bfa442aafddb47a7f37877143f61a26123648b584f1",
       "admission_status": "admitted_exact",
       "finalization_state": "draft_noindex_admitted",
       "searchatlas_content_score": null,
@@ -536,7 +604,10 @@
       ],
       "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/understanding-our-transparent-approach-to-mineral-rights-reviews-versus-traditional-selling-tactics.json",
       "evidence_packet_path_required": true,
-      "article_sha256": "7c3929b9df488aa0336aa93b110267f7606650bab5c1a9ea3b11d5fc4752b44b"
+      "article_sha256": "ed3e2158abe28b225a9f6e2cd85e0a088d723b55ff4b9b87f14e3d30cecd094c",
+      "inline_path": "/assets/articles/inline/understanding-our-transparent-approach-to-mineral-rights-reviews-versus-traditional-selling-tactics/transparent-approach-to-mineral-rights-reviews-versus-traditional-selling-tactics.webp",
+      "inline_asset_sha256": "51a780c2bb07f5d8fb692382931d0c5cd1b0e1af82a2f1eaa7730334567176b7",
+      "inline_rendered_text": "transparent approach to mineral rights reviews versus traditional selling tactics"
     },
     {
       "selection_rank": 17,
@@ -551,10 +622,10 @@
       "content_genius_article_uuid": null,
       "archive_evidence_sha256": "9e90ad08d21c010641dcc6f12d68522b3e0e67cdd6ebbc03ff349032479d664f",
       "repo_path": "src/content/posts/can-you-sell-part-of-your-mineral-rights-partial-interest-sales-explained.mdx",
-      "repo_sha256": "9e90ad08d21c010641dcc6f12d68522b3e0e67cdd6ebbc03ff349032479d664f",
-      "hero_path": "/assets/articles/can-you-sell-part-of-mineral-rights-partial-interest-sales.webp",
-      "hero_sha256": "2a2b6f9be5a47b27babe339c1f166690c8d33c2beac142ed81ab9a3d20c90266",
-      "hero_asset_sha256": "2a2b6f9be5a47b27babe339c1f166690c8d33c2beac142ed81ab9a3d20c90266",
+      "repo_sha256": "66f254ab5f90612509a9b07ec3e0553fc95fa13fae5c7d0365bff5f8b2ba22cb",
+      "hero_path": "/assets/articles/hero/can-you-sell-part-of-your-mineral-rights-partial-interest-sales-explained.webp",
+      "hero_sha256": "e79bbe0350d3bafe5681149bd7bde6569c5c8118dd396cc22eb8036181b634b2",
+      "hero_asset_sha256": "e79bbe0350d3bafe5681149bd7bde6569c5c8118dd396cc22eb8036181b634b2",
       "admission_status": "admitted_exact",
       "finalization_state": "draft_noindex_admitted",
       "searchatlas_content_score": null,
@@ -566,7 +637,10 @@
       ],
       "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/can-you-sell-part-of-your-mineral-rights-partial-interest-sales-explained.json",
       "evidence_packet_path_required": true,
-      "article_sha256": "9e90ad08d21c010641dcc6f12d68522b3e0e67cdd6ebbc03ff349032479d664f"
+      "article_sha256": "66f254ab5f90612509a9b07ec3e0553fc95fa13fae5c7d0365bff5f8b2ba22cb",
+      "inline_path": "/assets/articles/inline/can-you-sell-part-of-your-mineral-rights-partial-interest-sales-explained/can-you-sell-part-of-mineral-rights-partial-interest-sales.webp",
+      "inline_asset_sha256": "7d32195e5685ed5ca14895d4a282e04af7e9ed859e399937b26a4e09f2c1c423",
+      "inline_rendered_text": "can you sell part of mineral rights partial interest sales"
     },
     {
       "selection_rank": 18,
@@ -581,10 +655,10 @@
       "content_genius_article_uuid": null,
       "archive_evidence_sha256": "097c738c326ee7863ae92f27f84db9e7b0c8786b5763cdb76d20653096cea6d8",
       "repo_path": "src/content/posts/understanding-the-risks-of-skipping-an-independent-assessment-for-your-mineral-rights.mdx",
-      "repo_sha256": "097c738c326ee7863ae92f27f84db9e7b0c8786b5763cdb76d20653096cea6d8",
-      "hero_path": "/assets/articles/risks-of-skipping-an-independent-assessment-for-mineral-rights.webp",
-      "hero_sha256": "9f2f63fb37f9e6b00ea8ba6606010f0549f6c496b250bfcd43d18c9024a37d1f",
-      "hero_asset_sha256": "9f2f63fb37f9e6b00ea8ba6606010f0549f6c496b250bfcd43d18c9024a37d1f",
+      "repo_sha256": "0d41083a059e4fa09cad537a2b48e84e7d90b66e3fda6d211ccd757cfd64876e",
+      "hero_path": "/assets/articles/hero/understanding-the-risks-of-skipping-an-independent-assessment-for-your-mineral-rights.webp",
+      "hero_sha256": "3c25a0fcb39d9538d4e92114ee6a8d229a497d4e6d816fa8e9421eebb0865115",
+      "hero_asset_sha256": "3c25a0fcb39d9538d4e92114ee6a8d229a497d4e6d816fa8e9421eebb0865115",
       "admission_status": "admitted_exact",
       "finalization_state": "draft_noindex_admitted",
       "searchatlas_content_score": null,
@@ -596,7 +670,10 @@
       ],
       "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/understanding-the-risks-of-skipping-an-independent-assessment-for-your-mineral-rights.json",
       "evidence_packet_path_required": true,
-      "article_sha256": "097c738c326ee7863ae92f27f84db9e7b0c8786b5763cdb76d20653096cea6d8"
+      "article_sha256": "0d41083a059e4fa09cad537a2b48e84e7d90b66e3fda6d211ccd757cfd64876e",
+      "inline_path": "/assets/articles/inline/understanding-the-risks-of-skipping-an-independent-assessment-for-your-mineral-rights/risks-of-skipping-an-independent-assessment-for-mineral-rights.webp",
+      "inline_asset_sha256": "bc3e73a668b19c7512ffeb8bd506a918406ad82c8953bc4798a1c6d4974c3411",
+      "inline_rendered_text": "risks of skipping an independent assessment for mineral rights"
     },
     {
       "selection_rank": 19,
@@ -611,10 +688,10 @@
       "content_genius_article_uuid": null,
       "archive_evidence_sha256": "45718f12f425e8e4754ff946e3a1ed2cd443a62c7c1b8ecf08e08fa986a75077",
       "repo_path": "src/content/posts/steps-to-take-if-your-royalty-checks-are-inconsistent-a-mineral-owners-guide.mdx",
-      "repo_sha256": "45718f12f425e8e4754ff946e3a1ed2cd443a62c7c1b8ecf08e08fa986a75077",
-      "hero_path": "/assets/articles/steps-to-take-if-royalty-checks-are-inconsistent-a-mineral-owner-s-guide.webp",
-      "hero_sha256": "7a38173699e2e85cf7d0dc0d025eb6b7220fc27ec6d1274b20f82529bc30126b",
-      "hero_asset_sha256": "7a38173699e2e85cf7d0dc0d025eb6b7220fc27ec6d1274b20f82529bc30126b",
+      "repo_sha256": "14cefb305f3cb188dcccc9e7335f4594d3df281f6ce3828435aad3c8e47beba2",
+      "hero_path": "/assets/articles/hero/steps-to-take-if-your-royalty-checks-are-inconsistent-a-mineral-owners-guide.webp",
+      "hero_sha256": "845ba25f3f95a14d0566cad93f1a30362d2ba978593a903b5a37b621d7cfffba",
+      "hero_asset_sha256": "845ba25f3f95a14d0566cad93f1a30362d2ba978593a903b5a37b621d7cfffba",
       "admission_status": "admitted_exact",
       "finalization_state": "draft_noindex_admitted",
       "searchatlas_content_score": null,
@@ -626,7 +703,10 @@
       ],
       "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/steps-to-take-if-your-royalty-checks-are-inconsistent-a-mineral-owners-guide.json",
       "evidence_packet_path_required": true,
-      "article_sha256": "45718f12f425e8e4754ff946e3a1ed2cd443a62c7c1b8ecf08e08fa986a75077"
+      "article_sha256": "14cefb305f3cb188dcccc9e7335f4594d3df281f6ce3828435aad3c8e47beba2",
+      "inline_path": "/assets/articles/inline/steps-to-take-if-your-royalty-checks-are-inconsistent-a-mineral-owners-guide/steps-to-take-if-royalty-checks-are-inconsistent-a-mineral-owners-guide.webp",
+      "inline_asset_sha256": "b2c83b3c685827ba5b9354011762588b1ecd1f04004cb68b4da9be5d07989db9",
+      "inline_rendered_text": "steps to take if royalty checks are inconsistent a mineral owner's guide"
     },
     {
       "selection_rank": 20,
@@ -641,10 +721,10 @@
       "content_genius_article_uuid": null,
       "archive_evidence_sha256": "cba2a771f5b4aa61b64cf307d782a66d096e0b83a76a517bc6b26ea046b191d8",
       "repo_path": "src/content/posts/what-is-your-texas-mineral-rights-worth.mdx",
-      "repo_sha256": "cba2a771f5b4aa61b64cf307d782a66d096e0b83a76a517bc6b26ea046b191d8",
-      "hero_path": "/assets/articles/what-are-mineral-rights-worth.webp",
-      "hero_sha256": "997740163e40a740b514f10732011dc89cd79665d0413a214ebb9f0d51ed5ac5",
-      "hero_asset_sha256": "997740163e40a740b514f10732011dc89cd79665d0413a214ebb9f0d51ed5ac5",
+      "repo_sha256": "6d511f5ed4bf32ba741e72c53e0d08d1c097afef6d6c5a908c0cd35c3f9ab706",
+      "hero_path": "/assets/articles/hero/what-is-your-texas-mineral-rights-worth.webp",
+      "hero_sha256": "8c3f95683ee0d194e1981d4b3dd368fbe30e2269799a778bb4471f5ec8aa4f20",
+      "hero_asset_sha256": "8c3f95683ee0d194e1981d4b3dd368fbe30e2269799a778bb4471f5ec8aa4f20",
       "admission_status": "admitted_exact",
       "finalization_state": "draft_noindex_admitted",
       "searchatlas_content_score": null,
@@ -656,7 +736,10 @@
       ],
       "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/what-is-your-texas-mineral-rights-worth.json",
       "evidence_packet_path_required": true,
-      "article_sha256": "cba2a771f5b4aa61b64cf307d782a66d096e0b83a76a517bc6b26ea046b191d8"
+      "article_sha256": "6d511f5ed4bf32ba741e72c53e0d08d1c097afef6d6c5a908c0cd35c3f9ab706",
+      "inline_path": "/assets/articles/inline/what-is-your-texas-mineral-rights-worth/what-are-mineral-rights-worth.webp",
+      "inline_asset_sha256": "1859c3a81661a0e8dbf2e0855d3caa54de8ee82ceb654e6cef4ca53c3a6b282d",
+      "inline_rendered_text": "what are mineral rights worth"
     },
     {
       "selection_rank": 21,
@@ -671,10 +754,10 @@
       "content_genius_article_uuid": null,
       "archive_evidence_sha256": "9a104d6e247ce9b92dd90f84fbe0d40dba7336b3b1997949d0247a5338f2b5c2",
       "repo_path": "src/content/posts/types-of-mineral-rights-in-texas-royalty-interests-working-interests-and-overriding-royalties-explained.mdx",
-      "repo_sha256": "9a104d6e247ce9b92dd90f84fbe0d40dba7336b3b1997949d0247a5338f2b5c2",
-      "hero_path": "/assets/articles/types-of-mineral-rights-in-texas-royalty-interests-working-interests-and-overriding-royalties.webp",
-      "hero_sha256": "979cc3d7ad4ab9d83c0939fe60247ee8c3e3ae8850861a35161682d17daf1c3b",
-      "hero_asset_sha256": "979cc3d7ad4ab9d83c0939fe60247ee8c3e3ae8850861a35161682d17daf1c3b",
+      "repo_sha256": "02f15d83891093847a642cda50119c649910c1d4c2880889527a549920c3ec0e",
+      "hero_path": "/assets/articles/hero/types-of-mineral-rights-in-texas-royalty-interests-working-interests-and-overriding-royalties-explained.webp",
+      "hero_sha256": "fc03f476a7a0b1aa6658f4d68d53d8203ff9470a93c551966ef9eb3563ef8061",
+      "hero_asset_sha256": "fc03f476a7a0b1aa6658f4d68d53d8203ff9470a93c551966ef9eb3563ef8061",
       "admission_status": "admitted_exact",
       "finalization_state": "draft_noindex_admitted",
       "searchatlas_content_score": null,
@@ -686,7 +769,10 @@
       ],
       "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/types-of-mineral-rights-in-texas-royalty-interests-working-interests-and-overriding-royalties-explained.json",
       "evidence_packet_path_required": true,
-      "article_sha256": "9a104d6e247ce9b92dd90f84fbe0d40dba7336b3b1997949d0247a5338f2b5c2"
+      "article_sha256": "02f15d83891093847a642cda50119c649910c1d4c2880889527a549920c3ec0e",
+      "inline_path": "/assets/articles/inline/types-of-mineral-rights-in-texas-royalty-interests-working-interests-and-overriding-royalties-explained/types-of-mineral-rights-in-texas-royalty-interests-working-interests-and-overriding-royalties.webp",
+      "inline_asset_sha256": "5ef8f5ac29120d8b61cea76a5bbb00c79b1d31f3b7800002b810a5329e292ea7",
+      "inline_rendered_text": "types of mineral rights in texas royalty interests, working interests, and overriding royalties"
     },
     {
       "selection_rank": 22,
@@ -701,10 +787,10 @@
       "content_genius_article_uuid": null,
       "archive_evidence_sha256": "58cbeb7f8c9d9e837042bbe4d88fc1aa4c5cf591d374c7e28ae0313a810ea438",
       "repo_path": "src/content/posts/closing-costs-and-fees-when-selling-mineral-rights-in-texas.mdx",
-      "repo_sha256": "58cbeb7f8c9d9e837042bbe4d88fc1aa4c5cf591d374c7e28ae0313a810ea438",
-      "hero_path": "/assets/articles/mineral-rights-closing-costs-texas.webp",
-      "hero_sha256": "744c59a79d92f0ae9cf053c5fe186f3d273bddf127927915cdc01644c4047c4b",
-      "hero_asset_sha256": "744c59a79d92f0ae9cf053c5fe186f3d273bddf127927915cdc01644c4047c4b",
+      "repo_sha256": "ed368d58fe58da58e5faf10b6c68d504bcb64817d322d077a1cfacdfea60035b",
+      "hero_path": "/assets/articles/hero/closing-costs-and-fees-when-selling-mineral-rights-in-texas.webp",
+      "hero_sha256": "8040b509cfa47c5eb407f29bed770a985c55482beb17cd43594689a735cd0210",
+      "hero_asset_sha256": "8040b509cfa47c5eb407f29bed770a985c55482beb17cd43594689a735cd0210",
       "admission_status": "admitted_exact",
       "finalization_state": "draft_noindex_admitted",
       "searchatlas_content_score": null,
@@ -716,7 +802,10 @@
       ],
       "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/closing-costs-and-fees-when-selling-mineral-rights-in-texas.json",
       "evidence_packet_path_required": true,
-      "article_sha256": "58cbeb7f8c9d9e837042bbe4d88fc1aa4c5cf591d374c7e28ae0313a810ea438"
+      "article_sha256": "ed368d58fe58da58e5faf10b6c68d504bcb64817d322d077a1cfacdfea60035b",
+      "inline_path": "/assets/articles/inline/closing-costs-and-fees-when-selling-mineral-rights-in-texas/mineral-rights-closing-costs-texas.webp",
+      "inline_asset_sha256": "1f02edd309f170c2b603d8d748833d79c2e3582c0eb377e7cbe3ba89ebd26a9c",
+      "inline_rendered_text": "mineral rights closing costs texas"
     },
     {
       "selection_rank": 23,
@@ -731,10 +820,10 @@
       "content_genius_article_uuid": null,
       "archive_evidence_sha256": "ed6e547bd789843f42acee5a569caa079cb95bb30ef638999ecdc99dce62914f",
       "repo_path": "src/content/posts/title-curative-for-mineral-rights-what-it-is-and-why-it-matters-before-you-sell.mdx",
-      "repo_sha256": "ed6e547bd789843f42acee5a569caa079cb95bb30ef638999ecdc99dce62914f",
-      "hero_path": "/assets/articles/title-curative-for-mineral-rights-what-it-is-and-why-it-matters-before-you-sell.webp",
-      "hero_sha256": "3cbfc96287a4c8947c6780a8d869d9cfa61d630cd18c18f6a78e0fe84fa45551",
-      "hero_asset_sha256": "3cbfc96287a4c8947c6780a8d869d9cfa61d630cd18c18f6a78e0fe84fa45551",
+      "repo_sha256": "37d8f6194b13153ac39800b171d54034f23d05eb8fc2eccab2760f522dd2f0db",
+      "hero_path": "/assets/articles/hero/title-curative-for-mineral-rights-what-it-is-and-why-it-matters-before-you-sell.webp",
+      "hero_sha256": "f5409bdeaf194555d539eebc7fac21673fb9adcaf2ba84b523dcaaf3683cae7d",
+      "hero_asset_sha256": "f5409bdeaf194555d539eebc7fac21673fb9adcaf2ba84b523dcaaf3683cae7d",
       "admission_status": "admitted_exact",
       "finalization_state": "draft_noindex_admitted",
       "searchatlas_content_score": null,
@@ -746,7 +835,10 @@
       ],
       "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/title-curative-for-mineral-rights-what-it-is-and-why-it-matters-before-you-sell.json",
       "evidence_packet_path_required": true,
-      "article_sha256": "ed6e547bd789843f42acee5a569caa079cb95bb30ef638999ecdc99dce62914f"
+      "article_sha256": "37d8f6194b13153ac39800b171d54034f23d05eb8fc2eccab2760f522dd2f0db",
+      "inline_path": "/assets/articles/inline/title-curative-for-mineral-rights-what-it-is-and-why-it-matters-before-you-sell/title-curative-for-mineral-rights-what-it-is-and-why-it-matters-before-you-sell.webp",
+      "inline_asset_sha256": "d8b4dfbba958914f5c497c6a5ec321e5f1043c004a3783f4349dbda778cac8d1",
+      "inline_rendered_text": "title curative for mineral rights what it is and why it matters before you sell"
     },
     {
       "selection_rank": 24,
@@ -761,10 +853,10 @@
       "content_genius_article_uuid": null,
       "archive_evidence_sha256": "24161c29ad76ca410cfe7f34bb8872ccf0ef7033c6bfd7305c8449f8b355b885",
       "repo_path": "src/content/posts/what-is-a-mineral-rights-purchase-agreement-and-what-should-it-include.mdx",
-      "repo_sha256": "24161c29ad76ca410cfe7f34bb8872ccf0ef7033c6bfd7305c8449f8b355b885",
-      "hero_path": "/assets/articles/mineral-rights-purchase-agreement.webp",
-      "hero_sha256": "e899154dbd361aa60353dfd4ea811ec5b65b30fd7ddc6f0ea76451971c899d81",
-      "hero_asset_sha256": "e899154dbd361aa60353dfd4ea811ec5b65b30fd7ddc6f0ea76451971c899d81",
+      "repo_sha256": "e05af076d0a7cc07c5351502b3ae28177a59b2f0b633825282e31e277065ef61",
+      "hero_path": "/assets/articles/hero/what-is-a-mineral-rights-purchase-agreement-and-what-should-it-include.webp",
+      "hero_sha256": "6dec320cbb989bc81532aeb9b27fca5912ad6a3b3cadd343665d2a875893baf3",
+      "hero_asset_sha256": "6dec320cbb989bc81532aeb9b27fca5912ad6a3b3cadd343665d2a875893baf3",
       "admission_status": "admitted_exact",
       "finalization_state": "draft_noindex_admitted",
       "searchatlas_content_score": null,
@@ -776,7 +868,10 @@
       ],
       "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/what-is-a-mineral-rights-purchase-agreement-and-what-should-it-include.json",
       "evidence_packet_path_required": true,
-      "article_sha256": "24161c29ad76ca410cfe7f34bb8872ccf0ef7033c6bfd7305c8449f8b355b885"
+      "article_sha256": "e05af076d0a7cc07c5351502b3ae28177a59b2f0b633825282e31e277065ef61",
+      "inline_path": "/assets/articles/inline/what-is-a-mineral-rights-purchase-agreement-and-what-should-it-include/mineral-rights-purchase-agreement.webp",
+      "inline_asset_sha256": "d4a41d262c031d9c7c8db16bf53093bcfc72be0e7fa4069095038170f87efd6c",
+      "inline_rendered_text": "mineral rights purchase agreement"
     },
     {
       "selection_rank": 25,
@@ -791,10 +886,10 @@
       "content_genius_article_uuid": null,
       "archive_evidence_sha256": "7e15432ac09c7dc8c56ae4a8d0df88e2710799f4eb9bad3a4b0fcdeeef6fb7e1",
       "repo_path": "src/content/posts/why-mineral-rights-are-separate-from-surface-rights-in-texas-a-landowners-guide.mdx",
-      "repo_sha256": "7e15432ac09c7dc8c56ae4a8d0df88e2710799f4eb9bad3a4b0fcdeeef6fb7e1",
-      "hero_path": "/assets/articles/why-mineral-rights-are-separate-from-surface-rights-in-texas-a-landowner-s-guide.webp",
-      "hero_sha256": "286969babce22ea681f888a452425bf2561d93368d25b95a6f1983763d1cd46e",
-      "hero_asset_sha256": "286969babce22ea681f888a452425bf2561d93368d25b95a6f1983763d1cd46e",
+      "repo_sha256": "8fdbb19cf50b238709dfb8f7cad9cdb2aa3f80bc10071faa6555aaebcd4a1e71",
+      "hero_path": "/assets/articles/hero/why-mineral-rights-are-separate-from-surface-rights-in-texas-a-landowners-guide.webp",
+      "hero_sha256": "c9632dd5daa9741749a0b6d79a36ddec88312bf2cd3cbadc33de32ade7340178",
+      "hero_asset_sha256": "c9632dd5daa9741749a0b6d79a36ddec88312bf2cd3cbadc33de32ade7340178",
       "admission_status": "admitted_exact",
       "finalization_state": "draft_noindex_admitted",
       "searchatlas_content_score": null,
@@ -806,7 +901,10 @@
       ],
       "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/why-mineral-rights-are-separate-from-surface-rights-in-texas-a-landowners-guide.json",
       "evidence_packet_path_required": true,
-      "article_sha256": "7e15432ac09c7dc8c56ae4a8d0df88e2710799f4eb9bad3a4b0fcdeeef6fb7e1"
+      "article_sha256": "8fdbb19cf50b238709dfb8f7cad9cdb2aa3f80bc10071faa6555aaebcd4a1e71",
+      "inline_path": "/assets/articles/inline/why-mineral-rights-are-separate-from-surface-rights-in-texas-a-landowners-guide/why-mineral-rights-are-separate-from-surface-rights-in-texas-a-landowners-guide.webp",
+      "inline_asset_sha256": "cb4c0ed0bef17cb6f71a522585be430d438ba14e32af36fdc57970e3c0b96947",
+      "inline_rendered_text": "why mineral rights are separate from surface rights in texas a landowner's guide"
     },
     {
       "selection_rank": 26,
@@ -821,11 +919,11 @@
       "content_genius_article_uuid": null,
       "archive_evidence_sha256": "236efa189d856b0fffb4eb54d2604da29106b54b97c27e853143dd25bb4f7354",
       "repo_path": "src/content/posts/how-divorce-affects-mineral-rights-ownership-and-sales-in-texas.mdx",
-      "repo_sha256": "236efa189d856b0fffb4eb54d2604da29106b54b97c27e853143dd25bb4f7354",
-      "article_sha256": "236efa189d856b0fffb4eb54d2604da29106b54b97c27e853143dd25bb4f7354",
-      "hero_path": "/assets/articles/divorce-mineral-rights-texas.webp",
-      "hero_sha256": "f650455336d9eaf51ad9a50efc4ef9cedebb9974539bb2d9a9858019de5a8ca8",
-      "hero_asset_sha256": "f650455336d9eaf51ad9a50efc4ef9cedebb9974539bb2d9a9858019de5a8ca8",
+      "repo_sha256": "160b5c911fac9c6809bd0aeb03821911e2d43b54ced2bc0b647c650fc198e8f3",
+      "article_sha256": "160b5c911fac9c6809bd0aeb03821911e2d43b54ced2bc0b647c650fc198e8f3",
+      "hero_path": "/assets/articles/hero/how-divorce-affects-mineral-rights-ownership-and-sales-in-texas.webp",
+      "hero_sha256": "c7042498b27c61479ff5e86756124552d25dddc7dfaa19dc843063993b697cec",
+      "hero_asset_sha256": "c7042498b27c61479ff5e86756124552d25dddc7dfaa19dc843063993b697cec",
       "admission_status": "admitted_quality_gated",
       "finalization_state": "draft_noindex_admitted",
       "searchatlas_content_score": null,
@@ -835,7 +933,10 @@
         "Publication remains conditional on current editorial, factual/citation, compliance, exact-title asset, build, rollback, and live-verification evidence."
       ],
       "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/how-divorce-affects-mineral-rights-ownership-and-sales-in-texas.json",
-      "evidence_packet_path_required": true
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/how-divorce-affects-mineral-rights-ownership-and-sales-in-texas/divorce-mineral-rights-texas.webp",
+      "inline_asset_sha256": "2147d285fb4aece748fb8b8535bd1d34d0493ff325be00595f19f72af40b5e40",
+      "inline_rendered_text": "divorce mineral rights texas"
     },
     {
       "selection_rank": 27,
@@ -850,11 +951,11 @@
       "content_genius_article_uuid": null,
       "archive_evidence_sha256": "01773d3270ff848af41c305ae1e1ee08132f7d65b04198e3ea1467bfd220a0ad",
       "repo_path": "src/content/posts/transparent-mineral-rights-reviews-questions-that-help-owners-avoid-pressure.mdx",
-      "repo_sha256": "01773d3270ff848af41c305ae1e1ee08132f7d65b04198e3ea1467bfd220a0ad",
-      "article_sha256": "01773d3270ff848af41c305ae1e1ee08132f7d65b04198e3ea1467bfd220a0ad",
-      "hero_path": "/assets/articles/transparent-mineral-rights-reviews-questions-that-help-owners-avoid-pressure.webp",
-      "hero_sha256": "af006c015e259a7a988e1f25ce15e2635e14353e02cb026fb1526f1399bd5fbb",
-      "hero_asset_sha256": "af006c015e259a7a988e1f25ce15e2635e14353e02cb026fb1526f1399bd5fbb",
+      "repo_sha256": "bfc0a348ef2efd8b502a761bb63630f0a990438aee9628d503f6d10b4ed5b120",
+      "article_sha256": "bfc0a348ef2efd8b502a761bb63630f0a990438aee9628d503f6d10b4ed5b120",
+      "hero_path": "/assets/articles/hero/transparent-mineral-rights-reviews-questions-that-help-owners-avoid-pressure.webp",
+      "hero_sha256": "59bd9b586e13ba91d35142914f65dcc0e908d81decc6b4d3de9702d0a56c4914",
+      "hero_asset_sha256": "59bd9b586e13ba91d35142914f65dcc0e908d81decc6b4d3de9702d0a56c4914",
       "admission_status": "admitted_quality_gated",
       "finalization_state": "draft_noindex_admitted",
       "searchatlas_content_score": null,
@@ -864,7 +965,10 @@
         "Publication remains conditional on current editorial, factual/citation, compliance, exact-title asset, build, rollback, and live-verification evidence."
       ],
       "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/transparent-mineral-rights-reviews-questions-that-help-owners-avoid-pressure.json",
-      "evidence_packet_path_required": true
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/transparent-mineral-rights-reviews-questions-that-help-owners-avoid-pressure/transparent-mineral-rights-review-questions.webp",
+      "inline_asset_sha256": "53e4be4951866f6895438fcba203fc9b3ba17659aebf8b226ec28907fa00a5f2",
+      "inline_rendered_text": "transparent mineral rights review questions"
     },
     {
       "selection_rank": 28,
@@ -879,11 +983,11 @@
       "content_genius_article_uuid": null,
       "archive_evidence_sha256": "cc2455de872f3b23eed21ba221323a4c7133584e86eaa63c642b466a4e188c6a",
       "repo_path": "src/content/posts/how-to-compare-mineral-rights-review-services-transparently.mdx",
-      "repo_sha256": "cc2455de872f3b23eed21ba221323a4c7133584e86eaa63c642b466a4e188c6a",
-      "article_sha256": "cc2455de872f3b23eed21ba221323a4c7133584e86eaa63c642b466a4e188c6a",
-      "hero_path": "/assets/articles/how-to-compare-mineral-rights-review-services-transparently.webp",
-      "hero_sha256": "7ce32081e3de56659383752310a1f86147acec0d36d9c88d312fa9dcf0070acc",
-      "hero_asset_sha256": "7ce32081e3de56659383752310a1f86147acec0d36d9c88d312fa9dcf0070acc",
+      "repo_sha256": "1fb2abb68ed8e122609b7c6059aff25a25c3d52e776dd96dbe851023ed5555db",
+      "article_sha256": "1fb2abb68ed8e122609b7c6059aff25a25c3d52e776dd96dbe851023ed5555db",
+      "hero_path": "/assets/articles/hero/how-to-compare-mineral-rights-review-services-transparently.webp",
+      "hero_sha256": "60e4daf2dc4b060d7253e673763766f11c3893e3707d13dbfd27e2f5f5b0e94a",
+      "hero_asset_sha256": "60e4daf2dc4b060d7253e673763766f11c3893e3707d13dbfd27e2f5f5b0e94a",
       "admission_status": "admitted_quality_gated",
       "finalization_state": "draft_noindex_admitted",
       "searchatlas_content_score": null,
@@ -893,7 +997,10 @@
         "Publication remains conditional on current editorial, factual/citation, compliance, exact-title asset, build, rollback, and live-verification evidence."
       ],
       "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/how-to-compare-mineral-rights-review-services-transparently.json",
-      "evidence_packet_path_required": true
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/how-to-compare-mineral-rights-review-services-transparently/compare-mineral-rights-review-services.webp",
+      "inline_asset_sha256": "5a71bfdd50914420da4b6ee58c8994b1b06e5aff6e42dab599ae7609e211a36c",
+      "inline_rendered_text": "compare mineral rights review services"
     },
     {
       "selection_rank": 29,
@@ -908,11 +1015,11 @@
       "content_genius_article_uuid": null,
       "archive_evidence_sha256": "2daf93650df88ca61fa9675dc9b3d1d2350096ff60c22ffb211d8d4e31fb4ea3",
       "repo_path": "src/content/posts/why-mineralrightsxchange-focuses-on-transparent-mineral-rights-acquisition.mdx",
-      "repo_sha256": "2daf93650df88ca61fa9675dc9b3d1d2350096ff60c22ffb211d8d4e31fb4ea3",
-      "article_sha256": "2daf93650df88ca61fa9675dc9b3d1d2350096ff60c22ffb211d8d4e31fb4ea3",
-      "hero_path": "/assets/articles/why-mineralrightsxchange-focuses-on-transparent-mineral-rights-acquisition.webp",
-      "hero_sha256": "4ad179bb9515934d57567d398721a5c50dd3a2b5bdf18784e99951a7c1198491",
-      "hero_asset_sha256": "4ad179bb9515934d57567d398721a5c50dd3a2b5bdf18784e99951a7c1198491",
+      "repo_sha256": "6a9a924daeec0289df13a0336398f93f95bd3772a55a0dacc6ccbe1a080c9083",
+      "article_sha256": "6a9a924daeec0289df13a0336398f93f95bd3772a55a0dacc6ccbe1a080c9083",
+      "hero_path": "/assets/articles/hero/why-mineralrightsxchange-focuses-on-transparent-mineral-rights-acquisition.webp",
+      "hero_sha256": "16c1a3f58d73389319af080a18db84807f547e97c49df92fb194db8ba799ae38",
+      "hero_asset_sha256": "16c1a3f58d73389319af080a18db84807f547e97c49df92fb194db8ba799ae38",
       "admission_status": "admitted_quality_gated",
       "finalization_state": "draft_noindex_admitted",
       "searchatlas_content_score": null,
@@ -922,7 +1029,10 @@
         "Publication remains conditional on current editorial, factual/citation, compliance, exact-title asset, build, rollback, and live-verification evidence."
       ],
       "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/why-mineralrightsxchange-focuses-on-transparent-mineral-rights-acquisition.json",
-      "evidence_packet_path_required": true
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/why-mineralrightsxchange-focuses-on-transparent-mineral-rights-acquisition/why-mineralrightsxchange-focuses-on-transparent-mineral-rights-acquisition.webp",
+      "inline_asset_sha256": "fe9cb1aaae0732d54d2868ce20636cea81273d940e4eae7d7cb269729db69c1d",
+      "inline_rendered_text": "why mineralrightsxchange focuses on transparent mineral rights acquisition"
     },
     {
       "selection_rank": 30,
@@ -937,11 +1047,11 @@
       "content_genius_article_uuid": null,
       "archive_evidence_sha256": "049971a9d2ee4381b9765018ac3274add3522b48e8d7aaf2de1155669c36668e",
       "repo_path": "src/content/posts/how-mineralrightsxchange-approaches-mineral-rights-acquisition.mdx",
-      "repo_sha256": "049971a9d2ee4381b9765018ac3274add3522b48e8d7aaf2de1155669c36668e",
-      "article_sha256": "049971a9d2ee4381b9765018ac3274add3522b48e8d7aaf2de1155669c36668e",
-      "hero_path": "/assets/articles/how-mineralrightsxchange-approaches-mineral-rights-acquisition.webp",
-      "hero_sha256": "006c7fdde9ad32520763582afa6ab3b341953d692b8b1b18a298fe33c550eff2",
-      "hero_asset_sha256": "006c7fdde9ad32520763582afa6ab3b341953d692b8b1b18a298fe33c550eff2",
+      "repo_sha256": "67a046e48195c4f1e5656212a2f988975567d8067969cf16b97fc73fba39ce8d",
+      "article_sha256": "67a046e48195c4f1e5656212a2f988975567d8067969cf16b97fc73fba39ce8d",
+      "hero_path": "/assets/articles/hero/how-mineralrightsxchange-approaches-mineral-rights-acquisition.webp",
+      "hero_sha256": "f8fbb28576746bad79205172025ccda7f1fe9676b639b7287e6ebdfbb26b0813",
+      "hero_asset_sha256": "f8fbb28576746bad79205172025ccda7f1fe9676b639b7287e6ebdfbb26b0813",
       "admission_status": "admitted_quality_gated",
       "finalization_state": "draft_noindex_admitted",
       "searchatlas_content_score": null,
@@ -951,7 +1061,10 @@
         "Publication remains conditional on current editorial, factual/citation, compliance, exact-title asset, build, rollback, and live-verification evidence."
       ],
       "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/how-mineralrightsxchange-approaches-mineral-rights-acquisition.json",
-      "evidence_packet_path_required": true
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/how-mineralrightsxchange-approaches-mineral-rights-acquisition/how-mineralrightsxchange-approaches-mineral-rights-acquisition.webp",
+      "inline_asset_sha256": "ff83cece4df5aa4abfae17c50d91c75cb6a16c5a32496b8846ab524471b9c3d7",
+      "inline_rendered_text": "how mineralrightsxchange approaches mineral rights acquisition"
     },
     {
       "selection_rank": 31,
@@ -966,11 +1079,11 @@
       "content_genius_article_uuid": null,
       "archive_evidence_sha256": "acf61985964e8c2bc6c69869016590ed8e3884e5ba965ee444631d781848f751",
       "repo_path": "src/content/posts/why-our-ai-powered-mineral-rights-platform-is-different-from-other-acquisition-services.mdx",
-      "repo_sha256": "fa85a458b2718e5f382b50585d1c310e161ae461ba3a7818fabffceaea69b5fa",
-      "article_sha256": "fa85a458b2718e5f382b50585d1c310e161ae461ba3a7818fabffceaea69b5fa",
-      "hero_path": "/assets/articles/mineral-rights-acquisition-platform.webp",
-      "hero_sha256": "e7d7b1be9dbda840ebed827cbde69e45fd0f3e2745179e65b5c2f71fca253ffb",
-      "hero_asset_sha256": "e7d7b1be9dbda840ebed827cbde69e45fd0f3e2745179e65b5c2f71fca253ffb",
+      "repo_sha256": "a528aeb27863ea640bcac4a0c8510a52a31c45bea8776cd15981448f0d821aa3",
+      "article_sha256": "a528aeb27863ea640bcac4a0c8510a52a31c45bea8776cd15981448f0d821aa3",
+      "hero_path": "/assets/articles/hero/why-our-ai-powered-mineral-rights-platform-is-different-from-other-acquisition-services.webp",
+      "hero_sha256": "9f21ba36795b0c4b087dc3203d46201fb0dcf6caf408223a94095f58719379e4",
+      "hero_asset_sha256": "9f21ba36795b0c4b087dc3203d46201fb0dcf6caf408223a94095f58719379e4",
       "admission_status": "admitted_quality_gated",
       "finalization_state": "draft_noindex_admitted",
       "searchatlas_content_score": null,
@@ -980,7 +1093,10 @@
         "Publication remains conditional on current editorial, factual/citation, compliance, exact-title asset, build, rollback, deployment, and live-verification evidence."
       ],
       "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/why-our-ai-powered-mineral-rights-platform-is-different-from-other-acquisition-services.json",
-      "evidence_packet_path_required": true
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/why-our-ai-powered-mineral-rights-platform-is-different-from-other-acquisition-services/mineral-rights-acquisition-platform.webp",
+      "inline_asset_sha256": "1c2d33561e4f2c283f37028b16fbde8343d8f8f8149d6f44adfdaeea738228bf",
+      "inline_rendered_text": "mineral rights acquisition platform"
     },
     {
       "selection_rank": 32,
@@ -995,11 +1111,11 @@
       "content_genius_article_uuid": null,
       "archive_evidence_sha256": "cd2a24e7e1bf9f75877166a72cdebe505c523db66c8910cdff441dd5d1825bb3",
       "repo_path": "src/content/posts/how-we-protect-mineral-rights-sellers-from-predatory-tactics.mdx",
-      "repo_sha256": "109b03377e761244ff5f128efd7fb974ac3f5e7bd576a00be695f0c7f509b638",
-      "article_sha256": "109b03377e761244ff5f128efd7fb974ac3f5e7bd576a00be695f0c7f509b638",
-      "hero_path": "/assets/articles/predatory-mineral-rights-buyers-2.webp",
-      "hero_sha256": "041b72fb050730b39111bc228f5ff6319c3edab7e063878716c36dfbd03bae77",
-      "hero_asset_sha256": "041b72fb050730b39111bc228f5ff6319c3edab7e063878716c36dfbd03bae77",
+      "repo_sha256": "a099d383a9e8145b89cb5ff790a1ba1b5a16a4d5b460f91036231e609b4c2126",
+      "article_sha256": "a099d383a9e8145b89cb5ff790a1ba1b5a16a4d5b460f91036231e609b4c2126",
+      "hero_path": "/assets/articles/hero/how-we-protect-mineral-rights-sellers-from-predatory-tactics.webp",
+      "hero_sha256": "40fae3ba4f5f6e5cbcbaef880fac78389046c4c53bb2efa54d570ae8d625fb71",
+      "hero_asset_sha256": "40fae3ba4f5f6e5cbcbaef880fac78389046c4c53bb2efa54d570ae8d625fb71",
       "admission_status": "admitted_quality_gated",
       "finalization_state": "draft_noindex_admitted",
       "searchatlas_content_score": null,
@@ -1009,7 +1125,10 @@
         "Publication remains conditional on current editorial, factual/citation, compliance, exact-title asset, build, rollback, deployment, and live-verification evidence."
       ],
       "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/how-we-protect-mineral-rights-sellers-from-predatory-tactics.json",
-      "evidence_packet_path_required": true
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/how-we-protect-mineral-rights-sellers-from-predatory-tactics/predatory-mineral-rights-buyers.webp",
+      "inline_asset_sha256": "404615aaf31ce07242a4723f2c9604e6cd07abebf576f21bc4d38f733310ed43",
+      "inline_rendered_text": "predatory mineral rights buyers"
     },
     {
       "selection_rank": 33,
@@ -1024,11 +1143,11 @@
       "content_genius_article_uuid": null,
       "archive_evidence_sha256": "0864d6c92117a4460b423380ce5db2dec6043a226a759536189d5d381e3d7fa9",
       "repo_path": "src/content/posts/risks-of-selling-your-mineral-rights-to-a-direct-buyer-what-to-know-before-you-sign.mdx",
-      "repo_sha256": "f712b56b1a18420c09faab3174c0c3797216021cb911d44f837ce910ef81c7ec",
-      "article_sha256": "f712b56b1a18420c09faab3174c0c3797216021cb911d44f837ce910ef81c7ec",
-      "hero_path": "/assets/articles/mineral-rights-direct-buyer-risks.webp",
-      "hero_sha256": "e15993e537f305d54b0e729644be678a9411aa87f2ff66a5ed361c53c4e8ef82",
-      "hero_asset_sha256": "e15993e537f305d54b0e729644be678a9411aa87f2ff66a5ed361c53c4e8ef82",
+      "repo_sha256": "be8a804c4a70d67458c7a9f499589ab94a4a82c9aa76729d711de1f1959c784e",
+      "article_sha256": "be8a804c4a70d67458c7a9f499589ab94a4a82c9aa76729d711de1f1959c784e",
+      "hero_path": "/assets/articles/hero/risks-of-selling-your-mineral-rights-to-a-direct-buyer-what-to-know-before-you-sign.webp",
+      "hero_sha256": "a994da5c606dc6cab73b881d7e9a9278cae84d686ecde03e4ce5653bc1c79593",
+      "hero_asset_sha256": "a994da5c606dc6cab73b881d7e9a9278cae84d686ecde03e4ce5653bc1c79593",
       "admission_status": "admitted_quality_gated",
       "finalization_state": "draft_noindex_admitted",
       "searchatlas_content_score": null,
@@ -1038,7 +1157,10 @@
         "Publication remains conditional on current editorial, factual/citation, compliance, exact-title asset, build, rollback, deployment, and live-verification evidence."
       ],
       "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/risks-of-selling-your-mineral-rights-to-a-direct-buyer-what-to-know-before-you-sign.json",
-      "evidence_packet_path_required": true
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/risks-of-selling-your-mineral-rights-to-a-direct-buyer-what-to-know-before-you-sign/mineral-rights-direct-buyer-risks.webp",
+      "inline_asset_sha256": "694987dce6742e002f074002f9174696426bab4d5969d3cff63f5d8a7e2d51ba",
+      "inline_rendered_text": "mineral rights direct buyer risks"
     },
     {
       "selection_rank": 34,
@@ -1053,11 +1175,11 @@
       "content_genius_article_uuid": null,
       "archive_evidence_sha256": "b2c2c2459524b4e7c611d5d2c886f39195e3b83c2c251c46828f040828bded95",
       "repo_path": "src/content/posts/key-factors-that-determine-your-mineral-rights-assessment-pricing-range.mdx",
-      "repo_sha256": "2e78e85f27325de96c435a4529caa1ee259324c1f75aa562e540b261fd3ed1ea",
-      "article_sha256": "2e78e85f27325de96c435a4529caa1ee259324c1f75aa562e540b261fd3ed1ea",
-      "hero_path": "/assets/articles/mineral-rights-assessment.webp",
-      "hero_sha256": "7c69f5b26f7731e2e1fb249bc117924c0dc824f4f10a36a16a246f8488301893",
-      "hero_asset_sha256": "7c69f5b26f7731e2e1fb249bc117924c0dc824f4f10a36a16a246f8488301893",
+      "repo_sha256": "861979f8fd8a0aaec1b0bc6e4f6ada62810642a7c7043b7d21b85bd3ee348c28",
+      "article_sha256": "861979f8fd8a0aaec1b0bc6e4f6ada62810642a7c7043b7d21b85bd3ee348c28",
+      "hero_path": "/assets/articles/hero/key-factors-that-determine-your-mineral-rights-assessment-pricing-range.webp",
+      "hero_sha256": "bff60a8be2afbd4d3cdac85105e6497d3f9d94e11ff4227c2c9f98e285fbf3b9",
+      "hero_asset_sha256": "bff60a8be2afbd4d3cdac85105e6497d3f9d94e11ff4227c2c9f98e285fbf3b9",
       "admission_status": "admitted_quality_gated",
       "finalization_state": "draft_noindex_admitted",
       "searchatlas_content_score": null,
@@ -1067,7 +1189,10 @@
         "Publication remains conditional on current editorial, factual/citation, compliance, exact-title asset, build, rollback, deployment, and live-verification evidence."
       ],
       "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/key-factors-that-determine-your-mineral-rights-assessment-pricing-range.json",
-      "evidence_packet_path_required": true
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/key-factors-that-determine-your-mineral-rights-assessment-pricing-range/mineral-rights-assessment.webp",
+      "inline_asset_sha256": "439a00eb4ef5edbd9a5740a2ecc0d49e8f002c2bbeaeb135571b2c7bab96df18",
+      "inline_rendered_text": "mineral rights assessment"
     },
     {
       "selection_rank": 35,
@@ -1082,11 +1207,11 @@
       "content_genius_article_uuid": null,
       "archive_evidence_sha256": "5887672094e9d52e1dc3996b740beaed96764ac97b484b1d2b7387e9db338d55",
       "repo_path": "src/content/posts/how-to-identify-and-avoid-hidden-fees-in-your-mineral-rights-assessment-process.mdx",
-      "repo_sha256": "cc7de50259f48d2c7a3eee8a565a3b677f0be177c613eab3eb43664263f33ad8",
-      "article_sha256": "cc7de50259f48d2c7a3eee8a565a3b677f0be177c613eab3eb43664263f33ad8",
-      "hero_path": "/assets/articles/how-to-identify-and-avoid-hidden-fees-in-mineral-rights-assessment-process.webp",
-      "hero_sha256": "b59e6f993319f3c0a1a94a4e6f607cce94d73ea67fcf863a200c5201b7bfaae3",
-      "hero_asset_sha256": "b59e6f993319f3c0a1a94a4e6f607cce94d73ea67fcf863a200c5201b7bfaae3",
+      "repo_sha256": "eea544fcc51f6b2fac70793b9db40ba9ab6af19f1668ffdc4e250d6faa08541e",
+      "article_sha256": "eea544fcc51f6b2fac70793b9db40ba9ab6af19f1668ffdc4e250d6faa08541e",
+      "hero_path": "/assets/articles/hero/how-to-identify-and-avoid-hidden-fees-in-your-mineral-rights-assessment-process.webp",
+      "hero_sha256": "07248e82743b0d6dbc9a12931a5e3647248be016aac91ba3c4967fab16251685",
+      "hero_asset_sha256": "07248e82743b0d6dbc9a12931a5e3647248be016aac91ba3c4967fab16251685",
       "admission_status": "admitted_quality_gated",
       "finalization_state": "draft_noindex_admitted",
       "searchatlas_content_score": null,
@@ -1096,7 +1221,10 @@
         "Publication remains conditional on current editorial, factual/citation, compliance, exact-title asset, build, rollback, deployment, and live-verification evidence."
       ],
       "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/how-to-identify-and-avoid-hidden-fees-in-your-mineral-rights-assessment-process.json",
-      "evidence_packet_path_required": true
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/how-to-identify-and-avoid-hidden-fees-in-your-mineral-rights-assessment-process/how-to-identify-and-avoid-hidden-fees-in-mineral-rights-assessment-process.webp",
+      "inline_asset_sha256": "359f0a3cacdbca89151f7d8a1db253f355816cc1c8ab1756f8b9507f0836be91",
+      "inline_rendered_text": "how to identify and avoid hidden fees in mineral rights assessment process"
     },
     {
       "selection_rank": 36,
@@ -1111,11 +1239,11 @@
       "content_genius_article_uuid": null,
       "archive_evidence_sha256": "50a1e620635fe98bdec4a7e39f1b1ab006d7ea36e90904ec899e119340f0a1f5",
       "repo_path": "src/content/posts/how-long-does-it-take-to-sell-mineral-rights-in-texas.mdx",
-      "repo_sha256": "3f87a3180f5e572bdf79c80cc4389723b75f9c7b87edd73fb45708b1936eac6c",
-      "article_sha256": "3f87a3180f5e572bdf79c80cc4389723b75f9c7b87edd73fb45708b1936eac6c",
-      "hero_path": "/assets/articles/sell-mineral-rights-timeline-texas-wave5.webp",
-      "hero_sha256": "47deda0bc8a671daf3dbb324ffcfa50c2970a7a3c48fba5d68a8640d69cd56aa",
-      "hero_asset_sha256": "47deda0bc8a671daf3dbb324ffcfa50c2970a7a3c48fba5d68a8640d69cd56aa",
+      "repo_sha256": "6f431bfb968c4b61f36e040f140472b0479ecc2f6c9ad89127854254c2c68ba2",
+      "article_sha256": "6f431bfb968c4b61f36e040f140472b0479ecc2f6c9ad89127854254c2c68ba2",
+      "hero_path": "/assets/articles/hero/how-long-does-it-take-to-sell-mineral-rights-in-texas.webp",
+      "hero_sha256": "0e901c6f012f3b888c812802fffda7572c5e68ae57a2a650a3249b6123ca20aa",
+      "hero_asset_sha256": "0e901c6f012f3b888c812802fffda7572c5e68ae57a2a650a3249b6123ca20aa",
       "admission_status": "admitted_quality_gated",
       "finalization_state": "draft_noindex_admitted",
       "searchatlas_content_score": null,
@@ -1125,7 +1253,10 @@
         "Publication remains conditional on current editorial, factual/citation, compliance, exact-title asset, build, rollback, deployment, and live-verification evidence."
       ],
       "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/how-long-does-it-take-to-sell-mineral-rights-in-texas.json",
-      "evidence_packet_path_required": true
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/how-long-does-it-take-to-sell-mineral-rights-in-texas/how-long-to-sell-mineral-rights-texas.webp",
+      "inline_asset_sha256": "7eecc278b2d4a55334a8b3896f41f18712ef8afa5e5dafcce2d89da26894d9bd",
+      "inline_rendered_text": "how long to sell mineral rights texas"
     },
     {
       "selection_rank": 37,
@@ -1140,11 +1271,11 @@
       "content_genius_article_uuid": null,
       "archive_evidence_sha256": "37e1568d71c36f2c1cafcdbdceed95be971b4759233d7edbb1b060b0255f996f",
       "repo_path": "src/content/posts/how-the-step-by-step-process-of-selling-texas-mineral-rights-works.mdx",
-      "repo_sha256": "5149e1627a9be73b0ffbbd735963396f5d94eaeb9afcb3a94f2a671c0349f6c2",
-      "article_sha256": "5149e1627a9be73b0ffbbd735963396f5d94eaeb9afcb3a94f2a671c0349f6c2",
-      "hero_path": "/assets/articles/selling-texas-mineral-rights-process-wave5.webp",
-      "hero_sha256": "b9c6cdb506c5a40add2538c05a9e72b95b18d15fb2994d5247e3230e3038fff1",
-      "hero_asset_sha256": "b9c6cdb506c5a40add2538c05a9e72b95b18d15fb2994d5247e3230e3038fff1",
+      "repo_sha256": "49f880cfbb71e1f3656061197be49ed354595996678095c26d10c0d071fda6e6",
+      "article_sha256": "49f880cfbb71e1f3656061197be49ed354595996678095c26d10c0d071fda6e6",
+      "hero_path": "/assets/articles/hero/how-the-step-by-step-process-of-selling-texas-mineral-rights-works.webp",
+      "hero_sha256": "101adb6b0c7dc90c2946fa3c581f29b1d5c5c6ddb3fcfa8672e4cb3ccd839907",
+      "hero_asset_sha256": "101adb6b0c7dc90c2946fa3c581f29b1d5c5c6ddb3fcfa8672e4cb3ccd839907",
       "admission_status": "admitted_quality_gated",
       "finalization_state": "draft_noindex_admitted",
       "searchatlas_content_score": null,
@@ -1154,7 +1285,10 @@
         "Publication remains conditional on current editorial, factual/citation, compliance, exact-title asset, build, rollback, deployment, and live-verification evidence."
       ],
       "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/how-the-step-by-step-process-of-selling-texas-mineral-rights-works.json",
-      "evidence_packet_path_required": true
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/how-the-step-by-step-process-of-selling-texas-mineral-rights-works/how-the-step-by-step-process-of-selling-texas-mineral-rights-works.webp",
+      "inline_asset_sha256": "57143d6dde4e989a97526603d13ded14c20d1bb1854ccf345a0a5ccd47b46cd9",
+      "inline_rendered_text": "how the step-by-step process of selling texas mineral rights works"
     },
     {
       "selection_rank": 38,
@@ -1169,11 +1303,11 @@
       "content_genius_article_uuid": null,
       "archive_evidence_sha256": "603d77676521fd788839e6137bc1ee9f5abd219c015d7e45c2c3e0362858a18f",
       "repo_path": "src/content/posts/what-happens-after-you-sell-your-mineral-rights-in-texas.mdx",
-      "repo_sha256": "699c2f5cad827ce35fc5310e422047f0cbca7a4a044de53410e1e7df04019284",
-      "article_sha256": "699c2f5cad827ce35fc5310e422047f0cbca7a4a044de53410e1e7df04019284",
-      "hero_path": "/assets/articles/after-selling-mineral-rights-texas-wave5.webp",
-      "hero_sha256": "8e8bedf0f64c9400af7fa4bb922c809f13dc799ac34093ecd4cb30326741ba14",
-      "hero_asset_sha256": "8e8bedf0f64c9400af7fa4bb922c809f13dc799ac34093ecd4cb30326741ba14",
+      "repo_sha256": "0327ed4f9b5a012d05c731247c7231bce34604ec83dae51ad875654be740a715",
+      "article_sha256": "0327ed4f9b5a012d05c731247c7231bce34604ec83dae51ad875654be740a715",
+      "hero_path": "/assets/articles/hero/what-happens-after-you-sell-your-mineral-rights-in-texas.webp",
+      "hero_sha256": "86fdba0843322746cbd965e181117e50c2930bb067ae345eefba20f9003dd812",
+      "hero_asset_sha256": "86fdba0843322746cbd965e181117e50c2930bb067ae345eefba20f9003dd812",
       "admission_status": "admitted_quality_gated",
       "finalization_state": "draft_noindex_admitted",
       "searchatlas_content_score": null,
@@ -1183,7 +1317,10 @@
         "Publication remains conditional on current editorial, factual/citation, compliance, exact-title asset, build, rollback, deployment, and live-verification evidence."
       ],
       "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/what-happens-after-you-sell-your-mineral-rights-in-texas.json",
-      "evidence_packet_path_required": true
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/what-happens-after-you-sell-your-mineral-rights-in-texas/after-selling-mineral-rights-texas.webp",
+      "inline_asset_sha256": "70711aed2245c398e02d2810126fdd4463dc4c40fb6f1cb2b862186467fc0ebf",
+      "inline_rendered_text": "after selling mineral rights texas"
     },
     {
       "selection_rank": 39,
@@ -1198,11 +1335,11 @@
       "content_genius_article_uuid": null,
       "archive_evidence_sha256": "1edacb56e9d2096eba3858531b4ac535ee40481bc80b3b1eb7a2573be5176256",
       "repo_path": "src/content/posts/how-to-negotiate-a-mineral-rights-sale-what-sellers-need-to-know.mdx",
-      "repo_sha256": "1c974c3165421935a69811ae7c5fbbc4d851eeccc9d3d205bd5aacd403f0cb49",
-      "article_sha256": "1c974c3165421935a69811ae7c5fbbc4d851eeccc9d3d205bd5aacd403f0cb49",
-      "hero_path": "/assets/articles/negotiate-mineral-rights-sale-wave5.webp",
-      "hero_sha256": "a9b47ea165eae2df2efd23c87791b7fb97ea67b0ae6c65c57b966cd689612e84",
-      "hero_asset_sha256": "a9b47ea165eae2df2efd23c87791b7fb97ea67b0ae6c65c57b966cd689612e84",
+      "repo_sha256": "06d2d89dd2b0c7dfa570379c342eae421bfe15c07f247c0cbe09afc4a9f289df",
+      "article_sha256": "06d2d89dd2b0c7dfa570379c342eae421bfe15c07f247c0cbe09afc4a9f289df",
+      "hero_path": "/assets/articles/hero/how-to-negotiate-a-mineral-rights-sale-what-sellers-need-to-know.webp",
+      "hero_sha256": "ca8c2a311c524c28317c41bbc05faa0df6637a45beb1ad0295283823bc86e528",
+      "hero_asset_sha256": "ca8c2a311c524c28317c41bbc05faa0df6637a45beb1ad0295283823bc86e528",
       "admission_status": "admitted_quality_gated",
       "finalization_state": "draft_noindex_admitted",
       "searchatlas_content_score": null,
@@ -1212,7 +1349,10 @@
         "Publication remains conditional on current editorial, factual/citation, compliance, exact-title asset, build, rollback, deployment, and live-verification evidence."
       ],
       "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/how-to-negotiate-a-mineral-rights-sale-what-sellers-need-to-know.json",
-      "evidence_packet_path_required": true
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/how-to-negotiate-a-mineral-rights-sale-what-sellers-need-to-know/how-to-negotiate-a-mineral-rights-sale.webp",
+      "inline_asset_sha256": "4d04344b75bfd05508ed34935e5fef017d3f7e4cac799f7d4444685b1cf66435",
+      "inline_rendered_text": "how to negotiate a mineral rights sale"
     },
     {
       "selection_rank": 40,
@@ -1227,11 +1367,11 @@
       "content_genius_article_uuid": null,
       "archive_evidence_sha256": "1a08ae484c3032d80bc274bce33b1de87cab42696436f78c34e709a61209c3e2",
       "repo_path": "src/content/posts/understanding-the-key-factors-influencing-your-mineral-rights-offer-range.mdx",
-      "repo_sha256": "93fb9bcf4a93c715dc9eb7a77fcedc17e7a83670f7e73ab27cf1f6970f0f0c71",
-      "article_sha256": "93fb9bcf4a93c715dc9eb7a77fcedc17e7a83670f7e73ab27cf1f6970f0f0c71",
-      "hero_path": "/assets/articles/mineral-rights-offer-range-factors-wave5.webp",
-      "hero_sha256": "ec93eaeeb928c597a4b052c7361357df945cd1ece660091676a47254dbc20438",
-      "hero_asset_sha256": "ec93eaeeb928c597a4b052c7361357df945cd1ece660091676a47254dbc20438",
+      "repo_sha256": "200e138e75b86a43aff1aab4638c67a8c9cbe4c9bfe5ccfbbe70d821159f711a",
+      "article_sha256": "200e138e75b86a43aff1aab4638c67a8c9cbe4c9bfe5ccfbbe70d821159f711a",
+      "hero_path": "/assets/articles/hero/understanding-the-key-factors-influencing-your-mineral-rights-offer-range.webp",
+      "hero_sha256": "0759169708bd10241df9e2d623f0f8ab6ebc8405ac185b5a2090c169f97e9385",
+      "hero_asset_sha256": "0759169708bd10241df9e2d623f0f8ab6ebc8405ac185b5a2090c169f97e9385",
       "admission_status": "admitted_quality_gated",
       "finalization_state": "draft_noindex_admitted",
       "searchatlas_content_score": null,
@@ -1241,7 +1381,10 @@
         "Publication remains conditional on current editorial, factual/citation, compliance, exact-title asset, build, rollback, deployment, and live-verification evidence."
       ],
       "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/understanding-the-key-factors-influencing-your-mineral-rights-offer-range.json",
-      "evidence_packet_path_required": true
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/understanding-the-key-factors-influencing-your-mineral-rights-offer-range/key-factors-influencing-mineral-rights-offer-range.webp",
+      "inline_asset_sha256": "7024c048e4c01ab1a56333fdf95d606238ad43252be5ab0265e8073f09ba775e",
+      "inline_rendered_text": "key factors influencing mineral rights offer range"
     },
     {
       "selection_rank": 41,
@@ -1256,11 +1399,11 @@
       "content_genius_article_uuid": null,
       "archive_evidence_sha256": "788f870769ee111f5b747aa371b1877f059f44575805c9f42e3e87bbd727dac5",
       "repo_path": "src/content/posts/net-mineral-acres-vs-royalty-acres-what-texas-mineral-rights-owners-need-to-know.mdx",
-      "repo_sha256": "27f8bdd8b17f584c93520d4bec35a3c5b43f9e8b4191013bf875ab9857ba2aac",
-      "article_sha256": "27f8bdd8b17f584c93520d4bec35a3c5b43f9e8b4191013bf875ab9857ba2aac",
-      "hero_path": "/assets/articles/net-mineral-acres-vs-royalty-acres-wave6.webp",
-      "hero_sha256": "a9c92cb6d2c18b540559e94d5da98de9b31f25c17504d9f0df64ebf92e1cabb0",
-      "hero_asset_sha256": "a9c92cb6d2c18b540559e94d5da98de9b31f25c17504d9f0df64ebf92e1cabb0",
+      "repo_sha256": "54f87d1b5d22105e625ce55e32807e885ce619ebf96658250671b04c9bff3ec8",
+      "article_sha256": "54f87d1b5d22105e625ce55e32807e885ce619ebf96658250671b04c9bff3ec8",
+      "hero_path": "/assets/articles/hero/net-mineral-acres-vs-royalty-acres-what-texas-mineral-rights-owners-need-to-know.webp",
+      "hero_sha256": "0391986ebe1d91c91ce957eb27d9159fcf167861a1434ae0862587e28bc3f917",
+      "hero_asset_sha256": "0391986ebe1d91c91ce957eb27d9159fcf167861a1434ae0862587e28bc3f917",
       "admission_status": "admitted_quality_gated",
       "finalization_state": "draft_noindex_admitted",
       "searchatlas_content_score": null,
@@ -1270,7 +1413,10 @@
         "Publication remains conditional on current editorial, factual/citation, compliance, exact-title asset, build, rollback, deployment, and live-verification evidence."
       ],
       "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/net-mineral-acres-vs-royalty-acres-what-texas-mineral-rights-owners-need-to-know.json",
-      "evidence_packet_path_required": true
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/net-mineral-acres-vs-royalty-acres-what-texas-mineral-rights-owners-need-to-know/net-mineral-acres-vs-royalty-acres.webp",
+      "inline_asset_sha256": "52b836191bc7617f54a6ca441dccda8b15b7444579955213c0ecc403e1ab435e",
+      "inline_rendered_text": "net mineral acres vs royalty acres"
     },
     {
       "selection_rank": 42,
@@ -1285,11 +1431,11 @@
       "content_genius_article_uuid": null,
       "archive_evidence_sha256": "2d9811ca320a0a01be174c4a595f6cefac28735af703f36063db2bed89907978",
       "repo_path": "src/content/posts/what-is-an-oil-and-gas-lease-and-how-does-it-affect-your-mineral-rights.mdx",
-      "repo_sha256": "892c1b0607fa835d97c8e2cf6413a0cef9688abcf322b6142dc753994df25352",
-      "article_sha256": "892c1b0607fa835d97c8e2cf6413a0cef9688abcf322b6142dc753994df25352",
-      "hero_path": "/assets/articles/oil-and-gas-lease-anatomy-wave6.webp",
-      "hero_sha256": "8e81e5bc56c67fdc8cd44707d9004f9f1a9884b3cf3a8ca330c134c52f8f99b7",
-      "hero_asset_sha256": "8e81e5bc56c67fdc8cd44707d9004f9f1a9884b3cf3a8ca330c134c52f8f99b7",
+      "repo_sha256": "860349a7fe4c17108ca1353a0755d547251ed1eef3a9969340cb840753cd09e3",
+      "article_sha256": "860349a7fe4c17108ca1353a0755d547251ed1eef3a9969340cb840753cd09e3",
+      "hero_path": "/assets/articles/hero/what-is-an-oil-and-gas-lease-and-how-does-it-affect-your-mineral-rights.webp",
+      "hero_sha256": "1181e34ef0268c1819c5234bc40314474703b7ce4c7968f2efde371987cbcf81",
+      "hero_asset_sha256": "1181e34ef0268c1819c5234bc40314474703b7ce4c7968f2efde371987cbcf81",
       "admission_status": "admitted_quality_gated",
       "finalization_state": "draft_noindex_admitted",
       "searchatlas_content_score": null,
@@ -1299,7 +1445,10 @@
         "Publication remains conditional on current editorial, factual/citation, compliance, exact-title asset, build, rollback, deployment, and live-verification evidence."
       ],
       "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/what-is-an-oil-and-gas-lease-and-how-does-it-affect-your-mineral-rights.json",
-      "evidence_packet_path_required": true
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/what-is-an-oil-and-gas-lease-and-how-does-it-affect-your-mineral-rights/what-is-an-oil-and-gas-lease.webp",
+      "inline_asset_sha256": "9a9da0f969b7e5b2f085584abda1b436be367cb933e23908ace56810967baa0e",
+      "inline_rendered_text": "what is an oil and gas lease"
     },
     {
       "selection_rank": 43,
@@ -1314,11 +1463,11 @@
       "content_genius_article_uuid": null,
       "archive_evidence_sha256": "e982a48912ac88cb84bab361a4062cfb4600495aa936544eaf376869da97cd86",
       "repo_path": "src/content/posts/what-is-a-held-by-production-lease-and-how-does-it-affect-your-mineral-rights.mdx",
-      "repo_sha256": "974fa156922344f1a2d3d314007391451607d41d92915ea03e393d4f0fcf21ff",
-      "article_sha256": "974fa156922344f1a2d3d314007391451607d41d92915ea03e393d4f0fcf21ff",
-      "hero_path": "/assets/articles/held-by-production-lease-timeline-wave6.webp",
-      "hero_sha256": "4b1ec2d7db2db17474a1448464ad74caff9c94f889b23d258531a019ecabdb45",
-      "hero_asset_sha256": "4b1ec2d7db2db17474a1448464ad74caff9c94f889b23d258531a019ecabdb45",
+      "repo_sha256": "6dd8acbd276909949936ad7f7945f032bd4514cb705e06b3cc239e698b90a7a7",
+      "article_sha256": "6dd8acbd276909949936ad7f7945f032bd4514cb705e06b3cc239e698b90a7a7",
+      "hero_path": "/assets/articles/hero/what-is-a-held-by-production-lease-and-how-does-it-affect-your-mineral-rights.webp",
+      "hero_sha256": "ae70e74dbadf22a61d159c89d16bdf1faca8c41f3572cfecad0675e13e5b51e1",
+      "hero_asset_sha256": "ae70e74dbadf22a61d159c89d16bdf1faca8c41f3572cfecad0675e13e5b51e1",
       "admission_status": "admitted_quality_gated",
       "finalization_state": "draft_noindex_admitted",
       "searchatlas_content_score": null,
@@ -1328,7 +1477,10 @@
         "Publication remains conditional on current editorial, factual/citation, compliance, exact-title asset, build, rollback, deployment, and live-verification evidence."
       ],
       "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/what-is-a-held-by-production-lease-and-how-does-it-affect-your-mineral-rights.json",
-      "evidence_packet_path_required": true
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/what-is-a-held-by-production-lease-and-how-does-it-affect-your-mineral-rights/held-by-production-lease.webp",
+      "inline_asset_sha256": "5365b837f2348be491f0b6dfd6a8ac8cc4a2aebf359c5c7a6a13f34ffa3b591b",
+      "inline_rendered_text": "held by production lease"
     },
     {
       "selection_rank": 44,
@@ -1343,11 +1495,11 @@
       "content_genius_article_uuid": null,
       "archive_evidence_sha256": "7f66e8ab1aa5913eb829ee2d51936cc2a0e0b2f784171d3bf8db1176976f74ce",
       "repo_path": "src/content/posts/what-is-a-division-order-and-why-does-it-matter-for-mineral-rights-owners.mdx",
-      "repo_sha256": "01844740fd3309e585095012fbb2c620452ecf0a1c16ee9fbd996acca0118861",
-      "article_sha256": "01844740fd3309e585095012fbb2c620452ecf0a1c16ee9fbd996acca0118861",
-      "hero_path": "/assets/articles/division-order-payment-map-wave6.webp",
-      "hero_sha256": "a2d77c1d302af4b635d02e6257eb66081e9effc9189b7c6b29603d7aa43ad6a5",
-      "hero_asset_sha256": "a2d77c1d302af4b635d02e6257eb66081e9effc9189b7c6b29603d7aa43ad6a5",
+      "repo_sha256": "3737fbcbff4867bd47a3bb3ee1661d644e9c9bf4d2921ffeb121c9156bf2a3da",
+      "article_sha256": "3737fbcbff4867bd47a3bb3ee1661d644e9c9bf4d2921ffeb121c9156bf2a3da",
+      "hero_path": "/assets/articles/hero/what-is-a-division-order-and-why-does-it-matter-for-mineral-rights-owners.webp",
+      "hero_sha256": "456aa0a777cf0288d9bd7f358930ed3a5535cd3e462be91506676b6509d5e12b",
+      "hero_asset_sha256": "456aa0a777cf0288d9bd7f358930ed3a5535cd3e462be91506676b6509d5e12b",
       "admission_status": "admitted_quality_gated",
       "finalization_state": "draft_noindex_admitted",
       "searchatlas_content_score": null,
@@ -1357,7 +1509,10 @@
         "Publication remains conditional on current editorial, factual/citation, compliance, exact-title asset, build, rollback, deployment, and live-verification evidence."
       ],
       "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/what-is-a-division-order-and-why-does-it-matter-for-mineral-rights-owners.json",
-      "evidence_packet_path_required": true
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/what-is-a-division-order-and-why-does-it-matter-for-mineral-rights-owners/what-is-a-division-order.webp",
+      "inline_asset_sha256": "a7beb11a4b7b8bb9c50f8d30871a4d37f30eb5c7864f876f49cbfe125b14ecd7",
+      "inline_rendered_text": "what is a division order"
     },
     {
       "selection_rank": 45,
@@ -1372,11 +1527,11 @@
       "content_genius_article_uuid": null,
       "archive_evidence_sha256": "c7559e95b3fd3b4772e926ba2872d3f3ecbaf48eb70d2c0456c3f38fba6e8608",
       "repo_path": "src/content/posts/how-to-decode-your-royalty-check-statement.mdx",
-      "repo_sha256": "e168f9e0018b1b9ea98261acb544f71962ac951ff99f0a18b9e4f8cdd5e74caa",
-      "article_sha256": "e168f9e0018b1b9ea98261acb544f71962ac951ff99f0a18b9e4f8cdd5e74caa",
-      "hero_path": "/assets/articles/royalty-check-statement-grid-wave6.webp",
-      "hero_sha256": "a4d40f992c3a56257c99d4e60a958e15a5d0bade0f0c5d797a8cf7a608dffc40",
-      "hero_asset_sha256": "a4d40f992c3a56257c99d4e60a958e15a5d0bade0f0c5d797a8cf7a608dffc40",
+      "repo_sha256": "78846e6f5974b5a5d27c6f4f27d3a97eb1b27a6b7b0a7a3e4286ff980ad15d5d",
+      "article_sha256": "78846e6f5974b5a5d27c6f4f27d3a97eb1b27a6b7b0a7a3e4286ff980ad15d5d",
+      "hero_path": "/assets/articles/hero/how-to-decode-your-royalty-check-statement.webp",
+      "hero_sha256": "eebdb8c974bf19955104c3407e8da275e6dde110b4fa5bfcaf802e35f321fa83",
+      "hero_asset_sha256": "eebdb8c974bf19955104c3407e8da275e6dde110b4fa5bfcaf802e35f321fa83",
       "admission_status": "admitted_quality_gated",
       "finalization_state": "draft_noindex_admitted",
       "searchatlas_content_score": null,
@@ -1386,7 +1541,10 @@
         "Publication remains conditional on current editorial, factual/citation, compliance, exact-title asset, build, rollback, deployment, and live-verification evidence."
       ],
       "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/how-to-decode-your-royalty-check-statement.json",
-      "evidence_packet_path_required": true
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/how-to-decode-your-royalty-check-statement/how-to-decode-your-royalty-check-statement.webp",
+      "inline_asset_sha256": "478a625e31cdea584434ee6da2e14f80c6bdf9fa3d182f1d9b2749f1833a683d",
+      "inline_rendered_text": "how to decode your royalty check statement"
     },
     {
       "selection_rank": 46,
@@ -1401,11 +1559,11 @@
       "content_genius_article_uuid": null,
       "archive_evidence_sha256": "c7e5dd7dff6b7e1a1f8aebca409fe681eb9ad90f4581bdc6102a919b8218fa76",
       "repo_path": "src/content/posts/understanding-royalty-checks-after-inheriting-mineral-rights.mdx",
-      "repo_sha256": "87bc9126b1144f22ad8fcf480a0f8e2761c688f8c94605464144d2c8d045e7c7",
-      "article_sha256": "87bc9126b1144f22ad8fcf480a0f8e2761c688f8c94605464144d2c8d045e7c7",
-      "hero_path": "/assets/articles/inherited-royalty-check-flow-wave6.webp",
-      "hero_sha256": "8d9b3f5ebef1233e64e3dd4b4b42a9fc48c95fc0876c17c29275b2e8dcedaede",
-      "hero_asset_sha256": "8d9b3f5ebef1233e64e3dd4b4b42a9fc48c95fc0876c17c29275b2e8dcedaede",
+      "repo_sha256": "8423d0e3b8009211657593b7a343a5669ec8067f721a972dcb5c89f0581f2897",
+      "article_sha256": "8423d0e3b8009211657593b7a343a5669ec8067f721a972dcb5c89f0581f2897",
+      "hero_path": "/assets/articles/hero/understanding-royalty-checks-after-inheriting-mineral-rights.webp",
+      "hero_sha256": "15ec49dd06485a35771cf05cb115145d48b8572316fb5d8815e45c8e61aedfdc",
+      "hero_asset_sha256": "15ec49dd06485a35771cf05cb115145d48b8572316fb5d8815e45c8e61aedfdc",
       "admission_status": "admitted_quality_gated",
       "finalization_state": "draft_noindex_admitted",
       "searchatlas_content_score": null,
@@ -1415,7 +1573,10 @@
         "Publication remains conditional on current editorial, factual/citation, compliance, exact-title asset, build, rollback, deployment, and live-verification evidence."
       ],
       "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/understanding-royalty-checks-after-inheriting-mineral-rights.json",
-      "evidence_packet_path_required": true
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/understanding-royalty-checks-after-inheriting-mineral-rights/royalty-checks-after-inheriting-mineral-rights.webp",
+      "inline_asset_sha256": "dfddae3114c51324ca77303135cb54d15eae0a3471ca3c4555e4821268bc58c9",
+      "inline_rendered_text": "royalty checks after inheriting mineral rights"
     },
     {
       "selection_rank": 47,
@@ -1430,11 +1591,11 @@
       "content_genius_article_uuid": null,
       "archive_evidence_sha256": "53146c0ab6d3cb2024a741b1a2fada14cda92bb6ef778a58e08cd51ed4aecfd0",
       "repo_path": "src/content/posts/mineral-rights-inheritance-in-texas-what-heirs-need-to-know-before-selling.mdx",
-      "repo_sha256": "8feda60d3de276cdbef088c133e53ea49c04b0372e14bac05d750f00c03c3590",
-      "article_sha256": "8feda60d3de276cdbef088c133e53ea49c04b0372e14bac05d750f00c03c3590",
-      "hero_path": "/assets/articles/inherited-mineral-rights-sale-readiness-wave6.webp",
-      "hero_sha256": "004a3c876c88551b3b96cf4423efbdfca4f3adb3402e317f5b5375412ceed9f8",
-      "hero_asset_sha256": "004a3c876c88551b3b96cf4423efbdfca4f3adb3402e317f5b5375412ceed9f8",
+      "repo_sha256": "54515e290b187b0bfef45888ffcea8443f335a9f9bc94d777119d91d3994b152",
+      "article_sha256": "54515e290b187b0bfef45888ffcea8443f335a9f9bc94d777119d91d3994b152",
+      "hero_path": "/assets/articles/hero/mineral-rights-inheritance-in-texas-what-heirs-need-to-know-before-selling.webp",
+      "hero_sha256": "c7af801ca6f9dc47e519b05831bc6efb2fdb0c616af2b56ebd88bac25a709792",
+      "hero_asset_sha256": "c7af801ca6f9dc47e519b05831bc6efb2fdb0c616af2b56ebd88bac25a709792",
       "admission_status": "admitted_quality_gated",
       "finalization_state": "draft_noindex_admitted",
       "searchatlas_content_score": null,
@@ -1444,7 +1605,10 @@
         "Publication remains conditional on current editorial, factual/citation, compliance, exact-title asset, build, rollback, deployment, and live-verification evidence."
       ],
       "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/mineral-rights-inheritance-in-texas-what-heirs-need-to-know-before-selling.json",
-      "evidence_packet_path_required": true
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/mineral-rights-inheritance-in-texas-what-heirs-need-to-know-before-selling/mineral-rights-inheritance-in-texas-before-selling.webp",
+      "inline_asset_sha256": "5bcc30128541ff291febc9cf507a86892da98b4c891041adb45ed46adaa35189",
+      "inline_rendered_text": "mineral rights inheritance in Texas before selling"
     },
     {
       "selection_rank": 48,
@@ -1459,11 +1623,11 @@
       "content_genius_article_uuid": null,
       "archive_evidence_sha256": "3a0c0f795470935de09eb2cbefb99b5294593f9eed5d23c52eb0835083f0cc75",
       "repo_path": "src/content/posts/capital-gains-tax-on-mineral-rights-sales-in-texas-what-sellers-need-to-know.mdx",
-      "repo_sha256": "305f81318df830a00fe4bcf9cdac88daf9da3bdde5a033ce0b0f89408e4f3729",
-      "article_sha256": "305f81318df830a00fe4bcf9cdac88daf9da3bdde5a033ce0b0f89408e4f3729",
-      "hero_path": "/assets/articles/mineral-rights-capital-gains-framework-wave6.webp",
-      "hero_sha256": "197091745f1fbeefdfad8ba7f3659f0784dc93e8419b88ce4c74d8f2f05134fc",
-      "hero_asset_sha256": "197091745f1fbeefdfad8ba7f3659f0784dc93e8419b88ce4c74d8f2f05134fc",
+      "repo_sha256": "98199f50191fa23104f02b6bf65c0ea79ded8bfc07061fdae3d990c6baf51bf1",
+      "article_sha256": "98199f50191fa23104f02b6bf65c0ea79ded8bfc07061fdae3d990c6baf51bf1",
+      "hero_path": "/assets/articles/hero/capital-gains-tax-on-mineral-rights-sales-in-texas-what-sellers-need-to-know.webp",
+      "hero_sha256": "dc8694b879676687af4fe53a4c657bd8e8f489fe6d09f0d2adec4cc8bfdd723f",
+      "hero_asset_sha256": "dc8694b879676687af4fe53a4c657bd8e8f489fe6d09f0d2adec4cc8bfdd723f",
       "admission_status": "admitted_quality_gated",
       "finalization_state": "draft_noindex_admitted",
       "searchatlas_content_score": null,
@@ -1473,7 +1637,10 @@
         "Publication remains conditional on current editorial, factual/citation, compliance, exact-title asset, build, rollback, deployment, and live-verification evidence."
       ],
       "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/capital-gains-tax-on-mineral-rights-sales-in-texas-what-sellers-need-to-know.json",
-      "evidence_packet_path_required": true
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/capital-gains-tax-on-mineral-rights-sales-in-texas-what-sellers-need-to-know/capital-gains-tax-on-mineral-rights-sales-in-texas.webp",
+      "inline_asset_sha256": "e858b4f2486a4677410dd463a232b04de35b15865d84f9be52759b06c278102d",
+      "inline_rendered_text": "capital gains tax on mineral rights sales in Texas"
     },
     {
       "selection_rank": 49,
@@ -1488,11 +1655,11 @@
       "content_genius_article_uuid": null,
       "archive_evidence_sha256": "31ac9f41ccc6f434790ec29a8878219aa7669a9cce25b86837350ec89b1824f2",
       "repo_path": "src/content/posts/what-to-bring-to-your-underwriter-review-call-essential-documents-and-preparation-guide.mdx",
-      "repo_sha256": "391b6e4d741e9e3b63585da96c9b44b38e5489b9434250fb234ce402036a4db6",
-      "article_sha256": "391b6e4d741e9e3b63585da96c9b44b38e5489b9434250fb234ce402036a4db6",
-      "hero_path": "/assets/articles/underwriter-review-document-checklist-wave6.webp",
-      "hero_sha256": "1794e660ef871c827c6510fa6ea11040dcb88a8d2838e426ed5a6b9a60b36778",
-      "hero_asset_sha256": "1794e660ef871c827c6510fa6ea11040dcb88a8d2838e426ed5a6b9a60b36778",
+      "repo_sha256": "b347edeb1a02ff6d19b4d0fe8b781bcaaa55a1d0c7fd58ac94ec70012eda107e",
+      "article_sha256": "b347edeb1a02ff6d19b4d0fe8b781bcaaa55a1d0c7fd58ac94ec70012eda107e",
+      "hero_path": "/assets/articles/hero/what-to-bring-to-your-underwriter-review-call-essential-documents-and-preparation-guide.webp",
+      "hero_sha256": "88861891e79bdf96ff94821bd21b49176a02bea20a6e432ff74b9121343cb822",
+      "hero_asset_sha256": "88861891e79bdf96ff94821bd21b49176a02bea20a6e432ff74b9121343cb822",
       "admission_status": "admitted_quality_gated",
       "finalization_state": "draft_noindex_admitted",
       "searchatlas_content_score": null,
@@ -1502,7 +1669,10 @@
         "Publication remains conditional on current editorial, factual/citation, compliance, exact-title asset, build, rollback, deployment, and live-verification evidence."
       ],
       "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/what-to-bring-to-your-underwriter-review-call-essential-documents-and-preparation-guide.json",
-      "evidence_packet_path_required": true
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/what-to-bring-to-your-underwriter-review-call-essential-documents-and-preparation-guide/what-to-bring-to-an-underwriter-review-call.webp",
+      "inline_asset_sha256": "0c3483535fd4fa2a63a208f787262e5430068899f94592e47089e36402e1ee4e",
+      "inline_rendered_text": "what to bring to an underwriter review call"
     },
     {
       "selection_rank": 50,
@@ -1517,11 +1687,11 @@
       "content_genius_article_uuid": null,
       "archive_evidence_sha256": "014e6cd7d5605e7cf43183a50bccf5e9f15aa12ed70b0c450a2cf4c0efd13dc3",
       "repo_path": "src/content/posts/can-i-still-get-a-valid-underwriter-review-if-i-have-competing-mineral-rights-offers.mdx",
-      "repo_sha256": "4e5fe64f2da70f4075cb7975dafa54a43bf4e08a372ee723824134181e4be8f1",
-      "article_sha256": "4e5fe64f2da70f4075cb7975dafa54a43bf4e08a372ee723824134181e4be8f1",
-      "hero_path": "/assets/articles/competing-mineral-rights-offers-wave6.webp",
-      "hero_sha256": "2d1b24ab1505774ba98d548e09e0119ed7116b3c040a82bd82e56ff3aee5867a",
-      "hero_asset_sha256": "2d1b24ab1505774ba98d548e09e0119ed7116b3c040a82bd82e56ff3aee5867a",
+      "repo_sha256": "e1ec23d32331b8666d7f905d8bb4a78c87c21f5ec2e6dceaab269b3dd2711689",
+      "article_sha256": "e1ec23d32331b8666d7f905d8bb4a78c87c21f5ec2e6dceaab269b3dd2711689",
+      "hero_path": "/assets/articles/hero/can-i-still-get-a-valid-underwriter-review-if-i-have-competing-mineral-rights-offers.webp",
+      "hero_sha256": "87ca752b2ce0a1ac5c6a388ecc9952f53cb95c1038d6442b92a38e9a384711bf",
+      "hero_asset_sha256": "87ca752b2ce0a1ac5c6a388ecc9952f53cb95c1038d6442b92a38e9a384711bf",
       "admission_status": "admitted_quality_gated",
       "finalization_state": "draft_noindex_admitted",
       "searchatlas_content_score": null,
@@ -1531,7 +1701,10 @@
         "Publication remains conditional on current editorial, factual/citation, compliance, exact-title asset, build, rollback, deployment, and live-verification evidence."
       ],
       "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/can-i-still-get-a-valid-underwriter-review-if-i-have-competing-mineral-rights-offers.json",
-      "evidence_packet_path_required": true
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/can-i-still-get-a-valid-underwriter-review-if-i-have-competing-mineral-rights-offers/underwriter-review-with-competing-mineral-rights-offers.webp",
+      "inline_asset_sha256": "627a0222ad1c53201bf81bd620a371c7a6f799812e9b3583dca2a7a1b527261e",
+      "inline_rendered_text": "underwriter review with competing mineral rights offers"
     },
     {
       "selection_rank": 51,
@@ -1546,11 +1719,11 @@
       "content_genius_article_uuid": null,
       "archive_evidence_sha256": "7584a71bd3eebbf8b17bb0d4ce78e558b2ab713fdeb435446a4e85823b07e3f8",
       "repo_path": "src/content/posts/understanding-valuation-methodology-how-it-affects-your-mineral-rights-final-price.mdx",
-      "repo_sha256": "612c4bcd024f6e57502587aa98f2bf11f7ec95dc8c64c11cd8323f2a9add10b7",
-      "article_sha256": "612c4bcd024f6e57502587aa98f2bf11f7ec95dc8c64c11cd8323f2a9add10b7",
-      "hero_path": "/assets/articles/valuation-methodology-price-factors-wave7.webp",
-      "hero_sha256": "499f2c52ac19a924d8b806d5ca7a82769aa3b16f2cddb6d8ba1d472403605f51",
-      "hero_asset_sha256": "499f2c52ac19a924d8b806d5ca7a82769aa3b16f2cddb6d8ba1d472403605f51",
+      "repo_sha256": "90611fed774ac69d4cc5ef15fcec298558c86246152102899feb41fdd9636e07",
+      "article_sha256": "90611fed774ac69d4cc5ef15fcec298558c86246152102899feb41fdd9636e07",
+      "hero_path": "/assets/articles/hero/understanding-valuation-methodology-how-it-affects-your-mineral-rights-transaction-price.webp",
+      "hero_sha256": "3197ca844e4825db0366c4d9bd763aa093e18e350e7a936ba7bb848af12c2075",
+      "hero_asset_sha256": "3197ca844e4825db0366c4d9bd763aa093e18e350e7a936ba7bb848af12c2075",
       "admission_status": "admitted_quality_gated",
       "finalization_state": "draft_noindex_admitted",
       "searchatlas_content_score": null,
@@ -1560,7 +1733,10 @@
         "Publication remains conditional on current editorial, factual/citation, compliance, exact-title asset, build, rollback, deployment, and live-verification evidence."
       ],
       "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/understanding-valuation-methodology-how-it-affects-your-mineral-rights-final-price.json",
-      "evidence_packet_path_required": true
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/understanding-valuation-methodology-how-it-affects-your-mineral-rights-final-price/mineral-rights-valuation-methodology.webp",
+      "inline_asset_sha256": "6035c1b20eb1c99e5404abae0155493a49dfc084d067f46be571413928918c22",
+      "inline_rendered_text": "mineral rights valuation methodology"
     },
     {
       "selection_rank": 52,
@@ -1575,11 +1751,11 @@
       "content_genius_article_uuid": null,
       "archive_evidence_sha256": "5e4054b18b00ced482e6bae3821164f1f98c79d111cd0ef131634a62877817d4",
       "repo_path": "src/content/posts/what-determines-the-value-of-your-mineral-rights.mdx",
-      "repo_sha256": "cf54a2b444bf0983a1dd99323c07f028f784d06d65e7d7ac88e5dd15619cca0f",
-      "article_sha256": "cf54a2b444bf0983a1dd99323c07f028f784d06d65e7d7ac88e5dd15619cca0f",
-      "hero_path": "/assets/articles/mineral-rights-value-drivers-wave7.webp",
-      "hero_sha256": "9d02c29907046fc4394768ba83b5973c8ba3f970ded7c0bf7712c71690709b50",
-      "hero_asset_sha256": "9d02c29907046fc4394768ba83b5973c8ba3f970ded7c0bf7712c71690709b50",
+      "repo_sha256": "529ffa3e6b6770351ef1ba826388a715367fa36dd943ef7cee45abf6aa172e39",
+      "article_sha256": "529ffa3e6b6770351ef1ba826388a715367fa36dd943ef7cee45abf6aa172e39",
+      "hero_path": "/assets/articles/hero/what-determines-the-value-of-your-mineral-rights.webp",
+      "hero_sha256": "e3c7098012d9888ad5ad0b7c0cdbd5c3b1f263cc94fa8dbf57167e53a09733b7",
+      "hero_asset_sha256": "e3c7098012d9888ad5ad0b7c0cdbd5c3b1f263cc94fa8dbf57167e53a09733b7",
       "admission_status": "admitted_quality_gated",
       "finalization_state": "draft_noindex_admitted",
       "searchatlas_content_score": null,
@@ -1589,7 +1765,10 @@
         "Publication remains conditional on current editorial, factual/citation, compliance, exact-title asset, build, rollback, deployment, and live-verification evidence."
       ],
       "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/what-determines-the-value-of-your-mineral-rights.json",
-      "evidence_packet_path_required": true
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/what-determines-the-value-of-your-mineral-rights/what-determines-mineral-rights-value.webp",
+      "inline_asset_sha256": "7247da086510ec74f327b4554959a2140bf229bfdf15046f40bd85a91aeafd24",
+      "inline_rendered_text": "what determines mineral rights value"
     },
     {
       "selection_rank": 53,
@@ -1604,11 +1783,11 @@
       "content_genius_article_uuid": null,
       "archive_evidence_sha256": "3728723e323556bd0b6a86ae62e8dc8dfd473b0e63c6cd9f2d26a8b45e4b2d5f",
       "repo_path": "src/content/posts/how-to-get-multiple-offers-for-your-texas-mineral-rights.mdx",
-      "repo_sha256": "44aec819469120dc1d58a74f334b831c34b42a56d8f351ddbe84b2eea4d86d21",
-      "article_sha256": "44aec819469120dc1d58a74f334b831c34b42a56d8f351ddbe84b2eea4d86d21",
-      "hero_path": "/assets/articles/multiple-texas-offers-comparison-wave7.webp",
-      "hero_sha256": "5da52e2eb119a028348a5e8b49168271375a88797ea75f59fe96637a06eb96c4",
-      "hero_asset_sha256": "5da52e2eb119a028348a5e8b49168271375a88797ea75f59fe96637a06eb96c4",
+      "repo_sha256": "586bc1e901970485ba4ab3f52d6583687da5ea6ec60f4c30cfee1f640a99e0d5",
+      "article_sha256": "586bc1e901970485ba4ab3f52d6583687da5ea6ec60f4c30cfee1f640a99e0d5",
+      "hero_path": "/assets/articles/hero/how-to-get-multiple-offers-for-your-texas-mineral-rights.webp",
+      "hero_sha256": "c6ef93f00459bfb201cfb46d279466bd79a230de8fbae26a2e94f36db702de78",
+      "hero_asset_sha256": "c6ef93f00459bfb201cfb46d279466bd79a230de8fbae26a2e94f36db702de78",
       "admission_status": "admitted_quality_gated",
       "finalization_state": "draft_noindex_admitted",
       "searchatlas_content_score": null,
@@ -1618,7 +1797,10 @@
         "Publication remains conditional on current editorial, factual/citation, compliance, exact-title asset, build, rollback, deployment, and live-verification evidence."
       ],
       "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/how-to-get-multiple-offers-for-your-texas-mineral-rights.json",
-      "evidence_packet_path_required": true
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/how-to-get-multiple-offers-for-your-texas-mineral-rights/multiple-offers-for-texas-mineral-rights.webp",
+      "inline_asset_sha256": "1bc9d66a1d0f0c1879d76d7f53461cdb3e24217548b82a1ecb104e9630304a93",
+      "inline_rendered_text": "multiple offers for Texas mineral rights"
     },
     {
       "selection_rank": 54,
@@ -1633,11 +1815,11 @@
       "content_genius_article_uuid": null,
       "archive_evidence_sha256": "517fc1c041e7a6ff4ea291c40b219c04d2d6295826519787e2f42e9fbf3eafe2",
       "repo_path": "src/content/posts/how-to-identify-lowball-mineral-rights-offers.mdx",
-      "repo_sha256": "ffd3e03ef3cbf7347d3871ac2e065efdfed57543d5da0e978ee33356c3ade8fa",
-      "article_sha256": "ffd3e03ef3cbf7347d3871ac2e065efdfed57543d5da0e978ee33356c3ade8fa",
-      "hero_path": "/assets/articles/lowball-offer-checklist-wave7.webp",
-      "hero_sha256": "2d985bcd2237903c502990c4da8d78a19702622ed9a59419631dc455b333c390",
-      "hero_asset_sha256": "2d985bcd2237903c502990c4da8d78a19702622ed9a59419631dc455b333c390",
+      "repo_sha256": "1c0524af26f0218e732c72b086694d9abe7c6aaec6c241e0f9a30fdaed093e56",
+      "article_sha256": "1c0524af26f0218e732c72b086694d9abe7c6aaec6c241e0f9a30fdaed093e56",
+      "hero_path": "/assets/articles/hero/how-to-identify-lowball-mineral-rights-offers.webp",
+      "hero_sha256": "7217f685576c399c8b0305d84e450767220f4ce812731d9111ee5b2a83203520",
+      "hero_asset_sha256": "7217f685576c399c8b0305d84e450767220f4ce812731d9111ee5b2a83203520",
       "admission_status": "admitted_quality_gated",
       "finalization_state": "draft_noindex_admitted",
       "searchatlas_content_score": null,
@@ -1647,7 +1829,10 @@
         "Publication remains conditional on current editorial, factual/citation, compliance, exact-title asset, build, rollback, deployment, and live-verification evidence."
       ],
       "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/how-to-identify-lowball-mineral-rights-offers.json",
-      "evidence_packet_path_required": true
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/how-to-identify-lowball-mineral-rights-offers/lowball-mineral-rights-offers.webp",
+      "inline_asset_sha256": "9f7a8b4608a22926162840887865ec3135792d77c3af3dc7e6d690beeb59d204",
+      "inline_rendered_text": "lowball mineral rights offers"
     },
     {
       "selection_rank": 55,
@@ -1662,11 +1847,11 @@
       "content_genius_article_uuid": null,
       "archive_evidence_sha256": "5830cbb9c2de73065d73b03fa93133441bba0e7e34c7352aa462e4c490cf85b1",
       "repo_path": "src/content/posts/identifying-red-flags-in-mineral-rights-transactions.mdx",
-      "repo_sha256": "de6063daf0e18e16ecd95f91b2ea57c65642cfff6556139cfc21a0c6609b6960",
-      "article_sha256": "de6063daf0e18e16ecd95f91b2ea57c65642cfff6556139cfc21a0c6609b6960",
-      "hero_path": "/assets/articles/transaction-red-flags-wave7.webp",
-      "hero_sha256": "9984d414cf1cb8db9b0a26e5c81806cc12d6e34451fd436ebe2db06e2c90166c",
-      "hero_asset_sha256": "9984d414cf1cb8db9b0a26e5c81806cc12d6e34451fd436ebe2db06e2c90166c",
+      "repo_sha256": "dbf81106c4e0e5b2a577ac8b15967f5da2af8382105726032d834b3cda59b3b7",
+      "article_sha256": "dbf81106c4e0e5b2a577ac8b15967f5da2af8382105726032d834b3cda59b3b7",
+      "hero_path": "/assets/articles/hero/identifying-red-flags-in-mineral-rights-transactions.webp",
+      "hero_sha256": "e685a1302d40805b74be522f81c10c2eba1021e66937e84cf68e5a767a2ac0f8",
+      "hero_asset_sha256": "e685a1302d40805b74be522f81c10c2eba1021e66937e84cf68e5a767a2ac0f8",
       "admission_status": "admitted_quality_gated",
       "finalization_state": "draft_noindex_admitted",
       "searchatlas_content_score": null,
@@ -1676,7 +1861,10 @@
         "Publication remains conditional on current editorial, factual/citation, compliance, exact-title asset, build, rollback, deployment, and live-verification evidence."
       ],
       "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/identifying-red-flags-in-mineral-rights-transactions.json",
-      "evidence_packet_path_required": true
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/identifying-red-flags-in-mineral-rights-transactions/mineral-rights-transaction-red-flags.webp",
+      "inline_asset_sha256": "b3204444071ca970c5156e270322a50391cc7f6a64b67015747b3c1d4d6dfc03",
+      "inline_rendered_text": "mineral rights transaction red flags"
     },
     {
       "selection_rank": 56,
@@ -1691,11 +1879,11 @@
       "content_genius_article_uuid": null,
       "archive_evidence_sha256": "52b6ab89ac68c9650c4248085fff9d4f60abe2763bf781a07e9db4395c1506a0",
       "repo_path": "src/content/posts/understand-the-value-of-your-inherited-mineral-rights.mdx",
-      "repo_sha256": "83ebfa1b979db99838b8f3e408c8f42cef0408f482ea961bb07a49c7063d27cb",
-      "article_sha256": "83ebfa1b979db99838b8f3e408c8f42cef0408f482ea961bb07a49c7063d27cb",
-      "hero_path": "/assets/articles/inherited-mineral-value-records-wave7.webp",
-      "hero_sha256": "8aee343880e600cebc336b751cf9e36cc5042de78852d59c04c44e433bbb5060",
-      "hero_asset_sha256": "8aee343880e600cebc336b751cf9e36cc5042de78852d59c04c44e433bbb5060",
+      "repo_sha256": "a9df8c527aaa0aeb490bef0db7cb4f845ba064716ff0ae5c04ef07c4c66c49b2",
+      "article_sha256": "a9df8c527aaa0aeb490bef0db7cb4f845ba064716ff0ae5c04ef07c4c66c49b2",
+      "hero_path": "/assets/articles/hero/understand-the-value-of-your-inherited-mineral-rights.webp",
+      "hero_sha256": "a8099344c78773bcbde316bb084c3169f6a2cd3d81f26d08fefa3dc6f3fbd342",
+      "hero_asset_sha256": "a8099344c78773bcbde316bb084c3169f6a2cd3d81f26d08fefa3dc6f3fbd342",
       "admission_status": "admitted_quality_gated",
       "finalization_state": "draft_noindex_admitted",
       "searchatlas_content_score": null,
@@ -1705,7 +1893,10 @@
         "Publication remains conditional on current editorial, factual/citation, compliance, exact-title asset, build, rollback, deployment, and live-verification evidence."
       ],
       "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/understand-the-value-of-your-inherited-mineral-rights.json",
-      "evidence_packet_path_required": true
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/understand-the-value-of-your-inherited-mineral-rights/inherited-mineral-rights-value.webp",
+      "inline_asset_sha256": "773b891d5737bc2e540264b98f7c2c56f4025a38622fdea6ad79ae70b822b5ad",
+      "inline_rendered_text": "inherited mineral rights value"
     },
     {
       "selection_rank": 57,
@@ -1720,11 +1911,11 @@
       "content_genius_article_uuid": null,
       "archive_evidence_sha256": "dc41d34dc7b04300df985fdf249bb9fe8bb2e5617b2573d40004b245215e1a3c",
       "repo_path": "src/content/posts/top-texas-counties-for-mineral-rights-value-permian-eagle-ford-and-haynesville.mdx",
-      "repo_sha256": "07294a95fd46ec14cf60a0177dac67388b52bfe8d46e99dc54071cd5f45f7c3a",
-      "article_sha256": "07294a95fd46ec14cf60a0177dac67388b52bfe8d46e99dc54071cd5f45f7c3a",
-      "hero_path": "/assets/articles/texas-basin-county-value-map-wave7.webp",
-      "hero_sha256": "2cd8a865998909fbb4c7b01c53fc27f31797de2133e686c3ae12a4bb031858e6",
-      "hero_asset_sha256": "2cd8a865998909fbb4c7b01c53fc27f31797de2133e686c3ae12a4bb031858e6",
+      "repo_sha256": "d46058d6c772045c2f02812765a6cf4c9d9ffff91af801b2bcb9236e84f6c464",
+      "article_sha256": "d46058d6c772045c2f02812765a6cf4c9d9ffff91af801b2bcb9236e84f6c464",
+      "hero_path": "/assets/articles/hero/top-texas-counties-for-mineral-rights-value-permian-eagle-ford-and-haynesville.webp",
+      "hero_sha256": "3d01b41ca857ea83a5ecc5be1f450130845ece36e10402b35af1a33b61899473",
+      "hero_asset_sha256": "3d01b41ca857ea83a5ecc5be1f450130845ece36e10402b35af1a33b61899473",
       "admission_status": "admitted_quality_gated",
       "finalization_state": "draft_noindex_admitted",
       "searchatlas_content_score": null,
@@ -1734,7 +1925,10 @@
         "Publication remains conditional on current editorial, factual/citation, compliance, exact-title asset, build, rollback, deployment, and live-verification evidence."
       ],
       "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/top-texas-counties-for-mineral-rights-value-permian-eagle-ford-and-haynesville.json",
-      "evidence_packet_path_required": true
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/top-texas-counties-for-mineral-rights-value-permian-eagle-ford-and-haynesville/top-texas-counties-for-mineral-rights-value.webp",
+      "inline_asset_sha256": "16f736c14364bf15c16c96ae3fa0c26181ac94aeb58e1e0b86a7a72b25c37f40",
+      "inline_rendered_text": "top Texas counties for mineral rights value"
     },
     {
       "selection_rank": 58,
@@ -1749,11 +1943,11 @@
       "content_genius_article_uuid": null,
       "archive_evidence_sha256": "c46141f11825f18e85004c60d6c0b2a93a134d6e92c42946ac496f33688a40c4",
       "repo_path": "src/content/posts/the-difference-between-surface-rights-and-mineral-rights-in-texas.mdx",
-      "repo_sha256": "59ee8de2ba2cf715e869a88187be3e41dce1938137144169f0e1c62bafafb9a4",
-      "article_sha256": "59ee8de2ba2cf715e869a88187be3e41dce1938137144169f0e1c62bafafb9a4",
-      "hero_path": "/assets/articles/surface-vs-mineral-estates-wave7.webp",
-      "hero_sha256": "c404627928e3d6db8899d8d382b3d08d577ca554e489ac8231e7795c7aaae696",
-      "hero_asset_sha256": "c404627928e3d6db8899d8d382b3d08d577ca554e489ac8231e7795c7aaae696",
+      "repo_sha256": "053c4c22b0d55a65ac3cd119d9b2d0a3af6275e1f6f17137993c09c794470217",
+      "article_sha256": "053c4c22b0d55a65ac3cd119d9b2d0a3af6275e1f6f17137993c09c794470217",
+      "hero_path": "/assets/articles/hero/the-difference-between-surface-rights-and-mineral-rights-in-texas.webp",
+      "hero_sha256": "8e69e4f01cfb81361bdfafefb48350ab9d58e519e1c93ddb5c53335e11b5a4e2",
+      "hero_asset_sha256": "8e69e4f01cfb81361bdfafefb48350ab9d58e519e1c93ddb5c53335e11b5a4e2",
       "admission_status": "admitted_quality_gated",
       "finalization_state": "draft_noindex_admitted",
       "searchatlas_content_score": null,
@@ -1763,7 +1957,10 @@
         "Publication remains conditional on current editorial, factual/citation, compliance, exact-title asset, build, rollback, deployment, and live-verification evidence."
       ],
       "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/the-difference-between-surface-rights-and-mineral-rights-in-texas.json",
-      "evidence_packet_path_required": true
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/the-difference-between-surface-rights-and-mineral-rights-in-texas/surface-rights-vs-mineral-rights-texas.webp",
+      "inline_asset_sha256": "946c2c3e0463bd24cbe2e88da99a8455e2e0ae355d58596f66c35e7c48ce0fd9",
+      "inline_rendered_text": "surface rights vs mineral rights Texas"
     },
     {
       "selection_rank": 59,
@@ -1778,11 +1975,11 @@
       "content_genius_article_uuid": null,
       "archive_evidence_sha256": "366f5edfb60a797637666d150f443371ef00a49eccd3a60379f08ce5a6c265cf",
       "repo_path": "src/content/posts/are-there-any-fees-for-a-free-underwriter-review-of-your-mineral-rights.mdx",
-      "repo_sha256": "a9238dbc4e132a8cd3fba0a6f645208b7a5e96ba7855906a3cc44f9799c0a0bc",
-      "article_sha256": "a9238dbc4e132a8cd3fba0a6f645208b7a5e96ba7855906a3cc44f9799c0a0bc",
-      "hero_path": "/assets/articles/free-review-fees-wave7.webp",
-      "hero_sha256": "09d363f6dde691b44471a55dd0c7251f110ba9ca2daa4d617b0431cb46da4600",
-      "hero_asset_sha256": "09d363f6dde691b44471a55dd0c7251f110ba9ca2daa4d617b0431cb46da4600",
+      "repo_sha256": "dbf605dfb3bc43098befd3be7385039a86f0834804e90b0601f9c7f19c752dbd",
+      "article_sha256": "dbf605dfb3bc43098befd3be7385039a86f0834804e90b0601f9c7f19c752dbd",
+      "hero_path": "/assets/articles/hero/are-there-any-fees-for-a-free-underwriter-review-of-your-mineral-rights.webp",
+      "hero_sha256": "7653bdb55c8c88edf75205c71b322c50a278485ec4033aa7bbf421b985587d4b",
+      "hero_asset_sha256": "7653bdb55c8c88edf75205c71b322c50a278485ec4033aa7bbf421b985587d4b",
       "admission_status": "admitted_quality_gated",
       "finalization_state": "draft_noindex_admitted",
       "searchatlas_content_score": null,
@@ -1792,7 +1989,10 @@
         "Publication remains conditional on current editorial, factual/citation, compliance, exact-title asset, build, rollback, deployment, and live-verification evidence."
       ],
       "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/are-there-any-fees-for-a-free-underwriter-review-of-your-mineral-rights.json",
-      "evidence_packet_path_required": true
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/are-there-any-fees-for-a-free-underwriter-review-of-your-mineral-rights/mineral-rights-underwriter-review-fees.webp",
+      "inline_asset_sha256": "f9e70b60bef3208af4b08975bbc784a9419a40f4f7cbc461f2a08e58d20ec2ed",
+      "inline_rendered_text": "mineral rights underwriter review fees"
     },
     {
       "selection_rank": 60,
@@ -1807,11 +2007,11 @@
       "content_genius_article_uuid": null,
       "archive_evidence_sha256": "55a072d45394c241efed81eb0921645beecb68ca46f1633aaedb358527cdbbab",
       "repo_path": "src/content/posts/what-to-expect-during-the-underwriter-review-process-for-your-mineral-rights.mdx",
-      "repo_sha256": "156e5000d03950b715466ba99d40fe1206b375b332296827fa7173a902b8b968",
-      "article_sha256": "156e5000d03950b715466ba99d40fe1206b375b332296827fa7173a902b8b968",
-      "hero_path": "/assets/articles/underwriter-review-process-wave7.webp",
-      "hero_sha256": "5573880518023bb1f6ca6b54f8626aaf99c3c0024754a45562d748b38d40d211",
-      "hero_asset_sha256": "5573880518023bb1f6ca6b54f8626aaf99c3c0024754a45562d748b38d40d211",
+      "repo_sha256": "606ae9335a3e190344411813ade213bfcd79d495632f99f425645481c031fbd6",
+      "article_sha256": "606ae9335a3e190344411813ade213bfcd79d495632f99f425645481c031fbd6",
+      "hero_path": "/assets/articles/hero/what-to-expect-during-the-underwriter-review-process-for-your-mineral-rights.webp",
+      "hero_sha256": "f893e10a3b236679b85d516c337c9b1d28949b61276e3d5655c2912d4f130e88",
+      "hero_asset_sha256": "f893e10a3b236679b85d516c337c9b1d28949b61276e3d5655c2912d4f130e88",
       "admission_status": "admitted_quality_gated",
       "finalization_state": "draft_noindex_admitted",
       "searchatlas_content_score": null,
@@ -1821,7 +2021,10 @@
         "Publication remains conditional on current editorial, factual/citation, compliance, exact-title asset, build, rollback, deployment, and live-verification evidence."
       ],
       "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/what-to-expect-during-the-underwriter-review-process-for-your-mineral-rights.json",
-      "evidence_packet_path_required": true
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/what-to-expect-during-the-underwriter-review-process-for-your-mineral-rights/mineral-rights-underwriter-review-process.webp",
+      "inline_asset_sha256": "741c6b5d88fd50b8fecc070d7e525d0f44bbbc3f91ec74fed8d47b2935367f54",
+      "inline_rendered_text": "mineral rights underwriter review process"
     },
     {
       "selection_rank": 61,
@@ -1836,11 +2039,11 @@
       "content_genius_article_uuid": null,
       "archive_evidence_sha256": "aaa4254bf91516258057d8fdaa681526251f2b14aff235e2fefeaa3068b895e4",
       "repo_path": "src/content/posts/can-you-put-mineral-rights-in-a-trust-texas-estate-planning-explained.mdx",
-      "repo_sha256": "dec5ccd276283d96e1f529efa5e0f959f1ee9796cf4a429d220318ddcf00b8ed",
-      "article_sha256": "dec5ccd276283d96e1f529efa5e0f959f1ee9796cf4a429d220318ddcf00b8ed",
-      "hero_path": "/assets/articles/mineral-rights-trust-estate-plan-wave8.webp",
-      "hero_sha256": "97672891f064abe57ccb0e05ddbb98fd99801e6d0dad816b772dce9b23847ec6",
-      "hero_asset_sha256": "97672891f064abe57ccb0e05ddbb98fd99801e6d0dad816b772dce9b23847ec6",
+      "repo_sha256": "eb332567ea233cae9c942364b857da2f36e9d2f3608f2c252ec05cb6a867979d",
+      "article_sha256": "eb332567ea233cae9c942364b857da2f36e9d2f3608f2c252ec05cb6a867979d",
+      "hero_path": "/assets/articles/hero/can-you-put-mineral-rights-in-a-trust-texas-estate-planning-explained.webp",
+      "hero_sha256": "431675dd068a15d1ec027f1862409d2b2f7c3980810979d493e66b5dfd9114f1",
+      "hero_asset_sha256": "431675dd068a15d1ec027f1862409d2b2f7c3980810979d493e66b5dfd9114f1",
       "admission_status": "admitted_quality_gated",
       "finalization_state": "draft_noindex_admitted",
       "searchatlas_content_score": null,
@@ -1850,7 +2053,10 @@
         "Publication remains conditional on current editorial, factual/citation, compliance, exact-title asset, build, rollback, deployment, and live-verification evidence."
       ],
       "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/can-you-put-mineral-rights-in-a-trust-texas-estate-planning-explained.json",
-      "evidence_packet_path_required": true
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/can-you-put-mineral-rights-in-a-trust-texas-estate-planning-explained/put-mineral-rights-in-a-trust-texas.webp",
+      "inline_asset_sha256": "cd23b9e840a71e208eedea867da52736cbcf235f33d0c998450e75893360aeca",
+      "inline_rendered_text": "put mineral rights in a trust Texas"
     },
     {
       "selection_rank": 62,
@@ -1865,11 +2071,11 @@
       "content_genius_article_uuid": null,
       "archive_evidence_sha256": "e6d5bf568745bc9630bc03076f03845aadf76a1bce82530be7223664e40bca3e",
       "repo_path": "src/content/posts/how-selling-mineral-rights-affects-your-estate-plan-in-texas.mdx",
-      "repo_sha256": "d0c57e85c2431bb0cfda4266fbe6371db57b534a77da7e6dd13cb98034445d53",
-      "article_sha256": "d0c57e85c2431bb0cfda4266fbe6371db57b534a77da7e6dd13cb98034445d53",
-      "hero_path": "/assets/articles/selling-minerals-estate-plan-wave8.webp",
-      "hero_sha256": "df7f53ec63fbd59bb15539a85b905c301e7186142a6d9d37620dee37deaa32f8",
-      "hero_asset_sha256": "df7f53ec63fbd59bb15539a85b905c301e7186142a6d9d37620dee37deaa32f8",
+      "repo_sha256": "37060949cfa16d03b9abe6925ab6bafbe22997ca1a8e5173f50c9a4f276abbcd",
+      "article_sha256": "37060949cfa16d03b9abe6925ab6bafbe22997ca1a8e5173f50c9a4f276abbcd",
+      "hero_path": "/assets/articles/hero/how-selling-mineral-rights-affects-your-estate-plan-in-texas.webp",
+      "hero_sha256": "af3a4668263e816909f6ee02ffd70287997c034dcf5051d3d337646d3ce2423e",
+      "hero_asset_sha256": "af3a4668263e816909f6ee02ffd70287997c034dcf5051d3d337646d3ce2423e",
       "admission_status": "admitted_quality_gated",
       "finalization_state": "draft_noindex_admitted",
       "searchatlas_content_score": null,
@@ -1879,7 +2085,10 @@
         "Publication remains conditional on current editorial, factual/citation, compliance, exact-title asset, build, rollback, deployment, and live-verification evidence."
       ],
       "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/how-selling-mineral-rights-affects-your-estate-plan-in-texas.json",
-      "evidence_packet_path_required": true
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/how-selling-mineral-rights-affects-your-estate-plan-in-texas/selling-mineral-rights-estate-plan-texas.webp",
+      "inline_asset_sha256": "5eaa5a877c972c5f0bd141e001efda69217dfeb5d1acfd80ace5a5545eb5a0ec",
+      "inline_rendered_text": "selling mineral rights estate plan Texas"
     },
     {
       "selection_rank": 63,
@@ -1894,11 +2103,11 @@
       "content_genius_article_uuid": null,
       "archive_evidence_sha256": "0be0ac6b3fd8262359730213d0d0e599c4234896abee1b079c2ba0202cbf640b",
       "repo_path": "src/content/posts/understanding-the-probate-process-for-mineral-interests.mdx",
-      "repo_sha256": "9b8b07d1535f234296e28d30d7d0bf922e61bfc2d4a999fd02559e4aa741d600",
-      "article_sha256": "9b8b07d1535f234296e28d30d7d0bf922e61bfc2d4a999fd02559e4aa741d600",
-      "hero_path": "/assets/articles/probate-mineral-interest-process-wave8.webp",
-      "hero_sha256": "ac89845b32c6e24d61a6932df377e53bb3c362d8b41d5cfd3c484beccd73d465",
-      "hero_asset_sha256": "ac89845b32c6e24d61a6932df377e53bb3c362d8b41d5cfd3c484beccd73d465",
+      "repo_sha256": "89c68ed3a2330c09b14775aa9cdb4ec8d563d467ae94dd494abbd667c950d428",
+      "article_sha256": "89c68ed3a2330c09b14775aa9cdb4ec8d563d467ae94dd494abbd667c950d428",
+      "hero_path": "/assets/articles/hero/understanding-the-probate-process-for-mineral-interests.webp",
+      "hero_sha256": "56749558510c5f183ca9b2b3157439b838346ad9726fdfb1f42d3433e6f152b5",
+      "hero_asset_sha256": "56749558510c5f183ca9b2b3157439b838346ad9726fdfb1f42d3433e6f152b5",
       "admission_status": "admitted_quality_gated",
       "finalization_state": "draft_noindex_admitted",
       "searchatlas_content_score": null,
@@ -1908,7 +2117,10 @@
         "Publication remains conditional on current editorial, factual/citation, compliance, exact-title asset, build, rollback, deployment, and live-verification evidence."
       ],
       "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/understanding-the-probate-process-for-mineral-interests.json",
-      "evidence_packet_path_required": true
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/understanding-the-probate-process-for-mineral-interests/probate-process-for-mineral-interests.webp",
+      "inline_asset_sha256": "7fe8b26dcb20aa454e73ef1ca41332a009caf699cffcdbbf57f22841ef52502c",
+      "inline_rendered_text": "probate process for mineral interests"
     },
     {
       "selection_rank": 64,
@@ -1923,11 +2135,11 @@
       "content_genius_article_uuid": null,
       "archive_evidence_sha256": "eb786ca505bb9b52a907d9b534a19ffb4e3c706ffc0a3b623ba462786ae7030f",
       "repo_path": "src/content/posts/how-to-interpret-your-mineral-rights-royalty-checks.mdx",
-      "repo_sha256": "71ef639cf05ed40054635244c1137445fe9cdce921bd847e26dfed4981e430d7",
-      "article_sha256": "71ef639cf05ed40054635244c1137445fe9cdce921bd847e26dfed4981e430d7",
-      "hero_path": "/assets/articles/royalty-check-interpretation-wave8.webp",
-      "hero_sha256": "091d127855a19bed4f32f910ec700b5f68586308cf14c81ff391082c589df84c",
-      "hero_asset_sha256": "091d127855a19bed4f32f910ec700b5f68586308cf14c81ff391082c589df84c",
+      "repo_sha256": "8a461b95989fa8d17c9906cff55f9281f6ab00fd6c531509726fa4680df25b60",
+      "article_sha256": "8a461b95989fa8d17c9906cff55f9281f6ab00fd6c531509726fa4680df25b60",
+      "hero_path": "/assets/articles/hero/how-to-interpret-your-mineral-rights-royalty-checks.webp",
+      "hero_sha256": "59422841ee2605dc86a65717d2c44824f743f538e1cf7e75efe911ca26abc79d",
+      "hero_asset_sha256": "59422841ee2605dc86a65717d2c44824f743f538e1cf7e75efe911ca26abc79d",
       "admission_status": "admitted_quality_gated",
       "finalization_state": "draft_noindex_admitted",
       "searchatlas_content_score": null,
@@ -1937,7 +2149,10 @@
         "Publication remains conditional on current editorial, factual/citation, compliance, exact-title asset, build, rollback, deployment, and live-verification evidence."
       ],
       "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/how-to-interpret-your-mineral-rights-royalty-checks.json",
-      "evidence_packet_path_required": true
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/how-to-interpret-your-mineral-rights-royalty-checks/how-to-interpret-mineral-rights-royalty-checks.webp",
+      "inline_asset_sha256": "179fd914d53b3f3d76b0791744c58bd8a8c016df81535be580ff555774756d09",
+      "inline_rendered_text": "how to interpret mineral rights royalty checks"
     },
     {
       "selection_rank": 65,
@@ -1952,11 +2167,11 @@
       "content_genius_article_uuid": null,
       "archive_evidence_sha256": "98758b1873858b079346684f70a3bae6ac99f067e6ab256a4b7c74d799208d55",
       "repo_path": "src/content/posts/1031-exchange-for-mineral-rights-does-it-qualify-and-how-does-it-work.mdx",
-      "repo_sha256": "3f7436ce1377cb75458c02ffa1997d6986e59298ca531c67a6debe735dad3356",
-      "article_sha256": "3f7436ce1377cb75458c02ffa1997d6986e59298ca531c67a6debe735dad3356",
-      "hero_path": "/assets/articles/mineral-rights-1031-qualification-wave8.webp",
-      "hero_sha256": "71c0b4e6607e47d7242408f90f450d2b622483f457900126446f0a34dd35e282",
-      "hero_asset_sha256": "71c0b4e6607e47d7242408f90f450d2b622483f457900126446f0a34dd35e282",
+      "repo_sha256": "681a3a92996527bfcb0f7bd63c15a90692df89f9d2442885f410d35e11606e11",
+      "article_sha256": "681a3a92996527bfcb0f7bd63c15a90692df89f9d2442885f410d35e11606e11",
+      "hero_path": "/assets/articles/hero/1031-exchange-for-mineral-rights-does-it-qualify-and-how-does-it-work.webp",
+      "hero_sha256": "51a5209a6351045ad0f451a2afca1564db52e4a7c939569f83d237d958f98a1c",
+      "hero_asset_sha256": "51a5209a6351045ad0f451a2afca1564db52e4a7c939569f83d237d958f98a1c",
       "admission_status": "admitted_quality_gated",
       "finalization_state": "draft_noindex_admitted",
       "searchatlas_content_score": null,
@@ -1966,7 +2181,10 @@
         "Publication remains conditional on current editorial, factual/citation, compliance, exact-title asset, build, rollback, deployment, and live-verification evidence."
       ],
       "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/1031-exchange-for-mineral-rights-does-it-qualify-and-how-does-it-work.json",
-      "evidence_packet_path_required": true
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/1031-exchange-for-mineral-rights-does-it-qualify-and-how-does-it-work/1031-exchange-mineral-rights.webp",
+      "inline_asset_sha256": "b8e33badaff5689100f10d1090f67d9dd166239d40c54fd04f0b373ed7bafd64",
+      "inline_rendered_text": "1031 exchange mineral rights"
     },
     {
       "selection_rank": 66,
@@ -1981,11 +2199,11 @@
       "content_genius_article_uuid": null,
       "archive_evidence_sha256": "75728221ccf91bd86f5dec9ee23cdcf9c8140ea8f6f22e02171283f1c498a7d9",
       "repo_path": "src/content/posts/1031-exchange-vs-traditional-sales-for-mineral-rights.mdx",
-      "repo_sha256": "1e08074b9018b6003996b532a4dc2a53e611e6e0359e0b70473fcadeab7fd4cf",
-      "article_sha256": "1e08074b9018b6003996b532a4dc2a53e611e6e0359e0b70473fcadeab7fd4cf",
-      "hero_path": "/assets/articles/1031-vs-taxable-sale-wave8.webp",
-      "hero_sha256": "7f21b8e9215e79cc96afd46aaa54efc49988d25fdb1b5f15383dbd49e9f063ce",
-      "hero_asset_sha256": "7f21b8e9215e79cc96afd46aaa54efc49988d25fdb1b5f15383dbd49e9f063ce",
+      "repo_sha256": "9e333051dace33c31c65585c92a26e05cdbf3cc094e3413cd03c57bea945277d",
+      "article_sha256": "9e333051dace33c31c65585c92a26e05cdbf3cc094e3413cd03c57bea945277d",
+      "hero_path": "/assets/articles/hero/1031-exchange-vs-traditional-sales-for-mineral-rights.webp",
+      "hero_sha256": "04c05f4c6419d5cc190a4c51566ef8f511ff9771594110497c20c1e17bae9d4d",
+      "hero_asset_sha256": "04c05f4c6419d5cc190a4c51566ef8f511ff9771594110497c20c1e17bae9d4d",
       "admission_status": "admitted_quality_gated",
       "finalization_state": "draft_noindex_admitted",
       "searchatlas_content_score": null,
@@ -1995,7 +2213,10 @@
         "Publication remains conditional on current editorial, factual/citation, compliance, exact-title asset, build, rollback, deployment, and live-verification evidence."
       ],
       "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/1031-exchange-vs-traditional-sales-for-mineral-rights.json",
-      "evidence_packet_path_required": true
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/1031-exchange-vs-traditional-sales-for-mineral-rights/1031-exchange-vs-traditional-sale-mineral-rights.webp",
+      "inline_asset_sha256": "d89a0878acd22b1abf92408901ed1a580c33514381e64201f94a6de54f9d8798",
+      "inline_rendered_text": "1031 exchange vs traditional sale mineral rights"
     },
     {
       "selection_rank": 67,
@@ -2010,11 +2231,11 @@
       "content_genius_article_uuid": null,
       "archive_evidence_sha256": "914399756bc12c432dc62018fad716b47ba160b72489c2e6da15efef4d854ff1",
       "repo_path": "src/content/posts/how-to-report-a-mineral-rights-sale-on-your-federal-tax-return.mdx",
-      "repo_sha256": "f90dee3cd72b819988fcc46c9c8cde483c76f9d954351d5054dcc915f9caa221",
-      "article_sha256": "f90dee3cd72b819988fcc46c9c8cde483c76f9d954351d5054dcc915f9caa221",
-      "hero_path": "/assets/articles/federal-tax-reporting-mineral-sale-wave8.webp",
-      "hero_sha256": "449c67abab71ddd7821c699f8f07e3005f905c5a625eba4641779d9fa03ea4c9",
-      "hero_asset_sha256": "449c67abab71ddd7821c699f8f07e3005f905c5a625eba4641779d9fa03ea4c9",
+      "repo_sha256": "8d0e5e9abf44e990d73f0c0b9b649066bc32f5ac64b25a7cb63c6781640a5dd0",
+      "article_sha256": "8d0e5e9abf44e990d73f0c0b9b649066bc32f5ac64b25a7cb63c6781640a5dd0",
+      "hero_path": "/assets/articles/hero/how-to-report-a-mineral-rights-sale-on-your-federal-tax-return.webp",
+      "hero_sha256": "cf9769bd9c464e47b2aaf296280ede01b7f7dc617d5c42d02d36623995c5299e",
+      "hero_asset_sha256": "cf9769bd9c464e47b2aaf296280ede01b7f7dc617d5c42d02d36623995c5299e",
       "admission_status": "admitted_quality_gated",
       "finalization_state": "draft_noindex_admitted",
       "searchatlas_content_score": null,
@@ -2024,7 +2245,10 @@
         "Publication remains conditional on current editorial, factual/citation, compliance, exact-title asset, build, rollback, deployment, and live-verification evidence."
       ],
       "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/how-to-report-a-mineral-rights-sale-on-your-federal-tax-return.json",
-      "evidence_packet_path_required": true
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/how-to-report-a-mineral-rights-sale-on-your-federal-tax-return/report-mineral-rights-sale-federal-tax-return.webp",
+      "inline_asset_sha256": "70721990bdd7acd3cad4e347b509ee72850571824107ede86c83f1fe42733485",
+      "inline_rendered_text": "report mineral rights sale federal tax return"
     },
     {
       "selection_rank": 68,
@@ -2039,11 +2263,11 @@
       "content_genius_article_uuid": null,
       "archive_evidence_sha256": "3546d280c5363681f1588ebb9e43761e1d970a54cf6f7bf54e83bb5214094f4a",
       "repo_path": "src/content/posts/can-you-discuss-assessment-outcomes-with-your-underwriter-after-their-review.mdx",
-      "repo_sha256": "4e4100b03556aa4f67b7a5de1f668a6442db9d879c487c7fe44bc0d409c7d7fc",
-      "article_sha256": "4e4100b03556aa4f67b7a5de1f668a6442db9d879c487c7fe44bc0d409c7d7fc",
-      "hero_path": "/assets/articles/post-review-outcomes-wave8.webp",
-      "hero_sha256": "e10427ac38bf94e303016d54e262a535be251c8a16ba8dc3ee802a1f58566152",
-      "hero_asset_sha256": "e10427ac38bf94e303016d54e262a535be251c8a16ba8dc3ee802a1f58566152",
+      "repo_sha256": "ad4c2e7b9f31993bd16bd6c07eda49aab3c2df25e80aac3e8d40b9470cd3ae62",
+      "article_sha256": "ad4c2e7b9f31993bd16bd6c07eda49aab3c2df25e80aac3e8d40b9470cd3ae62",
+      "hero_path": "/assets/articles/hero/can-you-discuss-assessment-outcomes-with-your-underwriter-after-their-review.webp",
+      "hero_sha256": "4ea64eb6222def30811f229b199fa71196415f94b4d2bb3f9583cc14ff9bdb88",
+      "hero_asset_sha256": "4ea64eb6222def30811f229b199fa71196415f94b4d2bb3f9583cc14ff9bdb88",
       "admission_status": "admitted_quality_gated",
       "finalization_state": "draft_noindex_admitted",
       "searchatlas_content_score": null,
@@ -2053,7 +2277,10 @@
         "Publication remains conditional on current editorial, factual/citation, compliance, exact-title asset, build, rollback, deployment, and live-verification evidence."
       ],
       "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/can-you-discuss-assessment-outcomes-with-your-underwriter-after-their-review.json",
-      "evidence_packet_path_required": true
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/can-you-discuss-assessment-outcomes-with-your-underwriter-after-their-review/discuss-mineral-rights-underwriter-review-outcomes.webp",
+      "inline_asset_sha256": "82ec4787627102d3e7da0443331f2655cba58b70543cae507e9ebcf0a1472eac",
+      "inline_rendered_text": "discuss mineral rights underwriter review outcomes"
     },
     {
       "selection_rank": 69,
@@ -2068,11 +2295,11 @@
       "content_genius_article_uuid": null,
       "archive_evidence_sha256": "3732ae74decb40ad23b8831d0cb1da6a569045ed9bbea324dd7466b496cb5c7f",
       "repo_path": "src/content/posts/discover-which-types-of-texas-mineral-rights-qualify-for-a-free-underwriter-assessment.mdx",
-      "repo_sha256": "748656f3da322a5f5e155c413dc0348c6a71d7d67f4696e913bbb8a9b23d72f9",
-      "article_sha256": "748656f3da322a5f5e155c413dc0348c6a71d7d67f4696e913bbb8a9b23d72f9",
-      "hero_path": "/assets/articles/eligible-texas-interest-types-wave8.webp",
-      "hero_sha256": "dadad9e1b790ebddc5bd11a5818e45f89c89e85820b130f14605a5db1a5b8955",
-      "hero_asset_sha256": "dadad9e1b790ebddc5bd11a5818e45f89c89e85820b130f14605a5db1a5b8955",
+      "repo_sha256": "5b0310ad41089d09f1c373cce01a9408abcb05845fc13f9a873ae8b7956060b3",
+      "article_sha256": "5b0310ad41089d09f1c373cce01a9408abcb05845fc13f9a873ae8b7956060b3",
+      "hero_path": "/assets/articles/hero/discover-which-types-of-texas-mineral-rights-qualify-for-a-free-underwriter-assessment.webp",
+      "hero_sha256": "7408690f340d62384c03a17b6012dad5a6a0bcdfad7cec3acda9da66c2eb3246",
+      "hero_asset_sha256": "7408690f340d62384c03a17b6012dad5a6a0bcdfad7cec3acda9da66c2eb3246",
       "admission_status": "admitted_quality_gated",
       "finalization_state": "draft_noindex_admitted",
       "searchatlas_content_score": null,
@@ -2082,7 +2309,10 @@
         "Publication remains conditional on current editorial, factual/citation, compliance, exact-title asset, build, rollback, deployment, and live-verification evidence."
       ],
       "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/discover-which-types-of-texas-mineral-rights-qualify-for-a-free-underwriter-assessment.json",
-      "evidence_packet_path_required": true
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/discover-which-types-of-texas-mineral-rights-qualify-for-a-free-underwriter-assessment/types-of-texas-mineral-rights-free-underwriter-assessment.webp",
+      "inline_asset_sha256": "9b70e680e976dd5d1355b25d4a2c1069394239859403e80324996f55cf2b09f5",
+      "inline_rendered_text": "types of Texas mineral rights free underwriter assessment"
     },
     {
       "selection_rank": 70,
@@ -2097,11 +2327,11 @@
       "content_genius_article_uuid": null,
       "archive_evidence_sha256": "6d054449bf097acce7d68d464400b7147cf1408868311e081fee89852c1ba769",
       "repo_path": "src/content/posts/how-to-get-a-free-underwriter-review-of-mineral-rights.mdx",
-      "repo_sha256": "096d24521d89dc0ec7a635b1cc766f7859b5efccf1e6a779643553445eb93183",
-      "article_sha256": "096d24521d89dc0ec7a635b1cc766f7859b5efccf1e6a779643553445eb93183",
-      "hero_path": "/assets/articles/start-free-underwriter-review-wave8.webp",
-      "hero_sha256": "7d00991dc462629473d32aa32343582d17f6a344cca9ffb837013d7a11795a82",
-      "hero_asset_sha256": "7d00991dc462629473d32aa32343582d17f6a344cca9ffb837013d7a11795a82",
+      "repo_sha256": "2ad8ca1586bbceb980ef3d2faa0a67ac1ea2021c33785d4e87c875536bd79cd7",
+      "article_sha256": "2ad8ca1586bbceb980ef3d2faa0a67ac1ea2021c33785d4e87c875536bd79cd7",
+      "hero_path": "/assets/articles/hero/how-to-get-a-free-underwriter-review-of-mineral-rights.webp",
+      "hero_sha256": "8b1dae28127161ea64b864911f543a1e67114e25263f8c85b0f7a1e426a81190",
+      "hero_asset_sha256": "8b1dae28127161ea64b864911f543a1e67114e25263f8c85b0f7a1e426a81190",
       "admission_status": "admitted_quality_gated",
       "finalization_state": "draft_noindex_admitted",
       "searchatlas_content_score": null,
@@ -2111,7 +2341,10 @@
         "Publication remains conditional on current editorial, factual/citation, compliance, exact-title asset, build, rollback, deployment, and live-verification evidence."
       ],
       "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/how-to-get-a-free-underwriter-review-of-mineral-rights.json",
-      "evidence_packet_path_required": true
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/how-to-get-a-free-underwriter-review-of-mineral-rights/free-mineral-rights-underwriter-review.webp",
+      "inline_asset_sha256": "14aab55605ba561c397e8783a62a4a5f33a2001e559875b773835f6bd4704843",
+      "inline_rendered_text": "free mineral rights underwriter review"
     },
     {
       "selection_rank": 71,
@@ -2126,11 +2359,11 @@
       "content_genius_article_uuid": null,
       "archive_evidence_sha256": "b80beaa7bc157e08be676754090422326887472bc5b49eb4640adf798df775b5",
       "repo_path": "src/content/posts/unlocking-value-a-comprehensive-guide-to-assessing-your-mineral-rights-worth.mdx",
-      "repo_sha256": "200a5abab70201a10cc1c475afca1a8c13a225c1eb7031254d2525d04646a42f",
-      "article_sha256": "200a5abab70201a10cc1c475afca1a8c13a225c1eb7031254d2525d04646a42f",
-      "hero_path": "/assets/articles/mineral-worth-assessment-workbook-wave9.webp",
-      "hero_sha256": "a16459cce514c6afb795381103ffe3ce813994c3ff59b0ccfa59cc6b8e7514c8",
-      "hero_asset_sha256": "a16459cce514c6afb795381103ffe3ce813994c3ff59b0ccfa59cc6b8e7514c8",
+      "repo_sha256": "c847819a90d9444a3d81f4508915083944842b97e27dd52c5cb3290de872044f",
+      "article_sha256": "c847819a90d9444a3d81f4508915083944842b97e27dd52c5cb3290de872044f",
+      "hero_path": "/assets/articles/hero/unlocking-value-a-comprehensive-guide-to-assessing-your-mineral-rights-worth.webp",
+      "hero_sha256": "073be702c2c08a02a06fe754ba3fd2f8971f3d043a03792e0b330e82614204a8",
+      "hero_asset_sha256": "073be702c2c08a02a06fe754ba3fd2f8971f3d043a03792e0b330e82614204a8",
       "admission_status": "admitted_quality_gated",
       "finalization_state": "draft_noindex_admitted",
       "searchatlas_content_score": null,
@@ -2140,7 +2373,10 @@
         "Publication remains conditional on current editorial, factual/citation, compliance, exact-title asset, build, rollback, deployment, and live-verification evidence."
       ],
       "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/unlocking-value-a-comprehensive-guide-to-assessing-your-mineral-rights-worth.json",
-      "evidence_packet_path_required": true
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/unlocking-value-a-comprehensive-guide-to-assessing-your-mineral-rights-worth/assessing-mineral-rights-worth.webp",
+      "inline_asset_sha256": "546cac8dadbbdd749d5acc66265dc7a39c3b9998380120e5a1d54ab3318b72dd",
+      "inline_rendered_text": "assessing mineral rights worth"
     },
     {
       "selection_rank": 72,
@@ -2155,11 +2391,11 @@
       "content_genius_article_uuid": null,
       "archive_evidence_sha256": "7278a46040d363517aa8f9ad2a16c20c1e30978c805927ae5156de268c331736",
       "repo_path": "src/content/posts/how-to-identify-predatory-mineral-buyers.mdx",
-      "repo_sha256": "0f1c4dade9d00963380120af2eb1c1dcf2e422ba7be178ae752a85c7b7923daa",
-      "article_sha256": "0f1c4dade9d00963380120af2eb1c1dcf2e422ba7be178ae752a85c7b7923daa",
-      "hero_path": "/assets/articles/verify-mineral-buyer-wave9.webp",
-      "hero_sha256": "bb7de2b1e85fb3dd30a7d2ab88f2c0ea56bb6b6aeb1a1776c5459d474e8f9b40",
-      "hero_asset_sha256": "bb7de2b1e85fb3dd30a7d2ab88f2c0ea56bb6b6aeb1a1776c5459d474e8f9b40",
+      "repo_sha256": "91e15f149d19f5f1bd7fdaff03c97cff765ea274f991f4a66b3e2895cf63a67d",
+      "article_sha256": "91e15f149d19f5f1bd7fdaff03c97cff765ea274f991f4a66b3e2895cf63a67d",
+      "hero_path": "/assets/articles/hero/how-to-identify-predatory-mineral-buyers.webp",
+      "hero_sha256": "06bd1e62c5acb349b9d7919b8e9dfae047a1cacdf4eb1e8e0633fdfe981d1ac8",
+      "hero_asset_sha256": "06bd1e62c5acb349b9d7919b8e9dfae047a1cacdf4eb1e8e0633fdfe981d1ac8",
       "admission_status": "admitted_quality_gated",
       "finalization_state": "draft_noindex_admitted",
       "searchatlas_content_score": null,
@@ -2169,7 +2405,10 @@
         "Publication remains conditional on current editorial, factual/citation, compliance, exact-title asset, build, rollback, deployment, and live-verification evidence."
       ],
       "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/how-to-identify-predatory-mineral-buyers.json",
-      "evidence_packet_path_required": true
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/how-to-identify-predatory-mineral-buyers/identify-predatory-mineral-buyers.webp",
+      "inline_asset_sha256": "99eea02d49e34d0c91491ce5b539a0c9a87870d1cfffc2bcaa5af4becc4ae6da",
+      "inline_rendered_text": "identify predatory mineral buyers"
     },
     {
       "selection_rank": 73,
@@ -2184,11 +2423,11 @@
       "content_genius_article_uuid": null,
       "archive_evidence_sha256": "467885c32ec37a4d398eff2338c055654e23872059d6fa1615ef0e056a0722a3",
       "repo_path": "src/content/posts/navigating-competing-offers-what-to-do-before-your-mineral-rights-assessment-call.mdx",
-      "repo_sha256": "7db34e09ad87fab0d86cebc4bb3ed092013f01730a5ba13a506657cc21156631",
-      "article_sha256": "7db34e09ad87fab0d86cebc4bb3ed092013f01730a5ba13a506657cc21156631",
-      "hero_path": "/assets/articles/competing-offer-call-prep-wave9.webp",
-      "hero_sha256": "ab25450314e764becc2ded7093182924771712185223397dfe5c71cf54f8f053",
-      "hero_asset_sha256": "ab25450314e764becc2ded7093182924771712185223397dfe5c71cf54f8f053",
+      "repo_sha256": "1a80d01805cac9df95f2a7f60a5b57113d17d70eb4cd78d05abb73a4e84293d2",
+      "article_sha256": "1a80d01805cac9df95f2a7f60a5b57113d17d70eb4cd78d05abb73a4e84293d2",
+      "hero_path": "/assets/articles/hero/navigating-competing-offers-what-to-do-before-your-mineral-rights-assessment-call.webp",
+      "hero_sha256": "14330478768ec71e5acba7fbe40bfbe888399f8ace7f39eefa8f77e41642e08f",
+      "hero_asset_sha256": "14330478768ec71e5acba7fbe40bfbe888399f8ace7f39eefa8f77e41642e08f",
       "admission_status": "admitted_quality_gated",
       "finalization_state": "draft_noindex_admitted",
       "searchatlas_content_score": null,
@@ -2198,7 +2437,10 @@
         "Publication remains conditional on current editorial, factual/citation, compliance, exact-title asset, build, rollback, deployment, and live-verification evidence."
       ],
       "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/navigating-competing-offers-what-to-do-before-your-mineral-rights-assessment-call.json",
-      "evidence_packet_path_required": true
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/navigating-competing-offers-what-to-do-before-your-mineral-rights-assessment-call/competing-mineral-rights-offers-assessment-call.webp",
+      "inline_asset_sha256": "1cbf871dc9a2d3a79408aa85c8c893cc2c9f7ee7360c05ed2dca1e4a3291970c",
+      "inline_rendered_text": "competing mineral rights offers assessment call"
     },
     {
       "selection_rank": 74,
@@ -2213,11 +2455,11 @@
       "content_genius_article_uuid": null,
       "archive_evidence_sha256": "d5d0fc8c8265adb14f5e8f43e55d51bb86e5a09384538c90c6bd8b3bff10645c",
       "repo_path": "src/content/posts/understanding-mineral-rights-offer-scams-what-you-need-to-know.mdx",
-      "repo_sha256": "1d77f73172931af549ad8b237406db1bb97aa48009d972c022fc81dc40566462",
-      "article_sha256": "1d77f73172931af549ad8b237406db1bb97aa48009d972c022fc81dc40566462",
-      "hero_path": "/assets/articles/mineral-offer-scam-defense-wave9.webp",
-      "hero_sha256": "563d3d80227a9ff664d9a43d86bd7e6aa79695fa427a8f649a658ace70b388f0",
-      "hero_asset_sha256": "563d3d80227a9ff664d9a43d86bd7e6aa79695fa427a8f649a658ace70b388f0",
+      "repo_sha256": "a62ee39114f03e1de8dfa6b902cbe98ba46953c3d5a25e3914941a466f845e6c",
+      "article_sha256": "a62ee39114f03e1de8dfa6b902cbe98ba46953c3d5a25e3914941a466f845e6c",
+      "hero_path": "/assets/articles/hero/understanding-mineral-rights-offer-scams-what-you-need-to-know.webp",
+      "hero_sha256": "efd92cfb02fe08f449a358d6f75f096951a423e130a8d67605b9cd5208d627b0",
+      "hero_asset_sha256": "efd92cfb02fe08f449a358d6f75f096951a423e130a8d67605b9cd5208d627b0",
       "admission_status": "admitted_quality_gated",
       "finalization_state": "draft_noindex_admitted",
       "searchatlas_content_score": null,
@@ -2227,7 +2469,10 @@
         "Publication remains conditional on current editorial, factual/citation, compliance, exact-title asset, build, rollback, deployment, and live-verification evidence."
       ],
       "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/understanding-mineral-rights-offer-scams-what-you-need-to-know.json",
-      "evidence_packet_path_required": true
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/understanding-mineral-rights-offer-scams-what-you-need-to-know/mineral-rights-offer-scams.webp",
+      "inline_asset_sha256": "d0331a59053881c72f2613ae0dd80c9be510b97b0aa9f0f600e73fecab38b058",
+      "inline_rendered_text": "mineral rights offer scams"
     },
     {
       "selection_rank": 75,
@@ -2242,11 +2487,11 @@
       "content_genius_article_uuid": null,
       "archive_evidence_sha256": "a427cf95afe192cc421501979903b1e1c99920d0d265e8ecb01d05a4cfd096b2",
       "repo_path": "src/content/posts/managing-mineral-interests-in-estate-planning-explained.mdx",
-      "repo_sha256": "2fad68a5521e29157ed999173ea89348b3ab9754fa13bd647551c3e3c3e87e70",
-      "article_sha256": "2fad68a5521e29157ed999173ea89348b3ab9754fa13bd647551c3e3c3e87e70",
-      "hero_path": "/assets/articles/estate-mineral-management-wave9.webp",
-      "hero_sha256": "17020f3646e57e5d7209c0ec36efe79115d541e346edc8389a6b38a4c9a81d6a",
-      "hero_asset_sha256": "17020f3646e57e5d7209c0ec36efe79115d541e346edc8389a6b38a4c9a81d6a",
+      "repo_sha256": "037de85acd7a1bddd08bdfb11a94caeecb6a9d206077907a46932442f6bd631f",
+      "article_sha256": "037de85acd7a1bddd08bdfb11a94caeecb6a9d206077907a46932442f6bd631f",
+      "hero_path": "/assets/articles/hero/managing-mineral-interests-in-estate-planning-explained.webp",
+      "hero_sha256": "8715dd543d6cf7232deeec73bdc954827d86d31fee3c708ebaf84a992686f6cb",
+      "hero_asset_sha256": "8715dd543d6cf7232deeec73bdc954827d86d31fee3c708ebaf84a992686f6cb",
       "admission_status": "admitted_quality_gated",
       "finalization_state": "draft_noindex_admitted",
       "searchatlas_content_score": null,
@@ -2256,7 +2501,10 @@
         "Publication remains conditional on current editorial, factual/citation, compliance, exact-title asset, build, rollback, deployment, and live-verification evidence."
       ],
       "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/managing-mineral-interests-in-estate-planning-explained.json",
-      "evidence_packet_path_required": true
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/managing-mineral-interests-in-estate-planning-explained/managing-mineral-interests-estate-planning.webp",
+      "inline_asset_sha256": "df49f06e4a8ba4117c62c5e09fbe899b7975003fd57a4a5f882a2e21b583b955",
+      "inline_rendered_text": "managing mineral interests estate planning"
     },
     {
       "selection_rank": 76,
@@ -2271,11 +2519,11 @@
       "content_genius_article_uuid": null,
       "archive_evidence_sha256": "a569d3d2c14475f8c0f95036e188e7f27baaf0649fd71185fbf2b0db7c627298",
       "repo_path": "src/content/posts/understanding-inherited-mineral-rights-in-texas.mdx",
-      "repo_sha256": "ac6e16976f2aa3346d46c53ad4ae3fe9e3f70aea1ab9239a27eb33954c3d8134",
-      "article_sha256": "ac6e16976f2aa3346d46c53ad4ae3fe9e3f70aea1ab9239a27eb33954c3d8134",
-      "hero_path": "/assets/articles/inherited-texas-minerals-wave9.webp",
-      "hero_sha256": "e62068bf995743a70faf2eb3bbb327ab3015b82413431227ad45a062996495d1",
-      "hero_asset_sha256": "e62068bf995743a70faf2eb3bbb327ab3015b82413431227ad45a062996495d1",
+      "repo_sha256": "e916a8061ccb0804eb8fb8a2a3c22f94e733934b3054236eae54de5408e4e90b",
+      "article_sha256": "e916a8061ccb0804eb8fb8a2a3c22f94e733934b3054236eae54de5408e4e90b",
+      "hero_path": "/assets/articles/hero/understanding-inherited-mineral-rights-in-texas.webp",
+      "hero_sha256": "68f26bdb9eb6df6e287656e5d21a392d42ee75375b3e0bc95bfc0e091e897501",
+      "hero_asset_sha256": "68f26bdb9eb6df6e287656e5d21a392d42ee75375b3e0bc95bfc0e091e897501",
       "admission_status": "admitted_quality_gated",
       "finalization_state": "draft_noindex_admitted",
       "searchatlas_content_score": null,
@@ -2285,7 +2533,10 @@
         "Publication remains conditional on current editorial, factual/citation, compliance, exact-title asset, build, rollback, deployment, and live-verification evidence."
       ],
       "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/understanding-inherited-mineral-rights-in-texas.json",
-      "evidence_packet_path_required": true
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/understanding-inherited-mineral-rights-in-texas/inherited-mineral-rights-in-texas.webp",
+      "inline_asset_sha256": "9b41afece6a5129a504da2a1d8bae4d0292d4efb769890166fb6675fb1707d15",
+      "inline_rendered_text": "inherited mineral rights in Texas"
     },
     {
       "selection_rank": 77,
@@ -2300,11 +2551,11 @@
       "content_genius_article_uuid": null,
       "archive_evidence_sha256": "501a5e226fead3e27119509e49bb5381d29c1248b8137d7d729621048c71f140",
       "repo_path": "src/content/posts/understanding-1031-tax-implications-for-mineral-rights-owners.mdx",
-      "repo_sha256": "02c51c920a133c95342549ed7ad65ff4919b196f852ab1db16383d282125be0a",
-      "article_sha256": "02c51c920a133c95342549ed7ad65ff4919b196f852ab1db16383d282125be0a",
-      "hero_path": "/assets/articles/mineral-1031-tax-implications-wave9.webp",
-      "hero_sha256": "98ea056d8039ec636abc8ebb83514e9f04121e0d327d007d83584c16494f6148",
-      "hero_asset_sha256": "98ea056d8039ec636abc8ebb83514e9f04121e0d327d007d83584c16494f6148",
+      "repo_sha256": "fa8e3d003b3fdb6142cced19117686e64c31031d70ac2a2d8b36ce548a5ec0ae",
+      "article_sha256": "fa8e3d003b3fdb6142cced19117686e64c31031d70ac2a2d8b36ce548a5ec0ae",
+      "hero_path": "/assets/articles/hero/understanding-1031-tax-implications-for-mineral-rights-owners.webp",
+      "hero_sha256": "eca622d5c7e5ad74c28b8853f94cf1e3f59bf1e31614d3ae4ec6802c4d447af1",
+      "hero_asset_sha256": "eca622d5c7e5ad74c28b8853f94cf1e3f59bf1e31614d3ae4ec6802c4d447af1",
       "admission_status": "admitted_quality_gated",
       "finalization_state": "draft_noindex_admitted",
       "searchatlas_content_score": null,
@@ -2314,7 +2565,10 @@
         "Publication remains conditional on current editorial, factual/citation, compliance, exact-title asset, build, rollback, deployment, and live-verification evidence."
       ],
       "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/understanding-1031-tax-implications-for-mineral-rights-owners.json",
-      "evidence_packet_path_required": true
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/understanding-1031-tax-implications-for-mineral-rights-owners/1031-tax-implications-mineral-rights.webp",
+      "inline_asset_sha256": "058ab4741e1432c0c47b6b0355ad53e28d58e77b55fb5dee38fb5275c7ad18c9",
+      "inline_rendered_text": "1031 tax implications mineral rights"
     },
     {
       "selection_rank": 78,
@@ -2329,11 +2583,11 @@
       "content_genius_article_uuid": null,
       "archive_evidence_sha256": "b0734d1baf2e2ee9264e7b6a5479fc3a016a880336a5f3faaf370bb21c980c0f",
       "repo_path": "src/content/posts/how-to-accurately-assess-your-texas-mineral-rights-value.mdx",
-      "repo_sha256": "c1edb564ef4c0ca082d859e7bab55b7dde833f41f5edff061104cfe7095256eb",
-      "article_sha256": "c1edb564ef4c0ca082d859e7bab55b7dde833f41f5edff061104cfe7095256eb",
-      "hero_path": "/assets/articles/texas-mineral-value-evidence-wave9.webp",
-      "hero_sha256": "c412cc3579acc4c236640b34f793d706bd5130a342b559f6e0f57495c0e35623",
-      "hero_asset_sha256": "c412cc3579acc4c236640b34f793d706bd5130a342b559f6e0f57495c0e35623",
+      "repo_sha256": "14de226320c97917a109e47df9218ba07d1ed5a4bab0ae493d143176b049775f",
+      "article_sha256": "14de226320c97917a109e47df9218ba07d1ed5a4bab0ae493d143176b049775f",
+      "hero_path": "/assets/articles/hero/how-to-accurately-assess-your-texas-mineral-rights-value.webp",
+      "hero_sha256": "bc128b5b86f8eac288baa92a58310a52866c9a79c433f37c25c1756ddb8be07c",
+      "hero_asset_sha256": "bc128b5b86f8eac288baa92a58310a52866c9a79c433f37c25c1756ddb8be07c",
       "admission_status": "admitted_quality_gated",
       "finalization_state": "draft_noindex_admitted",
       "searchatlas_content_score": null,
@@ -2343,7 +2597,10 @@
         "Publication remains conditional on current editorial, factual/citation, compliance, exact-title asset, build, rollback, deployment, and live-verification evidence."
       ],
       "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/how-to-accurately-assess-your-texas-mineral-rights-value.json",
-      "evidence_packet_path_required": true
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/how-to-accurately-assess-your-texas-mineral-rights-value/assess-texas-mineral-rights-value.webp",
+      "inline_asset_sha256": "e23c9f05ea5ce87d4f5a359e5877d1e66b70740935ee01ee95aa3c7c16ddb7d1",
+      "inline_rendered_text": "assess Texas mineral rights value"
     },
     {
       "selection_rank": 79,
@@ -2358,11 +2615,11 @@
       "content_genius_article_uuid": null,
       "archive_evidence_sha256": "9532e3e23c073d797dd229334faa76f920c14a47f461c24b1a09914317038fae",
       "repo_path": "src/content/posts/understanding-your-mineral-royalty-checks-breakdown.mdx",
-      "repo_sha256": "8d83c5667f65693a268ffaecdefe0004084a6f7e5847fb178ad13c90bb3ddcab",
-      "article_sha256": "8d83c5667f65693a268ffaecdefe0004084a6f7e5847fb178ad13c90bb3ddcab",
-      "hero_path": "/assets/articles/royalty-check-breakdown-wave9.webp",
-      "hero_sha256": "ef36e7383fc20fb4acd534a1568943dcc60745dcc131015e5075f1aaf4f5e516",
-      "hero_asset_sha256": "ef36e7383fc20fb4acd534a1568943dcc60745dcc131015e5075f1aaf4f5e516",
+      "repo_sha256": "d148b5d01c8915db42f6bcd42fe9b5b24d77f1bac41b2a065a7c9d3855bf6772",
+      "article_sha256": "d148b5d01c8915db42f6bcd42fe9b5b24d77f1bac41b2a065a7c9d3855bf6772",
+      "hero_path": "/assets/articles/hero/understanding-your-mineral-royalty-checks-breakdown.webp",
+      "hero_sha256": "b4d8af0ba707e66b826ec51b0a9ff94fa0f9a72b32a10b1fa80a56ebe00c8e65",
+      "hero_asset_sha256": "b4d8af0ba707e66b826ec51b0a9ff94fa0f9a72b32a10b1fa80a56ebe00c8e65",
       "admission_status": "admitted_quality_gated",
       "finalization_state": "draft_noindex_admitted",
       "searchatlas_content_score": null,
@@ -2372,7 +2629,10 @@
         "Publication remains conditional on current editorial, factual/citation, compliance, exact-title asset, build, rollback, deployment, and live-verification evidence."
       ],
       "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/understanding-your-mineral-royalty-checks-breakdown.json",
-      "evidence_packet_path_required": true
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/understanding-your-mineral-royalty-checks-breakdown/mineral-royalty-checks-breakdown.webp",
+      "inline_asset_sha256": "4a38fd4b55c3ce17fa09efb0e4b09e54496514cfdb7596da94c804a7bb009db7",
+      "inline_rendered_text": "mineral royalty checks breakdown"
     },
     {
       "selection_rank": 80,
@@ -2387,11 +2647,11 @@
       "content_genius_article_uuid": null,
       "archive_evidence_sha256": "7917717c5660b6c9f2bcf2cb79c25aed0c19994d63fd9988633fac2cdebb17f1",
       "repo_path": "src/content/posts/understanding-the-key-differences-our-underwriter-review-vs-traditional-mineral-rights-brokers.mdx",
-      "repo_sha256": "a53ea4468461dd44c49ab803cebc05e986c11ef17e832c041c9e7b2f43d3ba86",
-      "article_sha256": "a53ea4468461dd44c49ab803cebc05e986c11ef17e832c041c9e7b2f43d3ba86",
-      "hero_path": "/assets/articles/underwriter-review-vs-broker-wave9.webp",
-      "hero_sha256": "2795fd27c0ea5e2c69e7e179a8ef2b0abc60b1e32accc1b807f8f47a65c59100",
-      "hero_asset_sha256": "2795fd27c0ea5e2c69e7e179a8ef2b0abc60b1e32accc1b807f8f47a65c59100",
+      "repo_sha256": "aa8c964f8c9339d1b3c7fdfa42c4d8c96f60414b014ddf7db2e2058f0ba577b5",
+      "article_sha256": "aa8c964f8c9339d1b3c7fdfa42c4d8c96f60414b014ddf7db2e2058f0ba577b5",
+      "hero_path": "/assets/articles/hero/understanding-the-key-differences-our-underwriter-review-vs-traditional-mineral-rights-brokers.webp",
+      "hero_sha256": "e2e4499434f3261b0ac03b9a35a658ed20e6616fbdb940e00e8ce4f82223dbc6",
+      "hero_asset_sha256": "e2e4499434f3261b0ac03b9a35a658ed20e6616fbdb940e00e8ce4f82223dbc6",
       "admission_status": "admitted_quality_gated",
       "finalization_state": "draft_noindex_admitted",
       "searchatlas_content_score": null,
@@ -2401,7 +2661,10 @@
         "Publication remains conditional on current editorial, factual/citation, compliance, exact-title asset, build, rollback, deployment, and live-verification evidence."
       ],
       "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/understanding-the-key-differences-our-underwriter-review-vs-traditional-mineral-rights-brokers.json",
-      "evidence_packet_path_required": true
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/understanding-the-key-differences-our-underwriter-review-vs-traditional-mineral-rights-brokers/underwriter-review-vs-mineral-rights-broker.webp",
+      "inline_asset_sha256": "737e0fd31621db94d73db15606d9bc8721f34469ef3759de22f4f19ba3db0a30",
+      "inline_rendered_text": "underwriter review vs mineral rights broker"
     },
     {
       "selection_rank": 81,
@@ -2416,11 +2679,11 @@
       "content_genius_article_uuid": null,
       "archive_evidence_sha256": "77a26b9c9c5c6d2b0e6e32f149cea5cacf9d84bc0d05a881014ae6a625ab3be0",
       "repo_path": "src/content/posts/1031-exchange-for-mineral-rights-in-texas-explained.mdx",
-      "repo_sha256": "e5a30f039d4f568d73cfd5c0d832ef9a0ed3757acbfd74a3d8049b7afb888d97",
-      "article_sha256": "e5a30f039d4f568d73cfd5c0d832ef9a0ed3757acbfd74a3d8049b7afb888d97",
-      "hero_path": "/assets/articles/texas-mineral-1031-exchange-wave10.webp",
-      "hero_sha256": "bd1f293103927ecdf2fb1b4505e341763064b320b504bbac662c72011c781509",
-      "hero_asset_sha256": "bd1f293103927ecdf2fb1b4505e341763064b320b504bbac662c72011c781509",
+      "repo_sha256": "881caa7813c1c553d810ca6b1fab5c02eedfab08315590d0b6194d24e5b52dd3",
+      "article_sha256": "881caa7813c1c553d810ca6b1fab5c02eedfab08315590d0b6194d24e5b52dd3",
+      "hero_path": "/assets/articles/hero/1031-exchange-for-mineral-rights-in-texas-explained.webp",
+      "hero_sha256": "d539b00cd3f06b13a9e4602ef277b17f5baef33e0eaf8c237c17527172ebaae0",
+      "hero_asset_sha256": "d539b00cd3f06b13a9e4602ef277b17f5baef33e0eaf8c237c17527172ebaae0",
       "admission_status": "admitted_quality_gated",
       "finalization_state": "draft_noindex_admitted",
       "searchatlas_content_score": null,
@@ -2430,7 +2693,10 @@
         "Publication remains conditional on current editorial, factual/citation, compliance, exact-title asset, build, rollback, deployment, and live-verification evidence."
       ],
       "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/1031-exchange-for-mineral-rights-in-texas-explained.json",
-      "evidence_packet_path_required": true
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/1031-exchange-for-mineral-rights-in-texas-explained/1031-exchange-mineral-rights-texas.webp",
+      "inline_asset_sha256": "2c52356a6509cf709b049d4b160dddfb278e4a606594b4f04962bf0c675b6eac",
+      "inline_rendered_text": "1031 exchange mineral rights Texas"
     },
     {
       "selection_rank": 82,
@@ -2445,11 +2711,11 @@
       "content_genius_article_uuid": null,
       "archive_evidence_sha256": "5e4312e3d28b1625ddd965b09bad115852ee15d4d759c54e9729c667da28d8ac",
       "repo_path": "src/content/posts/maximize-gains-with-1031-exchange-for-texas-mineral-rights.mdx",
-      "repo_sha256": "e6b8507659f1f9716899fbe9f1680fb133656a1b1ca6a859ab29668e219ebf26",
-      "article_sha256": "e6b8507659f1f9716899fbe9f1680fb133656a1b1ca6a859ab29668e219ebf26",
-      "hero_path": "/assets/articles/texas-mineral-1031-gain-planning-wave10.webp",
-      "hero_sha256": "7405673650aee778ece52e06ab93eb4eb086f85b46953d6aecb7d8221d4f526d",
-      "hero_asset_sha256": "7405673650aee778ece52e06ab93eb4eb086f85b46953d6aecb7d8221d4f526d",
+      "repo_sha256": "25268d1bd8718dc6ef506aca58cfcecf2499c6efdeb0d2012863061bdc187f56",
+      "article_sha256": "25268d1bd8718dc6ef506aca58cfcecf2499c6efdeb0d2012863061bdc187f56",
+      "hero_path": "/assets/articles/hero/maximize-gains-with-1031-exchange-for-texas-mineral-rights.webp",
+      "hero_sha256": "d8dbd43be08c4e94c052f60aec98c7b68f11ea3f53af1811e1ea339140dff9ea",
+      "hero_asset_sha256": "d8dbd43be08c4e94c052f60aec98c7b68f11ea3f53af1811e1ea339140dff9ea",
       "admission_status": "admitted_quality_gated",
       "finalization_state": "draft_noindex_admitted",
       "searchatlas_content_score": null,
@@ -2459,7 +2725,10 @@
         "Publication remains conditional on current editorial, factual/citation, compliance, exact-title asset, build, rollback, deployment, and live-verification evidence."
       ],
       "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/maximize-gains-with-1031-exchange-for-texas-mineral-rights.json",
-      "evidence_packet_path_required": true
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/maximize-gains-with-1031-exchange-for-texas-mineral-rights/maximize-gains-with-1031-exchange-texas-mineral-rights.webp",
+      "inline_asset_sha256": "a5c00dfe32a68d61cbd7b32303aec36703da0fb041b29c8cb207bf974e99502e",
+      "inline_rendered_text": "maximize gains with 1031 exchange Texas mineral rights"
     },
     {
       "selection_rank": 83,
@@ -2474,11 +2743,11 @@
       "content_genius_article_uuid": null,
       "archive_evidence_sha256": "bb378a4fdbe9f4411b082ba01fb876bad12217ee9a81d3862e1e20603e129272",
       "repo_path": "src/content/posts/what-happens-to-mineral-rights-in-probate.mdx",
-      "repo_sha256": "f195f7f395eef21339e9000c84e601168d97097870bc9606a0851c2b4ddb1efc",
-      "article_sha256": "f195f7f395eef21339e9000c84e601168d97097870bc9606a0851c2b4ddb1efc",
-      "hero_path": "/assets/articles/mineral-rights-probate-outcomes-wave10.webp",
-      "hero_sha256": "cd1e7eb833bf08ced19609a7f33fd3cad26604c9f67b9f2774c2c7917655f5a4",
-      "hero_asset_sha256": "cd1e7eb833bf08ced19609a7f33fd3cad26604c9f67b9f2774c2c7917655f5a4",
+      "repo_sha256": "eea408e912fd169d0b0ef6b308f5e8ada455c962134563962b085f8594b09165",
+      "article_sha256": "eea408e912fd169d0b0ef6b308f5e8ada455c962134563962b085f8594b09165",
+      "hero_path": "/assets/articles/hero/what-happens-to-mineral-rights-in-probate.webp",
+      "hero_sha256": "db6b4e52807b58d6d15338427a3094352777dd8841238aae9ead075f17957722",
+      "hero_asset_sha256": "db6b4e52807b58d6d15338427a3094352777dd8841238aae9ead075f17957722",
       "admission_status": "admitted_quality_gated",
       "finalization_state": "draft_noindex_admitted",
       "searchatlas_content_score": null,
@@ -2488,7 +2757,10 @@
         "Publication remains conditional on current editorial, factual/citation, compliance, exact-title asset, build, rollback, deployment, and live-verification evidence."
       ],
       "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/what-happens-to-mineral-rights-in-probate.json",
-      "evidence_packet_path_required": true
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/what-happens-to-mineral-rights-in-probate/what-happens-to-mineral-rights-in-probate.webp",
+      "inline_asset_sha256": "e6b9cbdbe97139dbc62974940c0630d40dadf51666f5b4727acd137cb1e730b7",
+      "inline_rendered_text": "what happens to mineral rights in probate"
     },
     {
       "selection_rank": 84,
@@ -2503,11 +2775,11 @@
       "content_genius_article_uuid": null,
       "archive_evidence_sha256": "0ccd4bb645f6bf681b57d7bf36487c9234b87213ba0e6ea0b2cda86d3c067c56",
       "repo_path": "src/content/posts/understanding-estate-planning-for-inherited-mineral-rights.mdx",
-      "repo_sha256": "5f45499bf1c5241bc294db940af228370f6dbe52776cd8e558f5494b3d2b2d3a",
-      "article_sha256": "5f45499bf1c5241bc294db940af228370f6dbe52776cd8e558f5494b3d2b2d3a",
-      "hero_path": "/assets/articles/inherited-mineral-estate-plan-wave10.webp",
-      "hero_sha256": "4c06caf44d2eaf654ae8d83e542ed8290989443fc0f09734a8e8c884d6d097f3",
-      "hero_asset_sha256": "4c06caf44d2eaf654ae8d83e542ed8290989443fc0f09734a8e8c884d6d097f3",
+      "repo_sha256": "e0da91d34d8a995ff74c05770ce1bf922e22ee6b9c1927cf2ee83d7a17556a79",
+      "article_sha256": "e0da91d34d8a995ff74c05770ce1bf922e22ee6b9c1927cf2ee83d7a17556a79",
+      "hero_path": "/assets/articles/hero/understanding-estate-planning-for-inherited-mineral-rights.webp",
+      "hero_sha256": "e0d55495f1344c2d409afc6e0f8178d8e59179fb64383202f0bc7d58b6e92858",
+      "hero_asset_sha256": "e0d55495f1344c2d409afc6e0f8178d8e59179fb64383202f0bc7d58b6e92858",
       "admission_status": "admitted_quality_gated",
       "finalization_state": "draft_noindex_admitted",
       "searchatlas_content_score": null,
@@ -2517,7 +2789,10 @@
         "Publication remains conditional on current editorial, factual/citation, compliance, exact-title asset, build, rollback, deployment, and live-verification evidence."
       ],
       "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/understanding-estate-planning-for-inherited-mineral-rights.json",
-      "evidence_packet_path_required": true
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/understanding-estate-planning-for-inherited-mineral-rights/estate-planning-inherited-mineral-rights.webp",
+      "inline_asset_sha256": "8ed3aca3d9ade6156119d07f0a23a12598aab70265c87fb4b324fdac5bdf734d",
+      "inline_rendered_text": "estate planning inherited mineral rights"
     },
     {
       "selection_rank": 85,
@@ -2532,11 +2807,11 @@
       "content_genius_article_uuid": null,
       "archive_evidence_sha256": "9f2b113f3b61ef3673b062f6022312faeeae516fe5cc515fe43b1d9ab0279ee5",
       "repo_path": "src/content/posts/understanding-your-mineral-royalty-checks-value.mdx",
-      "repo_sha256": "8db6f31fd9fb75a5a4c4be39592bbbace30dedd1d1dbfa8881778117759f35dc",
-      "article_sha256": "8db6f31fd9fb75a5a4c4be39592bbbace30dedd1d1dbfa8881778117759f35dc",
-      "hero_path": "/assets/articles/royalty-check-value-signals-wave10.webp",
-      "hero_sha256": "65d160c92c024c452c556befa77e49965090e0bc57de7b93e165925320b77f06",
-      "hero_asset_sha256": "65d160c92c024c452c556befa77e49965090e0bc57de7b93e165925320b77f06",
+      "repo_sha256": "2f926e4790da7e70ff060779e83972c5b6408b7bfa4964b4ce348677e9adf1a1",
+      "article_sha256": "2f926e4790da7e70ff060779e83972c5b6408b7bfa4964b4ce348677e9adf1a1",
+      "hero_path": "/assets/articles/hero/understanding-your-mineral-royalty-checks-value.webp",
+      "hero_sha256": "2edfd34833f159e6e6b365d79697470918a821510a5582160ba1528239f7bf58",
+      "hero_asset_sha256": "2edfd34833f159e6e6b365d79697470918a821510a5582160ba1528239f7bf58",
       "admission_status": "admitted_quality_gated",
       "finalization_state": "draft_noindex_admitted",
       "searchatlas_content_score": null,
@@ -2546,7 +2821,10 @@
         "Publication remains conditional on current editorial, factual/citation, compliance, exact-title asset, build, rollback, deployment, and live-verification evidence."
       ],
       "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/understanding-your-mineral-royalty-checks-value.json",
-      "evidence_packet_path_required": true
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/understanding-your-mineral-royalty-checks-value/mineral-royalty-checks-value.webp",
+      "inline_asset_sha256": "0f32e3bf83644ebe7d48ca3ec8ab29638d5639b3ca1542c94ef072ec1cb990ad",
+      "inline_rendered_text": "mineral royalty checks value"
     },
     {
       "selection_rank": 86,
@@ -2561,11 +2839,11 @@
       "content_genius_article_uuid": null,
       "archive_evidence_sha256": "14a1ac51c702607e55b7da99b15fa156dd7bc2fea6f4b3d1e7764e504bdd2d6d",
       "repo_path": "src/content/posts/how-to-determine-the-value-of-texas-mineral-rights.mdx",
-      "repo_sha256": "d626de8be89c64d030fa4fee9af9ba479cbf635bb12f09cc2f6f40f5e0609462",
-      "article_sha256": "d626de8be89c64d030fa4fee9af9ba479cbf635bb12f09cc2f6f40f5e0609462",
-      "hero_path": "/assets/articles/texas-mineral-value-workflow-wave10.webp",
-      "hero_sha256": "ffd037f944a37da804cdd25e4a5d48f029c1491c1a91b72d3f40870ec900bcf0",
-      "hero_asset_sha256": "ffd037f944a37da804cdd25e4a5d48f029c1491c1a91b72d3f40870ec900bcf0",
+      "repo_sha256": "6d2f0040bc6765bd8cd3b2a19d6c750abbb749f696f4f776b46e01a5715b5bd1",
+      "article_sha256": "6d2f0040bc6765bd8cd3b2a19d6c750abbb749f696f4f776b46e01a5715b5bd1",
+      "hero_path": "/assets/articles/hero/how-to-determine-the-value-of-texas-mineral-rights.webp",
+      "hero_sha256": "dc8f01dc2fa53e1b6c1500bddb68e89f9de2e35e17c6b7b3bca93be190acc249",
+      "hero_asset_sha256": "dc8f01dc2fa53e1b6c1500bddb68e89f9de2e35e17c6b7b3bca93be190acc249",
       "admission_status": "admitted_quality_gated",
       "finalization_state": "draft_noindex_admitted",
       "searchatlas_content_score": null,
@@ -2575,7 +2853,10 @@
         "Publication remains conditional on current editorial, factual/citation, compliance, exact-title asset, build, rollback, deployment, and live-verification evidence."
       ],
       "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/how-to-determine-the-value-of-texas-mineral-rights.json",
-      "evidence_packet_path_required": true
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/how-to-determine-the-value-of-texas-mineral-rights/determine-value-texas-mineral-rights.webp",
+      "inline_asset_sha256": "f114ae1ebb1ca2b22bc47cde2b4b21bc6f1ea4f148366252eb124932b1f5458d",
+      "inline_rendered_text": "determine value Texas mineral rights"
     },
     {
       "selection_rank": 87,
@@ -2590,11 +2871,11 @@
       "content_genius_article_uuid": null,
       "archive_evidence_sha256": "8c7877f489854e6857c44aec8da0903107c9847fee7434dbe296bfb0a2591364",
       "repo_path": "src/content/posts/unlocking-value-assessing-your-texas-mineral-rights.mdx",
-      "repo_sha256": "52e6f36d5b1e535a1a86ea02adf0cb1703e4f5b552f2c6fc23600aa7d83c282f",
-      "article_sha256": "52e6f36d5b1e535a1a86ea02adf0cb1703e4f5b552f2c6fc23600aa7d83c282f",
-      "hero_path": "/assets/articles/texas-mineral-value-levers-wave10.webp",
-      "hero_sha256": "175135becd7f10e9a84b12a1e78b4ac2f2dd5579fa90b2c36e815515f8ff6540",
-      "hero_asset_sha256": "175135becd7f10e9a84b12a1e78b4ac2f2dd5579fa90b2c36e815515f8ff6540",
+      "repo_sha256": "5acab511e4db7f8096766cbe31dfb081638e1a4410770df3a2201d2239cbca00",
+      "article_sha256": "5acab511e4db7f8096766cbe31dfb081638e1a4410770df3a2201d2239cbca00",
+      "hero_path": "/assets/articles/hero/unlocking-value-assessing-your-texas-mineral-rights.webp",
+      "hero_sha256": "cb054469a9397503d80e2add8cda6462de0d7627f79620378344039b85263785",
+      "hero_asset_sha256": "cb054469a9397503d80e2add8cda6462de0d7627f79620378344039b85263785",
       "admission_status": "admitted_quality_gated",
       "finalization_state": "draft_noindex_admitted",
       "searchatlas_content_score": null,
@@ -2604,7 +2885,10 @@
         "Publication remains conditional on current editorial, factual/citation, compliance, exact-title asset, build, rollback, deployment, and live-verification evidence."
       ],
       "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/unlocking-value-assessing-your-texas-mineral-rights.json",
-      "evidence_packet_path_required": true
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/unlocking-value-assessing-your-texas-mineral-rights/assessing-texas-mineral-rights.webp",
+      "inline_asset_sha256": "dad54459cce314f3531c17bceba65e4dab8d7239cd0a762fdf2b498bdc170c00",
+      "inline_rendered_text": "assessing Texas mineral rights"
     },
     {
       "selection_rank": 88,
@@ -2619,11 +2903,11 @@
       "content_genius_article_uuid": null,
       "archive_evidence_sha256": "cebce7069996622aeda687cdb3922ed9782c3154ec388650dd5e9c945197b9db",
       "repo_path": "src/content/posts/how-to-spot-predatory-mineral-rights-offers.mdx",
-      "repo_sha256": "07901d7c317514f99eb6d98ad6d2239c26f4a018a8c2400c0e3dd0d7be6b24f3",
-      "article_sha256": "07901d7c317514f99eb6d98ad6d2239c26f4a018a8c2400c0e3dd0d7be6b24f3",
-      "hero_path": "/assets/articles/mineral-offer-red-flags-wave10.webp",
-      "hero_sha256": "d005215c0dbe6912e7a7a8b4199915b61f8e6466d18d6351a633f2f9a5222cbc",
-      "hero_asset_sha256": "d005215c0dbe6912e7a7a8b4199915b61f8e6466d18d6351a633f2f9a5222cbc",
+      "repo_sha256": "eda8292efe8d5c0e62ec91c4201110c737a898df914a5e02b5d27b448dd6869e",
+      "article_sha256": "eda8292efe8d5c0e62ec91c4201110c737a898df914a5e02b5d27b448dd6869e",
+      "hero_path": "/assets/articles/hero/how-to-spot-predatory-mineral-rights-offers.webp",
+      "hero_sha256": "acb7b824031b5a964da56dd84d5fc989d605221017c5e7389c07b8b067fa4c1f",
+      "hero_asset_sha256": "acb7b824031b5a964da56dd84d5fc989d605221017c5e7389c07b8b067fa4c1f",
       "admission_status": "admitted_quality_gated",
       "finalization_state": "draft_noindex_admitted",
       "searchatlas_content_score": null,
@@ -2633,7 +2917,10 @@
         "Publication remains conditional on current editorial, factual/citation, compliance, exact-title asset, build, rollback, deployment, and live-verification evidence."
       ],
       "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/how-to-spot-predatory-mineral-rights-offers.json",
-      "evidence_packet_path_required": true
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/how-to-spot-predatory-mineral-rights-offers/predatory-mineral-rights-offers.webp",
+      "inline_asset_sha256": "de299b0bc6c76947fe3eda49e13e8dacb82614cd42a6d6394e97d4e2acadeefe",
+      "inline_rendered_text": "predatory mineral rights offers"
     },
     {
       "selection_rank": 89,
@@ -2648,11 +2935,11 @@
       "content_genius_article_uuid": null,
       "archive_evidence_sha256": "6abbf049608c85a6de2d8742f6aee09f86d9b29e989ce262ffb6ac3083a2d0d4",
       "repo_path": "src/content/posts/what-to-do-when-you-have-competing-offers-on-your-mineral-rights-a-guide.mdx",
-      "repo_sha256": "474916cb43b1e09301f325c743ee3c716288cc146dd2bad09518623ef88aeccb",
-      "article_sha256": "474916cb43b1e09301f325c743ee3c716288cc146dd2bad09518623ef88aeccb",
-      "hero_path": "/assets/articles/competing-mineral-offers-action-plan-wave10.webp",
-      "hero_sha256": "a456010e3b8e73c74dbae1ce87e9795672809991380c277ce8fee70c9f8388b4",
-      "hero_asset_sha256": "a456010e3b8e73c74dbae1ce87e9795672809991380c277ce8fee70c9f8388b4",
+      "repo_sha256": "18a80a586edf68f5c5f0f63b2dde1101da6b9496e2fd0763d26f4022b27da9cb",
+      "article_sha256": "18a80a586edf68f5c5f0f63b2dde1101da6b9496e2fd0763d26f4022b27da9cb",
+      "hero_path": "/assets/articles/hero/what-to-do-when-you-have-competing-offers-on-your-mineral-rights-a-guide.webp",
+      "hero_sha256": "910fe1a11a68c5d5888955383aea40357df4320f18f1bad2076ec0ccd9d0a326",
+      "hero_asset_sha256": "910fe1a11a68c5d5888955383aea40357df4320f18f1bad2076ec0ccd9d0a326",
       "admission_status": "admitted_quality_gated",
       "finalization_state": "draft_noindex_admitted",
       "searchatlas_content_score": null,
@@ -2662,7 +2949,10 @@
         "Publication remains conditional on current editorial, factual/citation, compliance, exact-title asset, build, rollback, deployment, and live-verification evidence."
       ],
       "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/what-to-do-when-you-have-competing-offers-on-your-mineral-rights-a-guide.json",
-      "evidence_packet_path_required": true
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/what-to-do-when-you-have-competing-offers-on-your-mineral-rights-a-guide/competing-offers-mineral-rights.webp",
+      "inline_asset_sha256": "0095375d1b23a1d272fc358b72ba8796c29cb8862d73a9fc9194388ef63fb016",
+      "inline_rendered_text": "competing offers mineral rights"
     },
     {
       "selection_rank": 90,
@@ -2677,11 +2967,11 @@
       "content_genius_article_uuid": null,
       "archive_evidence_sha256": "5b363102c39a1488f0882f8f64dc99ff79a073cbca50345b186709620fc969cd",
       "repo_path": "src/content/posts/understanding-the-value-of-your-mineral-rights.mdx",
-      "repo_sha256": "6056c3d22c82d4ee97bafd21e61a84adc56288820ef8489e816ea2962abba58a",
-      "article_sha256": "6056c3d22c82d4ee97bafd21e61a84adc56288820ef8489e816ea2962abba58a",
-      "hero_path": "/assets/articles/mineral-rights-value-primer-wave10.webp",
-      "hero_sha256": "4d5b180e4847576f6c1cacd813db0b2dc775c99fb00d5e2b1bdf505c3488de49",
-      "hero_asset_sha256": "4d5b180e4847576f6c1cacd813db0b2dc775c99fb00d5e2b1bdf505c3488de49",
+      "repo_sha256": "bec10594fc90680427ea5eb9a7a42d8aa630a60fbb389748d821358441dc877d",
+      "article_sha256": "bec10594fc90680427ea5eb9a7a42d8aa630a60fbb389748d821358441dc877d",
+      "hero_path": "/assets/articles/hero/understanding-the-value-of-your-mineral-rights.webp",
+      "hero_sha256": "90be4885d4a122610fed237c037a931f9f7794bf8a451c884d89565eee441c92",
+      "hero_asset_sha256": "90be4885d4a122610fed237c037a931f9f7794bf8a451c884d89565eee441c92",
       "admission_status": "admitted_quality_gated",
       "finalization_state": "draft_noindex_admitted",
       "searchatlas_content_score": null,
@@ -2691,7 +2981,10 @@
         "Publication remains conditional on current editorial, factual/citation, compliance, exact-title asset, build, rollback, deployment, and live-verification evidence."
       ],
       "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/understanding-the-value-of-your-mineral-rights.json",
-      "evidence_packet_path_required": true
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/understanding-the-value-of-your-mineral-rights/value-of-mineral-rights.webp",
+      "inline_asset_sha256": "e069159f4e229cdcfc21d2fc532f5e1964db529f3c2fd6e9092cb60ccab95fb7",
+      "inline_rendered_text": "value of mineral rights"
     }
   ],
   "admission_audit": {
@@ -2839,7 +3132,20 @@
     },
     "retained_production_baseline_manifest_json": {
       "path": "artifacts/mrx1000-release-10/release/retained-production-baseline.json",
-      "sha256": "5b6b39ee9d6d529b77e44d0cdec559775c0f94478263f1f7c21c99b66d549cdd"
+      "sha256": "dc36f762dcc0ccfc799c9675865b73b748e1473f306aa88739f3eb5aa1f0f108"
     }
+  },
+  "two_image_policy": {
+    "directive": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
+    "retrofit_manifest_path": "config/mrx-article-two-image-retrofit.json",
+    "retrofit_manifest_sha256": "0333bae4290c0c8fef8abc35d212423381d79b2adcf7abcf70f4972f121365d7",
+    "public_article_count": 99,
+    "batch_article_count": 90,
+    "assets_per_article": 2,
+    "hero_share_identity_required": true,
+    "inline_image_distinct_required": true,
+    "text_filename_identity_required": true,
+    "ocr_pass_required": true,
+    "authorized_source_and_asset_rebinding": true
   }
 }

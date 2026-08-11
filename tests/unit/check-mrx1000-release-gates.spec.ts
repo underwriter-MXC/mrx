@@ -273,6 +273,7 @@ describe('scripts/build-mrx1000-release-10-evidence-packets.mjs', () => {
           assets: [
             { kind: 'hero', disposition: 'PASS' },
             { kind: 'social', disposition: 'PASS' },
+            { kind: 'inline', disposition: 'PASS' },
           ],
         },
       ],
@@ -623,12 +624,13 @@ describe('scripts/check-mrx1000-release-gates.mjs', () => {
       };
     };
     // The original ten rows are already represented as public in the
-    // canonical ledger. Ranks 11–90 require byte-proven runtime overrides,
-    // so 80 transition proofs plus that ten-row baseline yield 90 observed.
+    // canonical ledger. The remaining 80 rows require byte-proven runtime
+    // overrides; after the two-image rebind those overrides must prove that
+    // the refreshed, reviewed source bytes are current.
     expect(inputs.ledger.runtime_publication_overrides).toHaveLength(80);
     expect(
       inputs.ledger.runtime_publication_overrides.every(
-        (override) => override.state === 'controlled_publication_transition',
+        (override) => override.state === 'reviewed_bytes_current',
       ),
     ).toBe(true);
     expect(

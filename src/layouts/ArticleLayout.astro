@@ -36,6 +36,14 @@ interface Props {
     social_height?: number;
     social_mime_type?: string;
   };
+  inlineImage?: {
+    src: string;
+    alt: string;
+    rendered_text: string;
+    width: number;
+    height: number;
+    mime_type: string;
+  };
   authorName: string;
   authorHref: string;
   authorDescription: string;
@@ -82,6 +90,7 @@ const {
   articleTitle,
   excerpt,
   heroImage,
+  inlineImage,
   authorName,
   authorHref,
   authorDescription,
@@ -195,6 +204,24 @@ const socialImageType = dedicatedSocialImage
                   ))}
                 </ul>
               </section>
+            )
+          }
+          {
+            inlineImage && (
+              <figure
+                class="article-inline-image"
+                data-article-inline-image
+                data-rendered-text={inlineImage.rendered_text}
+              >
+                <img
+                  src={inlineImage.src}
+                  alt={inlineImage.alt}
+                  width={inlineImage.width}
+                  height={inlineImage.height}
+                  loading="lazy"
+                  decoding="async"
+                />
+              </figure>
             )
           }
           <slot />
@@ -416,6 +443,22 @@ const socialImageType = dedicatedSocialImage
   }
 
   .article-hero-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .article-inline-image {
+    overflow: hidden;
+    margin: clamp(1.6rem, 3vw, 2.4rem) 0;
+    border: 1px solid rgba(7, 30, 52, 0.12);
+    border-radius: clamp(14px, 2vw, 20px);
+    background: var(--color-brand-900);
+    box-shadow: 0 14px 34px rgba(7, 30, 52, 0.1);
+  }
+
+  .article-inline-image img {
     display: block;
     width: 100%;
     height: auto;

@@ -9,10 +9,17 @@ const publishedFixture = `---
 title: 'Fixture article'
 description: 'Fixture description'
 draft: false
+noindex: false
 publication_status: published
+primary_keyword: 'fixture keyword'
 hero_image:
-  src: '/assets/articles/fixture.webp'
+  src: '/assets/articles/hero/fixture-article.webp'
   alt: 'A specific illustration for the fixture article.'
+  social_src: '/assets/articles/hero/fixture-article.webp'
+inline_image:
+  src: '/assets/articles/inline/fixture/fixture-keyword.webp'
+  alt: 'An educational illustration highlighting the fixture keyword.'
+  rendered_text: 'fixture keyword'
 ---`;
 
 describe('post frontmatter helper', () => {
@@ -24,8 +31,12 @@ describe('post frontmatter helper', () => {
       draft: false,
       publicationStatus: 'published',
       hero: {
-        src: '/assets/articles/fixture.webp',
+        src: '/assets/articles/hero/fixture-article.webp',
         alt: 'A specific illustration for the fixture article.',
+      },
+      inline: {
+        src: '/assets/articles/inline/fixture/fixture-keyword.webp',
+        renderedText: 'fixture keyword',
       },
     });
   });
@@ -46,12 +57,14 @@ describe('published article image guardrails', () => {
       (post) => post.publicationStatus === 'published' && post.draft !== true,
     );
     const heroPaths = published.map((post) => post.hero.src);
+    const inlinePaths = published.map((post) => post.inline.src);
     const explicitlyAllowedVerifiedRemoteSources = new Set<string>();
 
     // Nine legacy-live posts plus the ninety hash-locked release rows.
     // Production publication remains controlled by the separate release gate.
     expect(published).toHaveLength(99);
     expect(new Set(heroPaths).size).toBe(heroPaths.length);
+    expect(new Set(inlinePaths).size).toBe(inlinePaths.length);
     for (const post of published) {
       expect(post.hero.src, post.slug).toMatch(/^(\/|https:\/\/)/);
       if (post.hero.src.startsWith('/')) {
@@ -59,7 +72,17 @@ describe('published article image guardrails', () => {
       } else {
         expect(explicitlyAllowedVerifiedRemoteSources.has(post.hero.src), post.slug).toBe(true);
       }
-      expect(imagePolicyViolations(post, { requireDistinctSocial: false }), post.slug).toEqual([]);
+      expect(post.inline.src, post.slug).toMatch(/^\/assets\/articles\/inline\//);
+      expect(existsSync(join(repoRoot, 'public', post.inline.src.slice(1))), post.slug).toBe(true);
+      expect(
+        imagePolicyViolations(post, {
+          requireDistinctSocial: false,
+          requireCanonicalSocial: true,
+          requireInline: true,
+          requireTextMatchedFilenames: true,
+        }),
+        post.slug,
+      ).toEqual([]);
     }
   });
 
@@ -156,6 +179,7 @@ describe('article share metadata wiring', () => {
     expect(blogRoute).toContain('title={seoTitle}');
     expect(blogRoute).toContain('description={post.data.description}');
     expect(blogRoute).toContain('heroImage={post.data.hero_image}');
+    expect(blogRoute).toContain('inlineImage={post.data.inline_image}');
     expect(articleLayout).toContain(
       'const socialImage = ogImage ?? heroImage.social_src ?? heroImage.src;',
     );
@@ -169,5 +193,45 @@ describe('article share metadata wiring', () => {
     expect(seo).toContain('<meta name="twitter:title" content={finalTitle} />');
     expect(seo).toContain('<meta name="twitter:description" content={description} />');
     expect(seo).toContain('<meta name="twitter:image" content={og} />');
+    expect(articleLayout).toContain('data-article-inline-image');
+    expect(articleLayout).toContain('data-rendered-text={inlineImage.rendered_text}');
+    expect(articleLayout).toMatch(
+      /\.article-inline-image img\s*\{[\s\S]*?width:\s*100%;[\s\S]*?height:\s*auto;[\s\S]*?object-fit:\s*contain;/,
+    );
+  });
+
+  it('keeps the in-body image in release evidence and live-production verification', () => {
+    const assetEvidence = readFileSync(
+      join(repoRoot, 'scripts', 'build-mrx1000-release-10-asset-evidence.mjs'),
+      'utf8',
+    );
+    const packetBuilder = readFileSync(
+      join(repoRoot, 'scripts', 'build-mrx1000-release-10-evidence-packets.mjs'),
+      'utf8',
+    );
+    const lifecycle = readFileSync(join(repoRoot, 'src', 'lib', 'release-lifecycle.ts'), 'utf8');
+    const productionVerifier = readFileSync(
+      join(repoRoot, 'scripts', 'verify-mrx1000-release-10-production.mjs'),
+      'utf8',
+    );
+    const renderedBuildVerifier = readFileSync(
+      join(repoRoot, 'scripts', 'verify-mrx-article-two-image-build.mjs'),
+      'utf8',
+    );
+    const packageJson = readFileSync(join(repoRoot, 'package.json'), 'utf8');
+
+    expect(assetEvidence).toContain('for (const declared of [hero, social, inline])');
+    expect(assetEvidence).toContain('ocr_verified: ocrVerified');
+    expect(packetBuilder).toContain("!['hero', 'social', 'inline'].every");
+    expect(lifecycle).toContain('packet.asset_manifest.assets.length !== 3');
+    expect(lifecycle).toContain('asset.ocr_verified === true');
+    expect(productionVerifier).toContain("asset.kind === 'inline'");
+    expect(productionVerifier).toContain('visible_inline_exact');
+    expect(productionVerifier).toContain('inline_image_binary_exact');
+    expect(renderedBuildVerifier).toContain('Article schema image mismatch');
+    expect(renderedBuildVerifier).toContain('rendered in-body text identity mismatch');
+    expect(renderedBuildVerifier).toContain('rendered binary SHA-256 mismatch');
+    expect(packageJson).toContain('pnpm build:mrx1000:two-image-creative-briefs');
+    expect(packageJson).toContain('pnpm verify:articles:two-image-build');
   });
 });

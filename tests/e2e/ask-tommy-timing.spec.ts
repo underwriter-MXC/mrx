@@ -128,6 +128,14 @@ test('keeps validation feedback immediate while scripted scheduling remains dela
     });
   });
   await page.goto('/?book=1');
+  // The query-string booking request is consumed by the hydrated React app.
+  // Start the sub-second UI assertion only after that app has announced it is
+  // ready, so parallel-worker startup time is not counted as product latency.
+  await page.waitForFunction(() =>
+    Boolean(
+      (window as typeof window & { __mrxChatReady?: boolean }).__mrxChatReady,
+    ),
+  );
   await expect(page.getByLabel('Angela is typing')).toBeVisible({ timeout: 500 });
   await page.waitForTimeout(1_000);
   await expect(page.getByText(/I have your time zone as/)).toBeHidden();

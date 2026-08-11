@@ -445,7 +445,7 @@ export type GateEvidencePacket = {
     frontmatter_sha256: string;
     disposition: 'PASS' | 'FAIL' | 'HOLD';
     assets: Array<{
-      kind: 'hero' | 'social';
+      kind: 'hero' | 'social' | 'inline';
       public_path: string;
       sha256: string;
       width?: number;
@@ -457,6 +457,10 @@ export type GateEvidencePacket = {
       provenance: string;
       license: string;
       perceptual_hash: string;
+      rendered_text?: string;
+      filename_text_identity?: boolean;
+      canonical_surface_identity?: boolean;
+      ocr_verified?: boolean;
       disposition: 'PASS' | 'FAIL' | 'HOLD';
     }>;
   };
@@ -1054,8 +1058,8 @@ export function evaluateEvidencePacket(packet: GateEvidencePacket): {
     packet.asset_manifest?.frontmatter_sha256 !== packet.frontmatter_sha256 ||
     !HEX_64.test(packet.asset_manifest?.evidence_sha256 ?? '') ||
     !Array.isArray(packet.asset_manifest?.assets) ||
-    packet.asset_manifest.assets.length !== 2 ||
-    !['hero', 'social'].every((kind) =>
+    packet.asset_manifest.assets.length !== 3 ||
+    !['hero', 'social', 'inline'].every((kind) =>
       packet.asset_manifest.assets.some(
         (asset) =>
           asset.kind === kind &&
@@ -1065,11 +1069,15 @@ export function evaluateEvidencePacket(packet: GateEvidencePacket): {
           !!asset.public_path &&
           !!asset.alt_text &&
           !!asset.provenance &&
-          !!asset.license,
+          !!asset.license &&
+          !!asset.rendered_text &&
+          asset.filename_text_identity === true &&
+          asset.canonical_surface_identity === true &&
+          asset.ocr_verified === true,
       ),
     )
   ) {
-    failures.push('asset_manifest must contain hash-locked PASS hero and social assets');
+    failures.push('asset_manifest must contain hash-locked PASS hero, social, and inline assets');
   }
   if (
     packet.publication_manifest?.disposition !== 'READY' ||

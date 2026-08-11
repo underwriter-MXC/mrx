@@ -144,6 +144,7 @@ test.describe('Learning Center layout', () => {
     const topic = page.locator('select[data-learning-topic]');
     const author = page.locator('select[data-learning-author]');
     const cards = page.locator('[data-learning-card]');
+    const pageCards = page.locator('[data-learning-page-card="true"]');
     const visibleCards = page.locator('[data-learning-card]:visible');
     const firstCard = cards.first();
     const firstTitle = (await firstCard.locator('h2 a').innerText()).trim();
@@ -185,7 +186,7 @@ test.describe('Learning Center layout', () => {
     await expect(page.locator('[data-learning-summary]')).toContainText('0 matching articles');
 
     await page.getByRole('button', { name: 'Clear filters' }).click();
-    await expect(visibleCards).toHaveCount(await cards.count());
+    await expect(visibleCards).toHaveCount(await pageCards.count());
     await expect(page.locator('[data-learning-summary]')).toContainText('Showing');
   });
 

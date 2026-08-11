@@ -356,7 +356,10 @@ function buildPacket({ entry, bodyPath, materializedAt, assetEvidence, publicati
       assetRow.frontmatter_sha256 !== fmSha ||
       assetRow.disposition !== 'PASS' ||
       !Array.isArray(assetRow.assets) ||
-      assetRow.assets.length !== 2 ||
+      assetRow.assets.length !== 3 ||
+      !['hero', 'social', 'inline'].every((kind) =>
+        assetRow.assets.some((asset) => asset.kind === kind)
+      ) ||
       assetRow.assets.some((asset) => asset.disposition !== 'PASS'))
   ) {
     holdReason = 'asset_evidence_missing_stale_or_hold';

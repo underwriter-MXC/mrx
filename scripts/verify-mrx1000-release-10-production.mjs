@@ -19,6 +19,7 @@ const PUBLICATION_MANIFEST_PATH =
   'artifacts/mrx1000-release-10/release/publication-manifest.json';
 const RETAINED_PRODUCTION_BASELINE_PATH =
   'artifacts/mrx1000-release-10/release/retained-production-baseline.json';
+const TWO_IMAGE_RETROFIT_MANIFEST_PATH = 'config/mrx-article-two-image-retrofit.json';
 const OUTPUT_PATH =
   'artifacts/mrx1000-release-10/release/post-publication-verification.json';
 const CANONICAL_ORIGIN = process.env.MRX_CANONICAL_ORIGIN ?? 'https://mineralrightsxchange.com';
@@ -180,6 +181,7 @@ const batch = await readJson(BATCH_PATH);
 const ledger = await readJson(LEDGER_PATH);
 const publicationManifest = await readJson(PUBLICATION_MANIFEST_PATH);
 const retainedProductionBaselineManifest = await readJson(RETAINED_PRODUCTION_BASELINE_PATH);
+const twoImageRetrofitManifest = await readJson(TWO_IMAGE_RETROFIT_MANIFEST_PATH);
 const deployment = resolveDeployment();
 const deploymentExpectations = resolveDeploymentExpectations();
 const verifiedAt = new Date().toISOString();
@@ -233,11 +235,16 @@ for (const article of batch.articles) {
     /<figure\b[^>]*class=["'][^"']*article-hero-image[^"']*["'][^>]*>[\s\S]*?<\/figure>/i,
   )?.[0] ?? '';
   const heroTag = heroFigure.match(/<img\b[^>]*>/i)?.[0] ?? null;
+  const inlineFigure = html.match(
+    /<figure\b[^>]*data-article-inline-image[^>]*>[\s\S]*?<\/figure>/i,
+  )?.[0] ?? '';
+  const inlineTag = inlineFigure.match(/<img\b[^>]*>/i)?.[0] ?? null;
   const expectedHeroUrl = new URL(article.hero_path, `${CANONICAL_ORIGIN}/`).toString();
   const expectedHeroAsset = evidence.asset_manifest.assets.find((asset) => asset.kind === 'hero');
   const expectedSocialAsset = evidence.asset_manifest.assets.find((asset) => asset.kind === 'social');
+  const expectedInlineAsset = evidence.asset_manifest.assets.find((asset) => asset.kind === 'inline');
   const exactWave2OwnerPolicy = article.admission_status === 'admitted_exact';
-  const expectedShareAsset = exactWave2OwnerPolicy ? expectedHeroAsset : expectedSocialAsset;
+  const expectedShareAsset = expectedSocialAsset;
   const expectedShareUrl = expectedShareAsset?.public_path
     ? new URL(expectedShareAsset.public_path, `${CANONICAL_ORIGIN}/`).toString()
     : null;
@@ -246,6 +253,12 @@ for (const article of batch.articles) {
   const expectedShareWidth = expectedShareAsset?.observed_width ?? expectedShareAsset?.declared_width;
   const expectedShareHeight = expectedShareAsset?.observed_height ?? expectedShareAsset?.declared_height;
   const expectedShareMime = expectedShareAsset?.observed_mime_type ?? expectedShareAsset?.declared_mime_type;
+  const expectedInlineUrl = expectedInlineAsset?.public_path
+    ? new URL(expectedInlineAsset.public_path, `${CANONICAL_ORIGIN}/`).toString()
+    : null;
+  const expectedInlineWidth = expectedInlineAsset?.observed_width ?? expectedInlineAsset?.declared_width;
+  const expectedInlineHeight = expectedInlineAsset?.observed_height ?? expectedInlineAsset?.declared_height;
+  const expectedInlineMime = expectedInlineAsset?.observed_mime_type ?? expectedInlineAsset?.declared_mime_type;
   const schemaImageValue = Array.isArray(articleNode?.image)
     ? articleNode.image[0]
     : articleNode?.image;
@@ -255,6 +268,13 @@ for (const article of batch.articles) {
   const imageResponse = await fetchBytes(expectedHeroUrl);
   const imageDimensions = webpDimensions(imageResponse.bytes);
   const observedImageSha256 = sha256(imageResponse.bytes);
+  const inlineImageResponse = expectedInlineUrl ? await fetchBytes(expectedInlineUrl) : null;
+  const inlineImageDimensions = inlineImageResponse
+    ? webpDimensions(inlineImageResponse.bytes)
+    : null;
+  const observedInlineImageSha256 = inlineImageResponse
+    ? sha256(inlineImageResponse.bytes)
+    : null;
   const observedHero = {
     visible_src: readTagAttribute(heroTag, 'src') || null,
     visible_alt: readTagAttribute(heroTag, 'alt') || null,
@@ -275,6 +295,18 @@ for (const article of batch.articles) {
     fetched_content_type: imageResponse.response.headers.get('content-type'),
     fetched_sha256: observedImageSha256,
     fetched_dimensions: imageDimensions,
+  };
+  const observedInline = {
+    visible_src: readTagAttribute(inlineTag, 'src') || null,
+    visible_alt: readTagAttribute(inlineTag, 'alt') || null,
+    visible_width: Number.parseInt(readTagAttribute(inlineTag, 'width'), 10) || null,
+    visible_height: Number.parseInt(readTagAttribute(inlineTag, 'height'), 10) || null,
+    rendered_text: readTagAttribute(inlineFigure.match(/<figure\b[^>]*>/i)?.[0] ?? null, 'data-rendered-text') || null,
+    fetched_url: inlineImageResponse?.response.url ?? null,
+    fetched_status: inlineImageResponse?.response.status ?? null,
+    fetched_content_type: inlineImageResponse?.response.headers.get('content-type') ?? null,
+    fetched_sha256: observedInlineImageSha256,
+    fetched_dimensions: inlineImageDimensions,
   };
 
   const assertions = {
@@ -307,20 +339,33 @@ for (const article of batch.articles) {
     twitter_image_exact:
       observedHero.twitter_image === expectedShareUrl &&
       observedHero.twitter_image_alt === expectedShareAsset?.alt_text,
-    wave2_same_canonical_hero_share_asset:
-      !exactWave2OwnerPolicy ||
-      (expectedShareUrl === expectedHeroUrl &&
+    same_canonical_hero_share_asset:
+      expectedShareUrl === expectedHeroUrl &&
         expectedShareAsset?.sha256 === expectedHeroAsset?.sha256 &&
         expectedHeroWidth === 1200 &&
         expectedHeroHeight === 630 &&
-        expectedShareMime === 'image/webp'),
+        expectedShareMime === 'image/webp',
+    visible_inline_exact:
+      absoluteUrl(observedInline.visible_src) === expectedInlineUrl &&
+      observedInline.visible_alt === expectedInlineAsset?.alt_text &&
+      observedInline.visible_width === expectedInlineWidth &&
+      observedInline.visible_height === expectedInlineHeight &&
+      observedInline.rendered_text === expectedInlineAsset?.rendered_text,
+    inline_image_binary_exact:
+      inlineImageResponse?.response.status === 200 &&
+      new RegExp(`^${escapeRegExp(expectedInlineMime ?? '')}(?:;|$)`, 'i').test(
+        observedInline.fetched_content_type ?? '',
+      ) &&
+      inlineImageDimensions?.width === expectedInlineWidth &&
+      inlineImageDimensions?.height === expectedInlineHeight &&
+      observedInlineImageSha256 === expectedInlineAsset?.sha256,
     article_schema_image_exact: absoluteUrl(observedHero.schema_image) === expectedHeroUrl,
     canonical_image_binary_exact:
       imageResponse.response.status === 200 &&
       /^image\/webp(?:;|$)/i.test(observedHero.fetched_content_type ?? '') &&
       imageDimensions?.width === expectedHeroWidth &&
       imageDimensions?.height === expectedHeroHeight &&
-      observedImageSha256 === (article.hero_asset_sha256 ?? article.hero_sha256),
+      observedImageSha256 === expectedHeroAsset?.sha256,
     footer_disclosure_once: countElementsWithClass(html, 'mrx-disclaimer-footer') === 1,
     top_disclosure_absent: countElementsWithClass(html, 'mrx-disclaimer-top') === 0,
     analytics_present:
@@ -344,12 +389,16 @@ for (const article of batch.articles) {
     observed_asset_count: assetPaths.filter((assetPath) => html.includes(assetPath)).length,
     expected_asset_count: assetPaths.length,
     expected_canonical_hero_url: expectedHeroUrl,
-    expected_canonical_hero_sha256: article.hero_asset_sha256,
+    expected_canonical_hero_sha256: expectedHeroAsset?.sha256 ?? null,
     expected_canonical_hero_alt: expectedHeroAsset?.alt_text ?? null,
     expected_share_url: expectedShareUrl,
     expected_share_sha256: expectedShareAsset?.sha256 ?? null,
+    expected_inline_url: expectedInlineUrl,
+    expected_inline_sha256: expectedInlineAsset?.sha256 ?? null,
+    expected_inline_rendered_text: expectedInlineAsset?.rendered_text ?? null,
     exact_wave2_owner_policy: exactWave2OwnerPolicy,
     observed_canonical_hero: observedHero,
+    observed_inline_image: observedInline,
     response_headers: {
       cache_status: response.headers.get('cf-cache-status'),
       last_modified: response.headers.get('last-modified'),
@@ -362,9 +411,14 @@ for (const article of batch.articles) {
   });
 }
 
+const batchSlugs = new Set(batch.articles.map((article) => article.slug));
+const legacyTwoImageRows = (twoImageRetrofitManifest.rows ?? []).filter(
+  (row) => !batchSlugs.has(row.slug),
+);
 const retainedProductionBaselineResults = [];
-for (const route of retainedProductionBaselineManifest.retained_routes ?? []) {
-  const { response, text: html } = await fetchText(route.page_url);
+for (const route of legacyTwoImageRows) {
+  const pageUrl = `${CANONICAL_ORIGIN}/blog/${route.slug}/`;
+  const { response, text: html } = await fetchText(pageUrl);
   const schemas = extractSchemaNodes(html);
   const articleNode = schemas.find((node) => {
     const type = node?.['@type'];
@@ -379,7 +433,13 @@ for (const route of retainedProductionBaselineManifest.retained_routes ?? []) {
     /<figure\b[^>]*class=["'][^"']*article-hero-image[^"']*["'][^>]*>[\s\S]*?<\/figure>/i,
   )?.[0] ?? '';
   const heroTag = heroFigure.match(/<img\b[^>]*>/i)?.[0] ?? null;
-  const expectedHeroUrl = new URL(route.hero_path, `${CANONICAL_ORIGIN}/`).toString();
+  const inlineFigure = html.match(
+    /<figure\b[^>]*data-article-inline-image[^>]*>[\s\S]*?<\/figure>/i,
+  )?.[0] ?? '';
+  const inlineFigureTag = inlineFigure.match(/<figure\b[^>]*>/i)?.[0] ?? null;
+  const inlineTag = inlineFigure.match(/<img\b[^>]*>/i)?.[0] ?? null;
+  const expectedHeroUrl = new URL(route.hero.public_path, `${CANONICAL_ORIGIN}/`).toString();
+  const expectedInlineUrl = new URL(route.inline.public_path, `${CANONICAL_ORIGIN}/`).toString();
   const schemaImageValue = Array.isArray(articleNode?.image) ? articleNode.image[0] : articleNode?.image;
   const schemaImageUrl = typeof schemaImageValue === 'string'
     ? schemaImageValue
@@ -387,43 +447,92 @@ for (const route of retainedProductionBaselineManifest.retained_routes ?? []) {
   const imageResponse = await fetchBytes(expectedHeroUrl);
   const imageDimensions = webpDimensions(imageResponse.bytes);
   const observedImageSha256 = sha256(imageResponse.bytes);
+  const inlineImageResponse = await fetchBytes(expectedInlineUrl);
+  const inlineImageDimensions = webpDimensions(inlineImageResponse.bytes);
+  const observedInlineImageSha256 = sha256(inlineImageResponse.bytes);
   const observedHero = {
     visible_src: readTagAttribute(heroTag, 'src') || null,
     visible_alt: readTagAttribute(heroTag, 'alt') || null,
+    visible_width: Number.parseInt(readTagAttribute(heroTag, 'width'), 10) || null,
+    visible_height: Number.parseInt(readTagAttribute(heroTag, 'height'), 10) || null,
     og_image: extractMetaContent(html, 'property', 'og:image'),
+    og_image_alt: extractMetaContent(html, 'property', 'og:image:alt'),
+    og_image_width:
+      Number.parseInt(extractMetaContent(html, 'property', 'og:image:width') ?? '', 10) || null,
+    og_image_height:
+      Number.parseInt(extractMetaContent(html, 'property', 'og:image:height') ?? '', 10) || null,
+    og_image_type: extractMetaContent(html, 'property', 'og:image:type'),
     twitter_image: extractMetaContent(html, 'name', 'twitter:image'),
+    twitter_image_alt: extractMetaContent(html, 'name', 'twitter:image:alt'),
     schema_image: schemaImageUrl,
     fetched_status: imageResponse.response.status,
     fetched_content_type: imageResponse.response.headers.get('content-type'),
     fetched_sha256: observedImageSha256,
     fetched_dimensions: imageDimensions,
   };
+  const observedInline = {
+    visible_src: readTagAttribute(inlineTag, 'src') || null,
+    visible_alt: readTagAttribute(inlineTag, 'alt') || null,
+    visible_width: Number.parseInt(readTagAttribute(inlineTag, 'width'), 10) || null,
+    visible_height: Number.parseInt(readTagAttribute(inlineTag, 'height'), 10) || null,
+    rendered_text: readTagAttribute(inlineFigureTag, 'data-rendered-text') || null,
+    fetched_status: inlineImageResponse.response.status,
+    fetched_content_type: inlineImageResponse.response.headers.get('content-type'),
+    fetched_sha256: observedInlineImageSha256,
+    fetched_dimensions: inlineImageDimensions,
+  };
   const assertions = {
     http_200: response.status === 200,
-    final_url_exact: response.url === route.page_url,
-    canonical_exact: extractCanonical(html) === route.page_url,
+    final_url_exact: response.url === pageUrl,
+    canonical_exact: extractCanonical(html) === pageUrl,
     x_robots_indexable: !/noindex/i.test(response.headers.get('x-robots-tag') ?? ''),
     meta_robots_indexable: !/noindex/i.test(robotsMeta),
-    h1_exact: h1 === route.expected_h1,
-    visible_hero_exact: absoluteUrl(observedHero.visible_src) === expectedHeroUrl,
-    og_image_exact: observedHero.og_image === expectedHeroUrl,
-    twitter_image_exact: observedHero.twitter_image === expectedHeroUrl,
+    h1_exact: h1 === route.title,
+    visible_hero_exact:
+      absoluteUrl(observedHero.visible_src) === expectedHeroUrl &&
+      observedHero.visible_alt === route.hero.alt &&
+      observedHero.visible_width === route.hero.width &&
+      observedHero.visible_height === route.hero.height,
+    og_image_exact:
+      observedHero.og_image === expectedHeroUrl &&
+      observedHero.og_image_alt === route.hero.alt &&
+      observedHero.og_image_width === route.hero.width &&
+      observedHero.og_image_height === route.hero.height &&
+      observedHero.og_image_type === route.hero.mime_type,
+    twitter_image_exact:
+      observedHero.twitter_image === expectedHeroUrl &&
+      observedHero.twitter_image_alt === route.hero.alt,
     article_schema_image_exact: absoluteUrl(observedHero.schema_image) === expectedHeroUrl,
     canonical_image_binary_exact:
       imageResponse.response.status === 200 &&
       /^image\/webp(?:;|$)/i.test(observedHero.fetched_content_type ?? '') &&
       imageDimensions?.width === 1200 &&
       imageDimensions?.height === 630 &&
-      observedImageSha256 === route.hero_sha256,
+      observedImageSha256 === route.hero.sha256,
+    visible_inline_exact:
+      absoluteUrl(observedInline.visible_src) === expectedInlineUrl &&
+      observedInline.visible_alt === route.inline.alt &&
+      observedInline.visible_width === route.inline.width &&
+      observedInline.visible_height === route.inline.height &&
+      observedInline.rendered_text === route.inline.rendered_text,
+    inline_image_binary_exact:
+      inlineImageResponse.response.status === 200 &&
+      /^image\/webp(?:;|$)/i.test(observedInline.fetched_content_type ?? '') &&
+      inlineImageDimensions?.width === 1200 &&
+      inlineImageDimensions?.height === 675 &&
+      observedInlineImageSha256 === route.inline.sha256,
   };
   retainedProductionBaselineResults.push({
     slug: route.slug,
-    url: route.page_url,
-    expected_h1: route.expected_h1,
+    url: pageUrl,
+    expected_h1: route.title,
     expected_hero_url: expectedHeroUrl,
-    expected_hero_sha256: route.hero_sha256,
+    expected_hero_sha256: route.hero.sha256,
+    expected_inline_url: expectedInlineUrl,
+    expected_inline_sha256: route.inline.sha256,
     observed_h1: h1,
     observed_hero: observedHero,
+    observed_inline: observedInline,
     assertions,
     disposition: Object.values(assertions).every(Boolean) ? 'PASS' : 'FAIL',
   });
@@ -469,6 +578,11 @@ const interfaceAssertions = {
     Boolean(process.env.MRX_EXPECTED_LIVE_BLOG_COUNT) &&
     Number.isInteger(expectedLiveBlogCount) &&
     expectedLiveBlogCount === expectedPublicArticleUrls.length,
+  legacy_two_image_manifest_complete:
+    legacyTwoImageRows.length === legacyLiveUrls.length &&
+    legacyTwoImageRows.every((row) =>
+      legacyLiveUrls.includes(`${CANONICAL_ORIGIN}/blog/${row.slug}/`),
+    ),
   llms_http_200: llms.response.status === 200,
   llms_points_to_full_public_index:
     llms.text.includes(`${CANONICAL_ORIGIN}/llms-full.txt`),
@@ -487,6 +601,9 @@ const interfaceAssertions = {
     browserVerification?.wave10?.exact_titles_visible === true &&
     browserVerification?.wave10?.hero_images_visible === true &&
     browserVerification?.wave10?.hero_images_natural_1200x630 === true &&
+    browserVerification?.wave10?.inline_images_visible === true &&
+    browserVerification?.wave10?.inline_images_natural_1200x675 === true &&
+    browserVerification?.wave10?.inline_exact_text_visible === true &&
     browserVerification?.wave10?.exact_alt_text === true &&
     browserVerification?.wave10?.one_footer_disclosure_each === true &&
     browserVerification?.wave10?.no_clipping_overlap_or_garbling === true &&
@@ -518,7 +635,9 @@ const report = {
   browser_verification: browserVerification,
   article_results: articleResults,
   retained_production_baseline: {
-    manifest_path: RETAINED_PRODUCTION_BASELINE_PATH,
+    manifest_path: TWO_IMAGE_RETROFIT_MANIFEST_PATH,
+    legacy_route_manifest_path: RETAINED_PRODUCTION_BASELINE_PATH,
+    legacy_route_manifest_source_authority: retainedProductionBaselineManifest.source_authority,
     route_count: retainedProductionBaselineResults.length,
     routes: retainedProductionBaselineResults,
     disposition: retainedProductionBaselineResults.every((row) => row.disposition === 'PASS')
