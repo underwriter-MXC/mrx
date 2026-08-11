@@ -32,6 +32,15 @@ const TWO_IMAGE_DECISION = path.join(
 );
 const TWO_IMAGE_MANIFEST = path.join(MRX_ROOT, 'config/mrx-article-two-image-retrofit.json');
 const POSTS_DIR = path.join(MRX_ROOT, 'src/content/posts');
+const LEDGER_COUNTS = (
+  JSON.parse(readFileSync(LEDGER_JSON, 'utf8')) as {
+    verification: {
+      preservation_classification_counts: Record<string, number>;
+    };
+  }
+).verification.preservation_classification_counts;
+const PUBLIC_ROW_COUNT = LEDGER_COUNTS.live_public_published_route;
+const HELD_ROW_COUNT = LEDGER_COUNTS.incumbent_draft_nonpublic_held;
 const EXPECTED_OWNER_DECISION_SHA =
   'edc1d4602149558ff6d2b960416839b8caf97593f5fd8fe6ea91b56617d1425f';
 const REUSE_RULE =
@@ -351,11 +360,11 @@ describe('MRX 1,000-row hero/share creative-brief generator', () => {
     }
   });
 
-  it('preserves the 99 current public-workspace two-image sets and their frontmatter metadata', () => {
+  it('preserves every current public-workspace two-image set and its frontmatter metadata', () => {
     const publicRows = plan.rows.filter(
       (row) => row.preservation_classification === 'live_public_published_route',
     );
-    expect(publicRows).toHaveLength(99);
+    expect(publicRows).toHaveLength(PUBLIC_ROW_COUNT);
 
     for (const row of publicRows) {
       expect(row.repo_path).not.toBeNull();
@@ -390,11 +399,11 @@ describe('MRX 1,000-row hero/share creative-brief generator', () => {
     }
   });
 
-  it('requires all 29 held incumbents to satisfy the two-image policy before release', () => {
+  it('requires all held incumbents to satisfy the two-image policy before release', () => {
     const heldRows = plan.rows.filter(
       (row) => row.preservation_classification === 'incumbent_draft_nonpublic_held',
     );
-    expect(heldRows).toHaveLength(29);
+    expect(heldRows).toHaveLength(HELD_ROW_COUNT);
 
     for (const row of heldRows) {
       expect(row.repo_path).not.toBeNull();
@@ -421,7 +430,9 @@ describe('MRX 1,000-row hero/share creative-brief generator', () => {
     }
 
     expect(heldRows.filter((row) => row.current_asset_usable)).toHaveLength(0);
-    expect(heldRows.filter((row) => row.planned_replacement_required)).toHaveLength(29);
+    expect(heldRows.filter((row) => row.planned_replacement_required)).toHaveLength(
+      HELD_ROW_COUNT,
+    );
   });
 
   it('assigns 25 unique pilot replacements while leaving every pilot blocked and ungenerated', () => {
@@ -469,12 +480,12 @@ describe('MRX 1,000-row hero/share creative-brief generator', () => {
       deployment_authorized: true,
       spend_authorized: false,
     });
-    expect(plan.rows.filter((row) => row.asset_generated)).toHaveLength(99);
-    expect(plan.rows.filter((row) => row.inline_asset_generated)).toHaveLength(99);
-    expect(plan.rows.filter((row) => row.on_disk)).toHaveLength(99);
-    expect(plan.rows.filter((row) => row.inline_on_disk)).toHaveLength(99);
-    expect(plan.rows.filter((row) => row.published)).toHaveLength(99);
-    expect(plan.rows.filter((row) => row.release_blocked)).toHaveLength(901);
+    expect(plan.rows.filter((row) => row.asset_generated)).toHaveLength(PUBLIC_ROW_COUNT);
+    expect(plan.rows.filter((row) => row.inline_asset_generated)).toHaveLength(PUBLIC_ROW_COUNT);
+    expect(plan.rows.filter((row) => row.on_disk)).toHaveLength(PUBLIC_ROW_COUNT);
+    expect(plan.rows.filter((row) => row.inline_on_disk)).toHaveLength(PUBLIC_ROW_COUNT);
+    expect(plan.rows.filter((row) => row.published)).toHaveLength(PUBLIC_ROW_COUNT);
+    expect(plan.rows.filter((row) => row.release_blocked)).toHaveLength(1000 - PUBLIC_ROW_COUNT);
     expect(plan.scope_attestation).toMatchObject({
       local_only: true,
       images_generated_or_edited: false,
@@ -501,7 +512,9 @@ describe('MRX 1,000-row hero/share creative-brief generator', () => {
     expect(report).toMatch(/\| Unique semantic signatures\s+\|\s+1000 \|/);
     expect(report).toMatch(/\| Semantic appropriateness failures\s+\|\s+0 \|/);
     expect(report).toMatch(/\| Held current assets preserved\s+\|\s+0 \|/);
-    expect(report).toMatch(/\| Held assets still requiring replacement\s+\|\s+29 \|/);
+    expect(report).toMatch(
+      new RegExp(`\\| Held assets still requiring replacement\\s+\\|\\s+${HELD_ROW_COUNT} \\|`),
+    );
     expect(report).toMatch(/\| Pilot rows still quality-blocked\s+\|\s+25 \|/);
     expect(report).toContain(EXPECTED_OWNER_DECISION_SHA);
   });

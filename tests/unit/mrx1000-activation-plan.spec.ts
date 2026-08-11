@@ -270,13 +270,15 @@ describe('MRX1000 deterministic content activation plan', () => {
   });
 
   it('preserves source-publication evidence while removing numerical release blockers', () => {
-    expect(plan.distributions.by_source_preservation_classification).toEqual({
-      incumbent_draft_nonpublic_held: 29,
-      live_public_published_route: 99,
-      pilot_draft_noindex_stage: 25,
-      planning_only_inventory: 847,
-    });
-    expect(plan.rows.filter((row) => row.source_route_live)).toHaveLength(99);
+    const ledgerCounts = ledger.articles.reduce<Record<string, number>>((counts, row) => {
+      const classification = String(row.preservation_classification);
+      counts[classification] = (counts[classification] ?? 0) + 1;
+      return counts;
+    }, {});
+    expect(plan.distributions.by_source_preservation_classification).toEqual(ledgerCounts);
+    expect(plan.rows.filter((row) => row.source_route_live)).toHaveLength(
+      ledgerCounts.live_public_published_route,
+    );
     expect(plan.inputs.owner_decision.numerical_release_cap_applies).toBe(false);
     expect(plan.inputs.owner_decision.elapsed_time_gate_applies).toBe(false);
     expect(plan.inputs.owner_decision.spend_authorized).toBe(false);

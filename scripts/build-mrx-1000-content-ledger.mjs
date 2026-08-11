@@ -535,11 +535,15 @@ async function loadPilotSlugs() {
 }
 
 async function loadRelease10ProductionVerification() {
+  const batchBytes = await readFile(INPUTS.release10Batch);
+  const batch = JSON.parse(batchBytes.toString('utf8'));
+  const expectedArticleCount = batch.articles?.length;
+  if (!Number.isInteger(expectedArticleCount) || expectedArticleCount <= 0) {
+    throw new Error('Release-10 batch must contain at least one admitted article.');
+  }
+  const batchSlugs = new Set(batch.articles.map((article) => article.slug));
   try {
-    const [bytes, batchBytes] = await Promise.all([
-      readFile(INPUTS.release10PostPublicationVerification),
-      readFile(INPUTS.release10Batch),
-    ]);
+    const bytes = await readFile(INPUTS.release10PostPublicationVerification);
     const sidecar = await readFile(`${INPUTS.release10PostPublicationVerification}.sha256`, 'utf8');
     const expectedSha = sidecar
       .trim()
@@ -552,32 +556,32 @@ async function loadRelease10ProductionVerification() {
       );
     }
     const report = JSON.parse(bytes.toString('utf8'));
-    const batch = JSON.parse(batchBytes.toString('utf8'));
-    const expectedArticleCount = batch.articles?.length;
+    const verifiedArticleCount = report.summary?.expected_articles;
     if (
       !Number.isInteger(expectedArticleCount) ||
       expectedArticleCount <= 0 ||
+      !Number.isInteger(verifiedArticleCount) ||
+      verifiedArticleCount <= 0 ||
+      verifiedArticleCount > expectedArticleCount ||
       report.summary?.overall_disposition !== 'PASS' ||
-      report.summary?.expected_articles !== expectedArticleCount ||
-      report.summary?.passing_articles !== expectedArticleCount ||
+      report.summary?.passing_articles !== verifiedArticleCount ||
       report.summary?.failing_articles !== 0 ||
       report.interface_results?.disposition !== 'PASS'
     ) {
       throw new Error(
-        `Release-10 post-publication verification is present but not an exact ${expectedArticleCount ?? '(invalid batch)'}/${expectedArticleCount ?? '(invalid batch)'} PASS.`,
+        `Release-10 post-publication verification is not a valid passing prefix of the current ${expectedArticleCount ?? '(invalid batch)'}-row continuous batch.`,
       );
     }
     const rows = report.article_results ?? [];
-    const batchSlugs = new Set(batch.articles.map((article) => article.slug));
     const resultSlugs = new Set(rows.map((row) => row.slug));
     if (
-      rows.length !== expectedArticleCount ||
+      rows.length !== verifiedArticleCount ||
       rows.some((row) => row.disposition !== 'PASS') ||
-      resultSlugs.size !== expectedArticleCount ||
-      [...batchSlugs].some((slug) => !resultSlugs.has(slug))
+      resultSlugs.size !== verifiedArticleCount ||
+      [...resultSlugs].some((slug) => !batchSlugs.has(slug))
     ) {
       throw new Error(
-        `Release-10 post-publication article results are not the exact ${expectedArticleCount}-row admitted batch with PASS on every row.`,
+        `Release-10 post-publication article results are not a complete passing subset of the current ${expectedArticleCount}-row admitted batch.`,
       );
     }
     const verifiedAt = report.generated_at_utc;
@@ -586,6 +590,7 @@ async function loadRelease10ProductionVerification() {
       .slice(0, 10);
     return {
       artifactSha256: actualSha,
+      batchSlugs,
       bySlug: new Map(
         rows.map((row) => [
           row.slug,
@@ -605,12 +610,18 @@ async function loadRelease10ProductionVerification() {
       ),
     };
   } catch (error) {
-    if (error?.code === 'ENOENT') return { artifactSha256: null, bySlug: new Map() };
+    if (error?.code === 'ENOENT') {
+      return { artifactSha256: null, batchSlugs, bySlug: new Map() };
+    }
     throw error;
   }
 }
 
-async function loadRepoCandidates({ pilotSlugSet, release10ProductionBySlug = new Map() } = {}) {
+async function loadRepoCandidates({
+  pilotSlugSet,
+  release10AdmittedSlugs = new Set(),
+  release10ProductionBySlug = new Map(),
+} = {}) {
   const files = (await readdir(INPUTS.postsDir)).filter((name) => name.endsWith('.mdx')).sort();
   const rows = [];
   for (const filename of files) {
@@ -642,11 +653,7 @@ async function loadRepoCandidates({ pilotSlugSet, release10ProductionBySlug = ne
     // a separate field and is populated only from the checksummed production
     // verifier.
     const release10Production = release10ProductionBySlug.get(slug) ?? null;
-    const isAuthorizedReleaseCandidate =
-      isPublished &&
-      data.content_program === 'mrx1000' &&
-      (['release-10', 'wave2', 'wave3'].includes(data.content_batch) ||
-        release10Production != null);
+    const isAuthorizedReleaseCandidate = isPublished && release10AdmittedSlugs.has(slug);
     const isRelease10ProductionVerified =
       isAuthorizedReleaseCandidate && release10Production != null;
     const isLegacyPublished = isPublished && !isAuthorizedReleaseCandidate;
@@ -1309,6 +1316,7 @@ async function main() {
     readFile(INPUTS.mapRegistry, 'utf8').then(JSON.parse),
     loadRepoCandidates({
       pilotSlugSet,
+      release10AdmittedSlugs: release10Production.batchSlugs,
       release10ProductionBySlug: release10Production.bySlug,
     }),
     loadPilotCandidates({ pilotBySlug }),

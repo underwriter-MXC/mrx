@@ -1343,11 +1343,12 @@ async function main() {
     throw new Error('Canonical ledger must contain exactly 1,000 verified rows');
   }
   if (
-    twoImageRetrofit.summary?.article_count !== 99 ||
-    twoImageRetrofit.summary?.hero_ocr_pass_count !== 99 ||
-    twoImageRetrofit.summary?.inline_ocr_pass_count !== 99
+    !Array.isArray(twoImageRetrofit.rows) ||
+    twoImageRetrofit.summary?.article_count !== twoImageRetrofit.rows.length ||
+    twoImageRetrofit.summary?.hero_ocr_pass_count !== twoImageRetrofit.rows.length ||
+    twoImageRetrofit.summary?.inline_ocr_pass_count !== twoImageRetrofit.rows.length
   ) {
-    throw new Error('Two-image retrofit manifest must prove 99 public OCR-verified article rows');
+    throw new Error('Two-image retrofit manifest must prove every current public OCR-verified article row');
   }
   if (
     !twoImageDecisionText.includes('Decision ID: D-2026-0811-17') ||
@@ -1537,19 +1538,21 @@ async function main() {
     verification.share_description_outside_130_160_count === 0,
     verification.share_description_ellipsis_count === 0,
     verification.share_description_incomplete_sentence_count === 0,
-    verification.existing_public_asset_verified_count === 99,
-    verification.existing_public_inline_asset_verified_count === 99,
-    verification.asset_generated_count === 99 + verification.held_current_asset_preserved_count,
-    verification.on_disk_count === 99 + verification.held_current_asset_preserved_count,
-    verification.published_count === 99,
-    verification.release_blocked_count === 901,
-    verification.held_count === 29,
-    verification.held_current_asset_observed_count === 29,
+    verification.existing_public_asset_verified_count === publicRows.length,
+    verification.existing_public_inline_asset_verified_count === publicRows.length,
+    verification.asset_generated_count ===
+      publicRows.length + verification.held_current_asset_preserved_count,
+    verification.on_disk_count ===
+      publicRows.length + verification.held_current_asset_preserved_count,
+    verification.published_count === publicRows.length,
+    verification.release_blocked_count === rows.length - publicRows.length,
+    verification.held_count === heldRows.length,
+    verification.held_current_asset_observed_count === heldRows.length,
     verification.held_current_asset_preserved_count ===
       verification.held_current_asset_usable_count,
     verification.held_current_asset_preserved_count +
       verification.held_replacement_required_count ===
-      29,
+      heldRows.length,
     verification.pilot_count === 25,
     verification.pilot_shared_placeholder_current_count === 25,
     verification.pilot_unique_replacement_path_count === 25,

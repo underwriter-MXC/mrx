@@ -5,6 +5,10 @@ import { describe, expect, it } from 'vitest';
 import { imagePolicyViolations, parsePostFrontmatter } from './helpers/post-frontmatter';
 
 const repoRoot = join(import.meta.dirname, '..', '..');
+const releaseBatch = JSON.parse(
+  readFileSync(join(repoRoot, 'config', 'mrx1000-release-10-batch.json'), 'utf8'),
+) as { articles: Array<{ slug: string; admission_status?: string }> };
+const admittedArticleCount = releaseBatch.articles.length;
 const publishedFixture = `---
 title: 'Fixture article'
 description: 'Fixture description'
@@ -60,9 +64,9 @@ describe('published article image guardrails', () => {
     const inlinePaths = published.map((post) => post.inline.src);
     const explicitlyAllowedVerifiedRemoteSources = new Set<string>();
 
-    // Nine legacy-live posts plus the ninety hash-locked release rows.
+    // Nine legacy-live posts plus the continuously growing hash-locked release slate.
     // Production publication remains controlled by the separate release gate.
-    expect(published).toHaveLength(99);
+    expect(published).toHaveLength(admittedArticleCount + 9);
     expect(new Set(heroPaths).size).toBe(heroPaths.length);
     expect(new Set(inlinePaths).size).toBe(inlinePaths.length);
     for (const post of published) {
@@ -103,11 +107,7 @@ describe('published article image guardrails', () => {
         imagePolicyViolations(post, { requireDistinctSocial: false }).length > 0,
     );
     const exactWave2Slugs = new Set(
-      (
-        JSON.parse(
-          readFileSync(join(repoRoot, 'config', 'mrx1000-release-10-batch.json'), 'utf8'),
-        ) as { articles: Array<{ slug: string; admission_status?: string }> }
-      ).articles
+      releaseBatch.articles
         .filter((article) => article.admission_status === 'admitted_exact')
         .map((article) => article.slug),
     );
@@ -119,10 +119,10 @@ describe('published article image guardrails', () => {
       (post) => imagePolicyViolations(post, { requireDistinctSocial: true }).length > 0,
     );
 
-    expect(mrx1000Posts).toHaveLength(115);
+    expect(mrx1000Posts).toHaveLength(admittedArticleCount + 25);
     expect(
       mrx1000Posts.filter((post) => post.publicationStatus === 'published' && post.draft !== true),
-    ).toHaveLength(90);
+    ).toHaveLength(admittedArticleCount);
     expect(
       mrx1000Posts.filter(
         (post) => post.publicationStatus === 'draft' && post.draft && post.noindex,

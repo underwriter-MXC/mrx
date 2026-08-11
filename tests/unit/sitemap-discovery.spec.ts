@@ -52,7 +52,12 @@ describe('canonical sitemap discovery', () => {
           !/^draft:\s*true\s*$/m.test(source) &&
           !/^noindex:\s*true\s*$/m.test(source),
       ).length;
-    expect(publicPostCount).toBe(99);
+    const admittedArticleCount = (
+      JSON.parse(
+        readFileSync(join(process.cwd(), 'config', 'mrx1000-release-10-batch.json'), 'utf8'),
+      ) as { articles: unknown[] }
+    ).articles.length;
+    expect(publicPostCount).toBe(admittedArticleCount + 9);
     expect(archivePageNumbers(publicPostCount)).toEqual([2, 3, 4, 5]);
 
     const continuationRoute = readFileSync(

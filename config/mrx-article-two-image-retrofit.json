@@ -1,18 +1,18 @@
 {
   "artifact_type": "mrx_article_two_image_retrofit",
   "schema_version": 1,
-  "generated_at_utc": "2026-08-11T18:52:19Z",
+  "generated_at_utc": "2026-08-11T19:56:20Z",
   "policy_source": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
   "summary": {
-    "article_count": 99,
-    "asset_count": 198,
-    "unique_source_art_count": 99,
-    "unique_hero_sha256_count": 99,
-    "unique_inline_sha256_count": 99,
-    "distinct_article_pair_count": 99,
-    "hero_ocr_pass_count": 99,
-    "inline_ocr_pass_count": 99,
-    "exact_filename_identity_count": 99
+    "article_count": 100,
+    "asset_count": 200,
+    "unique_source_art_count": 100,
+    "unique_hero_sha256_count": 100,
+    "unique_inline_sha256_count": 100,
+    "distinct_article_pair_count": 100,
+    "hero_ocr_pass_count": 100,
+    "inline_ocr_pass_count": 100,
+    "exact_filename_identity_count": 100
   },
   "contact_sheets": {
     "hero": [
@@ -1728,6 +1728,56 @@
           "actual": "how to interpret mineral rights\nroyalty checks",
           "normalized_expected": "how to interpret mineral rights royalty checks",
           "normalized_actual": "how to interpret mineral rights royalty checks",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      }
+    },
+    {
+      "slug": "how-to-know-if-your-mineral-rights-offer-is-fair",
+      "title": "How to Know if Your Mineral Rights Offer Is Fair",
+      "keyword": "fair mineral rights offer",
+      "file_path": "src/content/posts/how-to-know-if-your-mineral-rights-offer-is-fair.mdx",
+      "source_public_path": "/assets/articles/hero/how-to-know-if-your-mineral-rights-offer-is-fair.webp",
+      "source_artifact_paths": [
+        "artifacts/mrx1000-wave11-creative-sources/how-to-know-if-your-mineral-rights-offer-is-fair-hero-base.png",
+        "artifacts/mrx1000-wave11-creative-sources/how-to-know-if-your-mineral-rights-offer-is-fair-inline-base.png"
+      ],
+      "generated_at_utc": "2026-08-11T19:56:20Z",
+      "hero": {
+        "public_path": "/assets/articles/hero/how-to-know-if-your-mineral-rights-offer-is-fair.webp",
+        "alt": "Offer folders and records with the title “How to Know if Your Mineral Rights Offer Is Fair”.",
+        "width": 1200,
+        "height": 630,
+        "mime_type": "image/webp",
+        "sha256": "f9edc07b76938253d0b4348ce58f55e842deb9badaef9a5b9b03c2860b8816ce",
+        "perceptual_hash": "0000000000111100000000000011110000000000001111000000000000111110010100100001110001111111000101110111111101100111011011101110011101100000111101110000000011110111000000001111001100000000111100110000000011111011000000001111101100000000111110000000000011110000",
+        "neutralized_art_text_region_count": 0,
+        "ocr": {
+          "expected": "How to Know if Your Mineral Rights Offer Is Fair",
+          "actual": "How to Know if Your\nMineral Rights Offer\nIs Fair",
+          "normalized_expected": "how to know if your mineral rights offer is fair",
+          "normalized_actual": "how to know if your mineral rights offer is fair",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      },
+      "inline": {
+        "public_path": "/assets/articles/inline/how-to-know-if-your-mineral-rights-offer-is-fair/fair-mineral-rights-offer.webp",
+        "alt": "Two blank offer worksheets highlighting the phrase “fair mineral rights offer”.",
+        "rendered_text": "fair mineral rights offer",
+        "visual_variant": "wave11-distinct-generated-flatlay",
+        "width": 1200,
+        "height": 675,
+        "mime_type": "image/webp",
+        "sha256": "739dd68de3a9356233f31ccffb0a2bd60f47988f71d65931acd5312fe27538e6",
+        "perceptual_hash": "1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "neutralized_art_text_region_count": 0,
+        "ocr": {
+          "expected": "fair mineral rights offer",
+          "actual": "fair mineral rights offer",
+          "normalized_expected": "fair mineral rights offer",
+          "normalized_actual": "fair mineral rights offer",
           "uppercase_i_confusable_accepted": false,
           "pass": true
         }

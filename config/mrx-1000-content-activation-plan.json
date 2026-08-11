@@ -1,15 +1,15 @@
 {
   "artifact_type": "mrx1000_content_activation_plan",
   "plan_version": "mrx1000-content-activation-v1.1.0",
-  "generated_at": "2026-07-20T23:28:03.932Z",
+  "generated_at": "2026-07-20T17:21:28.528Z",
   "generated_at_method": "canonical_ledger_generated_at",
   "generator": "scripts/build-mrx-1000-activation-plan.mjs",
-  "content_fingerprint_sha256": "7b13be466bae99d6b71948c35e4e1a2aebf6817d3a924d1e4413336072cb9162",
+  "content_fingerprint_sha256": "c60a2e628bd750d6ebc7af76213270bdd1fb38cde082dc0d7995fd3a5e902b89",
   "inputs": {
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
     "canonical_ledger_fingerprint_sha256": "d5f66894f10ca833d8428552eca598202a479ca9280be80d9471e91f755663b2",
     "canonical_ledger_fingerprint_verified": true,
-    "canonical_ledger_generated_at": "2026-07-20T23:28:03.932Z",
+    "canonical_ledger_generated_at": "2026-07-20T17:21:28.528Z",
     "owner_decision": {
       "decision_id": "D-2026-0804-16",
       "signed_disposition": "APPROVED_CONTINUOUS_QUALITY_GATED_ARTICLE_PUBLICATION",
@@ -114,8 +114,8 @@
       "contextual_inline": 350
     },
     "by_source_preservation_classification": {
-      "incumbent_draft_nonpublic_held": 29,
-      "live_public_published_route": 99,
+      "incumbent_draft_nonpublic_held": 28,
+      "live_public_published_route": 100,
       "pilot_draft_noindex_stage": 25,
       "planning_only_inventory": 847
     }
@@ -19357,8 +19357,8 @@
         "target_title": "How to Know if Your Mineral Rights Offer Is Fair",
         "url": "/blog/how-to-know-if-your-mineral-rights-offer-is-fair/",
         "relationship": "same_cluster_next_by_program_row_id_cyclic",
-        "target_source_preservation_classification": "incumbent_draft_nonpublic_held",
-        "target_route_live": false,
+        "target_source_preservation_classification": "live_public_published_route",
+        "target_route_live": true,
         "status": "planned_local_only"
       },
       "primary_cta": {
@@ -19408,8 +19408,8 @@
       "pillar": "offer-review",
       "search_intent": "commercial-investigation",
       "funnel_stage": "decision",
-      "source_preservation_classification": "incumbent_draft_nonpublic_held",
-      "source_route_live": false,
+      "source_preservation_classification": "live_public_published_route",
+      "source_route_live": true,
       "pillar_link": {
         "url": "/offer-review/",
         "route_evidence": "src/pages/offer-review.astro",
@@ -19458,7 +19458,7 @@
         "rendered_triangle_verified": false,
         "live_status": "not_published_or_verified_by_this_plan",
         "live_triangle_verified": false,
-        "release_status": "eligible_for_continuous_quality_review_not_yet_cleared",
+        "release_status": "released_under_d16_continuous_quality_gate",
         "numerical_release_cap_applies": false
       }
     },

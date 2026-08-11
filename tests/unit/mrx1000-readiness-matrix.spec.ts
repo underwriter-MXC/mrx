@@ -25,7 +25,7 @@
  *      authoritative local artifact names a row.
  *  11. Texas dynamic pillar route (/mineral-rights/texas/) is recognized via
  *      src/pages/mineral-rights/[state].astro + src/data/states.ts coverage.
- *  12. The 9 legacy rows plus 90 quality-cleared release rows are preserved as
+ *  12. The 9 legacy rows plus all quality-cleared release rows are preserved as
  *      public_live_known_route in the current local sitemap.
  */
 import { describe, it, expect, beforeAll } from 'vitest';
@@ -50,6 +50,7 @@ const LEDGER = path.join(MRX_ROOT, 'config/mrx-1000-canonical-content-ledger.jso
 const RELEASE_BATCH = JSON.parse(
   readFileSync(path.join(MRX_ROOT, 'config/mrx1000-release-10-batch.json'), 'utf8'),
 ) as { articles: Array<{ program_row_id: string }> };
+const PUBLIC_ROUTE_COUNT = RELEASE_BATCH.articles.length + 9;
 const READONLY_DIR = path.join(MRX_ROOT, 'tmp');
 const CONTENT_GENIUS_EXPORT = path.join(
   MRX_ROOT,
@@ -335,9 +336,9 @@ describe('MRX1000 readiness matrix', () => {
     }
   });
 
-  it('preserves the 9 legacy and 90 quality-cleared routes as public_live_known_route', () => {
+  it('preserves the legacy and quality-cleared routes as public_live_known_route', () => {
     const liveRoutes = matrix.rows.filter((r) => r.public_live_known_route);
-    expect(liveRoutes.length).toBe(99);
+    expect(liveRoutes.length).toBe(PUBLIC_ROUTE_COUNT);
     for (const row of liveRoutes) {
       expect(row.publication_status).toBe('published');
       expect(row.sitemap.currently_included).toBe(true);
@@ -392,7 +393,7 @@ describe('MRX1000 readiness matrix', () => {
     for (const row of matrix.rows.filter((r) => r.sitemap.currently_included)) {
       expect(sitemap).toContain(row.sitemap.public_url.toLowerCase().replace(/\/$/, ''));
     }
-    expect(matrix.aggregate.sitemap_currently_included).toBe(99);
+    expect(matrix.aggregate.sitemap_currently_included).toBe(PUBLIC_ROUTE_COUNT);
   });
 
   it('separates Content Genius exact-title records from ledger-created UUID evidence', () => {
@@ -726,9 +727,9 @@ describe('MRX1000 readiness matrix — load-bearing fact regressions', () => {
     expect(matrix.aggregate.pillar_route_missing).toBe(0);
   });
 
-  it('9 legacy and 90 quality-cleared release rows are eligible in the current local sitemap', () => {
+  it('legacy and quality-cleared release rows are eligible in the current local sitemap', () => {
     const live = matrix.rows.filter((r) => r.public_live_known_route);
-    expect(live.length).toBe(99);
+    expect(live.length).toBe(PUBLIC_ROUTE_COUNT);
     const legacyIds = [
       'MRX1000-0151',
       'MRX1000-0154',
@@ -767,7 +768,7 @@ describe('MRX1000 readiness matrix — load-bearing fact regressions', () => {
     }
   });
 
-  it('sitemap inclusion is parsed from one selected adapter output and matches the 99 local live rows', () => {
+  it('sitemap inclusion is parsed from one selected adapter output and matches local live rows', () => {
     const selected = selectCanonicalArticlesSitemap(CANONICAL_ARTICLES_SITEMAP_CANDIDATES);
     expect(selected).not.toBeNull();
     expect(matrix.inputs.sitemap_xml_files_indexed).toEqual([
@@ -775,7 +776,7 @@ describe('MRX1000 readiness matrix — load-bearing fact regressions', () => {
     ]);
     const sitemap = readFileSync(selected as string, 'utf8');
     const sitemapLower = sitemap.toLowerCase();
-    expect(matrix.aggregate.sitemap_currently_included).toBe(99);
+    expect(matrix.aggregate.sitemap_currently_included).toBe(PUBLIC_ROUTE_COUNT);
     for (const row of matrix.rows.filter((r) => r.sitemap.currently_included)) {
       expect(sitemapLower).toContain(row.sitemap.public_url.toLowerCase().replace(/\/$/, ''));
     }
@@ -787,10 +788,10 @@ describe('MRX1000 readiness matrix — load-bearing fact regressions', () => {
     const live = matrix.rows.filter((r) => r.public_live_known_route);
     const released = matrix.rows.filter((r) => r.release_index.release_authorized);
     const indexed = matrix.rows.filter((r) => r.release_index.index_authorized);
-    expect(live.length).toBe(99);
+    expect(live.length).toBe(PUBLIC_ROUTE_COUNT);
     expect(released.length).toBe(1000);
     expect(indexed.length).toBe(1000);
-    expect(matrix.aggregate.public_live_known_route).toBe(99);
+    expect(matrix.aggregate.public_live_known_route).toBe(PUBLIC_ROUTE_COUNT);
     expect(matrix.aggregate.release_authorized).toBe(1000);
     expect(matrix.aggregate.index_authorized).toBe(1000);
     for (const row of live) {

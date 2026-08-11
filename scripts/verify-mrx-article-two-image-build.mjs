@@ -58,8 +58,12 @@ function findArticleSchema(objects) {
   });
 }
 
-if (manifest.summary?.article_count !== 99 || manifest.rows?.length !== 99) {
-  failures.push('manifest must contain exactly 99 current public article rows');
+if (
+  !Array.isArray(manifest.rows) ||
+  manifest.summary?.article_count !== manifest.rows.length ||
+  manifest.summary?.asset_count !== manifest.rows.length * 2
+) {
+  failures.push('manifest summary must match the complete current public article corpus');
 }
 
 for (const row of manifest.rows ?? []) {

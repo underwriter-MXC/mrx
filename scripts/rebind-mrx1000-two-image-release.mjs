@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import { createHash } from 'node:crypto';
-import { existsSync, readFileSync, writeFileSync } from 'node:fs';
+import { existsSync, readFileSync, readdirSync, writeFileSync } from 'node:fs';
 import { join, resolve } from 'node:path';
 
 const root = resolve(
@@ -18,6 +18,7 @@ const decisionPath = join(root, decisionRelativePath);
 const retainedBaselineRelativePath =
   'artifacts/mrx1000-release-10/release/retained-production-baseline.json';
 const retainedBaselinePath = join(root, retainedBaselineRelativePath);
+const postsDirectory = join(root, 'src/content/posts');
 
 const sha256 = (bytes) => createHash('sha256').update(bytes).digest('hex');
 
@@ -32,6 +33,17 @@ const decisionBytes = readFileSync(decisionPath);
 const bySlug = new Map((retrofit.rows ?? []).map((row) => [row.slug, row]));
 const problems = [];
 const rows = [];
+
+const publicSourceCount = readdirSync(postsDirectory)
+  .filter((name) => name.endsWith('.mdx'))
+  .filter((name) => {
+    const source = readFileSync(join(postsDirectory, name), 'utf8');
+    return (
+      /^publication_status:\s*published\s*$/m.test(source) &&
+      !/^draft:\s*true\s*$/m.test(source) &&
+      !/^noindex:\s*true\s*$/m.test(source)
+    );
+  }).length;
 
 function sortDeep(value) {
   if (Array.isArray(value)) return value.map(sortDeep);
@@ -86,6 +98,7 @@ const summary = {
   batch_article_count: batch.articles?.length ?? 0,
   rebound_article_count: rows.length,
   corpus_article_count: retrofit.rows?.length ?? 0,
+  public_source_article_count: publicSourceCount,
   hero_ocr_pass_count: retrofit.summary?.hero_ocr_pass_count ?? 0,
   inline_ocr_pass_count: retrofit.summary?.inline_ocr_pass_count ?? 0,
   problems,
@@ -93,11 +106,11 @@ const summary = {
 
 if (
   summary.batch_article_count !== rows.length ||
-  summary.corpus_article_count !== 99 ||
+  summary.corpus_article_count !== summary.public_source_article_count ||
   summary.hero_ocr_pass_count !== summary.corpus_article_count ||
   summary.inline_ocr_pass_count !== summary.corpus_article_count
 ) {
-  problems.push('summary counts do not prove a complete 99-route two-image corpus');
+  problems.push('summary counts do not prove the complete current public two-image corpus');
 }
 
 if (write && problems.length === 0) {

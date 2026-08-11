@@ -20,6 +20,13 @@ const JSON_OUT = path.join(MRX_ROOT, 'config/mrx-1000-searchatlas-llm-execution-
 const CSV_OUT = path.join(MRX_ROOT, 'config/mrx-1000-searchatlas-llm-execution-manifest.csv');
 const REPORT_OUT = path.join(MRX_ROOT, 'reports/mrx-1000-searchatlas-llm-execution-manifest.md');
 const LEDGER = path.join(MRX_ROOT, 'config/mrx-1000-canonical-content-ledger.json');
+const LEDGER_COUNTS = (
+  JSON.parse(readFileSync(LEDGER, 'utf8')) as {
+    verification: { preservation_classification_counts: Record<string, number> };
+  }
+).verification.preservation_classification_counts;
+const PUBLIC_ROW_COUNT = LEDGER_COUNTS.live_public_published_route;
+const HELD_ROW_COUNT = LEDGER_COUNTS.incumbent_draft_nonpublic_held;
 const READINESS = path.join(MRX_ROOT, 'reports/mrx-1000-readiness-matrix.json');
 const D11 = path.join(WORKSPACE_ROOT, 'program-plans/mrx-1000-ceo-decision-no-spend-capacity.md');
 const OWNER_DECISION = path.join(
@@ -449,15 +456,15 @@ describe('MRX1000 SearchAtlas + ordered LLM execution manifest', () => {
     );
   });
 
-  it('projects the current 99 + 29 + 25 + 847 workspace-state partition', () => {
+  it('projects the current canonical workspace-state partition', () => {
     expect(manifest.aggregate.by_canonical_inventory_state).toEqual({
-      incumbent_draft_nonpublic_held: 29,
-      live_public_published_route: 99,
+      incumbent_draft_nonpublic_held: HELD_ROW_COUNT,
+      live_public_published_route: PUBLIC_ROW_COUNT,
       pilot_draft_noindex_stage: 25,
       planning_only_inventory: 847,
     });
     expect(manifest.aggregate.repo_mdx_present).toBe(153);
-    expect(manifest.aggregate.workspace_public_route_configured).toBe(99);
+    expect(manifest.aggregate.workspace_public_route_configured).toBe(PUBLIC_ROW_COUNT);
     expect(
       manifest.rows.every(
         (row) => !row.authoritative_current_state.repo.production_live_verified_in_this_local_build,
@@ -473,8 +480,8 @@ describe('MRX1000 SearchAtlas + ordered LLM execution manifest', () => {
       pilot_workspace_shells_marked_as_review_candidates: 0,
       pilot_rows_with_validated_distinct_review_candidate: 1,
       by_review_candidate_state: {
-        CHECKSUMMED_EXISTING_PUBLIC_ARTICLE_READY_FOR_LLM_REVIEW: 99,
-        CHECKSUMMED_HELD_SUBSTANTIVE_DRAFT_READY_FOR_LLM_REVIEW: 29,
+        CHECKSUMMED_EXISTING_PUBLIC_ARTICLE_READY_FOR_LLM_REVIEW: PUBLIC_ROW_COUNT,
+        CHECKSUMMED_HELD_SUBSTANTIVE_DRAFT_READY_FOR_LLM_REVIEW: HELD_ROW_COUNT,
         NO_CHECKSUMMED_REVIEW_CANDIDATE_PILOT_QA_SHELL_ONLY: 24,
         NO_WORKSPACE_CONTENT_CANDIDATE: 847,
         ROW2_REMEDIATED_NOINDEX_CANDIDATE_VALIDATED_FOR_ORDERED_LLM_REVIEW: 1,

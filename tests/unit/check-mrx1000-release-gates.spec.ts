@@ -45,6 +45,11 @@ import { tmpdir } from 'node:os';
 import { analyzeControlledPublicationTransition } from '../../scripts/_mrx1000-controlled-publication-transition.mjs';
 
 const repoRoot = resolve(__dirname, '..', '..');
+const admittedArticleCount = (
+  JSON.parse(readFileSync(join(repoRoot, 'config', 'mrx1000-release-10-batch.json'), 'utf8')) as {
+    articles: unknown[];
+  }
+).articles.length;
 
 function sha256Hex(buffer: Buffer | string): string {
   return createHash('sha256').update(buffer).digest('hex');
@@ -587,7 +592,7 @@ describe('scripts/check-mrx1000-release-gates.mjs', () => {
     }
   });
 
-  it('writes JSON+MD reports and passes all 90 continuously admitted rows after final approval', () => {
+  it('writes JSON+MD reports and passes every continuously admitted row after final approval', () => {
     const r = runCheckAndRead();
     expect(existsSync(r.jsonPath)).toBe(true);
     expect(existsSync(r.mdPath)).toBe(true);
@@ -600,8 +605,8 @@ describe('scripts/check-mrx1000-release-gates.mjs', () => {
       packets_failing: number;
     };
     expect(evidence).toMatchObject({
-      packets_required: 90,
-      packets_passing: 90,
+      packets_required: admittedArticleCount,
+      packets_passing: admittedArticleCount,
       packets_failing: 0,
     });
     const informational = (r.payload.informational_findings as string[]) || [];
@@ -610,24 +615,24 @@ describe('scripts/check-mrx1000-release-gates.mjs', () => {
     );
   });
 
-  it('treats 1,000 as program scope and observes the 90 quality-cleared public rows', () => {
+  it('treats 1,000 as program scope and observes every quality-cleared public row', () => {
     const r = runCheckAndRead();
     const cap = r.payload.cap as {
       authorized_release_total: number;
       observed_release_total: number;
     };
     expect(cap.authorized_release_total).toBe(1000);
-    expect(cap.observed_release_total).toBe(90);
+    expect(cap.observed_release_total).toBe(admittedArticleCount);
     const inputs = r.payload.inputs as {
       ledger: {
         runtime_publication_overrides: Array<{ slug: string; state: string }>;
       };
     };
     // The original ten rows are already represented as public in the
-    // canonical ledger. The remaining 80 rows require byte-proven runtime
+    // canonical ledger. Later rows require byte-proven runtime
     // overrides; after the two-image rebind those overrides must prove that
     // the refreshed, reviewed source bytes are current.
-    expect(inputs.ledger.runtime_publication_overrides).toHaveLength(80);
+    expect(inputs.ledger.runtime_publication_overrides).toHaveLength(admittedArticleCount - 10);
     expect(
       inputs.ledger.runtime_publication_overrides.every(
         (override) => override.state === 'reviewed_bytes_current',
@@ -674,7 +679,7 @@ describe('scripts/check-mrx1000-release-gates.mjs', () => {
       string,
       unknown
     >;
-    expect((exact.configured_exact_count as number) ?? 0).toBe(90);
+    expect((exact.configured_exact_count as number) ?? 0).toBe(admittedArticleCount);
     expect(exact.admission_mode).toBe('continuous_quality_gated');
   });
 

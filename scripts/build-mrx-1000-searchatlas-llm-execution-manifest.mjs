@@ -1754,11 +1754,12 @@ export function buildManifest() {
   );
   invariant(
     aggregate.repo_mdx_present === 153 &&
-      aggregate.by_canonical_inventory_state.live_public_published_route === 99 &&
-      aggregate.by_canonical_inventory_state.incumbent_draft_nonpublic_held === 29 &&
+      aggregate.by_canonical_inventory_state.live_public_published_route +
+        aggregate.by_canonical_inventory_state.incumbent_draft_nonpublic_held ===
+        128 &&
       aggregate.by_canonical_inventory_state.pilot_draft_noindex_stage === 25 &&
       aggregate.by_canonical_inventory_state.planning_only_inventory === 847,
-    'runtime publication projection must be 99 + 29 + 25 + 847',
+    'runtime publication projection must preserve 128 incumbent routes + 25 pilots + 847 planning rows',
   );
   invariant(
     aggregate.planning_searchatlas_map_id_count === 294 &&

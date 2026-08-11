@@ -625,6 +625,8 @@ function buildCheck() {
     const evidenceManifestRel = 'artifacts/mrx1000-release-10/evidence/_manifest.json';
     const evidenceManifestPath = join(repoRoot, evidenceManifestRel);
     const evidenceManifest = existsSync(evidenceManifestPath) ? readJson(evidenceManifestPath) : null;
+    const expectedCorpusCount = twoImagePolicy.public_article_count ?? null;
+    const expectedBatchCount = batch.articles?.length ?? 0;
 
     if (!decisionPath || !existsSync(decisionPath)) {
       twoImageFindings.push(`Missing two-image retrofit decision: ${decisionRel ?? '(unset)'}.`);
@@ -649,26 +651,30 @@ function buildCheck() {
         twoImageFindings.push('Two-image retrofit manifest SHA-256 mismatch.');
       }
       if (
-        retrofit?.summary?.article_count !== 99 ||
-        retrofit?.summary?.asset_count !== 198 ||
-        retrofit?.summary?.unique_source_art_count !== 99 ||
-        retrofit?.summary?.unique_hero_sha256_count !== 99 ||
-        retrofit?.summary?.unique_inline_sha256_count !== 99 ||
-        retrofit?.summary?.distinct_article_pair_count !== 99 ||
-        retrofit?.summary?.hero_ocr_pass_count !== 99 ||
-        retrofit?.summary?.inline_ocr_pass_count !== 99 ||
-        retrofit?.summary?.exact_filename_identity_count !== 99
+        !Number.isInteger(expectedCorpusCount) ||
+        retrofit?.rows?.length !== expectedCorpusCount ||
+        retrofit?.summary?.article_count !== expectedCorpusCount ||
+        retrofit?.summary?.asset_count !== expectedCorpusCount * 2 ||
+        retrofit?.summary?.unique_source_art_count !== expectedCorpusCount ||
+        retrofit?.summary?.unique_hero_sha256_count !== expectedCorpusCount ||
+        retrofit?.summary?.unique_inline_sha256_count !== expectedCorpusCount ||
+        retrofit?.summary?.distinct_article_pair_count !== expectedCorpusCount ||
+        retrofit?.summary?.hero_ocr_pass_count !== expectedCorpusCount ||
+        retrofit?.summary?.inline_ocr_pass_count !== expectedCorpusCount ||
+        retrofit?.summary?.exact_filename_identity_count !== expectedCorpusCount
       ) {
-        twoImageFindings.push('Two-image retrofit manifest does not prove the complete 99-route corpus.');
+        twoImageFindings.push(
+          `Two-image retrofit manifest does not prove the complete ${expectedCorpusCount ?? 'current'}-route corpus.`,
+        );
       }
     }
     if (!assetEvidence || !verifySidecar(assetEvidencePath)) {
       twoImageFindings.push('Two-image release asset evidence is missing or has a stale sidecar.');
     } else if (
-      assetEvidence.summary?.article_count !== 90 ||
-      assetEvidence.summary?.passing_article_count !== 90 ||
+      assetEvidence.summary?.article_count !== expectedBatchCount ||
+      assetEvidence.summary?.passing_article_count !== expectedBatchCount ||
       assetEvidence.summary?.all_assets_pass !== true ||
-      assetEvidence.rows?.length !== 90 ||
+      assetEvidence.rows?.length !== expectedBatchCount ||
       assetEvidence.rows.some(
         (row) =>
           row.disposition !== 'PASS' ||
@@ -685,12 +691,14 @@ function buildCheck() {
           ),
       )
     ) {
-      twoImageFindings.push('Two-image release asset evidence is incomplete or not PASS 90/90.');
+      twoImageFindings.push(
+        `Two-image release asset evidence is incomplete or not PASS ${expectedBatchCount}/${expectedBatchCount}.`,
+      );
     }
     if (!evidenceManifest || !verifySidecar(evidenceManifestPath)) {
       twoImageFindings.push('Two-image evidence-packet manifest is missing or has a stale sidecar.');
     } else if (
-      evidenceManifest.packets?.length !== 90 ||
+      evidenceManifest.packets?.length !== expectedBatchCount ||
       evidenceManifest.packets.some(
         (packet) =>
           packet.editorial_disposition !== 'PASS' ||
@@ -699,7 +707,9 @@ function buildCheck() {
           packet.hold_reason != null,
       )
     ) {
-      twoImageFindings.push('Two-image evidence packets are not PASS 90/90.');
+      twoImageFindings.push(
+        `Two-image evidence packets are not PASS ${expectedBatchCount}/${expectedBatchCount}.`,
+      );
     }
     if (twoImagePolicy.authorized_source_and_asset_rebinding !== true) {
       twoImageFindings.push('Two-image policy does not authorize source-and-asset hash rebinding.');

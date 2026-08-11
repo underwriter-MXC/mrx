@@ -1,7 +1,7 @@
 {
   "program": "MRX 1,000 Article SEO+AEO Production Program",
   "artifact_type": "authorized_release_10_batch",
-  "evidence_scaffold_generated_at_utc": "2026-08-06T13:30:00Z",
+  "evidence_scaffold_generated_at_utc": "2026-08-11T20:09:48Z",
   "decision_authority": {
     "successor_gate_decision_id": "D-2026-0804-16",
     "successor_gate_decision_path": "docs/governance/mrx1000-owner-continuous-publication-directive-2026-08-04.md",
@@ -54,13 +54,16 @@
     "wave10_selection_decision_sha256": "13d98fc401ced09c206b1be5238034f9d555388e628cfce1d84d5ed4e3b78e3f",
     "two_image_retrofit_decision_id": "D-2026-0811-17",
     "two_image_retrofit_decision_path": "artifacts/mrx1000-release-10/decisions/mrx-owner-two-image-retrofit-authorization-20260811.md",
-    "two_image_retrofit_decision_sha256": "8931708aafb31667e451bfe7ea21f37730a84d33b3d283168d8729cf57d858b8"
+    "two_image_retrofit_decision_sha256": "8931708aafb31667e451bfe7ea21f37730a84d33b3d283168d8729cf57d858b8",
+    "wave11_selection_decision_id": "MRX1000-W11-SELECT-2026-08-11",
+    "wave11_selection_decision_path": "docs/governance/mrx1000-wave11-selection-decision-2026-08-11.md",
+    "wave11_selection_decision_sha256": "08e0a9ff5364651914db81f0ff99685eab312e7720c7f25117c16b535fea03e3"
   },
   "identity_authority": {
     "scope_key": "canonical_slug",
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_sha256": "20aba7f17fd2447aa6507abd2614e4b0468a2cf43e19860e262897d7b7121fd9",
-    "canonical_ledger_generated_at": "2026-07-20T23:28:03.932Z",
+    "canonical_ledger_sha256": "f420e0d2e349a5a19da981dd455963922fc8e7f1a46a601cf1ce61bf427893aa",
+    "canonical_ledger_generated_at": "2026-07-20T17:21:28.528Z",
     "successor_ledger_decision_id": "D-2026-0723-LEDGER-04",
     "successor_ledger_decision_path": "artifacts/mrx1000-release-10/decisions/mrx-ceo-ledger-provenance-successor-20260723-04.md",
     "successor_ledger_decision_sha256": "09eca24bcd0e71563f2ac4197f564eec0ccb43a5ee955216da5c4a2543d04978",
@@ -74,11 +77,11 @@
     "authorization_scope": "declared_program_size_not_a_staged_release_cap",
     "admission_mode": "continuous_quality_gated",
     "continuous_quality_gated_from_selection_rank": 26,
-    "prior_verified_article_count": 80,
+    "prior_verified_article_count": 90,
     "fail_closed": true,
     "earned_scale_gates": [],
-    "exact_admitted_count": 90,
-    "exact_admitted_slate_sha256": "a219337c412f4a71a6623c9bb99d8c84468f58b59f9688804728a16e472d3832"
+    "exact_admitted_count": 91,
+    "exact_admitted_slate_sha256": "40f59ba8c861340db7c142da332aabb940b32d8f537310863c51262f990fa2a4"
   },
   "articles": [
     {
@@ -2985,10 +2988,43 @@
       "inline_path": "/assets/articles/inline/understanding-the-value-of-your-mineral-rights/value-of-mineral-rights.webp",
       "inline_asset_sha256": "e069159f4e229cdcfc21d2fc532f5e1964db529f3c2fd6e9092cb60ccab95fb7",
       "inline_rendered_text": "value of mineral rights"
+    },
+    {
+      "selection_rank": 91,
+      "program_row_id": "MRX1000-0309",
+      "source_shortlist_program_row_id": "MRX1000-0309",
+      "slug": "how-to-know-if-your-mineral-rights-offer-is-fair",
+      "title": "How to Know if Your Mineral Rights Offer Is Fair",
+      "source_shortlist_title": "How to Know if Your Mineral Rights Offer Is Fair",
+      "canonical_url": "https://mineralrightsxchange.com/blog/how-to-know-if-your-mineral-rights-offer-is-fair/",
+      "pillar": "offer-review",
+      "cluster": "offer-review-buyer-comparison-safety",
+      "content_genius_article_uuid": null,
+      "archive_evidence_sha256": "591fba8ea3111037c962f3d21ab957a8e55c3e825d423dcbfe96e446805ebd10",
+      "repo_path": "src/content/posts/how-to-know-if-your-mineral-rights-offer-is-fair.mdx",
+      "repo_sha256": "3c2ffc8adb978bc5e0cf92a20cb2780633e8be12a53e12322fffad28f7d14693",
+      "article_sha256": "3c2ffc8adb978bc5e0cf92a20cb2780633e8be12a53e12322fffad28f7d14693",
+      "hero_path": "/assets/articles/hero/how-to-know-if-your-mineral-rights-offer-is-fair.webp",
+      "hero_sha256": "f9edc07b76938253d0b4348ce58f55e842deb9badaef9a5b9b03c2860b8816ce",
+      "hero_asset_sha256": "f9edc07b76938253d0b4348ce58f55e842deb9badaef9a5b9b03c2860b8816ce",
+      "admission_status": "admitted_quality_gated",
+      "finalization_state": "draft_noindex_admitted",
+      "searchatlas_content_score": null,
+      "searchatlas_word_count": 1528,
+      "risk_citation_remediation": [
+        "The unsupported predecessor draft was replaced wholesale with an evidence-bounded, primary-source fairness worksheet.",
+        "Continuous quality-gated admission under D-2026-0804-16 and MRX1000-W11-SELECT-2026-08-11; no numerical cap or elapsed-time gate applies.",
+        "Publication remains conditional on current editorial, factual-citation, compliance, two-image, metadata, build, rollback, deployment, and live-verification evidence."
+      ],
+      "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/how-to-know-if-your-mineral-rights-offer-is-fair.json",
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/how-to-know-if-your-mineral-rights-offer-is-fair/fair-mineral-rights-offer.webp",
+      "inline_asset_sha256": "739dd68de3a9356233f31ccffb0a2bd60f47988f71d65931acd5312fe27538e6",
+      "inline_rendered_text": "fair mineral rights offer"
     }
   ],
   "admission_audit": {
-    "admitted_article_count": 90,
+    "admitted_article_count": 91,
     "selection_ranks": [
       1,
       2,
@@ -3079,7 +3115,8 @@
       87,
       88,
       89,
-      90
+      90,
+      91
     ],
     "duplicate_program_row_ids": [],
     "duplicate_slugs": [],
@@ -3138,9 +3175,9 @@
   "two_image_policy": {
     "directive": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
     "retrofit_manifest_path": "config/mrx-article-two-image-retrofit.json",
-    "retrofit_manifest_sha256": "0333bae4290c0c8fef8abc35d212423381d79b2adcf7abcf70f4972f121365d7",
-    "public_article_count": 99,
-    "batch_article_count": 90,
+    "retrofit_manifest_sha256": "3621c575d611e687ac8f8381eb30d87a05fcb5658033c8a723237d562c81fa4c",
+    "public_article_count": 100,
+    "batch_article_count": 91,
     "assets_per_article": 2,
     "hero_share_identity_required": true,
     "inline_image_distinct_required": true,
