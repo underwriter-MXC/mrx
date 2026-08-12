@@ -1,18 +1,18 @@
 {
   "artifact_type": "mrx_article_two_image_retrofit",
   "schema_version": 1,
-  "generated_at_utc": "2026-08-12T10:21:29Z",
+  "generated_at_utc": "2026-08-12T10:48:56Z",
   "policy_source": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
   "summary": {
-    "article_count": 114,
-    "asset_count": 228,
-    "unique_source_art_count": 114,
-    "unique_hero_sha256_count": 114,
-    "unique_inline_sha256_count": 114,
-    "distinct_article_pair_count": 114,
-    "hero_ocr_pass_count": 114,
-    "inline_ocr_pass_count": 114,
-    "exact_filename_identity_count": 114
+    "article_count": 115,
+    "asset_count": 230,
+    "unique_source_art_count": 115,
+    "unique_hero_sha256_count": 115,
+    "unique_inline_sha256_count": 115,
+    "distinct_article_pair_count": 115,
+    "hero_ocr_pass_count": 115,
+    "inline_ocr_pass_count": 115,
+    "exact_filename_identity_count": 115
   },
   "contact_sheets": {
     "hero": [
@@ -1508,6 +1508,56 @@
           "actual": "how mineralrightsxchange approaches\nmineral rights acquisition",
           "normalized_expected": "how mineralrightsxchange approaches mineral rights acquisition",
           "normalized_actual": "how mineralrightsxchange approaches mineral rights acquisition",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      }
+    },
+    {
+      "slug": "how-much-are-mineral-rights-worth-checklist-for-mineral-owners",
+      "title": "How Much Are Mineral Rights Worth: Checklist For Mineral Owners",
+      "keyword": "how much are mineral rights worth",
+      "file_path": "src/content/posts/how-much-are-mineral-rights-worth-checklist-for-mineral-owners.mdx",
+      "source_public_path": "/assets/articles/hero/how-much-are-mineral-rights-worth-checklist-for-mineral-owners.webp",
+      "source_artifact_paths": [
+        "artifacts/mrx1000-wave26-creative-sources/how-much-are-mineral-rights-worth-checklist-for-mineral-owners-hero-base.png",
+        "artifacts/mrx1000-wave26-creative-sources/how-much-are-mineral-rights-worth-checklist-for-mineral-owners-inline-base.png"
+      ],
+      "generated_at_utc": "2026-08-12T10:47:12.153Z",
+      "hero": {
+        "public_path": "/assets/articles/hero/how-much-are-mineral-rights-worth-checklist-for-mineral-owners.webp",
+        "alt": "An owner reviews evidence beside “How Much Are Mineral Rights Worth: Checklist For Mineral Owners”.",
+        "width": 1200,
+        "height": 630,
+        "mime_type": "image/webp",
+        "sha256": "6b94e47e1c6c46eaaa72fd32ea0c515cbcda7816491ec1aefc20a27d44459bfe",
+        "perceptual_hash": "1110001111100000111001111110000011100111111100001110011111100000111000000000000011100000000000001110000000000000111000000000000011100000000000001100000000000000110000000000000100011111111000100011110111100100111111111110000011111111111000001111111111100000",
+        "neutralized_art_text_region_count": 0,
+        "ocr": {
+          "expected": "How Much Are Mineral Rights Worth: Checklist For Mineral Owners",
+          "actual": "How Much Are Mineral\nRights Worth:\nChecklist For Mineral Owners",
+          "normalized_expected": "how much are mineral rights worth checklist for mineral owners",
+          "normalized_actual": "how much are mineral rights worth checklist for mineral owners",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      },
+      "inline": {
+        "public_path": "/assets/articles/inline/how-much-are-mineral-rights-worth-checklist-for-mineral-owners/how-much-are-mineral-rights-worth.webp",
+        "alt": "Distinct evidence checklist labeled “how much are mineral rights worth”.",
+        "rendered_text": "how much are mineral rights worth",
+        "visual_variant": "wave26-distinct-generated-mineral-value-evidence-checklist",
+        "width": 1200,
+        "height": 675,
+        "mime_type": "image/webp",
+        "sha256": "a717ebadc7957e38fad8da9553fd4c7f396ea5431049507572c05e0bbcc784cf",
+        "perceptual_hash": "0111111111100101011111111111111011011010010110101111111111111010111111111001111011011111111111101111111111111110111111111111111010011111111011110011111001111110100011100111111000011111111111100000000000000000000000000000000000000000000000000000000000000000",
+        "neutralized_art_text_region_count": 0,
+        "ocr": {
+          "expected": "how much are mineral rights worth",
+          "actual": "?\n→\nhow much are mineral rights worth",
+          "normalized_expected": "how much are mineral rights worth",
+          "normalized_actual": "how much are mineral rights worth",
           "uppercase_i_confusable_accepted": false,
           "pass": true
         }

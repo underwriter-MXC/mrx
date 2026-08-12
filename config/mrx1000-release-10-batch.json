@@ -1,7 +1,7 @@
 {
   "program": "MRX 1,000 Article SEO+AEO Production Program",
   "artifact_type": "authorized_release_10_batch",
-  "evidence_scaffold_generated_at_utc": "2026-08-12T10:39:34Z",
+  "evidence_scaffold_generated_at_utc": "2026-08-12T10:49:07Z",
   "decision_authority": {
     "successor_gate_decision_id": "D-2026-0804-16",
     "successor_gate_decision_path": "docs/governance/mrx1000-owner-continuous-publication-directive-2026-08-04.md",
@@ -99,13 +99,16 @@
     "wave24_selection_decision_sha256": "9a80af80fca7172ec3c0454aa1c1c15238623323c54458da71ba056cab2f6a12",
     "wave25_selection_decision_id": "MRX1000-W25-SELECT-2026-08-11",
     "wave25_selection_decision_path": "docs/governance/mrx1000-wave25-selection-decision-2026-08-11.md",
-    "wave25_selection_decision_sha256": "53e427cecc799e29cb77ae024debbd89c322f4e8f12129abb8fdde75b2155262"
+    "wave25_selection_decision_sha256": "53e427cecc799e29cb77ae024debbd89c322f4e8f12129abb8fdde75b2155262",
+    "wave26_selection_decision_id": "MRX1000-W26-SELECT-2026-08-12",
+    "wave26_selection_decision_path": "docs/governance/mrx1000-wave26-selection-decision-2026-08-12.md",
+    "wave26_selection_decision_sha256": "19044127da22535bc6a6e082685682452fb6bd37f5ab88dec662b5cd34fd1810"
   },
   "identity_authority": {
     "scope_key": "canonical_slug",
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_sha256": "6dc5be3db174c38bb47d6ee79c8b40f4aee49b4709b5d02de581e8b27faa1b9b",
-    "canonical_ledger_generated_at": "2026-07-20T20:32:31.258Z",
+    "canonical_ledger_sha256": "69854710f8691a66aacd8889495491d642a064b8ca72821d657928a3b3aacfa7",
+    "canonical_ledger_generated_at": "2026-07-20T12:20:17.155Z",
     "successor_ledger_decision_id": "D-2026-0723-LEDGER-04",
     "successor_ledger_decision_path": "artifacts/mrx1000-release-10/decisions/mrx-ceo-ledger-provenance-successor-20260723-04.md",
     "successor_ledger_decision_sha256": "09eca24bcd0e71563f2ac4197f564eec0ccb43a5ee955216da5c4a2543d04978",
@@ -119,11 +122,11 @@
     "authorization_scope": "declared_program_size_not_a_staged_release_cap",
     "admission_mode": "continuous_quality_gated",
     "continuous_quality_gated_from_selection_rank": 26,
-    "prior_verified_article_count": 104,
+    "prior_verified_article_count": 105,
     "fail_closed": true,
     "earned_scale_gates": [],
-    "exact_admitted_count": 105,
-    "exact_admitted_slate_sha256": "fd0f0289e0c0c5e689793a5de6b7d7a8641c15fe8176a76e51ad3c26b08784a2"
+    "exact_admitted_count": 106,
+    "exact_admitted_slate_sha256": "677a7c77503e54a7c3f847523f53cbfd5b2b1b6cafa75dde8fe0f2abe6395f3f"
   },
   "articles": [
     {
@@ -3525,10 +3528,43 @@
       "inline_path": "/assets/articles/inline/how-mineral-rights-valuation-affects-your-asset-decisions/factors-affecting-mineral-rights-value.webp",
       "inline_asset_sha256": "74c2a65f0e80e2a3f423ce66bf084226641f5af5daddfd022e88a89f24856e23",
       "inline_rendered_text": "Factors Affecting Mineral Rights Value"
+    },
+    {
+      "selection_rank": 106,
+      "program_row_id": "MRX1000-0184",
+      "source_shortlist_program_row_id": "MRX1000-0184",
+      "slug": "how-much-are-mineral-rights-worth-checklist-for-mineral-owners",
+      "title": "How Much Are Mineral Rights Worth: Checklist For Mineral Owners",
+      "source_shortlist_title": "How Much Are Mineral Rights Worth: Checklist For Mineral Owners",
+      "canonical_url": "https://mineralrightsxchange.com/blog/how-much-are-mineral-rights-worth-checklist-for-mineral-owners/",
+      "pillar": "mineral-rights-value",
+      "cluster": "valuation-methodology-drivers",
+      "content_genius_article_uuid": null,
+      "archive_evidence_sha256": "b79e59269ef412ed59bb7db8871b23dbe8110ddf0d2b1d37e715c043d606a12d",
+      "repo_path": "src/content/posts/how-much-are-mineral-rights-worth-checklist-for-mineral-owners.mdx",
+      "repo_sha256": "2eb737e495a6d100d496b6d24a1b5d4ceef77fe3b81319be354e581ee91a4b66",
+      "article_sha256": "2eb737e495a6d100d496b6d24a1b5d4ceef77fe3b81319be354e581ee91a4b66",
+      "hero_path": "/assets/articles/hero/how-much-are-mineral-rights-worth-checklist-for-mineral-owners.webp",
+      "hero_sha256": "6b94e47e1c6c46eaaa72fd32ea0c515cbcda7816491ec1aefc20a27d44459bfe",
+      "hero_asset_sha256": "6b94e47e1c6c46eaaa72fd32ea0c515cbcda7816491ec1aefc20a27d44459bfe",
+      "admission_status": "admitted_quality_gated",
+      "finalization_state": "draft_noindex_admitted",
+      "searchatlas_content_score": null,
+      "searchatlas_word_count": 2220,
+      "risk_citation_remediation": [
+        "The planning-only canonical row was developed into an original valuation-to-decision framework that separates property facts, model assumptions, scenario outputs, confidence, option scope, and owner criteria; no factory body text was imported.",
+        "Continuous quality-gated admission under D-2026-0804-16 and MRX1000-W26-SELECT-2026-08-12; no numerical cap or elapsed-time gate applies.",
+        "Publication remains conditional on current editorial, factual-citation, compliance, two-image, metadata, build, rollback, deployment, and live-verification evidence."
+      ],
+      "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/how-much-are-mineral-rights-worth-checklist-for-mineral-owners.json",
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/how-much-are-mineral-rights-worth-checklist-for-mineral-owners/how-much-are-mineral-rights-worth.webp",
+      "inline_asset_sha256": "a717ebadc7957e38fad8da9553fd4c7f396ea5431049507572c05e0bbcc784cf",
+      "inline_rendered_text": "how much are mineral rights worth"
     }
   ],
   "admission_audit": {
-    "admitted_article_count": 105,
+    "admitted_article_count": 106,
     "selection_ranks": [
       1,
       2,
@@ -3634,7 +3670,8 @@
       102,
       103,
       104,
-      105
+      105,
+      106
     ],
     "duplicate_program_row_ids": [],
     "duplicate_slugs": [],
@@ -3693,9 +3730,9 @@
   "two_image_policy": {
     "directive": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
     "retrofit_manifest_path": "config/mrx-article-two-image-retrofit.json",
-    "retrofit_manifest_sha256": "b4c6c0cf0d5eabfe146917d66117aff5e345f29ed4bc96c38504f3139c94f419",
-    "public_article_count": 114,
-    "batch_article_count": 105,
+    "retrofit_manifest_sha256": "cd4bdbbbbe13106a6b3355844a2f059737e3b3858ea9cb78a2ad9bcb68e3e94c",
+    "public_article_count": 115,
+    "batch_article_count": 106,
     "assets_per_article": 2,
     "hero_share_identity_required": true,
     "inline_image_distinct_required": true,

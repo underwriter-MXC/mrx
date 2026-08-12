@@ -1,15 +1,15 @@
 {
   "artifact_type": "mrx1000_content_activation_plan",
   "plan_version": "mrx1000-content-activation-v1.1.0",
-  "generated_at": "2026-07-20T20:32:31.258Z",
+  "generated_at": "2026-07-20T12:20:17.155Z",
   "generated_at_method": "canonical_ledger_generated_at",
   "generator": "scripts/build-mrx-1000-activation-plan.mjs",
-  "content_fingerprint_sha256": "e758521d23b2edf2f34dc53e6cee450038a364a30925d502332fcc51880bbaac",
+  "content_fingerprint_sha256": "83369ae1d8b4a6dd01e9d6b86dc29135a2a50961f5e3e58f213dc246c3a01736",
   "inputs": {
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_fingerprint_sha256": "6a30f8f74061fa932e55154c39dec5b5f9c8c17725befe9dc2b44b59cca50a21",
+    "canonical_ledger_fingerprint_sha256": "91678e223bde3763acec1f3522103e896ccbc5b8f5d6441d33964ee433633032",
     "canonical_ledger_fingerprint_verified": true,
-    "canonical_ledger_generated_at": "2026-07-20T20:32:31.258Z",
+    "canonical_ledger_generated_at": "2026-07-20T12:20:17.155Z",
     "owner_decision": {
       "decision_id": "D-2026-0804-16",
       "signed_disposition": "APPROVED_CONTINUOUS_QUALITY_GATED_ARTICLE_PUBLICATION",
@@ -115,9 +115,9 @@
     },
     "by_source_preservation_classification": {
       "incumbent_draft_nonpublic_held": 28,
-      "live_public_published_route": 114,
+      "live_public_published_route": 115,
       "pilot_draft_noindex_stage": 25,
-      "planning_only_inventory": 833
+      "planning_only_inventory": 832
     }
   },
   "rows": [
@@ -11482,8 +11482,8 @@
         "target_title": "How Much Are Mineral Rights Worth: Checklist For Mineral Owners",
         "url": "/blog/how-much-are-mineral-rights-worth-checklist-for-mineral-owners/",
         "relationship": "same_cluster_next_by_program_row_id_cyclic",
-        "target_source_preservation_classification": "planning_only_inventory",
-        "target_route_live": false,
+        "target_source_preservation_classification": "live_public_published_route",
+        "target_route_live": true,
         "status": "planned_local_only"
       },
       "primary_cta": {
@@ -11531,10 +11531,10 @@
       "canonical_url": "/blog/how-much-are-mineral-rights-worth-checklist-for-mineral-owners/",
       "cluster": "valuation-methodology-drivers",
       "pillar": "mineral-rights-value",
-      "search_intent": "valuation",
+      "search_intent": "informational",
       "funnel_stage": "consideration",
-      "source_preservation_classification": "planning_only_inventory",
-      "source_route_live": false,
+      "source_preservation_classification": "live_public_published_route",
+      "source_route_live": true,
       "pillar_link": {
         "url": "/mineral-rights-value/",
         "route_evidence": "src/pages/mineral-rights-value.astro",
@@ -11556,7 +11556,7 @@
         "placement_code": "contextual_inline",
         "placement_guidance": "Place after the first comparison, risk, document, or decision-framework section.",
         "assignment_rule": "consideration_stage_assisted_review",
-        "assignment_basis": "consideration:valuation",
+        "assignment_basis": "consideration:informational",
         "approved_route_evidence": "src/pages/book.astro",
         "role": "primary_appointment",
         "is_appointment_cta": true,
@@ -11569,7 +11569,7 @@
         "placement_code": "contextual_inline",
         "placement_guidance": "Place after the first comparison, risk, document, or decision-framework section.",
         "assignment_rule": "consideration_stage_assisted_review",
-        "assignment_basis": "consideration:valuation",
+        "assignment_basis": "consideration:informational",
         "approved_route_evidence": "src/pages/book.astro",
         "role": "same_as_primary_appointment",
         "distinct_from_primary_cta": false,
@@ -11583,7 +11583,7 @@
         "rendered_triangle_verified": false,
         "live_status": "not_published_or_verified_by_this_plan",
         "live_triangle_verified": false,
-        "release_status": "eligible_for_continuous_quality_review_not_yet_cleared",
+        "release_status": "released_under_d16_continuous_quality_gate",
         "numerical_release_cap_applies": false
       }
     },
