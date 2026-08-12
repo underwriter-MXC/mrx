@@ -1,18 +1,18 @@
 {
   "artifact_type": "mrx_article_two_image_retrofit",
   "schema_version": 1,
-  "generated_at_utc": "2026-08-12T13:34:14Z",
+  "generated_at_utc": "2026-08-12T13:58:18Z",
   "policy_source": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
   "summary": {
-    "article_count": 121,
-    "asset_count": 242,
-    "unique_source_art_count": 121,
-    "unique_hero_sha256_count": 121,
-    "unique_inline_sha256_count": 121,
-    "distinct_article_pair_count": 121,
-    "hero_ocr_pass_count": 121,
-    "inline_ocr_pass_count": 121,
-    "exact_filename_identity_count": 121
+    "article_count": 122,
+    "asset_count": 244,
+    "unique_source_art_count": 122,
+    "unique_hero_sha256_count": 122,
+    "unique_inline_sha256_count": 122,
+    "distinct_article_pair_count": 122,
+    "hero_ocr_pass_count": 122,
+    "inline_ocr_pass_count": 122,
+    "exact_filename_identity_count": 122
   },
   "contact_sheets": {
     "hero": [
@@ -3558,6 +3558,56 @@
         "mime_type": "image/webp",
         "sha256": "e168b84d78f994277353c8aca8f224932925e190d508572c662543e1bc32c456",
         "perceptual_hash": "0000111100000010000011100001110000011100000111000011110000011100001111000001110000111000000110000001100000011000001110000001100000011001100110000001111111111000000111000111100000011000000110000001100000011000000110000001100000000000000110000000000000000000",
+        "neutralized_art_text_region_count": 0,
+        "ocr": {
+          "expected": "selling mineral rights",
+          "actual": "selling\nmineral rights",
+          "normalized_expected": "selling mineral rights",
+          "normalized_actual": "selling mineral rights",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      }
+    },
+    {
+      "slug": "selling-mineral-rights-valuation-factors-step-by-step",
+      "title": "Selling Mineral Rights: Valuation Factors Step By Step",
+      "keyword": "selling mineral rights",
+      "file_path": "src/content/posts/selling-mineral-rights-valuation-factors-step-by-step.mdx",
+      "source_public_path": "/assets/articles/hero/selling-mineral-rights-valuation-factors-step-by-step.webp",
+      "source_artifact_paths": [
+        "artifacts/mrx1000-wave33-creative-sources/selling-mineral-rights-valuation-factors-step-by-step-hero-base.png",
+        "artifacts/mrx1000-wave33-creative-sources/selling-mineral-rights-valuation-factors-step-by-step-inline-base.png"
+      ],
+      "generated_at_utc": "2026-08-12T13:57:36.673Z",
+      "hero": {
+        "public_path": "/assets/articles/hero/selling-mineral-rights-valuation-factors-step-by-step.webp",
+        "alt": "A mineral owner follows a controlled workflow beside “Selling Mineral Rights: Valuation Factors Step By Step”.",
+        "width": 1200,
+        "height": 630,
+        "mime_type": "image/webp",
+        "sha256": "40149b40e5ca32a92fcc477ebad652c3a5b80897623cdc0dad6ec990ff5e23c3",
+        "perceptual_hash": "0000000011000011000000001110001100000000111011110111000011100101011110000000000001111100000000000111110000000000000000000010010001000000011110000000000111111011000000011111111100000001001111110000001111111100000000111111111000000001111111100000000000000000",
+        "neutralized_art_text_region_count": 0,
+        "ocr": {
+          "expected": "Selling Mineral Rights: Valuation Factors Step By Step",
+          "actual": "Selling Mineral\nRights: Valuation\nFactors Step By\nStep",
+          "normalized_expected": "selling mineral rights valuation factors step by step",
+          "normalized_actual": "selling mineral rights valuation factors step by step",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      },
+      "inline": {
+        "public_path": "/assets/articles/inline/selling-mineral-rights-valuation-factors-step-by-step/selling-mineral-rights.webp",
+        "alt": "Distinct six-stage valuation-workflow artwork labeled “selling mineral rights”.",
+        "rendered_text": "selling mineral rights",
+        "visual_variant": "wave33-distinct-generated-six-stage-valuation-workflow",
+        "width": 1200,
+        "height": 675,
+        "mime_type": "image/webp",
+        "sha256": "7b0c71191b1aa709dd75652dc0789faa84eadbabb751f7a8bdbe5be626ba26fc",
+        "perceptual_hash": "1100000000000011110000000001101011111111111111111111111111111111111111111111111111111111111111011111111111111111000000000000000000000001100000000000000000000000000000000000000000000000000000010000000000000111000100000000111100010000001111100001001000110010",
         "neutralized_art_text_region_count": 0,
         "ocr": {
           "expected": "selling mineral rights",
