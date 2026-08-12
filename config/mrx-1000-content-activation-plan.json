@@ -1,15 +1,15 @@
 {
   "artifact_type": "mrx1000_content_activation_plan",
   "plan_version": "mrx1000-content-activation-v1.1.0",
-  "generated_at": "2026-07-20T08:19:15.784Z",
+  "generated_at": "2026-07-20T18:31:15.547Z",
   "generated_at_method": "canonical_ledger_generated_at",
   "generator": "scripts/build-mrx-1000-activation-plan.mjs",
-  "content_fingerprint_sha256": "a0ae90ac90d58a8d29604a428e930a44db3f63687d4cd94434155ab7813aba4e",
+  "content_fingerprint_sha256": "a33a913e719f6ca978daacc3f8ffeb3e17e589af35f803596e5570ff05600d68",
   "inputs": {
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_fingerprint_sha256": "df59b7a197b5804fad4b6a16ad2cffca440ab66d1b27e7f8b8856ae64117b009",
+    "canonical_ledger_fingerprint_sha256": "dd737c51373644c4c88c51f60a73050940e28cbb0f2de73bf1dd13e782284f33",
     "canonical_ledger_fingerprint_verified": true,
-    "canonical_ledger_generated_at": "2026-07-20T08:19:15.784Z",
+    "canonical_ledger_generated_at": "2026-07-20T18:31:15.547Z",
     "owner_decision": {
       "decision_id": "D-2026-0804-16",
       "signed_disposition": "APPROVED_CONTINUOUS_QUALITY_GATED_ARTICLE_PUBLICATION",
@@ -115,9 +115,9 @@
     },
     "by_source_preservation_classification": {
       "incumbent_draft_nonpublic_held": 28,
-      "live_public_published_route": 136,
+      "live_public_published_route": 137,
       "pilot_draft_noindex_stage": 25,
-      "planning_only_inventory": 811
+      "planning_only_inventory": 810
     }
   },
   "rows": [
@@ -7954,8 +7954,8 @@
         "target_title": "Understanding Texas Mineral Rights Valuation Process",
         "url": "/blog/understanding-texas-mineral-rights-valuation-process/",
         "relationship": "same_cluster_next_by_program_row_id_cyclic",
-        "target_source_preservation_classification": "planning_only_inventory",
-        "target_route_live": false,
+        "target_source_preservation_classification": "live_public_published_route",
+        "target_route_live": true,
         "status": "planned_local_only"
       },
       "primary_cta": {
@@ -8005,8 +8005,8 @@
       "pillar": "sell-mineral-rights",
       "search_intent": "transactional",
       "funnel_stage": "decision",
-      "source_preservation_classification": "planning_only_inventory",
-      "source_route_live": false,
+      "source_preservation_classification": "live_public_published_route",
+      "source_route_live": true,
       "pillar_link": {
         "url": "/sell-mineral-rights/",
         "route_evidence": "src/pages/sell-mineral-rights.astro",
@@ -8055,7 +8055,7 @@
         "rendered_triangle_verified": false,
         "live_status": "not_published_or_verified_by_this_plan",
         "live_triangle_verified": false,
-        "release_status": "eligible_for_continuous_quality_review_not_yet_cleared",
+        "release_status": "released_under_d16_continuous_quality_gate",
         "numerical_release_cap_applies": false
       }
     },
