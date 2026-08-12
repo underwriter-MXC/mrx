@@ -1,7 +1,7 @@
 {
   "program": "MRX1000",
   "artifact_type": "searchatlas_ordered_llm_local_execution_manifest",
-  "generated_at": "2026-07-20T21:52:58.869Z",
+  "generated_at": "2026-07-20T08:25:37.000Z",
   "deterministic": true,
   "local_only": true,
   "external_services_called": false,
@@ -9,8 +9,8 @@
   "inputs": {
     "ledger": {
       "path": "config/mrx-1000-canonical-content-ledger.json",
-      "sha256": "8ac760118353cb5fe75777b2e663606b901b636f7d35d6cc690f171cdfd6da49",
-      "bytes": 4444507
+      "sha256": "55cb58e83dd905bc05be698a5c2ecaf62ed6a8ac8350f5dbc646d5be9948939e",
+      "bytes": 4444865
     },
     "readiness": {
       "path": "reports/mrx-1000-readiness-matrix.json",
@@ -70640,7 +70640,7 @@
       "primary_keyword": "Free Mineral Rights Valuation Review",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -349624,5 +349624,5 @@
       ]
     }
   ],
-  "content_fingerprint_sha256": "cdd22d074860603dd2b0099774f49ed991be3d2046501b56bca06568e27dbf33"
+  "content_fingerprint_sha256": "e450f8a72fff6334453a0ee28aad07869f8d73547464cf0234ed7af7d05443db"
 }
