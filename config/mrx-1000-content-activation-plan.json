@@ -1,15 +1,15 @@
 {
   "artifact_type": "mrx1000_content_activation_plan",
   "plan_version": "mrx1000-content-activation-v1.1.0",
-  "generated_at": "2026-07-20T11:27:58.152Z",
+  "generated_at": "2026-07-20T17:38:26.537Z",
   "generated_at_method": "canonical_ledger_generated_at",
   "generator": "scripts/build-mrx-1000-activation-plan.mjs",
-  "content_fingerprint_sha256": "f6038145d0334caa73846e00b0869b4acdce056a1fb9b957adbecd9b5888b2ce",
+  "content_fingerprint_sha256": "532f5e19215892d81427a07cca073a599925ab751a00cfe0dcaa1298d6978fb8",
   "inputs": {
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_fingerprint_sha256": "4a5f71234b6891d4e957b1266d9d1700f87ddb7c189f5d88a5c1685c771738b6",
+    "canonical_ledger_fingerprint_sha256": "dc8fa319d20decfb85ebb10d5cdf268b643b965742ea249afb44be7b8f87ff1d",
     "canonical_ledger_fingerprint_verified": true,
-    "canonical_ledger_generated_at": "2026-07-20T11:27:58.152Z",
+    "canonical_ledger_generated_at": "2026-07-20T17:38:26.537Z",
     "owner_decision": {
       "decision_id": "D-2026-0804-16",
       "signed_disposition": "APPROVED_CONTINUOUS_QUALITY_GATED_ARTICLE_PUBLICATION",
@@ -115,9 +115,9 @@
     },
     "by_source_preservation_classification": {
       "incumbent_draft_nonpublic_held": 28,
-      "live_public_published_route": 127,
+      "live_public_published_route": 128,
       "pilot_draft_noindex_stage": 25,
-      "planning_only_inventory": 820
+      "planning_only_inventory": 819
     }
   },
   "rows": [
@@ -7387,8 +7387,8 @@
         "target_title": "Uncovering the Truth: Are There Any Fees for Your No-Obligation Mineral Rights Assessment?",
         "url": "/blog/uncovering-the-truth-are-there-any-fees-for-your-no-obligation-mineral-rights-assessment/",
         "relationship": "same_cluster_next_by_program_row_id_cyclic",
-        "target_source_preservation_classification": "planning_only_inventory",
-        "target_route_live": false,
+        "target_source_preservation_classification": "live_public_published_route",
+        "target_route_live": true,
         "status": "planned_local_only"
       },
       "primary_cta": {
@@ -7438,8 +7438,8 @@
       "pillar": "sell-mineral-rights",
       "search_intent": "transactional",
       "funnel_stage": "decision",
-      "source_preservation_classification": "planning_only_inventory",
-      "source_route_live": false,
+      "source_preservation_classification": "live_public_published_route",
+      "source_route_live": true,
       "pillar_link": {
         "url": "/sell-mineral-rights/",
         "route_evidence": "src/pages/sell-mineral-rights.astro",
@@ -7488,7 +7488,7 @@
         "rendered_triangle_verified": false,
         "live_status": "not_published_or_verified_by_this_plan",
         "live_triangle_verified": false,
-        "release_status": "eligible_for_continuous_quality_review_not_yet_cleared",
+        "release_status": "released_under_d16_continuous_quality_gate",
         "numerical_release_cap_applies": false
       }
     },

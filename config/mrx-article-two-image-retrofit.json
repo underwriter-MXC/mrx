@@ -1,18 +1,18 @@
 {
   "artifact_type": "mrx_article_two_image_retrofit",
   "schema_version": 1,
-  "generated_at_utc": "2026-08-12T16:36:08Z",
+  "generated_at_utc": "2026-08-12T17:10:58Z",
   "policy_source": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
   "summary": {
-    "article_count": 127,
-    "asset_count": 254,
-    "unique_source_art_count": 127,
-    "unique_hero_sha256_count": 127,
-    "unique_inline_sha256_count": 127,
-    "distinct_article_pair_count": 127,
-    "hero_ocr_pass_count": 127,
-    "inline_ocr_pass_count": 127,
-    "exact_filename_identity_count": 127
+    "article_count": 128,
+    "asset_count": 256,
+    "unique_source_art_count": 128,
+    "unique_hero_sha256_count": 128,
+    "unique_inline_sha256_count": 128,
+    "distinct_article_pair_count": 128,
+    "hero_ocr_pass_count": 128,
+    "inline_ocr_pass_count": 128,
+    "exact_filename_identity_count": 128
   },
   "contact_sheets": {
     "hero": [
@@ -4324,6 +4324,56 @@
           "actual": "Are There Any Hidden Costs\nI Should Be Aware of\nDuring the Review?",
           "normalized_expected": "are there any hidden costs i should be aware of during the review",
           "normalized_actual": "are there any hidden costs i should be aware of during the review",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      }
+    },
+    {
+      "slug": "uncovering-the-truth-are-there-any-fees-for-your-no-obligation-mineral-rights-assessment",
+      "title": "Uncovering the Truth: Are There Any Fees for Your No-Obligation Mineral Rights Assessment?",
+      "keyword": "Are There Any Fees Associated With Getting a No-Obligation Assessment?",
+      "file_path": "src/content/posts/uncovering-the-truth-are-there-any-fees-for-your-no-obligation-mineral-rights-assessment.mdx",
+      "source_public_path": "/assets/articles/hero/uncovering-the-truth-are-there-any-fees-for-your-no-obligation-mineral-rights-assessment.webp",
+      "source_artifact_paths": [
+        "artifacts/mrx1000-wave39-creative-sources/uncovering-the-truth-are-there-any-fees-for-your-no-obligation-mineral-rights-assessment-hero-base.png",
+        "artifacts/mrx1000-wave39-creative-sources/uncovering-the-truth-are-there-any-fees-for-your-no-obligation-mineral-rights-assessment-inline-base.png"
+      ],
+      "generated_at_utc": "2026-08-12T17:10:06.500Z",
+      "hero": {
+        "public_path": "/assets/articles/hero/uncovering-the-truth-are-there-any-fees-for-your-no-obligation-mineral-rights-assessment.webp",
+        "alt": "Owner and form; title: “Uncovering the Truth: Are There Any Fees for Your No-Obligation Mineral Rights Assessment?”.",
+        "width": 1200,
+        "height": 630,
+        "mime_type": "image/webp",
+        "sha256": "3508f91e883caa6ec66d1eb76149b6a23dd6b5649b3062b6f502027d93f7f41f",
+        "perceptual_hash": "0000000011111111000000001111111100000000111111110000000011111111000000001111111000000000111111100011000001111110000100000111111000010000011111100000000000111100000000000110010000000000000110000000000001111000000000001111100000000000111100000000000001110000",
+        "neutralized_art_text_region_count": 2,
+        "ocr": {
+          "expected": "Uncovering the Truth: Are There Any Fees for Your No-Obligation Mineral Rights Assessment?",
+          "actual": "Uncovering the Truth:\nAre There Any Fees for\nYour No-Obligation\nMineral Rights\nAssessment?",
+          "normalized_expected": "uncovering the truth are there any fees for your no obligation mineral rights assessment",
+          "normalized_actual": "uncovering the truth are there any fees for your no obligation mineral rights assessment",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      },
+      "inline": {
+        "public_path": "/assets/articles/inline/uncovering-the-truth-are-there-any-fees-for-your-no-obligation-mineral-rights-assessment/are-there-any-fees-associated-with-getting-a-no-obligation-assessment.webp",
+        "alt": "A five-checkpoint verification path labeled “Are There Any Fees Associated With Getting a No-Obligation Assessment?”.",
+        "rendered_text": "Are There Any Fees Associated With Getting a No-Obligation Assessment?",
+        "visual_variant": "wave39-distinct-generated-five-checkpoint-assessment-verification-path",
+        "width": 1200,
+        "height": 675,
+        "mime_type": "image/webp",
+        "sha256": "5db6344b160b2387a4b69550168bbfc0a83d072dbbea1d7f79070a8268cac231",
+        "perceptual_hash": "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001111111111111111111111111111111111111111111111111111001011111011111100101111100111110110111010011111111111111111111111111111111111111111111111111111111111111111",
+        "neutralized_art_text_region_count": 0,
+        "ocr": {
+          "expected": "Are There Any Fees Associated With Getting a No-Obligation Assessment?",
+          "actual": "Are There Any Fees Associated\nWith Getting a No-Obligation\nAssessment?",
+          "normalized_expected": "are there any fees associated with getting a no obligation assessment",
+          "normalized_actual": "are there any fees associated with getting a no obligation assessment",
           "uppercase_i_confusable_accepted": false,
           "pass": true
         }
