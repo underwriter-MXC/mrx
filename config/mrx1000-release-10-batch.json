@@ -1,7 +1,7 @@
 {
   "program": "MRX 1,000 Article SEO+AEO Production Program",
   "artifact_type": "authorized_release_10_batch",
-  "evidence_scaffold_generated_at_utc": "2026-08-12T16:26:33Z",
+  "evidence_scaffold_generated_at_utc": "2026-08-12T16:43:03Z",
   "decision_authority": {
     "successor_gate_decision_id": "D-2026-0804-16",
     "successor_gate_decision_path": "docs/governance/mrx1000-owner-continuous-publication-directive-2026-08-04.md",
@@ -135,13 +135,16 @@
     "wave36_selection_decision_sha256": "ae96fe607d60922a774060ddeda7551fbd03e1cf3d486539492cb380ce34c52e",
     "wave37_selection_decision_id": "MRX1000-W37-SELECT-2026-08-12",
     "wave37_selection_decision_path": "docs/governance/mrx1000-wave37-selection-decision-2026-08-12.md",
-    "wave37_selection_decision_sha256": "c96ff8c4d67b929c4e82abb1951d18a24329128ac756cdc241fbdc444be3b5f3"
+    "wave37_selection_decision_sha256": "c96ff8c4d67b929c4e82abb1951d18a24329128ac756cdc241fbdc444be3b5f3",
+    "wave38_selection_decision_id": "MRX1000-W38-SELECT-2026-08-12",
+    "wave38_selection_decision_path": "docs/governance/mrx1000-wave38-selection-decision-2026-08-12.md",
+    "wave38_selection_decision_sha256": "cd52c6648f9c8aa63f614734fcf2f1908efe2ad52f8e0553537577e429beadff"
   },
   "identity_authority": {
     "scope_key": "canonical_slug",
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_sha256": "e85f61820fbcc3c4771b7494f4a46764f0a9a523be2bda014c6a01e9307600a5",
-    "canonical_ledger_generated_at": "2026-07-20T04:17:25.818Z",
+    "canonical_ledger_sha256": "3a50a0d0cd32b473d5d43ccf4cd5ed98771637c1fea3c22ff4222a00ad5202fc",
+    "canonical_ledger_generated_at": "2026-07-20T16:15:49.279Z",
     "successor_ledger_decision_id": "D-2026-0723-LEDGER-04",
     "successor_ledger_decision_path": "artifacts/mrx1000-release-10/decisions/mrx-ceo-ledger-provenance-successor-20260723-04.md",
     "successor_ledger_decision_sha256": "09eca24bcd0e71563f2ac4197f564eec0ccb43a5ee955216da5c4a2543d04978",
@@ -155,11 +158,11 @@
     "authorization_scope": "declared_program_size_not_a_staged_release_cap",
     "admission_mode": "continuous_quality_gated",
     "continuous_quality_gated_from_selection_rank": 26,
-    "prior_verified_article_count": 116,
+    "prior_verified_article_count": 117,
     "fail_closed": true,
     "earned_scale_gates": [],
-    "exact_admitted_count": 117,
-    "exact_admitted_slate_sha256": "fae70d0f6428fa9d19d9dad003bf5fdabf3e7b128f3777edfd16b12a47a78ebd"
+    "exact_admitted_count": 118,
+    "exact_admitted_slate_sha256": "478457f3c69889f9c1c4d1447cf4eb934b6a2c4165a9a9b68f704ac7522f0452"
   },
   "articles": [
     {
@@ -3957,10 +3960,43 @@
       "inline_path": "/assets/articles/inline/top-five-missteps-to-avoid-for-a-successful-mineral-rights-sale/what-are-common-pitfalls-i-should-avoid-in-selling-mineral-rights.webp",
       "inline_asset_sha256": "e5d5e238df0703caae9f88253284a591bf50865a70c290ee5c5bf37b5ff8ca3c",
       "inline_rendered_text": "What Are Common Pitfalls I Should Avoid in Selling Mineral Rights?"
+    },
+    {
+      "selection_rank": 118,
+      "program_row_id": "MRX1000-0118",
+      "source_shortlist_program_row_id": "MRX1000-0118",
+      "slug": "uncovering-hidden-costs-what-every-mineral-rights-seller-should-know-before-the-review",
+      "title": "Uncovering Hidden Costs: What Every Mineral Rights Seller Should Know Before the Review",
+      "source_shortlist_title": "Uncovering Hidden Costs: What Every Mineral Rights Seller Should Know Before the Review",
+      "canonical_url": "https://mineralrightsxchange.com/blog/uncovering-hidden-costs-what-every-mineral-rights-seller-should-know-before-the-review/",
+      "pillar": "sell-mineral-rights",
+      "cluster": "sell-mineral-rights-decision-process",
+      "content_genius_article_uuid": null,
+      "archive_evidence_sha256": "de1bbd0311a198a2bfef9709a04bc36f655defffbe16327cb7a8847ed71a6043",
+      "repo_path": "src/content/posts/uncovering-hidden-costs-what-every-mineral-rights-seller-should-know-before-the-review.mdx",
+      "repo_sha256": "980e9ffe2d862957155e1d82c529547627d6d8f5a179072816380ebc48e22578",
+      "article_sha256": "980e9ffe2d862957155e1d82c529547627d6d8f5a179072816380ebc48e22578",
+      "hero_path": "/assets/articles/hero/uncovering-hidden-costs-what-every-mineral-rights-seller-should-know-before-the-review.webp",
+      "hero_sha256": "ffffe76bd181b7a7080cebe5a0416bbb2edce3a14aa573af74339216fa65dfdf",
+      "hero_asset_sha256": "ffffe76bd181b7a7080cebe5a0416bbb2edce3a14aa573af74339216fa65dfdf",
+      "admission_status": "admitted_quality_gated",
+      "finalization_state": "draft_noindex_admitted",
+      "searchatlas_content_score": null,
+      "searchatlas_word_count": 2464,
+      "risk_citation_remediation": [
+        "The planning-only canonical row was developed into an original pre-review cost-boundary and authorization guide. It separates the free MRX review, records, independently engaged professional services, later proposal adjustments and closing deductions, and tax or basis questions through a nine-field authorization register and explicit stop rules without importing factory body text.",
+        "Continuous quality-gated admission under D-2026-0804-16 and MRX1000-W38-SELECT-2026-08-12; no numerical cap or elapsed-time gate applies.",
+        "Publication remains conditional on current editorial, factual-citation, compliance, two-image, metadata, build, rollback, deployment, and live-verification evidence."
+      ],
+      "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/uncovering-hidden-costs-what-every-mineral-rights-seller-should-know-before-the-review.json",
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/uncovering-hidden-costs-what-every-mineral-rights-seller-should-know-before-the-review/are-there-any-hidden-costs-i-should-be-aware-of-during-the-review.webp",
+      "inline_asset_sha256": "3831bb72948d66af217bebf1ea6da7320230c11ee31dbf05a700646d9c5ed888",
+      "inline_rendered_text": "Are There Any Hidden Costs I Should Be Aware of During the Review?"
     }
   ],
   "admission_audit": {
-    "admitted_article_count": 117,
+    "admitted_article_count": 118,
     "selection_ranks": [
       1,
       2,
@@ -4078,7 +4114,8 @@
       114,
       115,
       116,
-      117
+      117,
+      118
     ],
     "duplicate_program_row_ids": [],
     "duplicate_slugs": [],
@@ -4137,9 +4174,9 @@
   "two_image_policy": {
     "directive": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
     "retrofit_manifest_path": "config/mrx-article-two-image-retrofit.json",
-    "retrofit_manifest_sha256": "a40ed39bdc17d8ea9d1f2ede2ae98de61b579d5fa4d48040901e7b552d1106c0",
-    "public_article_count": 126,
-    "batch_article_count": 117,
+    "retrofit_manifest_sha256": "c2b7c9fc4adb57cdd700e680200213f7afd37f14d50524f6193ef5a1a3fa30ab",
+    "public_article_count": 127,
+    "batch_article_count": 118,
     "assets_per_article": 2,
     "hero_share_identity_required": true,
     "inline_image_distinct_required": true,

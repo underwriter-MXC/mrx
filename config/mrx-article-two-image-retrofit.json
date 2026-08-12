@@ -1,18 +1,18 @@
 {
   "artifact_type": "mrx_article_two_image_retrofit",
   "schema_version": 1,
-  "generated_at_utc": "2026-08-12T16:08:31Z",
+  "generated_at_utc": "2026-08-12T16:36:08Z",
   "policy_source": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
   "summary": {
-    "article_count": 126,
-    "asset_count": 252,
-    "unique_source_art_count": 126,
-    "unique_hero_sha256_count": 126,
-    "unique_inline_sha256_count": 126,
-    "distinct_article_pair_count": 126,
-    "hero_ocr_pass_count": 126,
-    "inline_ocr_pass_count": 126,
-    "exact_filename_identity_count": 126
+    "article_count": 127,
+    "asset_count": 254,
+    "unique_source_art_count": 127,
+    "unique_hero_sha256_count": 127,
+    "unique_inline_sha256_count": 127,
+    "distinct_article_pair_count": 127,
+    "hero_ocr_pass_count": 127,
+    "inline_ocr_pass_count": 127,
+    "exact_filename_identity_count": 127
   },
   "contact_sheets": {
     "hero": [
@@ -4274,6 +4274,56 @@
           "actual": "types of mineral rights in texas\nroyalty interests, working interests,\nand overriding royalties",
           "normalized_expected": "types of mineral rights in texas royalty interests working interests and overriding royalties",
           "normalized_actual": "types of mineral rights in texas royalty interests working interests and overriding royalties",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      }
+    },
+    {
+      "slug": "uncovering-hidden-costs-what-every-mineral-rights-seller-should-know-before-the-review",
+      "title": "Uncovering Hidden Costs: What Every Mineral Rights Seller Should Know Before the Review",
+      "keyword": "Are There Any Hidden Costs I Should Be Aware of During the Review?",
+      "file_path": "src/content/posts/uncovering-hidden-costs-what-every-mineral-rights-seller-should-know-before-the-review.mdx",
+      "source_public_path": "/assets/articles/hero/uncovering-hidden-costs-what-every-mineral-rights-seller-should-know-before-the-review.webp",
+      "source_artifact_paths": [
+        "artifacts/mrx1000-wave38-creative-sources/uncovering-hidden-costs-what-every-mineral-rights-seller-should-know-before-the-review-hero-base.png",
+        "artifacts/mrx1000-wave38-creative-sources/uncovering-hidden-costs-what-every-mineral-rights-seller-should-know-before-the-review-inline-base.png"
+      ],
+      "generated_at_utc": "2026-08-12T16:32:11.394Z",
+      "hero": {
+        "public_path": "/assets/articles/hero/uncovering-hidden-costs-what-every-mineral-rights-seller-should-know-before-the-review.webp",
+        "alt": "A mineral owner maps possible costs for “Uncovering Hidden Costs” before a mineral rights review.",
+        "width": 1200,
+        "height": 630,
+        "mime_type": "image/webp",
+        "sha256": "ffffe76bd181b7a7080cebe5a0416bbb2edce3a14aa573af74339216fa65dfdf",
+        "perceptual_hash": "0000000000011111000000000011011100000000000001110000000000001111011111000000111101001000000000110111100000000011010000000000000100000000011000010000000000111111000000001111111100000000011111110000000001111111000000000011111100000011001111110000000000111011",
+        "neutralized_art_text_region_count": 1,
+        "ocr": {
+          "expected": "Uncovering Hidden Costs: What Every Mineral Rights Seller Should Know Before the Review",
+          "actual": "Uncovering Hidden Costs:\nWhat Every Mineral\nRights Seller Should Know\nBefore the Review",
+          "normalized_expected": "uncovering hidden costs what every mineral rights seller should know before the review",
+          "normalized_actual": "uncovering hidden costs what every mineral rights seller should know before the review",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      },
+      "inline": {
+        "public_path": "/assets/articles/inline/uncovering-hidden-costs-what-every-mineral-rights-seller-should-know-before-the-review/are-there-any-hidden-costs-i-should-be-aware-of-during-the-review.webp",
+        "alt": "A five-part cost authorization map labeled “Are There Any Hidden Costs I Should Be Aware of During the Review?”.",
+        "rendered_text": "Are There Any Hidden Costs I Should Be Aware of During the Review?",
+        "visual_variant": "wave38-distinct-generated-five-part-cost-authorization-map",
+        "width": 1200,
+        "height": 675,
+        "mime_type": "image/webp",
+        "sha256": "3831bb72948d66af217bebf1ea6da7320230c11ee31dbf05a700646d9c5ed888",
+        "perceptual_hash": "0111111111100000001111100111100110011110010011001001111000001110110111100100111111111110011111111111111111111111111111111111111111111111111111111111111111111111111111111111111000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "neutralized_art_text_region_count": 2,
+        "ocr": {
+          "expected": "Are There Any Hidden Costs I Should Be Aware of During the Review?",
+          "actual": "Are There Any Hidden Costs\nI Should Be Aware of\nDuring the Review?",
+          "normalized_expected": "are there any hidden costs i should be aware of during the review",
+          "normalized_actual": "are there any hidden costs i should be aware of during the review",
           "uppercase_i_confusable_accepted": false,
           "pass": true
         }
