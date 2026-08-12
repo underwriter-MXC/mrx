@@ -1,7 +1,7 @@
 {
   "program": "MRX 1,000 Article SEO+AEO Production Program",
   "artifact_type": "authorized_release_10_batch",
-  "evidence_scaffold_generated_at_utc": "2026-08-12T11:04:52Z",
+  "evidence_scaffold_generated_at_utc": "2026-08-12T11:16:25Z",
   "decision_authority": {
     "successor_gate_decision_id": "D-2026-0804-16",
     "successor_gate_decision_path": "docs/governance/mrx1000-owner-continuous-publication-directive-2026-08-04.md",
@@ -102,13 +102,16 @@
     "wave25_selection_decision_sha256": "53e427cecc799e29cb77ae024debbd89c322f4e8f12129abb8fdde75b2155262",
     "wave26_selection_decision_id": "MRX1000-W26-SELECT-2026-08-12",
     "wave26_selection_decision_path": "docs/governance/mrx1000-wave26-selection-decision-2026-08-12.md",
-    "wave26_selection_decision_sha256": "19044127da22535bc6a6e082685682452fb6bd37f5ab88dec662b5cd34fd1810"
+    "wave26_selection_decision_sha256": "19044127da22535bc6a6e082685682452fb6bd37f5ab88dec662b5cd34fd1810",
+    "wave27_selection_decision_id": "MRX1000-W27-SELECT-2026-08-12",
+    "wave27_selection_decision_path": "docs/governance/mrx1000-wave27-selection-decision-2026-08-12.md",
+    "wave27_selection_decision_sha256": "4bbfb8540412651b105451f160a145fdddd4c4bb455090d195e0b03049db2d24"
   },
   "identity_authority": {
     "scope_key": "canonical_slug",
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_sha256": "71d613914ea4d07870de5d2ee4c5a1357600fd6eeb3549cf60980304c616aece",
-    "canonical_ledger_generated_at": "2026-07-20T18:37:05.973Z",
+    "canonical_ledger_sha256": "7766e31408a3b6f64b49edcd0068c2d9c06c446522d0e1c95238e80700ecc9d4",
+    "canonical_ledger_generated_at": "2026-07-20T19:32:13.198Z",
     "successor_ledger_decision_id": "D-2026-0723-LEDGER-04",
     "successor_ledger_decision_path": "artifacts/mrx1000-release-10/decisions/mrx-ceo-ledger-provenance-successor-20260723-04.md",
     "successor_ledger_decision_sha256": "09eca24bcd0e71563f2ac4197f564eec0ccb43a5ee955216da5c4a2543d04978",
@@ -122,11 +125,11 @@
     "authorization_scope": "declared_program_size_not_a_staged_release_cap",
     "admission_mode": "continuous_quality_gated",
     "continuous_quality_gated_from_selection_rank": 26,
-    "prior_verified_article_count": 105,
+    "prior_verified_article_count": 106,
     "fail_closed": true,
     "earned_scale_gates": [],
-    "exact_admitted_count": 106,
-    "exact_admitted_slate_sha256": "677a7c77503e54a7c3f847523f53cbfd5b2b1b6cafa75dde8fe0f2abe6395f3f"
+    "exact_admitted_count": 107,
+    "exact_admitted_slate_sha256": "802233ce346746d50dfb35bb22f9541487df3a596b991666dfbd6afda12b82f9"
   },
   "articles": [
     {
@@ -3561,10 +3564,43 @@
       "inline_path": "/assets/articles/inline/how-much-are-mineral-rights-worth-checklist-for-mineral-owners/how-much-are-mineral-rights-worth.webp",
       "inline_asset_sha256": "a717ebadc7957e38fad8da9553fd4c7f396ea5431049507572c05e0bbcc784cf",
       "inline_rendered_text": "how much are mineral rights worth"
+    },
+    {
+      "selection_rank": 107,
+      "program_row_id": "MRX1000-0185",
+      "source_shortlist_program_row_id": "MRX1000-0185",
+      "slug": "how-much-are-mineral-rights-worth-checklist-without-obligation",
+      "title": "How Much Are Mineral Rights Worth: Checklist Without Obligation",
+      "source_shortlist_title": "How Much Are Mineral Rights Worth: Checklist Without Obligation",
+      "canonical_url": "https://mineralrightsxchange.com/blog/how-much-are-mineral-rights-worth-checklist-without-obligation/",
+      "pillar": "mineral-rights-value",
+      "cluster": "valuation-methodology-drivers",
+      "content_genius_article_uuid": null,
+      "archive_evidence_sha256": "0542a957508a1236a33e447cefb89188f1aeefa4074e142c0ef8b857a5857d8b",
+      "repo_path": "src/content/posts/how-much-are-mineral-rights-worth-checklist-without-obligation.mdx",
+      "repo_sha256": "3abfe9593b5074dee5c50fb250a626185aeffd6b964334bfe6f7ce8431c4be8f",
+      "article_sha256": "3abfe9593b5074dee5c50fb250a626185aeffd6b964334bfe6f7ce8431c4be8f",
+      "hero_path": "/assets/articles/hero/how-much-are-mineral-rights-worth-checklist-without-obligation.webp",
+      "hero_sha256": "482936ab000bfb938f9955730992ade8b9738d5df5c1ae830eaa0e8bc7d9836e",
+      "hero_asset_sha256": "482936ab000bfb938f9955730992ade8b9738d5df5c1ae830eaa0e8bc7d9836e",
+      "admission_status": "admitted_quality_gated",
+      "finalization_state": "draft_noindex_admitted",
+      "searchatlas_content_score": null,
+      "searchatlas_word_count": 2354,
+      "risk_citation_remediation": [
+        "The planning-only canonical row was developed into an original no-obligation engagement checklist that separates the free review, owner choice, commercial-role disclosure, deliverable limits, information sharing, communication preferences, stopping points, and any later transaction; no factory body text was imported.",
+        "Continuous quality-gated admission under D-2026-0804-16 and MRX1000-W27-SELECT-2026-08-12; no numerical cap or elapsed-time gate applies.",
+        "Publication remains conditional on current editorial, factual-citation, compliance, two-image, metadata, build, rollback, deployment, and live-verification evidence."
+      ],
+      "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/how-much-are-mineral-rights-worth-checklist-without-obligation.json",
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/how-much-are-mineral-rights-worth-checklist-without-obligation/how-much-are-mineral-rights-worth.webp",
+      "inline_asset_sha256": "65cda030263c6a90c14b9d267cf9434d17264f08fcf745676d8627909e68ea0a",
+      "inline_rendered_text": "how much are mineral rights worth"
     }
   ],
   "admission_audit": {
-    "admitted_article_count": 106,
+    "admitted_article_count": 107,
     "selection_ranks": [
       1,
       2,
@@ -3671,7 +3707,8 @@
       103,
       104,
       105,
-      106
+      106,
+      107
     ],
     "duplicate_program_row_ids": [],
     "duplicate_slugs": [],
@@ -3730,9 +3767,9 @@
   "two_image_policy": {
     "directive": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
     "retrofit_manifest_path": "config/mrx-article-two-image-retrofit.json",
-    "retrofit_manifest_sha256": "cd4bdbbbbe13106a6b3355844a2f059737e3b3858ea9cb78a2ad9bcb68e3e94c",
-    "public_article_count": 115,
-    "batch_article_count": 106,
+    "retrofit_manifest_sha256": "11b8526a555b21f80b1bbdad2f10cf71f6c25aab443c4a63cd995e25774245ec",
+    "public_article_count": 116,
+    "batch_article_count": 107,
     "assets_per_article": 2,
     "hero_share_identity_required": true,
     "inline_image_distinct_required": true,
