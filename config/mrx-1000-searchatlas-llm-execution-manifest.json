@@ -1,7 +1,7 @@
 {
   "program": "MRX1000",
   "artifact_type": "searchatlas_ordered_llm_local_execution_manifest",
-  "generated_at": "2026-07-20T10:49:46.326Z",
+  "generated_at": "2026-07-20T08:25:37.000Z",
   "deterministic": true,
   "local_only": true,
   "external_services_called": false,
@@ -9,13 +9,13 @@
   "inputs": {
     "ledger": {
       "path": "config/mrx-1000-canonical-content-ledger.json",
-      "sha256": "c18a9205c4d6690ef695d6a589babb9fcd0feff5555488e08e0b8f7956ba9868",
-      "bytes": 4457910
+      "sha256": "9c291f03b710db9b1f4b72724eb615ba72206863b714783cf3f6d8282c43d6e2",
+      "bytes": 4458268
     },
     "readiness": {
       "path": "reports/mrx-1000-readiness-matrix.json",
-      "sha256": "3466dc7fcf738a3bd9762ce9d6f3b9be32eee615b0c17c3b7bc7f8c35f581cb8",
-      "bytes": 3415697,
+      "sha256": "b24deb2350aa28835026b8babf454918f4126bb5c584a7479bf460a0336fe614",
+      "bytes": 3415725,
       "sha256_method": "canonical_json_with_top_level_generated_at_masked",
       "generated_at_excluded_from_sha256": true
     },
@@ -50967,7 +50967,7 @@
       "primary_keyword": "How Do I Ensure I'm Receiving a Fair Valuation for My Mineral Rights?",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -350144,5 +350144,5 @@
       ]
     }
   ],
-  "content_fingerprint_sha256": "bc35e4f7a7a8d0af006f89ca2a31b61740adfe88c0ae626872796cce6a8696aa"
+  "content_fingerprint_sha256": "b7d80eebade19e0e31766d3da97236a6d7e7204d2a78b76117bef925b04ffaf1"
 }
