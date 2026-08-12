@@ -1,7 +1,7 @@
 {
   "program": "MRX1000",
   "artifact_type": "searchatlas_ordered_llm_local_execution_manifest",
-  "generated_at": "2026-07-20T16:26:15.862Z",
+  "generated_at": "2026-07-20T18:41:34.018Z",
   "deterministic": true,
   "local_only": true,
   "external_services_called": false,
@@ -9,8 +9,8 @@
   "inputs": {
     "ledger": {
       "path": "config/mrx-1000-canonical-content-ledger.json",
-      "sha256": "c93bf9afbbf1cfd202b80f7cf1f34f24c003ace80f2fb8d8df74120517b2aaa4",
-      "bytes": 4452860
+      "sha256": "144b1fb5ad7568dc874711c4643ec86418a1856278d4b1d6bd7adc8a4c76ae22",
+      "bytes": 4453218
     },
     "readiness": {
       "path": "reports/mrx-1000-readiness-matrix.json",
@@ -48391,7 +48391,7 @@
       "primary_keyword": "Common Mistakes Selling Mineral Rights",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -349962,5 +349962,5 @@
       ]
     }
   ],
-  "content_fingerprint_sha256": "0ff4acad9480943c806804a70ce063c5aafe627e8ec165b4df6c6aed47a642cf"
+  "content_fingerprint_sha256": "6de29ccb7b2390cee28a0fe407f53968bbe31158755501c37f6012b58a3297de"
 }
