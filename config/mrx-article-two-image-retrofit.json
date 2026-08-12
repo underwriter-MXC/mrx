@@ -1,18 +1,18 @@
 {
   "artifact_type": "mrx_article_two_image_retrofit",
   "schema_version": 1,
-  "generated_at_utc": "2026-08-12T08:57:26Z",
+  "generated_at_utc": "2026-08-12T09:52:18Z",
   "policy_source": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
   "summary": {
-    "article_count": 112,
-    "asset_count": 224,
-    "unique_source_art_count": 112,
-    "unique_hero_sha256_count": 112,
-    "unique_inline_sha256_count": 112,
-    "distinct_article_pair_count": 112,
-    "hero_ocr_pass_count": 112,
-    "inline_ocr_pass_count": 112,
-    "exact_filename_identity_count": 112
+    "article_count": 113,
+    "asset_count": 226,
+    "unique_source_art_count": 113,
+    "unique_hero_sha256_count": 113,
+    "unique_inline_sha256_count": 113,
+    "distinct_article_pair_count": 113,
+    "hero_ocr_pass_count": 113,
+    "inline_ocr_pass_count": 113,
+    "exact_filename_identity_count": 113
   },
   "contact_sheets": {
     "hero": [
@@ -1316,6 +1316,56 @@
           "actual": "how horizontal drilling changed\nmineral rights values in texas",
           "normalized_expected": "how horizontal drilling changed mineral rights values in texas",
           "normalized_actual": "how horizontal drilling changed mineral rights values in texas",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      }
+    },
+    {
+      "slug": "how-lease-royalty-rates-influence-mineral-value",
+      "title": "How Lease Royalty Rates Influence Mineral Value",
+      "keyword": "lease royalty rates mineral value",
+      "file_path": "src/content/posts/how-lease-royalty-rates-influence-mineral-value.mdx",
+      "source_public_path": "/assets/articles/hero/how-lease-royalty-rates-influence-mineral-value.webp",
+      "source_artifact_paths": [
+        "artifacts/mrx1000-wave24-creative-sources/how-lease-royalty-rates-influence-mineral-value-hero-base.png",
+        "artifacts/mrx1000-wave24-creative-sources/how-lease-royalty-rates-influence-mineral-value-inline-base.png"
+      ],
+      "generated_at_utc": "2026-08-12T09:47:23.938Z",
+      "hero": {
+        "public_path": "/assets/articles/hero/how-lease-royalty-rates-influence-mineral-value.webp",
+        "alt": "A land professional reviews lease evidence beside the title “How Lease Royalty Rates Influence Mineral Value”.",
+        "width": 1200,
+        "height": 630,
+        "mime_type": "image/webp",
+        "sha256": "22153db90e7cfaca81d2abfee9fbd496afd9642daaf805888344aa9a86a06128",
+        "perceptual_hash": "0000000000000000000000000000000000000001111011100000000111100110000000011110000000000011111111100000001111111110000001111111110101000100111111100000000011111111000100001111111100000000110111110000000111011111000000011111111100000001111111110000000010011111",
+        "neutralized_art_text_region_count": 0,
+        "ocr": {
+          "expected": "How Lease Royalty Rates Influence Mineral Value",
+          "actual": "How Lease\nRoyalty Rates\nInfluence\nMineral Value",
+          "normalized_expected": "how lease royalty rates influence mineral value",
+          "normalized_actual": "how lease royalty rates influence mineral value",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      },
+      "inline": {
+        "public_path": "/assets/articles/inline/how-lease-royalty-rates-influence-mineral-value/lease-royalty-rates-mineral-value.webp",
+        "alt": "Distinct lease-rate sensitivity board labeled “lease royalty rates mineral value”.",
+        "rendered_text": "lease royalty rates mineral value",
+        "visual_variant": "wave24-distinct-generated-lease-rate-sensitivity-board",
+        "width": 1200,
+        "height": 675,
+        "mime_type": "image/webp",
+        "sha256": "59de4e1e1c45d143c5cc5f2a13fd15ba7c210467533fb8ae0c815414e86876d2",
+        "perceptual_hash": "1000000000000000001111111100000000111111111111001011111111111100001111111111110000111111111111000011111111111100001001111111110000111111111111000011110000000000000000011000000000000001100000000000000000000010000000000000000001001101001101100000000000000000",
+        "neutralized_art_text_region_count": 0,
+        "ocr": {
+          "expected": "lease royalty rates mineral value",
+          "actual": "lease royalty rates mineral value",
+          "normalized_expected": "lease royalty rates mineral value",
+          "normalized_actual": "lease royalty rates mineral value",
           "uppercase_i_confusable_accepted": false,
           "pass": true
         }
