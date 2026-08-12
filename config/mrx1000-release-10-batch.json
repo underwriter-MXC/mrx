@@ -1,7 +1,7 @@
 {
   "program": "MRX 1,000 Article SEO+AEO Production Program",
   "artifact_type": "authorized_release_10_batch",
-  "evidence_scaffold_generated_at_utc": "2026-08-12T22:47:38Z",
+  "evidence_scaffold_generated_at_utc": "2026-08-12T22:59:43Z",
   "decision_authority": {
     "successor_gate_decision_id": "D-2026-0804-16",
     "successor_gate_decision_path": "docs/governance/mrx1000-owner-continuous-publication-directive-2026-08-04.md",
@@ -168,13 +168,16 @@
     "wave47_selection_decision_sha256": "9b36f41ed422c33bce7b681772c5f1849b1dc2a5ab50604e889c1de08df63e74",
     "wave48_selection_decision_id": "MRX1000-W48-SELECT-2026-08-12",
     "wave48_selection_decision_path": "docs/governance/mrx1000-wave48-selection-decision-2026-08-12.md",
-    "wave48_selection_decision_sha256": "9b9cde72f0a9bcbd565ad371f5bf3627d5afc7a875ee5e26addb94556a5e4ba4"
+    "wave48_selection_decision_sha256": "9b9cde72f0a9bcbd565ad371f5bf3627d5afc7a875ee5e26addb94556a5e4ba4",
+    "wave49_selection_decision_id": "MRX1000-W49-SELECT-2026-08-12",
+    "wave49_selection_decision_path": "docs/governance/mrx1000-wave49-selection-decision-2026-08-12.md",
+    "wave49_selection_decision_sha256": "1ab8df9e46f98437c2f7ca9532d9ab97c6163efc073d4ae0e3a580209c7d1865"
   },
   "identity_authority": {
     "scope_key": "canonical_slug",
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_sha256": "36cc1d5a621376452a85e882a84f89b08cbc1bf84b332d8adc4a3b52f8320162",
-    "canonical_ledger_generated_at": "2026-07-20T06:52:24.044Z",
+    "canonical_ledger_sha256": "b183558ec1df2b20d1c89e9a8b66ffcec16e79abdbebb93204904bc7b840e144",
+    "canonical_ledger_generated_at": "2026-07-20T21:14:25.597Z",
     "successor_ledger_decision_id": "D-2026-0723-LEDGER-04",
     "successor_ledger_decision_path": "artifacts/mrx1000-release-10/decisions/mrx-ceo-ledger-provenance-successor-20260723-04.md",
     "successor_ledger_decision_sha256": "09eca24bcd0e71563f2ac4197f564eec0ccb43a5ee955216da5c4a2543d04978",
@@ -188,11 +191,11 @@
     "authorization_scope": "declared_program_size_not_a_staged_release_cap",
     "admission_mode": "continuous_quality_gated",
     "continuous_quality_gated_from_selection_rank": 26,
-    "prior_verified_article_count": 127,
+    "prior_verified_article_count": 128,
     "fail_closed": true,
     "earned_scale_gates": [],
-    "exact_admitted_count": 128,
-    "exact_admitted_slate_sha256": "ab3a526b52256e84c1145d409f94dedd8574b1af753d18d39fd0824fe2fd2326"
+    "exact_admitted_count": 129,
+    "exact_admitted_slate_sha256": "d9ca2b76ee8215782be365752b10f2c8eda341d45783b0dfb4207efa0c2e2dbb"
   },
   "articles": [
     {
@@ -4353,10 +4356,43 @@
       "inline_path": "/assets/articles/inline/understanding-texas-mineral-rights-valuation-process/texas-mineral-rights-valuation-process.webp",
       "inline_asset_sha256": "dea26a4c17bfeaba69e418f9c66be333188d36a567e9e2f6c6c2bf3f6545e72b",
       "inline_rendered_text": "Texas Mineral Rights Valuation Process"
+    },
+    {
+      "selection_rank": 129,
+      "program_row_id": "MRX1000-0129",
+      "source_shortlist_program_row_id": "MRX1000-0129",
+      "slug": "understanding-the-factors-behind-the-valuation-of-your-texas-mineral-rights-explained",
+      "title": "Understanding the Factors Behind the Valuation of Your Texas Mineral Rights Explained",
+      "source_shortlist_title": "Understanding the Factors Behind the Valuation of Your Texas Mineral Rights Explained",
+      "canonical_url": "https://mineralrightsxchange.com/blog/understanding-the-factors-behind-the-valuation-of-your-texas-mineral-rights-explained/",
+      "pillar": "sell-mineral-rights",
+      "cluster": "sell-mineral-rights-decision-process",
+      "content_genius_article_uuid": null,
+      "archive_evidence_sha256": "707c49453b15ee96927e9a417f67e64a1ad5174908a4bef0a51de5ca1c0620a1",
+      "repo_path": "src/content/posts/understanding-the-factors-behind-the-valuation-of-your-texas-mineral-rights-explained.mdx",
+      "repo_sha256": "3aa9c79ba394e56db51255e0adede234df47e8451597588bed1151c45acab8b1",
+      "article_sha256": "3aa9c79ba394e56db51255e0adede234df47e8451597588bed1151c45acab8b1",
+      "hero_path": "/assets/articles/hero/understanding-the-factors-behind-the-valuation-of-your-texas-mineral-rights-explained.webp",
+      "hero_sha256": "8c4d70d5a48178e6efbea489867f5b5f5f0b5dd146a6ffe35d7e6d01dcdf7a97",
+      "hero_asset_sha256": "8c4d70d5a48178e6efbea489867f5b5f5f0b5dd146a6ffe35d7e6d01dcdf7a97",
+      "admission_status": "admitted_quality_gated",
+      "finalization_state": "draft_noindex_admitted",
+      "searchatlas_content_score": null,
+      "searchatlas_word_count": 2608,
+      "risk_citation_remediation": [
+        "The planning-only canonical row was developed into an original Texas valuation mechanics and evidence-confidence guide. It shows where interest quantity, matched owner cash flow, production and development evidence, market and forecast assumptions, method reconciliation, and transaction scope enter a conditional range, then grades evidence separately without importing factory body text or duplicating the process, factor-list, factor-to-range, or introductory value-driver guides.",
+        "Continuous quality-gated admission under D-2026-0804-16 and MRX1000-W49-SELECT-2026-08-12; no numerical cap or elapsed-time gate applies.",
+        "Publication remains conditional on current editorial, factual-citation, compliance, two-image, metadata, build, rollback, deployment, and live-verification evidence."
+      ],
+      "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/understanding-the-factors-behind-the-valuation-of-your-texas-mineral-rights-explained.json",
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/understanding-the-factors-behind-the-valuation-of-your-texas-mineral-rights-explained/how-is-the-value-of-my-texas-mineral-rights-determined-and-assessed.webp",
+      "inline_asset_sha256": "f22a08b88fe389d6a12d5f202d9460fa01dd84589ee7388adfcf3f9de91cc682",
+      "inline_rendered_text": "How Is the Value of My Texas Mineral Rights Determined and Assessed?"
     }
   ],
   "admission_audit": {
-    "admitted_article_count": 128,
+    "admitted_article_count": 129,
     "selection_ranks": [
       1,
       2,
@@ -4485,7 +4521,8 @@
       125,
       126,
       127,
-      128
+      128,
+      129
     ],
     "duplicate_program_row_ids": [],
     "duplicate_slugs": [],
@@ -4544,9 +4581,9 @@
   "two_image_policy": {
     "directive": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
     "retrofit_manifest_path": "config/mrx-article-two-image-retrofit.json",
-    "retrofit_manifest_sha256": "685058a2e7a59b3e1a2530ac05faa7db80773e1976925769dcf24632b5de9bf3",
-    "public_article_count": 137,
-    "batch_article_count": 128,
+    "retrofit_manifest_sha256": "cd40be8bd87ef3d16a9baa5a66feae302b08412f71d6e8bee46d84b0325f6977",
+    "public_article_count": 138,
+    "batch_article_count": 129,
     "assets_per_article": 2,
     "hero_share_identity_required": true,
     "inline_image_distinct_required": true,
