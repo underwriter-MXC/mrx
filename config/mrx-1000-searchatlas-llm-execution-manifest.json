@@ -1,7 +1,7 @@
 {
   "program": "MRX1000",
   "artifact_type": "searchatlas_ordered_llm_local_execution_manifest",
-  "generated_at": "2026-07-20T21:14:25.597Z",
+  "generated_at": "2026-07-20T12:03:50.234Z",
   "deterministic": true,
   "local_only": true,
   "external_services_called": false,
@@ -9,13 +9,13 @@
   "inputs": {
     "ledger": {
       "path": "config/mrx-1000-canonical-content-ledger.json",
-      "sha256": "b183558ec1df2b20d1c89e9a8b66ffcec16e79abdbebb93204904bc7b840e144",
-      "bytes": 4461948
+      "sha256": "c58140af3b9464127555ee03c8bc6ea7d129ddb10419aad65bbfaa83aa0fec38",
+      "bytes": 4462306
     },
     "readiness": {
       "path": "reports/mrx-1000-readiness-matrix.json",
-      "sha256": "f1133b2483ecba071d3d526ed516762165ad69656c2d90cf4ebed1f7f7f174c7",
-      "bytes": 3418512,
+      "sha256": "6f7f1a8980dc5d452d357dd4cc9fa728b453e971bcb8c4f07139fa65341cb819",
+      "bytes": 3418510,
       "sha256_method": "canonical_json_with_top_level_generated_at_masked",
       "generated_at_excluded_from_sha256": true
     },
@@ -53175,7 +53175,7 @@
       "primary_keyword": "How Is the Value of My Texas Mineral Rights Determined and Assessed?",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -53512,7 +53512,7 @@
         "release_action_eligible_now": false,
         "index_submission_eligible_now": false,
         "sitemap_addition_eligible_now": false,
-        "currently_in_workspace_sitemap": false,
+        "currently_in_workspace_sitemap": true,
         "production_live_verified_in_this_local_build": false,
         "release_or_index_action_performed": false,
         "exact_claude_opus_4_6_required_before_release_or_index_transition": true,
@@ -350300,5 +350300,5 @@
       ]
     }
   ],
-  "content_fingerprint_sha256": "2b141c3f0b2f3b8db91c328898fdd8566c6add985cf5e5cc7363b0f56b858f61"
+  "content_fingerprint_sha256": "11c843cb6597cf9deb06bb74c77181f324c8f4998ea235c78888db34db66e5a8"
 }
