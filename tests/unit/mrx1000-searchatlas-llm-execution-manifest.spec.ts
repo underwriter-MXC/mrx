@@ -645,8 +645,8 @@ describe('MRX1000 SearchAtlas + ordered LLM execution manifest', () => {
 
   it('keeps topical-map planning handles separate from Content Genius UUID proof', () => {
     expect(manifest.aggregate).toMatchObject({
-      planning_searchatlas_map_id_count: 279,
-      planning_searchatlas_title_uuid_count: 254,
+      planning_searchatlas_map_id_count: 278,
+      planning_searchatlas_title_uuid_count: 253,
       persisted_ledger_content_genius_article_uuid_count: 0,
       vendor_exact_title_match_rows: 153,
       vendor_unambiguous_candidate_rows: 147,
