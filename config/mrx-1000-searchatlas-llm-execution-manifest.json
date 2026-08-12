@@ -1,7 +1,7 @@
 {
   "program": "MRX1000",
   "artifact_type": "searchatlas_ordered_llm_local_execution_manifest",
-  "generated_at": "2026-07-20T18:31:15.547Z",
+  "generated_at": "2026-07-20T08:25:37.000Z",
   "deterministic": true,
   "local_only": true,
   "external_services_called": false,
@@ -9,8 +9,8 @@
   "inputs": {
     "ledger": {
       "path": "config/mrx-1000-canonical-content-ledger.json",
-      "sha256": "e24b2f0b8607f23008731c770fda137f7536cd2b6777c4a0b33f5f66db9613a8",
-      "bytes": 4461176
+      "sha256": "36cc1d5a621376452a85e882a84f89b08cbc1bf84b332d8adc4a3b52f8320162",
+      "bytes": 4461534
     },
     "readiness": {
       "path": "reports/mrx-1000-readiness-matrix.json",
@@ -52807,7 +52807,7 @@
       "primary_keyword": "Texas Mineral Rights Valuation Process",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -350274,5 +350274,5 @@
       ]
     }
   ],
-  "content_fingerprint_sha256": "9571efc232eebef2b544b1e816e3248d93d2795d3ee19fd2da82d397567bdfca"
+  "content_fingerprint_sha256": "7cc029225f945835224f371a63ec74c224383e78f648473f82408c98844718a0"
 }
