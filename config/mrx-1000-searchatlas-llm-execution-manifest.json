@@ -1,7 +1,7 @@
 {
   "program": "MRX1000",
   "artifact_type": "searchatlas_ordered_llm_local_execution_manifest",
-  "generated_at": "2026-07-20T10:41:11.321Z",
+  "generated_at": "2026-07-20T08:25:37.000Z",
   "deterministic": true,
   "local_only": true,
   "external_services_called": false,
@@ -9,8 +9,8 @@
   "inputs": {
     "ledger": {
       "path": "config/mrx-1000-canonical-content-ledger.json",
-      "sha256": "7f5fcc347433f0e15aae193b1f00aeeffa9394f99ad0ccaf400d3ea572844df0",
-      "bytes": 4453544
+      "sha256": "e85f61820fbcc3c4771b7494f4a46764f0a9a523be2bda014c6a01e9307600a5",
+      "bytes": 4453902
     },
     "readiness": {
       "path": "reports/mrx-1000-readiness-matrix.json",
@@ -48759,7 +48759,7 @@
       "primary_keyword": "What Are Common Pitfalls I Should Avoid in Selling Mineral Rights?",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -349988,5 +349988,5 @@
       ]
     }
   ],
-  "content_fingerprint_sha256": "105d35fb99e056e509198fbfb801cbb0a0e74f66e27d5285ef3ea11bb1ebbad7"
+  "content_fingerprint_sha256": "a7fee7102d0ebcc783ad23c40e059a15b1a6ddcb4ab7a0887c65d3c242311e81"
 }
