@@ -1,15 +1,15 @@
 {
   "artifact_type": "mrx1000_content_activation_plan",
   "plan_version": "mrx1000-content-activation-v1.1.0",
-  "generated_at": "2026-07-20T20:00:36.526Z",
+  "generated_at": "2026-07-20T03:06:45.253Z",
   "generated_at_method": "canonical_ledger_generated_at",
   "generator": "scripts/build-mrx-1000-activation-plan.mjs",
-  "content_fingerprint_sha256": "adaad926c59737d57c82629457f1c08942688412b343a94f81139fe0c1b419bd",
+  "content_fingerprint_sha256": "a4d50c223f6a4713bbc003e459df5f29617bc8beee64a83b1a397172c6aa79cf",
   "inputs": {
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_fingerprint_sha256": "be6cab1f148d6d082dce428f1cf5e8204bfd4a55bdb48310b539ed73be3e5859",
+    "canonical_ledger_fingerprint_sha256": "0afa8679d10a99e21d0c1e2438a95af601f43cee5a199e1b0da17edff04f24cc",
     "canonical_ledger_fingerprint_verified": true,
-    "canonical_ledger_generated_at": "2026-07-20T20:00:36.526Z",
+    "canonical_ledger_generated_at": "2026-07-20T03:06:45.253Z",
     "owner_decision": {
       "decision_id": "D-2026-0804-16",
       "signed_disposition": "APPROVED_CONTINUOUS_QUALITY_GATED_ARTICLE_PUBLICATION",
@@ -115,9 +115,9 @@
     },
     "by_source_preservation_classification": {
       "incumbent_draft_nonpublic_held": 28,
-      "live_public_published_route": 107,
+      "live_public_published_route": 108,
       "pilot_draft_noindex_stage": 25,
-      "planning_only_inventory": 840
+      "planning_only_inventory": 839
     }
   },
   "rows": [
@@ -11041,8 +11041,8 @@
         "target_title": "Discount Rates in Mineral Rights DCF: A Plain-Language Guide",
         "url": "/blog/discount-rates-in-mineral-rights-dcf-a-plain-language-guide/",
         "relationship": "same_cluster_next_by_program_row_id_cyclic",
-        "target_source_preservation_classification": "planning_only_inventory",
-        "target_route_live": false,
+        "target_source_preservation_classification": "live_public_published_route",
+        "target_route_live": true,
         "status": "planned_local_only"
       },
       "primary_cta": {
@@ -11092,8 +11092,8 @@
       "pillar": "mineral-rights-value",
       "search_intent": "informational",
       "funnel_stage": "consideration",
-      "source_preservation_classification": "planning_only_inventory",
-      "source_route_live": false,
+      "source_preservation_classification": "live_public_published_route",
+      "source_route_live": true,
       "pillar_link": {
         "url": "/mineral-rights-value/",
         "route_evidence": "src/pages/mineral-rights-value.astro",
@@ -11142,7 +11142,7 @@
         "rendered_triangle_verified": false,
         "live_status": "not_published_or_verified_by_this_plan",
         "live_triangle_verified": false,
-        "release_status": "eligible_for_continuous_quality_review_not_yet_cleared",
+        "release_status": "released_under_d16_continuous_quality_gate",
         "numerical_release_cap_applies": false
       }
     },

@@ -1,7 +1,7 @@
 {
   "program": "MRX 1,000 Article SEO+AEO Production Program",
   "artifact_type": "authorized_release_10_batch",
-  "evidence_scaffold_generated_at_utc": "2026-08-12T06:50:24Z",
+  "evidence_scaffold_generated_at_utc": "2026-08-12T07:02:19Z",
   "decision_authority": {
     "successor_gate_decision_id": "D-2026-0804-16",
     "successor_gate_decision_path": "docs/governance/mrx1000-owner-continuous-publication-directive-2026-08-04.md",
@@ -78,13 +78,16 @@
     "wave17_selection_decision_sha256": "94e3300c84c3f0a6673c8b0e3d9721e48377f6321c2a977aed687a5b7817c10e",
     "wave18_selection_decision_id": "MRX1000-W18-SELECT-2026-08-11",
     "wave18_selection_decision_path": "docs/governance/mrx1000-wave18-selection-decision-2026-08-11.md",
-    "wave18_selection_decision_sha256": "5e5dbd47e191536b11d3eeac1c65cb22e39e260747ff329621acd0cfe3c8dad3"
+    "wave18_selection_decision_sha256": "5e5dbd47e191536b11d3eeac1c65cb22e39e260747ff329621acd0cfe3c8dad3",
+    "wave19_selection_decision_id": "MRX1000-W19-SELECT-2026-08-11",
+    "wave19_selection_decision_path": "docs/governance/mrx1000-wave19-selection-decision-2026-08-11.md",
+    "wave19_selection_decision_sha256": "14f8d55f79da0a615ad059d85a75fda8a53743cc56d613589aef4993d36accbb"
   },
   "identity_authority": {
     "scope_key": "canonical_slug",
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_sha256": "eef509749a852f33aab8f93d789a737210961a66caec1038429a56f910f14622",
-    "canonical_ledger_generated_at": "2026-07-20T20:00:36.526Z",
+    "canonical_ledger_sha256": "c3cf0572d2856a0d6d752da5bda8ef270718031e2493e957cec98713709cbbee",
+    "canonical_ledger_generated_at": "2026-07-20T03:06:45.253Z",
     "successor_ledger_decision_id": "D-2026-0723-LEDGER-04",
     "successor_ledger_decision_path": "artifacts/mrx1000-release-10/decisions/mrx-ceo-ledger-provenance-successor-20260723-04.md",
     "successor_ledger_decision_sha256": "09eca24bcd0e71563f2ac4197f564eec0ccb43a5ee955216da5c4a2543d04978",
@@ -98,11 +101,11 @@
     "authorization_scope": "declared_program_size_not_a_staged_release_cap",
     "admission_mode": "continuous_quality_gated",
     "continuous_quality_gated_from_selection_rank": 26,
-    "prior_verified_article_count": 97,
+    "prior_verified_article_count": 98,
     "fail_closed": true,
     "earned_scale_gates": [],
-    "exact_admitted_count": 98,
-    "exact_admitted_slate_sha256": "7ee7aaef2ccb3ee005a5471cda7632b92ac91361d83e78b1ba5e2b3a774cbd37"
+    "exact_admitted_count": 99,
+    "exact_admitted_slate_sha256": "94bf200d96480dd17b0a091aa54e50509feaf80c93ba7188f40ddae7c2a725b0"
   },
   "articles": [
     {
@@ -3273,10 +3276,43 @@
       "inline_path": "/assets/articles/inline/depth-severances-and-formation-rights-in-mineral-valuation/depth-severance-formation-rights-valuation.webp",
       "inline_asset_sha256": "15451304bb4c8aee5fcd06d61b87bafa791af989873bb6d7d45c58c27f4aa211",
       "inline_rendered_text": "depth severance formation rights valuation"
+    },
+    {
+      "selection_rank": 99,
+      "program_row_id": "MRX1000-0177",
+      "source_shortlist_program_row_id": "MRX1000-0177",
+      "slug": "discount-rates-in-mineral-rights-dcf-a-plain-language-guide",
+      "title": "Discount Rates in Mineral Rights DCF: A Plain-Language Guide",
+      "source_shortlist_title": "Discount Rates in Mineral Rights DCF: A Plain-Language Guide",
+      "canonical_url": "https://mineralrightsxchange.com/blog/discount-rates-in-mineral-rights-dcf-a-plain-language-guide/",
+      "pillar": "mineral-rights-value",
+      "cluster": "valuation-methodology-drivers",
+      "content_genius_article_uuid": null,
+      "archive_evidence_sha256": "98056c2613b523542c40e52e64d803b1c50d98b77c6a70799a09fb339edbe132",
+      "repo_path": "src/content/posts/discount-rates-in-mineral-rights-dcf-a-plain-language-guide.mdx",
+      "repo_sha256": "787870b5263f66eed90e1cafe4b568f59580adf3f576f01c58dfe3cd1251688d",
+      "article_sha256": "787870b5263f66eed90e1cafe4b568f59580adf3f576f01c58dfe3cd1251688d",
+      "hero_path": "/assets/articles/hero/discount-rates-in-mineral-rights-dcf-a-plain-language-guide.webp",
+      "hero_sha256": "200ff6ff194c9034f02987699ca85ebe5360e2633ee0a837934be3a0b7966ed5",
+      "hero_asset_sha256": "200ff6ff194c9034f02987699ca85ebe5360e2633ee0a837934be3a0b7966ed5",
+      "admission_status": "admitted_quality_gated",
+      "finalization_state": "draft_noindex_admitted",
+      "searchatlas_content_score": null,
+      "searchatlas_word_count": 2296,
+      "risk_citation_remediation": [
+        "The planning-only canonical row was developed into an original, evidence-bounded mineral-rights DCF discount-rate guide; no factory body text was imported.",
+        "Continuous quality-gated admission under D-2026-0804-16 and MRX1000-W19-SELECT-2026-08-11; no numerical cap or elapsed-time gate applies.",
+        "Publication remains conditional on current editorial, factual-citation, compliance, two-image, metadata, build, rollback, deployment, and live-verification evidence."
+      ],
+      "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/discount-rates-in-mineral-rights-dcf-a-plain-language-guide.json",
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/discount-rates-in-mineral-rights-dcf-a-plain-language-guide/discount-rates-in-mineral-rights-dcf.webp",
+      "inline_asset_sha256": "42b41bc0951a4d7eb2aad034ddd47b7f64e299cce184c5c18cec0265bbc32b9b",
+      "inline_rendered_text": "discount rates in mineral rights DCF"
     }
   ],
   "admission_audit": {
-    "admitted_article_count": 98,
+    "admitted_article_count": 99,
     "selection_ranks": [
       1,
       2,
@@ -3375,7 +3411,8 @@
       95,
       96,
       97,
-      98
+      98,
+      99
     ],
     "duplicate_program_row_ids": [],
     "duplicate_slugs": [],
@@ -3434,9 +3471,9 @@
   "two_image_policy": {
     "directive": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
     "retrofit_manifest_path": "config/mrx-article-two-image-retrofit.json",
-    "retrofit_manifest_sha256": "36f83605bc6a8fcf15512e1ff19623c26f8fa402af19004c787ad222fd116037",
-    "public_article_count": 107,
-    "batch_article_count": 98,
+    "retrofit_manifest_sha256": "8e8137eb8b6a728789649ef599c1ef2b452d2ebab9cce66081fa4b2ad7ce432e",
+    "public_article_count": 108,
+    "batch_article_count": 99,
     "assets_per_article": 2,
     "hero_share_identity_required": true,
     "inline_image_distinct_required": true,
