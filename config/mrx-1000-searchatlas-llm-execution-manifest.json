@@ -1,7 +1,7 @@
 {
   "program": "MRX1000",
   "artifact_type": "searchatlas_ordered_llm_local_execution_manifest",
-  "generated_at": "2026-07-20T23:58:13.164Z",
+  "generated_at": "2026-07-20T20:32:31.258Z",
   "deterministic": true,
   "local_only": true,
   "external_services_called": false,
@@ -9,8 +9,8 @@
   "inputs": {
     "ledger": {
       "path": "config/mrx-1000-canonical-content-ledger.json",
-      "sha256": "e59f67c093719fa7d03945dc29a8e0ea8cdfe6adeeaa9696c805a3ab4ef028aa",
-      "bytes": 4445881
+      "sha256": "6dc5be3db174c38bb47d6ee79c8b40f4aee49b4709b5d02de581e8b27faa1b9b",
+      "bytes": 4446239
     },
     "readiness": {
       "path": "reports/mrx-1000-readiness-matrix.json",
@@ -71376,7 +71376,7 @@
       "primary_keyword": "Factors Affecting Mineral Rights Value",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -349676,5 +349676,5 @@
       ]
     }
   ],
-  "content_fingerprint_sha256": "950338e2233b5fa75e146d4071bb50aa152ef328ecb6f00df8897a88726ef23c"
+  "content_fingerprint_sha256": "fcd57ea4568134307d9c46128e8753dcbb86bfb4564f2f567b0e9b27ba46889d"
 }
