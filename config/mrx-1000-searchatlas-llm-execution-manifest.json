@@ -1,7 +1,7 @@
 {
   "program": "MRX1000",
   "artifact_type": "searchatlas_ordered_llm_local_execution_manifest",
-  "generated_at": "2026-07-20T16:15:49.279Z",
+  "generated_at": "2026-07-20T11:27:58.152Z",
   "deterministic": true,
   "local_only": true,
   "external_services_called": false,
@@ -9,8 +9,8 @@
   "inputs": {
     "ledger": {
       "path": "config/mrx-1000-canonical-content-ledger.json",
-      "sha256": "3a50a0d0cd32b473d5d43ccf4cd5ed98771637c1fea3c22ff4222a00ad5202fc",
-      "bytes": 4454320
+      "sha256": "da5a35c21bb216c497cfd03b11c61b94bfc63fd9f5cfbb5154b7b88e39912376",
+      "bytes": 4454678
     },
     "readiness": {
       "path": "reports/mrx-1000-readiness-matrix.json",
@@ -49127,7 +49127,7 @@
       "primary_keyword": "Are There Any Hidden Costs I Should Be Aware of During the Review?",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -350014,5 +350014,5 @@
       ]
     }
   ],
-  "content_fingerprint_sha256": "adbaa1a0df7605d47fa59687689284ce4ffd542e522bee8401e03d2316f1904d"
+  "content_fingerprint_sha256": "edf58d678ff622cdb9743ad3b05fe72c22142dcd28df3b71396d5574360f14c0"
 }
