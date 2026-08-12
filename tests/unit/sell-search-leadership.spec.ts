@@ -78,7 +78,9 @@ describe('sell-mineral-rights search leadership controls', () => {
     const hero = readFileSync(heroPath, 'utf8');
     const header = readFileSync(headerPath, 'utf8');
     expect(ctaBlock).toContain('openTommy={secondaryCta.openTommy}');
-    expect(ctaBlock).toMatch(/\.cta-block :global\(\.btn--ghost\)[\s\S]*?color: var\(--color-white\)/);
+    expect(ctaBlock).toMatch(
+      /\.cta-block :global\(\.btn--ghost\)[\s\S]*?color: var\(--color-white\)/,
+    );
     expect(ctaLink).toContain('data-open-tommy={openTommy || undefined}');
     expect(hero).toContain('<h2>{cardHeading}</h2>');
     expect(header).toContain('aria-label="Ask Tommy for mineral-rights help"');
@@ -108,6 +110,6 @@ describe('sell-mineral-rights search leadership controls', () => {
     expect(dashboard.portfolio.tracked_queries).toBe(50);
     expect(dashboard.portfolio.next_release_rows).toBe(25);
     expect(dashboard.portfolio.next_release_published_rows).toBe(0);
-    expect(dashboard.portfolio.live_sell_pillar_posts).toHaveLength(11);
+    expect(dashboard.portfolio.live_sell_pillar_posts).toHaveLength(12);
   });
 });

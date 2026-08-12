@@ -39,14 +39,7 @@
 import { describe, it, expect, beforeAll, afterAll } from 'vitest';
 import { spawnSync } from 'node:child_process';
 import { createHash } from 'node:crypto';
-import {
-  readFileSync,
-  existsSync,
-  readdirSync,
-  statSync,
-  mkdtempSync,
-  rmSync,
-} from 'node:fs';
+import { readFileSync, existsSync, readdirSync, statSync, mkdtempSync, rmSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -57,9 +50,9 @@ const SCRIPT = path.join(MRX_ROOT, 'scripts/build-mrx-1000-content-ledger.mjs');
 const CANONICAL_JSON = path.join(MRX_ROOT, 'config/mrx-1000-canonical-content-ledger.json');
 const CANONICAL_CSV = path.join(MRX_ROOT, 'config/mrx-1000-canonical-content-ledger.csv');
 const EXPECTED_CANONICAL_JSON_SHA256 =
-  '9e64869a616b30a5936704dd31333c2b888aec211caef3fe29769ae0667c0c85';
+  '46583b03971a1cfbbc869bdaa8e41fcdf114b8dd305b8799c32dd2bfe6f3483d';
 const EXPECTED_CANONICAL_CSV_SHA256 =
-  '3ca2ede84cd8b8e38d3fe9083d73f81b51ba6b28984402764fe4d342096fc913';
+  '4c27c5f89e9a144dfc3a3516239ac92bcedb9e39c89b87906f34e8c9429b8b33';
 const TEST_OUTPUT_DIR = mkdtempSync(path.join(tmpdir(), 'mrx1000-ledger-idempotency-'));
 const JSON_OUT = path.join(TEST_OUTPUT_DIR, 'mrx-1000-canonical-content-ledger.json');
 const CSV_OUT = path.join(TEST_OUTPUT_DIR, 'mrx-1000-canonical-content-ledger.csv');
