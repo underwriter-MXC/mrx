@@ -1,15 +1,15 @@
 {
   "artifact_type": "mrx1000_content_activation_plan",
   "plan_version": "mrx1000-content-activation-v1.1.0",
-  "generated_at": "2026-07-20T07:57:50.058Z",
+  "generated_at": "2026-07-20T03:04:21.027Z",
   "generated_at_method": "canonical_ledger_generated_at",
   "generator": "scripts/build-mrx-1000-activation-plan.mjs",
-  "content_fingerprint_sha256": "c034403fff8247c621d41d4684880788d7153857e4d002db7919eaff4966b3c7",
+  "content_fingerprint_sha256": "51a9f838a0c7ea7f478825c1236e1f0646a5417b0d6b94ec98e7e3956d9ec3d6",
   "inputs": {
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_fingerprint_sha256": "1fd12a9cc96876237ae9d98c17bc2903415126f809105c99aea35b9039a048ff",
+    "canonical_ledger_fingerprint_sha256": "ce8c2413792195aeaef36235d95da999addab0efad063cbafcf9078a3ebf70e6",
     "canonical_ledger_fingerprint_verified": true,
-    "canonical_ledger_generated_at": "2026-07-20T07:57:50.058Z",
+    "canonical_ledger_generated_at": "2026-07-20T03:04:21.027Z",
     "owner_decision": {
       "decision_id": "D-2026-0804-16",
       "signed_disposition": "APPROVED_CONTINUOUS_QUALITY_GATED_ARTICLE_PUBLICATION",
@@ -115,9 +115,9 @@
     },
     "by_source_preservation_classification": {
       "incumbent_draft_nonpublic_held": 28,
-      "live_public_published_route": 118,
+      "live_public_published_route": 119,
       "pilot_draft_noindex_stage": 25,
-      "planning_only_inventory": 829
+      "planning_only_inventory": 828
     }
   },
   "rows": [
@@ -6820,8 +6820,8 @@
         "target_title": "Selling Mineral Rights: Selling Process For Mineral Owners",
         "url": "/blog/selling-mineral-rights-selling-process-for-mineral-owners/",
         "relationship": "same_cluster_next_by_program_row_id_cyclic",
-        "target_source_preservation_classification": "planning_only_inventory",
-        "target_route_live": false,
+        "target_source_preservation_classification": "live_public_published_route",
+        "target_route_live": true,
         "status": "planned_local_only"
       },
       "primary_cta": {
@@ -6869,10 +6869,10 @@
       "canonical_url": "/blog/selling-mineral-rights-selling-process-for-mineral-owners/",
       "cluster": "sell-mineral-rights-decision-process",
       "pillar": "sell-mineral-rights",
-      "search_intent": "valuation",
+      "search_intent": "transactional",
       "funnel_stage": "decision",
-      "source_preservation_classification": "planning_only_inventory",
-      "source_route_live": false,
+      "source_preservation_classification": "live_public_published_route",
+      "source_route_live": true,
       "pillar_link": {
         "url": "/sell-mineral-rights/",
         "route_evidence": "src/pages/sell-mineral-rights.astro",
@@ -6894,7 +6894,7 @@
         "placement_code": "closing_panel",
         "placement_guidance": "Place in the closing decision panel after key takeaways and before related articles.",
         "assignment_rule": "decision_stage_team_handoff",
-        "assignment_basis": "decision:valuation",
+        "assignment_basis": "decision:transactional",
         "approved_route_evidence": "src/pages/book.astro",
         "role": "primary_appointment",
         "is_appointment_cta": true,
@@ -6907,7 +6907,7 @@
         "placement_code": "closing_panel",
         "placement_guidance": "Place in the closing decision panel after key takeaways and before related articles.",
         "assignment_rule": "decision_stage_team_handoff",
-        "assignment_basis": "decision:valuation",
+        "assignment_basis": "decision:transactional",
         "approved_route_evidence": "src/pages/book.astro",
         "role": "same_as_primary_appointment",
         "distinct_from_primary_cta": false,
@@ -6921,7 +6921,7 @@
         "rendered_triangle_verified": false,
         "live_status": "not_published_or_verified_by_this_plan",
         "live_triangle_verified": false,
-        "release_status": "eligible_for_continuous_quality_review_not_yet_cleared",
+        "release_status": "released_under_d16_continuous_quality_gate",
         "numerical_release_cap_applies": false
       }
     },

@@ -1,18 +1,18 @@
 {
   "artifact_type": "mrx_article_two_image_retrofit",
   "schema_version": 1,
-  "generated_at_utc": "2026-08-12T12:02:53Z",
+  "generated_at_utc": "2026-08-12T12:34:20Z",
   "policy_source": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
   "summary": {
-    "article_count": 118,
-    "asset_count": 236,
-    "unique_source_art_count": 118,
-    "unique_hero_sha256_count": 118,
-    "unique_inline_sha256_count": 118,
-    "distinct_article_pair_count": 118,
-    "hero_ocr_pass_count": 118,
-    "inline_ocr_pass_count": 118,
-    "exact_filename_identity_count": 118
+    "article_count": 119,
+    "asset_count": 238,
+    "unique_source_art_count": 119,
+    "unique_hero_sha256_count": 119,
+    "unique_inline_sha256_count": 119,
+    "distinct_article_pair_count": 119,
+    "hero_ocr_pass_count": 119,
+    "inline_ocr_pass_count": 119,
+    "exact_filename_identity_count": 119
   },
   "contact_sheets": {
     "hero": [
@@ -3414,6 +3414,56 @@
           "actual": "mineral rights\ndirect buyer\nrisks",
           "normalized_expected": "mineral rights direct buyer risks",
           "normalized_actual": "mineral rights direct buyer risks",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      }
+    },
+    {
+      "slug": "selling-mineral-rights-selling-process-for-mineral-owners",
+      "title": "Selling Mineral Rights: Selling Process For Mineral Owners",
+      "keyword": "selling mineral rights",
+      "file_path": "src/content/posts/selling-mineral-rights-selling-process-for-mineral-owners.mdx",
+      "source_public_path": "/assets/articles/hero/selling-mineral-rights-selling-process-for-mineral-owners.webp",
+      "source_artifact_paths": [
+        "artifacts/mrx1000-wave30-creative-sources/selling-mineral-rights-selling-process-for-mineral-owners-hero-base.png",
+        "artifacts/mrx1000-wave30-creative-sources/selling-mineral-rights-selling-process-for-mineral-owners-inline-base.png"
+      ],
+      "generated_at_utc": "2026-08-12T12:33:36.011Z",
+      "hero": {
+        "public_path": "/assets/articles/hero/selling-mineral-rights-selling-process-for-mineral-owners.webp",
+        "alt": "A mineral owner reviews transaction handoffs beside “Selling Mineral Rights: Selling Process For Mineral Owners”.",
+        "width": 1200,
+        "height": 630,
+        "mime_type": "image/webp",
+        "sha256": "cb5a899082cb066de05909bd085da2892292db28b6cdba946d0d79e74623804c",
+        "perceptual_hash": "0000000011110011000000001111001100000000101101110000000010111111000000000010001101111100001000110100100010101000011011001010000101011000111011000010000001111110011111011111111100000001111111110000000111100000000000000000001100000000000000110000000000000011",
+        "neutralized_art_text_region_count": 0,
+        "ocr": {
+          "expected": "Selling Mineral Rights: Selling Process For Mineral Owners",
+          "actual": "Selling Mineral\nRights: Selling\nProcess For\nMineral Owners",
+          "normalized_expected": "selling mineral rights selling process for mineral owners",
+          "normalized_actual": "selling mineral rights selling process for mineral owners",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      },
+      "inline": {
+        "public_path": "/assets/articles/inline/selling-mineral-rights-selling-process-for-mineral-owners/selling-mineral-rights.webp",
+        "alt": "Distinct transaction handoff map labeled “selling mineral rights”.",
+        "rendered_text": "selling mineral rights",
+        "visual_variant": "wave30-distinct-generated-seller-control-handoff-map",
+        "width": 1200,
+        "height": 675,
+        "mime_type": "image/webp",
+        "sha256": "9d98926fde12474a00b655d86a5afa6af8b24592e86b20cf40e0e3923677b162",
+        "perceptual_hash": "0010000000000000011110000001111001111000000111100111100000011110011110000001110000111000000011000111100100011110011110000001111001111011110111100011100000011100001110000000110001111000000111100111100000011110011110000001111000111000000111000000000000000000",
+        "neutralized_art_text_region_count": 0,
+        "ocr": {
+          "expected": "selling mineral rights",
+          "actual": "selling\nmineral rights",
+          "normalized_expected": "selling mineral rights",
+          "normalized_actual": "selling mineral rights",
           "uppercase_i_confusable_accepted": false,
           "pass": true
         }
