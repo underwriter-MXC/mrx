@@ -1,15 +1,15 @@
 {
   "artifact_type": "mrx1000_content_activation_plan",
   "plan_version": "mrx1000-content-activation-v1.1.0",
-  "generated_at": "2026-07-20T15:34:50.170Z",
+  "generated_at": "2026-07-20T19:36:44.882Z",
   "generated_at_method": "canonical_ledger_generated_at",
   "generator": "scripts/build-mrx-1000-activation-plan.mjs",
-  "content_fingerprint_sha256": "2d2b5428fdb1b69d3d3900d2720d548b0a994dd33b4ba4b689dd3f64f8e0720e",
+  "content_fingerprint_sha256": "9925463ee8591e3419f4228d51656dc6736c8aaee0b94b7e653607973ca9d731",
   "inputs": {
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_fingerprint_sha256": "a18045e7793774f085d4010f767a16d85affbde06c5efda800a34e88cbaf6c4b",
+    "canonical_ledger_fingerprint_sha256": "dfbbf11fad24cf9a9cf89af0364cc9a2a415088e3b073bde9efbf023542be887",
     "canonical_ledger_fingerprint_verified": true,
-    "canonical_ledger_generated_at": "2026-07-20T15:34:50.170Z",
+    "canonical_ledger_generated_at": "2026-07-20T19:36:44.882Z",
     "owner_decision": {
       "decision_id": "D-2026-0804-16",
       "signed_disposition": "APPROVED_CONTINUOUS_QUALITY_GATED_ARTICLE_PUBLICATION",
@@ -115,9 +115,9 @@
     },
     "by_source_preservation_classification": {
       "incumbent_draft_nonpublic_held": 28,
-      "live_public_published_route": 116,
+      "live_public_published_route": 117,
       "pilot_draft_noindex_stage": 25,
-      "planning_only_inventory": 831
+      "planning_only_inventory": 830
     }
   },
   "rows": [
@@ -11608,8 +11608,8 @@
         "target_title": "How Much Are Mineral Rights Worth: Due Diligence In 2026",
         "url": "/blog/how-much-are-mineral-rights-worth-due-diligence-in-2026/",
         "relationship": "same_cluster_next_by_program_row_id_cyclic",
-        "target_source_preservation_classification": "planning_only_inventory",
-        "target_route_live": false,
+        "target_source_preservation_classification": "live_public_published_route",
+        "target_route_live": true,
         "status": "planned_local_only"
       },
       "primary_cta": {
@@ -11657,10 +11657,10 @@
       "canonical_url": "/blog/how-much-are-mineral-rights-worth-due-diligence-in-2026/",
       "cluster": "valuation-methodology-drivers",
       "pillar": "mineral-rights-value",
-      "search_intent": "education",
+      "search_intent": "informational",
       "funnel_stage": "consideration",
-      "source_preservation_classification": "planning_only_inventory",
-      "source_route_live": false,
+      "source_preservation_classification": "live_public_published_route",
+      "source_route_live": true,
       "pillar_link": {
         "url": "/mineral-rights-value/",
         "route_evidence": "src/pages/mineral-rights-value.astro",
@@ -11682,7 +11682,7 @@
         "placement_code": "contextual_inline",
         "placement_guidance": "Place after the first comparison, risk, document, or decision-framework section.",
         "assignment_rule": "consideration_stage_assisted_review",
-        "assignment_basis": "consideration:education",
+        "assignment_basis": "consideration:informational",
         "approved_route_evidence": "src/pages/book.astro",
         "role": "primary_appointment",
         "is_appointment_cta": true,
@@ -11695,7 +11695,7 @@
         "placement_code": "contextual_inline",
         "placement_guidance": "Place after the first comparison, risk, document, or decision-framework section.",
         "assignment_rule": "consideration_stage_assisted_review",
-        "assignment_basis": "consideration:education",
+        "assignment_basis": "consideration:informational",
         "approved_route_evidence": "src/pages/book.astro",
         "role": "same_as_primary_appointment",
         "distinct_from_primary_cta": false,
@@ -11709,7 +11709,7 @@
         "rendered_triangle_verified": false,
         "live_status": "not_published_or_verified_by_this_plan",
         "live_triangle_verified": false,
-        "release_status": "eligible_for_continuous_quality_review_not_yet_cleared",
+        "release_status": "released_under_d16_continuous_quality_gate",
         "numerical_release_cap_applies": false
       }
     },

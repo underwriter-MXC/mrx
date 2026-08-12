@@ -1,18 +1,18 @@
 {
   "artifact_type": "mrx_article_two_image_retrofit",
   "schema_version": 1,
-  "generated_at_utc": "2026-08-12T11:14:33Z",
+  "generated_at_utc": "2026-08-12T11:38:12Z",
   "policy_source": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
   "summary": {
-    "article_count": 116,
-    "asset_count": 232,
-    "unique_source_art_count": 116,
-    "unique_hero_sha256_count": 116,
-    "unique_inline_sha256_count": 116,
-    "distinct_article_pair_count": 116,
-    "hero_ocr_pass_count": 116,
-    "inline_ocr_pass_count": 116,
-    "exact_filename_identity_count": 116
+    "article_count": 117,
+    "asset_count": 234,
+    "unique_source_art_count": 117,
+    "unique_hero_sha256_count": 117,
+    "unique_inline_sha256_count": 117,
+    "distinct_article_pair_count": 117,
+    "hero_ocr_pass_count": 117,
+    "inline_ocr_pass_count": 117,
+    "exact_filename_identity_count": 117
   },
   "contact_sheets": {
     "hero": [
@@ -1606,6 +1606,56 @@
         "ocr": {
           "expected": "how much are mineral rights worth",
           "actual": "how much are mineral rights worth",
+          "normalized_expected": "how much are mineral rights worth",
+          "normalized_actual": "how much are mineral rights worth",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      }
+    },
+    {
+      "slug": "how-much-are-mineral-rights-worth-due-diligence-in-2026",
+      "title": "How Much Are Mineral Rights Worth: Due Diligence In 2026",
+      "keyword": "how much are mineral rights worth",
+      "file_path": "src/content/posts/how-much-are-mineral-rights-worth-due-diligence-in-2026.mdx",
+      "source_public_path": "/assets/articles/hero/how-much-are-mineral-rights-worth-due-diligence-in-2026.webp",
+      "source_artifact_paths": [
+        "artifacts/mrx1000-wave28-creative-sources/how-much-are-mineral-rights-worth-due-diligence-in-2026-hero-base.png",
+        "artifacts/mrx1000-wave28-creative-sources/how-much-are-mineral-rights-worth-due-diligence-in-2026-inline-base.png"
+      ],
+      "generated_at_utc": "2026-08-12T11:37:27.249Z",
+      "hero": {
+        "public_path": "/assets/articles/hero/how-much-are-mineral-rights-worth-due-diligence-in-2026.webp",
+        "alt": "An owner audits dated evidence beside “How Much Are Mineral Rights Worth: Due Diligence In 2026”.",
+        "width": 1200,
+        "height": 630,
+        "mime_type": "image/webp",
+        "sha256": "f6ee837ffbe5c1624f433d45227c91853cd5eb15b276287bba1e8233d28d180d",
+        "perceptual_hash": "0000000000110101000000001100000100000000110000010101000011001101000000000100010101111100000000000000000000000000011110000000000000000001000100000111010111111101000000011111111100000011111111110011011111111110000011111111111100000111111111110000000000000111",
+        "neutralized_art_text_region_count": 0,
+        "ocr": {
+          "expected": "How Much Are Mineral Rights Worth: Due Diligence In 2026",
+          "actual": "How Much Are\nMineral Rights\nWorth: Due\nDiligence In 2026",
+          "normalized_expected": "how much are mineral rights worth due diligence in 2026",
+          "normalized_actual": "how much are mineral rights worth due diligence in 2026",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      },
+      "inline": {
+        "public_path": "/assets/articles/inline/how-much-are-mineral-rights-worth-due-diligence-in-2026/how-much-are-mineral-rights-worth.webp",
+        "alt": "Distinct input-freshness chain labeled “how much are mineral rights worth”.",
+        "rendered_text": "how much are mineral rights worth",
+        "visual_variant": "wave28-distinct-generated-2026-input-freshness-chain",
+        "width": 1200,
+        "height": 675,
+        "mime_type": "image/webp",
+        "sha256": "4ace6d7ff321cbd6ea4bf60aa0e348de2a69e4cd5f3bf006878eedb29d17bd43",
+        "perceptual_hash": "1111111111111111100011111111111110000011110010111000001111001111100000111110111110001110010010011111111111111111111111100111111111111110011111111111110011111111111111000011111111111100001111111111110000111111000000000000000000000000000000000000000000000000",
+        "neutralized_art_text_region_count": 0,
+        "ocr": {
+          "expected": "how much are mineral rights worth",
+          "actual": "?\nhow much are mineral rights worth",
           "normalized_expected": "how much are mineral rights worth",
           "normalized_actual": "how much are mineral rights worth",
           "uppercase_i_confusable_accepted": false,
