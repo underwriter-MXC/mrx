@@ -1,7 +1,7 @@
 {
   "program": "MRX 1,000 Article SEO+AEO Production Program",
   "artifact_type": "authorized_release_10_batch",
-  "evidence_scaffold_generated_at_utc": "2026-08-12T17:53:00Z",
+  "evidence_scaffold_generated_at_utc": "2026-08-12T18:03:49Z",
   "decision_authority": {
     "successor_gate_decision_id": "D-2026-0804-16",
     "successor_gate_decision_path": "docs/governance/mrx1000-owner-continuous-publication-directive-2026-08-04.md",
@@ -144,13 +144,16 @@
     "wave39_selection_decision_sha256": "f3855fd358963226f37047f2a94023d8733526ad57253d07e27e9ce886558cae",
     "wave40_selection_decision_id": "MRX1000-W40-SELECT-2026-08-12",
     "wave40_selection_decision_path": "docs/governance/mrx1000-wave40-selection-decision-2026-08-12.md",
-    "wave40_selection_decision_sha256": "44a4be5fd76a764a565780a3813018252c71d2d27f03046c075584655ef31eff"
+    "wave40_selection_decision_sha256": "44a4be5fd76a764a565780a3813018252c71d2d27f03046c075584655ef31eff",
+    "wave41_selection_decision_id": "MRX1000-W41-SELECT-2026-08-12",
+    "wave41_selection_decision_path": "docs/governance/mrx1000-wave41-selection-decision-2026-08-12.md",
+    "wave41_selection_decision_sha256": "e36ed8655e8ba7acf496ad913ec26fafab193e8022d8fd110bdb436957cf30cd"
   },
   "identity_authority": {
     "scope_key": "canonical_slug",
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_sha256": "dc81819faf958c99bf576b01d8df670621cdcdedfce818a5a62b7e11f007f8c4",
-    "canonical_ledger_generated_at": "2026-07-20T05:35:17.114Z",
+    "canonical_ledger_sha256": "50c1d09d9b47472fd3032e3922082f056b756ac06da237f5c366b59cbe518076",
+    "canonical_ledger_generated_at": "2026-07-20T21:43:17.780Z",
     "successor_ledger_decision_id": "D-2026-0723-LEDGER-04",
     "successor_ledger_decision_path": "artifacts/mrx1000-release-10/decisions/mrx-ceo-ledger-provenance-successor-20260723-04.md",
     "successor_ledger_decision_sha256": "09eca24bcd0e71563f2ac4197f564eec0ccb43a5ee955216da5c4a2543d04978",
@@ -164,11 +167,11 @@
     "authorization_scope": "declared_program_size_not_a_staged_release_cap",
     "admission_mode": "continuous_quality_gated",
     "continuous_quality_gated_from_selection_rank": 26,
-    "prior_verified_article_count": 119,
+    "prior_verified_article_count": 120,
     "fail_closed": true,
     "earned_scale_gates": [],
-    "exact_admitted_count": 120,
-    "exact_admitted_slate_sha256": "12cd0044d0b9e419026c1d3d1a780994c05646c70149b8c84c26bdf0feba73ec"
+    "exact_admitted_count": 121,
+    "exact_admitted_slate_sha256": "49cce44c85d9136489594d6410ef71c9d884237445bed2428d16a27fd3583b79"
   },
   "articles": [
     {
@@ -4065,10 +4068,43 @@
       "inline_path": "/assets/articles/inline/understanding-fair-valuation-key-factors-for-assessing-your-mineral-rights-worth/how-will-i-know-if-im-receiving-a-fair-valuation-for-my-mineral-rights.webp",
       "inline_asset_sha256": "4ec2b7c75eab2c14a11ace1124f5a86c6763335be3ee0bfafcd30b6f3526f53d",
       "inline_rendered_text": "How Will I Know if I'm Receiving a Fair Valuation for My Mineral Rights?"
+    },
+    {
+      "selection_rank": 121,
+      "program_row_id": "MRX1000-0121",
+      "source_shortlist_program_row_id": "MRX1000-0121",
+      "slug": "understanding-market-demand-how-it-influences-the-value-of-your-mineral-rights",
+      "title": "Understanding Market Demand: How It Influences the Value of Your Mineral Rights",
+      "source_shortlist_title": "Understanding Market Demand: How It Influences the Value of Your Mineral Rights",
+      "canonical_url": "https://mineralrightsxchange.com/blog/understanding-market-demand-how-it-influences-the-value-of-your-mineral-rights/",
+      "pillar": "sell-mineral-rights",
+      "cluster": "sell-mineral-rights-decision-process",
+      "content_genius_article_uuid": null,
+      "archive_evidence_sha256": "a1485ae6a205a4b48cfb2d7e3e1222e38dca1db092b8af65f566d0bc876baff4",
+      "repo_path": "src/content/posts/understanding-market-demand-how-it-influences-the-value-of-your-mineral-rights.mdx",
+      "repo_sha256": "995da27e6ee414a1348f5d2679d49eff5fd008e2853ef4f1b15c96c849c59e55",
+      "article_sha256": "995da27e6ee414a1348f5d2679d49eff5fd008e2853ef4f1b15c96c849c59e55",
+      "hero_path": "/assets/articles/hero/understanding-market-demand-how-it-influences-the-value-of-your-mineral-rights.webp",
+      "hero_sha256": "f73508ffe2cb82e667502362ce5fb51e238931066ccc66a028623e54e1cc646e",
+      "hero_asset_sha256": "f73508ffe2cb82e667502362ce5fb51e238931066ccc66a028623e54e1cc646e",
+      "admission_status": "admitted_quality_gated",
+      "finalization_state": "draft_noindex_admitted",
+      "searchatlas_content_score": null,
+      "searchatlas_word_count": 2239,
+      "risk_citation_remediation": [
+        "The planning-only canonical row was developed into an original three-layer market-demand transmission audit. It separates commodity-market demand, tract-connected development activity, and observable acquisition demand, then supplies a thirteen-field dated demand snapshot without importing factory body text.",
+        "Continuous quality-gated admission under D-2026-0804-16 and MRX1000-W41-SELECT-2026-08-12; no numerical cap or elapsed-time gate applies.",
+        "Publication remains conditional on current editorial, factual-citation, compliance, two-image, metadata, build, rollback, deployment, and live-verification evidence."
+      ],
+      "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/understanding-market-demand-how-it-influences-the-value-of-your-mineral-rights.json",
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/understanding-market-demand-how-it-influences-the-value-of-your-mineral-rights/how-does-the-market-demand-affect-the-price-i-can-expect-for-my-rights.webp",
+      "inline_asset_sha256": "81eba66147846b857195b2039c2881b88a34116656cb63fee0119548219a51ec",
+      "inline_rendered_text": "How Does the Market Demand Affect the Price I Can Expect for My Rights?"
     }
   ],
   "admission_audit": {
-    "admitted_article_count": 120,
+    "admitted_article_count": 121,
     "selection_ranks": [
       1,
       2,
@@ -4189,7 +4225,8 @@
       117,
       118,
       119,
-      120
+      120,
+      121
     ],
     "duplicate_program_row_ids": [],
     "duplicate_slugs": [],
@@ -4248,9 +4285,9 @@
   "two_image_policy": {
     "directive": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
     "retrofit_manifest_path": "config/mrx-article-two-image-retrofit.json",
-    "retrofit_manifest_sha256": "2cbed44d424d873e1d34d7f2e424d61d3e9cf7f09d5f10ae185200ee2f358c3a",
-    "public_article_count": 129,
-    "batch_article_count": 120,
+    "retrofit_manifest_sha256": "9c82cdd788104f3e315a2930a1d2ca48b41f164c40c44eb5eb8fa847d3891f1f",
+    "public_article_count": 130,
+    "batch_article_count": 121,
     "assets_per_article": 2,
     "hero_share_identity_required": true,
     "inline_image_distinct_required": true,
