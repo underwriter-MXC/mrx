@@ -1,7 +1,7 @@
 {
   "program": "MRX 1,000 Article SEO+AEO Production Program",
   "artifact_type": "authorized_release_10_batch",
-  "evidence_scaffold_generated_at_utc": "2026-08-12T17:26:52Z",
+  "evidence_scaffold_generated_at_utc": "2026-08-12T17:39:55Z",
   "decision_authority": {
     "successor_gate_decision_id": "D-2026-0804-16",
     "successor_gate_decision_path": "docs/governance/mrx1000-owner-continuous-publication-directive-2026-08-04.md",
@@ -141,13 +141,16 @@
     "wave38_selection_decision_sha256": "cd52c6648f9c8aa63f614734fcf2f1908efe2ad52f8e0553537577e429beadff",
     "wave39_selection_decision_id": "MRX1000-W39-SELECT-2026-08-12",
     "wave39_selection_decision_path": "docs/governance/mrx1000-wave39-selection-decision-2026-08-12.md",
-    "wave39_selection_decision_sha256": "f3855fd358963226f37047f2a94023d8733526ad57253d07e27e9ce886558cae"
+    "wave39_selection_decision_sha256": "f3855fd358963226f37047f2a94023d8733526ad57253d07e27e9ce886558cae",
+    "wave40_selection_decision_id": "MRX1000-W40-SELECT-2026-08-12",
+    "wave40_selection_decision_path": "docs/governance/mrx1000-wave40-selection-decision-2026-08-12.md",
+    "wave40_selection_decision_sha256": "44a4be5fd76a764a565780a3813018252c71d2d27f03046c075584655ef31eff"
   },
   "identity_authority": {
     "scope_key": "canonical_slug",
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_sha256": "3ed911501680fce689bb5a91058c12967d7f48683f245440819ec901d4e981e2",
-    "canonical_ledger_generated_at": "2026-07-20T13:05:56.658Z",
+    "canonical_ledger_sha256": "ddc361ff8b7b46843980e64ac3215e3f79a23abaf7a3344ea26837c25fdbb6ad",
+    "canonical_ledger_generated_at": "2026-07-20T03:15:54.157Z",
     "successor_ledger_decision_id": "D-2026-0723-LEDGER-04",
     "successor_ledger_decision_path": "artifacts/mrx1000-release-10/decisions/mrx-ceo-ledger-provenance-successor-20260723-04.md",
     "successor_ledger_decision_sha256": "09eca24bcd0e71563f2ac4197f564eec0ccb43a5ee955216da5c4a2543d04978",
@@ -161,11 +164,11 @@
     "authorization_scope": "declared_program_size_not_a_staged_release_cap",
     "admission_mode": "continuous_quality_gated",
     "continuous_quality_gated_from_selection_rank": 26,
-    "prior_verified_article_count": 118,
+    "prior_verified_article_count": 119,
     "fail_closed": true,
     "earned_scale_gates": [],
-    "exact_admitted_count": 119,
-    "exact_admitted_slate_sha256": "23d74194cbc02924092cf34701f939ddacc890e6e3be35acb26cbfc10bf6a9b7"
+    "exact_admitted_count": 120,
+    "exact_admitted_slate_sha256": "12cd0044d0b9e419026c1d3d1a780994c05646c70149b8c84c26bdf0feba73ec"
   },
   "articles": [
     {
@@ -4029,10 +4032,43 @@
       "inline_path": "/assets/articles/inline/uncovering-the-truth-are-there-any-fees-for-your-no-obligation-mineral-rights-assessment/are-there-any-fees-associated-with-getting-a-no-obligation-assessment.webp",
       "inline_asset_sha256": "5db6344b160b2387a4b69550168bbfc0a83d072dbbea1d7f79070a8268cac231",
       "inline_rendered_text": "Are There Any Fees Associated With Getting a No-Obligation Assessment?"
+    },
+    {
+      "selection_rank": 120,
+      "program_row_id": "MRX1000-0120",
+      "source_shortlist_program_row_id": "MRX1000-0120",
+      "slug": "understanding-fair-valuation-key-factors-for-assessing-your-mineral-rights-worth",
+      "title": "Understanding Fair Valuation: Key Factors for Assessing Your Mineral Rights' Worth",
+      "source_shortlist_title": "Understanding Fair Valuation: Key Factors for Assessing Your Mineral Rights' Worth",
+      "canonical_url": "https://mineralrightsxchange.com/blog/understanding-fair-valuation-key-factors-for-assessing-your-mineral-rights-worth/",
+      "pillar": "sell-mineral-rights",
+      "cluster": "sell-mineral-rights-decision-process",
+      "content_genius_article_uuid": null,
+      "archive_evidence_sha256": "76e7e1f11375815294e25b0e70569957f2efe042d3221afa459473bd4a38e25c",
+      "repo_path": "src/content/posts/understanding-fair-valuation-key-factors-for-assessing-your-mineral-rights-worth.mdx",
+      "repo_sha256": "2117487db0feeeb7cc017505997ae5b07f61f33afd6a75ad6ceac8f1f1029a35",
+      "article_sha256": "2117487db0feeeb7cc017505997ae5b07f61f33afd6a75ad6ceac8f1f1029a35",
+      "hero_path": "/assets/articles/hero/understanding-fair-valuation-key-factors-for-assessing-your-mineral-rights-worth.webp",
+      "hero_sha256": "d7b35b5180d0dcdf571917e7d7e7281a53d712813bd06096aa5289d039c51efc",
+      "hero_asset_sha256": "d7b35b5180d0dcdf571917e7d7e7281a53d712813bd06096aa5289d039c51efc",
+      "admission_status": "admitted_quality_gated",
+      "finalization_state": "draft_noindex_admitted",
+      "searchatlas_content_score": null,
+      "searchatlas_word_count": 2218,
+      "risk_citation_remediation": [
+        "The planning-only canonical row was developed into an original valuation-fairness symmetry audit. It tests consistent treatment of favorable and unfavorable evidence across interest identity, production and payments, commodity assumptions, development evidence, uncertainty, and transaction scope, then supplies a twelve-field audit record without importing factory body text.",
+        "Continuous quality-gated admission under D-2026-0804-16 and MRX1000-W40-SELECT-2026-08-12; no numerical cap or elapsed-time gate applies.",
+        "Publication remains conditional on current editorial, factual-citation, compliance, two-image, metadata, build, rollback, deployment, and live-verification evidence."
+      ],
+      "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/understanding-fair-valuation-key-factors-for-assessing-your-mineral-rights-worth.json",
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/understanding-fair-valuation-key-factors-for-assessing-your-mineral-rights-worth/how-will-i-know-if-im-receiving-a-fair-valuation-for-my-mineral-rights.webp",
+      "inline_asset_sha256": "4ec2b7c75eab2c14a11ace1124f5a86c6763335be3ee0bfafcd30b6f3526f53d",
+      "inline_rendered_text": "How Will I Know if I'm Receiving a Fair Valuation for My Mineral Rights?"
     }
   ],
   "admission_audit": {
-    "admitted_article_count": 119,
+    "admitted_article_count": 120,
     "selection_ranks": [
       1,
       2,
@@ -4152,7 +4188,8 @@
       116,
       117,
       118,
-      119
+      119,
+      120
     ],
     "duplicate_program_row_ids": [],
     "duplicate_slugs": [],
@@ -4211,9 +4248,9 @@
   "two_image_policy": {
     "directive": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
     "retrofit_manifest_path": "config/mrx-article-two-image-retrofit.json",
-    "retrofit_manifest_sha256": "a29932214b5e4b5ed0aab779c794d46a8144273036bf1e0015a22ad2b75311f8",
-    "public_article_count": 128,
-    "batch_article_count": 119,
+    "retrofit_manifest_sha256": "2cbed44d424d873e1d34d7f2e424d61d3e9cf7f09d5f10ae185200ee2f358c3a",
+    "public_article_count": 129,
+    "batch_article_count": 120,
     "assets_per_article": 2,
     "hero_share_identity_required": true,
     "inline_image_distinct_required": true,
