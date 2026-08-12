@@ -1,7 +1,7 @@
 {
   "program": "MRX 1,000 Article SEO+AEO Production Program",
   "artifact_type": "authorized_release_10_batch",
-  "evidence_scaffold_generated_at_utc": "2026-08-12T12:57:02Z",
+  "evidence_scaffold_generated_at_utc": "2026-08-12T13:11:11Z",
   "decision_authority": {
     "successor_gate_decision_id": "D-2026-0804-16",
     "successor_gate_decision_path": "docs/governance/mrx1000-owner-continuous-publication-directive-2026-08-04.md",
@@ -114,13 +114,16 @@
     "wave29_selection_decision_sha256": "76b7a2582da704250cbcb7a4608c94091195e6adf3ef13dc75df6764e3f6471a",
     "wave30_selection_decision_id": "MRX1000-W30-SELECT-2026-08-12",
     "wave30_selection_decision_path": "docs/governance/mrx1000-wave30-selection-decision-2026-08-12.md",
-    "wave30_selection_decision_sha256": "a45c8e3690c2e78a633b9ed10b43f27aad2e23afbbd2329137bbdc761d8726d4"
+    "wave30_selection_decision_sha256": "a45c8e3690c2e78a633b9ed10b43f27aad2e23afbbd2329137bbdc761d8726d4",
+    "wave31_selection_decision_id": "MRX1000-W31-SELECT-2026-08-12",
+    "wave31_selection_decision_path": "docs/governance/mrx1000-wave31-selection-decision-2026-08-12.md",
+    "wave31_selection_decision_sha256": "384c4e8b70b89f536199a41449f9ab7cb81d79cf57391e09afb0482100ac5d37"
   },
   "identity_authority": {
     "scope_key": "canonical_slug",
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_sha256": "e25b1dedcdaec22f0c7e0300bf6f5b89cffa41c6d409609179b8e4e1bc005e15",
-    "canonical_ledger_generated_at": "2026-07-20T13:06:51.066Z",
+    "canonical_ledger_sha256": "57d11b5aa27845e3a45edd00f1ac766bce05056d8eb34c725eda02ef54da3848",
+    "canonical_ledger_generated_at": "2026-07-20T12:33:29.288Z",
     "successor_ledger_decision_id": "D-2026-0723-LEDGER-04",
     "successor_ledger_decision_path": "artifacts/mrx1000-release-10/decisions/mrx-ceo-ledger-provenance-successor-20260723-04.md",
     "successor_ledger_decision_sha256": "09eca24bcd0e71563f2ac4197f564eec0ccb43a5ee955216da5c4a2543d04978",
@@ -134,11 +137,11 @@
     "authorization_scope": "declared_program_size_not_a_staged_release_cap",
     "admission_mode": "continuous_quality_gated",
     "continuous_quality_gated_from_selection_rank": 26,
-    "prior_verified_article_count": 109,
+    "prior_verified_article_count": 110,
     "fail_closed": true,
     "earned_scale_gates": [],
-    "exact_admitted_count": 110,
-    "exact_admitted_slate_sha256": "aee603fb8b4842701349c1b7a121712e7c69c01fc2eef9a57732e6cfc0a6ab9d"
+    "exact_admitted_count": 111,
+    "exact_admitted_slate_sha256": "3e911e3ac8dcd7b70ac613900e9a825e5fa16b1995d4ec730234bd73bedb6014"
   },
   "articles": [
     {
@@ -3705,10 +3708,43 @@
       "inline_path": "/assets/articles/inline/selling-mineral-rights-selling-process-for-mineral-owners/selling-mineral-rights.webp",
       "inline_asset_sha256": "9d98926fde12474a00b655d86a5afa6af8b24592e86b20cf40e0e3923677b162",
       "inline_rendered_text": "selling mineral rights"
+    },
+    {
+      "selection_rank": 111,
+      "program_row_id": "MRX1000-0111",
+      "source_shortlist_program_row_id": "MRX1000-0111",
+      "slug": "selling-mineral-rights-timeline-in-2026",
+      "title": "Selling Mineral Rights: Timeline In 2026",
+      "source_shortlist_title": "Selling Mineral Rights: Timeline In 2026",
+      "canonical_url": "https://mineralrightsxchange.com/blog/selling-mineral-rights-timeline-in-2026/",
+      "pillar": "sell-mineral-rights",
+      "cluster": "sell-mineral-rights-decision-process",
+      "content_genius_article_uuid": null,
+      "archive_evidence_sha256": "465dbbd3a407139de3f606acdd4d1f61849ff90c329e6a86cef06954cb2b1670",
+      "repo_path": "src/content/posts/selling-mineral-rights-timeline-in-2026.mdx",
+      "repo_sha256": "28922213d449f95874fbd6a8fa7e55963eb5fbb63f2321f2bab02b2f879402ae",
+      "article_sha256": "28922213d449f95874fbd6a8fa7e55963eb5fbb63f2321f2bab02b2f879402ae",
+      "hero_path": "/assets/articles/hero/selling-mineral-rights-timeline-in-2026.webp",
+      "hero_sha256": "8138e91cdccc664539be42c9e2747197fc06a4b9c087cea2e39048ce65d066fc",
+      "hero_asset_sha256": "8138e91cdccc664539be42c9e2747197fc06a4b9c087cea2e39048ce65d066fc",
+      "admission_status": "admitted_quality_gated",
+      "finalization_state": "draft_noindex_admitted",
+      "searchatlas_content_score": null,
+      "searchatlas_word_count": 1985,
+      "risk_citation_remediation": [
+        "The planning-only canonical row was developed into an original nationwide dependency-based timeline with owner, buyer, joint, and third-party lanes; parallel work, critical-path identification, dated milestone evidence, closing-sequence handoffs, and explicit reforecast rules; no factory body text was imported.",
+        "Continuous quality-gated admission under D-2026-0804-16 and MRX1000-W31-SELECT-2026-08-12; no numerical cap or elapsed-time gate applies.",
+        "Publication remains conditional on current editorial, factual-citation, compliance, two-image, metadata, build, rollback, deployment, and live-verification evidence."
+      ],
+      "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/selling-mineral-rights-timeline-in-2026.json",
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/selling-mineral-rights-timeline-in-2026/selling-mineral-rights.webp",
+      "inline_asset_sha256": "c99faa309ff7454e349cfbae110cf20fbfb8482d90b35e679bd9bee6ac5a6415",
+      "inline_rendered_text": "selling mineral rights"
     }
   ],
   "admission_audit": {
-    "admitted_article_count": 110,
+    "admitted_article_count": 111,
     "selection_ranks": [
       1,
       2,
@@ -3819,7 +3855,8 @@
       107,
       108,
       109,
-      110
+      110,
+      111
     ],
     "duplicate_program_row_ids": [],
     "duplicate_slugs": [],
@@ -3878,9 +3915,9 @@
   "two_image_policy": {
     "directive": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
     "retrofit_manifest_path": "config/mrx-article-two-image-retrofit.json",
-    "retrofit_manifest_sha256": "89b5c744544ba1ea286b65dd2ebed8eadc70376c3e251af0556c6f8e86264c68",
-    "public_article_count": 119,
-    "batch_article_count": 110,
+    "retrofit_manifest_sha256": "715dffe584c91f0af924312959781c248ef5400820be0c2e0984b0a1f8209545",
+    "public_article_count": 120,
+    "batch_article_count": 111,
     "assets_per_article": 2,
     "hero_share_identity_required": true,
     "inline_image_distinct_required": true,

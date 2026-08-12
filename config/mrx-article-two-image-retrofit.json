@@ -1,18 +1,18 @@
 {
   "artifact_type": "mrx_article_two_image_retrofit",
   "schema_version": 1,
-  "generated_at_utc": "2026-08-12T12:34:20Z",
+  "generated_at_utc": "2026-08-12T13:09:27Z",
   "policy_source": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
   "summary": {
-    "article_count": 119,
-    "asset_count": 238,
-    "unique_source_art_count": 119,
-    "unique_hero_sha256_count": 119,
-    "unique_inline_sha256_count": 119,
-    "distinct_article_pair_count": 119,
-    "hero_ocr_pass_count": 119,
-    "inline_ocr_pass_count": 119,
-    "exact_filename_identity_count": 119
+    "article_count": 120,
+    "asset_count": 240,
+    "unique_source_art_count": 120,
+    "unique_hero_sha256_count": 120,
+    "unique_inline_sha256_count": 120,
+    "distinct_article_pair_count": 120,
+    "hero_ocr_pass_count": 120,
+    "inline_ocr_pass_count": 120,
+    "exact_filename_identity_count": 120
   },
   "contact_sheets": {
     "hero": [
@@ -3458,6 +3458,56 @@
         "mime_type": "image/webp",
         "sha256": "9d98926fde12474a00b655d86a5afa6af8b24592e86b20cf40e0e3923677b162",
         "perceptual_hash": "0010000000000000011110000001111001111000000111100111100000011110011110000001110000111000000011000111100100011110011110000001111001111011110111100011100000011100001110000000110001111000000111100111100000011110011110000001111000111000000111000000000000000000",
+        "neutralized_art_text_region_count": 0,
+        "ocr": {
+          "expected": "selling mineral rights",
+          "actual": "selling\nmineral rights",
+          "normalized_expected": "selling mineral rights",
+          "normalized_actual": "selling mineral rights",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      }
+    },
+    {
+      "slug": "selling-mineral-rights-timeline-in-2026",
+      "title": "Selling Mineral Rights: Timeline In 2026",
+      "keyword": "selling mineral rights",
+      "file_path": "src/content/posts/selling-mineral-rights-timeline-in-2026.mdx",
+      "source_public_path": "/assets/articles/hero/selling-mineral-rights-timeline-in-2026.webp",
+      "source_artifact_paths": [
+        "artifacts/mrx1000-wave31-creative-sources/selling-mineral-rights-timeline-in-2026-hero-base.png",
+        "artifacts/mrx1000-wave31-creative-sources/selling-mineral-rights-timeline-in-2026-inline-base.png"
+      ],
+      "generated_at_utc": "2026-08-12T13:07:48.656Z",
+      "hero": {
+        "public_path": "/assets/articles/hero/selling-mineral-rights-timeline-in-2026.webp",
+        "alt": "An owner reviews a dependency calendar beside “Selling Mineral Rights: Timeline In 2026”.",
+        "width": 1200,
+        "height": 630,
+        "mime_type": "image/webp",
+        "sha256": "8138e91cdccc664539be42c9e2747197fc06a4b9c087cea2e39048ce65d066fc",
+        "perceptual_hash": "0000000000001111000000001000111100000000111011110000000011101111011111101011111101101010101011110111111100001000011100000101000000000000010000000000000000111110000000000011111000000000111111000000000011111111000000000011111100000000001111110000000001111111",
+        "neutralized_art_text_region_count": 0,
+        "ocr": {
+          "expected": "Selling Mineral Rights: Timeline In 2026",
+          "actual": "Selling Mineral\nRights: Timeline\nIn 2026",
+          "normalized_expected": "selling mineral rights timeline in 2026",
+          "normalized_actual": "selling mineral rights timeline in 2026",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      },
+      "inline": {
+        "public_path": "/assets/articles/inline/selling-mineral-rights-timeline-in-2026/selling-mineral-rights.webp",
+        "alt": "Distinct milestone-path artwork labeled “selling mineral rights”.",
+        "rendered_text": "selling mineral rights",
+        "visual_variant": "wave31-distinct-generated-dependency-milestone-path",
+        "width": 1200,
+        "height": 675,
+        "mime_type": "image/webp",
+        "sha256": "c99faa309ff7454e349cfbae110cf20fbfb8482d90b35e679bd9bee6ac5a6415",
+        "perceptual_hash": "0000000000001111000111011011101100011101101110010001110110111000000000000000000001000000000000001100000000000000101100000001110010110011110111001011011111101100100000100110010010000000000001100000111001110110000011100111011000000100001000000000000000000000",
         "neutralized_art_text_region_count": 0,
         "ocr": {
           "expected": "selling mineral rights",
