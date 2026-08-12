@@ -1,7 +1,7 @@
 {
   "program": "MRX 1,000 Article SEO+AEO Production Program",
   "artifact_type": "authorized_release_10_batch",
-  "evidence_scaffold_generated_at_utc": "2026-08-12T14:22:59Z",
+  "evidence_scaffold_generated_at_utc": "2026-08-12T14:39:27Z",
   "decision_authority": {
     "successor_gate_decision_id": "D-2026-0804-16",
     "successor_gate_decision_path": "docs/governance/mrx1000-owner-continuous-publication-directive-2026-08-04.md",
@@ -123,13 +123,16 @@
     "wave32_selection_decision_sha256": "f99f3bfeef747312a132352534e6817e88d546c11217dcde31844c7b02b3bdd4",
     "wave33_selection_decision_id": "MRX1000-W33-SELECT-2026-08-12",
     "wave33_selection_decision_path": "docs/governance/mrx1000-wave33-selection-decision-2026-08-12.md",
-    "wave33_selection_decision_sha256": "4822ec6d8881b3deae143dd76109a7e8a9e92f116e00e4762c99a28d58e02303"
+    "wave33_selection_decision_sha256": "4822ec6d8881b3deae143dd76109a7e8a9e92f116e00e4762c99a28d58e02303",
+    "wave34_selection_decision_id": "MRX1000-W34-SELECT-2026-08-12",
+    "wave34_selection_decision_path": "docs/governance/mrx1000-wave34-selection-decision-2026-08-12.md",
+    "wave34_selection_decision_sha256": "87a201ace6b8de8ed19b612f489840e1798ce6ce078f08a19647ec84a20a5c09"
   },
   "identity_authority": {
     "scope_key": "canonical_slug",
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_sha256": "c8aebb511fb6a67e711e425beae1006fbf1caffec938c47dc32892d5254c1f73",
-    "canonical_ledger_generated_at": "2026-07-20T11:57:15.751Z",
+    "canonical_ledger_sha256": "f7443cd06ab51b4714453d973523b634f46fa2dc3bc4ada528ef89787d8b0e91",
+    "canonical_ledger_generated_at": "2026-07-20T18:02:41.082Z",
     "successor_ledger_decision_id": "D-2026-0723-LEDGER-04",
     "successor_ledger_decision_path": "artifacts/mrx1000-release-10/decisions/mrx-ceo-ledger-provenance-successor-20260723-04.md",
     "successor_ledger_decision_sha256": "09eca24bcd0e71563f2ac4197f564eec0ccb43a5ee955216da5c4a2543d04978",
@@ -143,11 +146,11 @@
     "authorization_scope": "declared_program_size_not_a_staged_release_cap",
     "admission_mode": "continuous_quality_gated",
     "continuous_quality_gated_from_selection_rank": 26,
-    "prior_verified_article_count": 112,
+    "prior_verified_article_count": 113,
     "fail_closed": true,
     "earned_scale_gates": [],
-    "exact_admitted_count": 113,
-    "exact_admitted_slate_sha256": "89b67b8c3554fb5e8985c71d9131adb716e19da107f0de6f2713ce284e2f6257"
+    "exact_admitted_count": 114,
+    "exact_admitted_slate_sha256": "b6671fe6b603962548ca97268d8b46f2e0975212acf7a3018c0fa18c3b92801d"
   },
   "articles": [
     {
@@ -3813,10 +3816,43 @@
       "inline_path": "/assets/articles/inline/selling-mineral-rights-valuation-factors-step-by-step/selling-mineral-rights.webp",
       "inline_asset_sha256": "7b0c71191b1aa709dd75652dc0789faa84eadbabb751f7a8bdbe5be626ba26fc",
       "inline_rendered_text": "selling mineral rights"
+    },
+    {
+      "selection_rank": 114,
+      "program_row_id": "MRX1000-0114",
+      "source_shortlist_program_row_id": "MRX1000-0114",
+      "slug": "selling-mineral-rights-valuation-factors-without-obligation",
+      "title": "Selling Mineral Rights: Valuation Factors Without Obligation",
+      "source_shortlist_title": "Selling Mineral Rights: Valuation Factors Without Obligation",
+      "canonical_url": "https://mineralrightsxchange.com/blog/selling-mineral-rights-valuation-factors-without-obligation/",
+      "pillar": "sell-mineral-rights",
+      "cluster": "sell-mineral-rights-decision-process",
+      "content_genius_article_uuid": null,
+      "archive_evidence_sha256": "41c1a6a10bf07301a541ef55a11cab81715211949c40011fd5813f345ec6494c",
+      "repo_path": "src/content/posts/selling-mineral-rights-valuation-factors-without-obligation.mdx",
+      "repo_sha256": "a38e73e29b65c978f57ff784b72b1fa979034411318ed43511053a1d0d127784",
+      "article_sha256": "a38e73e29b65c978f57ff784b72b1fa979034411318ed43511053a1d0d127784",
+      "hero_path": "/assets/articles/hero/selling-mineral-rights-valuation-factors-without-obligation.webp",
+      "hero_sha256": "4bc6dfac8cb000855b77bb4115f944a04698b485ffaf40ee3282382a4789d8c7",
+      "hero_asset_sha256": "4bc6dfac8cb000855b77bb4115f944a04698b485ffaf40ee3282382a4789d8c7",
+      "admission_status": "admitted_quality_gated",
+      "finalization_state": "draft_noindex_admitted",
+      "searchatlas_content_score": null,
+      "searchatlas_word_count": 3155,
+      "risk_citation_remediation": [
+        "The planning-only canonical row was developed into an original nationwide no-obligation review and privacy journey that separates evidence review, permission to process deliberately supplied records, any later buyer proposal, and the owner’s transaction decision; it adds a staged permission ladder, minimum-necessary record controls, an assumption-and-permission register, provider-interest disclosure, stop rules, and explicit next-step choices without importing factory body text.",
+        "Continuous quality-gated admission under D-2026-0804-16 and MRX1000-W34-SELECT-2026-08-12; no numerical cap or elapsed-time gate applies.",
+        "Publication remains conditional on current editorial, factual-citation, compliance, two-image, metadata, build, rollback, deployment, and live-verification evidence."
+      ],
+      "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/selling-mineral-rights-valuation-factors-without-obligation.json",
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/selling-mineral-rights-valuation-factors-without-obligation/selling-mineral-rights.webp",
+      "inline_asset_sha256": "839ad4a2b243bda459d3e60f63bc58b3110d082284a96246ec67220dd6a085bb",
+      "inline_rendered_text": "selling mineral rights"
     }
   ],
   "admission_audit": {
-    "admitted_article_count": 113,
+    "admitted_article_count": 114,
     "selection_ranks": [
       1,
       2,
@@ -3930,7 +3966,8 @@
       110,
       111,
       112,
-      113
+      113,
+      114
     ],
     "duplicate_program_row_ids": [],
     "duplicate_slugs": [],
@@ -3989,9 +4026,9 @@
   "two_image_policy": {
     "directive": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
     "retrofit_manifest_path": "config/mrx-article-two-image-retrofit.json",
-    "retrofit_manifest_sha256": "bff1d38af8eb1cd0b0cac65e69668a63e176fcbc060b683138469bffc49aa388",
-    "public_article_count": 122,
-    "batch_article_count": 113,
+    "retrofit_manifest_sha256": "b99085459617b0af910bd0db4ac7cc28e8d76beb690e004d4d8b83a1ff4d6a9b",
+    "public_article_count": 123,
+    "batch_article_count": 114,
     "assets_per_article": 2,
     "hero_share_identity_required": true,
     "inline_image_distinct_required": true,
