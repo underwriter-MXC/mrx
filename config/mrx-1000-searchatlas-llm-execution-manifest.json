@@ -1,7 +1,7 @@
 {
   "program": "MRX1000",
   "artifact_type": "searchatlas_ordered_llm_local_execution_manifest",
-  "generated_at": "2026-07-20T22:44:34.062Z",
+  "generated_at": "2026-07-20T08:25:37.000Z",
   "deterministic": true,
   "local_only": true,
   "external_services_called": false,
@@ -9,8 +9,8 @@
   "inputs": {
     "ledger": {
       "path": "config/mrx-1000-canonical-content-ledger.json",
-      "sha256": "59ad2cc31c2eeeca413fe603f0cd0852d3699f640affcf651c70af98d87fa0bf",
-      "bytes": 4439735
+      "sha256": "6764ef123005c647ce78bb0be17fa898a10dee26cc56854263250cfee86c8edf",
+      "bytes": 4440093
     },
     "readiness": {
       "path": "reports/mrx-1000-readiness-matrix.json",
@@ -68064,7 +68064,7 @@
       "primary_keyword": "curative title risk valuation adjustment",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -349442,5 +349442,5 @@
       ]
     }
   ],
-  "content_fingerprint_sha256": "5af51a4c2dc34d57633a8f0907df8e82c67f0423c50fa7d020c932a61a22160a"
+  "content_fingerprint_sha256": "bf92d726bcbe11d31be41087e5037d1e62c6d1e5243632414d1efe1ae2410489"
 }
