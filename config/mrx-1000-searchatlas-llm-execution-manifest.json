@@ -1,7 +1,7 @@
 {
   "program": "MRX1000",
   "artifact_type": "searchatlas_ordered_llm_local_execution_manifest",
-  "generated_at": "2026-07-20T21:43:17.780Z",
+  "generated_at": "2026-07-20T22:10:28.942Z",
   "deterministic": true,
   "local_only": true,
   "external_services_called": false,
@@ -9,13 +9,13 @@
   "inputs": {
     "ledger": {
       "path": "config/mrx-1000-canonical-content-ledger.json",
-      "sha256": "50c1d09d9b47472fd3032e3922082f056b756ac06da237f5c366b59cbe518076",
-      "bytes": 4456614
+      "sha256": "cab07ce4142defe4da44883eece7dcb14335d7eb8013e54533cdc08173ae4f10",
+      "bytes": 4456972
     },
     "readiness": {
       "path": "reports/mrx-1000-readiness-matrix.json",
-      "sha256": "4b8588396e80d037a28409a4994d0a019a6d810a32d527735cb6d79e736c886f",
-      "bytes": 3414841,
+      "sha256": "b81e68f8b4f857ff5b4846287ecc6f0de6f7f5c431aea1d2a80187dfb306c179",
+      "bytes": 3414839,
       "sha256_method": "canonical_json_with_top_level_generated_at_masked",
       "generated_at_excluded_from_sha256": true
     },
@@ -50231,7 +50231,7 @@
       "primary_keyword": "How Does the Market Demand Affect the Price I Can Expect for My Rights?",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -50568,7 +50568,7 @@
         "release_action_eligible_now": false,
         "index_submission_eligible_now": false,
         "sitemap_addition_eligible_now": false,
-        "currently_in_workspace_sitemap": false,
+        "currently_in_workspace_sitemap": true,
         "production_live_verified_in_this_local_build": false,
         "release_or_index_action_performed": false,
         "exact_claude_opus_4_6_required_before_release_or_index_transition": true,
@@ -350092,5 +350092,5 @@
       ]
     }
   ],
-  "content_fingerprint_sha256": "234b29ea701636d383efd476cff586c16c2f4207539d6d1ac9f43e00db7ad50a"
+  "content_fingerprint_sha256": "c47f12edb42c639494ceae4b8a2897377b0c16a7ac5aaaea6148e5153fed4718"
 }
