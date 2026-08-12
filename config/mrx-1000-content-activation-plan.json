@@ -1,15 +1,15 @@
 {
   "artifact_type": "mrx1000_content_activation_plan",
   "plan_version": "mrx1000-content-activation-v1.1.0",
-  "generated_at": "2026-07-20T22:16:30.810Z",
+  "generated_at": "2026-07-20T21:52:58.869Z",
   "generated_at_method": "canonical_ledger_generated_at",
   "generator": "scripts/build-mrx-1000-activation-plan.mjs",
-  "content_fingerprint_sha256": "fea3d292c76ab629f759c7c8315079c7e076c81f6d1cbb4ea3763d4971011d73",
+  "content_fingerprint_sha256": "71ec01d1ac2a118c0c2f5ddf87d434d420a9cba5f0fba65ac733da252dd8a2fd",
   "inputs": {
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_fingerprint_sha256": "74ef69498dd704c8dc6cd6942142b148ea56a11d7df7d3f2b14da50f36a37eb9",
+    "canonical_ledger_fingerprint_sha256": "4a3cf75b97b4fe7504f71d4565568ef35140c66c98c77e8dd1c9a0f3f0968811",
     "canonical_ledger_fingerprint_verified": true,
-    "canonical_ledger_generated_at": "2026-07-20T22:16:30.810Z",
+    "canonical_ledger_generated_at": "2026-07-20T21:52:58.869Z",
     "owner_decision": {
       "decision_id": "D-2026-0804-16",
       "signed_disposition": "APPROVED_CONTINUOUS_QUALITY_GATED_ARTICLE_PUBLICATION",
@@ -115,9 +115,9 @@
     },
     "by_source_preservation_classification": {
       "incumbent_draft_nonpublic_held": 28,
-      "live_public_published_route": 111,
+      "live_public_published_route": 112,
       "pilot_draft_noindex_stage": 25,
-      "planning_only_inventory": 836
+      "planning_only_inventory": 835
     }
   },
   "rows": [
@@ -11293,8 +11293,8 @@
         "target_title": "Get a Free Mineral Rights Valuation Review Today",
         "url": "/blog/get-a-free-mineral-rights-valuation-review-today/",
         "relationship": "same_cluster_next_by_program_row_id_cyclic",
-        "target_source_preservation_classification": "planning_only_inventory",
-        "target_route_live": false,
+        "target_source_preservation_classification": "live_public_published_route",
+        "target_route_live": true,
         "status": "planned_local_only"
       },
       "primary_cta": {
@@ -11344,8 +11344,8 @@
       "pillar": "mineral-rights-value",
       "search_intent": "informational",
       "funnel_stage": "consideration",
-      "source_preservation_classification": "planning_only_inventory",
-      "source_route_live": false,
+      "source_preservation_classification": "live_public_published_route",
+      "source_route_live": true,
       "pillar_link": {
         "url": "/mineral-rights-value/",
         "route_evidence": "src/pages/mineral-rights-value.astro",
@@ -11394,7 +11394,7 @@
         "rendered_triangle_verified": false,
         "live_status": "not_published_or_verified_by_this_plan",
         "live_triangle_verified": false,
-        "release_status": "eligible_for_continuous_quality_review_not_yet_cleared",
+        "release_status": "released_under_d16_continuous_quality_gate",
         "numerical_release_cap_applies": false
       }
     },

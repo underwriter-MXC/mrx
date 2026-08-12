@@ -1,18 +1,18 @@
 {
   "artifact_type": "mrx_article_two_image_retrofit",
   "schema_version": 1,
-  "generated_at_utc": "2026-08-12T08:26:33Z",
+  "generated_at_utc": "2026-08-12T08:57:26Z",
   "policy_source": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
   "summary": {
-    "article_count": 111,
-    "asset_count": 222,
-    "unique_source_art_count": 111,
-    "unique_hero_sha256_count": 111,
-    "unique_inline_sha256_count": 111,
-    "distinct_article_pair_count": 111,
-    "hero_ocr_pass_count": 111,
-    "inline_ocr_pass_count": 111,
-    "exact_filename_identity_count": 111
+    "article_count": 112,
+    "asset_count": 224,
+    "unique_source_art_count": 112,
+    "unique_hero_sha256_count": 112,
+    "unique_inline_sha256_count": 112,
+    "distinct_article_pair_count": 112,
+    "hero_ocr_pass_count": 112,
+    "inline_ocr_pass_count": 112,
+    "exact_filename_identity_count": 112
   },
   "contact_sheets": {
     "hero": [
@@ -1128,6 +1128,56 @@
           "actual": "How Do I Know if My Mineral\nRights Qualify for Evaluation?",
           "normalized_expected": "how do i know if my mineral rights qualify for evaluation",
           "normalized_actual": "how do i know if my mineral rights qualify for evaluation",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      }
+    },
+    {
+      "slug": "get-a-free-mineral-rights-valuation-review-today",
+      "title": "Get a Free Mineral Rights Valuation Review Today",
+      "keyword": "Free Mineral Rights Valuation Review",
+      "file_path": "src/content/posts/get-a-free-mineral-rights-valuation-review-today.mdx",
+      "source_public_path": "/assets/articles/hero/get-a-free-mineral-rights-valuation-review-today.webp",
+      "source_artifact_paths": [
+        "artifacts/mrx1000-wave23-creative-sources/get-a-free-mineral-rights-valuation-review-today-hero-base.png",
+        "artifacts/mrx1000-wave23-creative-sources/get-a-free-mineral-rights-valuation-review-today-inline-base.png"
+      ],
+      "generated_at_utc": "2026-08-12T08:55:40.533Z",
+      "hero": {
+        "public_path": "/assets/articles/hero/get-a-free-mineral-rights-valuation-review-today.webp",
+        "alt": "Article cover titled “Get a Free Mineral Rights Valuation Review Today”.",
+        "width": 1200,
+        "height": 630,
+        "mime_type": "image/webp",
+        "sha256": "fa907d220ce07293db3b266ccd4348e59b4a34b2a6b702f684dcbddcdede0ea0",
+        "perceptual_hash": "0000000111110111000000011111001100000001111100010000000111110000000000011111110000000001111111000111100111111000000000011111100001111101111111000000000111011100011000011101110000000001110011000000000111000100000000011100000000000001110000000000000000000000",
+        "neutralized_art_text_region_count": 0,
+        "ocr": {
+          "expected": "Get a Free Mineral Rights Valuation Review Today",
+          "actual": "Get a Free\nMineral Rights\nValuation Review\nToday",
+          "normalized_expected": "get a free mineral rights valuation review today",
+          "normalized_actual": "get a free mineral rights valuation review today",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      },
+      "inline": {
+        "public_path": "/assets/articles/inline/get-a-free-mineral-rights-valuation-review-today/free-mineral-rights-valuation-review.webp",
+        "alt": "Distinct review-input workbook image labeled “Free Mineral Rights Valuation Review”.",
+        "rendered_text": "Free Mineral Rights Valuation Review",
+        "visual_variant": "wave23-distinct-generated-evidence-to-output-wall",
+        "width": 1200,
+        "height": 675,
+        "mime_type": "image/webp",
+        "sha256": "6b26996f561dde7c8ab218d07e1d1a1e17b79d544f30e31b6f9c6bb670b5abed",
+        "perceptual_hash": "1101111111111011110111111111111111011111111111111101111001111110110111100111110011011110011110101101111001111010010111100111101001011110111110110001111111111010000000111111101000000011111110100000000000000000000000000000000000000000000000000000000000000000",
+        "neutralized_art_text_region_count": 0,
+        "ocr": {
+          "expected": "Free Mineral Rights Valuation Review",
+          "actual": "Free Mineral Rights Valuation Review",
+          "normalized_expected": "free mineral rights valuation review",
+          "normalized_actual": "free mineral rights valuation review",
           "uppercase_i_confusable_accepted": false,
           "pass": true
         }

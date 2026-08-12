@@ -1,7 +1,7 @@
 {
   "program": "MRX 1,000 Article SEO+AEO Production Program",
   "artifact_type": "authorized_release_10_batch",
-  "evidence_scaffold_generated_at_utc": "2026-08-12T08:46:30Z",
+  "evidence_scaffold_generated_at_utc": "2026-08-12T09:03:48Z",
   "decision_authority": {
     "successor_gate_decision_id": "D-2026-0804-16",
     "successor_gate_decision_path": "docs/governance/mrx1000-owner-continuous-publication-directive-2026-08-04.md",
@@ -90,13 +90,16 @@
     "wave21_selection_decision_sha256": "2502e8ca038d587897187c06c40680b753deee3a427e52fadab2d9d7e100fd85",
     "wave22_selection_decision_id": "MRX1000-W22-SELECT-2026-08-11",
     "wave22_selection_decision_path": "docs/governance/mrx1000-wave22-selection-decision-2026-08-11.md",
-    "wave22_selection_decision_sha256": "45fc725156cf60f267489d9c2075e9cf2c2105c556d7be395a9eb4690fb7d784"
+    "wave22_selection_decision_sha256": "45fc725156cf60f267489d9c2075e9cf2c2105c556d7be395a9eb4690fb7d784",
+    "wave23_selection_decision_id": "MRX1000-W23-SELECT-2026-08-11",
+    "wave23_selection_decision_path": "docs/governance/mrx1000-wave23-selection-decision-2026-08-11.md",
+    "wave23_selection_decision_sha256": "1877bd05307864c8ac4c1d75d732ab553b9afeffe0aef80e3c1f29cdaf651348"
   },
   "identity_authority": {
     "scope_key": "canonical_slug",
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_sha256": "1f00320e7470ba9315ac1a384faedb801e118a8b5353670a3ff0342285654f48",
-    "canonical_ledger_generated_at": "2026-07-20T22:16:30.810Z",
+    "canonical_ledger_sha256": "8ac760118353cb5fe75777b2e663606b901b636f7d35d6cc690f171cdfd6da49",
+    "canonical_ledger_generated_at": "2026-07-20T21:52:58.869Z",
     "successor_ledger_decision_id": "D-2026-0723-LEDGER-04",
     "successor_ledger_decision_path": "artifacts/mrx1000-release-10/decisions/mrx-ceo-ledger-provenance-successor-20260723-04.md",
     "successor_ledger_decision_sha256": "09eca24bcd0e71563f2ac4197f564eec0ccb43a5ee955216da5c4a2543d04978",
@@ -110,11 +113,11 @@
     "authorization_scope": "declared_program_size_not_a_staged_release_cap",
     "admission_mode": "continuous_quality_gated",
     "continuous_quality_gated_from_selection_rank": 26,
-    "prior_verified_article_count": 101,
+    "prior_verified_article_count": 102,
     "fail_closed": true,
     "earned_scale_gates": [],
-    "exact_admitted_count": 102,
-    "exact_admitted_slate_sha256": "4845f8dbd9864ffdb2f5e1874cb55ade2997ace2cdd4423db5f293f0a5ce9cdd"
+    "exact_admitted_count": 103,
+    "exact_admitted_slate_sha256": "8cd1fec5f673988bc3bdc92e126d8f0b43ef821d9b6f9f47885647c403dd264d"
   },
   "articles": [
     {
@@ -3417,10 +3420,43 @@
       "inline_path": "/assets/articles/inline/five-key-indicators-that-show-your-mineral-rights-are-ready-for-evaluation/how-do-i-know-if-my-mineral-rights-qualify-for-evaluation.webp",
       "inline_asset_sha256": "358c51f2b52be0b6bd845c3d4a0d00b88dc8cf5310497533058a6cd85a4b1bd7",
       "inline_rendered_text": "How Do I Know if My Mineral Rights Qualify for Evaluation?"
+    },
+    {
+      "selection_rank": 103,
+      "program_row_id": "MRX1000-0181",
+      "source_shortlist_program_row_id": "MRX1000-0181",
+      "slug": "get-a-free-mineral-rights-valuation-review-today",
+      "title": "Get a Free Mineral Rights Valuation Review Today",
+      "source_shortlist_title": "Get a Free Mineral Rights Valuation Review Today",
+      "canonical_url": "https://mineralrightsxchange.com/blog/get-a-free-mineral-rights-valuation-review-today/",
+      "pillar": "mineral-rights-value",
+      "cluster": "valuation-methodology-drivers",
+      "content_genius_article_uuid": null,
+      "archive_evidence_sha256": "304cdccf46180885bb7ace055f74d8231864dbed8e0cbc0c58bccdd2f6b91870",
+      "repo_path": "src/content/posts/get-a-free-mineral-rights-valuation-review-today.mdx",
+      "repo_sha256": "a63600ed7a6f663f501b66fc52f7252a4511fe3a4c1ab704b568013d979df379",
+      "article_sha256": "a63600ed7a6f663f501b66fc52f7252a4511fe3a4c1ab704b568013d979df379",
+      "hero_path": "/assets/articles/hero/get-a-free-mineral-rights-valuation-review-today.webp",
+      "hero_sha256": "fa907d220ce07293db3b266ccd4348e59b4a34b2a6b702f684dcbddcdede0ea0",
+      "hero_asset_sha256": "fa907d220ce07293db3b266ccd4348e59b4a34b2a6b702f684dcbddcdede0ea0",
+      "admission_status": "admitted_quality_gated",
+      "finalization_state": "draft_noindex_admitted",
+      "searchatlas_content_score": null,
+      "searchatlas_word_count": 2348,
+      "risk_citation_remediation": [
+        "The planning-only canonical row was developed into an original evidence-to-output framework for a free directional valuation review; it separates verified evidence, owner-provided statements, calculations, assumptions, conflicts, and missing inputs, and no factory body text was imported.",
+        "Continuous quality-gated admission under D-2026-0804-16 and MRX1000-W23-SELECT-2026-08-11; no numerical cap or elapsed-time gate applies.",
+        "Publication remains conditional on current editorial, factual-citation, compliance, two-image, metadata, build, rollback, deployment, and live-verification evidence."
+      ],
+      "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/get-a-free-mineral-rights-valuation-review-today.json",
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/get-a-free-mineral-rights-valuation-review-today/free-mineral-rights-valuation-review.webp",
+      "inline_asset_sha256": "6b26996f561dde7c8ab218d07e1d1a1e17b79d544f30e31b6f9c6bb670b5abed",
+      "inline_rendered_text": "Free Mineral Rights Valuation Review"
     }
   ],
   "admission_audit": {
-    "admitted_article_count": 102,
+    "admitted_article_count": 103,
     "selection_ranks": [
       1,
       2,
@@ -3523,7 +3559,8 @@
       99,
       100,
       101,
-      102
+      102,
+      103
     ],
     "duplicate_program_row_ids": [],
     "duplicate_slugs": [],
@@ -3582,9 +3619,9 @@
   "two_image_policy": {
     "directive": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
     "retrofit_manifest_path": "config/mrx-article-two-image-retrofit.json",
-    "retrofit_manifest_sha256": "9e5d8408616a129e70b3957b23c4bda43f2ef6e82df4338716a336b5ae1ef0ff",
-    "public_article_count": 111,
-    "batch_article_count": 102,
+    "retrofit_manifest_sha256": "0a1e6922c159abdcc23e5bc1069d700ecf4dc773c897a8be1539d343d029b789",
+    "public_article_count": 112,
+    "batch_article_count": 103,
     "assets_per_article": 2,
     "hero_share_identity_required": true,
     "inline_image_distinct_required": true,
