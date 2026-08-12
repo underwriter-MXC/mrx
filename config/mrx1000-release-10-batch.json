@@ -1,7 +1,7 @@
 {
   "program": "MRX 1,000 Article SEO+AEO Production Program",
   "artifact_type": "authorized_release_10_batch",
-  "evidence_scaffold_generated_at_utc": "2026-08-12T10:08:17Z",
+  "evidence_scaffold_generated_at_utc": "2026-08-12T10:25:29Z",
   "decision_authority": {
     "successor_gate_decision_id": "D-2026-0804-16",
     "successor_gate_decision_path": "docs/governance/mrx1000-owner-continuous-publication-directive-2026-08-04.md",
@@ -96,13 +96,16 @@
     "wave23_selection_decision_sha256": "ba93573ee1452c3357d869e84aee293c9665a8dceab156cc7845a2e2f27dba55",
     "wave24_selection_decision_id": "MRX1000-W24-SELECT-2026-08-11",
     "wave24_selection_decision_path": "docs/governance/mrx1000-wave24-selection-decision-2026-08-11.md",
-    "wave24_selection_decision_sha256": "9a80af80fca7172ec3c0454aa1c1c15238623323c54458da71ba056cab2f6a12"
+    "wave24_selection_decision_sha256": "9a80af80fca7172ec3c0454aa1c1c15238623323c54458da71ba056cab2f6a12",
+    "wave25_selection_decision_id": "MRX1000-W25-SELECT-2026-08-11",
+    "wave25_selection_decision_path": "docs/governance/mrx1000-wave25-selection-decision-2026-08-11.md",
+    "wave25_selection_decision_sha256": "53e427cecc799e29cb77ae024debbd89c322f4e8f12129abb8fdde75b2155262"
   },
   "identity_authority": {
     "scope_key": "canonical_slug",
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_sha256": "3b9c11b7f4fb4018ae616954732b6a4eab8347cea49fe184ba69d316a0c7aae7",
-    "canonical_ledger_generated_at": "2026-07-20T16:14:21.239Z",
+    "canonical_ledger_sha256": "e59f67c093719fa7d03945dc29a8e0ea8cdfe6adeeaa9696c805a3ab4ef028aa",
+    "canonical_ledger_generated_at": "2026-07-20T23:58:13.164Z",
     "successor_ledger_decision_id": "D-2026-0723-LEDGER-04",
     "successor_ledger_decision_path": "artifacts/mrx1000-release-10/decisions/mrx-ceo-ledger-provenance-successor-20260723-04.md",
     "successor_ledger_decision_sha256": "09eca24bcd0e71563f2ac4197f564eec0ccb43a5ee955216da5c4a2543d04978",
@@ -116,11 +119,11 @@
     "authorization_scope": "declared_program_size_not_a_staged_release_cap",
     "admission_mode": "continuous_quality_gated",
     "continuous_quality_gated_from_selection_rank": 26,
-    "prior_verified_article_count": 103,
+    "prior_verified_article_count": 104,
     "fail_closed": true,
     "earned_scale_gates": [],
-    "exact_admitted_count": 104,
-    "exact_admitted_slate_sha256": "80d7bf3b012b334eb17aa303d51179f19c869c6f42c5d6f9ba4c5dc3833197bc"
+    "exact_admitted_count": 105,
+    "exact_admitted_slate_sha256": "fd0f0289e0c0c5e689793a5de6b7d7a8641c15fe8176a76e51ad3c26b08784a2"
   },
   "articles": [
     {
@@ -3489,10 +3492,43 @@
       "inline_path": "/assets/articles/inline/how-lease-royalty-rates-influence-mineral-value/lease-royalty-rates-mineral-value.webp",
       "inline_asset_sha256": "59de4e1e1c45d143c5cc5f2a13fd15ba7c210467533fb8ae0c815414e86876d2",
       "inline_rendered_text": "lease royalty rates mineral value"
+    },
+    {
+      "selection_rank": 105,
+      "program_row_id": "MRX1000-0183",
+      "source_shortlist_program_row_id": "MRX1000-0183",
+      "slug": "how-mineral-rights-valuation-affects-your-asset-decisions",
+      "title": "How Mineral Rights Valuation Affects Your Asset Decisions",
+      "source_shortlist_title": "How Mineral Rights Valuation Affects Your Asset Decisions",
+      "canonical_url": "https://mineralrightsxchange.com/blog/how-mineral-rights-valuation-affects-your-asset-decisions/",
+      "pillar": "mineral-rights-value",
+      "cluster": "valuation-methodology-drivers",
+      "content_genius_article_uuid": null,
+      "archive_evidence_sha256": "16a493a285be76bda7873ee2527bd37855348b906125932f552a56b94c2c770b",
+      "repo_path": "src/content/posts/how-mineral-rights-valuation-affects-your-asset-decisions.mdx",
+      "repo_sha256": "823ea71a79ed4f43e4dc1bfe07da3222cc03f7d0370d971bf3ae9e358c9cec77",
+      "article_sha256": "823ea71a79ed4f43e4dc1bfe07da3222cc03f7d0370d971bf3ae9e358c9cec77",
+      "hero_path": "/assets/articles/hero/how-mineral-rights-valuation-affects-your-asset-decisions.webp",
+      "hero_sha256": "95c6f15fef39641d14ad4ad393444bf031728482a9207710da17c741e6d6ba12",
+      "hero_asset_sha256": "95c6f15fef39641d14ad4ad393444bf031728482a9207710da17c741e6d6ba12",
+      "admission_status": "admitted_quality_gated",
+      "finalization_state": "draft_noindex_admitted",
+      "searchatlas_content_score": null,
+      "searchatlas_word_count": 2519,
+      "risk_citation_remediation": [
+        "The planning-only canonical row was developed into an original valuation-to-decision framework that separates property facts, model assumptions, scenario outputs, confidence, option scope, and owner criteria; no factory body text was imported.",
+        "Continuous quality-gated admission under D-2026-0804-16 and MRX1000-W25-SELECT-2026-08-11; no numerical cap or elapsed-time gate applies.",
+        "Publication remains conditional on current editorial, factual-citation, compliance, two-image, metadata, build, rollback, deployment, and live-verification evidence."
+      ],
+      "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/how-mineral-rights-valuation-affects-your-asset-decisions.json",
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/how-mineral-rights-valuation-affects-your-asset-decisions/factors-affecting-mineral-rights-value.webp",
+      "inline_asset_sha256": "74c2a65f0e80e2a3f423ce66bf084226641f5af5daddfd022e88a89f24856e23",
+      "inline_rendered_text": "Factors Affecting Mineral Rights Value"
     }
   ],
   "admission_audit": {
-    "admitted_article_count": 104,
+    "admitted_article_count": 105,
     "selection_ranks": [
       1,
       2,
@@ -3597,7 +3633,8 @@
       101,
       102,
       103,
-      104
+      104,
+      105
     ],
     "duplicate_program_row_ids": [],
     "duplicate_slugs": [],
@@ -3656,9 +3693,9 @@
   "two_image_policy": {
     "directive": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
     "retrofit_manifest_path": "config/mrx-article-two-image-retrofit.json",
-    "retrofit_manifest_sha256": "56c712b6f676d9c1ad59c840b54f9942841e7abd6b81f587b78a58b6aa280e04",
-    "public_article_count": 113,
-    "batch_article_count": 104,
+    "retrofit_manifest_sha256": "b4c6c0cf0d5eabfe146917d66117aff5e345f29ed4bc96c38504f3139c94f419",
+    "public_article_count": 114,
+    "batch_article_count": 105,
     "assets_per_article": 2,
     "hero_share_identity_required": true,
     "inline_image_distinct_required": true,

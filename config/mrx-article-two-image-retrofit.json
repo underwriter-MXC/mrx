@@ -1,18 +1,18 @@
 {
   "artifact_type": "mrx_article_two_image_retrofit",
   "schema_version": 1,
-  "generated_at_utc": "2026-08-12T09:52:18Z",
+  "generated_at_utc": "2026-08-12T10:21:29Z",
   "policy_source": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
   "summary": {
-    "article_count": 113,
-    "asset_count": 226,
-    "unique_source_art_count": 113,
-    "unique_hero_sha256_count": 113,
-    "unique_inline_sha256_count": 113,
-    "distinct_article_pair_count": 113,
-    "hero_ocr_pass_count": 113,
-    "inline_ocr_pass_count": 113,
-    "exact_filename_identity_count": 113
+    "article_count": 114,
+    "asset_count": 228,
+    "unique_source_art_count": 114,
+    "unique_hero_sha256_count": 114,
+    "unique_inline_sha256_count": 114,
+    "distinct_article_pair_count": 114,
+    "hero_ocr_pass_count": 114,
+    "inline_ocr_pass_count": 114,
+    "exact_filename_identity_count": 114
   },
   "contact_sheets": {
     "hero": [
@@ -1412,6 +1412,56 @@
           "actual": "how long to sell\nmineral rights\ntexas",
           "normalized_expected": "how long to sell mineral rights texas",
           "normalized_actual": "how long to sell mineral rights texas",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      }
+    },
+    {
+      "slug": "how-mineral-rights-valuation-affects-your-asset-decisions",
+      "title": "How Mineral Rights Valuation Affects Your Asset Decisions",
+      "keyword": "Factors Affecting Mineral Rights Value",
+      "file_path": "src/content/posts/how-mineral-rights-valuation-affects-your-asset-decisions.mdx",
+      "source_public_path": "/assets/articles/hero/how-mineral-rights-valuation-affects-your-asset-decisions.webp",
+      "source_artifact_paths": [
+        "artifacts/mrx1000-wave25-creative-sources/how-mineral-rights-valuation-affects-your-asset-decisions-hero-base.png",
+        "artifacts/mrx1000-wave25-creative-sources/how-mineral-rights-valuation-affects-your-asset-decisions-inline-base.png"
+      ],
+      "generated_at_utc": "2026-08-12T10:20:55.314Z",
+      "hero": {
+        "public_path": "/assets/articles/hero/how-mineral-rights-valuation-affects-your-asset-decisions.webp",
+        "alt": "An owner and underwriter review option evidence beside “How Mineral Rights Valuation Affects Your Asset Decisions”.",
+        "width": 1200,
+        "height": 630,
+        "mime_type": "image/webp",
+        "sha256": "95c6f15fef39641d14ad4ad393444bf031728482a9207710da17c741e6d6ba12",
+        "perceptual_hash": "0000000110000111000000011000011100000001100001110000000100100111000000000010011100010000000011110000000000001110010010000000111100000000010011110000001101111011000000111111111100000011111111110000001111111111000000111111111100000000011111110000000001000011",
+        "neutralized_art_text_region_count": 0,
+        "ocr": {
+          "expected": "How Mineral Rights Valuation Affects Your Asset Decisions",
+          "actual": "How Mineral\nRights Valuation\nAffects Your\nAsset Decisions",
+          "normalized_expected": "how mineral rights valuation affects your asset decisions",
+          "normalized_actual": "how mineral rights valuation affects your asset decisions",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      },
+      "inline": {
+        "public_path": "/assets/articles/inline/how-mineral-rights-valuation-affects-your-asset-decisions/factors-affecting-mineral-rights-value.webp",
+        "alt": "Distinct evidence board labeled “Factors Affecting Mineral Rights Value”.",
+        "rendered_text": "Factors Affecting Mineral Rights Value",
+        "visual_variant": "wave25-distinct-generated-mineral-asset-decision-evidence-board",
+        "width": 1200,
+        "height": 675,
+        "mime_type": "image/webp",
+        "sha256": "74c2a65f0e80e2a3f423ce66bf084226641f5af5daddfd022e88a89f24856e23",
+        "perceptual_hash": "1111111100000000111111110000000011111110100001101001111011000010000111001110000000011000000100001001100000000000110111001111100000011111111110001001111111111000000111111111100000011110111110000000000011111000000000000000000000100111111110100000000000000000",
+        "neutralized_art_text_region_count": 0,
+        "ocr": {
+          "expected": "Factors Affecting Mineral Rights Value",
+          "actual": "Factors Affecting Mineral Rights Value",
+          "normalized_expected": "factors affecting mineral rights value",
+          "normalized_actual": "factors affecting mineral rights value",
           "uppercase_i_confusable_accepted": false,
           "pass": true
         }
