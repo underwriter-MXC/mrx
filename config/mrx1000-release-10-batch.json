@@ -1,7 +1,7 @@
 {
   "program": "MRX 1,000 Article SEO+AEO Production Program",
   "artifact_type": "authorized_release_10_batch",
-  "evidence_scaffold_generated_at_utc": "2026-08-11T23:57:55Z",
+  "evidence_scaffold_generated_at_utc": "2026-08-12T00:27:09Z",
   "decision_authority": {
     "successor_gate_decision_id": "D-2026-0804-16",
     "successor_gate_decision_path": "docs/governance/mrx1000-owner-continuous-publication-directive-2026-08-04.md",
@@ -69,13 +69,16 @@
     "wave14_selection_decision_sha256": "2f981ca897ac03b9c7644302adaf834d7ffa44f32e31019472abf7fd17fc7f28",
     "wave15_selection_decision_id": "MRX1000-W15-SELECT-2026-08-11",
     "wave15_selection_decision_path": "docs/governance/mrx1000-wave15-selection-decision-2026-08-11.md",
-    "wave15_selection_decision_sha256": "c9d458f8c2d9498465ab4a1893a892553051f09f5387c7fefbb7102faf636964"
+    "wave15_selection_decision_sha256": "c9d458f8c2d9498465ab4a1893a892553051f09f5387c7fefbb7102faf636964",
+    "wave16_selection_decision_id": "MRX1000-W16-SELECT-2026-08-11",
+    "wave16_selection_decision_path": "docs/governance/mrx1000-wave16-selection-decision-2026-08-11.md",
+    "wave16_selection_decision_sha256": "257564ddaf96dadad9900fa5c04445993e760fb7d8c148f05041d65bea466972"
   },
   "identity_authority": {
     "scope_key": "canonical_slug",
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_sha256": "f1a5dab39cfb4b7d71f5735d4502b1cc04ad0d20292d4bbaf7acaa2f4721b474",
-    "canonical_ledger_generated_at": "2026-07-20T07:46:56.363Z",
+    "canonical_ledger_sha256": "59ad2cc31c2eeeca413fe603f0cd0852d3699f640affcf651c70af98d87fa0bf",
+    "canonical_ledger_generated_at": "2026-07-20T22:44:34.062Z",
     "successor_ledger_decision_id": "D-2026-0723-LEDGER-04",
     "successor_ledger_decision_path": "artifacts/mrx1000-release-10/decisions/mrx-ceo-ledger-provenance-successor-20260723-04.md",
     "successor_ledger_decision_sha256": "09eca24bcd0e71563f2ac4197f564eec0ccb43a5ee955216da5c4a2543d04978",
@@ -89,11 +92,11 @@
     "authorization_scope": "declared_program_size_not_a_staged_release_cap",
     "admission_mode": "continuous_quality_gated",
     "continuous_quality_gated_from_selection_rank": 26,
-    "prior_verified_article_count": 94,
+    "prior_verified_article_count": 95,
     "fail_closed": true,
     "earned_scale_gates": [],
-    "exact_admitted_count": 95,
-    "exact_admitted_slate_sha256": "ec9b06acb87cd0df1d37df21d08416f023414858a91d59786f894e18e7358f19"
+    "exact_admitted_count": 96,
+    "exact_admitted_slate_sha256": "b0831eac9239105b72e612226422a3d82518f5905c0460b7aa12008c3cb387a1"
   },
   "articles": [
     {
@@ -3165,10 +3168,43 @@
       "inline_path": "/assets/articles/inline/converting-monthly-royalty-history-into-a-valuation-baseline/monthly-royalty-history-worksheet.webp",
       "inline_asset_sha256": "b4aaa07c8d491e9813d558afeaa653b19226be31c843c8abdd2b56730d9fa072",
       "inline_rendered_text": "monthly royalty history worksheet"
+    },
+    {
+      "selection_rank": 96,
+      "program_row_id": "MRX1000-0174",
+      "source_shortlist_program_row_id": "MRX1000-0174",
+      "slug": "curative-title-risk-as-a-valuation-adjustment",
+      "title": "Curative Title Risk as a Valuation Adjustment",
+      "source_shortlist_title": "Curative Title Risk as a Valuation Adjustment",
+      "canonical_url": "https://mineralrightsxchange.com/blog/curative-title-risk-as-a-valuation-adjustment/",
+      "pillar": "mineral-rights-value",
+      "cluster": "valuation-methodology-drivers",
+      "content_genius_article_uuid": null,
+      "archive_evidence_sha256": "41d4014e2924024b22577fe035be3d4742cd8e9ac2e173eca5916c1c0f8b5609",
+      "repo_path": "src/content/posts/curative-title-risk-as-a-valuation-adjustment.mdx",
+      "repo_sha256": "687581b6137f8455ab24b6f398293e6a986bb16fb95120ebe0529b4e33d277cd",
+      "article_sha256": "687581b6137f8455ab24b6f398293e6a986bb16fb95120ebe0529b4e33d277cd",
+      "hero_path": "/assets/articles/hero/curative-title-risk-as-a-valuation-adjustment.webp",
+      "hero_sha256": "aead9ed9bad9d04dd5591d2beeae0205217a3139b5ab997cf9059ea0fcd14184",
+      "hero_asset_sha256": "aead9ed9bad9d04dd5591d2beeae0205217a3139b5ab997cf9059ea0fcd14184",
+      "admission_status": "admitted_quality_gated",
+      "finalization_state": "draft_noindex_admitted",
+      "searchatlas_content_score": null,
+      "searchatlas_word_count": 2554,
+      "risk_citation_remediation": [
+        "The planning-only canonical row was developed into an original, evidence-bounded curative-title-risk guide; no factory body text was imported.",
+        "Continuous quality-gated admission under D-2026-0804-16 and MRX1000-W16-SELECT-2026-08-11; no numerical cap or elapsed-time gate applies.",
+        "Publication remains conditional on current editorial, factual-citation, compliance, two-image, metadata, build, rollback, deployment, and live-verification evidence."
+      ],
+      "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/curative-title-risk-as-a-valuation-adjustment.json",
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/curative-title-risk-as-a-valuation-adjustment/curative-title-risk-worksheet.webp",
+      "inline_asset_sha256": "ef0ae23d48385249d3dd88e35516ceffc996e62ca1be7c07d394852a06c90ae0",
+      "inline_rendered_text": "curative title risk worksheet"
     }
   ],
   "admission_audit": {
-    "admitted_article_count": 95,
+    "admitted_article_count": 96,
     "selection_ranks": [
       1,
       2,
@@ -3264,7 +3300,8 @@
       92,
       93,
       94,
-      95
+      95,
+      96
     ],
     "duplicate_program_row_ids": [],
     "duplicate_slugs": [],
@@ -3323,9 +3360,9 @@
   "two_image_policy": {
     "directive": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
     "retrofit_manifest_path": "config/mrx-article-two-image-retrofit.json",
-    "retrofit_manifest_sha256": "d5a45312b44d4aec6d35dc13104cd7855af1fa9fb6743a5b8fdf51c22b92ab9e",
-    "public_article_count": 104,
-    "batch_article_count": 95,
+    "retrofit_manifest_sha256": "3db2aa591792fc40e45dcb15aab3e1431ad379a7dbb63fb1e75264a6c4b62606",
+    "public_article_count": 105,
+    "batch_article_count": 96,
     "assets_per_article": 2,
     "hero_share_identity_required": true,
     "inline_image_distinct_required": true,

@@ -1,18 +1,18 @@
 {
   "artifact_type": "mrx_article_two_image_retrofit",
   "schema_version": 1,
-  "generated_at_utc": "2026-08-11T23:37:17Z",
+  "generated_at_utc": "2026-08-12T00:15:37Z",
   "policy_source": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
   "summary": {
-    "article_count": 104,
-    "asset_count": 208,
-    "unique_source_art_count": 104,
-    "unique_hero_sha256_count": 104,
-    "unique_inline_sha256_count": 104,
-    "distinct_article_pair_count": 104,
-    "hero_ocr_pass_count": 104,
-    "inline_ocr_pass_count": 104,
-    "exact_filename_identity_count": 104
+    "article_count": 105,
+    "asset_count": 210,
+    "unique_source_art_count": 105,
+    "unique_hero_sha256_count": 105,
+    "unique_inline_sha256_count": 105,
+    "distinct_article_pair_count": 105,
+    "hero_ocr_pass_count": 105,
+    "inline_ocr_pass_count": 105,
+    "exact_filename_identity_count": 105
   },
   "contact_sheets": {
     "hero": [
@@ -686,6 +686,56 @@
           "actual": "monthly royalty\nhistory worksheet",
           "normalized_expected": "monthly royalty history worksheet",
           "normalized_actual": "monthly royalty history worksheet",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      }
+    },
+    {
+      "slug": "curative-title-risk-as-a-valuation-adjustment",
+      "title": "Curative Title Risk as a Valuation Adjustment",
+      "keyword": "curative title risk worksheet",
+      "file_path": "src/content/posts/curative-title-risk-as-a-valuation-adjustment.mdx",
+      "source_public_path": "/assets/articles/hero/curative-title-risk-as-a-valuation-adjustment.webp",
+      "source_artifact_paths": [
+        "artifacts/mrx1000-wave16-creative-sources/curative-title-risk-as-a-valuation-adjustment-hero-base.png",
+        "artifacts/mrx1000-wave16-creative-sources/curative-title-risk-as-a-valuation-adjustment-inline-base.png"
+      ],
+      "generated_at_utc": "2026-08-12T00:11:46.437Z",
+      "hero": {
+        "public_path": "/assets/articles/hero/curative-title-risk-as-a-valuation-adjustment.webp",
+        "alt": "Title-research workspace titled “Curative Title Risk as a Valuation Adjustment”.",
+        "width": 1200,
+        "height": 630,
+        "mime_type": "image/webp",
+        "sha256": "aead9ed9bad9d04dd5591d2beeae0205217a3139b5ab997cf9059ea0fcd14184",
+        "perceptual_hash": "0000000000010011000000000000001100000000000100110000000000000000000010000000111101111100000111110011100011011111011110001101111101110000110111110100000011011111000000000111111100000000111111110000000011100001000000000101100000000000000000010000000000000001",
+        "neutralized_art_text_region_count": 0,
+        "ocr": {
+          "expected": "Curative Title Risk as a Valuation Adjustment",
+          "actual": "Curative Title Risk\nas a Valuation\nAdjustment",
+          "normalized_expected": "curative title risk as a valuation adjustment",
+          "normalized_actual": "curative title risk as a valuation adjustment",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      },
+      "inline": {
+        "public_path": "/assets/articles/inline/curative-title-risk-as-a-valuation-adjustment/curative-title-risk-worksheet.webp",
+        "alt": "Distinct chain-of-title evidence workspace labeled “curative title risk worksheet”.",
+        "rendered_text": "curative title risk worksheet",
+        "visual_variant": "wave16-distinct-generated-chain-of-title-workspace",
+        "width": 1200,
+        "height": 675,
+        "mime_type": "image/webp",
+        "sha256": "ef0ae23d48385249d3dd88e35516ceffc996e62ca1be7c07d394852a06c90ae0",
+        "perceptual_hash": "1000001110000000100011011000000000001100000000000001111000000000000111100000000000011110000000000011110000000000011111000000000000111100110000000111111111100000011111111111000001111111111000000000000000000000001100000000000000110000000000000011000000000000",
+        "neutralized_art_text_region_count": 0,
+        "ocr": {
+          "expected": "curative title risk worksheet",
+          "actual": "curative title\nrisk worksheet",
+          "normalized_expected": "curative title risk worksheet",
+          "normalized_actual": "curative title risk worksheet",
           "uppercase_i_confusable_accepted": false,
           "pass": true
         }
