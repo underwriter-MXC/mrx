@@ -1,7 +1,7 @@
 {
   "program": "MRX 1,000 Article SEO+AEO Production Program",
   "artifact_type": "authorized_release_10_batch",
-  "evidence_scaffold_generated_at_utc": "2026-08-12T15:30:53Z",
+  "evidence_scaffold_generated_at_utc": "2026-08-12T15:47:21Z",
   "decision_authority": {
     "successor_gate_decision_id": "D-2026-0804-16",
     "successor_gate_decision_path": "docs/governance/mrx1000-owner-continuous-publication-directive-2026-08-04.md",
@@ -129,13 +129,16 @@
     "wave34_selection_decision_sha256": "87a201ace6b8de8ed19b612f489840e1798ce6ce078f08a19647ec84a20a5c09",
     "wave35_selection_decision_id": "MRX1000-W35-SELECT-2026-08-12",
     "wave35_selection_decision_path": "docs/governance/mrx1000-wave35-selection-decision-2026-08-12.md",
-    "wave35_selection_decision_sha256": "172fe106906bfd42b953675bd8f35881a8110efcf5a42633a9c935ce46b6c22a"
+    "wave35_selection_decision_sha256": "172fe106906bfd42b953675bd8f35881a8110efcf5a42633a9c935ce46b6c22a",
+    "wave36_selection_decision_id": "MRX1000-W36-SELECT-2026-08-12",
+    "wave36_selection_decision_path": "docs/governance/mrx1000-wave36-selection-decision-2026-08-12.md",
+    "wave36_selection_decision_sha256": "ae96fe607d60922a774060ddeda7551fbd03e1cf3d486539492cb380ce34c52e"
   },
   "identity_authority": {
     "scope_key": "canonical_slug",
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_sha256": "ec1b19624752ab93eb483984a1eb8ee59d87715df3f95b470678ca181d49741c",
-    "canonical_ledger_generated_at": "2026-07-20T08:46:52.983Z",
+    "canonical_ledger_sha256": "c93bf9afbbf1cfd202b80f7cf1f34f24c003ace80f2fb8d8df74120517b2aaa4",
+    "canonical_ledger_generated_at": "2026-07-20T16:26:15.862Z",
     "successor_ledger_decision_id": "D-2026-0723-LEDGER-04",
     "successor_ledger_decision_path": "artifacts/mrx1000-release-10/decisions/mrx-ceo-ledger-provenance-successor-20260723-04.md",
     "successor_ledger_decision_sha256": "09eca24bcd0e71563f2ac4197f564eec0ccb43a5ee955216da5c4a2543d04978",
@@ -149,11 +152,11 @@
     "authorization_scope": "declared_program_size_not_a_staged_release_cap",
     "admission_mode": "continuous_quality_gated",
     "continuous_quality_gated_from_selection_rank": 26,
-    "prior_verified_article_count": 114,
+    "prior_verified_article_count": 115,
     "fail_closed": true,
     "earned_scale_gates": [],
-    "exact_admitted_count": 115,
-    "exact_admitted_slate_sha256": "e0b4abcd1bf04aa74ff0f03785a4c1389f85f9bbe5c78ef3bc64dcb17bac6ea8"
+    "exact_admitted_count": 116,
+    "exact_admitted_slate_sha256": "d3e3bb15ed8c7778535cec58febb6bab60ce12c7a2f6259b0480078a7c6648be"
   },
   "articles": [
     {
@@ -3885,10 +3888,43 @@
       "inline_path": "/assets/articles/inline/the-comprehensive-guide-to-factors-impacting-your-mineral-rights-valuation/what-factors-influence-the-price-you-suggest-for-my-mineral-rights-assessment.webp",
       "inline_asset_sha256": "0a725857de5018d02ae870a80cb9a9defd5e7d6dd9813b612ba04991756f541c",
       "inline_rendered_text": "What Factors Influence the Price You Suggest for My Mineral Rights Assessment?"
+    },
+    {
+      "selection_rank": 116,
+      "program_row_id": "MRX1000-0116",
+      "source_shortlist_program_row_id": "MRX1000-0116",
+      "slug": "the-hidden-traps-in-selling-mineral-rights",
+      "title": "The Hidden Traps in Selling Mineral Rights",
+      "source_shortlist_title": "The Hidden Traps in Selling Mineral Rights",
+      "canonical_url": "https://mineralrightsxchange.com/blog/the-hidden-traps-in-selling-mineral-rights/",
+      "pillar": "sell-mineral-rights",
+      "cluster": "sell-mineral-rights-decision-process",
+      "content_genius_article_uuid": null,
+      "archive_evidence_sha256": "be176c2928c3d50ee4fde3322ab4f4978fcb16f1f7fd6af22c6de347e41ad359",
+      "repo_path": "src/content/posts/the-hidden-traps-in-selling-mineral-rights.mdx",
+      "repo_sha256": "aede6336d8d120a09eed78b630aa8dbd61a853373505b5233714c633eae16e01",
+      "article_sha256": "aede6336d8d120a09eed78b630aa8dbd61a853373505b5233714c633eae16e01",
+      "hero_path": "/assets/articles/hero/the-hidden-traps-in-selling-mineral-rights.webp",
+      "hero_sha256": "2a7c999d7b2a1bd583af58003f7a7f557da41d28fe5c89ed0844805d3124c913",
+      "hero_asset_sha256": "2a7c999d7b2a1bd583af58003f7a7f557da41d28fe5c89ed0844805d3124c913",
+      "admission_status": "admitted_quality_gated",
+      "finalization_state": "draft_noindex_admitted",
+      "searchatlas_content_score": null,
+      "searchatlas_word_count": 2949,
+      "risk_citation_remediation": [
+        "The planning-only canonical row was developed into an original nationwide clause-trigger and cross-document trap guide that separates headline terms from operative definitions, exhibits, diligence rights, price adjustments, exclusivity, deed and payment sequencing, remedies, and owner net; it adds a trap register, source-aware limitations, stop rules, and professional handoffs without importing factory body text.",
+        "Continuous quality-gated admission under D-2026-0804-16 and MRX1000-W36-SELECT-2026-08-12; no numerical cap or elapsed-time gate applies.",
+        "Publication remains conditional on current editorial, factual-citation, compliance, two-image, metadata, build, rollback, deployment, and live-verification evidence."
+      ],
+      "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/the-hidden-traps-in-selling-mineral-rights.json",
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/the-hidden-traps-in-selling-mineral-rights/common-mistakes-selling-mineral-rights.webp",
+      "inline_asset_sha256": "0b5520d1ab7c923acb6c8b95aff751206f6437fe8fab6fa9bf8e98e264cb4c7a",
+      "inline_rendered_text": "Common Mistakes Selling Mineral Rights"
     }
   ],
   "admission_audit": {
-    "admitted_article_count": 115,
+    "admitted_article_count": 116,
     "selection_ranks": [
       1,
       2,
@@ -4004,7 +4040,8 @@
       112,
       113,
       114,
-      115
+      115,
+      116
     ],
     "duplicate_program_row_ids": [],
     "duplicate_slugs": [],
@@ -4063,9 +4100,9 @@
   "two_image_policy": {
     "directive": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
     "retrofit_manifest_path": "config/mrx-article-two-image-retrofit.json",
-    "retrofit_manifest_sha256": "b0b26eb8d55ac81c9a08697e91d6fc0d40b7894a1ebb6e36cad470e6f848b534",
-    "public_article_count": 124,
-    "batch_article_count": 115,
+    "retrofit_manifest_sha256": "2f699188b6f2b00fb01754ff8736fee8c883f8f5617b82e46efaf1b96fadad9f",
+    "public_article_count": 125,
+    "batch_article_count": 116,
     "assets_per_article": 2,
     "hero_share_identity_required": true,
     "inline_image_distinct_required": true,
