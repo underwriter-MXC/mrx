@@ -1,18 +1,18 @@
 {
   "artifact_type": "mrx_article_two_image_retrofit",
   "schema_version": 1,
-  "generated_at_utc": "2026-08-12T07:54:39Z",
+  "generated_at_utc": "2026-08-12T08:26:33Z",
   "policy_source": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
   "summary": {
-    "article_count": 110,
-    "asset_count": 220,
-    "unique_source_art_count": 110,
-    "unique_hero_sha256_count": 110,
-    "unique_inline_sha256_count": 110,
-    "distinct_article_pair_count": 110,
-    "hero_ocr_pass_count": 110,
-    "inline_ocr_pass_count": 110,
-    "exact_filename_identity_count": 110
+    "article_count": 111,
+    "asset_count": 222,
+    "unique_source_art_count": 111,
+    "unique_hero_sha256_count": 111,
+    "unique_inline_sha256_count": 111,
+    "distinct_article_pair_count": 111,
+    "hero_ocr_pass_count": 111,
+    "inline_ocr_pass_count": 111,
+    "exact_filename_identity_count": 111
   },
   "contact_sheets": {
     "hero": [
@@ -1078,6 +1078,56 @@
           "actual": "existing wells\nfuture locations\nDCF",
           "normalized_expected": "existing wells future locations dcf",
           "normalized_actual": "existing wells future locations dcf",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      }
+    },
+    {
+      "slug": "five-key-indicators-that-show-your-mineral-rights-are-ready-for-evaluation",
+      "title": "Five Key Indicators That Show Your Mineral Rights Are Ready for Evaluation",
+      "keyword": "How Do I Know if My Mineral Rights Qualify for Evaluation?",
+      "file_path": "src/content/posts/five-key-indicators-that-show-your-mineral-rights-are-ready-for-evaluation.mdx",
+      "source_public_path": "/assets/articles/hero/five-key-indicators-that-show-your-mineral-rights-are-ready-for-evaluation.webp",
+      "source_artifact_paths": [
+        "artifacts/mrx1000-wave22-creative-sources/five-key-indicators-that-show-your-mineral-rights-are-ready-for-evaluation-hero-base.png",
+        "artifacts/mrx1000-wave22-creative-sources/five-key-indicators-that-show-your-mineral-rights-are-ready-for-evaluation-inline-base.png"
+      ],
+      "generated_at_utc": "2026-08-12T08:24:33.132Z",
+      "hero": {
+        "public_path": "/assets/articles/hero/five-key-indicators-that-show-your-mineral-rights-are-ready-for-evaluation.webp",
+        "alt": "Article cover titled “Five Key Indicators That Show Your Mineral Rights Are Ready for Evaluation”.",
+        "width": 1200,
+        "height": 630,
+        "mime_type": "image/webp",
+        "sha256": "3848064fd447d460b3abd68e16015172b7b3d48663dcc6767d720a08a8599614",
+        "perceptual_hash": "0000000000011110000000000011111000000000001111110000000000111111000100000011111101110100011111110000000011111110011110001111111100000000111111110111110011111111000000001111111101011000110000000001000011100110000000011110000000000001111000000000000000100000",
+        "neutralized_art_text_region_count": 0,
+        "ocr": {
+          "expected": "Five Key Indicators That Show Your Mineral Rights Are Ready for Evaluation",
+          "actual": "Five Key\nIndicators That\nShow Your\nMineral Rights\nAre Ready for\nEvaluation",
+          "normalized_expected": "five key indicators that show your mineral rights are ready for evaluation",
+          "normalized_actual": "five key indicators that show your mineral rights are ready for evaluation",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      },
+      "inline": {
+        "public_path": "/assets/articles/inline/five-key-indicators-that-show-your-mineral-rights-are-ready-for-evaluation/how-do-i-know-if-my-mineral-rights-qualify-for-evaluation.webp",
+        "alt": "Distinct evidence-checklist image labeled “How Do I Know if My Mineral Rights Qualify for Evaluation?”.",
+        "rendered_text": "How Do I Know if My Mineral Rights Qualify for Evaluation?",
+        "visual_variant": "wave22-distinct-generated-evidence-readiness-wall",
+        "width": 1200,
+        "height": 675,
+        "mime_type": "image/webp",
+        "sha256": "358c51f2b52be0b6bd845c3d4a0d00b88dc8cf5310497533058a6cd85a4b1bd7",
+        "perceptual_hash": "0000000000000011000000001100001100000111111111110001111111111111000111111111111100011111111111110001111111111111000111111111111100000000111111010000000000000001000111111111100000000000000000000001101100111000000000000000000000110000000001010010000000000110",
+        "neutralized_art_text_region_count": 0,
+        "ocr": {
+          "expected": "How Do I Know if My Mineral Rights Qualify for Evaluation?",
+          "actual": "How Do I Know if My Mineral\nRights Qualify for Evaluation?",
+          "normalized_expected": "how do i know if my mineral rights qualify for evaluation",
+          "normalized_actual": "how do i know if my mineral rights qualify for evaluation",
           "uppercase_i_confusable_accepted": false,
           "pass": true
         }
