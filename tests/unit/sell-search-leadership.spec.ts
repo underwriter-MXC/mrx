@@ -110,6 +110,6 @@ describe('sell-mineral-rights search leadership controls', () => {
     expect(dashboard.portfolio.tracked_queries).toBe(50);
     expect(dashboard.portfolio.next_release_rows).toBe(25);
     expect(dashboard.portfolio.next_release_published_rows).toBe(0);
-    expect(dashboard.portfolio.live_sell_pillar_posts).toHaveLength(13);
+    expect(dashboard.portfolio.live_sell_pillar_posts).toHaveLength(14);
   });
 });

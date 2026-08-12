@@ -1,18 +1,18 @@
 {
   "artifact_type": "mrx_article_two_image_retrofit",
   "schema_version": 1,
-  "generated_at_utc": "2026-08-12T15:41:06Z",
+  "generated_at_utc": "2026-08-12T16:08:31Z",
   "policy_source": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
   "summary": {
-    "article_count": 125,
-    "asset_count": 250,
-    "unique_source_art_count": 125,
-    "unique_hero_sha256_count": 125,
-    "unique_inline_sha256_count": 125,
-    "distinct_article_pair_count": 125,
-    "hero_ocr_pass_count": 125,
-    "inline_ocr_pass_count": 125,
-    "exact_filename_identity_count": 125
+    "article_count": 126,
+    "asset_count": 252,
+    "unique_source_art_count": 126,
+    "unique_hero_sha256_count": 126,
+    "unique_inline_sha256_count": 126,
+    "distinct_article_pair_count": 126,
+    "hero_ocr_pass_count": 126,
+    "inline_ocr_pass_count": 126,
+    "exact_filename_identity_count": 126
   },
   "contact_sheets": {
     "hero": [
@@ -4086,6 +4086,56 @@
           "actual": "title curative\nfor mineral\nrights what it\nis and why it\nmatters\nbefore you sell",
           "normalized_expected": "title curative for mineral rights what it is and why it matters before you sell",
           "normalized_actual": "title curative for mineral rights what it is and why it matters before you sell",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      }
+    },
+    {
+      "slug": "top-five-missteps-to-avoid-for-a-successful-mineral-rights-sale",
+      "title": "Top Five Missteps to Avoid for a Successful Mineral Rights Sale",
+      "keyword": "What Are Common Pitfalls I Should Avoid in Selling Mineral Rights?",
+      "file_path": "src/content/posts/top-five-missteps-to-avoid-for-a-successful-mineral-rights-sale.mdx",
+      "source_public_path": "/assets/articles/hero/top-five-missteps-to-avoid-for-a-successful-mineral-rights-sale.webp",
+      "source_artifact_paths": [
+        "artifacts/mrx1000-wave37-creative-sources/top-five-missteps-to-avoid-for-a-successful-mineral-rights-sale-hero-base.png",
+        "artifacts/mrx1000-wave37-creative-sources/top-five-missteps-to-avoid-for-a-successful-mineral-rights-sale-inline-base.png"
+      ],
+      "generated_at_utc": "2026-08-12T16:05:56.177Z",
+      "hero": {
+        "public_path": "/assets/articles/hero/top-five-missteps-to-avoid-for-a-successful-mineral-rights-sale.webp",
+        "alt": "A mineral owner organizes five folders beside “Top Five Missteps to Avoid for a Successful Mineral Rights Sale”.",
+        "width": 1200,
+        "height": 630,
+        "mime_type": "image/webp",
+        "sha256": "c0eaab63abe065850f2348e44e1d572f6a13261b84708cecaa7b5882052bc51f",
+        "perceptual_hash": "0000000001111111000000000110111100000000111001110000000011101111000000000011111100000000001111110111000000011111011111000011111000000000001111100000000000011110000000001111111100000000111111110000000011111111000000001110011100000000000001110000000000000111",
+        "neutralized_art_text_region_count": 0,
+        "ocr": {
+          "expected": "Top Five Missteps to Avoid for a Successful Mineral Rights Sale",
+          "actual": "Top Five Missteps\nto Avoid for a\nSuccessful Mineral\nRights Sale",
+          "normalized_expected": "top five missteps to avoid for a successful mineral rights sale",
+          "normalized_actual": "top five missteps to avoid for a successful mineral rights sale",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      },
+      "inline": {
+        "public_path": "/assets/articles/inline/top-five-missteps-to-avoid-for-a-successful-mineral-rights-sale/what-are-common-pitfalls-i-should-avoid-in-selling-mineral-rights.webp",
+        "alt": "A five-checkpoint prevention system labeled “What Are Common Pitfalls I Should Avoid in Selling Mineral Rights?”.",
+        "rendered_text": "What Are Common Pitfalls I Should Avoid in Selling Mineral Rights?",
+        "visual_variant": "wave37-distinct-generated-five-checkpoint-prevention-system",
+        "width": 1200,
+        "height": 675,
+        "mime_type": "image/webp",
+        "sha256": "e5d5e238df0703caae9f88253284a591bf50865a70c290ee5c5bf37b5ff8ca3c",
+        "perceptual_hash": "1111111111100000111111111111000011111111111111101111111111111110111111111111111011111111110011101111111111011110111111111111111011111111111111100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "neutralized_art_text_region_count": 0,
+        "ocr": {
+          "expected": "What Are Common Pitfalls I Should Avoid in Selling Mineral Rights?",
+          "actual": "What Are Common Pitfalls\nI Should Avoid in Selling\nMineral Rights?",
+          "normalized_expected": "what are common pitfalls i should avoid in selling mineral rights",
+          "normalized_actual": "what are common pitfalls i should avoid in selling mineral rights",
           "uppercase_i_confusable_accepted": false,
           "pass": true
         }

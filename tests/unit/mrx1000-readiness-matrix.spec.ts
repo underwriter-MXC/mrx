@@ -18,7 +18,7 @@
  *      preserving article-specific quality gates.
  *   7. Output is byte-deterministic aside from the generated_at timestamp.
  *   8. SearchAtlas map evidence joins exactly the 25 pilot ledger rows.
- *   9. The 263 ledger-side title UUID planning handles are tracked separately
+ *   9. The 262 ledger-side title UUID planning handles are tracked separately
  *      from authoritative evidence and remain distinct from the 298 generic
  *      artifact UUID scan that doesn't match any ledger row.
  *  10. Content Genius created-article UUID evidence stays at 0 unless an
@@ -287,16 +287,16 @@ describe('MRX1000 readiness matrix', () => {
     expect([...matrixJoinedIds].sort()).toEqual([...joinedIds].sort());
   });
 
-  it('tracks 263 ledger title UUID planning handles separately from authoritative evidence', () => {
+  it('tracks 262 ledger title UUID planning handles separately from authoritative evidence', () => {
     const ledger = JSON.parse(readFileSync(LEDGER, 'utf8'));
     const ledgerTitleUuids = new Set<string>();
     for (const r of ledger.articles) {
       if (r.searchatlas_title_uuid) ledgerTitleUuids.add(String(r.searchatlas_title_uuid));
     }
-    expect(ledgerTitleUuids.size).toBe(263);
-    expect(matrix.aggregate.ledger_searchatlas_title_uuid_planning_handle_count).toBe(263);
+    expect(ledgerTitleUuids.size).toBe(262);
+    expect(matrix.aggregate.ledger_searchatlas_title_uuid_planning_handle_count).toBe(262);
     // Authoritative evidence still requires the title UUID to actually appear
-    // in a current readonly artifact. None of the 263 ledger UUIDs match any
+    // in a current readonly artifact. None of the 262 ledger UUIDs match any
     // readonly UUID in the current snapshot.
     expect(matrix.aggregate.searchatlas_title_uuid_present_in_authoritative_local_artifact).toBe(0);
 
@@ -815,9 +815,9 @@ describe('MRX1000 readiness matrix — load-bearing fact regressions', () => {
     expect(d11Sha).toBe(D11_EXPECTED_SHA256);
   });
 
-  it('263 topical-map planning handles report map IDs and do not claim article-created proof', () => {
+  it('262 topical-map planning handles report map IDs and do not claim article-created proof', () => {
     const evidence = matrix.searchatlas_evidence.topical_map_planning_handles;
-    expect(evidence.ledger_searchatlas_title_uuid_planning_handle_count).toBe(263);
+    expect(evidence.ledger_searchatlas_title_uuid_planning_handle_count).toBe(262);
     expect(evidence.ledger_searchatlas_map_id_planning_handle_count).toBeGreaterThan(0);
     expect(evidence.readonly_distinct_map_ids).toBe(readonlyMapIds.size);
     expect(evidence.article_created_proof_claimed).toBe(false);

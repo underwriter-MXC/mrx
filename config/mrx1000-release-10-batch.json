@@ -1,7 +1,7 @@
 {
   "program": "MRX 1,000 Article SEO+AEO Production Program",
   "artifact_type": "authorized_release_10_batch",
-  "evidence_scaffold_generated_at_utc": "2026-08-12T16:01:10Z",
+  "evidence_scaffold_generated_at_utc": "2026-08-12T16:12:32Z",
   "decision_authority": {
     "successor_gate_decision_id": "D-2026-0804-16",
     "successor_gate_decision_path": "docs/governance/mrx1000-owner-continuous-publication-directive-2026-08-04.md",
@@ -132,13 +132,16 @@
     "wave35_selection_decision_sha256": "172fe106906bfd42b953675bd8f35881a8110efcf5a42633a9c935ce46b6c22a",
     "wave36_selection_decision_id": "MRX1000-W36-SELECT-2026-08-12",
     "wave36_selection_decision_path": "docs/governance/mrx1000-wave36-selection-decision-2026-08-12.md",
-    "wave36_selection_decision_sha256": "ae96fe607d60922a774060ddeda7551fbd03e1cf3d486539492cb380ce34c52e"
+    "wave36_selection_decision_sha256": "ae96fe607d60922a774060ddeda7551fbd03e1cf3d486539492cb380ce34c52e",
+    "wave37_selection_decision_id": "MRX1000-W37-SELECT-2026-08-12",
+    "wave37_selection_decision_path": "docs/governance/mrx1000-wave37-selection-decision-2026-08-12.md",
+    "wave37_selection_decision_sha256": "c96ff8c4d67b929c4e82abb1951d18a24329128ac756cdc241fbdc444be3b5f3"
   },
   "identity_authority": {
     "scope_key": "canonical_slug",
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_sha256": "144b1fb5ad7568dc874711c4643ec86418a1856278d4b1d6bd7adc8a4c76ae22",
-    "canonical_ledger_generated_at": "2026-07-20T18:41:34.018Z",
+    "canonical_ledger_sha256": "7f5fcc347433f0e15aae193b1f00aeeffa9394f99ad0ccaf400d3ea572844df0",
+    "canonical_ledger_generated_at": "2026-07-20T10:41:11.321Z",
     "successor_ledger_decision_id": "D-2026-0723-LEDGER-04",
     "successor_ledger_decision_path": "artifacts/mrx1000-release-10/decisions/mrx-ceo-ledger-provenance-successor-20260723-04.md",
     "successor_ledger_decision_sha256": "09eca24bcd0e71563f2ac4197f564eec0ccb43a5ee955216da5c4a2543d04978",
@@ -152,11 +155,11 @@
     "authorization_scope": "declared_program_size_not_a_staged_release_cap",
     "admission_mode": "continuous_quality_gated",
     "continuous_quality_gated_from_selection_rank": 26,
-    "prior_verified_article_count": 115,
+    "prior_verified_article_count": 116,
     "fail_closed": true,
     "earned_scale_gates": [],
-    "exact_admitted_count": 116,
-    "exact_admitted_slate_sha256": "d3e3bb15ed8c7778535cec58febb6bab60ce12c7a2f6259b0480078a7c6648be"
+    "exact_admitted_count": 117,
+    "exact_admitted_slate_sha256": "fae70d0f6428fa9d19d9dad003bf5fdabf3e7b128f3777edfd16b12a47a78ebd"
   },
   "articles": [
     {
@@ -3921,10 +3924,43 @@
       "inline_path": "/assets/articles/inline/the-hidden-traps-in-selling-mineral-rights/common-mistakes-selling-mineral-rights.webp",
       "inline_asset_sha256": "0b5520d1ab7c923acb6c8b95aff751206f6437fe8fab6fa9bf8e98e264cb4c7a",
       "inline_rendered_text": "Common Mistakes Selling Mineral Rights"
+    },
+    {
+      "selection_rank": 117,
+      "program_row_id": "MRX1000-0117",
+      "source_shortlist_program_row_id": "MRX1000-0117",
+      "slug": "top-five-missteps-to-avoid-for-a-successful-mineral-rights-sale",
+      "title": "Top Five Missteps to Avoid for a Successful Mineral Rights Sale",
+      "source_shortlist_title": "Top Five Missteps to Avoid for a Successful Mineral Rights Sale",
+      "canonical_url": "https://mineralrightsxchange.com/blog/top-five-missteps-to-avoid-for-a-successful-mineral-rights-sale/",
+      "pillar": "sell-mineral-rights",
+      "cluster": "sell-mineral-rights-decision-process",
+      "content_genius_article_uuid": null,
+      "archive_evidence_sha256": "81d33db0512fa9e45d3bbf6daf6b659df6927d7adc21da50756fc5def10362a4",
+      "repo_path": "src/content/posts/top-five-missteps-to-avoid-for-a-successful-mineral-rights-sale.mdx",
+      "repo_sha256": "7a0adab33952fe33e85615bcb867e7ca0a049c80124835a16aff970b339d64fa",
+      "article_sha256": "7a0adab33952fe33e85615bcb867e7ca0a049c80124835a16aff970b339d64fa",
+      "hero_path": "/assets/articles/hero/top-five-missteps-to-avoid-for-a-successful-mineral-rights-sale.webp",
+      "hero_sha256": "c0eaab63abe065850f2348e44e1d572f6a13261b84708cecaa7b5882052bc51f",
+      "hero_asset_sha256": "c0eaab63abe065850f2348e44e1d572f6a13261b84708cecaa7b5882052bc51f",
+      "admission_status": "admitted_quality_gated",
+      "finalization_state": "draft_noindex_admitted",
+      "searchatlas_content_score": null,
+      "searchatlas_word_count": 2665,
+      "risk_citation_remediation": [
+        "The planning-only canonical row was developed into an original five-error owner decision and recovery playbook that separates objectives, evidence readiness, comparable proposal review, professional handoffs, and controlled closing; each misstep has a prevention artifact, recovery action, stop rule, and source-aware limitation without importing factory body text.",
+        "Continuous quality-gated admission under D-2026-0804-16 and MRX1000-W37-SELECT-2026-08-12; no numerical cap or elapsed-time gate applies.",
+        "Publication remains conditional on current editorial, factual-citation, compliance, two-image, metadata, build, rollback, deployment, and live-verification evidence."
+      ],
+      "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/top-five-missteps-to-avoid-for-a-successful-mineral-rights-sale.json",
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/top-five-missteps-to-avoid-for-a-successful-mineral-rights-sale/what-are-common-pitfalls-i-should-avoid-in-selling-mineral-rights.webp",
+      "inline_asset_sha256": "e5d5e238df0703caae9f88253284a591bf50865a70c290ee5c5bf37b5ff8ca3c",
+      "inline_rendered_text": "What Are Common Pitfalls I Should Avoid in Selling Mineral Rights?"
     }
   ],
   "admission_audit": {
-    "admitted_article_count": 116,
+    "admitted_article_count": 117,
     "selection_ranks": [
       1,
       2,
@@ -4041,7 +4077,8 @@
       113,
       114,
       115,
-      116
+      116,
+      117
     ],
     "duplicate_program_row_ids": [],
     "duplicate_slugs": [],
@@ -4100,9 +4137,9 @@
   "two_image_policy": {
     "directive": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
     "retrofit_manifest_path": "config/mrx-article-two-image-retrofit.json",
-    "retrofit_manifest_sha256": "2f699188b6f2b00fb01754ff8736fee8c883f8f5617b82e46efaf1b96fadad9f",
-    "public_article_count": 125,
-    "batch_article_count": 116,
+    "retrofit_manifest_sha256": "a40ed39bdc17d8ea9d1f2ede2ae98de61b579d5fa4d48040901e7b552d1106c0",
+    "public_article_count": 126,
+    "batch_article_count": 117,
     "assets_per_article": 2,
     "hero_share_identity_required": true,
     "inline_image_distinct_required": true,
