@@ -1,7 +1,7 @@
 {
   "program": "MRX1000",
   "artifact_type": "searchatlas_ordered_llm_local_execution_manifest",
-  "generated_at": "2026-07-20T08:25:37.000Z",
+  "generated_at": "2026-07-20T08:46:52.983Z",
   "deterministic": true,
   "local_only": true,
   "external_services_called": false,
@@ -9,8 +9,8 @@
   "inputs": {
     "ledger": {
       "path": "config/mrx-1000-canonical-content-ledger.json",
-      "sha256": "46583b03971a1cfbbc869bdaa8e41fcdf114b8dd305b8799c32dd2bfe6f3483d",
-      "bytes": 4452273
+      "sha256": "ec1b19624752ab93eb483984a1eb8ee59d87715df3f95b470678ca181d49741c",
+      "bytes": 4452631
     },
     "readiness": {
       "path": "reports/mrx-1000-readiness-matrix.json",
@@ -48023,7 +48023,7 @@
       "primary_keyword": "What Factors Influence the Price You Suggest for My Mineral Rights Assessment?",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -349936,5 +349936,5 @@
       ]
     }
   ],
-  "content_fingerprint_sha256": "bfac25e6c2427ab7a875d281c2e3c1c8164900da0d9f68710455fb2e613c710a"
+  "content_fingerprint_sha256": "8794e8a96df2f55dfdafa56e267e3199a5a2a78ec946291bacf71a0e441863a4"
 }
