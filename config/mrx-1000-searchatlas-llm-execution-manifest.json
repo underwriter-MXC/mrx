@@ -1,7 +1,7 @@
 {
   "program": "MRX1000",
   "artifact_type": "searchatlas_ordered_llm_local_execution_manifest",
-  "generated_at": "2026-07-20T15:19:58.139Z",
+  "generated_at": "2026-07-20T14:11:56.679Z",
   "deterministic": true,
   "local_only": true,
   "external_services_called": false,
@@ -9,13 +9,13 @@
   "inputs": {
     "ledger": {
       "path": "config/mrx-1000-canonical-content-ledger.json",
-      "sha256": "4e06aa91e9c8d7c41d95ef6863ddb97e83f35096461f81875c4e90dcbfc18834",
-      "bytes": 4458690
+      "sha256": "d38f716a2e45a38254fb0040029d677999f1c0b38d69b2750de1aaf7ccec5877",
+      "bytes": 4459048
     },
     "readiness": {
       "path": "reports/mrx-1000-readiness-matrix.json",
-      "sha256": "d6a1413609d21f5feeca81e6c04a7b50d7879c8b8f7e05bca73492276418443a",
-      "bytes": 3416268,
+      "sha256": "3ec9e1e802cfe6d4bcffd310c43040f7e77316a615c207bea38a6f1194242f7b",
+      "bytes": 3416296,
       "sha256_method": "canonical_json_with_top_level_generated_at_masked",
       "generated_at_excluded_from_sha256": true
     },
@@ -51335,7 +51335,7 @@
       "primary_keyword": "How Can I Determine if My Mineral Rights Qualify for a Fair Assessment?",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -350170,5 +350170,5 @@
       ]
     }
   ],
-  "content_fingerprint_sha256": "2225f30afed887faedc578985fcae9940a725d055e8c5046712013df16ffeb91"
+  "content_fingerprint_sha256": "f1ea19d7bb54fd17dfc5b5aa69176e858533b68a0b1523357a789d8af630541e"
 }
