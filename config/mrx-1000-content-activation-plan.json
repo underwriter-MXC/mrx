@@ -1,15 +1,15 @@
 {
   "artifact_type": "mrx1000_content_activation_plan",
   "plan_version": "mrx1000-content-activation-v1.1.0",
-  "generated_at": "2026-07-20T12:03:50.234Z",
+  "generated_at": "2026-07-20T19:24:00.022Z",
   "generated_at_method": "canonical_ledger_generated_at",
   "generator": "scripts/build-mrx-1000-activation-plan.mjs",
-  "content_fingerprint_sha256": "5894d90db6e2593f4ee2a645f66a0be20efe2bf1609dd3a5f27cb169efa5552a",
+  "content_fingerprint_sha256": "ab5666e934928efad2a78b32df927466fc1f61caa89ac52f95cdfbd8774ee62c",
   "inputs": {
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_fingerprint_sha256": "2b6eb7c8c0282348b7e9663e68d1c79542e1383833bfea7caf4cbdc8e14ac85b",
+    "canonical_ledger_fingerprint_sha256": "d8b0021ba30166aa733d9c49c1363d04c3f73cc97ec25e930f0d7007d4a45d92",
     "canonical_ledger_fingerprint_verified": true,
-    "canonical_ledger_generated_at": "2026-07-20T12:03:50.234Z",
+    "canonical_ledger_generated_at": "2026-07-20T19:24:00.022Z",
     "owner_decision": {
       "decision_id": "D-2026-0804-16",
       "signed_disposition": "APPROVED_CONTINUOUS_QUALITY_GATED_ARTICLE_PUBLICATION",
@@ -115,9 +115,9 @@
     },
     "by_source_preservation_classification": {
       "incumbent_draft_nonpublic_held": 28,
-      "live_public_published_route": 138,
+      "live_public_published_route": 139,
       "pilot_draft_noindex_stage": 25,
-      "planning_only_inventory": 809
+      "planning_only_inventory": 808
     }
   },
   "rows": [
@@ -8080,8 +8080,8 @@
         "target_title": "Understanding the Key Factors That Affect Your Mineral Rights Assessment Price",
         "url": "/blog/understanding-the-key-factors-that-affect-your-mineral-rights-assessment-price/",
         "relationship": "same_cluster_next_by_program_row_id_cyclic",
-        "target_source_preservation_classification": "planning_only_inventory",
-        "target_route_live": false,
+        "target_source_preservation_classification": "live_public_published_route",
+        "target_route_live": true,
         "status": "planned_local_only"
       },
       "primary_cta": {
@@ -8131,8 +8131,8 @@
       "pillar": "sell-mineral-rights",
       "search_intent": "transactional",
       "funnel_stage": "decision",
-      "source_preservation_classification": "planning_only_inventory",
-      "source_route_live": false,
+      "source_preservation_classification": "live_public_published_route",
+      "source_route_live": true,
       "pillar_link": {
         "url": "/sell-mineral-rights/",
         "route_evidence": "src/pages/sell-mineral-rights.astro",
@@ -8181,7 +8181,7 @@
         "rendered_triangle_verified": false,
         "live_status": "not_published_or_verified_by_this_plan",
         "live_triangle_verified": false,
-        "release_status": "eligible_for_continuous_quality_review_not_yet_cleared",
+        "release_status": "released_under_d16_continuous_quality_gate",
         "numerical_release_cap_applies": false
       }
     },
