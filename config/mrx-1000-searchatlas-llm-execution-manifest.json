@@ -1,7 +1,7 @@
 {
   "program": "MRX1000",
   "artifact_type": "searchatlas_ordered_llm_local_execution_manifest",
-  "generated_at": "2026-07-20T08:25:37.000Z",
+  "generated_at": "2026-07-20T15:19:58.139Z",
   "deterministic": true,
   "local_only": true,
   "external_services_called": false,
@@ -9,13 +9,13 @@
   "inputs": {
     "ledger": {
       "path": "config/mrx-1000-canonical-content-ledger.json",
-      "sha256": "9c291f03b710db9b1f4b72724eb615ba72206863b714783cf3f6d8282c43d6e2",
-      "bytes": 4458268
+      "sha256": "4e06aa91e9c8d7c41d95ef6863ddb97e83f35096461f81875c4e90dcbfc18834",
+      "bytes": 4458690
     },
     "readiness": {
       "path": "reports/mrx-1000-readiness-matrix.json",
-      "sha256": "b24deb2350aa28835026b8babf454918f4126bb5c584a7479bf460a0336fe614",
-      "bytes": 3415725,
+      "sha256": "d6a1413609d21f5feeca81e6c04a7b50d7879c8b8f7e05bca73492276418443a",
+      "bytes": 3416268,
       "sha256_method": "canonical_json_with_top_level_generated_at_masked",
       "generated_at_excluded_from_sha256": true
     },
@@ -366,30 +366,30 @@
     },
     "by_canonical_inventory_state": {
       "incumbent_draft_nonpublic_held": 28,
-      "live_public_published_route": 132,
+      "live_public_published_route": 133,
       "pilot_draft_noindex_stage": 25,
-      "planning_only_inventory": 815
+      "planning_only_inventory": 814
     },
     "by_searchatlas_action_needed": {
-      "preserve_workspace_public_route_and_search_vendor_identity_before_any_creation": 56,
+      "preserve_workspace_public_route_and_search_vendor_identity_before_any_creation": 57,
       "reconcile_artifact_bound_content_genius_record_no_creation": 2,
       "reconcile_pilot_non_creation_workflow_label_then_bind_or_conditionally_create": 23,
       "reconcile_unambiguous_exact_title_vendor_candidate_no_creation": 145,
       "resolve_ambiguous_exact_title_vendor_candidates_no_creation": 6,
-      "search_vendor_identity_then_conditionally_create_after_identity_and_quality_preflight": 768
+      "search_vendor_identity_then_conditionally_create_after_identity_and_quality_preflight": 767
     },
-    "repo_mdx_present": 185,
-    "workspace_public_route_configured": 132,
-    "planning_searchatlas_map_id_count": 281,
-    "planning_searchatlas_title_uuid_count": 256,
+    "repo_mdx_present": 186,
+    "workspace_public_route_configured": 133,
+    "planning_searchatlas_map_id_count": 280,
+    "planning_searchatlas_title_uuid_count": 255,
     "persisted_ledger_content_genius_article_uuid_count": 0,
-    "checksummed_review_candidate_rows": 161,
-    "rows_without_checksummed_review_candidate": 839,
+    "checksummed_review_candidate_rows": 162,
+    "rows_without_checksummed_review_candidate": 838,
     "by_review_candidate_state": {
-      "CHECKSUMMED_EXISTING_PUBLIC_ARTICLE_READY_FOR_LLM_REVIEW": 132,
+      "CHECKSUMMED_EXISTING_PUBLIC_ARTICLE_READY_FOR_LLM_REVIEW": 133,
       "CHECKSUMMED_HELD_SUBSTANTIVE_DRAFT_READY_FOR_LLM_REVIEW": 28,
       "NO_CHECKSUMMED_REVIEW_CANDIDATE_PILOT_QA_SHELL_ONLY": 24,
-      "NO_WORKSPACE_CONTENT_CANDIDATE": 815,
+      "NO_WORKSPACE_CONTENT_CANDIDATE": 814,
       "ROW2_REMEDIATED_NOINDEX_CANDIDATE_VALIDATED_FOR_ORDERED_LLM_REVIEW": 1
     },
     "pilot_workspace_qa_shell_rows": 25,
@@ -51334,24 +51334,48 @@
       "cluster": "sell-mineral-rights-decision-process",
       "primary_keyword": "How Can I Determine if My Mineral Rights Qualify for a Fair Assessment?",
       "authoritative_current_state": {
-        "canonical_inventory_state": "planning_only_inventory",
-        "normalized_status": "planning_only_topical_map_title_planning_handle",
-        "source_system": "searchatlas_topical_map_export",
+        "canonical_inventory_state": "live_public_published_route",
+        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
-          "state": "NO_WORKSPACE_MDX",
-          "path": null,
-          "mdx_exists": false,
-          "source_sha256": null,
-          "publication_status": null,
+          "state": "WORKSPACE_MDX_PRESENT",
+          "path": "src/content/posts/understanding-mineral-rights-valuation-determine-the-fair-assessment-for-your-interests.mdx",
+          "mdx_exists": true,
+          "source_sha256": "32f00efc59a4c457e9ab38579fcea286c6c6e8e9375d43918356a360deaeb8a2",
+          "publication_status": "published",
           "frontmatter_noindex": false,
-          "workspace_public_route_configured": false,
+          "workspace_public_route_configured": true,
           "production_live_verified_in_this_local_build": false,
-          "content_evidence": null
+          "content_evidence": {
+            "frontmatter_title": "Understanding Mineral Rights Valuation: Determine the Fair Assessment for Your Interests",
+            "frontmatter_slug": null,
+            "frontmatter_publication_status": "published",
+            "frontmatter_reviewed_at": "2026-08-12T23:40:00Z",
+            "frontmatter_reviewed_by": "mrx_compliance-continuous-wave44",
+            "frontmatter_article_id": null,
+            "frontmatter_searchatlas_uuid": null,
+            "frontmatter_workflow_status": null,
+            "frontmatter_remediated_from_sha256": null,
+            "frontmatter_body_checksum_sha256": null,
+            "frontmatter_body_length_chars": 0,
+            "frontmatter_body_word_count": 0,
+            "frontmatter_draft": false,
+            "frontmatter_noindex": false,
+            "frontmatter_indexable": null,
+            "body_sha256": "18bee8757c4190b2c3a467adf9b4be4eb600b56e1cd685da600e4ddd27ca4506",
+            "body_bytes": 18481,
+            "body_characters": 18433,
+            "body_word_count": 2518,
+            "explicit_qa_shell_without_final_copy": false,
+            "filename_matches_canonical_slug": true,
+            "frontmatter_title_matches_canonical": true,
+            "frontmatter_publication_status_matches_ledger": true
+          }
         },
         "planning_handles": {
-          "searchatlas_map_id": 256286,
-          "searchatlas_title_uuid": "9911315e-1c29-406b-bea2-7593b02725a0",
+          "searchatlas_map_id": null,
+          "searchatlas_title_uuid": null,
           "searchatlas_record_id_persisted_in_ledger": null,
           "content_genius_article_uuid_persisted_in_ledger": null,
           "are_content_genius_article_creation_proof": false,
@@ -51370,28 +51394,31 @@
           "manual_reconciliation_required": true
         },
         "review_candidate": {
-          "state": "NO_WORKSPACE_CONTENT_CANDIDATE",
-          "checksummed_review_candidate_present": false,
-          "path": null,
-          "source_sha256": null,
-          "body_sha256": null,
-          "body_word_count": null,
-          "candidate_type": null,
-          "readiness_evidence_verified": false,
-          "readiness_evidence_paths": [],
+          "state": "CHECKSUMMED_EXISTING_PUBLIC_ARTICLE_READY_FOR_LLM_REVIEW",
+          "checksummed_review_candidate_present": true,
+          "path": "src/content/posts/understanding-mineral-rights-valuation-determine-the-fair-assessment-for-your-interests.mdx",
+          "source_sha256": "32f00efc59a4c457e9ab38579fcea286c6c6e8e9375d43918356a360deaeb8a2",
+          "body_sha256": "18bee8757c4190b2c3a467adf9b4be4eb600b56e1cd685da600e4ddd27ca4506",
+          "body_word_count": 2518,
+          "candidate_type": "existing_public_article",
+          "readiness_evidence_verified": true,
+          "readiness_evidence_paths": [
+            "reports/mrx-1000-readiness-matrix.json",
+            "config/mrx-1000-canonical-content-ledger.json"
+          ],
           "readiness_checks": {
-            "workspace_source_checksum_present": false,
+            "workspace_source_checksum_present": true,
             "readiness_row_identity_verified": true,
-            "filename_matches_canonical_slug": false,
-            "frontmatter_title_matches_canonical": false,
-            "frontmatter_publication_status_matches_ledger": false,
-            "substantive_body_at_least_500_words": false,
-            "explicit_qa_shell_absent": false,
-            "review_metadata_present": false,
-            "canonical_state_supports_content_review": false
+            "filename_matches_canonical_slug": true,
+            "frontmatter_title_matches_canonical": true,
+            "frontmatter_publication_status_matches_ledger": true,
+            "substantive_body_at_least_500_words": true,
+            "explicit_qa_shell_absent": true,
+            "review_metadata_present": true,
+            "canonical_state_supports_content_review": true
           },
-          "workspace_mdx_is_review_candidate": false,
-          "workspace_mdx_rejection_reason": "No workspace MDX exists.",
+          "workspace_mdx_is_review_candidate": true,
+          "workspace_mdx_rejection_reason": null,
           "special_candidate_validation": null
         }
       },
@@ -51402,7 +51429,7 @@
         "position_in_batch": 22,
         "batch_size": 25,
         "assignment_policy": "remaining_rows_by_program_row_id",
-        "action_needed": "search_vendor_identity_then_conditionally_create_after_identity_and_quality_preflight",
+        "action_needed": "preserve_workspace_public_route_and_search_vendor_identity_before_any_creation",
         "execution_state": "WAITING_FOR_IDENTITY_CONTENT_AND_REVIEW_GATES_NO_EXTERNAL_WRITE",
         "execution_eligible_now": false,
         "creation_needed_proven": false,
@@ -51416,9 +51443,9 @@
           "read_only_quota_preflight_required_before_external_write": true,
           "canonical_identity_reconciliation_required": true,
           "checksummed_content_candidate_required_before_review": true,
-          "checksummed_content_candidate_present": false,
-          "review_candidate_path_and_sha256_present": false,
-          "review_readiness_evidence_verified": false,
+          "checksummed_content_candidate_present": true,
+          "review_candidate_path_and_sha256_present": true,
+          "review_readiness_evidence_verified": true,
           "compliance_seo_aeo_editorial_gates_required": true
         },
         "evidence": {
@@ -51445,10 +51472,10 @@
           "availability_state": "NOT_CHECKED_BY_LOCAL_ONLY_BUILD",
           "dispatch_eligible_now": false,
           "prerequisite_gates": {
-            "checksummed_review_candidate_present": false,
-            "review_candidate_path": null,
-            "review_candidate_sha256": null,
-            "review_candidate_readiness_evidence_verified": false,
+            "checksummed_review_candidate_present": true,
+            "review_candidate_path": "src/content/posts/understanding-mineral-rights-valuation-determine-the-fair-assessment-for-your-interests.mdx",
+            "review_candidate_sha256": "32f00efc59a4c457e9ab38579fcea286c6c6e8e9375d43918356a360deaeb8a2",
+            "review_candidate_readiness_evidence_verified": true,
             "predecessor_key": null,
             "predecessor_pass_required": false,
             "predecessor_pass_observed": false,
@@ -51482,10 +51509,10 @@
           "availability_state": "NOT_CHECKED_BY_LOCAL_ONLY_BUILD",
           "dispatch_eligible_now": false,
           "prerequisite_gates": {
-            "checksummed_review_candidate_present": false,
-            "review_candidate_path": null,
-            "review_candidate_sha256": null,
-            "review_candidate_readiness_evidence_verified": false,
+            "checksummed_review_candidate_present": true,
+            "review_candidate_path": "src/content/posts/understanding-mineral-rights-valuation-determine-the-fair-assessment-for-your-interests.mdx",
+            "review_candidate_sha256": "32f00efc59a4c457e9ab38579fcea286c6c6e8e9375d43918356a360deaeb8a2",
+            "review_candidate_readiness_evidence_verified": true,
             "predecessor_key": "chatgpt",
             "predecessor_pass_required": true,
             "predecessor_pass_observed": false,
@@ -51519,10 +51546,10 @@
           "availability_state": "UNAVAILABLE_PER_LOCAL_FRAMEWORK_SNAPSHOT",
           "dispatch_eligible_now": false,
           "prerequisite_gates": {
-            "checksummed_review_candidate_present": false,
-            "review_candidate_path": null,
-            "review_candidate_sha256": null,
-            "review_candidate_readiness_evidence_verified": false,
+            "checksummed_review_candidate_present": true,
+            "review_candidate_path": "src/content/posts/understanding-mineral-rights-valuation-determine-the-fair-assessment-for-your-interests.mdx",
+            "review_candidate_sha256": "32f00efc59a4c457e9ab38579fcea286c6c6e8e9375d43918356a360deaeb8a2",
+            "review_candidate_readiness_evidence_verified": true,
             "predecessor_key": "google_gemini",
             "predecessor_pass_required": true,
             "predecessor_pass_observed": false,
@@ -51556,10 +51583,10 @@
           "availability_state": "NOT_CHECKED_BY_LOCAL_ONLY_BUILD",
           "dispatch_eligible_now": false,
           "prerequisite_gates": {
-            "checksummed_review_candidate_present": false,
-            "review_candidate_path": null,
-            "review_candidate_sha256": null,
-            "review_candidate_readiness_evidence_verified": false,
+            "checksummed_review_candidate_present": true,
+            "review_candidate_path": "src/content/posts/understanding-mineral-rights-valuation-determine-the-fair-assessment-for-your-interests.mdx",
+            "review_candidate_sha256": "32f00efc59a4c457e9ab38579fcea286c6c6e8e9375d43918356a360deaeb8a2",
+            "review_candidate_readiness_evidence_verified": true,
             "predecessor_key": "claude_opus_4_6",
             "predecessor_pass_required": true,
             "predecessor_pass_observed": false,
@@ -51593,10 +51620,10 @@
           "availability_state": "NOT_CHECKED_BY_LOCAL_ONLY_BUILD",
           "dispatch_eligible_now": false,
           "prerequisite_gates": {
-            "checksummed_review_candidate_present": false,
-            "review_candidate_path": null,
-            "review_candidate_sha256": null,
-            "review_candidate_readiness_evidence_verified": false,
+            "checksummed_review_candidate_present": true,
+            "review_candidate_path": "src/content/posts/understanding-mineral-rights-valuation-determine-the-fair-assessment-for-your-interests.mdx",
+            "review_candidate_sha256": "32f00efc59a4c457e9ab38579fcea286c6c6e8e9375d43918356a360deaeb8a2",
+            "review_candidate_readiness_evidence_verified": true,
             "predecessor_key": "perplexity",
             "predecessor_pass_required": true,
             "predecessor_pass_observed": false,
@@ -51627,7 +51654,7 @@
           "perplexity",
           "microsoft_copilot"
         ],
-        "next_stage": null,
+        "next_stage": "chatgpt",
         "any_verdict_recorded": false,
         "all_required_verdicts_passed": false,
         "sequence_complete": false,
@@ -51645,7 +51672,7 @@
         "release_action_eligible_now": false,
         "index_submission_eligible_now": false,
         "sitemap_addition_eligible_now": false,
-        "currently_in_workspace_sitemap": false,
+        "currently_in_workspace_sitemap": true,
         "production_live_verified_in_this_local_build": false,
         "release_or_index_action_performed": false,
         "exact_claude_opus_4_6_required_before_release_or_index_transition": true,
@@ -51662,7 +51689,6 @@
         "ORDERED_LLM_REVIEW_SEQUENCE_NOT_COMPLETE",
         "LOCAL_ONLY_MANIFEST_EXTERNAL_DISPATCH_NOT_PERFORMED",
         "ARTICLE_SPECIFIC_QUALITY_CLEARANCE_NOT_COMPLETE",
-        "NO_CHECKSUMMED_REVIEW_CANDIDATE",
         "CONTENT_GENIUS_CANONICAL_ROW_UUID_BINDING_UNPROVEN"
       ]
     },
@@ -350144,5 +350170,5 @@
       ]
     }
   ],
-  "content_fingerprint_sha256": "b7d80eebade19e0e31766d3da97236a6d7e7204d2a78b76117bef925b04ffaf1"
+  "content_fingerprint_sha256": "2225f30afed887faedc578985fcae9940a725d055e8c5046712013df16ffeb91"
 }

@@ -1,18 +1,18 @@
 {
   "artifact_type": "mrx_article_two_image_retrofit",
   "schema_version": 1,
-  "generated_at_utc": "2026-08-12T19:01:03Z",
+  "generated_at_utc": "2026-08-12T19:31:52Z",
   "policy_source": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
   "summary": {
-    "article_count": 132,
-    "asset_count": 264,
-    "unique_source_art_count": 132,
-    "unique_hero_sha256_count": 132,
-    "unique_inline_sha256_count": 132,
-    "distinct_article_pair_count": 132,
-    "hero_ocr_pass_count": 132,
-    "inline_ocr_pass_count": 132,
-    "exact_filename_identity_count": 132
+    "article_count": 133,
+    "asset_count": 266,
+    "unique_source_art_count": 133,
+    "unique_hero_sha256_count": 133,
+    "unique_inline_sha256_count": 133,
+    "distinct_article_pair_count": 133,
+    "hero_ocr_pass_count": 133,
+    "inline_ocr_pass_count": 133,
+    "exact_filename_identity_count": 133
   },
   "contact_sheets": {
     "hero": [
@@ -4804,6 +4804,56 @@
           "actual": "mineral rights offer scams",
           "normalized_expected": "mineral rights offer scams",
           "normalized_actual": "mineral rights offer scams",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      }
+    },
+    {
+      "slug": "understanding-mineral-rights-valuation-determine-the-fair-assessment-for-your-interests",
+      "title": "Understanding Mineral Rights Valuation: Determine the Fair Assessment for Your Interests",
+      "keyword": "How Can I Determine if My Mineral Rights Qualify for a Fair Assessment?",
+      "file_path": "src/content/posts/understanding-mineral-rights-valuation-determine-the-fair-assessment-for-your-interests.mdx",
+      "source_public_path": "/assets/articles/hero/understanding-mineral-rights-valuation-determine-the-fair-assessment-for-your-interests.webp",
+      "source_artifact_paths": [
+        "artifacts/mrx1000-wave44-creative-sources/understanding-mineral-rights-valuation-determine-the-fair-assessment-for-your-interests-hero-base.png",
+        "artifacts/mrx1000-wave44-creative-sources/understanding-mineral-rights-valuation-determine-the-fair-assessment-for-your-interests-inline-base.png"
+      ],
+      "generated_at_utc": "2026-08-12T19:31:20.653Z",
+      "hero": {
+        "public_path": "/assets/articles/hero/understanding-mineral-rights-valuation-determine-the-fair-assessment-for-your-interests.webp",
+        "alt": "Title reads “Understanding Mineral Rights Valuation: Determine the Fair Assessment for Your Interests”.",
+        "width": 1200,
+        "height": 630,
+        "mime_type": "image/webp",
+        "sha256": "1f14377fa1ff6ccd56cc8da2736d054fa0e6684b4a38ee8b98e8ff33fdffc7eb",
+        "perceptual_hash": "0000000011111000000000001111100000000000111110000000000111111001011111001111100101110000111111010101100011111100000110001111100001111000111110000110000011111000000000001111100000000001111111010000000000111111000000001111110100000000001111100000000000011000",
+        "neutralized_art_text_region_count": 0,
+        "ocr": {
+          "expected": "Understanding Mineral Rights Valuation: Determine the Fair Assessment for Your Interests",
+          "actual": "Understanding Mineral\nRights Valuation:\nDetermine the Fair\nAssessment for Your\nInterests",
+          "normalized_expected": "understanding mineral rights valuation determine the fair assessment for your interests",
+          "normalized_actual": "understanding mineral rights valuation determine the fair assessment for your interests",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      },
+      "inline": {
+        "public_path": "/assets/articles/inline/understanding-mineral-rights-valuation-determine-the-fair-assessment-for-your-interests/how-can-i-determine-if-my-mineral-rights-qualify-for-a-fair-assessment.webp",
+        "alt": "Assessment-pathway matrix labeled “How Can I Determine if My Mineral Rights Qualify for a Fair Assessment?”.",
+        "rendered_text": "How Can I Determine if My Mineral Rights Qualify for a Fair Assessment?",
+        "visual_variant": "wave44-distinct-generated-assessment-pathway-matrix",
+        "width": 1200,
+        "height": 675,
+        "mime_type": "image/webp",
+        "sha256": "b17d220db7318b88150e363172de4d9ca1e228322b8a6eca7e3c9bc88ea8c03e",
+        "perceptual_hash": "0000000000000000000000000000000000000111111000000000111111100000000000111100000000000000000000000000000000000000000111111111100011111111111111001111111111111100101111111111110010000000000000000011111110111000000011111111100100000011101110000000000110111000",
+        "neutralized_art_text_region_count": 0,
+        "ocr": {
+          "expected": "How Can I Determine if My Mineral Rights Qualify for a Fair Assessment?",
+          "actual": "How Can I Determine if My\nMineral Rights Qualify for a\nFair Assessment?",
+          "normalized_expected": "how can i determine if my mineral rights qualify for a fair assessment",
+          "normalized_actual": "how can i determine if my mineral rights qualify for a fair assessment",
           "uppercase_i_confusable_accepted": false,
           "pass": true
         }
