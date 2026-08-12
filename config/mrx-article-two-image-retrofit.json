@@ -1,18 +1,18 @@
 {
   "artifact_type": "mrx_article_two_image_retrofit",
   "schema_version": 1,
-  "generated_at_utc": "2026-08-12T07:26:45Z",
+  "generated_at_utc": "2026-08-12T07:54:39Z",
   "policy_source": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
   "summary": {
-    "article_count": 109,
-    "asset_count": 218,
-    "unique_source_art_count": 109,
-    "unique_hero_sha256_count": 109,
-    "unique_inline_sha256_count": 109,
-    "distinct_article_pair_count": 109,
-    "hero_ocr_pass_count": 109,
-    "inline_ocr_pass_count": 109,
-    "exact_filename_identity_count": 109
+    "article_count": 110,
+    "asset_count": 220,
+    "unique_source_art_count": 110,
+    "unique_hero_sha256_count": 110,
+    "unique_inline_sha256_count": 110,
+    "distinct_article_pair_count": 110,
+    "hero_ocr_pass_count": 110,
+    "inline_ocr_pass_count": 110,
+    "exact_filename_identity_count": 110
   },
   "contact_sheets": {
     "hero": [
@@ -1028,6 +1028,56 @@
           "actual": "What Steps Should I Take\nto Understand My\nMineral Rights' Value?",
           "normalized_expected": "what steps should i take to understand my mineral rights value",
           "normalized_actual": "what steps should i take to understand my mineral rights value",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      }
+    },
+    {
+      "slug": "existing-wells-vs-future-locations-in-a-dcf-model",
+      "title": "Existing Wells vs. Future Locations in a DCF Model",
+      "keyword": "existing wells future locations DCF",
+      "file_path": "src/content/posts/existing-wells-vs-future-locations-in-a-dcf-model.mdx",
+      "source_public_path": "/assets/articles/hero/existing-wells-vs-future-locations-in-a-dcf-model.webp",
+      "source_artifact_paths": [
+        "artifacts/mrx1000-wave21-creative-sources/existing-wells-vs-future-locations-in-a-dcf-model-hero-base.png",
+        "artifacts/mrx1000-wave21-creative-sources/existing-wells-vs-future-locations-in-a-dcf-model-inline-base.png"
+      ],
+      "generated_at_utc": "2026-08-12T07:52:47.689Z",
+      "hero": {
+        "public_path": "/assets/articles/hero/existing-wells-vs-future-locations-in-a-dcf-model.webp",
+        "alt": "Article cover titled “Existing Wells vs. Future Locations in a DCF Model”.",
+        "width": 1200,
+        "height": 630,
+        "mime_type": "image/webp",
+        "sha256": "1d253f2da3582e1af85aafb17e90bd5b7bdd5de76dab7a5139b3f8c79602c30d",
+        "perceptual_hash": "0000000111111111000000011111111100000001111111110000000111111111000000000100111101010000011010000000000011001000011110000000101000100001100000000000000111100000000000011111011100000001111101110000000111110011000000011111001100000001111110000000000111111000",
+        "neutralized_art_text_region_count": 0,
+        "ocr": {
+          "expected": "Existing Wells vs. Future Locations in a DCF Model",
+          "actual": "Existing Wells vs.\nFuture Locations in\na DCF Model",
+          "normalized_expected": "existing wells vs future locations in a dcf model",
+          "normalized_actual": "existing wells vs future locations in a dcf model",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      },
+      "inline": {
+        "public_path": "/assets/articles/inline/existing-wells-vs-future-locations-in-a-dcf-model/existing-wells-future-locations-dcf.webp",
+        "alt": "Distinct scenario-board image labeled “existing wells future locations DCF”.",
+        "rendered_text": "existing wells future locations DCF",
+        "visual_variant": "wave21-distinct-generated-existing-vs-future-scenario-board",
+        "width": 1200,
+        "height": 675,
+        "mime_type": "image/webp",
+        "sha256": "9a629c1955c4a34642d9d62637ccb5b22112271891c71f9cfc130e2cf8cc1031",
+        "perceptual_hash": "1111110000000000001111100000000011111110000000001101111000000000110111100000000010011110000000001111111000111000111111100000000011111111001010001111111001100000111111100000000011111111000000001111111000000000000001000000000000000000000000000000000000000000",
+        "neutralized_art_text_region_count": 0,
+        "ocr": {
+          "expected": "existing wells future locations DCF",
+          "actual": "existing wells\nfuture locations\nDCF",
+          "normalized_expected": "existing wells future locations dcf",
+          "normalized_actual": "existing wells future locations dcf",
           "uppercase_i_confusable_accepted": false,
           "pass": true
         }

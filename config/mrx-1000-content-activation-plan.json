@@ -1,15 +1,15 @@
 {
   "artifact_type": "mrx1000_content_activation_plan",
   "plan_version": "mrx1000-content-activation-v1.1.0",
-  "generated_at": "2026-07-20T14:11:51.904Z",
+  "generated_at": "2026-07-20T06:07:52.716Z",
   "generated_at_method": "canonical_ledger_generated_at",
   "generator": "scripts/build-mrx-1000-activation-plan.mjs",
-  "content_fingerprint_sha256": "32ce99281c07c376077c59f7bc3d3bc0b56a05780c213103ba6100ebc141c0fd",
+  "content_fingerprint_sha256": "9db69971b147cb3932d8431e51a89e3c4f1afc3682531e31bab019c8f3f39332",
   "inputs": {
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_fingerprint_sha256": "72b51fc31ce320aba8b985b9dda5a2e6d67ce7cb3e5e47a89b40bfda07d52ee3",
+    "canonical_ledger_fingerprint_sha256": "9ead3c6ef490f3e4d83d8800a072bda3acbb6f7230d4f06e5163b8eca4cfc300",
     "canonical_ledger_fingerprint_verified": true,
-    "canonical_ledger_generated_at": "2026-07-20T14:11:51.904Z",
+    "canonical_ledger_generated_at": "2026-07-20T06:07:52.716Z",
     "owner_decision": {
       "decision_id": "D-2026-0804-16",
       "signed_disposition": "APPROVED_CONTINUOUS_QUALITY_GATED_ARTICLE_PUBLICATION",
@@ -115,9 +115,9 @@
     },
     "by_source_preservation_classification": {
       "incumbent_draft_nonpublic_held": 28,
-      "live_public_published_route": 109,
+      "live_public_published_route": 110,
       "pilot_draft_noindex_stage": 25,
-      "planning_only_inventory": 838
+      "planning_only_inventory": 837
     }
   },
   "rows": [
@@ -11167,8 +11167,8 @@
         "target_title": "Existing Wells vs. Future Locations in a DCF Model",
         "url": "/blog/existing-wells-vs-future-locations-in-a-dcf-model/",
         "relationship": "same_cluster_next_by_program_row_id_cyclic",
-        "target_source_preservation_classification": "planning_only_inventory",
-        "target_route_live": false,
+        "target_source_preservation_classification": "live_public_published_route",
+        "target_route_live": true,
         "status": "planned_local_only"
       },
       "primary_cta": {
@@ -11218,8 +11218,8 @@
       "pillar": "mineral-rights-value",
       "search_intent": "informational",
       "funnel_stage": "consideration",
-      "source_preservation_classification": "planning_only_inventory",
-      "source_route_live": false,
+      "source_preservation_classification": "live_public_published_route",
+      "source_route_live": true,
       "pillar_link": {
         "url": "/mineral-rights-value/",
         "route_evidence": "src/pages/mineral-rights-value.astro",
@@ -11268,7 +11268,7 @@
         "rendered_triangle_verified": false,
         "live_status": "not_published_or_verified_by_this_plan",
         "live_triangle_verified": false,
-        "release_status": "eligible_for_continuous_quality_review_not_yet_cleared",
+        "release_status": "released_under_d16_continuous_quality_gate",
         "numerical_release_cap_applies": false
       }
     },
