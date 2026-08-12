@@ -1,7 +1,7 @@
 {
   "program": "MRX1000",
   "artifact_type": "searchatlas_ordered_llm_local_execution_manifest",
-  "generated_at": "2026-07-20T12:33:29.288Z",
+  "generated_at": "2026-07-20T18:24:02.028Z",
   "deterministic": true,
   "local_only": true,
   "external_services_called": false,
@@ -9,13 +9,13 @@
   "inputs": {
     "ledger": {
       "path": "config/mrx-1000-canonical-content-ledger.json",
-      "sha256": "57d11b5aa27845e3a45edd00f1ac766bce05056d8eb34c725eda02ef54da3848",
-      "bytes": 4449694
+      "sha256": "c2019c51ab78cfd9ea45b322e4bff935d749286ee480289d2ea0b9c9ffc42fe3",
+      "bytes": 4450052
     },
     "readiness": {
       "path": "reports/mrx-1000-readiness-matrix.json",
-      "sha256": "1738332eb8e77b28203b776b1c432d617cd8a50661b1a9f79d1c371528875694",
-      "bytes": 3410061,
+      "sha256": "b30f0fed7e8e02c3746412752a010bb8056e70f98c67108f19de813c010586cc",
+      "bytes": 3410059,
       "sha256_method": "canonical_json_with_top_level_generated_at_masked",
       "generated_at_excluded_from_sha256": true
     },
@@ -46551,7 +46551,7 @@
       "primary_keyword": "selling mineral rights",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -46888,7 +46888,7 @@
         "release_action_eligible_now": false,
         "index_submission_eligible_now": false,
         "sitemap_addition_eligible_now": false,
-        "currently_in_workspace_sitemap": false,
+        "currently_in_workspace_sitemap": true,
         "production_live_verified_in_this_local_build": false,
         "release_or_index_action_performed": false,
         "exact_claude_opus_4_6_required_before_release_or_index_transition": true,
@@ -349832,5 +349832,5 @@
       ]
     }
   ],
-  "content_fingerprint_sha256": "f7f09220654b3f7d35e436702dc8e8404e83374f5909ef317be6e08f30160d8f"
+  "content_fingerprint_sha256": "bc1c2f110c2679ff2221553eacd1e24a0889cc9094ca4f7e970e13e7a07f9f04"
 }
