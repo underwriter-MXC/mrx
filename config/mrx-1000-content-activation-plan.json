@@ -1,15 +1,15 @@
 {
   "artifact_type": "mrx1000_content_activation_plan",
   "plan_version": "mrx1000-content-activation-v1.1.0",
-  "generated_at": "2026-07-20T20:16:23.969Z",
+  "generated_at": "2026-07-20T10:49:46.326Z",
   "generated_at_method": "canonical_ledger_generated_at",
   "generator": "scripts/build-mrx-1000-activation-plan.mjs",
-  "content_fingerprint_sha256": "924abb10bbae133155ae1e209161b2d23f077f981617af26588a9c52ba64e52d",
+  "content_fingerprint_sha256": "4680302e08b7d588be9409fb507e3410cdf0791deaa74b87d4f5474d90ea90cf",
   "inputs": {
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_fingerprint_sha256": "7cb269ae29616bd4e41068d4128ba8ea4e8230a15d13f494da38f93ff88c085c",
+    "canonical_ledger_fingerprint_sha256": "a57224d18ab8fa33970e75939b2aada138f43388062a5ea0c39651e6ae625f6c",
     "canonical_ledger_fingerprint_verified": true,
-    "canonical_ledger_generated_at": "2026-07-20T20:16:23.969Z",
+    "canonical_ledger_generated_at": "2026-07-20T10:49:46.326Z",
     "owner_decision": {
       "decision_id": "D-2026-0804-16",
       "signed_disposition": "APPROVED_CONTINUOUS_QUALITY_GATED_ARTICLE_PUBLICATION",
@@ -115,9 +115,9 @@
     },
     "by_source_preservation_classification": {
       "incumbent_draft_nonpublic_held": 28,
-      "live_public_published_route": 131,
+      "live_public_published_route": 132,
       "pilot_draft_noindex_stage": 25,
-      "planning_only_inventory": 816
+      "planning_only_inventory": 815
     }
   },
   "rows": [
@@ -7639,8 +7639,8 @@
         "target_title": "Understanding Mineral Rights: How to Validate Your Asset’s True Worth",
         "url": "/blog/understanding-mineral-rights-how-to-validate-your-asset-s-true-worth/",
         "relationship": "same_cluster_next_by_program_row_id_cyclic",
-        "target_source_preservation_classification": "planning_only_inventory",
-        "target_route_live": false,
+        "target_source_preservation_classification": "live_public_published_route",
+        "target_route_live": true,
         "status": "planned_local_only"
       },
       "primary_cta": {
@@ -7690,8 +7690,8 @@
       "pillar": "sell-mineral-rights",
       "search_intent": "transactional",
       "funnel_stage": "decision",
-      "source_preservation_classification": "planning_only_inventory",
-      "source_route_live": false,
+      "source_preservation_classification": "live_public_published_route",
+      "source_route_live": true,
       "pillar_link": {
         "url": "/sell-mineral-rights/",
         "route_evidence": "src/pages/sell-mineral-rights.astro",
@@ -7740,7 +7740,7 @@
         "rendered_triangle_verified": false,
         "live_status": "not_published_or_verified_by_this_plan",
         "live_triangle_verified": false,
-        "release_status": "eligible_for_continuous_quality_review_not_yet_cleared",
+        "release_status": "released_under_d16_continuous_quality_gate",
         "numerical_release_cap_applies": false
       }
     },

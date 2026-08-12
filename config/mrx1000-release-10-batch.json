@@ -1,7 +1,7 @@
 {
   "program": "MRX 1,000 Article SEO+AEO Production Program",
   "artifact_type": "authorized_release_10_batch",
-  "evidence_scaffold_generated_at_utc": "2026-08-12T18:51:03Z",
+  "evidence_scaffold_generated_at_utc": "2026-08-12T19:07:52Z",
   "decision_authority": {
     "successor_gate_decision_id": "D-2026-0804-16",
     "successor_gate_decision_path": "docs/governance/mrx1000-owner-continuous-publication-directive-2026-08-04.md",
@@ -150,13 +150,16 @@
     "wave41_selection_decision_sha256": "e36ed8655e8ba7acf496ad913ec26fafab193e8022d8fd110bdb436957cf30cd",
     "wave42_selection_decision_id": "MRX1000-W42-SELECT-2026-08-12",
     "wave42_selection_decision_path": "docs/governance/mrx1000-wave42-selection-decision-2026-08-12.md",
-    "wave42_selection_decision_sha256": "2cac5c5d9590808f35764e458d77f0407d2b207240c8d5d90d385916f0f42f7a"
+    "wave42_selection_decision_sha256": "2cac5c5d9590808f35764e458d77f0407d2b207240c8d5d90d385916f0f42f7a",
+    "wave43_selection_decision_id": "MRX1000-W43-SELECT-2026-08-12",
+    "wave43_selection_decision_path": "docs/governance/mrx1000-wave43-selection-decision-2026-08-12.md",
+    "wave43_selection_decision_sha256": "1cad890294f65c56aab892c8bba33df8aaec266abf219f595a531734476f439d"
   },
   "identity_authority": {
     "scope_key": "canonical_slug",
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_sha256": "7b9618dd2ef9149c7c1b581e3cb436e91f33736bf16dff2b216089adf3a0315d",
-    "canonical_ledger_generated_at": "2026-07-20T20:16:23.969Z",
+    "canonical_ledger_sha256": "c18a9205c4d6690ef695d6a589babb9fcd0feff5555488e08e0b8f7956ba9868",
+    "canonical_ledger_generated_at": "2026-07-20T10:49:46.326Z",
     "successor_ledger_decision_id": "D-2026-0723-LEDGER-04",
     "successor_ledger_decision_path": "artifacts/mrx1000-release-10/decisions/mrx-ceo-ledger-provenance-successor-20260723-04.md",
     "successor_ledger_decision_sha256": "09eca24bcd0e71563f2ac4197f564eec0ccb43a5ee955216da5c4a2543d04978",
@@ -170,11 +173,11 @@
     "authorization_scope": "declared_program_size_not_a_staged_release_cap",
     "admission_mode": "continuous_quality_gated",
     "continuous_quality_gated_from_selection_rank": 26,
-    "prior_verified_article_count": 121,
+    "prior_verified_article_count": 122,
     "fail_closed": true,
     "earned_scale_gates": [],
-    "exact_admitted_count": 122,
-    "exact_admitted_slate_sha256": "a6935226c68d50188e99048c11d976f1ef646ca09624e7a6274e033cc47e5b16"
+    "exact_admitted_count": 123,
+    "exact_admitted_slate_sha256": "a32799bdf2d0fda0b9972263f442d9c4fe360dbc3478d5131a8dba71233b672b"
   },
   "articles": [
     {
@@ -4137,10 +4140,43 @@
       "inline_path": "/assets/articles/inline/understanding-mineral-rights-for-new-owners/mineral-rights-explained-for-beginners.webp",
       "inline_asset_sha256": "6fc8ac0d70793025931e8a5de35bc3fa5b9c7a9c165604d244f4b10bd0bdffab",
       "inline_rendered_text": "Mineral Rights Explained for Beginners"
+    },
+    {
+      "selection_rank": 123,
+      "program_row_id": "MRX1000-0123",
+      "source_shortlist_program_row_id": "MRX1000-0123",
+      "slug": "understanding-mineral-rights-how-to-validate-your-asset-s-true-worth",
+      "title": "Understanding Mineral Rights: How to Validate Your Asset’s True Worth",
+      "source_shortlist_title": "Understanding Mineral Rights: How to Validate Your Asset’s True Worth",
+      "canonical_url": "https://mineralrightsxchange.com/blog/understanding-mineral-rights-how-to-validate-your-asset-s-true-worth/",
+      "pillar": "sell-mineral-rights",
+      "cluster": "sell-mineral-rights-decision-process",
+      "content_genius_article_uuid": null,
+      "archive_evidence_sha256": "0c0d2b84480ccf91f076bb59717330f7f61bb25d31e1f194464b382225b645fe",
+      "repo_path": "src/content/posts/understanding-mineral-rights-how-to-validate-your-asset-s-true-worth.mdx",
+      "repo_sha256": "e3aa857e91db7625f2baf1a50a110605aaaf76e05c8f0be027c71880989405ea",
+      "article_sha256": "e3aa857e91db7625f2baf1a50a110605aaaf76e05c8f0be027c71880989405ea",
+      "hero_path": "/assets/articles/hero/understanding-mineral-rights-how-to-validate-your-assets-true-worth.webp",
+      "hero_sha256": "aeaab915c112e63401de6cb72b3d5954295af45da9a806960d5ee7aee6c70a33",
+      "hero_asset_sha256": "aeaab915c112e63401de6cb72b3d5954295af45da9a806960d5ee7aee6c70a33",
+      "admission_status": "admitted_quality_gated",
+      "finalization_state": "draft_noindex_admitted",
+      "searchatlas_content_score": null,
+      "searchatlas_word_count": 2573,
+      "risk_citation_remediation": [
+        "The planning-only canonical row was developed into an original valuation-validation and reperformance protocol. It traces a dated directional range from asset scope and sources through transformations, calculation, sensitivities, variances, and transaction separation without importing factory body text or claiming one guaranteed true value.",
+        "Continuous quality-gated admission under D-2026-0804-16 and MRX1000-W43-SELECT-2026-08-12; no numerical cap or elapsed-time gate applies.",
+        "Publication remains conditional on current editorial, factual-citation, compliance, two-image, metadata, build, rollback, deployment, and live-verification evidence."
+      ],
+      "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/understanding-mineral-rights-how-to-validate-your-asset-s-true-worth.json",
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/understanding-mineral-rights-how-to-validate-your-asset-s-true-worth/how-do-i-ensure-im-receiving-a-fair-valuation-for-my-mineral-rights.webp",
+      "inline_asset_sha256": "774ca0f6e54e9f5eb028d9ecd10b7013fcf18d03bc9826bd7bbd2c2eb7269ac6",
+      "inline_rendered_text": "How Do I Ensure I'm Receiving a Fair Valuation for My Mineral Rights?"
     }
   ],
   "admission_audit": {
-    "admitted_article_count": 122,
+    "admitted_article_count": 123,
     "selection_ranks": [
       1,
       2,
@@ -4263,7 +4299,8 @@
       119,
       120,
       121,
-      122
+      122,
+      123
     ],
     "duplicate_program_row_ids": [],
     "duplicate_slugs": [],
@@ -4322,9 +4359,9 @@
   "two_image_policy": {
     "directive": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
     "retrofit_manifest_path": "config/mrx-article-two-image-retrofit.json",
-    "retrofit_manifest_sha256": "3995a4971f1113647d1fe2ab8f45fc9466835ad619f313ab2d7861ef3fa87732",
-    "public_article_count": 131,
-    "batch_article_count": 122,
+    "retrofit_manifest_sha256": "f2efd7591f307b0708dc9557060b004d2c9e5aee5e08760b2e36a16a3f5966f0",
+    "public_article_count": 132,
+    "batch_article_count": 123,
     "assets_per_article": 2,
     "hero_share_identity_required": true,
     "inline_image_distinct_required": true,
