@@ -10,7 +10,7 @@
 - Primary keyword: `Free Mineral Rights Valuation Review`
 - Cluster: `valuation-methodology-drivers`
 - Pillar: `mineral-rights-value`
-- Article SHA-256 at editorial lock: `a63600ed7a6f663f501b66fc52f7252a4511fe3a4c1ab704b568013d979df379`
+- Article SHA-256 at editorial lock: `d6dc2a0274dece43d81392b2882a46512056d9d38ab978dfdf1d286827732cc0`
 - Selection disposition: `SELECTED_FOR_CONTINUOUS_QUALITY_GATED_PUBLICATION`
 
 ## Canonical-order and title lock
