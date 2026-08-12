@@ -1,7 +1,7 @@
 {
   "program": "MRX1000",
   "artifact_type": "searchatlas_ordered_llm_local_execution_manifest",
-  "generated_at": "2026-07-20T08:25:37.000Z",
+  "generated_at": "2026-07-20T14:11:51.904Z",
   "deterministic": true,
   "local_only": true,
   "external_services_called": false,
@@ -9,8 +9,8 @@
   "inputs": {
     "ledger": {
       "path": "config/mrx-1000-canonical-content-ledger.json",
-      "sha256": "ab336ce466abb8d934133ed25f5dad11934f8b02ed1f297fbd3f92e433f82895",
-      "bytes": 4442517
+      "sha256": "1b1b7fbf101a8b593fc0e5048b9ee60b246e2106b3a2e27e1054f1a1acd36ea6",
+      "bytes": 4442877
     },
     "readiness": {
       "path": "reports/mrx-1000-readiness-matrix.json",
@@ -69536,7 +69536,7 @@
       "primary_keyword": "What Steps Should I Take to Understand My Mineral Rights' Value?",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -349546,5 +349546,5 @@
       ]
     }
   ],
-  "content_fingerprint_sha256": "d047e45ca30644961c49fa8de85436e6c8aa3f36c63c63dd8af3fb74cca00075"
+  "content_fingerprint_sha256": "a4a4078e5e5e4d1ea1a27ee861ed0e765dadd533a8116c644fdf4d6a527a51d0"
 }
