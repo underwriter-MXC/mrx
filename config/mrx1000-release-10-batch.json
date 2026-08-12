@@ -1,7 +1,7 @@
 {
   "program": "MRX 1,000 Article SEO+AEO Production Program",
   "artifact_type": "authorized_release_10_batch",
-  "evidence_scaffold_generated_at_utc": "2026-08-12T20:00:02Z",
+  "evidence_scaffold_generated_at_utc": "2026-08-12T20:22:38Z",
   "decision_authority": {
     "successor_gate_decision_id": "D-2026-0804-16",
     "successor_gate_decision_path": "docs/governance/mrx1000-owner-continuous-publication-directive-2026-08-04.md",
@@ -156,13 +156,16 @@
     "wave43_selection_decision_sha256": "1cad890294f65c56aab892c8bba33df8aaec266abf219f595a531734476f439d",
     "wave44_selection_decision_id": "MRX1000-W44-SELECT-2026-08-12",
     "wave44_selection_decision_path": "docs/governance/mrx1000-wave44-selection-decision-2026-08-12.md",
-    "wave44_selection_decision_sha256": "1805d738ae1de465053515839721042b4614ac97df98d0fa194f1c5a0dbdf021"
+    "wave44_selection_decision_sha256": "1805d738ae1de465053515839721042b4614ac97df98d0fa194f1c5a0dbdf021",
+    "wave45_selection_decision_id": "MRX1000-W45-SELECT-2026-08-12",
+    "wave45_selection_decision_path": "docs/governance/mrx1000-wave45-selection-decision-2026-08-12.md",
+    "wave45_selection_decision_sha256": "68b8f15d5a7de762051bad265eb4ca8c31567c37e85b3b1fd3d3fd962af34704"
   },
   "identity_authority": {
     "scope_key": "canonical_slug",
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_sha256": "d38f716a2e45a38254fb0040029d677999f1c0b38d69b2750de1aaf7ccec5877",
-    "canonical_ledger_generated_at": "2026-07-20T14:11:56.679Z",
+    "canonical_ledger_sha256": "93eb168e97dc2280e8e70a52e2200ec7df50dd57d063e0cd0eac16f3962e3d08",
+    "canonical_ledger_generated_at": "2026-07-20T00:10:45.277Z",
     "successor_ledger_decision_id": "D-2026-0723-LEDGER-04",
     "successor_ledger_decision_path": "artifacts/mrx1000-release-10/decisions/mrx-ceo-ledger-provenance-successor-20260723-04.md",
     "successor_ledger_decision_sha256": "09eca24bcd0e71563f2ac4197f564eec0ccb43a5ee955216da5c4a2543d04978",
@@ -176,11 +179,11 @@
     "authorization_scope": "declared_program_size_not_a_staged_release_cap",
     "admission_mode": "continuous_quality_gated",
     "continuous_quality_gated_from_selection_rank": 26,
-    "prior_verified_article_count": 123,
+    "prior_verified_article_count": 124,
     "fail_closed": true,
     "earned_scale_gates": [],
-    "exact_admitted_count": 124,
-    "exact_admitted_slate_sha256": "b8afcc7927f278661f0496b2b98b16989d646b345055e01b6b44974668afe07e"
+    "exact_admitted_count": 125,
+    "exact_admitted_slate_sha256": "da0f0e2fcbec5c3bc1929db1375a7994233b3627357099735a4828c33174f8e9"
   },
   "articles": [
     {
@@ -4209,10 +4212,43 @@
       "inline_path": "/assets/articles/inline/understanding-mineral-rights-valuation-determine-the-fair-assessment-for-your-interests/how-can-i-determine-if-my-mineral-rights-qualify-for-a-fair-assessment.webp",
       "inline_asset_sha256": "b17d220db7318b88150e363172de4d9ca1e228322b8a6eca7e3c9bc88ea8c03e",
       "inline_rendered_text": "How Can I Determine if My Mineral Rights Qualify for a Fair Assessment?"
+    },
+    {
+      "selection_rank": 125,
+      "program_row_id": "MRX1000-0125",
+      "source_shortlist_program_row_id": "MRX1000-0125",
+      "slug": "understanding-mineral-rights-valuation-near-you",
+      "title": "Understanding Mineral Rights Valuation Near You",
+      "source_shortlist_title": "Understanding Mineral Rights Valuation Near You",
+      "canonical_url": "https://mineralrightsxchange.com/blog/understanding-mineral-rights-valuation-near-you/",
+      "pillar": "sell-mineral-rights",
+      "cluster": "sell-mineral-rights-decision-process",
+      "content_genius_article_uuid": null,
+      "archive_evidence_sha256": "479b2a324c5f16cd393811940f0428cee8b77e87b7b4d6e281db89e1209cf66b",
+      "repo_path": "src/content/posts/understanding-mineral-rights-valuation-near-you.mdx",
+      "repo_sha256": "46119e11fd375db8f54ffe3d9150b6c2a54ca75cf1c56e53102a0bb36b6cb1c3",
+      "article_sha256": "46119e11fd375db8f54ffe3d9150b6c2a54ca75cf1c56e53102a0bb36b6cb1c3",
+      "hero_path": "/assets/articles/hero/understanding-mineral-rights-valuation-near-you.webp",
+      "hero_sha256": "fa2f18d16339dedfdda898fee89ca312667c5695b9d4b1186c98d330e0a84e13",
+      "hero_asset_sha256": "fa2f18d16339dedfdda898fee89ca312667c5695b9d4b1186c98d330e0a84e13",
+      "admission_status": "admitted_quality_gated",
+      "finalization_state": "draft_noindex_admitted",
+      "searchatlas_content_score": null,
+      "searchatlas_word_count": 3368,
+      "risk_citation_remediation": [
+        "The planning-only canonical row was developed into an original location-aware provider and evidence-routing guide. It defines “near me” by the property jurisdiction, records, operating context, intended use, and fit-for-purpose specialist without importing factory body text or treating physical proximity as proof of competence, independence, ownership, value, or appraisal authority.",
+        "Continuous quality-gated admission under D-2026-0804-16 and MRX1000-W45-SELECT-2026-08-12; no numerical cap or elapsed-time gate applies.",
+        "Publication remains conditional on current editorial, factual-citation, compliance, two-image, metadata, build, rollback, deployment, and live-verification evidence."
+      ],
+      "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/understanding-mineral-rights-valuation-near-you.json",
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/understanding-mineral-rights-valuation-near-you/mineral-rights-appraisal-near-me.webp",
+      "inline_asset_sha256": "0a6e061a6054af3d6c1944ff59e0773f593e1b61f2e75d85107e1af15edee9ce",
+      "inline_rendered_text": "Mineral Rights Appraisal Near Me"
     }
   ],
   "admission_audit": {
-    "admitted_article_count": 124,
+    "admitted_article_count": 125,
     "selection_ranks": [
       1,
       2,
@@ -4337,7 +4373,8 @@
       121,
       122,
       123,
-      124
+      124,
+      125
     ],
     "duplicate_program_row_ids": [],
     "duplicate_slugs": [],
@@ -4396,9 +4433,9 @@
   "two_image_policy": {
     "directive": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
     "retrofit_manifest_path": "config/mrx-article-two-image-retrofit.json",
-    "retrofit_manifest_sha256": "e31dbeee8a46e7e569eacced89953c4ddae882cac75543390c9452f9526d1998",
-    "public_article_count": 133,
-    "batch_article_count": 124,
+    "retrofit_manifest_sha256": "af3047d8341b883a12db95a0cccf815ad44e16b0d892deaac5aec377b919014b",
+    "public_article_count": 134,
+    "batch_article_count": 125,
     "assets_per_article": 2,
     "hero_share_identity_required": true,
     "inline_image_distinct_required": true,
