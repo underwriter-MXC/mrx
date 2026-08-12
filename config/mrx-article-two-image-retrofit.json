@@ -1,18 +1,18 @@
 {
   "artifact_type": "mrx_article_two_image_retrofit",
   "schema_version": 1,
-  "generated_at_utc": "2026-08-12T06:59:41Z",
+  "generated_at_utc": "2026-08-12T07:26:45Z",
   "policy_source": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
   "summary": {
-    "article_count": 108,
-    "asset_count": 216,
-    "unique_source_art_count": 108,
-    "unique_hero_sha256_count": 108,
-    "unique_inline_sha256_count": 108,
-    "distinct_article_pair_count": 108,
-    "hero_ocr_pass_count": 108,
-    "inline_ocr_pass_count": 108,
-    "exact_filename_identity_count": 108
+    "article_count": 109,
+    "asset_count": 218,
+    "unique_source_art_count": 109,
+    "unique_hero_sha256_count": 109,
+    "unique_inline_sha256_count": 109,
+    "distinct_article_pair_count": 109,
+    "hero_ocr_pass_count": 109,
+    "inline_ocr_pass_count": 109,
+    "exact_filename_identity_count": 109
   },
   "contact_sheets": {
     "hero": [
@@ -978,6 +978,56 @@
           "actual": "eagle ford shale\nhow it affects\nmineral rights\nvalues in south\ntexas",
           "normalized_expected": "eagle ford shale how it affects mineral rights values in south texas",
           "normalized_actual": "eagle ford shale how it affects mineral rights values in south texas",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      }
+    },
+    {
+      "slug": "essential-steps-to-assess-the-value-of-your-mineral-rights-accurately-and-confidently",
+      "title": "Essential Steps to Assess the Value of Your Mineral Rights Accurately and Confidently",
+      "keyword": "What Steps Should I Take to Understand My Mineral Rights' Value?",
+      "file_path": "src/content/posts/essential-steps-to-assess-the-value-of-your-mineral-rights-accurately-and-confidently.mdx",
+      "source_public_path": "/assets/articles/hero/essential-steps-to-assess-the-value-of-your-mineral-rights-accurately-and-confidently.webp",
+      "source_artifact_paths": [
+        "artifacts/mrx1000-wave20-creative-sources/essential-steps-to-assess-the-value-of-your-mineral-rights-accurately-and-confidently-hero-base.png",
+        "artifacts/mrx1000-wave20-creative-sources/essential-steps-to-assess-the-value-of-your-mineral-rights-accurately-and-confidently-inline-base.png"
+      ],
+      "generated_at_utc": "2026-08-12T07:26:16.138Z",
+      "hero": {
+        "public_path": "/assets/articles/hero/essential-steps-to-assess-the-value-of-your-mineral-rights-accurately-and-confidently.webp",
+        "alt": "Article cover titled “Essential Steps to Assess the Value of Your Mineral Rights Accurately and Confidently”.",
+        "width": 1200,
+        "height": 630,
+        "mime_type": "image/webp",
+        "sha256": "acda7e708165b226fb1e8860e98cf93323510b57a2ef8d2a51b3c2513efa1a58",
+        "perceptual_hash": "0000000000000011000000000000000000000000000000000100000000011111011111000001111101110000000000000000000011000000011100000001100001111110000110000000000000111110000000000111101100000000111110000000000011111111000000000111111100000000001111110000000000111111",
+        "neutralized_art_text_region_count": 0,
+        "ocr": {
+          "expected": "Essential Steps to Assess the Value of Your Mineral Rights Accurately and Confidently",
+          "actual": "Essential Steps to Assess\nthe Value of Your\nMineral Rights\nAccurately and Confidently",
+          "normalized_expected": "essential steps to assess the value of your mineral rights accurately and confidently",
+          "normalized_actual": "essential steps to assess the value of your mineral rights accurately and confidently",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      },
+      "inline": {
+        "public_path": "/assets/articles/inline/essential-steps-to-assess-the-value-of-your-mineral-rights-accurately-and-confidently/what-steps-should-i-take-to-understand-my-mineral-rights-value.webp",
+        "alt": "Distinct evidence-ladder workspace labeled “What Steps Should I Take to Understand My Mineral Rights' Value?”.",
+        "rendered_text": "What Steps Should I Take to Understand My Mineral Rights' Value?",
+        "visual_variant": "wave20-distinct-generated-evidence-ladder-workspace",
+        "width": 1200,
+        "height": 675,
+        "mime_type": "image/webp",
+        "sha256": "d002768cef01d1efc1413021654506ad07fa88754c5e7d807aef88cec4397759",
+        "perceptual_hash": "1111100000000000111110000000000011111000000000001111001000000000111100000000000011011000000000000001110000000000111011000000000011110110001000001111011000000000111101110000000011110011000000001111100110000000111111000000000011111100000000001111110000000000",
+        "neutralized_art_text_region_count": 0,
+        "ocr": {
+          "expected": "What Steps Should I Take to Understand My Mineral Rights' Value?",
+          "actual": "What Steps Should I Take\nto Understand My\nMineral Rights' Value?",
+          "normalized_expected": "what steps should i take to understand my mineral rights value",
+          "normalized_actual": "what steps should i take to understand my mineral rights value",
           "uppercase_i_confusable_accepted": false,
           "pass": true
         }

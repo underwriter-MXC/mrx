@@ -1,7 +1,7 @@
 {
   "program": "MRX 1,000 Article SEO+AEO Production Program",
   "artifact_type": "authorized_release_10_batch",
-  "evidence_scaffold_generated_at_utc": "2026-08-12T07:18:05Z",
+  "evidence_scaffold_generated_at_utc": "2026-08-12T07:30:07Z",
   "decision_authority": {
     "successor_gate_decision_id": "D-2026-0804-16",
     "successor_gate_decision_path": "docs/governance/mrx1000-owner-continuous-publication-directive-2026-08-04.md",
@@ -81,13 +81,16 @@
     "wave18_selection_decision_sha256": "5e5dbd47e191536b11d3eeac1c65cb22e39e260747ff329621acd0cfe3c8dad3",
     "wave19_selection_decision_id": "MRX1000-W19-SELECT-2026-08-11",
     "wave19_selection_decision_path": "docs/governance/mrx1000-wave19-selection-decision-2026-08-11.md",
-    "wave19_selection_decision_sha256": "14f8d55f79da0a615ad059d85a75fda8a53743cc56d613589aef4993d36accbb"
+    "wave19_selection_decision_sha256": "14f8d55f79da0a615ad059d85a75fda8a53743cc56d613589aef4993d36accbb",
+    "wave20_selection_decision_id": "MRX1000-W20-SELECT-2026-08-11",
+    "wave20_selection_decision_path": "docs/governance/mrx1000-wave20-selection-decision-2026-08-11.md",
+    "wave20_selection_decision_sha256": "076196c66c3b1267a57e9b2a04b4b864ae320c1b9567b85bda632508ffea6248"
   },
   "identity_authority": {
     "scope_key": "canonical_slug",
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_sha256": "30287ed550943fad9772430d00d7c1d2378a9137e7b5f99987172bda7c3bac0e",
-    "canonical_ledger_generated_at": "2026-07-20T07:25:30.496Z",
+    "canonical_ledger_sha256": "ab336ce466abb8d934133ed25f5dad11934f8b02ed1f297fbd3f92e433f82895",
+    "canonical_ledger_generated_at": "2026-07-20T06:40:52.204Z",
     "successor_ledger_decision_id": "D-2026-0723-LEDGER-04",
     "successor_ledger_decision_path": "artifacts/mrx1000-release-10/decisions/mrx-ceo-ledger-provenance-successor-20260723-04.md",
     "successor_ledger_decision_sha256": "09eca24bcd0e71563f2ac4197f564eec0ccb43a5ee955216da5c4a2543d04978",
@@ -101,11 +104,11 @@
     "authorization_scope": "declared_program_size_not_a_staged_release_cap",
     "admission_mode": "continuous_quality_gated",
     "continuous_quality_gated_from_selection_rank": 26,
-    "prior_verified_article_count": 98,
+    "prior_verified_article_count": 99,
     "fail_closed": true,
     "earned_scale_gates": [],
-    "exact_admitted_count": 99,
-    "exact_admitted_slate_sha256": "94bf200d96480dd17b0a091aa54e50509feaf80c93ba7188f40ddae7c2a725b0"
+    "exact_admitted_count": 100,
+    "exact_admitted_slate_sha256": "763c04132bbc769b3b6d963cd196a58c29fb64bd71452d408155f81d78bbf38c"
   },
   "articles": [
     {
@@ -3309,10 +3312,43 @@
       "inline_path": "/assets/articles/inline/discount-rates-in-mineral-rights-dcf-a-plain-language-guide/discount-rates-in-mineral-rights-dcf.webp",
       "inline_asset_sha256": "42b41bc0951a4d7eb2aad034ddd47b7f64e299cce184c5c18cec0265bbc32b9b",
       "inline_rendered_text": "discount rates in mineral rights DCF"
+    },
+    {
+      "selection_rank": 100,
+      "program_row_id": "MRX1000-0178",
+      "source_shortlist_program_row_id": "MRX1000-0178",
+      "slug": "essential-steps-to-assess-the-value-of-your-mineral-rights-accurately-and-confidently",
+      "title": "Essential Steps to Assess the Value of Your Mineral Rights Accurately and Confidently",
+      "source_shortlist_title": "Essential Steps to Assess the Value of Your Mineral Rights Accurately and Confidently",
+      "canonical_url": "https://mineralrightsxchange.com/blog/essential-steps-to-assess-the-value-of-your-mineral-rights-accurately-and-confidently/",
+      "pillar": "mineral-rights-value",
+      "cluster": "valuation-methodology-drivers",
+      "content_genius_article_uuid": null,
+      "archive_evidence_sha256": "f72ef70e191ef5890407912a64d8593519a52733410b0d087fe4ffbe519d03ac",
+      "repo_path": "src/content/posts/essential-steps-to-assess-the-value-of-your-mineral-rights-accurately-and-confidently.mdx",
+      "repo_sha256": "e06ecd5b7eb29b4ffa10fb57c86636e89f6263cf236c64fa528026a69ac51a86",
+      "article_sha256": "e06ecd5b7eb29b4ffa10fb57c86636e89f6263cf236c64fa528026a69ac51a86",
+      "hero_path": "/assets/articles/hero/essential-steps-to-assess-the-value-of-your-mineral-rights-accurately-and-confidently.webp",
+      "hero_sha256": "acda7e708165b226fb1e8860e98cf93323510b57a2ef8d2a51b3c2513efa1a58",
+      "hero_asset_sha256": "acda7e708165b226fb1e8860e98cf93323510b57a2ef8d2a51b3c2513efa1a58",
+      "admission_status": "admitted_quality_gated",
+      "finalization_state": "draft_noindex_admitted",
+      "searchatlas_content_score": null,
+      "searchatlas_word_count": 2207,
+      "risk_citation_remediation": [
+        "The planning-only canonical row was developed into an original, evidence-first mineral-rights value-assessment checklist; no factory body text was imported.",
+        "Continuous quality-gated admission under D-2026-0804-16 and MRX1000-W20-SELECT-2026-08-11; no numerical cap or elapsed-time gate applies.",
+        "Publication remains conditional on current editorial, factual-citation, compliance, two-image, metadata, build, rollback, deployment, and live-verification evidence."
+      ],
+      "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/essential-steps-to-assess-the-value-of-your-mineral-rights-accurately-and-confidently.json",
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/essential-steps-to-assess-the-value-of-your-mineral-rights-accurately-and-confidently/what-steps-should-i-take-to-understand-my-mineral-rights-value.webp",
+      "inline_asset_sha256": "d002768cef01d1efc1413021654506ad07fa88754c5e7d807aef88cec4397759",
+      "inline_rendered_text": "What Steps Should I Take to Understand My Mineral Rights' Value?"
     }
   ],
   "admission_audit": {
-    "admitted_article_count": 99,
+    "admitted_article_count": 100,
     "selection_ranks": [
       1,
       2,
@@ -3412,7 +3448,8 @@
       96,
       97,
       98,
-      99
+      99,
+      100
     ],
     "duplicate_program_row_ids": [],
     "duplicate_slugs": [],
@@ -3471,9 +3508,9 @@
   "two_image_policy": {
     "directive": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
     "retrofit_manifest_path": "config/mrx-article-two-image-retrofit.json",
-    "retrofit_manifest_sha256": "8e8137eb8b6a728789649ef599c1ef2b452d2ebab9cce66081fa4b2ad7ce432e",
-    "public_article_count": 108,
-    "batch_article_count": 99,
+    "retrofit_manifest_sha256": "f7d0a7e5bbb863dca80b0c8404e66fbfd4904bc0fb2c281e239e489f7e24f5f8",
+    "public_article_count": 109,
+    "batch_article_count": 100,
     "assets_per_article": 2,
     "hero_share_identity_required": true,
     "inline_image_distinct_required": true,

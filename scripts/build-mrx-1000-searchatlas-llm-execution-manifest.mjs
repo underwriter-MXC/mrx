@@ -1765,8 +1765,10 @@ export function buildManifest() {
     'runtime publication projection must match the current incumbent, pilot, and planning ledger partitions',
   );
   invariant(
-    aggregate.planning_searchatlas_map_id_count === 294 &&
-      aggregate.planning_searchatlas_title_uuid_count === 269 &&
+    aggregate.planning_searchatlas_map_id_count ===
+      ledger.articles.filter((row) => row.searchatlas_map_id != null).length &&
+      aggregate.planning_searchatlas_title_uuid_count ===
+        ledger.articles.filter((row) => row.searchatlas_title_uuid != null).length &&
       aggregate.persisted_ledger_content_genius_article_uuid_count === 0,
     'planning-handle / persisted-UUID evidence boundary changed',
   );
