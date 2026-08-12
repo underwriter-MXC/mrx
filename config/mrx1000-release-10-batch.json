@@ -1,7 +1,7 @@
 {
   "program": "MRX 1,000 Article SEO+AEO Production Program",
   "artifact_type": "authorized_release_10_batch",
-  "evidence_scaffold_generated_at_utc": "2026-08-12T13:24:31Z",
+  "evidence_scaffold_generated_at_utc": "2026-08-12T13:38:20Z",
   "decision_authority": {
     "successor_gate_decision_id": "D-2026-0804-16",
     "successor_gate_decision_path": "docs/governance/mrx1000-owner-continuous-publication-directive-2026-08-04.md",
@@ -117,13 +117,16 @@
     "wave30_selection_decision_sha256": "a45c8e3690c2e78a633b9ed10b43f27aad2e23afbbd2329137bbdc761d8726d4",
     "wave31_selection_decision_id": "MRX1000-W31-SELECT-2026-08-12",
     "wave31_selection_decision_path": "docs/governance/mrx1000-wave31-selection-decision-2026-08-12.md",
-    "wave31_selection_decision_sha256": "384c4e8b70b89f536199a41449f9ab7cb81d79cf57391e09afb0482100ac5d37"
+    "wave31_selection_decision_sha256": "384c4e8b70b89f536199a41449f9ab7cb81d79cf57391e09afb0482100ac5d37",
+    "wave32_selection_decision_id": "MRX1000-W32-SELECT-2026-08-12",
+    "wave32_selection_decision_path": "docs/governance/mrx1000-wave32-selection-decision-2026-08-12.md",
+    "wave32_selection_decision_sha256": "f99f3bfeef747312a132352534e6817e88d546c11217dcde31844c7b02b3bdd4"
   },
   "identity_authority": {
     "scope_key": "canonical_slug",
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_sha256": "c2019c51ab78cfd9ea45b322e4bff935d749286ee480289d2ea0b9c9ffc42fe3",
-    "canonical_ledger_generated_at": "2026-07-20T18:24:02.028Z",
+    "canonical_ledger_sha256": "65e4b85507bfe59cf86e381646247e424c814cd20e1b1d85a7e981e622bfb36d",
+    "canonical_ledger_generated_at": "2026-07-20T16:50:21.389Z",
     "successor_ledger_decision_id": "D-2026-0723-LEDGER-04",
     "successor_ledger_decision_path": "artifacts/mrx1000-release-10/decisions/mrx-ceo-ledger-provenance-successor-20260723-04.md",
     "successor_ledger_decision_sha256": "09eca24bcd0e71563f2ac4197f564eec0ccb43a5ee955216da5c4a2543d04978",
@@ -137,11 +140,11 @@
     "authorization_scope": "declared_program_size_not_a_staged_release_cap",
     "admission_mode": "continuous_quality_gated",
     "continuous_quality_gated_from_selection_rank": 26,
-    "prior_verified_article_count": 110,
+    "prior_verified_article_count": 111,
     "fail_closed": true,
     "earned_scale_gates": [],
-    "exact_admitted_count": 111,
-    "exact_admitted_slate_sha256": "3e911e3ac8dcd7b70ac613900e9a825e5fa16b1995d4ec730234bd73bedb6014"
+    "exact_admitted_count": 112,
+    "exact_admitted_slate_sha256": "86b1e3d4f419e058bf41938b2f9bd857ba8021740548f7e2d5abfb24ccefa0f2"
   },
   "articles": [
     {
@@ -3741,10 +3744,43 @@
       "inline_path": "/assets/articles/inline/selling-mineral-rights-timeline-in-2026/selling-mineral-rights.webp",
       "inline_asset_sha256": "c99faa309ff7454e349cfbae110cf20fbfb8482d90b35e679bd9bee6ac5a6415",
       "inline_rendered_text": "selling mineral rights"
+    },
+    {
+      "selection_rank": 112,
+      "program_row_id": "MRX1000-0112",
+      "source_shortlist_program_row_id": "MRX1000-0112",
+      "slug": "selling-mineral-rights-valuation-factors-in-2026",
+      "title": "Selling Mineral Rights: Valuation Factors In 2026",
+      "source_shortlist_title": "Selling Mineral Rights: Valuation Factors In 2026",
+      "canonical_url": "https://mineralrightsxchange.com/blog/selling-mineral-rights-valuation-factors-in-2026/",
+      "pillar": "sell-mineral-rights",
+      "cluster": "sell-mineral-rights-decision-process",
+      "content_genius_article_uuid": null,
+      "archive_evidence_sha256": "062f31df66cb262732379330969e31cb7e64487a369983dad20b44e8a2d3ca88",
+      "repo_path": "src/content/posts/selling-mineral-rights-valuation-factors-in-2026.mdx",
+      "repo_sha256": "ba3aa0913e434c3ab4d007b0b1e1233ab78d87b6bb91072f8242d8c1cbf96694",
+      "article_sha256": "ba3aa0913e434c3ab4d007b0b1e1233ab78d87b6bb91072f8242d8c1cbf96694",
+      "hero_path": "/assets/articles/hero/selling-mineral-rights-valuation-factors-in-2026.webp",
+      "hero_sha256": "828fbf850c5c23e8f84527d5bf6da6eaec33a40319cbdc2738bf81f59e740df5",
+      "hero_asset_sha256": "828fbf850c5c23e8f84527d5bf6da6eaec33a40319cbdc2738bf81f59e740df5",
+      "admission_status": "admitted_quality_gated",
+      "finalization_state": "draft_noindex_admitted",
+      "searchatlas_content_score": null,
+      "searchatlas_word_count": 1991,
+      "risk_citation_remediation": [
+        "The planning-only canonical row was developed into an original nationwide seller-facing factor register that separates asset facts, forecast assumptions, and transaction terms; assigns source dates, confidence labels, scenario effects, verification owners, and reset triggers; and bridges ranges or offers factor by factor; no factory body text was imported.",
+        "Continuous quality-gated admission under D-2026-0804-16 and MRX1000-W32-SELECT-2026-08-12; no numerical cap or elapsed-time gate applies.",
+        "Publication remains conditional on current editorial, factual-citation, compliance, two-image, metadata, build, rollback, deployment, and live-verification evidence."
+      ],
+      "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/selling-mineral-rights-valuation-factors-in-2026.json",
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/selling-mineral-rights-valuation-factors-in-2026/selling-mineral-rights.webp",
+      "inline_asset_sha256": "e168b84d78f994277353c8aca8f224932925e190d508572c662543e1bc32c456",
+      "inline_rendered_text": "selling mineral rights"
     }
   ],
   "admission_audit": {
-    "admitted_article_count": 111,
+    "admitted_article_count": 112,
     "selection_ranks": [
       1,
       2,
@@ -3856,7 +3892,8 @@
       108,
       109,
       110,
-      111
+      111,
+      112
     ],
     "duplicate_program_row_ids": [],
     "duplicate_slugs": [],
@@ -3915,9 +3952,9 @@
   "two_image_policy": {
     "directive": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
     "retrofit_manifest_path": "config/mrx-article-two-image-retrofit.json",
-    "retrofit_manifest_sha256": "715dffe584c91f0af924312959781c248ef5400820be0c2e0984b0a1f8209545",
-    "public_article_count": 120,
-    "batch_article_count": 111,
+    "retrofit_manifest_sha256": "bae0e7d2a4fd851e2b945232f2e03ebb1143e93802ced9a262dc0751f551df2a",
+    "public_article_count": 121,
+    "batch_article_count": 112,
     "assets_per_article": 2,
     "hero_share_identity_required": true,
     "inline_image_distinct_required": true,

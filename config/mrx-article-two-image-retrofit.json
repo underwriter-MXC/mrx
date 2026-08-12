@@ -1,18 +1,18 @@
 {
   "artifact_type": "mrx_article_two_image_retrofit",
   "schema_version": 1,
-  "generated_at_utc": "2026-08-12T13:09:27Z",
+  "generated_at_utc": "2026-08-12T13:34:14Z",
   "policy_source": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
   "summary": {
-    "article_count": 120,
-    "asset_count": 240,
-    "unique_source_art_count": 120,
-    "unique_hero_sha256_count": 120,
-    "unique_inline_sha256_count": 120,
-    "distinct_article_pair_count": 120,
-    "hero_ocr_pass_count": 120,
-    "inline_ocr_pass_count": 120,
-    "exact_filename_identity_count": 120
+    "article_count": 121,
+    "asset_count": 242,
+    "unique_source_art_count": 121,
+    "unique_hero_sha256_count": 121,
+    "unique_inline_sha256_count": 121,
+    "distinct_article_pair_count": 121,
+    "hero_ocr_pass_count": 121,
+    "inline_ocr_pass_count": 121,
+    "exact_filename_identity_count": 121
   },
   "contact_sheets": {
     "hero": [
@@ -3508,6 +3508,56 @@
         "mime_type": "image/webp",
         "sha256": "c99faa309ff7454e349cfbae110cf20fbfb8482d90b35e679bd9bee6ac5a6415",
         "perceptual_hash": "0000000000001111000111011011101100011101101110010001110110111000000000000000000001000000000000001100000000000000101100000001110010110011110111001011011111101100100000100110010010000000000001100000111001110110000011100111011000000100001000000000000000000000",
+        "neutralized_art_text_region_count": 0,
+        "ocr": {
+          "expected": "selling mineral rights",
+          "actual": "selling\nmineral rights",
+          "normalized_expected": "selling mineral rights",
+          "normalized_actual": "selling mineral rights",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      }
+    },
+    {
+      "slug": "selling-mineral-rights-valuation-factors-in-2026",
+      "title": "Selling Mineral Rights: Valuation Factors In 2026",
+      "keyword": "selling mineral rights",
+      "file_path": "src/content/posts/selling-mineral-rights-valuation-factors-in-2026.mdx",
+      "source_public_path": "/assets/articles/hero/selling-mineral-rights-valuation-factors-in-2026.webp",
+      "source_artifact_paths": [
+        "artifacts/mrx1000-wave32-creative-sources/selling-mineral-rights-valuation-factors-in-2026-hero-base.png",
+        "artifacts/mrx1000-wave32-creative-sources/selling-mineral-rights-valuation-factors-in-2026-inline-base.png"
+      ],
+      "generated_at_utc": "2026-08-12T13:33:30.055Z",
+      "hero": {
+        "public_path": "/assets/articles/hero/selling-mineral-rights-valuation-factors-in-2026.webp",
+        "alt": "An owner reviews a three-part valuation register beside “Selling Mineral Rights: Valuation Factors In 2026”.",
+        "width": 1200,
+        "height": 630,
+        "mime_type": "image/webp",
+        "sha256": "828fbf850c5c23e8f84527d5bf6da6eaec33a40319cbdc2738bf81f59e740df5",
+        "perceptual_hash": "0000000000111110000000000011111100000000011010000000000001101100011111000110010001101100100000000110110110000100011111111000010000000001111000000000000011101000000000011111111000000011111111100000000111111110000000111111111000000011111000000000001111000000",
+        "neutralized_art_text_region_count": 0,
+        "ocr": {
+          "expected": "Selling Mineral Rights: Valuation Factors In 2026",
+          "actual": "Selling Mineral\nRights: Valuation\nFactors In 2026",
+          "normalized_expected": "selling mineral rights valuation factors in 2026",
+          "normalized_actual": "selling mineral rights valuation factors in 2026",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      },
+      "inline": {
+        "public_path": "/assets/articles/inline/selling-mineral-rights-valuation-factors-in-2026/selling-mineral-rights.webp",
+        "alt": "Distinct evidence-card artwork labeled “selling mineral rights”.",
+        "rendered_text": "selling mineral rights",
+        "visual_variant": "wave32-distinct-generated-three-ledger-factor-register",
+        "width": 1200,
+        "height": 675,
+        "mime_type": "image/webp",
+        "sha256": "e168b84d78f994277353c8aca8f224932925e190d508572c662543e1bc32c456",
+        "perceptual_hash": "0000111100000010000011100001110000011100000111000011110000011100001111000001110000111000000110000001100000011000001110000001100000011001100110000001111111111000000111000111100000011000000110000001100000011000000110000001100000000000000110000000000000000000",
         "neutralized_art_text_region_count": 0,
         "ocr": {
           "expected": "selling mineral rights",
