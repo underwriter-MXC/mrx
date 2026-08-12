@@ -1,7 +1,7 @@
 {
   "program": "MRX1000",
   "artifact_type": "searchatlas_ordered_llm_local_execution_manifest",
-  "generated_at": "2026-07-20T19:32:13.198Z",
+  "generated_at": "2026-07-20T15:34:50.170Z",
   "deterministic": true,
   "local_only": true,
   "external_services_called": false,
@@ -9,8 +9,8 @@
   "inputs": {
     "ledger": {
       "path": "config/mrx-1000-canonical-content-ledger.json",
-      "sha256": "7766e31408a3b6f64b49edcd0068c2d9c06c446522d0e1c95238e80700ecc9d4",
-      "bytes": 4447176
+      "sha256": "900d15706ff6d6f54c94772b171a7a201c24ed8d268e6e0037481587270bfc69",
+      "bytes": 4447534
     },
     "readiness": {
       "path": "reports/mrx-1000-readiness-matrix.json",
@@ -72112,7 +72112,7 @@
       "primary_keyword": "how much are mineral rights worth",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -349728,5 +349728,5 @@
       ]
     }
   ],
-  "content_fingerprint_sha256": "1767ba77ba03b697ed5d712b833b93dae645be557b36c5a2fd44e318ab75be98"
+  "content_fingerprint_sha256": "98e2a4171f5bfce59648f0c206c0c5c0f5afe76fe2d024b49dbd82599b7fa706"
 }
