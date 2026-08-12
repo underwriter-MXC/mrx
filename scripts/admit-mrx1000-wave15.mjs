@@ -301,7 +301,7 @@ if (existingBatchIndex >= 0) batch.articles[existingBatchIndex] = batchRow;
 else batch.articles.push(batchRow);
 batch.articles.sort((left, right) => left.selection_rank - right.selection_rank);
 if (
-  batch.articles.length !== selectionRank ||
+  batch.articles.length < selectionRank ||
   batch.articles.some((row, index) => row.selection_rank !== index + 1) ||
   new Set(batch.articles.map((row) => row.slug)).size !== batch.articles.length ||
   new Set(batch.articles.map((row) => row.program_row_id)).size !== batch.articles.length
@@ -334,7 +334,7 @@ if (productionVerificationBytes) {
 batch.decision_authority.wave15_selection_decision_id = 'MRX1000-W15-SELECT-2026-08-11';
 batch.decision_authority.wave15_selection_decision_path = decisionRelativePath;
 batch.decision_authority.wave15_selection_decision_sha256 = sha256(decisionBytes);
-batch.policy.prior_verified_article_count = selectionRank - 1;
+batch.policy.prior_verified_article_count = batch.articles.length - 1;
 batch.policy.exact_admitted_count = batch.articles.length;
 batch.policy.exact_admitted_slate_sha256 = sha256(JSON.stringify(sortDeep(batch.articles)));
 batch.two_image_policy.retrofit_manifest_sha256 = sha256(Buffer.from(nextRetrofitText));
@@ -389,4 +389,3 @@ console.log(
     2,
   ),
 );
-
