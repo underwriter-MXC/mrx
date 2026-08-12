@@ -1,7 +1,7 @@
 {
   "program": "MRX1000",
   "artifact_type": "searchatlas_ordered_llm_local_execution_manifest",
-  "generated_at": "2026-07-20T16:50:21.389Z",
+  "generated_at": "2026-07-20T18:06:09.398Z",
   "deterministic": true,
   "local_only": true,
   "external_services_called": false,
@@ -9,8 +9,8 @@
   "inputs": {
     "ledger": {
       "path": "config/mrx-1000-canonical-content-ledger.json",
-      "sha256": "65e4b85507bfe59cf86e381646247e424c814cd20e1b1d85a7e981e622bfb36d",
-      "bytes": 4450269
+      "sha256": "92a1cd9852ffd486340b9321a0f70cb3b972c89b479432e77f4b0c3a8034df95",
+      "bytes": 4450627
     },
     "readiness": {
       "path": "reports/mrx-1000-readiness-matrix.json",
@@ -46919,7 +46919,7 @@
       "primary_keyword": "selling mineral rights",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -349858,5 +349858,5 @@
       ]
     }
   ],
-  "content_fingerprint_sha256": "72fd342c4dae12ff2e2d56ed8f8610ad08b8cc3a7b6283182b993b3732f2c06b"
+  "content_fingerprint_sha256": "d7a59a1ff37c045671cd8bba94bdd04cc7ce0f3fb8700c5521dd32e62c9c61e0"
 }
