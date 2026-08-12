@@ -1,7 +1,7 @@
 {
   "program": "MRX 1,000 Article SEO+AEO Production Program",
   "artifact_type": "authorized_release_10_batch",
-  "evidence_scaffold_generated_at_utc": "2026-08-12T00:42:08Z",
+  "evidence_scaffold_generated_at_utc": "2026-08-12T05:57:13Z",
   "decision_authority": {
     "successor_gate_decision_id": "D-2026-0804-16",
     "successor_gate_decision_path": "docs/governance/mrx1000-owner-continuous-publication-directive-2026-08-04.md",
@@ -72,13 +72,16 @@
     "wave15_selection_decision_sha256": "c9d458f8c2d9498465ab4a1893a892553051f09f5387c7fefbb7102faf636964",
     "wave16_selection_decision_id": "MRX1000-W16-SELECT-2026-08-11",
     "wave16_selection_decision_path": "docs/governance/mrx1000-wave16-selection-decision-2026-08-11.md",
-    "wave16_selection_decision_sha256": "257564ddaf96dadad9900fa5c04445993e760fb7d8c148f05041d65bea466972"
+    "wave16_selection_decision_sha256": "257564ddaf96dadad9900fa5c04445993e760fb7d8c148f05041d65bea466972",
+    "wave17_selection_decision_id": "MRX1000-W17-SELECT-2026-08-11",
+    "wave17_selection_decision_path": "docs/governance/mrx1000-wave17-selection-decision-2026-08-11.md",
+    "wave17_selection_decision_sha256": "a52e03c28b6601f36b63f6eaa7108b0b18d30a9d24601d36c99ec1347e2964e0"
   },
   "identity_authority": {
     "scope_key": "canonical_slug",
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_sha256": "6764ef123005c647ce78bb0be17fa898a10dee26cc56854263250cfee86c8edf",
-    "canonical_ledger_generated_at": "2026-07-20T00:59:31.898Z",
+    "canonical_ledger_sha256": "27b824f72ad0b804dd5f4cda5c246e0b4126237ec60746920cceb6c26285b162",
+    "canonical_ledger_generated_at": "2026-07-20T15:44:36.510Z",
     "successor_ledger_decision_id": "D-2026-0723-LEDGER-04",
     "successor_ledger_decision_path": "artifacts/mrx1000-release-10/decisions/mrx-ceo-ledger-provenance-successor-20260723-04.md",
     "successor_ledger_decision_sha256": "09eca24bcd0e71563f2ac4197f564eec0ccb43a5ee955216da5c4a2543d04978",
@@ -92,11 +95,11 @@
     "authorization_scope": "declared_program_size_not_a_staged_release_cap",
     "admission_mode": "continuous_quality_gated",
     "continuous_quality_gated_from_selection_rank": 26,
-    "prior_verified_article_count": 95,
+    "prior_verified_article_count": 96,
     "fail_closed": true,
     "earned_scale_gates": [],
-    "exact_admitted_count": 96,
-    "exact_admitted_slate_sha256": "b0831eac9239105b72e612226422a3d82518f5905c0460b7aa12008c3cb387a1"
+    "exact_admitted_count": 97,
+    "exact_admitted_slate_sha256": "45a221987233d96845103960314f0f8fce04c75ab752d145a90ad2bb7e540436"
   },
   "articles": [
     {
@@ -3201,10 +3204,43 @@
       "inline_path": "/assets/articles/inline/curative-title-risk-as-a-valuation-adjustment/curative-title-risk-worksheet.webp",
       "inline_asset_sha256": "ef0ae23d48385249d3dd88e35516ceffc996e62ca1be7c07d394852a06c90ae0",
       "inline_rendered_text": "curative title risk worksheet"
+    },
+    {
+      "selection_rank": 97,
+      "program_row_id": "MRX1000-0175",
+      "source_shortlist_program_row_id": "MRX1000-0175",
+      "slug": "decline-curves-and-future-royalty-cash-flow",
+      "title": "Decline Curves and Future Royalty Cash Flow",
+      "source_shortlist_title": "Decline Curves and Future Royalty Cash Flow",
+      "canonical_url": "https://mineralrightsxchange.com/blog/decline-curves-and-future-royalty-cash-flow/",
+      "pillar": "mineral-rights-value",
+      "cluster": "valuation-methodology-drivers",
+      "content_genius_article_uuid": null,
+      "archive_evidence_sha256": "6844f1e2e01964ee281d3b07aaac74f757b6672d70cfd2a0d7cdbe505412007d",
+      "repo_path": "src/content/posts/decline-curves-and-future-royalty-cash-flow.mdx",
+      "repo_sha256": "c3b0e15b5f2d1cc1efe2cee13496b76870e05b287ccfd6e9ed7d2ea0fa646fb8",
+      "article_sha256": "c3b0e15b5f2d1cc1efe2cee13496b76870e05b287ccfd6e9ed7d2ea0fa646fb8",
+      "hero_path": "/assets/articles/hero/decline-curves-and-future-royalty-cash-flow.webp",
+      "hero_sha256": "171603bd3b958e29fa93355ad0c7eb43ade844eb02ec4963925d7abb97d9d8d9",
+      "hero_asset_sha256": "171603bd3b958e29fa93355ad0c7eb43ade844eb02ec4963925d7abb97d9d8d9",
+      "admission_status": "admitted_quality_gated",
+      "finalization_state": "draft_noindex_admitted",
+      "searchatlas_content_score": null,
+      "searchatlas_word_count": 2403,
+      "risk_citation_remediation": [
+        "The planning-only canonical row was developed into an original, evidence-bounded decline-curve and future royalty cash-flow guide; no factory body text was imported.",
+        "Continuous quality-gated admission under D-2026-0804-16 and MRX1000-W17-SELECT-2026-08-11; no numerical cap or elapsed-time gate applies.",
+        "Publication remains conditional on current editorial, factual-citation, compliance, two-image, metadata, build, rollback, deployment, and live-verification evidence."
+      ],
+      "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/decline-curves-and-future-royalty-cash-flow.json",
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/decline-curves-and-future-royalty-cash-flow/decline-curve-royalty-cash-flow-worksheet.webp",
+      "inline_asset_sha256": "efb27800565bf60ce09faa582a7e366e8c9756970f8094a866e68374a9a7e479",
+      "inline_rendered_text": "decline curve royalty cash flow worksheet"
     }
   ],
   "admission_audit": {
-    "admitted_article_count": 96,
+    "admitted_article_count": 97,
     "selection_ranks": [
       1,
       2,
@@ -3301,7 +3337,8 @@
       93,
       94,
       95,
-      96
+      96,
+      97
     ],
     "duplicate_program_row_ids": [],
     "duplicate_slugs": [],
@@ -3360,9 +3397,9 @@
   "two_image_policy": {
     "directive": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
     "retrofit_manifest_path": "config/mrx-article-two-image-retrofit.json",
-    "retrofit_manifest_sha256": "3db2aa591792fc40e45dcb15aab3e1431ad379a7dbb63fb1e75264a6c4b62606",
-    "public_article_count": 105,
-    "batch_article_count": 96,
+    "retrofit_manifest_sha256": "e1687a680442d5de4c44cda12ac8800557695d2bdc9a2fea88347efba0bd2096",
+    "public_article_count": 106,
+    "batch_article_count": 97,
     "assets_per_article": 2,
     "hero_share_identity_required": true,
     "inline_image_distinct_required": true,

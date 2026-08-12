@@ -1,18 +1,18 @@
 {
   "artifact_type": "mrx_article_two_image_retrofit",
   "schema_version": 1,
-  "generated_at_utc": "2026-08-12T00:15:37Z",
+  "generated_at_utc": "2026-08-12T05:52:59Z",
   "policy_source": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
   "summary": {
-    "article_count": 105,
-    "asset_count": 210,
-    "unique_source_art_count": 105,
-    "unique_hero_sha256_count": 105,
-    "unique_inline_sha256_count": 105,
-    "distinct_article_pair_count": 105,
-    "hero_ocr_pass_count": 105,
-    "inline_ocr_pass_count": 105,
-    "exact_filename_identity_count": 105
+    "article_count": 106,
+    "asset_count": 212,
+    "unique_source_art_count": 106,
+    "unique_hero_sha256_count": 106,
+    "unique_inline_sha256_count": 106,
+    "distinct_article_pair_count": 106,
+    "hero_ocr_pass_count": 106,
+    "inline_ocr_pass_count": 106,
+    "exact_filename_identity_count": 106
   },
   "contact_sheets": {
     "hero": [
@@ -736,6 +736,56 @@
           "actual": "curative title\nrisk worksheet",
           "normalized_expected": "curative title risk worksheet",
           "normalized_actual": "curative title risk worksheet",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      }
+    },
+    {
+      "slug": "decline-curves-and-future-royalty-cash-flow",
+      "title": "Decline Curves and Future Royalty Cash Flow",
+      "keyword": "decline curve royalty cash flow worksheet",
+      "file_path": "src/content/posts/decline-curves-and-future-royalty-cash-flow.mdx",
+      "source_public_path": "/assets/articles/hero/decline-curves-and-future-royalty-cash-flow.webp",
+      "source_artifact_paths": [
+        "artifacts/mrx1000-wave17-creative-sources/decline-curves-and-future-royalty-cash-flow-hero-base.png",
+        "artifacts/mrx1000-wave17-creative-sources/decline-curves-and-future-royalty-cash-flow-inline-base.png"
+      ],
+      "generated_at_utc": "2026-08-12T00:49:41.866Z",
+      "hero": {
+        "public_path": "/assets/articles/hero/decline-curves-and-future-royalty-cash-flow.webp",
+        "alt": "Petroleum-analysis workspace titled “Decline Curves and Future Royalty Cash Flow”.",
+        "width": 1200,
+        "height": 630,
+        "mime_type": "image/webp",
+        "sha256": "171603bd3b958e29fa93355ad0c7eb43ade844eb02ec4963925d7abb97d9d8d9",
+        "perceptual_hash": "0000000001111111000000000111111100000000011111110100000001111111011100000001111001111110000000000111100000000000011110000000000001110000000000000000000000001110000000000000110000000000000011000000000000111110000000000011111100000000000101110000000000011100",
+        "neutralized_art_text_region_count": 0,
+        "ocr": {
+          "expected": "Decline Curves and Future Royalty Cash Flow",
+          "actual": "Decline Curves and\nFuture Royalty\nCash Flow",
+          "normalized_expected": "decline curves and future royalty cash flow",
+          "normalized_actual": "decline curves and future royalty cash flow",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      },
+      "inline": {
+        "public_path": "/assets/articles/inline/decline-curves-and-future-royalty-cash-flow/decline-curve-royalty-cash-flow-worksheet.webp",
+        "alt": "Distinct production-analysis workspace labeled “decline curve royalty cash flow worksheet”.",
+        "rendered_text": "decline curve royalty cash flow worksheet",
+        "visual_variant": "wave17-distinct-generated-production-analysis-workspace",
+        "width": 1200,
+        "height": 675,
+        "mime_type": "image/webp",
+        "sha256": "efb27800565bf60ce09faa582a7e366e8c9756970f8094a866e68374a9a7e479",
+        "perceptual_hash": "1111111111111110111111111111001111111111111100101011111111110000100111111111100010011111111110001011111111111000111111011110000011111101110000001111110100000000111111000000000011111100000000000111110000000000011111000000000001111000000000001110000000000000",
+        "neutralized_art_text_region_count": 0,
+        "ocr": {
+          "expected": "decline curve royalty cash flow worksheet",
+          "actual": "decline curve\nroyalty cash flow\nworksheet",
+          "normalized_expected": "decline curve royalty cash flow worksheet",
+          "normalized_actual": "decline curve royalty cash flow worksheet",
           "uppercase_i_confusable_accepted": false,
           "pass": true
         }

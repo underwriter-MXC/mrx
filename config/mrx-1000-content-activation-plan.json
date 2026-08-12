@@ -1,15 +1,15 @@
 {
   "artifact_type": "mrx1000_content_activation_plan",
   "plan_version": "mrx1000-content-activation-v1.1.0",
-  "generated_at": "2026-07-20T00:59:31.898Z",
+  "generated_at": "2026-07-20T15:44:36.510Z",
   "generated_at_method": "canonical_ledger_generated_at",
   "generator": "scripts/build-mrx-1000-activation-plan.mjs",
-  "content_fingerprint_sha256": "1e01df67af813f616efdda04d51b6e49bb1cc927b2322878df6d43f4984b3f94",
+  "content_fingerprint_sha256": "7d1b35c2af380d5ed828862a7bb83aeadacdbc1a5c4a87f36a38a9bceee12493",
   "inputs": {
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_fingerprint_sha256": "519f431d8b4eb6d9f9a5ee34fd228c61e46c753e7e7480b2428f827f9ae871f2",
+    "canonical_ledger_fingerprint_sha256": "af6ad9efbb064da1815e307bf7893fb46e934993bed808fada8294bd70c99628",
     "canonical_ledger_fingerprint_verified": true,
-    "canonical_ledger_generated_at": "2026-07-20T00:59:31.898Z",
+    "canonical_ledger_generated_at": "2026-07-20T15:44:36.510Z",
     "owner_decision": {
       "decision_id": "D-2026-0804-16",
       "signed_disposition": "APPROVED_CONTINUOUS_QUALITY_GATED_ARTICLE_PUBLICATION",
@@ -115,9 +115,9 @@
     },
     "by_source_preservation_classification": {
       "incumbent_draft_nonpublic_held": 28,
-      "live_public_published_route": 105,
+      "live_public_published_route": 106,
       "pilot_draft_noindex_stage": 25,
-      "planning_only_inventory": 842
+      "planning_only_inventory": 841
     }
   },
   "rows": [
@@ -10915,8 +10915,8 @@
         "target_title": "Decline Curves and Future Royalty Cash Flow",
         "url": "/blog/decline-curves-and-future-royalty-cash-flow/",
         "relationship": "same_cluster_next_by_program_row_id_cyclic",
-        "target_source_preservation_classification": "planning_only_inventory",
-        "target_route_live": false,
+        "target_source_preservation_classification": "live_public_published_route",
+        "target_route_live": true,
         "status": "planned_local_only"
       },
       "primary_cta": {
@@ -10966,8 +10966,8 @@
       "pillar": "mineral-rights-value",
       "search_intent": "informational",
       "funnel_stage": "consideration",
-      "source_preservation_classification": "planning_only_inventory",
-      "source_route_live": false,
+      "source_preservation_classification": "live_public_published_route",
+      "source_route_live": true,
       "pillar_link": {
         "url": "/mineral-rights-value/",
         "route_evidence": "src/pages/mineral-rights-value.astro",
@@ -11016,7 +11016,7 @@
         "rendered_triangle_verified": false,
         "live_status": "not_published_or_verified_by_this_plan",
         "live_triangle_verified": false,
-        "release_status": "eligible_for_continuous_quality_review_not_yet_cleared",
+        "release_status": "released_under_d16_continuous_quality_gate",
         "numerical_release_cap_applies": false
       }
     },
