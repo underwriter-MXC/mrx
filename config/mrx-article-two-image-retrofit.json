@@ -1,18 +1,18 @@
 {
   "artifact_type": "mrx_article_two_image_retrofit",
   "schema_version": 1,
-  "generated_at_utc": "2026-08-13T21:54:02Z",
+  "generated_at_utc": "2026-08-13T22:21:37Z",
   "policy_source": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
   "summary": {
-    "article_count": 144,
-    "asset_count": 288,
-    "unique_source_art_count": 144,
-    "unique_hero_sha256_count": 144,
-    "unique_inline_sha256_count": 144,
-    "distinct_article_pair_count": 144,
-    "hero_ocr_pass_count": 144,
-    "inline_ocr_pass_count": 144,
-    "exact_filename_identity_count": 144
+    "article_count": 145,
+    "asset_count": 290,
+    "unique_source_art_count": 145,
+    "unique_hero_sha256_count": 145,
+    "unique_inline_sha256_count": 145,
+    "distinct_article_pair_count": 145,
+    "hero_ocr_pass_count": 145,
+    "inline_ocr_pass_count": 145,
+    "exact_filename_identity_count": 145
   },
   "contact_sheets": {
     "hero": [
@@ -5726,6 +5726,56 @@
           "actual": "How Do I Know if My\nMineral Rights Have\nSignificant Value?",
           "normalized_expected": "how do i know if my mineral rights have significant value",
           "normalized_actual": "how do i know if my mineral rights have significant value",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      }
+    },
+    {
+      "slug": "understanding-typical-pricing-ranges-for-mineral-rights-in-your-area-what-to-expect",
+      "title": "Understanding Typical Pricing Ranges for Mineral Rights in Your Area: What to Expect",
+      "keyword": "What Is the Typical Pricing Range for Mineral Rights in My Area?",
+      "file_path": "src/content/posts/understanding-typical-pricing-ranges-for-mineral-rights-in-your-area-what-to-expect.mdx",
+      "source_public_path": "/assets/articles/hero/understanding-typical-pricing-ranges-for-mineral-rights-in-your-area-what-to-expect.webp",
+      "source_artifact_paths": [
+        "artifacts/mrx1000-wave56-creative-sources/understanding-typical-pricing-ranges-for-mineral-rights-in-your-area-what-to-expect-hero-base.png",
+        "artifacts/mrx1000-wave56-creative-sources/understanding-typical-pricing-ranges-for-mineral-rights-in-your-area-what-to-expect-inline-base.png"
+      ],
+      "generated_at_utc": "2026-08-13T22:20:26.612Z",
+      "hero": {
+        "public_path": "/assets/articles/hero/understanding-typical-pricing-ranges-for-mineral-rights-in-your-area-what-to-expect.webp",
+        "alt": "The titled guide “Understanding Typical Pricing Ranges for Mineral Rights in Your Area: What to Expect” beside two reviewers.",
+        "width": 1200,
+        "height": 630,
+        "mime_type": "image/webp",
+        "sha256": "534cede8b609e2e9e2adf707555c8b94c95de775f48602d07a2e0feb2630132e",
+        "perceptual_hash": "0000000001010111000000000111011100000000001110010000000001111111011111100111111101111000011100010001000001110001011111100101000101111100011100010000000000001001000000001111110000000000111111110000000001111111000000000111111100000000011111010000000000000001",
+        "neutralized_art_text_region_count": 1,
+        "ocr": {
+          "expected": "Understanding Typical Pricing Ranges for Mineral Rights in Your Area: What to Expect",
+          "actual": "Understanding Typical\nPricing Ranges for\nMineral Rights in Your\nArea: What to Expect",
+          "normalized_expected": "understanding typical pricing ranges for mineral rights in your area what to expect",
+          "normalized_actual": "understanding typical pricing ranges for mineral rights in your area what to expect",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      },
+      "inline": {
+        "public_path": "/assets/articles/inline/understanding-typical-pricing-ranges-for-mineral-rights-in-your-area-what-to-expect/what-is-the-typical-pricing-range-for-mineral-rights-in-my-area.webp",
+        "alt": "Distinct property-matched evidence table asking “What Is the Typical Pricing Range for Mineral Rights in My Area?”.",
+        "rendered_text": "What Is the Typical Pricing Range for Mineral Rights in My Area?",
+        "visual_variant": "wave56-distinct-generated-local-range-evidence-table",
+        "width": 1200,
+        "height": 675,
+        "mime_type": "image/webp",
+        "sha256": "76d1b0b6f5e965fb3153510d39bf9f83059f1376a164b487c870fd8a43717908",
+        "perceptual_hash": "1111111110110000110111111111110011011110001111101110011000111110110000000000010011100000000001111110000001000111111000110000011111100000000001111000000000000111100000000000011110000000000001111001011111110111000111111111000000000111111100000000000000000000",
+        "neutralized_art_text_region_count": 1,
+        "ocr": {
+          "expected": "What Is the Typical Pricing Range for Mineral Rights in My Area?",
+          "actual": "What Is the Typical\nPricing Range for\nMineral Rights in\nMy Area?",
+          "normalized_expected": "what is the typical pricing range for mineral rights in my area",
+          "normalized_actual": "what is the typical pricing range for mineral rights in my area",
           "uppercase_i_confusable_accepted": false,
           "pass": true
         }

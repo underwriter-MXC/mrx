@@ -1,7 +1,7 @@
 {
   "program": "MRX 1,000 Article SEO+AEO Production Program",
   "artifact_type": "authorized_release_10_batch",
-  "evidence_scaffold_generated_at_utc": "2026-08-13T22:08:07Z",
+  "evidence_scaffold_generated_at_utc": "2026-08-13T22:29:01Z",
   "decision_authority": {
     "successor_gate_decision_id": "D-2026-0804-16",
     "successor_gate_decision_path": "docs/governance/mrx1000-owner-continuous-publication-directive-2026-08-04.md",
@@ -189,13 +189,16 @@
     "wave54_selection_decision_sha256": "bdc7d45cb460468e32c663d7e687aa91551aac75f3cb1ea66a793a6d924a5f2b",
     "wave55_selection_decision_id": "MRX1000-W55-SELECT-2026-08-13",
     "wave55_selection_decision_path": "docs/governance/mrx1000-wave55-selection-decision-2026-08-13.md",
-    "wave55_selection_decision_sha256": "0f97e132c8fb6758c4dcaa37792a75e4f4f3b9d7b5aeb28ab665389205deb35f"
+    "wave55_selection_decision_sha256": "0f97e132c8fb6758c4dcaa37792a75e4f4f3b9d7b5aeb28ab665389205deb35f",
+    "wave56_selection_decision_id": "MRX1000-W56-SELECT-2026-08-13",
+    "wave56_selection_decision_path": "docs/governance/mrx1000-wave56-selection-decision-2026-08-13.md",
+    "wave56_selection_decision_sha256": "798b1507a7a41be5e1ba7f32a5d1d1317c10c118bc97bdac86a0d912bde253a7"
   },
   "identity_authority": {
     "scope_key": "canonical_slug",
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_sha256": "ee721438dba5a21fad0fd18b2f1f20ec6f4e29a58ff16473e9aa67fd20ce0c23",
-    "canonical_ledger_generated_at": "2026-07-20T21:45:03.606Z",
+    "canonical_ledger_sha256": "98daf24e99ca7e13c008a6006cead6c1a41b8c0f262ccd2d72750fdda1cb6d54",
+    "canonical_ledger_generated_at": "2026-07-20T23:50:10.816Z",
     "successor_ledger_decision_id": "D-2026-0723-LEDGER-04",
     "successor_ledger_decision_path": "artifacts/mrx1000-release-10/decisions/mrx-ceo-ledger-provenance-successor-20260723-04.md",
     "successor_ledger_decision_sha256": "09eca24bcd0e71563f2ac4197f564eec0ccb43a5ee955216da5c4a2543d04978",
@@ -209,11 +212,11 @@
     "authorization_scope": "declared_program_size_not_a_staged_release_cap",
     "admission_mode": "continuous_quality_gated",
     "continuous_quality_gated_from_selection_rank": 26,
-    "prior_verified_article_count": 134,
+    "prior_verified_article_count": 135,
     "fail_closed": true,
     "earned_scale_gates": [],
-    "exact_admitted_count": 135,
-    "exact_admitted_slate_sha256": "fd38fbc3c8e99d939d86aff89f8aab67d86c9242bdebe570a04ddca2ea8cbfb9"
+    "exact_admitted_count": 136,
+    "exact_admitted_slate_sha256": "f705a45cf98ff8f93d2d51191c58fba49f4971921171997d0c310863a857dc9e"
   },
   "articles": [
     {
@@ -4605,10 +4608,43 @@
       "inline_path": "/assets/articles/inline/understanding-the-value-of-your-mineral-rights-essential-factors-to-consider/how-do-i-know-if-my-mineral-rights-have-significant-value.webp",
       "inline_asset_sha256": "fb4c2588b9d2af45ddb6755796af6ffa6ce216795b907bb4f740dca4bfa3ccd1",
       "inline_rendered_text": "How Do I Know if My Mineral Rights Have Significant Value?"
+    },
+    {
+      "selection_rank": 136,
+      "program_row_id": "MRX1000-0136",
+      "source_shortlist_program_row_id": "MRX1000-0136",
+      "slug": "understanding-typical-pricing-ranges-for-mineral-rights-in-your-area-what-to-expect",
+      "title": "Understanding Typical Pricing Ranges for Mineral Rights in Your Area: What to Expect",
+      "source_shortlist_title": "Understanding Typical Pricing Ranges for Mineral Rights in Your Area: What to Expect",
+      "canonical_url": "https://mineralrightsxchange.com/blog/understanding-typical-pricing-ranges-for-mineral-rights-in-your-area-what-to-expect/",
+      "pillar": "sell-mineral-rights",
+      "cluster": "sell-mineral-rights-decision-process",
+      "content_genius_article_uuid": null,
+      "archive_evidence_sha256": "709ffc5addcf483833d53caafa1962e77c771149c03ee2c3ba79da8d18b5b7d2",
+      "repo_path": "src/content/posts/understanding-typical-pricing-ranges-for-mineral-rights-in-your-area-what-to-expect.mdx",
+      "repo_sha256": "130a895a1d5de4457e8e4e106339cafba07bb97af130ba43714d772b7efccbd9",
+      "article_sha256": "130a895a1d5de4457e8e4e106339cafba07bb97af130ba43714d772b7efccbd9",
+      "hero_path": "/assets/articles/hero/understanding-typical-pricing-ranges-for-mineral-rights-in-your-area-what-to-expect.webp",
+      "hero_sha256": "534cede8b609e2e9e2adf707555c8b94c95de775f48602d07a2e0feb2630132e",
+      "hero_asset_sha256": "534cede8b609e2e9e2adf707555c8b94c95de775f48602d07a2e0feb2630132e",
+      "admission_status": "admitted_quality_gated",
+      "finalization_state": "draft_noindex_admitted",
+      "searchatlas_content_score": null,
+      "searchatlas_word_count": 2300,
+      "risk_citation_remediation": [
+        "The planning-only canonical row was developed into an original property-matched local pricing-range assembly and reporting guide. It defines the relevant area from the asset outward, separates materially different cohorts and evidence lanes, normalizes verified units and terms, reports an evidence envelope with exclusions and confidence, and states when no local range is supportable without importing factory body text or duplicating the comparable-sale screen, factor catalog, methodology guide, or fair-offer review.",
+        "Continuous quality-gated admission under D-2026-0804-16 and MRX1000-W56-SELECT-2026-08-13; no numerical cap or elapsed-time gate applies.",
+        "Publication remains conditional on current editorial, factual-citation, compliance, two-image, metadata, build, rollback, deployment, and live-verification evidence."
+      ],
+      "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/understanding-typical-pricing-ranges-for-mineral-rights-in-your-area-what-to-expect.json",
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/understanding-typical-pricing-ranges-for-mineral-rights-in-your-area-what-to-expect/what-is-the-typical-pricing-range-for-mineral-rights-in-my-area.webp",
+      "inline_asset_sha256": "76d1b0b6f5e965fb3153510d39bf9f83059f1376a164b487c870fd8a43717908",
+      "inline_rendered_text": "What Is the Typical Pricing Range for Mineral Rights in My Area?"
     }
   ],
   "admission_audit": {
-    "admitted_article_count": 135,
+    "admitted_article_count": 136,
     "selection_ranks": [
       1,
       2,
@@ -4744,7 +4780,8 @@
       132,
       133,
       134,
-      135
+      135,
+      136
     ],
     "duplicate_program_row_ids": [],
     "duplicate_slugs": [],
@@ -4803,9 +4840,9 @@
   "two_image_policy": {
     "directive": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
     "retrofit_manifest_path": "config/mrx-article-two-image-retrofit.json",
-    "retrofit_manifest_sha256": "2add9b2c810ae58e251798894acfc1eb168bdcf0af719cf4bacc4373397ad3ce",
-    "public_article_count": 144,
-    "batch_article_count": 135,
+    "retrofit_manifest_sha256": "ae1f0ee3cfeca45138c98442665759bd1c636ff4e977727f598008ad5fbe3f56",
+    "public_article_count": 145,
+    "batch_article_count": 136,
     "assets_per_article": 2,
     "hero_share_identity_required": true,
     "inline_image_distinct_required": true,

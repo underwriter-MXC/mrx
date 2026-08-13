@@ -58,7 +58,7 @@ describe('canonical sitemap discovery', () => {
       ) as { articles: unknown[] }
     ).articles.length;
     expect(publicPostCount).toBe(admittedArticleCount + 9);
-    expect(archivePageNumbers(publicPostCount)).toEqual([2, 3, 4, 5, 6]);
+    expect(archivePageNumbers(publicPostCount)).toEqual([2, 3, 4, 5, 6, 7]);
 
     const continuationRoute = readFileSync(
       join(process.cwd(), 'src', 'pages', 'blog', 'category', '[category]', 'page', '[page].astro'),
