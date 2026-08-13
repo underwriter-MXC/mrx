@@ -1,7 +1,7 @@
 {
   "program": "MRX 1,000 Article SEO+AEO Production Program",
   "artifact_type": "authorized_release_10_batch",
-  "evidence_scaffold_generated_at_utc": "2026-08-13T18:53:18Z",
+  "evidence_scaffold_generated_at_utc": "2026-08-13T21:04:11Z",
   "decision_authority": {
     "successor_gate_decision_id": "D-2026-0804-16",
     "successor_gate_decision_path": "docs/governance/mrx1000-owner-continuous-publication-directive-2026-08-04.md",
@@ -183,13 +183,16 @@
     "wave52_selection_decision_sha256": "0f56cc0e3a7c85eca980202b7b1a8e185918070ecdd1e13fd74a46ce2296473d",
     "wave53_selection_decision_id": "MRX1000-W53-SELECT-2026-08-12",
     "wave53_selection_decision_path": "docs/governance/mrx1000-wave53-selection-decision-2026-08-12.md",
-    "wave53_selection_decision_sha256": "80b4ca6f1c2609d2834d29724cfbc6297f162518fce73743fa5dd7a6bb3d0ddd"
+    "wave53_selection_decision_sha256": "80b4ca6f1c2609d2834d29724cfbc6297f162518fce73743fa5dd7a6bb3d0ddd",
+    "wave54_selection_decision_id": "MRX1000-W54-SELECT-2026-08-13",
+    "wave54_selection_decision_path": "docs/governance/mrx1000-wave54-selection-decision-2026-08-13.md",
+    "wave54_selection_decision_sha256": "bdc7d45cb460468e32c663d7e687aa91551aac75f3cb1ea66a793a6d924a5f2b"
   },
   "identity_authority": {
     "scope_key": "canonical_slug",
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_sha256": "9a0d3915cd861f0bb7a4a77b92f7191c9db3b40a5dabec7ac51c6bce6adb79c3",
-    "canonical_ledger_generated_at": "2026-07-20T11:57:08.888Z",
+    "canonical_ledger_sha256": "c951e9bcef05167e2cc7677f8391cc71b27cb80468a7817d3f45b2f706701fbd",
+    "canonical_ledger_generated_at": "2026-07-20T21:41:29.652Z",
     "successor_ledger_decision_id": "D-2026-0723-LEDGER-04",
     "successor_ledger_decision_path": "artifacts/mrx1000-release-10/decisions/mrx-ceo-ledger-provenance-successor-20260723-04.md",
     "successor_ledger_decision_sha256": "09eca24bcd0e71563f2ac4197f564eec0ccb43a5ee955216da5c4a2543d04978",
@@ -203,11 +206,11 @@
     "authorization_scope": "declared_program_size_not_a_staged_release_cap",
     "admission_mode": "continuous_quality_gated",
     "continuous_quality_gated_from_selection_rank": 26,
-    "prior_verified_article_count": 132,
+    "prior_verified_article_count": 133,
     "fail_closed": true,
     "earned_scale_gates": [],
-    "exact_admitted_count": 133,
-    "exact_admitted_slate_sha256": "2cb66a37d578436f575bb138606168719d0d9f9ac02b84230391a486a7e6b231"
+    "exact_admitted_count": 134,
+    "exact_admitted_slate_sha256": "bad587a46ce3bedf66e8d580d7db5ad896b73305e4d73bad6c9c084ec462453b"
   },
   "articles": [
     {
@@ -4533,10 +4536,43 @@
       "inline_path": "/assets/articles/inline/understanding-the-true-value-of-your-mineral-interests/what-to-know-before-selling-mineral-rights.webp",
       "inline_asset_sha256": "eb14d26e24aab959108a09ba63ab67af0951a89b2959897d6ba3167feb7778cc",
       "inline_rendered_text": "What to Know Before Selling Mineral Rights"
+    },
+    {
+      "selection_rank": 134,
+      "program_row_id": "MRX1000-0134",
+      "source_shortlist_program_row_id": "MRX1000-0134",
+      "slug": "understanding-the-value-of-texas-mineral-rights",
+      "title": "Understanding the Value of Texas Mineral Rights",
+      "source_shortlist_title": "Understanding the Value of Texas Mineral Rights",
+      "canonical_url": "https://mineralrightsxchange.com/blog/understanding-the-value-of-texas-mineral-rights/",
+      "pillar": "sell-mineral-rights",
+      "cluster": "sell-mineral-rights-decision-process",
+      "content_genius_article_uuid": null,
+      "archive_evidence_sha256": "9cd579d9f94f1779efa22771325c09e3fcca390a2ac8e6af7b7beacccbf28cc1",
+      "repo_path": "src/content/posts/understanding-the-value-of-texas-mineral-rights.mdx",
+      "repo_sha256": "c2c470e23c0162bbd2de3d2b12e76f342aacf4e4680036cd48be3ac7d12a940b",
+      "article_sha256": "c2c470e23c0162bbd2de3d2b12e76f342aacf4e4680036cd48be3ac7d12a940b",
+      "hero_path": "/assets/articles/hero/understanding-the-value-of-texas-mineral-rights.webp",
+      "hero_sha256": "8612f573c6316a869e0e01fdcfa19737f66c0438c268cef9863c9848cc310d9b",
+      "hero_asset_sha256": "8612f573c6316a869e0e01fdcfa19737f66c0438c268cef9863c9848cc310d9b",
+      "admission_status": "admitted_quality_gated",
+      "finalization_state": "draft_noindex_admitted",
+      "searchatlas_content_score": null,
+      "searchatlas_word_count": 1890,
+      "risk_citation_remediation": [
+        "The planning-only canonical row was developed into an original Texas value-question decision guide. It freezes the decision, defined interest, effective date, evidence cutoff, requested output, and reset triggers; routes the question to four distinct output lanes; maps Texas evidence to its bounded purpose; and supplies a one-page question record without importing factory body text or duplicating the statewide worth primer, full valuation workflow, factor mechanics, source reconciliation, or pre-sale four-layer value bridge.",
+        "Continuous quality-gated admission under D-2026-0804-16 and MRX1000-W54-SELECT-2026-08-13; no numerical cap or elapsed-time gate applies.",
+        "Publication remains conditional on current editorial, factual-citation, compliance, two-image, metadata, build, rollback, deployment, and live-verification evidence."
+      ],
+      "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/understanding-the-value-of-texas-mineral-rights.json",
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/understanding-the-value-of-texas-mineral-rights/understanding-texas-mineral-rights-worth.webp",
+      "inline_asset_sha256": "97fa2d3bbc01d7c1df4371b1e7738a5db2daf21646310833897764faa2ad8e03",
+      "inline_rendered_text": "Understanding Texas Mineral Rights Worth"
     }
   ],
   "admission_audit": {
-    "admitted_article_count": 133,
+    "admitted_article_count": 134,
     "selection_ranks": [
       1,
       2,
@@ -4670,7 +4706,8 @@
       130,
       131,
       132,
-      133
+      133,
+      134
     ],
     "duplicate_program_row_ids": [],
     "duplicate_slugs": [],
@@ -4729,9 +4766,9 @@
   "two_image_policy": {
     "directive": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
     "retrofit_manifest_path": "config/mrx-article-two-image-retrofit.json",
-    "retrofit_manifest_sha256": "3b873eb5a46f7c5f451f6f52597d75d0c2597598c9e9a966fd5ed94e36aeccec",
-    "public_article_count": 142,
-    "batch_article_count": 133,
+    "retrofit_manifest_sha256": "0d0f1d7d448464352d64d40d54a72326bafdb365cb7b08580c87a42ee810f207",
+    "public_article_count": 143,
+    "batch_article_count": 134,
     "assets_per_article": 2,
     "hero_share_identity_required": true,
     "inline_image_distinct_required": true,
