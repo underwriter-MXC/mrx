@@ -1,18 +1,18 @@
 {
   "artifact_type": "mrx_article_two_image_retrofit",
   "schema_version": 1,
-  "generated_at_utc": "2026-08-13T19:44:31Z",
+  "generated_at_utc": "2026-08-13T21:54:02Z",
   "policy_source": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
   "summary": {
-    "article_count": 143,
-    "asset_count": 286,
-    "unique_source_art_count": 143,
-    "unique_hero_sha256_count": 143,
-    "unique_inline_sha256_count": 143,
-    "distinct_article_pair_count": 143,
-    "hero_ocr_pass_count": 143,
-    "inline_ocr_pass_count": 143,
-    "exact_filename_identity_count": 143
+    "article_count": 144,
+    "asset_count": 288,
+    "unique_source_art_count": 144,
+    "unique_hero_sha256_count": 144,
+    "unique_inline_sha256_count": 144,
+    "distinct_article_pair_count": 144,
+    "hero_ocr_pass_count": 144,
+    "inline_ocr_pass_count": 144,
+    "exact_filename_identity_count": 144
   },
   "contact_sheets": {
     "hero": [
@@ -5676,6 +5676,56 @@
           "actual": "value of mineral\nrights",
           "normalized_expected": "value of mineral rights",
           "normalized_actual": "value of mineral rights",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      }
+    },
+    {
+      "slug": "understanding-the-value-of-your-mineral-rights-essential-factors-to-consider",
+      "title": "Understanding the Value of Your Mineral Rights: Essential Factors to Consider",
+      "keyword": "How Do I Know if My Mineral Rights Have Significant Value?",
+      "file_path": "src/content/posts/understanding-the-value-of-your-mineral-rights-essential-factors-to-consider.mdx",
+      "source_public_path": "/assets/articles/hero/understanding-the-value-of-your-mineral-rights-essential-factors-to-consider.webp",
+      "source_artifact_paths": [
+        "artifacts/mrx1000-wave55-creative-sources/understanding-the-value-of-your-mineral-rights-essential-factors-to-consider-hero-base.png",
+        "artifacts/mrx1000-wave55-creative-sources/understanding-the-value-of-your-mineral-rights-essential-factors-to-consider-inline-base.png"
+      ],
+      "generated_at_utc": "2026-08-13T21:50:59.635Z",
+      "hero": {
+        "public_path": "/assets/articles/hero/understanding-the-value-of-your-mineral-rights-essential-factors-to-consider.webp",
+        "alt": "Mineral-owner evidence screen with the title “Understanding the Value of Your Mineral Rights: Essential Factors to Consider”.",
+        "width": 1200,
+        "height": 630,
+        "mime_type": "image/webp",
+        "sha256": "f018ad81aa695f195b7fb677ee075272463e5ddb04bc51e620b8ffe188ac989c",
+        "perceptual_hash": "0000000000111111000000000011111100000000011111110000000011111111011110101111111100000000111111110000000011111111010110001111111101000000111111100000000000111110000000000111111000000000011110010000000000001001000000000111100000000000011110000000000001111100",
+        "neutralized_art_text_region_count": 1,
+        "ocr": {
+          "expected": "Understanding the Value of Your Mineral Rights: Essential Factors to Consider",
+          "actual": "Understanding the Value\nof Your Mineral Rights:\nEssential Factors to\nConsider",
+          "normalized_expected": "understanding the value of your mineral rights essential factors to consider",
+          "normalized_actual": "understanding the value of your mineral rights essential factors to consider",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      },
+      "inline": {
+        "public_path": "/assets/articles/inline/understanding-the-value-of-your-mineral-rights-essential-factors-to-consider/how-do-i-know-if-my-mineral-rights-have-significant-value.webp",
+        "alt": "Distinct mineral-rights evidence table asking “How Do I Know if My Mineral Rights Have Significant Value?”.",
+        "rendered_text": "How Do I Know if My Mineral Rights Have Significant Value?",
+        "visual_variant": "wave55-distinct-generated-significance-screen-evidence-table",
+        "width": 1200,
+        "height": 675,
+        "mime_type": "image/webp",
+        "sha256": "fb4c2588b9d2af45ddb6755796af6ffa6ce216795b907bb4f740dca4bfa3ccd1",
+        "perceptual_hash": "1111111111111111111111111111111111111111111111111111111111111111111111111111111111111000000110011111000000001000111100000000100001110000000010000100000000001000000000000000100000001000000110000000011111100000000001111110010000000111111000000000111111110000",
+        "neutralized_art_text_region_count": 1,
+        "ocr": {
+          "expected": "How Do I Know if My Mineral Rights Have Significant Value?",
+          "actual": "How Do I Know if My\nMineral Rights Have\nSignificant Value?",
+          "normalized_expected": "how do i know if my mineral rights have significant value",
+          "normalized_actual": "how do i know if my mineral rights have significant value",
           "uppercase_i_confusable_accepted": false,
           "pass": true
         }
