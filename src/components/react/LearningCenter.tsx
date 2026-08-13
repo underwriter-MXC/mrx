@@ -219,8 +219,8 @@ export default function LearningCenter({ posts, initialFilters = {} }: Props) {
                 <img
                   src={post.heroImage}
                   alt={post.heroAlt}
-                  width="1600"
-                  height="900"
+                  width="1200"
+                  height="630"
                   loading={index < 3 ? 'eager' : 'lazy'}
                   decoding="async"
                 />

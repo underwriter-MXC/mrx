@@ -55,6 +55,11 @@ test.describe('Learning Center layout', () => {
           imageBottom: image?.bottom ?? Number.POSITIVE_INFINITY,
           imageSrc: imageElement?.getAttribute('src') ?? '',
           imageWidth: imageElement?.naturalWidth ?? 0,
+          imageHeight: imageElement?.naturalHeight ?? 0,
+          declaredWidth: imageElement?.getAttribute('width') ?? '',
+          declaredHeight: imageElement?.getAttribute('height') ?? '',
+          objectFit: imageElement ? getComputedStyle(imageElement).objectFit : '',
+          renderedRatio: image ? image.width / image.height : 0,
           viewportHeight: window.innerHeight,
         };
       }),
@@ -66,6 +71,11 @@ test.describe('Learning Center layout', () => {
       expect(item.imageBottom).toBeLessThan(item.viewportHeight);
       expect(item.imageSrc).toMatch(/^\/assets\/articles\/.+\.webp$/);
       expect(item.imageWidth).toBeGreaterThan(0);
+      expect(item.imageHeight).toBeGreaterThan(0);
+      expect(item.declaredWidth).toBe('1200');
+      expect(item.declaredHeight).toBe('630');
+      expect(item.objectFit).toBe('contain');
+      expect(item.renderedRatio).toBeCloseTo(1200 / 630, 2);
     }
 
     const firstPreviewSrc = layout[0].imageSrc;
