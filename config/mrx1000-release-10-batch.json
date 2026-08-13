@@ -1,7 +1,7 @@
 {
   "program": "MRX 1,000 Article SEO+AEO Production Program",
   "artifact_type": "authorized_release_10_batch",
-  "evidence_scaffold_generated_at_utc": "2026-08-12T23:43:49Z",
+  "evidence_scaffold_generated_at_utc": "2026-08-12T23:59:23Z",
   "decision_authority": {
     "successor_gate_decision_id": "D-2026-0804-16",
     "successor_gate_decision_path": "docs/governance/mrx1000-owner-continuous-publication-directive-2026-08-04.md",
@@ -174,13 +174,16 @@
     "wave49_selection_decision_sha256": "1ab8df9e46f98437c2f7ca9532d9ab97c6163efc073d4ae0e3a580209c7d1865",
     "wave50_selection_decision_id": "MRX1000-W50-SELECT-2026-08-12",
     "wave50_selection_decision_path": "docs/governance/mrx1000-wave50-selection-decision-2026-08-12.md",
-    "wave50_selection_decision_sha256": "9c9cb770b89e93c597477340ab34774e5b25c269857d49e671007285dbb3b7ad"
+    "wave50_selection_decision_sha256": "9c9cb770b89e93c597477340ab34774e5b25c269857d49e671007285dbb3b7ad",
+    "wave51_selection_decision_id": "MRX1000-W51-SELECT-2026-08-12",
+    "wave51_selection_decision_path": "docs/governance/mrx1000-wave51-selection-decision-2026-08-12.md",
+    "wave51_selection_decision_sha256": "0ce2027d26ff30fbbb92b3ca8c17e99a50829419d6a0b7ebd6c23fb440d08429"
   },
   "identity_authority": {
     "scope_key": "canonical_slug",
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_sha256": "d33980546a53d6a61a74c5382edea4bde86cbe26be94d01f754e86f3a0b7cf4e",
-    "canonical_ledger_generated_at": "2026-07-20T13:20:04.348Z",
+    "canonical_ledger_sha256": "4a07fd1810bba5d7b140ea315b2a57c7d9849f2e4b676603f3b3859a0bcf80ac",
+    "canonical_ledger_generated_at": "2026-07-20T14:15:49.537Z",
     "successor_ledger_decision_id": "D-2026-0723-LEDGER-04",
     "successor_ledger_decision_path": "artifacts/mrx1000-release-10/decisions/mrx-ceo-ledger-provenance-successor-20260723-04.md",
     "successor_ledger_decision_sha256": "09eca24bcd0e71563f2ac4197f564eec0ccb43a5ee955216da5c4a2543d04978",
@@ -194,11 +197,11 @@
     "authorization_scope": "declared_program_size_not_a_staged_release_cap",
     "admission_mode": "continuous_quality_gated",
     "continuous_quality_gated_from_selection_rank": 26,
-    "prior_verified_article_count": 129,
+    "prior_verified_article_count": 130,
     "fail_closed": true,
     "earned_scale_gates": [],
-    "exact_admitted_count": 130,
-    "exact_admitted_slate_sha256": "546b2aeaa76260793689659df2aff92fa1a14c2d71191f5322e49a2618f35c4d"
+    "exact_admitted_count": 131,
+    "exact_admitted_slate_sha256": "de1b4740ab5fd9685a1532f385998228a66141b465ab931eaa1be2642333ab67"
   },
   "articles": [
     {
@@ -4425,10 +4428,43 @@
       "inline_path": "/assets/articles/inline/understanding-the-key-factors-that-affect-your-mineral-rights-assessment-price/what-factors-influence-the-price-you-suggest-for-my-mineral-rights-assessment.webp",
       "inline_asset_sha256": "27f475a755960b9cc65041e40b05b7abcec579cf513dc127eb0b30fb9bc98c36",
       "inline_rendered_text": "What Factors Influence the Price You Suggest for My Mineral Rights Assessment?"
+    },
+    {
+      "selection_rank": 131,
+      "program_row_id": "MRX1000-0131",
+      "source_shortlist_program_row_id": "MRX1000-0131",
+      "slug": "understanding-the-mineral-rights-assessment-errors",
+      "title": "Understanding the Mineral Rights Assessment Errors",
+      "source_shortlist_title": "Understanding the Mineral Rights Assessment Errors",
+      "canonical_url": "https://mineralrightsxchange.com/blog/understanding-the-mineral-rights-assessment-errors/",
+      "pillar": "sell-mineral-rights",
+      "cluster": "sell-mineral-rights-decision-process",
+      "content_genius_article_uuid": null,
+      "archive_evidence_sha256": "696ac8d4762c6c758ade4af58827d69413d325f4b7c685e957df475c5d81ea0e",
+      "repo_path": "src/content/posts/understanding-the-mineral-rights-assessment-errors.mdx",
+      "repo_sha256": "5af96792a7ef4208dd4d2f9863b3a2435c77507c6dff9820e8858f35bb8daa98",
+      "article_sha256": "5af96792a7ef4208dd4d2f9863b3a2435c77507c6dff9820e8858f35bb8daa98",
+      "hero_path": "/assets/articles/hero/understanding-the-mineral-rights-assessment-errors.webp",
+      "hero_sha256": "e800024c0e6cc41ca44215aeca13242e8759a6992ef2e215b36c9072b3051ff8",
+      "hero_asset_sha256": "e800024c0e6cc41ca44215aeca13242e8759a6992ef2e215b36c9072b3051ff8",
+      "admission_status": "admitted_quality_gated",
+      "finalization_state": "draft_noindex_admitted",
+      "searchatlas_content_score": null,
+      "searchatlas_word_count": 3473,
+      "risk_citation_remediation": [
+        "The planning-only canonical row was developed into an original assessment-error detection and correction guide. It distinguishes errors, evidence gaps, and reasonable scenario differences; covers eight error classes; and gives each issue a detection test, containment action, correction record, limited rerun scope, and reset trigger without importing factory body text or duplicating the end-to-end sale-missteps, clause-traps, seller-readiness, or suggested-price-bridge guides.",
+        "Continuous quality-gated admission under D-2026-0804-16 and MRX1000-W51-SELECT-2026-08-12; no numerical cap or elapsed-time gate applies.",
+        "Publication remains conditional on current editorial, factual-citation, compliance, two-image, metadata, build, rollback, deployment, and live-verification evidence."
+      ],
+      "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/understanding-the-mineral-rights-assessment-errors.json",
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/understanding-the-mineral-rights-assessment-errors/mineral-rights-selling-process-errors.webp",
+      "inline_asset_sha256": "6fa38301c00ed0b2c430d22b461407b35f17764306fa6a4f0ad993c9c24a16eb",
+      "inline_rendered_text": "Mineral Rights Selling Process Errors"
     }
   ],
   "admission_audit": {
-    "admitted_article_count": 130,
+    "admitted_article_count": 131,
     "selection_ranks": [
       1,
       2,
@@ -4559,7 +4595,8 @@
       127,
       128,
       129,
-      130
+      130,
+      131
     ],
     "duplicate_program_row_ids": [],
     "duplicate_slugs": [],
@@ -4618,9 +4655,9 @@
   "two_image_policy": {
     "directive": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
     "retrofit_manifest_path": "config/mrx-article-two-image-retrofit.json",
-    "retrofit_manifest_sha256": "79149958a67abd6bfefd06225891556b5ccc0bad8024e71c8532065f858fbd51",
-    "public_article_count": 139,
-    "batch_article_count": 130,
+    "retrofit_manifest_sha256": "eb51a35438d344fb9ed474388a4e897e69a391125a84ad5ff29c4017fdbea259",
+    "public_article_count": 140,
+    "batch_article_count": 131,
     "assets_per_article": 2,
     "hero_share_identity_required": true,
     "inline_image_distinct_required": true,
