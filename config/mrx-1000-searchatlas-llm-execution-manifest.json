@@ -1,7 +1,7 @@
 {
   "program": "MRX1000",
   "artifact_type": "searchatlas_ordered_llm_local_execution_manifest",
-  "generated_at": "2026-07-20T14:15:49.537Z",
+  "generated_at": "2026-07-20T21:04:08.186Z",
   "deterministic": true,
   "local_only": true,
   "external_services_called": false,
@@ -9,8 +9,8 @@
   "inputs": {
     "ledger": {
       "path": "config/mrx-1000-canonical-content-ledger.json",
-      "sha256": "4a07fd1810bba5d7b140ea315b2a57c7d9849f2e4b676603f3b3859a0bcf80ac",
-      "bytes": 4463311
+      "sha256": "c961176d6622a505a6dddadfce8d49eeaf1ab8f5aee79c2aa959e1db0d410edd",
+      "bytes": 4463669
     },
     "readiness": {
       "path": "reports/mrx-1000-readiness-matrix.json",
@@ -53911,7 +53911,7 @@
       "primary_keyword": "Mineral Rights Selling Process Errors",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -350352,5 +350352,5 @@
       ]
     }
   ],
-  "content_fingerprint_sha256": "4378dbad20d2e1afd9915dd6ba82fab0c7b775b299dc7be51897bbed70ee9858"
+  "content_fingerprint_sha256": "562e28dbb2bf6978d4e53666961f92bbb06d4e36397512c8834bd86cd5aa86b3"
 }
