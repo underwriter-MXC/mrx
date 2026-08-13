@@ -1,7 +1,7 @@
 {
   "program": "MRX 1,000 Article SEO+AEO Production Program",
   "artifact_type": "authorized_release_10_batch",
-  "evidence_scaffold_generated_at_utc": "2026-08-13T00:19:26Z",
+  "evidence_scaffold_generated_at_utc": "2026-08-13T00:29:18Z",
   "decision_authority": {
     "successor_gate_decision_id": "D-2026-0804-16",
     "successor_gate_decision_path": "docs/governance/mrx1000-owner-continuous-publication-directive-2026-08-04.md",
@@ -177,13 +177,16 @@
     "wave50_selection_decision_sha256": "9c9cb770b89e93c597477340ab34774e5b25c269857d49e671007285dbb3b7ad",
     "wave51_selection_decision_id": "MRX1000-W51-SELECT-2026-08-12",
     "wave51_selection_decision_path": "docs/governance/mrx1000-wave51-selection-decision-2026-08-12.md",
-    "wave51_selection_decision_sha256": "0ce2027d26ff30fbbb92b3ca8c17e99a50829419d6a0b7ebd6c23fb440d08429"
+    "wave51_selection_decision_sha256": "0ce2027d26ff30fbbb92b3ca8c17e99a50829419d6a0b7ebd6c23fb440d08429",
+    "wave52_selection_decision_id": "MRX1000-W52-SELECT-2026-08-12",
+    "wave52_selection_decision_path": "docs/governance/mrx1000-wave52-selection-decision-2026-08-12.md",
+    "wave52_selection_decision_sha256": "0f56cc0e3a7c85eca980202b7b1a8e185918070ecdd1e13fd74a46ce2296473d"
   },
   "identity_authority": {
     "scope_key": "canonical_slug",
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_sha256": "c961176d6622a505a6dddadfce8d49eeaf1ab8f5aee79c2aa959e1db0d410edd",
-    "canonical_ledger_generated_at": "2026-07-20T21:04:08.186Z",
+    "canonical_ledger_sha256": "15b84ff22a15e044c28ad54ca50577c39cd7b327d2d14d3db5a6b541484398b2",
+    "canonical_ledger_generated_at": "2026-07-20T03:24:14.382Z",
     "successor_ledger_decision_id": "D-2026-0723-LEDGER-04",
     "successor_ledger_decision_path": "artifacts/mrx1000-release-10/decisions/mrx-ceo-ledger-provenance-successor-20260723-04.md",
     "successor_ledger_decision_sha256": "09eca24bcd0e71563f2ac4197f564eec0ccb43a5ee955216da5c4a2543d04978",
@@ -197,11 +200,11 @@
     "authorization_scope": "declared_program_size_not_a_staged_release_cap",
     "admission_mode": "continuous_quality_gated",
     "continuous_quality_gated_from_selection_rank": 26,
-    "prior_verified_article_count": 130,
+    "prior_verified_article_count": 131,
     "fail_closed": true,
     "earned_scale_gates": [],
-    "exact_admitted_count": 131,
-    "exact_admitted_slate_sha256": "de1b4740ab5fd9685a1532f385998228a66141b465ab931eaa1be2642333ab67"
+    "exact_admitted_count": 132,
+    "exact_admitted_slate_sha256": "b193298721960b6732f8129ac796c07a7677b546aed22665cdd04f2763e503ca"
   },
   "articles": [
     {
@@ -4461,10 +4464,43 @@
       "inline_path": "/assets/articles/inline/understanding-the-mineral-rights-assessment-errors/mineral-rights-selling-process-errors.webp",
       "inline_asset_sha256": "6fa38301c00ed0b2c430d22b461407b35f17764306fa6a4f0ad993c9c24a16eb",
       "inline_rendered_text": "Mineral Rights Selling Process Errors"
+    },
+    {
+      "selection_rank": 132,
+      "program_row_id": "MRX1000-0132",
+      "source_shortlist_program_row_id": "MRX1000-0132",
+      "slug": "understanding-the-steps-to-book-your-free-no-obligation-mineral-rights-review",
+      "title": "Understanding the Steps to Book Your Free No-Obligation Mineral Rights Review",
+      "source_shortlist_title": "Understanding the Steps to Book Your Free No-Obligation Mineral Rights Review",
+      "canonical_url": "https://mineralrightsxchange.com/blog/understanding-the-steps-to-book-your-free-no-obligation-mineral-rights-review/",
+      "pillar": "sell-mineral-rights",
+      "cluster": "sell-mineral-rights-decision-process",
+      "content_genius_article_uuid": null,
+      "archive_evidence_sha256": "ef7ff8cd79d8f40cf9808500fe279cf51f3b8d6ceadf5c6077533e6c5dbe4caf",
+      "repo_path": "src/content/posts/understanding-the-steps-to-book-your-free-no-obligation-mineral-rights-review.mdx",
+      "repo_sha256": "941032278411870467a216054458698c8162a9d23a8d455d3336e23226a12024",
+      "article_sha256": "941032278411870467a216054458698c8162a9d23a8d455d3336e23226a12024",
+      "hero_path": "/assets/articles/hero/understanding-the-steps-to-book-your-free-no-obligation-mineral-rights-review.webp",
+      "hero_sha256": "0c3782cfbaf74e832b8e124395a1c2d5b7cffbc2df3a0628f48230d3db2860fd",
+      "hero_asset_sha256": "0c3782cfbaf74e832b8e124395a1c2d5b7cffbc2df3a0628f48230d3db2860fd",
+      "admission_status": "admitted_quality_gated",
+      "finalization_state": "draft_noindex_admitted",
+      "searchatlas_content_score": null,
+      "searchatlas_word_count": 1969,
+      "risk_citation_remediation": [
+        "The planning-only canonical row was developed into an original current-booking transaction guide. It covers the private assistant, timezone, timing window, live-slot selection, appointment details, separate communication choices, booked-versus-not-booked states, and failure recovery without importing factory body text or duplicating the broader review-request, call-preparation, fee-boundary, or substantive review-process guides.",
+        "Continuous quality-gated admission under D-2026-0804-16 and MRX1000-W52-SELECT-2026-08-12; no numerical cap or elapsed-time gate applies.",
+        "Publication remains conditional on current editorial, factual-citation, compliance, two-image, metadata, build, rollback, deployment, and live-verification evidence."
+      ],
+      "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/understanding-the-steps-to-book-your-free-no-obligation-mineral-rights-review.json",
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/understanding-the-steps-to-book-your-free-no-obligation-mineral-rights-review/what-steps-are-involved-in-getting-a-no-obligation-review-of-my-mineral-rights.webp",
+      "inline_asset_sha256": "3ae9683bb99810f0549a7ad7dd664bc3c79207f4e9dd97a0161aa46415ed3d87",
+      "inline_rendered_text": "What Steps Are Involved in Getting a No-Obligation Review of My Mineral Rights?"
     }
   ],
   "admission_audit": {
-    "admitted_article_count": 131,
+    "admitted_article_count": 132,
     "selection_ranks": [
       1,
       2,
@@ -4596,7 +4632,8 @@
       128,
       129,
       130,
-      131
+      131,
+      132
     ],
     "duplicate_program_row_ids": [],
     "duplicate_slugs": [],
@@ -4655,9 +4692,9 @@
   "two_image_policy": {
     "directive": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
     "retrofit_manifest_path": "config/mrx-article-two-image-retrofit.json",
-    "retrofit_manifest_sha256": "eb51a35438d344fb9ed474388a4e897e69a391125a84ad5ff29c4017fdbea259",
-    "public_article_count": 140,
-    "batch_article_count": 131,
+    "retrofit_manifest_sha256": "8edfbc3a460b4b994dd6b20864b7463b14396245111ffdeb8c80734674c489ba",
+    "public_article_count": 141,
+    "batch_article_count": 132,
     "assets_per_article": 2,
     "hero_share_identity_required": true,
     "inline_image_distinct_required": true,
