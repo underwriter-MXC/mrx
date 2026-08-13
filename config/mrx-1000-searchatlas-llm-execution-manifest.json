@@ -1,7 +1,7 @@
 {
   "program": "MRX1000",
   "artifact_type": "searchatlas_ordered_llm_local_execution_manifest",
-  "generated_at": "2026-07-20T08:25:37.000Z",
+  "generated_at": "2026-07-20T11:57:08.888Z",
   "deterministic": true,
   "local_only": true,
   "external_services_called": false,
@@ -9,8 +9,8 @@
   "inputs": {
     "ledger": {
       "path": "config/mrx-1000-canonical-content-ledger.json",
-      "sha256": "f8377e8ca968aafd0a5dea251aa4e991f40ba8077e7c5808c13cc093b5fc557c",
-      "bytes": 4464717
+      "sha256": "9a0d3915cd861f0bb7a4a77b92f7191c9db3b40a5dabec7ac51c6bce6adb79c3",
+      "bytes": 4465075
     },
     "readiness": {
       "path": "reports/mrx-1000-readiness-matrix.json",
@@ -54647,7 +54647,7 @@
       "primary_keyword": "What to Know Before Selling Mineral Rights",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -350404,5 +350404,5 @@
       ]
     }
   ],
-  "content_fingerprint_sha256": "7f20a6370f8295e91d916f70c3d57a611c75de31a98455736df3a3ac449c33b1"
+  "content_fingerprint_sha256": "f6b24ed544e2c0d582950ed4c94c0b16b95acbcb51255946a70b7b27b6dcab5c"
 }
