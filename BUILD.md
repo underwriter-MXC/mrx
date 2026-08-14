@@ -36,7 +36,7 @@ The `build` script in `package.json` chains three steps; ALL must pass:
 
 ## Environment requirements
 
-- **Node.js** 20.x (CI uses 20.19.5; Vercel applies current security patches within Node 20)
+- **Node.js** 24.x (CI uses 24.19.0; Vercel applies current security patches within Node 24)
 - **pnpm** (the repo's package manager). Install with `npm i -g pnpm` or `corepack enable`.
 - Internet access for first install (registry fetches).
 

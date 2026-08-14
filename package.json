@@ -6,7 +6,7 @@
   "type": "module",
   "description": "Mineral Rights Xchange public website (Astro 5 + Vercel behind Cloudflare)",
   "engines": {
-    "node": "20.x"
+    "node": "24.x"
   },
   "scripts": {
     "dev": "astro dev",
@@ -39,6 +39,7 @@
     "test:watch": "vitest",
     "test:e2e": "pnpm build:vercel && node scripts/stage-playwright-build-artifacts.mjs && playwright test",
     "test:owner-profiles:10": "node --env-file-if-exists=.env --env-file-if-exists=.env.local scripts/run-owner-profiles-10.mjs",
+    "test:production-owner-journey": "node --env-file-if-exists=.vercel/.env.production.local scripts/run-production-owner-journey-smoke.mjs",
     "test:ask-tommy:100": "node scripts/run-ask-tommy-100.mjs",
     "test:ask-tommy:fixtures": "node scripts/run-ask-tommy-100.mjs --dry-run",
     "verify:ghl": "node --env-file-if-exists=.env --env-file-if-exists=.env.local scripts/verify-ghl-connection.mjs",
@@ -91,6 +92,7 @@
     "schema-dts": "^1.1.0",
     "tinyglobby": "^0.2.0",
     "tslib": "^2.8.1",
+    "ws": "8.18.0",
     "zod": "^3.23.0"
   },
   "devDependencies": {

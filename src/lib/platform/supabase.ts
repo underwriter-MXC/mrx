@@ -1,6 +1,12 @@
 import { createClient, type SupabaseClient } from '@supabase/supabase-js';
 import { runtimeEnv } from './runtime-env';
 
+let NodeWebSocket: typeof WebSocket | undefined;
+if (import.meta.env.SSR) {
+  const websocketModule = await import('ws');
+  NodeWebSocket = websocketModule.WebSocket;
+}
+
 let serverClient: SupabaseClient | null | undefined;
 
 export function getSupabaseServer() {
@@ -11,6 +17,7 @@ export function getSupabaseServer() {
     url && serviceRole
       ? createClient(url, serviceRole, {
           auth: { persistSession: false, autoRefreshToken: false },
+          ...(NodeWebSocket ? { realtime: { transport: NodeWebSocket } } : {}),
         })
       : null;
   return serverClient;

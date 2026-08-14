@@ -13,7 +13,7 @@ A free, transparent underwriter review service for Texas mineral rights owners. 
 - **TypeScript** strict
 - **Vercel** production hosting behind **Cloudflare** DNS/proxying (Google tag/GA4 client-side)
 - **Playwright** for E2E, **Vitest** for unit
-- **pnpm** package manager, **Node 20** LTS
+- **pnpm** package manager, **Node 24** LTS
 
 ## Local development
 
