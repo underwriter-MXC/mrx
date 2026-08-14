@@ -105,6 +105,15 @@
   color: inherit;
 }
 
+.prose table {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  border-collapse: collapse;
+  overscroll-behavior-inline: contain;
+}
+
 .prose hr {
   border: 0;
   border-top: 1px solid var(--color-ink-200);

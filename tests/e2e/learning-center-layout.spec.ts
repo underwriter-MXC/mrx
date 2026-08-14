@@ -294,6 +294,31 @@ test.describe('Learning Center layout', () => {
     expect(dimensions.pageWidth).toBeLessThanOrEqual(dimensions.viewportWidth);
   });
 
+  test('keeps wide article tables scroll-contained on mobile', async ({ page }) => {
+    await page.setViewportSize({ width: 390, height: 844 });
+    await page.goto('/blog/why-doesnt-my-texas-mineral-tax-value-match-a-sale-estimate/');
+
+    const table = page.locator('.prose table').first();
+    await expect(table).toBeVisible();
+    const layout = await table.evaluate((element) => {
+      const rect = element.getBoundingClientRect();
+      const style = getComputedStyle(element);
+      return {
+        pageWidth: document.documentElement.scrollWidth,
+        viewportWidth: document.documentElement.clientWidth,
+        right: rect.right,
+        overflowX: style.overflowX,
+        scrollWidth: element.scrollWidth,
+        clientWidth: element.clientWidth,
+      };
+    });
+
+    expect(layout.pageWidth).toBeLessThanOrEqual(layout.viewportWidth);
+    expect(layout.right).toBeLessThanOrEqual(layout.viewportWidth);
+    expect(layout.overflowX).toBe('auto');
+    expect(layout.scrollWidth).toBeGreaterThanOrEqual(layout.clientWidth);
+  });
+
   test('uses article terminology for Learning Center post-type labels', async ({ page }) => {
     await page.goto('/');
     await expect(page.getByRole('link', { name: /Read the article/i }).first()).toBeVisible();
