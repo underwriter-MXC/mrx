@@ -529,6 +529,22 @@
   align-self: end;
   color: #805416;
 }
+.mrx-intent-links {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.65rem;
+  margin-top: 1rem;
+}
+.mrx-intent-links a {
+  padding: 0.78rem 0.9rem;
+  border: 1px solid var(--mrx-line);
+  border-radius: 12px;
+  background: #fffaf1;
+  color: var(--mrx-navy);
+  font-size: 0.82rem;
+  font-weight: 720;
+  text-underline-offset: 3px;
+}
 .mrx-process {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -794,6 +810,9 @@
 @media (max-width: 760px) {
   .mrx-intent-grid,
   .mrx-prose-grid {
+    grid-template-columns: 1fr;
+  }
+  .mrx-intent-links {
     grid-template-columns: 1fr;
   }
   .mrx-side-cta {

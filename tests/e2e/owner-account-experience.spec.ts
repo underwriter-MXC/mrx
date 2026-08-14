@@ -78,16 +78,20 @@ test.describe('MRX owner account experience', () => {
     ).toHaveAttribute('href', '/owner-intake/');
   });
 
-  test('keeps Ask Tommy available before account setup and offers optional continuity after an answer', async ({
+  test('keeps Ask Tommy available and offers optional continuity only after two useful answers', async ({
     page,
   }) => {
     await stubAnonymousSession(page);
     await page.route('**/api/chat/message', async (route) => {
+      const payload = route.request().postDataJSON();
+      const answer = String(payload.message).includes('headline offer amount')
+        ? 'Next, compare adjustment rights, deed scope, timing, costs, and payment terms.'
+        : 'Start by comparing the complete offer and the exact rights it would convey.';
       const body = [
         'event: message.delta',
         `data: ${JSON.stringify({
           type: 'message.delta',
-          delta: 'Start by comparing the complete offer and the exact rights it would convey.',
+          delta: answer,
           persona: 'tommy',
         })}`,
         '',
@@ -112,13 +116,22 @@ test.describe('MRX owner account experience', () => {
     await expect(
       page.getByText('Start by comparing the complete offer and the exact rights it would convey.'),
     ).toBeVisible();
+    await expect(page.getByTestId('tommy-benefit-suggestion')).toBeVisible();
+    await expect(page.getByTestId('tommy-account-prompt')).toHaveCount(0);
+
+    await page.getByRole('button', { name: /Ask this next/i }).click();
+    await expect(
+      page.getByText(
+        'Next, compare adjustment rights, deed scope, timing, costs, and payment terms.',
+      ),
+    ).toBeVisible();
     await expect(page.getByTestId('tommy-account-prompt')).toContainText(
-      'Keep this conversation and any mineral-rights documents together',
+      'Turn these answers into a free private owner profile',
     );
     await expect(
       page
         .getByTestId('tommy-account-prompt')
-        .getByRole('link', { name: 'Log in or create an account' }),
+        .getByRole('link', { name: 'Create my free profile' }),
     ).toHaveAttribute('href', '/account/?welcome=conversation');
     await expect(input).toBeEnabled();
   });
@@ -185,6 +198,18 @@ test.describe('MRX owner account experience', () => {
     });
     expect(identityRequest).not.toHaveProperty('permissions');
     expect(identityRequest?.redirectTo).toMatch(/\/account\/\?welcome=angela$/);
+    const freeProfileEvent = await page.evaluate(() =>
+      window.dataLayer.find((event: any) => event.event === 'free_profile_created'),
+    );
+    expect(freeProfileEvent).toMatchObject({
+      event: 'free_profile_created',
+      source: 'conversation',
+      verification_requested: true,
+      access_mode: 'device',
+    });
+    expect(freeProfileEvent).not.toHaveProperty('email');
+    expect(freeProfileEvent).not.toHaveProperty('phone');
+    expect(freeProfileEvent).not.toHaveProperty('full_name');
     await expect(page.getByRole('dialog')).toContainText('Let’s prepare your underwriter record');
     await expect(page.getByRole('dialog')).toContainText('This takes a couple of minutes');
   });

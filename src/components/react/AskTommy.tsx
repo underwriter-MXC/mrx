@@ -18,6 +18,11 @@ import {
 import { normalizeMrxText } from '../../lib/platform/style';
 import { guideReplyDelay, remainingGuideReplyDelay } from '../../lib/platform/timing';
 import { fallbackConversationAnswer } from '../../lib/platform/conversation';
+import {
+  getBenefitSuggestion,
+  normalizeSuggestionCopyVariant,
+  type SuggestionCopyVariant,
+} from '../../lib/ask-tommy-engagement';
 import './AskTommy.css';
 
 type Persona = 'tommy' | 'cooper' | 'charlie' | 'dale' | 'rebecca' | 'angela';
@@ -40,6 +45,7 @@ type Message = {
   persona?: Persona;
   citations?: Citation[];
   locationCard?: LocationCard;
+  eventType?: string;
 };
 type AppointmentOption = {
   id: string;
@@ -124,6 +130,7 @@ const minimumGuideReplyMs = guideReplyDelay(
 
 const tommyAvatar = '/assets/mrx-homepage-v4/avatars/tommy-hermes-128.webp';
 const bookedAppointmentStorageKey = 'mrx_upcoming_appointment';
+const suggestionVariantStorageKey = 'mrx_suggestion_copy_variant_v1';
 const personas: Persona[] = ['tommy', 'cooper', 'charlie', 'dale', 'rebecca', 'angela'];
 const isPersona = (value: unknown): value is Persona =>
   typeof value === 'string' && personas.includes(value as Persona);
@@ -131,6 +138,40 @@ const personaAvatar = (persona: unknown = 'tommy') => {
   const safePersona = isPersona(persona) ? persona : 'tommy';
   return safePersona === 'tommy' ? tommyAvatar : `/assets/team/${safePersona}-128.webp`;
 };
+
+function initialSuggestionCopyVariant(): SuggestionCopyVariant {
+  if (typeof window === 'undefined') return 'benefit-led';
+  try {
+    const stored = normalizeSuggestionCopyVariant(
+      window.localStorage.getItem(suggestionVariantStorageKey),
+    );
+    if (stored) return stored;
+    const random = window.crypto.getRandomValues(new Uint8Array(1))[0];
+    const assigned: SuggestionCopyVariant = random % 2 === 0 ? 'benefit-led' : 'outcome-led';
+    window.localStorage.setItem(suggestionVariantStorageKey, assigned);
+    return assigned;
+  } catch {
+    return 'benefit-led';
+  }
+}
+
+function countRestoredAnswers(messages: Message[]) {
+  const explicit = messages.filter(
+    (message) => message.role === 'assistant' && message.eventType === 'answer_completed',
+  ).length;
+  if (explicit) return explicit;
+
+  let awaitingAnswer = false;
+  let count = 0;
+  for (const message of messages) {
+    if (message.role === 'user') awaitingAnswer = true;
+    if (message.role === 'assistant' && awaitingAnswer && message.eventType !== 'handoff') {
+      count += 1;
+      awaitingAnswer = false;
+    }
+  }
+  return count;
+}
 
 function asLocationCard(value: unknown): LocationCard | undefined {
   if (!value || typeof value !== 'object') return undefined;
@@ -329,11 +370,17 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
   const [documentProcessingEnabled, setDocumentProcessingEnabled] = useState(false);
   const [ownerAuthenticated, setOwnerAuthenticated] = useState(false);
   const [accountPromptDismissed, setAccountPromptDismissed] = useState(false);
+  const [completedAnswerCount, setCompletedAnswerCount] = useState(0);
+  const [lastQuestion, setLastQuestion] = useState('');
+  const [suggestionCopyVariant] = useState<SuggestionCopyVariant>(initialSuggestionCopyVariant);
   const endRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const introStarted = useRef(false);
   const responseStartedAt = useRef<number | null>(null);
+  const completedAnswerCountRef = useRef(0);
+  const viewedSuggestionIds = useRef(new Set<string>());
+  const accountPromptViewed = useRef(false);
   const supabase = useMemo<SupabaseClient | null>(
     () =>
       typeof window !== 'undefined' && supabaseUrl && supabaseAnonKey
@@ -382,6 +429,16 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
     const startedAt = performance.now();
     responseStartedAt.current = startedAt;
     return startedAt;
+  }
+
+  function recordCompletedAnswer(citationCount: number) {
+    const answerNumber = completedAnswerCountRef.current + 1;
+    completedAnswerCountRef.current = answerNumber;
+    setCompletedAnswerCount(answerNumber);
+    track('answer_completed', {
+      answer_number: answerNumber,
+      has_citation: citationCount > 0,
+    });
   }
 
   async function guideSay(
@@ -545,7 +602,7 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
         if (!response.ok) return;
         const data = await response.json();
         if (cancelled) return;
-        setOwnerAuthenticated(Boolean(data.authenticated));
+        setOwnerAuthenticated(Boolean(data.authenticated || data.deviceAccess));
         const restored: Message[] = Array.isArray(data.messages)
           ? data.messages
               .filter((message: any) => message.role !== 'system')
@@ -556,9 +613,17 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
                 persona: message.persona,
                 citations: message.citations,
                 locationCard: asLocationCard(message.metadata?.locationCards?.[0]),
+                eventType: message.event_type,
               }))
           : [];
         setMessages(restored);
+        const restoredAnswerCount = countRestoredAnswers(restored);
+        completedAnswerCountRef.current = restoredAnswerCount;
+        setCompletedAnswerCount(restoredAnswerCount);
+        const restoredQuestion = [...restored]
+          .reverse()
+          .find((message) => message.role === 'user' && message.content)?.content;
+        if (restoredQuestion) setLastQuestion(restoredQuestion);
         if (restored.length) setTypingPersona(null);
         setDocumentUploadsEnabled(Boolean(data.documentUploadsEnabled));
         setDocumentProcessingEnabled(Boolean(data.documentProcessingEnabled));
@@ -684,7 +749,11 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
       return;
     introStarted.current = true;
     setStep('open');
-    void guideSay('How may I help you?', 'tommy', 520);
+    void guideSay(
+      'Tell me what brought you here: an offer, inherited rights, a royalty check, or a question about value. I’ll give you a plain-language answer, show a reviewed source when one fits, and suggest the most useful next question. You can stay anonymous.',
+      'tommy',
+      520,
+    );
   }, [open, sessionReady, messages.length, pendingPrompt, bookingRequested]);
 
   useEffect(() => {
@@ -718,6 +787,7 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
     const history = messages.slice(-8).map(({ role, content }) => ({ role, content }));
     setInput('');
     setSending(true);
+    setLastQuestion(text);
     setTypingPersona(activePersona);
     setNotice('');
     addUserMessage(text, false);
@@ -906,6 +976,7 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
       };
       setLastAnswer(answer);
       setStep('open');
+      recordCompletedAnswer(citations.length);
       if (citations.length) track('cited_answer_view', { citation_count: citations.length });
     } catch {
       const remainingDelay = revealAt - performance.now();
@@ -924,6 +995,7 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
       setLastAnswer({ id: assistantId, role: 'assistant', content, persona: currentPersona });
       void persistVisibleMessage('assistant', content, currentPersona, 'notice');
       setStep('open');
+      recordCompletedAnswer(0);
     } finally {
       setTypingPersona(null);
       setSending(false);
@@ -1941,11 +2013,54 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
   const isPhoneStep =
     step === 'intro-phone' || step === 'delivery-phone' || step === 'booking-phone';
   const isNameStep = step === 'intro-name' || step === 'intro-last-name' || step === 'booking-name';
+  const benefitSuggestion = useMemo(
+    () => (lastQuestion ? getBenefitSuggestion(lastQuestion, suggestionCopyVariant) : null),
+    [lastQuestion, suggestionCopyVariant],
+  );
+  const showBenefitSuggestion =
+    step === 'open' &&
+    Boolean(lastAnswer?.content) &&
+    completedAnswerCount > 0 &&
+    Boolean(benefitSuggestion);
   const showAccountPrompt =
     step === 'open' &&
     Boolean(lastAnswer?.content) &&
+    completedAnswerCount >= 2 &&
     !ownerAuthenticated &&
     !accountPromptDismissed;
+
+  useEffect(() => {
+    if (!showBenefitSuggestion || !benefitSuggestion || !lastAnswer?.id) return;
+    if (viewedSuggestionIds.current.has(lastAnswer.id)) return;
+    viewedSuggestionIds.current.add(lastAnswer.id);
+    track('benefit_suggestion_viewed', {
+      intent: benefitSuggestion.intent,
+      copy_variant: suggestionCopyVariant,
+      answer_number: completedAnswerCount,
+    });
+  }, [
+    benefitSuggestion,
+    completedAnswerCount,
+    lastAnswer?.id,
+    showBenefitSuggestion,
+    suggestionCopyVariant,
+  ]);
+
+  useEffect(() => {
+    if (!showAccountPrompt || accountPromptViewed.current) return;
+    accountPromptViewed.current = true;
+    track('free_profile_prompt_viewed', { after_answer_number: completedAnswerCount });
+  }, [completedAnswerCount, showAccountPrompt]);
+
+  async function useBenefitSuggestion() {
+    if (!benefitSuggestion || typingPersona || sending || booking) return;
+    track('benefit_suggestion_clicked', {
+      intent: benefitSuggestion.intent,
+      copy_variant: suggestionCopyVariant,
+      after_answer_number: completedAnswerCount,
+    });
+    await sendMessage(benefitSuggestion.question);
+  }
 
   function closeChat() {
     const browserWindow = window as typeof window & { __mrxChatOpenRequested?: boolean };
@@ -2066,6 +2181,20 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
                   </div>
                 </div>
               )}
+              {showBenefitSuggestion && benefitSuggestion && (
+                <aside
+                  className="tommy-benefit-suggestion"
+                  data-testid="tommy-benefit-suggestion"
+                  aria-labelledby="tommy-benefit-suggestion-title"
+                >
+                  <span>Best next question</span>
+                  <strong id="tommy-benefit-suggestion-title">{benefitSuggestion.question}</strong>
+                  <p>{benefitSuggestion.benefit}</p>
+                  <button type="button" onClick={useBenefitSuggestion}>
+                    Ask this next <span aria-hidden="true">→</span>
+                  </button>
+                </aside>
+              )}
               {!!quickReplies.length && (
                 <div className="tommy-quick-replies" aria-label="Suggested replies">
                   {step === 'open' && lastAnswer && (
@@ -2092,18 +2221,34 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
               {showAccountPrompt && (
                 <aside className="tommy-account-prompt" data-testid="tommy-account-prompt">
                   <div>
-                    <strong>
-                      Keep this conversation and any mineral-rights documents together
-                    </strong>
+                    <strong>Turn these answers into a free private owner profile</strong>
                     <p>
-                      Create or log in to one secure MRX owner profile so your paperwork, uploaded
-                      documents, saved questions, and property details are there when you return.
-                      Shared records can support a more exact underwriter review or assessment, but
-                      MRX does not guarantee a value, quote, offer, or outcome.
+                      You have already seen how MRX can help. A free profile makes the next steps
+                      more useful without committing you to sell:
                     </p>
+                    <ul>
+                      <li>Return to your questions, cited answers, and property details.</li>
+                      <li>Keep offers, deeds, and royalty statements with the right property.</li>
+                      <li>
+                        See what is known, what is missing, and what is ready for underwriting.
+                      </li>
+                    </ul>
+                    <small>
+                      Free, private, and no obligation. MRX does not guarantee a value, quote,
+                      offer, or outcome.
+                    </small>
                   </div>
                   <span>
-                    <a href="/account/?welcome=conversation">Log in or create an account</a>
+                    <a
+                      href="/account/?welcome=conversation"
+                      onClick={() =>
+                        track('free_profile_cta_clicked', {
+                          after_answer_number: completedAnswerCount,
+                        })
+                      }
+                    >
+                      Create my free profile
+                    </a>
                     <button type="button" onClick={() => setAccountPromptDismissed(true)}>
                       Keep chatting for now
                     </button>

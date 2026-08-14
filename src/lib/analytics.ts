@@ -19,6 +19,12 @@ export type DataLayerEvent =
   | { event: 'appointment_booked'; mrx_calendar_event_id?: string }
   | { event: 'intake_started'; source?: string }
   | { event: 'intake_completed'; mineral_interest_id?: string }
+  | {
+      event: 'free_profile_created';
+      source?: string;
+      verification_requested?: boolean;
+      access_mode?: 'device' | 'verified';
+    }
   | { event: 'document_received'; document_type?: string; status?: string }
   | { event: 'case_ready'; profile_id?: string }
   | { event: 'appointment_held'; mrx_calendar_event_id?: string };

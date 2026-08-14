@@ -361,6 +361,7 @@ export const POST: APIRoute = async (context) => {
             content: fullText,
             persona: persona.slug,
             citations,
+            eventType: 'answer_completed',
             metadata: locationCards.length ? { locationCards } : undefined,
           });
           try {
@@ -426,6 +427,7 @@ export const POST: APIRoute = async (context) => {
             content: fullText,
             persona: persona.slug,
             citations,
+            eventType: 'answer_completed',
             metadata: {
               delivery: 'connection_fallback',
               ...(locationCards.length ? { locationCards } : {}),

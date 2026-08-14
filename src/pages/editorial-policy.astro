@@ -1,0 +1,243 @@
+---
+import MarketingLayout from '../layouts/MarketingLayout.astro';
+
+export const prerender = true;
+
+const faq = [
+  {
+    question: 'Who is responsible for MRX educational content?',
+    answer:
+      'Mineral Rights Xchange is responsible for what it publishes. Named MRX AI Guides are fictional educational interfaces, not employees, licensed professionals, or independent article authors. The MRX Editorial Team owns publication, sourcing, review, corrections, and updates.',
+  },
+  {
+    question: 'Which sources does MRX prioritize?',
+    answer:
+      'MRX prioritizes controlling statutes and regulations, official regulator and agency records, owner-provided documents, and clearly identified first-party methodology statements. Secondary sources may add context but do not replace controlling records.',
+  },
+  {
+    question: 'How does MRX handle corrections?',
+    answer:
+      'Material corrections are reviewed, dated, and reflected in the page content and metadata. Readers can report a possible error to the MRX underwriter email shown on this page.',
+  },
+];
+---
+
+<MarketingLayout
+  title="MRX Editorial, Source, and Corrections Policy"
+  description="See how Mineral Rights Xchange assigns responsibility, prioritizes sources, reviews AI-assisted content, records updates, and corrects errors."
+  path="/editorial-policy/"
+  pageType="marketing"
+  pageCategory="legal"
+  breadcrumbs={[
+    { name: 'Home', path: '/' },
+    { name: 'Editorial Policy', path: '/editorial-policy/' },
+  ]}
+  faq={faq}
+>
+  <main class="editorial-policy">
+    <section class="mrx-page-hero">
+      <div class="container mrx-page-hero__grid">
+        <div>
+          <p class="mrx-eyebrow">Publication responsibility</p>
+          <h1>How MRX sources, reviews, updates, and corrects educational content</h1>
+          <p>
+            Mineral Rights Xchange is responsible for every page it publishes. MRX prioritizes
+            controlling public records and owner documents, separates sourced facts from
+            assumptions, identifies review responsibility, records material update dates, and
+            corrects confirmed errors. Fictional MRX AI Guides help present information; they are
+            not independent authors or licensed professionals.
+          </p>
+        </div>
+        <aside class="mrx-answer-card">
+          <h2>What an owner should expect</h2>
+          <ul>
+            <li>A direct answer with stated limits</li>
+            <li>Sources for material factual claims</li>
+            <li>A visible author or publication-responsibility link</li>
+            <li>A reviewed or materially updated date</li>
+            <li>Clear routing for legal, tax, title, or certified work</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section class="container mrx-section editorial-policy__section">
+      <h2>Source hierarchy</h2>
+      <p>
+        Source choice follows the question. A production record cannot prove title, a royalty
+        statement cannot prove future value, and an MRX method description cannot replace a statute
+        or owner-specific professional conclusion.
+      </p>
+      <ol class="editorial-policy__hierarchy">
+        <li>
+          <strong>Controlling authority.</strong> Applicable statutes, regulations, court or agency materials,
+          and official instructions where the question requires them.
+        </li>
+        <li>
+          <strong>Official public records.</strong> State regulator, county, operator, payor, and federal
+          agency information for the fact that record can actually establish.
+        </li>
+        <li>
+          <strong>Owner documents.</strong> Deeds, probate records, leases, division orders, royalty statements,
+          offers, and agreements supplied by the owner through the private account.
+        </li>
+        <li>
+          <strong>First-party MRX methods.</strong> Published workflow, methodology, disclosure, and service
+          information used only to explain how MRX works.
+        </li>
+        <li>
+          <strong>Secondary context.</strong> Credible professional or industry material used with attribution
+          when it adds context without displacing a primary source.
+        </li>
+      </ol>
+    </section>
+
+    <section class="mrx-section mrx-section--sand">
+      <div class="container editorial-policy__grid">
+        <article>
+          <p class="mrx-eyebrow">Authorship</p>
+          <h2>MRX owns the publication</h2>
+          <p>
+            Articles link to an author archive and identify an MRX publication role. The
+            <a href="/authors/mrx-editorial-team/">MRX Editorial Team</a> remains responsible for publication.
+            Named guides are fictional AI interfaces with limited educational roles.
+          </p>
+        </article>
+        <article>
+          <p class="mrx-eyebrow">Review boundary</p>
+          <h2>Directional information stays directional</h2>
+          <p>
+            MRX does not present education or a directional review as a certified appraisal, title
+            opinion, legal or tax opinion, engineering conclusion, reserve report, or guarantee. The <a
+              href="/methodology/">published methodology</a
+            > explains the process and limits.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="container mrx-section editorial-policy__section">
+      <h2>Material update and correction history</h2>
+      <p>
+        Article pages expose publication and material-update dates in visible copy and structured
+        data. A material revision rechecks the affected claim, source, answer summary, FAQ, internal
+        links, metadata, and distribution image when they change.
+      </p>
+      <div class="editorial-policy__table-wrap">
+        <table>
+          <thead>
+            <tr><th scope="col">Date</th><th scope="col">Policy change</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>August 14, 2026</td>
+              <td
+                >Published this consolidated source, review, correction, and change-history policy.</td
+              >
+            </tr>
+            <tr>
+              <td>August 11, 2026</td>
+              <td
+                >Added a distinct article-specific in-body image requirement and expanded
+                answer-first summaries, sources, FAQs, review roles, and material-update metadata on
+                priority pages.</td
+              >
+            </tr>
+            <tr>
+              <td>July 30, 2026</td>
+              <td
+                >Required one canonical exact-title hero/share image for new or materially revised
+                articles.</td
+              >
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        To report a possible factual or attribution error, email
+        <a href="mailto:underwriter@mineralrightsxchange.com"
+          >underwriter@mineralrightsxchange.com</a
+        >
+        with the page URL, statement, and source to review. Do not email private deeds, tax identifiers,
+        account numbers, or unredacted royalty statements; use the private owner account for sensitive
+        documents.
+      </p>
+    </section>
+
+    <section class="container mrx-section editorial-policy__section" aria-labelledby="policy-faq">
+      <h2 id="policy-faq">Editorial policy questions</h2>
+      <div class="editorial-policy__faq">
+        {
+          faq.map((item) => (
+            <details>
+              <summary>{item.question}</summary>
+              <p>{item.answer}</p>
+            </details>
+          ))
+        }
+      </div>
+    </section>
+  </main>
+</MarketingLayout>
+
+<style>
+  .editorial-policy__section {
+    max-width: 980px;
+  }
+  .editorial-policy__section > p {
+    max-width: 76ch;
+    margin-top: 0.8rem;
+  }
+  .editorial-policy__hierarchy,
+  .editorial-policy__faq {
+    display: grid;
+    gap: 0.8rem;
+    margin-top: 1.3rem;
+  }
+  .editorial-policy__hierarchy {
+    padding-left: 1.25rem;
+  }
+  .editorial-policy__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+  .editorial-policy__grid article,
+  .editorial-policy__faq details {
+    padding: 1rem;
+    border: 1px solid var(--color-ink-100);
+    border-radius: 14px;
+    background: #fff;
+  }
+  .editorial-policy__grid h2 {
+    margin-block: 0.35rem 0.7rem;
+  }
+  .editorial-policy__table-wrap {
+    overflow-x: auto;
+    margin-top: 1.3rem;
+  }
+  .editorial-policy table {
+    width: 100%;
+    min-width: 620px;
+    border-collapse: collapse;
+  }
+  .editorial-policy th,
+  .editorial-policy td {
+    padding: 0.8rem;
+    border: 1px solid var(--color-ink-100);
+    text-align: left;
+    vertical-align: top;
+  }
+  .editorial-policy__faq summary {
+    cursor: pointer;
+    font-weight: 760;
+  }
+  .editorial-policy__faq p {
+    margin-top: 0.65rem;
+  }
+  @media (max-width: 760px) {
+    .editorial-policy__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

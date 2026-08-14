@@ -75,6 +75,25 @@ const inventory =
       </aside>
     </div>
   </section>
+  <nav class="state-owner-paths" aria-label={`${state.name} mineral owner next steps`}>
+    <div class="container">
+      <p class="mrx-eyebrow">Continue with the question that fits</p>
+      <h2>Connect {state.name} records to the owner decision.</h2>
+      <ul>
+        <li><a href="/mineral-rights-value/">Understand mineral-rights value factors</a></li>
+        <li><a href="/offer-review/">Compare a complete written offer</a></li>
+        <li><a href="/inherited-mineral-rights/">Organize inherited mineral rights</a></li>
+        <li>
+          <a href="/learning-center/oil-and-gas-royalties/">Review royalties and payment changes</a>
+        </li>
+        <li>
+          <a href="/learning-center/title-lease-ownership/">Research deeds, leases, and ownership</a
+          >
+        </li>
+        <li><a href="/sell-mineral-rights/">Compare selling, holding, or a partial sale</a></li>
+      </ul>
+    </div>
+  </nav>
   {inventory && <StaticPillarInventory inventory={inventory} />}
 </MarketingLayout>
 <script>
@@ -88,3 +107,43 @@ const inventory =
       ),
     );
 </script>
+<style>
+  .state-owner-paths {
+    padding: clamp(2rem, 5vw, 4rem) 0;
+    border-block: 1px solid var(--color-ink-100);
+    background: #fffaf1;
+  }
+
+  .state-owner-paths h2 {
+    max-width: 24ch;
+    margin-top: 0.35rem;
+  }
+
+  .state-owner-paths ul {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.75rem;
+    margin-top: 1.4rem;
+    padding: 0;
+    list-style: none;
+  }
+
+  .state-owner-paths a {
+    display: block;
+    height: 100%;
+    padding: 0.9rem 1rem;
+    border: 1px solid var(--color-ink-100);
+    border-radius: 12px;
+    background: #fff;
+    color: var(--color-brand-900);
+    font-weight: 720;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+  }
+
+  @media (max-width: 760px) {
+    .state-owner-paths ul {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

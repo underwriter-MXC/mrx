@@ -307,6 +307,54 @@
   font-size: 0.82rem;
   animation: tommy-message-in 0.2s ease-out;
 }
+.tommy-benefit-suggestion {
+  display: grid;
+  gap: 0.45rem;
+  margin-left: 2.5rem;
+  padding: 0.9rem;
+  border: 1px solid #9ab7c8;
+  border-radius: 14px;
+  background: #f2f8fb;
+  color: #173e58;
+  box-shadow: 0 8px 22px rgba(7, 30, 52, 0.05);
+  animation: tommy-message-in 0.2s ease-out;
+}
+.tommy-benefit-suggestion > span {
+  color: #8a5d18;
+  font-size: 0.65rem;
+  font-weight: 850;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+.tommy-benefit-suggestion strong {
+  color: #071e34;
+  font-size: 0.86rem;
+  line-height: 1.35;
+}
+.tommy-benefit-suggestion p {
+  font-size: 0.75rem;
+  line-height: 1.48;
+}
+.tommy-benefit-suggestion button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.65rem;
+  width: max-content;
+  max-width: 100%;
+  min-height: 38px;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #173e58;
+  border-radius: 999px;
+  background: #fff;
+  color: #173e58;
+  font-size: 0.73rem;
+  font-weight: 780;
+}
+.tommy-benefit-suggestion button:hover {
+  border-color: #d79a2b;
+  background: #fff9ed;
+}
 .tommy-account-prompt {
   display: grid;
   gap: 0.7rem;
@@ -328,6 +376,20 @@
 .tommy-account-prompt p {
   font-size: 0.76rem;
   line-height: 1.45;
+}
+.tommy-account-prompt ul {
+  display: grid;
+  gap: 0.3rem;
+  margin: 0.55rem 0;
+  padding-left: 1.05rem;
+  font-size: 0.73rem;
+  line-height: 1.42;
+}
+.tommy-account-prompt small {
+  display: block;
+  color: #526775;
+  font-size: 0.67rem;
+  line-height: 1.4;
 }
 .tommy-account-prompt span {
   display: flex;
@@ -525,6 +587,7 @@
     max-width: 97%;
   }
   .tommy-quick-replies,
+  .tommy-benefit-suggestion,
   .tommy-account-prompt {
     padding-left: 0;
     margin-left: 0;
@@ -547,6 +610,7 @@
   .tommy-message,
   .tommy-message-row,
   .tommy-quick-replies,
+  .tommy-benefit-suggestion,
   .tommy-notice,
   .tommy-avatar i,
   .tommy-typing span {

@@ -80,9 +80,11 @@ test.describe('Ask Tommy conversational experience', () => {
     await stubAnonymousSession(page);
     await page.route('**/api/chat/message', async (route) => {
       const payload = route.request().postDataJSON();
-      const answer = payload.message.includes('Reeves County')
-        ? 'Reeves County gives us a useful starting point. Do you have the written offer amount?'
-        : 'Before you sign anything, I can help you slow it down and compare the complete offer.';
+      const answer = payload.message.includes('headline offer amount')
+        ? 'Compare the exact interest, adjustment rights, deed scope, timing, costs, and payment terms before treating the headline as the result.'
+        : payload.message.includes('Reeves County')
+          ? 'Reeves County gives us a useful starting point. Do you have the written offer amount?'
+          : 'Before you sign anything, I can help you slow it down and compare the complete offer.';
       const body = [
         'event: message.delta',
         `data: ${JSON.stringify({ type: 'message.delta', delta: answer, persona: 'tommy' })}`,
@@ -103,7 +105,7 @@ test.describe('Ask Tommy conversational experience', () => {
     await page.goto('/');
     await page.locator('[data-open-home-chat]').first().click();
     await expect(page.getByTestId('ask-tommy-dialog')).toBeVisible();
-    await expect(page.getByText('How may I help you?', { exact: true })).toBeVisible();
+    await expect(page.getByText(/Tell me what brought you here: an offer/i)).toBeVisible();
     await expect(page.getByText('Skip for now', { exact: true })).toHaveCount(0);
     await expect(page.getByRole('button', { name: 'Document uploads unavailable' })).toBeDisabled();
     await expect(page.getByRole('button', { name: 'Talk to a live underwriter' })).toBeVisible();
@@ -120,11 +122,26 @@ test.describe('Ask Tommy conversational experience', () => {
     );
     await expect(page.getByTestId('tommy-composer-input')).toHaveAttribute('name', 'mrx-chat-open');
 
+    await expect(page.getByTestId('tommy-benefit-suggestion')).toBeVisible();
+    await expect(
+      page.getByText('What should I compare besides the headline offer amount?'),
+    ).toBeVisible();
+    await expect(page.getByText(/checklist|side-by-side offer comparison/i).last()).toBeVisible();
+    await expect(page.getByTestId('tommy-account-prompt')).toHaveCount(0);
+
+    await page.getByRole('button', { name: /Ask this next/i }).click();
+    await expect(
+      page.getByText(
+        'Compare the exact interest, adjustment rights, deed scope, timing, costs, and payment terms before treating the headline as the result.',
+      ),
+    ).toBeVisible();
     await expect(page.getByTestId('tommy-account-prompt')).toBeVisible();
     await expect(
-      page.getByText('Keep this conversation and any mineral-rights documents together'),
+      page.getByText('Turn these answers into a free private owner profile'),
     ).toBeVisible();
-    await expect(page.getByRole('link', { name: 'Log in or create an account' })).toHaveAttribute(
+    await expect(page.getByText(/Return to your questions, cited answers/i)).toBeVisible();
+    await expect(page.getByText(/See what is known, what is missing/i)).toBeVisible();
+    await expect(page.getByRole('link', { name: 'Create my free profile' })).toHaveAttribute(
       'href',
       '/account/?welcome=conversation',
     );
@@ -368,7 +385,7 @@ test.describe('Ask Tommy mobile conversation', () => {
     await page.locator('[data-open-home-chat]').first().click();
     const dialog = page.getByTestId('ask-tommy-dialog');
     await expect(dialog).toBeVisible();
-    await expect(page.getByText('How may I help you?', { exact: true })).toBeVisible();
+    await expect(page.getByText(/Tell me what brought you here: an offer/i)).toBeVisible();
     await page.waitForTimeout(350);
     const dimensions = await dialog.evaluate((element) => ({
       width: element.getBoundingClientRect().width,

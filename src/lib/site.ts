@@ -51,6 +51,7 @@ export const NAV = {
     legal: [
       { label: 'Privacy Policy', href: '/privacy-policy' },
       { label: 'Terms & AI Disclosure', href: '/terms/' },
+      { label: 'Editorial & Source Policy', href: '/editorial-policy/' },
       { label: 'Communication Preferences', href: '/communication-preferences/' },
     ],
     cta: [{ label: 'Ask Tommy', href: '#ask-tommy', variant: 'primary' as const }],

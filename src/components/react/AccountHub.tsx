@@ -424,6 +424,11 @@ export default function AccountHub({ supabaseUrl, supabaseAnonKey }: Props) {
             detail: { email, phone },
           }),
         );
+        trackAccountEvent('free_profile_created', {
+          source: accountIntent || 'account',
+          verification_requested: Boolean(result.verificationSent),
+          access_mode: 'device',
+        });
         setIntakeOpen(true);
       }
       setStatus(

@@ -35,7 +35,14 @@ export async function saveMessage(args: {
   content: string;
   persona?: string;
   citations?: unknown[];
-  eventType?: 'message' | 'handoff' | 'profile_prompt' | 'appointment' | 'consent' | 'notice';
+  eventType?:
+    | 'message'
+    | 'answer_completed'
+    | 'handoff'
+    | 'profile_prompt'
+    | 'appointment'
+    | 'consent'
+    | 'notice';
   metadata?: Record<string, unknown>;
 }) {
   const supabase = getSupabaseServer();
