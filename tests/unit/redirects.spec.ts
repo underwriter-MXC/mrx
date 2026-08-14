@@ -96,6 +96,11 @@ describe('canonical owner-situation redirects', () => {
           permanent: true,
         },
         {
+          source: '/blog/how-to-understand-mineral-rights-valuation-in-texas/',
+          destination: '/blog/understanding-texas-mineral-rights-valuation-process/',
+          permanent: true,
+        },
+        {
           source: '/blog/mineral-rights-closing-costs-and-fees/',
           destination: '/blog/closing-costs-and-fees-when-selling-mineral-rights-in-texas/',
           permanent: true,
@@ -131,6 +136,11 @@ describe('canonical owner-situation redirects', () => {
         {
           source: '/blog/understanding-probate-mineral-rights-in-texas/',
           destination: '/blog/understanding-the-probate-process-for-mineral-interests/',
+          permanent: true,
+        },
+        {
+          source: '/blog/what-makes-your-mineral-rights-valuable/',
+          destination: '/blog/what-determines-the-value-of-your-mineral-rights/',
           permanent: true,
         },
       ]),
