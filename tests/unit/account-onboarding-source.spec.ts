@@ -60,6 +60,9 @@ describe('account conversation onboarding source contract', () => {
     expect(accountHub).toContain(
       '...(session ? { Authorization: `Bearer ${session.access_token}` } : {})',
     );
+    expect(accountHub).toContain("fetch('/api/account/claim'");
+    expect(accountHub).toContain("headers: { ...headers, 'Content-Type': 'application/json' }");
+    expect(accountHub).toContain("body: '{}'");
   });
 
   it('extends existing identity and account APIs with validation and tenant-scoped ownership', () => {

@@ -179,7 +179,7 @@ async function claimMagicLink(actionLink) {
   invariant(user.email?.toLowerCase() === state.email, 'verified_email_mismatch');
   await productRequest(`${redirect.pathname}${redirect.search}`);
   await jsonResponse(
-    await productRequest('/api/account/claim', { method: 'POST' }),
+    await productRequest('/api/account/claim', { method: 'POST', body: '{}' }),
     'account_claim',
   );
 }

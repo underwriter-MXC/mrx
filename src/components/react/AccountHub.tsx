@@ -327,7 +327,13 @@ export default function AccountHub({ supabaseUrl, supabaseAnonKey }: Props) {
     let cancelled = false;
     (async () => {
       const headers = session ? { Authorization: `Bearer ${session.access_token}` } : undefined;
-      if (session) await fetch('/api/account/claim', { method: 'POST', headers });
+      if (session) {
+        await fetch('/api/account/claim', {
+          method: 'POST',
+          headers: { ...headers, 'Content-Type': 'application/json' },
+          body: '{}',
+        });
+      }
       const response = await fetch('/api/chat/session', { headers });
       const data = await response.json().catch(() => ({}));
       if (cancelled || !response.ok) {
