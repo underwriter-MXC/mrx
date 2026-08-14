@@ -1,18 +1,18 @@
 {
   "artifact_type": "mrx_article_two_image_retrofit",
   "schema_version": 1,
-  "generated_at_utc": "2026-08-14T18:50:18Z",
+  "generated_at_utc": "2026-08-14T20:32:25Z",
   "policy_source": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
   "summary": {
-    "article_count": 149,
-    "asset_count": 298,
-    "unique_source_art_count": 149,
-    "unique_hero_sha256_count": 149,
-    "unique_inline_sha256_count": 149,
-    "distinct_article_pair_count": 149,
-    "hero_ocr_pass_count": 149,
-    "inline_ocr_pass_count": 149,
-    "exact_filename_identity_count": 149
+    "article_count": 150,
+    "asset_count": 300,
+    "unique_source_art_count": 150,
+    "unique_hero_sha256_count": 150,
+    "unique_inline_sha256_count": 150,
+    "distinct_article_pair_count": 150,
+    "hero_ocr_pass_count": 150,
+    "inline_ocr_pass_count": 150,
+    "exact_filename_identity_count": 150
   },
   "contact_sheets": {
     "hero": [
@@ -3664,6 +3664,56 @@
           "actual": "•\nselling\nmineral rights",
           "normalized_expected": "selling mineral rights",
           "normalized_actual": "selling mineral rights",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      }
+    },
+    {
+      "slug": "should-i-sell-my-mineral-rights",
+      "title": "Should I Sell My Mineral Rights?",
+      "keyword": "Sell Mineral Rights or Keep Receiving Royalties",
+      "file_path": "src/content/posts/should-i-sell-my-mineral-rights.mdx",
+      "source_public_path": "/assets/articles/hero/should-i-sell-my-mineral-rights.webp",
+      "source_artifact_paths": [
+        "artifacts/mrx1000-wave61-creative-sources/should-i-sell-my-mineral-rights-hero-base.png",
+        "artifacts/mrx1000-wave61-creative-sources/should-i-sell-my-mineral-rights-inline-base.png"
+      ],
+      "generated_at_utc": "2026-08-14T20:28:59.782Z",
+      "hero": {
+        "public_path": "/assets/articles/hero/should-i-sell-my-mineral-rights.webp",
+        "alt": "A mineral owner compares a royalty statement and a sale folder beside “Should I Sell My Mineral Rights?”.",
+        "width": 1200,
+        "height": 630,
+        "mime_type": "image/webp",
+        "sha256": "34fc52353bfe5987897c02cc034e17594d88f440820097a955dd8e281755dc49",
+        "perceptual_hash": "0000000000001111000000000000111100000000000011110000000000011111011111000000111101101100000010111111110000000001000000000000000100000000110110010000000011000001000000000110011000000000111001010000000001111111000000001111111100000000111110110000000001111011",
+        "neutralized_art_text_region_count": 1,
+        "ocr": {
+          "expected": "Should I Sell My Mineral Rights?",
+          "actual": "Should I Sell My\nMineral Rights?",
+          "normalized_expected": "should i sell my mineral rights",
+          "normalized_actual": "should i sell my mineral rights",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      },
+      "inline": {
+        "public_path": "/assets/articles/inline/should-i-sell-my-mineral-rights/sell-mineral-rights-or-keep-receiving-royalties.webp",
+        "alt": "A parcel map separates a sale folder from royalty statements above “Sell Mineral Rights or Keep Receiving Royalties”.",
+        "rendered_text": "Sell Mineral Rights or Keep Receiving Royalties",
+        "visual_variant": "wave61-distinct-generated-sell-or-royalties-decision",
+        "width": 1200,
+        "height": 675,
+        "mime_type": "image/webp",
+        "sha256": "07daecbdd54c7879d1bc674566cf920bccae286ab7b0a82fc16e9a18c2016331",
+        "perceptual_hash": "1111110000000000111111000000000011111000000000001111111111100000111111111110000011111111111000001111111111100000111111111110000011111111111000001111111111100000110000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "neutralized_art_text_region_count": 1,
+        "ocr": {
+          "expected": "Sell Mineral Rights or Keep Receiving Royalties",
+          "actual": "Sell Mineral Rights or\nKeep Receiving Royalties",
+          "normalized_expected": "sell mineral rights or keep receiving royalties",
+          "normalized_actual": "sell mineral rights or keep receiving royalties",
           "uppercase_i_confusable_accepted": false,
           "pass": true
         }

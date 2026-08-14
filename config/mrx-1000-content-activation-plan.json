@@ -1,15 +1,15 @@
 {
   "artifact_type": "mrx1000_content_activation_plan",
   "plan_version": "mrx1000-content-activation-v1.1.0",
-  "generated_at": "2026-07-20T06:17:11.256Z",
+  "generated_at": "2026-07-20T20:03:01.141Z",
   "generated_at_method": "canonical_ledger_generated_at",
   "generator": "scripts/build-mrx-1000-activation-plan.mjs",
-  "content_fingerprint_sha256": "32e285abe39f489127c1131cef5ee0126060d49ebf620d94260b311e9eadafa0",
+  "content_fingerprint_sha256": "b9082ac6c472cc09ec116ad840f334e3884a7cbfc306a12ff9b0de719af98eb0",
   "inputs": {
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_fingerprint_sha256": "70cc5b34786faca428fdde3b02b309b8ca6dbfd0c597cb5e1ae5c5c772a26262",
+    "canonical_ledger_fingerprint_sha256": "8bab733b166d1a279321c98476571e4c21d8bbdc87a0a22ee66901159fdd374e",
     "canonical_ledger_fingerprint_verified": true,
-    "canonical_ledger_generated_at": "2026-07-20T06:17:11.256Z",
+    "canonical_ledger_generated_at": "2026-07-20T20:03:01.141Z",
     "owner_decision": {
       "decision_id": "D-2026-0804-16",
       "signed_disposition": "APPROVED_CONTINUOUS_QUALITY_GATED_ARTICLE_PUBLICATION",
@@ -115,9 +115,9 @@
     },
     "by_source_preservation_classification": {
       "incumbent_draft_nonpublic_held": 28,
-      "live_public_published_route": 149,
+      "live_public_published_route": 150,
       "pilot_draft_noindex_stage": 25,
-      "planning_only_inventory": 798
+      "planning_only_inventory": 797
     }
   },
   "rows": [
@@ -8770,11 +8770,11 @@
       },
       "sibling_link": {
         "target_program_row_id": "MRX1000-0141",
-        "target_title": "What Every Mineral Rights Owner Needs to Know",
-        "url": "/blog/what-every-mineral-rights-owner-needs-to-know/",
+        "target_title": "Should I Sell My Mineral Rights?",
+        "url": "/blog/should-i-sell-my-mineral-rights/",
         "relationship": "same_cluster_next_by_program_row_id_cyclic",
-        "target_source_preservation_classification": "planning_only_inventory",
-        "target_route_live": false,
+        "target_source_preservation_classification": "live_public_published_route",
+        "target_route_live": true,
         "status": "planned_local_only"
       },
       "primary_cta": {
@@ -8817,15 +8817,15 @@
     },
     {
       "program_row_id": "MRX1000-0141",
-      "canonical_title": "What Every Mineral Rights Owner Needs to Know",
-      "canonical_slug": "what-every-mineral-rights-owner-needs-to-know",
-      "canonical_url": "/blog/what-every-mineral-rights-owner-needs-to-know/",
+      "canonical_title": "Should I Sell My Mineral Rights?",
+      "canonical_slug": "should-i-sell-my-mineral-rights",
+      "canonical_url": "/blog/should-i-sell-my-mineral-rights/",
       "cluster": "sell-mineral-rights-decision-process",
       "pillar": "sell-mineral-rights",
       "search_intent": "transactional",
       "funnel_stage": "decision",
-      "source_preservation_classification": "planning_only_inventory",
-      "source_route_live": false,
+      "source_preservation_classification": "live_public_published_route",
+      "source_route_live": true,
       "pillar_link": {
         "url": "/sell-mineral-rights/",
         "route_evidence": "src/pages/sell-mineral-rights.astro",
@@ -8874,7 +8874,7 @@
         "rendered_triangle_verified": false,
         "live_status": "not_published_or_verified_by_this_plan",
         "live_triangle_verified": false,
-        "release_status": "eligible_for_continuous_quality_review_not_yet_cleared",
+        "release_status": "released_under_d16_continuous_quality_gate",
         "numerical_release_cap_applies": false
       }
     },
