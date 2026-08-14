@@ -1,7 +1,7 @@
 {
   "program": "MRX1000",
   "artifact_type": "searchatlas_ordered_llm_local_execution_manifest",
-  "generated_at": "2026-07-20T19:40:15.587Z",
+  "generated_at": "2026-07-20T08:25:37.000Z",
   "deterministic": true,
   "local_only": true,
   "external_services_called": false,
@@ -9,8 +9,8 @@
   "inputs": {
     "ledger": {
       "path": "config/mrx-1000-canonical-content-ledger.json",
-      "sha256": "2f4fb40c583c52b2ffe109277e30a0a4a722863a1fbeddff91b8d1767bde140b",
-      "bytes": 4472206
+      "sha256": "dcdd0a1645cc51d73ef354baf5d95efc6704b1a1b0f1f5045117de9daa5b56a5",
+      "bytes": 4472564
     },
     "readiness": {
       "path": "reports/mrx-1000-readiness-matrix.json",
@@ -57223,7 +57223,7 @@
       "primary_keyword": "Texas Mineral Tax Value vs. Sale Estimate",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -350586,5 +350586,5 @@
       ]
     }
   ],
-  "content_fingerprint_sha256": "79315940801eebf4b274f21f6b39ae4f6a7758ba40aca227176aae1319d34452"
+  "content_fingerprint_sha256": "5ad60f7ee4a62781b12131b4634ee7720bb6ace4014e8805939f82f7f0362cba"
 }
