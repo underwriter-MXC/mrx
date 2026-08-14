@@ -1,7 +1,7 @@
 {
   "program": "MRX1000",
   "artifact_type": "searchatlas_ordered_llm_local_execution_manifest",
-  "generated_at": "2026-07-20T15:49:28.667Z",
+  "generated_at": "2026-07-20T08:25:37.000Z",
   "deterministic": true,
   "local_only": true,
   "external_services_called": false,
@@ -9,8 +9,8 @@
   "inputs": {
     "ledger": {
       "path": "config/mrx-1000-canonical-content-ledger.json",
-      "sha256": "da5410f8e81e7bb6e7017c37951b4c5ccda747932f434dc10bfdf7ba56b40142",
-      "bytes": 4467571
+      "sha256": "fbb8a1797f42923a5ae12a9625319bbe6307698210c5b985abfe313e94a91331",
+      "bytes": 4467929
     },
     "readiness": {
       "path": "reports/mrx-1000-readiness-matrix.json",
@@ -56119,7 +56119,7 @@
       "primary_keyword": "What Information Do I Need to Provide for a Mineral Rights Review?",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -350508,5 +350508,5 @@
       ]
     }
   ],
-  "content_fingerprint_sha256": "7837eb6cac4ae9135d6545bcff11f55c593bbdb1b570d1839eb9961bb4192db9"
+  "content_fingerprint_sha256": "805a38c78b19e798897f8ffbc864708938d6d97a894b0f41a2dceca1e13f0bff"
 }
