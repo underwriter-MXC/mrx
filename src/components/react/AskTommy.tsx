@@ -536,7 +536,11 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
         const restoredAppointment = restoreBookedAppointment();
         if (!cancelled && restoredAppointment) setBookedAppointment(restoredAppointment);
         const headers = await authHeaders(false);
-        await fetch('/api/chat/session', { method: 'POST', headers });
+        await fetch('/api/chat/session', {
+          method: 'POST',
+          headers: await authHeaders(),
+          body: '{}',
+        });
         const response = await fetch('/api/chat/session', { headers });
         if (!response.ok) return;
         const data = await response.json();

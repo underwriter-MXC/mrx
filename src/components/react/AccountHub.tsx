@@ -462,7 +462,8 @@ export default function AccountHub({ supabaseUrl, supabaseAnonKey }: Props) {
     if (!hasOwnerAccess || !confirm('Delete this private document from your MRX account?')) return;
     const response = await fetch(`/api/chat/attachments/${id}`, {
       method: 'DELETE',
-      headers: ownerHeaders(),
+      headers: ownerHeaders(true),
+      body: '{}',
     });
     if (response.ok) setAttachments((current) => current.filter((item) => item.id !== id));
   }
@@ -489,7 +490,11 @@ export default function AccountHub({ supabaseUrl, supabaseAnonKey }: Props) {
       return;
     const response = await fetch(`/api/chat/conversations/${id}`, {
       method: 'DELETE',
-      headers: { Authorization: `Bearer ${session.access_token}` },
+      headers: {
+        Authorization: `Bearer ${session.access_token}`,
+        'Content-Type': 'application/json',
+      },
+      body: '{}',
     });
     if (response.ok) setConversations((current) => current.filter((item) => item.id !== id));
     else setStatus('That conversation could not be deleted.');
@@ -835,7 +840,11 @@ export default function AccountHub({ supabaseUrl, supabaseAnonKey }: Props) {
         return;
       const response = await fetch('/api/account/deletion-request', {
         method: 'POST',
-        headers: { Authorization: `Bearer ${session.access_token}` },
+        headers: {
+          Authorization: `Bearer ${session.access_token}`,
+          'Content-Type': 'application/json',
+        },
+        body: '{}',
       });
       const result = await response.json().catch(() => ({}));
       if (!response.ok || !result.deletionToken)

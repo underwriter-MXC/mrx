@@ -63,6 +63,10 @@ describe('account conversation onboarding source contract', () => {
     expect(accountHub).toContain("fetch('/api/account/claim'");
     expect(accountHub).toContain("headers: { ...headers, 'Content-Type': 'application/json' }");
     expect(accountHub).toContain("body: '{}'");
+    expect(accountHub).toContain('headers: ownerHeaders(true)');
+    expect(accountHub).toContain("fetch('/api/account/deletion-request'");
+    expect(askTommy).toContain("fetch('/api/chat/session'");
+    expect(askTommy).toContain("headers: await authHeaders()");
   });
 
   it('extends existing identity and account APIs with validation and tenant-scoped ownership', () => {

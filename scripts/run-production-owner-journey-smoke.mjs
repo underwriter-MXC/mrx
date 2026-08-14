@@ -299,7 +299,10 @@ async function bookAndCancelAppointment() {
   invariant(local?.id, 'local_appointment_missing');
   state.localAppointmentId = local.id;
   const cancelled = await jsonResponse(
-    await productRequest(`/api/appointments/${state.localAppointmentId}`, { method: 'DELETE' }),
+    await productRequest(`/api/appointments/${state.localAppointmentId}`, {
+      method: 'DELETE',
+      body: '{}',
+    }),
     'appointment_cancel',
   );
   invariant(cancelled.ok === true, 'appointment_not_cancelled');
