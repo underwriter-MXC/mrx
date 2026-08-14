@@ -1,7 +1,7 @@
 {
   "program": "MRX1000",
   "artifact_type": "searchatlas_ordered_llm_local_execution_manifest",
-  "generated_at": "2026-07-20T20:03:01.141Z",
+  "generated_at": "2026-07-20T15:12:49.692Z",
   "deterministic": true,
   "local_only": true,
   "external_services_called": false,
@@ -9,8 +9,8 @@
   "inputs": {
     "ledger": {
       "path": "config/mrx-1000-canonical-content-ledger.json",
-      "sha256": "61191dc0f416ec383dd5ed000e28b464e66a52b6973c52d0dba0c9e8907f8c96",
-      "bytes": 4473326
+      "sha256": "3adaa3407f746b00f1bec464ed4860d93abce36cda755b16a3b0214203f62f97",
+      "bytes": 4473684
     },
     "readiness": {
       "path": "reports/mrx-1000-readiness-matrix.json",
@@ -57591,7 +57591,7 @@
       "primary_keyword": "should I sell my mineral rights",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -350612,5 +350612,5 @@
       ]
     }
   ],
-  "content_fingerprint_sha256": "0c2ecca48147ff949ad491edbc5142579aa2a6a626d6a54860cfbee0ea483375"
+  "content_fingerprint_sha256": "6b481df842372737e9097547bb186367fb46e0b717389cddfca0c19ec87ffd7c"
 }
