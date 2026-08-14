@@ -60,12 +60,17 @@ const PRIOR_LEDGER_PATH = process.env.MRX1000_LEDGER_PRIOR_PATH
 
 const PROGRAM_ROW_ID_RE = /^MRX1000-(\d+)$/;
 const SUPERSEDED_CANONICAL_SLUGS = new Set([
+  'unlocking-the-true-worth-of-your-mineral-rights-a-comprehensive-evaluation-guide',
   'ensuring-transparency-how-we-avoid-predatory-tactics-in-mineral-rights-assessments',
   'transparency-in-mineral-rights-how-we-compare-to-other-services',
   'why-mineralrightsxchange-is-your-most-reliable-choice-for-transparent-mineral-rights-acquisition',
   'why-mineralrightsxchange-offers-unique-advantages-over-competing-mineral-rights-acquisition-services',
 ]);
 const SUCCESSOR_CANONICAL_SLUGS = new Map([
+  [
+    'unlocking-the-true-worth-of-your-mineral-rights-a-comprehensive-evaluation-guide',
+    'why-is-my-mineral-rights-valuation-range-so-wide',
+  ],
   [
     'ensuring-transparency-how-we-avoid-predatory-tactics-in-mineral-rights-assessments',
     'transparent-mineral-rights-reviews-questions-that-help-owners-avoid-pressure',
@@ -95,6 +100,7 @@ async function loadPriorProgramRowIds() {
         sourceSystemBySlug: new Map(),
         incumbentRepoCount: 0,
         maxSequenceEver: 0,
+        wave58Rekey: null,
       };
     }
     throw error;
@@ -126,6 +132,7 @@ async function loadPriorProgramRowIds() {
     sourceSystemBySlug,
     incumbentRepoCount: Number(prior.verification?.incumbent_repo_count ?? 0),
     maxSequenceEver,
+    wave58Rekey: prior.identity_registry?.wave58_rekey ?? null,
   };
 }
 
@@ -1445,6 +1452,7 @@ async function main() {
       max_sequence_ever: maxProgramRowSequenceEver,
       preserved_existing_id_count: preservedProgramRowIdCount,
       newly_allocated_id_count: selected.length - preservedProgramRowIdCount,
+      ...(priorIdentity.wave58Rekey ? { wave58_rekey: priorIdentity.wave58Rekey } : {}),
     },
     content_fingerprint_sha256: hashRows(selected),
     policy: {
