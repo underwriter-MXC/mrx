@@ -1,7 +1,7 @@
 {
   "program": "MRX1000",
   "artifact_type": "searchatlas_ordered_llm_local_execution_manifest",
-  "generated_at": "2026-07-20T23:09:08.573Z",
+  "generated_at": "2026-07-20T08:25:37.000Z",
   "deterministic": true,
   "local_only": true,
   "external_services_called": false,
@@ -9,8 +9,8 @@
   "inputs": {
     "ledger": {
       "path": "config/mrx-1000-canonical-content-ledger.json",
-      "sha256": "59f7571d688795a61814608ece59e64ec51bb19cee29581ef6c784873b59049b",
-      "bytes": 4468693
+      "sha256": "9803dc72d60baa7ec7e9d61ca91a3b3c0fa3d5e7d02acdc0d7dcf6a08f959b21",
+      "bytes": 4469051
     },
     "readiness": {
       "path": "reports/mrx-1000-readiness-matrix.json",
@@ -56487,7 +56487,7 @@
       "primary_keyword": "Why Is My Mineral Rights Valuation Range So Wide?",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -350534,5 +350534,5 @@
       ]
     }
   ],
-  "content_fingerprint_sha256": "e5ef36635a5e464107cb69e6ee23ac347fe4ed0150d2c84641e4d03986b1ed8d"
+  "content_fingerprint_sha256": "b4b35eddca436b6872510a04a235ff4c8d7b488deb7a1a7405a87dfcf764e0e4"
 }
