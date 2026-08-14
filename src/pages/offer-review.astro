@@ -56,5 +56,51 @@ const inventory = await getPillarInventoryPage('offer-review');
       },
     ]}
   />
+  <section class="mrx-section mrx-section--sand" aria-labelledby="offer-comparison-cta-title">
+    <div class="container mrx-prose-grid">
+      <div>
+        <p class="mrx-eyebrow">New private worksheet</p>
+        <h2 id="offer-comparison-cta-title">
+          Compare two offers before you share your information.
+        </h2>
+        <p>
+          Enter the headline amount, disclosed fees, rights conveyed, adjustment language, document
+          stage, and closing timing. The worksheet shows provisional net proceeds, flags missing
+          terms, and builds questions to ask. It runs in your browser with no account required.
+        </p>
+        <div class="mrx-home-actions">
+          <a class="mrx-primary" href="/mineral-rights-offer-comparison/">
+            Compare my offers free
+          </a>
+          <button
+            class="mrx-secondary"
+            type="button"
+            data-offer-tool-prompt="I have one mineral-rights offer and want help identifying the terms I should compare before I respond."
+          >
+            Ask Tommy what to collect
+          </button>
+        </div>
+      </div>
+      <aside class="mrx-answer-card">
+        <h2>What you get first</h2>
+        <ul>
+          <li>A side-by-side provisional net comparison</li>
+          <li>Flags for unclear rights, reductions, and timing</li>
+          <li>A reusable question list for both buyers</li>
+          <li>An optional path to a free profile or underwriter review</li>
+        </ul>
+        <small>The worksheet does not estimate mineral value or interpret a contract.</small>
+      </aside>
+    </div>
+  </section>
   <StaticPillarInventory inventory={inventory} />
 </MarketingLayout>
+
+<script>
+  document
+    .querySelector<HTMLElement>('[data-offer-tool-prompt]')
+    ?.addEventListener('click', (event) => {
+      const prompt = (event.currentTarget as HTMLElement).dataset.offerToolPrompt;
+      window.dispatchEvent(new CustomEvent('mrx:open-chat', { detail: { prompt } }));
+    });
+</script>

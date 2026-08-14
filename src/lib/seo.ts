@@ -21,6 +21,7 @@ export const DESC_MAX = 160;
 export const OG_IMAGE_WIDTH = 1200;
 export const OG_IMAGE_HEIGHT = 630;
 export const OG_IMAGE_TYPE = 'image/png';
+export const TWITTER_DESCRIPTION_MAX = 125;
 
 export function buildTitle(parts: string[], brand = 'Mineral Rights Xchange'): string {
   // Pattern: "[Value Prop] · [Brand]" (per SEO plan §1.1)
@@ -56,6 +57,26 @@ export function validateDescription(description: string): { ok: boolean; reason?
     return { ok: false, reason: `Description too long (${description.length} > ${DESC_MAX})` };
   }
   return { ok: true };
+}
+
+/**
+ * Keep X card copy inside the 125-character crawler budget without shortening
+ * the page's search description. Truncation happens on a word boundary and is
+ * deterministic, so the rendered head is stable across builds.
+ */
+export function buildTwitterDescription(
+  description: string,
+  maxLength = TWITTER_DESCRIPTION_MAX,
+): string {
+  const clean = description.trim().replace(/\s+/g, ' ');
+  if (clean.length <= maxLength) return clean;
+  if (maxLength <= 1) return clean.slice(0, maxLength);
+
+  const candidate = clean.slice(0, maxLength - 1).trimEnd();
+  const wordBoundary = candidate.lastIndexOf(' ');
+  const shortened =
+    wordBoundary > Math.floor(maxLength * 0.6) ? candidate.slice(0, wordBoundary) : candidate;
+  return `${shortened.trimEnd()}…`;
 }
 
 export function buildCanonical(path: string, baseUrl: string): string {

@@ -191,7 +191,7 @@ describe('article share metadata wiring', () => {
     expect(seo).toContain('<meta property="og:description" content={description} />');
     expect(seo).toContain('<meta property="og:image" content={og} />');
     expect(seo).toContain('<meta name="twitter:title" content={finalTitle} />');
-    expect(seo).toContain('<meta name="twitter:description" content={description} />');
+    expect(seo).toContain('<meta name="twitter:description" content={twitterDescription} />');
     expect(seo).toContain('<meta name="twitter:image" content={og} />');
     expect(articleLayout).toContain('data-article-inline-image');
     expect(articleLayout).toContain('data-rendered-text={inlineImage.rendered_text}');

@@ -1,5 +1,6 @@
 ---
 import MarketingLayout from '../layouts/MarketingLayout.astro';
+import CitedAnswer from '../components/molecules/CitedAnswer.astro';
 export const prerender = true;
 ---
 
@@ -45,6 +46,16 @@ export const prerender = true;
       </aside>
     </div>
   </section>
+  <div class="container section--sm">
+    <CitedAnswer
+      text="A free MRX phone conversation is an optional next step after an owner has received useful information. Before booking, an owner can ask Tommy a mineral-rights question anonymously, read reviewed guidance, compare two written offers in a private browser-only worksheet, or begin organizing property details. If a conversation would help, Angela asks for the owner’s timezone and timing preference, checks live availability, and offers three available phone times inside the private assistant. Contact information is requested only to confirm the chosen appointment and connect it to secure member access. Email, SMS, marketing-text, human-call, and AI-voice choices are presented separately; declining a communication channel does not prevent an owner from booking or using the website’s educational help. The call is free and creates no obligation to sell. The underwriter can help organize facts, explain common terms, identify missing records, and prepare questions, but the conversation is not a certified appraisal, legal opinion, tax opinion, or guarantee of a value or transaction outcome. If MRX may become a buyer, that relationship is disclosed in writing before an agreement is signed. The owner controls every next step."
+      sources={[
+        { label: 'How the review works', href: '/how-it-works/' },
+        { label: 'Communication preferences', href: '/communication-preferences/' },
+        { label: 'Terms and AI disclosure', href: '/terms/' },
+      ]}
+    />
+  </div>
   <section class="mrx-section">
     <div class="container mrx-prose-grid">
       <div>

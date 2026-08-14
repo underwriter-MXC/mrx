@@ -1,6 +1,6 @@
 ---
 title: 'How It Works: A Free Underwriter Review · MRX'
-description: 'See how Mineral Rights Xchange reviews Texas mineral rights: intake, document review, underwriting, valuation discussion, and clear next steps. No pressure.'
+description: 'See how MRX reviews mineral rights nationwide: owner question, records, underwriting factors, a directional range, and clear next steps. No pressure.'
 slug: 'how-it-works'
 category: 'process'
 hero_kicker: 'A transparent review process'
@@ -30,8 +30,8 @@ compliance_signoff:
   no_named_underwriter: true
   has_footer_disclaimer: true
   money_figure_sourced: false
-  reviewed_by: 'mrx_compliance-stage06-initial'
-  reviewed_at: '2026-06-11T00:00:00Z'
+  reviewed_by: 'mrx_compliance-seo-aeo-2026-08-14'
+  reviewed_at: '2026-08-14T23:45:00Z'
 ---
 
 import Hero from '../../components/molecules/Hero.astro';
@@ -40,6 +40,7 @@ import FaqBlock from '../../components/molecules/FaqBlock.astro';
 import Text from '../../components/atoms/Text.astro';
 import Heading from '../../components/atoms/Heading.astro';
 import Icon from '../../components/atoms/Icon.astro';
+import CitedAnswer from '../../components/molecules/CitedAnswer.astro';
 
 <Hero
   kicker={frontmatter.hero_kicker}
@@ -48,6 +49,17 @@ import Icon from '../../components/atoms/Icon.astro';
   primaryCta={frontmatter.primary_cta}
   secondaryCta={frontmatter.secondary_cta}
 />
+
+<div class="container section--sm">
+  <CitedAnswer
+    text="A free MRX underwriter review begins with the owner’s decision, not a sales form. An owner can first ask a question anonymously, read reviewed guidance, or use a private comparison tool. If the owner wants a closer look, MRX organizes the available ownership, lease, royalty, production, operator, title, and offer records. Missing documents are normal and become a checklist rather than an automatic rejection. The underwriter then separates verified facts from assumptions, reviews factors that may affect expected royalty income or a written offer, and explains uncertainty in plain language. Where the records support it, the output is a directional range with the assumptions stated; it is not a certified appraisal, legal opinion, or tax opinion. An owner can use the result to compare an offer, identify questions for a buyer, decide what records to request, or prepare for a conversation with an attorney, tax professional, or appraiser. There is no obligation to sell. If MRX may become a buyer, that relationship is disclosed in writing before an agreement is signed. Owners remain in control of whether to continue, save information in a free private profile, request a phone conversation, or stop after receiving educational value."
+    sources={[
+      { label: 'Published methodology', href: '/methodology/' },
+      { label: 'Editorial and source policy', href: '/editorial-policy/' },
+      { label: 'Private offer-comparison worksheet', href: '/mineral-rights-offer-comparison/' },
+    ]}
+  />
+</div>
 
 <section class="container section">
   <Heading level={2} size="3xl">What your underwriter review actually covers</Heading>
@@ -68,7 +80,7 @@ import Icon from '../../components/atoms/Icon.astro';
     </article>
     <article class="card" style="background: var(--color-white); padding: var(--space-6); border-radius: var(--radius-md); border: 1px solid var(--color-ink-100);">
       <Heading level={3} size="lg">Title and acreage confidence</Heading>
-      <Text>Unclear title, partial mineral rights, and multiple-heir situations all change the picture. We flag what to verify with a Texas-licensed attorney before you commit to anything.</Text>
+      <Text>Unclear title, partial mineral rights, and multiple-heir situations all change the picture. We flag what to verify with an attorney qualified in the applicable state before you commit to anything.</Text>
     </article>
   </div>
 </section>

@@ -1,0 +1,635 @@
+---
+/**
+ * Private, browser-only offer comparison worksheet. Values stay in the DOM
+ * for the current page session and are never included in analytics events.
+ */
+---
+
+<section class="offer-tool" aria-labelledby="offer-tool-title">
+  <div class="container">
+    <header class="offer-tool__intro">
+      <div>
+        <p class="mrx-eyebrow">Free private worksheet</p>
+        <h2 id="offer-tool-title">Compare what each offer actually says</h2>
+        <p>
+          Enter only the terms you are comfortable comparing. Nothing is submitted, saved, or sent
+          to MRX unless you later choose to start a conversation or create a profile.
+        </p>
+      </div>
+      <ul aria-label="Worksheet benefits">
+        <li>See provisional net proceeds after entered fees</li>
+        <li>Surface missing rights and adjustment language</li>
+        <li>Build a focused question list before you respond</li>
+      </ul>
+    </header>
+
+    <form class="offer-tool__form" data-offer-comparison-form>
+      <div class="offer-tool__offers">
+        {
+          ['a', 'b'].map((id, index) => (
+            <fieldset class="offer-tool__card" data-offer-card={id}>
+              <legend>Offer {index === 0 ? 'A' : 'B'}</legend>
+              <label>
+                Headline amount
+                <span class="offer-tool__money">
+                  <span aria-hidden="true">$</span>
+                  <input
+                    name={`${id}-headline`}
+                    type="number"
+                    min="0"
+                    step="0.01"
+                    inputmode="decimal"
+                    required
+                    placeholder="0"
+                  />
+                </span>
+              </label>
+              <label>
+                Known fees or deductions
+                <small>Leave blank if the offer does not say.</small>
+                <span class="offer-tool__money">
+                  <span aria-hidden="true">$</span>
+                  <input
+                    name={`${id}-fees`}
+                    type="number"
+                    min="0"
+                    step="0.01"
+                    inputmode="decimal"
+                    placeholder="Unknown"
+                  />
+                </span>
+              </label>
+              <label>
+                Expected closing time in days
+                <small>Use the written timing, not an oral estimate.</small>
+                <input
+                  name={`${id}-days`}
+                  type="number"
+                  min="0"
+                  max="730"
+                  step="1"
+                  inputmode="numeric"
+                  placeholder="Unknown"
+                />
+              </label>
+              <label>
+                Rights the buyer would receive
+                <select name={`${id}-rights`} required>
+                  <option value="">Choose what the document says</option>
+                  <option value="all">All described mineral rights</option>
+                  <option value="partial">A stated partial interest or depth</option>
+                  <option value="royalty">Royalty interest only</option>
+                  <option value="unclear">Not clear from the document</option>
+                </select>
+              </label>
+              <label>
+                Buyer adjustment rights
+                <select name={`${id}-adjustment`} required>
+                  <option value="">Choose what the document says</option>
+                  <option value="none">No reduction right found</option>
+                  <option value="reduce">Buyer may reduce the amount</option>
+                  <option value="unclear">Not clear from the document</option>
+                </select>
+              </label>
+              <label>
+                Form of the offer
+                <select name={`${id}-document`} required>
+                  <option value="">Choose the closest description</option>
+                  <option value="final">Complete written agreement</option>
+                  <option value="loi">Letter of intent or term sheet</option>
+                  <option value="verbal">Email, text, or verbal number</option>
+                  <option value="unclear">Not sure</option>
+                </select>
+              </label>
+            </fieldset>
+          ))
+        }
+      </div>
+
+      <div class="offer-tool__controls">
+        <button class="mrx-primary" type="submit">Show my comparison</button>
+        <button class="offer-tool__reset" type="reset">Clear worksheet</button>
+        <small>No account or contact information required.</small>
+      </div>
+    </form>
+
+    <section class="offer-result" data-offer-result hidden aria-live="polite" tabindex="-1">
+      <header>
+        <p class="mrx-eyebrow">Your private comparison</p>
+        <h2 data-result-heading>Here is what the entered terms show</h2>
+        <p data-result-summary></p>
+      </header>
+
+      <div class="offer-result__numbers" aria-label="Provisional net comparison">
+        <div>
+          <span>Offer A</span>
+          <strong data-net-a></strong>
+          <small>headline minus entered fees</small>
+        </div>
+        <div>
+          <span>Offer B</span>
+          <strong data-net-b></strong>
+          <small>headline minus entered fees</small>
+        </div>
+        <div>
+          <span>Difference</span>
+          <strong data-net-difference></strong>
+          <small data-timing-summary></small>
+        </div>
+      </div>
+
+      <div class="offer-result__grid">
+        <section aria-labelledby="terms-to-clarify-title">
+          <h3 id="terms-to-clarify-title">Terms to clarify</h3>
+          <ul data-risk-list></ul>
+        </section>
+        <section aria-labelledby="questions-to-ask-title">
+          <h3 id="questions-to-ask-title">Questions worth asking</h3>
+          <ol data-question-list></ol>
+        </section>
+      </div>
+
+      <div class="offer-result__next">
+        <div>
+          <p class="mrx-eyebrow">Make the comparison more useful</p>
+          <h3>Get a plain-language second look without starting over</h3>
+          <p>
+            Ask Tommy to explain the flagged terms now. If you want to keep questions, property
+            details, offers, deeds, and royalty statements together, create a free private profile
+            only after you have seen the worksheet results.
+          </p>
+        </div>
+        <div class="offer-result__actions">
+          <button class="mrx-primary" type="button" data-ask-about-comparison>
+            Ask Tommy about these flags
+          </button>
+          <a
+            class="mrx-secondary"
+            href="/account/?welcome=offer-comparison"
+            data-cta-name="offer-comparison-free-profile">Create my free profile</a
+          >
+          <a class="offer-result__book" href="/book/" data-cta-name="offer-comparison-book-review"
+            >Request a free underwriter review</a
+          >
+          <button class="offer-result__print" type="button" data-print-comparison>
+            Print this comparison
+          </button>
+        </div>
+      </div>
+
+      <p class="offer-result__disclaimer">
+        This worksheet compares only the terms you enter. It does not estimate mineral value, verify
+        title, interpret a contract, or provide legal, tax, appraisal, or investment advice.
+      </p>
+    </section>
+  </div>
+</section>
+
+<script>
+  type OfferInput = {
+    headline: number;
+    fees: number | null;
+    days: number | null;
+    rights: string;
+    adjustment: string;
+    document: string;
+  };
+
+  const form = document.querySelector<HTMLFormElement>('[data-offer-comparison-form]');
+  const result = document.querySelector<HTMLElement>('[data-offer-result]');
+  const analyticsWindow = window as typeof window & {
+    __mrxPush?: (payload: Record<string, unknown>) => void;
+  };
+  let started = false;
+  let lastOutcome = 'equal';
+  let lastFlagCount = 0;
+
+  function track(event: string, extra: Record<string, unknown> = {}) {
+    const payload = { event, tool_name: 'mineral_rights_offer_comparison', ...extra };
+    if (analyticsWindow.__mrxPush) analyticsWindow.__mrxPush(payload);
+    else {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push(payload);
+    }
+  }
+
+  function field<T extends HTMLInputElement | HTMLSelectElement>(name: string): T {
+    const element = form?.elements.namedItem(name);
+    if (!(element instanceof HTMLInputElement) && !(element instanceof HTMLSelectElement)) {
+      throw new Error(`Missing offer-comparison field: ${name}`);
+    }
+    return element as T;
+  }
+
+  function optionalNumber(name: string): number | null {
+    const value = field<HTMLInputElement>(name).value.trim();
+    return value === '' ? null : Number(value);
+  }
+
+  function readOffer(id: 'a' | 'b'): OfferInput {
+    return {
+      headline: Number(field<HTMLInputElement>(`${id}-headline`).value),
+      fees: optionalNumber(`${id}-fees`),
+      days: optionalNumber(`${id}-days`),
+      rights: field<HTMLSelectElement>(`${id}-rights`).value,
+      adjustment: field<HTMLSelectElement>(`${id}-adjustment`).value,
+      document: field<HTMLSelectElement>(`${id}-document`).value,
+    };
+  }
+
+  function money(value: number): string {
+    return new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'USD',
+      maximumFractionDigits: value % 1 === 0 ? 0 : 2,
+    }).format(value);
+  }
+
+  function setText(selector: string, value: string) {
+    const element = result?.querySelector<HTMLElement>(selector);
+    if (element) element.textContent = value;
+  }
+
+  function appendList(selector: string, items: string[]) {
+    const list = result?.querySelector<HTMLElement>(selector);
+    if (!list) return;
+    list.replaceChildren(
+      ...items.map((item) => {
+        const row = document.createElement('li');
+        row.textContent = item;
+        return row;
+      }),
+    );
+  }
+
+  function flagsFor(label: string, offer: OfferInput): string[] {
+    const flags: string[] = [];
+    if (offer.fees === null)
+      flags.push(`${label}: fees or deductions were not entered, so net proceeds are provisional.`);
+    if (offer.days === null)
+      flags.push(`${label}: the written closing or payment timeline is not clear.`);
+    if (offer.rights === 'unclear')
+      flags.push(`${label}: the exact acres, depths, and interests conveyed are not clear.`);
+    if (offer.adjustment === 'reduce')
+      flags.push(`${label}: the buyer may reduce the amount after title or diligence review.`);
+    if (offer.adjustment === 'unclear')
+      flags.push(`${label}: adjustment or clawback rights are not clear.`);
+    if (offer.document === 'loi')
+      flags.push(`${label}: a letter of intent or term sheet may not contain the final agreement.`);
+    if (offer.document === 'verbal')
+      flags.push(`${label}: the number is not yet supported by a complete written agreement.`);
+    if (offer.document === 'unclear') flags.push(`${label}: the document stage is not clear.`);
+    return flags;
+  }
+
+  form?.addEventListener('input', () => {
+    if (started) return;
+    started = true;
+    track('offer_comparison_started');
+  });
+
+  form?.addEventListener('submit', (event) => {
+    event.preventDefault();
+    if (!form.reportValidity() || !result) return;
+
+    const a = readOffer('a');
+    const b = readOffer('b');
+    const netA = a.headline - (a.fees ?? 0);
+    const netB = b.headline - (b.fees ?? 0);
+    const difference = Math.abs(netA - netB);
+    lastOutcome = netA === netB ? 'equal' : netA > netB ? 'offer_a' : 'offer_b';
+
+    const summary =
+      lastOutcome === 'equal'
+        ? 'The entered amounts produce the same provisional net. The written rights, adjustment terms, document stage, and timing may still make the offers materially different.'
+        : `${lastOutcome === 'offer_a' ? 'Offer A' : 'Offer B'} has the higher provisional net from the amounts entered. That does not make it the better agreement until the rights conveyed, adjustment language, document stage, and closing conditions are compared.`;
+
+    const flags = [...flagsFor('Offer A', a), ...flagsFor('Offer B', b)];
+    if (flags.length === 0)
+      flags.push(
+        'No missing field was detected in this worksheet. The underlying deed, exhibits, title assumptions, and complete agreement still need document-level review.',
+      );
+    lastFlagCount = flags.length;
+
+    const questions = [
+      'Exactly which counties, tracts, depths, acres, and interests would the deed convey?',
+      'Can the buyer change the amount after title, acreage, production, or diligence review?',
+      'What must happen before payment, and what rights does either party have if closing is delayed?',
+    ];
+    if (a.fees === null || b.fees === null)
+      questions.push('Are there any fees, deductions, commissions, transfer costs, or holdbacks?');
+    if (a.document !== 'final' || b.document !== 'final')
+      questions.push('Which terms can still change between this document and the final agreement?');
+
+    setText('[data-net-a]', money(netA));
+    setText('[data-net-b]', money(netB));
+    setText('[data-net-difference]', money(difference));
+    setText('[data-result-summary]', summary);
+    setText(
+      '[data-timing-summary]',
+      a.days !== null && b.days !== null
+        ? a.days === b.days
+          ? `Both state ${a.days} days`
+          : `${a.days < b.days ? 'Offer A' : 'Offer B'} states ${Math.abs(a.days - b.days)} fewer days`
+        : 'Timing is incomplete',
+    );
+    appendList('[data-risk-list]', flags);
+    appendList('[data-question-list]', questions);
+    result.hidden = false;
+    result.focus({ preventScroll: true });
+    result.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    track('offer_comparison_completed', {
+      comparison_outcome: lastOutcome,
+      has_terms_to_clarify: lastFlagCount > 0,
+    });
+  });
+
+  form?.addEventListener('reset', () => {
+    if (result) result.hidden = true;
+    started = false;
+    track('offer_comparison_cleared');
+  });
+
+  document.querySelector('[data-ask-about-comparison]')?.addEventListener('click', () => {
+    track('offer_comparison_ask_tommy_clicked', {
+      comparison_outcome: lastOutcome,
+      has_terms_to_clarify: lastFlagCount > 0,
+    });
+    const higher =
+      lastOutcome === 'equal'
+        ? 'the provisional nets were equal'
+        : `${lastOutcome === 'offer_a' ? 'Offer A' : 'Offer B'} had the higher provisional net`;
+    window.dispatchEvent(
+      new CustomEvent('mrx:open-chat', {
+        detail: {
+          prompt: `I used the private offer comparison worksheet. ${higher}, and it identified ${lastFlagCount} term${lastFlagCount === 1 ? '' : 's'} to clarify. Help me understand the most important questions before I respond.`,
+        },
+      }),
+    );
+  });
+
+  document.querySelector('[data-print-comparison]')?.addEventListener('click', () => {
+    track('offer_comparison_printed');
+    window.print();
+  });
+</script>
+
+<style>
+  .offer-tool {
+    padding: clamp(2.5rem, 6vw, 5.5rem) 0;
+    background: #f5f1e8;
+  }
+  .offer-tool__intro {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(280px, 0.55fr);
+    gap: clamp(1.5rem, 5vw, 4rem);
+    align-items: end;
+    margin-bottom: 1.75rem;
+  }
+  .offer-tool__intro h2 {
+    max-width: 20ch;
+    font-size: clamp(1.9rem, 4vw, 3.25rem);
+  }
+  .offer-tool__intro p {
+    max-width: 68ch;
+    margin-top: 0.75rem;
+    color: #50636f;
+  }
+  .offer-tool__intro ul {
+    display: grid;
+    gap: 0.55rem;
+    padding: 1rem 1.1rem;
+    border: 1px solid #d9cfbc;
+    border-radius: 14px;
+    background: #fff;
+  }
+  .offer-tool__intro li::before {
+    content: '✓';
+    margin-right: 0.55rem;
+    color: #357359;
+    font-weight: 850;
+  }
+  .offer-tool__offers {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+  .offer-tool__card {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+    min-width: 0;
+    padding: clamp(1rem, 3vw, 1.5rem);
+    border: 1px solid #d6cbb8;
+    border-radius: 18px;
+    background: #fff;
+    box-shadow: 0 16px 44px rgba(7, 30, 52, 0.06);
+  }
+  .offer-tool__card legend {
+    padding: 0 0.45rem;
+    color: #0b304d;
+    font-size: 1.35rem;
+    font-weight: 850;
+  }
+  .offer-tool__card label {
+    display: grid;
+    align-content: start;
+    gap: 0.35rem;
+    color: #18394f;
+    font-size: 0.9rem;
+    font-weight: 750;
+  }
+  .offer-tool__card label small {
+    min-height: 2.6em;
+    color: #63747e;
+    font-size: 0.75rem;
+    font-weight: 500;
+  }
+  .offer-tool__card input,
+  .offer-tool__card select {
+    width: 100%;
+    min-height: 46px;
+    padding: 0.65rem 0.75rem;
+    border: 1px solid #aab7be;
+    border-radius: 10px;
+    background: #fff;
+    color: #0b304d;
+  }
+  .offer-tool__card input:focus,
+  .offer-tool__card select:focus {
+    outline: 3px solid rgba(200, 144, 44, 0.24);
+    border-color: #a46f14;
+  }
+  .offer-tool__money {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    border: 1px solid #aab7be;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .offer-tool__money > span {
+    padding-left: 0.75rem;
+    color: #50636f;
+  }
+  .offer-tool__money input {
+    border: 0;
+  }
+  .offer-tool__controls {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.8rem;
+    margin-top: 1.25rem;
+  }
+  .offer-tool__reset,
+  .offer-result__print {
+    padding: 0.7rem 1rem;
+    border: 1px solid #9aaab3;
+    border-radius: 999px;
+    background: transparent;
+    color: #173a52;
+    font-weight: 750;
+  }
+  .offer-tool__controls small {
+    color: #5f707a;
+  }
+  .offer-result {
+    scroll-margin-top: 7rem;
+    margin-top: 2rem;
+    padding: clamp(1.2rem, 4vw, 2.2rem);
+    border: 2px solid #c8902c;
+    border-radius: 22px;
+    background: #fff;
+    box-shadow: 0 24px 70px rgba(7, 30, 52, 0.12);
+  }
+  .offer-result[hidden] {
+    display: none;
+  }
+  .offer-result > header {
+    max-width: 820px;
+  }
+  .offer-result > header h2 {
+    font-size: clamp(1.7rem, 3.5vw, 2.8rem);
+  }
+  .offer-result > header p:last-child {
+    margin-top: 0.65rem;
+    color: #50636f;
+  }
+  .offer-result__numbers {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+    margin-top: 1.4rem;
+  }
+  .offer-result__numbers > div {
+    display: grid;
+    gap: 0.25rem;
+    padding: 1rem;
+    border-radius: 14px;
+    background: #f4f7f8;
+  }
+  .offer-result__numbers span,
+  .offer-result__numbers small {
+    color: #5d6f79;
+  }
+  .offer-result__numbers strong {
+    color: #0b304d;
+    font-size: clamp(1.35rem, 3vw, 2.2rem);
+  }
+  .offer-result__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  .offer-result__grid section {
+    padding: 1rem;
+    border: 1px solid #dde3e6;
+    border-radius: 14px;
+  }
+  .offer-result__grid h3 {
+    font-size: 1.2rem;
+  }
+  .offer-result__grid ul,
+  .offer-result__grid ol {
+    display: grid;
+    gap: 0.55rem;
+    margin: 0.75rem 0 0;
+    padding-left: 1.25rem;
+  }
+  .offer-result__next {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(250px, 0.5fr);
+    gap: 1.5rem;
+    margin-top: 1rem;
+    padding: clamp(1rem, 3vw, 1.5rem);
+    border-radius: 16px;
+    background: #0b304d;
+    color: #dbe6ec;
+  }
+  .offer-result__next h3 {
+    color: #fff;
+    font-size: 1.45rem;
+  }
+  .offer-result__next p:not(.mrx-eyebrow) {
+    margin-top: 0.55rem;
+  }
+  .offer-result__actions {
+    display: grid;
+    gap: 0.65rem;
+    align-content: center;
+  }
+  .offer-result__actions a,
+  .offer-result__actions button {
+    justify-content: center;
+    text-align: center;
+  }
+  .offer-result__book {
+    color: #fff;
+    font-weight: 750;
+  }
+  .offer-result__print {
+    border-color: #aebdc5;
+    color: #fff;
+  }
+  .offer-result__disclaimer {
+    margin: 1rem 0 0;
+    color: #687983;
+    font-size: 0.8rem;
+  }
+  @media (max-width: 900px) {
+    .offer-tool__intro,
+    .offer-tool__offers,
+    .offer-result__next {
+      grid-template-columns: 1fr;
+    }
+  }
+  @media (max-width: 620px) {
+    .offer-tool__card,
+    .offer-result__numbers,
+    .offer-result__grid {
+      grid-template-columns: 1fr;
+    }
+    .offer-tool__card label small {
+      min-height: 0;
+    }
+  }
+  @media print {
+    .header,
+    .footer,
+    .offer-tool__intro,
+    .offer-tool__form,
+    .offer-result__actions,
+    .tommy-fab {
+      display: none !important;
+    }
+    .offer-tool,
+    .offer-result {
+      padding: 0;
+      border: 0;
+      box-shadow: none;
+      background: #fff;
+    }
+  }
+</style>

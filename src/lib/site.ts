@@ -18,11 +18,8 @@ export const SITE = {
   addressRegion: 'TX',
   addressCountry: 'US',
   foundedYear: 2026,
-  // Twitter / X handle for the `twitter:site` meta tag. Leave undefined
-  // until Daryl confirms first-party ownership of the @mineralrightsxchange
-  // X profile; Seo.astro suppresses the `<meta name="twitter:site">` tag
-  // when this is undefined so we never publish a guessed handle.
-  twitterSite: undefined as string | undefined,
+  // Confirmed first-party X profile in the MRX Brand Vault.
+  twitterSite: '@mineralrightsxchange',
 } as const;
 
 export const NAV = {
@@ -45,6 +42,7 @@ export const NAV = {
       { label: 'Submit Property Details', href: '/owner-intake/' },
       { label: 'Value My Minerals', href: '/mineral-rights-value/' },
       { label: 'Review My Offer', href: '/offer-review/' },
+      { label: 'Compare Two Offers', href: '/mineral-rights-offer-comparison/' },
       { label: 'Inherited Rights', href: '/inherited-mineral-rights/' },
       { label: 'Learning Center', href: '/learning-center/' },
     ],

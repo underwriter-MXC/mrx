@@ -19,6 +19,21 @@ export type DataLayerEvent =
   | { event: 'appointment_booked'; mrx_calendar_event_id?: string }
   | { event: 'intake_started'; source?: string }
   | { event: 'intake_completed'; mineral_interest_id?: string }
+  | { event: 'offer_comparison_started'; tool_name: 'mineral_rights_offer_comparison' }
+  | {
+      event: 'offer_comparison_completed';
+      tool_name: 'mineral_rights_offer_comparison';
+      comparison_outcome: 'offer_a' | 'offer_b' | 'equal';
+      has_terms_to_clarify: boolean;
+    }
+  | {
+      event: 'offer_comparison_ask_tommy_clicked';
+      tool_name: 'mineral_rights_offer_comparison';
+      comparison_outcome: 'offer_a' | 'offer_b' | 'equal';
+      has_terms_to_clarify: boolean;
+    }
+  | { event: 'offer_comparison_cleared'; tool_name: 'mineral_rights_offer_comparison' }
+  | { event: 'offer_comparison_printed'; tool_name: 'mineral_rights_offer_comparison' }
   | {
       event: 'free_profile_created';
       source?: string;

@@ -4,6 +4,8 @@ import {
   TITLE_MAX,
   DESC_MIN,
   DESC_MAX,
+  TWITTER_DESCRIPTION_MAX,
+  buildTwitterDescription,
   validateTitle,
   validateDescription,
 } from '../../src/lib/seo';
@@ -47,5 +49,16 @@ describe('seo metadata validators', () => {
   it('rejects a too-short description', () => {
     const r = validateDescription('too short');
     expect(r.ok).toBe(false);
+  });
+
+  it('keeps X card descriptions at or below the crawler budget', () => {
+    const description =
+      'Compare mineral-rights offers by disclosed net proceeds, fees, rights conveyed, adjustments, and closing timing before you sign any agreement.';
+    const twitterDescription = buildTwitterDescription(description);
+
+    expect(TWITTER_DESCRIPTION_MAX).toBe(125);
+    expect(twitterDescription.length).toBeLessThanOrEqual(TWITTER_DESCRIPTION_MAX);
+    expect(twitterDescription.endsWith('…')).toBe(true);
+    expect(twitterDescription).not.toMatch(/\s…$/);
   });
 });

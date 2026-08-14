@@ -45,6 +45,7 @@ const CORE_PAGES = new Set([
   '/book',
   '/mineral-rights-value',
   '/offer-review',
+  '/mineral-rights-offer-comparison',
   '/inherited-mineral-rights',
   '/learning-center',
   '/team',

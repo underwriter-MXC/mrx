@@ -41,6 +41,11 @@ describe('canonical sitemap discovery', () => {
     expect(astroConfig).toContain("!pathname.startsWith('/communication-preferences')");
   });
 
+  it('treats the owner offer-comparison tool as a core conversion page', () => {
+    const postbuild = readFileSync(join(process.cwd(), 'scripts', 'postbuild-sitemap.mjs'), 'utf8');
+    expect(postbuild).toContain("'/mineral-rights-offer-comparison'");
+  });
+
   it('publishes only the populated continuation pages required by the public article count', () => {
     const postsDirectory = join(process.cwd(), 'src', 'content', 'posts');
     const publicPostCount = readdirSync(postsDirectory)

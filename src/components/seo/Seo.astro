@@ -11,6 +11,7 @@ import {
   validateDescription,
   buildCanonical,
   buildOgImage,
+  buildTwitterDescription,
   OG_IMAGE_WIDTH,
   OG_IMAGE_HEIGHT,
   OG_IMAGE_TYPE,
@@ -88,6 +89,7 @@ const og = ogImage
 const robotsContent =
   robots ??
   (noindex ? 'noindex, nofollow' : 'index, follow, max-image-preview:large, max-snippet:-1');
+const twitterDescription = buildTwitterDescription(description);
 
 const graph = buildPageGraph([
   ...siteGraph(path, finalTitle),
@@ -139,8 +141,9 @@ const graph = buildPageGraph([
 }
 
 <meta name="twitter:card" content="summary_large_image" />
+{SITE.twitterSite && <meta name="twitter:site" content={SITE.twitterSite} />}
 <meta name="twitter:title" content={finalTitle} />
-<meta name="twitter:description" content={description} />
+<meta name="twitter:description" content={twitterDescription} />
 <meta name="twitter:image" content={og} />
 <meta name="twitter:image:alt" content={ogImageAlt ?? finalTitle} />
 
