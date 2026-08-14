@@ -1,15 +1,15 @@
 {
   "artifact_type": "mrx1000_content_activation_plan",
   "plan_version": "mrx1000-content-activation-v1.1.0",
-  "generated_at": "2026-07-20T15:26:20.032Z",
+  "generated_at": "2026-07-20T19:40:15.587Z",
   "generated_at_method": "canonical_ledger_generated_at",
   "generator": "scripts/build-mrx-1000-activation-plan.mjs",
-  "content_fingerprint_sha256": "dbb2dd21140855586123bdf8dea1ffcd19305d6f3e3767355a4d4ead2d1d89ff",
+  "content_fingerprint_sha256": "32e285abe39f489127c1131cef5ee0126060d49ebf620d94260b311e9eadafa0",
   "inputs": {
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_fingerprint_sha256": "b40c13ec0975d28bc39e328f1e1639a507bbede6b905dfe733fb2e5c7a60e6ad",
+    "canonical_ledger_fingerprint_sha256": "70cc5b34786faca428fdde3b02b309b8ca6dbfd0c597cb5e1ae5c5c772a26262",
     "canonical_ledger_fingerprint_verified": true,
-    "canonical_ledger_generated_at": "2026-07-20T15:26:20.032Z",
+    "canonical_ledger_generated_at": "2026-07-20T19:40:15.587Z",
     "owner_decision": {
       "decision_id": "D-2026-0804-16",
       "signed_disposition": "APPROVED_CONTINUOUS_QUALITY_GATED_ARTICLE_PUBLICATION",
@@ -115,9 +115,9 @@
     },
     "by_source_preservation_classification": {
       "incumbent_draft_nonpublic_held": 28,
-      "live_public_published_route": 148,
+      "live_public_published_route": 149,
       "pilot_draft_noindex_stage": 25,
-      "planning_only_inventory": 799
+      "planning_only_inventory": 798
     }
   },
   "rows": [
@@ -8707,11 +8707,11 @@
       },
       "sibling_link": {
         "target_program_row_id": "MRX1000-0140",
-        "target_title": "What Determines the Value of Your Texas Mineral Rights?",
-        "url": "/blog/what-determines-the-value-of-your-texas-mineral-rights/",
+        "target_title": "Why Doesn’t My Texas Mineral Tax Value Match a Sale Estimate?",
+        "url": "/blog/why-doesnt-my-texas-mineral-tax-value-match-a-sale-estimate/",
         "relationship": "same_cluster_next_by_program_row_id_cyclic",
-        "target_source_preservation_classification": "planning_only_inventory",
-        "target_route_live": false,
+        "target_source_preservation_classification": "live_public_published_route",
+        "target_route_live": true,
         "status": "planned_local_only"
       },
       "primary_cta": {
@@ -8754,15 +8754,15 @@
     },
     {
       "program_row_id": "MRX1000-0140",
-      "canonical_title": "What Determines the Value of Your Texas Mineral Rights?",
-      "canonical_slug": "what-determines-the-value-of-your-texas-mineral-rights",
-      "canonical_url": "/blog/what-determines-the-value-of-your-texas-mineral-rights/",
+      "canonical_title": "Why Doesn’t My Texas Mineral Tax Value Match a Sale Estimate?",
+      "canonical_slug": "why-doesnt-my-texas-mineral-tax-value-match-a-sale-estimate",
+      "canonical_url": "/blog/why-doesnt-my-texas-mineral-tax-value-match-a-sale-estimate/",
       "cluster": "sell-mineral-rights-decision-process",
       "pillar": "sell-mineral-rights",
-      "search_intent": "transactional",
+      "search_intent": "informational",
       "funnel_stage": "decision",
-      "source_preservation_classification": "planning_only_inventory",
-      "source_route_live": false,
+      "source_preservation_classification": "live_public_published_route",
+      "source_route_live": true,
       "pillar_link": {
         "url": "/sell-mineral-rights/",
         "route_evidence": "src/pages/sell-mineral-rights.astro",
@@ -8784,7 +8784,7 @@
         "placement_code": "closing_panel",
         "placement_guidance": "Place in the closing decision panel after key takeaways and before related articles.",
         "assignment_rule": "decision_stage_team_handoff",
-        "assignment_basis": "decision:transactional",
+        "assignment_basis": "decision:informational",
         "approved_route_evidence": "src/pages/book.astro",
         "role": "primary_appointment",
         "is_appointment_cta": true,
@@ -8797,7 +8797,7 @@
         "placement_code": "closing_panel",
         "placement_guidance": "Place in the closing decision panel after key takeaways and before related articles.",
         "assignment_rule": "decision_stage_team_handoff",
-        "assignment_basis": "decision:transactional",
+        "assignment_basis": "decision:informational",
         "approved_route_evidence": "src/pages/book.astro",
         "role": "same_as_primary_appointment",
         "distinct_from_primary_cta": false,
@@ -8811,7 +8811,7 @@
         "rendered_triangle_verified": false,
         "live_status": "not_published_or_verified_by_this_plan",
         "live_triangle_verified": false,
-        "release_status": "eligible_for_continuous_quality_review_not_yet_cleared",
+        "release_status": "released_under_d16_continuous_quality_gate",
         "numerical_release_cap_applies": false
       }
     },

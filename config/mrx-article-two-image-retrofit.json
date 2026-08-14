@@ -1,18 +1,18 @@
 {
   "artifact_type": "mrx_article_two_image_retrofit",
   "schema_version": 1,
-  "generated_at_utc": "2026-08-14T16:15:11Z",
+  "generated_at_utc": "2026-08-14T18:50:18Z",
   "policy_source": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
   "summary": {
-    "article_count": 148,
-    "asset_count": 296,
-    "unique_source_art_count": 148,
-    "unique_hero_sha256_count": 148,
-    "unique_inline_sha256_count": 148,
-    "distinct_article_pair_count": 148,
-    "hero_ocr_pass_count": 148,
-    "inline_ocr_pass_count": 148,
-    "exact_filename_identity_count": 148
+    "article_count": 149,
+    "asset_count": 298,
+    "unique_source_art_count": 149,
+    "unique_hero_sha256_count": 149,
+    "unique_inline_sha256_count": 149,
+    "distinct_article_pair_count": 149,
+    "hero_ocr_pass_count": 149,
+    "inline_ocr_pass_count": 149,
+    "exact_filename_identity_count": 149
   },
   "contact_sheets": {
     "hero": [
@@ -6842,6 +6842,56 @@
           "actual": "why did my\nmineral royalty\ncheck go down",
           "normalized_expected": "why did my mineral royalty check go down",
           "normalized_actual": "why did my mineral royalty check go down",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      }
+    },
+    {
+      "slug": "why-doesnt-my-texas-mineral-tax-value-match-a-sale-estimate",
+      "title": "Why Doesn’t My Texas Mineral Tax Value Match a Sale Estimate?",
+      "keyword": "Texas Mineral Tax Value vs. Sale Estimate",
+      "file_path": "src/content/posts/why-doesnt-my-texas-mineral-tax-value-match-a-sale-estimate.mdx",
+      "source_public_path": "/assets/articles/hero/why-doesnt-my-texas-mineral-tax-value-match-a-sale-estimate.webp",
+      "source_artifact_paths": [
+        "artifacts/mrx1000-wave60-creative-sources/why-doesnt-my-texas-mineral-tax-value-match-a-sale-estimate-hero-base.png",
+        "artifacts/mrx1000-wave60-creative-sources/why-doesnt-my-texas-mineral-tax-value-match-a-sale-estimate-inline-base.png"
+      ],
+      "generated_at_utc": "2026-08-14T18:32:42.792Z",
+      "hero": {
+        "public_path": "/assets/articles/hero/why-doesnt-my-texas-mineral-tax-value-match-a-sale-estimate.webp",
+        "alt": "Two document stacks sit beside a parcel map and “Why Doesn’t My Texas Mineral Tax Value Match a Sale Estimate?”.",
+        "width": 1200,
+        "height": 630,
+        "mime_type": "image/webp",
+        "sha256": "524f75ae1d2adfe70f9080db0bee65faf88e0469bfbe9acb9bbeec25e59bd038",
+        "perceptual_hash": "0000000001111111000000000011111100000000011111110000000000011111000000000000011100000000011111110001000001111110000000000111111000000000011111100000000001111110000000000111111000000000011011000000000000001111000000000011111100000000001111110000000000111111",
+        "neutralized_art_text_region_count": 1,
+        "ocr": {
+          "expected": "Why Doesn’t My Texas Mineral Tax Value Match a Sale Estimate?",
+          "actual": "Why Doesn't My Texas\nMineral Tax Value Match\na Sale Estimate?",
+          "normalized_expected": "why doesn t my texas mineral tax value match a sale estimate",
+          "normalized_actual": "why doesn t my texas mineral tax value match a sale estimate",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      },
+      "inline": {
+        "public_path": "/assets/articles/inline/why-doesnt-my-texas-mineral-tax-value-match-a-sale-estimate/texas-mineral-tax-value-vs-sale-estimate.webp",
+        "alt": "Two parcel folders flank a central comparison grid above “Texas Mineral Tax Value vs. Sale Estimate”.",
+        "rendered_text": "Texas Mineral Tax Value vs. Sale Estimate",
+        "visual_variant": "wave60-distinct-generated-tax-value-comparison",
+        "width": 1200,
+        "height": 675,
+        "mime_type": "image/webp",
+        "sha256": "987bb495b1e6adda844e28fbfb2bc891ec8985dcda460402762a7e4b9e2dda8c",
+        "perceptual_hash": "0000001011000000011110100101100000000000000000000000000110000000000001111110000001111111111011100111111111111110011111111110111101111111111011110111100001001111011100000000011101100000000000110000001010100011000000000000000000000000000000000000000000000000",
+        "neutralized_art_text_region_count": 1,
+        "ocr": {
+          "expected": "Texas Mineral Tax Value vs. Sale Estimate",
+          "actual": "Texas Mineral Tax Value\nvs. Sale Estimate",
+          "normalized_expected": "texas mineral tax value vs sale estimate",
+          "normalized_actual": "texas mineral tax value vs sale estimate",
           "uppercase_i_confusable_accepted": false,
           "pass": true
         }
