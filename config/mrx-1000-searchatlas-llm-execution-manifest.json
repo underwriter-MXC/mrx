@@ -1,7 +1,7 @@
 {
   "program": "MRX1000",
   "artifact_type": "searchatlas_ordered_llm_local_execution_manifest",
-  "generated_at": "2026-07-20T08:25:37.000Z",
+  "generated_at": "2026-07-20T15:26:20.032Z",
   "deterministic": true,
   "local_only": true,
   "external_services_called": false,
@@ -9,8 +9,8 @@
   "inputs": {
     "ledger": {
       "path": "config/mrx-1000-canonical-content-ledger.json",
-      "sha256": "bca4ef975fdee3d121e3a967966743ada862e6512e982b1f8c79ba726ad75fd5",
-      "bytes": 4470200
+      "sha256": "4120d7513c6cba929d50f1035b11c7e495bec759295d12e68516ff55fc0b96fa",
+      "bytes": 4470558
     },
     "readiness": {
       "path": "reports/mrx-1000-readiness-matrix.json",
@@ -56855,7 +56855,7 @@
       "primary_keyword": "Texas Mineral Rights Sale Problem Triage",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -350560,5 +350560,5 @@
       ]
     }
   ],
-  "content_fingerprint_sha256": "7cd035c3afcf2e59a6a861312cefe46d19d4a0c394cbfcb9b9dfa64120b41226"
+  "content_fingerprint_sha256": "27d141ee61f82d70c3625ae75654f6e67a0b8aab240d5801b682748287ffa9fd"
 }
