@@ -1,18 +1,18 @@
 {
   "artifact_type": "mrx_article_two_image_retrofit",
   "schema_version": 1,
-  "generated_at_utc": "2026-08-14T12:44:56Z",
+  "generated_at_utc": "2026-08-14T16:15:11Z",
   "policy_source": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
   "summary": {
-    "article_count": 147,
-    "asset_count": 294,
-    "unique_source_art_count": 147,
-    "unique_hero_sha256_count": 147,
-    "unique_inline_sha256_count": 147,
-    "distinct_article_pair_count": 147,
-    "hero_ocr_pass_count": 147,
-    "inline_ocr_pass_count": 147,
-    "exact_filename_identity_count": 147
+    "article_count": 148,
+    "asset_count": 296,
+    "unique_source_art_count": 148,
+    "unique_hero_sha256_count": 148,
+    "unique_inline_sha256_count": 148,
+    "distinct_article_pair_count": 148,
+    "hero_ocr_pass_count": 148,
+    "inline_ocr_pass_count": 148,
+    "exact_filename_identity_count": 148
   },
   "contact_sheets": {
     "hero": [
@@ -6608,6 +6608,56 @@
           "actual": "what are\nmineral rights\nworth",
           "normalized_expected": "what are mineral rights worth",
           "normalized_actual": "what are mineral rights worth",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      }
+    },
+    {
+      "slug": "what-should-i-do-if-a-texas-mineral-rights-sale-goes-wrong",
+      "title": "What Should I Do If a Texas Mineral Rights Sale Goes Wrong?",
+      "keyword": "Texas Mineral Rights Sale Problem Triage",
+      "file_path": "src/content/posts/what-should-i-do-if-a-texas-mineral-rights-sale-goes-wrong.mdx",
+      "source_public_path": "/assets/articles/hero/what-should-i-do-if-a-texas-mineral-rights-sale-goes-wrong.webp",
+      "source_artifact_paths": [
+        "artifacts/mrx1000-wave59-creative-sources/what-should-i-do-if-a-texas-mineral-rights-sale-goes-wrong-hero-base.png",
+        "artifacts/mrx1000-wave59-creative-sources/what-should-i-do-if-a-texas-mineral-rights-sale-goes-wrong-inline-base.png"
+      ],
+      "generated_at_utc": "2026-08-14T16:09:30.640Z",
+      "hero": {
+        "public_path": "/assets/articles/hero/what-should-i-do-if-a-texas-mineral-rights-sale-goes-wrong.webp",
+        "alt": "A hand holds an envelope beside a tabbed file and “What Should I Do If a Texas Mineral Rights Sale Goes Wrong?”.",
+        "width": 1200,
+        "height": 630,
+        "mime_type": "image/webp",
+        "sha256": "a5beaa391c46eac8418097f25fc2e44ba44327d7fd4c74ca660f7f3eb25c5e01",
+        "perceptual_hash": "0000000001111110000000000111110000000000000111000000000001000000000000000111000001111100011101000000000001111100000000000111110000000000011111110000000001111111000000000111111100000000011111110000000001111111000000000111011100000000010001110000000001000111",
+        "neutralized_art_text_region_count": 1,
+        "ocr": {
+          "expected": "What Should I Do If a Texas Mineral Rights Sale Goes Wrong?",
+          "actual": "What Should I Do If a Texas\nMineral Rights Sale\nGoes Wrong?",
+          "normalized_expected": "what should i do if a texas mineral rights sale goes wrong",
+          "normalized_actual": "what should i do if a texas mineral rights sale goes wrong",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      },
+      "inline": {
+        "public_path": "/assets/articles/inline/what-should-i-do-if-a-texas-mineral-rights-sale-goes-wrong/texas-mineral-rights-sale-problem-triage.webp",
+        "alt": "Hands hold envelopes and a file folder around a parcel map, an abacus, and “Texas Mineral Rights Sale Problem Triage”.",
+        "rendered_text": "Texas Mineral Rights Sale Problem Triage",
+        "visual_variant": "wave59-distinct-generated-incident-triage-routing",
+        "width": 1200,
+        "height": 675,
+        "mime_type": "image/webp",
+        "sha256": "8ff0247b0dd8cdaa74aa01c4d2f363483bcda6841ffaf7e6a33fb48270a1cef0",
+        "perceptual_hash": "0001110000010000011111000011100011111100001111001111110000011000001000000000000000100000000000000010000000000000001001111110000000000111111000001110000000000100111000000000001011100000000000101111100000001011111111000000101101111100000010110111000000000011",
+        "neutralized_art_text_region_count": 1,
+        "ocr": {
+          "expected": "Texas Mineral Rights Sale Problem Triage",
+          "actual": "Texas Mineral Rights\nSale Problem Triage",
+          "normalized_expected": "texas mineral rights sale problem triage",
+          "normalized_actual": "texas mineral rights sale problem triage",
           "uppercase_i_confusable_accepted": false,
           "pass": true
         }

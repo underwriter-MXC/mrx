@@ -60,6 +60,7 @@ const PRIOR_LEDGER_PATH = process.env.MRX1000_LEDGER_PRIOR_PATH
 
 const PROGRAM_ROW_ID_RE = /^MRX1000-(\d+)$/;
 const SUPERSEDED_CANONICAL_SLUGS = new Set([
+  'what-are-the-biggest-pitfalls-in-selling-mineral-rights',
   'unlocking-the-true-worth-of-your-mineral-rights-a-comprehensive-evaluation-guide',
   'ensuring-transparency-how-we-avoid-predatory-tactics-in-mineral-rights-assessments',
   'transparency-in-mineral-rights-how-we-compare-to-other-services',
@@ -67,6 +68,10 @@ const SUPERSEDED_CANONICAL_SLUGS = new Set([
   'why-mineralrightsxchange-offers-unique-advantages-over-competing-mineral-rights-acquisition-services',
 ]);
 const SUCCESSOR_CANONICAL_SLUGS = new Map([
+  [
+    'what-are-the-biggest-pitfalls-in-selling-mineral-rights',
+    'what-should-i-do-if-a-texas-mineral-rights-sale-goes-wrong',
+  ],
   [
     'unlocking-the-true-worth-of-your-mineral-rights-a-comprehensive-evaluation-guide',
     'why-is-my-mineral-rights-valuation-range-so-wide',
@@ -101,6 +106,7 @@ async function loadPriorProgramRowIds() {
         incumbentRepoCount: 0,
         maxSequenceEver: 0,
         wave58Rekey: null,
+        wave59Rekey: null,
       };
     }
     throw error;
@@ -133,6 +139,7 @@ async function loadPriorProgramRowIds() {
     incumbentRepoCount: Number(prior.verification?.incumbent_repo_count ?? 0),
     maxSequenceEver,
     wave58Rekey: prior.identity_registry?.wave58_rekey ?? null,
+    wave59Rekey: prior.identity_registry?.wave59_rekey ?? null,
   };
 }
 
@@ -1453,6 +1460,7 @@ async function main() {
       preserved_existing_id_count: preservedProgramRowIdCount,
       newly_allocated_id_count: selected.length - preservedProgramRowIdCount,
       ...(priorIdentity.wave58Rekey ? { wave58_rekey: priorIdentity.wave58Rekey } : {}),
+      ...(priorIdentity.wave59Rekey ? { wave59_rekey: priorIdentity.wave59Rekey } : {}),
     },
     content_fingerprint_sha256: hashRows(selected),
     policy: {
