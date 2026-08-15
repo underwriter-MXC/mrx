@@ -2,8 +2,51 @@ User-agent: OAI-SearchBot
 Allow: /
 Disallow: /api/
 Disallow: /account/
+Disallow: /book/thank-you/
+Disallow: /free-guide/thank-you/
 Disallow: /knowledge/
 Disallow: /blog/drafts/
+Disallow: /staff/
+
+User-agent: GPTBot
+Allow: /
+Disallow: /api/
+Disallow: /account/
+Disallow: /book/thank-you/
+Disallow: /free-guide/thank-you/
+Disallow: /knowledge/
+Disallow: /blog/drafts/
+Disallow: /staff/
+
+User-agent: ClaudeBot
+Allow: /
+Disallow: /api/
+Disallow: /account/
+Disallow: /book/thank-you/
+Disallow: /free-guide/thank-you/
+Disallow: /knowledge/
+Disallow: /blog/drafts/
+Disallow: /staff/
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /api/
+Disallow: /account/
+Disallow: /book/thank-you/
+Disallow: /free-guide/thank-you/
+Disallow: /knowledge/
+Disallow: /blog/drafts/
+Disallow: /staff/
+
+User-agent: Google-Extended
+Allow: /
+Disallow: /api/
+Disallow: /account/
+Disallow: /book/thank-you/
+Disallow: /free-guide/thank-you/
+Disallow: /knowledge/
+Disallow: /blog/drafts/
+Disallow: /staff/
 
 User-agent: *
 Allow: /
@@ -13,5 +56,6 @@ Disallow: /book/thank-you/
 Disallow: /free-guide/thank-you/
 Disallow: /knowledge/
 Disallow: /blog/drafts/
+Disallow: /staff/
 
 Sitemap: https://mineralrightsxchange.com/sitemap_index.xml

@@ -19,7 +19,7 @@ const basePath = `/blog/category/${category.data.slug}/`;
 const path = archivePagePath(basePath, currentPage);
 const pageSuffix = currentPage === 1 ? '' : ` · Page ${currentPage}`;
 const title = `${category.data.label} · Texas Mineral Rights${pageSuffix} · MRX`;
-const rawDescription = `Browse ${totalItems} reviewed MRX articles about ${category.data.label.toLowerCase()}. ${category.data.description}${currentPage === 1 ? '' : ` Page ${currentPage} of ${lastPage}.`}`;
+const rawDescription = `${currentPage === 1 ? '' : `Page ${currentPage} of ${lastPage}. `}Browse ${totalItems} reviewed MRX articles about ${category.data.label.toLowerCase()}. ${category.data.description}`;
 const description =
   rawDescription.length <= 160
     ? rawDescription
@@ -47,7 +47,9 @@ const nextPath = currentPage < lastPage ? archivePagePath(basePath, currentPage 
   ]}
 >
   <section class="container section--sm">
-    <Heading level={1} size="4xl">{category.data.label}</Heading>
+    <Heading level={1} size="4xl">
+      {category.data.label}{currentPage > 1 ? `: Page ${currentPage}` : ''}
+    </Heading>
     <Text class="text--lead" style="margin-top: var(--space-3); max-width: 60ch;">
       {category.data.description}
     </Text>

@@ -2241,6 +2241,7 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
                   <span>
                     <a
                       href="/account/?welcome=conversation"
+                      rel="nofollow"
                       onClick={() =>
                         track('free_profile_cta_clicked', {
                           after_answer_number: completedAnswerCount,

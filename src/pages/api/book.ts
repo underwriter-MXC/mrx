@@ -15,7 +15,12 @@ import { serverEnv } from '../../lib/astro/env';
 export const GET: APIRoute = async () =>
   new Response(JSON.stringify({ ok: false, error: 'method_not_allowed' }), {
     status: 405,
-    headers: { 'Content-Type': 'application/json', Allow: 'POST' },
+    headers: {
+      'Content-Type': 'application/json',
+      Allow: 'POST',
+      'Cache-Control': 'no-store',
+      'X-Robots-Tag': 'noindex, nofollow',
+    },
   });
 
 export const POST: APIRoute = async (ctx) => {

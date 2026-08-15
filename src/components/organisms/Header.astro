@@ -62,6 +62,7 @@ const getHomeIntentPrompt = (href: string) =>
         <a
           class="header__account"
           href="/account/"
+          rel="nofollow"
           aria-current={currentPath === '/account/' ? 'page' : undefined}>Log In</a
         >
         <button
@@ -115,8 +116,10 @@ const getHomeIntentPrompt = (href: string) =>
           >
         </li>
         <li>
-          <a href="/account/" aria-current={currentPath === '/account/' ? 'page' : undefined}
-            >Log In</a
+          <a
+            href="/account/"
+            rel="nofollow"
+            aria-current={currentPath === '/account/' ? 'page' : undefined}>Log In</a
           >
         </li>
         <li>

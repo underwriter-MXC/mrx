@@ -53,6 +53,7 @@ for (const article of manifest.articles) {
   const twitterDescription = decodeHtml(
     extract(html, /<meta name="twitter:description" content="([^"]+)"/i),
   );
+  const expectedDescription = frontmatterDescription(article.slug);
   const robots = extract(html, /<meta name="robots" content="([^"]+)"/i);
   const canonical = extract(html, /<link rel="canonical" href="([^"]+)"/i);
   const articleNode = extractArticleJsonLd(html);
@@ -67,10 +68,10 @@ for (const article of manifest.articles) {
     og_type_article: ogType === 'article',
     og_image_absolute: heroSrc.startsWith('https://mineralrightsxchange.com/'),
     og_title_exact: ogTitle === article.title,
-    og_description_exact: ogDescription === frontmatterDescription(article.slug),
+    og_description_exact: ogDescription === expectedDescription,
     twitter_card_large_image: twitterCard === 'summary_large_image',
     twitter_title_exact: twitterTitle === article.title,
-    twitter_description_exact: twitterDescription === frontmatterDescription(article.slug),
+    twitter_description_exact: twitterDescription === buildTwitterDescription(expectedDescription),
     twitter_image_matches_og: socialSrc === heroSrc,
     article_jsonld_stage_id: articleNode?.['@id'] === `${expectedCanonical}#article`,
     article_jsonld_stage_page:
@@ -187,4 +188,16 @@ function cleanScalar(value) {
     .trim()
     .replace(/^['"]|['"]$/g, '')
     .trim();
+}
+
+function buildTwitterDescription(description, maxLength = 125) {
+  const clean = description.trim().replace(/\s+/g, ' ');
+  if (clean.length <= maxLength) return clean;
+  if (maxLength <= 1) return clean.slice(0, maxLength);
+
+  const candidate = clean.slice(0, maxLength - 1).trimEnd();
+  const wordBoundary = candidate.lastIndexOf(' ');
+  const shortened =
+    wordBoundary > Math.floor(maxLength * 0.6) ? candidate.slice(0, wordBoundary) : candidate;
+  return `${shortened.trimEnd()}…`;
 }

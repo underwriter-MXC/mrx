@@ -28,14 +28,14 @@ export const NAV = {
     { label: 'Review My Offer', href: '/offer-review/' },
     { label: 'Inherited Rights', href: '/inherited-mineral-rights/' },
     { label: 'Learning Center', href: '/learning-center/' },
-    { label: 'About MRX', href: '/about' },
+    { label: 'About MRX', href: '/about/' },
   ],
   footer: {
     company: [
-      { label: 'About', href: '/about' },
+      { label: 'About', href: '/about/' },
       { label: 'Meet the AI Guides', href: '/team/' },
-      { label: 'Methodology', href: '/methodology' },
-      { label: 'How It Works', href: '/how-it-works' },
+      { label: 'Methodology', href: '/methodology/' },
+      { label: 'How It Works', href: '/how-it-works/' },
       { label: 'Contact Us', href: '/contact/' },
     ],
     resources: [
@@ -47,7 +47,7 @@ export const NAV = {
       { label: 'Learning Center', href: '/learning-center/' },
     ],
     legal: [
-      { label: 'Privacy Policy', href: '/privacy-policy' },
+      { label: 'Privacy Policy', href: '/privacy-policy/' },
       { label: 'Terms & AI Disclosure', href: '/terms/' },
       { label: 'Editorial & Source Policy', href: '/editorial-policy/' },
       { label: 'Communication Preferences', href: '/communication-preferences/' },
@@ -55,8 +55,8 @@ export const NAV = {
     cta: [{ label: 'Ask Tommy', href: '#ask-tommy', variant: 'primary' as const }],
   },
   cta: {
-    book: { label: 'Book My Free Review', href: '/book' },
-    guide: { label: 'Get the Free Guide', href: '/free-guide' },
+    book: { label: 'Book My Free Review', href: '/book/' },
+    guide: { label: 'Get the Free Guide', href: '/free-guide/' },
   },
 } as const;
 
