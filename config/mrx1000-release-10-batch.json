@@ -1,7 +1,7 @@
 {
   "program": "MRX 1,000 Article SEO+AEO Production Program",
   "artifact_type": "authorized_release_10_batch",
-  "evidence_scaffold_generated_at_utc": "2026-08-15T06:10:17Z",
+  "evidence_scaffold_generated_at_utc": "2026-08-15T06:24:52Z",
   "decision_authority": {
     "successor_gate_decision_id": "D-2026-0804-16",
     "successor_gate_decision_path": "docs/governance/mrx1000-owner-continuous-publication-directive-2026-08-04.md",
@@ -219,13 +219,16 @@
     "wave64_selection_decision_sha256": "b19d08c6d19eccd6605148409d249a47bd688b749ed6eb69f84f306786238505",
     "wave65_selection_decision_id": "MRX1000-W65-SELECT-2026-08-14",
     "wave65_selection_decision_path": "docs/governance/mrx1000-wave65-selection-decision-2026-08-14.md",
-    "wave65_selection_decision_sha256": "9aa763bad5d2add55ab8a3cd9b7063218b886d73f8f0390929564ceafb973eab"
+    "wave65_selection_decision_sha256": "9aa763bad5d2add55ab8a3cd9b7063218b886d73f8f0390929564ceafb973eab",
+    "wave66_selection_decision_id": "MRX1000-W66-SELECT-2026-08-14",
+    "wave66_selection_decision_path": "docs/governance/mrx1000-wave66-selection-decision-2026-08-14.md",
+    "wave66_selection_decision_sha256": "2eaf64b4862062e9b7229a8704040c34dfbbe454bc860486675f8aceafed0e5d"
   },
   "identity_authority": {
     "scope_key": "canonical_slug",
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_sha256": "b20395eb96cfbbaf743c6017f53e1e660fca071add477ddc5530102f9a1c79b9",
-    "canonical_ledger_generated_at": "2026-07-20T12:39:07.839Z",
+    "canonical_ledger_sha256": "899e8adf0bfeff756d4e966dc509844ee366fdf60b63e54753944cf268ab4015",
+    "canonical_ledger_generated_at": "2026-07-20T16:33:33.370Z",
     "successor_ledger_decision_id": "D-2026-0723-LEDGER-04",
     "successor_ledger_decision_path": "artifacts/mrx1000-release-10/decisions/mrx-ceo-ledger-provenance-successor-20260723-04.md",
     "successor_ledger_decision_sha256": "09eca24bcd0e71563f2ac4197f564eec0ccb43a5ee955216da5c4a2543d04978",
@@ -239,11 +242,11 @@
     "authorization_scope": "declared_program_size_not_a_staged_release_cap",
     "admission_mode": "continuous_quality_gated",
     "continuous_quality_gated_from_selection_rank": 26,
-    "prior_verified_article_count": 144,
+    "prior_verified_article_count": 145,
     "fail_closed": true,
     "earned_scale_gates": [],
-    "exact_admitted_count": 145,
-    "exact_admitted_slate_sha256": "58e1723e79903b040b94256826bf4d44522b9ea4ab741169bdac82c85d0ee9c8"
+    "exact_admitted_count": 146,
+    "exact_admitted_slate_sha256": "7d309ccbdcdec055b706d3f08f14e2b35f0513fb0074aa00722d934a1000c35f"
   },
   "articles": [
     {
@@ -4965,10 +4968,43 @@
       "inline_path": "/assets/articles/inline/how-to-build-a-mineral-rights-sale-document-package-index/mineral-rights-sale-package-index.webp",
       "inline_asset_sha256": "51c7edc9faf536b837c501daaea84a06742d1a3fe8b270e7a2141e096419af9a",
       "inline_rendered_text": "Mineral Rights Sale Package Index"
+    },
+    {
+      "selection_rank": 146,
+      "program_row_id": "MRX1000-0146",
+      "source_shortlist_program_row_id": "MRX1000-0146",
+      "slug": "how-to-talk-to-your-family-before-you-decide-to-sell-mineral-rights",
+      "title": "How to Talk to Your Family Before You Decide to Sell Mineral Rights",
+      "source_shortlist_title": "How to Talk to Your Family Before You Decide to Sell Mineral Rights",
+      "canonical_url": "https://mineralrightsxchange.com/blog/how-to-talk-to-your-family-before-you-decide-to-sell-mineral-rights/",
+      "pillar": "sell-mineral-rights",
+      "cluster": "sell-mineral-rights-decision-process",
+      "content_genius_article_uuid": null,
+      "archive_evidence_sha256": "6776e0ef918be54592471955ae7a343b36bcd14cdd0537664b6a11de45346cac",
+      "repo_path": "src/content/posts/how-to-talk-to-your-family-before-you-decide-to-sell-mineral-rights.mdx",
+      "repo_sha256": "4f98b66f3894e35188822c8717780952df0cc38531265713ead922d4595190ed",
+      "article_sha256": "4f98b66f3894e35188822c8717780952df0cc38531265713ead922d4595190ed",
+      "hero_path": "/assets/articles/hero/how-to-talk-to-your-family-before-you-decide-to-sell-mineral-rights.webp",
+      "hero_sha256": "ab8c4e5b6f804186a009ba7ac802bcba7ed6bbb9627c7580baf5bc2098d29fce",
+      "hero_asset_sha256": "ab8c4e5b6f804186a009ba7ac802bcba7ed6bbb9627c7580baf5bc2098d29fce",
+      "admission_status": "admitted_quality_gated",
+      "finalization_state": "draft_noindex_admitted",
+      "searchatlas_content_score": null,
+      "searchatlas_word_count": 2527,
+      "risk_citation_remediation": [
+        "The original no-obligation-assessment-process identity was rejected because live articles already own assessment expectations, booking, consultation preparation, service scope, and seller-process sequence. The admitted replacement owns only the internal family conversation before a possible assessment.",
+        "Continuous quality-gated admission under D-2026-0804-16, the 2026-08-14 no-approval owner directive, and MRX1000-W66-SELECT-2026-08-14; no numerical cap, elapsed-time gate, or owner publication approval applies.",
+        "Publication remains conditional on current editorial, factual-citation, compliance, two-image, metadata, build, rollback, deployment, and live-verification evidence."
+      ],
+      "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/how-to-talk-to-your-family-before-you-decide-to-sell-mineral-rights.json",
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/how-to-talk-to-your-family-before-you-decide-to-sell-mineral-rights/one-family-one-decision-one-honest-conversation.webp",
+      "inline_asset_sha256": "97fcd2ce86b7aab9268e4340c8e3351f4fe1821e7a57b7d38f089ba27aa96d0f",
+      "inline_rendered_text": "One Family, One Decision, One Honest Conversation"
     }
   ],
   "admission_audit": {
-    "admitted_article_count": 145,
+    "admitted_article_count": 146,
     "selection_ranks": [
       1,
       2,
@@ -5114,7 +5150,8 @@
       142,
       143,
       144,
-      145
+      145,
+      146
     ],
     "duplicate_program_row_ids": [],
     "duplicate_slugs": [],
@@ -5173,9 +5210,9 @@
   "two_image_policy": {
     "directive": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
     "retrofit_manifest_path": "config/mrx-article-two-image-retrofit.json",
-    "retrofit_manifest_sha256": "7597de46614fb62ff0457cb3e22b0912cc03a5f12cb1d814ce5a0182c14e99ad",
-    "public_article_count": 154,
-    "batch_article_count": 145,
+    "retrofit_manifest_sha256": "0538e6b79ace3810dad2a6491429df3e1542a5b6d34ac4af4c45d5967310468b",
+    "public_article_count": 155,
+    "batch_article_count": 146,
     "assets_per_article": 2,
     "hero_share_identity_required": true,
     "inline_image_distinct_required": true,

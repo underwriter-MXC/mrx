@@ -1,18 +1,18 @@
 {
   "artifact_type": "mrx_article_two_image_retrofit",
   "schema_version": 1,
-  "generated_at_utc": "2026-08-15T05:56:16Z",
+  "generated_at_utc": "2026-08-15T06:20:45Z",
   "policy_source": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
   "summary": {
-    "article_count": 154,
-    "asset_count": 308,
-    "unique_source_art_count": 154,
-    "unique_hero_sha256_count": 154,
-    "unique_inline_sha256_count": 154,
-    "distinct_article_pair_count": 154,
-    "hero_ocr_pass_count": 154,
-    "inline_ocr_pass_count": 154,
-    "exact_filename_identity_count": 154
+    "article_count": 155,
+    "asset_count": 310,
+    "unique_source_art_count": 155,
+    "unique_hero_sha256_count": 155,
+    "unique_inline_sha256_count": 155,
+    "distinct_article_pair_count": 155,
+    "hero_ocr_pass_count": 155,
+    "inline_ocr_pass_count": 155,
+    "exact_filename_identity_count": 155
   },
   "contact_sheets": {
     "hero": [
@@ -2962,6 +2962,56 @@
           "actual": "predatory mineral rights offers",
           "normalized_expected": "predatory mineral rights offers",
           "normalized_actual": "predatory mineral rights offers",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      }
+    },
+    {
+      "slug": "how-to-talk-to-your-family-before-you-decide-to-sell-mineral-rights",
+      "title": "How to Talk to Your Family Before You Decide to Sell Mineral Rights",
+      "keyword": "One Family, One Decision, One Honest Conversation",
+      "file_path": "src/content/posts/how-to-talk-to-your-family-before-you-decide-to-sell-mineral-rights.mdx",
+      "source_public_path": "/assets/articles/hero/how-to-talk-to-your-family-before-you-decide-to-sell-mineral-rights.webp",
+      "source_artifact_paths": [
+        "artifacts/mrx1000-wave66-creative-sources/how-to-talk-to-your-family-before-you-decide-to-sell-mineral-rights-hero-base.png",
+        "artifacts/mrx1000-wave66-creative-sources/how-to-talk-to-your-family-before-you-decide-to-sell-mineral-rights-inline-base.png"
+      ],
+      "generated_at_utc": "2026-08-15T06:17:25.541Z",
+      "hero": {
+        "public_path": "/assets/articles/hero/how-to-talk-to-your-family-before-you-decide-to-sell-mineral-rights.webp",
+        "alt": "Three adult family members talk at a table beside “How to Talk to Your Family Before You Decide to Sell Mineral Rights”.",
+        "width": 1200,
+        "height": 630,
+        "mime_type": "image/webp",
+        "sha256": "ab8c4e5b6f804186a009ba7ac802bcba7ed6bbb9627c7580baf5bc2098d29fce",
+        "perceptual_hash": "0000000000001111000000000000111100000000000111110000000000011110111111110001111000010011000001101111111100000111000000000100001111111000010000100000000001001010000000000011110000000000011111000000000000011100000000000000011000000000000001100000000000000100",
+        "neutralized_art_text_region_count": 1,
+        "ocr": {
+          "expected": "How to Talk to Your Family Before You Decide to Sell Mineral Rights",
+          "actual": "How to Talk to Your Family\nBefore You Decide to Sell\nMineral Rights",
+          "normalized_expected": "how to talk to your family before you decide to sell mineral rights",
+          "normalized_actual": "how to talk to your family before you decide to sell mineral rights",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      },
+      "inline": {
+        "public_path": "/assets/articles/inline/how-to-talk-to-your-family-before-you-decide-to-sell-mineral-rights/one-family-one-decision-one-honest-conversation.webp",
+        "alt": "Three notebooks surround a table above “One Family, One Decision, One Honest Conversation”.",
+        "rendered_text": "One Family, One Decision, One Honest Conversation",
+        "visual_variant": "wave66-distinct-generated-overhead-family-conversation-workspace",
+        "width": 1200,
+        "height": 675,
+        "mime_type": "image/webp",
+        "sha256": "97fcd2ce86b7aab9268e4340c8e3351f4fe1821e7a57b7d38f089ba27aa96d0f",
+        "perceptual_hash": "1111111001111101000111100111100000011110011110000001111111111000001111111111100000111111111110000011111111111000000111111111100110001111111110110000011111110000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "neutralized_art_text_region_count": 1,
+        "ocr": {
+          "expected": "One Family, One Decision, One Honest Conversation",
+          "actual": "One Family, One Decision, One Honest Conversation",
+          "normalized_expected": "one family one decision one honest conversation",
+          "normalized_actual": "one family one decision one honest conversation",
           "uppercase_i_confusable_accepted": false,
           "pass": true
         }

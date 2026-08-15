@@ -1,15 +1,15 @@
 {
   "artifact_type": "mrx1000_content_activation_plan",
   "plan_version": "mrx1000-content-activation-v1.1.0",
-  "generated_at": "2026-07-20T12:39:07.839Z",
+  "generated_at": "2026-07-20T16:33:33.370Z",
   "generated_at_method": "canonical_ledger_generated_at",
   "generator": "scripts/build-mrx-1000-activation-plan.mjs",
-  "content_fingerprint_sha256": "c5dc95ecaa1010cb3637cb839702c3bef57b55164cb45da70b56c7ea4036b2f2",
+  "content_fingerprint_sha256": "50e194e085ff95939a6557250ffb301c05109cadc5915928b993b005fbee2fca",
   "inputs": {
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_fingerprint_sha256": "c9d821938ce65928c6b9f0a70eee4bf855bc7d6c1148ca82a07d40f36f55dd35",
+    "canonical_ledger_fingerprint_sha256": "f2a9779b054373acd7624edee7d2601258b8b2e12780984b222593dcb75aea7e",
     "canonical_ledger_fingerprint_verified": true,
-    "canonical_ledger_generated_at": "2026-07-20T12:39:07.839Z",
+    "canonical_ledger_generated_at": "2026-07-20T16:33:33.370Z",
     "owner_decision": {
       "decision_id": "D-2026-0804-16",
       "signed_disposition": "APPROVED_CONTINUOUS_QUALITY_GATED_ARTICLE_PUBLICATION",
@@ -115,9 +115,9 @@
     },
     "by_source_preservation_classification": {
       "incumbent_draft_nonpublic_held": 28,
-      "live_public_published_route": 154,
+      "live_public_published_route": 155,
       "pilot_draft_noindex_stage": 25,
-      "planning_only_inventory": 793
+      "planning_only_inventory": 792
     }
   },
   "rows": [
@@ -9085,11 +9085,11 @@
       },
       "sibling_link": {
         "target_program_row_id": "MRX1000-0146",
-        "target_title": "What to Expect During Your No-Obligation Mineral Rights Assessment Process",
-        "url": "/blog/what-to-expect-during-your-no-obligation-mineral-rights-assessment-process/",
+        "target_title": "How to Talk to Your Family Before You Decide to Sell Mineral Rights",
+        "url": "/blog/how-to-talk-to-your-family-before-you-decide-to-sell-mineral-rights/",
         "relationship": "same_cluster_next_by_program_row_id_cyclic",
-        "target_source_preservation_classification": "planning_only_inventory",
-        "target_route_live": false,
+        "target_source_preservation_classification": "live_public_published_route",
+        "target_route_live": true,
         "status": "planned_local_only"
       },
       "primary_cta": {
@@ -9132,15 +9132,15 @@
     },
     {
       "program_row_id": "MRX1000-0146",
-      "canonical_title": "What to Expect During Your No-Obligation Mineral Rights Assessment Process",
-      "canonical_slug": "what-to-expect-during-your-no-obligation-mineral-rights-assessment-process",
-      "canonical_url": "/blog/what-to-expect-during-your-no-obligation-mineral-rights-assessment-process/",
+      "canonical_title": "How to Talk to Your Family Before You Decide to Sell Mineral Rights",
+      "canonical_slug": "how-to-talk-to-your-family-before-you-decide-to-sell-mineral-rights",
+      "canonical_url": "/blog/how-to-talk-to-your-family-before-you-decide-to-sell-mineral-rights/",
       "cluster": "sell-mineral-rights-decision-process",
       "pillar": "sell-mineral-rights",
-      "search_intent": "transactional",
+      "search_intent": "informational",
       "funnel_stage": "decision",
-      "source_preservation_classification": "planning_only_inventory",
-      "source_route_live": false,
+      "source_preservation_classification": "live_public_published_route",
+      "source_route_live": true,
       "pillar_link": {
         "url": "/sell-mineral-rights/",
         "route_evidence": "src/pages/sell-mineral-rights.astro",
@@ -9162,7 +9162,7 @@
         "placement_code": "closing_panel",
         "placement_guidance": "Place in the closing decision panel after key takeaways and before related articles.",
         "assignment_rule": "decision_stage_team_handoff",
-        "assignment_basis": "decision:transactional",
+        "assignment_basis": "decision:informational",
         "approved_route_evidence": "src/pages/book.astro",
         "role": "primary_appointment",
         "is_appointment_cta": true,
@@ -9175,7 +9175,7 @@
         "placement_code": "closing_panel",
         "placement_guidance": "Place in the closing decision panel after key takeaways and before related articles.",
         "assignment_rule": "decision_stage_team_handoff",
-        "assignment_basis": "decision:transactional",
+        "assignment_basis": "decision:informational",
         "approved_route_evidence": "src/pages/book.astro",
         "role": "same_as_primary_appointment",
         "distinct_from_primary_cta": false,
@@ -9189,7 +9189,7 @@
         "rendered_triangle_verified": false,
         "live_status": "not_published_or_verified_by_this_plan",
         "live_triangle_verified": false,
-        "release_status": "eligible_for_continuous_quality_review_not_yet_cleared",
+        "release_status": "released_under_d16_continuous_quality_gate",
         "numerical_release_cap_applies": false
       }
     },
