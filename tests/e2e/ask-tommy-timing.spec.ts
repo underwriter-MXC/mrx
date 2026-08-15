@@ -45,7 +45,7 @@ test('shows typing immediately and holds a guide answer for at least two seconds
 
   await page.goto('/');
   await page.locator('[data-open-home-chat]').first().click();
-  await expect(page.getByText('How may I help you?', { exact: true })).toBeVisible();
+  await expect(page.getByText(/Tell me what brought you here:/)).toBeVisible();
   const ownerQuestion = 'Owner — text --- about mineral-rights';
   await page.getByTestId('tommy-composer-input').fill(ownerQuestion);
   const submittedAt = Date.now();
@@ -85,7 +85,7 @@ test('does not add another two-second delay when answer processing is already sl
 
   await page.goto('/');
   await page.locator('[data-open-home-chat]').first().click();
-  await expect(page.getByText('How may I help you?', { exact: true })).toBeVisible();
+  await expect(page.getByText(/Tell me what brought you here:/)).toBeVisible();
   await page.getByTestId('tommy-composer-input').fill('What affects value?');
   const submittedAt = Date.now();
   await page.getByLabel('Send reply').click();
@@ -104,7 +104,7 @@ test('holds a local fallback answer to the same minimum', async ({ page }) => {
 
   await page.goto('/');
   await page.locator('[data-open-home-chat]').first().click();
-  await expect(page.getByText('How may I help you?', { exact: true })).toBeVisible();
+  await expect(page.getByText(/Tell me what brought you here:/)).toBeVisible();
   await page.getByTestId('tommy-composer-input').fill('What affects value?');
   const submittedAt = Date.now();
   await page.getByLabel('Send reply').click();

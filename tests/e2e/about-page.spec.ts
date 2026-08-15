@@ -17,7 +17,7 @@ test.describe('About MRX page', () => {
     await expect(heroChatButton).toHaveCount(1);
     await heroChatButton.click();
     await expect(page.getByTestId('ask-tommy-dialog')).toBeVisible();
-    await expect(page.getByText('How may I help you?', { exact: true })).toBeVisible();
+    await expect(page.getByText(/Tell me what brought you here:/)).toBeVisible();
   });
 
   test('stays within a 390-pixel mobile viewport', async ({ page }) => {
