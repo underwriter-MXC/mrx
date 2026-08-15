@@ -1,7 +1,7 @@
 {
   "program": "MRX 1,000 Article SEO+AEO Production Program",
   "artifact_type": "authorized_release_10_batch",
-  "evidence_scaffold_generated_at_utc": "2026-08-15T06:33:35Z",
+  "evidence_scaffold_generated_at_utc": "2026-08-15T06:52:22Z",
   "decision_authority": {
     "successor_gate_decision_id": "D-2026-0804-16",
     "successor_gate_decision_path": "docs/governance/mrx1000-owner-continuous-publication-directive-2026-08-04.md",
@@ -222,13 +222,16 @@
     "wave65_selection_decision_sha256": "9aa763bad5d2add55ab8a3cd9b7063218b886d73f8f0390929564ceafb973eab",
     "wave66_selection_decision_id": "MRX1000-W66-SELECT-2026-08-14",
     "wave66_selection_decision_path": "docs/governance/mrx1000-wave66-selection-decision-2026-08-14.md",
-    "wave66_selection_decision_sha256": "2eaf64b4862062e9b7229a8704040c34dfbbe454bc860486675f8aceafed0e5d"
+    "wave66_selection_decision_sha256": "2eaf64b4862062e9b7229a8704040c34dfbbe454bc860486675f8aceafed0e5d",
+    "wave67_selection_decision_id": "MRX1000-W67-SELECT-2026-08-14",
+    "wave67_selection_decision_path": "docs/governance/mrx1000-wave67-selection-decision-2026-08-14.md",
+    "wave67_selection_decision_sha256": "1ae1b8be16855b962006619591616d921e7cbc3f290531ca93f1ba37b07229c3"
   },
   "identity_authority": {
     "scope_key": "canonical_slug",
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_sha256": "bfa6ef83e32eafe5d8fb515b79305a2ff0dc068630a2c5dae869e1b70a163666",
-    "canonical_ledger_generated_at": "2026-07-20T15:42:20.605Z",
+    "canonical_ledger_sha256": "8b0ea94febd596c6a221b3be6acefad29acad6f30ef754ce41e67b92256de032",
+    "canonical_ledger_generated_at": "2026-07-20T08:31:33.131Z",
     "successor_ledger_decision_id": "D-2026-0723-LEDGER-04",
     "successor_ledger_decision_path": "artifacts/mrx1000-release-10/decisions/mrx-ceo-ledger-provenance-successor-20260723-04.md",
     "successor_ledger_decision_sha256": "09eca24bcd0e71563f2ac4197f564eec0ccb43a5ee955216da5c4a2543d04978",
@@ -242,11 +245,11 @@
     "authorization_scope": "declared_program_size_not_a_staged_release_cap",
     "admission_mode": "continuous_quality_gated",
     "continuous_quality_gated_from_selection_rank": 26,
-    "prior_verified_article_count": 145,
+    "prior_verified_article_count": 146,
     "fail_closed": true,
     "earned_scale_gates": [],
-    "exact_admitted_count": 146,
-    "exact_admitted_slate_sha256": "7d309ccbdcdec055b706d3f08f14e2b35f0513fb0074aa00722d934a1000c35f"
+    "exact_admitted_count": 147,
+    "exact_admitted_slate_sha256": "a5d234c0f3a39f6c10605799949fde26c6481a13f56e2432728cfb95dcbaefec"
   },
   "articles": [
     {
@@ -5001,10 +5004,43 @@
       "inline_path": "/assets/articles/inline/how-to-talk-to-your-family-before-you-decide-to-sell-mineral-rights/one-family-one-decision-one-honest-conversation.webp",
       "inline_asset_sha256": "97fcd2ce86b7aab9268e4340c8e3351f4fe1821e7a57b7d38f089ba27aa96d0f",
       "inline_rendered_text": "One Family, One Decision, One Honest Conversation"
+    },
+    {
+      "selection_rank": 147,
+      "program_row_id": "MRX1000-0147",
+      "source_shortlist_program_row_id": "MRX1000-0147",
+      "slug": "how-to-choose-a-family-point-person-for-mineral-rights-inquiries",
+      "title": "How to Choose a Family Point Person for Mineral Rights Inquiries",
+      "source_shortlist_title": "How to Choose a Family Point Person for Mineral Rights Inquiries",
+      "canonical_url": "https://mineralrightsxchange.com/blog/how-to-choose-a-family-point-person-for-mineral-rights-inquiries/",
+      "pillar": "sell-mineral-rights",
+      "cluster": "sell-mineral-rights-decision-process",
+      "content_genius_article_uuid": null,
+      "archive_evidence_sha256": "7938500e968a227f2fe660c0016319408dda1c6bbceb5a6632c3a769403280d8",
+      "repo_path": "src/content/posts/how-to-choose-a-family-point-person-for-mineral-rights-inquiries.mdx",
+      "repo_sha256": "ae5cc492ae161e65822b5ae0e300a7a10d777e783ca713ce6436b8734110bae1",
+      "article_sha256": "ae5cc492ae161e65822b5ae0e300a7a10d777e783ca713ce6436b8734110bae1",
+      "hero_path": "/assets/articles/hero/how-to-choose-a-family-point-person-for-mineral-rights-inquiries.webp",
+      "hero_sha256": "42b8cebaba417411a6cffb2e9de229f5fc66eb08c6f5d0c7e7256476f6c67341",
+      "hero_asset_sha256": "42b8cebaba417411a6cffb2e9de229f5fc66eb08c6f5d0c7e7256476f6c67341",
+      "admission_status": "admitted_quality_gated",
+      "finalization_state": "draft_noindex_admitted",
+      "searchatlas_content_score": null,
+      "searchatlas_word_count": 2531,
+      "risk_citation_remediation": [
+        "The original generic selling-process identity was rejected because live articles already own seller process, timing, comprehensive-guide, mistake, hidden-trap, partial-sale, and post-sale jobs. A valuation-focused replacement was also rejected for direct corpus collision and source drift. The admitted replacement owns only a non-legal family point-person protocol after the family has already chosen to receive inquiries.",
+        "Continuous quality-gated admission under D-2026-0804-16, the 2026-08-14 no-approval owner directive, and MRX1000-W67-SELECT-2026-08-14; no numerical cap, elapsed-time gate, or owner publication approval applies.",
+        "Publication remains conditional on current editorial, factual-citation, compliance, two-image, metadata, build, rollback, deployment, and live-verification evidence."
+      ],
+      "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/how-to-choose-a-family-point-person-for-mineral-rights-inquiries.json",
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/how-to-choose-a-family-point-person-for-mineral-rights-inquiries/one-contact-shared-information.webp",
+      "inline_asset_sha256": "a125d9211b4b8849d58e60ad61fefac876fbeab5332d4977624de3de8fed1474",
+      "inline_rendered_text": "One Contact, Shared Information"
     }
   ],
   "admission_audit": {
-    "admitted_article_count": 146,
+    "admitted_article_count": 147,
     "selection_ranks": [
       1,
       2,
@@ -5151,7 +5187,8 @@
       143,
       144,
       145,
-      146
+      146,
+      147
     ],
     "duplicate_program_row_ids": [],
     "duplicate_slugs": [],
@@ -5210,9 +5247,9 @@
   "two_image_policy": {
     "directive": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
     "retrofit_manifest_path": "config/mrx-article-two-image-retrofit.json",
-    "retrofit_manifest_sha256": "0538e6b79ace3810dad2a6491429df3e1542a5b6d34ac4af4c45d5967310468b",
-    "public_article_count": 155,
-    "batch_article_count": 146,
+    "retrofit_manifest_sha256": "0ea2b8f190c4d1ceffda8137ab1861029165c51f61386528c45c66f687b2aa59",
+    "public_article_count": 156,
+    "batch_article_count": 147,
     "assets_per_article": 2,
     "hero_share_identity_required": true,
     "inline_image_distinct_required": true,

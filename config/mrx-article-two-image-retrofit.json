@@ -1,18 +1,18 @@
 {
   "artifact_type": "mrx_article_two_image_retrofit",
   "schema_version": 1,
-  "generated_at_utc": "2026-08-15T06:20:45Z",
+  "generated_at_utc": "2026-08-15T06:50:30Z",
   "policy_source": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
   "summary": {
-    "article_count": 155,
-    "asset_count": 310,
-    "unique_source_art_count": 155,
-    "unique_hero_sha256_count": 155,
-    "unique_inline_sha256_count": 155,
-    "distinct_article_pair_count": 155,
-    "hero_ocr_pass_count": 155,
-    "inline_ocr_pass_count": 155,
-    "exact_filename_identity_count": 155
+    "article_count": 156,
+    "asset_count": 312,
+    "unique_source_art_count": 156,
+    "unique_hero_sha256_count": 156,
+    "unique_inline_sha256_count": 156,
+    "distinct_article_pair_count": 156,
+    "hero_ocr_pass_count": 156,
+    "inline_ocr_pass_count": 156,
+    "exact_filename_identity_count": 156
   },
   "contact_sheets": {
     "hero": [
@@ -2176,6 +2176,56 @@
           "actual": "Mineral Rights Sale Package Index",
           "normalized_expected": "mineral rights sale package index",
           "normalized_actual": "mineral rights sale package index",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      }
+    },
+    {
+      "slug": "how-to-choose-a-family-point-person-for-mineral-rights-inquiries",
+      "title": "How to Choose a Family Point Person for Mineral Rights Inquiries",
+      "keyword": "One Contact, Shared Information",
+      "file_path": "src/content/posts/how-to-choose-a-family-point-person-for-mineral-rights-inquiries.mdx",
+      "source_public_path": "/assets/articles/hero/how-to-choose-a-family-point-person-for-mineral-rights-inquiries.webp",
+      "source_artifact_paths": [
+        "artifacts/mrx1000-wave67-creative-sources/how-to-choose-a-family-point-person-for-mineral-rights-inquiries-hero-base.png",
+        "artifacts/mrx1000-wave67-creative-sources/how-to-choose-a-family-point-person-for-mineral-rights-inquiries-inline-base.png"
+      ],
+      "generated_at_utc": "2026-08-15T06:45:05.583Z",
+      "hero": {
+        "public_path": "/assets/articles/hero/how-to-choose-a-family-point-person-for-mineral-rights-inquiries.webp",
+        "alt": "A family chooses one notebook holder beside “How to Choose a Family Point Person for Mineral Rights Inquiries”.",
+        "width": 1200,
+        "height": 630,
+        "mime_type": "image/webp",
+        "sha256": "42b8cebaba417411a6cffb2e9de229f5fc66eb08c6f5d0c7e7256476f6c67341",
+        "perceptual_hash": "0000000001101111000000000110111100000000011011110000000001101111000100100001111100000000000111110111111100110111000000000011010001111000001111000000000000111100000000000011110000000000001110000000000000001101000000000001111100000000010011110000000001111111",
+        "neutralized_art_text_region_count": 1,
+        "ocr": {
+          "expected": "How to Choose a Family Point Person for Mineral Rights Inquiries",
+          "actual": "How to Choose a Family\nPoint Person for Mineral\nRights Inquiries",
+          "normalized_expected": "how to choose a family point person for mineral rights inquiries",
+          "normalized_actual": "how to choose a family point person for mineral rights inquiries",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      },
+      "inline": {
+        "public_path": "/assets/articles/inline/how-to-choose-a-family-point-person-for-mineral-rights-inquiries/one-contact-shared-information.webp",
+        "alt": "Blank envelopes surround one notebook above “One Contact, Shared Information”.",
+        "rendered_text": "One Contact, Shared Information",
+        "visual_variant": "wave67-distinct-generated-family-inquiry-routing-workspace",
+        "width": 1200,
+        "height": 675,
+        "mime_type": "image/webp",
+        "sha256": "a125d9211b4b8849d58e60ad61fefac876fbeab5332d4977624de3de8fed1474",
+        "perceptual_hash": "1000001000000000100011000011000000111100011110000111110001111000111111000011100010111100000010000111110001111100001111100111110000111110001111000001111000111100000000000000000000000000000000000000000111000000000000000000000000000000000000000000000000000000",
+        "neutralized_art_text_region_count": 1,
+        "ocr": {
+          "expected": "One Contact, Shared Information",
+          "actual": "One Contact, Shared Information",
+          "normalized_expected": "one contact shared information",
+          "normalized_actual": "one contact shared information",
           "uppercase_i_confusable_accepted": false,
           "pass": true
         }

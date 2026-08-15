@@ -1,15 +1,15 @@
 {
   "artifact_type": "mrx1000_content_activation_plan",
   "plan_version": "mrx1000-content-activation-v1.1.0",
-  "generated_at": "2026-07-20T15:42:20.605Z",
+  "generated_at": "2026-07-20T08:31:33.131Z",
   "generated_at_method": "canonical_ledger_generated_at",
   "generator": "scripts/build-mrx-1000-activation-plan.mjs",
-  "content_fingerprint_sha256": "50e194e085ff95939a6557250ffb301c05109cadc5915928b993b005fbee2fca",
+  "content_fingerprint_sha256": "ef308117f9e700dda135d91dfd4adc39fc566372b809ab69965b0fcc6500ceaa",
   "inputs": {
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_fingerprint_sha256": "f2a9779b054373acd7624edee7d2601258b8b2e12780984b222593dcb75aea7e",
+    "canonical_ledger_fingerprint_sha256": "663fc0b461dab34d2e28393adb554206c7b9844059395f4bea2d7b8916f49bde",
     "canonical_ledger_fingerprint_verified": true,
-    "canonical_ledger_generated_at": "2026-07-20T15:42:20.605Z",
+    "canonical_ledger_generated_at": "2026-07-20T08:31:33.131Z",
     "owner_decision": {
       "decision_id": "D-2026-0804-16",
       "signed_disposition": "APPROVED_CONTINUOUS_QUALITY_GATED_ARTICLE_PUBLICATION",
@@ -115,9 +115,9 @@
     },
     "by_source_preservation_classification": {
       "incumbent_draft_nonpublic_held": 28,
-      "live_public_published_route": 155,
+      "live_public_published_route": 156,
       "pilot_draft_noindex_stage": 25,
-      "planning_only_inventory": 792
+      "planning_only_inventory": 791
     }
   },
   "rows": [
@@ -9148,11 +9148,11 @@
       },
       "sibling_link": {
         "target_program_row_id": "MRX1000-0147",
-        "target_title": "What to Know About the Mineral Rights Selling Process",
-        "url": "/blog/what-to-know-about-the-mineral-rights-selling-process/",
+        "target_title": "How to Choose a Family Point Person for Mineral Rights Inquiries",
+        "url": "/blog/how-to-choose-a-family-point-person-for-mineral-rights-inquiries/",
         "relationship": "same_cluster_next_by_program_row_id_cyclic",
-        "target_source_preservation_classification": "planning_only_inventory",
-        "target_route_live": false,
+        "target_source_preservation_classification": "live_public_published_route",
+        "target_route_live": true,
         "status": "planned_local_only"
       },
       "primary_cta": {
@@ -9195,15 +9195,15 @@
     },
     {
       "program_row_id": "MRX1000-0147",
-      "canonical_title": "What to Know About the Mineral Rights Selling Process",
-      "canonical_slug": "what-to-know-about-the-mineral-rights-selling-process",
-      "canonical_url": "/blog/what-to-know-about-the-mineral-rights-selling-process/",
+      "canonical_title": "How to Choose a Family Point Person for Mineral Rights Inquiries",
+      "canonical_slug": "how-to-choose-a-family-point-person-for-mineral-rights-inquiries",
+      "canonical_url": "/blog/how-to-choose-a-family-point-person-for-mineral-rights-inquiries/",
       "cluster": "sell-mineral-rights-decision-process",
       "pillar": "sell-mineral-rights",
-      "search_intent": "transactional",
+      "search_intent": "informational",
       "funnel_stage": "decision",
-      "source_preservation_classification": "planning_only_inventory",
-      "source_route_live": false,
+      "source_preservation_classification": "live_public_published_route",
+      "source_route_live": true,
       "pillar_link": {
         "url": "/sell-mineral-rights/",
         "route_evidence": "src/pages/sell-mineral-rights.astro",
@@ -9225,7 +9225,7 @@
         "placement_code": "closing_panel",
         "placement_guidance": "Place in the closing decision panel after key takeaways and before related articles.",
         "assignment_rule": "decision_stage_team_handoff",
-        "assignment_basis": "decision:transactional",
+        "assignment_basis": "decision:informational",
         "approved_route_evidence": "src/pages/book.astro",
         "role": "primary_appointment",
         "is_appointment_cta": true,
@@ -9238,7 +9238,7 @@
         "placement_code": "closing_panel",
         "placement_guidance": "Place in the closing decision panel after key takeaways and before related articles.",
         "assignment_rule": "decision_stage_team_handoff",
-        "assignment_basis": "decision:transactional",
+        "assignment_basis": "decision:informational",
         "approved_route_evidence": "src/pages/book.astro",
         "role": "same_as_primary_appointment",
         "distinct_from_primary_cta": false,
@@ -9252,7 +9252,7 @@
         "rendered_triangle_verified": false,
         "live_status": "not_published_or_verified_by_this_plan",
         "live_triangle_verified": false,
-        "release_status": "eligible_for_continuous_quality_review_not_yet_cleared",
+        "release_status": "released_under_d16_continuous_quality_gate",
         "numerical_release_cap_applies": false
       }
     },
