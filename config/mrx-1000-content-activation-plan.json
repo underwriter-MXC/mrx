@@ -1,15 +1,15 @@
 {
   "artifact_type": "mrx1000_content_activation_plan",
   "plan_version": "mrx1000-content-activation-v1.1.0",
-  "generated_at": "2026-07-20T14:29:55.916Z",
+  "generated_at": "2026-07-20T11:13:50.883Z",
   "generated_at_method": "canonical_ledger_generated_at",
   "generator": "scripts/build-mrx-1000-activation-plan.mjs",
-  "content_fingerprint_sha256": "a673c3cd90a613f50f011ec66d292aedf9b34d94b9733ac1f7c90c3b562c015e",
+  "content_fingerprint_sha256": "28a066e6c1eed1bc9fe4f961651d8550264e4b4e5610270c090feaf40806adac",
   "inputs": {
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_fingerprint_sha256": "c15e318ea6836b1c1612dab715160bf3834b8e56ef80e73e128e4625903034bf",
+    "canonical_ledger_fingerprint_sha256": "a99a0d385e11eb610565ebcdca2bbdf9f360fb33c569c8218faf524e91023812",
     "canonical_ledger_fingerprint_verified": true,
-    "canonical_ledger_generated_at": "2026-07-20T14:29:55.916Z",
+    "canonical_ledger_generated_at": "2026-07-20T11:13:50.883Z",
     "owner_decision": {
       "decision_id": "D-2026-0804-16",
       "signed_disposition": "APPROVED_CONTINUOUS_QUALITY_GATED_ARTICLE_PUBLICATION",
@@ -115,9 +115,9 @@
     },
     "by_source_preservation_classification": {
       "incumbent_draft_nonpublic_held": 28,
-      "live_public_published_route": 151,
+      "live_public_published_route": 152,
       "pilot_draft_noindex_stage": 25,
-      "planning_only_inventory": 796
+      "planning_only_inventory": 795
     }
   },
   "rows": [
@@ -8833,11 +8833,11 @@
       },
       "sibling_link": {
         "target_program_row_id": "MRX1000-0143",
-        "target_title": "What Influences the Suggested Price for Your Mineral Rights Assessment?",
-        "url": "/blog/what-influences-the-suggested-price-for-your-mineral-rights-assessment/",
+        "target_title": "What a Mineral Rights Assessment Does and Does Not Tell You",
+        "url": "/blog/what-a-mineral-rights-assessment-does-and-does-not-tell-you/",
         "relationship": "same_cluster_next_by_program_row_id_cyclic",
-        "target_source_preservation_classification": "planning_only_inventory",
-        "target_route_live": false,
+        "target_source_preservation_classification": "live_public_published_route",
+        "target_route_live": true,
         "status": "planned_local_only"
       },
       "primary_cta": {
@@ -8943,15 +8943,15 @@
     },
     {
       "program_row_id": "MRX1000-0143",
-      "canonical_title": "What Influences the Suggested Price for Your Mineral Rights Assessment?",
-      "canonical_slug": "what-influences-the-suggested-price-for-your-mineral-rights-assessment",
-      "canonical_url": "/blog/what-influences-the-suggested-price-for-your-mineral-rights-assessment/",
+      "canonical_title": "What a Mineral Rights Assessment Does and Does Not Tell You",
+      "canonical_slug": "what-a-mineral-rights-assessment-does-and-does-not-tell-you",
+      "canonical_url": "/blog/what-a-mineral-rights-assessment-does-and-does-not-tell-you/",
       "cluster": "sell-mineral-rights-decision-process",
       "pillar": "sell-mineral-rights",
-      "search_intent": "transactional",
+      "search_intent": "informational",
       "funnel_stage": "decision",
-      "source_preservation_classification": "planning_only_inventory",
-      "source_route_live": false,
+      "source_preservation_classification": "live_public_published_route",
+      "source_route_live": true,
       "pillar_link": {
         "url": "/sell-mineral-rights/",
         "route_evidence": "src/pages/sell-mineral-rights.astro",
@@ -8973,7 +8973,7 @@
         "placement_code": "closing_panel",
         "placement_guidance": "Place in the closing decision panel after key takeaways and before related articles.",
         "assignment_rule": "decision_stage_team_handoff",
-        "assignment_basis": "decision:transactional",
+        "assignment_basis": "decision:informational",
         "approved_route_evidence": "src/pages/book.astro",
         "role": "primary_appointment",
         "is_appointment_cta": true,
@@ -8986,7 +8986,7 @@
         "placement_code": "closing_panel",
         "placement_guidance": "Place in the closing decision panel after key takeaways and before related articles.",
         "assignment_rule": "decision_stage_team_handoff",
-        "assignment_basis": "decision:transactional",
+        "assignment_basis": "decision:informational",
         "approved_route_evidence": "src/pages/book.astro",
         "role": "same_as_primary_appointment",
         "distinct_from_primary_cta": false,
@@ -9000,7 +9000,7 @@
         "rendered_triangle_verified": false,
         "live_status": "not_published_or_verified_by_this_plan",
         "live_triangle_verified": false,
-        "release_status": "eligible_for_continuous_quality_review_not_yet_cleared",
+        "release_status": "released_under_d16_continuous_quality_gate",
         "numerical_release_cap_applies": false
       }
     },
