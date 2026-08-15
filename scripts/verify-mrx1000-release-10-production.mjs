@@ -1,6 +1,8 @@
 import { createHash } from 'node:crypto';
+import { execFile } from 'node:child_process';
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import path from 'node:path';
+import { promisify } from 'node:util';
 
 import { legacyLiveRowsFromLedger } from './_release-lifecycle-embedded.mjs';
 import {
@@ -15,13 +17,11 @@ import {
 const ROOT = process.cwd();
 const BATCH_PATH = 'config/mrx1000-release-10-batch.json';
 const LEDGER_PATH = 'config/mrx-1000-canonical-content-ledger.json';
-const PUBLICATION_MANIFEST_PATH =
-  'artifacts/mrx1000-release-10/release/publication-manifest.json';
+const PUBLICATION_MANIFEST_PATH = 'artifacts/mrx1000-release-10/release/publication-manifest.json';
 const RETAINED_PRODUCTION_BASELINE_PATH =
   'artifacts/mrx1000-release-10/release/retained-production-baseline.json';
 const TWO_IMAGE_RETROFIT_MANIFEST_PATH = 'config/mrx-article-two-image-retrofit.json';
-const OUTPUT_PATH =
-  'artifacts/mrx1000-release-10/release/post-publication-verification.json';
+const OUTPUT_PATH = 'artifacts/mrx1000-release-10/release/post-publication-verification.json';
 const CANONICAL_ORIGIN = process.env.MRX_CANONICAL_ORIGIN ?? 'https://mineralrightsxchange.com';
 const REDIRECT_ALIASES = parseCsvEnv(
   process.env,
@@ -37,6 +37,7 @@ const readJson = async (relativePath) =>
   JSON.parse(await readFile(path.join(ROOT, relativePath), 'utf8'));
 
 const sha256 = (value) => createHash('sha256').update(value).digest('hex');
+const execFileAsync = promisify(execFile);
 
 const decodeHtml = (value = '') =>
   value
@@ -49,7 +50,12 @@ const decodeHtml = (value = '') =>
     .replace(/&#x([0-9a-f]+);/gi, (_, code) => String.fromCodePoint(parseInt(code, 16)));
 
 const stripTags = (value = '') =>
-  decodeHtml(value.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim());
+  decodeHtml(
+    value
+      .replace(/<[^>]+>/g, ' ')
+      .replace(/\s+/g, ' ')
+      .trim(),
+  );
 
 const extractMetaContent = (html, attribute, value) => {
   for (const match of html.matchAll(/<meta\b[^>]*>/gi)) {
@@ -108,8 +114,121 @@ const schemaTypes = (nodes) =>
     }),
   );
 
+const TRANSIENT_HTTP_STATUSES = new Set([
+  408, 425, 429, 500, 502, 503, 504, 520, 521, 522, 523, 524, 525, 526, 527,
+]);
+const CURL_META_MARKER = '\n__MRX_PRODUCTION_CURL_META_5F6C3A81__\n';
+
+const fetchWithCurl = async (url, options = {}) => {
+  const headerNames = [
+    'content-type',
+    'x-robots-tag',
+    'cf-cache-status',
+    'last-modified',
+    'x-vercel-cache',
+    'x-vercel-id',
+    'location',
+  ];
+  const writeOut = [
+    CURL_META_MARKER,
+    '%{response_code}',
+    '%{url_effective}',
+    ...headerNames.map((name) => `%header{${name}}`),
+  ].join('\n');
+  const args = [
+    '--silent',
+    '--show-error',
+    '--retry',
+    '8',
+    '--retry-all-errors',
+    '--retry-delay',
+    '1',
+    '--connect-timeout',
+    '8',
+    '--max-time',
+    '45',
+    '--header',
+    'cache-control: no-cache',
+    '--user-agent',
+    'MRX-Codex-Production-Verifier/1.0',
+    ...(options.redirect === 'manual' ? [] : ['--location']),
+    '--write-out',
+    writeOut,
+    url,
+  ];
+  const transportAttempts = Number.parseInt(process.env.MRX_PRODUCTION_CURL_ATTEMPTS ?? '3', 10);
+  let lastError = null;
+  for (let attempt = 1; attempt <= transportAttempts; attempt += 1) {
+    try {
+      const { stdout } = await execFileAsync('curl', args, {
+        encoding: 'buffer',
+        maxBuffer: 16 * 1024 * 1024,
+      });
+      const marker = Buffer.from(CURL_META_MARKER);
+      const markerOffset = stdout.lastIndexOf(marker);
+      if (markerOffset < 0) throw new Error(`curl metadata missing for ${url}`);
+      const body = stdout.subarray(0, markerOffset);
+      const fields = stdout
+        .subarray(markerOffset + marker.length)
+        .toString('utf8')
+        .trim()
+        .split('\n');
+      const status = Number.parseInt(fields[0] ?? '', 10);
+      const finalUrl = fields[1] ?? url;
+      const observedHeaders = new Map(
+        headerNames.map((name, index) => [name, fields[index + 2] || null]),
+      );
+      const result = {
+        status,
+        url: finalUrl,
+        headers: { get: (name) => observedHeaders.get(String(name).toLowerCase()) ?? null },
+        body: { cancel: async () => {} },
+        text: async () => body.toString('utf8'),
+        arrayBuffer: async () =>
+          body.buffer.slice(body.byteOffset, body.byteOffset + body.byteLength),
+      };
+      if (!TRANSIENT_HTTP_STATUSES.has(status) || attempt === transportAttempts) return result;
+      lastError = new Error(`Transient HTTP ${status} for ${url}`);
+    } catch (error) {
+      lastError = error;
+      if (attempt === transportAttempts) throw error;
+    }
+    await new Promise((resolve) => setTimeout(resolve, 500 * attempt));
+  }
+  throw lastError ?? new Error(`curl failed for ${url}`);
+};
+
+const fetchWithRetry = async (url, options = {}) => {
+  if (process.env.MRX_PRODUCTION_FETCH_TRANSPORT === 'curl') {
+    return fetchWithCurl(url, options);
+  }
+  const attempts = Number.parseInt(process.env.MRX_PRODUCTION_FETCH_ATTEMPTS ?? '5', 10);
+  let lastError = null;
+  for (let attempt = 1; attempt <= attempts; attempt += 1) {
+    try {
+      const response = await fetch(url, {
+        ...options,
+        signal: AbortSignal.timeout(30_000),
+      });
+      if (!TRANSIENT_HTTP_STATUSES.has(response.status) || attempt === attempts) return response;
+      await response.body?.cancel();
+      lastError = new Error(`Transient HTTP ${response.status} for ${url}`);
+    } catch (error) {
+      lastError = error;
+      if (attempt === attempts) {
+        if (process.env.MRX_PRODUCTION_FETCH_CURL_FALLBACK !== '0') {
+          return fetchWithCurl(url, options);
+        }
+        throw error;
+      }
+    }
+    await new Promise((resolve) => setTimeout(resolve, 500 * attempt));
+  }
+  throw lastError ?? new Error(`Fetch failed for ${url}`);
+};
+
 const fetchText = async (url, options = {}) => {
-  const response = await fetch(url, {
+  const response = await fetchWithRetry(url, {
     redirect: options.redirect ?? 'follow',
     headers: {
       'cache-control': 'no-cache',
@@ -123,7 +242,7 @@ const fetchText = async (url, options = {}) => {
 };
 
 const fetchBytes = async (url) => {
-  const response = await fetch(url, {
+  const response = await fetchWithRetry(url, {
     redirect: 'follow',
     headers: {
       'cache-control': 'no-cache',
@@ -138,7 +257,8 @@ const webpDimensions = (bytes) => {
     bytes.length < 30 ||
     bytes.toString('ascii', 0, 4) !== 'RIFF' ||
     bytes.toString('ascii', 8, 12) !== 'WEBP'
-  ) return null;
+  )
+    return null;
   let offset = 12;
   while (offset + 8 <= bytes.length) {
     const chunk = bytes.toString('ascii', offset, offset + 4);
@@ -189,15 +309,14 @@ const canonicalArticleUrls = new Set(batch.articles.map((article) => article.can
 const legacyLiveUrls = legacyLiveRowsFromLedger(ledger.articles ?? [])
   .map((row) => row.canonical_url)
   .filter((url) => url && !canonicalArticleUrls.has(url));
-const expectedPublicArticleUrls = [...new Set([...batch.articles.map((article) => article.canonical_url), ...legacyLiveUrls])];
+const expectedPublicArticleUrls = [
+  ...new Set([...batch.articles.map((article) => article.canonical_url), ...legacyLiveUrls]),
+];
 const expectedLiveBlogCount = Number.parseInt(
   process.env.MRX_EXPECTED_LIVE_BLOG_COUNT ?? `${expectedPublicArticleUrls.length}`,
   10,
 );
-const expectedBlogLocPattern = new RegExp(
-  `<loc>${escapeRegExp(`${CANONICAL_ORIGIN}/blog/`)}`,
-  'g',
-);
+const expectedBlogLocPattern = new RegExp(`<loc>${escapeRegExp(`${CANONICAL_ORIGIN}/blog/`)}`, 'g');
 const activeTargetsAtRelease = parseCsvEnv(
   process.env,
   'MRX_ACTIVE_PRODUCTION_TARGETS',
@@ -222,8 +341,11 @@ for (const article of batch.articles) {
   });
   const articleNode = schemas.find((node) => {
     const type = node?.['@type'];
-    return type === 'Article' || type === 'BlogPosting' ||
-      (Array.isArray(type) && (type.includes('Article') || type.includes('BlogPosting')));
+    return (
+      type === 'Article' ||
+      type === 'BlogPosting' ||
+      (Array.isArray(type) && (type.includes('Article') || type.includes('BlogPosting')))
+    );
   });
   const h1 = stripTags(html.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/i)?.[1] ?? '');
   const sourceUrls = evidence.claim_to_source.map((row) => row.source_url);
@@ -231,40 +353,52 @@ for (const article of batch.articles) {
   const robotsMeta = [...html.matchAll(/<meta\b[^>]*name=["']robots["'][^>]*>/gi)]
     .map((match) => match[0])
     .join(' ');
-  const heroFigure = html.match(
-    /<figure\b[^>]*class=["'][^"']*article-hero-image[^"']*["'][^>]*>[\s\S]*?<\/figure>/i,
-  )?.[0] ?? '';
+  const heroFigure =
+    html.match(
+      /<figure\b[^>]*class=["'][^"']*article-hero-image[^"']*["'][^>]*>[\s\S]*?<\/figure>/i,
+    )?.[0] ?? '';
   const heroTag = heroFigure.match(/<img\b[^>]*>/i)?.[0] ?? null;
-  const inlineFigure = html.match(
-    /<figure\b[^>]*data-article-inline-image[^>]*>[\s\S]*?<\/figure>/i,
-  )?.[0] ?? '';
+  const inlineFigure =
+    html.match(/<figure\b[^>]*data-article-inline-image[^>]*>[\s\S]*?<\/figure>/i)?.[0] ?? '';
   const inlineTag = inlineFigure.match(/<img\b[^>]*>/i)?.[0] ?? null;
   const expectedHeroUrl = new URL(article.hero_path, `${CANONICAL_ORIGIN}/`).toString();
   const expectedHeroAsset = evidence.asset_manifest.assets.find((asset) => asset.kind === 'hero');
-  const expectedSocialAsset = evidence.asset_manifest.assets.find((asset) => asset.kind === 'social');
-  const expectedInlineAsset = evidence.asset_manifest.assets.find((asset) => asset.kind === 'inline');
+  const expectedSocialAsset = evidence.asset_manifest.assets.find(
+    (asset) => asset.kind === 'social',
+  );
+  const expectedInlineAsset = evidence.asset_manifest.assets.find(
+    (asset) => asset.kind === 'inline',
+  );
   const exactWave2OwnerPolicy = article.admission_status === 'admitted_exact';
   const expectedShareAsset = expectedSocialAsset;
   const expectedShareUrl = expectedShareAsset?.public_path
     ? new URL(expectedShareAsset.public_path, `${CANONICAL_ORIGIN}/`).toString()
     : null;
   const expectedHeroWidth = expectedHeroAsset?.observed_width ?? expectedHeroAsset?.declared_width;
-  const expectedHeroHeight = expectedHeroAsset?.observed_height ?? expectedHeroAsset?.declared_height;
-  const expectedShareWidth = expectedShareAsset?.observed_width ?? expectedShareAsset?.declared_width;
-  const expectedShareHeight = expectedShareAsset?.observed_height ?? expectedShareAsset?.declared_height;
-  const expectedShareMime = expectedShareAsset?.observed_mime_type ?? expectedShareAsset?.declared_mime_type;
+  const expectedHeroHeight =
+    expectedHeroAsset?.observed_height ?? expectedHeroAsset?.declared_height;
+  const expectedShareWidth =
+    expectedShareAsset?.observed_width ?? expectedShareAsset?.declared_width;
+  const expectedShareHeight =
+    expectedShareAsset?.observed_height ?? expectedShareAsset?.declared_height;
+  const expectedShareMime =
+    expectedShareAsset?.observed_mime_type ?? expectedShareAsset?.declared_mime_type;
   const expectedInlineUrl = expectedInlineAsset?.public_path
     ? new URL(expectedInlineAsset.public_path, `${CANONICAL_ORIGIN}/`).toString()
     : null;
-  const expectedInlineWidth = expectedInlineAsset?.observed_width ?? expectedInlineAsset?.declared_width;
-  const expectedInlineHeight = expectedInlineAsset?.observed_height ?? expectedInlineAsset?.declared_height;
-  const expectedInlineMime = expectedInlineAsset?.observed_mime_type ?? expectedInlineAsset?.declared_mime_type;
+  const expectedInlineWidth =
+    expectedInlineAsset?.observed_width ?? expectedInlineAsset?.declared_width;
+  const expectedInlineHeight =
+    expectedInlineAsset?.observed_height ?? expectedInlineAsset?.declared_height;
+  const expectedInlineMime =
+    expectedInlineAsset?.observed_mime_type ?? expectedInlineAsset?.declared_mime_type;
   const schemaImageValue = Array.isArray(articleNode?.image)
     ? articleNode.image[0]
     : articleNode?.image;
-  const schemaImageUrl = typeof schemaImageValue === 'string'
-    ? schemaImageValue
-    : schemaImageValue?.url ?? schemaImageValue?.contentUrl ?? null;
+  const schemaImageUrl =
+    typeof schemaImageValue === 'string'
+      ? schemaImageValue
+      : (schemaImageValue?.url ?? schemaImageValue?.contentUrl ?? null);
   const imageResponse = await fetchBytes(expectedHeroUrl);
   const imageDimensions = webpDimensions(imageResponse.bytes);
   const observedImageSha256 = sha256(imageResponse.bytes);
@@ -272,9 +406,7 @@ for (const article of batch.articles) {
   const inlineImageDimensions = inlineImageResponse
     ? webpDimensions(inlineImageResponse.bytes)
     : null;
-  const observedInlineImageSha256 = inlineImageResponse
-    ? sha256(inlineImageResponse.bytes)
-    : null;
+  const observedInlineImageSha256 = inlineImageResponse ? sha256(inlineImageResponse.bytes) : null;
   const observedHero = {
     visible_src: readTagAttribute(heroTag, 'src') || null,
     visible_alt: readTagAttribute(heroTag, 'alt') || null,
@@ -301,7 +433,9 @@ for (const article of batch.articles) {
     visible_alt: readTagAttribute(inlineTag, 'alt') || null,
     visible_width: Number.parseInt(readTagAttribute(inlineTag, 'width'), 10) || null,
     visible_height: Number.parseInt(readTagAttribute(inlineTag, 'height'), 10) || null,
-    rendered_text: readTagAttribute(inlineFigure.match(/<figure\b[^>]*>/i)?.[0] ?? null, 'data-rendered-text') || null,
+    rendered_text:
+      readTagAttribute(inlineFigure.match(/<figure\b[^>]*>/i)?.[0] ?? null, 'data-rendered-text') ||
+      null,
     fetched_url: inlineImageResponse?.response.url ?? null,
     fetched_status: inlineImageResponse?.response.status ?? null,
     fetched_content_type: inlineImageResponse?.response.headers.get('content-type') ?? null,
@@ -321,9 +455,7 @@ for (const article of batch.articles) {
     faq_schema: types.has('FAQPage'),
     five_faqs: Array.isArray(faqNode?.mainEntity) && faqNode.mainEntity.length === 5,
     breadcrumb_schema: types.has('BreadcrumbList'),
-    every_reviewed_source_rendered: sourceUrls.every((url) =>
-      decodeHtml(html).includes(url),
-    ),
+    every_reviewed_source_rendered: sourceUrls.every((url) => decodeHtml(html).includes(url)),
     every_approved_asset_rendered: assetPaths.every((assetPath) => html.includes(assetPath)),
     visible_hero_exact:
       absoluteUrl(observedHero.visible_src) === expectedHeroUrl &&
@@ -341,10 +473,10 @@ for (const article of batch.articles) {
       observedHero.twitter_image_alt === expectedShareAsset?.alt_text,
     same_canonical_hero_share_asset:
       expectedShareUrl === expectedHeroUrl &&
-        expectedShareAsset?.sha256 === expectedHeroAsset?.sha256 &&
-        expectedHeroWidth === 1200 &&
-        expectedHeroHeight === 630 &&
-        expectedShareMime === 'image/webp',
+      expectedShareAsset?.sha256 === expectedHeroAsset?.sha256 &&
+      expectedHeroWidth === 1200 &&
+      expectedHeroHeight === 630 &&
+      expectedShareMime === 'image/webp',
     visible_inline_exact:
       absoluteUrl(observedInline.visible_src) === expectedInlineUrl &&
       observedInline.visible_alt === expectedInlineAsset?.alt_text &&
@@ -422,28 +554,34 @@ for (const route of legacyTwoImageRows) {
   const schemas = extractSchemaNodes(html);
   const articleNode = schemas.find((node) => {
     const type = node?.['@type'];
-    return type === 'Article' || type === 'BlogPosting' ||
-      (Array.isArray(type) && (type.includes('Article') || type.includes('BlogPosting')));
+    return (
+      type === 'Article' ||
+      type === 'BlogPosting' ||
+      (Array.isArray(type) && (type.includes('Article') || type.includes('BlogPosting')))
+    );
   });
   const h1 = stripTags(html.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/i)?.[1] ?? '');
   const robotsMeta = [...html.matchAll(/<meta\b[^>]*name=["']robots["'][^>]*>/gi)]
     .map((match) => match[0])
     .join(' ');
-  const heroFigure = html.match(
-    /<figure\b[^>]*class=["'][^"']*article-hero-image[^"']*["'][^>]*>[\s\S]*?<\/figure>/i,
-  )?.[0] ?? '';
+  const heroFigure =
+    html.match(
+      /<figure\b[^>]*class=["'][^"']*article-hero-image[^"']*["'][^>]*>[\s\S]*?<\/figure>/i,
+    )?.[0] ?? '';
   const heroTag = heroFigure.match(/<img\b[^>]*>/i)?.[0] ?? null;
-  const inlineFigure = html.match(
-    /<figure\b[^>]*data-article-inline-image[^>]*>[\s\S]*?<\/figure>/i,
-  )?.[0] ?? '';
+  const inlineFigure =
+    html.match(/<figure\b[^>]*data-article-inline-image[^>]*>[\s\S]*?<\/figure>/i)?.[0] ?? '';
   const inlineFigureTag = inlineFigure.match(/<figure\b[^>]*>/i)?.[0] ?? null;
   const inlineTag = inlineFigure.match(/<img\b[^>]*>/i)?.[0] ?? null;
   const expectedHeroUrl = new URL(route.hero.public_path, `${CANONICAL_ORIGIN}/`).toString();
   const expectedInlineUrl = new URL(route.inline.public_path, `${CANONICAL_ORIGIN}/`).toString();
-  const schemaImageValue = Array.isArray(articleNode?.image) ? articleNode.image[0] : articleNode?.image;
-  const schemaImageUrl = typeof schemaImageValue === 'string'
-    ? schemaImageValue
-    : schemaImageValue?.url ?? schemaImageValue?.contentUrl ?? null;
+  const schemaImageValue = Array.isArray(articleNode?.image)
+    ? articleNode.image[0]
+    : articleNode?.image;
+  const schemaImageUrl =
+    typeof schemaImageValue === 'string'
+      ? schemaImageValue
+      : (schemaImageValue?.url ?? schemaImageValue?.contentUrl ?? null);
   const imageResponse = await fetchBytes(expectedHeroUrl);
   const imageDimensions = webpDimensions(imageResponse.bytes);
   const observedImageSha256 = sha256(imageResponse.bytes);
@@ -547,10 +685,12 @@ const [home, sitemap, llms, llmsFull, robots] = await Promise.all([
   fetchText(`${CANONICAL_ORIGIN}/robots.txt`),
 ]);
 const primaryRedirectAlias = REDIRECT_ALIASES[0] ?? null;
-const wwwResponse = primaryRedirectAlias ? await fetch(`${primaryRedirectAlias}/`, {
-  redirect: 'manual',
-  headers: { 'cache-control': 'no-cache', 'user-agent': 'MRX-Codex-Production-Verifier/1.0' },
-}) : { status: null, headers: new Headers() };
+const wwwResponse = primaryRedirectAlias
+  ? await fetchWithRetry(`${primaryRedirectAlias}/`, {
+      redirect: 'manual',
+      headers: { 'cache-control': 'no-cache', 'user-agent': 'MRX-Codex-Production-Verifier/1.0' },
+    })
+  : { status: null, headers: new Headers() };
 
 let browserVerification = null;
 if (process.env.MRX_BROWSER_VERIFICATION_JSON) {
@@ -562,10 +702,8 @@ const observedWave10Slugs = browserVerification?.wave10?.slugs ?? [];
 
 const interfaceAssertions = {
   homepage_http_200: home.response.status === 200,
-  homepage_top_disclosure_absent:
-    countElementsWithClass(home.text, 'mrx-disclaimer-top') === 0,
-  homepage_footer_disclosure_once:
-    countElementsWithClass(home.text, 'mrx-disclaimer-footer') === 1,
+  homepage_top_disclosure_absent: countElementsWithClass(home.text, 'mrx-disclaimer-top') === 0,
+  homepage_footer_disclosure_once: countElementsWithClass(home.text, 'mrx-disclaimer-footer') === 1,
   www_redirects_to_apex:
     !primaryRedirectAlias ||
     ([301, 302, 307, 308].includes(wwwResponse.status) &&
@@ -584,16 +722,13 @@ const interfaceAssertions = {
       legacyLiveUrls.includes(`${CANONICAL_ORIGIN}/blog/${row.slug}/`),
     ),
   llms_http_200: llms.response.status === 200,
-  llms_points_to_full_public_index:
-    llms.text.includes(`${CANONICAL_ORIGIN}/llms-full.txt`),
+  llms_points_to_full_public_index: llms.text.includes(`${CANONICAL_ORIGIN}/llms-full.txt`),
   llms_full_http_200: llmsFull.response.status === 200,
   llms_full_contains_all_batch_urls: articleUrls.every((url) => llmsFull.text.includes(url)),
   robots_http_200: robots.response.status === 200,
   robots_mentions_oai_searchbot: /User-agent:\s*OAI-SearchBot/i.test(robots.text),
-  browser_home_top_disclosure_absent:
-    browserVerification?.homepage?.top_disclosure_count === 0,
-  browser_home_footer_disclosure_once:
-    browserVerification?.homepage?.footer_disclosure_count === 1,
+  browser_home_top_disclosure_absent: browserVerification?.homepage?.top_disclosure_count === 0,
+  browser_home_footer_disclosure_once: browserVerification?.homepage?.footer_disclosure_count === 1,
   browser_wave10_visual_verification_complete:
     browserVerification?.wave10?.article_count === 10 &&
     observedWave10Slugs.length === expectedWave10Slugs.length &&
@@ -655,10 +790,9 @@ const report = {
     disposition: Object.values(interfaceAssertions).every(Boolean) ? 'PASS' : 'FAIL',
   },
   rollback: {
-    prior_verified_production_deployment:
-      deployment.deployment_id
-        ? `Use deployment history immediately before ${deployment.deployment_id}.`
-        : 'Use the deployment history immediately before the currently promoted production target.',
+    prior_verified_production_deployment: deployment.deployment_id
+      ? `Use deployment history immediately before ${deployment.deployment_id}.`
+      : 'Use the deployment history immediately before the currently promoted production target.',
     per_article: publicationManifest.rows.map((row) => ({
       program_row_id: row.program_row_id,
       slug: row.slug,
@@ -692,7 +826,11 @@ report.summary.overall_disposition =
 const serialized = `${JSON.stringify(report, null, 2)}\n`;
 await mkdir(path.dirname(path.join(ROOT, OUTPUT_PATH)), { recursive: true });
 await writeFile(path.join(ROOT, OUTPUT_PATH), serialized, 'utf8');
-await writeFile(path.join(ROOT, `${OUTPUT_PATH}.sha256`), `${sha256(serialized)}  ${path.basename(OUTPUT_PATH)}\n`, 'utf8');
+await writeFile(
+  path.join(ROOT, `${OUTPUT_PATH}.sha256`),
+  `${sha256(serialized)}  ${path.basename(OUTPUT_PATH)}\n`,
+  'utf8',
+);
 
 console.log(
   JSON.stringify(
