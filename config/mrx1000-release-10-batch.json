@@ -1,7 +1,7 @@
 {
   "program": "MRX 1,000 Article SEO+AEO Production Program",
   "artifact_type": "authorized_release_10_batch",
-  "evidence_scaffold_generated_at_utc": "2026-08-14T21:25:17Z",
+  "evidence_scaffold_generated_at_utc": "2026-08-15T03:53:22Z",
   "decision_authority": {
     "successor_gate_decision_id": "D-2026-0804-16",
     "successor_gate_decision_path": "docs/governance/mrx1000-owner-continuous-publication-directive-2026-08-04.md",
@@ -207,13 +207,16 @@
     "wave60_selection_decision_sha256": "5d2075434690735bc1640fe58547b6871880e21817738ac1ed188d0714407411",
     "wave61_selection_decision_id": "MRX1000-W61-SELECT-2026-08-14",
     "wave61_selection_decision_path": "docs/governance/mrx1000-wave61-selection-decision-2026-08-14.md",
-    "wave61_selection_decision_sha256": "9c79d7191609e16f3dec9b2bb227bc30469ab0dc82bd1f5e506ad75939c6271e"
+    "wave61_selection_decision_sha256": "9c79d7191609e16f3dec9b2bb227bc30469ab0dc82bd1f5e506ad75939c6271e",
+    "wave62_selection_decision_id": "MRX1000-W62-SELECT-2026-08-14",
+    "wave62_selection_decision_path": "docs/governance/mrx1000-wave62-selection-decision-2026-08-14.md",
+    "wave62_selection_decision_sha256": "13617d26abcdeec79e00446c551707cb845dee6622fa20619c7c0c65e29e21ad"
   },
   "identity_authority": {
     "scope_key": "canonical_slug",
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_sha256": "3adaa3407f746b00f1bec464ed4860d93abce36cda755b16a3b0214203f62f97",
-    "canonical_ledger_generated_at": "2026-07-20T15:12:49.692Z",
+    "canonical_ledger_sha256": "9bb1d120d78d8335ccbcb0e0806497f487671213c7e3bf8eee1063da330193ad",
+    "canonical_ledger_generated_at": "2026-07-20T14:29:55.916Z",
     "successor_ledger_decision_id": "D-2026-0723-LEDGER-04",
     "successor_ledger_decision_path": "artifacts/mrx1000-release-10/decisions/mrx-ceo-ledger-provenance-successor-20260723-04.md",
     "successor_ledger_decision_sha256": "09eca24bcd0e71563f2ac4197f564eec0ccb43a5ee955216da5c4a2543d04978",
@@ -227,11 +230,11 @@
     "authorization_scope": "declared_program_size_not_a_staged_release_cap",
     "admission_mode": "continuous_quality_gated",
     "continuous_quality_gated_from_selection_rank": 26,
-    "prior_verified_article_count": 140,
+    "prior_verified_article_count": 141,
     "fail_closed": true,
     "earned_scale_gates": [],
-    "exact_admitted_count": 141,
-    "exact_admitted_slate_sha256": "2c3ed9da8807bdcda6ae1892c6161be4f3717e8417a72ea8214f0d47d8d402c6"
+    "exact_admitted_count": 142,
+    "exact_admitted_slate_sha256": "cadb23b2b32b415a5f2f4d3e1a5b869871503b59a27581bcbfc1f95c5f248174"
   },
   "articles": [
     {
@@ -4821,10 +4824,43 @@
       "inline_path": "/assets/articles/inline/should-i-sell-my-mineral-rights/sell-mineral-rights-or-keep-receiving-royalties.webp",
       "inline_asset_sha256": "07daecbdd54c7879d1bc674566cf920bccae286ab7b0a82fc16e9a18c2016331",
       "inline_rendered_text": "Sell Mineral Rights or Keep Receiving Royalties"
+    },
+    {
+      "selection_rank": 142,
+      "program_row_id": "MRX1000-0142",
+      "source_shortlist_program_row_id": "MRX1000-0142",
+      "slug": "calculate-price-per-net-mineral-acre",
+      "title": "How to Calculate Price per Net Mineral Acre From a Mineral Rights Offer",
+      "source_shortlist_title": "How to Calculate Price per Net Mineral Acre From a Mineral Rights Offer",
+      "canonical_url": "https://mineralrightsxchange.com/blog/calculate-price-per-net-mineral-acre/",
+      "pillar": "mineral-rights-value",
+      "cluster": "valuation-methodology-drivers",
+      "content_genius_article_uuid": null,
+      "archive_evidence_sha256": "9e87c5b3dc82d1fbc15f14a16aa5fb18ce24abf51b5b379a6410af8c1c91ea0d",
+      "repo_path": "src/content/posts/calculate-price-per-net-mineral-acre.mdx",
+      "repo_sha256": "184b38ccec22fd4c4cd287785d9905fdec39186f007a8ed6eed34cb882c1d00d",
+      "article_sha256": "184b38ccec22fd4c4cd287785d9905fdec39186f007a8ed6eed34cb882c1d00d",
+      "hero_path": "/assets/articles/hero/how-to-calculate-price-per-net-mineral-acre-from-a-mineral-rights-offer.webp",
+      "hero_sha256": "19002e96dcbffb1c7c942b5fd224ed50f27de2bbde8e94243e54b852cbbb25f1",
+      "hero_asset_sha256": "19002e96dcbffb1c7c942b5fd224ed50f27de2bbde8e94243e54b852cbbb25f1",
+      "admission_status": "admitted_quality_gated",
+      "finalization_state": "draft_noindex_admitted",
+      "searchatlas_content_score": null,
+      "searchatlas_word_count": 1772,
+      "risk_citation_remediation": [
+        "The original valuation-factor identity was rejected because it collides with MRX1000-0167, MRX1000-0183, MRX1000-0291, MRX1000-0294, and the current valuation-guide corpus. The admitted article owns only the arithmetic job of dividing one written total offer by the confirmed NMA covered by that same offer.",
+        "Continuous quality-gated admission under D-2026-0804-16, the 2026-08-14 no-approval owner directive, and MRX1000-W62-SELECT-2026-08-14; no numerical cap, elapsed-time gate, or owner publication approval applies.",
+        "Publication remains conditional on current editorial, factual-citation, compliance, two-image, metadata, build, rollback, deployment, and live-verification evidence."
+      ],
+      "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/calculate-price-per-net-mineral-acre.json",
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/calculate-price-per-net-mineral-acre/calculate-price-per-net-mineral-acre.webp",
+      "inline_asset_sha256": "267d6cbc16b573d254a3beed9d00b7cc88fe0e6f5f9ff2b54534d2019125aad7",
+      "inline_rendered_text": "Calculate Price per Net Mineral Acre"
     }
   ],
   "admission_audit": {
-    "admitted_article_count": 141,
+    "admitted_article_count": 142,
     "selection_ranks": [
       1,
       2,
@@ -4966,7 +5002,8 @@
       138,
       139,
       140,
-      141
+      141,
+      142
     ],
     "duplicate_program_row_ids": [],
     "duplicate_slugs": [],
@@ -5025,9 +5062,9 @@
   "two_image_policy": {
     "directive": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
     "retrofit_manifest_path": "config/mrx-article-two-image-retrofit.json",
-    "retrofit_manifest_sha256": "1519e7ec74a6523493ec6fa3962d4c1e0f715535c9e11011bc09a6b14a29cb1a",
-    "public_article_count": 150,
-    "batch_article_count": 141,
+    "retrofit_manifest_sha256": "c9d7c23b44e90f5e5415f16ed28d0d7439e1788f59453f250612875cbc8c9627",
+    "public_article_count": 151,
+    "batch_article_count": 142,
     "assets_per_article": 2,
     "hero_share_identity_required": true,
     "inline_image_distinct_required": true,
