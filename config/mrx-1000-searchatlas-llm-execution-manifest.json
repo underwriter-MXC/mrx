@@ -1,7 +1,7 @@
 {
   "program": "MRX1000",
   "artifact_type": "searchatlas_ordered_llm_local_execution_manifest",
-  "generated_at": "2026-07-20T16:33:33.370Z",
+  "generated_at": "2026-07-20T15:42:20.605Z",
   "deterministic": true,
   "local_only": true,
   "external_services_called": false,
@@ -9,13 +9,13 @@
   "inputs": {
     "ledger": {
       "path": "config/mrx-1000-canonical-content-ledger.json",
-      "sha256": "899e8adf0bfeff756d4e966dc509844ee366fdf60b63e54753944cf268ab4015",
-      "bytes": 4480272
+      "sha256": "bfa6ef83e32eafe5d8fb515b79305a2ff0dc068630a2c5dae869e1b70a163666",
+      "bytes": 4480630
     },
     "readiness": {
       "path": "reports/mrx-1000-readiness-matrix.json",
-      "sha256": "42a2d85cbc86da45a246e4d3c06f087ec8d87839c7f376f05022ad6c028e63d2",
-      "bytes": 3426058,
+      "sha256": "0e66d4acbfa15a3f81cc63a9f39c00fe48ed4ce9c431328b112bdedfdddbca97",
+      "bytes": 3426056,
       "sha256_method": "canonical_json_with_top_level_generated_at_masked",
       "generated_at_excluded_from_sha256": true
     },
@@ -59431,7 +59431,7 @@
       "primary_keyword": "how do I talk to my family about selling our mineral rights?",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -59768,7 +59768,7 @@
         "release_action_eligible_now": false,
         "index_submission_eligible_now": false,
         "sitemap_addition_eligible_now": false,
-        "currently_in_workspace_sitemap": false,
+        "currently_in_workspace_sitemap": true,
         "production_live_verified_in_this_local_build": false,
         "release_or_index_action_performed": false,
         "exact_claude_opus_4_6_required_before_release_or_index_transition": true,
@@ -350742,5 +350742,5 @@
       ]
     }
   ],
-  "content_fingerprint_sha256": "529abbe288b82a1e9de3d49fee73e8e9ea8e5648037ba46ed2cc8dbb64a3df30"
+  "content_fingerprint_sha256": "968689a8c460ab626aeb790b2e73398b81ec30c77fc2431b761ff10fbdd0cab7"
 }
