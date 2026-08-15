@@ -1,7 +1,7 @@
 {
   "program": "MRX 1,000 Article SEO+AEO Production Program",
   "artifact_type": "authorized_release_10_batch",
-  "evidence_scaffold_generated_at_utc": "2026-08-15T05:42:41Z",
+  "evidence_scaffold_generated_at_utc": "2026-08-15T06:01:20Z",
   "decision_authority": {
     "successor_gate_decision_id": "D-2026-0804-16",
     "successor_gate_decision_path": "docs/governance/mrx1000-owner-continuous-publication-directive-2026-08-04.md",
@@ -216,13 +216,16 @@
     "wave63_selection_decision_sha256": "7717c0133bfae410ed4df4c7a1876957a1e91990b70da84630d9bcfe580a116d",
     "wave64_selection_decision_id": "MRX1000-W64-SELECT-2026-08-14",
     "wave64_selection_decision_path": "docs/governance/mrx1000-wave64-selection-decision-2026-08-14.md",
-    "wave64_selection_decision_sha256": "b19d08c6d19eccd6605148409d249a47bd688b749ed6eb69f84f306786238505"
+    "wave64_selection_decision_sha256": "b19d08c6d19eccd6605148409d249a47bd688b749ed6eb69f84f306786238505",
+    "wave65_selection_decision_id": "MRX1000-W65-SELECT-2026-08-14",
+    "wave65_selection_decision_path": "docs/governance/mrx1000-wave65-selection-decision-2026-08-14.md",
+    "wave65_selection_decision_sha256": "9aa763bad5d2add55ab8a3cd9b7063218b886d73f8f0390929564ceafb973eab"
   },
   "identity_authority": {
     "scope_key": "canonical_slug",
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_sha256": "2b19802d3368673c7585117d436cb6cda37db35575dcfadeaf52b390b78e0f50",
-    "canonical_ledger_generated_at": "2026-07-20T04:50:56.942Z",
+    "canonical_ledger_sha256": "261f76827de01f224672a9899b1a884ce6600c4a81119e8cfd78ce551a1851ee",
+    "canonical_ledger_generated_at": "2026-07-20T16:29:46.854Z",
     "successor_ledger_decision_id": "D-2026-0723-LEDGER-04",
     "successor_ledger_decision_path": "artifacts/mrx1000-release-10/decisions/mrx-ceo-ledger-provenance-successor-20260723-04.md",
     "successor_ledger_decision_sha256": "09eca24bcd0e71563f2ac4197f564eec0ccb43a5ee955216da5c4a2543d04978",
@@ -236,11 +239,11 @@
     "authorization_scope": "declared_program_size_not_a_staged_release_cap",
     "admission_mode": "continuous_quality_gated",
     "continuous_quality_gated_from_selection_rank": 26,
-    "prior_verified_article_count": 143,
+    "prior_verified_article_count": 144,
     "fail_closed": true,
     "earned_scale_gates": [],
-    "exact_admitted_count": 144,
-    "exact_admitted_slate_sha256": "c7725ed221f5c0f1d77831a43fb67f03fe71a784a5487549822cb78494e669a7"
+    "exact_admitted_count": 145,
+    "exact_admitted_slate_sha256": "58e1723e79903b040b94256826bf4d44522b9ea4ab741169bdac82c85d0ee9c8"
   },
   "articles": [
     {
@@ -4929,10 +4932,43 @@
       "inline_path": "/assets/articles/inline/mineral-rights-sale-decision-log/mineral-rights-sale-decision-log.webp",
       "inline_asset_sha256": "d862e6b777ad8787acf77cd4645a548623087f5101612667348767e646487845",
       "inline_rendered_text": "Mineral Rights Sale Decision Log"
+    },
+    {
+      "selection_rank": 145,
+      "program_row_id": "MRX1000-0145",
+      "source_shortlist_program_row_id": "MRX1000-0145",
+      "slug": "how-to-build-a-mineral-rights-sale-document-package-index",
+      "title": "How to Build a Mineral Rights Sale Document Package Index",
+      "source_shortlist_title": "How to Build a Mineral Rights Sale Document Package Index",
+      "canonical_url": "https://mineralrightsxchange.com/blog/how-to-build-a-mineral-rights-sale-document-package-index/",
+      "pillar": "sell-mineral-rights",
+      "cluster": "sell-mineral-rights-decision-process",
+      "content_genius_article_uuid": null,
+      "archive_evidence_sha256": "bcb8510709d6c89a60e8a4ed4a353a6ff0322d7bad215bde891cd0ecff8c3b53",
+      "repo_path": "src/content/posts/how-to-build-a-mineral-rights-sale-document-package-index.mdx",
+      "repo_sha256": "7897d79c0254549b845aec628079e38e09dee6e96c0723fe32201ca9553bba33",
+      "article_sha256": "7897d79c0254549b845aec628079e38e09dee6e96c0723fe32201ca9553bba33",
+      "hero_path": "/assets/articles/hero/how-to-build-a-mineral-rights-sale-document-package-index.webp",
+      "hero_sha256": "e9fc719c0d361b3df1bd5f67310883da56aaca9552ece1a680cfdbf24a7fbb0a",
+      "hero_asset_sha256": "e9fc719c0d361b3df1bd5f67310883da56aaca9552ece1a680cfdbf24a7fbb0a",
+      "admission_status": "admitted_quality_gated",
+      "finalization_state": "draft_noindex_admitted",
+      "searchatlas_content_score": null,
+      "searchatlas_word_count": 2295,
+      "risk_citation_remediation": [
+        "The original seller-process-errors identity was rejected because a live article owns the exact primary keyword and several live articles own the mistakes-and-avoidance job. The admitted replacement owns only a page-level completeness index for a mineral-rights sale document package.",
+        "Continuous quality-gated admission under D-2026-0804-16, the 2026-08-14 no-approval owner directive, and MRX1000-W65-SELECT-2026-08-14; no numerical cap, elapsed-time gate, or owner publication approval applies.",
+        "Publication remains conditional on current editorial, factual-citation, compliance, two-image, metadata, build, rollback, deployment, and live-verification evidence."
+      ],
+      "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/how-to-build-a-mineral-rights-sale-document-package-index.json",
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/how-to-build-a-mineral-rights-sale-document-package-index/mineral-rights-sale-package-index.webp",
+      "inline_asset_sha256": "51c7edc9faf536b837c501daaea84a06742d1a3fe8b270e7a2141e096419af9a",
+      "inline_rendered_text": "Mineral Rights Sale Package Index"
     }
   ],
   "admission_audit": {
-    "admitted_article_count": 144,
+    "admitted_article_count": 145,
     "selection_ranks": [
       1,
       2,
@@ -5077,7 +5113,8 @@
       141,
       142,
       143,
-      144
+      144,
+      145
     ],
     "duplicate_program_row_ids": [],
     "duplicate_slugs": [],
@@ -5136,9 +5173,9 @@
   "two_image_policy": {
     "directive": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
     "retrofit_manifest_path": "config/mrx-article-two-image-retrofit.json",
-    "retrofit_manifest_sha256": "ba9cf539df9c7e749cada9113d6c508d1c4a996fcefd09d8f01c9a6095f243ab",
-    "public_article_count": 153,
-    "batch_article_count": 144,
+    "retrofit_manifest_sha256": "7597de46614fb62ff0457cb3e22b0912cc03a5f12cb1d814ce5a0182c14e99ad",
+    "public_article_count": 154,
+    "batch_article_count": 145,
     "assets_per_article": 2,
     "hero_share_identity_required": true,
     "inline_image_distinct_required": true,

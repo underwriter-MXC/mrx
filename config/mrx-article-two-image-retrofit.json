@@ -1,18 +1,18 @@
 {
   "artifact_type": "mrx_article_two_image_retrofit",
   "schema_version": 1,
-  "generated_at_utc": "2026-08-15T05:26:27Z",
+  "generated_at_utc": "2026-08-15T05:56:16Z",
   "policy_source": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
   "summary": {
-    "article_count": 153,
-    "asset_count": 306,
-    "unique_source_art_count": 153,
-    "unique_hero_sha256_count": 153,
-    "unique_inline_sha256_count": 153,
-    "distinct_article_pair_count": 153,
-    "hero_ocr_pass_count": 153,
-    "inline_ocr_pass_count": 153,
-    "exact_filename_identity_count": 153
+    "article_count": 154,
+    "asset_count": 308,
+    "unique_source_art_count": 154,
+    "unique_hero_sha256_count": 154,
+    "unique_inline_sha256_count": 154,
+    "distinct_article_pair_count": 154,
+    "hero_ocr_pass_count": 154,
+    "inline_ocr_pass_count": 154,
+    "exact_filename_identity_count": 154
   },
   "contact_sheets": {
     "hero": [
@@ -2126,6 +2126,56 @@
           "actual": "assess Texas\nmineral rights\nvalue",
           "normalized_expected": "assess texas mineral rights value",
           "normalized_actual": "assess texas mineral rights value",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      }
+    },
+    {
+      "slug": "how-to-build-a-mineral-rights-sale-document-package-index",
+      "title": "How to Build a Mineral Rights Sale Document Package Index",
+      "keyword": "Mineral Rights Sale Package Index",
+      "file_path": "src/content/posts/how-to-build-a-mineral-rights-sale-document-package-index.mdx",
+      "source_public_path": "/assets/articles/hero/how-to-build-a-mineral-rights-sale-document-package-index.webp",
+      "source_artifact_paths": [
+        "artifacts/mrx1000-wave65-creative-sources/how-to-build-a-mineral-rights-sale-document-package-index-hero-base.png",
+        "artifacts/mrx1000-wave65-creative-sources/how-to-build-a-mineral-rights-sale-document-package-index-inline-base.png"
+      ],
+      "generated_at_utc": "2026-08-15T05:56:16.536Z",
+      "hero": {
+        "public_path": "/assets/articles/hero/how-to-build-a-mineral-rights-sale-document-package-index.webp",
+        "alt": "An open document binder and page stack appear beside “How to Build a Mineral Rights Sale Document Package Index”.",
+        "width": 1200,
+        "height": 630,
+        "mime_type": "image/webp",
+        "sha256": "e9fc719c0d361b3df1bd5f67310883da56aaca9552ece1a680cfdbf24a7fbb0a",
+        "perceptual_hash": "0000000000000000000000000001110000000000000111110000000000011111000100000011111100000000001111100111110000111110000000000001111001111111000001100000000001110000000000000111100000000000011110000000000001111000000000000111100000000000011110000000000001110000",
+        "neutralized_art_text_region_count": 1,
+        "ocr": {
+          "expected": "How to Build a Mineral Rights Sale Document Package Index",
+          "actual": "How to Build a\nMineral Rights Sale\nDocument Package Index",
+          "normalized_expected": "how to build a mineral rights sale document package index",
+          "normalized_actual": "how to build a mineral rights sale document package index",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      },
+      "inline": {
+        "public_path": "/assets/articles/inline/how-to-build-a-mineral-rights-sale-document-package-index/mineral-rights-sale-package-index.webp",
+        "alt": "Organized document folders and tabs appear above “Mineral Rights Sale Package Index”.",
+        "rendered_text": "Mineral Rights Sale Package Index",
+        "visual_variant": "wave65-distinct-generated-overhead-document-package",
+        "width": 1200,
+        "height": 675,
+        "mime_type": "image/webp",
+        "sha256": "51c7edc9faf536b837c501daaea84a06742d1a3fe8b270e7a2141e096419af9a",
+        "perceptual_hash": "1111111111111111111111100011111111111110001111111111111000111111111111100001111111111110000111111111111000011111111111100001111111111110000111111111111000000011000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "neutralized_art_text_region_count": 1,
+        "ocr": {
+          "expected": "Mineral Rights Sale Package Index",
+          "actual": "Mineral Rights Sale Package Index",
+          "normalized_expected": "mineral rights sale package index",
+          "normalized_actual": "mineral rights sale package index",
           "uppercase_i_confusable_accepted": false,
           "pass": true
         }
