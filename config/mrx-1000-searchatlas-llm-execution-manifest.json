@@ -1,7 +1,7 @@
 {
   "program": "MRX1000",
   "artifact_type": "searchatlas_ordered_llm_local_execution_manifest",
-  "generated_at": "2026-07-20T11:13:50.883Z",
+  "generated_at": "2026-07-20T08:25:37.000Z",
   "deterministic": true,
   "local_only": true,
   "external_services_called": false,
@@ -9,13 +9,13 @@
   "inputs": {
     "ledger": {
       "path": "config/mrx-1000-canonical-content-ledger.json",
-      "sha256": "c34b07e01d7060ca7913a3735ce197bdac4bb53c7dd5d5ae50a05ffccec23f7d",
-      "bytes": 4476073
+      "sha256": "2b19802d3368673c7585117d436cb6cda37db35575dcfadeaf52b390b78e0f50",
+      "bytes": 4477406
     },
     "readiness": {
       "path": "reports/mrx-1000-readiness-matrix.json",
-      "sha256": "c444fbdc112ae07b062c76dee380c806d2ff12eb0bbdc897d4f50e76daee9bff",
-      "bytes": 3424795,
+      "sha256": "a4606e4cf099f54f831a9d22a34394badb6d00621eae6a952cd5607f45532214",
+      "bytes": 3425152,
       "sha256_method": "canonical_json_with_top_level_generated_at_masked",
       "generated_at_excluded_from_sha256": true
     },
@@ -366,30 +366,30 @@
     },
     "by_canonical_inventory_state": {
       "incumbent_draft_nonpublic_held": 28,
-      "live_public_published_route": 152,
+      "live_public_published_route": 153,
       "pilot_draft_noindex_stage": 25,
-      "planning_only_inventory": 795
+      "planning_only_inventory": 794
     },
     "by_searchatlas_action_needed": {
-      "preserve_workspace_public_route_and_search_vendor_identity_before_any_creation": 76,
+      "preserve_workspace_public_route_and_search_vendor_identity_before_any_creation": 77,
       "reconcile_artifact_bound_content_genius_record_no_creation": 2,
       "reconcile_pilot_non_creation_workflow_label_then_bind_or_conditionally_create": 23,
       "reconcile_unambiguous_exact_title_vendor_candidate_no_creation": 145,
       "resolve_ambiguous_exact_title_vendor_candidates_no_creation": 6,
-      "search_vendor_identity_then_conditionally_create_after_identity_and_quality_preflight": 748
+      "search_vendor_identity_then_conditionally_create_after_identity_and_quality_preflight": 747
     },
-    "repo_mdx_present": 205,
-    "workspace_public_route_configured": 152,
-    "planning_searchatlas_map_id_count": 261,
-    "planning_searchatlas_title_uuid_count": 236,
+    "repo_mdx_present": 206,
+    "workspace_public_route_configured": 153,
+    "planning_searchatlas_map_id_count": 260,
+    "planning_searchatlas_title_uuid_count": 235,
     "persisted_ledger_content_genius_article_uuid_count": 0,
-    "checksummed_review_candidate_rows": 181,
-    "rows_without_checksummed_review_candidate": 819,
+    "checksummed_review_candidate_rows": 182,
+    "rows_without_checksummed_review_candidate": 818,
     "by_review_candidate_state": {
-      "CHECKSUMMED_EXISTING_PUBLIC_ARTICLE_READY_FOR_LLM_REVIEW": 152,
+      "CHECKSUMMED_EXISTING_PUBLIC_ARTICLE_READY_FOR_LLM_REVIEW": 153,
       "CHECKSUMMED_HELD_SUBSTANTIVE_DRAFT_READY_FOR_LLM_REVIEW": 28,
       "NO_CHECKSUMMED_REVIEW_CANDIDATE_PILOT_QA_SHELL_ONLY": 24,
-      "NO_WORKSPACE_CONTENT_CANDIDATE": 795,
+      "NO_WORKSPACE_CONTENT_CANDIDATE": 794,
       "ROW2_REMEDIATED_NOINDEX_CANDIDATE_VALIDATED_FOR_ORDERED_LLM_REVIEW": 1
     },
     "pilot_workspace_qa_shell_rows": 25,
@@ -58327,7 +58327,7 @@
       "primary_keyword": "what does a mineral rights assessment include",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -58686,32 +58686,56 @@
     },
     {
       "program_row_id": "MRX1000-0144",
-      "canonical_title": "What Sellers Get Wrong About Mineral Rights",
-      "canonical_slug": "what-sellers-get-wrong-about-mineral-rights",
-      "canonical_url": "https://mineralrightsxchange.com/blog/what-sellers-get-wrong-about-mineral-rights/",
+      "canonical_title": "How to Build a Mineral Rights Sale Decision Log",
+      "canonical_slug": "mineral-rights-sale-decision-log",
+      "canonical_url": "https://mineralrightsxchange.com/blog/mineral-rights-sale-decision-log/",
       "pillar": "sell-mineral-rights",
       "pillar_url": "/sell-mineral-rights/",
       "cluster": "sell-mineral-rights-decision-process",
-      "primary_keyword": "Common Mistakes Selling Mineral Rights",
+      "primary_keyword": "mineral rights sale decision log",
       "authoritative_current_state": {
-        "canonical_inventory_state": "planning_only_inventory",
-        "normalized_status": "planning_only_topical_map_title_planning_handle",
-        "source_system": "searchatlas_topical_map_export",
+        "canonical_inventory_state": "live_public_published_route",
+        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
-          "state": "NO_WORKSPACE_MDX",
-          "path": null,
-          "mdx_exists": false,
-          "source_sha256": null,
-          "publication_status": null,
+          "state": "WORKSPACE_MDX_PRESENT",
+          "path": "src/content/posts/mineral-rights-sale-decision-log.mdx",
+          "mdx_exists": true,
+          "source_sha256": "5592194f9cf2d20c3b933ebc1b5095909fd54c9813fef9d33f0c74d7d6d4e0ee",
+          "publication_status": "published",
           "frontmatter_noindex": false,
-          "workspace_public_route_configured": false,
+          "workspace_public_route_configured": true,
           "production_live_verified_in_this_local_build": false,
-          "content_evidence": null
+          "content_evidence": {
+            "frontmatter_title": "How to Build a Mineral Rights Sale Decision Log",
+            "frontmatter_slug": null,
+            "frontmatter_publication_status": "published",
+            "frontmatter_reviewed_at": "2026-08-15T05:23:00Z",
+            "frontmatter_reviewed_by": "mrx_compliance-continuous-wave64",
+            "frontmatter_article_id": null,
+            "frontmatter_searchatlas_uuid": null,
+            "frontmatter_workflow_status": null,
+            "frontmatter_remediated_from_sha256": null,
+            "frontmatter_body_checksum_sha256": null,
+            "frontmatter_body_length_chars": 0,
+            "frontmatter_body_word_count": 0,
+            "frontmatter_draft": false,
+            "frontmatter_noindex": false,
+            "frontmatter_indexable": null,
+            "body_sha256": "1a92aff77c09e6eb3344ee1ea53599b2e42e395491ec57edbe80083865ba5567",
+            "body_bytes": 12181,
+            "body_characters": 12169,
+            "body_word_count": 1726,
+            "explicit_qa_shell_without_final_copy": false,
+            "filename_matches_canonical_slug": true,
+            "frontmatter_title_matches_canonical": true,
+            "frontmatter_publication_status_matches_ledger": true
+          }
         },
         "planning_handles": {
-          "searchatlas_map_id": 256286,
-          "searchatlas_title_uuid": "97b70929-02ba-4058-9cac-a53f4ed97102",
+          "searchatlas_map_id": null,
+          "searchatlas_title_uuid": null,
           "searchatlas_record_id_persisted_in_ledger": null,
           "content_genius_article_uuid_persisted_in_ledger": null,
           "are_content_genius_article_creation_proof": false,
@@ -58730,28 +58754,31 @@
           "manual_reconciliation_required": true
         },
         "review_candidate": {
-          "state": "NO_WORKSPACE_CONTENT_CANDIDATE",
-          "checksummed_review_candidate_present": false,
-          "path": null,
-          "source_sha256": null,
-          "body_sha256": null,
-          "body_word_count": null,
-          "candidate_type": null,
-          "readiness_evidence_verified": false,
-          "readiness_evidence_paths": [],
+          "state": "CHECKSUMMED_EXISTING_PUBLIC_ARTICLE_READY_FOR_LLM_REVIEW",
+          "checksummed_review_candidate_present": true,
+          "path": "src/content/posts/mineral-rights-sale-decision-log.mdx",
+          "source_sha256": "5592194f9cf2d20c3b933ebc1b5095909fd54c9813fef9d33f0c74d7d6d4e0ee",
+          "body_sha256": "1a92aff77c09e6eb3344ee1ea53599b2e42e395491ec57edbe80083865ba5567",
+          "body_word_count": 1726,
+          "candidate_type": "existing_public_article",
+          "readiness_evidence_verified": true,
+          "readiness_evidence_paths": [
+            "reports/mrx-1000-readiness-matrix.json",
+            "config/mrx-1000-canonical-content-ledger.json"
+          ],
           "readiness_checks": {
-            "workspace_source_checksum_present": false,
+            "workspace_source_checksum_present": true,
             "readiness_row_identity_verified": true,
-            "filename_matches_canonical_slug": false,
-            "frontmatter_title_matches_canonical": false,
-            "frontmatter_publication_status_matches_ledger": false,
-            "substantive_body_at_least_500_words": false,
-            "explicit_qa_shell_absent": false,
-            "review_metadata_present": false,
-            "canonical_state_supports_content_review": false
+            "filename_matches_canonical_slug": true,
+            "frontmatter_title_matches_canonical": true,
+            "frontmatter_publication_status_matches_ledger": true,
+            "substantive_body_at_least_500_words": true,
+            "explicit_qa_shell_absent": true,
+            "review_metadata_present": true,
+            "canonical_state_supports_content_review": true
           },
-          "workspace_mdx_is_review_candidate": false,
-          "workspace_mdx_rejection_reason": "No workspace MDX exists.",
+          "workspace_mdx_is_review_candidate": true,
+          "workspace_mdx_rejection_reason": null,
           "special_candidate_validation": null
         }
       },
@@ -58762,7 +58789,7 @@
         "position_in_batch": 17,
         "batch_size": 25,
         "assignment_policy": "remaining_rows_by_program_row_id",
-        "action_needed": "search_vendor_identity_then_conditionally_create_after_identity_and_quality_preflight",
+        "action_needed": "preserve_workspace_public_route_and_search_vendor_identity_before_any_creation",
         "execution_state": "WAITING_FOR_IDENTITY_CONTENT_AND_REVIEW_GATES_NO_EXTERNAL_WRITE",
         "execution_eligible_now": false,
         "creation_needed_proven": false,
@@ -58776,9 +58803,9 @@
           "read_only_quota_preflight_required_before_external_write": true,
           "canonical_identity_reconciliation_required": true,
           "checksummed_content_candidate_required_before_review": true,
-          "checksummed_content_candidate_present": false,
-          "review_candidate_path_and_sha256_present": false,
-          "review_readiness_evidence_verified": false,
+          "checksummed_content_candidate_present": true,
+          "review_candidate_path_and_sha256_present": true,
+          "review_readiness_evidence_verified": true,
           "compliance_seo_aeo_editorial_gates_required": true
         },
         "evidence": {
@@ -58805,10 +58832,10 @@
           "availability_state": "NOT_CHECKED_BY_LOCAL_ONLY_BUILD",
           "dispatch_eligible_now": false,
           "prerequisite_gates": {
-            "checksummed_review_candidate_present": false,
-            "review_candidate_path": null,
-            "review_candidate_sha256": null,
-            "review_candidate_readiness_evidence_verified": false,
+            "checksummed_review_candidate_present": true,
+            "review_candidate_path": "src/content/posts/mineral-rights-sale-decision-log.mdx",
+            "review_candidate_sha256": "5592194f9cf2d20c3b933ebc1b5095909fd54c9813fef9d33f0c74d7d6d4e0ee",
+            "review_candidate_readiness_evidence_verified": true,
             "predecessor_key": null,
             "predecessor_pass_required": false,
             "predecessor_pass_observed": false,
@@ -58842,10 +58869,10 @@
           "availability_state": "NOT_CHECKED_BY_LOCAL_ONLY_BUILD",
           "dispatch_eligible_now": false,
           "prerequisite_gates": {
-            "checksummed_review_candidate_present": false,
-            "review_candidate_path": null,
-            "review_candidate_sha256": null,
-            "review_candidate_readiness_evidence_verified": false,
+            "checksummed_review_candidate_present": true,
+            "review_candidate_path": "src/content/posts/mineral-rights-sale-decision-log.mdx",
+            "review_candidate_sha256": "5592194f9cf2d20c3b933ebc1b5095909fd54c9813fef9d33f0c74d7d6d4e0ee",
+            "review_candidate_readiness_evidence_verified": true,
             "predecessor_key": "chatgpt",
             "predecessor_pass_required": true,
             "predecessor_pass_observed": false,
@@ -58879,10 +58906,10 @@
           "availability_state": "UNAVAILABLE_PER_LOCAL_FRAMEWORK_SNAPSHOT",
           "dispatch_eligible_now": false,
           "prerequisite_gates": {
-            "checksummed_review_candidate_present": false,
-            "review_candidate_path": null,
-            "review_candidate_sha256": null,
-            "review_candidate_readiness_evidence_verified": false,
+            "checksummed_review_candidate_present": true,
+            "review_candidate_path": "src/content/posts/mineral-rights-sale-decision-log.mdx",
+            "review_candidate_sha256": "5592194f9cf2d20c3b933ebc1b5095909fd54c9813fef9d33f0c74d7d6d4e0ee",
+            "review_candidate_readiness_evidence_verified": true,
             "predecessor_key": "google_gemini",
             "predecessor_pass_required": true,
             "predecessor_pass_observed": false,
@@ -58916,10 +58943,10 @@
           "availability_state": "NOT_CHECKED_BY_LOCAL_ONLY_BUILD",
           "dispatch_eligible_now": false,
           "prerequisite_gates": {
-            "checksummed_review_candidate_present": false,
-            "review_candidate_path": null,
-            "review_candidate_sha256": null,
-            "review_candidate_readiness_evidence_verified": false,
+            "checksummed_review_candidate_present": true,
+            "review_candidate_path": "src/content/posts/mineral-rights-sale-decision-log.mdx",
+            "review_candidate_sha256": "5592194f9cf2d20c3b933ebc1b5095909fd54c9813fef9d33f0c74d7d6d4e0ee",
+            "review_candidate_readiness_evidence_verified": true,
             "predecessor_key": "claude_opus_4_6",
             "predecessor_pass_required": true,
             "predecessor_pass_observed": false,
@@ -58953,10 +58980,10 @@
           "availability_state": "NOT_CHECKED_BY_LOCAL_ONLY_BUILD",
           "dispatch_eligible_now": false,
           "prerequisite_gates": {
-            "checksummed_review_candidate_present": false,
-            "review_candidate_path": null,
-            "review_candidate_sha256": null,
-            "review_candidate_readiness_evidence_verified": false,
+            "checksummed_review_candidate_present": true,
+            "review_candidate_path": "src/content/posts/mineral-rights-sale-decision-log.mdx",
+            "review_candidate_sha256": "5592194f9cf2d20c3b933ebc1b5095909fd54c9813fef9d33f0c74d7d6d4e0ee",
+            "review_candidate_readiness_evidence_verified": true,
             "predecessor_key": "perplexity",
             "predecessor_pass_required": true,
             "predecessor_pass_observed": false,
@@ -58987,7 +59014,7 @@
           "perplexity",
           "microsoft_copilot"
         ],
-        "next_stage": null,
+        "next_stage": "chatgpt",
         "any_verdict_recorded": false,
         "all_required_verdicts_passed": false,
         "sequence_complete": false,
@@ -59005,7 +59032,7 @@
         "release_action_eligible_now": false,
         "index_submission_eligible_now": false,
         "sitemap_addition_eligible_now": false,
-        "currently_in_workspace_sitemap": false,
+        "currently_in_workspace_sitemap": true,
         "production_live_verified_in_this_local_build": false,
         "release_or_index_action_performed": false,
         "exact_claude_opus_4_6_required_before_release_or_index_transition": true,
@@ -59022,7 +59049,6 @@
         "ORDERED_LLM_REVIEW_SEQUENCE_NOT_COMPLETE",
         "LOCAL_ONLY_MANIFEST_EXTERNAL_DISPATCH_NOT_PERFORMED",
         "ARTICLE_SPECIFIC_QUALITY_CLEARANCE_NOT_COMPLETE",
-        "NO_CHECKSUMMED_REVIEW_CANDIDATE",
         "CONTENT_GENIUS_CANONICAL_ROW_UUID_BINDING_UNPROVEN"
       ]
     },
@@ -350664,5 +350690,5 @@
       ]
     }
   ],
-  "content_fingerprint_sha256": "4360ce9e4c95e142474d608be8c55ef362750612b4f0cc5d95f0d056139374dd"
+  "content_fingerprint_sha256": "b1a17a78302a35132723037faa8fc7741d0cfe5695806151f048be22164e8988"
 }

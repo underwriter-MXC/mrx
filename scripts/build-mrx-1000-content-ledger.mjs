@@ -63,6 +63,7 @@ const SUPERSEDED_CANONICAL_SLUGS = new Set([
   'what-every-mineral-rights-owner-needs-to-know',
   'what-factors-determine-your-mineral-rights-value',
   'what-influences-the-suggested-price-for-your-mineral-rights-assessment',
+  'what-sellers-get-wrong-about-mineral-rights',
   'what-determines-the-value-of-your-texas-mineral-rights',
   'what-are-the-biggest-pitfalls-in-selling-mineral-rights',
   'unlocking-the-true-worth-of-your-mineral-rights-a-comprehensive-evaluation-guide',
@@ -81,6 +82,7 @@ const SUCCESSOR_CANONICAL_SLUGS = new Map([
     'what-influences-the-suggested-price-for-your-mineral-rights-assessment',
     'what-a-mineral-rights-assessment-does-and-does-not-tell-you',
   ],
+  ['what-sellers-get-wrong-about-mineral-rights', 'mineral-rights-sale-decision-log'],
   [
     'what-determines-the-value-of-your-texas-mineral-rights',
     'why-doesnt-my-texas-mineral-tax-value-match-a-sale-estimate',
@@ -114,6 +116,7 @@ const APPROVED_REKEY_SEARCH_INTENT_BY_SLUG = new Map([
   ['should-i-sell-my-mineral-rights', 'transactional'],
   ['calculate-price-per-net-mineral-acre', 'informational'],
   ['what-a-mineral-rights-assessment-does-and-does-not-tell-you', 'informational'],
+  ['mineral-rights-sale-decision-log', 'informational'],
   ['why-doesnt-my-texas-mineral-tax-value-match-a-sale-estimate', 'informational'],
 ]);
 
@@ -134,6 +137,7 @@ async function loadPriorProgramRowIds() {
         wave61Rekey: null,
         wave62Rekey: null,
         wave63Rekey: null,
+        wave64Rekey: null,
       };
     }
     throw error;
@@ -173,6 +177,7 @@ async function loadPriorProgramRowIds() {
     wave61Rekey: prior.identity_registry?.wave61_rekey ?? null,
     wave62Rekey: prior.identity_registry?.wave62_rekey ?? null,
     wave63Rekey: prior.identity_registry?.wave63_rekey ?? null,
+    wave64Rekey: prior.identity_registry?.wave64_rekey ?? null,
   };
 }
 
@@ -1508,6 +1513,7 @@ async function main() {
       ...(priorIdentity.wave61Rekey ? { wave61_rekey: priorIdentity.wave61Rekey } : {}),
       ...(priorIdentity.wave62Rekey ? { wave62_rekey: priorIdentity.wave62Rekey } : {}),
       ...(priorIdentity.wave63Rekey ? { wave63_rekey: priorIdentity.wave63Rekey } : {}),
+      ...(priorIdentity.wave64Rekey ? { wave64_rekey: priorIdentity.wave64Rekey } : {}),
     },
     content_fingerprint_sha256: hashRows(selected),
     policy: {
