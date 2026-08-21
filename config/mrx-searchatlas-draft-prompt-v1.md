@@ -1,6 +1,8 @@
-# MRX SearchAtlas draft brief v1
+# MRX SearchAtlas draft brief v1 — input-only legacy template
 
-Create an evidence-first educational draft for Mineral Rights Xchange (MRX). The draft is for editorial and compliance review only; do not publish it.
+Status: retired as a controlling article or publication prompt on 2026-08-21. Repository-root `AGENTS.md` is the single source of truth for MRX article workflows.
+
+When this legacy template is explicitly used, create an evidence-first educational draft for Mineral Rights Xchange (MRX) as an input to the quality-gated workflow. The draft itself is not publication evidence and must not be represented as approved or live. Its draft status does not block the sole authorized release lane from independently reviewing, correcting, testing, committing, deploying, publishing, verifying, and reconciling the article under `AGENTS.md` without owner approval.
 
 ## Audience and voice
 
