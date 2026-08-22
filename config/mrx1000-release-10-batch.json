@@ -1,7 +1,7 @@
 {
   "program": "MRX 1,000 Article SEO+AEO Production Program",
   "artifact_type": "authorized_release_10_batch",
-  "evidence_scaffold_generated_at_utc": "2026-08-22T19:49:36Z",
+  "evidence_scaffold_generated_at_utc": "2026-08-22T20:08:20Z",
   "decision_authority": {
     "successor_gate_decision_id": "D-2026-0804-16",
     "successor_gate_decision_path": "docs/governance/mrx1000-owner-continuous-publication-directive-2026-08-04.md",
@@ -231,13 +231,16 @@
     "wave68_selection_decision_sha256": "c376e51ab4d87dddc15a7c93bf4d052c48dbde78de150ac5874570aafd404b66",
     "wave69_selection_decision_id": "MRX1000-W69-SELECT-2026-08-22",
     "wave69_selection_decision_path": "docs/governance/mrx1000-wave69-selection-decision-2026-08-22.md",
-    "wave69_selection_decision_sha256": "f26480a02a01f0809289a40d34b9008c524d87d41da3650f92581981e7676fd7"
+    "wave69_selection_decision_sha256": "f26480a02a01f0809289a40d34b9008c524d87d41da3650f92581981e7676fd7",
+    "wave70_selection_decision_id": "MRX1000-W70-SELECT-2026-08-22",
+    "wave70_selection_decision_path": "docs/governance/mrx1000-wave70-selection-decision-2026-08-22.md",
+    "wave70_selection_decision_sha256": "0d3aa421cec292492388d08a33ec48d7ec658ba627563f4cd5124039cc0e4278"
   },
   "identity_authority": {
     "scope_key": "canonical_slug",
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_sha256": "929001c7466c8a67d14d4d931a8842b287aa9808847ff7a3d065d7fb4c6a03af",
-    "canonical_ledger_generated_at": "2026-07-20T07:24:54.186Z",
+    "canonical_ledger_sha256": "876f92946b8d3d7d277419f2a7fb70ab34407228cdc2b91d52ef87687b9f6bd8",
+    "canonical_ledger_generated_at": "2026-07-20T08:21:35.957Z",
     "successor_ledger_decision_id": "D-2026-0723-LEDGER-04",
     "successor_ledger_decision_path": "artifacts/mrx1000-release-10/decisions/mrx-ceo-ledger-provenance-successor-20260723-04.md",
     "successor_ledger_decision_sha256": "09eca24bcd0e71563f2ac4197f564eec0ccb43a5ee955216da5c4a2543d04978",
@@ -251,11 +254,11 @@
     "authorization_scope": "declared_program_size_not_a_staged_release_cap",
     "admission_mode": "continuous_quality_gated",
     "continuous_quality_gated_from_selection_rank": 26,
-    "prior_verified_article_count": 148,
+    "prior_verified_article_count": 149,
     "fail_closed": true,
     "earned_scale_gates": [],
-    "exact_admitted_count": 149,
-    "exact_admitted_slate_sha256": "1c0b0792181426624e88212f0076d665ab9145f34873f2632aead3610d8b92e2"
+    "exact_admitted_count": 150,
+    "exact_admitted_slate_sha256": "e0cb8c882dcb1e1d6c8d10fd9ada3052780dedf0e093fd4511be1723272968e6"
   },
   "articles": [
     {
@@ -5110,10 +5113,44 @@
       "inline_path": "/assets/articles/inline/mineral-rights-offer-correspondence-index/mineral-rights-offer-correspondence-index.webp",
       "inline_asset_sha256": "0845e34a89563064a097f9d23908fa549b5f008d3258171e6d7e7848cee19c8e",
       "inline_rendered_text": "Mineral Rights Offer Correspondence Index"
+    },
+    {
+      "selection_rank": 150,
+      "program_row_id": "MRX1000-0150",
+      "source_shortlist_program_row_id": "MRX1000-0150",
+      "slug": "mineral-rights-valuation-input-correction-packet",
+      "title": "How to Build a Mineral Rights Valuation Input Correction Packet",
+      "source_shortlist_title": "How to Build a Mineral Rights Valuation Input Correction Packet",
+      "canonical_url": "https://mineralrightsxchange.com/blog/mineral-rights-valuation-input-correction-packet/",
+      "pillar": "sell-mineral-rights",
+      "cluster": "sell-mineral-rights-decision-process",
+      "content_genius_article_uuid": null,
+      "archive_evidence_sha256": "648c29bfe5a2ff5bbd557d527fb9bb1f6d6556a68c174131f0c608e209d4b882",
+      "repo_path": "src/content/posts/mineral-rights-valuation-input-correction-packet.mdx",
+      "repo_sha256": "ec8e40da0a926f441303f13dda68d1083e82e8857b8a8779ab05e63a4b7b609d",
+      "article_sha256": "ec8e40da0a926f441303f13dda68d1083e82e8857b8a8779ab05e63a4b7b609d",
+      "hero_path": "/assets/articles/hero/how-to-build-a-mineral-rights-valuation-input-correction-packet.webp",
+      "hero_sha256": "207e69b65230ff906b694fdb33f2d2154c7c582dd41d723d091b5d1c71afd25e",
+      "hero_asset_sha256": "207e69b65230ff906b694fdb33f2d2154c7c582dd41d723d091b5d1c71afd25e",
+      "admission_status": "admitted_quality_gated",
+      "finalization_state": "draft_noindex_admitted",
+      "searchatlas_content_score": null,
+      "searchatlas_word_count": 1592,
+      "risk_citation_remediation": [
+        "The original identity was rejected because its broad valuation-fine-tuning title and seller-errors keyword point to different intents already owned by the valuation and sale-process corpus. The admitted replacement owns only a neutral correction-intake packet after a specific discrepancy is identified.",
+        "EPA and NARA sources are used only as transparent federal administrative analogies for specific correction-request fields and the source/input/output distinction. They do not govern a private mineral-rights review, validate a replacement, create a correction right, or require private retention.",
+        "Continuous quality-gated admission under D-2026-0804-16, the 2026-08-14 no-approval owner directive, and MRX1000-W70-SELECT-2026-08-22; no numerical cap, elapsed-time gate, or owner publication approval applies.",
+        "Publication remains conditional on current editorial, factual-citation, compliance, two-image, metadata, build, rollback, deployment, and live-verification evidence."
+      ],
+      "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/mineral-rights-valuation-input-correction-packet.json",
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/mineral-rights-valuation-input-correction-packet/mineral-rights-valuation-input-correction-packet.webp",
+      "inline_asset_sha256": "342e0f94a59a0b5517d483df35b680a50f1c4c07f37239e19fd9dff047c3a456",
+      "inline_rendered_text": "Mineral Rights Valuation Input Correction Packet"
     }
   ],
   "admission_audit": {
-    "admitted_article_count": 149,
+    "admitted_article_count": 150,
     "selection_ranks": [
       1,
       2,
@@ -5263,7 +5300,8 @@
       146,
       147,
       148,
-      149
+      149,
+      150
     ],
     "duplicate_program_row_ids": [],
     "duplicate_slugs": [],
@@ -5322,9 +5360,9 @@
   "two_image_policy": {
     "directive": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
     "retrofit_manifest_path": "config/mrx-article-two-image-retrofit.json",
-    "retrofit_manifest_sha256": "69a0374ac16dec5cdca625d8a420a95e731b2144233f0adeaef15d913c01d5d6",
-    "public_article_count": 158,
-    "batch_article_count": 149,
+    "retrofit_manifest_sha256": "b2f688df7f3100c593189147a25a277d8e8fcc8d747f1ad48205fb1f3f6dae3a",
+    "public_article_count": 159,
+    "batch_article_count": 150,
     "assets_per_article": 2,
     "hero_share_identity_required": true,
     "inline_image_distinct_required": true,

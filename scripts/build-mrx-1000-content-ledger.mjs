@@ -76,6 +76,7 @@ const SUPERSEDED_CANONICAL_SLUGS = new Set([
   'why-mineralrightsxchange-is-your-most-reliable-choice-for-transparent-mineral-rights-acquisition',
   'why-mineralrightsxchange-offers-unique-advantages-over-competing-mineral-rights-acquisition-services',
   'why-you-should-avoid-these-seller-pitfalls',
+  'your-guide-to-fine-tuning-mineral-rights-valuation',
 ]);
 const SUCCESSOR_CANONICAL_SLUGS = new Map([
   ['what-every-mineral-rights-owner-needs-to-know', 'should-i-sell-my-mineral-rights'],
@@ -107,6 +108,10 @@ const SUCCESSOR_CANONICAL_SLUGS = new Map([
   [
     'why-you-should-avoid-these-seller-pitfalls',
     'mineral-rights-offer-correspondence-index',
+  ],
+  [
+    'your-guide-to-fine-tuning-mineral-rights-valuation',
+    'mineral-rights-valuation-input-correction-packet',
   ],
   [
     'what-determines-the-value-of-your-texas-mineral-rights',
@@ -172,6 +177,7 @@ async function loadPriorProgramRowIds() {
         wave67Rekey: null,
         wave68Rekey: null,
         wave69Rekey: null,
+        wave70Rekey: null,
       };
     }
     throw error;
@@ -219,6 +225,7 @@ async function loadPriorProgramRowIds() {
     wave67Rekey: prior.identity_registry?.wave67_rekey ?? null,
     wave68Rekey: prior.identity_registry?.wave68_rekey ?? null,
     wave69Rekey: prior.identity_registry?.wave69_rekey ?? null,
+    wave70Rekey: prior.identity_registry?.wave70_rekey ?? null,
   };
 }
 
@@ -1560,6 +1567,7 @@ async function main() {
       ...(priorIdentity.wave67Rekey ? { wave67_rekey: priorIdentity.wave67Rekey } : {}),
       ...(priorIdentity.wave68Rekey ? { wave68_rekey: priorIdentity.wave68Rekey } : {}),
       ...(priorIdentity.wave69Rekey ? { wave69_rekey: priorIdentity.wave69Rekey } : {}),
+      ...(priorIdentity.wave70Rekey ? { wave70_rekey: priorIdentity.wave70Rekey } : {}),
     },
     content_fingerprint_sha256: hashRows(selected),
     policy: {

@@ -1,15 +1,15 @@
 {
   "artifact_type": "mrx1000_content_activation_plan",
   "plan_version": "mrx1000-content-activation-v1.1.0",
-  "generated_at": "2026-07-20T07:24:54.186Z",
+  "generated_at": "2026-07-20T08:21:35.957Z",
   "generated_at_method": "canonical_ledger_generated_at",
   "generator": "scripts/build-mrx-1000-activation-plan.mjs",
-  "content_fingerprint_sha256": "af5cb9ff14a62f23e0bc9081220176cd8c4c7187ee01a46f0414285bc99194da",
+  "content_fingerprint_sha256": "fac57a5e895c1f880699398496cb7b49a0a0c41e5dccfcfe73a1b7590cf11137",
   "inputs": {
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_fingerprint_sha256": "21520ba9afa56a5dc9f827cd7c321cf1696c4913d16a57c1383f531cd669547f",
+    "canonical_ledger_fingerprint_sha256": "f9da60f5c06036d3c398c29129a61654c120d962875caa6d0e4188ed63c19817",
     "canonical_ledger_fingerprint_verified": true,
-    "canonical_ledger_generated_at": "2026-07-20T07:24:54.186Z",
+    "canonical_ledger_generated_at": "2026-07-20T08:21:35.957Z",
     "owner_decision": {
       "decision_id": "D-2026-0804-16",
       "signed_disposition": "APPROVED_CONTINUOUS_QUALITY_GATED_ARTICLE_PUBLICATION",
@@ -115,9 +115,9 @@
     },
     "by_source_preservation_classification": {
       "incumbent_draft_nonpublic_held": 28,
-      "live_public_published_route": 158,
+      "live_public_published_route": 159,
       "pilot_draft_noindex_stage": 25,
-      "planning_only_inventory": 789
+      "planning_only_inventory": 788
     }
   },
   "rows": [
@@ -9337,11 +9337,11 @@
       },
       "sibling_link": {
         "target_program_row_id": "MRX1000-0150",
-        "target_title": "Your Guide to Fine-Tuning Mineral Rights Valuation",
-        "url": "/blog/your-guide-to-fine-tuning-mineral-rights-valuation/",
+        "target_title": "How to Build a Mineral Rights Valuation Input Correction Packet",
+        "url": "/blog/mineral-rights-valuation-input-correction-packet/",
         "relationship": "same_cluster_next_by_program_row_id_cyclic",
-        "target_source_preservation_classification": "planning_only_inventory",
-        "target_route_live": false,
+        "target_source_preservation_classification": "live_public_published_route",
+        "target_route_live": true,
         "status": "planned_local_only"
       },
       "primary_cta": {
@@ -9384,15 +9384,15 @@
     },
     {
       "program_row_id": "MRX1000-0150",
-      "canonical_title": "Your Guide to Fine-Tuning Mineral Rights Valuation",
-      "canonical_slug": "your-guide-to-fine-tuning-mineral-rights-valuation",
-      "canonical_url": "/blog/your-guide-to-fine-tuning-mineral-rights-valuation/",
+      "canonical_title": "How to Build a Mineral Rights Valuation Input Correction Packet",
+      "canonical_slug": "mineral-rights-valuation-input-correction-packet",
+      "canonical_url": "/blog/mineral-rights-valuation-input-correction-packet/",
       "cluster": "sell-mineral-rights-decision-process",
       "pillar": "sell-mineral-rights",
       "search_intent": "transactional",
       "funnel_stage": "decision",
-      "source_preservation_classification": "planning_only_inventory",
-      "source_route_live": false,
+      "source_preservation_classification": "live_public_published_route",
+      "source_route_live": true,
       "pillar_link": {
         "url": "/sell-mineral-rights/",
         "route_evidence": "src/pages/sell-mineral-rights.astro",
@@ -9441,7 +9441,7 @@
         "rendered_triangle_verified": false,
         "live_status": "not_published_or_verified_by_this_plan",
         "live_triangle_verified": false,
-        "release_status": "eligible_for_continuous_quality_review_not_yet_cleared",
+        "release_status": "released_under_d16_continuous_quality_gate",
         "numerical_release_cap_applies": false
       }
     },
