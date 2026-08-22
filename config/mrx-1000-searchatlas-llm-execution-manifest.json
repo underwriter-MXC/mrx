@@ -1,7 +1,7 @@
 {
   "program": "MRX1000",
   "artifact_type": "searchatlas_ordered_llm_local_execution_manifest",
-  "generated_at": "2026-07-20T11:48:50.462Z",
+  "generated_at": "2026-07-20T14:10:17.041Z",
   "deterministic": true,
   "local_only": true,
   "external_services_called": false,
@@ -9,8 +9,8 @@
   "inputs": {
     "ledger": {
       "path": "config/mrx-1000-canonical-content-ledger.json",
-      "sha256": "d4513a73b155bd021e6b2de2f0792a91ca8c7368a34486ff65484e32d48b8c60",
-      "bytes": 4483351
+      "sha256": "cd72efec8c2973188f6dfaf957b56e606fe51dcd7134a90cc21fbb7619a1e676",
+      "bytes": 4483709
     },
     "readiness": {
       "path": "reports/mrx-1000-readiness-matrix.json",
@@ -60167,7 +60167,7 @@
       "primary_keyword": "mineral rights offer property scope checklist",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -350794,5 +350794,5 @@
       ]
     }
   ],
-  "content_fingerprint_sha256": "468826fd58bc576e875b4ebebb80ade91a46999244c126f8b328ff20e8778696"
+  "content_fingerprint_sha256": "0461294687f43f4dd3c67c09c6bbc36006c466b3b6762f81e482c000df25bcb4"
 }
