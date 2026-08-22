@@ -23,8 +23,7 @@ const approvedLiveSlugs = [
   'why-did-my-royalty-check-go-down',
 ].sort();
 const approvedPublicationShapedSlugs = [
-  ...approvedLiveSlugs,
-  ...releaseBatch.articles.map(({ slug }) => slug),
+  ...new Set([...approvedLiveSlugs, ...releaseBatch.articles.map(({ slug }) => slug)]),
 ].sort();
 
 describe('article publication gate', () => {
@@ -70,7 +69,8 @@ describe('article publication gate', () => {
       .sort();
 
     expect(articleFiles).toHaveLength(
-      canonicalLedger.verification.incumbent_repo_count + canonicalLedger.verification.pilot_001_count,
+      canonicalLedger.verification.incumbent_repo_count +
+        canonicalLedger.verification.pilot_001_count,
     );
     expect(statuses.every(({ status }) => status === 'draft' || status === 'published')).toBe(true);
     expect(published).toEqual(approvedPublicationShapedSlugs);

@@ -80,10 +80,7 @@ const SUPERSEDED_CANONICAL_SLUGS = new Set([
 ]);
 const SUCCESSOR_CANONICAL_SLUGS = new Map([
   ['what-every-mineral-rights-owner-needs-to-know', 'should-i-sell-my-mineral-rights'],
-  [
-    'what-factors-determine-your-mineral-rights-value',
-    'calculate-price-per-net-mineral-acre',
-  ],
+  ['what-factors-determine-your-mineral-rights-value', 'calculate-price-per-net-mineral-acre'],
   [
     'what-influences-the-suggested-price-for-your-mineral-rights-assessment',
     'what-a-mineral-rights-assessment-does-and-does-not-tell-you',
@@ -105,10 +102,7 @@ const SUCCESSOR_CANONICAL_SLUGS = new Map([
     'what-you-must-know-before-evaluating-mineral-rights',
     'property-scope-crosswalk-mineral-rights-offers',
   ],
-  [
-    'why-you-should-avoid-these-seller-pitfalls',
-    'mineral-rights-offer-correspondence-index',
-  ],
+  ['why-you-should-avoid-these-seller-pitfalls', 'mineral-rights-offer-correspondence-index'],
   [
     'your-guide-to-fine-tuning-mineral-rights-valuation',
     'mineral-rights-valuation-input-correction-packet',
@@ -178,6 +172,7 @@ async function loadPriorProgramRowIds() {
         wave68Rekey: null,
         wave69Rekey: null,
         wave70Rekey: null,
+        wave71Refresh: null,
       };
     }
     throw error;
@@ -226,6 +221,7 @@ async function loadPriorProgramRowIds() {
     wave68Rekey: prior.identity_registry?.wave68_rekey ?? null,
     wave69Rekey: prior.identity_registry?.wave69_rekey ?? null,
     wave70Rekey: prior.identity_registry?.wave70_rekey ?? null,
+    wave71Refresh: prior.identity_registry?.wave71_refresh ?? null,
   };
 }
 
@@ -1568,6 +1564,7 @@ async function main() {
       ...(priorIdentity.wave68Rekey ? { wave68_rekey: priorIdentity.wave68Rekey } : {}),
       ...(priorIdentity.wave69Rekey ? { wave69_rekey: priorIdentity.wave69Rekey } : {}),
       ...(priorIdentity.wave70Rekey ? { wave70_rekey: priorIdentity.wave70Rekey } : {}),
+      ...(priorIdentity.wave71Refresh ? { wave71_refresh: priorIdentity.wave71Refresh } : {}),
     },
     content_fingerprint_sha256: hashRows(selected),
     policy: {

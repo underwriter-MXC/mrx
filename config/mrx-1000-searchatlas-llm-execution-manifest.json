@@ -9,13 +9,13 @@
   "inputs": {
     "ledger": {
       "path": "config/mrx-1000-canonical-content-ledger.json",
-      "sha256": "47495be0b1d409cef6d16b2fcfb914c8204cbf3b7df9d4db93c8800fa954ee21",
-      "bytes": 4486653
+      "sha256": "9d31c19c1b19269e3ecea87f011f5686cd26c8527bf855a702f881ead881a040",
+      "bytes": 4488044
     },
     "readiness": {
       "path": "reports/mrx-1000-readiness-matrix.json",
-      "sha256": "509a6f4be22ffd6ff3ae02c88ce1f998d42ba9598e320013e9a83cc2c685aa63",
-      "bytes": 3427890,
+      "sha256": "bd763863cde2855b97a1cea46221e5d356c9e3ee8d06d2fabd983c7ff2f8489c",
+      "bytes": 3428031,
       "sha256_method": "canonical_json_with_top_level_generated_at_masked",
       "generated_at_excluded_from_sha256": true
     },
@@ -61271,14 +61271,14 @@
       "primary_keyword": "how are mineral rights valued",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "live_public_published_route_existing_route_verified",
+        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
           "state": "WORKSPACE_MDX_PRESENT",
           "path": "src/content/posts/how-are-mineral-rights-valued.mdx",
           "mdx_exists": true,
-          "source_sha256": "97eaa4a030a85a104c45a8cd151e92256679f0be2bf2a40c095baa5d3db20b1f",
+          "source_sha256": "c7b809e91a09e06d4d6403af004e3274abb44743b8b76aa30c137d214862984c",
           "publication_status": "published",
           "frontmatter_noindex": false,
           "workspace_public_route_configured": true,
@@ -61287,8 +61287,8 @@
             "frontmatter_title": "How Are Mineral Rights Valued?",
             "frontmatter_slug": "how-are-mineral-rights-valued",
             "frontmatter_publication_status": "published",
-            "frontmatter_reviewed_at": "2026-06-11T00:00:00Z",
-            "frontmatter_reviewed_by": "mrx_compliance-stage06-initial",
+            "frontmatter_reviewed_at": "2026-08-22T21:11:45Z",
+            "frontmatter_reviewed_by": "mrx_compliance-continuous-wave71",
             "frontmatter_article_id": null,
             "frontmatter_searchatlas_uuid": null,
             "frontmatter_workflow_status": null,
@@ -61296,13 +61296,13 @@
             "frontmatter_body_checksum_sha256": null,
             "frontmatter_body_length_chars": 0,
             "frontmatter_body_word_count": 0,
-            "frontmatter_draft": null,
-            "frontmatter_noindex": null,
+            "frontmatter_draft": false,
+            "frontmatter_noindex": false,
             "frontmatter_indexable": null,
-            "body_sha256": "9c17cca96f5b3cfce62090cdce4ada86963dac630fcb25eef8e3796a666c7160",
-            "body_bytes": 5515,
-            "body_characters": 5515,
-            "body_word_count": 845,
+            "body_sha256": "11f9d8e434d8f8446171fc5e204a1711793a52c810e5cbd828628865ab97cdd5",
+            "body_bytes": 11310,
+            "body_characters": 11310,
+            "body_word_count": 1578,
             "explicit_qa_shell_without_final_copy": false,
             "filename_matches_canonical_slug": true,
             "frontmatter_title_matches_canonical": true,
@@ -61333,9 +61333,9 @@
           "state": "CHECKSUMMED_EXISTING_PUBLIC_ARTICLE_READY_FOR_LLM_REVIEW",
           "checksummed_review_candidate_present": true,
           "path": "src/content/posts/how-are-mineral-rights-valued.mdx",
-          "source_sha256": "97eaa4a030a85a104c45a8cd151e92256679f0be2bf2a40c095baa5d3db20b1f",
-          "body_sha256": "9c17cca96f5b3cfce62090cdce4ada86963dac630fcb25eef8e3796a666c7160",
-          "body_word_count": 845,
+          "source_sha256": "c7b809e91a09e06d4d6403af004e3274abb44743b8b76aa30c137d214862984c",
+          "body_sha256": "11f9d8e434d8f8446171fc5e204a1711793a52c810e5cbd828628865ab97cdd5",
+          "body_word_count": 1578,
           "candidate_type": "existing_public_article",
           "readiness_evidence_verified": true,
           "readiness_evidence_paths": [
@@ -61410,7 +61410,7 @@
           "prerequisite_gates": {
             "checksummed_review_candidate_present": true,
             "review_candidate_path": "src/content/posts/how-are-mineral-rights-valued.mdx",
-            "review_candidate_sha256": "97eaa4a030a85a104c45a8cd151e92256679f0be2bf2a40c095baa5d3db20b1f",
+            "review_candidate_sha256": "c7b809e91a09e06d4d6403af004e3274abb44743b8b76aa30c137d214862984c",
             "review_candidate_readiness_evidence_verified": true,
             "predecessor_key": null,
             "predecessor_pass_required": false,
@@ -61447,7 +61447,7 @@
           "prerequisite_gates": {
             "checksummed_review_candidate_present": true,
             "review_candidate_path": "src/content/posts/how-are-mineral-rights-valued.mdx",
-            "review_candidate_sha256": "97eaa4a030a85a104c45a8cd151e92256679f0be2bf2a40c095baa5d3db20b1f",
+            "review_candidate_sha256": "c7b809e91a09e06d4d6403af004e3274abb44743b8b76aa30c137d214862984c",
             "review_candidate_readiness_evidence_verified": true,
             "predecessor_key": "chatgpt",
             "predecessor_pass_required": true,
@@ -61484,7 +61484,7 @@
           "prerequisite_gates": {
             "checksummed_review_candidate_present": true,
             "review_candidate_path": "src/content/posts/how-are-mineral-rights-valued.mdx",
-            "review_candidate_sha256": "97eaa4a030a85a104c45a8cd151e92256679f0be2bf2a40c095baa5d3db20b1f",
+            "review_candidate_sha256": "c7b809e91a09e06d4d6403af004e3274abb44743b8b76aa30c137d214862984c",
             "review_candidate_readiness_evidence_verified": true,
             "predecessor_key": "google_gemini",
             "predecessor_pass_required": true,
@@ -61521,7 +61521,7 @@
           "prerequisite_gates": {
             "checksummed_review_candidate_present": true,
             "review_candidate_path": "src/content/posts/how-are-mineral-rights-valued.mdx",
-            "review_candidate_sha256": "97eaa4a030a85a104c45a8cd151e92256679f0be2bf2a40c095baa5d3db20b1f",
+            "review_candidate_sha256": "c7b809e91a09e06d4d6403af004e3274abb44743b8b76aa30c137d214862984c",
             "review_candidate_readiness_evidence_verified": true,
             "predecessor_key": "claude_opus_4_6",
             "predecessor_pass_required": true,
@@ -61558,7 +61558,7 @@
           "prerequisite_gates": {
             "checksummed_review_candidate_present": true,
             "review_candidate_path": "src/content/posts/how-are-mineral-rights-valued.mdx",
-            "review_candidate_sha256": "97eaa4a030a85a104c45a8cd151e92256679f0be2bf2a40c095baa5d3db20b1f",
+            "review_candidate_sha256": "c7b809e91a09e06d4d6403af004e3274abb44743b8b76aa30c137d214862984c",
             "review_candidate_readiness_evidence_verified": true,
             "predecessor_key": "perplexity",
             "predecessor_pass_required": true,
@@ -350846,5 +350846,5 @@
       ]
     }
   ],
-  "content_fingerprint_sha256": "ec9796d7f02f9351353c99514a01e6fcc6602df155922af96ef088348b653438"
+  "content_fingerprint_sha256": "49a82d67b119c8287ab7a542a5197ec57564d7b5c873a699d2fe18417bcf2ec1"
 }

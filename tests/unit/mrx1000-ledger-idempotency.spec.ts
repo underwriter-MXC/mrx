@@ -50,9 +50,9 @@ const SCRIPT = path.join(MRX_ROOT, 'scripts/build-mrx-1000-content-ledger.mjs');
 const CANONICAL_JSON = path.join(MRX_ROOT, 'config/mrx-1000-canonical-content-ledger.json');
 const CANONICAL_CSV = path.join(MRX_ROOT, 'config/mrx-1000-canonical-content-ledger.csv');
 const EXPECTED_CANONICAL_JSON_SHA256 =
-  '47495be0b1d409cef6d16b2fcfb914c8204cbf3b7df9d4db93c8800fa954ee21';
+  '9d31c19c1b19269e3ecea87f011f5686cd26c8527bf855a702f881ead881a040';
 const EXPECTED_CANONICAL_CSV_SHA256 =
-  '66e907fd814e03d337421d141e19c75885966ffae434524c8bb025e579c8d109';
+  'a6e3d4721b84ecf335792ee90dffc06d6fd6ce42ebae3c9e2faab3fc58de1514';
 const TEST_OUTPUT_DIR = mkdtempSync(path.join(tmpdir(), 'mrx1000-ledger-idempotency-'));
 const JSON_OUT = path.join(TEST_OUTPUT_DIR, 'mrx-1000-canonical-content-ledger.json');
 const CSV_OUT = path.join(TEST_OUTPUT_DIR, 'mrx-1000-canonical-content-ledger.csv');
@@ -66,7 +66,13 @@ const POSTS_DIR = path.join(MRX_ROOT, 'src/content/posts');
 const RELEASE_BATCH = JSON.parse(
   readFileSync(path.join(MRX_ROOT, 'config/mrx1000-release-10-batch.json'), 'utf8'),
 ) as { articles: unknown[] };
-const EXPECTED_PUBLIC_COUNT = RELEASE_BATCH.articles.length + 9;
+const EXPECTED_PUBLIC_COUNT = (
+  JSON.parse(readFileSync(CANONICAL_JSON, 'utf8')) as {
+    verification: {
+      preservation_classification_counts: { live_public_published_route: number };
+    };
+  }
+).verification.preservation_classification_counts.live_public_published_route;
 let expectedIncumbentCount = 0;
 let expectedHeldCount = 0;
 let expectedPlanningCount = 0;

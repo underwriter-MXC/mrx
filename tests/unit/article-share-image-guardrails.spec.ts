@@ -9,6 +9,15 @@ const releaseBatch = JSON.parse(
   readFileSync(join(repoRoot, 'config', 'mrx1000-release-10-batch.json'), 'utf8'),
 ) as { articles: Array<{ slug: string; admission_status?: string }> };
 const admittedArticleCount = releaseBatch.articles.length;
+const canonicalPublicRouteCount = (
+  JSON.parse(
+    readFileSync(join(repoRoot, 'config', 'mrx-1000-canonical-content-ledger.json'), 'utf8'),
+  ) as {
+    verification: {
+      preservation_classification_counts: { live_public_published_route: number };
+    };
+  }
+).verification.preservation_classification_counts.live_public_published_route;
 const publishedFixture = `---
 title: 'Fixture article'
 description: 'Fixture description'
@@ -64,9 +73,9 @@ describe('published article image guardrails', () => {
     const inlinePaths = published.map((post) => post.inline.src);
     const explicitlyAllowedVerifiedRemoteSources = new Set<string>();
 
-    // Nine legacy-live posts plus the continuously growing hash-locked release slate.
-    // Production publication remains controlled by the separate release gate.
-    expect(published).toHaveLength(admittedArticleCount + 9);
+    // The canonical public-route count is a set cardinality. An incumbent route
+    // admitted into the growing release slate must not be counted a second time.
+    expect(published).toHaveLength(canonicalPublicRouteCount);
     expect(new Set(heroPaths).size).toBe(heroPaths.length);
     expect(new Set(inlinePaths).size).toBe(inlinePaths.length);
     for (const post of published) {

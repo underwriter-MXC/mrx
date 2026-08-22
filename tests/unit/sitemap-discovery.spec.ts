@@ -52,12 +52,19 @@ describe('canonical sitemap discovery', () => {
           !/^draft:\s*true\s*$/m.test(source) &&
           !/^noindex:\s*true\s*$/m.test(source),
       ).length;
-    const admittedArticleCount = (
+    const canonicalPublicRouteCount = (
       JSON.parse(
-        readFileSync(join(process.cwd(), 'config', 'mrx1000-release-10-batch.json'), 'utf8'),
-      ) as { articles: unknown[] }
-    ).articles.length;
-    expect(publicPostCount).toBe(admittedArticleCount + 9);
+        readFileSync(
+          join(process.cwd(), 'config', 'mrx-1000-canonical-content-ledger.json'),
+          'utf8',
+        ),
+      ) as {
+        verification: {
+          preservation_classification_counts: { live_public_published_route: number };
+        };
+      }
+    ).verification.preservation_classification_counts.live_public_published_route;
+    expect(publicPostCount).toBe(canonicalPublicRouteCount);
     expect(archivePageNumbers(publicPostCount)).toEqual([2, 3, 4, 5, 6, 7]);
 
     const continuationRoute = readFileSync(

@@ -25,8 +25,8 @@
  *      authoritative local artifact names a row.
  *  11. Texas dynamic pillar route (/mineral-rights/texas/) is recognized via
  *      src/pages/mineral-rights/[state].astro + src/data/states.ts coverage.
- *  12. The 9 legacy rows plus all quality-cleared release rows are preserved as
- *      public_live_known_route in the current local sitemap.
+ *  12. The union of legacy rows and quality-cleared release rows is preserved
+ *      as public_live_known_route without double-counting admitted incumbents.
  */
 import { describe, it, expect, beforeAll } from 'vitest';
 import { spawnSync } from 'node:child_process';
@@ -50,7 +50,13 @@ const LEDGER = path.join(MRX_ROOT, 'config/mrx-1000-canonical-content-ledger.jso
 const RELEASE_BATCH = JSON.parse(
   readFileSync(path.join(MRX_ROOT, 'config/mrx1000-release-10-batch.json'), 'utf8'),
 ) as { articles: Array<{ program_row_id: string }> };
-const PUBLIC_ROUTE_COUNT = RELEASE_BATCH.articles.length + 9;
+const PUBLIC_ROUTE_COUNT = (
+  JSON.parse(readFileSync(LEDGER, 'utf8')) as {
+    verification: {
+      preservation_classification_counts: { live_public_published_route: number };
+    };
+  }
+).verification.preservation_classification_counts.live_public_published_route;
 const READONLY_DIR = path.join(MRX_ROOT, 'tmp');
 const CONTENT_GENIUS_EXPORT = path.join(
   MRX_ROOT,
@@ -742,8 +748,10 @@ describe('MRX1000 readiness matrix — load-bearing fact regressions', () => {
       'MRX1000-0882',
     ];
     const expectedIds = [
-      ...legacyIds,
-      ...RELEASE_BATCH.articles.map(({ program_row_id }) => program_row_id),
+      ...new Set([
+        ...legacyIds,
+        ...RELEASE_BATCH.articles.map(({ program_row_id }) => program_row_id),
+      ]),
     ];
     expect(live.map((r) => r.program_row_id).sort()).toEqual([...expectedIds].sort());
     for (const row of live) {

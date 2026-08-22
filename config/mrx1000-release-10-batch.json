@@ -1,7 +1,7 @@
 {
   "program": "MRX 1,000 Article SEO+AEO Production Program",
   "artifact_type": "authorized_release_10_batch",
-  "evidence_scaffold_generated_at_utc": "2026-08-22T20:34:08Z",
+  "evidence_scaffold_generated_at_utc": "2026-08-22T21:32:03Z",
   "decision_authority": {
     "successor_gate_decision_id": "D-2026-0804-16",
     "successor_gate_decision_path": "docs/governance/mrx1000-owner-continuous-publication-directive-2026-08-04.md",
@@ -234,13 +234,16 @@
     "wave69_selection_decision_sha256": "f26480a02a01f0809289a40d34b9008c524d87d41da3650f92581981e7676fd7",
     "wave70_selection_decision_id": "MRX1000-W70-SELECT-2026-08-22",
     "wave70_selection_decision_path": "docs/governance/mrx1000-wave70-selection-decision-2026-08-22.md",
-    "wave70_selection_decision_sha256": "0d3aa421cec292492388d08a33ec48d7ec658ba627563f4cd5124039cc0e4278"
+    "wave70_selection_decision_sha256": "0d3aa421cec292492388d08a33ec48d7ec658ba627563f4cd5124039cc0e4278",
+    "wave71_selection_decision_id": "MRX1000-W71-SELECT-2026-08-22",
+    "wave71_selection_decision_path": "docs/governance/mrx1000-wave71-selection-decision-2026-08-22.md",
+    "wave71_selection_decision_sha256": "16917868dd7a6d10f2081b3c548312fd6bc47a8abccf0884ca5c8ecc97fe9c11"
   },
   "identity_authority": {
     "scope_key": "canonical_slug",
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_sha256": "47495be0b1d409cef6d16b2fcfb914c8204cbf3b7df9d4db93c8800fa954ee21",
-    "canonical_ledger_generated_at": "2026-07-20T07:55:43.420Z",
+    "canonical_ledger_sha256": "9d31c19c1b19269e3ecea87f011f5686cd26c8527bf855a702f881ead881a040",
+    "canonical_ledger_generated_at": "2026-07-20T06:20:04.424Z",
     "successor_ledger_decision_id": "D-2026-0723-LEDGER-04",
     "successor_ledger_decision_path": "artifacts/mrx1000-release-10/decisions/mrx-ceo-ledger-provenance-successor-20260723-04.md",
     "successor_ledger_decision_sha256": "09eca24bcd0e71563f2ac4197f564eec0ccb43a5ee955216da5c4a2543d04978",
@@ -254,11 +257,11 @@
     "authorization_scope": "declared_program_size_not_a_staged_release_cap",
     "admission_mode": "continuous_quality_gated",
     "continuous_quality_gated_from_selection_rank": 26,
-    "prior_verified_article_count": 149,
+    "prior_verified_article_count": 150,
     "fail_closed": true,
     "earned_scale_gates": [],
-    "exact_admitted_count": 150,
-    "exact_admitted_slate_sha256": "e0cb8c882dcb1e1d6c8d10fd9ada3052780dedf0e093fd4511be1723272968e6"
+    "exact_admitted_count": 151,
+    "exact_admitted_slate_sha256": "d48bafdacd16e21ebdef70928d94008fcc358f8a52d028a494499ddaa11ab692"
   },
   "articles": [
     {
@@ -5147,10 +5150,45 @@
       "inline_path": "/assets/articles/inline/mineral-rights-valuation-input-correction-packet/mineral-rights-valuation-input-correction-packet.webp",
       "inline_asset_sha256": "342e0f94a59a0b5517d483df35b680a50f1c4c07f37239e19fd9dff047c3a456",
       "inline_rendered_text": "Mineral Rights Valuation Input Correction Packet"
+    },
+    {
+      "selection_rank": 151,
+      "program_row_id": "MRX1000-0151",
+      "source_shortlist_program_row_id": "MRX1000-0151",
+      "slug": "how-are-mineral-rights-valued",
+      "title": "How Are Mineral Rights Valued?",
+      "source_shortlist_title": "How Are Mineral Rights Valued?",
+      "canonical_url": "https://mineralrightsxchange.com/blog/how-are-mineral-rights-valued/",
+      "pillar": "mineral-rights-value",
+      "cluster": "valuation-methodology-drivers",
+      "content_genius_article_uuid": null,
+      "archive_evidence_sha256": "14835f6f4c01b36786239bf9acd02e2df668e9251778f1689f1b0bfb6a7ea0a5",
+      "repo_path": "src/content/posts/how-are-mineral-rights-valued.mdx",
+      "repo_sha256": "c7b809e91a09e06d4d6403af004e3274abb44743b8b76aa30c137d214862984c",
+      "article_sha256": "c7b809e91a09e06d4d6403af004e3274abb44743b8b76aa30c137d214862984c",
+      "hero_path": "/assets/articles/hero/how-are-mineral-rights-valued.webp",
+      "hero_sha256": "26dcaf56a0993d7919ed349541404a5a6c6ff3442a060058af79adc80d4a9ff4",
+      "hero_asset_sha256": "26dcaf56a0993d7919ed349541404a5a6c6ff3442a060058af79adc80d4a9ff4",
+      "admission_status": "admitted_quality_gated",
+      "finalization_state": "draft_noindex_admitted",
+      "searchatlas_content_score": null,
+      "searchatlas_word_count": 1577,
+      "risk_citation_remediation": [
+        "The established title, slug, keyword, and public URL are preserved. The incumbent is materially refreshed in place as a plain-language conceptual primer on identified royalty economics, conditional cash flow, DCF, and a market-evidence reasonableness check.",
+        "RRC production data remains operator-reported and subject to reporting lag and revision; EIA decline analysis is general methodological context; TALCB and Comptroller material support only professional and present-value boundaries. No source establishes owner-specific title, reserves, engineering, value, price, offer, or outcome.",
+        "Cannibalization is bounded explicitly: the article does not duplicate the Texas seven-lock valuation workflow, valuation validation or reperformance, the range-width audit, or the planned separate Texas-specific valuation primer.",
+        "Continuous quality-gated admission under D-2026-0804-16, the 2026-08-14 no-approval owner directive, and MRX1000-W71-SELECT-2026-08-22; no numerical cap, elapsed-time gate, or owner publication approval applies.",
+        "Publication remains conditional on current editorial, factual-citation, compliance, two-image, metadata, build, rollback, deployment, and live-verification evidence."
+      ],
+      "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/how-are-mineral-rights-valued.json",
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/how-are-mineral-rights-valued/how-are-mineral-rights-valued.webp",
+      "inline_asset_sha256": "1a15494830e2ecb50201cf12d4e0c30c2a1ae1f2e8d1089c1254dc91cb692b18",
+      "inline_rendered_text": "how are mineral rights valued"
     }
   ],
   "admission_audit": {
-    "admitted_article_count": 150,
+    "admitted_article_count": 151,
     "selection_ranks": [
       1,
       2,
@@ -5301,7 +5339,8 @@
       147,
       148,
       149,
-      150
+      150,
+      151
     ],
     "duplicate_program_row_ids": [],
     "duplicate_slugs": [],
@@ -5360,9 +5399,9 @@
   "two_image_policy": {
     "directive": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
     "retrofit_manifest_path": "config/mrx-article-two-image-retrofit.json",
-    "retrofit_manifest_sha256": "b2f688df7f3100c593189147a25a277d8e8fcc8d747f1ad48205fb1f3f6dae3a",
+    "retrofit_manifest_sha256": "b0660f7b2bc8d7481b34cf4d19277a8792c954901767a062f8cb45c4cf46b9b5",
     "public_article_count": 159,
-    "batch_article_count": 150,
+    "batch_article_count": 151,
     "assets_per_article": 2,
     "hero_share_identity_required": true,
     "inline_image_distinct_required": true,

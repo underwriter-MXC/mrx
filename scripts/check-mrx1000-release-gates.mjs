@@ -344,7 +344,7 @@ function validateBoundGscRecoveryEvidence({
   return findings;
 }
 
-function validateRetainedProductionBaseline({ manifest }) {
+function validateRetainedProductionBaseline({ manifest, admittedSlugs = new Set() }) {
   const findings = [];
   if (!manifest || typeof manifest !== 'object') {
     return ['Retained production baseline manifest is missing or unreadable.'];
@@ -360,30 +360,45 @@ function validateRetainedProductionBaseline({ manifest }) {
   }
   const files = Array.isArray(manifest.files) ? manifest.files : [];
   const retainedRoutes = Array.isArray(manifest.retained_routes) ? manifest.retained_routes : [];
+  const admittedRouteUrls = new Set(
+    retainedRoutes.filter((route) => admittedSlugs.has(route.slug)).map((route) => route.page_url),
+  );
   if (retainedRoutes.length !== 2) {
-    findings.push(`Retained production baseline route count mismatch: expected 2, got ${retainedRoutes.length}.`);
+    findings.push(
+      `Retained production baseline route count mismatch: expected 2, got ${retainedRoutes.length}.`,
+    );
   }
   if (files.length !== retainedRoutes.length * 3) {
-    findings.push(`Retained production baseline must bind source, hero, and inline files per route.`);
+    findings.push(
+      `Retained production baseline must bind source, hero, and inline files per route.`,
+    );
   }
   for (const manifestEntry of files) {
     const relPath = manifestEntry?.path ?? '';
     const absPath = relPath ? join(repoRoot, relPath) : null;
     if (!/^[a-f0-9]{64}$/i.test(manifestEntry?.sha256 ?? '')) {
-      findings.push(`Retained production baseline SHA-256 is invalid for ${relPath || '(missing path)'}.`);
+      findings.push(
+        `Retained production baseline SHA-256 is invalid for ${relPath || '(missing path)'}.`,
+      );
     }
     if (!['page_source', 'hero_asset', 'inline_asset'].includes(manifestEntry?.role)) {
-      findings.push(`Retained production baseline role is invalid for ${relPath || '(missing path)'}.`);
+      findings.push(
+        `Retained production baseline role is invalid for ${relPath || '(missing path)'}.`,
+      );
     }
     if (!manifestEntry?.page_url) {
-      findings.push(`Retained production baseline page URL is missing for ${relPath || '(missing path)'}.`);
+      findings.push(
+        `Retained production baseline page URL is missing for ${relPath || '(missing path)'}.`,
+      );
     }
     if (!absPath || !existsSync(absPath)) {
-      findings.push(`Retained production baseline file is missing on disk: ${relPath || '(missing path)'}.`);
+      findings.push(
+        `Retained production baseline file is missing on disk: ${relPath || '(missing path)'}.`,
+      );
       continue;
     }
     const observedSha = sha256File(absPath);
-    if (observedSha !== manifestEntry.sha256) {
+    if (!admittedRouteUrls.has(manifestEntry.page_url) && observedSha !== manifestEntry.sha256) {
       findings.push(
         `Retained production baseline on-disk SHA mismatch for ${relPath}: expected ${manifestEntry.sha256}, got ${observedSha}.`,
       );
@@ -403,7 +418,9 @@ function validateRetainedProductionBaseline({ manifest }) {
       route.hero_path === route.inline_path ||
       route.hero_sha256 === route.inline_sha256
     ) {
-      findings.push(`Retained production baseline route is incomplete for ${route.slug ?? '(missing slug)'}.`);
+      findings.push(
+        `Retained production baseline route is incomplete for ${route.slug ?? '(missing slug)'}.`,
+      );
       continue;
     }
     const expectedBindings = [
@@ -429,11 +446,11 @@ function validateRetainedProductionBaseline({ manifest }) {
       continue;
     }
     const source = readText(absPath);
-    if (!source.includes(`title: '${route.expected_h1.replace(/'/g, "''")}'`) &&
-        !source.includes(`title: "${route.expected_h1}"`)) {
-      findings.push(
-        `Retained production baseline title binding mismatch for ${route.slug}.`,
-      );
+    if (
+      !source.includes(`title: '${route.expected_h1.replace(/'/g, "''")}'`) &&
+      !source.includes(`title: "${route.expected_h1}"`)
+    ) {
+      findings.push(`Retained production baseline title binding mismatch for ${route.slug}.`);
     }
   }
   return findings;
@@ -624,7 +641,9 @@ function buildCheck() {
     const assetEvidence = existsSync(assetEvidencePath) ? readJson(assetEvidencePath) : null;
     const evidenceManifestRel = 'artifacts/mrx1000-release-10/evidence/_manifest.json';
     const evidenceManifestPath = join(repoRoot, evidenceManifestRel);
-    const evidenceManifest = existsSync(evidenceManifestPath) ? readJson(evidenceManifestPath) : null;
+    const evidenceManifest = existsSync(evidenceManifestPath)
+      ? readJson(evidenceManifestPath)
+      : null;
     const expectedCorpusCount = twoImagePolicy.public_article_count ?? null;
     const expectedBatchCount = batch.articles?.length ?? 0;
 
@@ -641,7 +660,9 @@ function buildCheck() {
         twoImageFindings.push('Two-image retrofit decision sidecar is missing or stale.');
       }
       if (!/authorizes replacement and hash rebinding/i.test(decisionText)) {
-        twoImageFindings.push('Two-image retrofit decision lacks source-and-asset rebind authority.');
+        twoImageFindings.push(
+          'Two-image retrofit decision lacks source-and-asset rebind authority.',
+        );
       }
     }
     if (!retrofitPath || !existsSync(retrofitPath)) {
@@ -696,7 +717,9 @@ function buildCheck() {
       );
     }
     if (!evidenceManifest || !verifySidecar(evidenceManifestPath)) {
-      twoImageFindings.push('Two-image evidence-packet manifest is missing or has a stale sidecar.');
+      twoImageFindings.push(
+        'Two-image evidence-packet manifest is missing or has a stale sidecar.',
+      );
     } else if (
       evidenceManifest.packets?.length !== expectedBatchCount ||
       evidenceManifest.packets.some(
@@ -1051,6 +1074,7 @@ function buildCheck() {
       blocking.push(
         ...validateRetainedProductionBaseline({
           manifest: verifiedReleaseEvidence.retained_production_baseline_manifest_json ?? null,
+          admittedSlugs: new Set(batch.articles.map((article) => article.slug)),
         }),
       );
       if (!boundPreEdit.sidecar_verified) {
@@ -1067,7 +1091,7 @@ function buildCheck() {
       if (
         !twoImageRebindActive &&
         canonicalizeExactSlate(preservedRows) !==
-        canonicalizeExactSlate(boundPreEdit.batch.articles ?? [])
+          canonicalizeExactSlate(boundPreEdit.batch.articles ?? [])
       ) {
         blocking.push(
           'Existing authorized rows 1..10 are not preserved verbatim from the bound pre-edit batch.',
