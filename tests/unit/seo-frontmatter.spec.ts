@@ -5,6 +5,7 @@ import {
   DESC_MIN,
   DESC_MAX,
   validateTitle,
+  validateArticleTitle,
   validateDescription,
 } from '../../src/lib/seo';
 
@@ -34,6 +35,13 @@ describe('seo metadata validators', () => {
   it('rejects a too-long title', () => {
     const r = validateTitle('x'.repeat(70));
     expect(r.ok).toBe(false);
+  });
+
+  it('allows only the bounded exact canonical article-title exception', () => {
+    const exactTitle = 'How to Build a Mineral Rights Offer Sender Identity Cross-Check';
+    expect(validateArticleTitle(exactTitle, exactTitle).ok).toBe(true);
+    expect(validateArticleTitle(exactTitle, 'x'.repeat(63)).ok).toBe(false);
+    expect(validateArticleTitle('x'.repeat(71), 'x'.repeat(71)).ok).toBe(false);
   });
 
   it('validates a healthy description', () => {

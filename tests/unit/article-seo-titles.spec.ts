@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { readdirSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
-import { buildArticleTitle } from '../../src/lib/seo';
+import { buildArticleTitle, validateArticleTitle } from '../../src/lib/seo';
 
 const postsDirectory = join(process.cwd(), 'src/content/posts');
 const postFiles = readdirSync(postsDirectory).filter((file) => /\.mdx?$/.test(file));
@@ -17,7 +17,7 @@ function frontmatterValue(source: string, field: string): string | undefined {
 }
 
 describe('article SEO titles', () => {
-  it('keeps every release-eligible branded article title within 30–60 characters', () => {
+  it('keeps every release-eligible branded article title within policy', () => {
     const invalid: string[] = [];
 
     for (const file of postFiles) {
@@ -31,8 +31,9 @@ describe('article SEO titles', () => {
       const releaseEligible = publicationStatus === 'published' && !draft && !noindex;
       if (!releaseEligible) continue;
 
-      const finalTitle = buildArticleTitle(visibleTitle!, frontmatterValue(source, 'seo_title'));
-      if (finalTitle.length < 30 || finalTitle.length > 60) {
+      const seoTitle = frontmatterValue(source, 'seo_title');
+      const finalTitle = buildArticleTitle(visibleTitle!, seoTitle);
+      if (!validateArticleTitle(visibleTitle!, seoTitle).ok) {
         invalid.push(`${file}: ${finalTitle.length} — ${finalTitle}`);
       }
     }

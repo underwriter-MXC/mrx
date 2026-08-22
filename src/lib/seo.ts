@@ -16,6 +16,9 @@
 // the canonical budget on the source constants.
 export const TITLE_MIN = 30;
 export const TITLE_MAX = 60;
+export const EXACT_CANONICAL_ARTICLE_TITLE_MAX = 70;
+export const BRANDED_EXACT_CANONICAL_ARTICLE_TITLE_MAX =
+  EXACT_CANONICAL_ARTICLE_TITLE_MAX + ' · MRX'.length;
 export const DESC_MIN = 130;
 export const DESC_MAX = 160;
 export const OG_IMAGE_WIDTH = 1200;
@@ -46,6 +49,30 @@ export function validateTitle(title: string): { ok: boolean; reason?: string } {
     return { ok: false, reason: `Title too long (${title.length} > ${TITLE_MAX})` };
   }
   return { ok: true };
+}
+
+/**
+ * Article metadata normally follows the 60-character search-result budget.
+ * The owner exact-title social-preview/distribution policy permits a bounded
+ * exception only when `seo_title` exactly matches the finalized visible title.
+ */
+export function validateArticleTitle(
+  visibleTitle: string,
+  seoTitle?: string,
+): { ok: boolean; reason?: string } {
+  const finalTitle = buildArticleTitle(visibleTitle, seoTitle);
+  const ordinaryValidation = validateTitle(finalTitle);
+  if (ordinaryValidation.ok) return ordinaryValidation;
+
+  const normalizedVisibleTitle = visibleTitle.trim();
+  const normalizedSeoTitle = seoTitle?.trim();
+  const exactCanonicalException =
+    normalizedSeoTitle === normalizedVisibleTitle &&
+    normalizedVisibleTitle.length <= EXACT_CANONICAL_ARTICLE_TITLE_MAX &&
+    finalTitle.length <= BRANDED_EXACT_CANONICAL_ARTICLE_TITLE_MAX;
+
+  if (exactCanonicalException) return { ok: true };
+  return ordinaryValidation;
 }
 
 export function validateDescription(description: string): { ok: boolean; reason?: string } {

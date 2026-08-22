@@ -312,7 +312,11 @@ describe('MRX 1,000-row hero/share creative-brief generator', () => {
       expect(row.final_inline_asset_path, row.program_row_id).not.toBe(row.final_hero_asset_path);
       expect(row.visible_canonical_title, row.program_row_id).toBe(row.canonical_title);
       expect(row.share_seo_title, row.program_row_id).toBe(row.share_title);
-      expect(row.share_title.length, row.program_row_id).toBeLessThanOrEqual(60);
+      const exactCanonicalTitleException =
+        row.share_title === row.visible_canonical_title && row.share_title.length <= 70;
+      expect(row.share_title.length <= 60 || exactCanonicalTitleException, row.program_row_id).toBe(
+        true,
+      );
       expect(Object.values(row.semantic_appropriateness_checks).every(Boolean)).toBe(true);
       expect(row.topic_semantics.semantic_signature_sha256, row.program_row_id).toBe(
         row.semantic_signature_sha256,
@@ -430,9 +434,7 @@ describe('MRX 1,000-row hero/share creative-brief generator', () => {
     }
 
     expect(heldRows.filter((row) => row.current_asset_usable)).toHaveLength(0);
-    expect(heldRows.filter((row) => row.planned_replacement_required)).toHaveLength(
-      HELD_ROW_COUNT,
-    );
+    expect(heldRows.filter((row) => row.planned_replacement_required)).toHaveLength(HELD_ROW_COUNT);
   });
 
   it('assigns 25 unique pilot replacements while leaving every pilot blocked and ungenerated', () => {

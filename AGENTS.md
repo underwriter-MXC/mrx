@@ -10,18 +10,24 @@ This repository-root file is the single controlling prompt for MRX article plann
 
 ## Current release boundary
 
-The canonical MRX1000 program is verified through Article 146. Article 147 has been created and release-committed but must be reconciled before any Article 148-or-later research, drafting, image production, implementation, or release work begins.
+The canonical MRX1000 program is production verified and reconciled through release-sequence Article 151. The canonical ledger records 151 `released_public_article` rows and 159 public article routes after Vercel deployment `dpl_AVAZY84GaRptfUwHXCMvdqKT5CmG`.
 
-For this boundary, Article 147 is reconciled only when all of the following are true and evidenced:
+Release-sequence article numbers are incremental verified-count labels, not assumptions that the same-numbered `MRX1000-####` program row is unreleased. Before every selection, use the current canonical ledger plus fresh live HTTP checks to exclude rows and routes that are already released. Republishing or refreshing an already released row does not advance the MRX1000 verified count.
 
-- Its exact title and identity are finalized.
-- Its canonical hero image is byte-locked.
-- Every mandatory gate in this file has passed with recorded evidence.
-- Its canonical ledger row is reconciled.
-- Its release and reconciliation commits are pushed from the verified isolated worktree.
-- The live apex and `www` behavior is verified, including production image bytes.
+Article 152 is assigned to program row `MRX1000-0962`, with the planning identity rejected and the following exact identity locked by the Wave 72 read-only Chesty/`mrx_ceo` decision:
 
-Article 148 cannot begin until every item above is true.
+- Title: `How to Build a Mineral Rights Offer Sender Identity Cross-Check`
+- Slug: `mineral-rights-offer-sender-identity-cross-check`
+- Primary keyword: `mineral rights offer sender identity cross-check`
+- Job: build a reusable field-level matrix for the stated sender, acquiring entity, signer, email/reply-to domain, business address, phone, and website; compare those fields across the offer, Texas public entity/status records, and independently located company contact sources; record only `match`, `mismatch`, or `unverified`; and turn discrepancies into neutral clarification questions.
+
+Article 152 may not determine legitimacy, authenticity, authority, reputation, fairness, fraud, value, legal effect, or whether to transact. It must remain distinct from the live predatory-buyer, offer-risk, scam-response, and seller-protection guides and from planning row `MRX1000-0326`, which retains the broader candidate job of verifying an offer's legitimacy.
+
+## Chesty decision routing
+
+Chesty is advisory and read-only for article identity and specialist review. Invoke the `chestyorchestrator` profile with the already-authorized `openai-codex` provider, explicitly name every authoritative absolute source path, state the verified isolated worktree and branch, and prohibit file, repository, deployment, and external-system writes. Route the executive verdict through `mrx_ceo` and relevant MRX specialists.
+
+Independently verify Chesty's candidate against the current isolated ledger, repository corpus, and live routes. If a nested Hermes call changes to an unverified working directory, omits the corrected provider, uses stale ledger state, or hangs, terminate only that verified advisory process and rerun the final read-only decision through `mrx_ceo` with `--provider openai-codex`. Never allow Chesty or a specialist to write the release worktree.
 
 ## Autonomous execution and the sole approval exception
 

@@ -1,15 +1,15 @@
 {
   "artifact_type": "mrx1000_content_activation_plan",
   "plan_version": "mrx1000-content-activation-v1.1.0",
-  "generated_at": "2026-07-20T15:08:04.366Z",
+  "generated_at": "2026-07-20T05:46:08.593Z",
   "generated_at_method": "canonical_ledger_generated_at",
   "generator": "scripts/build-mrx-1000-activation-plan.mjs",
-  "content_fingerprint_sha256": "fac57a5e895c1f880699398496cb7b49a0a0c41e5dccfcfe73a1b7590cf11137",
+  "content_fingerprint_sha256": "0ad28117ca0942fc49921723ddd09f45ed825f025b1dd5d5f29bc92988ae812a",
   "inputs": {
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_fingerprint_sha256": "f9da60f5c06036d3c398c29129a61654c120d962875caa6d0e4188ed63c19817",
+    "canonical_ledger_fingerprint_sha256": "333c99da6c38a0a08517207619fe19b2c8c9247992c438e856ae92a349f0e4de",
     "canonical_ledger_fingerprint_verified": true,
-    "canonical_ledger_generated_at": "2026-07-20T15:08:04.366Z",
+    "canonical_ledger_generated_at": "2026-07-20T05:46:08.593Z",
     "owner_decision": {
       "decision_id": "D-2026-0804-16",
       "signed_disposition": "APPROVED_CONTINUOUS_QUALITY_GATED_ARTICLE_PUBLICATION",
@@ -114,8 +114,8 @@
       "contextual_inline": 350
     },
     "by_source_preservation_classification": {
-      "incumbent_draft_nonpublic_held": 28,
-      "live_public_published_route": 159,
+      "incumbent_draft_nonpublic_held": 27,
+      "live_public_published_route": 160,
       "pilot_draft_noindex_stage": 25,
       "planning_only_inventory": 788
     }
@@ -22944,69 +22944,6 @@
         "status": "planned_local_only"
       },
       "sibling_link": {
-        "target_program_row_id": "MRX1000-0367",
-        "target_title": "Mineral Rights Buyers: Risk Checklist For Royalty Owners",
-        "url": "/blog/mineral-rights-buyers-risk-checklist-for-royalty-owners/",
-        "relationship": "same_cluster_next_by_program_row_id_cyclic",
-        "target_source_preservation_classification": "planning_only_inventory",
-        "target_route_live": false,
-        "status": "planned_local_only"
-      },
-      "primary_cta": {
-        "url": "/book/",
-        "label": "Review My Written Offer",
-        "name": "mrx1000-offer-review-book_review-closing_panel",
-        "placement_code": "closing_panel",
-        "placement_guidance": "Place in the closing decision panel after key takeaways and before related articles.",
-        "assignment_rule": "decision_stage_team_handoff",
-        "assignment_basis": "decision:royalty-income",
-        "approved_route_evidence": "src/pages/book.astro",
-        "role": "primary_appointment",
-        "is_appointment_cta": true,
-        "status": "planned_local_only"
-      },
-      "appointment_cta": {
-        "url": "/book/",
-        "label": "Review My Written Offer",
-        "name": "mrx1000-offer-review-book_review-closing_panel",
-        "placement_code": "closing_panel",
-        "placement_guidance": "Place in the closing decision panel after key takeaways and before related articles.",
-        "assignment_rule": "decision_stage_team_handoff",
-        "assignment_basis": "decision:royalty-income",
-        "approved_route_evidence": "src/pages/book.astro",
-        "role": "same_as_primary_appointment",
-        "distinct_from_primary_cta": false,
-        "status": "planned_local_only"
-      },
-      "evidence": {
-        "triangle_plan_status": "planned_complete",
-        "primary_cta_plan_status": "planned_complete",
-        "appointment_cta_plan_status": "planned_complete",
-        "rendered_status": "not_rendered_or_verified_by_this_plan",
-        "rendered_triangle_verified": false,
-        "live_status": "not_published_or_verified_by_this_plan",
-        "live_triangle_verified": false,
-        "release_status": "eligible_for_continuous_quality_review_not_yet_cleared",
-        "numerical_release_cap_applies": false
-      }
-    },
-    {
-      "program_row_id": "MRX1000-0367",
-      "canonical_title": "Mineral Rights Buyers: Risk Checklist For Royalty Owners",
-      "canonical_slug": "mineral-rights-buyers-risk-checklist-for-royalty-owners",
-      "canonical_url": "/blog/mineral-rights-buyers-risk-checklist-for-royalty-owners/",
-      "cluster": "offer-review-buyer-comparison-safety",
-      "pillar": "offer-review",
-      "search_intent": "compare-offers",
-      "funnel_stage": "decision",
-      "source_preservation_classification": "planning_only_inventory",
-      "source_route_live": false,
-      "pillar_link": {
-        "url": "/offer-review/",
-        "route_evidence": "src/pages/offer-review.astro",
-        "status": "planned_local_only"
-      },
-      "sibling_link": {
         "target_program_row_id": "MRX1000-0368",
         "target_title": "Mineral Rights Buyers: Risk Checklist In 2026",
         "url": "/blog/mineral-rights-buyers-risk-checklist-in-2026/",
@@ -23022,7 +22959,7 @@
         "placement_code": "closing_panel",
         "placement_guidance": "Place in the closing decision panel after key takeaways and before related articles.",
         "assignment_rule": "decision_stage_team_handoff",
-        "assignment_basis": "decision:compare-offers",
+        "assignment_basis": "decision:royalty-income",
         "approved_route_evidence": "src/pages/book.astro",
         "role": "primary_appointment",
         "is_appointment_cta": true,
@@ -23035,7 +22972,7 @@
         "placement_code": "closing_panel",
         "placement_guidance": "Place in the closing decision panel after key takeaways and before related articles.",
         "assignment_rule": "decision_stage_team_handoff",
-        "assignment_basis": "decision:compare-offers",
+        "assignment_basis": "decision:royalty-income",
         "approved_route_evidence": "src/pages/book.astro",
         "role": "same_as_primary_appointment",
         "distinct_from_primary_cta": false,
@@ -26661,12 +26598,12 @@
         "status": "planned_local_only"
       },
       "sibling_link": {
-        "target_program_row_id": "MRX1000-0301",
-        "target_title": "Avoiding Predatory Offers: Fair Valuation for Mineral Rights",
-        "url": "/blog/avoiding-predatory-offers-fair-valuation-for-mineral-rights/",
+        "target_program_row_id": "MRX1000-0962",
+        "target_title": "How to Build a Mineral Rights Offer Sender Identity Cross-Check",
+        "url": "/blog/mineral-rights-offer-sender-identity-cross-check/",
         "relationship": "same_cluster_next_by_program_row_id_cyclic",
-        "target_source_preservation_classification": "incumbent_draft_nonpublic_held",
-        "target_route_live": false,
+        "target_source_preservation_classification": "live_public_published_route",
+        "target_route_live": true,
         "status": "planned_local_only"
       },
       "primary_cta": {
@@ -60366,9 +60303,9 @@
         "status": "planned_local_only"
       },
       "sibling_link": {
-        "target_program_row_id": "MRX1000-0962",
-        "target_title": "How Our Underwriter Offers Differ From Competing Mineral Rights Buyers",
-        "url": "/blog/how-our-underwriter-offers-differ-from-competing-mineral-rights-buyers/",
+        "target_program_row_id": "MRX1000-0963",
+        "target_title": "How Our Valuation Methodology Ensures Fairness and Transparency in Mineral Rights Assessments",
+        "url": "/blog/how-our-valuation-methodology-ensures-fairness-and-transparency-in-mineral-rights-assessments/",
         "relationship": "same_cluster_next_by_program_row_id_cyclic",
         "target_source_preservation_classification": "incumbent_draft_nonpublic_held",
         "target_route_live": false,
@@ -60414,24 +60351,24 @@
     },
     {
       "program_row_id": "MRX1000-0962",
-      "canonical_title": "How Our Underwriter Offers Differ From Competing Mineral Rights Buyers",
-      "canonical_slug": "how-our-underwriter-offers-differ-from-competing-mineral-rights-buyers",
-      "canonical_url": "/blog/how-our-underwriter-offers-differ-from-competing-mineral-rights-buyers/",
-      "cluster": "mrx-methodology-transparency-underwriter-process",
-      "pillar": "mrx-methodology",
+      "canonical_title": "How to Build a Mineral Rights Offer Sender Identity Cross-Check",
+      "canonical_slug": "mineral-rights-offer-sender-identity-cross-check",
+      "canonical_url": "/blog/mineral-rights-offer-sender-identity-cross-check/",
+      "cluster": "offer-review-buyer-comparison-safety",
+      "pillar": "offer-review",
       "search_intent": "commercial-investigation",
-      "funnel_stage": "consideration",
-      "source_preservation_classification": "incumbent_draft_nonpublic_held",
-      "source_route_live": false,
+      "funnel_stage": "decision",
+      "source_preservation_classification": "live_public_published_route",
+      "source_route_live": true,
       "pillar_link": {
-        "url": "/methodology/",
-        "route_evidence": "src/pages/methodology.astro",
+        "url": "/offer-review/",
+        "route_evidence": "src/pages/offer-review.astro",
         "status": "planned_local_only"
       },
       "sibling_link": {
-        "target_program_row_id": "MRX1000-0963",
-        "target_title": "How Our Valuation Methodology Ensures Fairness and Transparency in Mineral Rights Assessments",
-        "url": "/blog/how-our-valuation-methodology-ensures-fairness-and-transparency-in-mineral-rights-assessments/",
+        "target_program_row_id": "MRX1000-0301",
+        "target_title": "Avoiding Predatory Offers: Fair Valuation for Mineral Rights",
+        "url": "/blog/avoiding-predatory-offers-fair-valuation-for-mineral-rights/",
         "relationship": "same_cluster_next_by_program_row_id_cyclic",
         "target_source_preservation_classification": "incumbent_draft_nonpublic_held",
         "target_route_live": false,
@@ -60439,12 +60376,12 @@
       },
       "primary_cta": {
         "url": "/book/",
-        "label": "Talk With the MRX Team",
-        "name": "mrx1000-mrx-methodology-book_review-contextual_inline",
-        "placement_code": "contextual_inline",
-        "placement_guidance": "Place after the first comparison, risk, document, or decision-framework section.",
-        "assignment_rule": "consideration_stage_assisted_review",
-        "assignment_basis": "consideration:commercial-investigation",
+        "label": "Review My Written Offer",
+        "name": "mrx1000-offer-review-book_review-closing_panel",
+        "placement_code": "closing_panel",
+        "placement_guidance": "Place in the closing decision panel after key takeaways and before related articles.",
+        "assignment_rule": "decision_stage_team_handoff",
+        "assignment_basis": "decision:commercial-investigation",
         "approved_route_evidence": "src/pages/book.astro",
         "role": "primary_appointment",
         "is_appointment_cta": true,
@@ -60452,12 +60389,12 @@
       },
       "appointment_cta": {
         "url": "/book/",
-        "label": "Talk With the MRX Team",
-        "name": "mrx1000-mrx-methodology-book_review-contextual_inline",
-        "placement_code": "contextual_inline",
-        "placement_guidance": "Place after the first comparison, risk, document, or decision-framework section.",
-        "assignment_rule": "consideration_stage_assisted_review",
-        "assignment_basis": "consideration:commercial-investigation",
+        "label": "Review My Written Offer",
+        "name": "mrx1000-offer-review-book_review-closing_panel",
+        "placement_code": "closing_panel",
+        "placement_guidance": "Place in the closing decision panel after key takeaways and before related articles.",
+        "assignment_rule": "decision_stage_team_handoff",
+        "assignment_basis": "decision:commercial-investigation",
         "approved_route_evidence": "src/pages/book.astro",
         "role": "same_as_primary_appointment",
         "distinct_from_primary_cta": false,
@@ -60471,7 +60408,7 @@
         "rendered_triangle_verified": false,
         "live_status": "not_published_or_verified_by_this_plan",
         "live_triangle_verified": false,
-        "release_status": "eligible_for_continuous_quality_review_not_yet_cleared",
+        "release_status": "released_under_d16_continuous_quality_gate",
         "numerical_release_cap_applies": false
       }
     },
@@ -62823,12 +62760,12 @@
         "status": "planned_local_only"
       },
       "sibling_link": {
-        "target_program_row_id": "MRX1000-0951",
-        "target_title": "Are There Any Fees for a Free Underwriter Review of Your Mineral Rights?",
-        "url": "/blog/are-there-any-fees-for-a-free-underwriter-review-of-your-mineral-rights/",
+        "target_program_row_id": "MRX1000-1007",
+        "target_title": "Response Times: How Our Underwriter Reviews Outpace Traditional Mineral Rights Acquisition Methods",
+        "url": "/blog/response-times-how-our-underwriter-reviews-outpace-traditional-mineral-rights-acquisition-methods/",
         "relationship": "same_cluster_next_by_program_row_id_cyclic",
-        "target_source_preservation_classification": "live_public_published_route",
-        "target_route_live": true,
+        "target_source_preservation_classification": "planning_only_inventory",
+        "target_route_live": false,
         "status": "planned_local_only"
       },
       "primary_cta": {
@@ -63104,6 +63041,69 @@
         "placement_guidance": "Place in the closing decision panel after key takeaways and before related articles.",
         "assignment_rule": "decision_stage_team_handoff",
         "assignment_basis": "decision:valuation",
+        "approved_route_evidence": "src/pages/book.astro",
+        "role": "same_as_primary_appointment",
+        "distinct_from_primary_cta": false,
+        "status": "planned_local_only"
+      },
+      "evidence": {
+        "triangle_plan_status": "planned_complete",
+        "primary_cta_plan_status": "planned_complete",
+        "appointment_cta_plan_status": "planned_complete",
+        "rendered_status": "not_rendered_or_verified_by_this_plan",
+        "rendered_triangle_verified": false,
+        "live_status": "not_published_or_verified_by_this_plan",
+        "live_triangle_verified": false,
+        "release_status": "eligible_for_continuous_quality_review_not_yet_cleared",
+        "numerical_release_cap_applies": false
+      }
+    },
+    {
+      "program_row_id": "MRX1000-1007",
+      "canonical_title": "Response Times: How Our Underwriter Reviews Outpace Traditional Mineral Rights Acquisition Methods",
+      "canonical_slug": "response-times-how-our-underwriter-reviews-outpace-traditional-mineral-rights-acquisition-methods",
+      "canonical_url": "/blog/response-times-how-our-underwriter-reviews-outpace-traditional-mineral-rights-acquisition-methods/",
+      "cluster": "mrx-methodology-transparency-underwriter-process",
+      "pillar": "mrx-methodology",
+      "search_intent": "commercial-investigation",
+      "funnel_stage": "consideration",
+      "source_preservation_classification": "planning_only_inventory",
+      "source_route_live": false,
+      "pillar_link": {
+        "url": "/methodology/",
+        "route_evidence": "src/pages/methodology.astro",
+        "status": "planned_local_only"
+      },
+      "sibling_link": {
+        "target_program_row_id": "MRX1000-0951",
+        "target_title": "Are There Any Fees for a Free Underwriter Review of Your Mineral Rights?",
+        "url": "/blog/are-there-any-fees-for-a-free-underwriter-review-of-your-mineral-rights/",
+        "relationship": "same_cluster_next_by_program_row_id_cyclic",
+        "target_source_preservation_classification": "live_public_published_route",
+        "target_route_live": true,
+        "status": "planned_local_only"
+      },
+      "primary_cta": {
+        "url": "/book/",
+        "label": "Talk With the MRX Team",
+        "name": "mrx1000-mrx-methodology-book_review-contextual_inline",
+        "placement_code": "contextual_inline",
+        "placement_guidance": "Place after the first comparison, risk, document, or decision-framework section.",
+        "assignment_rule": "consideration_stage_assisted_review",
+        "assignment_basis": "consideration:commercial-investigation",
+        "approved_route_evidence": "src/pages/book.astro",
+        "role": "primary_appointment",
+        "is_appointment_cta": true,
+        "status": "planned_local_only"
+      },
+      "appointment_cta": {
+        "url": "/book/",
+        "label": "Talk With the MRX Team",
+        "name": "mrx1000-mrx-methodology-book_review-contextual_inline",
+        "placement_code": "contextual_inline",
+        "placement_guidance": "Place after the first comparison, risk, document, or decision-framework section.",
+        "assignment_rule": "consideration_stage_assisted_review",
+        "assignment_basis": "consideration:commercial-investigation",
         "approved_route_evidence": "src/pages/book.astro",
         "role": "same_as_primary_appointment",
         "distinct_from_primary_cta": false,

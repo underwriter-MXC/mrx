@@ -1159,7 +1159,9 @@ async function buildRow(
     palette_guidance: creative.palette,
     share_title: shareTitle,
     share_title_plan:
-      'Use share_seo_title (60 characters maximum) for og:title and twitter:title. Keep visible_canonical_title unchanged for the article H1.',
+      shareTitle === row.canonical_title && shareTitle.length > 60
+        ? 'Use the exact finalized article title for og:title and twitter:title under the owner exact-title metadata policy; this policy-controlled title may exceed the ordinary 60-character target.'
+        : 'Use share_seo_title (60 characters maximum) for og:title and twitter:title. Keep visible_canonical_title unchanged for the article H1.',
     share_description: shareDescription,
     share_description_plan:
       'Use this article-specific plain-language description for og:description and twitter:description; keep it factual, non-advisory, 130–160 characters, and complete without ellipsis.',
@@ -1249,6 +1251,11 @@ function buildReport(plan) {
       ['Semantic appropriateness failures', v.semantic_appropriateness_failure_count],
       ['Alt text values over 125 characters', v.alt_text_over_125_count],
       ['Share titles over 60 characters', v.share_title_over_60_count],
+      [
+        'Exact-title owner-policy exceptions over 60 characters',
+        v.share_title_exact_canonical_owner_policy_exception_count,
+      ],
+      ['Share-title policy violations', v.share_title_policy_violation_count],
       ['Share descriptions outside 130–160', v.share_description_outside_130_160_count],
       ['Share descriptions with ellipsis', v.share_description_ellipsis_count],
       ['Existing public assets verified on disk', v.existing_public_asset_verified_count],
@@ -1484,6 +1491,17 @@ async function main() {
     unique_share_description_count: new Set(rows.map((row) => row.share_description)).size,
     alt_text_over_125_count: rows.filter((row) => row.alt_text.length > 125).length,
     share_title_over_60_count: rows.filter((row) => row.share_title.length > 60).length,
+    share_title_exact_canonical_owner_policy_exception_count: rows.filter(
+      (row) =>
+        row.share_title.length > 60 &&
+        row.share_title.length <= 70 &&
+        row.share_title === row.visible_canonical_title,
+    ).length,
+    share_title_policy_violation_count: rows.filter(
+      (row) =>
+        row.share_title.length > 70 ||
+        (row.share_title.length > 60 && row.share_title !== row.visible_canonical_title),
+    ).length,
     share_description_outside_130_160_count: rows.filter(
       (row) => row.share_description.length < 130 || row.share_description.length > 160,
     ).length,
@@ -1548,7 +1566,7 @@ async function main() {
     verification.unique_share_title_count === 1000,
     verification.unique_share_description_count === 1000,
     verification.alt_text_over_125_count === 0,
-    verification.share_title_over_60_count === 0,
+    verification.share_title_policy_violation_count === 0,
     verification.share_description_outside_130_160_count === 0,
     verification.share_description_ellipsis_count === 0,
     verification.share_description_incomplete_sentence_count === 0,

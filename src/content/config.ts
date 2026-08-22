@@ -17,7 +17,7 @@
 import { defineCollection, reference, z } from 'astro:content';
 
 import { articleImageFilenameMatchesText } from '../lib/article-images';
-import { buildArticleTitle, validateTitle } from '../lib/seo';
+import { validateArticleTitle } from '../lib/seo';
 
 const reviewId = z
   .string()
@@ -172,9 +172,10 @@ const posts = defineCollection({
     .object({
       // Canonical SEO budget (per SEO plan §1): 30-60 title, 130-160 description.
       title: z.string().min(20).max(120),
-      // Optional search-result title. The visible article H1 continues to use
-      // `title`; 54 characters leaves room for the canonical ` · MRX` suffix.
-      seo_title: z.string().min(20).max(54).optional(),
+      // Optional search-result title. The ordinary 54-character budget leaves
+      // room for ` · MRX`; up to 70 is accepted only by the refinement below
+      // when it exactly matches the owner-finalized canonical article title.
+      seo_title: z.string().min(20).max(70).optional(),
       description: z.string().min(130).max(160),
       // NOTE: `slug` is auto-derived from the file name in Astro 5
       // content collections; no need to declare it in the schema.
@@ -433,12 +434,13 @@ const posts = defineCollection({
       // render and index. Draft/noindex staging shells have no public <title>
       // and must not block an otherwise valid production build.
       if (data.publication_status === 'published' && data.noindex !== true) {
-        const finalSeoTitle = buildArticleTitle(data.title, data.seo_title);
-        const titleValidation = validateTitle(finalSeoTitle);
+        const titleValidation = validateArticleTitle(data.title, data.seo_title);
         if (!titleValidation.ok) {
           ctx.addIssue({
             code: z.ZodIssueCode.custom,
-            message: titleValidation.reason ?? 'mrx1000 final SEO title must be 30-60 characters',
+            message:
+              titleValidation.reason ??
+              'mrx1000 final SEO title must be 30-60 characters unless it is the bounded exact canonical-title metadata exception',
             path: ['seo_title'],
           });
         }
