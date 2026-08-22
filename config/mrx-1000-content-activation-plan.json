@@ -1,15 +1,15 @@
 {
   "artifact_type": "mrx1000_content_activation_plan",
   "plan_version": "mrx1000-content-activation-v1.1.0",
-  "generated_at": "2026-07-20T10:58:31.495Z",
+  "generated_at": "2026-07-20T11:48:50.462Z",
   "generated_at_method": "canonical_ledger_generated_at",
   "generator": "scripts/build-mrx-1000-activation-plan.mjs",
-  "content_fingerprint_sha256": "ef308117f9e700dda135d91dfd4adc39fc566372b809ab69965b0fcc6500ceaa",
+  "content_fingerprint_sha256": "75ba1c3716b7a5a60d76a1a5371b47206e37a2bb9a4984daf2a50ea2e65d7f94",
   "inputs": {
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_fingerprint_sha256": "663fc0b461dab34d2e28393adb554206c7b9844059395f4bea2d7b8916f49bde",
+    "canonical_ledger_fingerprint_sha256": "9529e0981b221233c646e96c2da496563b29a6969c938692989afd5e46c3a56e",
     "canonical_ledger_fingerprint_verified": true,
-    "canonical_ledger_generated_at": "2026-07-20T10:58:31.495Z",
+    "canonical_ledger_generated_at": "2026-07-20T11:48:50.462Z",
     "owner_decision": {
       "decision_id": "D-2026-0804-16",
       "signed_disposition": "APPROVED_CONTINUOUS_QUALITY_GATED_ARTICLE_PUBLICATION",
@@ -115,9 +115,9 @@
     },
     "by_source_preservation_classification": {
       "incumbent_draft_nonpublic_held": 28,
-      "live_public_published_route": 156,
+      "live_public_published_route": 157,
       "pilot_draft_noindex_stage": 25,
-      "planning_only_inventory": 791
+      "planning_only_inventory": 790
     }
   },
   "rows": [
@@ -9211,11 +9211,11 @@
       },
       "sibling_link": {
         "target_program_row_id": "MRX1000-0148",
-        "target_title": "What You Must Know Before Evaluating Mineral Rights",
-        "url": "/blog/what-you-must-know-before-evaluating-mineral-rights/",
+        "target_title": "How to Build a Property-Scope Crosswalk Before Comparing Mineral Rights Offers",
+        "url": "/blog/property-scope-crosswalk-mineral-rights-offers/",
         "relationship": "same_cluster_next_by_program_row_id_cyclic",
-        "target_source_preservation_classification": "planning_only_inventory",
-        "target_route_live": false,
+        "target_source_preservation_classification": "live_public_published_route",
+        "target_route_live": true,
         "status": "planned_local_only"
       },
       "primary_cta": {
@@ -9258,15 +9258,15 @@
     },
     {
       "program_row_id": "MRX1000-0148",
-      "canonical_title": "What You Must Know Before Evaluating Mineral Rights",
-      "canonical_slug": "what-you-must-know-before-evaluating-mineral-rights",
-      "canonical_url": "/blog/what-you-must-know-before-evaluating-mineral-rights/",
+      "canonical_title": "How to Build a Property-Scope Crosswalk Before Comparing Mineral Rights Offers",
+      "canonical_slug": "property-scope-crosswalk-mineral-rights-offers",
+      "canonical_url": "/blog/property-scope-crosswalk-mineral-rights-offers/",
       "cluster": "sell-mineral-rights-decision-process",
       "pillar": "sell-mineral-rights",
-      "search_intent": "transactional",
+      "search_intent": "informational",
       "funnel_stage": "decision",
-      "source_preservation_classification": "planning_only_inventory",
-      "source_route_live": false,
+      "source_preservation_classification": "live_public_published_route",
+      "source_route_live": true,
       "pillar_link": {
         "url": "/sell-mineral-rights/",
         "route_evidence": "src/pages/sell-mineral-rights.astro",
@@ -9288,7 +9288,7 @@
         "placement_code": "closing_panel",
         "placement_guidance": "Place in the closing decision panel after key takeaways and before related articles.",
         "assignment_rule": "decision_stage_team_handoff",
-        "assignment_basis": "decision:transactional",
+        "assignment_basis": "decision:informational",
         "approved_route_evidence": "src/pages/book.astro",
         "role": "primary_appointment",
         "is_appointment_cta": true,
@@ -9301,7 +9301,7 @@
         "placement_code": "closing_panel",
         "placement_guidance": "Place in the closing decision panel after key takeaways and before related articles.",
         "assignment_rule": "decision_stage_team_handoff",
-        "assignment_basis": "decision:transactional",
+        "assignment_basis": "decision:informational",
         "approved_route_evidence": "src/pages/book.astro",
         "role": "same_as_primary_appointment",
         "distinct_from_primary_cta": false,
@@ -9315,7 +9315,7 @@
         "rendered_triangle_verified": false,
         "live_status": "not_published_or_verified_by_this_plan",
         "live_triangle_verified": false,
-        "release_status": "eligible_for_continuous_quality_review_not_yet_cleared",
+        "release_status": "released_under_d16_continuous_quality_gate",
         "numerical_release_cap_applies": false
       }
     },

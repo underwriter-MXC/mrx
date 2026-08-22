@@ -1,18 +1,18 @@
 {
   "artifact_type": "mrx_article_two_image_retrofit",
   "schema_version": 1,
-  "generated_at_utc": "2026-08-15T06:50:30Z",
+  "generated_at_utc": "2026-08-22T18:20:44Z",
   "policy_source": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
   "summary": {
-    "article_count": 156,
-    "asset_count": 312,
-    "unique_source_art_count": 156,
-    "unique_hero_sha256_count": 156,
-    "unique_inline_sha256_count": 156,
-    "distinct_article_pair_count": 156,
-    "hero_ocr_pass_count": 156,
-    "inline_ocr_pass_count": 156,
-    "exact_filename_identity_count": 156
+    "article_count": 157,
+    "asset_count": 314,
+    "unique_source_art_count": 157,
+    "unique_hero_sha256_count": 157,
+    "unique_inline_sha256_count": 157,
+    "distinct_article_pair_count": 157,
+    "hero_ocr_pass_count": 157,
+    "inline_ocr_pass_count": 157,
+    "exact_filename_identity_count": 157
   },
   "contact_sheets": {
     "hero": [
@@ -3618,6 +3618,56 @@
           "actual": "net mineral\nacres vS\nroyalty acres",
           "normalized_expected": "net mineral acres vs royalty acres",
           "normalized_actual": "net mineral acres vs royalty acres",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      }
+    },
+    {
+      "slug": "property-scope-crosswalk-mineral-rights-offers",
+      "title": "How to Build a Property-Scope Crosswalk Before Comparing Mineral Rights Offers",
+      "keyword": "Mineral Rights Offer Property Scope Checklist",
+      "file_path": "src/content/posts/property-scope-crosswalk-mineral-rights-offers.mdx",
+      "source_public_path": "/assets/articles/hero/how-to-build-a-property-scope-crosswalk-before-comparing-mineral-rights-offers.webp",
+      "source_artifact_paths": [
+        "artifacts/mrx1000-wave68-creative-sources/property-scope-crosswalk-mineral-rights-offers-hero-base.png",
+        "artifacts/mrx1000-wave68-creative-sources/property-scope-crosswalk-mineral-rights-offers-inline-base.png"
+      ],
+      "generated_at_utc": "2026-08-22T18:20:16.958Z",
+      "hero": {
+        "public_path": "/assets/articles/hero/how-to-build-a-property-scope-crosswalk-before-comparing-mineral-rights-offers.webp",
+        "alt": "A mineral owner compares documents beside “How to Build a Property-Scope Crosswalk Before Comparing Mineral Rights Offers”.",
+        "width": 1200,
+        "height": 630,
+        "mime_type": "image/webp",
+        "sha256": "e71712102287a36af561b29caf05a0e8e56d8fca318e203f2ebe4dbac8bdde98",
+        "perceptual_hash": "0000000000001111000000000000101100000000000000110000000000001011111110000000111100000000000011010111111100000000111111110000000000000000000000001111000001100000000000000111100000000000011111000000000000011000000000000011100100000000011111000000000001111100",
+        "neutralized_art_text_region_count": 1,
+        "ocr": {
+          "expected": "How to Build a Property-Scope Crosswalk Before Comparing Mineral Rights Offers",
+          "actual": "How to Build a\nProperty-Scope Crosswalk\nBefore Comparing Mineral\nRights Offers",
+          "normalized_expected": "how to build a property scope crosswalk before comparing mineral rights offers",
+          "normalized_actual": "how to build a property scope crosswalk before comparing mineral rights offers",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      },
+      "inline": {
+        "public_path": "/assets/articles/inline/property-scope-crosswalk-mineral-rights-offers/mineral-rights-offer-property-scope-checklist.webp",
+        "alt": "Two offer folders frame a blank crosswalk worksheet above “Mineral Rights Offer Property Scope Checklist”.",
+        "rendered_text": "Mineral Rights Offer Property Scope Checklist",
+        "visual_variant": "wave68-distinct-generated-overhead-property-scope-crosswalk-workspace",
+        "width": 1200,
+        "height": 675,
+        "mime_type": "image/webp",
+        "sha256": "ec26d0a293ed2c7b576501ce1168e25665879c4a9bebb23821d9c984141bbb81",
+        "perceptual_hash": "1100111111110011110011111111001111001111111100111000111111110001100011111111000110001111111100011000111111110001111111111111111111111111111111111111111111111111000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "neutralized_art_text_region_count": 1,
+        "ocr": {
+          "expected": "Mineral Rights Offer Property Scope Checklist",
+          "actual": "Mineral Rights Offer\nProperty Scope Checklist",
+          "normalized_expected": "mineral rights offer property scope checklist",
+          "normalized_actual": "mineral rights offer property scope checklist",
           "uppercase_i_confusable_accepted": false,
           "pass": true
         }
