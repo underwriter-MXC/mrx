@@ -9,8 +9,8 @@
   "inputs": {
     "ledger": {
       "path": "config/mrx-1000-canonical-content-ledger.json",
-      "sha256": "876f92946b8d3d7d277419f2a7fb70ab34407228cdc2b91d52ef87687b9f6bd8",
-      "bytes": 4486295
+      "sha256": "47495be0b1d409cef6d16b2fcfb914c8204cbf3b7df9d4db93c8800fa954ee21",
+      "bytes": 4486653
     },
     "readiness": {
       "path": "reports/mrx-1000-readiness-matrix.json",
@@ -60903,7 +60903,7 @@
       "primary_keyword": "mineral rights valuation input correction packet",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -350846,5 +350846,5 @@
       ]
     }
   ],
-  "content_fingerprint_sha256": "7c3ebabcbb918ed4b37ec0aab694185cc51c1c99f04ef54394b4397e0fce1fca"
+  "content_fingerprint_sha256": "ec9796d7f02f9351353c99514a01e6fcc6602df155922af96ef088348b653438"
 }
