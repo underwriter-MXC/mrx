@@ -75,6 +75,7 @@ const SUPERSEDED_CANONICAL_SLUGS = new Set([
   'transparency-in-mineral-rights-how-we-compare-to-other-services',
   'why-mineralrightsxchange-is-your-most-reliable-choice-for-transparent-mineral-rights-acquisition',
   'why-mineralrightsxchange-offers-unique-advantages-over-competing-mineral-rights-acquisition-services',
+  'why-you-should-avoid-these-seller-pitfalls',
 ]);
 const SUCCESSOR_CANONICAL_SLUGS = new Map([
   ['what-every-mineral-rights-owner-needs-to-know', 'should-i-sell-my-mineral-rights'],
@@ -102,6 +103,10 @@ const SUCCESSOR_CANONICAL_SLUGS = new Map([
   [
     'what-you-must-know-before-evaluating-mineral-rights',
     'property-scope-crosswalk-mineral-rights-offers',
+  ],
+  [
+    'why-you-should-avoid-these-seller-pitfalls',
+    'mineral-rights-offer-correspondence-index',
   ],
   [
     'what-determines-the-value-of-your-texas-mineral-rights',
@@ -166,6 +171,7 @@ async function loadPriorProgramRowIds() {
         wave66Rekey: null,
         wave67Rekey: null,
         wave68Rekey: null,
+        wave69Rekey: null,
       };
     }
     throw error;
@@ -185,7 +191,9 @@ async function loadPriorProgramRowIds() {
     bySlug.set(slug, id);
     sourceSystemBySlug.set(slug, String(row.source_system ?? ''));
     const successorSlug = SUCCESSOR_CANONICAL_SLUGS.get(slug);
-    if (successorSlug) {
+    // Preserve a materialized successor's own incumbent identity. Only seed the
+    // successor from its retired planning row when it is not already present.
+    if (successorSlug && !bySlug.has(successorSlug)) {
       bySlug.set(successorSlug, id);
       sourceSystemBySlug.set(successorSlug, String(row.source_system ?? ''));
     }
@@ -210,6 +218,7 @@ async function loadPriorProgramRowIds() {
     wave66Rekey: prior.identity_registry?.wave66_rekey ?? null,
     wave67Rekey: prior.identity_registry?.wave67_rekey ?? null,
     wave68Rekey: prior.identity_registry?.wave68_rekey ?? null,
+    wave69Rekey: prior.identity_registry?.wave69_rekey ?? null,
   };
 }
 
@@ -1550,6 +1559,7 @@ async function main() {
       ...(priorIdentity.wave66Rekey ? { wave66_rekey: priorIdentity.wave66Rekey } : {}),
       ...(priorIdentity.wave67Rekey ? { wave67_rekey: priorIdentity.wave67Rekey } : {}),
       ...(priorIdentity.wave68Rekey ? { wave68_rekey: priorIdentity.wave68Rekey } : {}),
+      ...(priorIdentity.wave69Rekey ? { wave69_rekey: priorIdentity.wave69Rekey } : {}),
     },
     content_fingerprint_sha256: hashRows(selected),
     policy: {

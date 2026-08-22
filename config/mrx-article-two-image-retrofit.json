@@ -1,18 +1,18 @@
 {
   "artifact_type": "mrx_article_two_image_retrofit",
   "schema_version": 1,
-  "generated_at_utc": "2026-08-22T18:20:44Z",
+  "generated_at_utc": "2026-08-22T19:30:41Z",
   "policy_source": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
   "summary": {
-    "article_count": 157,
-    "asset_count": 314,
-    "unique_source_art_count": 157,
-    "unique_hero_sha256_count": 157,
-    "unique_inline_sha256_count": 157,
-    "distinct_article_pair_count": 157,
-    "hero_ocr_pass_count": 157,
-    "inline_ocr_pass_count": 157,
-    "exact_filename_identity_count": 157
+    "article_count": 158,
+    "asset_count": 316,
+    "unique_source_art_count": 158,
+    "unique_hero_sha256_count": 158,
+    "unique_inline_sha256_count": 158,
+    "distinct_article_pair_count": 158,
+    "hero_ocr_pass_count": 158,
+    "inline_ocr_pass_count": 158,
+    "exact_filename_identity_count": 158
   },
   "contact_sheets": {
     "hero": [
@@ -3430,6 +3430,56 @@
           "actual": "mineral rights inheritance in Texas\nbefore selling",
           "normalized_expected": "mineral rights inheritance in texas before selling",
           "normalized_actual": "mineral rights inheritance in texas before selling",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      }
+    },
+    {
+      "slug": "mineral-rights-offer-correspondence-index",
+      "title": "How to Build a Mineral Rights Offer Correspondence Index",
+      "keyword": "Mineral Rights Offer Correspondence Index",
+      "file_path": "src/content/posts/mineral-rights-offer-correspondence-index.mdx",
+      "source_public_path": "/assets/articles/hero/how-to-build-a-mineral-rights-offer-correspondence-index.webp",
+      "source_artifact_paths": [
+        "artifacts/mrx1000-wave69-creative-sources/mineral-rights-offer-correspondence-index-hero-base.png",
+        "artifacts/mrx1000-wave69-creative-sources/mineral-rights-offer-correspondence-index-inline-base.png"
+      ],
+      "generated_at_utc": "2026-08-22T19:14:05.587Z",
+      "hero": {
+        "public_path": "/assets/articles/hero/how-to-build-a-mineral-rights-offer-correspondence-index.webp",
+        "alt": "A mineral owner organizes envelopes beside “How to Build a Mineral Rights Offer Correspondence Index”.",
+        "width": 1200,
+        "height": 630,
+        "mime_type": "image/webp",
+        "sha256": "f2cf68991b92833369bb5958b9bb6ed9f05668296a013a97e992b2ed1012573d",
+        "perceptual_hash": "0000000000011111000000000001111100000000001101110000000000011111011100000001111100000000000111110111110000011111000000000001111101111110000111110000000000011111000000000011111100000000001111100000000001111000000000000110000100000000000001100000000000000001",
+        "neutralized_art_text_region_count": 1,
+        "ocr": {
+          "expected": "How to Build a Mineral Rights Offer Correspondence Index",
+          "actual": "How to Build a\nMineral Rights Offer\nCorrespondence Index",
+          "normalized_expected": "how to build a mineral rights offer correspondence index",
+          "normalized_actual": "how to build a mineral rights offer correspondence index",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      },
+      "inline": {
+        "public_path": "/assets/articles/inline/mineral-rights-offer-correspondence-index/mineral-rights-offer-correspondence-index.webp",
+        "alt": "Blank correspondence cards and folders appear above “Mineral Rights Offer Correspondence Index”.",
+        "rendered_text": "Mineral Rights Offer Correspondence Index",
+        "visual_variant": "wave69-distinct-generated-overhead-correspondence-index-workspace",
+        "width": 1200,
+        "height": 675,
+        "mime_type": "image/webp",
+        "sha256": "0845e34a89563064a097f9d23908fa549b5f008d3258171e6d7e7848cee19c8e",
+        "perceptual_hash": "1111111111111111000111111111111100001111111111110000111111111111000011111111111110001111111111111000111111111111100011111111111110001111111111110000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "neutralized_art_text_region_count": 1,
+        "ocr": {
+          "expected": "Mineral Rights Offer Correspondence Index",
+          "actual": "Mineral Rights Offer\nCorrespondence Index",
+          "normalized_expected": "mineral rights offer correspondence index",
+          "normalized_actual": "mineral rights offer correspondence index",
           "uppercase_i_confusable_accepted": false,
           "pass": true
         }
