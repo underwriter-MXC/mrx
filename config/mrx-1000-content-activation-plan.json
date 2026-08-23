@@ -1,15 +1,15 @@
 {
   "artifact_type": "mrx1000_content_activation_plan",
   "plan_version": "mrx1000-content-activation-v1.1.0",
-  "generated_at": "2026-07-20T00:26:16.017Z",
+  "generated_at": "2026-07-20T18:49:48.083Z",
   "generated_at_method": "canonical_ledger_generated_at",
   "generator": "scripts/build-mrx-1000-activation-plan.mjs",
-  "content_fingerprint_sha256": "78134ed5ac87348b1fdb90e8568f524c2727c72b83e5ea433b4669525ec7c8e8",
+  "content_fingerprint_sha256": "0a327b14da839904cf4954866691ec6d3def0c21ea8fa3d8dda2919e8b0ea817",
   "inputs": {
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_fingerprint_sha256": "ac504150d188f936a0995c193c58e3775492b76abf1c7ab09020e4880ef5184e",
+    "canonical_ledger_fingerprint_sha256": "ed81525010376d5680d3a48609e8913bc355a75e7e9743437ceff47e0f1a2c3f",
     "canonical_ledger_fingerprint_verified": true,
-    "canonical_ledger_generated_at": "2026-07-20T00:26:16.017Z",
+    "canonical_ledger_generated_at": "2026-07-20T18:49:48.083Z",
     "owner_decision": {
       "decision_id": "D-2026-0804-16",
       "signed_disposition": "APPROVED_CONTINUOUS_QUALITY_GATED_ARTICLE_PUBLICATION",
@@ -115,9 +115,9 @@
     },
     "by_source_preservation_classification": {
       "incumbent_draft_nonpublic_held": 27,
-      "live_public_published_route": 173,
+      "live_public_published_route": 174,
       "pilot_draft_noindex_stage": 25,
-      "planning_only_inventory": 775
+      "planning_only_inventory": 774
     }
   },
   "rows": [
@@ -16771,11 +16771,11 @@
       },
       "sibling_link": {
         "target_program_row_id": "MRX1000-0270",
-        "target_title": "Shut-In Wells: What They Mean for a Valuation Review",
-        "url": "/blog/shut-in-wells-what-they-mean-for-a-valuation-review/",
+        "target_title": "How to Extract Shut-In Clause Conditions Before a Valuation Review",
+        "url": "/blog/how-to-extract-shut-in-clause-conditions-before-a-valuation-review/",
         "relationship": "same_cluster_next_by_program_row_id_cyclic",
-        "target_source_preservation_classification": "planning_only_inventory",
-        "target_route_live": false,
+        "target_source_preservation_classification": "live_public_published_route",
+        "target_route_live": true,
         "status": "planned_local_only"
       },
       "primary_cta": {
@@ -16818,15 +16818,15 @@
     },
     {
       "program_row_id": "MRX1000-0270",
-      "canonical_title": "Shut-In Wells: What They Mean for a Valuation Review",
-      "canonical_slug": "shut-in-wells-what-they-mean-for-a-valuation-review",
-      "canonical_url": "/blog/shut-in-wells-what-they-mean-for-a-valuation-review/",
+      "canonical_title": "How to Extract Shut-In Clause Conditions Before a Valuation Review",
+      "canonical_slug": "how-to-extract-shut-in-clause-conditions-before-a-valuation-review",
+      "canonical_url": "/blog/how-to-extract-shut-in-clause-conditions-before-a-valuation-review/",
       "cluster": "valuation-methodology-drivers",
       "pillar": "mineral-rights-value",
       "search_intent": "informational",
       "funnel_stage": "consideration",
-      "source_preservation_classification": "planning_only_inventory",
-      "source_route_live": false,
+      "source_preservation_classification": "live_public_published_route",
+      "source_route_live": true,
       "pillar_link": {
         "url": "/mineral-rights-value/",
         "route_evidence": "src/pages/mineral-rights-value.astro",
@@ -16875,7 +16875,7 @@
         "rendered_triangle_verified": false,
         "live_status": "not_published_or_verified_by_this_plan",
         "live_triangle_verified": false,
-        "release_status": "eligible_for_continuous_quality_review_not_yet_cleared",
+        "release_status": "released_under_d16_continuous_quality_gate",
         "numerical_release_cap_applies": false
       }
     },
@@ -18723,9 +18723,9 @@
         "status": "planned_local_only"
       },
       "sibling_link": {
-        "target_program_row_id": "MRX1000-1016",
-        "target_title": "Mineral Appraisal: Guide In 2026",
-        "url": "/blog/mineral-appraisal-guide-in-2026/",
+        "target_program_row_id": "MRX1000-1017",
+        "target_title": "Shut-In Wells: What They Mean for a Valuation Review",
+        "url": "/blog/shut-in-wells-what-they-mean-for-a-valuation-review/",
         "relationship": "same_cluster_next_by_program_row_id_cyclic",
         "target_source_preservation_classification": "planning_only_inventory",
         "target_route_live": false,
@@ -63059,13 +63059,13 @@
       }
     },
     {
-      "program_row_id": "MRX1000-1016",
-      "canonical_title": "Mineral Appraisal: Guide In 2026",
-      "canonical_slug": "mineral-appraisal-guide-in-2026",
-      "canonical_url": "/blog/mineral-appraisal-guide-in-2026/",
+      "program_row_id": "MRX1000-1017",
+      "canonical_title": "Shut-In Wells: What They Mean for a Valuation Review",
+      "canonical_slug": "shut-in-wells-what-they-mean-for-a-valuation-review",
+      "canonical_url": "/blog/shut-in-wells-what-they-mean-for-a-valuation-review/",
       "cluster": "valuation-methodology-drivers",
       "pillar": "mineral-rights-value",
-      "search_intent": "education",
+      "search_intent": "informational",
       "funnel_stage": "consideration",
       "source_preservation_classification": "planning_only_inventory",
       "source_route_live": false,
@@ -63090,7 +63090,7 @@
         "placement_code": "contextual_inline",
         "placement_guidance": "Place after the first comparison, risk, document, or decision-framework section.",
         "assignment_rule": "consideration_stage_assisted_review",
-        "assignment_basis": "consideration:education",
+        "assignment_basis": "consideration:informational",
         "approved_route_evidence": "src/pages/book.astro",
         "role": "primary_appointment",
         "is_appointment_cta": true,
@@ -63103,7 +63103,7 @@
         "placement_code": "contextual_inline",
         "placement_guidance": "Place after the first comparison, risk, document, or decision-framework section.",
         "assignment_rule": "consideration_stage_assisted_review",
-        "assignment_basis": "consideration:education",
+        "assignment_basis": "consideration:informational",
         "approved_route_evidence": "src/pages/book.astro",
         "role": "same_as_primary_appointment",
         "distinct_from_primary_cta": false,
