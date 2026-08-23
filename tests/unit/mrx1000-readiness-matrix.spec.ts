@@ -293,16 +293,16 @@ describe('MRX1000 readiness matrix', () => {
     expect([...matrixJoinedIds].sort()).toEqual([...joinedIds].sort());
   });
 
-  it('tracks 230 ledger title UUID planning handles separately from authoritative evidence', () => {
+  it('tracks 229 ledger title UUID planning handles separately from authoritative evidence', () => {
     const ledger = JSON.parse(readFileSync(LEDGER, 'utf8'));
     const ledgerTitleUuids = new Set<string>();
     for (const r of ledger.articles) {
       if (r.searchatlas_title_uuid) ledgerTitleUuids.add(String(r.searchatlas_title_uuid));
     }
-    expect(ledgerTitleUuids.size).toBe(230);
-    expect(matrix.aggregate.ledger_searchatlas_title_uuid_planning_handle_count).toBe(230);
+    expect(ledgerTitleUuids.size).toBe(229);
+    expect(matrix.aggregate.ledger_searchatlas_title_uuid_planning_handle_count).toBe(229);
     // Authoritative evidence still requires the title UUID to actually appear
-    // in a current readonly artifact. None of the 230 ledger UUIDs match any
+    // in a current readonly artifact. None of the 229 ledger UUIDs match any
     // readonly UUID in the current snapshot.
     expect(matrix.aggregate.searchatlas_title_uuid_present_in_authoritative_local_artifact).toBe(0);
 
@@ -823,9 +823,9 @@ describe('MRX1000 readiness matrix — load-bearing fact regressions', () => {
     expect(d11Sha).toBe(D11_EXPECTED_SHA256);
   });
 
-  it('230 topical-map planning handles report map IDs and do not claim article-created proof', () => {
+  it('229 topical-map planning handles report map IDs and do not claim article-created proof', () => {
     const evidence = matrix.searchatlas_evidence.topical_map_planning_handles;
-    expect(evidence.ledger_searchatlas_title_uuid_planning_handle_count).toBe(230);
+    expect(evidence.ledger_searchatlas_title_uuid_planning_handle_count).toBe(229);
     expect(evidence.ledger_searchatlas_map_id_planning_handle_count).toBeGreaterThan(0);
     expect(evidence.readonly_distinct_map_ids).toBe(readonlyMapIds.size);
     expect(evidence.article_created_proof_claimed).toBe(false);

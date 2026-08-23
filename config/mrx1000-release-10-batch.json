@@ -1,7 +1,7 @@
 {
   "program": "MRX 1,000 Article SEO+AEO Production Program",
   "artifact_type": "authorized_release_10_batch",
-  "evidence_scaffold_generated_at_utc": "2026-08-23T00:49:26Z",
+  "evidence_scaffold_generated_at_utc": "2026-08-23T01:48:44Z",
   "decision_authority": {
     "successor_gate_decision_id": "D-2026-0804-16",
     "successor_gate_decision_path": "docs/governance/mrx1000-owner-continuous-publication-directive-2026-08-04.md",
@@ -243,13 +243,16 @@
     "wave72_selection_decision_sha256": "79155f079acf51fb261a9e83aa36ad5afa013ba7edee992855950949871599fd",
     "wave73_selection_decision_id": "MRX1000-W73-SELECT-2026-08-22",
     "wave73_selection_decision_path": "docs/governance/mrx1000-wave73-selection-decision-2026-08-22.md",
-    "wave73_selection_decision_sha256": "48280d23ec1a4b5ab7a277664ee99f92ac0d5903b009d0344248ca9de939dbcf"
+    "wave73_selection_decision_sha256": "48280d23ec1a4b5ab7a277664ee99f92ac0d5903b009d0344248ca9de939dbcf",
+    "wave74_selection_decision_id": "MRX1000-W74-SELECT-2026-08-22",
+    "wave74_selection_decision_path": "docs/governance/mrx1000-wave74-selection-decision-2026-08-22.md",
+    "wave74_selection_decision_sha256": "092a684c286015865cc4ec98cb55f0401bed714a1beddad19b670304d23964aa"
   },
   "identity_authority": {
     "scope_key": "canonical_slug",
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_sha256": "61c366d338e7f9b72e08f6e510449fa5dad25fe9eb55958a55838215516f5772",
-    "canonical_ledger_generated_at": "2026-07-20T06:34:43.451Z",
+    "canonical_ledger_sha256": "9c7616a8725db06c029ae9a470fe65e2bb72b71b6accd09810d4b92760657045",
+    "canonical_ledger_generated_at": "2026-07-20T13:39:16.998Z",
     "successor_ledger_decision_id": "D-2026-0723-LEDGER-04",
     "successor_ledger_decision_path": "artifacts/mrx1000-release-10/decisions/mrx-ceo-ledger-provenance-successor-20260723-04.md",
     "successor_ledger_decision_sha256": "09eca24bcd0e71563f2ac4197f564eec0ccb43a5ee955216da5c4a2543d04978",
@@ -263,11 +266,11 @@
     "authorization_scope": "declared_program_size_not_a_staged_release_cap",
     "admission_mode": "continuous_quality_gated",
     "continuous_quality_gated_from_selection_rank": 26,
-    "prior_verified_article_count": 152,
+    "prior_verified_article_count": 153,
     "fail_closed": true,
     "earned_scale_gates": [],
-    "exact_admitted_count": 153,
-    "exact_admitted_slate_sha256": "6abc22a6a46f995d79906e9e35a6f3a5917b45977af75c863bf5ef389d8e8fc9"
+    "exact_admitted_count": 154,
+    "exact_admitted_slate_sha256": "444afce00607f363f5290e2db18f2d7e89a9781dc83f3d468836df63be25b126"
   },
   "articles": [
     {
@@ -5259,10 +5262,44 @@
       "inline_path": "/assets/articles/inline/robertson-county-mineral-rights-public-record-locator/robertson-county-mineral-rights-public-records.webp",
       "inline_asset_sha256": "629f76a59b4238861039bf8e56aa6f4c32df44c945fcb7208d27755088dadf79",
       "inline_rendered_text": "Robertson County mineral rights public records"
+    },
+    {
+      "selection_rank": 154,
+      "program_row_id": "MRX1000-0007",
+      "source_shortlist_program_row_id": "MRX1000-0007",
+      "slug": "mineral-rights-document-redaction-checklist-before-sharing-records",
+      "title": "Mineral Rights Document Redaction Checklist Before You Share Records",
+      "source_shortlist_title": "Mineral Rights Document Redaction Checklist Before You Share Records",
+      "canonical_url": "https://mineralrightsxchange.com/blog/mineral-rights-document-redaction-checklist-before-sharing-records/",
+      "pillar": "sell-mineral-rights",
+      "cluster": "sell-mineral-rights-decision-process",
+      "content_genius_article_uuid": null,
+      "archive_evidence_sha256": "587232d9b4a33567e3063d68c35a32c05c28c53a4437af88a769d9dc63be5f7f",
+      "repo_path": "src/content/posts/mineral-rights-document-redaction-checklist-before-sharing-records.mdx",
+      "repo_sha256": "bd84af1051d1ce4bfc12b73b979b51a76245b26da8daed7bb8ef05434d738bdf",
+      "article_sha256": "bd84af1051d1ce4bfc12b73b979b51a76245b26da8daed7bb8ef05434d738bdf",
+      "hero_path": "/assets/articles/hero/mineral-rights-document-redaction-checklist-before-you-share-records.webp",
+      "hero_sha256": "43b4241d19329b5b0bb57fd5a706ea5069c6835bf33151f442520f726686845f",
+      "hero_asset_sha256": "43b4241d19329b5b0bb57fd5a706ea5069c6835bf33151f442520f726686845f",
+      "admission_status": "admitted_quality_gated",
+      "finalization_state": "draft_noindex_admitted",
+      "searchatlas_content_score": null,
+      "searchatlas_word_count": 1899,
+      "risk_citation_remediation": [
+        "The original identity was rejected because it promised confidentiality and overlapped generic privacy, intake, and seller-protection material. The admitted replacement owns only preservation of the original, creation of one purpose-limited share copy, and a redaction log that never repeats the hidden value.",
+        "MRX, NIST, FTC, and IRS sources support only bounded document-handling, PII-context, unexpected-request, identity-theft-context, and W-9 purpose facts. None promises confidentiality or security, verifies a recipient, interprets law, decides required disclosure, or proves that redaction prevents misuse.",
+        "Continuous quality-gated admission under D-2026-0804-16, the 2026-08-14 no-approval owner directive, and MRX1000-W74-SELECT-2026-08-22; no numerical cap, elapsed-time gate, or owner publication approval applies.",
+        "Publication remains conditional on current editorial, factual-citation, compliance, two-image, metadata, build, rollback, deployment, and live-verification evidence."
+      ],
+      "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/mineral-rights-document-redaction-checklist-before-sharing-records.json",
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/mineral-rights-document-redaction-checklist-before-sharing-records/mineral-rights-document-redaction-checklist.webp",
+      "inline_asset_sha256": "23c20014fa83388eb50663d3ffc636acebdce19dc59fc4efc3793e16eff47058",
+      "inline_rendered_text": "mineral rights document redaction checklist"
     }
   ],
   "admission_audit": {
-    "admitted_article_count": 153,
+    "admitted_article_count": 154,
     "selection_ranks": [
       1,
       2,
@@ -5416,7 +5453,8 @@
       150,
       151,
       152,
-      153
+      153,
+      154
     ],
     "duplicate_program_row_ids": [],
     "duplicate_slugs": [],
@@ -5475,9 +5513,9 @@
   "two_image_policy": {
     "directive": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
     "retrofit_manifest_path": "config/mrx-article-two-image-retrofit.json",
-    "retrofit_manifest_sha256": "5f6a734ee2727a3227d35fe4be32f9f12aa3ba8cb2a9b2a0ec2450eb2836efc4",
-    "public_article_count": 161,
-    "batch_article_count": 153,
+    "retrofit_manifest_sha256": "3f6b169a33fdd2585fd141e8de7c1b9d3365053d9a8b7dcfb97c10baf15bfcb4",
+    "public_article_count": 162,
+    "batch_article_count": 154,
     "assets_per_article": 2,
     "hero_share_identity_required": true,
     "inline_image_distinct_required": true,

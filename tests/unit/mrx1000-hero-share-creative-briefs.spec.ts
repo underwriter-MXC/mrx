@@ -345,7 +345,7 @@ describe('MRX 1,000-row hero/share creative-brief generator', () => {
 
   it('uses representative topic-specific semantics instead of cluster-only boilerplate', () => {
     const cases: Array<[RegExp, string, RegExp]> = [
-      [/personal information confidential/i, 'privacy-confidentiality', /sealed owner records/i],
+      [/document redaction checklist/i, 'document-preparation', /organized deed/i],
       [/mineral rights in probate/i, 'probate-estate-inheritance', /probate folder/i],
       [/how are mineral rights valued/i, 'valuation-dcf-drivers', /production curves/i],
       [/1031 exchange process/i, 'tax-1031-exchange', /exchange timeline/i],

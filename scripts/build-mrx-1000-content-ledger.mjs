@@ -77,6 +77,7 @@ const SUPERSEDED_CANONICAL_SLUGS = new Set([
   'why-mineralrightsxchange-offers-unique-advantages-over-competing-mineral-rights-acquisition-services',
   'why-you-should-avoid-these-seller-pitfalls',
   'your-guide-to-fine-tuning-mineral-rights-valuation',
+  '7-effective-strategies-to-keep-your-personal-information-confidential-in-mineral-rights-transactions',
 ]);
 const SUCCESSOR_CANONICAL_SLUGS = new Map([
   ['what-every-mineral-rights-owner-needs-to-know', 'should-i-sell-my-mineral-rights'],
@@ -135,6 +136,10 @@ const SUCCESSOR_CANONICAL_SLUGS = new Map([
     'why-mineralrightsxchange-offers-unique-advantages-over-competing-mineral-rights-acquisition-services',
     'how-mineralrightsxchange-approaches-mineral-rights-acquisition',
   ],
+  [
+    '7-effective-strategies-to-keep-your-personal-information-confidential-in-mineral-rights-transactions',
+    'mineral-rights-document-redaction-checklist-before-sharing-records',
+  ],
 ]);
 const APPROVED_REKEY_SEARCH_INTENT_BY_SLUG = new Map([
   ['should-i-sell-my-mineral-rights', 'transactional'],
@@ -146,6 +151,7 @@ const APPROVED_REKEY_SEARCH_INTENT_BY_SLUG = new Map([
   ['how-to-choose-a-family-point-person-for-mineral-rights-inquiries', 'informational'],
   ['property-scope-crosswalk-mineral-rights-offers', 'informational'],
   ['why-doesnt-my-texas-mineral-tax-value-match-a-sale-estimate', 'informational'],
+  ['mineral-rights-document-redaction-checklist-before-sharing-records', 'informational'],
 ]);
 
 async function loadPriorProgramRowIds() {
@@ -173,6 +179,9 @@ async function loadPriorProgramRowIds() {
         wave69Rekey: null,
         wave70Rekey: null,
         wave71Refresh: null,
+        wave72Rekey: null,
+        wave73Rekey: null,
+        wave74Rekey: null,
       };
     }
     throw error;
@@ -224,6 +233,7 @@ async function loadPriorProgramRowIds() {
     wave71Refresh: prior.identity_registry?.wave71_refresh ?? null,
     wave72Rekey: prior.identity_registry?.wave72_rekey ?? null,
     wave73Rekey: prior.identity_registry?.wave73_rekey ?? null,
+    wave74Rekey: prior.identity_registry?.wave74_rekey ?? null,
   };
 }
 
@@ -1569,6 +1579,7 @@ async function main() {
       ...(priorIdentity.wave71Refresh ? { wave71_refresh: priorIdentity.wave71Refresh } : {}),
       ...(priorIdentity.wave72Rekey ? { wave72_rekey: priorIdentity.wave72Rekey } : {}),
       ...(priorIdentity.wave73Rekey ? { wave73_rekey: priorIdentity.wave73Rekey } : {}),
+      ...(priorIdentity.wave74Rekey ? { wave74_rekey: priorIdentity.wave74Rekey } : {}),
     },
     content_fingerprint_sha256: hashRows(selected),
     policy: {
