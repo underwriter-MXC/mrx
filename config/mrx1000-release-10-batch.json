@@ -1,7 +1,7 @@
 {
   "program": "MRX 1,000 Article SEO+AEO Production Program",
   "artifact_type": "authorized_release_10_batch",
-  "evidence_scaffold_generated_at_utc": "2026-08-23T11:11:56Z",
+  "evidence_scaffold_generated_at_utc": "2026-08-23T12:35:03Z",
   "decision_authority": {
     "successor_gate_decision_id": "D-2026-0804-16",
     "successor_gate_decision_path": "docs/governance/mrx1000-owner-continuous-publication-directive-2026-08-04.md",
@@ -267,13 +267,16 @@
     "wave80_selection_decision_sha256": "67d3d6db3eba55a0590b2e0bc17d46f1577dd1eb9d90414ed68cd4a2192bdf6e",
     "wave81_selection_decision_id": "MRX1000-W81-SELECT-2026-08-23",
     "wave81_selection_decision_path": "docs/governance/mrx1000-wave81-selection-decision-2026-08-23.md",
-    "wave81_selection_decision_sha256": "638a424ab8c7ff96de80950e23d0b86dc93dcf54a39bcd66eae2ef9b860d3046"
+    "wave81_selection_decision_sha256": "638a424ab8c7ff96de80950e23d0b86dc93dcf54a39bcd66eae2ef9b860d3046",
+    "wave82_selection_decision_id": "MRX1000-W82-SELECT-2026-08-23",
+    "wave82_selection_decision_path": "docs/governance/mrx1000-wave82-selection-decision-2026-08-23.md",
+    "wave82_selection_decision_sha256": "8d26609723b56d72656bfa90e4b3ccbddb1690b0c42f6842e50e32f5f4c51670"
   },
   "identity_authority": {
     "scope_key": "canonical_slug",
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_sha256": "faa936b12fe0a5de09c3d36f96e1f10733be05b391a7ef950de12002b926971f",
-    "canonical_ledger_generated_at": "2026-07-20T05:56:27.170Z",
+    "canonical_ledger_sha256": "22314eed29ee69c28a443b0551d4b87749e758804f4e1482708b136af6391ac0",
+    "canonical_ledger_generated_at": "2026-07-20T08:59:29.228Z",
     "successor_ledger_decision_id": "D-2026-0723-LEDGER-04",
     "successor_ledger_decision_path": "artifacts/mrx1000-release-10/decisions/mrx-ceo-ledger-provenance-successor-20260723-04.md",
     "successor_ledger_decision_sha256": "09eca24bcd0e71563f2ac4197f564eec0ccb43a5ee955216da5c4a2543d04978",
@@ -287,11 +290,11 @@
     "authorization_scope": "declared_program_size_not_a_staged_release_cap",
     "admission_mode": "continuous_quality_gated",
     "continuous_quality_gated_from_selection_rank": 26,
-    "prior_verified_article_count": 160,
+    "prior_verified_article_count": 161,
     "fail_closed": true,
     "earned_scale_gates": [],
-    "exact_admitted_count": 161,
-    "exact_admitted_slate_sha256": "1e131bbf2171c67d46a43ea00197b1d1ea4242a9c57b9f52404d573c6807042c"
+    "exact_admitted_count": 162,
+    "exact_admitted_slate_sha256": "ee3db705a6602d36be91fce657e527ec24a08e7f7f01ddcbd09e08ce827b41ce"
   },
   "articles": [
     {
@@ -5555,10 +5558,44 @@
       "inline_path": "/assets/articles/inline/post-production-cost-evidence-packet-for-royalty-records/post-production-cost-evidence-packet-royalty-records.webp",
       "inline_asset_sha256": "621be9597c40952fe865fcd156e77ddd716333ffba311efa774903fbbce6d74f",
       "inline_rendered_text": "post-production cost evidence packet royalty records"
+    },
+    {
+      "selection_rank": 162,
+      "program_row_id": "MRX1000-0267",
+      "source_shortlist_program_row_id": "MRX1000-0267",
+      "slug": "compare-public-oil-and-gas-price-decks-without-mixing-assumptions",
+      "title": "How to Compare Public Oil and Gas Price Decks Without Mixing Assumptions",
+      "source_shortlist_title": "How to Compare Public Oil and Gas Price Decks Without Mixing Assumptions",
+      "canonical_url": "https://mineralrightsxchange.com/blog/compare-public-oil-and-gas-price-decks-without-mixing-assumptions/",
+      "pillar": "mineral-rights-value",
+      "cluster": "valuation-methodology-drivers",
+      "content_genius_article_uuid": null,
+      "archive_evidence_sha256": "534e11f757ac32af9f3490a5e9f3226caac1ed9c5b64a91de5d7377a512a611a",
+      "repo_path": "src/content/posts/compare-public-oil-and-gas-price-decks-without-mixing-assumptions.mdx",
+      "repo_sha256": "66aa85b03205f914c6c319fb3ea05c03fdeb64e2518e55417d3113da4449a0c2",
+      "article_sha256": "66aa85b03205f914c6c319fb3ea05c03fdeb64e2518e55417d3113da4449a0c2",
+      "hero_path": "/assets/articles/hero/how-to-compare-public-oil-and-gas-price-decks-without-mixing-assumptions.webp",
+      "hero_sha256": "e0db6d382e4ac50e927ccf9ab6e82ef9d0679916b09dd6419f79614b4cf7bc30",
+      "hero_asset_sha256": "e0db6d382e4ac50e927ccf9ab6e82ef9d0679916b09dd6419f79614b4cf7bc30",
+      "admission_status": "admitted_quality_gated",
+      "finalization_state": "draft_noindex_admitted",
+      "searchatlas_content_score": null,
+      "searchatlas_word_count": 1804,
+      "risk_citation_remediation": [
+        "The original price-deck and present-value identity was rejected because it overlaps the live oil-price, DCF, discount-rate, decline-curve, future-location, sensitivity, due-diligence, and valuation-methodology corpus. The admitted replacement owns only a source-preserving field-by-field comparison of dated public price publications.",
+        "Current official EIA and SEC/Federal Register sources support only bounded descriptions of release context, units, nominal-or-real basis, and distinct public-outlook versus reserve-disclosure pricing frames. None selects or validates a price deck, supplies property-specific assumptions, predicts realized prices, or determines cash flow, present value, value, an offer, or a transaction result.",
+        "Continuous quality-gated admission under D-2026-0804-16, the 2026-08-14 no-approval owner directive, and MRX1000-W82-SELECT-2026-08-23; no numerical cap, elapsed-time gate, or owner publication approval applies.",
+        "Publication remains conditional on current editorial, factual-citation, compliance, two-image, metadata, build, rollback, deployment, and live-verification evidence."
+      ],
+      "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/compare-public-oil-and-gas-price-decks-without-mixing-assumptions.json",
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/compare-public-oil-and-gas-price-decks-without-mixing-assumptions/compare-public-oil-and-gas-price-decks.webp",
+      "inline_asset_sha256": "ec026c9d07d0c66429b229307e27548a0619ac40c67421db6cc1cd8b087ad8d5",
+      "inline_rendered_text": "compare public oil and gas price decks"
     }
   ],
   "admission_audit": {
-    "admitted_article_count": 161,
+    "admitted_article_count": 162,
     "selection_ranks": [
       1,
       2,
@@ -5720,7 +5757,8 @@
       158,
       159,
       160,
-      161
+      161,
+      162
     ],
     "duplicate_program_row_ids": [],
     "duplicate_slugs": [],
@@ -5779,9 +5817,9 @@
   "two_image_policy": {
     "directive": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
     "retrofit_manifest_path": "config/mrx-article-two-image-retrofit.json",
-    "retrofit_manifest_sha256": "4cecf34f724eb21c951302f003f4d6685186c61ee4a9c0fbbba4e2737f1b765b",
-    "public_article_count": 169,
-    "batch_article_count": 161,
+    "retrofit_manifest_sha256": "0da7414da6cc4e96cecdb4841564f72bd71307414b5780a23654ae6afa483426",
+    "public_article_count": 170,
+    "batch_article_count": 162,
     "assets_per_article": 2,
     "hero_share_identity_required": true,
     "inline_image_distinct_required": true,
