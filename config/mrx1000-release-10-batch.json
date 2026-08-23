@@ -1,7 +1,7 @@
 {
   "program": "MRX 1,000 Article SEO+AEO Production Program",
   "artifact_type": "authorized_release_10_batch",
-  "evidence_scaffold_generated_at_utc": "2026-08-23T06:30:33Z",
+  "evidence_scaffold_generated_at_utc": "2026-08-23T07:28:28Z",
   "decision_authority": {
     "successor_gate_decision_id": "D-2026-0804-16",
     "successor_gate_decision_path": "docs/governance/mrx1000-owner-continuous-publication-directive-2026-08-04.md",
@@ -255,13 +255,16 @@
     "wave76_selection_decision_sha256": "0b9a6774eeabb1881696c7da32eb15baa210f084b8faf9708152e40a84d9023d",
     "wave77_selection_decision_id": "MRX1000-W77-SELECT-2026-08-22",
     "wave77_selection_decision_path": "docs/governance/mrx1000-wave77-selection-decision-2026-08-22.md",
-    "wave77_selection_decision_sha256": "ac1632ca303c2b23d86adbeb9562acc54b1125b10903168500330bc0934fe2c8"
+    "wave77_selection_decision_sha256": "ac1632ca303c2b23d86adbeb9562acc54b1125b10903168500330bc0934fe2c8",
+    "wave78_selection_decision_id": "MRX1000-W78-SELECT-2026-08-23",
+    "wave78_selection_decision_path": "docs/governance/mrx1000-wave78-selection-decision-2026-08-23.md",
+    "wave78_selection_decision_sha256": "581a6358aaae7cf7778fb2e6c7c0f64ec6dfe364cea71b263dffb9e33606fcdc"
   },
   "identity_authority": {
     "scope_key": "canonical_slug",
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_sha256": "974ed3c913216ec83884fca9d14d90a5966b3bbe3ad496d4adb58f16ed4afbc6",
-    "canonical_ledger_generated_at": "2026-07-20T14:25:49.347Z",
+    "canonical_ledger_sha256": "55c38fe0f07394989963057a997c6d2deae9d5c350f18538c97b5456e1c52e30",
+    "canonical_ledger_generated_at": "2026-07-20T21:16:37.950Z",
     "successor_ledger_decision_id": "D-2026-0723-LEDGER-04",
     "successor_ledger_decision_path": "artifacts/mrx1000-release-10/decisions/mrx-ceo-ledger-provenance-successor-20260723-04.md",
     "successor_ledger_decision_sha256": "09eca24bcd0e71563f2ac4197f564eec0ccb43a5ee955216da5c4a2543d04978",
@@ -275,11 +278,11 @@
     "authorization_scope": "declared_program_size_not_a_staged_release_cap",
     "admission_mode": "continuous_quality_gated",
     "continuous_quality_gated_from_selection_rank": 26,
-    "prior_verified_article_count": 156,
+    "prior_verified_article_count": 157,
     "fail_closed": true,
     "earned_scale_gates": [],
-    "exact_admitted_count": 157,
-    "exact_admitted_slate_sha256": "cb5cab2e9205b458d22a3fb20b92cf352aee58922e73eebf8d2028d9d44cb8fa"
+    "exact_admitted_count": 158,
+    "exact_admitted_slate_sha256": "41d31879c32b4ffa466491658d0d62e1446953c326973cf32c064df476136d24"
   },
   "articles": [
     {
@@ -5407,10 +5410,44 @@
       "inline_path": "/assets/articles/inline/mineral-rights-worksheet-question-locator/mineral-rights-worksheet-question-locator.webp",
       "inline_asset_sha256": "1bc9091084c13bed12db357ee2627fa41fce333ccf991f875aa3d88b8ad2bcc6",
       "inline_rendered_text": "mineral rights worksheet question locator"
+    },
+    {
+      "selection_rank": 158,
+      "program_row_id": "MRX1000-0263",
+      "source_shortlist_program_row_id": "MRX1000-0263",
+      "slug": "offset-activity-property-connection-cross-check",
+      "title": "Offset Activity Records: Building a Property-Connection Cross-Check",
+      "source_shortlist_title": "Offset Activity Records: Building a Property-Connection Cross-Check",
+      "canonical_url": "https://mineralrightsxchange.com/blog/offset-activity-property-connection-cross-check/",
+      "pillar": "mineral-rights-value",
+      "cluster": "valuation-methodology-drivers",
+      "content_genius_article_uuid": null,
+      "archive_evidence_sha256": "215a19ff62fdf012db4958bf8394fb70df78f87d5a67be1996f69ba156ab43f9",
+      "repo_path": "src/content/posts/offset-activity-property-connection-cross-check.mdx",
+      "repo_sha256": "e11b1b6ab3d0bcaaa918ee18c839cac7b6c0b685d1cbdbc5ba516ed11c7c2571",
+      "article_sha256": "e11b1b6ab3d0bcaaa918ee18c839cac7b6c0b685d1cbdbc5ba516ed11c7c2571",
+      "hero_path": "/assets/articles/hero/offset-activity-records-building-a-property-connection-cross-check.webp",
+      "hero_sha256": "67e6bebff48682d02161ffd6dbe0a9d4a02bef8c4121d905ac37bc06553813d6",
+      "hero_asset_sha256": "67e6bebff48682d02161ffd6dbe0a9d4a02bef8c4121d905ac37bc06553813d6",
+      "admission_status": "admitted_quality_gated",
+      "finalization_state": "draft_noindex_admitted",
+      "searchatlas_content_score": null,
+      "searchatlas_word_count": 1788,
+      "risk_citation_remediation": [
+        "The original generic offset-activity/development-potential identity was rejected because it overlaps the live acreage-contiguity, future-location DCF, and valuation-factor corpus. The admitted replacement owns only a field-level property-connection matrix for one identified offset record.",
+        "Current official RRC sources support only bounded descriptions of permit and wellbore identifiers, query scope, GIS limitations, and production-reporting level, lag, update, and revision context. None establishes private title, ownership, tract or depth inclusion, development, production attribution, payment, appraisal, value, offer analysis, or transaction outcome.",
+        "Continuous quality-gated admission under D-2026-0804-16, the 2026-08-14 no-approval owner directive, and MRX1000-W78-SELECT-2026-08-23; no numerical cap, elapsed-time gate, or owner publication approval applies.",
+        "Publication remains conditional on current editorial, factual-citation, compliance, two-image, metadata, build, rollback, deployment, and live-verification evidence."
+      ],
+      "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/offset-activity-property-connection-cross-check.json",
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/offset-activity-property-connection-cross-check/offset-activity-property-connection.webp",
+      "inline_asset_sha256": "df7a89fd4ba9ee2cca9b2cbdf2d4c8f4b1cb345d14d2ffaff46fe45a9d844037",
+      "inline_rendered_text": "offset activity property connection"
     }
   ],
   "admission_audit": {
-    "admitted_article_count": 157,
+    "admitted_article_count": 158,
     "selection_ranks": [
       1,
       2,
@@ -5568,7 +5605,8 @@
       154,
       155,
       156,
-      157
+      157,
+      158
     ],
     "duplicate_program_row_ids": [],
     "duplicate_slugs": [],
@@ -5627,9 +5665,9 @@
   "two_image_policy": {
     "directive": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
     "retrofit_manifest_path": "config/mrx-article-two-image-retrofit.json",
-    "retrofit_manifest_sha256": "0d0e3d8a1f385f1e22b136b5d7dfe3fd3e0ca4b718d3b04e6359fb6edb347eb1",
-    "public_article_count": 165,
-    "batch_article_count": 157,
+    "retrofit_manifest_sha256": "3f5c8504e85855d07c481b6b9674dd5bcd1af3bf7fd023a7fb3b434bbe729b1a",
+    "public_article_count": 166,
+    "batch_article_count": 158,
     "assets_per_article": 2,
     "hero_share_identity_required": true,
     "inline_image_distinct_required": true,

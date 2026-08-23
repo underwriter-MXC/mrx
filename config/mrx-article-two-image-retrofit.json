@@ -1,18 +1,18 @@
 {
   "artifact_type": "mrx_article_two_image_retrofit",
   "schema_version": 1,
-  "generated_at_utc": "2026-08-23T05:42:24Z",
+  "generated_at_utc": "2026-08-23T07:21:00Z",
   "policy_source": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
   "summary": {
-    "article_count": 165,
-    "asset_count": 330,
-    "unique_source_art_count": 165,
-    "unique_hero_sha256_count": 165,
-    "unique_inline_sha256_count": 165,
-    "distinct_article_pair_count": 165,
-    "hero_ocr_pass_count": 165,
-    "inline_ocr_pass_count": 165,
-    "exact_filename_identity_count": 165
+    "article_count": 166,
+    "asset_count": 332,
+    "unique_source_art_count": 166,
+    "unique_hero_sha256_count": 166,
+    "unique_inline_sha256_count": 166,
+    "distinct_article_pair_count": 166,
+    "hero_ocr_pass_count": 166,
+    "inline_ocr_pass_count": 166,
+    "exact_filename_identity_count": 166
   },
   "contact_sheets": {
     "hero": [
@@ -3972,6 +3972,56 @@
           "actual": "net mineral\nacres vS\nroyalty acres",
           "normalized_expected": "net mineral acres vs royalty acres",
           "normalized_actual": "net mineral acres vs royalty acres",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      }
+    },
+    {
+      "slug": "offset-activity-property-connection-cross-check",
+      "title": "Offset Activity Records: Building a Property-Connection Cross-Check",
+      "keyword": "offset activity property connection",
+      "file_path": "src/content/posts/offset-activity-property-connection-cross-check.mdx",
+      "source_public_path": "/assets/articles/hero/offset-activity-records-building-a-property-connection-cross-check.webp",
+      "source_artifact_paths": [
+        "artifacts/mrx1000-wave78-creative-sources/offset-activity-property-connection-cross-check-hero-base.png",
+        "artifacts/mrx1000-wave78-creative-sources/offset-activity-property-connection-cross-check-inline-base.png"
+      ],
+      "generated_at_utc": "2026-08-23T07:21:00.399Z",
+      "hero": {
+        "public_path": "/assets/articles/hero/offset-activity-records-building-a-property-connection-cross-check.webp",
+        "alt": "A regulatory well record, private property folder, and three status tokens appear beside the exact article title.",
+        "width": 1200,
+        "height": 630,
+        "mime_type": "image/webp",
+        "sha256": "67e6bebff48682d02161ffd6dbe0a9d4a02bef8c4121d905ac37bc06553813d6",
+        "perceptual_hash": "0000000000000111000000000000011100000000000001110000000000000011000000000000011001100000011000010111100011110011000000001111111100000000111111110000000011111111000000001111111100000000111101110000000001110111000000000000011000000000000000000000000000000001",
+        "neutralized_art_text_region_count": 1,
+        "ocr": {
+          "expected": "Offset Activity Records: Building a Property-Connection Cross-Check",
+          "actual": "Offset Activity Records:\nBuilding a\nProperty-Connection\nCross-Check",
+          "normalized_expected": "offset activity records building a property connection cross check",
+          "normalized_actual": "offset activity records building a property connection cross check",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      },
+      "inline": {
+        "public_path": "/assets/articles/inline/offset-activity-property-connection-cross-check/offset-activity-property-connection.webp",
+        "alt": "A top-down cross-check matrix compares a blank wellbore card with blank owner-record cards under the exact keyword.",
+        "rendered_text": "offset activity property connection",
+        "visual_variant": "wave78-distinct-generated-overhead-property-connection-matrix",
+        "width": 1200,
+        "height": 675,
+        "mime_type": "image/webp",
+        "sha256": "df7a89fd4ba9ee2cca9b2cbdf2d4c8f4b1cb345d14d2ffaff46fe45a9d844037",
+        "perceptual_hash": "0001111111111111001111111111111100111111111111110111111111111111011111111111111101111111111111111111111111111111111111111111110011111111111111001111111111111110000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "neutralized_art_text_region_count": 1,
+        "ocr": {
+          "expected": "offset activity property connection",
+          "actual": "offset activity\nproperty connection",
+          "normalized_expected": "offset activity property connection",
+          "normalized_actual": "offset activity property connection",
           "uppercase_i_confusable_accepted": false,
           "pass": true
         }
