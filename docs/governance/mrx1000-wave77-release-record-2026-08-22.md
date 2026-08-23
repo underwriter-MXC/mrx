@@ -30,3 +30,19 @@ If the Article 157 deployment fails a production gate, immediately restore every
 - Rendered copy and grammar: `PASS`
 
 Deployment, live verification, final production hashes, and ledger reconciliation are recorded after publication in the canonical release evidence.
+
+## Production publication and reconciliation
+
+- Release commit: `6d334612d405f3966a014d1a0b575eedf314eb12`
+- Production deployment: `dpl_C3eWZCHNMzKkjNyiCqS87DKU3GEx`
+- Deployment state and target: `READY`, `production`
+- Active aliases attached: apex, `www`, `mrx-web.vercel.app`, and `mrx-web-team-mrx.vercel.app`
+- Canonical article HTTP result: `200`
+- `www` article result: permanent `308` redirect to the apex canonical URL
+- Exact H1, canonical, Article schema headline/image, five-question FAQ schema, `og:image`, and `twitter:image`: `PASS`
+- Canonical hero binary: `1200×630` WebP, SHA-256 `d830e39261c419ed2f40daec98a4ac05c5076c29a786ba9aed76a1c8b90df989`
+- Inline binary: `1200×675` WebP, SHA-256 `1bc9091084c13bed12db357ee2627fa41fce333ccf991f875aa3d88b8ad2bcc6`
+- Desktop and mobile rendered browser gate for the current ten-article release window: `PASS`
+- Post-publication verification artifact SHA-256: `c8cfb25078d2613dc431bb7f8ad847b05497cc1ce17875fb1d661481fa3e5ca5`
+- Canonical MRX1000 live-verified count: `157`
+- Public article-route count: `165`
