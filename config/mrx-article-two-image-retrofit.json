@@ -1,18 +1,18 @@
 {
   "artifact_type": "mrx_article_two_image_retrofit",
   "schema_version": 1,
-  "generated_at_utc": "2026-08-23T09:12:03Z",
+  "generated_at_utc": "2026-08-23T10:18:06Z",
   "policy_source": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
   "summary": {
-    "article_count": 168,
-    "asset_count": 336,
-    "unique_source_art_count": 168,
-    "unique_hero_sha256_count": 168,
-    "unique_inline_sha256_count": 168,
-    "distinct_article_pair_count": 168,
-    "hero_ocr_pass_count": 168,
-    "inline_ocr_pass_count": 168,
-    "exact_filename_identity_count": 168
+    "article_count": 169,
+    "asset_count": 338,
+    "unique_source_art_count": 169,
+    "unique_hero_sha256_count": 169,
+    "unique_inline_sha256_count": 169,
+    "distinct_article_pair_count": 169,
+    "hero_ocr_pass_count": 169,
+    "inline_ocr_pass_count": 169,
+    "exact_filename_identity_count": 169
   },
   "contact_sheets": {
     "hero": [
@@ -4122,6 +4122,56 @@
           "actual": "PDP PUD undeveloped acreage\nterminology register",
           "normalized_expected": "pdp pud undeveloped acreage terminology register",
           "normalized_actual": "pdp pud undeveloped acreage terminology register",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      }
+    },
+    {
+      "slug": "post-production-cost-evidence-packet-for-royalty-records",
+      "title": "Post-Production Cost Evidence Packet for Royalty Records",
+      "keyword": "post-production cost evidence packet royalty records",
+      "file_path": "src/content/posts/post-production-cost-evidence-packet-for-royalty-records.mdx",
+      "source_public_path": "/assets/articles/hero/post-production-cost-evidence-packet-for-royalty-records.webp",
+      "source_artifact_paths": [
+        "artifacts/mrx1000-wave81-creative-sources/post-production-cost-evidence-packet-for-royalty-records-hero-base.png",
+        "artifacts/mrx1000-wave81-creative-sources/post-production-cost-evidence-packet-for-royalty-records-inline-base.png"
+      ],
+      "generated_at_utc": "2026-08-23T10:09:46.969Z",
+      "hero": {
+        "public_path": "/assets/articles/hero/post-production-cost-evidence-packet-for-royalty-records.webp",
+        "alt": "A blank royalty-record evidence packet appears beside the exact article title.",
+        "width": 1200,
+        "height": 630,
+        "mime_type": "image/webp",
+        "sha256": "106beb6e191e5d937db37ba4218c513f220dae1d5b5ce0af5d487b65dd2dd64a",
+        "perceptual_hash": "0000000001100000000000000100010000000000000111000000000000011110000000000001111101111000000111110111000000011111000000000001111100000000000111100000000000011110000000000001111000000000000001100000000000111110000000000011111000000000001111100000000000000110",
+        "neutralized_art_text_region_count": 1,
+        "ocr": {
+          "expected": "Post-Production Cost Evidence Packet for Royalty Records",
+          "actual": "Post-Production Cost\nEvidence Packet for\nRoyalty Records",
+          "normalized_expected": "post production cost evidence packet for royalty records",
+          "normalized_actual": "post production cost evidence packet for royalty records",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      },
+      "inline": {
+        "public_path": "/assets/articles/inline/post-production-cost-evidence-packet-for-royalty-records/post-production-cost-evidence-packet-royalty-records.webp",
+        "alt": "An overhead royalty-record source matrix appears above the exact keyword.",
+        "rendered_text": "post-production cost evidence packet royalty records",
+        "visual_variant": "wave81-distinct-generated-overhead-royalty-record-source-matrix",
+        "width": 1200,
+        "height": 675,
+        "mime_type": "image/webp",
+        "sha256": "621be9597c40952fe865fcd156e77ddd716333ffba311efa774903fbbce6d74f",
+        "perceptual_hash": "1111111111111111111111111111111111111111111111101111111111111110111111111111111111111111111111111111111111111000110111111111100011011111111110001100111111111000110011111111100000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "neutralized_art_text_region_count": 1,
+        "ocr": {
+          "expected": "post-production cost evidence packet royalty records",
+          "actual": "post-production cost evidence\npacket royalty records",
+          "normalized_expected": "post production cost evidence packet royalty records",
+          "normalized_actual": "post production cost evidence packet royalty records",
           "uppercase_i_confusable_accepted": false,
           "pass": true
         }
