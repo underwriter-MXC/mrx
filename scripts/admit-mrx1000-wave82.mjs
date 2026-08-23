@@ -377,6 +377,10 @@ const sourceIdentitySha =
   );
 
 if ([priorCanonicalSlug, slug].includes(sourceRow.canonical_slug)) {
+  const productionVerified =
+    sourceRow.normalized_status === 'live_public_published_route_release_10_verified' &&
+    sourceRow.publication_state === 'released_public_article' &&
+    Boolean(sourceRow.production_verified_at);
   Object.assign(sourceRow, {
     canonical_title: title,
     canonical_slug: slug,
@@ -401,17 +405,27 @@ if ([priorCanonicalSlug, slug].includes(sourceRow.canonical_slug)) {
     publication_gate_nonpublic: false,
     noindex_required: false,
     preservation_classification: 'live_public_published_route',
-    normalized_status: 'authorized_release_candidate_pending_gate_and_deployment',
-    publication_state: 'authorized_release_candidate',
+    normalized_status: productionVerified
+      ? 'live_public_published_route_release_10_verified'
+      : 'authorized_release_candidate_pending_gate_and_deployment',
+    publication_state: productionVerified
+      ? 'released_public_article'
+      : 'authorized_release_candidate',
     map_cluster: null,
     dedupe_group_id: `canonical:${slug}`,
     canonical_group_owner_url: `https://mineralrightsxchange.com/blog/${slug}/`,
-    action: 'release_only_after_exact_batch_gate_and_production_verification',
-    action_reason: actionReason,
-    compliance_status: 'release_10_hash_locked_review_required',
+    action: productionVerified
+      ? 'retain_verified_live_route_measure_index_coverage_and_refresh'
+      : 'release_only_after_exact_batch_gate_and_production_verification',
+    action_reason: productionVerified
+      ? 'Release-10 passed the signed batch gate, production deployment, and independent post-publication verification. Preserve the canonical URL; measurement informs refresh and prioritization, not a numerical release gate.'
+      : actionReason,
+    compliance_status: productionVerified
+      ? 'release_10_capability_reviews_passed_production_verified'
+      : 'release_10_hash_locked_review_required',
     schema_status: 'article_schema_path_present_revalidation_required',
     internal_link_role: 'incumbent_supporting_article',
-    next_owner: 'mrx_editorial',
+    next_owner: productionVerified ? 'mrx_growth_measurement' : 'mrx_editorial',
     dedupe_evidence: {
       normalized_title: title
         .toLowerCase()

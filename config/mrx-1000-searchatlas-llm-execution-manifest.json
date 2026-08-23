@@ -1,7 +1,7 @@
 {
   "program": "MRX1000",
   "artifact_type": "searchatlas_ordered_llm_local_execution_manifest",
-  "generated_at": "2026-07-20T11:00:07.755Z",
+  "generated_at": "2026-07-20T08:25:37.000Z",
   "deterministic": true,
   "local_only": true,
   "external_services_called": false,
@@ -9,8 +9,8 @@
   "inputs": {
     "ledger": {
       "path": "config/mrx-1000-canonical-content-ledger.json",
-      "sha256": "cd799e0314c3c61515c90e0a71250d1f89c2ed16f522a012fb595c607d46dc9e",
-      "bytes": 4512775
+      "sha256": "cf4e044a7b5ec331131ba16f6b257e7435617018fe443762d08c4fc75e20a9e9",
+      "bytes": 4513133
     },
     "readiness": {
       "path": "reports/mrx-1000-readiness-matrix.json",
@@ -107869,7 +107869,7 @@
       "primary_keyword": "Texas RRC pooling filing retrieval",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -351268,5 +351268,5 @@
       ]
     }
   ],
-  "content_fingerprint_sha256": "66a910f46227a8c892468c726fc5942897b5d268a82a1ccd88ab778c0e1daa6f"
+  "content_fingerprint_sha256": "32490a6dc501d96b0dec01d5bce1deb08caff7a4a4b927357b0b40232e2efac6"
 }

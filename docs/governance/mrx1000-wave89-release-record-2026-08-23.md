@@ -28,19 +28,31 @@ If the Article 169 deployment fails a production gate, immediately restore every
 - Hero SHA-256: `6e9fe5ef10871a17083fc832d893d14eb611c77d9098e18af0c2ac0909643440`
 - Inline SHA-256: `76e9a86fad240955f518f9087f8daf6ca475ede4d8fadf26fa224617d3e340f1`
 - Canonical ledger: `1,000/1,000` unique rows; Article 169 is the exact `MRX1000-0286` replacement identity
-- Pre-publication canonical ledger JSON SHA-256: `cd799e0314c3c61515c90e0a71250d1f89c2ed16f522a012fb595c607d46dc9e`
-- Pre-publication canonical ledger CSV SHA-256: `74df780da2bea314a9c51af484d456849d5bdcf01ae7efafdf45e0cb81340d57`
+- Reconciled canonical ledger JSON SHA-256: `cf4e044a7b5ec331131ba16f6b257e7435617018fe443762d08c4fc75e20a9e9`
+- Reconciled canonical ledger CSV SHA-256: `8f34e721ec42b2a1401d335d825b5be732a1e9598154ccdd7bbf7b2f7d9f6a1a`
 - Release batch: `169/169` exact admissions
-- Release-batch SHA-256: `e23de48388af7a037093c531c0d576feb6fd0a3013fb3de2778caf791963ceef`
+- Release-batch SHA-256: `c4cb130b828d342d63570a5063c155e83e107e2748b03faa158b7f1c5507684f`
 - Automated release gates: `169/169 PASS`; `0` blocking findings
-- Release-gate JSON SHA-256: `aed01cf2d0cabcf031bbd3e76c27a446bc45b9d2d1d7d4beadc96b3498c5a7ee`
+- Release-gate JSON SHA-256: `9184b57201273f3328303d45e63bc448ce275bb90d59e9a41afe3a3d291b614a`
 - Publication manifest: `169/169 READY`
 - Production build: `PASS` with `177` public article routes and `354` article-image binaries
 - Rendered two-image, visible-copy, and grammar verification: `PASS`
 - ESLint: `PASS`
 - Unit tests: `596/596 PASS` across `65/65` files
-- Deployment, live verification, and reconciliation: `PENDING`
+- Deployment, live verification, and reconciliation: `PASS`
 
 ## Production publication and reconciliation
 
-Pending the publication commit, production deployment, live target verification, browser verification, and canonical-ledger reconciliation.
+- Publication commit: `3357923`
+- Vercel deployment: `dpl_3XaCYGDb6pZS4YJr1sQ86YEoP3wV` (`READY`)
+- Deployment origin: `https://mrx-nhh3l6ggb-team-mrx.vercel.app`
+- Active production targets verified: Vercel protected origin, `mrx-web.vercel.app`, `mineralrightsxchange.com`, `www.mineralrightsxchange.com`, and `mrx-web-team-mrx.vercel.app`
+- Canonical route: `https://mineralrightsxchange.com/blog/texas-rrc-pooling-filing-retrieval-provenance-worksheet/`
+- Route assertions: `HTTP 200`, exact canonical URL, exact H1, `Article` and `FAQPage` schema, five FAQs, six authoritative source links, and indexable metadata
+- Hero/share assertions: visible hero, `og:image`, `twitter:image`, schema image, image dimensions, alt metadata, and live bytes all resolve to the canonical exact-title asset; SHA-256 `6e9fe5ef10871a17083fc832d893d14eb611c77d9098e18af0c2ac0909643440`
+- Inline-image assertions: distinct composition, exact-keyword alt metadata, expected dimensions, and live bytes; SHA-256 `76e9a86fad240955f518f9087f8daf6ca475ede4d8fadf26fa224617d3e340f1`
+- Browser verification: `PASS` in configured Google Chrome at `1440x1000` and `390x844`; exact title and both article images rendered without clipping or horizontal overflow. The extension-backed surface was temporarily unavailable, so the same configured Chrome binary was exercised headlessly.
+- Browser-verification evidence SHA-256: `34f3e8a5ce9ebb6dfed145e041e964b826b75bccc4d83f7113c1be54220905e8`
+- Production verifier: `169/169 PASS`, `0` failures, `177` live public article routes, retained-baseline `PASS`, deployment `PASS`, interface `PASS`, overall `PASS`
+- Post-publication evidence SHA-256: `53eb356a7412e5de7c6eb7a0b2761e38f200e0e2612c37324afb376859203af6`
+- Reconciliation: canonical MRX1000 ledger now records `169` publication-and-production-verified articles; signed release batch and all derived lifecycle artifacts regenerated without blockers
