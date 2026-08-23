@@ -1,7 +1,7 @@
 {
   "program": "MRX1000",
   "artifact_type": "searchatlas_ordered_llm_local_execution_manifest",
-  "generated_at": "2026-07-20T08:25:37.000Z",
+  "generated_at": "2026-07-20T09:08:05.783Z",
   "deterministic": true,
   "local_only": true,
   "external_services_called": false,
@@ -9,13 +9,13 @@
   "inputs": {
     "ledger": {
       "path": "config/mrx-1000-canonical-content-ledger.json",
-      "sha256": "91981401a64ca0229239247f70e2eb6ab6078e720c69a8bda6c3c7b37b056e9d",
-      "bytes": 4498671
+      "sha256": "f34eda7dfe854126457ff983570754d3caaea9cd6d326d3cda9dfba94055a2ff",
+      "bytes": 4498984
     },
     "readiness": {
       "path": "reports/mrx-1000-readiness-matrix.json",
-      "sha256": "6e73a935a0a65bf2b191f32721ee12f0fbfa9add10cadf89d05e415d5854f189",
-      "bytes": 3429966,
+      "sha256": "3e6e4598469a46f15b763dd0cf630e11c089038196e1ba6c2bb0645e1f6e5a9b",
+      "bytes": 3429964,
       "sha256_method": "canonical_json_with_top_level_generated_at_masked",
       "generated_at_excluded_from_sha256": true
     },
@@ -100448,7 +100448,7 @@
         "release_action_eligible_now": false,
         "index_submission_eligible_now": false,
         "sitemap_addition_eligible_now": false,
-        "currently_in_workspace_sitemap": false,
+        "currently_in_workspace_sitemap": true,
         "production_live_verified_in_this_local_build": false,
         "release_or_index_action_performed": false,
         "exact_claude_opus_4_6_required_before_release_or_index_transition": true,
@@ -351008,5 +351008,5 @@
       ]
     }
   ],
-  "content_fingerprint_sha256": "28984b0a532ebbf9bf85554c4d81184cdd740a5419c6d4936fc6c2f8b57158b7"
+  "content_fingerprint_sha256": "721d870036457b02d7c1d533c37e0ffe361d91d415a87d438aba6a8a3c4da7ae"
 }
