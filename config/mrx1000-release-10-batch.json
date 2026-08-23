@@ -1,7 +1,7 @@
 {
   "program": "MRX 1,000 Article SEO+AEO Production Program",
   "artifact_type": "authorized_release_10_batch",
-  "evidence_scaffold_generated_at_utc": "2026-08-23T07:41:23Z",
+  "evidence_scaffold_generated_at_utc": "2026-08-23T08:34:04Z",
   "decision_authority": {
     "successor_gate_decision_id": "D-2026-0804-16",
     "successor_gate_decision_path": "docs/governance/mrx1000-owner-continuous-publication-directive-2026-08-04.md",
@@ -258,13 +258,16 @@
     "wave77_selection_decision_sha256": "ac1632ca303c2b23d86adbeb9562acc54b1125b10903168500330bc0934fe2c8",
     "wave78_selection_decision_id": "MRX1000-W78-SELECT-2026-08-23",
     "wave78_selection_decision_path": "docs/governance/mrx1000-wave78-selection-decision-2026-08-23.md",
-    "wave78_selection_decision_sha256": "581a6358aaae7cf7778fb2e6c7c0f64ec6dfe364cea71b263dffb9e33606fcdc"
+    "wave78_selection_decision_sha256": "581a6358aaae7cf7778fb2e6c7c0f64ec6dfe364cea71b263dffb9e33606fcdc",
+    "wave79_selection_decision_id": "MRX1000-W79-SELECT-2026-08-23",
+    "wave79_selection_decision_path": "docs/governance/mrx1000-wave79-selection-decision-2026-08-23.md",
+    "wave79_selection_decision_sha256": "3a2af358e28c4289f763060cf6e71ebac908e9d9c5aca434805891fb53ccad40"
   },
   "identity_authority": {
     "scope_key": "canonical_slug",
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_sha256": "dde3145c3e7744bbe849b0253ef7fd8c0a2b9ffdde65b472834dce3f20ab08e5",
-    "canonical_ledger_generated_at": "2026-07-20T07:09:33.629Z",
+    "canonical_ledger_sha256": "91981401a64ca0229239247f70e2eb6ab6078e720c69a8bda6c3c7b37b056e9d",
+    "canonical_ledger_generated_at": "2026-07-20T03:10:34.137Z",
     "successor_ledger_decision_id": "D-2026-0723-LEDGER-04",
     "successor_ledger_decision_path": "artifacts/mrx1000-release-10/decisions/mrx-ceo-ledger-provenance-successor-20260723-04.md",
     "successor_ledger_decision_sha256": "09eca24bcd0e71563f2ac4197f564eec0ccb43a5ee955216da5c4a2543d04978",
@@ -278,11 +281,11 @@
     "authorization_scope": "declared_program_size_not_a_staged_release_cap",
     "admission_mode": "continuous_quality_gated",
     "continuous_quality_gated_from_selection_rank": 26,
-    "prior_verified_article_count": 157,
+    "prior_verified_article_count": 158,
     "fail_closed": true,
     "earned_scale_gates": [],
-    "exact_admitted_count": 158,
-    "exact_admitted_slate_sha256": "41d31879c32b4ffa466491658d0d62e1446953c326973cf32c064df476136d24"
+    "exact_admitted_count": 159,
+    "exact_admitted_slate_sha256": "0c87631e63054369f00ddf6ecac83c281b39861af432d2c2a04642d3cac99888"
   },
   "articles": [
     {
@@ -5444,10 +5447,44 @@
       "inline_path": "/assets/articles/inline/offset-activity-property-connection-cross-check/offset-activity-property-connection.webp",
       "inline_asset_sha256": "df7a89fd4ba9ee2cca9b2cbdf2d4c8f4b1cb345d14d2ffaff46fe45a9d844037",
       "inline_rendered_text": "offset activity property connection"
+    },
+    {
+      "selection_rank": 159,
+      "program_row_id": "MRX1000-0264",
+      "source_shortlist_program_row_id": "MRX1000-0264",
+      "slug": "mineral-rights-operator-name-change-log",
+      "title": "How to Build a Mineral Rights Operator-Name Change Log",
+      "source_shortlist_title": "How to Build a Mineral Rights Operator-Name Change Log",
+      "canonical_url": "https://mineralrightsxchange.com/blog/mineral-rights-operator-name-change-log/",
+      "pillar": "mineral-rights-value",
+      "cluster": "valuation-methodology-drivers",
+      "content_genius_article_uuid": null,
+      "archive_evidence_sha256": "42b168b4ace059da2c36e08f486d2a8056077c028c39b272be72d96f047bf06d",
+      "repo_path": "src/content/posts/mineral-rights-operator-name-change-log.mdx",
+      "repo_sha256": "af3061d5cacb25f846f57d11018c3cf1aa2359e62ec024ce73cc1faed91130e0",
+      "article_sha256": "af3061d5cacb25f846f57d11018c3cf1aa2359e62ec024ce73cc1faed91130e0",
+      "hero_path": "/assets/articles/hero/how-to-build-a-mineral-rights-operator-name-change-log.webp",
+      "hero_sha256": "ff3217d9896ff93e7f37911968290978fa5e9022d25543dc2802b251f1ebc460",
+      "hero_asset_sha256": "ff3217d9896ff93e7f37911968290978fa5e9022d25543dc2802b251f1ebc460",
+      "admission_status": "admitted_quality_gated",
+      "finalization_state": "draft_noindex_admitted",
+      "searchatlas_content_score": null,
+      "searchatlas_word_count": 1642,
+      "risk_citation_remediation": [
+        "The original operator-track-record/development-risk identity was rejected because it overlaps the live valuation, development-context, public-record, DCF, decline-curve, market-demand, and offset-record corpus. The admitted replacement owns only a dated displayed-name log across identified public and owner records.",
+        "Current official RRC sources support only bounded descriptions of research-query limitations and displayed wellbore, organization, and drilling-permit name and identifier fields. None establishes corporate relationships, operator or payment responsibility, private title, ownership, property connection, development, appraisal, value, offer analysis, or transaction outcome.",
+        "Continuous quality-gated admission under D-2026-0804-16, the 2026-08-14 no-approval owner directive, and MRX1000-W79-SELECT-2026-08-23; no numerical cap, elapsed-time gate, or owner publication approval applies.",
+        "Publication remains conditional on current editorial, factual-citation, compliance, two-image, metadata, build, rollback, deployment, and live-verification evidence."
+      ],
+      "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/mineral-rights-operator-name-change-log.json",
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/mineral-rights-operator-name-change-log/mineral-rights-operator-name-change-log.webp",
+      "inline_asset_sha256": "23f4c68927cd5d99434a18bc88ed45430c5082b824aed51a3234b3a67251a0db",
+      "inline_rendered_text": "mineral rights operator name change log"
     }
   ],
   "admission_audit": {
-    "admitted_article_count": 158,
+    "admitted_article_count": 159,
     "selection_ranks": [
       1,
       2,
@@ -5606,7 +5643,8 @@
       155,
       156,
       157,
-      158
+      158,
+      159
     ],
     "duplicate_program_row_ids": [],
     "duplicate_slugs": [],
@@ -5665,9 +5703,9 @@
   "two_image_policy": {
     "directive": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
     "retrofit_manifest_path": "config/mrx-article-two-image-retrofit.json",
-    "retrofit_manifest_sha256": "3f5c8504e85855d07c481b6b9674dd5bcd1af3bf7fd023a7fb3b434bbe729b1a",
-    "public_article_count": 166,
-    "batch_article_count": 158,
+    "retrofit_manifest_sha256": "0c958373b3ba1977cb6e1df9bd7a1a2d1581497a086195a80d49a4b2cf5eb510",
+    "public_article_count": 167,
+    "batch_article_count": 159,
     "assets_per_article": 2,
     "hero_share_identity_required": true,
     "inline_image_distinct_required": true,

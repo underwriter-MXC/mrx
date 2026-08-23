@@ -1,15 +1,15 @@
 {
   "artifact_type": "mrx1000_content_activation_plan",
   "plan_version": "mrx1000-content-activation-v1.1.0",
-  "generated_at": "2026-07-20T07:09:33.629Z",
+  "generated_at": "2026-07-20T03:10:34.137Z",
   "generated_at_method": "canonical_ledger_generated_at",
   "generator": "scripts/build-mrx-1000-activation-plan.mjs",
-  "content_fingerprint_sha256": "ca139d5a9947540fd0d84e40cef3d0c69a1d6ae9d3d54650180e37bdfa19d2fd",
+  "content_fingerprint_sha256": "37c82c0dc19544472cfb609b89d8e309b696f88ea8faa1e9a9fb99ef9e97cb3d",
   "inputs": {
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_fingerprint_sha256": "23807dd9b9d08fc715e2ff6dcea4961aa413a4f14a37eda8c75eeaaf0249dcbe",
+    "canonical_ledger_fingerprint_sha256": "7d7009aa559d601cef52f5985928613d29bacdc0d6665060b22d30dd9eb35c66",
     "canonical_ledger_fingerprint_verified": true,
-    "canonical_ledger_generated_at": "2026-07-20T07:09:33.629Z",
+    "canonical_ledger_generated_at": "2026-07-20T03:10:34.137Z",
     "owner_decision": {
       "decision_id": "D-2026-0804-16",
       "signed_disposition": "APPROVED_CONTINUOUS_QUALITY_GATED_ARTICLE_PUBLICATION",
@@ -115,9 +115,9 @@
     },
     "by_source_preservation_classification": {
       "incumbent_draft_nonpublic_held": 27,
-      "live_public_published_route": 166,
+      "live_public_published_route": 167,
       "pilot_draft_noindex_stage": 25,
-      "planning_only_inventory": 782
+      "planning_only_inventory": 781
     }
   },
   "rows": [
@@ -16393,11 +16393,11 @@
       },
       "sibling_link": {
         "target_program_row_id": "MRX1000-0264",
-        "target_title": "Operator Track Record and Mineral Development Risk",
-        "url": "/blog/operator-track-record-and-mineral-development-risk/",
+        "target_title": "How to Build a Mineral Rights Operator-Name Change Log",
+        "url": "/blog/mineral-rights-operator-name-change-log/",
         "relationship": "same_cluster_next_by_program_row_id_cyclic",
-        "target_source_preservation_classification": "planning_only_inventory",
-        "target_route_live": false,
+        "target_source_preservation_classification": "live_public_published_route",
+        "target_route_live": true,
         "status": "planned_local_only"
       },
       "primary_cta": {
@@ -16440,15 +16440,15 @@
     },
     {
       "program_row_id": "MRX1000-0264",
-      "canonical_title": "Operator Track Record and Mineral Development Risk",
-      "canonical_slug": "operator-track-record-and-mineral-development-risk",
-      "canonical_url": "/blog/operator-track-record-and-mineral-development-risk/",
+      "canonical_title": "How to Build a Mineral Rights Operator-Name Change Log",
+      "canonical_slug": "mineral-rights-operator-name-change-log",
+      "canonical_url": "/blog/mineral-rights-operator-name-change-log/",
       "cluster": "valuation-methodology-drivers",
       "pillar": "mineral-rights-value",
       "search_intent": "informational",
       "funnel_stage": "consideration",
-      "source_preservation_classification": "planning_only_inventory",
-      "source_route_live": false,
+      "source_preservation_classification": "live_public_published_route",
+      "source_route_live": true,
       "pillar_link": {
         "url": "/mineral-rights-value/",
         "route_evidence": "src/pages/mineral-rights-value.astro",
@@ -16497,7 +16497,7 @@
         "rendered_triangle_verified": false,
         "live_status": "not_published_or_verified_by_this_plan",
         "live_triangle_verified": false,
-        "release_status": "eligible_for_continuous_quality_review_not_yet_cleared",
+        "release_status": "released_under_d16_continuous_quality_gate",
         "numerical_release_cap_applies": false
       }
     },
