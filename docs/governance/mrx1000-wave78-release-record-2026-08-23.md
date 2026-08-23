@@ -29,4 +29,18 @@ If the Article 158 deployment fails a production gate, immediately restore every
 - Rendered visible-copy and grammar gates: `PASS`
 - Deployment, live verification, and reconciliation: `PENDING`
 
-Production results are appended only after the verified release is live.
+## Production publication and verification
+
+- Release commit: `40fce98ed25def921639e8480eac945356ce5d1e`
+- Production deployment: `dpl_DR4uRmY78KYgGeP4BnBdWD3msUNm`
+- Deployment URL: `https://mrx-jkcka7uzn-team-mrx.vercel.app`
+- Active aliases: `https://mineralrightsxchange.com`, `https://www.mineralrightsxchange.com`, `https://mrx-web.vercel.app`, and `https://mrx-web-team-mrx.vercel.app`
+- Deployment status and alias inspection: `READY / PASS`
+- Desktop and mobile browser rendering: `PASS`
+- Exact H1, hero/inline source, alt, natural dimensions, rendered ratio, footer, and overflow assertions: `PASS`
+- Post-publication verifier: `158/158 PASS`, zero failing articles, `166` public article routes
+- Post-publication verification SHA-256: `11a6c0c8486ec6d8fabbfdd25dd9f96736c55a2bd6364d71c5e586fa769d9880`
+- Final canonical ledger SHA-256: `dde3145c3e7744bbe849b0253ef7fd8c0a2b9ffdde65b472834dce3f20ab08e5`
+- Final canonical ledger CSV SHA-256: `d590babf20b0df22bdb42b7d67eeeccfbbd1a4f8e3320131af7309fbf7979f08`
+- Canonical MRX1000 published-and-live-verified count: `158`
+- Reconciliation: `PASS`
