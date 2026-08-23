@@ -14,7 +14,8 @@ if (unknownArgs.length) {
 }
 
 const slug =
-  process.env.MRX_ARTICLE_SLUG ?? 'compare-public-oil-and-gas-price-decks-without-mixing-assumptions';
+  process.env.MRX_ARTICLE_SLUG ??
+  'compare-public-oil-and-gas-price-decks-without-mixing-assumptions';
 const title =
   process.env.MRX_ARTICLE_TITLE ??
   'How to Compare Public Oil and Gas Price Decks Without Mixing Assumptions';
@@ -35,12 +36,10 @@ const retrofitRelativePath = 'config/mrx-article-two-image-retrofit.json';
 const decisionRelativePath =
   process.env.MRX_DECISION_PATH ??
   `docs/governance/mrx1000-wave${waveNumber}-selection-decision-2026-08-23.md`;
-const creativeManifestRelativePath =
-  `artifacts/mrx1000-wave${waveNumber}-creative-qa/${slug}/creative-manifest.json`;
+const creativeManifestRelativePath = `artifacts/mrx1000-wave${waveNumber}-creative-qa/${slug}/creative-manifest.json`;
 const requiredDecisionId =
   process.env.MRX_DECISION_ID ?? `MRX1000-W${waveNumber}-SELECT-2026-08-23`;
-const reviewedBy =
-  process.env.MRX_REVIEWED_BY ?? `mrx_compliance-continuous-wave${waveNumber}`;
+const reviewedBy = process.env.MRX_REVIEWED_BY ?? `mrx_compliance-continuous-wave${waveNumber}`;
 const priorCanonicalTitle =
   process.env.MRX_PRIOR_TITLE ?? 'Price Decks: How Oil and Gas Assumptions Change Present Value';
 const priorCanonicalSlug =
@@ -71,6 +70,10 @@ const riskCitationRemediation = JSON.parse(
 const inlineVisualVariant =
   process.env.MRX_INLINE_VISUAL_VARIANT ??
   'wave82-distinct-generated-overhead-public-price-deck-comparison-matrix';
+const pillar = process.env.MRX_PILLAR ?? 'mineral-rights-value';
+const pillarUrl = process.env.MRX_PILLAR_URL ?? '/mineral-rights-value/';
+const cluster = process.env.MRX_CLUSTER ?? 'valuation-methodology-drivers';
+const funnelStage = process.env.MRX_FUNNEL_STAGE ?? 'consideration';
 
 const batchPath = join(root, batchRelativePath);
 const retrofitPath = join(root, retrofitRelativePath);
@@ -194,7 +197,9 @@ if (
   !decisionSource.includes(`Decision ID: \`${requiredDecisionId}\``) ||
   !decisionSource.includes('Disposition: `APPROVED_FOR_CONTINUOUS_QUALITY_GATED_PUBLICATION`')
 ) {
-  throw new Error(`Wave ${waveNumber} selection decision remains draft-only and is not publication authority`);
+  throw new Error(
+    `Wave ${waveNumber} selection decision remains draft-only and is not publication authority`,
+  );
 }
 
 if (
@@ -376,13 +381,13 @@ if ([priorCanonicalSlug, slug].includes(sourceRow.canonical_slug)) {
     canonical_title: title,
     canonical_slug: slug,
     canonical_url: `https://mineralrightsxchange.com/blog/${slug}/`,
-    pillar: 'mineral-rights-value',
-    pillar_url: '/mineral-rights-value/',
-    cluster: 'valuation-methodology-drivers',
+    pillar,
+    pillar_url: pillarUrl,
+    cluster,
     primary_keyword: primaryKeyword,
     secondary_keywords: secondaryKeywords,
     search_intent: 'informational',
-    funnel_stage: 'consideration',
+    funnel_stage: funnelStage,
     source_system: 'astro_repo',
     source_record_id: `${slug}.mdx`,
     source_handle: `repo:${articleRelativePath}`,
@@ -427,7 +432,9 @@ if (
   new Set(ledger.articles.map((row) => row.canonical_slug)).size !== 1000 ||
   ledger.articles.some((row) => row.canonical_slug === priorCanonicalSlug)
 ) {
-  throw new Error(`Wave ${waveNumber} canonical ledger re-key or 1,000-row uniqueness proof failed`);
+  throw new Error(
+    `Wave ${waveNumber} canonical ledger re-key or 1,000-row uniqueness proof failed`,
+  );
 }
 const articleSha = sha256(articleBytes);
 ledger.identity_registry ??= {};
@@ -459,8 +466,8 @@ const batchRow = {
   title,
   source_shortlist_title: title,
   canonical_url: `https://mineralrightsxchange.com/blog/${slug}/`,
-  pillar: 'mineral-rights-value',
-  cluster: 'valuation-methodology-drivers',
+  pillar,
+  cluster,
   content_genius_article_uuid: null,
   archive_evidence_sha256: sourceIdentitySha,
   repo_path: articleRelativePath,

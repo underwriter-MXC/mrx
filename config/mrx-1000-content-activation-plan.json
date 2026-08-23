@@ -1,15 +1,15 @@
 {
   "artifact_type": "mrx1000_content_activation_plan",
   "plan_version": "mrx1000-content-activation-v1.1.0",
-  "generated_at": "2026-07-20T02:07:38.881Z",
+  "generated_at": "2026-07-20T15:47:49.367Z",
   "generated_at_method": "canonical_ledger_generated_at",
   "generator": "scripts/build-mrx-1000-activation-plan.mjs",
-  "content_fingerprint_sha256": "51e946e06b55f39dd7f83a60c44bc24b6531d00f35484f820f99a6301ed30434",
+  "content_fingerprint_sha256": "78134ed5ac87348b1fdb90e8568f524c2727c72b83e5ea433b4669525ec7c8e8",
   "inputs": {
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_fingerprint_sha256": "40f7c691c29d8f92fbcef58a1728fe7792dca8725e895d5eb27d30e4a0b9769d",
+    "canonical_ledger_fingerprint_sha256": "ac504150d188f936a0995c193c58e3775492b76abf1c7ab09020e4880ef5184e",
     "canonical_ledger_fingerprint_verified": true,
-    "canonical_ledger_generated_at": "2026-07-20T02:07:38.881Z",
+    "canonical_ledger_generated_at": "2026-07-20T15:47:49.367Z",
     "owner_decision": {
       "decision_id": "D-2026-0804-16",
       "signed_disposition": "APPROVED_CONTINUOUS_QUALITY_GATED_ARTICLE_PUBLICATION",
@@ -115,9 +115,9 @@
     },
     "by_source_preservation_classification": {
       "incumbent_draft_nonpublic_held": 27,
-      "live_public_published_route": 172,
+      "live_public_published_route": 173,
       "pilot_draft_noindex_stage": 25,
-      "planning_only_inventory": 776
+      "planning_only_inventory": 775
     }
   },
   "rows": [
@@ -46318,11 +46318,11 @@
       },
       "sibling_link": {
         "target_program_row_id": "MRX1000-0741",
-        "target_title": "Andrews County, Texas Mineral Rights Value: Family Decision Guide Step By Step",
-        "url": "/blog/andrews-county-texas-mineral-rights-value-family-decision-guide-step-by-step/",
+        "target_title": "How to Build an Andrews County Mineral Rights Public-Record Locator",
+        "url": "/blog/andrews-county-mineral-rights-public-record-locator/",
         "relationship": "same_cluster_next_by_program_row_id_cyclic",
-        "target_source_preservation_classification": "planning_only_inventory",
-        "target_route_live": false,
+        "target_source_preservation_classification": "live_public_published_route",
+        "target_route_live": true,
         "status": "planned_local_only"
       },
       "primary_cta": {
@@ -46365,15 +46365,15 @@
     },
     {
       "program_row_id": "MRX1000-0741",
-      "canonical_title": "Andrews County, Texas Mineral Rights Value: Family Decision Guide Step By Step",
-      "canonical_slug": "andrews-county-texas-mineral-rights-value-family-decision-guide-step-by-step",
-      "canonical_url": "/blog/andrews-county-texas-mineral-rights-value-family-decision-guide-step-by-step/",
+      "canonical_title": "How to Build an Andrews County Mineral Rights Public-Record Locator",
+      "canonical_slug": "andrews-county-mineral-rights-public-record-locator",
+      "canonical_url": "/blog/andrews-county-mineral-rights-public-record-locator/",
       "cluster": "texas-county-basin-local-intent",
       "pillar": "texas-mineral-rights",
-      "search_intent": "risk-check",
+      "search_intent": "informational",
       "funnel_stage": "consideration",
-      "source_preservation_classification": "planning_only_inventory",
-      "source_route_live": false,
+      "source_preservation_classification": "live_public_published_route",
+      "source_route_live": true,
       "pillar_link": {
         "url": "/mineral-rights/texas/",
         "route_evidence": "src/pages/mineral-rights/[state].astro#stateGuides:texas",
@@ -46395,7 +46395,7 @@
         "placement_code": "contextual_inline",
         "placement_guidance": "Place after the first comparison, risk, document, or decision-framework section.",
         "assignment_rule": "consideration_stage_assisted_review",
-        "assignment_basis": "consideration:risk-check",
+        "assignment_basis": "consideration:informational",
         "approved_route_evidence": "src/pages/book.astro",
         "role": "primary_appointment",
         "is_appointment_cta": true,
@@ -46408,7 +46408,7 @@
         "placement_code": "contextual_inline",
         "placement_guidance": "Place after the first comparison, risk, document, or decision-framework section.",
         "assignment_rule": "consideration_stage_assisted_review",
-        "assignment_basis": "consideration:risk-check",
+        "assignment_basis": "consideration:informational",
         "approved_route_evidence": "src/pages/book.astro",
         "role": "same_as_primary_appointment",
         "distinct_from_primary_cta": false,
@@ -46422,7 +46422,7 @@
         "rendered_triangle_verified": false,
         "live_status": "not_published_or_verified_by_this_plan",
         "live_triangle_verified": false,
-        "release_status": "eligible_for_continuous_quality_review_not_yet_cleared",
+        "release_status": "released_under_d16_continuous_quality_gate",
         "numerical_release_cap_applies": false
       }
     },

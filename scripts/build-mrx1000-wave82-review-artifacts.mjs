@@ -7,7 +7,8 @@ import { basename, join } from 'node:path';
 const repoRoot = process.cwd();
 const waveNumber = process.env.MRX_WAVE_NUMBER ?? '82';
 const slug =
-  process.env.MRX_ARTICLE_SLUG ?? 'compare-public-oil-and-gas-price-decks-without-mixing-assumptions';
+  process.env.MRX_ARTICLE_SLUG ??
+  'compare-public-oil-and-gas-price-decks-without-mixing-assumptions';
 const programRowId = process.env.MRX_PROGRAM_ROW_ID ?? 'MRX1000-0267';
 const title =
   process.env.MRX_ARTICLE_TITLE ??
@@ -21,16 +22,21 @@ const inlineAlt =
   process.env.MRX_INLINE_ALT ??
   'An overhead public price-deck comparison matrix appears above the exact keyword.';
 const articlePath = `src/content/posts/${slug}.mdx`;
-const creativePath =
-  `artifacts/mrx1000-wave${waveNumber}-creative-qa/${slug}/creative-manifest.json`;
+const creativePath = `artifacts/mrx1000-wave${waveNumber}-creative-qa/${slug}/creative-manifest.json`;
 const expectedSelectionRank = Number(process.env.MRX_SELECTION_RANK ?? 162);
+const expectedSourceCount = Number(process.env.MRX_EXPECTED_SOURCE_COUNT ?? 5);
 const batch = JSON.parse(
   readFileSync(join(repoRoot, 'config', 'mrx1000-release-10-batch.json'), 'utf8'),
 );
 const row = batch.articles.find((article) => article.program_row_id === programRowId);
 const reviewedAt = new Date().toISOString().replace(/\.\d{3}Z$/, 'Z');
 
-if (!row || row.slug !== slug || row.title !== title || row.selection_rank !== expectedSelectionRank) {
+if (
+  !row ||
+  row.slug !== slug ||
+  row.title !== title ||
+  row.selection_rank !== expectedSelectionRank
+) {
   throw new Error(`Wave ${waveNumber} batch identity is missing or drifted`);
 }
 
@@ -229,7 +235,7 @@ if (
   nestedScalar(fm, 'inline_image', 'rendered_text') !== inlineKeyword ||
   faqCount !== 5 ||
   wordCount < 700 ||
-  sources.length !== 5
+  sources.length !== expectedSourceCount
 ) {
   throw new Error(
     `Wave ${waveNumber} review inputs do not satisfy identity, article-depth, source, or creative gates`,

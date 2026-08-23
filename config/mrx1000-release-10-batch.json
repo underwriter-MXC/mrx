@@ -1,7 +1,7 @@
 {
   "program": "MRX 1,000 Article SEO+AEO Production Program",
   "artifact_type": "authorized_release_10_batch",
-  "evidence_scaffold_generated_at_utc": "2026-08-23T16:08:19Z",
+  "evidence_scaffold_generated_at_utc": "2026-08-23T17:11:01Z",
   "decision_authority": {
     "successor_gate_decision_id": "D-2026-0804-16",
     "successor_gate_decision_path": "docs/governance/mrx1000-owner-continuous-publication-directive-2026-08-04.md",
@@ -276,13 +276,16 @@
     "wave83_selection_decision_sha256": "00c5e1d063693b406e2e8ee7c33759653a43bef3b9150892882f598a00ac60e6",
     "wave84_selection_decision_id": "MRX1000-W84-SELECT-2026-08-23",
     "wave84_selection_decision_path": "docs/governance/mrx1000-wave84-selection-decision-2026-08-23.md",
-    "wave84_selection_decision_sha256": "61c6631c5b1a6f36a425db1d22f189e4b78c6fbba1a72f815f0049ed85741d40"
+    "wave84_selection_decision_sha256": "61c6631c5b1a6f36a425db1d22f189e4b78c6fbba1a72f815f0049ed85741d40",
+    "wave85_selection_decision_id": "MRX1000-W85-SELECT-2026-08-23",
+    "wave85_selection_decision_path": "docs/governance/mrx1000-wave85-selection-decision-2026-08-23.md",
+    "wave85_selection_decision_sha256": "73cfad9f5f2fe682f1d653afa5939b7605baa6eb17d9195b09ec4b99a575d293"
   },
   "identity_authority": {
     "scope_key": "canonical_slug",
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_sha256": "54c77fed8dacb9eac93563eef417e11da8c69720cfb0c4b81599218afa0baa68",
-    "canonical_ledger_generated_at": "2026-07-20T03:43:51.663Z",
+    "canonical_ledger_sha256": "ddecefdd136ff59cf8235c07c368539859371a32a82dbfc87f1bed798df771e4",
+    "canonical_ledger_generated_at": "2026-07-20T15:47:49.367Z",
     "successor_ledger_decision_id": "D-2026-0723-LEDGER-04",
     "successor_ledger_decision_path": "artifacts/mrx1000-release-10/decisions/mrx-ceo-ledger-provenance-successor-20260723-04.md",
     "successor_ledger_decision_sha256": "09eca24bcd0e71563f2ac4197f564eec0ccb43a5ee955216da5c4a2543d04978",
@@ -296,11 +299,11 @@
     "authorization_scope": "declared_program_size_not_a_staged_release_cap",
     "admission_mode": "continuous_quality_gated",
     "continuous_quality_gated_from_selection_rank": 26,
-    "prior_verified_article_count": 163,
+    "prior_verified_article_count": 164,
     "fail_closed": true,
     "earned_scale_gates": [],
-    "exact_admitted_count": 164,
-    "exact_admitted_slate_sha256": "1f0fe0ded4a8688152fce9bfa7af6ce9a96f834cc7ba5b25de3fb6ad7c3ee646"
+    "exact_admitted_count": 165,
+    "exact_admitted_slate_sha256": "cb7a6535d5cf99c4f95427880ab31d4db6bd846d87567a7117e995ee6b913351"
   },
   "articles": [
     {
@@ -5666,10 +5669,44 @@
       "inline_path": "/assets/articles/inline/refrac-workover-event-claim-register-source-preserving-record-template/refrac-workover-event-claim-register.webp",
       "inline_asset_sha256": "a5f7bfc5729b292acdf611b6ef57703b14b24994aac9e2fdd02990505d5e073e",
       "inline_rendered_text": "refrac workover event claim register"
+    },
+    {
+      "selection_rank": 165,
+      "program_row_id": "MRX1000-0741",
+      "source_shortlist_program_row_id": "MRX1000-0741",
+      "slug": "andrews-county-mineral-rights-public-record-locator",
+      "title": "How to Build an Andrews County Mineral Rights Public-Record Locator",
+      "source_shortlist_title": "How to Build an Andrews County Mineral Rights Public-Record Locator",
+      "canonical_url": "https://mineralrightsxchange.com/blog/andrews-county-mineral-rights-public-record-locator/",
+      "pillar": "texas-mineral-rights",
+      "cluster": "texas-county-basin-local-intent",
+      "content_genius_article_uuid": null,
+      "archive_evidence_sha256": "a101e06fb6d786792296654f86729bdadef01822b578a0f472cb5f9073618625",
+      "repo_path": "src/content/posts/andrews-county-mineral-rights-public-record-locator.mdx",
+      "repo_sha256": "a4764e033823a46aec67b0df58da1bd8227c2248078d0c6f0ecda06aea538fcc",
+      "article_sha256": "a4764e033823a46aec67b0df58da1bd8227c2248078d0c6f0ecda06aea538fcc",
+      "hero_path": "/assets/articles/hero/how-to-build-an-andrews-county-mineral-rights-public-record-locator.webp",
+      "hero_sha256": "c651b77b496cbdc25491617dd50872f972eb2c01fa0575ef0062c13e935b41bc",
+      "hero_asset_sha256": "c651b77b496cbdc25491617dd50872f972eb2c01fa0575ef0062c13e935b41bc",
+      "admission_status": "admitted_quality_gated",
+      "finalization_state": "draft_noindex_admitted",
+      "searchatlas_content_score": null,
+      "searchatlas_word_count": 2022,
+      "risk_citation_remediation": [
+        "The original Andrews County value and family-decision identity was rejected for cannibalization. The admitted replacement owns only a county-specific administrative public-record locator with source-separated fields and limitations.",
+        "Current Andrews County, Andrews CAD, Texas GLO, and Texas RRC sources support only office, portal, field, identifier, access-date, posting-lag, appraisal-purpose, archive-purpose, and regulatory-locator statements. None establishes private title, ownership, acreage, lease meaning, property connection, production entitlement, value, offer quality, or a transaction result.",
+        "The title deliberately resembles the Robertson County locator only at the reusable county-locator pattern. Andrews-specific official systems, access instructions, posting timing, appraisal fields, source limitations, and follow-up workflow make the substantive evidence job county-distinct.",
+        "Continuous quality-gated admission under D-2026-0804-16, the 2026-08-14 no-approval owner directive, and MRX1000-W85-SELECT-2026-08-23; publication remains conditional on every article-specific gate and no owner publication approval applies."
+      ],
+      "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/andrews-county-mineral-rights-public-record-locator.json",
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/andrews-county-mineral-rights-public-record-locator/andrews-county-mineral-rights-public-record-locator.webp",
+      "inline_asset_sha256": "7be198091d268da2ef4da4c44353876b2594cc93ff16c45cc8070772d8d088e0",
+      "inline_rendered_text": "Andrews County mineral rights public-record locator"
     }
   ],
   "admission_audit": {
-    "admitted_article_count": 164,
+    "admitted_article_count": 165,
     "selection_ranks": [
       1,
       2,
@@ -5834,7 +5871,8 @@
       161,
       162,
       163,
-      164
+      164,
+      165
     ],
     "duplicate_program_row_ids": [],
     "duplicate_slugs": [],
@@ -5893,9 +5931,9 @@
   "two_image_policy": {
     "directive": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
     "retrofit_manifest_path": "config/mrx-article-two-image-retrofit.json",
-    "retrofit_manifest_sha256": "88979f77b0590a960d76098e022fdf1a0aba6c2e5f82cd338fa5966017b1bd20",
-    "public_article_count": 172,
-    "batch_article_count": 164,
+    "retrofit_manifest_sha256": "3c397ba263b55605964092bdec25829e74c293281fe9fbd5a28a0005bfc03e0d",
+    "public_article_count": 173,
+    "batch_article_count": 165,
     "assets_per_article": 2,
     "hero_share_identity_required": true,
     "inline_image_distinct_required": true,
