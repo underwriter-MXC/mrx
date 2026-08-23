@@ -1,7 +1,7 @@
 {
   "program": "MRX1000",
   "artifact_type": "searchatlas_ordered_llm_local_execution_manifest",
-  "generated_at": "2026-07-20T13:39:16.998Z",
+  "generated_at": "2026-07-20T12:06:47.130Z",
   "deterministic": true,
   "local_only": true,
   "external_services_called": false,
@@ -9,8 +9,8 @@
   "inputs": {
     "ledger": {
       "path": "config/mrx-1000-canonical-content-ledger.json",
-      "sha256": "9c7616a8725db06c029ae9a470fe65e2bb72b71b6accd09810d4b92760657045",
-      "bytes": 4491375
+      "sha256": "81e98b5f9fb986e88372256c02b40ee2e0a6705e0f64c647cde5e0c24dbcaf92",
+      "bytes": 4491733
     },
     "readiness": {
       "path": "reports/mrx-1000-readiness-matrix.json",
@@ -11641,7 +11641,7 @@
       "primary_keyword": "mineral rights document redaction checklist",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -350878,5 +350878,5 @@
       ]
     }
   ],
-  "content_fingerprint_sha256": "9ba7db91fa7f8690d564cb2182797c09846005c9c4ce03f96f9e6487df9ae781"
+  "content_fingerprint_sha256": "8050c8a17071a021d8d08346d299dbef3e5b41ffb2754bf0caf0525e9980f3ce"
 }
