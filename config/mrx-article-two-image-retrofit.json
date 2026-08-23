@@ -1,18 +1,18 @@
 {
   "artifact_type": "mrx_article_two_image_retrofit",
   "schema_version": 1,
-  "generated_at_utc": "2026-08-23T19:01:28Z",
+  "generated_at_utc": "2026-08-23T19:55:35Z",
   "policy_source": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
   "summary": {
-    "article_count": 175,
-    "asset_count": 350,
-    "unique_source_art_count": 175,
-    "unique_hero_sha256_count": 175,
-    "unique_inline_sha256_count": 175,
-    "distinct_article_pair_count": 175,
-    "hero_ocr_pass_count": 175,
-    "inline_ocr_pass_count": 175,
-    "exact_filename_identity_count": 175
+    "article_count": 176,
+    "asset_count": 352,
+    "unique_source_art_count": 176,
+    "unique_hero_sha256_count": 176,
+    "unique_inline_sha256_count": 176,
+    "distinct_article_pair_count": 176,
+    "hero_ocr_pass_count": 176,
+    "inline_ocr_pass_count": 176,
+    "exact_filename_identity_count": 176
   },
   "contact_sheets": {
     "hero": [
@@ -2330,6 +2330,56 @@
           "actual": "mineral rights valuation\nevidence cutoff log",
           "normalized_expected": "mineral rights valuation evidence cutoff log",
           "normalized_actual": "mineral rights valuation evidence cutoff log",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      }
+    },
+    {
+      "slug": "how-to-build-a-texas-mineral-production-record-locator-sheet",
+      "title": "How to Build a Texas Mineral Production Record Locator Sheet",
+      "keyword": "Texas mineral production record locator sheet",
+      "file_path": "src/content/posts/how-to-build-a-texas-mineral-production-record-locator-sheet.mdx",
+      "source_public_path": "/assets/articles/hero/how-to-build-a-texas-mineral-production-record-locator-sheet.webp",
+      "source_artifact_paths": [
+        "artifacts/mrx1000-wave88-creative-sources/how-to-build-a-texas-mineral-production-record-locator-sheet-hero-base.png",
+        "artifacts/mrx1000-wave88-creative-sources/how-to-build-a-texas-mineral-production-record-locator-sheet-inline-base.png"
+      ],
+      "generated_at_utc": "2026-08-23T19:49:08.417Z",
+      "hero": {
+        "public_path": "/assets/articles/hero/how-to-build-a-texas-mineral-production-record-locator-sheet.webp",
+        "alt": "A Texas public-record research desk appears beside the exact article title.",
+        "width": 1200,
+        "height": 630,
+        "mime_type": "image/webp",
+        "sha256": "d3b9cfee1942df6bd518025d23425f4597596fb583197f902e4ac045908f1ddb",
+        "perceptual_hash": "0000000001111111000000000111111100000000011111110000000001111111000000000111111100100000011011110101000001011001011000000111110000000000000111000000000011110111000000001111111100000000111111100000000011111100000000000011110000000000000111000000000000000101",
+        "neutralized_art_text_region_count": 1,
+        "ocr": {
+          "expected": "How to Build a Texas Mineral Production Record Locator Sheet",
+          "actual": "How to Build a\nTexas Mineral\nProduction Record\nLocator Sheet",
+          "normalized_expected": "how to build a texas mineral production record locator sheet",
+          "normalized_actual": "how to build a texas mineral production record locator sheet",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      },
+      "inline": {
+        "public_path": "/assets/articles/inline/how-to-build-a-texas-mineral-production-record-locator-sheet/texas-mineral-production-record-locator-sheet.webp",
+        "alt": "A top-down production-record locator worksheet appears above the exact keyword.",
+        "rendered_text": "Texas mineral production record locator sheet",
+        "visual_variant": "wave88-distinct-generated-overhead-seven-field-production-record-locator-worksheet",
+        "width": 1200,
+        "height": 675,
+        "mime_type": "image/webp",
+        "sha256": "6f1869c8fda0c99de6637cad22c8a51a1a698735da098c5ba8c1929df09222a1",
+        "perceptual_hash": "1111111111111111111111111111111111111111111111111111111111111001111111111111111111111111111101111111111111110111111111111111011111111111111110111111111111110111111111111110101100000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "neutralized_art_text_region_count": 1,
+        "ocr": {
+          "expected": "Texas mineral production record locator sheet",
+          "actual": "Texas mineral production\nrecord locator sheet",
+          "normalized_expected": "texas mineral production record locator sheet",
+          "normalized_actual": "texas mineral production record locator sheet",
           "uppercase_i_confusable_accepted": false,
           "pass": true
         }

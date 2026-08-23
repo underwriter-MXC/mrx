@@ -1,15 +1,15 @@
 {
   "artifact_type": "mrx1000_content_activation_plan",
   "plan_version": "mrx1000-content-activation-v1.1.0",
-  "generated_at": "2026-07-20T04:49:36.589Z",
+  "generated_at": "2026-07-20T08:08:29.183Z",
   "generated_at_method": "canonical_ledger_generated_at",
   "generator": "scripts/build-mrx-1000-activation-plan.mjs",
-  "content_fingerprint_sha256": "532a95173bc1d96a29b5ba386c321b2613923ceb94005eb783d6b75c48e94fe9",
+  "content_fingerprint_sha256": "683819d78454654a889ee1c5cf0328890dbfc97933a9abd9a2d5a2649827c277",
   "inputs": {
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_fingerprint_sha256": "7f6be4d1213d66f6dca6bdd2dec789eb6cd6033b2c672da5c43b603af69a840c",
+    "canonical_ledger_fingerprint_sha256": "6c73f2b56898b3dab24465ec958554ff84c0ac22f7db0d57c0e77ed32f35ca15",
     "canonical_ledger_fingerprint_verified": true,
-    "canonical_ledger_generated_at": "2026-07-20T04:49:36.589Z",
+    "canonical_ledger_generated_at": "2026-07-20T08:08:29.183Z",
     "owner_decision": {
       "decision_id": "D-2026-0804-16",
       "signed_disposition": "APPROVED_CONTINUOUS_QUALITY_GATED_ARTICLE_PUBLICATION",
@@ -92,8 +92,8 @@
       "title-lease-ownership": 75
     },
     "by_funnel_stage": {
-      "consideration": 351,
-      "decision": 274,
+      "consideration": 350,
+      "decision": 275,
       "education": 375
     },
     "by_primary_cta_url": {
@@ -104,20 +104,20 @@
       "/book/": 1000
     },
     "by_primary_cta_placement": {
-      "closing_panel": 274,
-      "contextual_inline": 351,
+      "closing_panel": 275,
+      "contextual_inline": 350,
       "mid_article": 375
     },
     "by_appointment_cta_placement": {
-      "closing_panel": 274,
+      "closing_panel": 275,
       "closing_team_handoff": 375,
-      "contextual_inline": 351
+      "contextual_inline": 350
     },
     "by_source_preservation_classification": {
       "incumbent_draft_nonpublic_held": 27,
-      "live_public_published_route": 175,
+      "live_public_published_route": 176,
       "pilot_draft_noindex_stage": 25,
-      "planning_only_inventory": 773
+      "planning_only_inventory": 772
     }
   },
   "rows": [
@@ -16834,11 +16834,11 @@
       },
       "sibling_link": {
         "target_program_row_id": "MRX1000-0272",
-        "target_title": "The Role of Production History in Determining Your Mineral Rights' True Value",
-        "url": "/blog/the-role-of-production-history-in-determining-your-mineral-rights-true-value/",
+        "target_title": "How to Build a Texas Mineral Production Record Locator Sheet",
+        "url": "/blog/how-to-build-a-texas-mineral-production-record-locator-sheet/",
         "relationship": "same_cluster_next_by_program_row_id_cyclic",
-        "target_source_preservation_classification": "planning_only_inventory",
-        "target_route_live": false,
+        "target_source_preservation_classification": "live_public_published_route",
+        "target_route_live": true,
         "status": "planned_local_only"
       },
       "primary_cta": {
@@ -16887,7 +16887,7 @@
       "cluster": "sell-mineral-rights-decision-process",
       "pillar": "sell-mineral-rights",
       "search_intent": "informational",
-      "funnel_stage": "consideration",
+      "funnel_stage": "decision",
       "source_preservation_classification": "live_public_published_route",
       "source_route_live": true,
       "pillar_link": {
@@ -16907,11 +16907,11 @@
       "primary_cta": {
         "url": "/book/",
         "label": "Talk Through My Selling Options",
-        "name": "mrx1000-sell-mineral-rights-book_review-contextual_inline",
-        "placement_code": "contextual_inline",
-        "placement_guidance": "Place after the first comparison, risk, document, or decision-framework section.",
-        "assignment_rule": "consideration_stage_assisted_review",
-        "assignment_basis": "consideration:informational",
+        "name": "mrx1000-sell-mineral-rights-book_review-closing_panel",
+        "placement_code": "closing_panel",
+        "placement_guidance": "Place in the closing decision panel after key takeaways and before related articles.",
+        "assignment_rule": "decision_stage_team_handoff",
+        "assignment_basis": "decision:informational",
         "approved_route_evidence": "src/pages/book.astro",
         "role": "primary_appointment",
         "is_appointment_cta": true,
@@ -16920,11 +16920,11 @@
       "appointment_cta": {
         "url": "/book/",
         "label": "Talk Through My Selling Options",
-        "name": "mrx1000-sell-mineral-rights-book_review-contextual_inline",
-        "placement_code": "contextual_inline",
-        "placement_guidance": "Place after the first comparison, risk, document, or decision-framework section.",
-        "assignment_rule": "consideration_stage_assisted_review",
-        "assignment_basis": "consideration:informational",
+        "name": "mrx1000-sell-mineral-rights-book_review-closing_panel",
+        "placement_code": "closing_panel",
+        "placement_guidance": "Place in the closing decision panel after key takeaways and before related articles.",
+        "assignment_rule": "decision_stage_team_handoff",
+        "assignment_basis": "decision:informational",
         "approved_route_evidence": "src/pages/book.astro",
         "role": "same_as_primary_appointment",
         "distinct_from_primary_cta": false,
@@ -16944,15 +16944,15 @@
     },
     {
       "program_row_id": "MRX1000-0272",
-      "canonical_title": "The Role of Production History in Determining Your Mineral Rights' True Value",
-      "canonical_slug": "the-role-of-production-history-in-determining-your-mineral-rights-true-value",
-      "canonical_url": "/blog/the-role-of-production-history-in-determining-your-mineral-rights-true-value/",
+      "canonical_title": "How to Build a Texas Mineral Production Record Locator Sheet",
+      "canonical_slug": "how-to-build-a-texas-mineral-production-record-locator-sheet",
+      "canonical_url": "/blog/how-to-build-a-texas-mineral-production-record-locator-sheet/",
       "cluster": "valuation-methodology-drivers",
       "pillar": "mineral-rights-value",
       "search_intent": "informational",
       "funnel_stage": "consideration",
-      "source_preservation_classification": "planning_only_inventory",
-      "source_route_live": false,
+      "source_preservation_classification": "live_public_published_route",
+      "source_route_live": true,
       "pillar_link": {
         "url": "/mineral-rights-value/",
         "route_evidence": "src/pages/mineral-rights-value.astro",
@@ -17001,7 +17001,7 @@
         "rendered_triangle_verified": false,
         "live_status": "not_published_or_verified_by_this_plan",
         "live_triangle_verified": false,
-        "release_status": "eligible_for_continuous_quality_review_not_yet_cleared",
+        "release_status": "released_under_d16_continuous_quality_gate",
         "numerical_release_cap_applies": false
       }
     },

@@ -1,7 +1,7 @@
 {
   "program": "MRX 1,000 Article SEO+AEO Production Program",
   "artifact_type": "authorized_release_10_batch",
-  "evidence_scaffold_generated_at_utc": "2026-08-23T19:24:34Z",
+  "evidence_scaffold_generated_at_utc": "2026-08-23T20:04:32Z",
   "decision_authority": {
     "successor_gate_decision_id": "D-2026-0804-16",
     "successor_gate_decision_path": "docs/governance/mrx1000-owner-continuous-publication-directive-2026-08-04.md",
@@ -285,13 +285,16 @@
     "wave86_selection_decision_sha256": "61a183cc90c768f5b9d815e2228ecde5d8dd8c5ec56b03abab698a206cecc746",
     "wave87_selection_decision_id": "MRX1000-W87-SELECT-2026-08-23",
     "wave87_selection_decision_path": "docs/governance/mrx1000-wave87-selection-decision-2026-08-23.md",
-    "wave87_selection_decision_sha256": "43586e8d4a35d2f8e4d754b84608c273db584c1b0b611b39d0b6c9d0d5893899"
+    "wave87_selection_decision_sha256": "43586e8d4a35d2f8e4d754b84608c273db584c1b0b611b39d0b6c9d0d5893899",
+    "wave88_selection_decision_id": "MRX1000-W88-SELECT-2026-08-23",
+    "wave88_selection_decision_path": "docs/governance/mrx1000-wave88-selection-decision-2026-08-23.md",
+    "wave88_selection_decision_sha256": "08bfc42431c498e07953dce6d66f7365f4d71de0cc616dac1fb0c72463003786"
   },
   "identity_authority": {
     "scope_key": "canonical_slug",
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_sha256": "4d1117dc67fc078bc6aaa5d3e87bea7416071664b785f0b944b737f99c32ce8c",
-    "canonical_ledger_generated_at": "2026-07-20T04:49:36.589Z",
+    "canonical_ledger_sha256": "e0edc7012808bbf02ff5695eebffd0e3a149d1c3383b0db3cb727fe7ffddeddf",
+    "canonical_ledger_generated_at": "2026-07-20T08:08:29.183Z",
     "successor_ledger_decision_id": "D-2026-0723-LEDGER-04",
     "successor_ledger_decision_path": "artifacts/mrx1000-release-10/decisions/mrx-ceo-ledger-provenance-successor-20260723-04.md",
     "successor_ledger_decision_sha256": "09eca24bcd0e71563f2ac4197f564eec0ccb43a5ee955216da5c4a2543d04978",
@@ -305,11 +308,11 @@
     "authorization_scope": "declared_program_size_not_a_staged_release_cap",
     "admission_mode": "continuous_quality_gated",
     "continuous_quality_gated_from_selection_rank": 26,
-    "prior_verified_article_count": 166,
+    "prior_verified_article_count": 167,
     "fail_closed": true,
     "earned_scale_gates": [],
-    "exact_admitted_count": 167,
-    "exact_admitted_slate_sha256": "d2140f0964b704c5291395078df25b4e4e249f033c1fc2e0b3bf7ba48b18af8d"
+    "exact_admitted_count": 168,
+    "exact_admitted_slate_sha256": "53ec5728f82e7f1123443b01682be9c8538d39bad8f09ebff3ec1855f6338848"
   },
   "articles": [
     {
@@ -5777,10 +5780,44 @@
       "inline_path": "/assets/articles/inline/how-to-build-a-mineral-rights-valuation-evidence-cutoff-log/mineral-rights-valuation-evidence-cutoff-log.webp",
       "inline_asset_sha256": "69db70c472b817dd98c7c43469ac498bfdfa278f58d63605b564f94468d96c23",
       "inline_rendered_text": "mineral rights valuation evidence cutoff log"
+    },
+    {
+      "selection_rank": 168,
+      "program_row_id": "MRX1000-0272",
+      "source_shortlist_program_row_id": "MRX1000-0272",
+      "slug": "how-to-build-a-texas-mineral-production-record-locator-sheet",
+      "title": "How to Build a Texas Mineral Production Record Locator Sheet",
+      "source_shortlist_title": "How to Build a Texas Mineral Production Record Locator Sheet",
+      "canonical_url": "https://mineralrightsxchange.com/blog/how-to-build-a-texas-mineral-production-record-locator-sheet/",
+      "pillar": "mineral-rights-value",
+      "cluster": "valuation-methodology-drivers",
+      "content_genius_article_uuid": null,
+      "archive_evidence_sha256": "f2bd32e08c399d23fbe2f6d6ee3f45ed2e594877bd5b0a18862b2875b1639f39",
+      "repo_path": "src/content/posts/how-to-build-a-texas-mineral-production-record-locator-sheet.mdx",
+      "repo_sha256": "a2583b6d4292f287b1da327668566f54615d5c174f3aed760a107826c2baf768",
+      "article_sha256": "a2583b6d4292f287b1da327668566f54615d5c174f3aed760a107826c2baf768",
+      "hero_path": "/assets/articles/hero/how-to-build-a-texas-mineral-production-record-locator-sheet.webp",
+      "hero_sha256": "d3b9cfee1942df6bd518025d23425f4597596fb583197f902e4ac045908f1ddb",
+      "hero_asset_sha256": "d3b9cfee1942df6bd518025d23425f4597596fb583197f902e4ac045908f1ddb",
+      "admission_status": "admitted_quality_gated",
+      "finalization_state": "draft_noindex_admitted",
+      "searchatlas_content_score": null,
+      "searchatlas_word_count": 1892,
+      "risk_citation_remediation": [
+        "The original production-history and true-value identity was rejected for material corpus overlap and unsupported value certainty. The admitted replacement owns only a source-preserving locator sheet for Texas public production-record retrieval.",
+        "Current official Railroad Commission sources support only official routes, query and dataset names, record classes, identifier fields, coverage context, update and reporting notes, and public-data limitations. None establishes property connection, ownership, entitlement, production performance, completeness, accuracy, suitability, or value.",
+        "The article remains distinct from the general RRC tutorial, monthly royalty-history baseline, producing-status education, decline-curve modeling, operator-name log, and evidence-cutoff log because it records one retrieval trail without interpreting the located record or using it downstream.",
+        "Continuous quality-gated admission under D-2026-0804-16, the 2026-08-14 no-approval owner directive, and MRX1000-W88-SELECT-2026-08-23; publication remains conditional on every article-specific gate and no owner publication approval applies."
+      ],
+      "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/how-to-build-a-texas-mineral-production-record-locator-sheet.json",
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/how-to-build-a-texas-mineral-production-record-locator-sheet/texas-mineral-production-record-locator-sheet.webp",
+      "inline_asset_sha256": "6f1869c8fda0c99de6637cad22c8a51a1a698735da098c5ba8c1929df09222a1",
+      "inline_rendered_text": "Texas mineral production record locator sheet"
     }
   ],
   "admission_audit": {
-    "admitted_article_count": 167,
+    "admitted_article_count": 168,
     "selection_ranks": [
       1,
       2,
@@ -5948,7 +5985,8 @@
       164,
       165,
       166,
-      167
+      167,
+      168
     ],
     "duplicate_program_row_ids": [],
     "duplicate_slugs": [],
@@ -6007,9 +6045,9 @@
   "two_image_policy": {
     "directive": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
     "retrofit_manifest_path": "config/mrx-article-two-image-retrofit.json",
-    "retrofit_manifest_sha256": "3776a729349124000e39dac4c24e6a9a5a251f775b31786afec320f1b29ad6ab",
-    "public_article_count": 175,
-    "batch_article_count": 167,
+    "retrofit_manifest_sha256": "5f0c69755a1276790c6db75ff698b4780b5ba7ab0f267cd71ea3abcdb7c1fe36",
+    "public_article_count": 176,
+    "batch_article_count": 168,
     "assets_per_article": 2,
     "hero_share_identity_required": true,
     "inline_image_distinct_required": true,
