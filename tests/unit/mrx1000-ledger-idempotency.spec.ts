@@ -50,9 +50,9 @@ const SCRIPT = path.join(MRX_ROOT, 'scripts/build-mrx-1000-content-ledger.mjs');
 const CANONICAL_JSON = path.join(MRX_ROOT, 'config/mrx-1000-canonical-content-ledger.json');
 const CANONICAL_CSV = path.join(MRX_ROOT, 'config/mrx-1000-canonical-content-ledger.csv');
 const EXPECTED_CANONICAL_JSON_SHA256 =
-  '51d14165e9e8b99063749741a016f2ab7669b096c95a1437a3c95552ee8deda1';
+  'bfefcfe3e63f9002a61958fe8dafa098fe51e1265870f041f0ece845b4cf4d87';
 const EXPECTED_CANONICAL_CSV_SHA256 =
-  'd2c0810acf1a8fb232c02dda4e432564327dc5181d04a8f414f797c7c155c48e';
+  '51d89af072775c0a50d8af01c6e8dde863a93133da73baa586c7b07662cd4f69';
 const TEST_OUTPUT_DIR = mkdtempSync(path.join(tmpdir(), 'mrx1000-ledger-idempotency-'));
 const JSON_OUT = path.join(TEST_OUTPUT_DIR, 'mrx-1000-canonical-content-ledger.json');
 const CSV_OUT = path.join(TEST_OUTPUT_DIR, 'mrx-1000-canonical-content-ledger.csv');

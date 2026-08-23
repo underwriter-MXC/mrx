@@ -1,7 +1,7 @@
 {
   "program": "MRX1000",
   "artifact_type": "searchatlas_ordered_llm_local_execution_manifest",
-  "generated_at": "2026-07-20T16:02:55.102Z",
+  "generated_at": "2026-07-20T08:25:37.000Z",
   "deterministic": true,
   "local_only": true,
   "external_services_called": false,
@@ -9,8 +9,8 @@
   "inputs": {
     "ledger": {
       "path": "config/mrx-1000-canonical-content-ledger.json",
-      "sha256": "51d14165e9e8b99063749741a016f2ab7669b096c95a1437a3c95552ee8deda1",
-      "bytes": 4505058
+      "sha256": "bfefcfe3e63f9002a61958fe8dafa098fe51e1265870f041f0ece845b4cf4d87",
+      "bytes": 4504715
     },
     "readiness": {
       "path": "reports/mrx-1000-readiness-matrix.json",
@@ -101583,7 +101583,7 @@
       "primary_keyword": "mixed-status mineral interest inventory",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -351112,5 +351112,5 @@
       ]
     }
   ],
-  "content_fingerprint_sha256": "eef157ceacfaf48ec23586f55a1e754457ac0cfb54244d8360ab80e274e217e4"
+  "content_fingerprint_sha256": "16e2f934f432fe3f4ab763af3f388e32be392b065eeaacaf03748695e084b5c1"
 }
