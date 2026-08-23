@@ -287,15 +287,15 @@
   "identity_authority": {
     "scope_key": "canonical_slug",
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_sha256": "57012a177a3fb80b4d69c55ed64d88e9517521d30ebfbb80f5578f2b4e5e7a7c",
-    "canonical_ledger_generated_at": "2026-07-20T18:49:48.083Z",
+    "canonical_ledger_sha256": "c9d3c59276b0f127d9c5440ec09f26e9897afc286fc4d52040d50efd1f9bf9da",
+    "canonical_ledger_generated_at": "2026-07-20T03:37:32.254Z",
     "successor_ledger_decision_id": "D-2026-0723-LEDGER-04",
     "successor_ledger_decision_path": "artifacts/mrx1000-release-10/decisions/mrx-ceo-ledger-provenance-successor-20260723-04.md",
     "successor_ledger_decision_sha256": "09eca24bcd0e71563f2ac4197f564eec0ccb43a5ee955216da5c4a2543d04978",
     "program_row_id_strategy": "preserve_program_row_id_by_canonical_slug",
     "source_shortlist_identity_field": "source_shortlist_program_row_id",
-    "reconciled_at_utc": "2026-08-23T17:28:17.361Z",
-    "note": "The controlling shortlist authorizes these exact canonical slugs. Historical row IDs remain provenance; current IDs are bound to the deterministic pre-publication ledger for Article 166, with 174 public article routes and 165 previously live-verified MRX1000 articles."
+    "reconciled_at_utc": "2026-08-23T18:31:59.526Z",
+    "note": "The controlling shortlist authorizes these exact canonical slugs. Historical row IDs remain provenance; current IDs are reconciled to the deterministic post-publication ledger after deployment dpl_554zByksoyEu3r5trzrHDKzvE59f, with 174 public article routes and 166 live-verified MRX1000 articles."
   },
   "policy": {
     "authorization_cap_released_articles": 1000,

@@ -1,7 +1,7 @@
 {
   "program": "MRX1000",
   "artifact_type": "searchatlas_ordered_llm_local_execution_manifest",
-  "generated_at": "2026-07-20T18:49:48.083Z",
+  "generated_at": "2026-07-20T08:25:37.000Z",
   "deterministic": true,
   "local_only": true,
   "external_services_called": false,
@@ -9,13 +9,13 @@
   "inputs": {
     "ledger": {
       "path": "config/mrx-1000-canonical-content-ledger.json",
-      "sha256": "57012a177a3fb80b4d69c55ed64d88e9517521d30ebfbb80f5578f2b4e5e7a7c",
-      "bytes": 4508820
+      "sha256": "c9d3c59276b0f127d9c5440ec09f26e9897afc286fc4d52040d50efd1f9bf9da",
+      "bytes": 4509178
     },
     "readiness": {
       "path": "reports/mrx-1000-readiness-matrix.json",
-      "sha256": "6a47c76a30703bf01b0572d0200f5cdcc3e6e41d1ecfd6227583061aeaa53ae8",
-      "bytes": 3433201,
+      "sha256": "68a9e08d18c7802d669abcf6d562d2c87a311fcb81bd65f5d0cf319759321570",
+      "bytes": 3433199,
       "sha256_method": "canonical_json_with_top_level_generated_at_masked",
       "generated_at_excluded_from_sha256": true
     },
@@ -102319,7 +102319,7 @@
       "primary_keyword": "shut-in clause conditions valuation review",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -102656,7 +102656,7 @@
         "release_action_eligible_now": false,
         "index_submission_eligible_now": false,
         "sitemap_addition_eligible_now": false,
-        "currently_in_workspace_sitemap": false,
+        "currently_in_workspace_sitemap": true,
         "production_live_verified_in_this_local_build": false,
         "release_or_index_action_performed": false,
         "exact_claude_opus_4_6_required_before_release_or_index_transition": true,
@@ -351190,5 +351190,5 @@
       ]
     }
   ],
-  "content_fingerprint_sha256": "90edd8357847d4c4d4dd1546730d3d75bdf4e893593b1bd3cb90e9d99679b82c"
+  "content_fingerprint_sha256": "6c9746f134a3c8ba3487d770054bf65a2ac2e4e18b4b0716e3a468cb5a223131"
 }

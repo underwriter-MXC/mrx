@@ -31,4 +31,21 @@ If the Article 166 deployment fails a production gate, immediately restore every
 - Canonical pre-publication ledger JSON SHA-256: `57012a177a3fb80b4d69c55ed64d88e9517521d30ebfbb80f5578f2b4e5e7a7c`
 - Canonical pre-publication ledger CSV SHA-256: `906d487cc8da82e26993bfe8828a473d5af66b32f32bdcd4a8326829bb52c6df`
 - Signed pre-publication batch SHA-256: `0f2a25850211270f80e92e7bbca49de20dc21b375f69ee09058bd766c2a093b8`
-- Deployment, live verification, and reconciliation: `PENDING`
+- Deployment, live verification, and reconciliation: `PASS`
+
+## Production publication and reconciliation
+
+- Publication commit: `49ccaef`
+- Vercel deployment: `dpl_554zByksoyEu3r5trzrHDKzvE59f`
+- Deployment URL: `https://mrx-ho86xogg2-team-mrx.vercel.app`
+- Inspect URL: `https://vercel.com/team-mrx/mrx-web/554zByksoyEu3r5trzrHDKzvE59f`
+- Active targets: `vercel-origin-via-cloudflare-apex`, `vercel-www-redirect`, `vercel-project-alias`, and `vercel-protected-team-alias`
+- Article route: `HTTP 200` with exact canonical URL, H1, Article and FAQ schema, five FAQs, seven reviewed sources, and indexable robots state
+- Canonical image identity: visible hero, `og:image`, `twitter:image`, and Article schema all use the same exact hero asset and verified production bytes
+- Inline image identity: exact distinct inline asset, keyword text, alt text, dimensions, MIME type, and production bytes verified
+- Browser verification: `PASS` on desktop and mobile with no clipping, overlap, garbling, or horizontal overflow
+- Post-publication verifier: `166/166 PASS`; `174` live public article routes; `0` failures
+- Post-publication evidence SHA-256: `bd1214ea25e110b308c7d8905ccaf03c90008fed1b623e049a9617bbab703c6e`
+- Canonical reconciled ledger JSON SHA-256: `c9d3c59276b0f127d9c5440ec09f26e9897afc286fc4d52040d50efd1f9bf9da`
+- Canonical reconciled ledger CSV SHA-256: `cd408120cfcc8f2af7ab75f9274460d0ba1123ceae75b84ef617bd4960eb30ec`
+- Reconciled signed batch SHA-256: `bc6bde73b0dc7fc6be53fc3c12879fe701dddbcd93db065ac368ecabbf5bbebe`
