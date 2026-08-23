@@ -1,15 +1,15 @@
 {
   "artifact_type": "mrx1000_content_activation_plan",
   "plan_version": "mrx1000-content-activation-v1.1.0",
-  "generated_at": "2026-07-20T09:08:05.783Z",
+  "generated_at": "2026-07-20T20:25:13.043Z",
   "generated_at_method": "canonical_ledger_generated_at",
   "generator": "scripts/build-mrx-1000-activation-plan.mjs",
-  "content_fingerprint_sha256": "37c82c0dc19544472cfb609b89d8e309b696f88ea8faa1e9a9fb99ef9e97cb3d",
+  "content_fingerprint_sha256": "4a5b05cc0847c5b6d1ce545601fb4dd9171cfa7db41ba87f9c8152e00e29b97f",
   "inputs": {
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_fingerprint_sha256": "7d7009aa559d601cef52f5985928613d29bacdc0d6665060b22d30dd9eb35c66",
+    "canonical_ledger_fingerprint_sha256": "edaeb98fd848baca0771f53835c9cebe72a1f7aebc8a4225ac4c915359328b3a",
     "canonical_ledger_fingerprint_verified": true,
-    "canonical_ledger_generated_at": "2026-07-20T09:08:05.783Z",
+    "canonical_ledger_generated_at": "2026-07-20T20:25:13.043Z",
     "owner_decision": {
       "decision_id": "D-2026-0804-16",
       "signed_disposition": "APPROVED_CONTINUOUS_QUALITY_GATED_ARTICLE_PUBLICATION",
@@ -115,9 +115,9 @@
     },
     "by_source_preservation_classification": {
       "incumbent_draft_nonpublic_held": 27,
-      "live_public_published_route": 167,
+      "live_public_published_route": 168,
       "pilot_draft_noindex_stage": 25,
-      "planning_only_inventory": 781
+      "planning_only_inventory": 780
     }
   },
   "rows": [
@@ -16456,11 +16456,11 @@
       },
       "sibling_link": {
         "target_program_row_id": "MRX1000-0265",
-        "target_title": "PDP, PUD, and Undeveloped Acreage in Mineral Valuation",
-        "url": "/blog/pdp-pud-and-undeveloped-acreage-in-mineral-valuation/",
+        "target_title": "How to Build a PDP, PUD, and Undeveloped Acreage Terminology Register",
+        "url": "/blog/pdp-pud-and-undeveloped-acreage-terminology-register/",
         "relationship": "same_cluster_next_by_program_row_id_cyclic",
-        "target_source_preservation_classification": "planning_only_inventory",
-        "target_route_live": false,
+        "target_source_preservation_classification": "live_public_published_route",
+        "target_route_live": true,
         "status": "planned_local_only"
       },
       "primary_cta": {
@@ -16503,15 +16503,15 @@
     },
     {
       "program_row_id": "MRX1000-0265",
-      "canonical_title": "PDP, PUD, and Undeveloped Acreage in Mineral Valuation",
-      "canonical_slug": "pdp-pud-and-undeveloped-acreage-in-mineral-valuation",
-      "canonical_url": "/blog/pdp-pud-and-undeveloped-acreage-in-mineral-valuation/",
+      "canonical_title": "How to Build a PDP, PUD, and Undeveloped Acreage Terminology Register",
+      "canonical_slug": "pdp-pud-and-undeveloped-acreage-terminology-register",
+      "canonical_url": "/blog/pdp-pud-and-undeveloped-acreage-terminology-register/",
       "cluster": "valuation-methodology-drivers",
       "pillar": "mineral-rights-value",
       "search_intent": "informational",
       "funnel_stage": "consideration",
-      "source_preservation_classification": "planning_only_inventory",
-      "source_route_live": false,
+      "source_preservation_classification": "live_public_published_route",
+      "source_route_live": true,
       "pillar_link": {
         "url": "/mineral-rights-value/",
         "route_evidence": "src/pages/mineral-rights-value.astro",
@@ -16560,7 +16560,7 @@
         "rendered_triangle_verified": false,
         "live_status": "not_published_or_verified_by_this_plan",
         "live_triangle_verified": false,
-        "release_status": "eligible_for_continuous_quality_review_not_yet_cleared",
+        "release_status": "released_under_d16_continuous_quality_gate",
         "numerical_release_cap_applies": false
       }
     },
@@ -18723,7 +18723,7 @@
         "status": "planned_local_only"
       },
       "sibling_link": {
-        "target_program_row_id": "MRX1000-1014",
+        "target_program_row_id": "MRX1000-1016",
         "target_title": "Mineral Appraisal: Guide In 2026",
         "url": "/blog/mineral-appraisal-guide-in-2026/",
         "relationship": "same_cluster_next_by_program_row_id_cyclic",
@@ -63059,7 +63059,7 @@
       }
     },
     {
-      "program_row_id": "MRX1000-1014",
+      "program_row_id": "MRX1000-1016",
       "canonical_title": "Mineral Appraisal: Guide In 2026",
       "canonical_slug": "mineral-appraisal-guide-in-2026",
       "canonical_url": "/blog/mineral-appraisal-guide-in-2026/",

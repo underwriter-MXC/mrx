@@ -1,7 +1,7 @@
 {
   "program": "MRX 1,000 Article SEO+AEO Production Program",
   "artifact_type": "authorized_release_10_batch",
-  "evidence_scaffold_generated_at_utc": "2026-08-23T08:48:00Z",
+  "evidence_scaffold_generated_at_utc": "2026-08-23T09:26:25Z",
   "decision_authority": {
     "successor_gate_decision_id": "D-2026-0804-16",
     "successor_gate_decision_path": "docs/governance/mrx1000-owner-continuous-publication-directive-2026-08-04.md",
@@ -261,13 +261,16 @@
     "wave78_selection_decision_sha256": "581a6358aaae7cf7778fb2e6c7c0f64ec6dfe364cea71b263dffb9e33606fcdc",
     "wave79_selection_decision_id": "MRX1000-W79-SELECT-2026-08-23",
     "wave79_selection_decision_path": "docs/governance/mrx1000-wave79-selection-decision-2026-08-23.md",
-    "wave79_selection_decision_sha256": "3a2af358e28c4289f763060cf6e71ebac908e9d9c5aca434805891fb53ccad40"
+    "wave79_selection_decision_sha256": "3a2af358e28c4289f763060cf6e71ebac908e9d9c5aca434805891fb53ccad40",
+    "wave80_selection_decision_id": "MRX1000-W80-SELECT-2026-08-23",
+    "wave80_selection_decision_path": "docs/governance/mrx1000-wave80-selection-decision-2026-08-23.md",
+    "wave80_selection_decision_sha256": "67d3d6db3eba55a0590b2e0bc17d46f1577dd1eb9d90414ed68cd4a2192bdf6e"
   },
   "identity_authority": {
     "scope_key": "canonical_slug",
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_sha256": "f34eda7dfe854126457ff983570754d3caaea9cd6d326d3cda9dfba94055a2ff",
-    "canonical_ledger_generated_at": "2026-07-20T09:08:05.783Z",
+    "canonical_ledger_sha256": "3f290774a53c63558884a0b605cfa2586afad0a2b07285d2beea99eb19fcc8a3",
+    "canonical_ledger_generated_at": "2026-07-20T20:25:13.043Z",
     "successor_ledger_decision_id": "D-2026-0723-LEDGER-04",
     "successor_ledger_decision_path": "artifacts/mrx1000-release-10/decisions/mrx-ceo-ledger-provenance-successor-20260723-04.md",
     "successor_ledger_decision_sha256": "09eca24bcd0e71563f2ac4197f564eec0ccb43a5ee955216da5c4a2543d04978",
@@ -281,11 +284,11 @@
     "authorization_scope": "declared_program_size_not_a_staged_release_cap",
     "admission_mode": "continuous_quality_gated",
     "continuous_quality_gated_from_selection_rank": 26,
-    "prior_verified_article_count": 158,
+    "prior_verified_article_count": 159,
     "fail_closed": true,
     "earned_scale_gates": [],
-    "exact_admitted_count": 159,
-    "exact_admitted_slate_sha256": "0c87631e63054369f00ddf6ecac83c281b39861af432d2c2a04642d3cac99888"
+    "exact_admitted_count": 160,
+    "exact_admitted_slate_sha256": "dacb44278aad9c5cd05ab4c12672ce0cc5f44210cf8635db9320570477193ec0"
   },
   "articles": [
     {
@@ -5481,10 +5484,44 @@
       "inline_path": "/assets/articles/inline/mineral-rights-operator-name-change-log/mineral-rights-operator-name-change-log.webp",
       "inline_asset_sha256": "23f4c68927cd5d99434a18bc88ed45430c5082b824aed51a3234b3a67251a0db",
       "inline_rendered_text": "mineral rights operator name change log"
+    },
+    {
+      "selection_rank": 160,
+      "program_row_id": "MRX1000-0265",
+      "source_shortlist_program_row_id": "MRX1000-0265",
+      "slug": "pdp-pud-and-undeveloped-acreage-terminology-register",
+      "title": "How to Build a PDP, PUD, and Undeveloped Acreage Terminology Register",
+      "source_shortlist_title": "How to Build a PDP, PUD, and Undeveloped Acreage Terminology Register",
+      "canonical_url": "https://mineralrightsxchange.com/blog/pdp-pud-and-undeveloped-acreage-terminology-register/",
+      "pillar": "mineral-rights-value",
+      "cluster": "valuation-methodology-drivers",
+      "content_genius_article_uuid": null,
+      "archive_evidence_sha256": "758c239424dc813053fc6d321c1ae2e2d3d37a0536b42a8236af0313edc7d303",
+      "repo_path": "src/content/posts/pdp-pud-and-undeveloped-acreage-terminology-register.mdx",
+      "repo_sha256": "aa58e028fd589197216100eb52bc77c24335c71cbb6d6f5f6e504bae7d8e63ea",
+      "article_sha256": "aa58e028fd589197216100eb52bc77c24335c71cbb6d6f5f6e504bae7d8e63ea",
+      "hero_path": "/assets/articles/hero/how-to-build-a-pdp-pud-and-undeveloped-acreage-terminology-register.webp",
+      "hero_sha256": "7a56863d0d39b0a63b88173dbf43b629c33f9650303dd5c9a3fed9bd5f3ae68f",
+      "hero_asset_sha256": "7a56863d0d39b0a63b88173dbf43b629c33f9650303dd5c9a3fed9bd5f3ae68f",
+      "admission_status": "admitted_quality_gated",
+      "finalization_state": "draft_noindex_admitted",
+      "searchatlas_content_score": null,
+      "searchatlas_word_count": 1722,
+      "risk_citation_remediation": [
+        "The original PDP/PUD/undeveloped-acreage valuation identity was rejected because it overlaps the live DCF, valuation-methodology, acreage-contiguity, and due-diligence corpus. The admitted replacement owns only a source-preserving terminology register across identified reports, disclosures, and owner documents.",
+        "Current official GovInfo, SEC, SPE, and RRC sources support only bounded descriptions of named terminology frameworks, disclosure context, and production-query limitations. None classifies an owner property, certifies or compares a report, establishes compliance, predicts development, supplies DCF inputs, or determines an offer or value.",
+        "Continuous quality-gated admission under D-2026-0804-16, the 2026-08-14 no-approval owner directive, and MRX1000-W80-SELECT-2026-08-23; no numerical cap, elapsed-time gate, or owner publication approval applies.",
+        "Publication remains conditional on current editorial, factual-citation, compliance, two-image, metadata, build, rollback, deployment, and live-verification evidence."
+      ],
+      "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/pdp-pud-and-undeveloped-acreage-terminology-register.json",
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/pdp-pud-and-undeveloped-acreage-terminology-register/pdp-pud-undeveloped-acreage-terminology-register.webp",
+      "inline_asset_sha256": "9d7114d07214446614ebc3ca2b27704d8a68676163c95138cb9d6b76c439266b",
+      "inline_rendered_text": "PDP PUD undeveloped acreage terminology register"
     }
   ],
   "admission_audit": {
-    "admitted_article_count": 159,
+    "admitted_article_count": 160,
     "selection_ranks": [
       1,
       2,
@@ -5644,7 +5681,8 @@
       156,
       157,
       158,
-      159
+      159,
+      160
     ],
     "duplicate_program_row_ids": [],
     "duplicate_slugs": [],
@@ -5703,9 +5741,9 @@
   "two_image_policy": {
     "directive": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
     "retrofit_manifest_path": "config/mrx-article-two-image-retrofit.json",
-    "retrofit_manifest_sha256": "0c958373b3ba1977cb6e1df9bd7a1a2d1581497a086195a80d49a4b2cf5eb510",
-    "public_article_count": 167,
-    "batch_article_count": 159,
+    "retrofit_manifest_sha256": "38c61e3954d413ac3bbbd6a233355196ebc15db13d6a7d1181352dc367f725cb",
+    "public_article_count": 168,
+    "batch_article_count": 160,
     "assets_per_article": 2,
     "hero_share_identity_required": true,
     "inline_image_distinct_required": true,
