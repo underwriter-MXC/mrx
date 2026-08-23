@@ -19,19 +19,19 @@ If the Article 164 deployment fails a production gate, immediately restore every
 - Authoritative source retrieval: `5/5 PASS`
 - Editorial, factual-citation, and compliance review: `PASS`
 - Exact-title hero/share and distinct exact-keyword inline image: `PASS`
-- Article SHA-256: `6a18c7d912aa22df2c9cad198d26ad6e3bc83007561f3d251860d77489e20fdf`
+- Article SHA-256: `a0a5f257a46ff7a8a29ba33b91f094f3119c412897e220964b3be2835b8de5d1`
 - Selection-decision SHA-256: `61c6631c5b1a6f36a425db1d22f189e4b78c6fbba1a72f815f0049ed85741d40`
 - Hero SHA-256: `16436d31026ec5fd2415a2945c716ed49c4e46614647c8c0dcf034760d7e5bd3`
 - Inline SHA-256: `a5f7bfc5729b292acdf611b6ef57703b14b24994aac9e2fdd02990505d5e073e`
-- Article body and FAQ depth: `2,027 words / 5 FAQs`
+- Article body and FAQ depth: `2,039 words / 5 FAQs`
 - Release packets and gates: `164/164 PASS`, zero blocking findings
 - Production build and rendered-HTML assertions: `PASS` (`172` public article routes; `344` image binaries)
 - Built hero and inline asset byte assertions: `PASS`
 - Lint: `PASS`
 - Unit tests: `596/596 PASS`
-- Pre-publication canonical-ledger JSON SHA-256: `872aa887f538679fe556b48db696971bc1123b3721884a9c0ed8c26af8a52411`
+- Pre-publication canonical-ledger JSON SHA-256: `83e6c6615a553ad6a82970d8beb1b3a4d33760df90531b5c46905b0811496d11`
 - Pre-publication canonical-ledger CSV SHA-256: `d02ba9c4748e3fbbfdd213683cdb75d0504dd96a026bc12e6679ad63901f9e15`
-- Pre-publication release-batch SHA-256: `2e9f410296a6dbf941f22740c2eccf8ddf02e074bbbe63beda917e30582897dd`
+- Pre-publication release-batch SHA-256: `efaec5136832ca2b41c5c571b3e8d12baf73cdbea4fecf65a758429d820e9e48`
 - Deployment, live verification, and reconciliation: `PENDING`
 
 ## Production result
