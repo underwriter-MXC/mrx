@@ -1,7 +1,7 @@
 {
   "program": "MRX 1,000 Article SEO+AEO Production Program",
   "artifact_type": "authorized_release_10_batch",
-  "evidence_scaffold_generated_at_utc": "2026-08-23T01:59:34Z",
+  "evidence_scaffold_generated_at_utc": "2026-08-23T03:11:25Z",
   "decision_authority": {
     "successor_gate_decision_id": "D-2026-0804-16",
     "successor_gate_decision_path": "docs/governance/mrx1000-owner-continuous-publication-directive-2026-08-04.md",
@@ -246,13 +246,16 @@
     "wave73_selection_decision_sha256": "48280d23ec1a4b5ab7a277664ee99f92ac0d5903b009d0344248ca9de939dbcf",
     "wave74_selection_decision_id": "MRX1000-W74-SELECT-2026-08-22",
     "wave74_selection_decision_path": "docs/governance/mrx1000-wave74-selection-decision-2026-08-22.md",
-    "wave74_selection_decision_sha256": "092a684c286015865cc4ec98cb55f0401bed714a1beddad19b670304d23964aa"
+    "wave74_selection_decision_sha256": "092a684c286015865cc4ec98cb55f0401bed714a1beddad19b670304d23964aa",
+    "wave75_selection_decision_id": "MRX1000-W75-SELECT-2026-08-22",
+    "wave75_selection_decision_path": "docs/governance/mrx1000-wave75-selection-decision-2026-08-22.md",
+    "wave75_selection_decision_sha256": "8f70ffe8ef64bd11ca800f17565667a3890ba6817345e024c308613f2b9cfd43"
   },
   "identity_authority": {
     "scope_key": "canonical_slug",
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_sha256": "81e98b5f9fb986e88372256c02b40ee2e0a6705e0f64c647cde5e0c24dbcaf92",
-    "canonical_ledger_generated_at": "2026-07-20T12:06:47.130Z",
+    "canonical_ledger_sha256": "ed6953a2019333249e581df20df12214f970a25613635b3e17e063b50a3c47ff",
+    "canonical_ledger_generated_at": "2026-07-20T18:15:54.767Z",
     "successor_ledger_decision_id": "D-2026-0723-LEDGER-04",
     "successor_ledger_decision_path": "artifacts/mrx1000-release-10/decisions/mrx-ceo-ledger-provenance-successor-20260723-04.md",
     "successor_ledger_decision_sha256": "09eca24bcd0e71563f2ac4197f564eec0ccb43a5ee955216da5c4a2543d04978",
@@ -266,11 +269,11 @@
     "authorization_scope": "declared_program_size_not_a_staged_release_cap",
     "admission_mode": "continuous_quality_gated",
     "continuous_quality_gated_from_selection_rank": 26,
-    "prior_verified_article_count": 153,
+    "prior_verified_article_count": 154,
     "fail_closed": true,
     "earned_scale_gates": [],
-    "exact_admitted_count": 154,
-    "exact_admitted_slate_sha256": "444afce00607f363f5290e2db18f2d7e89a9781dc83f3d468836df63be25b126"
+    "exact_admitted_count": 155,
+    "exact_admitted_slate_sha256": "4c77bb5e0c3da2e8e7f942f6f5e087263d31b8c181c6f5a685aacbae22abf603"
   },
   "articles": [
     {
@@ -5296,10 +5299,44 @@
       "inline_path": "/assets/articles/inline/mineral-rights-document-redaction-checklist-before-sharing-records/mineral-rights-document-redaction-checklist.webp",
       "inline_asset_sha256": "23c20014fa83388eb50663d3ffc636acebdce19dc59fc4efc3793e16eff47058",
       "inline_rendered_text": "mineral rights document redaction checklist"
+    },
+    {
+      "selection_rank": 155,
+      "program_row_id": "MRX1000-0034",
+      "source_shortlist_program_row_id": "MRX1000-0034",
+      "slug": "mineral-rights-ai-source-trace",
+      "title": "How to Keep an AI Source Trace for a Mineral Rights Review",
+      "source_shortlist_title": "How to Keep an AI Source Trace for a Mineral Rights Review",
+      "canonical_url": "https://mineralrightsxchange.com/blog/mineral-rights-ai-source-trace/",
+      "pillar": "mrx-methodology",
+      "cluster": "mrx-methodology-transparency-underwriter-process",
+      "content_genius_article_uuid": null,
+      "archive_evidence_sha256": "b59b775ec0d6c09edaf5f97576bc536dc468db5b48ccfef05676dfee1f2d7883",
+      "repo_path": "src/content/posts/mineral-rights-ai-source-trace.mdx",
+      "repo_sha256": "81b68a6c72193f71603d2b1b23f1cf943697a6cc1daefd36f9fbabded39e3695",
+      "article_sha256": "81b68a6c72193f71603d2b1b23f1cf943697a6cc1daefd36f9fbabded39e3695",
+      "hero_path": "/assets/articles/hero/how-to-keep-an-ai-source-trace-for-a-mineral-rights-review.webp",
+      "hero_sha256": "fd10890f2b0f5af47af296628e7187cbcf450d951ce9ffee6e4d63c73f60e10e",
+      "hero_asset_sha256": "fd10890f2b0f5af47af296628e7187cbcf450d951ce9ffee6e4d63c73f60e10e",
+      "admission_status": "admitted_quality_gated",
+      "finalization_state": "draft_noindex_admitted",
+      "searchatlas_content_score": null,
+      "searchatlas_word_count": 1534,
+      "risk_citation_remediation": [
+        "The original identity was rejected because its AI offer-comparison promise overlapped live platform, offer-comparison, methodology, valuation, and seller-decision material. The admitted replacement owns only statement-level provenance labeling with an exact source reference, access date, and human-review status.",
+        "MRX, NIST, and FTC sources support only bounded first-party source and privacy disclosures, voluntary risk-management context, and the need for evidence behind specified AI accuracy or efficacy claims. None proves an AI output, source match, owner fact, review result, accuracy, completeness, reliability, safety, title, value, legal conclusion, tax treatment, or transaction outcome.",
+        "Continuous quality-gated admission under D-2026-0804-16, the 2026-08-14 no-approval owner directive, and MRX1000-W75-SELECT-2026-08-22; no numerical cap, elapsed-time gate, or owner publication approval applies.",
+        "Publication remains conditional on current editorial, factual-citation, compliance, two-image, metadata, build, rollback, deployment, and live-verification evidence."
+      ],
+      "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/mineral-rights-ai-source-trace.json",
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/mineral-rights-ai-source-trace/mineral-rights-ai-source-trace.webp",
+      "inline_asset_sha256": "db4dcdf797671a3207ed90a9493418fab779a66f589c4bcd40e46f8066035e04",
+      "inline_rendered_text": "mineral rights AI source trace"
     }
   ],
   "admission_audit": {
-    "admitted_article_count": 154,
+    "admitted_article_count": 155,
     "selection_ranks": [
       1,
       2,
@@ -5454,7 +5491,8 @@
       151,
       152,
       153,
-      154
+      154,
+      155
     ],
     "duplicate_program_row_ids": [],
     "duplicate_slugs": [],
@@ -5513,9 +5551,9 @@
   "two_image_policy": {
     "directive": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
     "retrofit_manifest_path": "config/mrx-article-two-image-retrofit.json",
-    "retrofit_manifest_sha256": "3f6b169a33fdd2585fd141e8de7c1b9d3365053d9a8b7dcfb97c10baf15bfcb4",
-    "public_article_count": 162,
-    "batch_article_count": 154,
+    "retrofit_manifest_sha256": "1e48704e4162b00fe7bd227eae371360b3727071aab3879c7f61a6b4232f9ca9",
+    "public_article_count": 163,
+    "batch_article_count": 155,
     "assets_per_article": 2,
     "hero_share_identity_required": true,
     "inline_image_distinct_required": true,

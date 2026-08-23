@@ -1,18 +1,18 @@
 {
   "artifact_type": "mrx_article_two_image_retrofit",
   "schema_version": 1,
-  "generated_at_utc": "2026-08-23T01:37:24Z",
+  "generated_at_utc": "2026-08-23T03:05:16Z",
   "policy_source": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
   "summary": {
-    "article_count": 162,
-    "asset_count": 324,
-    "unique_source_art_count": 162,
-    "unique_hero_sha256_count": 162,
-    "unique_inline_sha256_count": 162,
-    "distinct_article_pair_count": 162,
-    "hero_ocr_pass_count": 162,
-    "inline_ocr_pass_count": 162,
-    "exact_filename_identity_count": 162
+    "article_count": 163,
+    "asset_count": 326,
+    "unique_source_art_count": 163,
+    "unique_hero_sha256_count": 163,
+    "unique_inline_sha256_count": 163,
+    "distinct_article_pair_count": 163,
+    "hero_ocr_pass_count": 163,
+    "inline_ocr_pass_count": 163,
+    "exact_filename_identity_count": 163
   },
   "contact_sheets": {
     "hero": [
@@ -3389,6 +3389,56 @@
           "normalized_expected": "midland vs delaware basin how formation affects your mineral rights value",
           "normalized_actual": "midland vs delaware basin how formation affects your mineral rights value",
           "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      }
+    },
+    {
+      "slug": "mineral-rights-ai-source-trace",
+      "title": "How to Keep an AI Source Trace for a Mineral Rights Review",
+      "keyword": "mineral rights AI source trace",
+      "file_path": "src/content/posts/mineral-rights-ai-source-trace.mdx",
+      "source_public_path": "/assets/articles/hero/how-to-keep-an-ai-source-trace-for-a-mineral-rights-review.webp",
+      "source_artifact_paths": [
+        "artifacts/mrx1000-wave75-creative-sources/mineral-rights-ai-source-trace-hero-base.png",
+        "artifacts/mrx1000-wave75-creative-sources/mineral-rights-ai-source-trace-inline-base.png"
+      ],
+      "generated_at_utc": "2026-08-23T02:52:48.531Z",
+      "hero": {
+        "public_path": "/assets/articles/hero/how-to-keep-an-ai-source-trace-for-a-mineral-rights-review.webp",
+        "alt": "A reviewer checks source records and three blank status cards beside the exact article title.",
+        "width": 1200,
+        "height": 630,
+        "mime_type": "image/webp",
+        "sha256": "fd10890f2b0f5af47af296628e7187cbcf450d951ce9ffee6e4d63c73f60e10e",
+        "perceptual_hash": "0000000000111111000000000011110100000000001111010001000000011111000000000001111101111100001111100111111000111110000100000011111000000000001111000000000001111100000000000110010000000000001000000000000000111000000000000111100000000000011110000000000000110000",
+        "neutralized_art_text_region_count": 1,
+        "ocr": {
+          "expected": "How to Keep an AI Source Trace for a Mineral Rights Review",
+          "actual": "How to Keep an\nAl Source Trace for a\nMineral Rights Review",
+          "normalized_expected": "how to keep an ai source trace for a mineral rights review",
+          "normalized_actual": "how to keep an al source trace for a mineral rights review",
+          "uppercase_i_confusable_accepted": true,
+          "pass": true
+        }
+      },
+      "inline": {
+        "public_path": "/assets/articles/inline/mineral-rights-ai-source-trace/mineral-rights-ai-source-trace.webp",
+        "alt": "A top-down provenance grid links a blank output card to source records and an unresolved marker under the exact keyword.",
+        "rendered_text": "mineral rights AI source trace",
+        "visual_variant": "wave75-distinct-generated-overhead-ai-source-provenance-grid",
+        "width": 1200,
+        "height": 675,
+        "mime_type": "image/webp",
+        "sha256": "db4dcdf797671a3207ed90a9493418fab779a66f589c4bcd40e46f8066035e04",
+        "perceptual_hash": "1111111111111110111111111111111011111111111111101111111111111110111111111111111111111111111111111111111001111111011111111111111000001011111111100111100111111111000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "neutralized_art_text_region_count": 1,
+        "ocr": {
+          "expected": "mineral rights AI source trace",
+          "actual": "mineral rights Al\nsource trace",
+          "normalized_expected": "mineral rights ai source trace",
+          "normalized_actual": "mineral rights al source trace",
+          "uppercase_i_confusable_accepted": true,
           "pass": true
         }
       }
