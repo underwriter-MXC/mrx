@@ -1,18 +1,18 @@
 {
   "artifact_type": "mrx_article_two_image_retrofit",
   "schema_version": 1,
-  "generated_at_utc": "2026-08-23T03:05:16Z",
+  "generated_at_utc": "2026-08-23T04:12:38Z",
   "policy_source": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
   "summary": {
-    "article_count": 163,
-    "asset_count": 326,
-    "unique_source_art_count": 163,
-    "unique_hero_sha256_count": 163,
-    "unique_inline_sha256_count": 163,
-    "distinct_article_pair_count": 163,
-    "hero_ocr_pass_count": 163,
-    "inline_ocr_pass_count": 163,
-    "exact_filename_identity_count": 163
+    "article_count": 164,
+    "asset_count": 328,
+    "unique_source_art_count": 164,
+    "unique_hero_sha256_count": 164,
+    "unique_inline_sha256_count": 164,
+    "distinct_article_pair_count": 164,
+    "hero_ocr_pass_count": 164,
+    "inline_ocr_pass_count": 164,
+    "exact_filename_identity_count": 164
   },
   "contact_sheets": {
     "hero": [
@@ -3734,6 +3734,56 @@
           "actual": "Mineral Rights Valuation\nInput Correction Packet",
           "normalized_expected": "mineral rights valuation input correction packet",
           "normalized_actual": "mineral rights valuation input correction packet",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      }
+    },
+    {
+      "slug": "mineral-valuation-sensitivity-analysis-one-variable-scenario-worksheet",
+      "title": "Mineral Valuation Sensitivity Analysis: A One-Variable Scenario Worksheet",
+      "keyword": "mineral valuation sensitivity analysis worksheet",
+      "file_path": "src/content/posts/mineral-valuation-sensitivity-analysis-one-variable-scenario-worksheet.mdx",
+      "source_public_path": "/assets/articles/hero/mineral-valuation-sensitivity-analysis-a-one-variable-scenario-worksheet.webp",
+      "source_artifact_paths": [
+        "artifacts/mrx1000-wave76-creative-sources/mineral-valuation-sensitivity-analysis-one-variable-scenario-worksheet-hero-base.png",
+        "artifacts/mrx1000-wave76-creative-sources/mineral-valuation-sensitivity-analysis-one-variable-scenario-worksheet-inline-base.png"
+      ],
+      "generated_at_utc": "2026-08-23T04:11:05.865Z",
+      "hero": {
+        "public_path": "/assets/articles/hero/mineral-valuation-sensitivity-analysis-a-one-variable-scenario-worksheet.webp",
+        "alt": "A reviewer examines five blank scenario cards with one changed card beside the exact article title.",
+        "width": 1200,
+        "height": 630,
+        "mime_type": "image/webp",
+        "sha256": "1e7a242ee452bcd9a2e63dec61736c9173ad1eb01d381511c0b19ab0e51e6bad",
+        "perceptual_hash": "0000000000000000000000000000000000000000000000000000000000001111010110000001111101111000001101110111000000110110011110000011111000000000011111100000000001111110000000000111110000000000001111100000000000111100000000000011010000000000001100000000000000110000",
+        "neutralized_art_text_region_count": 1,
+        "ocr": {
+          "expected": "Mineral Valuation Sensitivity Analysis: A One-Variable Scenario Worksheet",
+          "actual": "Mineral Valuation\nSensitivity Analysis:\nA One-Variable\nScenario Worksheet",
+          "normalized_expected": "mineral valuation sensitivity analysis a one variable scenario worksheet",
+          "normalized_actual": "mineral valuation sensitivity analysis a one variable scenario worksheet",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      },
+      "inline": {
+        "public_path": "/assets/articles/inline/mineral-valuation-sensitivity-analysis-one-variable-scenario-worksheet/mineral-valuation-sensitivity-analysis-worksheet.webp",
+        "alt": "A top-down blank worksheet changes one highlighted input row while adjacent fields stay fixed under the exact keyword.",
+        "rendered_text": "mineral valuation sensitivity analysis worksheet",
+        "visual_variant": "wave76-distinct-generated-overhead-one-variable-scenario-grid",
+        "width": 1200,
+        "height": 675,
+        "mime_type": "image/webp",
+        "sha256": "1b35cd7fad1e1eb82cfd20f3041be8fb802d4aa7042ef6696c5cbec394db4dd2",
+        "perceptual_hash": "1111111111111111000111111111100100011111111111110001111111111111000111111111111100011111111111110001111111111111000011111111111100001111111111110000111111111111000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "neutralized_art_text_region_count": 1,
+        "ocr": {
+          "expected": "mineral valuation sensitivity analysis worksheet",
+          "actual": "mineral valuation sensitivity\nanalysis worksheet",
+          "normalized_expected": "mineral valuation sensitivity analysis worksheet",
+          "normalized_actual": "mineral valuation sensitivity analysis worksheet",
           "uppercase_i_confusable_accepted": false,
           "pass": true
         }

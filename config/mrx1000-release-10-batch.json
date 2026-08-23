@@ -1,7 +1,7 @@
 {
   "program": "MRX 1,000 Article SEO+AEO Production Program",
   "artifact_type": "authorized_release_10_batch",
-  "evidence_scaffold_generated_at_utc": "2026-08-23T03:42:33Z",
+  "evidence_scaffold_generated_at_utc": "2026-08-23T04:21:20Z",
   "decision_authority": {
     "successor_gate_decision_id": "D-2026-0804-16",
     "successor_gate_decision_path": "docs/governance/mrx1000-owner-continuous-publication-directive-2026-08-04.md",
@@ -249,13 +249,16 @@
     "wave74_selection_decision_sha256": "092a684c286015865cc4ec98cb55f0401bed714a1beddad19b670304d23964aa",
     "wave75_selection_decision_id": "MRX1000-W75-SELECT-2026-08-22",
     "wave75_selection_decision_path": "docs/governance/mrx1000-wave75-selection-decision-2026-08-22.md",
-    "wave75_selection_decision_sha256": "8f70ffe8ef64bd11ca800f17565667a3890ba6817345e024c308613f2b9cfd43"
+    "wave75_selection_decision_sha256": "8f70ffe8ef64bd11ca800f17565667a3890ba6817345e024c308613f2b9cfd43",
+    "wave76_selection_decision_id": "MRX1000-W76-SELECT-2026-08-22",
+    "wave76_selection_decision_path": "docs/governance/mrx1000-wave76-selection-decision-2026-08-22.md",
+    "wave76_selection_decision_sha256": "0b9a6774eeabb1881696c7da32eb15baa210f084b8faf9708152e40a84d9023d"
   },
   "identity_authority": {
     "scope_key": "canonical_slug",
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_sha256": "1defe44e20d8bc19d5b94d03374f45ed25f04b5eaf683746130813f5e1e94f7a",
-    "canonical_ledger_generated_at": "2026-07-20T09:39:04.122Z",
+    "canonical_ledger_sha256": "0355d931382f30b09de76ba456969006b4f54341bea20d70df035615e4e1bcaf",
+    "canonical_ledger_generated_at": "2026-07-20T05:42:46.609Z",
     "successor_ledger_decision_id": "D-2026-0723-LEDGER-04",
     "successor_ledger_decision_path": "artifacts/mrx1000-release-10/decisions/mrx-ceo-ledger-provenance-successor-20260723-04.md",
     "successor_ledger_decision_sha256": "09eca24bcd0e71563f2ac4197f564eec0ccb43a5ee955216da5c4a2543d04978",
@@ -269,11 +272,11 @@
     "authorization_scope": "declared_program_size_not_a_staged_release_cap",
     "admission_mode": "continuous_quality_gated",
     "continuous_quality_gated_from_selection_rank": 26,
-    "prior_verified_article_count": 154,
+    "prior_verified_article_count": 155,
     "fail_closed": true,
     "earned_scale_gates": [],
-    "exact_admitted_count": 155,
-    "exact_admitted_slate_sha256": "4c77bb5e0c3da2e8e7f942f6f5e087263d31b8c181c6f5a685aacbae22abf603"
+    "exact_admitted_count": 156,
+    "exact_admitted_slate_sha256": "3cd9c71cbe7068885379f10893e1c84a00e89db52f50e8b2e474ad570d730ce2"
   },
   "articles": [
     {
@@ -5333,10 +5336,44 @@
       "inline_path": "/assets/articles/inline/mineral-rights-ai-source-trace/mineral-rights-ai-source-trace.webp",
       "inline_asset_sha256": "db4dcdf797671a3207ed90a9493418fab779a66f589c4bcd40e46f8066035e04",
       "inline_rendered_text": "mineral rights AI source trace"
+    },
+    {
+      "selection_rank": 156,
+      "program_row_id": "MRX1000-0261",
+      "source_shortlist_program_row_id": "MRX1000-0261",
+      "slug": "mineral-valuation-sensitivity-analysis-one-variable-scenario-worksheet",
+      "title": "Mineral Valuation Sensitivity Analysis: A One-Variable Scenario Worksheet",
+      "source_shortlist_title": "Mineral Valuation Sensitivity Analysis: A One-Variable Scenario Worksheet",
+      "canonical_url": "https://mineralrightsxchange.com/blog/mineral-valuation-sensitivity-analysis-one-variable-scenario-worksheet/",
+      "pillar": "mineral-rights-value",
+      "cluster": "valuation-methodology-drivers",
+      "content_genius_article_uuid": null,
+      "archive_evidence_sha256": "76f85f557f163d4b4c5834fc0dd37cad2419a07d21b63e0e141dbd585db7b3c5",
+      "repo_path": "src/content/posts/mineral-valuation-sensitivity-analysis-one-variable-scenario-worksheet.mdx",
+      "repo_sha256": "ec4d7d0f278c5ec46477247567d42085e4e07be9aaeaf49d1f7593c867f34bfc",
+      "article_sha256": "ec4d7d0f278c5ec46477247567d42085e4e07be9aaeaf49d1f7593c867f34bfc",
+      "hero_path": "/assets/articles/hero/mineral-valuation-sensitivity-analysis-a-one-variable-scenario-worksheet.webp",
+      "hero_sha256": "1e7a242ee452bcd9a2e63dec61736c9173ad1eb01d381511c0b19ab0e51e6bad",
+      "hero_asset_sha256": "1e7a242ee452bcd9a2e63dec61736c9173ad1eb01d381511c0b19ab0e51e6bad",
+      "admission_status": "admitted_quality_gated",
+      "finalization_state": "draft_noindex_admitted",
+      "searchatlas_content_score": null,
+      "searchatlas_word_count": 1630,
+      "risk_citation_remediation": [
+        "The original broad sensitivity-analysis identity was rejected because it overlapped live range-width, valuation-factor, price-deck, production-decline, discount-rate, existing-well, and future-location material. The admitted replacement owns only the control mechanics for changing one sourced input in an existing worksheet while every other assumption and convention stays fixed.",
+        "RRC and EIA sources support only bounded descriptions of dated public production and commodity data plus reporting limitations. None supplies a property-specific model input, public-record match, ownership fact, title conclusion, forecast, probability, appraisal, value, offer analysis, or transaction outcome.",
+        "Continuous quality-gated admission under D-2026-0804-16, the 2026-08-14 no-approval owner directive, and MRX1000-W76-SELECT-2026-08-22; no numerical cap, elapsed-time gate, or owner publication approval applies.",
+        "Publication remains conditional on current editorial, factual-citation, compliance, two-image, metadata, build, rollback, deployment, and live-verification evidence."
+      ],
+      "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/mineral-valuation-sensitivity-analysis-one-variable-scenario-worksheet.json",
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/mineral-valuation-sensitivity-analysis-one-variable-scenario-worksheet/mineral-valuation-sensitivity-analysis-worksheet.webp",
+      "inline_asset_sha256": "1b35cd7fad1e1eb82cfd20f3041be8fb802d4aa7042ef6696c5cbec394db4dd2",
+      "inline_rendered_text": "mineral valuation sensitivity analysis worksheet"
     }
   ],
   "admission_audit": {
-    "admitted_article_count": 155,
+    "admitted_article_count": 156,
     "selection_ranks": [
       1,
       2,
@@ -5492,7 +5529,8 @@
       152,
       153,
       154,
-      155
+      155,
+      156
     ],
     "duplicate_program_row_ids": [],
     "duplicate_slugs": [],
@@ -5551,9 +5589,9 @@
   "two_image_policy": {
     "directive": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
     "retrofit_manifest_path": "config/mrx-article-two-image-retrofit.json",
-    "retrofit_manifest_sha256": "1e48704e4162b00fe7bd227eae371360b3727071aab3879c7f61a6b4232f9ca9",
-    "public_article_count": 163,
-    "batch_article_count": 155,
+    "retrofit_manifest_sha256": "dd59f16cb7713f2d5da3fee20c0d52d06e03a5bcacc20e92e600c2832651ffb1",
+    "public_article_count": 164,
+    "batch_article_count": 156,
     "assets_per_article": 2,
     "hero_share_identity_required": true,
     "inline_image_distinct_required": true,
