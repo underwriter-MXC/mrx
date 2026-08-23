@@ -92,6 +92,7 @@ const SUPERSEDED_CANONICAL_SLUGS = new Set([
   'the-assessment-process-unveiled-how-your-mineral-rights-value-is-accurately-calculated',
   'the-role-of-production-history-in-determining-your-mineral-rights-true-value',
   'unitization-and-pooling-as-mineral-valuation-inputs',
+  'understanding-how-location-impacts-the-valuation-of-your-mineral-rights-portfolio',
 ]);
 const SUCCESSOR_CANONICAL_SLUGS = new Map([
   ['what-every-mineral-rights-owner-needs-to-know', 'should-i-sell-my-mineral-rights'],
@@ -207,6 +208,10 @@ const SUCCESSOR_CANONICAL_SLUGS = new Map([
     'unitization-and-pooling-as-mineral-valuation-inputs',
     'texas-rrc-pooling-filing-retrieval-provenance-worksheet',
   ],
+  [
+    'understanding-how-location-impacts-the-valuation-of-your-mineral-rights-portfolio',
+    'texas-rrc-drilling-permit-query-retrieval-provenance-worksheet',
+  ],
 ]);
 const APPROVED_REKEY_SEARCH_INTENT_BY_SLUG = new Map([
   ['should-i-sell-my-mineral-rights', 'transactional'],
@@ -233,6 +238,7 @@ const APPROVED_REKEY_SEARCH_INTENT_BY_SLUG = new Map([
   ['how-to-build-a-mineral-rights-valuation-evidence-cutoff-log', 'informational'],
   ['how-to-build-a-texas-mineral-production-record-locator-sheet', 'informational'],
   ['texas-rrc-pooling-filing-retrieval-provenance-worksheet', 'informational'],
+  ['texas-rrc-drilling-permit-query-retrieval-provenance-worksheet', 'informational'],
 ]);
 
 async function loadPriorProgramRowIds() {
@@ -278,6 +284,7 @@ async function loadPriorProgramRowIds() {
         wave87Rekey: null,
         wave88Rekey: null,
         wave89Rekey: null,
+        wave90Rekey: null,
       };
     }
     throw error;
@@ -345,6 +352,7 @@ async function loadPriorProgramRowIds() {
     wave87Rekey: prior.identity_registry?.wave87_rekey ?? null,
     wave88Rekey: prior.identity_registry?.wave88_rekey ?? null,
     wave89Rekey: prior.identity_registry?.wave89_rekey ?? null,
+    wave90Rekey: prior.identity_registry?.wave90_rekey ?? null,
   };
 }
 
@@ -1706,6 +1714,7 @@ async function main() {
       ...(priorIdentity.wave87Rekey ? { wave87_rekey: priorIdentity.wave87Rekey } : {}),
       ...(priorIdentity.wave88Rekey ? { wave88_rekey: priorIdentity.wave88Rekey } : {}),
       ...(priorIdentity.wave89Rekey ? { wave89_rekey: priorIdentity.wave89Rekey } : {}),
+      ...(priorIdentity.wave90Rekey ? { wave90_rekey: priorIdentity.wave90Rekey } : {}),
     },
     content_fingerprint_sha256: hashRows(selected),
     policy: {

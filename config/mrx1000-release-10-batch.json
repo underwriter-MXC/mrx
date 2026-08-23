@@ -1,7 +1,7 @@
 {
   "program": "MRX 1,000 Article SEO+AEO Production Program",
   "artifact_type": "authorized_release_10_batch",
-  "evidence_scaffold_generated_at_utc": "2026-08-23T22:14:21Z",
+  "evidence_scaffold_generated_at_utc": "2026-08-23T23:00:46Z",
   "decision_authority": {
     "successor_gate_decision_id": "D-2026-0804-16",
     "successor_gate_decision_path": "docs/governance/mrx1000-owner-continuous-publication-directive-2026-08-04.md",
@@ -291,13 +291,16 @@
     "wave88_selection_decision_sha256": "08bfc42431c498e07953dce6d66f7365f4d71de0cc616dac1fb0c72463003786",
     "wave89_selection_decision_id": "MRX1000-W89-SELECT-2026-08-23",
     "wave89_selection_decision_path": "docs/governance/mrx1000-wave89-selection-decision-2026-08-23.md",
-    "wave89_selection_decision_sha256": "abd592e9d3db9cf5373b66753c024246fff9044b1e7680c043d5eb82c0d7c332"
+    "wave89_selection_decision_sha256": "abd592e9d3db9cf5373b66753c024246fff9044b1e7680c043d5eb82c0d7c332",
+    "wave90_selection_decision_id": "MRX1000-W90-SELECT-2026-08-23",
+    "wave90_selection_decision_path": "docs/governance/mrx1000-wave90-selection-decision-2026-08-23.md",
+    "wave90_selection_decision_sha256": "ff9948aacfc68c5cc348672bbf9662439cdf437861af55572e9282e00b95a228"
   },
   "identity_authority": {
     "scope_key": "canonical_slug",
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_sha256": "cf4e044a7b5ec331131ba16f6b257e7435617018fe443762d08c4fc75e20a9e9",
-    "canonical_ledger_generated_at": "2026-07-20T02:50:14.678Z",
+    "canonical_ledger_sha256": "f5e49d899483600d005e4f09a15689435ad95ce44c05fc7f5cff70555b36de39",
+    "canonical_ledger_generated_at": "2026-07-20T14:24:44.351Z",
     "successor_ledger_decision_id": "D-2026-0723-LEDGER-04",
     "successor_ledger_decision_path": "artifacts/mrx1000-release-10/decisions/mrx-ceo-ledger-provenance-successor-20260723-04.md",
     "successor_ledger_decision_sha256": "09eca24bcd0e71563f2ac4197f564eec0ccb43a5ee955216da5c4a2543d04978",
@@ -311,11 +314,11 @@
     "authorization_scope": "declared_program_size_not_a_staged_release_cap",
     "admission_mode": "continuous_quality_gated",
     "continuous_quality_gated_from_selection_rank": 26,
-    "prior_verified_article_count": 168,
+    "prior_verified_article_count": 169,
     "fail_closed": true,
     "earned_scale_gates": [],
-    "exact_admitted_count": 169,
-    "exact_admitted_slate_sha256": "de3ec43dabfb5aa4359e7bc0600358bc82228852451b68dea64d47f145b958f3"
+    "exact_admitted_count": 170,
+    "exact_admitted_slate_sha256": "d283c79552a211023fc5be31238485043b6a755526da7db36a093ae3462b6052"
   },
   "articles": [
     {
@@ -5851,10 +5854,44 @@
       "inline_path": "/assets/articles/inline/texas-rrc-pooling-filing-retrieval-provenance-worksheet/texas-rrc-pooling-filing-retrieval.webp",
       "inline_asset_sha256": "76e9a86fad240955f518f9087f8daf6ca475ede4d8fadf26fa224617d3e340f1",
       "inline_rendered_text": "Texas RRC pooling filing retrieval"
+    },
+    {
+      "selection_rank": 170,
+      "program_row_id": "MRX1000-0275",
+      "source_shortlist_program_row_id": "MRX1000-0275",
+      "slug": "texas-rrc-drilling-permit-query-retrieval-provenance-worksheet",
+      "title": "Texas RRC Drilling-Permit Query Retrieval Provenance Worksheet",
+      "source_shortlist_title": "Texas RRC Drilling-Permit Query Retrieval Provenance Worksheet",
+      "canonical_url": "https://mineralrightsxchange.com/blog/texas-rrc-drilling-permit-query-retrieval-provenance-worksheet/",
+      "pillar": "mineral-rights-value",
+      "cluster": "valuation-methodology-drivers",
+      "content_genius_article_uuid": null,
+      "archive_evidence_sha256": "1f83f53c7f21bc92b2962e55722dc4b8c7e72490cfdd54d6abc2da73b99c8c15",
+      "repo_path": "src/content/posts/texas-rrc-drilling-permit-query-retrieval-provenance-worksheet.mdx",
+      "repo_sha256": "7db599bed3732224865516d91304b38d17ab613c10ead32e76d35ea7cb34e128",
+      "article_sha256": "7db599bed3732224865516d91304b38d17ab613c10ead32e76d35ea7cb34e128",
+      "hero_path": "/assets/articles/hero/texas-rrc-drilling-permit-query-retrieval-provenance-worksheet.webp",
+      "hero_sha256": "71e2deffffa7abccafcfd3799106773a7451da45ef4f68e5cb566ae7266d490e",
+      "hero_asset_sha256": "71e2deffffa7abccafcfd3799106773a7451da45ef4f68e5cb566ae7266d490e",
+      "admission_status": "admitted_quality_gated",
+      "finalization_state": "draft_noindex_admitted",
+      "searchatlas_content_score": null,
+      "searchatlas_word_count": 1978,
+      "risk_citation_remediation": [
+        "The original location-and-mineral-valuation identity was rejected for material corpus overlap. The admitted replacement owns only a source-preserving provenance worksheet for one official Texas RRC drilling-permit query attempt.",
+        "Current official Railroad Commission sources support only official routes, source-displayed query criteria and result labels, navigation behavior, public-query versus filing context, update notes, and data limitations. None establishes property connection, title, ownership, acreage, lease effect, entitlement, compliance, drilling likelihood, development, production, value, or a transaction result.",
+        "The article remains distinct from the pooling-filing worksheet, production-record locator, broad RRC tutorial, operator-name log, property-connection cross-check, and development or DCF corpus because it records one query execution without interpreting a permit or using the result downstream.",
+        "Continuous quality-gated admission under D-2026-0804-16, the 2026-08-14 no-approval owner directive, and MRX1000-W90-SELECT-2026-08-23; publication remains conditional on every article-specific gate and no owner publication approval applies."
+      ],
+      "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/texas-rrc-drilling-permit-query-retrieval-provenance-worksheet.json",
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/texas-rrc-drilling-permit-query-retrieval-provenance-worksheet/texas-rrc-drilling-permit-query-retrieval.webp",
+      "inline_asset_sha256": "e5058131e0893078f0299db7070b02a77415314579786ea8b92de287aacef3f0",
+      "inline_rendered_text": "Texas RRC drilling permit query retrieval"
     }
   ],
   "admission_audit": {
-    "admitted_article_count": 169,
+    "admitted_article_count": 170,
     "selection_ranks": [
       1,
       2,
@@ -6024,7 +6061,8 @@
       166,
       167,
       168,
-      169
+      169,
+      170
     ],
     "duplicate_program_row_ids": [],
     "duplicate_slugs": [],
@@ -6083,9 +6121,9 @@
   "two_image_policy": {
     "directive": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
     "retrofit_manifest_path": "config/mrx-article-two-image-retrofit.json",
-    "retrofit_manifest_sha256": "66ed3b150073db938f7bdbdef9b6d20fe75d098bee74963cc0fa643ecd1d2a59",
-    "public_article_count": 177,
-    "batch_article_count": 169,
+    "retrofit_manifest_sha256": "acaf37346cfe7a4535cda01325d76ab6b8bf0c30e793f9dbe80722bfaae0a6ae",
+    "public_article_count": 178,
+    "batch_article_count": 170,
     "assets_per_article": 2,
     "hero_share_identity_required": true,
     "inline_image_distinct_required": true,

@@ -1,18 +1,18 @@
 {
   "artifact_type": "mrx_article_two_image_retrofit",
   "schema_version": 1,
-  "generated_at_utc": "2026-08-23T21:02:39Z",
+  "generated_at_utc": "2026-08-23T22:42:37Z",
   "policy_source": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
   "summary": {
-    "article_count": 177,
-    "asset_count": 354,
-    "unique_source_art_count": 177,
-    "unique_hero_sha256_count": 177,
-    "unique_inline_sha256_count": 177,
-    "distinct_article_pair_count": 177,
-    "hero_ocr_pass_count": 177,
-    "inline_ocr_pass_count": 177,
-    "exact_filename_identity_count": 177
+    "article_count": 178,
+    "asset_count": 356,
+    "unique_source_art_count": 178,
+    "unique_hero_sha256_count": 178,
+    "unique_inline_sha256_count": 178,
+    "distinct_article_pair_count": 178,
+    "hero_ocr_pass_count": 178,
+    "inline_ocr_pass_count": 178,
+    "exact_filename_identity_count": 178
   },
   "contact_sheets": {
     "hero": [
@@ -5106,6 +5106,56 @@
           "actual": "Texas Railroad\nCommission:\nPublic Records\nfor Mineral\nRights",
           "normalized_expected": "texas railroad commission public records for mineral rights",
           "normalized_actual": "texas railroad commission public records for mineral rights",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      }
+    },
+    {
+      "slug": "texas-rrc-drilling-permit-query-retrieval-provenance-worksheet",
+      "title": "Texas RRC Drilling-Permit Query Retrieval Provenance Worksheet",
+      "keyword": "Texas RRC drilling permit query retrieval",
+      "file_path": "src/content/posts/texas-rrc-drilling-permit-query-retrieval-provenance-worksheet.mdx",
+      "source_public_path": "/assets/articles/hero/texas-rrc-drilling-permit-query-retrieval-provenance-worksheet.webp",
+      "source_artifact_paths": [
+        "artifacts/mrx1000-wave90-creative-sources/texas-rrc-drilling-permit-query-retrieval-provenance-worksheet-hero-base.png",
+        "artifacts/mrx1000-wave90-creative-sources/texas-rrc-drilling-permit-query-retrieval-provenance-worksheet-inline-base.png"
+      ],
+      "generated_at_utc": "2026-08-23T22:36:50.032Z",
+      "hero": {
+        "public_path": "/assets/articles/hero/texas-rrc-drilling-permit-query-retrieval-provenance-worksheet.webp",
+        "alt": "An archival Texas permit-query counter appears beside the exact article title.",
+        "width": 1200,
+        "height": 630,
+        "mime_type": "image/webp",
+        "sha256": "71e2deffffa7abccafcfd3799106773a7451da45ef4f68e5cb566ae7266d490e",
+        "perceptual_hash": "0000000011110100000000001101000100000000111000000000000011100001000000000011100001001000000111010000000000111111010000001100111100000000111111110000000011111110000000001111111100000000111111110000000011111111000000001111111100000000111111110000000001111111",
+        "neutralized_art_text_region_count": 1,
+        "ocr": {
+          "expected": "Texas RRC Drilling-Permit Query Retrieval Provenance Worksheet",
+          "actual": "Texas RRC\nDrilling-Permit Query\nRetrieval Provenance\nWorksheet",
+          "normalized_expected": "texas rrc drilling permit query retrieval provenance worksheet",
+          "normalized_actual": "texas rrc drilling permit query retrieval provenance worksheet",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      },
+      "inline": {
+        "public_path": "/assets/articles/inline/texas-rrc-drilling-permit-query-retrieval-provenance-worksheet/texas-rrc-drilling-permit-query-retrieval.webp",
+        "alt": "A top-down query-provenance worksheet appears above the exact keyword.",
+        "rendered_text": "Texas RRC drilling permit query retrieval",
+        "visual_variant": "wave90-distinct-generated-overhead-eight-field-drilling-permit-query-provenance-worksheet",
+        "width": 1200,
+        "height": 675,
+        "mime_type": "image/webp",
+        "sha256": "e5058131e0893078f0299db7070b02a77415314579786ea8b92de287aacef3f0",
+        "perceptual_hash": "1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111110000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "neutralized_art_text_region_count": 1,
+        "ocr": {
+          "expected": "Texas RRC drilling permit query retrieval",
+          "actual": "Texas RRC drilling permit\nquery retrieval",
+          "normalized_expected": "texas rrc drilling permit query retrieval",
+          "normalized_actual": "texas rrc drilling permit query retrieval",
           "uppercase_i_confusable_accepted": false,
           "pass": true
         }
