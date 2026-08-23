@@ -9,8 +9,8 @@
   "inputs": {
     "ledger": {
       "path": "config/mrx-1000-canonical-content-ledger.json",
-      "sha256": "83e6c6615a553ad6a82970d8beb1b3a4d33760df90531b5c46905b0811496d11",
-      "bytes": 4506801
+      "sha256": "54c77fed8dacb9eac93563eef417e11da8c69720cfb0c4b81599218afa0baa68",
+      "bytes": 4506393
     },
     "readiness": {
       "path": "reports/mrx-1000-readiness-matrix.json",
@@ -101951,7 +101951,7 @@
       "primary_keyword": "refrac workover event claim register",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -351138,5 +351138,5 @@
       ]
     }
   ],
-  "content_fingerprint_sha256": "bb546581311e4c262300cf444c81a48b5b7d0953d95207aac34c0616c2e92c8b"
+  "content_fingerprint_sha256": "0f8fea9476e7df7668865d9970b2d072e1904d609193f883038804072882b818"
 }
