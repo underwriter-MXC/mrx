@@ -1,7 +1,7 @@
 {
   "program": "MRX 1,000 Article SEO+AEO Production Program",
   "artifact_type": "authorized_release_10_batch",
-  "evidence_scaffold_generated_at_utc": "2026-08-23T05:17:23Z",
+  "evidence_scaffold_generated_at_utc": "2026-08-23T05:47:07Z",
   "decision_authority": {
     "successor_gate_decision_id": "D-2026-0804-16",
     "successor_gate_decision_path": "docs/governance/mrx1000-owner-continuous-publication-directive-2026-08-04.md",
@@ -252,13 +252,16 @@
     "wave75_selection_decision_sha256": "8f70ffe8ef64bd11ca800f17565667a3890ba6817345e024c308613f2b9cfd43",
     "wave76_selection_decision_id": "MRX1000-W76-SELECT-2026-08-22",
     "wave76_selection_decision_path": "docs/governance/mrx1000-wave76-selection-decision-2026-08-22.md",
-    "wave76_selection_decision_sha256": "0b9a6774eeabb1881696c7da32eb15baa210f084b8faf9708152e40a84d9023d"
+    "wave76_selection_decision_sha256": "0b9a6774eeabb1881696c7da32eb15baa210f084b8faf9708152e40a84d9023d",
+    "wave77_selection_decision_id": "MRX1000-W77-SELECT-2026-08-22",
+    "wave77_selection_decision_path": "docs/governance/mrx1000-wave77-selection-decision-2026-08-22.md",
+    "wave77_selection_decision_sha256": "ac1632ca303c2b23d86adbeb9562acc54b1125b10903168500330bc0934fe2c8"
   },
   "identity_authority": {
     "scope_key": "canonical_slug",
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_sha256": "25fe58c6ccdb1c26f8e4ac86802fced748d946deecd7e1ea5cea52899f7c2c53",
-    "canonical_ledger_generated_at": "2026-07-20T03:00:18.072Z",
+    "canonical_ledger_sha256": "8a59ceb48c4af54a9f6e14e684c60c3cf7b407ea9e3df971e00b9bce6d057b14",
+    "canonical_ledger_generated_at": "2026-07-20T15:11:38.706Z",
     "successor_ledger_decision_id": "D-2026-0723-LEDGER-04",
     "successor_ledger_decision_path": "artifacts/mrx1000-release-10/decisions/mrx-ceo-ledger-provenance-successor-20260723-04.md",
     "successor_ledger_decision_sha256": "09eca24bcd0e71563f2ac4197f564eec0ccb43a5ee955216da5c4a2543d04978",
@@ -272,11 +275,11 @@
     "authorization_scope": "declared_program_size_not_a_staged_release_cap",
     "admission_mode": "continuous_quality_gated",
     "continuous_quality_gated_from_selection_rank": 26,
-    "prior_verified_article_count": 155,
+    "prior_verified_article_count": 156,
     "fail_closed": true,
     "earned_scale_gates": [],
-    "exact_admitted_count": 156,
-    "exact_admitted_slate_sha256": "3cd9c71cbe7068885379f10893e1c84a00e89db52f50e8b2e474ad570d730ce2"
+    "exact_admitted_count": 157,
+    "exact_admitted_slate_sha256": "cb5cab2e9205b458d22a3fb20b92cf352aee58922e73eebf8d2028d9d44cb8fa"
   },
   "articles": [
     {
@@ -5370,10 +5373,44 @@
       "inline_path": "/assets/articles/inline/mineral-valuation-sensitivity-analysis-one-variable-scenario-worksheet/mineral-valuation-sensitivity-analysis-worksheet.webp",
       "inline_asset_sha256": "1b35cd7fad1e1eb82cfd20f3041be8fb802d4aa7042ef6696c5cbec394db4dd2",
       "inline_rendered_text": "mineral valuation sensitivity analysis worksheet"
+    },
+    {
+      "selection_rank": 157,
+      "program_row_id": "MRX1000-0262",
+      "source_shortlist_program_row_id": "MRX1000-0262",
+      "slug": "mineral-rights-worksheet-question-locator",
+      "title": "How to Locate an Unanswered Question in a Mineral Rights Worksheet",
+      "source_shortlist_title": "How to Locate an Unanswered Question in a Mineral Rights Worksheet",
+      "canonical_url": "https://mineralrightsxchange.com/blog/mineral-rights-worksheet-question-locator/",
+      "pillar": "mineral-rights-value",
+      "cluster": "valuation-methodology-drivers",
+      "content_genius_article_uuid": null,
+      "archive_evidence_sha256": "65d15b8ed1cba04f7ed682b16e7fdb35c13e1dee4fd093d4142f532b9cb30282",
+      "repo_path": "src/content/posts/mineral-rights-worksheet-question-locator.mdx",
+      "repo_sha256": "174e87b1ab2848d86be83832ebb6f42ebaea3881bba2b1fd485efb903230cf4f",
+      "article_sha256": "174e87b1ab2848d86be83832ebb6f42ebaea3881bba2b1fd485efb903230cf4f",
+      "hero_path": "/assets/articles/hero/how-to-locate-an-unanswered-question-in-a-mineral-rights-worksheet.webp",
+      "hero_sha256": "d830e39261c419ed2f40daec98a4ac05c5076c29a786ba9aed76a1c8b90df989",
+      "hero_asset_sha256": "d830e39261c419ed2f40daec98a4ac05c5076c29a786ba9aed76a1c8b90df989",
+      "admission_status": "admitted_quality_gated",
+      "finalization_state": "draft_noindex_admitted",
+      "searchatlas_content_score": null,
+      "searchatlas_word_count": 1609,
+      "risk_citation_remediation": [
+        "The original NRI-as-value-input identity was rejected because it overlaps the live net-royalty-acre/NRI and lease-royalty-rate valuation guides. The admitted replacement owns only the neutral mechanics for locating one unanswered question in an existing worksheet and routing it to an already-shown reviewer or queue.",
+        "NARA, Microsoft, and RRC sources support only bounded descriptions of record identifiers and dates, worksheet location references, query types and update context, and PDQ navigation/reporting limitations. None supplies a source-validation judgment, correction, ownership fact, title conclusion, appraisal, value, offer analysis, or transaction outcome.",
+        "Continuous quality-gated admission under D-2026-0804-16, the 2026-08-14 no-approval owner directive, and MRX1000-W77-SELECT-2026-08-22; no numerical cap, elapsed-time gate, or owner publication approval applies.",
+        "Publication remains conditional on current editorial, factual-citation, compliance, two-image, metadata, build, rollback, deployment, and live-verification evidence."
+      ],
+      "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/mineral-rights-worksheet-question-locator.json",
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/mineral-rights-worksheet-question-locator/mineral-rights-worksheet-question-locator.webp",
+      "inline_asset_sha256": "1bc9091084c13bed12db357ee2627fa41fce333ccf991f875aa3d88b8ad2bcc6",
+      "inline_rendered_text": "mineral rights worksheet question locator"
     }
   ],
   "admission_audit": {
-    "admitted_article_count": 156,
+    "admitted_article_count": 157,
     "selection_ranks": [
       1,
       2,
@@ -5530,7 +5567,8 @@
       153,
       154,
       155,
-      156
+      156,
+      157
     ],
     "duplicate_program_row_ids": [],
     "duplicate_slugs": [],
@@ -5589,9 +5627,9 @@
   "two_image_policy": {
     "directive": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
     "retrofit_manifest_path": "config/mrx-article-two-image-retrofit.json",
-    "retrofit_manifest_sha256": "dd59f16cb7713f2d5da3fee20c0d52d06e03a5bcacc20e92e600c2832651ffb1",
-    "public_article_count": 164,
-    "batch_article_count": 156,
+    "retrofit_manifest_sha256": "0d0e3d8a1f385f1e22b136b5d7dfe3fd3e0ca4b718d3b04e6359fb6edb347eb1",
+    "public_article_count": 165,
+    "batch_article_count": 157,
     "assets_per_article": 2,
     "hero_share_identity_required": true,
     "inline_image_distinct_required": true,

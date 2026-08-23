@@ -1,15 +1,15 @@
 {
   "artifact_type": "mrx1000_content_activation_plan",
   "plan_version": "mrx1000-content-activation-v1.1.0",
-  "generated_at": "2026-07-20T03:00:18.072Z",
+  "generated_at": "2026-07-20T15:11:38.706Z",
   "generated_at_method": "canonical_ledger_generated_at",
   "generator": "scripts/build-mrx-1000-activation-plan.mjs",
-  "content_fingerprint_sha256": "d6fa7a2ea59bb7f1a8adc0dbbd1c0470adc20cd61fb52743efcc182f2215f029",
+  "content_fingerprint_sha256": "a63cd96e3f2824c9cc0ce90fa98f1feba8d448e7557116874cf859dfeb18931d",
   "inputs": {
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_fingerprint_sha256": "7d87511ce826693f300f279b20f01f78a8ff1f241bbb74a883c2929ff5b2aab9",
+    "canonical_ledger_fingerprint_sha256": "e000b3065ef7690a9a6e4d0aed9e1d8e2109df5289c46942da6a92a3d40aae06",
     "canonical_ledger_fingerprint_verified": true,
-    "canonical_ledger_generated_at": "2026-07-20T03:00:18.072Z",
+    "canonical_ledger_generated_at": "2026-07-20T15:11:38.706Z",
     "owner_decision": {
       "decision_id": "D-2026-0804-16",
       "signed_disposition": "APPROVED_CONTINUOUS_QUALITY_GATED_ARTICLE_PUBLICATION",
@@ -115,9 +115,9 @@
     },
     "by_source_preservation_classification": {
       "incumbent_draft_nonpublic_held": 27,
-      "live_public_published_route": 164,
+      "live_public_published_route": 165,
       "pilot_draft_noindex_stage": 25,
-      "planning_only_inventory": 784
+      "planning_only_inventory": 783
     }
   },
   "rows": [
@@ -16267,11 +16267,11 @@
       },
       "sibling_link": {
         "target_program_row_id": "MRX1000-0262",
-        "target_title": "Net Revenue Interest as a Mineral Valuation Input",
-        "url": "/blog/net-revenue-interest-as-a-mineral-valuation-input/",
+        "target_title": "How to Locate an Unanswered Question in a Mineral Rights Worksheet",
+        "url": "/blog/mineral-rights-worksheet-question-locator/",
         "relationship": "same_cluster_next_by_program_row_id_cyclic",
-        "target_source_preservation_classification": "planning_only_inventory",
-        "target_route_live": false,
+        "target_source_preservation_classification": "live_public_published_route",
+        "target_route_live": true,
         "status": "planned_local_only"
       },
       "primary_cta": {
@@ -16314,15 +16314,15 @@
     },
     {
       "program_row_id": "MRX1000-0262",
-      "canonical_title": "Net Revenue Interest as a Mineral Valuation Input",
-      "canonical_slug": "net-revenue-interest-as-a-mineral-valuation-input",
-      "canonical_url": "/blog/net-revenue-interest-as-a-mineral-valuation-input/",
+      "canonical_title": "How to Locate an Unanswered Question in a Mineral Rights Worksheet",
+      "canonical_slug": "mineral-rights-worksheet-question-locator",
+      "canonical_url": "/blog/mineral-rights-worksheet-question-locator/",
       "cluster": "valuation-methodology-drivers",
       "pillar": "mineral-rights-value",
       "search_intent": "informational",
       "funnel_stage": "consideration",
-      "source_preservation_classification": "planning_only_inventory",
-      "source_route_live": false,
+      "source_preservation_classification": "live_public_published_route",
+      "source_route_live": true,
       "pillar_link": {
         "url": "/mineral-rights-value/",
         "route_evidence": "src/pages/mineral-rights-value.astro",
@@ -16371,7 +16371,7 @@
         "rendered_triangle_verified": false,
         "live_status": "not_published_or_verified_by_this_plan",
         "live_triangle_verified": false,
-        "release_status": "eligible_for_continuous_quality_review_not_yet_cleared",
+        "release_status": "released_under_d16_continuous_quality_gate",
         "numerical_release_cap_applies": false
       }
     },
@@ -18723,7 +18723,7 @@
         "status": "planned_local_only"
       },
       "sibling_link": {
-        "target_program_row_id": "MRX1000-1012",
+        "target_program_row_id": "MRX1000-1014",
         "target_title": "Mineral Appraisal: Guide In 2026",
         "url": "/blog/mineral-appraisal-guide-in-2026/",
         "relationship": "same_cluster_next_by_program_row_id_cyclic",
@@ -63059,7 +63059,7 @@
       }
     },
     {
-      "program_row_id": "MRX1000-1012",
+      "program_row_id": "MRX1000-1014",
       "canonical_title": "Mineral Appraisal: Guide In 2026",
       "canonical_slug": "mineral-appraisal-guide-in-2026",
       "canonical_url": "/blog/mineral-appraisal-guide-in-2026/",

@@ -1,18 +1,18 @@
 {
   "artifact_type": "mrx_article_two_image_retrofit",
   "schema_version": 1,
-  "generated_at_utc": "2026-08-23T04:12:38Z",
+  "generated_at_utc": "2026-08-23T05:42:24Z",
   "policy_source": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
   "summary": {
-    "article_count": 164,
-    "asset_count": 328,
-    "unique_source_art_count": 164,
-    "unique_hero_sha256_count": 164,
-    "unique_inline_sha256_count": 164,
-    "distinct_article_pair_count": 164,
-    "hero_ocr_pass_count": 164,
-    "inline_ocr_pass_count": 164,
-    "exact_filename_identity_count": 164
+    "article_count": 165,
+    "asset_count": 330,
+    "unique_source_art_count": 165,
+    "unique_hero_sha256_count": 165,
+    "unique_inline_sha256_count": 165,
+    "distinct_article_pair_count": 165,
+    "hero_ocr_pass_count": 165,
+    "inline_ocr_pass_count": 165,
+    "exact_filename_identity_count": 165
   },
   "contact_sheets": {
     "hero": [
@@ -3734,6 +3734,56 @@
           "actual": "Mineral Rights Valuation\nInput Correction Packet",
           "normalized_expected": "mineral rights valuation input correction packet",
           "normalized_actual": "mineral rights valuation input correction packet",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      }
+    },
+    {
+      "slug": "mineral-rights-worksheet-question-locator",
+      "title": "How to Locate an Unanswered Question in a Mineral Rights Worksheet",
+      "keyword": "mineral rights worksheet question locator",
+      "file_path": "src/content/posts/mineral-rights-worksheet-question-locator.mdx",
+      "source_public_path": "/assets/articles/hero/how-to-locate-an-unanswered-question-in-a-mineral-rights-worksheet.webp",
+      "source_artifact_paths": [
+        "artifacts/mrx1000-wave77-creative-sources/mineral-rights-worksheet-question-locator-hero-base.png",
+        "artifacts/mrx1000-wave77-creative-sources/mineral-rights-worksheet-question-locator-inline-base.png"
+      ],
+      "generated_at_utc": "2026-08-23T05:36:20.946Z",
+      "hero": {
+        "public_path": "/assets/articles/hero/how-to-locate-an-unanswered-question-in-a-mineral-rights-worksheet.webp",
+        "alt": "A blank worksheet, callout bracket, and question card appear beside the exact article title.",
+        "width": 1200,
+        "height": 630,
+        "mime_type": "image/webp",
+        "sha256": "d830e39261c419ed2f40daec98a4ac05c5076c29a786ba9aed76a1c8b90df989",
+        "perceptual_hash": "0000000000000010000000000001110000000000001111100000000001111110000000000111111001001000011111100011100001111110000000000111111100000000011111110000000001111111000000000111111100000000011111110000000001111110000000000111111000000000000000000000000000000000",
+        "neutralized_art_text_region_count": 1,
+        "ocr": {
+          "expected": "How to Locate an Unanswered Question in a Mineral Rights Worksheet",
+          "actual": "How to Locate an\nUnanswered Question\nin a Mineral Rights\nWorksheet",
+          "normalized_expected": "how to locate an unanswered question in a mineral rights worksheet",
+          "normalized_actual": "how to locate an unanswered question in a mineral rights worksheet",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      },
+      "inline": {
+        "public_path": "/assets/articles/inline/mineral-rights-worksheet-question-locator/mineral-rights-worksheet-question-locator.webp",
+        "alt": "A top-down locator board outlines one blank worksheet cell beside a source tag and question-routing card.",
+        "rendered_text": "mineral rights worksheet question locator",
+        "visual_variant": "wave77-distinct-generated-overhead-question-locator-board",
+        "width": 1200,
+        "height": 675,
+        "mime_type": "image/webp",
+        "sha256": "1bc9091084c13bed12db357ee2627fa41fce333ccf991f875aa3d88b8ad2bcc6",
+        "perceptual_hash": "1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "neutralized_art_text_region_count": 1,
+        "ocr": {
+          "expected": "mineral rights worksheet question locator",
+          "actual": "mineral rights worksheet\nquestion locator",
+          "normalized_expected": "mineral rights worksheet question locator",
+          "normalized_actual": "mineral rights worksheet question locator",
           "uppercase_i_confusable_accepted": false,
           "pass": true
         }

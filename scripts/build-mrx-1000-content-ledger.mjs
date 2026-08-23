@@ -80,6 +80,7 @@ const SUPERSEDED_CANONICAL_SLUGS = new Set([
   '7-effective-strategies-to-keep-your-personal-information-confidential-in-mineral-rights-transactions',
   'enhancing-your-mineral-rights-sale-how-ai-streamlines-the-comparison-process',
   'mineral-valuation-sensitivity-analysis-which-assumptions-matter',
+  'net-revenue-interest-as-a-mineral-valuation-input',
 ]);
 const SUCCESSOR_CANONICAL_SLUGS = new Map([
   ['what-every-mineral-rights-owner-needs-to-know', 'should-i-sell-my-mineral-rights'],
@@ -150,6 +151,10 @@ const SUCCESSOR_CANONICAL_SLUGS = new Map([
     'mineral-valuation-sensitivity-analysis-which-assumptions-matter',
     'mineral-valuation-sensitivity-analysis-one-variable-scenario-worksheet',
   ],
+  [
+    'net-revenue-interest-as-a-mineral-valuation-input',
+    'mineral-rights-worksheet-question-locator',
+  ],
 ]);
 const APPROVED_REKEY_SEARCH_INTENT_BY_SLUG = new Map([
   ['should-i-sell-my-mineral-rights', 'transactional'],
@@ -164,6 +169,7 @@ const APPROVED_REKEY_SEARCH_INTENT_BY_SLUG = new Map([
   ['mineral-rights-document-redaction-checklist-before-sharing-records', 'informational'],
   ['mineral-rights-ai-source-trace', 'informational'],
   ['mineral-valuation-sensitivity-analysis-one-variable-scenario-worksheet', 'informational'],
+  ['mineral-rights-worksheet-question-locator', 'informational'],
 ]);
 
 async function loadPriorProgramRowIds() {
@@ -196,6 +202,7 @@ async function loadPriorProgramRowIds() {
         wave74Rekey: null,
         wave75Rekey: null,
         wave76Rekey: null,
+        wave77Rekey: null,
       };
     }
     throw error;
@@ -250,6 +257,7 @@ async function loadPriorProgramRowIds() {
     wave74Rekey: prior.identity_registry?.wave74_rekey ?? null,
     wave75Rekey: prior.identity_registry?.wave75_rekey ?? null,
     wave76Rekey: prior.identity_registry?.wave76_rekey ?? null,
+    wave77Rekey: prior.identity_registry?.wave77_rekey ?? null,
   };
 }
 
@@ -1598,6 +1606,7 @@ async function main() {
       ...(priorIdentity.wave74Rekey ? { wave74_rekey: priorIdentity.wave74Rekey } : {}),
       ...(priorIdentity.wave75Rekey ? { wave75_rekey: priorIdentity.wave75Rekey } : {}),
       ...(priorIdentity.wave76Rekey ? { wave76_rekey: priorIdentity.wave76Rekey } : {}),
+      ...(priorIdentity.wave77Rekey ? { wave77_rekey: priorIdentity.wave77Rekey } : {}),
     },
     content_fingerprint_sha256: hashRows(selected),
     policy: {
