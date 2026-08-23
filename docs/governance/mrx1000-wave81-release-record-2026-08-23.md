@@ -17,7 +17,7 @@ If the Article 161 deployment fails a production gate, immediately restore every
 - Authoritative source retrieval: `5/5 PASS`
 - Editorial, factual-citation, and compliance review: `PASS`
 - Exact-title hero/share and distinct exact-keyword inline image: `PASS`
-- Article SHA-256: `dae3253f749eff5fa7e3a44715e2426fdda0b23b20b101a7be688eb861115761`
+- Article SHA-256: `8528e6f97b85b6ad8fac6f77a71920371e60321d96ccceb3fb2fedbc114dfb0b`
 - Selection-decision SHA-256: `638a424ab8c7ff96de80950e23d0b86dc93dcf54a39bcd66eae2ef9b860d3046`
 - Hero SHA-256: `106beb6e191e5d937db37ba4218c513f220dae1d5b5ce0af5d487b65dd2dd64a`
 - Inline SHA-256: `621be9597c40952fe865fcd156e77ddd716333ffba311efa774903fbbce6d74f`
@@ -27,9 +27,9 @@ If the Article 161 deployment fails a production gate, immediately restore every
 - Built hero and inline asset byte assertions: `PASS`
 - Lint: `PASS`
 - Unit tests: `596/596 PASS`
-- Pre-publication canonical-ledger JSON SHA-256: `d2a25e28a148519262fbbec2c879902f385bcadebe306e2ab7443d6ba3f25397`
+- Pre-publication canonical-ledger JSON SHA-256: `0a053f88ec3658f8253e0a0fa3ef1210a23232d0aeea1316e4b6f52c89f2ce61`
 - Pre-publication canonical-ledger CSV SHA-256: `e36764ecb4e65c52ac956dd02e59467102352239bcf3840f6e558bc57cdb1bf3`
-- Pre-publication release-batch SHA-256: `3ab0eba88a71a85985471d931222da6b9598be30825e1a5e55f671085fda9acb`
+- Pre-publication release-batch SHA-256: `53540f523c312ddef4f6579cf3d8c6bdcbfd5ffa668a9c0db4f64ca2a0083859`
 - Deployment, live verification, and reconciliation: `PENDING`
 
 Production results are appended only after the verified release is live.

@@ -9,8 +9,8 @@
   "inputs": {
     "ledger": {
       "path": "config/mrx-1000-canonical-content-ledger.json",
-      "sha256": "d2a25e28a148519262fbbec2c879902f385bcadebe306e2ab7443d6ba3f25397",
-      "bytes": 4501962
+      "sha256": "0a053f88ec3658f8253e0a0fa3ef1210a23232d0aeea1316e4b6f52c89f2ce61",
+      "bytes": 4501156
     },
     "readiness": {
       "path": "reports/mrx-1000-readiness-matrix.json",
@@ -100854,7 +100854,7 @@
           "state": "WORKSPACE_MDX_PRESENT",
           "path": "src/content/posts/post-production-cost-evidence-packet-for-royalty-records.mdx",
           "mdx_exists": true,
-          "source_sha256": "dae3253f749eff5fa7e3a44715e2426fdda0b23b20b101a7be688eb861115761",
+          "source_sha256": "8528e6f97b85b6ad8fac6f77a71920371e60321d96ccceb3fb2fedbc114dfb0b",
           "publication_status": "published",
           "frontmatter_noindex": false,
           "workspace_public_route_configured": true,
@@ -100875,10 +100875,10 @@
             "frontmatter_draft": false,
             "frontmatter_noindex": false,
             "frontmatter_indexable": null,
-            "body_sha256": "095ab97c848af8f2748487056d2410d81a563fa1141af7a9650bd63f18627d5b",
-            "body_bytes": 12481,
-            "body_characters": 12449,
-            "body_word_count": 1723,
+            "body_sha256": "670f7af8e85a71efce7fb2545177995798f408d8043414888ca622ccb9e8d803",
+            "body_bytes": 12263,
+            "body_characters": 12231,
+            "body_word_count": 1707,
             "explicit_qa_shell_without_final_copy": false,
             "filename_matches_canonical_slug": true,
             "frontmatter_title_matches_canonical": true,
@@ -100909,9 +100909,9 @@
           "state": "CHECKSUMMED_EXISTING_PUBLIC_ARTICLE_READY_FOR_LLM_REVIEW",
           "checksummed_review_candidate_present": true,
           "path": "src/content/posts/post-production-cost-evidence-packet-for-royalty-records.mdx",
-          "source_sha256": "dae3253f749eff5fa7e3a44715e2426fdda0b23b20b101a7be688eb861115761",
-          "body_sha256": "095ab97c848af8f2748487056d2410d81a563fa1141af7a9650bd63f18627d5b",
-          "body_word_count": 1723,
+          "source_sha256": "8528e6f97b85b6ad8fac6f77a71920371e60321d96ccceb3fb2fedbc114dfb0b",
+          "body_sha256": "670f7af8e85a71efce7fb2545177995798f408d8043414888ca622ccb9e8d803",
+          "body_word_count": 1707,
           "candidate_type": "existing_public_article",
           "readiness_evidence_verified": true,
           "readiness_evidence_paths": [
@@ -100986,7 +100986,7 @@
           "prerequisite_gates": {
             "checksummed_review_candidate_present": true,
             "review_candidate_path": "src/content/posts/post-production-cost-evidence-packet-for-royalty-records.mdx",
-            "review_candidate_sha256": "dae3253f749eff5fa7e3a44715e2426fdda0b23b20b101a7be688eb861115761",
+            "review_candidate_sha256": "8528e6f97b85b6ad8fac6f77a71920371e60321d96ccceb3fb2fedbc114dfb0b",
             "review_candidate_readiness_evidence_verified": true,
             "predecessor_key": null,
             "predecessor_pass_required": false,
@@ -101023,7 +101023,7 @@
           "prerequisite_gates": {
             "checksummed_review_candidate_present": true,
             "review_candidate_path": "src/content/posts/post-production-cost-evidence-packet-for-royalty-records.mdx",
-            "review_candidate_sha256": "dae3253f749eff5fa7e3a44715e2426fdda0b23b20b101a7be688eb861115761",
+            "review_candidate_sha256": "8528e6f97b85b6ad8fac6f77a71920371e60321d96ccceb3fb2fedbc114dfb0b",
             "review_candidate_readiness_evidence_verified": true,
             "predecessor_key": "chatgpt",
             "predecessor_pass_required": true,
@@ -101060,7 +101060,7 @@
           "prerequisite_gates": {
             "checksummed_review_candidate_present": true,
             "review_candidate_path": "src/content/posts/post-production-cost-evidence-packet-for-royalty-records.mdx",
-            "review_candidate_sha256": "dae3253f749eff5fa7e3a44715e2426fdda0b23b20b101a7be688eb861115761",
+            "review_candidate_sha256": "8528e6f97b85b6ad8fac6f77a71920371e60321d96ccceb3fb2fedbc114dfb0b",
             "review_candidate_readiness_evidence_verified": true,
             "predecessor_key": "google_gemini",
             "predecessor_pass_required": true,
@@ -101097,7 +101097,7 @@
           "prerequisite_gates": {
             "checksummed_review_candidate_present": true,
             "review_candidate_path": "src/content/posts/post-production-cost-evidence-packet-for-royalty-records.mdx",
-            "review_candidate_sha256": "dae3253f749eff5fa7e3a44715e2426fdda0b23b20b101a7be688eb861115761",
+            "review_candidate_sha256": "8528e6f97b85b6ad8fac6f77a71920371e60321d96ccceb3fb2fedbc114dfb0b",
             "review_candidate_readiness_evidence_verified": true,
             "predecessor_key": "claude_opus_4_6",
             "predecessor_pass_required": true,
@@ -101134,7 +101134,7 @@
           "prerequisite_gates": {
             "checksummed_review_candidate_present": true,
             "review_candidate_path": "src/content/posts/post-production-cost-evidence-packet-for-royalty-records.mdx",
-            "review_candidate_sha256": "dae3253f749eff5fa7e3a44715e2426fdda0b23b20b101a7be688eb861115761",
+            "review_candidate_sha256": "8528e6f97b85b6ad8fac6f77a71920371e60321d96ccceb3fb2fedbc114dfb0b",
             "review_candidate_readiness_evidence_verified": true,
             "predecessor_key": "perplexity",
             "predecessor_pass_required": true,
@@ -351060,5 +351060,5 @@
       ]
     }
   ],
-  "content_fingerprint_sha256": "e856bf0be50be785aef4737fefa57547a646eedc89b89414e687e951ea7cb5f6"
+  "content_fingerprint_sha256": "a746f034a6a45c1b58272ec07e5c7fd6e833785c5fc2464a00ffa3a50ba5e15d"
 }
