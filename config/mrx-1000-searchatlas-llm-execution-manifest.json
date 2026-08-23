@@ -9,13 +9,13 @@
   "inputs": {
     "ledger": {
       "path": "config/mrx-1000-canonical-content-ledger.json",
-      "sha256": "0355d931382f30b09de76ba456969006b4f54341bea20d70df035615e4e1bcaf",
-      "bytes": 4494432
+      "sha256": "25fe58c6ccdb1c26f8e4ac86802fced748d946deecd7e1ea5cea52899f7c2c53",
+      "bytes": 4494745
     },
     "readiness": {
       "path": "reports/mrx-1000-readiness-matrix.json",
-      "sha256": "2adb7a8f7da055fbf7da10b613fcc3a7bf74a02b6bd6220876c54eb45e1c2578",
-      "bytes": 3428799,
+      "sha256": "5e4214e689cd539d94ccc998461ce76bfaab3c113ce3f2102c5bc53041352262",
+      "bytes": 3428797,
       "sha256_method": "canonical_json_with_top_level_generated_at_masked",
       "generated_at_excluded_from_sha256": true
     },
@@ -99344,7 +99344,7 @@
         "release_action_eligible_now": false,
         "index_submission_eligible_now": false,
         "sitemap_addition_eligible_now": false,
-        "currently_in_workspace_sitemap": false,
+        "currently_in_workspace_sitemap": true,
         "production_live_verified_in_this_local_build": false,
         "release_or_index_action_performed": false,
         "exact_claude_opus_4_6_required_before_release_or_index_transition": true,
@@ -350930,5 +350930,5 @@
       ]
     }
   ],
-  "content_fingerprint_sha256": "e6bc15bceca4a50ad6ea143341fdf6702c1bfecd0762d6d82d14eb54407c3fdd"
+  "content_fingerprint_sha256": "1c1bb9d2958ad61a443cf5c378f7f1bddbe3a86edc193a7f420e1263bc917d0f"
 }
