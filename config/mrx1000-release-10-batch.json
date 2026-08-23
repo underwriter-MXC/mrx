@@ -1,7 +1,7 @@
 {
   "program": "MRX 1,000 Article SEO+AEO Production Program",
   "artifact_type": "authorized_release_10_batch",
-  "evidence_scaffold_generated_at_utc": "2026-08-23T13:01:24Z",
+  "evidence_scaffold_generated_at_utc": "2026-08-23T13:31:40Z",
   "decision_authority": {
     "successor_gate_decision_id": "D-2026-0804-16",
     "successor_gate_decision_path": "docs/governance/mrx1000-owner-continuous-publication-directive-2026-08-04.md",
@@ -270,13 +270,16 @@
     "wave81_selection_decision_sha256": "638a424ab8c7ff96de80950e23d0b86dc93dcf54a39bcd66eae2ef9b860d3046",
     "wave82_selection_decision_id": "MRX1000-W82-SELECT-2026-08-23",
     "wave82_selection_decision_path": "docs/governance/mrx1000-wave82-selection-decision-2026-08-23.md",
-    "wave82_selection_decision_sha256": "8d26609723b56d72656bfa90e4b3ccbddb1690b0c42f6842e50e32f5f4c51670"
+    "wave82_selection_decision_sha256": "8d26609723b56d72656bfa90e4b3ccbddb1690b0c42f6842e50e32f5f4c51670",
+    "wave83_selection_decision_id": "MRX1000-W83-SELECT-2026-08-23",
+    "wave83_selection_decision_path": "docs/governance/mrx1000-wave83-selection-decision-2026-08-23.md",
+    "wave83_selection_decision_sha256": "00c5e1d063693b406e2e8ee7c33759653a43bef3b9150892882f598a00ac60e6"
   },
   "identity_authority": {
     "scope_key": "canonical_slug",
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_sha256": "95b88415d0c36034bdb46922d0e48173420b62febdb6ef0459da54a99c0936ab",
-    "canonical_ledger_generated_at": "2026-07-20T12:43:36.341Z",
+    "canonical_ledger_sha256": "51d14165e9e8b99063749741a016f2ab7669b096c95a1437a3c95552ee8deda1",
+    "canonical_ledger_generated_at": "2026-07-20T16:02:55.102Z",
     "successor_ledger_decision_id": "D-2026-0723-LEDGER-04",
     "successor_ledger_decision_path": "artifacts/mrx1000-release-10/decisions/mrx-ceo-ledger-provenance-successor-20260723-04.md",
     "successor_ledger_decision_sha256": "09eca24bcd0e71563f2ac4197f564eec0ccb43a5ee955216da5c4a2543d04978",
@@ -290,11 +293,11 @@
     "authorization_scope": "declared_program_size_not_a_staged_release_cap",
     "admission_mode": "continuous_quality_gated",
     "continuous_quality_gated_from_selection_rank": 26,
-    "prior_verified_article_count": 161,
+    "prior_verified_article_count": 162,
     "fail_closed": true,
     "earned_scale_gates": [],
-    "exact_admitted_count": 162,
-    "exact_admitted_slate_sha256": "ee3db705a6602d36be91fce657e527ec24a08e7f7f01ddcbd09e08ce827b41ce"
+    "exact_admitted_count": 163,
+    "exact_admitted_slate_sha256": "1fe898aa4c618e2cf889e59fbeea19cccc61fbecf7ff3f7b9e545a65b4c5e266"
   },
   "articles": [
     {
@@ -5592,10 +5595,44 @@
       "inline_path": "/assets/articles/inline/compare-public-oil-and-gas-price-decks-without-mixing-assumptions/compare-public-oil-and-gas-price-decks.webp",
       "inline_asset_sha256": "ec026c9d07d0c66429b229307e27548a0619ac40c67421db6cc1cd8b087ad8d5",
       "inline_rendered_text": "compare public oil and gas price decks"
+    },
+    {
+      "selection_rank": 163,
+      "program_row_id": "MRX1000-0268",
+      "source_shortlist_program_row_id": "MRX1000-0268",
+      "slug": "inventory-mixed-status-mineral-interests-before-valuation-review",
+      "title": "How to Inventory Mixed-Status Mineral Interests Before a Valuation Review",
+      "source_shortlist_title": "How to Inventory Mixed-Status Mineral Interests Before a Valuation Review",
+      "canonical_url": "https://mineralrightsxchange.com/blog/inventory-mixed-status-mineral-interests-before-valuation-review/",
+      "pillar": "mineral-rights-value",
+      "cluster": "valuation-methodology-drivers",
+      "content_genius_article_uuid": null,
+      "archive_evidence_sha256": "8fe9a0a5f9776d9db76d9f547fa2be5d7d79be64c89c2081b4c05c279717d767",
+      "repo_path": "src/content/posts/inventory-mixed-status-mineral-interests-before-valuation-review.mdx",
+      "repo_sha256": "bde02b409d35e4723822fed05e87b967246e8779117c8b7e692034db5667da18",
+      "article_sha256": "bde02b409d35e4723822fed05e87b967246e8779117c8b7e692034db5667da18",
+      "hero_path": "/assets/articles/hero/how-to-inventory-mixed-status-mineral-interests-before-a-valuation-review.webp",
+      "hero_sha256": "adc86940ec5e195d0c0b1d913afb78fe4196df94576eb15f8c373b1564305889",
+      "hero_asset_sha256": "adc86940ec5e195d0c0b1d913afb78fe4196df94576eb15f8c373b1564305889",
+      "admission_status": "admitted_quality_gated",
+      "finalization_state": "draft_noindex_admitted",
+      "searchatlas_content_score": null,
+      "searchatlas_word_count": 1644,
+      "risk_citation_remediation": [
+        "The original producing-versus-non-producing valuation identity was rejected because it materially collides with the live status-and-inputs comparison guide. The admitted replacement owns only an administrative mixed-status inventory.",
+        "Current Texas regulator, GLO, and unclaimed-property sources support only record-location and query-reference logistics. None proves private ownership, determines operating or payment status, interprets a document, establishes entitlement, or determines value.",
+        "Continuous quality-gated admission under D-2026-0804-16, the 2026-08-14 no-approval owner directive, and MRX1000-W83-SELECT-2026-08-23; no numerical cap, elapsed-time gate, or owner publication approval applies.",
+        "Publication remains conditional on current editorial, factual-citation, compliance, two-image, metadata, build, rollback, deployment, and live-verification evidence."
+      ],
+      "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/inventory-mixed-status-mineral-interests-before-valuation-review.json",
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/inventory-mixed-status-mineral-interests-before-valuation-review/mixed-status-mineral-interest-inventory.webp",
+      "inline_asset_sha256": "2f790894d9db1f251bcea14310d7eeb6a4e11346b5d5b61118fec1454c642471",
+      "inline_rendered_text": "mixed-status mineral interest inventory"
     }
   ],
   "admission_audit": {
-    "admitted_article_count": 162,
+    "admitted_article_count": 163,
     "selection_ranks": [
       1,
       2,
@@ -5758,7 +5795,8 @@
       159,
       160,
       161,
-      162
+      162,
+      163
     ],
     "duplicate_program_row_ids": [],
     "duplicate_slugs": [],
@@ -5817,9 +5855,9 @@
   "two_image_policy": {
     "directive": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
     "retrofit_manifest_path": "config/mrx-article-two-image-retrofit.json",
-    "retrofit_manifest_sha256": "0da7414da6cc4e96cecdb4841564f72bd71307414b5780a23654ae6afa483426",
-    "public_article_count": 170,
-    "batch_article_count": 162,
+    "retrofit_manifest_sha256": "943e59ce9744ba16f811abe2b712185d96d3e25a341093110487ac32afb94fb4",
+    "public_article_count": 171,
+    "batch_article_count": 163,
     "assets_per_article": 2,
     "hero_share_identity_required": true,
     "inline_image_distinct_required": true,

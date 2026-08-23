@@ -9,22 +9,36 @@ import { basename, dirname, join, resolve } from 'node:path';
 import sharp from 'sharp';
 
 const root = resolve(import.meta.dirname, '..');
-const slug = 'compare-public-oil-and-gas-price-decks-without-mixing-assumptions';
-const title = 'How to Compare Public Oil and Gas Price Decks Without Mixing Assumptions';
-const keyword = 'compare public oil and gas price decks';
-const heroFilename = 'how-to-compare-public-oil-and-gas-price-decks-without-mixing-assumptions';
-const inlineFilename = 'compare-public-oil-and-gas-price-decks';
+const waveNumber = process.env.MRX_WAVE_NUMBER ?? '82';
+const slug =
+  process.env.MRX_ARTICLE_SLUG ?? 'compare-public-oil-and-gas-price-decks-without-mixing-assumptions';
+const title =
+  process.env.MRX_ARTICLE_TITLE ??
+  'How to Compare Public Oil and Gas Price Decks Without Mixing Assumptions';
+const keyword = process.env.MRX_ARTICLE_KEYWORD ?? 'compare public oil and gas price decks';
+const heroFilename = process.env.MRX_HERO_FILENAME ?? textSlug(title);
+const inlineFilename = process.env.MRX_INLINE_FILENAME ?? textSlug(keyword);
+const heroLines = JSON.parse(
+  process.env.MRX_HERO_LINES_JSON ??
+    '["How to Compare Public","Oil and Gas Price Decks","Without Mixing","Assumptions"]',
+);
+const inlineLines = JSON.parse(
+  process.env.MRX_INLINE_LINES_JSON ?? '["compare public oil and gas","price decks"]',
+);
 const paths = {
-  heroSource: join(root, `artifacts/mrx1000-wave82-creative-sources/${slug}-hero-base.png`),
-  inlineSource: join(root, `artifacts/mrx1000-wave82-creative-sources/${slug}-inline-base.png`),
+  heroSource: join(root, `artifacts/mrx1000-wave${waveNumber}-creative-sources/${slug}-hero-base.png`),
+  inlineSource: join(root, `artifacts/mrx1000-wave${waveNumber}-creative-sources/${slug}-inline-base.png`),
   hero: join(root, `public/assets/articles/hero/${heroFilename}.webp`),
   inline: join(root, `public/assets/articles/inline/${slug}/${inlineFilename}.webp`),
-  qa: join(root, `artifacts/mrx1000-wave82-creative-qa/${slug}`),
+  qa: join(root, `artifacts/mrx1000-wave${waveNumber}-creative-qa/${slug}`),
 };
 
 const generationPrompts = {
-  hero: 'Premium photorealistic elevated front-facing desk scene with two clearly separate blank public oil-and-gas outlook booklets, distinct source-category tabs, blank source cards, and an uninterrupted navy field on the left; no people, maps, wells, rigs, money, values, graphs, curves, arrows, predictions, readable words, figures, dates, signatures, seals, logos, conclusions, or fake document text.',
+  hero:
+    process.env.MRX_HERO_GENERATION_PROMPT ??
+    'Premium photorealistic elevated front-facing desk scene with two clearly separate blank public oil-and-gas outlook booklets, distinct source-category tabs, blank source cards, and an uninterrupted navy field on the left; no people, maps, wells, rigs, money, values, graphs, curves, arrows, predictions, readable words, figures, dates, signatures, seals, logos, conclusions, or fake document text.',
   inline:
+    process.env.MRX_INLINE_GENERATION_PROMPT ??
     'Materially distinct people-free strict overhead pale public-source comparison matrix with two source columns, separate blank cards for publication date, effective period, commodity, geography, unit convention, dollar basis, and stated use case, plus unresolved markers above an uninterrupted lower navy field; no booklets, front-facing perspective, maps, rigs, wells, money, graphs, curves, arrows, forecasts, recommendations, readable words, figures, dates, signatures, seals, logos, or fake document text.',
 };
 
@@ -38,6 +52,18 @@ const normalizeText = (value) =>
 
 const sha256 = (buffer) => createHash('sha256').update(buffer).digest('hex');
 const fileSha256 = async (filePath) => sha256(await readFile(filePath));
+function textSlug(value) {
+  return value
+    .normalize('NFKD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[’']/g, '')
+    .replace(/&/g, ' and ')
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+}
+const svgTextLines = (lines, x, lineHeight) =>
+  lines.map((line, index) => `<tspan x="${x}" dy="${index === 0 ? 0 : lineHeight}">${line}</tspan>`).join('');
 
 function heroTypography() {
   return Buffer.from(`
@@ -55,10 +81,7 @@ function heroTypography() {
       <rect x="0" y="0" width="640" height="630" fill="url(#navy)" />
       <rect class="rule" x="46" y="102" width="82" height="5" rx="2.5" />
       <text class="title" x="46" y="168">
-        <tspan x="46" dy="0">How to Compare Public</tspan>
-        <tspan x="46" dy="48">Oil and Gas Price Decks</tspan>
-        <tspan x="46" dy="48">Without Mixing</tspan>
-        <tspan x="46" dy="48">Assumptions</tspan>
+        ${svgTextLines(heroLines, 46, 48)}
       </text>
     </svg>
   `);
@@ -81,8 +104,7 @@ function inlineTypography() {
       <rect x="0" y="455" width="1200" height="220" fill="url(#navy)" />
       <rect class="rule" x="300" y="485" width="600" height="4" rx="2" />
       <text class="keyword" x="600" y="533">
-        <tspan x="600" dy="0">compare public oil and gas</tspan>
-        <tspan x="600" dy="48">price decks</tspan>
+        ${svgTextLines(inlineLines, 600, 48)}
       </text>
     </svg>
   `);
@@ -203,7 +225,7 @@ async function main() {
     }
   }
 
-  const tempDirectory = await mkdtemp(join(tmpdir(), 'mrx-wave82-ocr-'));
+  const tempDirectory = await mkdtemp(join(tmpdir(), `mrx-wave${waveNumber}-ocr-`));
   try {
     const heroOcr = await runOcr(paths.hero, title, tempDirectory, {
       left: 0,

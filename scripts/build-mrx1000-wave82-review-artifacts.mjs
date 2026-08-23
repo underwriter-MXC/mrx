@@ -5,25 +5,33 @@ import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { basename, join } from 'node:path';
 
 const repoRoot = process.cwd();
-const slug = 'compare-public-oil-and-gas-price-decks-without-mixing-assumptions';
-const programRowId = 'MRX1000-0267';
-const title = 'How to Compare Public Oil and Gas Price Decks Without Mixing Assumptions';
-const primaryKeyword = 'compare public oil and gas price decks';
-const inlineKeyword = primaryKeyword;
+const waveNumber = process.env.MRX_WAVE_NUMBER ?? '82';
+const slug =
+  process.env.MRX_ARTICLE_SLUG ?? 'compare-public-oil-and-gas-price-decks-without-mixing-assumptions';
+const programRowId = process.env.MRX_PROGRAM_ROW_ID ?? 'MRX1000-0267';
+const title =
+  process.env.MRX_ARTICLE_TITLE ??
+  'How to Compare Public Oil and Gas Price Decks Without Mixing Assumptions';
+const primaryKeyword = process.env.MRX_PRIMARY_KEYWORD ?? 'compare public oil and gas price decks';
+const inlineKeyword = process.env.MRX_INLINE_KEYWORD ?? primaryKeyword;
 const heroAlt =
+  process.env.MRX_HERO_ALT ??
   'Two separate published price-deck booklets appear beside the exact article title.';
 const inlineAlt =
+  process.env.MRX_INLINE_ALT ??
   'An overhead public price-deck comparison matrix appears above the exact keyword.';
 const articlePath = `src/content/posts/${slug}.mdx`;
-const creativePath = `artifacts/mrx1000-wave82-creative-qa/${slug}/creative-manifest.json`;
+const creativePath =
+  `artifacts/mrx1000-wave${waveNumber}-creative-qa/${slug}/creative-manifest.json`;
+const expectedSelectionRank = Number(process.env.MRX_SELECTION_RANK ?? 162);
 const batch = JSON.parse(
   readFileSync(join(repoRoot, 'config', 'mrx1000-release-10-batch.json'), 'utf8'),
 );
 const row = batch.articles.find((article) => article.program_row_id === programRowId);
 const reviewedAt = new Date().toISOString().replace(/\.\d{3}Z$/, 'Z');
 
-if (!row || row.slug !== slug || row.title !== title || row.selection_rank !== 162) {
-  throw new Error('Wave 82 batch identity is missing or drifted');
+if (!row || row.slug !== slug || row.title !== title || row.selection_rank !== expectedSelectionRank) {
+  throw new Error(`Wave ${waveNumber} batch identity is missing or drifted`);
 }
 
 const sha256 = (value) => createHash('sha256').update(value).digest('hex');
@@ -101,7 +109,7 @@ async function verifySource({ label, url }) {
   };
 }
 
-const sourceScopes = new Map([
+const defaultSourceScopes = [
   [
     'https://www.eia.gov/outlooks/steo/outlook.php',
     [
@@ -137,7 +145,41 @@ const sourceScopes = new Map([
       'The article uses the rule only to distinguish a prescribed reserve-disclosure pricing frame from a public forecast or property-specific planning deck; it does not interpret a reserve report, calculate reserves or present value, or recommend a pricing input.',
     ],
   ],
-]);
+];
+const sourceScopes = new Map(
+  process.env.MRX_SOURCE_SCOPES_JSON
+    ? JSON.parse(process.env.MRX_SOURCE_SCOPES_JSON)
+    : defaultSourceScopes,
+);
+const editorialFindings = JSON.parse(
+  process.env.MRX_EDITORIAL_FINDINGS_JSON ??
+    JSON.stringify([
+      'The article owns only a source-preserving comparison of publication identity, dates, commodity, benchmark, geography, units, nominal-or-real basis, interval, horizon, and stated use case. It stops before creating, extending, blending, converting, normalizing, selecting, validating, or recommending a deck; forecasting prices; applying property-level assumptions; or calculating cash flow, present value, value, an offer, or a transaction result.',
+      `Exact-title hero/share OCR passed for “${title}”; distinct in-body OCR passed for “${inlineKeyword}”; the elevated two-booklet hero and people-free strict-overhead two-source comparison matrix are materially different compositions with matching alt metadata.`,
+    ]),
+);
+const factualFindings = JSON.parse(
+  process.env.MRX_FACTUAL_FINDINGS_JSON ??
+    JSON.stringify([
+      'Claims remain bounded to EIA publication-date, unit, and nominal-or-real context plus the SEC/Federal Register reserve-disclosure pricing frame. None is converted into a forecast selection, unit conversion, inflation adjustment, property-specific price bridge, reserve interpretation, cash-flow calculation, present value, offer, or value.',
+      'The article supplies no proprietary, universal, market, or owner-specific numerical assumption; invents no benchmark, geographic basis, unit, base period, forecast horizon, source relationship, property fact, or modeled result; and makes no owner-specific engineering, reserve, appraisal, investment, legal, tax, financial, valuation, offer, or transaction conclusion.',
+    ]),
+);
+const complianceFindings = JSON.parse(
+  process.env.MRX_COMPLIANCE_FINDINGS_JSON ??
+    JSON.stringify([
+      'The article keeps each public source in a separate column; preserves source identity, version, dates, commodity, benchmark, geography, units, nominal-or-real basis, interval, horizon, use case, and retrieval date; limits status to matched frame, different frame, missing, or unresolved; turns gaps into neutral questions; discloses possible MRX buyer interest; and preserves owner agency and qualified-review boundaries.',
+      'Image text is limited to the exact article title and approved keyword and adds no owner name, property fact, source result, model output, numerical assumption, seal, recommendation, appraisal claim, forecast, guarantee, or transaction outcome.',
+    ]),
+);
+const factualChecks = JSON.parse(
+  process.env.MRX_FACTUAL_CHECKS_JSON ??
+    '["complete_file_sha256_match","five_distinct_https_sources","current_source_access_review_pass","claim_to_source_scope_present","official_source_priority_pass","unsupported_high_risk_claim_scan_pass"]',
+);
+const complianceChecks = JSON.parse(
+  process.env.MRX_COMPLIANCE_CHECKS_JSON ??
+    '["complete_file_sha256_match","hero_share_sha256_identity","inline_image_distinct_sha256","exact_text_ocr_pass","filename_text_identity_pass","public_price_deck_comparison_no_forecast_normalization_selection_property_economics_present_value_or_recommendation_boundary_pass","owner_agency_and_possible_buyer_interest_disclosure_preserved","no_unsupported_visual_or_decision_claims"]',
+);
 
 function sourceScope(source) {
   const [paraphrase, claimScope] = sourceScopes.get(source.url) ?? [];
@@ -190,7 +232,7 @@ if (
   sources.length !== 5
 ) {
   throw new Error(
-    'Wave 82 review inputs do not satisfy identity, article-depth, source, or creative gates',
+    `Wave ${waveNumber} review inputs do not satisfy identity, article-depth, source, or creative gates`,
   );
 }
 
@@ -218,15 +260,14 @@ const common = {
 };
 
 writeArtifact('editorial', `${programRowId}-${slug}.json`, {
-  artifact_type: 'mrx1000_two_image_editorial_review',
+  artifact_type: `mrx1000_wave${waveNumber}_two_image_editorial_review`,
   ...common,
-  reviewer_id: 'codex_wave82_editorial',
-  review_run_id: `mrx1000-wave82-editorial-${reviewedAt.replace(/[-:]/g, '')}`,
+  reviewer_id: `codex_wave${waveNumber}_editorial`,
+  review_run_id: `mrx1000-wave${waveNumber}-editorial-${reviewedAt.replace(/[-:]/g, '')}`,
   capability: 'editorial',
   findings: [
     `Complete current MDX SHA-256 is ${articleSha}; the answer-first article contains ${wordCount} body tokens and five FAQs.`,
-    'The article owns only a source-preserving comparison of publication identity, dates, commodity, benchmark, geography, units, nominal-or-real basis, interval, horizon, and stated use case. It stops before creating, extending, blending, converting, normalizing, selecting, validating, or recommending a deck; forecasting prices; applying property-level assumptions; or calculating cash flow, present value, value, an offer, or a transaction result.',
-    `Exact-title hero/share OCR passed for “${title}”; distinct in-body OCR passed for “${inlineKeyword}”; the elevated two-booklet hero and people-free strict-overhead two-source comparison matrix are materially different compositions with matching alt metadata.`,
+    ...editorialFindings,
   ],
   checks: [
     { name: 'complete_file_sha256_match', status: 'PASS', evidence: articleSha },
@@ -253,53 +294,35 @@ writeArtifact('editorial', `${programRowId}-${slug}.json`, {
 });
 
 writeArtifact('factual_citation', `${slug}.review.json`, {
-  artifact_type: 'mrx1000_two_image_factual_citation_review',
+  artifact_type: `mrx1000_wave${waveNumber}_two_image_factual_citation_review`,
   ...common,
-  reviewer_id: 'codex_wave82_factual',
-  review_run_id: `mrx1000-wave82-factual-${reviewedAt.replace(/[-:]/g, '')}`,
+  reviewer_id: `codex_wave${waveNumber}_factual`,
+  review_run_id: `mrx1000-wave${waveNumber}-factual-${reviewedAt.replace(/[-:]/g, '')}`,
   capability: 'factual_citation',
   findings: [
     `Complete current MDX SHA-256 is ${articleSha}; all ${sources.length} declared sources passed current HTTPS access review.`,
-    'Claims remain bounded to EIA publication-date, unit, and nominal-or-real context plus the SEC/Federal Register reserve-disclosure pricing frame. None is converted into a forecast selection, unit conversion, inflation adjustment, property-specific price bridge, reserve interpretation, cash-flow calculation, present value, offer, or value.',
-    'The article supplies no proprietary, universal, market, or owner-specific numerical assumption; invents no benchmark, geographic basis, unit, base period, forecast horizon, source relationship, property fact, or modeled result; and makes no owner-specific engineering, reserve, appraisal, investment, legal, tax, financial, valuation, offer, or transaction conclusion.',
+    ...factualFindings,
   ],
-  checks: [
-    'complete_file_sha256_match',
-    'five_distinct_https_sources',
-    'current_source_access_review_pass',
-    'claim_to_source_scope_present',
-    'official_source_priority_pass',
-    'unsupported_high_risk_claim_scan_pass',
-  ],
+  checks: factualChecks,
   sources_inspected: sourceAccess,
 });
 
 writeArtifact('compliance', `${slug}.json`, {
-  artifact_type: 'mrx1000_two_image_compliance_review',
+  artifact_type: `mrx1000_wave${waveNumber}_two_image_compliance_review`,
   ...common,
-  reviewer_id: 'codex_wave82_compliance',
-  review_run_id: `mrx1000-wave82-compliance-${reviewedAt.replace(/[-:]/g, '')}`,
+  reviewer_id: `codex_wave${waveNumber}_compliance`,
+  review_run_id: `mrx1000-wave${waveNumber}-compliance-${reviewedAt.replace(/[-:]/g, '')}`,
   capability: 'compliance',
   expected_hero_sha256: heroSha,
   expected_inline_sha256: inlineSha,
   findings: [
     `Complete current MDX SHA-256 is ${articleSha}; hero/share and inline image hashes are separately locked.`,
-    'The article keeps each public source in a separate column; preserves source identity, version, dates, commodity, benchmark, geography, units, nominal-or-real basis, interval, horizon, use case, and retrieval date; limits status to matched frame, different frame, missing, or unresolved; turns gaps into neutral questions; discloses possible MRX buyer interest; and preserves owner agency and qualified-review boundaries.',
-    'Image text is limited to the exact article title and approved keyword and adds no owner name, property fact, source result, model output, numerical assumption, seal, recommendation, appraisal claim, forecast, guarantee, or transaction outcome.',
+    ...complianceFindings,
   ],
-  checks: [
-    'complete_file_sha256_match',
-    'hero_share_sha256_identity',
-    'inline_image_distinct_sha256',
-    'exact_text_ocr_pass',
-    'filename_text_identity_pass',
-    'public_price_deck_comparison_no_forecast_normalization_selection_property_economics_present_value_or_recommendation_boundary_pass',
-    'owner_agency_and_possible_buyer_interest_disclosure_preserved',
-    'no_unsupported_visual_or_decision_claims',
-  ],
+  checks: complianceChecks,
   sources_inspected: [articlePath, row.hero_path, row.inline_path],
 });
 
 console.log(
-  `Built three hash-locked Wave 82 review artifacts with ${sources.length} current source checks.`,
+  `Built three hash-locked Wave ${waveNumber} review artifacts with ${sources.length} current source checks.`,
 );

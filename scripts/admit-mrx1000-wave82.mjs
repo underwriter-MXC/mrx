@@ -5,28 +5,72 @@ import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { basename, dirname, join, resolve } from 'node:path';
 
 const root = resolve(import.meta.dirname, '..');
+const waveNumber = process.env.MRX_WAVE_NUMBER ?? '82';
+const waveKey = `wave${waveNumber}`;
 const stageCandidate = process.argv.includes('--stage-candidate');
 const unknownArgs = process.argv.slice(2).filter((arg) => arg !== '--stage-candidate');
 if (unknownArgs.length) {
-  throw new Error(`Unknown Wave 82 admission argument(s): ${unknownArgs.join(', ')}`);
+  throw new Error(`Unknown Wave ${waveNumber} admission argument(s): ${unknownArgs.join(', ')}`);
 }
 
-const slug = 'compare-public-oil-and-gas-price-decks-without-mixing-assumptions';
-const title = 'How to Compare Public Oil and Gas Price Decks Without Mixing Assumptions';
-const primaryKeyword = 'compare public oil and gas price decks';
-const keyword = 'compare public oil and gas price decks';
-const heroFilename = 'how-to-compare-public-oil-and-gas-price-decks-without-mixing-assumptions';
+const slug =
+  process.env.MRX_ARTICLE_SLUG ?? 'compare-public-oil-and-gas-price-decks-without-mixing-assumptions';
+const title =
+  process.env.MRX_ARTICLE_TITLE ??
+  'How to Compare Public Oil and Gas Price Decks Without Mixing Assumptions';
+const primaryKeyword = process.env.MRX_PRIMARY_KEYWORD ?? 'compare public oil and gas price decks';
+const keyword = process.env.MRX_INLINE_KEYWORD ?? primaryKeyword;
+const heroFilename = process.env.MRX_HERO_FILENAME ?? textSlug(title);
 const heroAlt =
+  process.env.MRX_HERO_ALT ??
   'Two separate published price-deck booklets appear beside the exact article title.';
 const inlineAlt =
+  process.env.MRX_INLINE_ALT ??
   'An overhead public price-deck comparison matrix appears above the exact keyword.';
-const programRowId = 'MRX1000-0267';
-const selectionRank = 162;
+const programRowId = process.env.MRX_PROGRAM_ROW_ID ?? 'MRX1000-0267';
+const selectionRank = Number(process.env.MRX_SELECTION_RANK ?? 162);
 const articleRelativePath = `src/content/posts/${slug}.mdx`;
 const batchRelativePath = 'config/mrx1000-release-10-batch.json';
 const retrofitRelativePath = 'config/mrx-article-two-image-retrofit.json';
-const decisionRelativePath = 'docs/governance/mrx1000-wave82-selection-decision-2026-08-23.md';
-const creativeManifestRelativePath = `artifacts/mrx1000-wave82-creative-qa/${slug}/creative-manifest.json`;
+const decisionRelativePath =
+  process.env.MRX_DECISION_PATH ??
+  `docs/governance/mrx1000-wave${waveNumber}-selection-decision-2026-08-23.md`;
+const creativeManifestRelativePath =
+  `artifacts/mrx1000-wave${waveNumber}-creative-qa/${slug}/creative-manifest.json`;
+const requiredDecisionId =
+  process.env.MRX_DECISION_ID ?? `MRX1000-W${waveNumber}-SELECT-2026-08-23`;
+const reviewedBy =
+  process.env.MRX_REVIEWED_BY ?? `mrx_compliance-continuous-wave${waveNumber}`;
+const priorCanonicalTitle =
+  process.env.MRX_PRIOR_TITLE ?? 'Price Decks: How Oil and Gas Assumptions Change Present Value';
+const priorCanonicalSlug =
+  process.env.MRX_PRIOR_SLUG ?? 'price-decks-how-oil-and-gas-assumptions-change-present-value';
+const priorSourceHandle =
+  process.env.MRX_PRIOR_SOURCE_HANDLE ??
+  'factory-taxonomy-synthesis:valuation:price-decks-present-value';
+const secondaryKeywords = JSON.parse(
+  process.env.MRX_SECONDARY_KEYWORDS_JSON ??
+    '["compare public oil and gas price decks","oil and gas price deck comparison","price deck assumption checklist"]',
+);
+const nearestSameClusterSlug =
+  process.env.MRX_NEAREST_SAME_CLUSTER_SLUG ??
+  'pdp-pud-and-undeveloped-acreage-terminology-register';
+const cannibalizationScore = Number(process.env.MRX_CANNIBALIZATION_SCORE ?? 0.15);
+const actionReason =
+  process.env.MRX_ACTION_REASON ??
+  'The original price-deck and present-value identity overlapped the live oil-price, DCF, discount-rate, decline-curve, future-location, sensitivity, due-diligence, and valuation-methodology corpus. The approved replacement owns only source-preserving comparison of published source identity, dates, commodities, benchmarks, geography, units, nominal-or-real basis, horizon, stated use case, frame status, and neutral questions. It stops before building, extending, blending, converting, normalizing, selecting, validating, or recommending a deck; forecasting prices; applying property-level assumptions; or calculating cash flow, present value, value, an offer, or a transaction result. Release remains controlled by the signed batch, matching evidence, deployment, and live verification.';
+const riskCitationRemediation = JSON.parse(
+  process.env.MRX_RISK_REMEDIATION_JSON ??
+    JSON.stringify([
+      'The original price-deck and present-value identity was rejected because it overlaps the live oil-price, DCF, discount-rate, decline-curve, future-location, sensitivity, due-diligence, and valuation-methodology corpus. The admitted replacement owns only a source-preserving field-by-field comparison of dated public price publications.',
+      'Current official EIA and SEC/Federal Register sources support only bounded descriptions of release context, units, nominal-or-real basis, and distinct public-outlook versus reserve-disclosure pricing frames. None selects or validates a price deck, supplies property-specific assumptions, predicts realized prices, or determines cash flow, present value, value, an offer, or a transaction result.',
+      'Continuous quality-gated admission under D-2026-0804-16, the 2026-08-14 no-approval owner directive, and MRX1000-W82-SELECT-2026-08-23; no numerical cap, elapsed-time gate, or owner publication approval applies.',
+      'Publication remains conditional on current editorial, factual-citation, compliance, two-image, metadata, build, rollback, deployment, and live-verification evidence.',
+    ]),
+);
+const inlineVisualVariant =
+  process.env.MRX_INLINE_VISUAL_VARIANT ??
+  'wave82-distinct-generated-overhead-public-price-deck-comparison-matrix';
 
 const batchPath = join(root, batchRelativePath);
 const retrofitPath = join(root, retrofitRelativePath);
@@ -124,7 +168,7 @@ async function writeReviewPlaceholder(relativePath, capability, now) {
     }
   }
   const artifact = {
-    artifact_type: 'mrx1000_wave82_review_placeholder',
+    artifact_type: `mrx1000_wave${waveNumber}_review_placeholder`,
     schema_version: '1.0.0',
     disposition: 'PENDING_REBUILD',
     capability,
@@ -146,12 +190,11 @@ const [articleBytes, decisionBytes] = await Promise.all([
 const source = articleBytes.toString('utf8');
 const fm = frontmatter(source);
 const decisionSource = decisionBytes.toString('utf8');
-const requiredDecisionId = 'MRX1000-W82-SELECT-2026-08-23';
 if (
   !decisionSource.includes(`Decision ID: \`${requiredDecisionId}\``) ||
   !decisionSource.includes('Disposition: `APPROVED_FOR_CONTINUOUS_QUALITY_GATED_PUBLICATION`')
 ) {
-  throw new Error('Wave 82 selection decision remains draft-only and is not publication authority');
+  throw new Error(`Wave ${waveNumber} selection decision remains draft-only and is not publication authority`);
 }
 
 if (
@@ -160,7 +203,7 @@ if (
   scalar(fm, 'draft') !== 'false' ||
   scalar(fm, 'noindex') !== 'false' ||
   scalar(fm, 'primary_keyword') !== primaryKeyword ||
-  scalar(fm, 'reviewed_by') !== 'mrx_compliance-continuous-wave82' ||
+  scalar(fm, 'reviewed_by') !== reviewedBy ||
   nestedScalar(fm, 'hero_image', 'src') !== `/assets/articles/hero/${heroFilename}.webp` ||
   nestedScalar(fm, 'hero_image', 'social_src') !== `/assets/articles/hero/${heroFilename}.webp` ||
   nestedScalar(fm, 'hero_image', 'alt') !== heroAlt ||
@@ -266,7 +309,7 @@ const retrofitRow = {
     public_path: creative.inline.public_path,
     alt: inlineAlt,
     rendered_text: keyword,
-    visual_variant: 'wave82-distinct-generated-overhead-public-price-deck-comparison-matrix',
+    visual_variant: inlineVisualVariant,
     width: creative.inline.width,
     height: creative.inline.height,
     mime_type: creative.inline.mime_type,
@@ -305,8 +348,6 @@ await writeFile(retrofitPath, nextRetrofitText);
 const batch = JSON.parse(batchBytes.toString('utf8'));
 const ledger = JSON.parse(ledgerBytes.toString('utf8'));
 const sourceRow = ledger.articles.find((row) => row.program_row_id === programRowId);
-const priorCanonicalTitle = 'Price Decks: How Oil and Gas Assumptions Change Present Value';
-const priorCanonicalSlug = 'price-decks-how-oil-and-gas-assumptions-change-present-value';
 if (
   !sourceRow ||
   ![priorCanonicalSlug, slug].includes(sourceRow.canonical_slug) ||
@@ -339,11 +380,7 @@ if ([priorCanonicalSlug, slug].includes(sourceRow.canonical_slug)) {
     pillar_url: '/mineral-rights-value/',
     cluster: 'valuation-methodology-drivers',
     primary_keyword: primaryKeyword,
-    secondary_keywords: [
-      keyword,
-      'oil and gas price deck comparison',
-      'price deck assumption checklist',
-    ],
+    secondary_keywords: secondaryKeywords,
     search_intent: 'informational',
     funnel_stage: 'consideration',
     source_system: 'astro_repo',
@@ -365,8 +402,7 @@ if ([priorCanonicalSlug, slug].includes(sourceRow.canonical_slug)) {
     dedupe_group_id: `canonical:${slug}`,
     canonical_group_owner_url: `https://mineralrightsxchange.com/blog/${slug}/`,
     action: 'release_only_after_exact_batch_gate_and_production_verification',
-    action_reason:
-      'The original price-deck and present-value identity overlapped the live oil-price, DCF, discount-rate, decline-curve, future-location, sensitivity, due-diligence, and valuation-methodology corpus. The approved replacement owns only source-preserving comparison of published source identity, dates, commodities, benchmarks, geography, units, nominal-or-real basis, horizon, stated use case, frame status, and neutral questions. It stops before building, extending, blending, converting, normalizing, selecting, validating, or recommending a deck; forecasting prices; applying property-level assumptions; or calculating cash flow, present value, value, an offer, or a transaction result. Release remains controlled by the signed batch, matching evidence, deployment, and live verification.',
+    action_reason: actionReason,
     compliance_status: 'release_10_hash_locked_review_required',
     schema_status: 'article_schema_path_present_revalidation_required',
     internal_link_role: 'incumbent_supporting_article',
@@ -375,14 +411,14 @@ if ([priorCanonicalSlug, slug].includes(sourceRow.canonical_slug)) {
       normalized_title: title.toLowerCase(),
       exact_slug_unique: true,
       exact_title_unique: true,
-      nearest_same_cluster_slug: 'pdp-pud-and-undeveloped-acreage-terminology-register',
-      nearest_same_cluster_title_token_jaccard: 0.15,
+      nearest_same_cluster_slug: nearestSameClusterSlug,
+      nearest_same_cluster_title_token_jaccard: cannibalizationScore,
       review_status: 'exact_and_fuzzy_title_check_pass',
     },
     exact_slug_unique: true,
     exact_title_unique: true,
-    nearest_same_cluster_slug: 'pdp-pud-and-undeveloped-acreage-terminology-register',
-    cannibalization_score: 0.15,
+    nearest_same_cluster_slug: nearestSameClusterSlug,
+    cannibalization_score: cannibalizationScore,
     dedupe_review_status: 'exact_and_fuzzy_title_check_pass',
   });
 }
@@ -391,27 +427,27 @@ if (
   new Set(ledger.articles.map((row) => row.canonical_slug)).size !== 1000 ||
   ledger.articles.some((row) => row.canonical_slug === priorCanonicalSlug)
 ) {
-  throw new Error('Wave 82 canonical ledger re-key or 1,000-row uniqueness proof failed');
+  throw new Error(`Wave ${waveNumber} canonical ledger re-key or 1,000-row uniqueness proof failed`);
 }
 const articleSha = sha256(articleBytes);
 ledger.identity_registry ??= {};
-const wave82Rekey = ledger.identity_registry.wave82_rekey ?? {
+const rekeyRegistryKey = `${waveKey}_rekey`;
+const waveRekey = ledger.identity_registry[rekeyRegistryKey] ?? {
   program_row_id: programRowId,
   prior_canonical_slug: priorCanonicalSlug,
-  prior_source_handle:
-    'factory-taxonomy-synthesis:valuation:price-decks-present-value',
+  prior_source_handle: priorSourceHandle,
   selection_decision: decisionRelativePath,
   draft_selection_decision_sha256: sha256(decisionBytes),
   draft_article_sha256: articleSha,
 };
-if (wave82Rekey.program_row_id !== programRowId) {
-  throw new Error('Wave 82 canonical re-key provenance is missing or drifted');
+if (waveRekey.program_row_id !== programRowId) {
+  throw new Error(`Wave ${waveNumber} canonical re-key provenance is missing or drifted`);
 }
-ledger.identity_registry.wave82_rekey = wave82Rekey;
-wave82Rekey.draft_selection_decision_sha256 ??= wave82Rekey.selection_decision_sha256;
-wave82Rekey.selection_decision_sha256 = sha256(decisionBytes);
-wave82Rekey.release_candidate_article_sha256 = articleSha;
-wave82Rekey.promoted_at_utc ??= now;
+ledger.identity_registry[rekeyRegistryKey] = waveRekey;
+waveRekey.draft_selection_decision_sha256 ??= waveRekey.selection_decision_sha256;
+waveRekey.selection_decision_sha256 = sha256(decisionBytes);
+waveRekey.release_candidate_article_sha256 = articleSha;
+waveRekey.promoted_at_utc ??= now;
 const nextLedgerText = `${JSON.stringify(ledger, null, 2)}\n`;
 await writeFile(ledgerPath, nextLedgerText);
 
@@ -437,12 +473,7 @@ const batchRow = {
   finalization_state: 'draft_noindex_admitted',
   searchatlas_content_score: null,
   searchatlas_word_count: wordCount(source),
-  risk_citation_remediation: [
-    'The original price-deck and present-value identity was rejected because it overlaps the live oil-price, DCF, discount-rate, decline-curve, future-location, sensitivity, due-diligence, and valuation-methodology corpus. The admitted replacement owns only a source-preserving field-by-field comparison of dated public price publications.',
-    'Current official EIA and SEC/Federal Register sources support only bounded descriptions of release context, units, nominal-or-real basis, and distinct public-outlook versus reserve-disclosure pricing frames. None selects or validates a price deck, supplies property-specific assumptions, predicts realized prices, or determines cash flow, present value, value, an offer, or a transaction result.',
-    'Continuous quality-gated admission under D-2026-0804-16, the 2026-08-14 no-approval owner directive, and MRX1000-W82-SELECT-2026-08-23; no numerical cap, elapsed-time gate, or owner publication approval applies.',
-    'Publication remains conditional on current editorial, factual-citation, compliance, two-image, metadata, build, rollback, deployment, and live-verification evidence.',
-  ],
+  risk_citation_remediation: riskCitationRemediation,
   evidence_packet_path: `artifacts/mrx1000-release-10/evidence/${slug}.json`,
   evidence_packet_path_required: true,
   inline_path: creative.inline.public_path,
@@ -460,7 +491,7 @@ if (
   new Set(batch.articles.map((row) => row.slug)).size !== batch.articles.length ||
   new Set(batch.articles.map((row) => row.program_row_id)).size !== batch.articles.length
 ) {
-  throw new Error('Wave 82 continuous batch identity or selection-rank audit failed');
+  throw new Error(`Wave ${waveNumber} continuous batch identity or selection-rank audit failed`);
 }
 
 batch.evidence_scaffold_generated_at_utc = now;
@@ -485,9 +516,9 @@ if (productionVerificationBytes) {
       `${productionSummary.expected_articles} live-verified MRX1000 articles.`;
   }
 }
-batch.decision_authority.wave82_selection_decision_id = requiredDecisionId;
-batch.decision_authority.wave82_selection_decision_path = decisionRelativePath;
-batch.decision_authority.wave82_selection_decision_sha256 = sha256(decisionBytes);
+batch.decision_authority[`${waveKey}_selection_decision_id`] = requiredDecisionId;
+batch.decision_authority[`${waveKey}_selection_decision_path`] = decisionRelativePath;
+batch.decision_authority[`${waveKey}_selection_decision_sha256`] = sha256(decisionBytes);
 batch.policy.prior_verified_article_count = selectionRank - 1;
 batch.policy.exact_admitted_count = batch.articles.length;
 batch.policy.exact_admitted_slate_sha256 = sha256(JSON.stringify(sortDeep(batch.articles)));

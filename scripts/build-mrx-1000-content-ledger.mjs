@@ -86,6 +86,7 @@ const SUPERSEDED_CANONICAL_SLUGS = new Set([
   'pdp-pud-and-undeveloped-acreage-in-mineral-valuation',
   'post-production-costs-and-their-effect-on-royalty-cash-flow',
   'price-decks-how-oil-and-gas-assumptions-change-present-value',
+  'producing-vs-non-producing-minerals-which-inputs-change',
 ]);
 const SUCCESSOR_CANONICAL_SLUGS = new Map([
   ['what-every-mineral-rights-owner-needs-to-know', 'should-i-sell-my-mineral-rights'],
@@ -177,6 +178,10 @@ const SUCCESSOR_CANONICAL_SLUGS = new Map([
     'price-decks-how-oil-and-gas-assumptions-change-present-value',
     'compare-public-oil-and-gas-price-decks-without-mixing-assumptions',
   ],
+  [
+    'producing-vs-non-producing-minerals-which-inputs-change',
+    'inventory-mixed-status-mineral-interests-before-valuation-review',
+  ],
 ]);
 const APPROVED_REKEY_SEARCH_INTENT_BY_SLUG = new Map([
   ['should-i-sell-my-mineral-rights', 'transactional'],
@@ -197,6 +202,7 @@ const APPROVED_REKEY_SEARCH_INTENT_BY_SLUG = new Map([
   ['pdp-pud-and-undeveloped-acreage-terminology-register', 'informational'],
   ['post-production-cost-evidence-packet-for-royalty-records', 'informational'],
   ['compare-public-oil-and-gas-price-decks-without-mixing-assumptions', 'informational'],
+  ['inventory-mixed-status-mineral-interests-before-valuation-review', 'informational'],
 ]);
 
 async function loadPriorProgramRowIds() {
@@ -235,6 +241,7 @@ async function loadPriorProgramRowIds() {
         wave80Rekey: null,
         wave81Rekey: null,
         wave82Rekey: null,
+        wave83Rekey: null,
       };
     }
     throw error;
@@ -295,6 +302,7 @@ async function loadPriorProgramRowIds() {
     wave80Rekey: prior.identity_registry?.wave80_rekey ?? null,
     wave81Rekey: prior.identity_registry?.wave81_rekey ?? null,
     wave82Rekey: prior.identity_registry?.wave82_rekey ?? null,
+    wave83Rekey: prior.identity_registry?.wave83_rekey ?? null,
   };
 }
 
@@ -1649,6 +1657,7 @@ async function main() {
       ...(priorIdentity.wave80Rekey ? { wave80_rekey: priorIdentity.wave80Rekey } : {}),
       ...(priorIdentity.wave81Rekey ? { wave81_rekey: priorIdentity.wave81Rekey } : {}),
       ...(priorIdentity.wave82Rekey ? { wave82_rekey: priorIdentity.wave82Rekey } : {}),
+      ...(priorIdentity.wave83Rekey ? { wave83_rekey: priorIdentity.wave83Rekey } : {}),
     },
     content_fingerprint_sha256: hashRows(selected),
     policy: {
