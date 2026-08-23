@@ -1,7 +1,7 @@
 {
   "program": "MRX1000",
   "artifact_type": "searchatlas_ordered_llm_local_execution_manifest",
-  "generated_at": "2026-07-20T18:15:54.767Z",
+  "generated_at": "2026-07-20T09:39:04.122Z",
   "deterministic": true,
   "local_only": true,
   "external_services_called": false,
@@ -9,8 +9,8 @@
   "inputs": {
     "ledger": {
       "path": "config/mrx-1000-canonical-content-ledger.json",
-      "sha256": "ed6953a2019333249e581df20df12214f970a25613635b3e17e063b50a3c47ff",
-      "bytes": 4492118
+      "sha256": "1defe44e20d8bc19d5b94d03374f45ed25f04b5eaf683746130813f5e1e94f7a",
+      "bytes": 4493123
     },
     "readiness": {
       "path": "reports/mrx-1000-readiness-matrix.json",
@@ -350904,5 +350904,5 @@
       ]
     }
   ],
-  "content_fingerprint_sha256": "b12e920ec8a66cce71d159b21f583a3728480efa4f46dbf83994ab5075fda717"
+  "content_fingerprint_sha256": "b4bbe57993726aa5fbb986d4a70ce47a91efd1a2e247f5f6d06c3e81ae9c706e"
 }
