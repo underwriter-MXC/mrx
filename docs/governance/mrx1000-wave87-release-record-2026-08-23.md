@@ -31,4 +31,21 @@ If the Article 167 deployment fails a production gate, immediately restore every
 - Canonical pre-publication ledger JSON SHA-256: `6eca7dd6abb99536764a9e3291fbe0c09b16a2aec841f96ab15d5803ec37255e`
 - Canonical pre-publication ledger CSV SHA-256: `75be8230f3fdcd83f1a5d593fd2ae0c9b5efd2564a0707f74828f96f797a35c5`
 - Signed pre-publication batch SHA-256: `ba8364ddede1473272adebbdaade32e26526bb3c20f0fd44d133c404837bda3e`
-- Deployment, live verification, and reconciliation: `PENDING`
+- Deployment, live verification, and reconciliation: `PASS`
+
+## Production publication and reconciliation
+
+- Publication commit: `fcb7fd0`
+- Vercel deployment: `dpl_3siXonPg2BEe7Xgm1KQDdxZ4xnrX`
+- Deployment URL: `https://mrx-5zttbelsb-team-mrx.vercel.app`
+- Inspect URL: `https://vercel.com/team-mrx/mrx-web/3siXonPg2BEe7Xgm1KQDdxZ4xnrX`
+- Active targets: `vercel-origin-via-cloudflare-apex`, `vercel-www-redirect`, `vercel-project-alias`, and `vercel-protected-team-alias`
+- Article route: `HTTP 200` with exact canonical URL, H1, Article and FAQ schema, five FAQs, six reviewed sources, and indexable robots state
+- Canonical image identity: visible hero, `og:image`, `twitter:image`, and Article schema all use the same exact hero asset and verified production bytes
+- Inline image identity: exact distinct inline asset, keyword text, alt text, dimensions, MIME type, and production bytes verified
+- Browser verification: `PASS` in Google Chrome for the latest 10 articles and for Article 167 at desktop and mobile widths, with no clipping, overlap, garbling, or horizontal overflow
+- Post-publication verifier: `167/167 PASS`; `175` live public article routes; `0` failures
+- Post-publication evidence SHA-256: `b70ed7646cfe6b8f5e6b4c1e712141f0711456d6c577410968ee6f8f04597198`
+- Canonical reconciled ledger JSON SHA-256: `4d1117dc67fc078bc6aaa5d3e87bea7416071664b785f0b944b737f99c32ce8c`
+- Canonical reconciled ledger CSV SHA-256: `7cc6cbbdca2b275bdb85f41e096cbad2d8c8598fc3fbec0c10ed7962d15b05ad`
+- Reconciled signed batch SHA-256: `06fc06a952a7cbf78e80fad2a9283814754dd8140221c1fed92eb9fc24443b65`
