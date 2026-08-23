@@ -89,6 +89,7 @@ const SUPERSEDED_CANONICAL_SLUGS = new Set([
   'producing-vs-non-producing-minerals-which-inputs-change',
   'refracs-and-workovers-how-upside-is-treated-in-valuation',
   'andrews-county-texas-mineral-rights-value-family-decision-guide-step-by-step',
+  'the-assessment-process-unveiled-how-your-mineral-rights-value-is-accurately-calculated',
 ]);
 const SUCCESSOR_CANONICAL_SLUGS = new Map([
   ['what-every-mineral-rights-owner-needs-to-know', 'should-i-sell-my-mineral-rights'],
@@ -192,6 +193,10 @@ const SUCCESSOR_CANONICAL_SLUGS = new Map([
     'andrews-county-texas-mineral-rights-value-family-decision-guide-step-by-step',
     'andrews-county-mineral-rights-public-record-locator',
   ],
+  [
+    'the-assessment-process-unveiled-how-your-mineral-rights-value-is-accurately-calculated',
+    'how-to-build-a-mineral-rights-valuation-evidence-cutoff-log',
+  ],
 ]);
 const APPROVED_REKEY_SEARCH_INTENT_BY_SLUG = new Map([
   ['should-i-sell-my-mineral-rights', 'transactional'],
@@ -215,6 +220,7 @@ const APPROVED_REKEY_SEARCH_INTENT_BY_SLUG = new Map([
   ['inventory-mixed-status-mineral-interests-before-valuation-review', 'informational'],
   ['refrac-workover-event-claim-register-source-preserving-record-template', 'informational'],
   ['andrews-county-mineral-rights-public-record-locator', 'informational'],
+  ['how-to-build-a-mineral-rights-valuation-evidence-cutoff-log', 'informational'],
 ]);
 
 async function loadPriorProgramRowIds() {
@@ -257,6 +263,7 @@ async function loadPriorProgramRowIds() {
         wave84Rekey: null,
         wave85Rekey: null,
         wave86Rekey: null,
+        wave87Rekey: null,
       };
     }
     throw error;
@@ -321,6 +328,7 @@ async function loadPriorProgramRowIds() {
     wave84Rekey: prior.identity_registry?.wave84_rekey ?? null,
     wave85Rekey: prior.identity_registry?.wave85_rekey ?? null,
     wave86Rekey: prior.identity_registry?.wave86_rekey ?? null,
+    wave87Rekey: prior.identity_registry?.wave87_rekey ?? null,
   };
 }
 
@@ -1679,6 +1687,7 @@ async function main() {
       ...(priorIdentity.wave84Rekey ? { wave84_rekey: priorIdentity.wave84Rekey } : {}),
       ...(priorIdentity.wave85Rekey ? { wave85_rekey: priorIdentity.wave85Rekey } : {}),
       ...(priorIdentity.wave86Rekey ? { wave86_rekey: priorIdentity.wave86Rekey } : {}),
+      ...(priorIdentity.wave87Rekey ? { wave87_rekey: priorIdentity.wave87Rekey } : {}),
     },
     content_fingerprint_sha256: hashRows(selected),
     policy: {

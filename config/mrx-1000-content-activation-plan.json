@@ -1,15 +1,15 @@
 {
   "artifact_type": "mrx1000_content_activation_plan",
   "plan_version": "mrx1000-content-activation-v1.1.0",
-  "generated_at": "2026-07-20T03:37:32.254Z",
+  "generated_at": "2026-07-20T00:45:34.415Z",
   "generated_at_method": "canonical_ledger_generated_at",
   "generator": "scripts/build-mrx-1000-activation-plan.mjs",
-  "content_fingerprint_sha256": "0a327b14da839904cf4954866691ec6d3def0c21ea8fa3d8dda2919e8b0ea817",
+  "content_fingerprint_sha256": "532a95173bc1d96a29b5ba386c321b2613923ceb94005eb783d6b75c48e94fe9",
   "inputs": {
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_fingerprint_sha256": "ed81525010376d5680d3a48609e8913bc355a75e7e9743437ceff47e0f1a2c3f",
+    "canonical_ledger_fingerprint_sha256": "7f6be4d1213d66f6dca6bdd2dec789eb6cd6033b2c672da5c43b603af69a840c",
     "canonical_ledger_fingerprint_verified": true,
-    "canonical_ledger_generated_at": "2026-07-20T03:37:32.254Z",
+    "canonical_ledger_generated_at": "2026-07-20T00:45:34.415Z",
     "owner_decision": {
       "decision_id": "D-2026-0804-16",
       "signed_disposition": "APPROVED_CONTINUOUS_QUALITY_GATED_ARTICLE_PUBLICATION",
@@ -92,8 +92,8 @@
       "title-lease-ownership": 75
     },
     "by_funnel_stage": {
-      "consideration": 350,
-      "decision": 275,
+      "consideration": 351,
+      "decision": 274,
       "education": 375
     },
     "by_primary_cta_url": {
@@ -104,20 +104,20 @@
       "/book/": 1000
     },
     "by_primary_cta_placement": {
-      "closing_panel": 275,
-      "contextual_inline": 350,
+      "closing_panel": 274,
+      "contextual_inline": 351,
       "mid_article": 375
     },
     "by_appointment_cta_placement": {
-      "closing_panel": 275,
+      "closing_panel": 274,
       "closing_team_handoff": 375,
-      "contextual_inline": 350
+      "contextual_inline": 351
     },
     "by_source_preservation_classification": {
       "incumbent_draft_nonpublic_held": 27,
-      "live_public_published_route": 174,
+      "live_public_published_route": 175,
       "pilot_draft_noindex_stage": 25,
-      "planning_only_inventory": 774
+      "planning_only_inventory": 773
     }
   },
   "rows": [
@@ -9399,9 +9399,9 @@
         "status": "planned_local_only"
       },
       "sibling_link": {
-        "target_program_row_id": "MRX1000-0877",
-        "target_title": "How to Sell Mineral Rights in Texas",
-        "url": "/blog/how-to-sell-mineral-rights-in-texas/",
+        "target_program_row_id": "MRX1000-0271",
+        "target_title": "How to Build a Mineral Rights Valuation Evidence-Cutoff Log",
+        "url": "/blog/how-to-build-a-mineral-rights-valuation-evidence-cutoff-log/",
         "relationship": "same_cluster_next_by_program_row_id_cyclic",
         "target_source_preservation_classification": "live_public_published_route",
         "target_route_live": true,
@@ -16833,9 +16833,9 @@
         "status": "planned_local_only"
       },
       "sibling_link": {
-        "target_program_row_id": "MRX1000-0271",
-        "target_title": "The Assessment Process Unveiled: How Your Mineral Rights Value Is Accurately Calculated",
-        "url": "/blog/the-assessment-process-unveiled-how-your-mineral-rights-value-is-accurately-calculated/",
+        "target_program_row_id": "MRX1000-0272",
+        "target_title": "The Role of Production History in Determining Your Mineral Rights' True Value",
+        "url": "/blog/the-role-of-production-history-in-determining-your-mineral-rights-true-value/",
         "relationship": "same_cluster_next_by_program_row_id_cyclic",
         "target_source_preservation_classification": "planning_only_inventory",
         "target_route_live": false,
@@ -16881,33 +16881,33 @@
     },
     {
       "program_row_id": "MRX1000-0271",
-      "canonical_title": "The Assessment Process Unveiled: How Your Mineral Rights Value Is Accurately Calculated",
-      "canonical_slug": "the-assessment-process-unveiled-how-your-mineral-rights-value-is-accurately-calculated",
-      "canonical_url": "/blog/the-assessment-process-unveiled-how-your-mineral-rights-value-is-accurately-calculated/",
-      "cluster": "valuation-methodology-drivers",
-      "pillar": "mineral-rights-value",
+      "canonical_title": "How to Build a Mineral Rights Valuation Evidence-Cutoff Log",
+      "canonical_slug": "how-to-build-a-mineral-rights-valuation-evidence-cutoff-log",
+      "canonical_url": "/blog/how-to-build-a-mineral-rights-valuation-evidence-cutoff-log/",
+      "cluster": "sell-mineral-rights-decision-process",
+      "pillar": "sell-mineral-rights",
       "search_intent": "informational",
       "funnel_stage": "consideration",
-      "source_preservation_classification": "planning_only_inventory",
-      "source_route_live": false,
+      "source_preservation_classification": "live_public_published_route",
+      "source_route_live": true,
       "pillar_link": {
-        "url": "/mineral-rights-value/",
-        "route_evidence": "src/pages/mineral-rights-value.astro",
+        "url": "/sell-mineral-rights/",
+        "route_evidence": "src/pages/sell-mineral-rights.astro",
         "status": "planned_local_only"
       },
       "sibling_link": {
-        "target_program_row_id": "MRX1000-0272",
-        "target_title": "The Role of Production History in Determining Your Mineral Rights' True Value",
-        "url": "/blog/the-role-of-production-history-in-determining-your-mineral-rights-true-value/",
+        "target_program_row_id": "MRX1000-0877",
+        "target_title": "How to Sell Mineral Rights in Texas",
+        "url": "/blog/how-to-sell-mineral-rights-in-texas/",
         "relationship": "same_cluster_next_by_program_row_id_cyclic",
-        "target_source_preservation_classification": "planning_only_inventory",
-        "target_route_live": false,
+        "target_source_preservation_classification": "live_public_published_route",
+        "target_route_live": true,
         "status": "planned_local_only"
       },
       "primary_cta": {
         "url": "/book/",
-        "label": "Understand My Value Factors",
-        "name": "mrx1000-mineral-rights-value-book_review-contextual_inline",
+        "label": "Talk Through My Selling Options",
+        "name": "mrx1000-sell-mineral-rights-book_review-contextual_inline",
         "placement_code": "contextual_inline",
         "placement_guidance": "Place after the first comparison, risk, document, or decision-framework section.",
         "assignment_rule": "consideration_stage_assisted_review",
@@ -16919,8 +16919,8 @@
       },
       "appointment_cta": {
         "url": "/book/",
-        "label": "Understand My Value Factors",
-        "name": "mrx1000-mineral-rights-value-book_review-contextual_inline",
+        "label": "Talk Through My Selling Options",
+        "name": "mrx1000-sell-mineral-rights-book_review-contextual_inline",
         "placement_code": "contextual_inline",
         "placement_guidance": "Place after the first comparison, risk, document, or decision-framework section.",
         "assignment_rule": "consideration_stage_assisted_review",
@@ -16938,7 +16938,7 @@
         "rendered_triangle_verified": false,
         "live_status": "not_published_or_verified_by_this_plan",
         "live_triangle_verified": false,
-        "release_status": "eligible_for_continuous_quality_review_not_yet_cleared",
+        "release_status": "released_under_d16_continuous_quality_gate",
         "numerical_release_cap_applies": false
       }
     },
@@ -62949,69 +62949,6 @@
         "status": "planned_local_only"
       },
       "sibling_link": {
-        "target_program_row_id": "MRX1000-1010",
-        "target_title": "Sell Mineral Rights: Selling Process For First-Time Sellers",
-        "url": "/blog/sell-mineral-rights-selling-process-for-first-time-sellers/",
-        "relationship": "same_cluster_next_by_program_row_id_cyclic",
-        "target_source_preservation_classification": "planning_only_inventory",
-        "target_route_live": false,
-        "status": "planned_local_only"
-      },
-      "primary_cta": {
-        "url": "/book/",
-        "label": "Talk Through My Selling Options",
-        "name": "mrx1000-sell-mineral-rights-book_review-closing_panel",
-        "placement_code": "closing_panel",
-        "placement_guidance": "Place in the closing decision panel after key takeaways and before related articles.",
-        "assignment_rule": "decision_stage_team_handoff",
-        "assignment_basis": "decision:valuation",
-        "approved_route_evidence": "src/pages/book.astro",
-        "role": "primary_appointment",
-        "is_appointment_cta": true,
-        "status": "planned_local_only"
-      },
-      "appointment_cta": {
-        "url": "/book/",
-        "label": "Talk Through My Selling Options",
-        "name": "mrx1000-sell-mineral-rights-book_review-closing_panel",
-        "placement_code": "closing_panel",
-        "placement_guidance": "Place in the closing decision panel after key takeaways and before related articles.",
-        "assignment_rule": "decision_stage_team_handoff",
-        "assignment_basis": "decision:valuation",
-        "approved_route_evidence": "src/pages/book.astro",
-        "role": "same_as_primary_appointment",
-        "distinct_from_primary_cta": false,
-        "status": "planned_local_only"
-      },
-      "evidence": {
-        "triangle_plan_status": "planned_complete",
-        "primary_cta_plan_status": "planned_complete",
-        "appointment_cta_plan_status": "planned_complete",
-        "rendered_status": "not_rendered_or_verified_by_this_plan",
-        "rendered_triangle_verified": false,
-        "live_status": "not_published_or_verified_by_this_plan",
-        "live_triangle_verified": false,
-        "release_status": "eligible_for_continuous_quality_review_not_yet_cleared",
-        "numerical_release_cap_applies": false
-      }
-    },
-    {
-      "program_row_id": "MRX1000-1010",
-      "canonical_title": "Sell Mineral Rights: Selling Process For First-Time Sellers",
-      "canonical_slug": "sell-mineral-rights-selling-process-for-first-time-sellers",
-      "canonical_url": "/blog/sell-mineral-rights-selling-process-for-first-time-sellers/",
-      "cluster": "sell-mineral-rights-decision-process",
-      "pillar": "sell-mineral-rights",
-      "search_intent": "royalty-income",
-      "funnel_stage": "decision",
-      "source_preservation_classification": "planning_only_inventory",
-      "source_route_live": false,
-      "pillar_link": {
-        "url": "/sell-mineral-rights/",
-        "route_evidence": "src/pages/sell-mineral-rights.astro",
-        "status": "planned_local_only"
-      },
-      "sibling_link": {
         "target_program_row_id": "MRX1000-0001",
         "target_title": "Can You Sell Part of Your Mineral Rights? Partial Interest Sales Explained",
         "url": "/blog/can-you-sell-part-of-your-mineral-rights-partial-interest-sales-explained/",
@@ -63027,7 +62964,7 @@
         "placement_code": "closing_panel",
         "placement_guidance": "Place in the closing decision panel after key takeaways and before related articles.",
         "assignment_rule": "decision_stage_team_handoff",
-        "assignment_basis": "decision:royalty-income",
+        "assignment_basis": "decision:valuation",
         "approved_route_evidence": "src/pages/book.astro",
         "role": "primary_appointment",
         "is_appointment_cta": true,
@@ -63040,7 +62977,7 @@
         "placement_code": "closing_panel",
         "placement_guidance": "Place in the closing decision panel after key takeaways and before related articles.",
         "assignment_rule": "decision_stage_team_handoff",
-        "assignment_basis": "decision:royalty-income",
+        "assignment_basis": "decision:valuation",
         "approved_route_evidence": "src/pages/book.astro",
         "role": "same_as_primary_appointment",
         "distinct_from_primary_cta": false,
@@ -63075,12 +63012,12 @@
         "status": "planned_local_only"
       },
       "sibling_link": {
-        "target_program_row_id": "MRX1000-0142",
-        "target_title": "How to Calculate Price per Net Mineral Acre From a Mineral Rights Offer",
-        "url": "/blog/calculate-price-per-net-mineral-acre/",
+        "target_program_row_id": "MRX1000-1019",
+        "target_title": "Mineral Appraisal: Guide In 2026",
+        "url": "/blog/mineral-appraisal-guide-in-2026/",
         "relationship": "same_cluster_next_by_program_row_id_cyclic",
-        "target_source_preservation_classification": "live_public_published_route",
-        "target_route_live": true,
+        "target_source_preservation_classification": "planning_only_inventory",
+        "target_route_live": false,
         "status": "planned_local_only"
       },
       "primary_cta": {
@@ -63104,6 +63041,69 @@
         "placement_guidance": "Place after the first comparison, risk, document, or decision-framework section.",
         "assignment_rule": "consideration_stage_assisted_review",
         "assignment_basis": "consideration:informational",
+        "approved_route_evidence": "src/pages/book.astro",
+        "role": "same_as_primary_appointment",
+        "distinct_from_primary_cta": false,
+        "status": "planned_local_only"
+      },
+      "evidence": {
+        "triangle_plan_status": "planned_complete",
+        "primary_cta_plan_status": "planned_complete",
+        "appointment_cta_plan_status": "planned_complete",
+        "rendered_status": "not_rendered_or_verified_by_this_plan",
+        "rendered_triangle_verified": false,
+        "live_status": "not_published_or_verified_by_this_plan",
+        "live_triangle_verified": false,
+        "release_status": "eligible_for_continuous_quality_review_not_yet_cleared",
+        "numerical_release_cap_applies": false
+      }
+    },
+    {
+      "program_row_id": "MRX1000-1019",
+      "canonical_title": "Mineral Appraisal: Guide In 2026",
+      "canonical_slug": "mineral-appraisal-guide-in-2026",
+      "canonical_url": "/blog/mineral-appraisal-guide-in-2026/",
+      "cluster": "valuation-methodology-drivers",
+      "pillar": "mineral-rights-value",
+      "search_intent": "education",
+      "funnel_stage": "consideration",
+      "source_preservation_classification": "planning_only_inventory",
+      "source_route_live": false,
+      "pillar_link": {
+        "url": "/mineral-rights-value/",
+        "route_evidence": "src/pages/mineral-rights-value.astro",
+        "status": "planned_local_only"
+      },
+      "sibling_link": {
+        "target_program_row_id": "MRX1000-0142",
+        "target_title": "How to Calculate Price per Net Mineral Acre From a Mineral Rights Offer",
+        "url": "/blog/calculate-price-per-net-mineral-acre/",
+        "relationship": "same_cluster_next_by_program_row_id_cyclic",
+        "target_source_preservation_classification": "live_public_published_route",
+        "target_route_live": true,
+        "status": "planned_local_only"
+      },
+      "primary_cta": {
+        "url": "/book/",
+        "label": "Understand My Value Factors",
+        "name": "mrx1000-mineral-rights-value-book_review-contextual_inline",
+        "placement_code": "contextual_inline",
+        "placement_guidance": "Place after the first comparison, risk, document, or decision-framework section.",
+        "assignment_rule": "consideration_stage_assisted_review",
+        "assignment_basis": "consideration:education",
+        "approved_route_evidence": "src/pages/book.astro",
+        "role": "primary_appointment",
+        "is_appointment_cta": true,
+        "status": "planned_local_only"
+      },
+      "appointment_cta": {
+        "url": "/book/",
+        "label": "Understand My Value Factors",
+        "name": "mrx1000-mineral-rights-value-book_review-contextual_inline",
+        "placement_code": "contextual_inline",
+        "placement_guidance": "Place after the first comparison, risk, document, or decision-framework section.",
+        "assignment_rule": "consideration_stage_assisted_review",
+        "assignment_basis": "consideration:education",
         "approved_route_evidence": "src/pages/book.astro",
         "role": "same_as_primary_appointment",
         "distinct_from_primary_cta": false,
