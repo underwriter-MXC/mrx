@@ -32,19 +32,22 @@ If the Article 162 deployment fails a production gate, immediately restore every
 - Pre-publication canonical-ledger JSON SHA-256: `22314eed29ee69c28a443b0551d4b87749e758804f4e1482708b136af6391ac0`
 - Pre-publication canonical-ledger CSV SHA-256: `55c26493bb8ae06e7c28aef8050c90af1f6d791996e702432fd93efed971ed87`
 - Pre-publication release-batch SHA-256: `5497a963eff0efd766f72586f30666d86c58cee01630a5cf5148ebd3c11320c8`
-- Deployment, live verification, and reconciliation: `PENDING`
+- Deployment, live verification, and reconciliation: `PASS`
 
 ## Production result
 
-- Publication commit: `PENDING`
-- Final deployment ID: `PENDING`
-- Final deployment URL: `PENDING`
-- Vercel inspection: `PENDING`
+- Publication commit: `21dcd4181e62cbee596fa39f110738f9b9aedc64`
+- Final deployment ID: `dpl_HQN4jzhLzJR8WeQwXGCZDayup6zg`
+- Final deployment URL: `https://mrx-fcmcbr35z-team-mrx.vercel.app`
+- Vercel inspection: `https://vercel.com/team-mrx/mrx-web/HQN4jzhLzJR8WeQwXGCZDayup6zg`
 - Active production aliases: apex, `www`, `mrx-web.vercel.app`, and `mrx-web-team-mrx.vercel.app`
-- Fresh exact-title/metadata/schema assertions: `PENDING`
-- Fresh hero and inline HTTP/MIME/byte assertions: `PENDING`
-- Exact live inline-image occurrence count: `PENDING`
-- Browser desktop/mobile disposition: `PENDING`
-- Production verifier: `PENDING`
-- Canonical MRX1000 published-and-live-verified count: `PENDING`
-- Reconciliation disposition: `PENDING`
+- Fresh exact-title/metadata/schema assertions: `PASS`
+- Fresh hero and inline HTTP/MIME/byte assertions: `PASS`
+- Exact live inline-image occurrence count: `1 PASS`
+- Browser desktop/mobile disposition: `PASS`; generated `2026-08-23T12:55:13.733Z`; evidence SHA-256 `d9c093ebe94d98cbb8cff6efe7c607ef9ddaad3b10eaa7d628aabb338e1fee6f`
+- Production verifier: `162/162 PASS`, zero failures, `170` expected live blog routes; generated `2026-08-23T12:55:31.569Z`; evidence SHA-256 `81a81771f6c6805f9b3d8752715be5ff916c9ba24d69528b2710fc49c47c8875`
+- Canonical MRX1000 published-and-live-verified count: `162`
+- Final canonical-ledger JSON SHA-256: `95b88415d0c36034bdb46922d0e48173420b62febdb6ef0459da54a99c0936ab`
+- Final canonical-ledger CSV SHA-256: `9ee7faf0186b0e9060d544a451b53062a3af2be92a673907f4562a2d22451643`
+- Final release-batch SHA-256: `1ca257a9f00d97cd992880f692b8721912b641c8b3c8fa4a690e0874868f6ef2`
+- Reconciliation disposition: `PASS`; Article 162 is recorded as a released public article in the canonical ledger.
