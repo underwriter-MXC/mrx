@@ -1,15 +1,15 @@
 {
   "artifact_type": "mrx1000_content_activation_plan",
   "plan_version": "mrx1000-content-activation-v1.1.0",
-  "generated_at": "2026-07-20T21:15:43.222Z",
+  "generated_at": "2026-07-20T20:07:01.855Z",
   "generated_at_method": "canonical_ledger_generated_at",
   "generator": "scripts/build-mrx-1000-activation-plan.mjs",
-  "content_fingerprint_sha256": "0ad28117ca0942fc49921723ddd09f45ed825f025b1dd5d5f29bc92988ae812a",
+  "content_fingerprint_sha256": "291c665a6992f5769bbad4df5a1fb549f076d6557e749d82b0599ecb03e67481",
   "inputs": {
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_fingerprint_sha256": "333c99da6c38a0a08517207619fe19b2c8c9247992c438e856ae92a349f0e4de",
+    "canonical_ledger_fingerprint_sha256": "85ba1a0816b870479a69ea1b5e779e80e5e33fd65efca6b8ed5c47a764114261",
     "canonical_ledger_fingerprint_verified": true,
-    "canonical_ledger_generated_at": "2026-07-20T21:15:43.222Z",
+    "canonical_ledger_generated_at": "2026-07-20T20:07:01.855Z",
     "owner_decision": {
       "decision_id": "D-2026-0804-16",
       "signed_disposition": "APPROVED_CONTINUOUS_QUALITY_GATED_ARTICLE_PUBLICATION",
@@ -115,9 +115,9 @@
     },
     "by_source_preservation_classification": {
       "incumbent_draft_nonpublic_held": 27,
-      "live_public_published_route": 160,
+      "live_public_published_route": 161,
       "pilot_draft_noindex_stage": 25,
-      "planning_only_inventory": 788
+      "planning_only_inventory": 787
     }
   },
   "rows": [
@@ -54886,11 +54886,11 @@
       },
       "sibling_link": {
         "target_program_row_id": "MRX1000-1001",
-        "target_title": "Robertson County, Texas Mineral Rights Value: Guide For Mineral Owners",
-        "url": "/blog/robertson-county-texas-mineral-rights-value-guide-for-mineral-owners/",
+        "target_title": "How to Build a Robertson County Mineral Rights Public-Record Locator",
+        "url": "/blog/robertson-county-mineral-rights-public-record-locator/",
         "relationship": "same_cluster_next_by_program_row_id_cyclic",
-        "target_source_preservation_classification": "planning_only_inventory",
-        "target_route_live": false,
+        "target_source_preservation_classification": "live_public_published_route",
+        "target_route_live": true,
         "status": "planned_local_only"
       },
       "primary_cta": {
@@ -62808,15 +62808,15 @@
     },
     {
       "program_row_id": "MRX1000-1001",
-      "canonical_title": "Robertson County, Texas Mineral Rights Value: Guide For Mineral Owners",
-      "canonical_slug": "robertson-county-texas-mineral-rights-value-guide-for-mineral-owners",
-      "canonical_url": "/blog/robertson-county-texas-mineral-rights-value-guide-for-mineral-owners/",
+      "canonical_title": "How to Build a Robertson County Mineral Rights Public-Record Locator",
+      "canonical_slug": "robertson-county-mineral-rights-public-record-locator",
+      "canonical_url": "/blog/robertson-county-mineral-rights-public-record-locator/",
       "cluster": "texas-county-basin-local-intent",
       "pillar": "texas-mineral-rights",
-      "search_intent": "education",
+      "search_intent": "local-informational",
       "funnel_stage": "consideration",
-      "source_preservation_classification": "planning_only_inventory",
-      "source_route_live": false,
+      "source_preservation_classification": "live_public_published_route",
+      "source_route_live": true,
       "pillar_link": {
         "url": "/mineral-rights/texas/",
         "route_evidence": "src/pages/mineral-rights/[state].astro#stateGuides:texas",
@@ -62838,7 +62838,7 @@
         "placement_code": "contextual_inline",
         "placement_guidance": "Place after the first comparison, risk, document, or decision-framework section.",
         "assignment_rule": "consideration_stage_assisted_review",
-        "assignment_basis": "consideration:education",
+        "assignment_basis": "consideration:local-informational",
         "approved_route_evidence": "src/pages/book.astro",
         "role": "primary_appointment",
         "is_appointment_cta": true,
@@ -62851,7 +62851,7 @@
         "placement_code": "contextual_inline",
         "placement_guidance": "Place after the first comparison, risk, document, or decision-framework section.",
         "assignment_rule": "consideration_stage_assisted_review",
-        "assignment_basis": "consideration:education",
+        "assignment_basis": "consideration:local-informational",
         "approved_route_evidence": "src/pages/book.astro",
         "role": "same_as_primary_appointment",
         "distinct_from_primary_cta": false,
@@ -62865,7 +62865,7 @@
         "rendered_triangle_verified": false,
         "live_status": "not_published_or_verified_by_this_plan",
         "live_triangle_verified": false,
-        "release_status": "eligible_for_continuous_quality_review_not_yet_cleared",
+        "release_status": "released_under_d16_continuous_quality_gate",
         "numerical_release_cap_applies": false
       }
     },

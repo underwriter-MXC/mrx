@@ -223,6 +223,7 @@ async function loadPriorProgramRowIds() {
     wave70Rekey: prior.identity_registry?.wave70_rekey ?? null,
     wave71Refresh: prior.identity_registry?.wave71_refresh ?? null,
     wave72Rekey: prior.identity_registry?.wave72_rekey ?? null,
+    wave73Rekey: prior.identity_registry?.wave73_rekey ?? null,
   };
 }
 
@@ -1567,6 +1568,7 @@ async function main() {
       ...(priorIdentity.wave70Rekey ? { wave70_rekey: priorIdentity.wave70Rekey } : {}),
       ...(priorIdentity.wave71Refresh ? { wave71_refresh: priorIdentity.wave71Refresh } : {}),
       ...(priorIdentity.wave72Rekey ? { wave72_rekey: priorIdentity.wave72Rekey } : {}),
+      ...(priorIdentity.wave73Rekey ? { wave73_rekey: priorIdentity.wave73Rekey } : {}),
     },
     content_fingerprint_sha256: hashRows(selected),
     policy: {

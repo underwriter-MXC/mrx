@@ -1,7 +1,7 @@
 {
   "program": "MRX 1,000 Article SEO+AEO Production Program",
   "artifact_type": "authorized_release_10_batch",
-  "evidence_scaffold_generated_at_utc": "2026-08-22T23:40:11Z",
+  "evidence_scaffold_generated_at_utc": "2026-08-23T00:27:28Z",
   "decision_authority": {
     "successor_gate_decision_id": "D-2026-0804-16",
     "successor_gate_decision_path": "docs/governance/mrx1000-owner-continuous-publication-directive-2026-08-04.md",
@@ -240,13 +240,16 @@
     "wave71_selection_decision_sha256": "16917868dd7a6d10f2081b3c548312fd6bc47a8abccf0884ca5c8ecc97fe9c11",
     "wave72_selection_decision_id": "MRX1000-W72-SELECT-2026-08-22",
     "wave72_selection_decision_path": "docs/governance/mrx1000-wave72-selection-decision-2026-08-22.md",
-    "wave72_selection_decision_sha256": "79155f079acf51fb261a9e83aa36ad5afa013ba7edee992855950949871599fd"
+    "wave72_selection_decision_sha256": "79155f079acf51fb261a9e83aa36ad5afa013ba7edee992855950949871599fd",
+    "wave73_selection_decision_id": "MRX1000-W73-SELECT-2026-08-22",
+    "wave73_selection_decision_path": "docs/governance/mrx1000-wave73-selection-decision-2026-08-22.md",
+    "wave73_selection_decision_sha256": "48280d23ec1a4b5ab7a277664ee99f92ac0d5903b009d0344248ca9de939dbcf"
   },
   "identity_authority": {
     "scope_key": "canonical_slug",
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_sha256": "9db67b2c2e06b41e6e645842641e8cc3ddad3eff9a5893727cf64e6d2038d928",
-    "canonical_ledger_generated_at": "2026-07-20T21:15:43.222Z",
+    "canonical_ledger_sha256": "c1fbcef1fdf12f73eb56b7405e474edb72ca25e8e98c8f04c5b9404be8cb30ee",
+    "canonical_ledger_generated_at": "2026-07-20T20:07:01.855Z",
     "successor_ledger_decision_id": "D-2026-0723-LEDGER-04",
     "successor_ledger_decision_path": "artifacts/mrx1000-release-10/decisions/mrx-ceo-ledger-provenance-successor-20260723-04.md",
     "successor_ledger_decision_sha256": "09eca24bcd0e71563f2ac4197f564eec0ccb43a5ee955216da5c4a2543d04978",
@@ -260,11 +263,11 @@
     "authorization_scope": "declared_program_size_not_a_staged_release_cap",
     "admission_mode": "continuous_quality_gated",
     "continuous_quality_gated_from_selection_rank": 26,
-    "prior_verified_article_count": 151,
+    "prior_verified_article_count": 152,
     "fail_closed": true,
     "earned_scale_gates": [],
-    "exact_admitted_count": 152,
-    "exact_admitted_slate_sha256": "18ffbbd47200e77c9101431a8c9dd0ca9eefc769db33bc629559a88fa6fff07d"
+    "exact_admitted_count": 153,
+    "exact_admitted_slate_sha256": "6abc22a6a46f995d79906e9e35a6f3a5917b45977af75c863bf5ef389d8e8fc9"
   },
   "articles": [
     {
@@ -5222,10 +5225,44 @@
       "inline_path": "/assets/articles/inline/mineral-rights-offer-sender-identity-cross-check/mineral-rights-offer-sender-identity-cross-check.webp",
       "inline_asset_sha256": "fb05486d80c072f2df31ee9e38f2c95692cc6582253ab73f724dd2c6d6bb3838",
       "inline_rendered_text": "mineral rights offer sender identity cross-check"
+    },
+    {
+      "selection_rank": 153,
+      "program_row_id": "MRX1000-1001",
+      "source_shortlist_program_row_id": "MRX1000-1001",
+      "slug": "robertson-county-mineral-rights-public-record-locator",
+      "title": "How to Build a Robertson County Mineral Rights Public-Record Locator",
+      "source_shortlist_title": "How to Build a Robertson County Mineral Rights Public-Record Locator",
+      "canonical_url": "https://mineralrightsxchange.com/blog/robertson-county-mineral-rights-public-record-locator/",
+      "pillar": "texas-mineral-rights",
+      "cluster": "texas-county-basin-local-intent",
+      "content_genius_article_uuid": null,
+      "archive_evidence_sha256": "9dd86834989e9645b813d63f9363b50cb735185aa2252edf74f6bf46dbae90d6",
+      "repo_path": "src/content/posts/robertson-county-mineral-rights-public-record-locator.mdx",
+      "repo_sha256": "3a7725e9dcfb9d70e89e7c5705574ccc3476d1d85797b4aeb265d5e7a1193d0f",
+      "article_sha256": "3a7725e9dcfb9d70e89e7c5705574ccc3476d1d85797b4aeb265d5e7a1193d0f",
+      "hero_path": "/assets/articles/hero/how-to-build-a-robertson-county-mineral-rights-public-record-locator.webp",
+      "hero_sha256": "f95a082e17723d9b281159adbfb1192f8c74f182d4a157abbfaf81cc15222f64",
+      "hero_asset_sha256": "f95a082e17723d9b281159adbfb1192f8c74f182d4a157abbfaf81cc15222f64",
+      "admission_status": "admitted_quality_gated",
+      "finalization_state": "draft_noindex_admitted",
+      "searchatlas_content_score": null,
+      "searchatlas_word_count": 1668,
+      "risk_citation_remediation": [
+        "The original identity was rejected because it was a repetitive county mineral-value guide and would require unsupported local valuation claims. The admitted replacement owns only a Robertson County public-record lead locator with five evidence fields and controlled lead located, no result located, or needs professional review labels.",
+        "Robertson County Clerk, Texas General Land Office, and Railroad Commission sources are used only to locate and preserve source-specific public-record leads. None establishes title, ownership, authority, acreage, lease meaning, legal effect, production potential, value, offer quality, or a transaction decision.",
+        "Continuous quality-gated admission under D-2026-0804-16, the 2026-08-14 no-approval owner directive, and MRX1000-W73-SELECT-2026-08-22; no numerical cap, elapsed-time gate, or owner publication approval applies.",
+        "Publication remains conditional on current editorial, factual-citation, compliance, two-image, metadata, build, rollback, deployment, and live-verification evidence."
+      ],
+      "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/robertson-county-mineral-rights-public-record-locator.json",
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/robertson-county-mineral-rights-public-record-locator/robertson-county-mineral-rights-public-records.webp",
+      "inline_asset_sha256": "629f76a59b4238861039bf8e56aa6f4c32df44c945fcb7208d27755088dadf79",
+      "inline_rendered_text": "Robertson County mineral rights public records"
     }
   ],
   "admission_audit": {
-    "admitted_article_count": 152,
+    "admitted_article_count": 153,
     "selection_ranks": [
       1,
       2,
@@ -5378,7 +5415,8 @@
       149,
       150,
       151,
-      152
+      152,
+      153
     ],
     "duplicate_program_row_ids": [],
     "duplicate_slugs": [],
@@ -5437,9 +5475,9 @@
   "two_image_policy": {
     "directive": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
     "retrofit_manifest_path": "config/mrx-article-two-image-retrofit.json",
-    "retrofit_manifest_sha256": "3159c19d304335b504f5d886b287873cff70ad67908977505dac856bf9a8c20e",
-    "public_article_count": 160,
-    "batch_article_count": 152,
+    "retrofit_manifest_sha256": "5f6a734ee2727a3227d35fe4be32f9f12aa3ba8cb2a9b2a0ec2450eb2836efc4",
+    "public_article_count": 161,
+    "batch_article_count": 153,
     "assets_per_article": 2,
     "hero_share_identity_required": true,
     "inline_image_distinct_required": true,
