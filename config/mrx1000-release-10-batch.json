@@ -1,7 +1,7 @@
 {
   "program": "MRX 1,000 Article SEO+AEO Production Program",
   "artifact_type": "authorized_release_10_batch",
-  "evidence_scaffold_generated_at_utc": "2026-08-23T14:01:27Z",
+  "evidence_scaffold_generated_at_utc": "2026-08-23T15:34:55Z",
   "decision_authority": {
     "successor_gate_decision_id": "D-2026-0804-16",
     "successor_gate_decision_path": "docs/governance/mrx1000-owner-continuous-publication-directive-2026-08-04.md",
@@ -273,13 +273,16 @@
     "wave82_selection_decision_sha256": "8d26609723b56d72656bfa90e4b3ccbddb1690b0c42f6842e50e32f5f4c51670",
     "wave83_selection_decision_id": "MRX1000-W83-SELECT-2026-08-23",
     "wave83_selection_decision_path": "docs/governance/mrx1000-wave83-selection-decision-2026-08-23.md",
-    "wave83_selection_decision_sha256": "00c5e1d063693b406e2e8ee7c33759653a43bef3b9150892882f598a00ac60e6"
+    "wave83_selection_decision_sha256": "00c5e1d063693b406e2e8ee7c33759653a43bef3b9150892882f598a00ac60e6",
+    "wave84_selection_decision_id": "MRX1000-W84-SELECT-2026-08-23",
+    "wave84_selection_decision_path": "docs/governance/mrx1000-wave84-selection-decision-2026-08-23.md",
+    "wave84_selection_decision_sha256": "61c6631c5b1a6f36a425db1d22f189e4b78c6fbba1a72f815f0049ed85741d40"
   },
   "identity_authority": {
     "scope_key": "canonical_slug",
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_sha256": "bfefcfe3e63f9002a61958fe8dafa098fe51e1265870f041f0ece845b4cf4d87",
-    "canonical_ledger_generated_at": "2026-07-20T01:00:59.031Z",
+    "canonical_ledger_sha256": "872aa887f538679fe556b48db696971bc1123b3721884a9c0ed8c26af8a52411",
+    "canonical_ledger_generated_at": "2026-07-20T03:43:51.663Z",
     "successor_ledger_decision_id": "D-2026-0723-LEDGER-04",
     "successor_ledger_decision_path": "artifacts/mrx1000-release-10/decisions/mrx-ceo-ledger-provenance-successor-20260723-04.md",
     "successor_ledger_decision_sha256": "09eca24bcd0e71563f2ac4197f564eec0ccb43a5ee955216da5c4a2543d04978",
@@ -293,11 +296,11 @@
     "authorization_scope": "declared_program_size_not_a_staged_release_cap",
     "admission_mode": "continuous_quality_gated",
     "continuous_quality_gated_from_selection_rank": 26,
-    "prior_verified_article_count": 162,
+    "prior_verified_article_count": 163,
     "fail_closed": true,
     "earned_scale_gates": [],
-    "exact_admitted_count": 163,
-    "exact_admitted_slate_sha256": "1fe898aa4c618e2cf889e59fbeea19cccc61fbecf7ff3f7b9e545a65b4c5e266"
+    "exact_admitted_count": 164,
+    "exact_admitted_slate_sha256": "c196654d02754ab37ea21e48e48970aa6a44e1ab300088a48ec6c2e173870605"
   },
   "articles": [
     {
@@ -5629,10 +5632,44 @@
       "inline_path": "/assets/articles/inline/inventory-mixed-status-mineral-interests-before-valuation-review/mixed-status-mineral-interest-inventory.webp",
       "inline_asset_sha256": "2f790894d9db1f251bcea14310d7eeb6a4e11346b5d5b61118fec1454c642471",
       "inline_rendered_text": "mixed-status mineral interest inventory"
+    },
+    {
+      "selection_rank": 164,
+      "program_row_id": "MRX1000-0269",
+      "source_shortlist_program_row_id": "MRX1000-0269",
+      "slug": "refrac-workover-event-claim-register-source-preserving-record-template",
+      "title": "Refrac and Workover Event-Claim Register: A Source-Preserving Record Template",
+      "source_shortlist_title": "Refrac and Workover Event-Claim Register: A Source-Preserving Record Template",
+      "canonical_url": "https://mineralrightsxchange.com/blog/refrac-workover-event-claim-register-source-preserving-record-template/",
+      "pillar": "mineral-rights-value",
+      "cluster": "valuation-methodology-drivers",
+      "content_genius_article_uuid": null,
+      "archive_evidence_sha256": "987d2595e8b4d85c245dd94802024923f732310f1b225229902e8cb8363dcbd4",
+      "repo_path": "src/content/posts/refrac-workover-event-claim-register-source-preserving-record-template.mdx",
+      "repo_sha256": "6a18c7d912aa22df2c9cad198d26ad6e3bc83007561f3d251860d77489e20fdf",
+      "article_sha256": "6a18c7d912aa22df2c9cad198d26ad6e3bc83007561f3d251860d77489e20fdf",
+      "hero_path": "/assets/articles/hero/refrac-and-workover-event-claim-register-a-source-preserving-record-template.webp",
+      "hero_sha256": "16436d31026ec5fd2415a2945c716ed49c4e46614647c8c0dcf034760d7e5bd3",
+      "hero_asset_sha256": "16436d31026ec5fd2415a2945c716ed49c4e46614647c8c0dcf034760d7e5bd3",
+      "admission_status": "admitted_quality_gated",
+      "finalization_state": "draft_noindex_admitted",
+      "searchatlas_content_score": null,
+      "searchatlas_word_count": 2027,
+      "risk_citation_remediation": [
+        "The original refrac-and-workover valuation identity was rejected because it materially collides with live decline-curve, DCF, valuation-assumption, and asset-decision coverage. The admitted replacement owns only a source-preserving event-claim register.",
+        "Current Texas regulator and SEC sources support only record-location, form-identity, filing-identity, and dated reported-period logistics. None proves that an event occurred, establishes a property connection, attributes causation, forecasts production, estimates reserves, or determines value.",
+        "Continuous quality-gated admission under D-2026-0804-16, the 2026-08-14 no-approval owner directive, and MRX1000-W84-SELECT-2026-08-23; no numerical cap, elapsed-time gate, or owner publication approval applies.",
+        "Publication remains conditional on current editorial, factual-citation, compliance, two-image, metadata, build, rollback, deployment, and live-verification evidence."
+      ],
+      "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/refrac-workover-event-claim-register-source-preserving-record-template.json",
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/refrac-workover-event-claim-register-source-preserving-record-template/refrac-workover-event-claim-register.webp",
+      "inline_asset_sha256": "a5f7bfc5729b292acdf611b6ef57703b14b24994aac9e2fdd02990505d5e073e",
+      "inline_rendered_text": "refrac workover event claim register"
     }
   ],
   "admission_audit": {
-    "admitted_article_count": 163,
+    "admitted_article_count": 164,
     "selection_ranks": [
       1,
       2,
@@ -5796,7 +5833,8 @@
       160,
       161,
       162,
-      163
+      163,
+      164
     ],
     "duplicate_program_row_ids": [],
     "duplicate_slugs": [],
@@ -5855,9 +5893,9 @@
   "two_image_policy": {
     "directive": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
     "retrofit_manifest_path": "config/mrx-article-two-image-retrofit.json",
-    "retrofit_manifest_sha256": "943e59ce9744ba16f811abe2b712185d96d3e25a341093110487ac32afb94fb4",
-    "public_article_count": 171,
-    "batch_article_count": 163,
+    "retrofit_manifest_sha256": "88979f77b0590a960d76098e022fdf1a0aba6c2e5f82cd338fa5966017b1bd20",
+    "public_article_count": 172,
+    "batch_article_count": 164,
     "assets_per_article": 2,
     "hero_share_identity_required": true,
     "inline_image_distinct_required": true,
