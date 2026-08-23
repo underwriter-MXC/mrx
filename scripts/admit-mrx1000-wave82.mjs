@@ -413,7 +413,10 @@ if ([priorCanonicalSlug, slug].includes(sourceRow.canonical_slug)) {
     internal_link_role: 'incumbent_supporting_article',
     next_owner: 'mrx_editorial',
     dedupe_evidence: {
-      normalized_title: title.toLowerCase(),
+      normalized_title: title
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, ' ')
+        .trim(),
       exact_slug_unique: true,
       exact_title_unique: true,
       nearest_same_cluster_slug: nearestSameClusterSlug,

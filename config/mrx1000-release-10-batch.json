@@ -1,7 +1,7 @@
 {
   "program": "MRX 1,000 Article SEO+AEO Production Program",
   "artifact_type": "authorized_release_10_batch",
-  "evidence_scaffold_generated_at_utc": "2026-08-23T20:33:51Z",
+  "evidence_scaffold_generated_at_utc": "2026-08-23T21:22:17Z",
   "decision_authority": {
     "successor_gate_decision_id": "D-2026-0804-16",
     "successor_gate_decision_path": "docs/governance/mrx1000-owner-continuous-publication-directive-2026-08-04.md",
@@ -288,13 +288,16 @@
     "wave87_selection_decision_sha256": "43586e8d4a35d2f8e4d754b84608c273db584c1b0b611b39d0b6c9d0d5893899",
     "wave88_selection_decision_id": "MRX1000-W88-SELECT-2026-08-23",
     "wave88_selection_decision_path": "docs/governance/mrx1000-wave88-selection-decision-2026-08-23.md",
-    "wave88_selection_decision_sha256": "08bfc42431c498e07953dce6d66f7365f4d71de0cc616dac1fb0c72463003786"
+    "wave88_selection_decision_sha256": "08bfc42431c498e07953dce6d66f7365f4d71de0cc616dac1fb0c72463003786",
+    "wave89_selection_decision_id": "MRX1000-W89-SELECT-2026-08-23",
+    "wave89_selection_decision_path": "docs/governance/mrx1000-wave89-selection-decision-2026-08-23.md",
+    "wave89_selection_decision_sha256": "abd592e9d3db9cf5373b66753c024246fff9044b1e7680c043d5eb82c0d7c332"
   },
   "identity_authority": {
     "scope_key": "canonical_slug",
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_sha256": "e0edc7012808bbf02ff5695eebffd0e3a149d1c3383b0db3cb727fe7ffddeddf",
-    "canonical_ledger_generated_at": "2026-07-20T08:08:29.183Z",
+    "canonical_ledger_sha256": "cd799e0314c3c61515c90e0a71250d1f89c2ed16f522a012fb595c607d46dc9e",
+    "canonical_ledger_generated_at": "2026-07-20T11:00:07.755Z",
     "successor_ledger_decision_id": "D-2026-0723-LEDGER-04",
     "successor_ledger_decision_path": "artifacts/mrx1000-release-10/decisions/mrx-ceo-ledger-provenance-successor-20260723-04.md",
     "successor_ledger_decision_sha256": "09eca24bcd0e71563f2ac4197f564eec0ccb43a5ee955216da5c4a2543d04978",
@@ -308,11 +311,11 @@
     "authorization_scope": "declared_program_size_not_a_staged_release_cap",
     "admission_mode": "continuous_quality_gated",
     "continuous_quality_gated_from_selection_rank": 26,
-    "prior_verified_article_count": 167,
+    "prior_verified_article_count": 168,
     "fail_closed": true,
     "earned_scale_gates": [],
-    "exact_admitted_count": 168,
-    "exact_admitted_slate_sha256": "53ec5728f82e7f1123443b01682be9c8538d39bad8f09ebff3ec1855f6338848"
+    "exact_admitted_count": 169,
+    "exact_admitted_slate_sha256": "de3ec43dabfb5aa4359e7bc0600358bc82228852451b68dea64d47f145b958f3"
   },
   "articles": [
     {
@@ -5814,10 +5817,44 @@
       "inline_path": "/assets/articles/inline/how-to-build-a-texas-mineral-production-record-locator-sheet/texas-mineral-production-record-locator-sheet.webp",
       "inline_asset_sha256": "6f1869c8fda0c99de6637cad22c8a51a1a698735da098c5ba8c1929df09222a1",
       "inline_rendered_text": "Texas mineral production record locator sheet"
+    },
+    {
+      "selection_rank": 169,
+      "program_row_id": "MRX1000-0286",
+      "source_shortlist_program_row_id": "MRX1000-0286",
+      "slug": "texas-rrc-pooling-filing-retrieval-provenance-worksheet",
+      "title": "Texas RRC Pooling-Filing Retrieval Provenance Worksheet",
+      "source_shortlist_title": "Texas RRC Pooling-Filing Retrieval Provenance Worksheet",
+      "canonical_url": "https://mineralrightsxchange.com/blog/texas-rrc-pooling-filing-retrieval-provenance-worksheet/",
+      "pillar": "mineral-rights-value",
+      "cluster": "valuation-methodology-drivers",
+      "content_genius_article_uuid": null,
+      "archive_evidence_sha256": "a4e61b3ff113ddd3ca0919b2c2152d68c65e516822e53a82afcb1e08fb7f5002",
+      "repo_path": "src/content/posts/texas-rrc-pooling-filing-retrieval-provenance-worksheet.mdx",
+      "repo_sha256": "67973f95b615135a2bb8f0d7bf16b59ea2cb803634e3c7eff3d2f0198a1b4dbd",
+      "article_sha256": "67973f95b615135a2bb8f0d7bf16b59ea2cb803634e3c7eff3d2f0198a1b4dbd",
+      "hero_path": "/assets/articles/hero/texas-rrc-pooling-filing-retrieval-provenance-worksheet.webp",
+      "hero_sha256": "6e9fe5ef10871a17083fc832d893d14eb611c77d9098e18af0c2ac0909643440",
+      "hero_asset_sha256": "6e9fe5ef10871a17083fc832d893d14eb611c77d9098e18af0c2ac0909643440",
+      "admission_status": "admitted_quality_gated",
+      "finalization_state": "draft_noindex_admitted",
+      "searchatlas_content_score": null,
+      "searchatlas_word_count": 1924,
+      "risk_citation_remediation": [
+        "The original unitization, pooling, and mineral-valuation identity was rejected for material corpus overlap and unsupported property, development, and value implications. The admitted replacement owns only a source-preserving retrieval-provenance worksheet for one Texas RRC pooling-filing search.",
+        "Current official Railroad Commission sources support only official routes, system and form labels, displayed search-identifier categories, record classes, coverage descriptions, access notes, and public-data limitations. None establishes property connection, ownership, tract inclusion, lease effect, pooling authority, entitlement, compliance, completeness, accuracy, development, production, or value.",
+        "The article remains distinct from the broad RRC tutorial, privacy policy, redaction checklist, property-connection cross-check, acreage-development article, DCF future-locations article, depth and formation-rights article, and production-record locator because it records one different record-family retrieval trail without interpretation or downstream use.",
+        "Continuous quality-gated admission under D-2026-0804-16, the 2026-08-14 no-approval owner directive, and MRX1000-W89-SELECT-2026-08-23; publication remains conditional on every article-specific gate and no owner publication approval applies."
+      ],
+      "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/texas-rrc-pooling-filing-retrieval-provenance-worksheet.json",
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/texas-rrc-pooling-filing-retrieval-provenance-worksheet/texas-rrc-pooling-filing-retrieval.webp",
+      "inline_asset_sha256": "76e9a86fad240955f518f9087f8daf6ca475ede4d8fadf26fa224617d3e340f1",
+      "inline_rendered_text": "Texas RRC pooling filing retrieval"
     }
   ],
   "admission_audit": {
-    "admitted_article_count": 168,
+    "admitted_article_count": 169,
     "selection_ranks": [
       1,
       2,
@@ -5986,7 +6023,8 @@
       165,
       166,
       167,
-      168
+      168,
+      169
     ],
     "duplicate_program_row_ids": [],
     "duplicate_slugs": [],
@@ -6045,9 +6083,9 @@
   "two_image_policy": {
     "directive": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
     "retrofit_manifest_path": "config/mrx-article-two-image-retrofit.json",
-    "retrofit_manifest_sha256": "5f0c69755a1276790c6db75ff698b4780b5ba7ab0f267cd71ea3abcdb7c1fe36",
-    "public_article_count": 176,
-    "batch_article_count": 168,
+    "retrofit_manifest_sha256": "66ed3b150073db938f7bdbdef9b6d20fe75d098bee74963cc0fa643ecd1d2a59",
+    "public_article_count": 177,
+    "batch_article_count": 169,
     "assets_per_article": 2,
     "hero_share_identity_required": true,
     "inline_image_distinct_required": true,
