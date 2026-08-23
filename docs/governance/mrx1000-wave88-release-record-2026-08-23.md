@@ -31,9 +31,28 @@ If the Article 168 deployment fails a production gate, immediately restore every
 - Release batch: `168/168` exact admissions
 - Release-batch SHA-256: `74260fe026e51c83258b8bc884c983456eaaa69c9ce438830c3c9b2c63cc973d`
 - Automated release gates: `168/168 PASS`; `0` blocking findings
-- Release-gate JSON SHA-256: `2fe01ce4c81aa241df3fb9d1af41b1e563f5e678adc5615209f244da93c7aa66`
+- Release-gate JSON SHA-256: `d6e3bd4728c92992ee586fa87a37fbb02c4bc1e0a4331ce86b45bf6f3163c09c`
 - Production build: `PASS` with `176` public article routes and `352` article-image binaries
 - Rendered two-image, visible-copy, and grammar verification: `PASS`
 - ESLint: `PASS`
 - Unit tests: `596/596 PASS` across `65/65` files
-- Deployment, live verification, and reconciliation: `PENDING`
+- Deployment, live verification, and reconciliation: `PASS`
+
+## Production publication and reconciliation
+
+- Publication commit: `964e51d`
+- Vercel deployment: `dpl_D43eA2vPg3MdWnzAJpFQbgboZtV2`
+- Deployment URL: `https://mrx-5n85pamkh-team-mrx.vercel.app`
+- Inspect URL: `https://vercel.com/team-mrx/mrx-web/D43eA2vPg3MdWnzAJpFQbgboZtV2`
+- Active targets: `vercel-origin-via-cloudflare-apex`, `vercel-www-redirect`, `vercel-project-alias`, and `vercel-protected-team-alias`
+- Article route: `HTTP 200` with exact canonical URL, H1, Article and FAQ schema, five FAQs, five reviewed sources, and indexable robots state
+- Canonical image identity: visible hero, `og:image`, `twitter:image`, and Article schema all use the same exact hero asset and verified production bytes
+- Inline image identity: exact distinct inline asset, keyword text, alt text, dimensions, MIME type, and production bytes verified
+- Protected deployment-origin verification: exact HTML plus hero and inline SHA-256 values `PASS`
+- Browser verification: `PASS` in extension-backed Google Chrome at desktop and mobile widths, with exact title and images, no clipping, overlap, garbling, or horizontal overflow
+- Browser-verification SHA-256: `d26c13daf061efb474a534fd5dd867df95772eed698b7e83e138de668a31e1a5`
+- Post-publication verifier: `168/168 PASS`; `176` live public article routes; `0` failures
+- Post-publication evidence SHA-256: `a6a278fe7ef8e47e677dfac360eafa6dbc1fa1cc5e9149df62c367887fbf3760`
+- Canonical reconciled ledger JSON SHA-256: `e0edc7012808bbf02ff5695eebffd0e3a149d1c3383b0db3cb727fe7ffddeddf`
+- Canonical reconciled ledger CSV SHA-256: `40b840f6683647bd29de29ff538fbccaa3d40a23a0ebfeea0c7c5897654443a4`
+- Reconciled signed batch SHA-256: `f73a20d707ebd9266a1885de6aed39f9297a5fa0495bf4e6aa31bf4e585d9386`
