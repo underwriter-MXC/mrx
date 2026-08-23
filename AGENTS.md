@@ -29,6 +29,20 @@ Chesty is advisory and read-only for article identity and specialist review. Inv
 
 Independently verify Chesty's candidate against the current isolated ledger, repository corpus, and live routes. If a nested Hermes call changes to an unverified working directory, omits the corrected provider, uses stale ledger state, or hangs, terminate only that verified advisory process and rerun the final read-only decision through `mrx_ceo` with `--provider openai-codex`. Never allow Chesty or a specialist to write the release worktree.
 
+## Fast, fail-closed article selection
+
+Applies to every unstarted article-identity selection after Article 171. Do not interrupt or restart an already verified Chesty/`mrx_ceo` decision merely to adopt this protocol.
+
+The release owner must first generate one compact, current selection packet from deterministic checks: exact worktree, branch, and commit; ledger count and candidate-row state; prior hold/redefinition constraints; the small set of nearest existing slugs/routes; and official-source URLs with their concurrent HTTP retrieval results. Regenerate the packet when its worktree commit or ledger state changes. Do not make an executive agent rediscover this mechanical evidence by reading broad source trees or repeating prior decision records.
+
+Use Chesty as the single read-only coordinator and route the sole executive verdict immediately through `mrx_ceo`. Do not obtain a separate preliminary Chesty opinion that repeats the same corpus or source analysis before the CEO decision. Consult a specialist only for a named, unresolved collision, compliance, or source question; include that answer in the same final decision packet instead of creating another serial review.
+
+Run deterministic collision checks and official-source reachability checks concurrently before the CEO call. Give `mrx_ceo` the compact packet plus only the authoritative records necessary to resolve the live candidate; it must still confirm the finalized job-to-be-done, exact boundary from nearest collisions, and sufficient official factual support.
+
+Timebox the read-only executive selection to four minutes. If a defensible distinct identity cannot be established within that window, return `HOLD` with the specific collision or evidence gap. Do not retry the same selection through additional serial agents; the release owner may correct the packet and start one new CEO decision. This timebox never authorizes drafting, image work, or publication without a defensible executive verdict.
+
+This protocol removes duplicated orchestration and redundant retrieval only. It does not relax the source, originality, compliance, two-image, metadata, test, deployment, or live-verification gates below.
+
 ## Autonomous execution and the sole approval exception
 
 Do not request owner approval, confirmation, an "Allow once" response, or similar permission for ordinary work within an approved MRX article workflow. Standing authorization includes:
