@@ -9,8 +9,8 @@
   "inputs": {
     "ledger": {
       "path": "config/mrx-1000-canonical-content-ledger.json",
-      "sha256": "66e6a31f44d18016826a3e667f5f9e2f282d081e0027cad355d726a489e1619d",
-      "bytes": 4554860
+      "sha256": "2eefc470ff86290f615985e3462236bd42aa25f8e35318cce3afe3ee74513307",
+      "bytes": 4555244
     },
     "readiness": {
       "path": "reports/mrx-1000-readiness-matrix.json",
@@ -106025,7 +106025,7 @@
       "primary_keyword": "Texas RRC severance query retrieval",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -351528,5 +351528,5 @@
       ]
     }
   ],
-  "content_fingerprint_sha256": "1de190fb1781c50bbf5b8af76007e18a250861e262579aceb404bc000ed59c48"
+  "content_fingerprint_sha256": "cbb2ad846b9caccffdf765f0900e63d3430ae6d3d4d831b269021152833a6acb"
 }

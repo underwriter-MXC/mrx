@@ -35,6 +35,7 @@ rsync -a \
   --exclude='.git/' \
   --exclude='.vercel/' \
   --exclude='.worktrees/' \
+  --exclude='.worktrees' \
   --exclude='node_modules/' \
   --exclude='.astro/' \
   --exclude='dist/' \
