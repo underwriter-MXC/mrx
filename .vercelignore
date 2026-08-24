@@ -19,6 +19,12 @@ tmp/
 artifacts/
 reports/
 
+# The icon-library React sources and master SVGs are authoring inputs only.
+# Runtime code has no imports of them; retain optimized SVG and PNG public
+# assets while avoiding hundreds of non-serving deployment entries.
+public/assets/icons/react/
+public/assets/icons/*/svg/
+
 # Planning artifacts are not part of the public Vercel site. Keep only the
 # hash-bound governance receipts required by the fail-closed release gate.
 docs/*
