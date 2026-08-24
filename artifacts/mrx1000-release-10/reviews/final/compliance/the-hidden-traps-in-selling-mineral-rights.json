@@ -1,0 +1,43 @@
+{
+  "artifact_type": "mrx1000_two_image_compliance_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-12T15:43:41Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-12",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0116",
+  "slug": "the-hidden-traps-in-selling-mineral-rights",
+  "title": "The Hidden Traps in Selling Mineral Rights",
+  "canonical_url": "https://mineralrightsxchange.com/blog/the-hidden-traps-in-selling-mineral-rights/",
+  "source_path": "src/content/posts/the-hidden-traps-in-selling-mineral-rights.mdx",
+  "input_body_sha256": "aede6336d8d120a09eed78b630aa8dbd61a853373505b5233714c633eae16e01",
+  "input_frontmatter_sha256": "340bd08f6b1632952d716765389eefc692a9c6b65fcf8a40b644422fab63373c",
+  "expected_repo_sha256": "aede6336d8d120a09eed78b630aa8dbd61a853373505b5233714c633eae16e01",
+  "two_image_manifest_sha256": "a2258407c3f43fec103d8352d1d1c73968b5175dd91bf5076ad8ea805c57edcc",
+  "reviewer_id": "codex_wave36_compliance",
+  "review_run_id": "mrx1000-wave36-compliance-20260812T154341Z",
+  "capability": "compliance",
+  "expected_hero_sha256": "2a7c999d7b2a1bd583af58003f7a7f557da41d28fe5c89ed0844805d3124c913",
+  "expected_inline_sha256": "0b5520d1ab7c923acb6c8b95aff751206f6437fe8fab6fa9bf8e98e264cb4c7a",
+  "findings": [
+    "Complete current MDX SHA-256 is aede6336d8d120a09eed78b630aa8dbd61a853373505b5233714c633eae16e01; hero/share and inline image hashes are separately locked.",
+    "The article states educational and professional boundaries, discloses MRX’s potential economic interest, separates headline terms from the complete document package and expected owner net, supplies explicit stop conditions, labels MRX review as directional, and routes unresolved title, legal, tax, accounting, appraisal, investment, and transaction questions without making owner-specific conclusions.",
+    "Image text is limited to the exact article title and canonical keyword and adds no owner data, buyer endorsement, contract interpretation, deed, price, acreage, decimal, formula, appraisal result, tax outcome, or transaction conclusion."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "hero_share_sha256_identity",
+    "inline_image_distinct_sha256",
+    "exact_text_ocr_pass",
+    "filename_text_identity_pass",
+    "educational_and_professional_boundaries_preserved",
+    "no_unsupported_visual_or_valuation_claims"
+  ],
+  "sources_inspected": [
+    "src/content/posts/the-hidden-traps-in-selling-mineral-rights.mdx",
+    "/assets/articles/hero/the-hidden-traps-in-selling-mineral-rights.webp",
+    "/assets/articles/inline/the-hidden-traps-in-selling-mineral-rights/common-mistakes-selling-mineral-rights.webp"
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "artifact_type": "mrx1000_two_image_factual_citation_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-15T03:53:20Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-11",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0142",
+  "slug": "calculate-price-per-net-mineral-acre",
+  "title": "How to Calculate Price per Net Mineral Acre From a Mineral Rights Offer",
+  "canonical_url": "https://mineralrightsxchange.com/blog/calculate-price-per-net-mineral-acre/",
+  "source_path": "src/content/posts/calculate-price-per-net-mineral-acre.mdx",
+  "input_body_sha256": "184b38ccec22fd4c4cd287785d9905fdec39186f007a8ed6eed34cb882c1d00d",
+  "input_frontmatter_sha256": "9b5bfff28666aa5d4228dc628a9ad4bb54e00a9159ddce947d92beb51f72a60d",
+  "expected_repo_sha256": "184b38ccec22fd4c4cd287785d9905fdec39186f007a8ed6eed34cb882c1d00d",
+  "two_image_manifest_sha256": "e477074747ea1acf218978f2c3acc43221c91c3ddfa0e477bd7cea66631770d5",
+  "visual_metadata": {
+    "hero_alt": "Two people study a tract map beside “How to Calculate Price per Net Mineral Acre From a Mineral Rights Offer”.",
+    "social_alt": "Two people study a tract map beside “How to Calculate Price per Net Mineral Acre From a Mineral Rights Offer”.",
+    "inline_alt": "A top-down offer worksheet uses unmarked acreage tiles above “Calculate Price per Net Mineral Acre”."
+  },
+  "reviewer_id": "codex_wave62_factual",
+  "review_run_id": "mrx1000-wave62-factual-20260815T035320Z",
+  "capability": "factual_citation",
+  "findings": [
+    "Complete current MDX SHA-256 is 184b38ccec22fd4c4cd287785d9905fdec39186f007a8ed6eed34cb882c1d00d; all 4 declared sources passed current access review.",
+    "Claims remain bounded to NMA working arithmetic, mineral-ownership research complexity, RRC well-record types, and the RRC GIS non-authoritative-data limitation. No source is converted into private title, confirmed acreage, fair market value, offer fairness, buyer quality, contract meaning, tax result, or transaction advice.",
+    "All dollar and acreage examples are visibly labeled hypothetical and are used only to demonstrate division. The article invents no real owner, property, buyer, contract, transaction, price range, production, reserves, forecast, testimonial, success rate, or owner-specific legal, tax, accounting, title, appraisal, engineering, investment, or transaction conclusion."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "minimum_three_distinct_https_sources",
+    "current_source_access_review_pass",
+    "claim_to_source_scope_present",
+    "official_and_first_party_source_priority_pass",
+    "unsupported_high_risk_claim_scan_pass"
+  ],
+  "sources_inspected": [
+    {
+      "label": "Texas A&M AgriLife and Oklahoma State University Extension, Petroleum Production on Agricultural Lands in Texas (accessed 2026-08-14)",
+      "url": "https://agrilife.org/texasaglaw/files/2016/08/Petroleum-Production-on-Agricultural-Lands-in-Texas.pdf",
+      "publisher": "agrilife.org",
+      "accessed_at": "2026-08-15T03:53:20Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://agrilife.org/texasaglaw/files/2016/08/Petroleum-Production-on-Agricultural-Lands-in-Texas.pdf",
+        "content_type": "application/pdf"
+      },
+      "source_location_or_paraphrase": "The Oklahoma State University Extension and Texas A&M AgriLife guide illustrates fractional mineral ownership, net mineral acres, and division-order context.",
+      "claim_scope": "The article uses it only for working NMA arithmetic and fractionalization context; it does not establish owner-specific title, acreage, offer value, legal meaning, or a transaction result."
+    },
+    {
+      "label": "Texas A&M AgriLife, How Do I Find Out If I Own Mineral Rights? (accessed 2026-08-14)",
+      "url": "https://agrilife.org/texasaglaw/2015/07/20/questions-from-tiffanys-desk-how-do-i-find-out-if-i-own-mineral-rights/",
+      "publisher": "agrilife.org",
+      "accessed_at": "2026-08-15T03:53:20Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://agrilife.org/texasaglaw/2015/07/20/questions-from-tiffanys-desk-how-do-i-find-out-if-i-own-mineral-rights/",
+        "content_type": "text/html; charset=UTF-8"
+      },
+      "source_location_or_paraphrase": "Texas A&M AgriLife explains that mineral ownership may be severed or divided, that records such as division orders may contain useful ownership information, and that chain-of-title research can be complex.",
+      "claim_scope": "The article uses it only to require an evidence label and qualified review when ownership is uncertain; it does not decide title, acreage, deed meaning, or legal rights."
+    },
+    {
+      "label": "Railroad Commission of Texas, Oil and Gas Well Records (accessed 2026-08-14)",
+      "url": "https://www.rrc.texas.gov/oil-and-gas/research-and-statistics/obtaining-commission-records/oil-and-gas-well-records/",
+      "publisher": "www.rrc.texas.gov",
+      "accessed_at": "2026-08-15T03:53:20Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.rrc.texas.gov/oil-and-gas/research-and-statistics/obtaining-commission-records/oil-and-gas-well-records/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The Railroad Commission of Texas well-records page describes public search paths and record types including permits, completion reports, plats, plugging reports, and related filings.",
+      "claim_scope": "The article uses it only for reproducible well and lease research context; it does not prove private title, NMA, tract inclusion, owner decimals, offer scope, value, or a transaction decision."
+    },
+    {
+      "label": "Railroad Commission of Texas, Public GIS Viewer (accessed 2026-08-14)",
+      "url": "https://www.rrc.texas.gov/resource-center/research/gis-viewer/",
+      "publisher": "www.rrc.texas.gov",
+      "accessed_at": "2026-08-15T03:53:20Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.rrc.texas.gov/resource-center/research/gis-viewer/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The Railroad Commission of Texas Public GIS Viewer page describes map-based well, lease, survey, and pipeline research and states that the GIS data are not authoritative public records for a geographic location and have no legal force or effect.",
+      "claim_scope": "The article uses it only for bounded identifier and map context; it does not treat the viewer as land title, a legal boundary, private ownership evidence, NMA, offer scope, or value."
+    }
+  ]
+}

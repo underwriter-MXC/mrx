@@ -1,0 +1,87 @@
+{
+  "artifact_type": "mrx1000_two_image_factual_citation_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-11T22:44:38Z",
+  "decision_authority": {
+    "source": "Daryl owner directive, 2026-08-11",
+    "policy": "MRX two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0639",
+  "slug": "understanding-1031-tax-implications-for-mineral-rights-owners",
+  "title": "Understanding 1031 Tax Implications for Mineral Rights Owners",
+  "canonical_url": "https://mineralrightsxchange.com/blog/understanding-1031-tax-implications-for-mineral-rights-owners/",
+  "source_path": "src/content/posts/understanding-1031-tax-implications-for-mineral-rights-owners.mdx",
+  "input_body_sha256": "fa8e3d003b3fdb6142cced19117686e64c31031d70ac2a2d8b36ce548a5ec0ae",
+  "input_frontmatter_sha256": "95662adaea83b68f7ab51b8803fef5e4fb272b115d41990b31f3df4e69c157ce",
+  "expected_repo_sha256": "fa8e3d003b3fdb6142cced19117686e64c31031d70ac2a2d8b36ce548a5ec0ae",
+  "two_image_manifest_sha256": "802512b5dab8eae7592be5934f97a6a8989125fb8f65d3f37ee3cdeb2d35dc10",
+  "reviewer_id": "codex_two_image_factual",
+  "review_run_id": "mrx1000-two-image-retrofit-20260811T224438Z",
+  "capability": "factual_citation",
+  "findings": [
+    "Complete current MDX SHA-256 is fa8e3d003b3fdb6142cced19117686e64c31031d70ac2a2d8b36ce548a5ec0ae; all 4 declared sources passed live access review.",
+    "The retrofit changes image metadata and assets, not the bounded claim-to-source relationships in the article body.",
+    "The two images make no fabricated numeric, legal, tax, valuation, testimonial, or document claims."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "minimum_two_distinct_https_sources",
+    "current_source_access_review_pass",
+    "two_image_unsupported_claim_scan_pass"
+  ],
+  "sources_inspected": [
+    {
+      "label": "IRS Instructions for Form 8824 (2025, accessed 2026-08-06)",
+      "url": "https://www.irs.gov/instructions/i8824",
+      "publisher": "www.irs.gov",
+      "accessed_at": "2026-08-11T22:44:38Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.irs.gov/instructions/i8824",
+        "content_type": "text/html; charset=UTF-8"
+      },
+      "source_location_or_paraphrase": "The article cites IRS Instructions for Form 8824 (2025, accessed 2026-08-06) only for the bounded context attributed in its body and source notes.",
+      "claim_scope": "Owner-specific legal, tax, title, accounting, brokerage, engineering, appraisal, eligibility, value, and transaction conclusions remain outside this source use."
+    },
+    {
+      "label": "IRS Publication 544, Sales and Other Dispositions of Assets (2025, accessed 2026-08-06)",
+      "url": "https://www.irs.gov/publications/p544",
+      "publisher": "www.irs.gov",
+      "accessed_at": "2026-08-11T22:44:38Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.irs.gov/publications/p544",
+        "content_type": "text/html; charset=UTF-8"
+      },
+      "source_location_or_paraphrase": "The article cites IRS Publication 544, Sales and Other Dispositions of Assets (2025, accessed 2026-08-06) only for the bounded context attributed in its body and source notes.",
+      "claim_scope": "Owner-specific legal, tax, title, accounting, brokerage, engineering, appraisal, eligibility, value, and transaction conclusions remain outside this source use."
+    },
+    {
+      "label": "IRS, Like-Kind Exchanges: Real Estate Tax Tips (accessed 2026-08-06)",
+      "url": "https://www.irs.gov/businesses/small-businesses-self-employed/like-kind-exchanges-real-estate-tax-tips",
+      "publisher": "www.irs.gov",
+      "accessed_at": "2026-08-11T22:44:38Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.irs.gov/businesses/small-businesses-self-employed/like-kind-exchanges-real-estate-tax-tips",
+        "content_type": "text/html; charset=UTF-8"
+      },
+      "source_location_or_paraphrase": "The article cites IRS, Like-Kind Exchanges: Real Estate Tax Tips (accessed 2026-08-06) only for the bounded context attributed in its body and source notes.",
+      "claim_scope": "Owner-specific legal, tax, title, accounting, brokerage, engineering, appraisal, eligibility, value, and transaction conclusions remain outside this source use."
+    },
+    {
+      "label": "IRS Publication 551, Basis of Assets (accessed 2026-08-06)",
+      "url": "https://www.irs.gov/publications/p551",
+      "publisher": "www.irs.gov",
+      "accessed_at": "2026-08-11T22:44:38Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.irs.gov/publications/p551",
+        "content_type": "text/html; charset=UTF-8"
+      },
+      "source_location_or_paraphrase": "The article cites IRS Publication 551, Basis of Assets (accessed 2026-08-06) only for the bounded context attributed in its body and source notes.",
+      "claim_scope": "Owner-specific legal, tax, title, accounting, brokerage, engineering, appraisal, eligibility, value, and transaction conclusions remain outside this source use."
+    }
+  ]
+}

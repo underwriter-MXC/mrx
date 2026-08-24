@@ -1,0 +1,43 @@
+{
+  "artifact_type": "mrx1000_two_image_compliance_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-12T21:31:25Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-12",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0126",
+  "slug": "understanding-mineral-rights-your-essential-selling-guide",
+  "title": "Understanding Mineral Rights: Your Essential Selling Guide",
+  "canonical_url": "https://mineralrightsxchange.com/blog/understanding-mineral-rights-your-essential-selling-guide/",
+  "source_path": "src/content/posts/understanding-mineral-rights-your-essential-selling-guide.mdx",
+  "input_body_sha256": "3e8200d9a7b42f281272978023ddbfe88050c04283e6fed5bf939d1702358f23",
+  "input_frontmatter_sha256": "d75c09fb32ba9e7e0b7b6ea56d4cb25fefe64a321387c9cc91fb9b341956447b",
+  "expected_repo_sha256": "3e8200d9a7b42f281272978023ddbfe88050c04283e6fed5bf939d1702358f23",
+  "two_image_manifest_sha256": "dd453b25c7a3f6c67d1bc8b815e8856f95ce2bef1e358a089898147f3dd5c764",
+  "reviewer_id": "codex_wave46_compliance",
+  "review_run_id": "mrx1000-wave46-compliance-20260812T213125Z",
+  "capability": "compliance",
+  "expected_hero_sha256": "bc88dd406e9b89a735f9b665c183496605cce5a7982758058de9e08796e26d8d",
+  "expected_inline_sha256": "23d3e1ab1e8c0d1cae03816cbb4352db07dffeb0a69ea12451c71e5beb7b9b94",
+  "findings": [
+    "Complete current MDX SHA-256 is 3e8200d9a7b42f281272978023ddbfe88050c04283e6fed5bf939d1702358f23; hero/share and inline image hashes are separately locked.",
+    "The article states educational and professional boundaries, discloses MRX’s potential economic interest, separates owner objectives, property evidence, proposal comparison, professional handoffs, and controlled closing, supplies explicit stop conditions, labels MRX review as directional, and routes unresolved title, legal, tax, accounting, appraisal, investment, and transaction questions without making owner-specific conclusions.",
+    "Image text is limited to the exact article title and canonical question and adds no owner data, buyer endorsement, contract interpretation, deed, price, acreage, decimal, formula, success claim, appraisal result, tax outcome, or transaction conclusion."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "hero_share_sha256_identity",
+    "inline_image_distinct_sha256",
+    "exact_text_ocr_pass",
+    "filename_text_identity_pass",
+    "educational_and_professional_boundaries_preserved",
+    "no_unsupported_visual_or_valuation_claims"
+  ],
+  "sources_inspected": [
+    "src/content/posts/understanding-mineral-rights-your-essential-selling-guide.mdx",
+    "/assets/articles/hero/understanding-mineral-rights-your-essential-selling-guide.webp",
+    "/assets/articles/inline/understanding-mineral-rights-your-essential-selling-guide/how-to-avoid-mineral-rights-selling-pitfalls.webp"
+  ]
+}

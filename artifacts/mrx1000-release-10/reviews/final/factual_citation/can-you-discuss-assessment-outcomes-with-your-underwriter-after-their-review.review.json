@@ -1,0 +1,87 @@
+{
+  "artifact_type": "mrx1000_two_image_factual_citation_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-11T22:44:38Z",
+  "decision_authority": {
+    "source": "Daryl owner directive, 2026-08-11",
+    "policy": "MRX two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0953",
+  "slug": "can-you-discuss-assessment-outcomes-with-your-underwriter-after-their-review",
+  "title": "Can You Discuss Assessment Outcomes With Your Underwriter After Their Review?",
+  "canonical_url": "https://mineralrightsxchange.com/blog/can-you-discuss-assessment-outcomes-with-your-underwriter-after-their-review/",
+  "source_path": "src/content/posts/can-you-discuss-assessment-outcomes-with-your-underwriter-after-their-review.mdx",
+  "input_body_sha256": "ad4c2e7b9f31993bd16bd6c07eda49aab3c2df25e80aac3e8d40b9470cd3ae62",
+  "input_frontmatter_sha256": "86125a1558ecd4e4e34c8d211db61112274b6b976a8bb8c44cee0a09ac716577",
+  "expected_repo_sha256": "ad4c2e7b9f31993bd16bd6c07eda49aab3c2df25e80aac3e8d40b9470cd3ae62",
+  "two_image_manifest_sha256": "802512b5dab8eae7592be5934f97a6a8989125fb8f65d3f37ee3cdeb2d35dc10",
+  "reviewer_id": "codex_two_image_factual",
+  "review_run_id": "mrx1000-two-image-retrofit-20260811T224438Z",
+  "capability": "factual_citation",
+  "findings": [
+    "Complete current MDX SHA-256 is ad4c2e7b9f31993bd16bd6c07eda49aab3c2df25e80aac3e8d40b9470cd3ae62; all 4 declared sources passed live access review.",
+    "The retrofit changes image metadata and assets, not the bounded claim-to-source relationships in the article body.",
+    "The two images make no fabricated numeric, legal, tax, valuation, testimonial, or document claims."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "minimum_two_distinct_https_sources",
+    "current_source_access_review_pass",
+    "two_image_unsupported_claim_scan_pass"
+  ],
+  "sources_inspected": [
+    {
+      "label": "MRX How It Works: current underwriter-review process (accessed 2026-08-06)",
+      "url": "https://mineralrightsxchange.com/how-it-works/",
+      "publisher": "mineralrightsxchange.com",
+      "accessed_at": "2026-08-11T22:44:38Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://mineralrightsxchange.com/how-it-works/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The article cites MRX How It Works: current underwriter-review process (accessed 2026-08-06) only for the bounded context attributed in its body and source notes.",
+      "claim_scope": "Owner-specific legal, tax, title, accounting, brokerage, engineering, appraisal, eligibility, value, and transaction conclusions remain outside this source use."
+    },
+    {
+      "label": "MRX methodology: review inputs, assumptions, and limits (accessed 2026-08-06)",
+      "url": "https://mineralrightsxchange.com/methodology/",
+      "publisher": "mineralrightsxchange.com",
+      "accessed_at": "2026-08-11T22:44:38Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://mineralrightsxchange.com/methodology/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The article cites MRX methodology: review inputs, assumptions, and limits (accessed 2026-08-06) only for the bounded context attributed in its body and source notes.",
+      "claim_scope": "Owner-specific legal, tax, title, accounting, brokerage, engineering, appraisal, eligibility, value, and transaction conclusions remain outside this source use."
+    },
+    {
+      "label": "MRX FAQ: no-card, no-obligation, conflict, and review boundaries (accessed 2026-08-06)",
+      "url": "https://mineralrightsxchange.com/faq/",
+      "publisher": "mineralrightsxchange.com",
+      "accessed_at": "2026-08-11T22:44:38Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://mineralrightsxchange.com/faq/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The article cites MRX FAQ: no-card, no-obligation, conflict, and review boundaries (accessed 2026-08-06) only for the bounded context attributed in its body and source notes.",
+      "claim_scope": "Owner-specific legal, tax, title, accounting, brokerage, engineering, appraisal, eligibility, value, and transaction conclusions remain outside this source use."
+    },
+    {
+      "label": "Texas Railroad Commission production data (accessed 2026-08-06)",
+      "url": "https://www.rrc.texas.gov/oil-and-gas/research-and-statistics/production-data/",
+      "publisher": "www.rrc.texas.gov",
+      "accessed_at": "2026-08-11T22:44:38Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.rrc.texas.gov/oil-and-gas/research-and-statistics/production-data/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The article cites Texas Railroad Commission production data (accessed 2026-08-06) only for the bounded context attributed in its body and source notes.",
+      "claim_scope": "Owner-specific legal, tax, title, accounting, brokerage, engineering, appraisal, eligibility, value, and transaction conclusions remain outside this source use."
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "artifact_type": "mrx1000_two_image_editorial_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-22T21:32:00Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-14",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0151",
+  "slug": "how-are-mineral-rights-valued",
+  "title": "How Are Mineral Rights Valued?",
+  "canonical_url": "https://mineralrightsxchange.com/blog/how-are-mineral-rights-valued/",
+  "source_path": "src/content/posts/how-are-mineral-rights-valued.mdx",
+  "input_body_sha256": "c7b809e91a09e06d4d6403af004e3274abb44743b8b76aa30c137d214862984c",
+  "input_frontmatter_sha256": "86e02f2d756458e8494e048de37878390242a91785bc0d0f43a3e41b5d99b73a",
+  "expected_repo_sha256": "c7b809e91a09e06d4d6403af004e3274abb44743b8b76aa30c137d214862984c",
+  "two_image_manifest_sha256": "d7530a40a4a2e731486d5d5d7ed0a9b6648c4039a908bbd20551327be0ca2ee3",
+  "visual_metadata": {
+    "hero_alt": "An owner and analyst review blank cash-flow evidence beside “How Are Mineral Rights Valued?”.",
+    "social_alt": "An owner and analyst review blank cash-flow evidence beside “How Are Mineral Rights Valued?”.",
+    "inline_alt": "Blank production, royalty-term, assumption, and market-check records appear above “how are mineral rights valued”."
+  },
+  "reviewer_id": "codex_wave71_editorial",
+  "review_run_id": "mrx1000-wave71-editorial-20260822T213200Z",
+  "capability": "editorial",
+  "findings": [
+    "Complete current MDX SHA-256 is c7b809e91a09e06d4d6403af004e3274abb44743b8b76aa30c137d214862984c; the answer-first article contains 1577 body tokens and five FAQs.",
+    "The article owns the plain-language conceptual question of how an identified economic interest and stated evidence become a directional range. It explains DCF as the primary model and market evidence only as a reasonableness check while explicitly deferring the Texas seven-lock workflow, validation and reperformance, and range-width audit to their incumbent guides.",
+    "Exact-title hero/share OCR passed for “How Are Mineral Rights Valued?”; distinct in-body OCR passed for “how are mineral rights valued”; composition-accurate hero/social and inline alt metadata matched the final visual audit."
+  ],
+  "checks": [
+    {
+      "name": "complete_file_sha256_match",
+      "status": "PASS",
+      "evidence": "c7b809e91a09e06d4d6403af004e3274abb44743b8b76aa30c137d214862984c"
+    },
+    {
+      "name": "answer_first_article_depth_and_five_faqs",
+      "status": "PASS",
+      "evidence": {
+        "word_count": 1577,
+        "minimum_word_count": 700,
+        "faq_count": 5
+      }
+    },
+    {
+      "name": "two_image_exact_text_identity",
+      "status": "PASS",
+      "evidence": {
+        "hero_ocr": true,
+        "inline_ocr": true,
+        "social_reuses_hero": true,
+        "hero_social_alt_match": true,
+        "inline_alt_match": true,
+        "filename_identity": true,
+        "distinct_binaries": true
+      }
+    }
+  ],
+  "sources_inspected": [
+    "src/content/posts/how-are-mineral-rights-valued.mdx",
+    "/assets/articles/hero/how-are-mineral-rights-valued.webp",
+    "/assets/articles/inline/how-are-mineral-rights-valued/how-are-mineral-rights-valued.webp"
+  ]
+}

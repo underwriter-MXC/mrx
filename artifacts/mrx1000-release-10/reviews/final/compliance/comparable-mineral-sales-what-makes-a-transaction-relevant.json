@@ -1,0 +1,43 @@
+{
+  "artifact_type": "mrx1000_two_image_compliance_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-11T23:07:13Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-11",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0172",
+  "slug": "comparable-mineral-sales-what-makes-a-transaction-relevant",
+  "title": "Comparable Mineral Sales: What Makes a Transaction Relevant?",
+  "canonical_url": "https://mineralrightsxchange.com/blog/comparable-mineral-sales-what-makes-a-transaction-relevant/",
+  "source_path": "src/content/posts/comparable-mineral-sales-what-makes-a-transaction-relevant.mdx",
+  "input_body_sha256": "dbb6b87f3ed351f4eb73c4d85ea2406cc44a9ac08ec52c0fa520992cee328f3a",
+  "input_frontmatter_sha256": "c33242ce61b605a7133a6e8cce988d49168391e6cf4d41769646139a7f21c11b",
+  "expected_repo_sha256": "dbb6b87f3ed351f4eb73c4d85ea2406cc44a9ac08ec52c0fa520992cee328f3a",
+  "two_image_manifest_sha256": "e4c9774895df24092a5020642dae355be68675a6d054da517bc5962b47982ed3",
+  "reviewer_id": "codex_wave14_compliance",
+  "review_run_id": "mrx1000-wave14-compliance-20260811T230713Z",
+  "capability": "compliance",
+  "expected_hero_sha256": "44719f82c56498277664a6c3c8f40e235fd81f4830d5cca9bc0c48d57243fd2b",
+  "expected_inline_sha256": "16e301339af420705dd3832cd246e0beb6ba12e0cbfc3740ecac0eef9108343d",
+  "findings": [
+    "Complete current MDX SHA-256 is dbb6b87f3ed351f4eb73c4d85ea2406cc44a9ac08ec52c0fa520992cee328f3a; hero/share and inline image hashes are separately locked.",
+    "The article states educational and professional boundaries, discloses MRX’s potential economic interest, and avoids guarantees, universal per-acre benchmarks, unsupported adjustments, or a value conclusion.",
+    "Image text is limited to the exact article title and an authorized supporting keyword and adds no price, title, legal, tax, or transaction claim."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "hero_share_sha256_identity",
+    "inline_image_distinct_sha256",
+    "exact_text_ocr_pass",
+    "filename_text_identity_pass",
+    "educational_and_professional_boundaries_preserved",
+    "no_unsupported_visual_or_payment_claims"
+  ],
+  "sources_inspected": [
+    "src/content/posts/comparable-mineral-sales-what-makes-a-transaction-relevant.mdx",
+    "/assets/articles/hero/comparable-mineral-sales-what-makes-a-transaction-relevant.webp",
+    "/assets/articles/inline/comparable-mineral-sales-what-makes-a-transaction-relevant/mineral-sale-comparability-checklist.webp"
+  ]
+}

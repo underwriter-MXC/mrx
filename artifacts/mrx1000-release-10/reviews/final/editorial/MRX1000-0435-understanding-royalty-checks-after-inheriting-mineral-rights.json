@@ -1,0 +1,62 @@
+{
+  "artifact_type": "mrx1000_two_image_editorial_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-11T22:44:38Z",
+  "decision_authority": {
+    "source": "Daryl owner directive, 2026-08-11",
+    "policy": "MRX two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0435",
+  "slug": "understanding-royalty-checks-after-inheriting-mineral-rights",
+  "title": "Understanding Royalty Checks After Inheriting Mineral Rights",
+  "canonical_url": "https://mineralrightsxchange.com/blog/understanding-royalty-checks-after-inheriting-mineral-rights/",
+  "source_path": "src/content/posts/understanding-royalty-checks-after-inheriting-mineral-rights.mdx",
+  "input_body_sha256": "8423d0e3b8009211657593b7a343a5669ec8067f721a972dcb5c89f0581f2897",
+  "input_frontmatter_sha256": "257a7eca0279a312412fd5084eedaf260ec48a20460de2de7835e54a39035d10",
+  "expected_repo_sha256": "8423d0e3b8009211657593b7a343a5669ec8067f721a972dcb5c89f0581f2897",
+  "two_image_manifest_sha256": "802512b5dab8eae7592be5934f97a6a8989125fb8f65d3f37ee3cdeb2d35dc10",
+  "reviewer_id": "codex_two_image_editorial",
+  "review_run_id": "mrx1000-two-image-retrofit-20260811T224438Z",
+  "capability": "editorial",
+  "findings": [
+    "Complete current MDX SHA-256 is 8423d0e3b8009211657593b7a343a5669ec8067f721a972dcb5c89f0581f2897; article has 779 body tokens and five FAQs.",
+    "Exact-title hero/share OCR passed for “Understanding Royalty Checks After Inheriting Mineral Rights”; distinct in-body OCR passed for “royalty checks after inheriting mineral rights”.",
+    "Both text treatments remain deterministic, descriptive, filename-matched, article-specific, and bound to the current source."
+  ],
+  "checks": [
+    {
+      "name": "complete_file_sha256_match",
+      "status": "PASS",
+      "evidence": "8423d0e3b8009211657593b7a343a5669ec8067f721a972dcb5c89f0581f2897"
+    },
+    {
+      "name": "answer_first_depth_and_five_faqs",
+      "status": "PASS",
+      "evidence": {
+        "word_count": 779,
+        "minimum_word_count": 700,
+        "faq_count": 5
+      }
+    },
+    {
+      "name": "two_image_exact_text_identity",
+      "status": "PASS",
+      "evidence": {
+        "hero_path": true,
+        "social_identity": true,
+        "inline_path": true,
+        "inline_text": true,
+        "hero_ocr": true,
+        "inline_ocr": true,
+        "filename_identity": true,
+        "distinct_binaries": true
+      }
+    }
+  ],
+  "sources_inspected": [
+    "src/content/posts/understanding-royalty-checks-after-inheriting-mineral-rights.mdx",
+    "/assets/articles/hero/understanding-royalty-checks-after-inheriting-mineral-rights.webp",
+    "/assets/articles/inline/understanding-royalty-checks-after-inheriting-mineral-rights/royalty-checks-after-inheriting-mineral-rights.webp"
+  ]
+}

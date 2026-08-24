@@ -1,0 +1,43 @@
+{
+  "artifact_type": "mrx1000_two_image_compliance_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-11T22:44:38Z",
+  "decision_authority": {
+    "source": "Daryl owner directive, 2026-08-11",
+    "policy": "MRX two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0970",
+  "slug": "understanding-our-transparent-approach-to-mineral-rights-reviews-versus-traditional-selling-tactics",
+  "title": "Understanding Our Transparent Approach to Mineral Rights Reviews Versus Traditional Selling Tactics",
+  "canonical_url": "https://mineralrightsxchange.com/blog/understanding-our-transparent-approach-to-mineral-rights-reviews-versus-traditional-selling-tactics/",
+  "source_path": "src/content/posts/understanding-our-transparent-approach-to-mineral-rights-reviews-versus-traditional-selling-tactics.mdx",
+  "input_body_sha256": "ed3e2158abe28b225a9f6e2cd85e0a088d723b55ff4b9b87f14e3d30cecd094c",
+  "input_frontmatter_sha256": "f9071dad4d5a2dc3edf0e1f2e276284dc1522794575588e6af6613dc4d7bcab7",
+  "expected_repo_sha256": "ed3e2158abe28b225a9f6e2cd85e0a088d723b55ff4b9b87f14e3d30cecd094c",
+  "two_image_manifest_sha256": "802512b5dab8eae7592be5934f97a6a8989125fb8f65d3f37ee3cdeb2d35dc10",
+  "reviewer_id": "codex_two_image_compliance",
+  "review_run_id": "mrx1000-two-image-retrofit-20260811T224438Z",
+  "capability": "compliance",
+  "expected_hero_sha256": "045a8cd425a37b12b52a2bfa442aafddb47a7f37877143f61a26123648b584f1",
+  "expected_inline_sha256": "51a780c2bb07f5d8fb692382931d0c5cd1b0e1af82a2f1eaa7730334567176b7",
+  "findings": [
+    "Complete current MDX SHA-256 is ed3e2158abe28b225a9f6e2cd85e0a088d723b55ff4b9b87f14e3d30cecd094c; hero/share and in-body image hashes are separately locked.",
+    "Image text is limited to the exact article title and declared page keyword; it adds no guarantee, price, deadline, legal conclusion, or tax conclusion.",
+    "The article retains its educational and professional-boundary language and current disclosure treatment."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "hero_share_sha256_identity",
+    "inline_image_distinct_sha256",
+    "exact_text_ocr_pass",
+    "filename_text_identity_pass",
+    "no_unsupported_visual_claims",
+    "educational_and_professional_boundaries_preserved"
+  ],
+  "sources_inspected": [
+    "src/content/posts/understanding-our-transparent-approach-to-mineral-rights-reviews-versus-traditional-selling-tactics.mdx",
+    "/assets/articles/hero/understanding-our-transparent-approach-to-mineral-rights-reviews-versus-traditional-selling-tactics.webp",
+    "/assets/articles/inline/understanding-our-transparent-approach-to-mineral-rights-reviews-versus-traditional-selling-tactics/transparent-approach-to-mineral-rights-reviews-versus-traditional-selling-tactics.webp"
+  ]
+}

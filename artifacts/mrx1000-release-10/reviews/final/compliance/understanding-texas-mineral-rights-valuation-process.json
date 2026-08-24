@@ -1,0 +1,43 @@
+{
+  "artifact_type": "mrx1000_two_image_compliance_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-12T22:47:38Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-12",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0128",
+  "slug": "understanding-texas-mineral-rights-valuation-process",
+  "title": "Understanding Texas Mineral Rights Valuation Process",
+  "canonical_url": "https://mineralrightsxchange.com/blog/understanding-texas-mineral-rights-valuation-process/",
+  "source_path": "src/content/posts/understanding-texas-mineral-rights-valuation-process.mdx",
+  "input_body_sha256": "47dff07799bf4fd398158db1c9533c7635db78e1d4d46ddb9bc4e881c5adc63b",
+  "input_frontmatter_sha256": "8ece11eef1d88fc927e89d9b5490dea77005941df2f8b3307f58a966eea33b5b",
+  "expected_repo_sha256": "47dff07799bf4fd398158db1c9533c7635db78e1d4d46ddb9bc4e881c5adc63b",
+  "two_image_manifest_sha256": "59f579348d35c06c4f3e061f6836ca086b5195cb6be2b1175df484136565dc4c",
+  "reviewer_id": "codex_wave48_compliance",
+  "review_run_id": "mrx1000-wave48-compliance-20260812T224738Z",
+  "capability": "compliance",
+  "expected_hero_sha256": "2dbd00acbe6992ca9106c46f615cf5e0ab97e73e96bc88791b1e62878822d09a",
+  "expected_inline_sha256": "dea26a4c17bfeaba69e418f9c66be333188d36a567e9e2f6c6c2bf3f6545e72b",
+  "findings": [
+    "Complete current MDX SHA-256 is 47dff07799bf4fd398158db1c9533c7635db78e1d4d46ddb9bc4e881c5adc63b; hero/share and inline image hashes are separately locked.",
+    "The article states educational and professional boundaries, discloses MRX’s potential economic interest, separates a directional asset range, appraisal conclusion, written proposal, and expected owner net, labels observed, reported, assumed, inferred, and professionally concluded inputs, and routes unresolved title, legal, tax, accounting, appraisal, land, engineering, geology, reserves, commodity, and transaction questions without making owner-specific conclusions.",
+    "Image text is limited to the exact article title and exact canonical keyword and adds no owner data, buyer endorsement, property identifier, price, acreage, decimal, formula, reserves claim, forecast, success claim, appraisal result, tax outcome, or transaction conclusion."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "hero_share_sha256_identity",
+    "inline_image_distinct_sha256",
+    "exact_text_ocr_pass",
+    "filename_text_identity_pass",
+    "educational_and_professional_boundaries_preserved",
+    "no_unsupported_visual_or_valuation_claims"
+  ],
+  "sources_inspected": [
+    "src/content/posts/understanding-texas-mineral-rights-valuation-process.mdx",
+    "/assets/articles/hero/understanding-texas-mineral-rights-valuation-process.webp",
+    "/assets/articles/inline/understanding-texas-mineral-rights-valuation-process/texas-mineral-rights-valuation-process.webp"
+  ]
+}

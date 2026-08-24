@@ -1,0 +1,62 @@
+{
+  "artifact_type": "mrx1000_two_image_editorial_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-11T22:44:38Z",
+  "decision_authority": {
+    "source": "Daryl owner directive, 2026-08-11",
+    "policy": "MRX two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0312",
+  "slug": "how-we-protect-mineral-rights-sellers-from-predatory-tactics",
+  "title": "How We Protect Mineral Rights Sellers From Predatory Tactics",
+  "canonical_url": "https://mineralrightsxchange.com/blog/how-we-protect-mineral-rights-sellers-from-predatory-tactics/",
+  "source_path": "src/content/posts/how-we-protect-mineral-rights-sellers-from-predatory-tactics.mdx",
+  "input_body_sha256": "a099d383a9e8145b89cb5ff790a1ba1b5a16a4d5b460f91036231e609b4c2126",
+  "input_frontmatter_sha256": "208e417ed261b0358f5c2ca6f71a9483fffd3e1fcb53e4558472c1293cb4865a",
+  "expected_repo_sha256": "a099d383a9e8145b89cb5ff790a1ba1b5a16a4d5b460f91036231e609b4c2126",
+  "two_image_manifest_sha256": "802512b5dab8eae7592be5934f97a6a8989125fb8f65d3f37ee3cdeb2d35dc10",
+  "reviewer_id": "codex_two_image_editorial",
+  "review_run_id": "mrx1000-two-image-retrofit-20260811T224438Z",
+  "capability": "editorial",
+  "findings": [
+    "Complete current MDX SHA-256 is a099d383a9e8145b89cb5ff790a1ba1b5a16a4d5b460f91036231e609b4c2126; article has 831 body tokens and five FAQs.",
+    "Exact-title hero/share OCR passed for “How We Protect Mineral Rights Sellers From Predatory Tactics”; distinct in-body OCR passed for “predatory mineral rights buyers”.",
+    "Both text treatments remain deterministic, descriptive, filename-matched, article-specific, and bound to the current source."
+  ],
+  "checks": [
+    {
+      "name": "complete_file_sha256_match",
+      "status": "PASS",
+      "evidence": "a099d383a9e8145b89cb5ff790a1ba1b5a16a4d5b460f91036231e609b4c2126"
+    },
+    {
+      "name": "answer_first_depth_and_five_faqs",
+      "status": "PASS",
+      "evidence": {
+        "word_count": 831,
+        "minimum_word_count": 0,
+        "faq_count": 5
+      }
+    },
+    {
+      "name": "two_image_exact_text_identity",
+      "status": "PASS",
+      "evidence": {
+        "hero_path": true,
+        "social_identity": true,
+        "inline_path": true,
+        "inline_text": true,
+        "hero_ocr": true,
+        "inline_ocr": true,
+        "filename_identity": true,
+        "distinct_binaries": true
+      }
+    }
+  ],
+  "sources_inspected": [
+    "src/content/posts/how-we-protect-mineral-rights-sellers-from-predatory-tactics.mdx",
+    "/assets/articles/hero/how-we-protect-mineral-rights-sellers-from-predatory-tactics.webp",
+    "/assets/articles/inline/how-we-protect-mineral-rights-sellers-from-predatory-tactics/predatory-mineral-rights-buyers.webp"
+  ]
+}

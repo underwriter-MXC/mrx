@@ -1,0 +1,49 @@
+{
+  "artifact_type": "mrx1000_two_image_compliance_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-23T12:35:01Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-14",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0267",
+  "slug": "compare-public-oil-and-gas-price-decks-without-mixing-assumptions",
+  "title": "How to Compare Public Oil and Gas Price Decks Without Mixing Assumptions",
+  "canonical_url": "https://mineralrightsxchange.com/blog/compare-public-oil-and-gas-price-decks-without-mixing-assumptions/",
+  "source_path": "src/content/posts/compare-public-oil-and-gas-price-decks-without-mixing-assumptions.mdx",
+  "input_body_sha256": "66aa85b03205f914c6c319fb3ea05c03fdeb64e2518e55417d3113da4449a0c2",
+  "input_frontmatter_sha256": "116cb0445ac9f9fe5099f50a63e52d3283e8e564712a971e275a7a3ac3332bf4",
+  "expected_repo_sha256": "66aa85b03205f914c6c319fb3ea05c03fdeb64e2518e55417d3113da4449a0c2",
+  "two_image_manifest_sha256": "90fc1a11049fdf97e84e79883679f96c2cf263b9a39e6c6fcc7453b3146b2984",
+  "visual_metadata": {
+    "hero_alt": "Two separate published price-deck booklets appear beside the exact article title.",
+    "social_alt": "Two separate published price-deck booklets appear beside the exact article title.",
+    "inline_alt": "An overhead public price-deck comparison matrix appears above the exact keyword."
+  },
+  "reviewer_id": "codex_wave82_compliance",
+  "review_run_id": "mrx1000-wave82-compliance-20260823T123501Z",
+  "capability": "compliance",
+  "expected_hero_sha256": "e0db6d382e4ac50e927ccf9ab6e82ef9d0679916b09dd6419f79614b4cf7bc30",
+  "expected_inline_sha256": "ec026c9d07d0c66429b229307e27548a0619ac40c67421db6cc1cd8b087ad8d5",
+  "findings": [
+    "Complete current MDX SHA-256 is 66aa85b03205f914c6c319fb3ea05c03fdeb64e2518e55417d3113da4449a0c2; hero/share and inline image hashes are separately locked.",
+    "The article keeps each public source in a separate column; preserves source identity, version, dates, commodity, benchmark, geography, units, nominal-or-real basis, interval, horizon, use case, and retrieval date; limits status to matched frame, different frame, missing, or unresolved; turns gaps into neutral questions; discloses possible MRX buyer interest; and preserves owner agency and qualified-review boundaries.",
+    "Image text is limited to the exact article title and approved keyword and adds no owner name, property fact, source result, model output, numerical assumption, seal, recommendation, appraisal claim, forecast, guarantee, or transaction outcome."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "hero_share_sha256_identity",
+    "inline_image_distinct_sha256",
+    "exact_text_ocr_pass",
+    "filename_text_identity_pass",
+    "public_price_deck_comparison_no_forecast_normalization_selection_property_economics_present_value_or_recommendation_boundary_pass",
+    "owner_agency_and_possible_buyer_interest_disclosure_preserved",
+    "no_unsupported_visual_or_decision_claims"
+  ],
+  "sources_inspected": [
+    "src/content/posts/compare-public-oil-and-gas-price-decks-without-mixing-assumptions.mdx",
+    "/assets/articles/hero/how-to-compare-public-oil-and-gas-price-decks-without-mixing-assumptions.webp",
+    "/assets/articles/inline/compare-public-oil-and-gas-price-decks-without-mixing-assumptions/compare-public-oil-and-gas-price-decks.webp"
+  ]
+}

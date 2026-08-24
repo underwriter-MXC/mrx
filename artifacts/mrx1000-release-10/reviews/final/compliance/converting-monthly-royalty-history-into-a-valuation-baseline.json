@@ -1,0 +1,43 @@
+{
+  "artifact_type": "mrx1000_two_image_compliance_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-12T09:40:44Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-11",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0173",
+  "slug": "converting-monthly-royalty-history-into-a-valuation-baseline",
+  "title": "Converting Monthly Royalty History Into a Valuation Baseline",
+  "canonical_url": "https://mineralrightsxchange.com/blog/converting-monthly-royalty-history-into-a-valuation-baseline/",
+  "source_path": "src/content/posts/converting-monthly-royalty-history-into-a-valuation-baseline.mdx",
+  "input_body_sha256": "4cc74029733ace842907d69e8ab006b47516c4ce6eec67189cf058ad04abcb30",
+  "input_frontmatter_sha256": "41a9959f1489ce701df4e9e8739d3c1fe2a4d96252149fb78e73d9a0473a0bf5",
+  "expected_repo_sha256": "4cc74029733ace842907d69e8ab006b47516c4ce6eec67189cf058ad04abcb30",
+  "two_image_manifest_sha256": "a785fd32cad6858ef6c41e25351e84462a350f34df8bc37abc54015bf05afeca",
+  "reviewer_id": "codex_wave15_compliance",
+  "review_run_id": "mrx1000-wave15-compliance-20260812T094044Z",
+  "capability": "compliance",
+  "expected_hero_sha256": "993a90ffa48d889c5fce2b04ff535f5f1af905d65028ba3345bd7bd44ce5fe5d",
+  "expected_inline_sha256": "b4aaa07c8d491e9813d558afeaa653b19226be31c843c8abdd2b56730d9fa072",
+  "findings": [
+    "Complete current MDX SHA-256 is 4cc74029733ace842907d69e8ab006b47516c4ce6eec67189cf058ad04abcb30; hero/share and inline image hashes are separately locked.",
+    "The article states educational and professional boundaries, discloses MRX’s potential economic interest, and avoids guarantees, universal lookback rules, unsupported normalizations, underpayment claims, forecasts, or a value conclusion.",
+    "Image text is limited to the exact article title and an authorized supporting keyword and adds no payment amount, production, price, title, tax, or future-income claim."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "hero_share_sha256_identity",
+    "inline_image_distinct_sha256",
+    "exact_text_ocr_pass",
+    "filename_text_identity_pass",
+    "educational_and_professional_boundaries_preserved",
+    "no_unsupported_visual_or_payment_claims"
+  ],
+  "sources_inspected": [
+    "src/content/posts/converting-monthly-royalty-history-into-a-valuation-baseline.mdx",
+    "/assets/articles/hero/converting-monthly-royalty-history-into-a-valuation-baseline.webp",
+    "/assets/articles/inline/converting-monthly-royalty-history-into-a-valuation-baseline/monthly-royalty-history-worksheet.webp"
+  ]
+}

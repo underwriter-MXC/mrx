@@ -1,0 +1,120 @@
+{
+  "artifact_type": "mrx1000_two_image_factual_citation_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-22T20:08:06Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-14",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0150",
+  "slug": "mineral-rights-valuation-input-correction-packet",
+  "title": "How to Build a Mineral Rights Valuation Input Correction Packet",
+  "canonical_url": "https://mineralrightsxchange.com/blog/mineral-rights-valuation-input-correction-packet/",
+  "source_path": "src/content/posts/mineral-rights-valuation-input-correction-packet.mdx",
+  "input_body_sha256": "ec8e40da0a926f441303f13dda68d1083e82e8857b8a8779ab05e63a4b7b609d",
+  "input_frontmatter_sha256": "e8313ba3ba84cab73f22bfd61dc111e8b6bcd602c7a0cd70bec7b91f89136563",
+  "expected_repo_sha256": "ec8e40da0a926f441303f13dda68d1083e82e8857b8a8779ab05e63a4b7b609d",
+  "two_image_manifest_sha256": "8c1bd817bb0c625d2c46f36bb4f47436f4a26ac790b4a712dea5cbe483516175",
+  "visual_metadata": {
+    "hero_alt": "An owner reviews blank correction cards beside “How to Build a Mineral Rights Valuation Input Correction Packet”.",
+    "social_alt": "An owner reviews blank correction cards beside “How to Build a Mineral Rights Valuation Input Correction Packet”.",
+    "inline_alt": "Blank correction fields and source markers appear above “Mineral Rights Valuation Input Correction Packet”."
+  },
+  "reviewer_id": "codex_wave70_factual",
+  "review_run_id": "mrx1000-wave70-factual-20260822T200806Z",
+  "capability": "factual_citation",
+  "findings": [
+    "Complete current MDX SHA-256 is ec8e40da0a926f441303f13dda68d1083e82e8857b8a8779ab05e63a4b7b609d; all 6 declared sources passed current access review.",
+    "Claims remain bounded to the EPA correction-request fields and NARA source/input/output distinction as explicitly nonbinding federal administrative analogies, plus current MRX validation, valuation-process, and package-index boundaries. No source is converted into a private correction right, source validation, title, acreage, decimal, value, fairness, appraisal, contract, or transaction conclusion.",
+    "The article invents no real owner, request, input, source record, property, buyer, contract, transaction, price, valuation result, testimonial, success rate, or owner-specific legal, tax, accounting, title, appraisal, investment, or transaction conclusion."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "minimum_three_distinct_https_sources",
+    "current_source_access_review_pass",
+    "claim_to_source_scope_present",
+    "official_and_first_party_source_priority_pass",
+    "unsupported_high_risk_claim_scan_pass"
+  ],
+  "sources_inspected": [
+    {
+      "label": "U.S. Environmental Protection Agency, EPA Information Quality Guidelines (accessed 2026-08-22)",
+      "url": "https://www.epa.gov/quality/epa-information-quality-guidelines",
+      "publisher": "www.epa.gov",
+      "accessed_at": "2026-08-22T20:08:06Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.epa.gov/quality/epa-information-quality-guidelines",
+        "content_type": "text/html; charset=UTF-8"
+      },
+      "source_location_or_paraphrase": "The current EPA page identifies its Information Quality Guidelines and the federal correction-request mechanism for information disseminated by EPA.",
+      "claim_scope": "The article identifies the EPA process as a federal administrative analogy only. It does not claim that the process governs a private mineral-rights valuation, validates a replacement value, or creates a right to a revised result."
+    },
+    {
+      "label": "U.S. Environmental Protection Agency, Guidelines for Ensuring and Maximizing Information Quality, Section 8.2 (accessed 2026-08-22)",
+      "url": "https://www.epa.gov/sites/production/files/2020-02/documents/epa-info-quality-guidelines_pdf_version.pdf",
+      "publisher": "www.epa.gov",
+      "accessed_at": "2026-08-22T20:08:06Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.epa.gov/sites/default/files/2020-02/documents/epa-info-quality-guidelines_pdf_version.pdf",
+        "content_type": "application/pdf"
+      },
+      "source_location_or_paraphrase": "Section 8.2 of the EPA guideline PDF describes correction requests that identify the requester, cite the disputed information, explain the concern, recommend corrective action, and describe the requester’s interest.",
+      "claim_scope": "The article borrows only that field-level request discipline. It omits agency-specific legal standards and makes no private right, validation, value, or correction conclusion."
+    },
+    {
+      "label": "U.S. National Archives, Records Basics (accessed 2026-08-22)",
+      "url": "https://www.archives.gov/records-mgmt/scheduling/basics",
+      "publisher": "www.archives.gov",
+      "accessed_at": "2026-08-22T20:08:06Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.archives.gov/records-mgmt/scheduling/basics",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The NARA Records Basics page distinguishes source records, input records, system content, and outputs in federal records-management guidance.",
+      "claim_scope": "The article uses that distinction only as a transparent administrative analogy for preserving the reviewed snapshot, source, input, and later output separately. It does not impose a private retention rule."
+    },
+    {
+      "label": "Mineral Rights Xchange, How to Validate a Mineral Rights Valuation (accessed 2026-08-22)",
+      "url": "https://mineralrightsxchange.com/blog/understanding-mineral-rights-how-to-validate-your-asset-s-true-worth/",
+      "publisher": "mineralrightsxchange.com",
+      "accessed_at": "2026-08-22T20:08:06Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://mineralrightsxchange.com/blog/understanding-mineral-rights-how-to-validate-your-asset-s-true-worth/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The current MRX valuation-validation guide owns evidence review, transformation tracing, method and assumption review, reperformance, and result-difference analysis.",
+      "claim_scope": "The correction-packet article begins only after a specific discrepancy has already been identified. It does not validate evidence, reperform a valuation, run sensitivities, or decide whether a requested replacement is correct."
+    },
+    {
+      "label": "Mineral Rights Xchange, Understanding Texas Mineral Rights Valuation Process (accessed 2026-08-22)",
+      "url": "https://mineralrightsxchange.com/blog/understanding-texas-mineral-rights-valuation-process/",
+      "publisher": "mineralrightsxchange.com",
+      "accessed_at": "2026-08-22T20:08:06Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://mineralrightsxchange.com/blog/understanding-texas-mineral-rights-valuation-process/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The current MRX Texas valuation-process guide owns the traceable relationship among the analyzed interest, evidence, inputs, assumptions, range, and unresolved questions.",
+      "claim_scope": "The article uses that guide only to define the adjacent traceability job. It does not explain valuation methods, calculate value, revise a range, appraise an interest, or decide offer fairness."
+    },
+    {
+      "label": "Mineral Rights Xchange, How to Build a Mineral Rights Sale Document Package Index (accessed 2026-08-22)",
+      "url": "https://mineralrightsxchange.com/blog/how-to-build-a-mineral-rights-sale-document-package-index/",
+      "publisher": "mineralrightsxchange.com",
+      "accessed_at": "2026-08-22T20:08:06Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://mineralrightsxchange.com/blog/how-to-build-a-mineral-rights-sale-document-package-index/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The current MRX document-package guide owns received-file identity, page and exhibit completeness, versions, and controlled component references.",
+      "claim_scope": "The correction packet links to a stable component and page rather than rebuilding the package. It does not determine authenticity, completeness, title, legal effect, acreage, decimal interest, or document sufficiency."
+    }
+  ]
+}

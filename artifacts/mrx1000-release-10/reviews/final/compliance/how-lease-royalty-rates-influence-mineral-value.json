@@ -1,0 +1,43 @@
+{
+  "artifact_type": "mrx1000_two_image_compliance_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-12T10:08:27Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-11",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0182",
+  "slug": "how-lease-royalty-rates-influence-mineral-value",
+  "title": "How Lease Royalty Rates Influence Mineral Value",
+  "canonical_url": "https://mineralrightsxchange.com/blog/how-lease-royalty-rates-influence-mineral-value/",
+  "source_path": "src/content/posts/how-lease-royalty-rates-influence-mineral-value.mdx",
+  "input_body_sha256": "2cc3b0be9908eaa7e1cf4d008d92312aa608f959867dc361e792bfc32b74f83f",
+  "input_frontmatter_sha256": "1cbd8a81143ee0e1125fbd549ab2ebfbfa30a917f74b5a9d705fe21a93fce4bd",
+  "expected_repo_sha256": "2cc3b0be9908eaa7e1cf4d008d92312aa608f959867dc361e792bfc32b74f83f",
+  "two_image_manifest_sha256": "42d952c9558b93bb02abee89a27a355a1ccb526a886e1fc9be3f8d236107d759",
+  "reviewer_id": "codex_wave24_compliance",
+  "review_run_id": "mrx1000-wave24-compliance-20260812T100827Z",
+  "capability": "compliance",
+  "expected_hero_sha256": "22153db90e7cfaca81d2abfee9fbd496afd9642daaf805888344aa9a86a06128",
+  "expected_inline_sha256": "59de4e1e1c45d143c5cc5f2a13fd15ba7c210467533fb8ae0c815414e86876d2",
+  "findings": [
+    "Complete current MDX SHA-256 is 2cc3b0be9908eaa7e1cf4d008d92312aa608f959867dc361e792bfc32b74f83f; hero/share and inline image hashes are separately locked.",
+    "The article states educational and professional boundaries, discloses MRX’s potential economic interest, distinguishes a lease royalty rate from owner-specific lease interpretation and payment auditing, and avoids title, legal, tax, investment, accounting, engineering, appraisal, transaction-suitability, or owner-specific value conclusions.",
+    "Image text is limited to the exact article title and canonical keyword and adds no owner, deed, well, lease term, production, price, acreage, decimal, offer, market, legal, tax, accounting, engineering, or valuation conclusion."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "hero_share_sha256_identity",
+    "inline_image_distinct_sha256",
+    "exact_text_ocr_pass",
+    "filename_text_identity_pass",
+    "educational_and_professional_boundaries_preserved",
+    "no_unsupported_visual_or_payment_claims"
+  ],
+  "sources_inspected": [
+    "src/content/posts/how-lease-royalty-rates-influence-mineral-value.mdx",
+    "/assets/articles/hero/how-lease-royalty-rates-influence-mineral-value.webp",
+    "/assets/articles/inline/how-lease-royalty-rates-influence-mineral-value/lease-royalty-rates-mineral-value.webp"
+  ]
+}

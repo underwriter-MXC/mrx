@@ -1,0 +1,62 @@
+{
+  "artifact_type": "mrx1000_two_image_editorial_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-11T22:44:38Z",
+  "decision_authority": {
+    "source": "Daryl owner directive, 2026-08-11",
+    "policy": "MRX two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0737",
+  "slug": "what-is-your-texas-mineral-rights-worth",
+  "title": "What Is Your Texas Mineral Rights Worth?",
+  "canonical_url": "https://mineralrightsxchange.com/blog/what-is-your-texas-mineral-rights-worth/",
+  "source_path": "src/content/posts/what-is-your-texas-mineral-rights-worth.mdx",
+  "input_body_sha256": "6d511f5ed4bf32ba741e72c53e0d08d1c097afef6d6c5a908c0cd35c3f9ab706",
+  "input_frontmatter_sha256": "29c166471ada46932d2b77c4d882bdfb58db02a8ea99c8daf5ad587918ed0979",
+  "expected_repo_sha256": "6d511f5ed4bf32ba741e72c53e0d08d1c097afef6d6c5a908c0cd35c3f9ab706",
+  "two_image_manifest_sha256": "802512b5dab8eae7592be5934f97a6a8989125fb8f65d3f37ee3cdeb2d35dc10",
+  "reviewer_id": "codex_two_image_editorial",
+  "review_run_id": "mrx1000-two-image-retrofit-20260811T224438Z",
+  "capability": "editorial",
+  "findings": [
+    "Complete current MDX SHA-256 is 6d511f5ed4bf32ba741e72c53e0d08d1c097afef6d6c5a908c0cd35c3f9ab706; article has 507 body tokens and five FAQs.",
+    "Exact-title hero/share OCR passed for “What Is Your Texas Mineral Rights Worth?”; distinct in-body OCR passed for “what are mineral rights worth”.",
+    "Both text treatments remain deterministic, descriptive, filename-matched, article-specific, and bound to the current source."
+  ],
+  "checks": [
+    {
+      "name": "complete_file_sha256_match",
+      "status": "PASS",
+      "evidence": "6d511f5ed4bf32ba741e72c53e0d08d1c097afef6d6c5a908c0cd35c3f9ab706"
+    },
+    {
+      "name": "answer_first_depth_and_five_faqs",
+      "status": "PASS",
+      "evidence": {
+        "word_count": 507,
+        "minimum_word_count": 0,
+        "faq_count": 5
+      }
+    },
+    {
+      "name": "two_image_exact_text_identity",
+      "status": "PASS",
+      "evidence": {
+        "hero_path": true,
+        "social_identity": true,
+        "inline_path": true,
+        "inline_text": true,
+        "hero_ocr": true,
+        "inline_ocr": true,
+        "filename_identity": true,
+        "distinct_binaries": true
+      }
+    }
+  ],
+  "sources_inspected": [
+    "src/content/posts/what-is-your-texas-mineral-rights-worth.mdx",
+    "/assets/articles/hero/what-is-your-texas-mineral-rights-worth.webp",
+    "/assets/articles/inline/what-is-your-texas-mineral-rights-worth/what-are-mineral-rights-worth.webp"
+  ]
+}

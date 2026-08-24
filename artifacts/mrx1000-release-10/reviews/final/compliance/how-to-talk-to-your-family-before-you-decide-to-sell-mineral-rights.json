@@ -1,0 +1,49 @@
+{
+  "artifact_type": "mrx1000_two_image_compliance_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-15T06:22:17Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-14",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0146",
+  "slug": "how-to-talk-to-your-family-before-you-decide-to-sell-mineral-rights",
+  "title": "How to Talk to Your Family Before You Decide to Sell Mineral Rights",
+  "canonical_url": "https://mineralrightsxchange.com/blog/how-to-talk-to-your-family-before-you-decide-to-sell-mineral-rights/",
+  "source_path": "src/content/posts/how-to-talk-to-your-family-before-you-decide-to-sell-mineral-rights.mdx",
+  "input_body_sha256": "4f98b66f3894e35188822c8717780952df0cc38531265713ead922d4595190ed",
+  "input_frontmatter_sha256": "3962e433ca25231cb27a6705ff17a1bbf5fd936c361f20bde1e4460b364ed84b",
+  "expected_repo_sha256": "4f98b66f3894e35188822c8717780952df0cc38531265713ead922d4595190ed",
+  "two_image_manifest_sha256": "a11a26ae04cb9c5d9bbbb2d0d1d90768e3d092948f0d3b48a4d363bddb9899b1",
+  "visual_metadata": {
+    "hero_alt": "Three adult family members talk at a table beside “How to Talk to Your Family Before You Decide to Sell Mineral Rights”.",
+    "social_alt": "Three adult family members talk at a table beside “How to Talk to Your Family Before You Decide to Sell Mineral Rights”.",
+    "inline_alt": "Three notebooks surround a table above “One Family, One Decision, One Honest Conversation”."
+  },
+  "reviewer_id": "codex_wave66_compliance",
+  "review_run_id": "mrx1000-wave66-compliance-20260815T062217Z",
+  "capability": "compliance",
+  "expected_hero_sha256": "ab8c4e5b6f804186a009ba7ac802bcba7ed6bbb9627c7580baf5bc2098d29fce",
+  "expected_inline_sha256": "97fcd2ce86b7aab9268e4340c8e3351f4fe1821e7a57b7d38f089ba27aa96d0f",
+  "findings": [
+    "Complete current MDX SHA-256 is 4f98b66f3894e35188822c8717780952df0cc38531265713ead922d4595190ed; hero/share and inline image hashes are separately locked.",
+    "The article states educational and professional boundaries, discloses possible MRX buyer interest, preserves owner agency, and makes no owner-specific title, acreage, value, fairness, buyer, contract, legal, tax, suitability, investment, or transaction conclusion.",
+    "Image text is limited to the exact article title and approved family-conversation phrase and adds no account data, property identifier, amount, date, equation, official seal, title conclusion, value conclusion, recommendation, offer, guarantee, buyer endorsement, or transaction result."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "hero_share_sha256_identity",
+    "inline_image_distinct_sha256",
+    "exact_text_ocr_pass",
+    "filename_text_identity_pass",
+    "educational_and_professional_boundaries_preserved",
+    "owner_agency_and_possible_buyer_interest_disclosure_preserved",
+    "no_unsupported_visual_or_decision_claims"
+  ],
+  "sources_inspected": [
+    "src/content/posts/how-to-talk-to-your-family-before-you-decide-to-sell-mineral-rights.mdx",
+    "/assets/articles/hero/how-to-talk-to-your-family-before-you-decide-to-sell-mineral-rights.webp",
+    "/assets/articles/inline/how-to-talk-to-your-family-before-you-decide-to-sell-mineral-rights/one-family-one-decision-one-honest-conversation.webp"
+  ]
+}

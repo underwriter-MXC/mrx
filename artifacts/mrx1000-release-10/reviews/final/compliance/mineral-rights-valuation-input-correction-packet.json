@@ -1,0 +1,49 @@
+{
+  "artifact_type": "mrx1000_two_image_compliance_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-22T20:08:06Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-14",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0150",
+  "slug": "mineral-rights-valuation-input-correction-packet",
+  "title": "How to Build a Mineral Rights Valuation Input Correction Packet",
+  "canonical_url": "https://mineralrightsxchange.com/blog/mineral-rights-valuation-input-correction-packet/",
+  "source_path": "src/content/posts/mineral-rights-valuation-input-correction-packet.mdx",
+  "input_body_sha256": "ec8e40da0a926f441303f13dda68d1083e82e8857b8a8779ab05e63a4b7b609d",
+  "input_frontmatter_sha256": "e8313ba3ba84cab73f22bfd61dc111e8b6bcd602c7a0cd70bec7b91f89136563",
+  "expected_repo_sha256": "ec8e40da0a926f441303f13dda68d1083e82e8857b8a8779ab05e63a4b7b609d",
+  "two_image_manifest_sha256": "8c1bd817bb0c625d2c46f36bb4f47436f4a26ac790b4a712dea5cbe483516175",
+  "visual_metadata": {
+    "hero_alt": "An owner reviews blank correction cards beside “How to Build a Mineral Rights Valuation Input Correction Packet”.",
+    "social_alt": "An owner reviews blank correction cards beside “How to Build a Mineral Rights Valuation Input Correction Packet”.",
+    "inline_alt": "Blank correction fields and source markers appear above “Mineral Rights Valuation Input Correction Packet”."
+  },
+  "reviewer_id": "codex_wave70_compliance",
+  "review_run_id": "mrx1000-wave70-compliance-20260822T200806Z",
+  "capability": "compliance",
+  "expected_hero_sha256": "207e69b65230ff906b694fdb33f2d2154c7c582dd41d723d091b5d1c71afd25e",
+  "expected_inline_sha256": "342e0f94a59a0b5517d483df35b680a50f1c4c07f37239e19fd9dff047c3a456",
+  "findings": [
+    "Complete current MDX SHA-256 is ec8e40da0a926f441303f13dda68d1083e82e8857b8a8779ab05e63a4b7b609d; hero/share and inline image hashes are separately locked.",
+    "The article states educational and professional boundaries, separates correction intake from validation, valuation revision, package completeness, title, acreage, appraisal, and decisions, discloses possible MRX buyer interest, preserves owner agency, and makes no owner-specific correction, ownership, title, authority, value, fairness, buyer, contract, legal, tax, suitability, investment, or transaction conclusion.",
+    "Image text is limited to the exact article title and approved correction-packet phrase and adds no request content, name, address, account data, property identifier, amount, acreage, decimal, date, signature, official seal, legal conclusion, value conclusion, ranking, recommendation, offer, guarantee, buyer endorsement, or transaction result."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "hero_share_sha256_identity",
+    "inline_image_distinct_sha256",
+    "exact_text_ocr_pass",
+    "filename_text_identity_pass",
+    "educational_and_professional_boundaries_preserved",
+    "owner_agency_and_possible_buyer_interest_disclosure_preserved",
+    "no_unsupported_visual_or_decision_claims"
+  ],
+  "sources_inspected": [
+    "src/content/posts/mineral-rights-valuation-input-correction-packet.mdx",
+    "/assets/articles/hero/how-to-build-a-mineral-rights-valuation-input-correction-packet.webp",
+    "/assets/articles/inline/mineral-rights-valuation-input-correction-packet/mineral-rights-valuation-input-correction-packet.webp"
+  ]
+}

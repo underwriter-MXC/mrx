@@ -1,0 +1,120 @@
+{
+  "artifact_type": "mrx1000_wave91_two_image_factual_citation_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-24T00:23:26Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-14",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0276",
+  "slug": "texas-rrc-wellbore-query-retrieval-provenance-worksheet",
+  "title": "Texas RRC Wellbore Query Retrieval Provenance Worksheet",
+  "canonical_url": "https://mineralrightsxchange.com/blog/texas-rrc-wellbore-query-retrieval-provenance-worksheet/",
+  "source_path": "src/content/posts/texas-rrc-wellbore-query-retrieval-provenance-worksheet.mdx",
+  "input_body_sha256": "9c37a3a47aeecc7184e1467497ed2a0cc5ed0b2e82c3bb224bd6850e10d97151",
+  "input_frontmatter_sha256": "dd5910719c0a9ce0b08631e17f29a03859b73c6212b6a64d16ac47fa863b08b5",
+  "expected_repo_sha256": "9c37a3a47aeecc7184e1467497ed2a0cc5ed0b2e82c3bb224bd6850e10d97151",
+  "two_image_manifest_sha256": "26af3f5637262d084556825d388e90dc0f18dcf396a5acfcf3b58e2e6568baa3",
+  "visual_metadata": {
+    "hero_alt": "A Texas wellbore-query research counter appears beside the exact article title.",
+    "social_alt": "A Texas wellbore-query research counter appears beside the exact article title.",
+    "inline_alt": "A people-free overhead wellbore-query provenance worksheet appears above the exact keyword."
+  },
+  "reviewer_id": "codex_wave91_factual",
+  "review_run_id": "mrx1000-wave91-factual-20260824T002326Z",
+  "capability": "factual_citation",
+  "findings": [
+    "Complete current MDX SHA-256 is 9c37a3a47aeecc7184e1467497ed2a0cc5ed0b2e82c3bb224bd6850e10d97151; all 6 declared sources passed current HTTPS access review.",
+    "Claims remain bounded to current official RRC routes, source-displayed criteria and result labels, navigation behavior, result-display limits, record-access context, update context, and published data limitations. None of the sources is used to interpret a wellbore or establish property connection, title, ownership, acreage, lease effect, entitlement, compliance, drilling, completion, production, development, reserves, value, or a transaction result.",
+    "The article publishes no actual query values, owner document, signature, address, legal description, property identifier, result screenshot, operator allegation, well conclusion, production result, drilling forecast, valuation input, price, value, offer, or transaction claim."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "six_distinct_https_sources",
+    "current_source_access_review_pass",
+    "claim_to_source_scope_present",
+    "official_source_priority_pass",
+    "unsupported_high_risk_claim_scan_pass"
+  ],
+  "sources_inspected": [
+    {
+      "label": "Railroad Commission of Texas, Research Queries (accessed 2026-08-23)",
+      "url": "https://www.rrc.texas.gov/resource-center/research/research-queries/",
+      "publisher": "www.rrc.texas.gov",
+      "accessed_at": "2026-08-24T00:23:26Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.rrc.texas.gov/resource-center/research/research-queries/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The official RRC directory identifies the Oil & Gas Data Query as a public research route and publishes the limitation that online data is continually updated, informational, non-authoritative, and without legal force.",
+      "claim_scope": "The article records the named route, access time, and source limitation without treating a query result as complete, legally controlling, connected to private property, or suitable for a downstream conclusion."
+    },
+    {
+      "label": "Railroad Commission of Texas, About Oil & Gas Data Queries (accessed 2026-08-23)",
+      "url": "https://www.rrc.texas.gov/resource-center/research/research-queries/about-oil-gas-data-queries/",
+      "publisher": "www.rrc.texas.gov",
+      "accessed_at": "2026-08-24T00:23:26Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.rrc.texas.gov/resource-center/research/research-queries/about-oil-gas-data-queries/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The official data-query overview explains that the Wellbore Query can search by displayed categories including well type, district, lease or gas-well identifier, county, field, operator, permit number, API number, and current or historical selection.",
+      "claim_scope": "The article uses those source-displayed categories only to construct a criteria snapshot and never interprets the identifiers or record."
+    },
+    {
+      "label": "Railroad Commission of Texas, Oil & Gas Data Query (accessed 2026-08-23)",
+      "url": "https://webapps2.rrc.texas.gov/EWA/ewaMain.do",
+      "publisher": "webapps2.rrc.texas.gov",
+      "accessed_at": "2026-08-24T00:23:26Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://webapps2.rrc.texas.gov/EWA/ewaMain.do",
+        "content_type": "text/html; charset=UTF-8"
+      },
+      "source_location_or_paraphrase": "The official Oil & Gas Data Query menu presents the Wellbore Query as a separate route from production, injection, severance, P-4, proration, organization, inactive-well, orphan-well, drilling-permit, inspection, and violation routes.",
+      "claim_scope": "The article preserves that route identity so records from separate systems are not merged or mislabeled."
+    },
+    {
+      "label": "Railroad Commission of Texas, Wellbore Query (accessed 2026-08-23)",
+      "url": "https://webapps2.rrc.texas.gov/EWA/wellboreQueryAction.do",
+      "publisher": "webapps2.rrc.texas.gov",
+      "accessed_at": "2026-08-24T00:23:26Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://webapps2.rrc.texas.gov/EWA/wellboreQueryAction.do",
+        "content_type": "text/html; charset=UTF-8"
+      },
+      "source_location_or_paraphrase": "The official public Wellbore Query entry displays current criteria labels and the route used for one query attempt.",
+      "claim_scope": "The article records only criteria actually used, navigation steps that occurred, and bounded retrieval state. It does not submit a filing or reproduce an actual property query."
+    },
+    {
+      "label": "Railroad Commission of Texas, Wellbore Query Help (accessed 2026-08-23)",
+      "url": "https://webapps2.rrc.texas.gov/EWA/help/WellboreGeneralHowTo.html",
+      "publisher": "webapps2.rrc.texas.gov",
+      "accessed_at": "2026-08-24T00:23:26Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://webapps2.rrc.texas.gov/EWA/help/WellboreGeneralHowTo.html",
+        "content_type": "text/html; charset=UTF-8"
+      },
+      "source_location_or_paraphrase": "The official Wellbore Query help describes criteria, the 10,000-record display limit for broad searches, displayed result columns, navigation and sorting controls, result links, and lease-detail tabs.",
+      "claim_scope": "The article keeps result headers, result rows, navigation state, and detail routes separate and rejects well, operator, lease, field, county, schedule, production, property, or valuation interpretation."
+    },
+    {
+      "label": "Railroad Commission of Texas, Oil and Gas Well Records (accessed 2026-08-23)",
+      "url": "https://www.rrc.texas.gov/oil-and-gas/research-and-statistics/obtaining-commission-records/oil-and-gas-well-records/",
+      "publisher": "www.rrc.texas.gov",
+      "accessed_at": "2026-08-24T00:23:26Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.rrc.texas.gov/oil-and-gas/research-and-statistics/obtaining-commission-records/oil-and-gas-well-records/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The official well-records page identifies separate channels for Commission well records and document access.",
+      "claim_scope": "The article uses that context only to turn a query gap into a neutral next retrieval question, not to claim that an online result is the complete agency record."
+    }
+  ]
+}

@@ -1,0 +1,120 @@
+{
+  "artifact_type": "mrx1000_two_image_factual_citation_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-22T21:32:00Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-14",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0151",
+  "slug": "how-are-mineral-rights-valued",
+  "title": "How Are Mineral Rights Valued?",
+  "canonical_url": "https://mineralrightsxchange.com/blog/how-are-mineral-rights-valued/",
+  "source_path": "src/content/posts/how-are-mineral-rights-valued.mdx",
+  "input_body_sha256": "c7b809e91a09e06d4d6403af004e3274abb44743b8b76aa30c137d214862984c",
+  "input_frontmatter_sha256": "86e02f2d756458e8494e048de37878390242a91785bc0d0f43a3e41b5d99b73a",
+  "expected_repo_sha256": "c7b809e91a09e06d4d6403af004e3274abb44743b8b76aa30c137d214862984c",
+  "two_image_manifest_sha256": "d7530a40a4a2e731486d5d5d7ed0a9b6648c4039a908bbd20551327be0ca2ee3",
+  "visual_metadata": {
+    "hero_alt": "An owner and analyst review blank cash-flow evidence beside “How Are Mineral Rights Valued?”.",
+    "social_alt": "An owner and analyst review blank cash-flow evidence beside “How Are Mineral Rights Valued?”.",
+    "inline_alt": "Blank production, royalty-term, assumption, and market-check records appear above “how are mineral rights valued”."
+  },
+  "reviewer_id": "codex_wave71_factual",
+  "review_run_id": "mrx1000-wave71-factual-20260822T213200Z",
+  "capability": "factual_citation",
+  "findings": [
+    "Complete current MDX SHA-256 is c7b809e91a09e06d4d6403af004e3274abb44743b8b76aa30c137d214862984c; all 6 declared sources passed current access review.",
+    "Claims remain bounded to operator-reported RRC production history and its timing limits, EIA decline-curve methodology context, TALCB professional regulation, Texas Comptroller DCF context, and MRX process boundaries. No source is converted into owner-specific title, decimal, reserves, engineering, geology, realized price, deductions, production forecast, value, offer, fairness, legal, tax, or transaction evidence.",
+    "The article invents no real owner, interest, source record, property, operator assertion, development event, buyer, contract, transaction, price, numerical example, valuation result, testimonial, success rate, or owner-specific legal, tax, accounting, title, appraisal, investment, or transaction conclusion."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "minimum_three_distinct_https_sources",
+    "current_source_access_review_pass",
+    "claim_to_source_scope_present",
+    "official_and_first_party_source_priority_pass",
+    "unsupported_high_risk_claim_scan_pass"
+  ],
+  "sources_inspected": [
+    {
+      "label": "Railroad Commission of Texas, Oil and Gas Production Data (accessed 2026-08-22)",
+      "url": "https://www.rrc.texas.gov/oil-and-gas/research-and-statistics/production-data/",
+      "publisher": "www.rrc.texas.gov",
+      "accessed_at": "2026-08-22T21:32:00Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.rrc.texas.gov/oil-and-gas/research-and-statistics/production-data/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The current Railroad Commission page identifies Texas oil-and-gas production compilations and query resources using production information reported by operators.",
+      "claim_scope": "The article uses the source only to identify public operator-reported production history as one evidence input. It does not treat the data as title, an owner royalty decimal, realized price, deductions, reserves, a property-specific forecast, or value."
+    },
+    {
+      "label": "Railroad Commission of Texas, Production Data Query System FAQs (accessed 2026-08-22)",
+      "url": "https://www.rrc.texas.gov/about-us/faqs/oil-gas-faq/production-data-query-system-faqs/",
+      "publisher": "www.rrc.texas.gov",
+      "accessed_at": "2026-08-22T21:32:00Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.rrc.texas.gov/about-us/faqs/oil-gas-faq/production-data-query-system-faqs/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The current Railroad Commission FAQs describe production-data reporting granularity, monthly updates, reporting lag, and later revisions or corrections.",
+      "claim_scope": "The article uses those limits to explain why public production history may be useful but is not automatically current, final, or matched to an individual owner. It makes no operator, title, decimal, reserve, price, deduction, forecast, or value conclusion."
+    },
+    {
+      "label": "U.S. Energy Information Administration, Production Decline Curve Analysis (accessed 2026-08-22)",
+      "url": "https://www.eia.gov/analysis/drilling/curve_analysis/2020/",
+      "publisher": "www.eia.gov",
+      "accessed_at": "2026-08-22T21:32:00Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.eia.gov/analysis/drilling/curve_analysis/2020/",
+        "content_type": "text/html; charset=UTF-8"
+      },
+      "source_location_or_paraphrase": "The EIA analysis describes estimating decline-curve parameters from observed well-level production data and using them to project production.",
+      "claim_scope": "The article cites that general methodological context only. It does not claim that EIA establishes the production forecast, decline parameters, reserves, engineering result, geology, or value of an owner-specific interest."
+    },
+    {
+      "label": "Texas Appraiser Licensing & Certification Board, Rules and Laws (accessed 2026-08-22)",
+      "url": "https://www.talcb.texas.gov/node/17",
+      "publisher": "www.talcb.texas.gov",
+      "accessed_at": "2026-08-22T21:32:00Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.talcb.texas.gov/node/17",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The current Texas Appraiser Licensing & Certification Board page identifies the rules and laws governing Texas appraisers and appraisal management companies and links to USPAP context.",
+      "claim_scope": "The article uses the source only for the regulated-appraisal professional boundary. It does not characterize a directional review as a certified appraisal or imply a licensed appraisal conclusion."
+    },
+    {
+      "label": "Texas Comptroller, Appraisal of Oil and Gas Mineral Properties (accessed 2026-08-22)",
+      "url": "https://comptroller.texas.gov/taxes/property-tax/reappraisals/ector15-16.pdf",
+      "publisher": "comptroller.texas.gov",
+      "accessed_at": "2026-08-22T21:32:00Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://comptroller.texas.gov/taxes/property-tax/reappraisals/ector15-16.pdf",
+        "content_type": "application/octet-stream"
+      },
+      "source_location_or_paraphrase": "The Texas Comptroller appraisal material provides public-sector context for present-value and discounted-cash-flow analysis of oil and gas mineral property.",
+      "claim_scope": "The article cites only that general DCF and present-value context. It does not apply the manual to calculate a private sale price, certified value, tax value, offer, or owner-specific conclusion."
+    },
+    {
+      "label": "Mineral Rights Xchange, Methodology (accessed 2026-08-22)",
+      "url": "https://mineralrightsxchange.com/methodology/",
+      "publisher": "mineralrightsxchange.com",
+      "accessed_at": "2026-08-22T21:32:00Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://mineralrightsxchange.com/methodology/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The current MRX methodology page explains a directional evidence-and-assumption workflow and its professional limits.",
+      "claim_scope": "The article uses the page to describe MRX process boundaries only. It does not use the page as evidence of title, reserves, engineering, realized price, deductions, an owner-specific value, an offer, or a transaction result."
+    }
+  ]
+}

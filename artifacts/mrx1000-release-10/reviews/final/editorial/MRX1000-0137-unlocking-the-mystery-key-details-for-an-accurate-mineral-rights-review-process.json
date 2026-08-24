@@ -1,0 +1,59 @@
+{
+  "artifact_type": "mrx1000_two_image_editorial_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-14T05:39:41Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-11",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0137",
+  "slug": "unlocking-the-mystery-key-details-for-an-accurate-mineral-rights-review-process",
+  "title": "Unlocking the Mystery: Key Details for an Accurate Mineral Rights Review Process",
+  "canonical_url": "https://mineralrightsxchange.com/blog/unlocking-the-mystery-key-details-for-an-accurate-mineral-rights-review-process/",
+  "source_path": "src/content/posts/unlocking-the-mystery-key-details-for-an-accurate-mineral-rights-review-process.mdx",
+  "input_body_sha256": "96e5fb89381484fc079f61ec944519064badac05515d540f7bc91418f091cfd2",
+  "input_frontmatter_sha256": "346b61d3617ef0ce27fd7c10463c4e98ef46eaab8efca3c95d32d48d4b4617af",
+  "expected_repo_sha256": "96e5fb89381484fc079f61ec944519064badac05515d540f7bc91418f091cfd2",
+  "two_image_manifest_sha256": "f7d53137d03e201b8283e332507abb2acd22d63990850c8a3cc9905d2914b068",
+  "reviewer_id": "codex_wave57_editorial",
+  "review_run_id": "mrx1000-wave57-editorial-20260814T053941Z",
+  "capability": "editorial",
+  "findings": [
+    "Complete current MDX SHA-256 is 96e5fb89381484fc079f61ec944519064badac05515d540f7bc91418f091cfd2; the answer-first article contains 2574 body tokens and five FAQs.",
+    "The article owns the review-intake identity and evidence-usability job. It defines the owner decision and evidence cutoff, prioritizes property and record identifiers, separates ownership, lease, payment, operating, and offer evidence, preserves support-status labels and conflicts, protects sensitive information, and states pause and professional-handoff conditions.",
+    "Exact-title hero/share OCR passed for “Unlocking the Mystery: Key Details for an Accurate Mineral Rights Review Process”; distinct in-body OCR passed for “What Information Do I Need to Provide for a Mineral Rights Review?”."
+  ],
+  "checks": [
+    {
+      "name": "complete_file_sha256_match",
+      "status": "PASS",
+      "evidence": "96e5fb89381484fc079f61ec944519064badac05515d540f7bc91418f091cfd2"
+    },
+    {
+      "name": "answer_first_article_depth_and_five_faqs",
+      "status": "PASS",
+      "evidence": {
+        "word_count": 2574,
+        "minimum_word_count": 700,
+        "faq_count": 5
+      }
+    },
+    {
+      "name": "two_image_exact_text_identity",
+      "status": "PASS",
+      "evidence": {
+        "hero_ocr": true,
+        "inline_ocr": true,
+        "social_reuses_hero": true,
+        "filename_identity": true,
+        "distinct_binaries": true
+      }
+    }
+  ],
+  "sources_inspected": [
+    "src/content/posts/unlocking-the-mystery-key-details-for-an-accurate-mineral-rights-review-process.mdx",
+    "/assets/articles/hero/unlocking-the-mystery-key-details-for-an-accurate-mineral-rights-review-process.webp",
+    "/assets/articles/inline/unlocking-the-mystery-key-details-for-an-accurate-mineral-rights-review-process/what-information-do-i-need-to-provide-for-a-mineral-rights-review.webp"
+  ]
+}

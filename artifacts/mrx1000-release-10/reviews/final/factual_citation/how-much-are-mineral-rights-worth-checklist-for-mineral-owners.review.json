@@ -1,0 +1,128 @@
+{
+  "artifact_type": "mrx1000_two_image_factual_citation_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-12T11:04:56Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-12",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0184",
+  "slug": "how-much-are-mineral-rights-worth-checklist-for-mineral-owners",
+  "title": "How Much Are Mineral Rights Worth: Checklist For Mineral Owners",
+  "canonical_url": "https://mineralrightsxchange.com/blog/how-much-are-mineral-rights-worth-checklist-for-mineral-owners/",
+  "source_path": "src/content/posts/how-much-are-mineral-rights-worth-checklist-for-mineral-owners.mdx",
+  "input_body_sha256": "2eb737e495a6d100d496b6d24a1b5d4ceef77fe3b81319be354e581ee91a4b66",
+  "input_frontmatter_sha256": "7b0a7c6b39ae97e95ff195a3edc79792183a0fb8216be77e0958cff2bf26026d",
+  "expected_repo_sha256": "2eb737e495a6d100d496b6d24a1b5d4ceef77fe3b81319be354e581ee91a4b66",
+  "two_image_manifest_sha256": "2b28f23b40312a77535ba2d4ce7bc4706cd309df06acc3cbd7ea3290e9241b8a",
+  "reviewer_id": "codex_wave26_factual",
+  "review_run_id": "mrx1000-wave26-factual-20260812T110456Z",
+  "capability": "factual_citation",
+  "findings": [
+    "Complete current MDX SHA-256 is 2eb737e495a6d100d496b6d24a1b5d4ceef77fe3b81319be354e581ee91a4b66; all 7 declared official sources passed live access review.",
+    "MRX methodology and value-driver claims remain bounded to current first-party pages; RRC claims remain bounded to official production-reporting and data-limit descriptions; Texas State Library and GLO claims remain bounded to record-location and archival-research guidance; IRS concepts remain bounded to general valuation-date and evidence-discipline context in Publication 561.",
+    "The article uses no fabricated owners, deeds, wells, leases, production, payments, offers, prices, acreage, ownership decimals, valuation ranges, portfolio allocations, testimonials, or owner-specific title, legal, tax, accounting, engineering, investment, or valuation conclusions."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "minimum_three_distinct_https_sources",
+    "current_source_access_review_pass",
+    "claim_to_source_scope_present",
+    "official_primary_source_priority_pass",
+    "unsupported_high_risk_claim_scan_pass"
+  ],
+  "sources_inspected": [
+    {
+      "label": "Mineral Rights Xchange, Published DCF Methodology (accessed 2026-08-12)",
+      "url": "https://mineralrightsxchange.com/methodology/",
+      "publisher": "mineralrightsxchange.com",
+      "accessed_at": "2026-08-12T11:04:56Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://mineralrightsxchange.com/methodology/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The current MRX methodology describes a discounted-cash-flow review of expected royalty income and a directional range with stated production, decline, royalty, discount-rate, commodity, title-confidence, and offer inputs.",
+      "claim_scope": "The article uses the methodology only to identify the dated inputs and scenarios that belong in a pre-review evidence checklist; it does not present a formal credentialed valuation, reserve report, title opinion, legal or tax opinion, guaranteed value, or recommendation to sell."
+    },
+    {
+      "label": "Mineral Rights Xchange, What Determines the Value of Your Mineral Rights? (accessed 2026-08-12)",
+      "url": "https://mineralrightsxchange.com/blog/what-determines-the-value-of-your-mineral-rights/",
+      "publisher": "mineralrightsxchange.com",
+      "accessed_at": "2026-08-12T11:04:56Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://mineralrightsxchange.com/blog/what-determines-the-value-of-your-mineral-rights/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The MRX value-driver guide identifies ownership scope, location, lease terms, production, development evidence, commodity and timing assumptions, title certainty, and transaction scope as distinct inputs to a directional mineral-rights value range.",
+      "claim_scope": "The article names those drivers only to identify the supporting record, source date, status label, or unresolved assumption needed before a directional review; it does not duplicate the broad factor catalog or claim that one factor determines value."
+    },
+    {
+      "label": "Railroad Commission of Texas, Oil & Gas Production Data (accessed 2026-08-12)",
+      "url": "https://www.rrc.texas.gov/oil-and-gas/research-and-statistics/production-data/",
+      "publisher": "www.rrc.texas.gov",
+      "accessed_at": "2026-08-12T11:04:56Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.rrc.texas.gov/oil-and-gas/research-and-statistics/production-data/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The Railroad Commission of Texas production-data page describes compilations, summaries, queries, and downloads of production information reported to the Commission by Texas operators.",
+      "claim_scope": "The article uses the page to identify an official source class for reported operating context only; it does not treat reported production as proof of title, owner decimal, payment entitlement, reserves, future production, or value."
+    },
+    {
+      "label": "Railroad Commission of Texas, Production Data Query FAQs (accessed 2026-08-12)",
+      "url": "https://www.rrc.texas.gov/about-us/faqs/oil-gas-faq/production-data-query-system-faqs/",
+      "publisher": "www.rrc.texas.gov",
+      "accessed_at": "2026-08-12T11:04:56Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.rrc.texas.gov/about-us/faqs/oil-gas-faq/production-data-query-system-faqs/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The Railroad Commission of Texas FAQ explains that oil production is reported by lease, operator reports feed the system, online information has reporting lag, and records can change after revisions, corrections, or delinquent reports.",
+      "claim_scope": "The article uses those points to bound production matching and data-status labels; it does not infer title, lease meaning, owner decimal, payment entitlement, reserves, future production, or value."
+    },
+    {
+      "label": "Texas State Library, Land and Property History Research (accessed 2026-08-12)",
+      "url": "https://www.tsl.texas.gov/ref/propertyresearch",
+      "publisher": "www.tsl.texas.gov",
+      "accessed_at": "2026-08-12T11:04:56Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.tsl.texas.gov/ref/propertyresearch",
+        "content_type": "text/html; charset=UTF-8"
+      },
+      "source_location_or_paraphrase": "The Texas State Library explains that real-property records such as deeds, surveys, liens, and tax records are maintained by the county where the property is located and directs researchers to the county clerk.",
+      "claim_scope": "The article uses that guidance to identify the appropriate record source class; it does not claim that one recorded document resolves chain of title, reservations, legal effect, or owner-specific ownership."
+    },
+    {
+      "label": "Texas General Land Office, Search Our Collections (accessed 2026-08-12)",
+      "url": "https://www.glo.texas.gov/archives-and-heritage/search-our-collections",
+      "publisher": "www.glo.texas.gov",
+      "accessed_at": "2026-08-12T11:04:56Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.glo.texas.gov/archives-and-heritage/search-our-collections",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The Texas General Land Office describes searchable archival collections that include land-grant records, historical maps, and related public-land materials.",
+      "claim_scope": "The article uses those collections as possible survey and historical research leads only; it does not treat an archival record or map as a current county title record, legal-description verification, or owner-specific title opinion."
+    },
+    {
+      "label": "Internal Revenue Service, Publication 561 (accessed 2026-08-12)",
+      "url": "https://www.irs.gov/publications/p561",
+      "publisher": "www.irs.gov",
+      "accessed_at": "2026-08-12T11:04:56Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.irs.gov/publications/p561",
+        "content_type": "text/html; charset=UTF-8"
+      },
+      "source_location_or_paraphrase": "IRS Publication 561 defines fair market value for donated-property purposes and emphasizes relevant facts, valuation date, market conditions, comparable-property similarity, and evidentiary support.",
+      "claim_scope": "The article uses that material only as general evidence-discipline context; it does not present Publication 561 as a mineral appraisal method, qualified appraisal, or owner-specific tax conclusion."
+    }
+  ]
+}

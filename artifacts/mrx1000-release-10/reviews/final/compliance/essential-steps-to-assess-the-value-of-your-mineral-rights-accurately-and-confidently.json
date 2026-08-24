@@ -1,0 +1,43 @@
+{
+  "artifact_type": "mrx1000_two_image_compliance_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-12T07:45:54Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-11",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0178",
+  "slug": "essential-steps-to-assess-the-value-of-your-mineral-rights-accurately-and-confidently",
+  "title": "Essential Steps to Assess the Value of Your Mineral Rights Accurately and Confidently",
+  "canonical_url": "https://mineralrightsxchange.com/blog/essential-steps-to-assess-the-value-of-your-mineral-rights-accurately-and-confidently/",
+  "source_path": "src/content/posts/essential-steps-to-assess-the-value-of-your-mineral-rights-accurately-and-confidently.mdx",
+  "input_body_sha256": "e06ecd5b7eb29b4ffa10fb57c86636e89f6263cf236c64fa528026a69ac51a86",
+  "input_frontmatter_sha256": "44264d62ecfe65d211e9829f715cd3d2b8e2ac7d1d77adc1e19631c6c3eef10c",
+  "expected_repo_sha256": "e06ecd5b7eb29b4ffa10fb57c86636e89f6263cf236c64fa528026a69ac51a86",
+  "two_image_manifest_sha256": "afe12c0ce53ddcae95df1d6ad0a3c200fd4796f43acb6e86ff5b15716a41561f",
+  "reviewer_id": "codex_wave20_compliance",
+  "review_run_id": "mrx1000-wave20-compliance-20260812T074554Z",
+  "capability": "compliance",
+  "expected_hero_sha256": "acda7e708165b226fb1e8860e98cf93323510b57a2ef8d2a51b3c2513efa1a58",
+  "expected_inline_sha256": "d002768cef01d1efc1413021654506ad07fa88754c5e7d807aef88cec4397759",
+  "findings": [
+    "Complete current MDX SHA-256 is e06ecd5b7eb29b4ffa10fb57c86636e89f6263cf236c64fa528026a69ac51a86; hero/share and inline image hashes are separately locked.",
+    "The article states educational and professional boundaries, discloses MRX’s potential economic interest, and avoids title, legal, tax, investment, surveying, reserve, engineering, or appraisal opinions, universal price shortcuts, unsupported precision, or an owner-specific value conclusion.",
+    "Image text is limited to the exact article title and canonical owner question and adds no owner, well, lease, reserve, production, forecast, price, cost, rate, percentage, market, tax, surveying, investment, engineering, or valuation conclusion."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "hero_share_sha256_identity",
+    "inline_image_distinct_sha256",
+    "exact_text_ocr_pass",
+    "filename_text_identity_pass",
+    "educational_and_professional_boundaries_preserved",
+    "no_unsupported_visual_or_payment_claims"
+  ],
+  "sources_inspected": [
+    "src/content/posts/essential-steps-to-assess-the-value-of-your-mineral-rights-accurately-and-confidently.mdx",
+    "/assets/articles/hero/essential-steps-to-assess-the-value-of-your-mineral-rights-accurately-and-confidently.webp",
+    "/assets/articles/inline/essential-steps-to-assess-the-value-of-your-mineral-rights-accurately-and-confidently/what-steps-should-i-take-to-understand-my-mineral-rights-value.webp"
+  ]
+}

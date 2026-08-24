@@ -1,0 +1,120 @@
+{
+  "artifact_type": "mrx1000_wave90_two_image_factual_citation_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-23T22:59:51Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-14",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0275",
+  "slug": "texas-rrc-drilling-permit-query-retrieval-provenance-worksheet",
+  "title": "Texas RRC Drilling-Permit Query Retrieval Provenance Worksheet",
+  "canonical_url": "https://mineralrightsxchange.com/blog/texas-rrc-drilling-permit-query-retrieval-provenance-worksheet/",
+  "source_path": "src/content/posts/texas-rrc-drilling-permit-query-retrieval-provenance-worksheet.mdx",
+  "input_body_sha256": "7db599bed3732224865516d91304b38d17ab613c10ead32e76d35ea7cb34e128",
+  "input_frontmatter_sha256": "ef657569dab6aa0462d377364335c747f65cd480b2f7925803470182c69b26c9",
+  "expected_repo_sha256": "7db599bed3732224865516d91304b38d17ab613c10ead32e76d35ea7cb34e128",
+  "two_image_manifest_sha256": "75440838e34ac9df725b7ce00237aaf72f85734a00dbc268aea4077cd02461e5",
+  "visual_metadata": {
+    "hero_alt": "An archival Texas permit-query counter appears beside the exact article title.",
+    "social_alt": "An archival Texas permit-query counter appears beside the exact article title.",
+    "inline_alt": "A top-down query-provenance worksheet appears above the exact keyword."
+  },
+  "reviewer_id": "codex_wave90_factual",
+  "review_run_id": "mrx1000-wave90-factual-20260823T225951Z",
+  "capability": "factual_citation",
+  "findings": [
+    "Complete current MDX SHA-256 is 7db599bed3732224865516d91304b38d17ab613c10ead32e76d35ea7cb34e128; all 6 declared sources passed current HTTPS access review.",
+    "Claims remain bounded to current official RRC query routes, source-displayed criteria and result labels, navigation behavior, application-versus-query distinction, multiple-criteria instruction, update context, and published data limitations. None of the sources is used to interpret a permit or establish property connection, title, ownership, acreage, lease effect, entitlement, compliance, drilling, production, value, or a transaction result.",
+    "The article publishes no actual query values, completed permit, owner document, signature, address, legal description, property identifier, result screenshot, operator allegation, production result, drilling forecast, valuation input, price, value, offer, or transaction claim."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "six_distinct_https_sources",
+    "current_source_access_review_pass",
+    "claim_to_source_scope_present",
+    "official_source_priority_pass",
+    "unsupported_high_risk_claim_scan_pass"
+  ],
+  "sources_inspected": [
+    {
+      "label": "Railroad Commission of Texas, Research Queries (accessed 2026-08-23)",
+      "url": "https://www.rrc.texas.gov/resource-center/research/research-queries/",
+      "publisher": "www.rrc.texas.gov",
+      "accessed_at": "2026-08-23T22:59:51Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.rrc.texas.gov/resource-center/research/research-queries/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The official RRC directory identifies the Drilling Permit (W-1) Query as a separate public research route, displays its update note, and publishes the limitation that online data is continually updated, informational, non-authoritative, and without legal force.",
+      "claim_scope": "The article records the named entry route, access time, update note, and source limitation without treating a query result as complete, legally controlling, connected to private property, or suitable for a downstream conclusion."
+    },
+    {
+      "label": "Railroad Commission of Texas, Drilling Permit Query About (accessed 2026-08-23)",
+      "url": "https://webapps2.rrc.texas.gov/EWA/help/DPQuery_About.htm",
+      "publisher": "webapps2.rrc.texas.gov",
+      "accessed_at": "2026-08-23T22:59:51Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://webapps2.rrc.texas.gov/EWA/help/DPQuery_About.htm",
+        "content_type": "text/html; charset=UTF-8"
+      },
+      "source_location_or_paraphrase": "The official query-about page lists search categories and displayed result fields for the drilling-permit query.",
+      "claim_scope": "The article uses those labels only to build a reproducible criteria and result-field snapshot. It does not interpret a field, reconcile identifiers, or connect a result to a private mineral interest."
+    },
+    {
+      "label": "Railroad Commission of Texas, Drilling Permit Application Query (accessed 2026-08-23)",
+      "url": "https://webapps2.rrc.texas.gov/EWA/drillingPermitsQueryAction.do",
+      "publisher": "webapps2.rrc.texas.gov",
+      "accessed_at": "2026-08-23T22:59:51Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://webapps2.rrc.texas.gov/EWA/drillingPermitsQueryAction.do",
+        "content_type": "text/html; charset=UTF-8"
+      },
+      "source_location_or_paraphrase": "The official public W-1 query entry supplies current source-displayed search controls and the route used for one query attempt.",
+      "claim_scope": "The article records only criteria actually used, navigation steps that occurred, and bounded retrieval state. It does not submit a filing or reproduce an actual property query."
+    },
+    {
+      "label": "Railroad Commission of Texas, Drilling Permit Query Results Help (accessed 2026-08-23)",
+      "url": "https://webapps2.rrc.texas.gov/EWA/help/DPQuery_results_howto.htm",
+      "publisher": "webapps2.rrc.texas.gov",
+      "accessed_at": "2026-08-23T22:59:51Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://webapps2.rrc.texas.gov/EWA/help/DPQuery_results_howto.htm",
+        "content_type": "text/html; charset=UTF-8"
+      },
+      "source_location_or_paraphrase": "The official results help describes the result header, criteria display, sorting and navigation behavior, result columns, and links to additional detail pages.",
+      "claim_scope": "The article keeps result-header state, rows, and detail routes separate and rejects permit, status, operator, lease, survey, unit, property, compliance, drilling, production, and value interpretations."
+    },
+    {
+      "label": "Railroad Commission of Texas, Drilling Permits (accessed 2026-08-23)",
+      "url": "https://www.rrc.texas.gov/oil-and-gas/applications-and-permits/drilling-permits/",
+      "publisher": "www.rrc.texas.gov",
+      "accessed_at": "2026-08-23T22:59:51Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.rrc.texas.gov/oil-and-gas/applications-and-permits/drilling-permits/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The official drilling-permits page identifies application and online-filing guidance as a separate source role.",
+      "claim_scope": "The article uses that distinction only to prevent application or filing guidance from being mislabeled as a public query result. It does not teach filing, payment, amendment, approval, or compliance."
+    },
+    {
+      "label": "Railroad Commission of Texas, Drilling Permits W-1 Online Filing User Guide (accessed 2026-08-23)",
+      "url": "https://www.rrc.texas.gov/media/qqmhxxex/dpmanual.pdf",
+      "publisher": "www.rrc.texas.gov",
+      "accessed_at": "2026-08-23T22:59:51Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.rrc.texas.gov/media/qqmhxxex/dpmanual.pdf",
+        "content_type": "application/pdf"
+      },
+      "source_location_or_paraphrase": "The official W-1 user guide displays query-screen examples and states that when more than one search criterion is selected, all selected criteria must be true for a W-1 to appear in the result list.",
+      "claim_scope": "The article attaches that source instruction to the criteria snapshot so a not-located attempt is not misrepresented as proof that no permit exists. It does not use filing, fee, or application instructions."
+    }
+  ]
+}

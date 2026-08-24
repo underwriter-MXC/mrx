@@ -1,0 +1,115 @@
+{
+  "artifact_type": "mrx1000_two_image_factual_citation_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-12T16:12:35Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-12",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0117",
+  "slug": "top-five-missteps-to-avoid-for-a-successful-mineral-rights-sale",
+  "title": "Top Five Missteps to Avoid for a Successful Mineral Rights Sale",
+  "canonical_url": "https://mineralrightsxchange.com/blog/top-five-missteps-to-avoid-for-a-successful-mineral-rights-sale/",
+  "source_path": "src/content/posts/top-five-missteps-to-avoid-for-a-successful-mineral-rights-sale.mdx",
+  "input_body_sha256": "7a0adab33952fe33e85615bcb867e7ca0a049c80124835a16aff970b339d64fa",
+  "input_frontmatter_sha256": "6f4feab86266aadd04aca911b24e9588e02dacf46a13534dccba9c27b29c94b2",
+  "expected_repo_sha256": "7a0adab33952fe33e85615bcb867e7ca0a049c80124835a16aff970b339d64fa",
+  "two_image_manifest_sha256": "7a26a5a50a43d40e7671df3c26f60ea76e7c49568883844e4f8a5a0cd72d7205",
+  "reviewer_id": "codex_wave37_factual",
+  "review_run_id": "mrx1000-wave37-factual-20260812T161235Z",
+  "capability": "factual_citation",
+  "findings": [
+    "Complete current MDX SHA-256 is 7a0adab33952fe33e85615bcb867e7ca0a049c80124835a16aff970b339d64fa; all 6 declared sources passed live access review.",
+    "MRX claims remain bounded to its current FAQ, methodology, and terms; Texas recording law is expressly limited to a state-specific example; IRS claims remain general disposition concepts; and FTC guidance is identified as general document discipline from a different transaction context.",
+    "The article uses no fabricated owners, buyers, contracts, deeds, prices, acreage, ownership decimals, tax results, offers, testimonials, success rates, or owner-specific title, legal, tax, accounting, appraisal, investment, or transaction conclusions."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "minimum_three_distinct_https_sources",
+    "current_source_access_review_pass",
+    "claim_to_source_scope_present",
+    "official_primary_source_priority_pass",
+    "unsupported_high_risk_claim_scan_pass"
+  ],
+  "sources_inspected": [
+    {
+      "label": "Mineral Rights Xchange, Frequently Asked Questions (accessed 2026-08-12)",
+      "url": "https://mineralrightsxchange.com/faq/",
+      "publisher": "mineralrightsxchange.com",
+      "accessed_at": "2026-08-12T16:12:35Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://mineralrightsxchange.com/faq/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The current MRX FAQ describes a no-obligation directional underwriter assessment, not a certified valuation, and discloses that MRX may ultimately want to buy an interest.",
+      "claim_scope": "The article uses the FAQ only for MRX’s current service boundaries and provider-interest disclosure; it does not promise a result, interpret an agreement, or recommend a transaction."
+    },
+    {
+      "label": "Mineral Rights Xchange, Published DCF Methodology (accessed 2026-08-12)",
+      "url": "https://mineralrightsxchange.com/methodology/",
+      "publisher": "mineralrightsxchange.com",
+      "accessed_at": "2026-08-12T16:12:35Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://mineralrightsxchange.com/methodology/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The current MRX methodology separates a directional asset range from actual buyer offers and expected owner net, and requires dated inputs, assumptions, and limitations.",
+      "claim_scope": "The article uses the methodology only to distinguish property evidence, a directional range, complete proposal terms, and owner net; it does not value a specific interest, establish legal rights, or predict a transaction result."
+    },
+    {
+      "label": "Mineral Rights Xchange, Terms of Use (accessed 2026-08-12)",
+      "url": "https://mineralrightsxchange.com/terms/",
+      "publisher": "mineralrightsxchange.com",
+      "accessed_at": "2026-08-12T16:12:35Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://mineralrightsxchange.com/terms/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The current MRX terms state that website information is educational and not legal, tax, financial, investment, engineering, or certified appraisal advice.",
+      "claim_scope": "The article uses the terms only to preserve educational and professional boundaries; it does not use them to interpret a buyer contract or determine an owner’s rights."
+    },
+    {
+      "label": "Texas Legislature, Property Code Chapter 12, Recording of Instruments (accessed 2026-08-12)",
+      "url": "https://statutes.capitol.texas.gov/?artSec=12.001&chapter=PR.12&code=PR&tab=1",
+      "publisher": "statutes.capitol.texas.gov",
+      "accessed_at": "2026-08-12T16:12:35Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://statutes.capitol.texas.gov/?artSec=12.001&chapter=PR.12&code=PR&tab=1",
+        "content_type": "text/html"
+      },
+      "source_location_or_paraphrase": "Texas Property Code Chapter 12 provides a state-specific example of formal requirements associated with recording instruments concerning real or personal property.",
+      "claim_scope": "The article uses Chapter 12 only to show why deed, acknowledgment, delivery, and recording instructions deserve attorney review in a Texas transaction; it does not extend Texas law elsewhere or claim that recordability proves validity, title, authority, delivery, consideration, priority, or an owner-specific result."
+    },
+    {
+      "label": "Internal Revenue Service, Publication 544, Sales and Other Dispositions of Assets (accessed 2026-08-12)",
+      "url": "https://www.irs.gov/publications/p544",
+      "publisher": "www.irs.gov",
+      "accessed_at": "2026-08-12T16:12:35Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.irs.gov/publications/p544",
+        "content_type": "text/html; charset=UTF-8"
+      },
+      "source_location_or_paraphrase": "IRS Publication 544 explains that gain or loss on a sale or other disposition generally depends on the amount realized and adjusted basis, with treatment depending on the property and transaction facts.",
+      "claim_scope": "The article uses the publication only to distinguish gross consideration from owner net and to prompt a transaction-specific tax handoff; it does not classify an owner’s asset, calculate basis, gain, loss, tax, or filing treatment."
+    },
+    {
+      "label": "Federal Trade Commission, How To Avoid a Home Improvement Scam (accessed 2026-08-12)",
+      "url": "https://consumer.ftc.gov/articles/how-avoid-home-improvement-scam",
+      "publisher": "consumer.ftc.gov",
+      "accessed_at": "2026-08-12T16:12:35Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://consumer.ftc.gov/articles/how-avoid-home-improvement-scam",
+        "content_type": "text/html; charset=UTF-8"
+      },
+      "source_location_or_paraphrase": "In a different consumer-transaction context, the FTC advises reading a completed contract, avoiding blank spaces, resisting pressure, and retaining signed copies.",
+      "claim_scope": "The article cites this source only as general document-control discipline. It is not mineral-sale law, does not interpret a mineral agreement, and does not establish any owner’s rights or remedies."
+    }
+  ]
+}

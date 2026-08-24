@@ -1,0 +1,120 @@
+{
+  "artifact_type": "mrx1000_two_image_factual_citation_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-23T00:27:25Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-14",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-1001",
+  "slug": "robertson-county-mineral-rights-public-record-locator",
+  "title": "How to Build a Robertson County Mineral Rights Public-Record Locator",
+  "canonical_url": "https://mineralrightsxchange.com/blog/robertson-county-mineral-rights-public-record-locator/",
+  "source_path": "src/content/posts/robertson-county-mineral-rights-public-record-locator.mdx",
+  "input_body_sha256": "3a7725e9dcfb9d70e89e7c5705574ccc3476d1d85797b4aeb265d5e7a1193d0f",
+  "input_frontmatter_sha256": "6bea9bc0c7ecac39acd8d248d02309f5a8e7ad5a3ddac30ec5a960ce9acb5015",
+  "expected_repo_sha256": "3a7725e9dcfb9d70e89e7c5705574ccc3476d1d85797b4aeb265d5e7a1193d0f",
+  "two_image_manifest_sha256": "8de5e5cda69e337c34bb473803f1bb31c1aae53e96426085798d0b55709a033a",
+  "visual_metadata": {
+    "hero_alt": "Owner and researcher organize a locator beside “How to Build a Robertson County Mineral Rights Public-Record Locator”.",
+    "social_alt": "Owner and researcher organize a locator beside “How to Build a Robertson County Mineral Rights Public-Record Locator”.",
+    "inline_alt": "Three separate public-record source groups surround a blank locator above “Robertson County mineral rights public records”."
+  },
+  "reviewer_id": "codex_wave73_factual",
+  "review_run_id": "mrx1000-wave73-factual-20260823T002725Z",
+  "capability": "factual_citation",
+  "findings": [
+    "Complete current MDX SHA-256 is 3a7725e9dcfb9d70e89e7c5705574ccc3476d1d85797b4aeb265d5e7a1193d0f; all 6 declared sources passed current access review.",
+    "Claims remain bounded to the public-record scope of the Robertson County Clerk, Texas General Land Office, Railroad Commission research and GIS systems, and Texas Property Code recording context. No source is converted into a title, ownership, acreage, legal-description, lease, payment, production, value, offer, or transaction conclusion.",
+    "The article invents no real owner, heir, instrument, abstract, survey, operator, well, lease, map result, property, payment, offer, transaction, price, testimonial, success rate, or owner-specific legal, tax, accounting, title, appraisal, engineering, investment, or transaction conclusion."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "minimum_three_distinct_https_sources",
+    "current_source_access_review_pass",
+    "claim_to_source_scope_present",
+    "official_and_first_party_source_priority_pass",
+    "unsupported_high_risk_claim_scan_pass"
+  ],
+  "sources_inspected": [
+    {
+      "label": "Railroad Commission of Texas, Online Research Queries (accessed 2026-08-22)",
+      "url": "https://www.rrc.texas.gov/resource-center/research/research-queries/",
+      "publisher": "www.rrc.texas.gov",
+      "accessed_at": "2026-08-23T00:27:25Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.rrc.texas.gov/resource-center/research/research-queries/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The Railroad Commission of Texas research-query directory identifies official online production, permit, well, imaged-record, organization, and GIS systems and states that its online data is informational rather than authoritative legal evidence.",
+      "claim_scope": "The article uses the directory only to locate regulatory research systems and does not convert an online result into proof of title, ownership, acreage, payment rights, legal effect, value, or a transaction decision."
+    },
+    {
+      "label": "Railroad Commission of Texas, Oil and Gas Well Records (accessed 2026-08-22)",
+      "url": "https://www.rrc.texas.gov/oil-and-gas/research-and-statistics/obtaining-commission-records/oil-and-gas-well-records/",
+      "publisher": "www.rrc.texas.gov",
+      "accessed_at": "2026-08-23T00:27:25Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.rrc.texas.gov/oil-and-gas/research-and-statistics/obtaining-commission-records/oil-and-gas-well-records/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The Railroad Commission well-record page lists search fields including county, drilling date, lease or well name and number, operator, field or reservoir, Commission identifiers, and survey or abstract location details.",
+      "claim_scope": "The article limits those fields to locating regulatory record leads and expressly excludes private title, royalty entitlement, payment accuracy, lease interpretation, and ownership conclusions."
+    },
+    {
+      "label": "Railroad Commission of Texas, Public GIS Viewer (accessed 2026-08-22)",
+      "url": "https://www.rrc.texas.gov/resource-center/research/gis-viewer/",
+      "publisher": "www.rrc.texas.gov",
+      "accessed_at": "2026-08-23T00:27:25Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.rrc.texas.gov/resource-center/research/gis-viewer/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The Railroad Commission GIS page describes a map-based regulatory locator and warns that displayed information may be approximate, unsuitable for legal, engineering, or surveying purposes, and without legal force.",
+      "claim_scope": "The article uses the viewer only to preserve a map-linked identifier for follow-up and does not treat mapped boundaries or proximity as a survey, legal description, tract match, title finding, acreage fact, or value conclusion."
+    },
+    {
+      "label": "Texas General Land Office, Land Grant Database (accessed 2026-08-22)",
+      "url": "https://www.glo.texas.gov/archives-heritage/search-our-collections/land-grant-search",
+      "publisher": "www.glo.texas.gov",
+      "accessed_at": "2026-08-23T00:27:25Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.glo.texas.gov/archives-heritage/search-our-collections/land-grant-search",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The Texas General Land Office Land Grant Database exposes archive search fields such as county, abstract, original grantee, patentee, file or certificate number, patent information, and survey or block.",
+      "claim_scope": "The article treats a returned land-grant identifier only as a historical archive lead and does not use it to establish a present chain of title, severance, reservation, ownership, acreage, or property match."
+    },
+    {
+      "label": "Robertson County, County Clerk (accessed 2026-08-22)",
+      "url": "https://www.co.robertson.tx.us/page/robertson.County.Clerk",
+      "publisher": "www.co.robertson.tx.us",
+      "accessed_at": "2026-08-23T00:27:25Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.co.robertson.tx.us/page/robertson.County.Clerk",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The official Robertson County Clerk page identifies the county office and links to the current Texas Land Records search channel.",
+      "claim_scope": "The article uses the page only as the county-record starting point and treats any displayed instrument reference as a research lead, not the complete instrument, a valid conveyance, or proof of current ownership."
+    },
+    {
+      "label": "Texas Property Code, Chapter 12, Recording of Instruments (accessed 2026-08-22)",
+      "url": "https://statutes.capitol.texas.gov/Docs/PR/pdf/PR.12.pdf",
+      "publisher": "statutes.capitol.texas.gov",
+      "accessed_at": "2026-08-23T00:27:25Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://statutes.capitol.texas.gov/Docs/PR/pdf/PR.12.pdf",
+        "content_type": "text/html"
+      },
+      "source_location_or_paraphrase": "Texas Property Code Chapter 12 supplies the state statutory context for recording instruments.",
+      "claim_scope": "The article cites that context only to explain why the full recorded instrument matters and makes no owner-specific claim about recordability, validity, legal effect, title, or what a Robertson County instrument means."
+    }
+  ]
+}

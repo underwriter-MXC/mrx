@@ -1,0 +1,49 @@
+{
+  "artifact_type": "mrx1000_two_image_compliance_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-15T06:01:08Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-14",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0145",
+  "slug": "how-to-build-a-mineral-rights-sale-document-package-index",
+  "title": "How to Build a Mineral Rights Sale Document Package Index",
+  "canonical_url": "https://mineralrightsxchange.com/blog/how-to-build-a-mineral-rights-sale-document-package-index/",
+  "source_path": "src/content/posts/how-to-build-a-mineral-rights-sale-document-package-index.mdx",
+  "input_body_sha256": "7897d79c0254549b845aec628079e38e09dee6e96c0723fe32201ca9553bba33",
+  "input_frontmatter_sha256": "af77cd85df3a6ed9f30dbca2e02ce0760ec520ff13fe74106ae2c4b596cf1452",
+  "expected_repo_sha256": "7897d79c0254549b845aec628079e38e09dee6e96c0723fe32201ca9553bba33",
+  "two_image_manifest_sha256": "3f195b924b26a4ec7804db2d684483d6bc1dba4b74c1b39ba4b625d689a15433",
+  "visual_metadata": {
+    "hero_alt": "An open document binder and page stack appear beside “How to Build a Mineral Rights Sale Document Package Index”.",
+    "social_alt": "An open document binder and page stack appear beside “How to Build a Mineral Rights Sale Document Package Index”.",
+    "inline_alt": "Organized document folders and tabs appear above “Mineral Rights Sale Package Index”."
+  },
+  "reviewer_id": "codex_wave65_compliance",
+  "review_run_id": "mrx1000-wave65-compliance-20260815T060108Z",
+  "capability": "compliance",
+  "expected_hero_sha256": "e9fc719c0d361b3df1bd5f67310883da56aaca9552ece1a680cfdbf24a7fbb0a",
+  "expected_inline_sha256": "51c7edc9faf536b837c501daaea84a06742d1a3fe8b270e7a2141e096419af9a",
+  "findings": [
+    "Complete current MDX SHA-256 is 7897d79c0254549b845aec628079e38e09dee6e96c0723fe32201ca9553bba33; hero/share and inline image hashes are separately locked.",
+    "The article states educational and professional boundaries, discloses possible MRX buyer interest, preserves owner agency, and makes no owner-specific title, acreage, value, fairness, buyer, contract, legal, tax, suitability, investment, or transaction conclusion.",
+    "Image text is limited to the exact article title and approved package-index phrase and adds no account data, property identifier, amount, date, equation, official seal, title conclusion, value conclusion, recommendation, offer, guarantee, buyer endorsement, or transaction result."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "hero_share_sha256_identity",
+    "inline_image_distinct_sha256",
+    "exact_text_ocr_pass",
+    "filename_text_identity_pass",
+    "educational_and_professional_boundaries_preserved",
+    "owner_agency_and_possible_buyer_interest_disclosure_preserved",
+    "no_unsupported_visual_or_decision_claims"
+  ],
+  "sources_inspected": [
+    "src/content/posts/how-to-build-a-mineral-rights-sale-document-package-index.mdx",
+    "/assets/articles/hero/how-to-build-a-mineral-rights-sale-document-package-index.webp",
+    "/assets/articles/inline/how-to-build-a-mineral-rights-sale-document-package-index/mineral-rights-sale-package-index.webp"
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "artifact_type": "mrx1000_two_image_factual_citation_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-11T22:44:38Z",
+  "decision_authority": {
+    "source": "Daryl owner directive, 2026-08-11",
+    "policy": "MRX two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0885",
+  "slug": "what-is-an-oil-and-gas-lease-and-how-does-it-affect-your-mineral-rights",
+  "title": "What Is an Oil and Gas Lease and How Does It Affect Your Mineral Rights?",
+  "canonical_url": "https://mineralrightsxchange.com/blog/what-is-an-oil-and-gas-lease-and-how-does-it-affect-your-mineral-rights/",
+  "source_path": "src/content/posts/what-is-an-oil-and-gas-lease-and-how-does-it-affect-your-mineral-rights.mdx",
+  "input_body_sha256": "860349a7fe4c17108ca1353a0755d547251ed1eef3a9969340cb840753cd09e3",
+  "input_frontmatter_sha256": "a186b9212f4e50209032098880d5e60e9ab2567ad77694b3b2afa23beb15dc92",
+  "expected_repo_sha256": "860349a7fe4c17108ca1353a0755d547251ed1eef3a9969340cb840753cd09e3",
+  "two_image_manifest_sha256": "802512b5dab8eae7592be5934f97a6a8989125fb8f65d3f37ee3cdeb2d35dc10",
+  "reviewer_id": "codex_two_image_factual",
+  "review_run_id": "mrx1000-two-image-retrofit-20260811T224438Z",
+  "capability": "factual_citation",
+  "findings": [
+    "Complete current MDX SHA-256 is 860349a7fe4c17108ca1353a0755d547251ed1eef3a9969340cb840753cd09e3; all 4 declared sources passed live access review.",
+    "The retrofit changes image metadata and assets, not the bounded claim-to-source relationships in the article body.",
+    "The two images make no fabricated numeric, legal, tax, valuation, testimonial, or document claims."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "minimum_two_distinct_https_sources",
+    "current_source_access_review_pass",
+    "two_image_unsupported_claim_scan_pass"
+  ],
+  "sources_inspected": [
+    {
+      "label": "Texas General Land Office mineral leasing overview (accessed 2026-08-06)",
+      "url": "https://www.glo.texas.gov/energy/mineral-leasing-overview",
+      "publisher": "www.glo.texas.gov",
+      "accessed_at": "2026-08-11T22:44:38Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.glo.texas.gov/energy/mineral-leasing-overview",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The article cites Texas General Land Office mineral leasing overview (accessed 2026-08-06) only for the bounded context attributed in its body and source notes.",
+      "claim_scope": "Owner-specific legal, tax, title, accounting, brokerage, engineering, appraisal, eligibility, value, and transaction conclusions remain outside this source use."
+    },
+    {
+      "label": "Texas General Land Office leasing resources (accessed 2026-08-06)",
+      "url": "https://www.glo.texas.gov/energy/mineral-leasing/leasing",
+      "publisher": "www.glo.texas.gov",
+      "accessed_at": "2026-08-11T22:44:38Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.glo.texas.gov/energy/mineral-leasing/leasing",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The article cites Texas General Land Office leasing resources (accessed 2026-08-06) only for the bounded context attributed in its body and source notes.",
+      "claim_scope": "Owner-specific legal, tax, title, accounting, brokerage, engineering, appraisal, eligibility, value, and transaction conclusions remain outside this source use."
+    },
+    {
+      "label": "Texas General Land Office lease-maintenance resources (accessed 2026-08-06)",
+      "url": "https://www.glo.texas.gov/energy/mineral-leasing/lease-maintenance",
+      "publisher": "www.glo.texas.gov",
+      "accessed_at": "2026-08-11T22:44:38Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.glo.texas.gov/energy/mineral-leasing/lease-maintenance",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The article cites Texas General Land Office lease-maintenance resources (accessed 2026-08-06) only for the bounded context attributed in its body and source notes.",
+      "claim_scope": "Owner-specific legal, tax, title, accounting, brokerage, engineering, appraisal, eligibility, value, and transaction conclusions remain outside this source use."
+    },
+    {
+      "label": "Texas Railroad Commission royalties FAQ (accessed 2026-08-06)",
+      "url": "https://www.rrc.texas.gov/about-us/faqs/royalties-faq/",
+      "publisher": "www.rrc.texas.gov",
+      "accessed_at": "2026-08-11T22:44:38Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.rrc.texas.gov/about-us/faqs/royalties-faq/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The article cites Texas Railroad Commission royalties FAQ (accessed 2026-08-06) only for the bounded context attributed in its body and source notes.",
+      "claim_scope": "Owner-specific legal, tax, title, accounting, brokerage, engineering, appraisal, eligibility, value, and transaction conclusions remain outside this source use."
+    }
+  ]
+}

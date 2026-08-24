@@ -1,0 +1,115 @@
+{
+  "artifact_type": "mrx1000_two_image_factual_citation_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-12T07:45:54Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-11",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0178",
+  "slug": "essential-steps-to-assess-the-value-of-your-mineral-rights-accurately-and-confidently",
+  "title": "Essential Steps to Assess the Value of Your Mineral Rights Accurately and Confidently",
+  "canonical_url": "https://mineralrightsxchange.com/blog/essential-steps-to-assess-the-value-of-your-mineral-rights-accurately-and-confidently/",
+  "source_path": "src/content/posts/essential-steps-to-assess-the-value-of-your-mineral-rights-accurately-and-confidently.mdx",
+  "input_body_sha256": "e06ecd5b7eb29b4ffa10fb57c86636e89f6263cf236c64fa528026a69ac51a86",
+  "input_frontmatter_sha256": "44264d62ecfe65d211e9829f715cd3d2b8e2ac7d1d77adc1e19631c6c3eef10c",
+  "expected_repo_sha256": "e06ecd5b7eb29b4ffa10fb57c86636e89f6263cf236c64fa528026a69ac51a86",
+  "two_image_manifest_sha256": "afe12c0ce53ddcae95df1d6ad0a3c200fd4796f43acb6e86ff5b15716a41561f",
+  "reviewer_id": "codex_wave20_factual",
+  "review_run_id": "mrx1000-wave20-factual-20260812T074554Z",
+  "capability": "factual_citation",
+  "findings": [
+    "Complete current MDX SHA-256 is e06ecd5b7eb29b4ffa10fb57c86636e89f6263cf236c64fa528026a69ac51a86; all 6 declared official sources passed live access review.",
+    "Regulatory production, query, GIS, public property-appraisal, and commodity benchmark claims remain bounded to their official government sources and stated limitations.",
+    "The article uses no fabricated owners, wells, leases, production, forecasts, prices, costs, ownership decimals, reserves, transaction values, market evidence, testimonials, or owner-specific title, legal, tax, surveying, investment, reserve, engineering, or valuation conclusions."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "minimum_three_distinct_https_sources",
+    "current_source_access_review_pass",
+    "claim_to_source_scope_present",
+    "official_primary_source_priority_pass",
+    "unsupported_high_risk_claim_scan_pass"
+  ],
+  "sources_inspected": [
+    {
+      "label": "Railroad Commission of Texas, Oil and Gas Production Data (accessed 2026-08-11)",
+      "url": "https://www.rrc.texas.gov/oil-and-gas/research-and-statistics/production-data/",
+      "publisher": "www.rrc.texas.gov",
+      "accessed_at": "2026-08-12T07:45:54Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.rrc.texas.gov/oil-and-gas/research-and-statistics/production-data/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The Railroad Commission of Texas publishes production compilations and summaries based on information reported to the Commission by operators and provides multiple production-query and download paths.",
+      "claim_scope": "The article uses the page to identify a public regulatory production source and does not treat reported production as proof of title, a complete owner cash flow, a reserve report, a forecast, or market value."
+    },
+    {
+      "label": "Railroad Commission of Texas, Production Data Query System FAQs (accessed 2026-08-11)",
+      "url": "https://www.rrc.texas.gov/about-us/faqs/oil-gas-faq/production-data-query-system-faqs/",
+      "publisher": "www.rrc.texas.gov",
+      "accessed_at": "2026-08-12T07:45:54Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.rrc.texas.gov/about-us/faqs/oil-gas-faq/production-data-query-system-faqs/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The Railroad Commission explains that Texas oil production may be reported at the lease level, online production information has a reporting lag, and records can change as corrected, revised, or delinquent reports arrive.",
+      "claim_scope": "The article uses these limitations to bound production-history work and does not infer individual-well volumes, payment ownership, title, or future production from a regulatory record."
+    },
+    {
+      "label": "Railroad Commission of Texas, Research Queries (accessed 2026-08-11)",
+      "url": "https://www.rrc.texas.gov/resource-center/research/research-queries/",
+      "publisher": "www.rrc.texas.gov",
+      "accessed_at": "2026-08-12T07:45:54Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.rrc.texas.gov/resource-center/research/research-queries/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The Railroad Commission lists public research paths for production, permits, well records, GIS, imaged records, operator information, and related oil-and-gas data, and states that the datasets are informational and continually updated.",
+      "claim_scope": "The article uses the query catalog only as an evidence-discovery map and preserves the Commission boundary that online datasets are not authoritative legal records and require user verification for accuracy, completeness, currency, and suitability."
+    },
+    {
+      "label": "Railroad Commission of Texas, Public GIS Viewer (accessed 2026-08-11)",
+      "url": "https://www.rrc.texas.gov/resource-center/research/gis-viewer/",
+      "publisher": "www.rrc.texas.gov",
+      "accessed_at": "2026-08-12T07:45:54Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.rrc.texas.gov/resource-center/research/gis-viewer/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The Railroad Commission Public GIS Viewer provides map context for oil, gas, pipeline, survey, lease, and well information and warns that mapped boundaries can be approximate and are not authoritative legal, engineering, or surveying records.",
+      "claim_scope": "The article uses GIS only for location and regulatory context and does not infer title, exact boundaries, legal descriptions, surveying conclusions, development certainty, or owner-specific value from the map."
+    },
+    {
+      "label": "Texas Comptroller, Valuing Property (accessed 2026-08-11)",
+      "url": "https://comptroller.texas.gov/taxes/property-tax/valuing-property.php",
+      "publisher": "comptroller.texas.gov",
+      "accessed_at": "2026-08-12T07:45:54Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://comptroller.texas.gov/taxes/property-tax/valuing-property.php",
+        "content_type": "text/html; charset=UTF-8"
+      },
+      "source_location_or_paraphrase": "The Texas Comptroller describes the sales-comparison, income, and cost approaches and explains that the income approach estimates the present worth of anticipated future benefits.",
+      "claim_scope": "The article preserves the public property-tax context and does not present the page as a private-sale formula, professional appraisal, title conclusion, or owner-specific value."
+    },
+    {
+      "label": "U.S. Energy Information Administration, Spot Prices for Crude Oil and Petroleum Products (accessed 2026-08-11)",
+      "url": "https://www.eia.gov/dnav/pet/pet_pri_spt_s1_d.htm",
+      "publisher": "www.eia.gov",
+      "accessed_at": "2026-08-12T07:45:54Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.eia.gov/dnav/pet/pet_pri_spt_s1_d.htm",
+        "content_type": "text/html"
+      },
+      "source_location_or_paraphrase": "The U.S. Energy Information Administration publishes dated crude-oil and petroleum-product spot-price series with definitions, source notes, and historical downloads.",
+      "claim_scope": "The article uses EIA spot prices only as dated benchmark context and does not treat a benchmark as the owner’s realized price, a future price forecast, or an owner-specific valuation conclusion."
+    }
+  ]
+}

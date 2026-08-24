@@ -1,0 +1,43 @@
+{
+  "artifact_type": "mrx1000_two_image_compliance_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-12T06:50:25Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-11",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0176",
+  "slug": "depth-severances-and-formation-rights-in-mineral-valuation",
+  "title": "Depth Severances and Formation Rights in Mineral Valuation",
+  "canonical_url": "https://mineralrightsxchange.com/blog/depth-severances-and-formation-rights-in-mineral-valuation/",
+  "source_path": "src/content/posts/depth-severances-and-formation-rights-in-mineral-valuation.mdx",
+  "input_body_sha256": "61ce051f7f3f5e475dd9a2d1f39697db83d28fd99f23b1636a9963581464d807",
+  "input_frontmatter_sha256": "f798f3a0740f0d0490d4ad2a2780a43a0d85beb754d1b2d354997c2257002aa9",
+  "expected_repo_sha256": "61ce051f7f3f5e475dd9a2d1f39697db83d28fd99f23b1636a9963581464d807",
+  "two_image_manifest_sha256": "15822b0988960d4122065bc7dfeefd42d59228453a05db98bba98a6a4cc82ff1",
+  "reviewer_id": "codex_wave18_compliance",
+  "review_run_id": "mrx1000-wave18-compliance-20260812T065025Z",
+  "capability": "compliance",
+  "expected_hero_sha256": "0cff9f62a5d39bc81fac9749d288e7d263285de39d0b86a48efedce3bfea7da9",
+  "expected_inline_sha256": "15451304bb4c8aee5fcd06d61b87bafa791af989873bb6d7d45c58c27f4aa211",
+  "findings": [
+    "Complete current MDX SHA-256 is 61ce051f7f3f5e475dd9a2d1f39697db83d28fd99f23b1636a9963581464d807; hero/share and inline image hashes are separately locked.",
+    "The article states educational and professional boundaries, discloses MRX’s potential economic interest, and avoids title or legal opinions, lease-status conclusions, reserve claims, engineering guarantees, unsupported precision, double counting, or an owner-specific value conclusion.",
+    "Image text is limited to the exact article title and an authorized supporting keyword and adds no owner, instrument, legal description, depth, formation, well, reserve, production, price, percentage, dispute, or valuation conclusion."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "hero_share_sha256_identity",
+    "inline_image_distinct_sha256",
+    "exact_text_ocr_pass",
+    "filename_text_identity_pass",
+    "educational_and_professional_boundaries_preserved",
+    "no_unsupported_visual_or_payment_claims"
+  ],
+  "sources_inspected": [
+    "src/content/posts/depth-severances-and-formation-rights-in-mineral-valuation.mdx",
+    "/assets/articles/hero/depth-severances-and-formation-rights-in-mineral-valuation.webp",
+    "/assets/articles/inline/depth-severances-and-formation-rights-in-mineral-valuation/depth-severance-formation-rights-valuation.webp"
+  ]
+}

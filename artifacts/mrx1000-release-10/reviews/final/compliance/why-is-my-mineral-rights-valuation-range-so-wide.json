@@ -1,0 +1,48 @@
+{
+  "artifact_type": "mrx1000_two_image_compliance_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-14T15:20:32Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-11",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0138",
+  "slug": "why-is-my-mineral-rights-valuation-range-so-wide",
+  "title": "Why Is My Mineral Rights Valuation Range So Wide?",
+  "canonical_url": "https://mineralrightsxchange.com/blog/why-is-my-mineral-rights-valuation-range-so-wide/",
+  "source_path": "src/content/posts/why-is-my-mineral-rights-valuation-range-so-wide.mdx",
+  "input_body_sha256": "2b34c65487109e3b907a57a8ed30ef3b7a807ddd002a60f240e7b45e9d7078ea",
+  "input_frontmatter_sha256": "53cf3e6f055c0ee157a40f1bce371686a0280dcc3e301e395eee1a2fdd57a5d9",
+  "expected_repo_sha256": "2b34c65487109e3b907a57a8ed30ef3b7a807ddd002a60f240e7b45e9d7078ea",
+  "two_image_manifest_sha256": "5b20218b333d3d208085d66b525c0f3d2bcce45a0c2db75499dfa5db9ecb3ab9",
+  "visual_metadata": {
+    "hero_alt": "Two people review a fan-shaped valuation chart beside “Why Is My Mineral Rights Valuation Range So Wide?”.",
+    "social_alt": "Two people review a fan-shaped valuation chart beside “Why Is My Mineral Rights Valuation Range So Wide?”.",
+    "inline_alt": "Hands arrange map and data tiles around “What Makes a Mineral Rights Valuation Range Wider or Narrower?”."
+  },
+  "reviewer_id": "codex_wave58_compliance",
+  "review_run_id": "mrx1000-wave58-compliance-20260814T152032Z",
+  "capability": "compliance",
+  "expected_hero_sha256": "127dbe4851bf1fadca87cbf97114f8eeb90c92dddf7020ec62508f7e03290e2d",
+  "expected_inline_sha256": "b286d5cb03a0f5336d8a4c142dabce4cb0eb7f1a223d0b9d9ca192806a9a67c5",
+  "findings": [
+    "Complete current MDX SHA-256 is 2b34c65487109e3b907a57a8ed30ef3b7a807ddd002a60f240e7b45e9d7078ea; hero/share and inline image hashes are separately locked.",
+    "The article states educational and professional boundaries, separates six endpoint-driver lanes, labels supported, derived, assumed, conflicted, missing, and professional-review-needed fields, preserves identity conflicts, discloses possible MRX buyer interest, and makes no owner-specific title, authority, value, legal, tax, investment, appraisal, or transaction conclusion.",
+    "Image text is limited to the exact article title and exact canonical keyword and adds no owner data, property identifier, price, percentage, buyer endorsement, title conclusion, valuation conclusion, tax result, guarantee, or transaction conclusion."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "hero_share_sha256_identity",
+    "inline_image_distinct_sha256",
+    "exact_text_ocr_pass",
+    "filename_text_identity_pass",
+    "educational_and_professional_boundaries_preserved",
+    "no_unsupported_visual_or_valuation_claims"
+  ],
+  "sources_inspected": [
+    "src/content/posts/why-is-my-mineral-rights-valuation-range-so-wide.mdx",
+    "/assets/articles/hero/why-is-my-mineral-rights-valuation-range-so-wide.webp",
+    "/assets/articles/inline/why-is-my-mineral-rights-valuation-range-so-wide/what-makes-a-mineral-rights-valuation-range-wider-or-narrower.webp"
+  ]
+}

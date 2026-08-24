@@ -1,0 +1,128 @@
+{
+  "artifact_type": "mrx1000_two_image_factual_citation_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-12T12:08:59Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-12",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0187",
+  "slug": "how-much-are-mineral-rights-worth-due-diligence-step-by-step",
+  "title": "How Much Are Mineral Rights Worth: Due Diligence Step By Step",
+  "canonical_url": "https://mineralrightsxchange.com/blog/how-much-are-mineral-rights-worth-due-diligence-step-by-step/",
+  "source_path": "src/content/posts/how-much-are-mineral-rights-worth-due-diligence-step-by-step.mdx",
+  "input_body_sha256": "da6167122063ceba8043b7ea9ad3e208ccb8b525788ca5395a6dfcca3c64f371",
+  "input_frontmatter_sha256": "b39eacc273f27c7304afa09346e8b28d2d6ceb3234ca4ecb27968f16f350338c",
+  "expected_repo_sha256": "da6167122063ceba8043b7ea9ad3e208ccb8b525788ca5395a6dfcca3c64f371",
+  "two_image_manifest_sha256": "bc391d5e67ef6a4c4f546dff05635cee17287220108575f3266ee94f9d58c1c4",
+  "reviewer_id": "codex_wave29_factual",
+  "review_run_id": "mrx1000-wave29-factual-20260812T120859Z",
+  "capability": "factual_citation",
+  "findings": [
+    "Complete current MDX SHA-256 is da6167122063ceba8043b7ea9ad3e208ccb8b525788ca5395a6dfcca3c64f371; all 7 declared official sources passed live access review.",
+    "MRX methodology claims remain bounded to its current first-party page; Texas State Library claims remain bounded to county record location and availability; RRC claims remain bounded to query distinctions, record classes, reporting units, lag, and corrections; IRS claims remain bounded to the general purpose of basis and recordkeeping.",
+    "The article uses no fabricated owners, deeds, wells, permits, production, payments, prices, forecasts, acreage, ownership decimals, valuation ranges, testimonials, or owner-specific title, legal, tax, accounting, engineering, investment, reserve, or valuation conclusions."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "minimum_three_distinct_https_sources",
+    "current_source_access_review_pass",
+    "claim_to_source_scope_present",
+    "official_primary_source_priority_pass",
+    "unsupported_high_risk_claim_scan_pass"
+  ],
+  "sources_inspected": [
+    {
+      "label": "Mineral Rights Xchange, Published DCF Methodology (accessed 2026-08-12)",
+      "url": "https://mineralrightsxchange.com/methodology/",
+      "publisher": "mineralrightsxchange.com",
+      "accessed_at": "2026-08-12T12:08:59Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://mineralrightsxchange.com/methodology/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The current MRX methodology identifies production history, decline context, operator evidence, royalty terms, commodity assumptions, discount rate, title and acreage, and any offer terms as dated inputs to a directional range with assumptions stated.",
+      "claim_scope": "The article uses the methodology to order the evidence, assumption, scenario, sensitivity, exclusion, and handoff checks behind a directional range; it does not certify a value, prove title or reserves, guarantee an outcome, or recommend a transaction."
+    },
+    {
+      "label": "Texas State Library, Land and Property History Research (accessed 2026-08-12)",
+      "url": "https://www.tsl.texas.gov/ref/propertyresearch",
+      "publisher": "www.tsl.texas.gov",
+      "accessed_at": "2026-08-12T12:08:59Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.tsl.texas.gov/ref/propertyresearch",
+        "content_type": "text/html; charset=UTF-8"
+      },
+      "source_location_or_paraphrase": "The Texas State Library explains that real-property records including deeds, surveys, liens, and tax records are maintained by the county where the property is located and that online and older-record availability varies.",
+      "claim_scope": "The article uses that guidance to identify the county-record source class in the ownership-evidence step; it does not claim that one record or online search proves chain of title, reservations, legal effect, or owner-specific ownership."
+    },
+    {
+      "label": "Railroad Commission of Texas, Online Research Queries (accessed 2026-08-12)",
+      "url": "https://www.rrc.texas.gov/resource-center/research/research-queries/",
+      "publisher": "www.rrc.texas.gov",
+      "accessed_at": "2026-08-12T12:08:59Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.rrc.texas.gov/resource-center/research/research-queries/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The RRC research-query directory provides official routes for production, drilling permits, completions, wellbores, and related oil-and-gas records and identifies update cadences for several systems.",
+      "claim_scope": "The article uses the directory to identify record classes and workflow order; it does not claim that the presence of a query result proves an interest match, ownership, payment entitlement, reserves, future production, or value."
+    },
+    {
+      "label": "Railroad Commission of Texas, About Oil and Gas Data Queries (accessed 2026-08-12)",
+      "url": "https://www.rrc.texas.gov/resource-center/research/research-queries/about-oil-gas-data-queries/",
+      "publisher": "www.rrc.texas.gov",
+      "accessed_at": "2026-08-12T12:08:59Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.rrc.texas.gov/resource-center/research/research-queries/about-oil-gas-data-queries/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The RRC data-query guide explains that each query is one slice of a larger system, a wellbore may contain one or more completions, and wellbore, completion, lease, permit, field, operator, and API identifiers support different searches.",
+      "claim_scope": "The article uses those distinctions to build a match-key sheet and prevent unsupported joins; it does not infer an owner interest, tract match, payment, reserves, development outcome, or value from one identifier."
+    },
+    {
+      "label": "Railroad Commission of Texas, Oil and Gas Well Records (accessed 2026-08-12)",
+      "url": "https://www.rrc.texas.gov/oil-and-gas/research-and-statistics/obtaining-commission-records/oil-and-gas-well-records/",
+      "publisher": "www.rrc.texas.gov",
+      "accessed_at": "2026-08-12T12:08:59Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.rrc.texas.gov/oil-and-gas/research-and-statistics/obtaining-commission-records/oil-and-gas-well-records/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The RRC well-records guide describes records spanning drilling-permit applications, completion reports, plugging reports, plats, logs, and other documents and lists match fields used to request or search those records.",
+      "claim_scope": "The article uses the guide to order development-evidence classification from application through later observed records; it does not equate a permit, completion filing, nearby record, or wellbore with production, economics, owner participation, or value."
+    },
+    {
+      "label": "Railroad Commission of Texas, Production Data Query System FAQs (accessed 2026-08-12)",
+      "url": "https://www.rrc.texas.gov/about-us/faqs/oil-gas-faq/production-data-query-system-faqs/",
+      "publisher": "www.rrc.texas.gov",
+      "accessed_at": "2026-08-12T12:08:59Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.rrc.texas.gov/about-us/faqs/oil-gas-faq/production-data-query-system-faqs/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The RRC production FAQ states that Texas production is reported by lease, online information has a two-month lag, and operator reports can later be revised, corrected, or submitted delinquently.",
+      "claim_scope": "The article uses those statements to require reporting-unit, period, lag, correction, and interest-match checks before modeling; it does not infer individual-well allocation, title, payment entitlement, reserves, future production, or value."
+    },
+    {
+      "label": "Internal Revenue Service, Publication 551, Basis of Assets (accessed 2026-08-12)",
+      "url": "https://www.irs.gov/publications/p551",
+      "publisher": "www.irs.gov",
+      "accessed_at": "2026-08-12T12:08:59Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.irs.gov/publications/p551",
+        "content_type": "text/html; charset=UTF-8"
+      },
+      "source_location_or_paraphrase": "IRS Publication 551 describes basis as an amount used for tax computations including depreciation, depletion, and gain or loss and directs taxpayers to keep records of items affecting basis.",
+      "claim_scope": "The article uses the publication only to separate basis records from a current directional value range and to require a qualified tax handoff; it does not calculate basis, gain, loss, depletion, tax liability, or an owner-specific tax result."
+    }
+  ]
+}

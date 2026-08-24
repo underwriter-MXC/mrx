@@ -1,0 +1,59 @@
+{
+  "artifact_type": "mrx1000_two_image_editorial_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-12T10:39:39Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-11",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0183",
+  "slug": "how-mineral-rights-valuation-affects-your-asset-decisions",
+  "title": "How Mineral Rights Valuation Affects Your Asset Decisions",
+  "canonical_url": "https://mineralrightsxchange.com/blog/how-mineral-rights-valuation-affects-your-asset-decisions/",
+  "source_path": "src/content/posts/how-mineral-rights-valuation-affects-your-asset-decisions.mdx",
+  "input_body_sha256": "823ea71a79ed4f43e4dc1bfe07da3222cc03f7d0370d971bf3ae9e358c9cec77",
+  "input_frontmatter_sha256": "abec18fc70d44ff25c2e39f81b305d090ac18eb37ffdd7078d79b306a9b65c5d",
+  "expected_repo_sha256": "823ea71a79ed4f43e4dc1bfe07da3222cc03f7d0370d971bf3ae9e358c9cec77",
+  "two_image_manifest_sha256": "fb35fcfd6e60cb24e9f850e4ed0dff508c9963b98d5c62e1c5e5c7f87535c0e1",
+  "reviewer_id": "codex_wave25_editorial",
+  "review_run_id": "mrx1000-wave25-editorial-20260812T103939Z",
+  "capability": "editorial",
+  "findings": [
+    "Complete current MDX SHA-256 is 823ea71a79ed4f43e4dc1bfe07da3222cc03f7d0370d971bf3ae9e358c9cec77; the answer-first article contains 2519 body tokens and five FAQs.",
+    "The article owns the valuation-to-decision translation job by separating property facts, operating evidence, model assumptions, scenario outputs, confidence, option scope, and owner criteria while comparing hold, full-transfer, partial-transfer, and gather-evidence paths without recommending one.",
+    "Exact-title hero/share OCR passed for “How Mineral Rights Valuation Affects Your Asset Decisions”; distinct in-body OCR passed for “Factors Affecting Mineral Rights Value”."
+  ],
+  "checks": [
+    {
+      "name": "complete_file_sha256_match",
+      "status": "PASS",
+      "evidence": "823ea71a79ed4f43e4dc1bfe07da3222cc03f7d0370d971bf3ae9e358c9cec77"
+    },
+    {
+      "name": "answer_first_article_depth_and_five_faqs",
+      "status": "PASS",
+      "evidence": {
+        "word_count": 2519,
+        "minimum_word_count": 700,
+        "faq_count": 5
+      }
+    },
+    {
+      "name": "two_image_exact_text_identity",
+      "status": "PASS",
+      "evidence": {
+        "hero_ocr": true,
+        "inline_ocr": true,
+        "social_reuses_hero": true,
+        "filename_identity": true,
+        "distinct_binaries": true
+      }
+    }
+  ],
+  "sources_inspected": [
+    "src/content/posts/how-mineral-rights-valuation-affects-your-asset-decisions.mdx",
+    "/assets/articles/hero/how-mineral-rights-valuation-affects-your-asset-decisions.webp",
+    "/assets/articles/inline/how-mineral-rights-valuation-affects-your-asset-decisions/factors-affecting-mineral-rights-value.webp"
+  ]
+}

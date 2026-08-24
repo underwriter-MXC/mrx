@@ -1,0 +1,62 @@
+{
+  "artifact_type": "mrx1000_two_image_editorial_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-11T22:44:38Z",
+  "decision_authority": {
+    "source": "Daryl owner directive, 2026-08-11",
+    "policy": "MRX two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0733",
+  "slug": "the-permian-basin-explained-what-texas-mineral-rights-owners-need-to-know",
+  "title": "The Permian Basin Explained: An Owner Overview",
+  "canonical_url": "https://mineralrightsxchange.com/blog/the-permian-basin-explained-what-texas-mineral-rights-owners-need-to-know/",
+  "source_path": "src/content/posts/the-permian-basin-explained-what-texas-mineral-rights-owners-need-to-know.mdx",
+  "input_body_sha256": "279b9ab2ca7a4c02e1ca549757f4aba19d9355d92f516631813a5d063a733a7f",
+  "input_frontmatter_sha256": "dbec966b6551f195a4d1a97f38b07f62d480826f6b22316ae3b848b7c1e0971a",
+  "expected_repo_sha256": "279b9ab2ca7a4c02e1ca549757f4aba19d9355d92f516631813a5d063a733a7f",
+  "two_image_manifest_sha256": "802512b5dab8eae7592be5934f97a6a8989125fb8f65d3f37ee3cdeb2d35dc10",
+  "reviewer_id": "codex_two_image_editorial",
+  "review_run_id": "mrx1000-two-image-retrofit-20260811T224438Z",
+  "capability": "editorial",
+  "findings": [
+    "Complete current MDX SHA-256 is 279b9ab2ca7a4c02e1ca549757f4aba19d9355d92f516631813a5d063a733a7f; article has 943 body tokens and five FAQs.",
+    "Exact-title hero/share OCR passed for “The Permian Basin Explained: An Owner Overview”; distinct in-body OCR passed for “the permian basin explained what texas mineral rights owners need to know”.",
+    "Both text treatments remain deterministic, descriptive, filename-matched, article-specific, and bound to the current source."
+  ],
+  "checks": [
+    {
+      "name": "complete_file_sha256_match",
+      "status": "PASS",
+      "evidence": "279b9ab2ca7a4c02e1ca549757f4aba19d9355d92f516631813a5d063a733a7f"
+    },
+    {
+      "name": "answer_first_depth_and_five_faqs",
+      "status": "PASS",
+      "evidence": {
+        "word_count": 943,
+        "minimum_word_count": 0,
+        "faq_count": 5
+      }
+    },
+    {
+      "name": "two_image_exact_text_identity",
+      "status": "PASS",
+      "evidence": {
+        "hero_path": true,
+        "social_identity": true,
+        "inline_path": true,
+        "inline_text": true,
+        "hero_ocr": true,
+        "inline_ocr": true,
+        "filename_identity": true,
+        "distinct_binaries": true
+      }
+    }
+  ],
+  "sources_inspected": [
+    "src/content/posts/the-permian-basin-explained-what-texas-mineral-rights-owners-need-to-know.mdx",
+    "/assets/articles/hero/the-permian-basin-explained-an-owner-overview.webp",
+    "/assets/articles/inline/the-permian-basin-explained-what-texas-mineral-rights-owners-need-to-know/the-permian-basin-explained-what-texas-mineral-rights-owners-need-to-know.webp"
+  ]
+}

@@ -1,0 +1,146 @@
+{
+  "artifact_type": "mrx1000_two_image_factual_citation_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-14T15:20:32Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-11",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0138",
+  "slug": "why-is-my-mineral-rights-valuation-range-so-wide",
+  "title": "Why Is My Mineral Rights Valuation Range So Wide?",
+  "canonical_url": "https://mineralrightsxchange.com/blog/why-is-my-mineral-rights-valuation-range-so-wide/",
+  "source_path": "src/content/posts/why-is-my-mineral-rights-valuation-range-so-wide.mdx",
+  "input_body_sha256": "2b34c65487109e3b907a57a8ed30ef3b7a807ddd002a60f240e7b45e9d7078ea",
+  "input_frontmatter_sha256": "53cf3e6f055c0ee157a40f1bce371686a0280dcc3e301e395eee1a2fdd57a5d9",
+  "expected_repo_sha256": "2b34c65487109e3b907a57a8ed30ef3b7a807ddd002a60f240e7b45e9d7078ea",
+  "two_image_manifest_sha256": "5b20218b333d3d208085d66b525c0f3d2bcce45a0c2db75499dfa5db9ecb3ab9",
+  "visual_metadata": {
+    "hero_alt": "Two people review a fan-shaped valuation chart beside “Why Is My Mineral Rights Valuation Range So Wide?”.",
+    "social_alt": "Two people review a fan-shaped valuation chart beside “Why Is My Mineral Rights Valuation Range So Wide?”.",
+    "inline_alt": "Hands arrange map and data tiles around “What Makes a Mineral Rights Valuation Range Wider or Narrower?”."
+  },
+  "reviewer_id": "codex_wave58_factual",
+  "review_run_id": "mrx1000-wave58-factual-20260814T152032Z",
+  "capability": "factual_citation",
+  "findings": [
+    "Complete current MDX SHA-256 is 2b34c65487109e3b907a57a8ed30ef3b7a807ddd002a60f240e7b45e9d7078ea; all 8 declared sources passed live access review.",
+    "Claims remain bounded to current RRC operator-reported production, query-identity, reporting-lag, correction, and payment-record context; EIA public commodity benchmarks; and current MRX methodology and value-education scope. The article does not turn any source into owner-specific title, authority, legal effect, reserves, future production, realized price, value, tax result, offer, or decision evidence.",
+    "The article uses no fabricated owners, properties, buyers, contracts, prices, acreage, ownership decimals, production, reserves, forecasts, tax results, offers, testimonials, success rates, or owner-specific title, legal, tax, accounting, appraisal, investment, or transaction conclusions."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "minimum_three_distinct_https_sources",
+    "current_source_access_review_pass",
+    "claim_to_source_scope_present",
+    "official_primary_source_priority_pass",
+    "unsupported_high_risk_claim_scan_pass"
+  ],
+  "sources_inspected": [
+    {
+      "label": "Railroad Commission of Texas production data (accessed 2026-08-14)",
+      "url": "https://www.rrc.texas.gov/oil-and-gas/research-and-statistics/production-data/",
+      "publisher": "www.rrc.texas.gov",
+      "accessed_at": "2026-08-14T15:20:32Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.rrc.texas.gov/oil-and-gas/research-and-statistics/production-data/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The Railroad Commission of Texas production page identifies Texas production compilations and summaries derived from operator reports.",
+      "claim_scope": "The article uses the page only for operator-reported production context; it does not prove private title, an owner decimal, realized price, reserves, future production, or value."
+    },
+    {
+      "label": "Railroad Commission of Texas Production Data Query FAQs (accessed 2026-08-14)",
+      "url": "https://www.rrc.texas.gov/about-us/faqs/oil-gas-faq/production-data-query-system-faqs/",
+      "publisher": "www.rrc.texas.gov",
+      "accessed_at": "2026-08-14T15:20:32Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.rrc.texas.gov/about-us/faqs/oil-gas-faq/production-data-query-system-faqs/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The RRC Production Data Query FAQs explain operator-reported production, Texas lease-versus-well reporting, reporting lag, and later revisions, corrections, or late filings.",
+      "claim_scope": "The article uses the page only to require retrieval dates, periods, identifiers, and version controls for public operating evidence; it does not establish owner-specific title, payment, reserves, future production, or value."
+    },
+    {
+      "label": "Railroad Commission of Texas About Oil & Gas Data Queries (accessed 2026-08-14)",
+      "url": "https://www.rrc.texas.gov/resource-center/research/research-queries/about-oil-gas-data-queries/",
+      "publisher": "www.rrc.texas.gov",
+      "accessed_at": "2026-08-14T15:20:32Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.rrc.texas.gov/resource-center/research/research-queries/about-oil-gas-data-queries/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The Railroad Commission of Texas query guide explains public oil-and-gas data identities, including API wellbore identity and lease or gas-well completion identifiers.",
+      "claim_scope": "The article uses the page only to keep record identifiers and query paths explicit; it does not resolve private ownership, title, contract effect, production entitlement, or value."
+    },
+    {
+      "label": "Railroad Commission of Texas Royalties FAQ (accessed 2026-08-14)",
+      "url": "https://www.rrc.texas.gov/about-us/faqs/royalties-faq/",
+      "publisher": "www.rrc.texas.gov",
+      "accessed_at": "2026-08-14T15:20:32Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.rrc.texas.gov/about-us/faqs/royalties-faq/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The Railroad Commission of Texas Royalties FAQ describes information associated with royalty payments and division orders and identifies paths for requesting certain lease, property, or well identifiers.",
+      "claim_scope": "The article uses the page only for payment-record fields, division-order matching, and identifier follow-up; it does not establish complete title, ownership, reserves, future production, value, or legal effect."
+    },
+    {
+      "label": "U.S. EIA crude-oil spot prices (accessed 2026-08-14)",
+      "url": "https://www.eia.gov/dnav/pet/pet_pri_spt_s1_m.htm",
+      "publisher": "www.eia.gov",
+      "accessed_at": "2026-08-14T15:20:32Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.eia.gov/dnav/pet/pet_pri_spt_s1_m.htm",
+        "content_type": "text/html"
+      },
+      "source_location_or_paraphrase": "The U.S. Energy Information Administration page publishes dated crude-oil spot-price series and their units and frequency.",
+      "claim_scope": "The article uses the page only for public benchmark context; it does not establish a property-specific realized price, differential, deduction, forecast, or value."
+    },
+    {
+      "label": "U.S. EIA natural-gas data (accessed 2026-08-14)",
+      "url": "https://www.eia.gov/naturalgas/data.php",
+      "publisher": "www.eia.gov",
+      "accessed_at": "2026-08-14T15:20:32Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.eia.gov/naturalgas/data.php",
+        "content_type": "text/html; charset=UTF-8"
+      },
+      "source_location_or_paraphrase": "The U.S. Energy Information Administration natural-gas data page provides dated public natural-gas data and price-series access.",
+      "claim_scope": "The article uses the page only for public benchmark context; it does not establish a property-specific realized price, contract, deduction, forecast, or value."
+    },
+    {
+      "label": "MRX methodology (accessed 2026-08-14)",
+      "url": "https://mineralrightsxchange.com/methodology/",
+      "publisher": "mineralrightsxchange.com",
+      "accessed_at": "2026-08-14T15:20:32Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://mineralrightsxchange.com/methodology/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The current MRX methodology describes the evidence, assumptions, scenarios, and professional limits of a directional mineral-rights review.",
+      "claim_scope": "The article uses the page only to bound a scoped directional review and its handoffs; it does not establish owner-specific title, reserves, value, legal effect, tax treatment, suitability, or a transaction result."
+    },
+    {
+      "label": "MRX mineral-rights value hub (accessed 2026-08-14)",
+      "url": "https://mineralrightsxchange.com/mineral-rights-value/",
+      "publisher": "mineralrightsxchange.com",
+      "accessed_at": "2026-08-14T15:20:32Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://mineralrightsxchange.com/mineral-rights-value/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The current MRX mineral-rights value hub describes common inputs and the educational directional-review boundary.",
+      "claim_scope": "The article uses the page only to bound general value education; it does not establish owner-specific title, reserves, value, suitability, or a transaction result."
+    }
+  ]
+}

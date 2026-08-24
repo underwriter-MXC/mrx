@@ -1,0 +1,49 @@
+{
+  "artifact_type": "mrx1000_two_image_compliance_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-15T06:51:27Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-14",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0147",
+  "slug": "how-to-choose-a-family-point-person-for-mineral-rights-inquiries",
+  "title": "How to Choose a Family Point Person for Mineral Rights Inquiries",
+  "canonical_url": "https://mineralrightsxchange.com/blog/how-to-choose-a-family-point-person-for-mineral-rights-inquiries/",
+  "source_path": "src/content/posts/how-to-choose-a-family-point-person-for-mineral-rights-inquiries.mdx",
+  "input_body_sha256": "ae5cc492ae161e65822b5ae0e300a7a10d777e783ca713ce6436b8734110bae1",
+  "input_frontmatter_sha256": "13d11f08cfa341b46515890dc959efd8ddd6e5dac606914f5d3ba91ac7953741",
+  "expected_repo_sha256": "ae5cc492ae161e65822b5ae0e300a7a10d777e783ca713ce6436b8734110bae1",
+  "two_image_manifest_sha256": "0d2c2f92b634861a9c60fc7dd21f9ad7ce99e82cc18706f11adf3f2a71c7804c",
+  "visual_metadata": {
+    "hero_alt": "A family chooses one notebook holder beside “How to Choose a Family Point Person for Mineral Rights Inquiries”.",
+    "social_alt": "A family chooses one notebook holder beside “How to Choose a Family Point Person for Mineral Rights Inquiries”.",
+    "inline_alt": "Blank envelopes surround one notebook above “One Contact, Shared Information”."
+  },
+  "reviewer_id": "codex_wave67_compliance",
+  "review_run_id": "mrx1000-wave67-compliance-20260815T065127Z",
+  "capability": "compliance",
+  "expected_hero_sha256": "42b8cebaba417411a6cffb2e9de229f5fc66eb08c6f5d0c7e7256476f6c67341",
+  "expected_inline_sha256": "a125d9211b4b8849d58e60ad61fefac876fbeab5332d4977624de3de8fed1474",
+  "findings": [
+    "Complete current MDX SHA-256 is ae5cc492ae161e65822b5ae0e300a7a10d777e783ca713ce6436b8734110bae1; hero/share and inline image hashes are separately locked.",
+    "The article states educational and professional boundaries, separates administrative contact from legal authority, discloses possible MRX buyer interest, preserves owner agency, and makes no owner-specific title, acreage, authority, value, fairness, buyer, contract, legal, tax, suitability, investment, or transaction conclusion.",
+    "Image text is limited to the exact article title and approved inquiry-routing phrase and adds no account data, property identifier, amount, date, equation, official seal, title conclusion, authority conclusion, value conclusion, recommendation, offer, guarantee, buyer endorsement, or transaction result."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "hero_share_sha256_identity",
+    "inline_image_distinct_sha256",
+    "exact_text_ocr_pass",
+    "filename_text_identity_pass",
+    "educational_and_professional_boundaries_preserved",
+    "owner_agency_and_possible_buyer_interest_disclosure_preserved",
+    "no_unsupported_visual_or_decision_claims"
+  ],
+  "sources_inspected": [
+    "src/content/posts/how-to-choose-a-family-point-person-for-mineral-rights-inquiries.mdx",
+    "/assets/articles/hero/how-to-choose-a-family-point-person-for-mineral-rights-inquiries.webp",
+    "/assets/articles/inline/how-to-choose-a-family-point-person-for-mineral-rights-inquiries/one-contact-shared-information.webp"
+  ]
+}

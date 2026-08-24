@@ -1,0 +1,43 @@
+{
+  "artifact_type": "mrx1000_two_image_compliance_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-12T18:51:03Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-12",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0122",
+  "slug": "understanding-mineral-rights-for-new-owners",
+  "title": "Understanding Mineral Rights for New Owners",
+  "canonical_url": "https://mineralrightsxchange.com/blog/understanding-mineral-rights-for-new-owners/",
+  "source_path": "src/content/posts/understanding-mineral-rights-for-new-owners.mdx",
+  "input_body_sha256": "7daa4944534a0349b2de103eb8d0970c99ca6bcbd14682fed0d8a4b2d215a588",
+  "input_frontmatter_sha256": "2101c21fbbe5b7f52f8a5723459a129d3b84846fac94b03b1115f3bc834e548f",
+  "expected_repo_sha256": "7daa4944534a0349b2de103eb8d0970c99ca6bcbd14682fed0d8a4b2d215a588",
+  "two_image_manifest_sha256": "577b21f167c112824b3014c730ffb279d734143e24e7f2a3565fd66f589e13d9",
+  "reviewer_id": "codex_wave42_compliance",
+  "review_run_id": "mrx1000-wave42-compliance-20260812T185103Z",
+  "capability": "compliance",
+  "expected_hero_sha256": "83767a8879d6e2fd8498920d421c5b5c4922ec1db1389ef5102f36a3c693e4dd",
+  "expected_inline_sha256": "6fc8ac0d70793025931e8a5de35bc3fa5b9c7a9c165604d244f4b10bd0bdffab",
+  "findings": [
+    "Complete current MDX SHA-256 is 7daa4944534a0349b2de103eb8d0970c99ca6bcbd14682fed0d8a4b2d215a588; hero/share and inline image hashes are separately locked.",
+    "The article separates documents, county records, operational evidence, payment evidence, and professional questions rather than making an owner-specific title, legal, tax, payment, value, or transaction conclusion; discloses MRX’s possible economic interest; preserves dates, identifiers, reporting levels, limitations, and unknowns; and routes professional questions to the appropriate qualified role.",
+    "Image text is limited to the exact article title and canonical phrase; the blank folders, land-map silhouette, and blank cards add no owner data, ownership conclusion, production value, commodity price, acreage, decimal, formula, offer, transaction term, appraisal result, regulatory endorsement, tax outcome, legal conclusion, or private information."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "hero_share_sha256_identity",
+    "inline_image_distinct_sha256",
+    "exact_text_ocr_pass",
+    "filename_text_identity_pass",
+    "educational_and_professional_boundaries_preserved",
+    "no_unsupported_visual_or_valuation_claims"
+  ],
+  "sources_inspected": [
+    "src/content/posts/understanding-mineral-rights-for-new-owners.mdx",
+    "/assets/articles/hero/understanding-mineral-rights-for-new-owners.webp",
+    "/assets/articles/inline/understanding-mineral-rights-for-new-owners/mineral-rights-explained-for-beginners.webp"
+  ]
+}

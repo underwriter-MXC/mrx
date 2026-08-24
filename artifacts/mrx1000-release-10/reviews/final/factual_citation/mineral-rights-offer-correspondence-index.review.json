@@ -1,0 +1,120 @@
+{
+  "artifact_type": "mrx1000_two_image_factual_citation_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-22T19:36:32Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-14",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0149",
+  "slug": "mineral-rights-offer-correspondence-index",
+  "title": "How to Build a Mineral Rights Offer Correspondence Index",
+  "canonical_url": "https://mineralrightsxchange.com/blog/mineral-rights-offer-correspondence-index/",
+  "source_path": "src/content/posts/mineral-rights-offer-correspondence-index.mdx",
+  "input_body_sha256": "e910ef76a463e675b5a6e9fc189ded6cb005c00785aff275c0643bcfd148a954",
+  "input_frontmatter_sha256": "7f229357b8d73b3b4e52e40b03d8d3d829eea3971a2ea60b96b783c987262993",
+  "expected_repo_sha256": "e910ef76a463e675b5a6e9fc189ded6cb005c00785aff275c0643bcfd148a954",
+  "two_image_manifest_sha256": "5621b8116258e6d0a87e9a79b16e6951dd25a59e4a9573c8d5c54e2c2d467e52",
+  "visual_metadata": {
+    "hero_alt": "A mineral owner organizes envelopes beside “How to Build a Mineral Rights Offer Correspondence Index”.",
+    "social_alt": "A mineral owner organizes envelopes beside “How to Build a Mineral Rights Offer Correspondence Index”.",
+    "inline_alt": "Blank correspondence cards and folders appear above “Mineral Rights Offer Correspondence Index”."
+  },
+  "reviewer_id": "codex_wave69_factual",
+  "review_run_id": "mrx1000-wave69-factual-20260822T193632Z",
+  "capability": "factual_citation",
+  "findings": [
+    "Complete current MDX SHA-256 is e910ef76a463e675b5a6e9fc189ded6cb005c00785aff275c0643bcfd148a954; all 6 declared sources passed current access review.",
+    "Claims remain bounded to observable NARA message and attachment metadata as an explicitly nonbinding records-management analogy, the defined Texas Property Code mailed-offer context, and current MRX package-index, decision-log, and property-scope boundaries. No source is converted into a private delivery, legal-receipt, title, value, fairness, contract, deadline, or transaction conclusion.",
+    "The article invents no real owner, message, sender, recipient, property, buyer, contract, transaction, price, deadline, testimonial, success rate, or owner-specific legal, tax, accounting, title, appraisal, investment, or transaction conclusion."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "minimum_three_distinct_https_sources",
+    "current_source_access_review_pass",
+    "claim_to_source_scope_present",
+    "official_and_first_party_source_priority_pass",
+    "unsupported_high_risk_claim_scan_pass"
+  ],
+  "sources_inspected": [
+    {
+      "label": "U.S. National Archives, Email and Electronic Messages Management (accessed 2026-08-22)",
+      "url": "https://www.archives.gov/records-mgmt/email-mgmt",
+      "publisher": "www.archives.gov",
+      "accessed_at": "2026-08-22T19:36:32Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.archives.gov/records-mgmt/email-mgmt",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The U.S. National Archives page collects current federal guidance for managing email and electronic messages and states that federal agencies must manage those records.",
+      "claim_scope": "The article clearly identifies NARA as federal-agency guidance and uses it only as a records-management analogy. It does not claim that private mineral owners are subject to NARA transfer or retention requirements."
+    },
+    {
+      "label": "U.S. National Archives, Appendix A: Tables of File Formats (accessed 2026-08-22)",
+      "url": "https://www.archives.gov/records-mgmt/policy/transfer-guidance-tables.html",
+      "publisher": "www.archives.gov",
+      "accessed_at": "2026-08-22T19:36:32Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.archives.gov/records-mgmt/policy/transfer-guidance-tables.html",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The NARA transfer-guidance tables list observable email components including date, from, to, subject, body, attachment, sent time, and filename, and treat attachments as components of an email record.",
+      "claim_scope": "The article borrows only the neutral field discipline for a private administrative index. It does not prescribe a federal transfer format, retention schedule, or legal conclusion."
+    },
+    {
+      "label": "Texas Legislature, Property Code Chapter 5, Conveyances (accessed 2026-08-22)",
+      "url": "https://statutes.capitol.texas.gov/Docs/PR/pdf/PR.5.pdf",
+      "publisher": "statutes.capitol.texas.gov",
+      "accessed_at": "2026-08-22T19:36:32Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://statutes.capitol.texas.gov/Docs/PR/pdf/PR.5.pdf",
+        "content_type": "text/html"
+      },
+      "source_location_or_paraphrase": "Texas Property Code Chapter 5, Subchapter F includes document-level requirements for defined mineral- or royalty-interest conveyance situations; Section 5.151 describes a specific mailed offer with a conveyance instrument, payment instrument, and property-description disclosure.",
+      "claim_scope": "The article uses that bounded example only to explain why message, envelope, offer, conveyance, and payment materials should remain linked as observed. It does not decide coverage, compliance, sufficiency, delivery, enforceability, remedies, or whether an instrument is void."
+    },
+    {
+      "label": "Mineral Rights Xchange, How to Build a Mineral Rights Sale Document Package Index (accessed 2026-08-22)",
+      "url": "https://mineralrightsxchange.com/blog/how-to-build-a-mineral-rights-sale-document-package-index/",
+      "publisher": "mineralrightsxchange.com",
+      "accessed_at": "2026-08-22T19:36:32Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://mineralrightsxchange.com/blog/how-to-build-a-mineral-rights-sale-document-package-index/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The current MRX document-package guide owns received-file identity, page and attachment completeness, signature and execution copies, and package version control.",
+      "claim_scope": "The article links to that guide as the attachment/package boundary. It does not re-inventory pages or determine package completeness."
+    },
+    {
+      "label": "Mineral Rights Xchange, How to Build a Mineral Rights Sale Decision Log (accessed 2026-08-22)",
+      "url": "https://mineralrightsxchange.com/blog/mineral-rights-sale-decision-log/",
+      "publisher": "mineralrightsxchange.com",
+      "accessed_at": "2026-08-22T19:36:32Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://mineralrightsxchange.com/blog/mineral-rights-sale-decision-log/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The current MRX decision-log guide owns process events, changes, open questions, referrals, decisions, and next actions.",
+      "claim_scope": "The article links to the decision log for questions, deadlines, referrals, and decisions. The correspondence index itself never recommends a response or records a sell-or-hold outcome."
+    },
+    {
+      "label": "Mineral Rights Xchange, How to Build a Property-Scope Crosswalk Before Comparing Mineral Rights Offers (accessed 2026-08-22)",
+      "url": "https://mineralrightsxchange.com/blog/property-scope-crosswalk-mineral-rights-offers/",
+      "publisher": "mineralrightsxchange.com",
+      "accessed_at": "2026-08-22T19:36:32Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://mineralrightsxchange.com/blog/property-scope-crosswalk-mineral-rights-offers/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The current MRX property-scope crosswalk owns tract-by-tract transcription of stated property and interest scope before comparing economics or terms.",
+      "claim_scope": "The article links to that crosswalk only as a separate downstream artifact. It does not transcribe scope fields, calculate economics, compare terms, or judge an offer."
+    }
+  ]
+}

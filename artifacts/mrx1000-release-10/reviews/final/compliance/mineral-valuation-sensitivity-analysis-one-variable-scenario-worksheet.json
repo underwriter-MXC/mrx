@@ -1,0 +1,49 @@
+{
+  "artifact_type": "mrx1000_two_image_compliance_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-23T04:21:16Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-14",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0261",
+  "slug": "mineral-valuation-sensitivity-analysis-one-variable-scenario-worksheet",
+  "title": "Mineral Valuation Sensitivity Analysis: A One-Variable Scenario Worksheet",
+  "canonical_url": "https://mineralrightsxchange.com/blog/mineral-valuation-sensitivity-analysis-one-variable-scenario-worksheet/",
+  "source_path": "src/content/posts/mineral-valuation-sensitivity-analysis-one-variable-scenario-worksheet.mdx",
+  "input_body_sha256": "ec4d7d0f278c5ec46477247567d42085e4e07be9aaeaf49d1f7593c867f34bfc",
+  "input_frontmatter_sha256": "1d756fba21cebf14e49788adf83bc06d3b30d67732f46485a9f8ac15048702a0",
+  "expected_repo_sha256": "ec4d7d0f278c5ec46477247567d42085e4e07be9aaeaf49d1f7593c867f34bfc",
+  "two_image_manifest_sha256": "9ffe4b947a15b95b05443775784bc2fb5493de05794da7efcdc043a3e155a19f",
+  "visual_metadata": {
+    "hero_alt": "A reviewer examines five blank scenario cards with one changed card beside the exact article title.",
+    "social_alt": "A reviewer examines five blank scenario cards with one changed card beside the exact article title.",
+    "inline_alt": "A top-down blank worksheet changes one highlighted input row while adjacent fields stay fixed under the exact keyword."
+  },
+  "reviewer_id": "codex_wave76_compliance",
+  "review_run_id": "mrx1000-wave76-compliance-20260823T042116Z",
+  "capability": "compliance",
+  "expected_hero_sha256": "1e7a242ee452bcd9a2e63dec61736c9173ad1eb01d381511c0b19ab0e51e6bad",
+  "expected_inline_sha256": "1b35cd7fad1e1eb82cfd20f3041be8fb802d4aa7042ef6696c5cbec394db4dd2",
+  "findings": [
+    "Complete current MDX SHA-256 is ec4d7d0f278c5ec46477247567d42085e4e07be9aaeaf49d1f7593c867f34bfc; hero/share and inline image hashes are separately locked.",
+    "The article changes exactly one input per row, leaves missing or mismatched evidence unresolved, avoids rankings and probability language, discloses possible MRX buyer interest, and preserves owner agency and qualified-review boundaries.",
+    "Image text is limited to the exact article title and approved keyword and adds no owner name, property fact, source result, model output, numerical assumption, seal, recommendation, appraisal claim, forecast, guarantee, or transaction outcome."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "hero_share_sha256_identity",
+    "inline_image_distinct_sha256",
+    "exact_text_ocr_pass",
+    "filename_text_identity_pass",
+    "one_variable_fixed_assumptions_and_unresolved_evidence_boundary_pass",
+    "owner_agency_and_possible_buyer_interest_disclosure_preserved",
+    "no_unsupported_visual_or_decision_claims"
+  ],
+  "sources_inspected": [
+    "src/content/posts/mineral-valuation-sensitivity-analysis-one-variable-scenario-worksheet.mdx",
+    "/assets/articles/hero/mineral-valuation-sensitivity-analysis-a-one-variable-scenario-worksheet.webp",
+    "/assets/articles/inline/mineral-valuation-sensitivity-analysis-one-variable-scenario-worksheet/mineral-valuation-sensitivity-analysis-worksheet.webp"
+  ]
+}

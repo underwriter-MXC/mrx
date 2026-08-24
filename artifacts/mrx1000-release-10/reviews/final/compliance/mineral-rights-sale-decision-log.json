@@ -1,0 +1,49 @@
+{
+  "artifact_type": "mrx1000_two_image_compliance_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-15T05:30:55Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-14",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0144",
+  "slug": "mineral-rights-sale-decision-log",
+  "title": "How to Build a Mineral Rights Sale Decision Log",
+  "canonical_url": "https://mineralrightsxchange.com/blog/mineral-rights-sale-decision-log/",
+  "source_path": "src/content/posts/mineral-rights-sale-decision-log.mdx",
+  "input_body_sha256": "5592194f9cf2d20c3b933ebc1b5095909fd54c9813fef9d33f0c74d7d6d4e0ee",
+  "input_frontmatter_sha256": "25f19b9ee3412295db37b9bb423109e0b7f56f72da5316c3b1170737c1556842",
+  "expected_repo_sha256": "5592194f9cf2d20c3b933ebc1b5095909fd54c9813fef9d33f0c74d7d6d4e0ee",
+  "two_image_manifest_sha256": "8a152f8302780a09dee373162e277202edf2f0b913544f34e673f81b836957d6",
+  "visual_metadata": {
+    "hero_alt": "A mineral owner reviews an organized folder beside “How to Build a Mineral Rights Sale Decision Log”.",
+    "social_alt": "A mineral owner reviews an organized folder beside “How to Build a Mineral Rights Sale Decision Log”.",
+    "inline_alt": "An open blank ledger and document tools appear above “Mineral Rights Sale Decision Log”."
+  },
+  "reviewer_id": "codex_wave64_compliance",
+  "review_run_id": "mrx1000-wave64-compliance-20260815T053055Z",
+  "capability": "compliance",
+  "expected_hero_sha256": "cf93f665fffd0747d21badec6777f63335bfa70ad7c15854b00a9f5a6173fb49",
+  "expected_inline_sha256": "d862e6b777ad8787acf77cd4645a548623087f5101612667348767e646487845",
+  "findings": [
+    "Complete current MDX SHA-256 is 5592194f9cf2d20c3b933ebc1b5095909fd54c9813fef9d33f0c74d7d6d4e0ee; hero/share and inline image hashes are separately locked.",
+    "The article states educational and professional boundaries, discloses possible MRX buyer interest, preserves owner agency, and makes no owner-specific title, acreage, value, fairness, buyer, contract, legal, tax, suitability, investment, or transaction conclusion.",
+    "Image text is limited to the exact article title and approved decision-log phrase and adds no account data, property identifier, amount, date, equation, official seal, title conclusion, value conclusion, recommendation, offer, guarantee, buyer endorsement, or transaction result."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "hero_share_sha256_identity",
+    "inline_image_distinct_sha256",
+    "exact_text_ocr_pass",
+    "filename_text_identity_pass",
+    "educational_and_professional_boundaries_preserved",
+    "owner_agency_and_possible_buyer_interest_disclosure_preserved",
+    "no_unsupported_visual_or_decision_claims"
+  ],
+  "sources_inspected": [
+    "src/content/posts/mineral-rights-sale-decision-log.mdx",
+    "/assets/articles/hero/how-to-build-a-mineral-rights-sale-decision-log.webp",
+    "/assets/articles/inline/mineral-rights-sale-decision-log/mineral-rights-sale-decision-log.webp"
+  ]
+}

@@ -1,0 +1,141 @@
+{
+  "artifact_type": "mrx1000_two_image_factual_citation_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-12T20:33:53Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-12",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0125",
+  "slug": "understanding-mineral-rights-valuation-near-you",
+  "title": "Understanding Mineral Rights Valuation Near You",
+  "canonical_url": "https://mineralrightsxchange.com/blog/understanding-mineral-rights-valuation-near-you/",
+  "source_path": "src/content/posts/understanding-mineral-rights-valuation-near-you.mdx",
+  "input_body_sha256": "46119e11fd375db8f54ffe3d9150b6c2a54ca75cf1c56e53102a0bb36b6cb1c3",
+  "input_frontmatter_sha256": "d129097bb925c73bd63642d8a10af4d26324801a15979d42b1699a15cf42702a",
+  "expected_repo_sha256": "46119e11fd375db8f54ffe3d9150b6c2a54ca75cf1c56e53102a0bb36b6cb1c3",
+  "two_image_manifest_sha256": "5face8f3f6b73074b315e67ead51ce76eede4a1b0998d028a3af2bf51f38593b",
+  "reviewer_id": "codex_wave45_factual",
+  "review_run_id": "mrx1000-wave45-factual-20260812T203353Z",
+  "capability": "factual_citation",
+  "findings": [
+    "Complete current MDX SHA-256 is 46119e11fd375db8f54ffe3d9150b6c2a54ca75cf1c56e53102a0bb36b6cb1c3; all 8 declared sources passed live access review.",
+    "MRX claims remain bounded to its current methodology, FAQ, and How It Works page; Railroad Commission claims preserve the separate GIS, query, well-record, county-record, identifier, and operational-data boundaries; and the GLO claim preserves the distinction between original grants, later county records, and current ownership.",
+    "The article uses no fabricated owners, buyers, contracts, deeds, prices, acreage, ownership decimals, tax results, offers, testimonials, success rates, or owner-specific title, legal, tax, accounting, appraisal, investment, or transaction conclusions."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "minimum_three_distinct_https_sources",
+    "current_source_access_review_pass",
+    "claim_to_source_scope_present",
+    "official_primary_source_priority_pass",
+    "unsupported_high_risk_claim_scan_pass"
+  ],
+  "sources_inspected": [
+    {
+      "label": "Mineral Rights Xchange, Published DCF Methodology (accessed 2026-08-12)",
+      "url": "https://mineralrightsxchange.com/methodology/",
+      "publisher": "mineralrightsxchange.com",
+      "accessed_at": "2026-08-12T20:33:53Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://mineralrightsxchange.com/methodology/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The current MRX methodology describes a directional DCF range with dated inputs, assumptions, limitations, and sensitivity, and separates asset range from offer consideration and expected owner net.",
+      "claim_scope": "The article uses the methodology only for the disclosed directional framework, input-status discipline, sensitivity review, and transaction separation; it does not value a specific interest, establish ownership, or recommend a transaction."
+    },
+    {
+      "label": "Mineral Rights Xchange, Frequently Asked Questions (accessed 2026-08-12)",
+      "url": "https://mineralrightsxchange.com/faq/",
+      "publisher": "mineralrightsxchange.com",
+      "accessed_at": "2026-08-12T20:33:53Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://mineralrightsxchange.com/faq/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The current MRX FAQ describes the review as educational, directional, and not certified, and states that a possible later MRX buyer relationship is disclosed when applicable.",
+      "claim_scope": "The article uses the FAQ only for the professional boundary and potential economic-interest disclosure; it does not promise value, price, an offer, payment, or closing."
+    },
+    {
+      "label": "Mineral Rights Xchange, How It Works (accessed 2026-08-12)",
+      "url": "https://mineralrightsxchange.com/how-it-works/",
+      "publisher": "mineralrightsxchange.com",
+      "accessed_at": "2026-08-12T20:33:53Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://mineralrightsxchange.com/how-it-works/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The current MRX How It Works page describes the first-party intake sequence, the directional review boundary, and a separate path for reviewing a written offer.",
+      "claim_scope": "The article uses the page only to distinguish assessment intake from a complete written-offer comparison; it does not promise eligibility, a value, an offer, payment, acceptance, or closing."
+    },
+    {
+      "label": "Railroad Commission of Texas, Public GIS Viewer (accessed 2026-08-12)",
+      "url": "https://www.rrc.texas.gov/resource-center/research/gis-viewer/",
+      "publisher": "www.rrc.texas.gov",
+      "accessed_at": "2026-08-12T20:33:53Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.rrc.texas.gov/resource-center/research/gis-viewer/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The Railroad Commission of Texas describes its Public GIS Viewer as a map surface for oil, gas, pipeline, well, survey, lease, API, and related Commission-regulated data.",
+      "claim_scope": "The article uses the viewer only for dated geographic and operational context; it does not treat map proximity or a displayed feature as proof of ownership, tract inclusion, formation rights, payment entitlement, reserves, future development, or value."
+    },
+    {
+      "label": "Railroad Commission of Texas, About Oil and Gas Data Queries (accessed 2026-08-12)",
+      "url": "https://www.rrc.texas.gov/resource-center/research/research-queries/about-oil-gas-data-queries/",
+      "publisher": "www.rrc.texas.gov",
+      "accessed_at": "2026-08-12T20:33:53Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.rrc.texas.gov/resource-center/research/research-queries/about-oil-gas-data-queries/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The Railroad Commission of Texas explains that its oil-and-gas queries cover distinct slices of the regulatory system, identifies available search fields, and states update schedules for several query surfaces.",
+      "claim_scope": "The article uses the guide only to preserve query identity, identifiers, retrieval date, reporting scope, and update context; it does not infer title, owner allocation, reserves, future activity, or value."
+    },
+    {
+      "label": "Railroad Commission of Texas, Oil and Gas Well Records (accessed 2026-08-12)",
+      "url": "https://www.rrc.texas.gov/oil-and-gas/research-and-statistics/obtaining-commission-records/oil-and-gas-well-records/",
+      "publisher": "www.rrc.texas.gov",
+      "accessed_at": "2026-08-12T20:33:53Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.rrc.texas.gov/oil-and-gas/research-and-statistics/obtaining-commission-records/oil-and-gas-well-records/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The Railroad Commission of Texas well-records page describes available record types and lists county, lease or well name, operator, field, API or permit number, and survey or abstract information as useful retrieval details.",
+      "claim_scope": "The article uses those fields only to route and identify operational records; it does not treat a well file as proof of an owner’s title, acreage, decimal, payment, tract inclusion, reserves, development, or value."
+    },
+    {
+      "label": "Railroad Commission of Texas, Royalties FAQ (accessed 2026-08-12)",
+      "url": "https://www.rrc.texas.gov/about-us/faqs/royalties-faq/",
+      "publisher": "www.rrc.texas.gov",
+      "accessed_at": "2026-08-12T20:33:53Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.rrc.texas.gov/about-us/faqs/royalties-faq/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The Railroad Commission of Texas Royalties FAQ routes lease or royalty-agreement questions toward the courthouse in the county where the land is located and describes using RRC identifiers to retrieve production information.",
+      "claim_scope": "The article uses the FAQ only to keep county conveyance records and Commission operational records in separate evidence lanes; it does not claim that either source alone resolves ownership, legal effect, payment entitlement, or value."
+    },
+    {
+      "label": "Texas General Land Office, Minerals FAQ (accessed 2026-08-12)",
+      "url": "https://www.glo.texas.gov/sites/default/files/2025-01/Minerals%20FAQ_updated%202023.pdf",
+      "publisher": "www.glo.texas.gov",
+      "accessed_at": "2026-08-12T20:33:53Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.glo.texas.gov/sites/default/files/2025-01/Minerals%20FAQ_updated%202023.pdf",
+        "content_type": "application/pdf"
+      },
+      "source_location_or_paraphrase": "The Texas General Land Office minerals FAQ distinguishes original land-grant records from later county conveyance records and cautions that descent from an original grantee does not alone establish current mineral ownership.",
+      "claim_scope": "The article uses the FAQ only to route property-and-interest research and preserve the title boundary; it does not infer ownership, acreage, legal effect, or value from a surname, grant record, or family history."
+    }
+  ]
+}

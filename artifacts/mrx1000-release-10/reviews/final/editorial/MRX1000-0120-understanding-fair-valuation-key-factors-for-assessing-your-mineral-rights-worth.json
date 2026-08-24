@@ -1,0 +1,59 @@
+{
+  "artifact_type": "mrx1000_two_image_editorial_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-12T17:53:00Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-12",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0120",
+  "slug": "understanding-fair-valuation-key-factors-for-assessing-your-mineral-rights-worth",
+  "title": "Understanding Fair Valuation: Key Factors for Assessing Your Mineral Rights' Worth",
+  "canonical_url": "https://mineralrightsxchange.com/blog/understanding-fair-valuation-key-factors-for-assessing-your-mineral-rights-worth/",
+  "source_path": "src/content/posts/understanding-fair-valuation-key-factors-for-assessing-your-mineral-rights-worth.mdx",
+  "input_body_sha256": "2117487db0feeeb7cc017505997ae5b07f61f33afd6a75ad6ceac8f1f1029a35",
+  "input_frontmatter_sha256": "c578a850834c5611df26585cfcdb3beaf5af2814009d49e131a98aaaa9161227",
+  "expected_repo_sha256": "2117487db0feeeb7cc017505997ae5b07f61f33afd6a75ad6ceac8f1f1029a35",
+  "two_image_manifest_sha256": "227ab25c8334806496c1f52c36d7fcf473a6bf3e1f6f12c6347506895d9730dc",
+  "reviewer_id": "codex_wave40_editorial",
+  "review_run_id": "mrx1000-wave40-editorial-20260812T175300Z",
+  "capability": "editorial",
+  "findings": [
+    "Complete current MDX SHA-256 is 2117487db0feeeb7cc017505997ae5b07f61f33afd6a75ad6ceac8f1f1029a35; the answer-first article contains 2218 body tokens and five FAQs.",
+    "The article owns the valuation-fairness symmetry-audit job: it tests consistent treatment of favorable and unfavorable evidence across interest identity, production and payments, commodity assumptions, development evidence, uncertainty, and transaction scope, then supplies a twelve-field audit record and stop conditions.",
+    "Exact-title hero/share OCR passed for “Understanding Fair Valuation: Key Factors for Assessing Your Mineral Rights' Worth”; distinct in-body OCR passed for “How Will I Know if I'm Receiving a Fair Valuation for My Mineral Rights?”."
+  ],
+  "checks": [
+    {
+      "name": "complete_file_sha256_match",
+      "status": "PASS",
+      "evidence": "2117487db0feeeb7cc017505997ae5b07f61f33afd6a75ad6ceac8f1f1029a35"
+    },
+    {
+      "name": "answer_first_article_depth_and_five_faqs",
+      "status": "PASS",
+      "evidence": {
+        "word_count": 2218,
+        "minimum_word_count": 700,
+        "faq_count": 5
+      }
+    },
+    {
+      "name": "two_image_exact_text_identity",
+      "status": "PASS",
+      "evidence": {
+        "hero_ocr": true,
+        "inline_ocr": true,
+        "social_reuses_hero": true,
+        "filename_identity": true,
+        "distinct_binaries": true
+      }
+    }
+  ],
+  "sources_inspected": [
+    "src/content/posts/understanding-fair-valuation-key-factors-for-assessing-your-mineral-rights-worth.mdx",
+    "/assets/articles/hero/understanding-fair-valuation-key-factors-for-assessing-your-mineral-rights-worth.webp",
+    "/assets/articles/inline/understanding-fair-valuation-key-factors-for-assessing-your-mineral-rights-worth/how-will-i-know-if-im-receiving-a-fair-valuation-for-my-mineral-rights.webp"
+  ]
+}

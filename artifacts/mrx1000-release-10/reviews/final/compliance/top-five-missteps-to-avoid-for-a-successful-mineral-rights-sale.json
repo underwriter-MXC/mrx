@@ -1,0 +1,43 @@
+{
+  "artifact_type": "mrx1000_two_image_compliance_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-12T16:12:35Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-12",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0117",
+  "slug": "top-five-missteps-to-avoid-for-a-successful-mineral-rights-sale",
+  "title": "Top Five Missteps to Avoid for a Successful Mineral Rights Sale",
+  "canonical_url": "https://mineralrightsxchange.com/blog/top-five-missteps-to-avoid-for-a-successful-mineral-rights-sale/",
+  "source_path": "src/content/posts/top-five-missteps-to-avoid-for-a-successful-mineral-rights-sale.mdx",
+  "input_body_sha256": "7a0adab33952fe33e85615bcb867e7ca0a049c80124835a16aff970b339d64fa",
+  "input_frontmatter_sha256": "6f4feab86266aadd04aca911b24e9588e02dacf46a13534dccba9c27b29c94b2",
+  "expected_repo_sha256": "7a0adab33952fe33e85615bcb867e7ca0a049c80124835a16aff970b339d64fa",
+  "two_image_manifest_sha256": "7a26a5a50a43d40e7671df3c26f60ea76e7c49568883844e4f8a5a0cd72d7205",
+  "reviewer_id": "codex_wave37_compliance",
+  "review_run_id": "mrx1000-wave37-compliance-20260812T161235Z",
+  "capability": "compliance",
+  "expected_hero_sha256": "c0eaab63abe065850f2348e44e1d572f6a13261b84708cecaa7b5882052bc51f",
+  "expected_inline_sha256": "e5d5e238df0703caae9f88253284a591bf50865a70c290ee5c5bf37b5ff8ca3c",
+  "findings": [
+    "Complete current MDX SHA-256 is 7a0adab33952fe33e85615bcb867e7ca0a049c80124835a16aff970b339d64fa; hero/share and inline image hashes are separately locked.",
+    "The article states educational and professional boundaries, discloses MRX’s potential economic interest, separates owner objectives, property evidence, proposal comparison, professional handoffs, and controlled closing, supplies explicit stop conditions, labels MRX review as directional, and routes unresolved title, legal, tax, accounting, appraisal, investment, and transaction questions without making owner-specific conclusions.",
+    "Image text is limited to the exact article title and canonical question and adds no owner data, buyer endorsement, contract interpretation, deed, price, acreage, decimal, formula, success claim, appraisal result, tax outcome, or transaction conclusion."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "hero_share_sha256_identity",
+    "inline_image_distinct_sha256",
+    "exact_text_ocr_pass",
+    "filename_text_identity_pass",
+    "educational_and_professional_boundaries_preserved",
+    "no_unsupported_visual_or_valuation_claims"
+  ],
+  "sources_inspected": [
+    "src/content/posts/top-five-missteps-to-avoid-for-a-successful-mineral-rights-sale.mdx",
+    "/assets/articles/hero/top-five-missteps-to-avoid-for-a-successful-mineral-rights-sale.webp",
+    "/assets/articles/inline/top-five-missteps-to-avoid-for-a-successful-mineral-rights-sale/what-are-common-pitfalls-i-should-avoid-in-selling-mineral-rights.webp"
+  ]
+}

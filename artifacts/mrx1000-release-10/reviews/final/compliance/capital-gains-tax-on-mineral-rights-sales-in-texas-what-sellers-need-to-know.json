@@ -1,0 +1,43 @@
+{
+  "artifact_type": "mrx1000_two_image_compliance_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-11T22:44:38Z",
+  "decision_authority": {
+    "source": "Daryl owner directive, 2026-08-11",
+    "policy": "MRX two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0629",
+  "slug": "capital-gains-tax-on-mineral-rights-sales-in-texas-what-sellers-need-to-know",
+  "title": "Capital Gains Tax on Mineral Rights Sales in Texas: What Sellers Need to Know",
+  "canonical_url": "https://mineralrightsxchange.com/blog/capital-gains-tax-on-mineral-rights-sales-in-texas-what-sellers-need-to-know/",
+  "source_path": "src/content/posts/capital-gains-tax-on-mineral-rights-sales-in-texas-what-sellers-need-to-know.mdx",
+  "input_body_sha256": "98199f50191fa23104f02b6bf65c0ea79ded8bfc07061fdae3d990c6baf51bf1",
+  "input_frontmatter_sha256": "dcf2cacc7a724080ce8791fb38a5f6b81e3b377658cf4d428d6c627303759d9e",
+  "expected_repo_sha256": "98199f50191fa23104f02b6bf65c0ea79ded8bfc07061fdae3d990c6baf51bf1",
+  "two_image_manifest_sha256": "802512b5dab8eae7592be5934f97a6a8989125fb8f65d3f37ee3cdeb2d35dc10",
+  "reviewer_id": "codex_two_image_compliance",
+  "review_run_id": "mrx1000-two-image-retrofit-20260811T224438Z",
+  "capability": "compliance",
+  "expected_hero_sha256": "dc8694b879676687af4fe53a4c657bd8e8f489fe6d09f0d2adec4cc8bfdd723f",
+  "expected_inline_sha256": "e858b4f2486a4677410dd463a232b04de35b15865d84f9be52759b06c278102d",
+  "findings": [
+    "Complete current MDX SHA-256 is 98199f50191fa23104f02b6bf65c0ea79ded8bfc07061fdae3d990c6baf51bf1; hero/share and in-body image hashes are separately locked.",
+    "Image text is limited to the exact article title and declared page keyword; it adds no guarantee, price, deadline, legal conclusion, or tax conclusion.",
+    "The article retains its educational and professional-boundary language and current disclosure treatment."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "hero_share_sha256_identity",
+    "inline_image_distinct_sha256",
+    "exact_text_ocr_pass",
+    "filename_text_identity_pass",
+    "no_unsupported_visual_claims",
+    "educational_and_professional_boundaries_preserved"
+  ],
+  "sources_inspected": [
+    "src/content/posts/capital-gains-tax-on-mineral-rights-sales-in-texas-what-sellers-need-to-know.mdx",
+    "/assets/articles/hero/capital-gains-tax-on-mineral-rights-sales-in-texas-what-sellers-need-to-know.webp",
+    "/assets/articles/inline/capital-gains-tax-on-mineral-rights-sales-in-texas-what-sellers-need-to-know/capital-gains-tax-on-mineral-rights-sales-in-texas.webp"
+  ]
+}

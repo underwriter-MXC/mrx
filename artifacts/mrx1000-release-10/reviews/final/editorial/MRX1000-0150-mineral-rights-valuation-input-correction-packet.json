@@ -1,0 +1,66 @@
+{
+  "artifact_type": "mrx1000_two_image_editorial_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-22T20:08:06Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-14",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0150",
+  "slug": "mineral-rights-valuation-input-correction-packet",
+  "title": "How to Build a Mineral Rights Valuation Input Correction Packet",
+  "canonical_url": "https://mineralrightsxchange.com/blog/mineral-rights-valuation-input-correction-packet/",
+  "source_path": "src/content/posts/mineral-rights-valuation-input-correction-packet.mdx",
+  "input_body_sha256": "ec8e40da0a926f441303f13dda68d1083e82e8857b8a8779ab05e63a4b7b609d",
+  "input_frontmatter_sha256": "e8313ba3ba84cab73f22bfd61dc111e8b6bcd602c7a0cd70bec7b91f89136563",
+  "expected_repo_sha256": "ec8e40da0a926f441303f13dda68d1083e82e8857b8a8779ab05e63a4b7b609d",
+  "two_image_manifest_sha256": "8c1bd817bb0c625d2c46f36bb4f47436f4a26ac790b4a712dea5cbe483516175",
+  "visual_metadata": {
+    "hero_alt": "An owner reviews blank correction cards beside “How to Build a Mineral Rights Valuation Input Correction Packet”.",
+    "social_alt": "An owner reviews blank correction cards beside “How to Build a Mineral Rights Valuation Input Correction Packet”.",
+    "inline_alt": "Blank correction fields and source markers appear above “Mineral Rights Valuation Input Correction Packet”."
+  },
+  "reviewer_id": "codex_wave70_editorial",
+  "review_run_id": "mrx1000-wave70-editorial-20260822T200806Z",
+  "capability": "editorial",
+  "findings": [
+    "Complete current MDX SHA-256 is ec8e40da0a926f441303f13dda68d1083e82e8857b8a8779ab05e63a4b7b609d; the answer-first article contains 1592 body tokens and five FAQs.",
+    "The article owns a neutral correction-intake job only after a specific factual input discrepancy has already been identified. It records the field, observed value, source location, requested replacement, stated reason, support reference, and one of six controlled workflow statuses while excluding validation, reperformance, recalculation, value, title, acreage, decimal, fairness, appraisal, and sell-or-hold conclusions.",
+    "Exact-title hero/share OCR passed for “How to Build a Mineral Rights Valuation Input Correction Packet”; distinct in-body OCR passed for “Mineral Rights Valuation Input Correction Packet”; composition-accurate hero/social and inline alt metadata matched the final visual audit."
+  ],
+  "checks": [
+    {
+      "name": "complete_file_sha256_match",
+      "status": "PASS",
+      "evidence": "ec8e40da0a926f441303f13dda68d1083e82e8857b8a8779ab05e63a4b7b609d"
+    },
+    {
+      "name": "answer_first_article_depth_and_five_faqs",
+      "status": "PASS",
+      "evidence": {
+        "word_count": 1592,
+        "minimum_word_count": 700,
+        "faq_count": 5
+      }
+    },
+    {
+      "name": "two_image_exact_text_identity",
+      "status": "PASS",
+      "evidence": {
+        "hero_ocr": true,
+        "inline_ocr": true,
+        "social_reuses_hero": true,
+        "hero_social_alt_match": true,
+        "inline_alt_match": true,
+        "filename_identity": true,
+        "distinct_binaries": true
+      }
+    }
+  ],
+  "sources_inspected": [
+    "src/content/posts/mineral-rights-valuation-input-correction-packet.mdx",
+    "/assets/articles/hero/how-to-build-a-mineral-rights-valuation-input-correction-packet.webp",
+    "/assets/articles/inline/mineral-rights-valuation-input-correction-packet/mineral-rights-valuation-input-correction-packet.webp"
+  ]
+}

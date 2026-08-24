@@ -1,0 +1,43 @@
+{
+  "artifact_type": "mrx1000_two_image_compliance_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-11T22:44:38Z",
+  "decision_authority": {
+    "source": "Daryl owner directive, 2026-08-11",
+    "policy": "MRX two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0642",
+  "slug": "what-is-a-mineral-rights-purchase-agreement-and-what-should-it-include",
+  "title": "What Is a Mineral Rights Purchase Agreement and What Should It Include?",
+  "canonical_url": "https://mineralrightsxchange.com/blog/what-is-a-mineral-rights-purchase-agreement-and-what-should-it-include/",
+  "source_path": "src/content/posts/what-is-a-mineral-rights-purchase-agreement-and-what-should-it-include.mdx",
+  "input_body_sha256": "e05af076d0a7cc07c5351502b3ae28177a59b2f0b633825282e31e277065ef61",
+  "input_frontmatter_sha256": "03d9558ad9138a15ea3c12630d2cbbe1ddd6638cb2aac75c77bd393bb1b17629",
+  "expected_repo_sha256": "e05af076d0a7cc07c5351502b3ae28177a59b2f0b633825282e31e277065ef61",
+  "two_image_manifest_sha256": "802512b5dab8eae7592be5934f97a6a8989125fb8f65d3f37ee3cdeb2d35dc10",
+  "reviewer_id": "codex_two_image_compliance",
+  "review_run_id": "mrx1000-two-image-retrofit-20260811T224438Z",
+  "capability": "compliance",
+  "expected_hero_sha256": "6dec320cbb989bc81532aeb9b27fca5912ad6a3b3cadd343665d2a875893baf3",
+  "expected_inline_sha256": "d4a41d262c031d9c7c8db16bf53093bcfc72be0e7fa4069095038170f87efd6c",
+  "findings": [
+    "Complete current MDX SHA-256 is e05af076d0a7cc07c5351502b3ae28177a59b2f0b633825282e31e277065ef61; hero/share and in-body image hashes are separately locked.",
+    "Image text is limited to the exact article title and declared page keyword; it adds no guarantee, price, deadline, legal conclusion, or tax conclusion.",
+    "The article retains its educational and professional-boundary language and current disclosure treatment."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "hero_share_sha256_identity",
+    "inline_image_distinct_sha256",
+    "exact_text_ocr_pass",
+    "filename_text_identity_pass",
+    "no_unsupported_visual_claims",
+    "educational_and_professional_boundaries_preserved"
+  ],
+  "sources_inspected": [
+    "src/content/posts/what-is-a-mineral-rights-purchase-agreement-and-what-should-it-include.mdx",
+    "/assets/articles/hero/what-is-a-mineral-rights-purchase-agreement-and-what-should-it-include.webp",
+    "/assets/articles/inline/what-is-a-mineral-rights-purchase-agreement-and-what-should-it-include/mineral-rights-purchase-agreement.webp"
+  ]
+}

@@ -1,0 +1,115 @@
+{
+  "artifact_type": "mrx1000_two_image_factual_citation_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-12T11:16:30Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-12",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0185",
+  "slug": "how-much-are-mineral-rights-worth-checklist-without-obligation",
+  "title": "How Much Are Mineral Rights Worth: Checklist Without Obligation",
+  "canonical_url": "https://mineralrightsxchange.com/blog/how-much-are-mineral-rights-worth-checklist-without-obligation/",
+  "source_path": "src/content/posts/how-much-are-mineral-rights-worth-checklist-without-obligation.mdx",
+  "input_body_sha256": "3abfe9593b5074dee5c50fb250a626185aeffd6b964334bfe6f7ce8431c4be8f",
+  "input_frontmatter_sha256": "368a63dce29f372da78cd10021403f74a5a00b1c48ab9902bf397cc7ba96d66e",
+  "expected_repo_sha256": "3abfe9593b5074dee5c50fb250a626185aeffd6b964334bfe6f7ce8431c4be8f",
+  "two_image_manifest_sha256": "95f79ebc9c52ea9e91e5669e5d1eb1e86ed55d10ab1202a76c85fe3d0d85e51c",
+  "reviewer_id": "codex_wave27_factual",
+  "review_run_id": "mrx1000-wave27-factual-20260812T111630Z",
+  "capability": "factual_citation",
+  "findings": [
+    "Complete current MDX SHA-256 is 3abfe9593b5074dee5c50fb250a626185aeffd6b964334bfe6f7ce8431c4be8f; all 6 declared official sources passed live access review.",
+    "MRX price, scope, methodology, commercial-role, privacy, and communication-choice claims remain bounded to current first-party pages; FTC concepts remain bounded to general truth-in-advertising and clear-disclosure guidance without a legal compliance conclusion.",
+    "The article uses no fabricated owners, agreements, documents, communications, fees, deposits, cards, offers, prices, deadlines, testimonials, or owner-specific title, legal, tax, privacy, communications-law, accounting, engineering, investment, or valuation conclusions."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "minimum_three_distinct_https_sources",
+    "current_source_access_review_pass",
+    "claim_to_source_scope_present",
+    "official_primary_source_priority_pass",
+    "unsupported_high_risk_claim_scan_pass"
+  ],
+  "sources_inspected": [
+    {
+      "label": "Mineral Rights Xchange, Homepage Review Disclosures (accessed 2026-08-12)",
+      "url": "https://mineralrightsxchange.com/",
+      "publisher": "mineralrightsxchange.com",
+      "accessed_at": "2026-08-12T11:16:30Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://mineralrightsxchange.com/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The current MRX homepage describes a free and confidential directional underwriter review with no obligation and no pressure, while its footer limits the material to general educational information rather than certified professional advice.",
+      "claim_scope": "The article uses those first-party statements only to identify the advertised review boundary and educational scope; it does not treat them as a legal compliance determination, universal privacy promise, guaranteed response time, promised value, offer, or transaction outcome."
+    },
+    {
+      "label": "Mineral Rights Xchange, Published DCF Methodology (accessed 2026-08-12)",
+      "url": "https://mineralrightsxchange.com/methodology/",
+      "publisher": "mineralrightsxchange.com",
+      "accessed_at": "2026-08-12T11:16:30Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://mineralrightsxchange.com/methodology/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The current MRX methodology describes the free review as requiring no card and no obligation and identifies its output as a directional underwriter range with stated assumptions rather than a regulated valuation certification, title opinion, reserve certification, legal or tax opinion, or guarantee.",
+      "claim_scope": "The article uses the methodology only to identify the price, deliverable, assumptions, limits, and stopping boundary an owner should confirm; it does not turn the review into a professional assignment, guaranteed value, offer, or recommendation to transact."
+    },
+    {
+      "label": "Mineral Rights Xchange, Terms of Use and AI Disclosure (accessed 2026-08-12)",
+      "url": "https://mineralrightsxchange.com/terms/",
+      "publisher": "mineralrightsxchange.com",
+      "accessed_at": "2026-08-12T11:16:30Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://mineralrightsxchange.com/terms/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The current MRX terms describe the website and AI assistant as educational, require users to upload only files they are authorized to share, separate requested-call scheduling from consent to marketing texts, and state that MRX may be a buyer with that relationship disclosed in writing before an agreement is signed.",
+      "claim_scope": "The article uses those terms to distinguish a review request, document-sharing authorization, communication choices, commercial-role disclosure, and any later transaction agreement; it does not interpret the terms for an owner or announce that a particular practice or agreement complies with law."
+    },
+    {
+      "label": "Mineral Rights Xchange, Privacy Policy (accessed 2026-08-12)",
+      "url": "https://mineralrightsxchange.com/privacy-policy/",
+      "publisher": "mineralrightsxchange.com",
+      "accessed_at": "2026-08-12T11:16:30Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://mineralrightsxchange.com/privacy-policy/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The current MRX privacy policy describes categories of information collected, purposes, sharing, security, retention, and user choices.",
+      "claim_scope": "The article cites that page only as the current first-party place to review data-handling terms and choices before sharing documents; it does not promise anonymity, perfect security, universal confidentiality, deletion timing, or legal compliance."
+    },
+    {
+      "label": "Mineral Rights Xchange, Communication Preferences (accessed 2026-08-12)",
+      "url": "https://mineralrightsxchange.com/communication-preferences/",
+      "publisher": "mineralrightsxchange.com",
+      "accessed_at": "2026-08-12T11:16:30Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://mineralrightsxchange.com/communication-preferences/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The current MRX communication-preferences page provides a first-party route for users to review or change available communication choices.",
+      "claim_scope": "The article identifies that route as a practical preference-management checkpoint only; it does not give communications-law advice, promise that every channel or message is covered, or determine the legal effect of a particular choice."
+    },
+    {
+      "label": "Federal Trade Commission, Advertising FAQs for Small Business (accessed 2026-08-12)",
+      "url": "https://search.ftc.gov/business-guidance/resources/advertising-faqs-guide-small-business",
+      "publisher": "search.ftc.gov",
+      "accessed_at": "2026-08-12T11:16:30Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://search.ftc.gov/business-guidance/resources/advertising-faqs-guide-small-business",
+        "content_type": "text/html; charset=UTF-8"
+      },
+      "source_location_or_paraphrase": "The Federal Trade Commission small-business advertising FAQ describes general principles that advertising should be truthful and non-deceptive, supported by evidence, and clear and conspicuous about material qualifications, including conditions attached to free claims.",
+      "claim_scope": "The article uses that federal guidance only as a general transparency principle for clearly defining free and no-obligation claims; it does not offer consumer-protection legal advice or conclude that MRX or another party complies with any law."
+    }
+  ]
+}

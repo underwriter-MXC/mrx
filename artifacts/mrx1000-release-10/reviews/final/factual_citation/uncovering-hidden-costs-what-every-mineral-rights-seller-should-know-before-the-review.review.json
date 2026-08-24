@@ -1,0 +1,115 @@
+{
+  "artifact_type": "mrx1000_two_image_factual_citation_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-12T16:43:03Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-12",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0118",
+  "slug": "uncovering-hidden-costs-what-every-mineral-rights-seller-should-know-before-the-review",
+  "title": "Uncovering Hidden Costs: What Every Mineral Rights Seller Should Know Before the Review",
+  "canonical_url": "https://mineralrightsxchange.com/blog/uncovering-hidden-costs-what-every-mineral-rights-seller-should-know-before-the-review/",
+  "source_path": "src/content/posts/uncovering-hidden-costs-what-every-mineral-rights-seller-should-know-before-the-review.mdx",
+  "input_body_sha256": "980e9ffe2d862957155e1d82c529547627d6d8f5a179072816380ebc48e22578",
+  "input_frontmatter_sha256": "1de201f3282626831e3ea92d2cc7f08c56e78411d232f59cc7f973a1a2db203e",
+  "expected_repo_sha256": "980e9ffe2d862957155e1d82c529547627d6d8f5a179072816380ebc48e22578",
+  "two_image_manifest_sha256": "d6dab7c26bdb23820ae1f284338840279c2831dc8f25edf6dfe3921ddc46df4e",
+  "reviewer_id": "codex_wave38_factual",
+  "review_run_id": "mrx1000-wave38-factual-20260812T164303Z",
+  "capability": "factual_citation",
+  "findings": [
+    "Complete current MDX SHA-256 is 980e9ffe2d862957155e1d82c529547627d6d8f5a179072816380ebc48e22578; all 6 declared sources passed live access review.",
+    "MRX claims remain bounded to its current FAQ, methodology, and terms; Texas recording law is expressly limited to a state-specific example; and IRS claims remain general disposition and basis concepts that require owner-specific professional review.",
+    "The article uses no fabricated owners, buyers, contracts, deeds, prices, acreage, ownership decimals, tax results, offers, testimonials, success rates, or owner-specific title, legal, tax, accounting, appraisal, investment, or transaction conclusions."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "minimum_three_distinct_https_sources",
+    "current_source_access_review_pass",
+    "claim_to_source_scope_present",
+    "official_primary_source_priority_pass",
+    "unsupported_high_risk_claim_scan_pass"
+  ],
+  "sources_inspected": [
+    {
+      "label": "Mineral Rights Xchange, Frequently Asked Questions (accessed 2026-08-12)",
+      "url": "https://mineralrightsxchange.com/faq/",
+      "publisher": "mineralrightsxchange.com",
+      "accessed_at": "2026-08-12T16:43:03Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://mineralrightsxchange.com/faq/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The current MRX FAQ states that the directional underwriter review is free, requires no payment card, creates no obligation to sell, is not a certified valuation, and may precede an MRX buyer relationship that is disclosed when applicable.",
+      "claim_scope": "The article uses the FAQ only for MRX’s current review price and service boundaries and its provider-interest disclosure; it does not extend the free-review statement to outside work, promise a result, interpret an agreement, or recommend a transaction."
+    },
+    {
+      "label": "Mineral Rights Xchange, Published DCF Methodology (accessed 2026-08-12)",
+      "url": "https://mineralrightsxchange.com/methodology/",
+      "publisher": "mineralrightsxchange.com",
+      "accessed_at": "2026-08-12T16:43:03Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://mineralrightsxchange.com/methodology/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The current MRX methodology separates a directional asset range from actual buyer offers and expected owner net, and requires dated inputs, assumptions, and limitations.",
+      "claim_scope": "The article uses the methodology only to distinguish property evidence, a directional range, proposal consideration, adjustments or deductions, and expected owner net; it does not value a specific interest, establish legal rights, or predict a transaction result."
+    },
+    {
+      "label": "Mineral Rights Xchange, Terms of Use (accessed 2026-08-12)",
+      "url": "https://mineralrightsxchange.com/terms/",
+      "publisher": "mineralrightsxchange.com",
+      "accessed_at": "2026-08-12T16:43:03Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://mineralrightsxchange.com/terms/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The current MRX terms state that website information is educational and not legal, tax, financial, investment, engineering, or certified appraisal advice.",
+      "claim_scope": "The article uses the terms only to preserve educational and professional boundaries; it does not use them to interpret a buyer contract or determine an owner’s rights."
+    },
+    {
+      "label": "Texas Legislature, Property Code Chapter 12, Recording of Instruments (accessed 2026-08-12)",
+      "url": "https://statutes.capitol.texas.gov/?artSec=12.001&chapter=PR.12&code=PR&tab=1",
+      "publisher": "statutes.capitol.texas.gov",
+      "accessed_at": "2026-08-12T16:43:03Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://statutes.capitol.texas.gov/?artSec=12.001&chapter=PR.12&code=PR&tab=1",
+        "content_type": "text/html"
+      },
+      "source_location_or_paraphrase": "Texas Property Code Chapter 12 provides a state-specific example of formal requirements associated with recording instruments concerning real or personal property.",
+      "claim_scope": "The article uses Chapter 12 only to show why recording-related duties and costs require document-specific review in a Texas transaction; it does not extend Texas law elsewhere or claim that recordability proves validity, title, authority, delivery, consideration, priority, or an owner-specific result."
+    },
+    {
+      "label": "Internal Revenue Service, Publication 544, Sales and Other Dispositions of Assets (accessed 2026-08-12)",
+      "url": "https://www.irs.gov/publications/p544",
+      "publisher": "www.irs.gov",
+      "accessed_at": "2026-08-12T16:43:03Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.irs.gov/publications/p544",
+        "content_type": "text/html; charset=UTF-8"
+      },
+      "source_location_or_paraphrase": "IRS Publication 544 explains that gain or loss on a sale or other disposition generally depends on the amount realized and adjusted basis, with treatment depending on the property and transaction facts.",
+      "claim_scope": "The article uses the publication only to identify general federal disposition concepts and prompt an owner-specific tax handoff; it does not classify an owner’s asset or calculate basis, gain, loss, depletion, tax, withholding, or filing treatment."
+    },
+    {
+      "label": "Internal Revenue Service, Publication 551, Basis of Assets (accessed 2026-08-12)",
+      "url": "https://www.irs.gov/publications/p551",
+      "publisher": "www.irs.gov",
+      "accessed_at": "2026-08-12T16:43:03Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.irs.gov/publications/p551",
+        "content_type": "text/html; charset=UTF-8"
+      },
+      "source_location_or_paraphrase": "IRS Publication 551 explains general federal basis concepts and adjustments that can depend on acquisition history and the asset’s facts.",
+      "claim_scope": "The article uses the publication only to identify basis as an owner-specific record and professional question; it does not determine basis, depletion, allocation, gain, loss, tax, withholding, or filing treatment."
+    }
+  ]
+}

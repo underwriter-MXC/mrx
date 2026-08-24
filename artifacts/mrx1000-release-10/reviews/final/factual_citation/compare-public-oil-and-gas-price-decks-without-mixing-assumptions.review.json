@@ -1,0 +1,107 @@
+{
+  "artifact_type": "mrx1000_two_image_factual_citation_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-23T12:35:01Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-14",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0267",
+  "slug": "compare-public-oil-and-gas-price-decks-without-mixing-assumptions",
+  "title": "How to Compare Public Oil and Gas Price Decks Without Mixing Assumptions",
+  "canonical_url": "https://mineralrightsxchange.com/blog/compare-public-oil-and-gas-price-decks-without-mixing-assumptions/",
+  "source_path": "src/content/posts/compare-public-oil-and-gas-price-decks-without-mixing-assumptions.mdx",
+  "input_body_sha256": "66aa85b03205f914c6c319fb3ea05c03fdeb64e2518e55417d3113da4449a0c2",
+  "input_frontmatter_sha256": "116cb0445ac9f9fe5099f50a63e52d3283e8e564712a971e275a7a3ac3332bf4",
+  "expected_repo_sha256": "66aa85b03205f914c6c319fb3ea05c03fdeb64e2518e55417d3113da4449a0c2",
+  "two_image_manifest_sha256": "90fc1a11049fdf97e84e79883679f96c2cf263b9a39e6c6fcc7453b3146b2984",
+  "visual_metadata": {
+    "hero_alt": "Two separate published price-deck booklets appear beside the exact article title.",
+    "social_alt": "Two separate published price-deck booklets appear beside the exact article title.",
+    "inline_alt": "An overhead public price-deck comparison matrix appears above the exact keyword."
+  },
+  "reviewer_id": "codex_wave82_factual",
+  "review_run_id": "mrx1000-wave82-factual-20260823T123501Z",
+  "capability": "factual_citation",
+  "findings": [
+    "Complete current MDX SHA-256 is 66aa85b03205f914c6c319fb3ea05c03fdeb64e2518e55417d3113da4449a0c2; all 5 declared sources passed current HTTPS access review.",
+    "Claims remain bounded to EIA publication-date, unit, and nominal-or-real context plus the SEC/Federal Register reserve-disclosure pricing frame. None is converted into a forecast selection, unit conversion, inflation adjustment, property-specific price bridge, reserve interpretation, cash-flow calculation, present value, offer, or value.",
+    "The article supplies no proprietary, universal, market, or owner-specific numerical assumption; invents no benchmark, geographic basis, unit, base period, forecast horizon, source relationship, property fact, or modeled result; and makes no owner-specific engineering, reserve, appraisal, investment, legal, tax, financial, valuation, offer, or transaction conclusion."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "five_distinct_https_sources",
+    "current_source_access_review_pass",
+    "claim_to_source_scope_present",
+    "official_source_priority_pass",
+    "unsupported_high_risk_claim_scan_pass"
+  ],
+  "sources_inspected": [
+    {
+      "label": "U.S. Energy Information Administration, Short-Term Energy Outlook (accessed 2026-08-23)",
+      "url": "https://www.eia.gov/outlooks/steo/outlook.php",
+      "publisher": "www.eia.gov",
+      "accessed_at": "2026-08-23T12:35:01Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.eia.gov/outlooks/steo/outlook.php",
+        "content_type": "text/html; charset=UTF-8"
+      },
+      "source_location_or_paraphrase": "The EIA Short-Term Energy Outlook page supplies a current first-party example of a dated public outlook with release, forecast-completion, current-table, data, and archive context.",
+      "claim_scope": "The article uses the page only to preserve publication identity, dates, edition, source location, and stated use case; it does not adopt an EIA forecast, extend a horizon, predict realized prices, or make a property-level economic conclusion."
+    },
+    {
+      "label": "U.S. Energy Information Administration, nominal and real prices FAQ (accessed 2026-08-23)",
+      "url": "https://www.eia.gov/tools/faqs/faq.php?id=13&t=2",
+      "publisher": "www.eia.gov",
+      "accessed_at": "2026-08-23T12:35:01Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.eia.gov/tools/faqs/faq.php?id=13&t=2",
+        "content_type": "text/html; charset=UTF-8"
+      },
+      "source_location_or_paraphrase": "The EIA FAQ distinguishes generally published nominal prices from inflation-adjusted real prices.",
+      "claim_scope": "The article uses the FAQ only to preserve the source-stated dollar basis and any stated real-price base period; it does not choose an inflation series, convert a value, or normalize two publications."
+    },
+    {
+      "label": "U.S. Energy Information Administration, units and calculators (accessed 2026-08-23)",
+      "url": "https://www.eia.gov/energyexplained/units-and-calculators/",
+      "publisher": "www.eia.gov",
+      "accessed_at": "2026-08-23T12:35:01Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.eia.gov/energyexplained/units-and-calculators/",
+        "content_type": "text/html; charset=UTF-8"
+      },
+      "source_location_or_paraphrase": "The EIA units and calculators overview supplies first-party context for the physical units used across energy sources and the fact that conversions require a defined method.",
+      "claim_scope": "The article uses the page only to require explicit unit capture and reject silent conversion inside the source matrix; it does not select a conversion factor or make sources analytically equivalent."
+    },
+    {
+      "label": "U.S. Energy Information Administration, natural gas units FAQ (accessed 2026-08-23)",
+      "url": "https://www.eia.gov/tools/faqs/faq.php?id=1417&t=7",
+      "publisher": "www.eia.gov",
+      "accessed_at": "2026-08-23T12:35:01Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.eia.gov/tools/faqs/faq.php?id=1417&t=7",
+        "content_type": "text/html; charset=UTF-8"
+      },
+      "source_location_or_paraphrase": "The EIA natural-gas units FAQ defines common U.S. scale and energy-unit abbreviations including Mcf, Btu, and MMBtu.",
+      "claim_scope": "The article uses the FAQ only to keep scale prefixes and denominators explicit; it does not convert a volume unit to an energy unit, infer heat content, or bridge a public price to an owner result."
+    },
+    {
+      "label": "SEC, Modernization of Oil and Gas Reporting final rule, 74 FR 2158 (accessed 2026-08-23)",
+      "url": "https://www.govinfo.gov/content/pkg/FR-2009-01-14/pdf/E9-409.pdf",
+      "publisher": "www.govinfo.gov",
+      "accessed_at": "2026-08-23T12:35:01Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.govinfo.gov/content/pkg/FR-2009-01-14/pdf/E9-409.pdf",
+        "content_type": "application/pdf"
+      },
+      "source_location_or_paraphrase": "The SEC Modernization of Oil and Gas Reporting final rule supplies the official Federal Register context for the 12-month average pricing mechanism used in specified reserves disclosures.",
+      "claim_scope": "The article uses the rule only to distinguish a prescribed reserve-disclosure pricing frame from a public forecast or property-specific planning deck; it does not interpret a reserve report, calculate reserves or present value, or recommend a pricing input."
+    }
+  ]
+}

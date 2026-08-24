@@ -1,0 +1,66 @@
+{
+  "artifact_type": "mrx1000_two_image_editorial_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-15T06:22:17Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-14",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0146",
+  "slug": "how-to-talk-to-your-family-before-you-decide-to-sell-mineral-rights",
+  "title": "How to Talk to Your Family Before You Decide to Sell Mineral Rights",
+  "canonical_url": "https://mineralrightsxchange.com/blog/how-to-talk-to-your-family-before-you-decide-to-sell-mineral-rights/",
+  "source_path": "src/content/posts/how-to-talk-to-your-family-before-you-decide-to-sell-mineral-rights.mdx",
+  "input_body_sha256": "4f98b66f3894e35188822c8717780952df0cc38531265713ead922d4595190ed",
+  "input_frontmatter_sha256": "3962e433ca25231cb27a6705ff17a1bbf5fd936c361f20bde1e4460b364ed84b",
+  "expected_repo_sha256": "4f98b66f3894e35188822c8717780952df0cc38531265713ead922d4595190ed",
+  "two_image_manifest_sha256": "a11a26ae04cb9c5d9bbbb2d0d1d90768e3d092948f0d3b48a4d363bddb9899b1",
+  "visual_metadata": {
+    "hero_alt": "Three adult family members talk at a table beside “How to Talk to Your Family Before You Decide to Sell Mineral Rights”.",
+    "social_alt": "Three adult family members talk at a table beside “How to Talk to Your Family Before You Decide to Sell Mineral Rights”.",
+    "inline_alt": "Three notebooks surround a table above “One Family, One Decision, One Honest Conversation”."
+  },
+  "reviewer_id": "codex_wave66_editorial",
+  "review_run_id": "mrx1000-wave66-editorial-20260815T062217Z",
+  "capability": "editorial",
+  "findings": [
+    "Complete current MDX SHA-256 is 4f98b66f3894e35188822c8717780952df0cc38531265713ead922d4595190ed; the answer-first article contains 2527 body tokens and five FAQs.",
+    "The article owns the narrow pre-assessment family-conversation job. It provides purpose framing, a one-page fact sheet, a timed agenda, needs-oriented questions, disagreement buckets, inherited-interest cautions, and a limited next-step close while stopping before ownership, authority, consent, title, valuation, tax, offer comparison, process narration, and transaction selection.",
+    "Exact-title hero/share OCR passed for “How to Talk to Your Family Before You Decide to Sell Mineral Rights”; distinct in-body OCR passed for “One Family, One Decision, One Honest Conversation”; composition-accurate hero/social and inline alt metadata matched the final visual audit."
+  ],
+  "checks": [
+    {
+      "name": "complete_file_sha256_match",
+      "status": "PASS",
+      "evidence": "4f98b66f3894e35188822c8717780952df0cc38531265713ead922d4595190ed"
+    },
+    {
+      "name": "answer_first_article_depth_and_five_faqs",
+      "status": "PASS",
+      "evidence": {
+        "word_count": 2527,
+        "minimum_word_count": 700,
+        "faq_count": 5
+      }
+    },
+    {
+      "name": "two_image_exact_text_identity",
+      "status": "PASS",
+      "evidence": {
+        "hero_ocr": true,
+        "inline_ocr": true,
+        "social_reuses_hero": true,
+        "hero_social_alt_match": true,
+        "inline_alt_match": true,
+        "filename_identity": true,
+        "distinct_binaries": true
+      }
+    }
+  ],
+  "sources_inspected": [
+    "src/content/posts/how-to-talk-to-your-family-before-you-decide-to-sell-mineral-rights.mdx",
+    "/assets/articles/hero/how-to-talk-to-your-family-before-you-decide-to-sell-mineral-rights.webp",
+    "/assets/articles/inline/how-to-talk-to-your-family-before-you-decide-to-sell-mineral-rights/one-family-one-decision-one-honest-conversation.webp"
+  ]
+}

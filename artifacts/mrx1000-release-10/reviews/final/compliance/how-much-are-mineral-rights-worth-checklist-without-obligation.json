@@ -1,0 +1,43 @@
+{
+  "artifact_type": "mrx1000_two_image_compliance_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-12T11:16:30Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-12",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0185",
+  "slug": "how-much-are-mineral-rights-worth-checklist-without-obligation",
+  "title": "How Much Are Mineral Rights Worth: Checklist Without Obligation",
+  "canonical_url": "https://mineralrightsxchange.com/blog/how-much-are-mineral-rights-worth-checklist-without-obligation/",
+  "source_path": "src/content/posts/how-much-are-mineral-rights-worth-checklist-without-obligation.mdx",
+  "input_body_sha256": "3abfe9593b5074dee5c50fb250a626185aeffd6b964334bfe6f7ce8431c4be8f",
+  "input_frontmatter_sha256": "368a63dce29f372da78cd10021403f74a5a00b1c48ab9902bf397cc7ba96d66e",
+  "expected_repo_sha256": "3abfe9593b5074dee5c50fb250a626185aeffd6b964334bfe6f7ce8431c4be8f",
+  "two_image_manifest_sha256": "95f79ebc9c52ea9e91e5669e5d1eb1e86ed55d10ab1202a76c85fe3d0d85e51c",
+  "reviewer_id": "codex_wave27_compliance",
+  "review_run_id": "mrx1000-wave27-compliance-20260812T111630Z",
+  "capability": "compliance",
+  "expected_hero_sha256": "482936ab000bfb938f9955730992ade8b9738d5df5c1ae830eaa0e8bc7d9836e",
+  "expected_inline_sha256": "65cda030263c6a90c14b9d267cf9434d17264f08fcf745676d8627909e68ea0a",
+  "findings": [
+    "Complete current MDX SHA-256 is 3abfe9593b5074dee5c50fb250a626185aeffd6b964334bfe6f7ce8431c4be8f; hero/share and inline image hashes are separately locked.",
+    "The article states educational and professional boundaries, discloses MRX’s potential economic interest, separates a free directional review from information-sharing and communication choices and from any later transaction agreement, and avoids owner-specific legal, tax, privacy, communications-law, accounting, engineering, appraisal, or value conclusions.",
+    "Image text is limited to the exact article title and canonical keyword and adds no owner data, agreement, document, fee, card, deposit, communication choice, offer, price, deadline, legal, tax, privacy, accounting, engineering, investment, or valuation conclusion."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "hero_share_sha256_identity",
+    "inline_image_distinct_sha256",
+    "exact_text_ocr_pass",
+    "filename_text_identity_pass",
+    "educational_and_professional_boundaries_preserved",
+    "no_unsupported_visual_or_payment_claims"
+  ],
+  "sources_inspected": [
+    "src/content/posts/how-much-are-mineral-rights-worth-checklist-without-obligation.mdx",
+    "/assets/articles/hero/how-much-are-mineral-rights-worth-checklist-without-obligation.webp",
+    "/assets/articles/inline/how-much-are-mineral-rights-worth-checklist-without-obligation/how-much-are-mineral-rights-worth.webp"
+  ]
+}

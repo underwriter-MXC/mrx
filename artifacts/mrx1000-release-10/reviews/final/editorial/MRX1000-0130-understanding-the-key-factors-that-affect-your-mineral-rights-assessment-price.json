@@ -1,0 +1,59 @@
+{
+  "artifact_type": "mrx1000_two_image_editorial_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-12T23:43:49Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-12",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0130",
+  "slug": "understanding-the-key-factors-that-affect-your-mineral-rights-assessment-price",
+  "title": "Understanding the Key Factors That Affect Your Mineral Rights Assessment Price",
+  "canonical_url": "https://mineralrightsxchange.com/blog/understanding-the-key-factors-that-affect-your-mineral-rights-assessment-price/",
+  "source_path": "src/content/posts/understanding-the-key-factors-that-affect-your-mineral-rights-assessment-price.mdx",
+  "input_body_sha256": "64ee61b373039ec33b1620826ed50a14c07b1a524b103876075cbdd9690328e1",
+  "input_frontmatter_sha256": "58a4122201d9f29d32851dbb3acd4012766532d93a6ed08d3e2b80446d231200",
+  "expected_repo_sha256": "64ee61b373039ec33b1620826ed50a14c07b1a524b103876075cbdd9690328e1",
+  "two_image_manifest_sha256": "3d25ad0be9467c9950ebca46ecea88f5a1a6d11bbaa788ce9c5597ed1d62326e",
+  "reviewer_id": "codex_wave50_editorial",
+  "review_run_id": "mrx1000-wave50-editorial-20260812T234349Z",
+  "capability": "editorial",
+  "findings": [
+    "Complete current MDX SHA-256 is 64ee61b373039ec33b1620826ed50a14c07b1a524b103876075cbdd9690328e1; the answer-first article contains 3046 body tokens and five FAQs.",
+    "The article owns the suggested-assessment-price audit job. It keeps gross range, evidence support, transaction proposal, and expected owner net separate; traces six evidence groups through a change log; and routes the five-layer valuation-mechanics, broad factor-list, offer-range, and introductory value-driver jobs to their established pages.",
+    "Exact-title hero/share OCR passed for “Understanding the Key Factors That Affect Your Mineral Rights Assessment Price”; distinct in-body OCR passed for “What Factors Influence the Price You Suggest for My Mineral Rights Assessment?”."
+  ],
+  "checks": [
+    {
+      "name": "complete_file_sha256_match",
+      "status": "PASS",
+      "evidence": "64ee61b373039ec33b1620826ed50a14c07b1a524b103876075cbdd9690328e1"
+    },
+    {
+      "name": "answer_first_article_depth_and_five_faqs",
+      "status": "PASS",
+      "evidence": {
+        "word_count": 3046,
+        "minimum_word_count": 700,
+        "faq_count": 5
+      }
+    },
+    {
+      "name": "two_image_exact_text_identity",
+      "status": "PASS",
+      "evidence": {
+        "hero_ocr": true,
+        "inline_ocr": true,
+        "social_reuses_hero": true,
+        "filename_identity": true,
+        "distinct_binaries": true
+      }
+    }
+  ],
+  "sources_inspected": [
+    "src/content/posts/understanding-the-key-factors-that-affect-your-mineral-rights-assessment-price.mdx",
+    "/assets/articles/hero/understanding-the-key-factors-that-affect-your-mineral-rights-assessment-price.webp",
+    "/assets/articles/inline/understanding-the-key-factors-that-affect-your-mineral-rights-assessment-price/what-factors-influence-the-price-you-suggest-for-my-mineral-rights-assessment.webp"
+  ]
+}

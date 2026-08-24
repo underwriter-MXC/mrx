@@ -1,0 +1,66 @@
+{
+  "artifact_type": "mrx1000_wave87_two_image_editorial_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-23T19:05:43Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-14",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0271",
+  "slug": "how-to-build-a-mineral-rights-valuation-evidence-cutoff-log",
+  "title": "How to Build a Mineral Rights Valuation Evidence-Cutoff Log",
+  "canonical_url": "https://mineralrightsxchange.com/blog/how-to-build-a-mineral-rights-valuation-evidence-cutoff-log/",
+  "source_path": "src/content/posts/how-to-build-a-mineral-rights-valuation-evidence-cutoff-log.mdx",
+  "input_body_sha256": "09f5e8bcb908f3c6df0ba6998a9031d8b0ec7ff07d91730471cfe564e771916f",
+  "input_frontmatter_sha256": "950a28317a2e354963a9c4e5fc32c9914537469ff6092f61035676c64a065dd2",
+  "expected_repo_sha256": "09f5e8bcb908f3c6df0ba6998a9031d8b0ec7ff07d91730471cfe564e771916f",
+  "two_image_manifest_sha256": "370337a16e0e9f81153100aa2ffe38b8e4c2c148c5bfbe92ff4e0e6086e399e9",
+  "visual_metadata": {
+    "hero_alt": "A dated evidence-control worksheet and source files appear beside the exact article title.",
+    "social_alt": "A dated evidence-control worksheet and source files appear beside the exact article title.",
+    "inline_alt": "A top-down six-column evidence-cutoff worksheet appears above the exact keyword."
+  },
+  "reviewer_id": "codex_wave87_editorial",
+  "review_run_id": "mrx1000-wave87-editorial-20260823T190543Z",
+  "capability": "editorial",
+  "findings": [
+    "Complete current MDX SHA-256 is 09f5e8bcb908f3c6df0ba6998a9031d8b0ec7ff07d91730471cfe564e771916f; the answer-first article contains 2013 body tokens and five FAQs.",
+    "The article replaces a colliding valuation-assessment explainer with one administrative job: inventory the exact source objects present at a stated cutoff using stable file identity, distinct date roles, inclusion statuses, retained locators, source limitations, and unresolved gaps.",
+    "Exact-title hero/share OCR passed and distinct in-body keyword OCR passed. The eye-level evidence-control desk and people-free strict-overhead six-column worksheet differ materially in camera angle, subject arrangement, composition, and evidence function with matching alt metadata."
+  ],
+  "checks": [
+    {
+      "name": "complete_file_sha256_match",
+      "status": "PASS",
+      "evidence": "09f5e8bcb908f3c6df0ba6998a9031d8b0ec7ff07d91730471cfe564e771916f"
+    },
+    {
+      "name": "answer_first_article_depth_and_five_faqs",
+      "status": "PASS",
+      "evidence": {
+        "word_count": 2013,
+        "minimum_word_count": 700,
+        "faq_count": 5
+      }
+    },
+    {
+      "name": "two_image_exact_text_identity",
+      "status": "PASS",
+      "evidence": {
+        "hero_ocr": true,
+        "inline_ocr": true,
+        "social_reuses_hero": true,
+        "hero_social_alt_match": true,
+        "inline_alt_match": true,
+        "filename_identity": true,
+        "distinct_binaries": true
+      }
+    }
+  ],
+  "sources_inspected": [
+    "src/content/posts/how-to-build-a-mineral-rights-valuation-evidence-cutoff-log.mdx",
+    "/assets/articles/hero/how-to-build-a-mineral-rights-valuation-evidence-cutoff-log.webp",
+    "/assets/articles/inline/how-to-build-a-mineral-rights-valuation-evidence-cutoff-log/mineral-rights-valuation-evidence-cutoff-log.webp"
+  ]
+}

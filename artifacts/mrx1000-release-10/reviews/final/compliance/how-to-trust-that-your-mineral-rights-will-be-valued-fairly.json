@@ -1,0 +1,43 @@
+{
+  "artifact_type": "mrx1000_two_image_compliance_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-11T22:44:38Z",
+  "decision_authority": {
+    "source": "Daryl owner directive, 2026-08-11",
+    "policy": "MRX two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0429",
+  "slug": "how-to-trust-that-your-mineral-rights-will-be-valued-fairly",
+  "title": "How to Trust That Your Mineral Rights Will Be Valued Fairly",
+  "canonical_url": "https://mineralrightsxchange.com/blog/how-to-trust-that-your-mineral-rights-will-be-valued-fairly/",
+  "source_path": "src/content/posts/how-to-trust-that-your-mineral-rights-will-be-valued-fairly.mdx",
+  "input_body_sha256": "fc773de5c8a155bcbcdfcaec1c5e463888396355c12f11defff6d6b2aed4ada9",
+  "input_frontmatter_sha256": "64fe12f948c491bc6dc9bbbcfbfbaec359eba2720500b1551388f0cafa1880ce",
+  "expected_repo_sha256": "fc773de5c8a155bcbcdfcaec1c5e463888396355c12f11defff6d6b2aed4ada9",
+  "two_image_manifest_sha256": "802512b5dab8eae7592be5934f97a6a8989125fb8f65d3f37ee3cdeb2d35dc10",
+  "reviewer_id": "codex_two_image_compliance",
+  "review_run_id": "mrx1000-two-image-retrofit-20260811T224438Z",
+  "capability": "compliance",
+  "expected_hero_sha256": "b6ca5d8d67345c10c3614b3416de66e8a8b5a3711d7249f0c8e98fdb34822769",
+  "expected_inline_sha256": "de6d71f358f2d7a91da9149442a638a3d44dbbb72331db6bfd31faaff4eaf2d4",
+  "findings": [
+    "Complete current MDX SHA-256 is fc773de5c8a155bcbcdfcaec1c5e463888396355c12f11defff6d6b2aed4ada9; hero/share and in-body image hashes are separately locked.",
+    "Image text is limited to the exact article title and declared page keyword; it adds no guarantee, price, deadline, legal conclusion, or tax conclusion.",
+    "The article retains its educational and professional-boundary language and current disclosure treatment."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "hero_share_sha256_identity",
+    "inline_image_distinct_sha256",
+    "exact_text_ocr_pass",
+    "filename_text_identity_pass",
+    "no_unsupported_visual_claims",
+    "educational_and_professional_boundaries_preserved"
+  ],
+  "sources_inspected": [
+    "src/content/posts/how-to-trust-that-your-mineral-rights-will-be-valued-fairly.mdx",
+    "/assets/articles/hero/how-to-trust-that-your-mineral-rights-will-be-valued-fairly.webp",
+    "/assets/articles/inline/how-to-trust-that-your-mineral-rights-will-be-valued-fairly/fair-mineral-rights-offer.webp"
+  ]
+}

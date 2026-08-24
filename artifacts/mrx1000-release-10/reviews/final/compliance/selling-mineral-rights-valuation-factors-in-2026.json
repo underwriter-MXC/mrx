@@ -1,0 +1,43 @@
+{
+  "artifact_type": "mrx1000_two_image_compliance_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-12T13:38:20Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-12",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0112",
+  "slug": "selling-mineral-rights-valuation-factors-in-2026",
+  "title": "Selling Mineral Rights: Valuation Factors In 2026",
+  "canonical_url": "https://mineralrightsxchange.com/blog/selling-mineral-rights-valuation-factors-in-2026/",
+  "source_path": "src/content/posts/selling-mineral-rights-valuation-factors-in-2026.mdx",
+  "input_body_sha256": "ba3aa0913e434c3ab4d007b0b1e1233ab78d87b6bb91072f8242d8c1cbf96694",
+  "input_frontmatter_sha256": "64a1a5988a58aa9e96383efc2ff2ca107d2b71ac55e26b0937376e10c0f4f2c5",
+  "expected_repo_sha256": "ba3aa0913e434c3ab4d007b0b1e1233ab78d87b6bb91072f8242d8c1cbf96694",
+  "two_image_manifest_sha256": "cd440e31ee83047815e1c8a89c7930250bdfffec437ed5c7dea60600d0ad9119",
+  "reviewer_id": "codex_wave32_compliance",
+  "review_run_id": "mrx1000-wave32-compliance-20260812T133820Z",
+  "capability": "compliance",
+  "expected_hero_sha256": "828fbf850c5c23e8f84527d5bf6da6eaec33a40319cbdc2738bf81f59e740df5",
+  "expected_inline_sha256": "e168b84d78f994277353c8aca8f224932925e190d508572c662543e1bc32c456",
+  "findings": [
+    "Complete current MDX SHA-256 is ba3aa0913e434c3ab4d007b0b1e1233ab78d87b6bb91072f8242d8c1cbf96694; hero/share and inline image hashes are separately locked.",
+    "The article states educational and professional boundaries, discloses MRX’s potential economic interest, separates observed asset facts from forward assumptions and negotiated terms, labels MRX review as directional, and routes unresolved title, legal, tax, accounting, engineering, appraisal, investment, and transaction questions without making owner-specific conclusions.",
+    "Image text is limited to the exact article title and canonical keyword and adds no owner data, buyer endorsement, deed, price, factor weight, multiple, acreage, decimal, formula, reserve quantity, appraisal result, tax outcome, or transaction conclusion."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "hero_share_sha256_identity",
+    "inline_image_distinct_sha256",
+    "exact_text_ocr_pass",
+    "filename_text_identity_pass",
+    "educational_and_professional_boundaries_preserved",
+    "no_unsupported_visual_or_valuation_claims"
+  ],
+  "sources_inspected": [
+    "src/content/posts/selling-mineral-rights-valuation-factors-in-2026.mdx",
+    "/assets/articles/hero/selling-mineral-rights-valuation-factors-in-2026.webp",
+    "/assets/articles/inline/selling-mineral-rights-valuation-factors-in-2026/selling-mineral-rights.webp"
+  ]
+}

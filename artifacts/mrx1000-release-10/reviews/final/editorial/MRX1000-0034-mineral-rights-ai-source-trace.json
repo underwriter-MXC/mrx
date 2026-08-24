@@ -1,0 +1,66 @@
+{
+  "artifact_type": "mrx1000_two_image_editorial_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-23T03:11:21Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-14",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0034",
+  "slug": "mineral-rights-ai-source-trace",
+  "title": "How to Keep an AI Source Trace for a Mineral Rights Review",
+  "canonical_url": "https://mineralrightsxchange.com/blog/mineral-rights-ai-source-trace/",
+  "source_path": "src/content/posts/mineral-rights-ai-source-trace.mdx",
+  "input_body_sha256": "81b68a6c72193f71603d2b1b23f1cf943697a6cc1daefd36f9fbabded39e3695",
+  "input_frontmatter_sha256": "d5460037fb0b63916d4e7c8cae01fa23bab8925ebc99ece8efe20fb854497dbd",
+  "expected_repo_sha256": "81b68a6c72193f71603d2b1b23f1cf943697a6cc1daefd36f9fbabded39e3695",
+  "two_image_manifest_sha256": "402a01516bbe0a95c0cb283371b8da2ffb552a0831d338c616c147967b633dc6",
+  "visual_metadata": {
+    "hero_alt": "A reviewer checks source records and three blank status cards beside the exact article title.",
+    "social_alt": "A reviewer checks source records and three blank status cards beside the exact article title.",
+    "inline_alt": "A top-down provenance grid links a blank output card to source records and an unresolved marker under the exact keyword."
+  },
+  "reviewer_id": "codex_wave75_editorial",
+  "review_run_id": "mrx1000-wave75-editorial-20260823T031121Z",
+  "capability": "editorial",
+  "findings": [
+    "Complete current MDX SHA-256 is 81b68a6c72193f71603d2b1b23f1cf943697a6cc1daefd36f9fbabded39e3695; the answer-first article contains 1534 body tokens and five FAQs.",
+    "The article owns one statement-level provenance workflow with three origin labels, a source reference, access date, and human-review status. It does not duplicate platform differentiation, document intake, valuation-input, title, legal, tax, offer-comparison, or provider-evaluation jobs.",
+    "Exact-title hero/share OCR passed for “How to Keep an AI Source Trace for a Mineral Rights Review”; distinct in-body OCR passed for “mineral rights AI source trace”; the side-angle human-review hero and people-free overhead provenance grid are materially different compositions with matching alt metadata."
+  ],
+  "checks": [
+    {
+      "name": "complete_file_sha256_match",
+      "status": "PASS",
+      "evidence": "81b68a6c72193f71603d2b1b23f1cf943697a6cc1daefd36f9fbabded39e3695"
+    },
+    {
+      "name": "answer_first_article_depth_and_five_faqs",
+      "status": "PASS",
+      "evidence": {
+        "word_count": 1534,
+        "minimum_word_count": 700,
+        "faq_count": 5
+      }
+    },
+    {
+      "name": "two_image_exact_text_identity",
+      "status": "PASS",
+      "evidence": {
+        "hero_ocr": true,
+        "inline_ocr": true,
+        "social_reuses_hero": true,
+        "hero_social_alt_match": true,
+        "inline_alt_match": true,
+        "filename_identity": true,
+        "distinct_binaries": true
+      }
+    }
+  ],
+  "sources_inspected": [
+    "src/content/posts/mineral-rights-ai-source-trace.mdx",
+    "/assets/articles/hero/how-to-keep-an-ai-source-trace-for-a-mineral-rights-review.webp",
+    "/assets/articles/inline/mineral-rights-ai-source-trace/mineral-rights-ai-source-trace.webp"
+  ]
+}

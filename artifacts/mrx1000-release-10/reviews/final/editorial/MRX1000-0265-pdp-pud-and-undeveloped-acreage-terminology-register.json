@@ -1,0 +1,66 @@
+{
+  "artifact_type": "mrx1000_two_image_editorial_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-23T09:26:23Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-14",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0265",
+  "slug": "pdp-pud-and-undeveloped-acreage-terminology-register",
+  "title": "How to Build a PDP, PUD, and Undeveloped Acreage Terminology Register",
+  "canonical_url": "https://mineralrightsxchange.com/blog/pdp-pud-and-undeveloped-acreage-terminology-register/",
+  "source_path": "src/content/posts/pdp-pud-and-undeveloped-acreage-terminology-register.mdx",
+  "input_body_sha256": "aa58e028fd589197216100eb52bc77c24335c71cbb6d6f5f6e504bae7d8e63ea",
+  "input_frontmatter_sha256": "1a38cb2c81a7950c692f8d7408ad805c8b1d470e7faea7cc5a96c6a0747cbd7b",
+  "expected_repo_sha256": "aa58e028fd589197216100eb52bc77c24335c71cbb6d6f5f6e504bae7d8e63ea",
+  "two_image_manifest_sha256": "777740123846573be7cfc4d304e62e462ec2feaf01634e7403553dc3cba32cfb",
+  "visual_metadata": {
+    "hero_alt": "Three blank archival category folders and a source-reference card appear beside the exact article title.",
+    "social_alt": "Three blank archival category folders and a source-reference card appear beside the exact article title.",
+    "inline_alt": "An overhead three-source terminology register and neutral-question card appear above the exact keyword."
+  },
+  "reviewer_id": "codex_wave80_editorial",
+  "review_run_id": "mrx1000-wave80-editorial-20260823T092623Z",
+  "capability": "editorial",
+  "findings": [
+    "Complete current MDX SHA-256 is aa58e028fd589197216100eb52bc77c24335c71cbb6d6f5f6e504bae7d8e63ea; the answer-first article contains 1722 body tokens and five FAQs.",
+    "The article owns only a source-preserving terminology register for PDP, PUD, and undeveloped-acreage language displayed in identified documents. It uses term displayed, standard stated, or standard not stated and stops before classification, compliance, comparability, property attribution, development, production, valuation, offer, or transaction conclusions.",
+    "Exact-title hero/share OCR passed for “How to Build a PDP, PUD, and Undeveloped Acreage Terminology Register”; distinct in-body OCR passed for “PDP PUD undeveloped acreage terminology register”; the front-facing archival-category hero and people-free overhead terminology-register worksheet are materially different compositions with matching alt metadata."
+  ],
+  "checks": [
+    {
+      "name": "complete_file_sha256_match",
+      "status": "PASS",
+      "evidence": "aa58e028fd589197216100eb52bc77c24335c71cbb6d6f5f6e504bae7d8e63ea"
+    },
+    {
+      "name": "answer_first_article_depth_and_five_faqs",
+      "status": "PASS",
+      "evidence": {
+        "word_count": 1722,
+        "minimum_word_count": 700,
+        "faq_count": 5
+      }
+    },
+    {
+      "name": "two_image_exact_text_identity",
+      "status": "PASS",
+      "evidence": {
+        "hero_ocr": true,
+        "inline_ocr": true,
+        "social_reuses_hero": true,
+        "hero_social_alt_match": true,
+        "inline_alt_match": true,
+        "filename_identity": true,
+        "distinct_binaries": true
+      }
+    }
+  ],
+  "sources_inspected": [
+    "src/content/posts/pdp-pud-and-undeveloped-acreage-terminology-register.mdx",
+    "/assets/articles/hero/how-to-build-a-pdp-pud-and-undeveloped-acreage-terminology-register.webp",
+    "/assets/articles/inline/pdp-pud-and-undeveloped-acreage-terminology-register/pdp-pud-undeveloped-acreage-terminology-register.webp"
+  ]
+}

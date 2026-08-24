@@ -1,0 +1,43 @@
+{
+  "artifact_type": "mrx1000_two_image_compliance_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-13T22:25:53Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-11",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0136",
+  "slug": "understanding-typical-pricing-ranges-for-mineral-rights-in-your-area-what-to-expect",
+  "title": "Understanding Typical Pricing Ranges for Mineral Rights in Your Area: What to Expect",
+  "canonical_url": "https://mineralrightsxchange.com/blog/understanding-typical-pricing-ranges-for-mineral-rights-in-your-area-what-to-expect/",
+  "source_path": "src/content/posts/understanding-typical-pricing-ranges-for-mineral-rights-in-your-area-what-to-expect.mdx",
+  "input_body_sha256": "130a895a1d5de4457e8e4e106339cafba07bb97af130ba43714d772b7efccbd9",
+  "input_frontmatter_sha256": "c52bb6df70860f91e615c69afd8abf34732ec6b2bf15ed49dac0ac6ac17f38fa",
+  "expected_repo_sha256": "130a895a1d5de4457e8e4e106339cafba07bb97af130ba43714d772b7efccbd9",
+  "two_image_manifest_sha256": "4cd2c530c5dbbae7ac86448bb2d6f6351f161452dda34c4f5f965a1e8b2f9431",
+  "reviewer_id": "codex_wave56_compliance",
+  "review_run_id": "mrx1000-wave56-compliance-20260813T222553Z",
+  "capability": "compliance",
+  "expected_hero_sha256": "534cede8b609e2e9e2adf707555c8b94c95de775f48602d07a2e0feb2630132e",
+  "expected_inline_sha256": "76d1b0b6f5e965fb3153510d39bf9f83059f1376a164b487c870fd8a43717908",
+  "findings": [
+    "Complete current MDX SHA-256 is 130a895a1d5de4457e8e4e106339cafba07bb97af130ba43714d772b7efccbd9; hero/share and inline image hashes are separately locked.",
+    "The article states educational and professional boundaries, separates cohorts and evidence lanes, labels unresolved identity and denominator questions, distinguishes state lease bids from private sale evidence, discloses possible MRX buyer interest, and makes no owner-specific title, value, legal, tax, investment, appraisal, or transaction conclusion.",
+    "Image text is limited to the exact article title and exact canonical keyword and adds no owner data, property identifier, price, percentage, buyer endorsement, title conclusion, valuation conclusion, tax result, guarantee, or transaction conclusion."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "hero_share_sha256_identity",
+    "inline_image_distinct_sha256",
+    "exact_text_ocr_pass",
+    "filename_text_identity_pass",
+    "educational_and_professional_boundaries_preserved",
+    "no_unsupported_visual_or_valuation_claims"
+  ],
+  "sources_inspected": [
+    "src/content/posts/understanding-typical-pricing-ranges-for-mineral-rights-in-your-area-what-to-expect.mdx",
+    "/assets/articles/hero/understanding-typical-pricing-ranges-for-mineral-rights-in-your-area-what-to-expect.webp",
+    "/assets/articles/inline/understanding-typical-pricing-ranges-for-mineral-rights-in-your-area-what-to-expect/what-is-the-typical-pricing-range-for-mineral-rights-in-my-area.webp"
+  ]
+}

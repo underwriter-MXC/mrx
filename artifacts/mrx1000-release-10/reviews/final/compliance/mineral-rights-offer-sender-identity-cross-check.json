@@ -1,0 +1,49 @@
+{
+  "artifact_type": "mrx1000_two_image_compliance_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-22T23:09:02Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-14",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0962",
+  "slug": "mineral-rights-offer-sender-identity-cross-check",
+  "title": "How to Build a Mineral Rights Offer Sender Identity Cross-Check",
+  "canonical_url": "https://mineralrightsxchange.com/blog/mineral-rights-offer-sender-identity-cross-check/",
+  "source_path": "src/content/posts/mineral-rights-offer-sender-identity-cross-check.mdx",
+  "input_body_sha256": "8dfbf8a57d0a02539e9adfb3de6cdd5cff99e20abeb9308f53a2a2845c063119",
+  "input_frontmatter_sha256": "786f982b004e06ba6b3c083a69ab03e8abc8a766ae1381f9ba7647f65c7af6ef",
+  "expected_repo_sha256": "8dfbf8a57d0a02539e9adfb3de6cdd5cff99e20abeb9308f53a2a2845c063119",
+  "two_image_manifest_sha256": "58d88427daaf536607f1e31e90cdd993084aace3d0904eb102e4778683dc807e",
+  "visual_metadata": {
+    "hero_alt": "Owner and analyst review a sender checklist beside “How to Build a Mineral Rights Offer Sender Identity Cross-Check”.",
+    "social_alt": "Owner and analyst review a sender checklist beside “How to Build a Mineral Rights Offer Sender Identity Cross-Check”.",
+    "inline_alt": "Blank offer, entity, and contact cards form a matrix above “mineral rights offer sender identity cross-check”."
+  },
+  "reviewer_id": "codex_wave72_compliance",
+  "review_run_id": "mrx1000-wave72-compliance-20260822T230902Z",
+  "capability": "compliance",
+  "expected_hero_sha256": "044a33367b2fd936664eaafd604fa5d09b8c75ba1d6d7765620e8fcbc33c5690",
+  "expected_inline_sha256": "fb05486d80c072f2df31ee9e38f2c95692cc6582253ab73f724dd2c6d6bb3838",
+  "findings": [
+    "Complete current MDX SHA-256 is 8dfbf8a57d0a02539e9adfb3de6cdd5cff99e20abeb9308f53a2a2845c063119; hero/share and inline image hashes are separately locked.",
+    "The article states educational and professional boundaries, separates an identity cross-check from authentication, authority, legitimacy, reputation, fraud, offer economics, property scope, contract review, and decisions, discloses possible MRX buyer interest, and preserves owner agency.",
+    "Image text is limited to the exact article title and approved keyword and adds no name, address, phone, domain, entity result, amount, property identifier, signature, seal, match or mismatch result, legitimacy conclusion, ranking, recommendation, guarantee, buyer endorsement, or transaction result."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "hero_share_sha256_identity",
+    "inline_image_distinct_sha256",
+    "exact_text_ocr_pass",
+    "filename_text_identity_pass",
+    "educational_and_professional_boundaries_preserved",
+    "owner_agency_and_possible_buyer_interest_disclosure_preserved",
+    "no_unsupported_visual_or_decision_claims"
+  ],
+  "sources_inspected": [
+    "src/content/posts/mineral-rights-offer-sender-identity-cross-check.mdx",
+    "/assets/articles/hero/how-to-build-a-mineral-rights-offer-sender-identity-cross-check.webp",
+    "/assets/articles/inline/mineral-rights-offer-sender-identity-cross-check/mineral-rights-offer-sender-identity-cross-check.webp"
+  ]
+}

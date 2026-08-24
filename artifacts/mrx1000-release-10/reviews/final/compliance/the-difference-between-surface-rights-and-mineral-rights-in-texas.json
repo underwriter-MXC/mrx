@@ -1,0 +1,43 @@
+{
+  "artifact_type": "mrx1000_two_image_compliance_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-11T22:44:38Z",
+  "decision_authority": {
+    "source": "Daryl owner directive, 2026-08-11",
+    "policy": "MRX two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0879",
+  "slug": "the-difference-between-surface-rights-and-mineral-rights-in-texas",
+  "title": "The Difference Between Surface Rights and Mineral Rights in Texas",
+  "canonical_url": "https://mineralrightsxchange.com/blog/the-difference-between-surface-rights-and-mineral-rights-in-texas/",
+  "source_path": "src/content/posts/the-difference-between-surface-rights-and-mineral-rights-in-texas.mdx",
+  "input_body_sha256": "053c4c22b0d55a65ac3cd119d9b2d0a3af6275e1f6f17137993c09c794470217",
+  "input_frontmatter_sha256": "9ab9bd4ca683cb089fe130abb321c6e6ff185339aa2912367df3f99ead774c7c",
+  "expected_repo_sha256": "053c4c22b0d55a65ac3cd119d9b2d0a3af6275e1f6f17137993c09c794470217",
+  "two_image_manifest_sha256": "802512b5dab8eae7592be5934f97a6a8989125fb8f65d3f37ee3cdeb2d35dc10",
+  "reviewer_id": "codex_two_image_compliance",
+  "review_run_id": "mrx1000-two-image-retrofit-20260811T224438Z",
+  "capability": "compliance",
+  "expected_hero_sha256": "8e69e4f01cfb81361bdfafefb48350ab9d58e519e1c93ddb5c53335e11b5a4e2",
+  "expected_inline_sha256": "946c2c3e0463bd24cbe2e88da99a8455e2e0ae355d58596f66c35e7c48ce0fd9",
+  "findings": [
+    "Complete current MDX SHA-256 is 053c4c22b0d55a65ac3cd119d9b2d0a3af6275e1f6f17137993c09c794470217; hero/share and in-body image hashes are separately locked.",
+    "Image text is limited to the exact article title and declared page keyword; it adds no guarantee, price, deadline, legal conclusion, or tax conclusion.",
+    "The article retains its educational and professional-boundary language and current disclosure treatment."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "hero_share_sha256_identity",
+    "inline_image_distinct_sha256",
+    "exact_text_ocr_pass",
+    "filename_text_identity_pass",
+    "no_unsupported_visual_claims",
+    "educational_and_professional_boundaries_preserved"
+  ],
+  "sources_inspected": [
+    "src/content/posts/the-difference-between-surface-rights-and-mineral-rights-in-texas.mdx",
+    "/assets/articles/hero/the-difference-between-surface-rights-and-mineral-rights-in-texas.webp",
+    "/assets/articles/inline/the-difference-between-surface-rights-and-mineral-rights-in-texas/surface-rights-vs-mineral-rights-texas.webp"
+  ]
+}

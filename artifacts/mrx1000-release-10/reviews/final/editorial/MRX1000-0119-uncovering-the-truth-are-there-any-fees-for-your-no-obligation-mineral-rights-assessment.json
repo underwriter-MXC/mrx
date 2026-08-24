@@ -1,0 +1,59 @@
+{
+  "artifact_type": "mrx1000_two_image_editorial_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-12T17:26:52Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-12",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0119",
+  "slug": "uncovering-the-truth-are-there-any-fees-for-your-no-obligation-mineral-rights-assessment",
+  "title": "Uncovering the Truth: Are There Any Fees for Your No-Obligation Mineral Rights Assessment?",
+  "canonical_url": "https://mineralrightsxchange.com/blog/uncovering-the-truth-are-there-any-fees-for-your-no-obligation-mineral-rights-assessment/",
+  "source_path": "src/content/posts/uncovering-the-truth-are-there-any-fees-for-your-no-obligation-mineral-rights-assessment.mdx",
+  "input_body_sha256": "09b95117c11f2f34b7f60fcbdf6dbca4bb7cc6655c2d6154eacba91b72383124",
+  "input_frontmatter_sha256": "5c2b07ff924af67ae1bb233259a0c99c5974a7978c158b34af68362fcdd5f2ed",
+  "expected_repo_sha256": "09b95117c11f2f34b7f60fcbdf6dbca4bb7cc6655c2d6154eacba91b72383124",
+  "two_image_manifest_sha256": "5deaec405eedbaf5902ecddd77cc81b98ac409e20858b592b0423d8c6c8656ee",
+  "reviewer_id": "codex_wave39_editorial",
+  "review_run_id": "mrx1000-wave39-editorial-20260812T172652Z",
+  "capability": "editorial",
+  "findings": [
+    "Complete current MDX SHA-256 is 09b95117c11f2f34b7f60fcbdf6dbca4bb7cc6655c2d6154eacba91b72383124; the answer-first article contains 2602 body tokens and five FAQs.",
+    "The article owns the assessment-request service-boundary verification job: it verifies the current zero-fee, no-card, and no-obligation policy; separates appointment, transactional, marketing, document-follow-up, outside-service, and later-transaction decisions; and supplies a ten-field dated boundary receipt with explicit pause rules.",
+    "Exact-title hero/share OCR passed for “Uncovering the Truth: Are There Any Fees for Your No-Obligation Mineral Rights Assessment?”; distinct in-body OCR passed for “Are There Any Fees Associated With Getting a No-Obligation Assessment?”."
+  ],
+  "checks": [
+    {
+      "name": "complete_file_sha256_match",
+      "status": "PASS",
+      "evidence": "09b95117c11f2f34b7f60fcbdf6dbca4bb7cc6655c2d6154eacba91b72383124"
+    },
+    {
+      "name": "answer_first_article_depth_and_five_faqs",
+      "status": "PASS",
+      "evidence": {
+        "word_count": 2602,
+        "minimum_word_count": 700,
+        "faq_count": 5
+      }
+    },
+    {
+      "name": "two_image_exact_text_identity",
+      "status": "PASS",
+      "evidence": {
+        "hero_ocr": true,
+        "inline_ocr": true,
+        "social_reuses_hero": true,
+        "filename_identity": true,
+        "distinct_binaries": true
+      }
+    }
+  ],
+  "sources_inspected": [
+    "src/content/posts/uncovering-the-truth-are-there-any-fees-for-your-no-obligation-mineral-rights-assessment.mdx",
+    "/assets/articles/hero/uncovering-the-truth-are-there-any-fees-for-your-no-obligation-mineral-rights-assessment.webp",
+    "/assets/articles/inline/uncovering-the-truth-are-there-any-fees-for-your-no-obligation-mineral-rights-assessment/are-there-any-fees-associated-with-getting-a-no-obligation-assessment.webp"
+  ]
+}

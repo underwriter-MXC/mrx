@@ -1,0 +1,49 @@
+{
+  "artifact_type": "mrx1000_two_image_compliance_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-14T20:37:18Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-11",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0141",
+  "slug": "should-i-sell-my-mineral-rights",
+  "title": "Should I Sell My Mineral Rights?",
+  "canonical_url": "https://mineralrightsxchange.com/blog/should-i-sell-my-mineral-rights/",
+  "source_path": "src/content/posts/should-i-sell-my-mineral-rights.mdx",
+  "input_body_sha256": "638c478784325e2645ece02bb47a812cbdc2a60795a1677feaeafa4fb6a62ac4",
+  "input_frontmatter_sha256": "0fc5b498ce2a8524915b0711a6e76924c769a8fb1171fde37b0dfeea4389a88d",
+  "expected_repo_sha256": "638c478784325e2645ece02bb47a812cbdc2a60795a1677feaeafa4fb6a62ac4",
+  "two_image_manifest_sha256": "677e2ff092de68a38cc2f21310d849b98c1966ce5f729efa5e3dba3c0d744af3",
+  "visual_metadata": {
+    "hero_alt": "A mineral owner compares a royalty statement and a sale folder beside “Should I Sell My Mineral Rights?”.",
+    "social_alt": "A mineral owner compares a royalty statement and a sale folder beside “Should I Sell My Mineral Rights?”.",
+    "inline_alt": "A parcel map separates a sale folder from royalty statements above “Sell Mineral Rights or Keep Receiving Royalties”."
+  },
+  "reviewer_id": "codex_wave61_compliance",
+  "review_run_id": "mrx1000-wave61-compliance-20260814T203718Z",
+  "capability": "compliance",
+  "expected_hero_sha256": "34fc52353bfe5987897c02cc034e17594d88f440820097a955dd8e281755dc49",
+  "expected_inline_sha256": "07daecbdd54c7879d1bc674566cf920bccae286ab7b0a82fc16e9a18c2016331",
+  "findings": [
+    "Complete current MDX SHA-256 is 638c478784325e2645ece02bb47a812cbdc2a60795a1677feaeafa4fb6a62ac4; hero/share and inline image hashes are separately locked.",
+    "The article states educational and professional boundaries, discloses possible MRX buyer interest, preserves owner agency, and makes no owner-specific recommendation, title, lease, engineering, reserves, tax, value, offer, suitability, investment, or transaction conclusion.",
+    "Image text is limited to the exact article title and approved supporting phrase and adds no account data, property identifier, amount, date, official seal, value conclusion, recommendation, offer, guarantee, buyer endorsement, or transaction result."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "hero_share_sha256_identity",
+    "inline_image_distinct_sha256",
+    "exact_text_ocr_pass",
+    "filename_text_identity_pass",
+    "educational_and_professional_boundaries_preserved",
+    "owner_agency_and_possible_buyer_interest_disclosure_preserved",
+    "no_unsupported_visual_or_decision_claims"
+  ],
+  "sources_inspected": [
+    "src/content/posts/should-i-sell-my-mineral-rights.mdx",
+    "/assets/articles/hero/should-i-sell-my-mineral-rights.webp",
+    "/assets/articles/inline/should-i-sell-my-mineral-rights/sell-mineral-rights-or-keep-receiving-royalties.webp"
+  ]
+}

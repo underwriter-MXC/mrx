@@ -1,0 +1,59 @@
+{
+  "artifact_type": "mrx1000_two_image_editorial_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-12T16:12:35Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-12",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0117",
+  "slug": "top-five-missteps-to-avoid-for-a-successful-mineral-rights-sale",
+  "title": "Top Five Missteps to Avoid for a Successful Mineral Rights Sale",
+  "canonical_url": "https://mineralrightsxchange.com/blog/top-five-missteps-to-avoid-for-a-successful-mineral-rights-sale/",
+  "source_path": "src/content/posts/top-five-missteps-to-avoid-for-a-successful-mineral-rights-sale.mdx",
+  "input_body_sha256": "7a0adab33952fe33e85615bcb867e7ca0a049c80124835a16aff970b339d64fa",
+  "input_frontmatter_sha256": "6f4feab86266aadd04aca911b24e9588e02dacf46a13534dccba9c27b29c94b2",
+  "expected_repo_sha256": "7a0adab33952fe33e85615bcb867e7ca0a049c80124835a16aff970b339d64fa",
+  "two_image_manifest_sha256": "7a26a5a50a43d40e7671df3c26f60ea76e7c49568883844e4f8a5a0cd72d7205",
+  "reviewer_id": "codex_wave37_editorial",
+  "review_run_id": "mrx1000-wave37-editorial-20260812T161235Z",
+  "capability": "editorial",
+  "findings": [
+    "Complete current MDX SHA-256 is 7a0adab33952fe33e85615bcb867e7ca0a049c80124835a16aff970b339d64fa; the answer-first article contains 2665 body tokens and five FAQs.",
+    "The article owns a five-error owner decision and recovery job: it separates objective and scope, evidence readiness, comparable proposal review, professional handoffs, and controlled closing, then provides a prevention artifact, recovery action, stop rule, and bounded professional question for each misstep.",
+    "Exact-title hero/share OCR passed for “Top Five Missteps to Avoid for a Successful Mineral Rights Sale”; distinct in-body OCR passed for “What Are Common Pitfalls I Should Avoid in Selling Mineral Rights?”."
+  ],
+  "checks": [
+    {
+      "name": "complete_file_sha256_match",
+      "status": "PASS",
+      "evidence": "7a0adab33952fe33e85615bcb867e7ca0a049c80124835a16aff970b339d64fa"
+    },
+    {
+      "name": "answer_first_article_depth_and_five_faqs",
+      "status": "PASS",
+      "evidence": {
+        "word_count": 2665,
+        "minimum_word_count": 700,
+        "faq_count": 5
+      }
+    },
+    {
+      "name": "two_image_exact_text_identity",
+      "status": "PASS",
+      "evidence": {
+        "hero_ocr": true,
+        "inline_ocr": true,
+        "social_reuses_hero": true,
+        "filename_identity": true,
+        "distinct_binaries": true
+      }
+    }
+  ],
+  "sources_inspected": [
+    "src/content/posts/top-five-missteps-to-avoid-for-a-successful-mineral-rights-sale.mdx",
+    "/assets/articles/hero/top-five-missteps-to-avoid-for-a-successful-mineral-rights-sale.webp",
+    "/assets/articles/inline/top-five-missteps-to-avoid-for-a-successful-mineral-rights-sale/what-are-common-pitfalls-i-should-avoid-in-selling-mineral-rights.webp"
+  ]
+}

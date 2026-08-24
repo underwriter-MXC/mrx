@@ -1,0 +1,43 @@
+{
+  "artifact_type": "mrx1000_two_image_compliance_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-12T12:08:59Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-12",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0187",
+  "slug": "how-much-are-mineral-rights-worth-due-diligence-step-by-step",
+  "title": "How Much Are Mineral Rights Worth: Due Diligence Step By Step",
+  "canonical_url": "https://mineralrightsxchange.com/blog/how-much-are-mineral-rights-worth-due-diligence-step-by-step/",
+  "source_path": "src/content/posts/how-much-are-mineral-rights-worth-due-diligence-step-by-step.mdx",
+  "input_body_sha256": "da6167122063ceba8043b7ea9ad3e208ccb8b525788ca5395a6dfcca3c64f371",
+  "input_frontmatter_sha256": "b39eacc273f27c7304afa09346e8b28d2d6ceb3234ca4ecb27968f16f350338c",
+  "expected_repo_sha256": "da6167122063ceba8043b7ea9ad3e208ccb8b525788ca5395a6dfcca3c64f371",
+  "two_image_manifest_sha256": "bc391d5e67ef6a4c4f546dff05635cee17287220108575f3266ee94f9d58c1c4",
+  "reviewer_id": "codex_wave29_compliance",
+  "review_run_id": "mrx1000-wave29-compliance-20260812T120859Z",
+  "capability": "compliance",
+  "expected_hero_sha256": "7a725306a2f9b55d1e38cc218c3233ddfcc4ecb650dde0f8f24f4e826cf48a2f",
+  "expected_inline_sha256": "277d796ead02a026d5479f33cb22e39192021c4aa2e90cf3cff57e5d5ed7127f",
+  "findings": [
+    "Complete current MDX SHA-256 is da6167122063ceba8043b7ea9ad3e208ccb8b525788ca5395a6dfcca3c64f371; hero/share and inline image hashes are separately locked.",
+    "The article states educational and professional boundaries, discloses MRX’s potential economic interest, separates observed evidence from assumptions, and routes unresolved title, legal, tax, accounting, payment, engineering, reserve, and appraisal questions without making owner-specific conclusions.",
+    "Image text is limited to the exact article title and canonical keyword and adds no owner data, deed, well, permit status, production, payment, price, forecast, acreage, decimal, legal, tax, accounting, engineering, reserve, investment, or valuation conclusion."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "hero_share_sha256_identity",
+    "inline_image_distinct_sha256",
+    "exact_text_ocr_pass",
+    "filename_text_identity_pass",
+    "educational_and_professional_boundaries_preserved",
+    "no_unsupported_visual_or_payment_claims"
+  ],
+  "sources_inspected": [
+    "src/content/posts/how-much-are-mineral-rights-worth-due-diligence-step-by-step.mdx",
+    "/assets/articles/hero/how-much-are-mineral-rights-worth-due-diligence-step-by-step.webp",
+    "/assets/articles/inline/how-much-are-mineral-rights-worth-due-diligence-step-by-step/how-much-are-mineral-rights-worth.webp"
+  ]
+}

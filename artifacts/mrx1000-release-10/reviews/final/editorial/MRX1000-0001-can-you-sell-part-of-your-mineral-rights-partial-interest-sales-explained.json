@@ -1,0 +1,62 @@
+{
+  "artifact_type": "mrx1000_two_image_editorial_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-11T22:44:38Z",
+  "decision_authority": {
+    "source": "Daryl owner directive, 2026-08-11",
+    "policy": "MRX two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0001",
+  "slug": "can-you-sell-part-of-your-mineral-rights-partial-interest-sales-explained",
+  "title": "Can You Sell Part of Your Mineral Rights? Partial Interest Sales Explained",
+  "canonical_url": "https://mineralrightsxchange.com/blog/can-you-sell-part-of-your-mineral-rights-partial-interest-sales-explained/",
+  "source_path": "src/content/posts/can-you-sell-part-of-your-mineral-rights-partial-interest-sales-explained.mdx",
+  "input_body_sha256": "66f254ab5f90612509a9b07ec3e0553fc95fa13fae5c7d0365bff5f8b2ba22cb",
+  "input_frontmatter_sha256": "1d4ea90aced961daa0a003b06690c03fbf729131e92fa593bc102092806f0675",
+  "expected_repo_sha256": "66f254ab5f90612509a9b07ec3e0553fc95fa13fae5c7d0365bff5f8b2ba22cb",
+  "two_image_manifest_sha256": "802512b5dab8eae7592be5934f97a6a8989125fb8f65d3f37ee3cdeb2d35dc10",
+  "reviewer_id": "codex_two_image_editorial",
+  "review_run_id": "mrx1000-two-image-retrofit-20260811T224438Z",
+  "capability": "editorial",
+  "findings": [
+    "Complete current MDX SHA-256 is 66f254ab5f90612509a9b07ec3e0553fc95fa13fae5c7d0365bff5f8b2ba22cb; article has 501 body tokens and five FAQs.",
+    "Exact-title hero/share OCR passed for “Can You Sell Part of Your Mineral Rights? Partial Interest Sales Explained”; distinct in-body OCR passed for “can you sell part of mineral rights partial interest sales”.",
+    "Both text treatments remain deterministic, descriptive, filename-matched, article-specific, and bound to the current source."
+  ],
+  "checks": [
+    {
+      "name": "complete_file_sha256_match",
+      "status": "PASS",
+      "evidence": "66f254ab5f90612509a9b07ec3e0553fc95fa13fae5c7d0365bff5f8b2ba22cb"
+    },
+    {
+      "name": "answer_first_depth_and_five_faqs",
+      "status": "PASS",
+      "evidence": {
+        "word_count": 501,
+        "minimum_word_count": 0,
+        "faq_count": 5
+      }
+    },
+    {
+      "name": "two_image_exact_text_identity",
+      "status": "PASS",
+      "evidence": {
+        "hero_path": true,
+        "social_identity": true,
+        "inline_path": true,
+        "inline_text": true,
+        "hero_ocr": true,
+        "inline_ocr": true,
+        "filename_identity": true,
+        "distinct_binaries": true
+      }
+    }
+  ],
+  "sources_inspected": [
+    "src/content/posts/can-you-sell-part-of-your-mineral-rights-partial-interest-sales-explained.mdx",
+    "/assets/articles/hero/can-you-sell-part-of-your-mineral-rights-partial-interest-sales-explained.webp",
+    "/assets/articles/inline/can-you-sell-part-of-your-mineral-rights-partial-interest-sales-explained/can-you-sell-part-of-mineral-rights-partial-interest-sales.webp"
+  ]
+}

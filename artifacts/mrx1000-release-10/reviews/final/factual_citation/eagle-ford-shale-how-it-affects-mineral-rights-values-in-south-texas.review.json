@@ -1,0 +1,87 @@
+{
+  "artifact_type": "mrx1000_two_image_factual_citation_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-11T22:44:38Z",
+  "decision_authority": {
+    "source": "Daryl owner directive, 2026-08-11",
+    "policy": "MRX two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0726",
+  "slug": "eagle-ford-shale-how-it-affects-mineral-rights-values-in-south-texas",
+  "title": "Eagle Ford Shale and South Texas Mineral Rights",
+  "canonical_url": "https://mineralrightsxchange.com/blog/eagle-ford-shale-how-it-affects-mineral-rights-values-in-south-texas/",
+  "source_path": "src/content/posts/eagle-ford-shale-how-it-affects-mineral-rights-values-in-south-texas.mdx",
+  "input_body_sha256": "73da1b3423ee4f0b8e680c3786dc5c85745f45fc461cf1b988544b32dbf5febf",
+  "input_frontmatter_sha256": "cc898a5635f8fea45a1fbc3992c673f9fdd0d01948ca53922a6acd0f4836edd4",
+  "expected_repo_sha256": "73da1b3423ee4f0b8e680c3786dc5c85745f45fc461cf1b988544b32dbf5febf",
+  "two_image_manifest_sha256": "802512b5dab8eae7592be5934f97a6a8989125fb8f65d3f37ee3cdeb2d35dc10",
+  "reviewer_id": "codex_two_image_factual",
+  "review_run_id": "mrx1000-two-image-retrofit-20260811T224438Z",
+  "capability": "factual_citation",
+  "findings": [
+    "Complete current MDX SHA-256 is 73da1b3423ee4f0b8e680c3786dc5c85745f45fc461cf1b988544b32dbf5febf; all 4 declared sources passed live access review.",
+    "The retrofit changes image metadata and assets, not the bounded claim-to-source relationships in the article body.",
+    "The two images make no fabricated numeric, legal, tax, valuation, testimonial, or document claims."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "minimum_two_distinct_https_sources",
+    "current_source_access_review_pass",
+    "two_image_unsupported_claim_scan_pass"
+  ],
+  "sources_inspected": [
+    {
+      "label": "U.S. Geological Survey: Eagle Ford Group Continuous Oil and Gas Assessment (Fact Sheet 2018-3033)",
+      "url": "https://pubs.usgs.gov/fs/2018/3033/fs20183033.pdf",
+      "publisher": "pubs.usgs.gov",
+      "accessed_at": "2026-08-11T22:44:38Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://pubs.usgs.gov/fs/2018/3033/fs20183033.pdf",
+        "content_type": "application/pdf"
+      },
+      "source_location_or_paraphrase": "The article cites U.S. Geological Survey: Eagle Ford Group Continuous Oil and Gas Assessment (Fact Sheet 2018-3033) only for the bounded context attributed in its body and source notes.",
+      "claim_scope": "Owner-specific legal, tax, title, accounting, brokerage, engineering, appraisal, eligibility, value, and transaction conclusions remain outside this source use."
+    },
+    {
+      "label": "Railroad Commission of Texas: Production Data",
+      "url": "https://www.rrc.texas.gov/oil-and-gas/research-and-statistics/production-data/",
+      "publisher": "www.rrc.texas.gov",
+      "accessed_at": "2026-08-11T22:44:38Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.rrc.texas.gov/oil-and-gas/research-and-statistics/production-data/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The article cites Railroad Commission of Texas: Production Data only for the bounded context attributed in its body and source notes.",
+      "claim_scope": "Owner-specific legal, tax, title, accounting, brokerage, engineering, appraisal, eligibility, value, and transaction conclusions remain outside this source use."
+    },
+    {
+      "label": "U.S. Energy Information Administration: Texas Profile",
+      "url": "https://www.eia.gov/state/?sid=TX",
+      "publisher": "www.eia.gov",
+      "accessed_at": "2026-08-11T22:44:38Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.eia.gov/states/TX/overview",
+        "content_type": "text/html; charset=UTF-8"
+      },
+      "source_location_or_paraphrase": "The article cites U.S. Energy Information Administration: Texas Profile only for the bounded context attributed in its body and source notes.",
+      "claim_scope": "Owner-specific legal, tax, title, accounting, brokerage, engineering, appraisal, eligibility, value, and transaction conclusions remain outside this source use."
+    },
+    {
+      "label": "MRX Methodology: How We Value Mineral Rights",
+      "url": "https://mineralrightsxchange.com/methodology/",
+      "publisher": "mineralrightsxchange.com",
+      "accessed_at": "2026-08-11T22:44:38Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://mineralrightsxchange.com/methodology/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The article cites MRX Methodology: How We Value Mineral Rights only for the bounded context attributed in its body and source notes.",
+      "claim_scope": "Owner-specific legal, tax, title, accounting, brokerage, engineering, appraisal, eligibility, value, and transaction conclusions remain outside this source use."
+    }
+  ]
+}

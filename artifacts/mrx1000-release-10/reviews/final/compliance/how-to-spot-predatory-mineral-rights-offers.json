@@ -1,0 +1,43 @@
+{
+  "artifact_type": "mrx1000_two_image_compliance_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-11T22:44:38Z",
+  "decision_authority": {
+    "source": "Daryl owner directive, 2026-08-11",
+    "policy": "MRX two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0311",
+  "slug": "how-to-spot-predatory-mineral-rights-offers",
+  "title": "How to Spot Predatory Mineral Rights Offers",
+  "canonical_url": "https://mineralrightsxchange.com/blog/how-to-spot-predatory-mineral-rights-offers/",
+  "source_path": "src/content/posts/how-to-spot-predatory-mineral-rights-offers.mdx",
+  "input_body_sha256": "eda8292efe8d5c0e62ec91c4201110c737a898df914a5e02b5d27b448dd6869e",
+  "input_frontmatter_sha256": "34c7f955700ef4653aea1369cae9d0f2c73df38b0141586e172591f4c79f05ab",
+  "expected_repo_sha256": "eda8292efe8d5c0e62ec91c4201110c737a898df914a5e02b5d27b448dd6869e",
+  "two_image_manifest_sha256": "802512b5dab8eae7592be5934f97a6a8989125fb8f65d3f37ee3cdeb2d35dc10",
+  "reviewer_id": "codex_two_image_compliance",
+  "review_run_id": "mrx1000-two-image-retrofit-20260811T224438Z",
+  "capability": "compliance",
+  "expected_hero_sha256": "acb7b824031b5a964da56dd84d5fc989d605221017c5e7389c07b8b067fa4c1f",
+  "expected_inline_sha256": "de299b0bc6c76947fe3eda49e13e8dacb82614cd42a6d6394e97d4e2acadeefe",
+  "findings": [
+    "Complete current MDX SHA-256 is eda8292efe8d5c0e62ec91c4201110c737a898df914a5e02b5d27b448dd6869e; hero/share and in-body image hashes are separately locked.",
+    "Image text is limited to the exact article title and declared page keyword; it adds no guarantee, price, deadline, legal conclusion, or tax conclusion.",
+    "The article retains its educational and professional-boundary language and current disclosure treatment."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "hero_share_sha256_identity",
+    "inline_image_distinct_sha256",
+    "exact_text_ocr_pass",
+    "filename_text_identity_pass",
+    "no_unsupported_visual_claims",
+    "educational_and_professional_boundaries_preserved"
+  ],
+  "sources_inspected": [
+    "src/content/posts/how-to-spot-predatory-mineral-rights-offers.mdx",
+    "/assets/articles/hero/how-to-spot-predatory-mineral-rights-offers.webp",
+    "/assets/articles/inline/how-to-spot-predatory-mineral-rights-offers/predatory-mineral-rights-offers.webp"
+  ]
+}

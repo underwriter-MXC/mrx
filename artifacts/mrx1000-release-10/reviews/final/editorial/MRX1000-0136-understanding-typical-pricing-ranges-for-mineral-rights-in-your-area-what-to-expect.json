@@ -1,0 +1,59 @@
+{
+  "artifact_type": "mrx1000_two_image_editorial_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-13T22:25:53Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-11",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0136",
+  "slug": "understanding-typical-pricing-ranges-for-mineral-rights-in-your-area-what-to-expect",
+  "title": "Understanding Typical Pricing Ranges for Mineral Rights in Your Area: What to Expect",
+  "canonical_url": "https://mineralrightsxchange.com/blog/understanding-typical-pricing-ranges-for-mineral-rights-in-your-area-what-to-expect/",
+  "source_path": "src/content/posts/understanding-typical-pricing-ranges-for-mineral-rights-in-your-area-what-to-expect.mdx",
+  "input_body_sha256": "130a895a1d5de4457e8e4e106339cafba07bb97af130ba43714d772b7efccbd9",
+  "input_frontmatter_sha256": "c52bb6df70860f91e615c69afd8abf34732ec6b2bf15ed49dac0ac6ac17f38fa",
+  "expected_repo_sha256": "130a895a1d5de4457e8e4e106339cafba07bb97af130ba43714d772b7efccbd9",
+  "two_image_manifest_sha256": "4cd2c530c5dbbae7ac86448bb2d6f6351f161452dda34c4f5f965a1e8b2f9431",
+  "reviewer_id": "codex_wave56_editorial",
+  "review_run_id": "mrx1000-wave56-editorial-20260813T222553Z",
+  "capability": "editorial",
+  "findings": [
+    "Complete current MDX SHA-256 is 130a895a1d5de4457e8e4e106339cafba07bb97af130ba43714d772b7efccbd9; the answer-first article contains 2300 body tokens and five FAQs.",
+    "The article owns the property-matched local pricing-range assembly and reporting job. It defines the relevant area from the subject outward, separates materially different cohorts and evidence lanes, normalizes verified units and terms, reports a supported evidence envelope with exclusions and confidence, and states when no local range is supportable.",
+    "Exact-title hero/share OCR passed for “Understanding Typical Pricing Ranges for Mineral Rights in Your Area: What to Expect”; distinct in-body OCR passed for “What Is the Typical Pricing Range for Mineral Rights in My Area?”."
+  ],
+  "checks": [
+    {
+      "name": "complete_file_sha256_match",
+      "status": "PASS",
+      "evidence": "130a895a1d5de4457e8e4e106339cafba07bb97af130ba43714d772b7efccbd9"
+    },
+    {
+      "name": "answer_first_article_depth_and_five_faqs",
+      "status": "PASS",
+      "evidence": {
+        "word_count": 2300,
+        "minimum_word_count": 700,
+        "faq_count": 5
+      }
+    },
+    {
+      "name": "two_image_exact_text_identity",
+      "status": "PASS",
+      "evidence": {
+        "hero_ocr": true,
+        "inline_ocr": true,
+        "social_reuses_hero": true,
+        "filename_identity": true,
+        "distinct_binaries": true
+      }
+    }
+  ],
+  "sources_inspected": [
+    "src/content/posts/understanding-typical-pricing-ranges-for-mineral-rights-in-your-area-what-to-expect.mdx",
+    "/assets/articles/hero/understanding-typical-pricing-ranges-for-mineral-rights-in-your-area-what-to-expect.webp",
+    "/assets/articles/inline/understanding-typical-pricing-ranges-for-mineral-rights-in-your-area-what-to-expect/what-is-the-typical-pricing-range-for-mineral-rights-in-my-area.webp"
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "artifact_type": "mrx1000_two_image_compliance_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-12T20:00:02Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-12",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0124",
+  "slug": "understanding-mineral-rights-valuation-determine-the-fair-assessment-for-your-interests",
+  "title": "Understanding Mineral Rights Valuation: Determine the Fair Assessment for Your Interests",
+  "canonical_url": "https://mineralrightsxchange.com/blog/understanding-mineral-rights-valuation-determine-the-fair-assessment-for-your-interests/",
+  "source_path": "src/content/posts/understanding-mineral-rights-valuation-determine-the-fair-assessment-for-your-interests.mdx",
+  "input_body_sha256": "32f00efc59a4c457e9ab38579fcea286c6c6e8e9375d43918356a360deaeb8a2",
+  "input_frontmatter_sha256": "72038972da45cb16449978b81fcee31afda556991fb417dcc9d9948ccd064d47",
+  "expected_repo_sha256": "32f00efc59a4c457e9ab38579fcea286c6c6e8e9375d43918356a360deaeb8a2",
+  "two_image_manifest_sha256": "3f5f74da21e95ec6fba49edf748e5ef636ebee2db127cbef3778a76267676702",
+  "reviewer_id": "codex_wave44_compliance",
+  "review_run_id": "mrx1000-wave44-compliance-20260812T200002Z",
+  "capability": "compliance",
+  "expected_hero_sha256": "1f14377fa1ff6ccd56cc8da2736d054fa0e6684b4a38ee8b98e8ff33fdffc7eb",
+  "expected_inline_sha256": "b17d220db7318b88150e363172de4d9ca1e228322b8a6eca7e3c9bc88ea8c03e",
+  "findings": [
+    "Complete current MDX SHA-256 is 32f00efc59a4c457e9ab38579fcea286c6c6e8e9375d43918356a360deaeb8a2; hero/share and inline image hashes are separately locked.",
+    "The article classifies assessment scope without making an owner-specific title, reserve, engineering, appraisal, legal, tax, value, payment, eligibility, or transaction conclusion; discloses MRX’s possible economic interest; preserves separate evidence lanes and uncertainty; and routes formal-purpose or specialist questions to the appropriate qualified role.",
+    "Image text is limited to the exact article title and canonical phrase; the blank pathway cards, folders, records, and neutral office objects add no owner data, ownership conclusion, production value, commodity price, acreage, decimal, formula result, offer, transaction term, appraisal result, regulatory endorsement, tax outcome, legal conclusion, or private information."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "hero_share_sha256_identity",
+    "inline_image_distinct_sha256",
+    "exact_text_ocr_pass",
+    "filename_text_identity_pass",
+    "educational_and_professional_boundaries_preserved",
+    "no_unsupported_visual_or_valuation_claims"
+  ],
+  "sources_inspected": [
+    "src/content/posts/understanding-mineral-rights-valuation-determine-the-fair-assessment-for-your-interests.mdx",
+    "/assets/articles/hero/understanding-mineral-rights-valuation-determine-the-fair-assessment-for-your-interests.webp",
+    "/assets/articles/inline/understanding-mineral-rights-valuation-determine-the-fair-assessment-for-your-interests/how-can-i-determine-if-my-mineral-rights-qualify-for-a-fair-assessment.webp"
+  ]
+}

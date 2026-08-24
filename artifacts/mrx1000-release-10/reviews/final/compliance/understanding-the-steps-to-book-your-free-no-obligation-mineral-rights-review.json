@@ -1,0 +1,43 @@
+{
+  "artifact_type": "mrx1000_two_image_compliance_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-13T00:49:55Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-12",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0132",
+  "slug": "understanding-the-steps-to-book-your-free-no-obligation-mineral-rights-review",
+  "title": "Understanding the Steps to Book Your Free No-Obligation Mineral Rights Review",
+  "canonical_url": "https://mineralrightsxchange.com/blog/understanding-the-steps-to-book-your-free-no-obligation-mineral-rights-review/",
+  "source_path": "src/content/posts/understanding-the-steps-to-book-your-free-no-obligation-mineral-rights-review.mdx",
+  "input_body_sha256": "941032278411870467a216054458698c8162a9d23a8d455d3336e23226a12024",
+  "input_frontmatter_sha256": "7c3d2a325f1731125049b3709e7fd981b6125445cd0495759e2a72e9b6840013",
+  "expected_repo_sha256": "941032278411870467a216054458698c8162a9d23a8d455d3336e23226a12024",
+  "two_image_manifest_sha256": "1de92373d0ed9472ebd421f1f67cac7816b145da32cf90f38d41837d2cbbcdc7",
+  "reviewer_id": "codex_wave52_compliance",
+  "review_run_id": "mrx1000-wave52-compliance-20260813T004955Z",
+  "capability": "compliance",
+  "expected_hero_sha256": "0c3782cfbaf74e832b8e124395a1c2d5b7cffbc2df3a0628f48230d3db2860fd",
+  "expected_inline_sha256": "3ae9683bb99810f0549a7ad7dd664bc3c79207f4e9dd97a0161aa46415ed3d87",
+  "findings": [
+    "Complete current MDX SHA-256 is 941032278411870467a216054458698c8162a9d23a8d455d3336e23226a12024; hero/share and inline image hashes are separately locked.",
+    "The article states educational and professional boundaries, distinguishes a selected slot from a confirmed appointment, keeps requested-call, email, SMS, optional AI-voice, and marketing choices separate, uses minimal appointment data, and makes no owner-specific title, value, legal, tax, consent, or transaction conclusion.",
+    "Image text is limited to the exact article title and exact canonical keyword and adds no owner data, contact detail, calendar date, appointment time, buyer endorsement, property identifier, price, consent conclusion, guarantee, value result, tax outcome, or transaction conclusion."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "hero_share_sha256_identity",
+    "inline_image_distinct_sha256",
+    "exact_text_ocr_pass",
+    "filename_text_identity_pass",
+    "educational_and_professional_boundaries_preserved",
+    "no_unsupported_visual_or_valuation_claims"
+  ],
+  "sources_inspected": [
+    "src/content/posts/understanding-the-steps-to-book-your-free-no-obligation-mineral-rights-review.mdx",
+    "/assets/articles/hero/understanding-the-steps-to-book-your-free-no-obligation-mineral-rights-review.webp",
+    "/assets/articles/inline/understanding-the-steps-to-book-your-free-no-obligation-mineral-rights-review/what-steps-are-involved-in-getting-a-no-obligation-review-of-my-mineral-rights.webp"
+  ]
+}

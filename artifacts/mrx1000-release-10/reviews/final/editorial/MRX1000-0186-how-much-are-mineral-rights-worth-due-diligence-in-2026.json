@@ -1,0 +1,59 @@
+{
+  "artifact_type": "mrx1000_two_image_editorial_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-12T11:38:24Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-12",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0186",
+  "slug": "how-much-are-mineral-rights-worth-due-diligence-in-2026",
+  "title": "How Much Are Mineral Rights Worth: Due Diligence In 2026",
+  "canonical_url": "https://mineralrightsxchange.com/blog/how-much-are-mineral-rights-worth-due-diligence-in-2026/",
+  "source_path": "src/content/posts/how-much-are-mineral-rights-worth-due-diligence-in-2026.mdx",
+  "input_body_sha256": "f82ebccdf3823d720b58c011e44476e500939c420fca33409b23081d2ac51052",
+  "input_frontmatter_sha256": "eff92862bc09633644f455ce231c9a541f43090653fa541353287dd3ddb65244",
+  "expected_repo_sha256": "f82ebccdf3823d720b58c011e44476e500939c420fca33409b23081d2ac51052",
+  "two_image_manifest_sha256": "176b40fa2f8289b356c2c3ab175de4ef4e4b8bab04cf70b39534c6bae94cf922",
+  "reviewer_id": "codex_wave28_editorial",
+  "review_run_id": "mrx1000-wave28-editorial-20260812T113824Z",
+  "capability": "editorial",
+  "findings": [
+    "Complete current MDX SHA-256 is f82ebccdf3823d720b58c011e44476e500939c420fca33409b23081d2ac51052; the answer-first article contains 2296 body tokens and five FAQs.",
+    "The article owns the 2026 input-freshness audit by separating effective date, source date, observed-through date, query status, reporting lag, later corrections, current assumptions, and the change log used before relying on a directional range.",
+    "Exact-title hero/share OCR passed for “How Much Are Mineral Rights Worth: Due Diligence In 2026”; distinct in-body OCR passed for “how much are mineral rights worth”."
+  ],
+  "checks": [
+    {
+      "name": "complete_file_sha256_match",
+      "status": "PASS",
+      "evidence": "f82ebccdf3823d720b58c011e44476e500939c420fca33409b23081d2ac51052"
+    },
+    {
+      "name": "answer_first_article_depth_and_five_faqs",
+      "status": "PASS",
+      "evidence": {
+        "word_count": 2296,
+        "minimum_word_count": 700,
+        "faq_count": 5
+      }
+    },
+    {
+      "name": "two_image_exact_text_identity",
+      "status": "PASS",
+      "evidence": {
+        "hero_ocr": true,
+        "inline_ocr": true,
+        "social_reuses_hero": true,
+        "filename_identity": true,
+        "distinct_binaries": true
+      }
+    }
+  ],
+  "sources_inspected": [
+    "src/content/posts/how-much-are-mineral-rights-worth-due-diligence-in-2026.mdx",
+    "/assets/articles/hero/how-much-are-mineral-rights-worth-due-diligence-in-2026.webp",
+    "/assets/articles/inline/how-much-are-mineral-rights-worth-due-diligence-in-2026/how-much-are-mineral-rights-worth.webp"
+  ]
+}

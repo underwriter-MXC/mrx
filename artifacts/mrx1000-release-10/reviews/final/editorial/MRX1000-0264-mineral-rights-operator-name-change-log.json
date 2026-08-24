@@ -1,0 +1,66 @@
+{
+  "artifact_type": "mrx1000_two_image_editorial_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-23T08:34:01Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-14",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0264",
+  "slug": "mineral-rights-operator-name-change-log",
+  "title": "How to Build a Mineral Rights Operator-Name Change Log",
+  "canonical_url": "https://mineralrightsxchange.com/blog/mineral-rights-operator-name-change-log/",
+  "source_path": "src/content/posts/mineral-rights-operator-name-change-log.mdx",
+  "input_body_sha256": "af3061d5cacb25f846f57d11018c3cf1aa2359e62ec024ce73cc1faed91130e0",
+  "input_frontmatter_sha256": "b727953fdd91e64eceb5c5aaeab13a79908abe89d330d2104e03ff25edf571ae",
+  "expected_repo_sha256": "af3061d5cacb25f846f57d11018c3cf1aa2359e62ec024ce73cc1faed91130e0",
+  "two_image_manifest_sha256": "fd907abcd84ecd90d3f77048ac70f6003f9df39464e8dd823c989b0f833fa2de",
+  "visual_metadata": {
+    "hero_alt": "Three blank archival folders and a source-reference card appear beside the exact article title.",
+    "social_alt": "Three blank archival folders and a source-reference card appear beside the exact article title.",
+    "inline_alt": "An overhead three-source name-history strip and blank question-routing card appear above the exact keyword."
+  },
+  "reviewer_id": "codex_wave79_editorial",
+  "review_run_id": "mrx1000-wave79-editorial-20260823T083401Z",
+  "capability": "editorial",
+  "findings": [
+    "Complete current MDX SHA-256 is af3061d5cacb25f846f57d11018c3cf1aa2359e62ec024ce73cc1faed91130e0; the answer-first article contains 1642 body tokens and five FAQs.",
+    "The article owns only a dated, source-preserving log of operator or payor names displayed in identified records. It uses same displayed name, different displayed name, or unavailable and stops before corporate-identity, responsibility, property, title, payment, development, valuation, offer, or transaction conclusions.",
+    "Exact-title hero/share OCR passed for “How to Build a Mineral Rights Operator-Name Change Log”; distinct in-body OCR passed for “mineral rights operator name change log”; the front-facing archival-folder hero and people-free overhead name-history strip are materially different compositions with matching alt metadata."
+  ],
+  "checks": [
+    {
+      "name": "complete_file_sha256_match",
+      "status": "PASS",
+      "evidence": "af3061d5cacb25f846f57d11018c3cf1aa2359e62ec024ce73cc1faed91130e0"
+    },
+    {
+      "name": "answer_first_article_depth_and_five_faqs",
+      "status": "PASS",
+      "evidence": {
+        "word_count": 1642,
+        "minimum_word_count": 700,
+        "faq_count": 5
+      }
+    },
+    {
+      "name": "two_image_exact_text_identity",
+      "status": "PASS",
+      "evidence": {
+        "hero_ocr": true,
+        "inline_ocr": true,
+        "social_reuses_hero": true,
+        "hero_social_alt_match": true,
+        "inline_alt_match": true,
+        "filename_identity": true,
+        "distinct_binaries": true
+      }
+    }
+  ],
+  "sources_inspected": [
+    "src/content/posts/mineral-rights-operator-name-change-log.mdx",
+    "/assets/articles/hero/how-to-build-a-mineral-rights-operator-name-change-log.webp",
+    "/assets/articles/inline/mineral-rights-operator-name-change-log/mineral-rights-operator-name-change-log.webp"
+  ]
+}

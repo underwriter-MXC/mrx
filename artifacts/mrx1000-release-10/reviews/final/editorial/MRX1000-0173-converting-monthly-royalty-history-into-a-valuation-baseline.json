@@ -1,0 +1,59 @@
+{
+  "artifact_type": "mrx1000_two_image_editorial_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-12T09:40:44Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-11",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0173",
+  "slug": "converting-monthly-royalty-history-into-a-valuation-baseline",
+  "title": "Converting Monthly Royalty History Into a Valuation Baseline",
+  "canonical_url": "https://mineralrightsxchange.com/blog/converting-monthly-royalty-history-into-a-valuation-baseline/",
+  "source_path": "src/content/posts/converting-monthly-royalty-history-into-a-valuation-baseline.mdx",
+  "input_body_sha256": "4cc74029733ace842907d69e8ab006b47516c4ce6eec67189cf058ad04abcb30",
+  "input_frontmatter_sha256": "41a9959f1489ce701df4e9e8739d3c1fe2a4d96252149fb78e73d9a0473a0bf5",
+  "expected_repo_sha256": "4cc74029733ace842907d69e8ab006b47516c4ce6eec67189cf058ad04abcb30",
+  "two_image_manifest_sha256": "a785fd32cad6858ef6c41e25351e84462a350f34df8bc37abc54015bf05afeca",
+  "reviewer_id": "codex_wave15_editorial",
+  "review_run_id": "mrx1000-wave15-editorial-20260812T094044Z",
+  "capability": "editorial",
+  "findings": [
+    "Complete current MDX SHA-256 is 4cc74029733ace842907d69e8ab006b47516c4ce6eec67189cf058ad04abcb30; the answer-first article contains 2312 body tokens and five FAQs.",
+    "The worksheet framework separates production month, property, product, volume, price, owner decimal, taxes, deductions, adjustments, and net payment without asserting an owner-specific value or forecast.",
+    "Exact-title hero/share OCR passed for “Converting Monthly Royalty History Into a Valuation Baseline”; distinct in-body OCR passed for “monthly royalty history worksheet”."
+  ],
+  "checks": [
+    {
+      "name": "complete_file_sha256_match",
+      "status": "PASS",
+      "evidence": "4cc74029733ace842907d69e8ab006b47516c4ce6eec67189cf058ad04abcb30"
+    },
+    {
+      "name": "answer_first_depth_and_five_faqs",
+      "status": "PASS",
+      "evidence": {
+        "word_count": 2312,
+        "minimum_word_count": 700,
+        "faq_count": 5
+      }
+    },
+    {
+      "name": "two_image_exact_text_identity",
+      "status": "PASS",
+      "evidence": {
+        "hero_ocr": true,
+        "inline_ocr": true,
+        "social_reuses_hero": true,
+        "filename_identity": true,
+        "distinct_binaries": true
+      }
+    }
+  ],
+  "sources_inspected": [
+    "src/content/posts/converting-monthly-royalty-history-into-a-valuation-baseline.mdx",
+    "/assets/articles/hero/converting-monthly-royalty-history-into-a-valuation-baseline.webp",
+    "/assets/articles/inline/converting-monthly-royalty-history-into-a-valuation-baseline/monthly-royalty-history-worksheet.webp"
+  ]
+}

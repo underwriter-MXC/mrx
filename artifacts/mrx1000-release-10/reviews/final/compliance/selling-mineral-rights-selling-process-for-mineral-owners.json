@@ -1,0 +1,43 @@
+{
+  "artifact_type": "mrx1000_two_image_compliance_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-12T12:46:26Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-12",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0110",
+  "slug": "selling-mineral-rights-selling-process-for-mineral-owners",
+  "title": "Selling Mineral Rights: Selling Process For Mineral Owners",
+  "canonical_url": "https://mineralrightsxchange.com/blog/selling-mineral-rights-selling-process-for-mineral-owners/",
+  "source_path": "src/content/posts/selling-mineral-rights-selling-process-for-mineral-owners.mdx",
+  "input_body_sha256": "3413a2a6e515ba2d35ee451fa1d03326a18b4a58c6579e1613a67e0282c0baf4",
+  "input_frontmatter_sha256": "d05c1739a7b4dac65d9e99fa12bb610ac6cca1db69bfd18f7fa8a28976000973",
+  "expected_repo_sha256": "3413a2a6e515ba2d35ee451fa1d03326a18b4a58c6579e1613a67e0282c0baf4",
+  "two_image_manifest_sha256": "6ac764a57c519c97d20512c68c0327c18a7f1f3293f76b1e6da52345c1742a9a",
+  "reviewer_id": "codex_wave30_compliance",
+  "review_run_id": "mrx1000-wave30-compliance-20260812T124626Z",
+  "capability": "compliance",
+  "expected_hero_sha256": "cb5a899082cb066de05909bd085da2892292db28b6cdba946d0d79e74623804c",
+  "expected_inline_sha256": "9d98926fde12474a00b655d86a5afa6af8b24592e86b20cf40e0e3923677b162",
+  "findings": [
+    "Complete current MDX SHA-256 is 3413a2a6e515ba2d35ee451fa1d03326a18b4a58c6579e1613a67e0282c0baf4; hero/share and inline image hashes are separately locked.",
+    "The article states educational and professional boundaries, discloses MRX’s potential economic interest, separates each transaction state, and routes unresolved title, legal, tax, accounting, valuation, cybersecurity, escrow, payment, recording, and contract questions without making owner-specific conclusions.",
+    "Image text is limited to the exact article title and canonical keyword and adds no owner data, buyer endorsement, deed, payment instruction, price, acreage, decimal, deadline, settlement status, recording number, legal, tax, cybersecurity, escrow, or transaction conclusion."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "hero_share_sha256_identity",
+    "inline_image_distinct_sha256",
+    "exact_text_ocr_pass",
+    "filename_text_identity_pass",
+    "educational_and_professional_boundaries_preserved",
+    "no_unsupported_visual_or_payment_claims"
+  ],
+  "sources_inspected": [
+    "src/content/posts/selling-mineral-rights-selling-process-for-mineral-owners.mdx",
+    "/assets/articles/hero/selling-mineral-rights-selling-process-for-mineral-owners.webp",
+    "/assets/articles/inline/selling-mineral-rights-selling-process-for-mineral-owners/selling-mineral-rights.webp"
+  ]
+}

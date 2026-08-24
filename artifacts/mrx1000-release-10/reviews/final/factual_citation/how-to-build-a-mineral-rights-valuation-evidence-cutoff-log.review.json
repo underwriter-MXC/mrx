@@ -1,0 +1,120 @@
+{
+  "artifact_type": "mrx1000_wave87_two_image_factual_citation_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-23T19:05:43Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-14",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0271",
+  "slug": "how-to-build-a-mineral-rights-valuation-evidence-cutoff-log",
+  "title": "How to Build a Mineral Rights Valuation Evidence-Cutoff Log",
+  "canonical_url": "https://mineralrightsxchange.com/blog/how-to-build-a-mineral-rights-valuation-evidence-cutoff-log/",
+  "source_path": "src/content/posts/how-to-build-a-mineral-rights-valuation-evidence-cutoff-log.mdx",
+  "input_body_sha256": "09f5e8bcb908f3c6df0ba6998a9031d8b0ec7ff07d91730471cfe564e771916f",
+  "input_frontmatter_sha256": "950a28317a2e354963a9c4e5fc32c9914537469ff6092f61035676c64a065dd2",
+  "expected_repo_sha256": "09f5e8bcb908f3c6df0ba6998a9031d8b0ec7ff07d91730471cfe564e771916f",
+  "two_image_manifest_sha256": "370337a16e0e9f81153100aa2ffe38b8e4c2c148c5bfbe92ff4e0e6086e399e9",
+  "visual_metadata": {
+    "hero_alt": "A dated evidence-control worksheet and source files appear beside the exact article title.",
+    "social_alt": "A dated evidence-control worksheet and source files appear beside the exact article title.",
+    "inline_alt": "A top-down six-column evidence-cutoff worksheet appears above the exact keyword."
+  },
+  "reviewer_id": "codex_wave87_factual",
+  "review_run_id": "mrx1000-wave87-factual-20260823T190543Z",
+  "capability": "factual_citation",
+  "findings": [
+    "Complete current MDX SHA-256 is 09f5e8bcb908f3c6df0ba6998a9031d8b0ec7ff07d91730471cfe564e771916f; all 6 declared sources passed current HTTPS access review.",
+    "Claims remain bounded to current official RRC data roles and limitations, a federal records-management analogy, and EIA public-series metadata. None of the sources is used to validate a private file, assessment, valuation method, input, calculation, or conclusion.",
+    "The article publishes no private owner document, signature, address, account data, payment instruction, property identifier, private amount, ownership or lease conclusion, production forecast, valuation input, price, value, offer, or transaction claim."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "six_distinct_https_sources",
+    "current_source_access_review_pass",
+    "claim_to_source_scope_present",
+    "official_source_priority_pass",
+    "unsupported_high_risk_claim_scan_pass"
+  ],
+  "sources_inspected": [
+    {
+      "label": "Railroad Commission of Texas, Research Queries (accessed 2026-08-23)",
+      "url": "https://www.rrc.texas.gov/resource-center/research/research-queries/",
+      "publisher": "www.rrc.texas.gov",
+      "accessed_at": "2026-08-23T19:05:43Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.rrc.texas.gov/resource-center/research/research-queries/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The official RRC directory identifies production, permit, well-record, and other research systems together with update-frequency labels.",
+      "claim_scope": "The article preserves the exact system and query path and repeats the RRC boundary that online datasets are informational, non-authoritative, continually updated, and without legal force."
+    },
+    {
+      "label": "Railroad Commission of Texas, Oil and Gas Production Data (accessed 2026-08-23)",
+      "url": "https://www.rrc.texas.gov/oil-and-gas/research-and-statistics/production-data/",
+      "publisher": "www.rrc.texas.gov",
+      "accessed_at": "2026-08-23T19:05:43Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.rrc.texas.gov/oil-and-gas/research-and-statistics/production-data/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The official RRC production page describes compilations and summaries of production information reported by Texas operators.",
+      "claim_scope": "The article uses the page only to define the regulatory source class, locator, reporting period, access date, and source limitation; it draws no ownership, payment, property-connection, production-forecast, or value conclusion."
+    },
+    {
+      "label": "Railroad Commission of Texas, Production Data Query System FAQs (accessed 2026-08-23)",
+      "url": "https://www.rrc.texas.gov/about-us/faqs/oil-gas-faq/production-data-query-system-faqs/",
+      "publisher": "www.rrc.texas.gov",
+      "accessed_at": "2026-08-23T19:05:43Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.rrc.texas.gov/about-us/faqs/oil-gas-faq/production-data-query-system-faqs/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The official PDQ FAQs explain Texas oil reporting level, reporting lag, revisions, corrections, delinquent-report changes, snapshot status, monthly updates, and the displayed coverage period.",
+      "claim_scope": "The article uses those stated limits only to justify distinct metadata fields and rejects treating a query result as proof of completeness, property connection, or suitability."
+    },
+    {
+      "label": "Railroad Commission of Texas, Oil and Gas Well Records (accessed 2026-08-23)",
+      "url": "https://www.rrc.texas.gov/oil-and-gas/research-and-statistics/obtaining-commission-records/oil-and-gas-well-records/",
+      "publisher": "www.rrc.texas.gov",
+      "accessed_at": "2026-08-23T19:05:43Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.rrc.texas.gov/oil-and-gas/research-and-statistics/obtaining-commission-records/oil-and-gas-well-records/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The official well-records page identifies useful file-locator fields and record-period context.",
+      "claim_scope": "The article preserves the Commission boundary that it lacks authority over private leases, royalties, payments, and property-right matters and therefore draws no private-rights conclusion from a well-record locator."
+    },
+    {
+      "label": "U.S. National Archives, Records Basics (accessed 2026-08-23)",
+      "url": "https://www.archives.gov/records-mgmt/scheduling/basics",
+      "publisher": "www.archives.gov",
+      "accessed_at": "2026-08-23T19:05:43Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.archives.gov/records-mgmt/scheduling/basics",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The official National Archives page distinguishes source records, working files, information-system inputs and content, and outputs in the federal records-management context.",
+      "claim_scope": "The article uses that distinction only as an organizational analogy and expressly states that it creates no private mineral-owner retention rule, legal duty, or disposition schedule."
+    },
+    {
+      "label": "U.S. Energy Information Administration, Spot Prices for Crude Oil and Petroleum Products (accessed 2026-08-23)",
+      "url": "https://www.eia.gov/dnav/pet/pet_pri_spt_s1_m.htm",
+      "publisher": "www.eia.gov",
+      "accessed_at": "2026-08-23T19:05:43Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.eia.gov/dnav/pet/pet_pri_spt_s1_m.htm",
+        "content_type": "text/html"
+      },
+      "source_location_or_paraphrase": "The official EIA page supplies a bounded example of public-series metadata including product, geography, unit, period, history route, release date, and source notes.",
+      "claim_scope": "The article records metadata only and adopts no displayed price as an owner realized price, forecast, contract price, valuation input, or private value conclusion."
+    }
+  ]
+}

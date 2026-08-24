@@ -1,0 +1,43 @@
+{
+  "artifact_type": "mrx1000_two_image_compliance_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-12T17:53:00Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-12",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0120",
+  "slug": "understanding-fair-valuation-key-factors-for-assessing-your-mineral-rights-worth",
+  "title": "Understanding Fair Valuation: Key Factors for Assessing Your Mineral Rights' Worth",
+  "canonical_url": "https://mineralrightsxchange.com/blog/understanding-fair-valuation-key-factors-for-assessing-your-mineral-rights-worth/",
+  "source_path": "src/content/posts/understanding-fair-valuation-key-factors-for-assessing-your-mineral-rights-worth.mdx",
+  "input_body_sha256": "2117487db0feeeb7cc017505997ae5b07f61f33afd6a75ad6ceac8f1f1029a35",
+  "input_frontmatter_sha256": "c578a850834c5611df26585cfcdb3beaf5af2814009d49e131a98aaaa9161227",
+  "expected_repo_sha256": "2117487db0feeeb7cc017505997ae5b07f61f33afd6a75ad6ceac8f1f1029a35",
+  "two_image_manifest_sha256": "227ab25c8334806496c1f52c36d7fcf473a6bf3e1f6f12c6347506895d9730dc",
+  "reviewer_id": "codex_wave40_compliance",
+  "review_run_id": "mrx1000-wave40-compliance-20260812T175300Z",
+  "capability": "compliance",
+  "expected_hero_sha256": "d7b35b5180d0dcdf571917e7d7e7281a53d712813bd06096aa5289d039c51efc",
+  "expected_inline_sha256": "4ec2b7c75eab2c14a11ace1124f5a86c6763335be3ee0bfafcd30b6f3526f53d",
+  "findings": [
+    "Complete current MDX SHA-256 is 2117487db0feeeb7cc017505997ae5b07f61f33afd6a75ad6ceac8f1f1029a35; hero/share and inline image hashes are separately locked.",
+    "The article defines fairness as procedural transparency rather than an owner-specific market-value conclusion, discloses MRX’s possible economic interest, separates regulatory production from owner payments, separates public commodity context from property pricing, grades development evidence, labels uncertainty, separates asset range from transaction scope, and routes professional questions without making owner-specific conclusions.",
+    "Image text is limited to the exact article title and canonical question after incidental generated document, chart, and calculator marks were neutralized; the images add no owner data, ownership conclusion, production value, commodity price, acreage, decimal, formula, offer, transaction term, appraisal result, regulatory endorsement, tax outcome, or private information."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "hero_share_sha256_identity",
+    "inline_image_distinct_sha256",
+    "exact_text_ocr_pass",
+    "filename_text_identity_pass",
+    "educational_and_professional_boundaries_preserved",
+    "no_unsupported_visual_or_valuation_claims"
+  ],
+  "sources_inspected": [
+    "src/content/posts/understanding-fair-valuation-key-factors-for-assessing-your-mineral-rights-worth.mdx",
+    "/assets/articles/hero/understanding-fair-valuation-key-factors-for-assessing-your-mineral-rights-worth.webp",
+    "/assets/articles/inline/understanding-fair-valuation-key-factors-for-assessing-your-mineral-rights-worth/how-will-i-know-if-im-receiving-a-fair-valuation-for-my-mineral-rights.webp"
+  ]
+}

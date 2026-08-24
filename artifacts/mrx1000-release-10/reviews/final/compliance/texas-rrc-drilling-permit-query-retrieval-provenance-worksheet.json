@@ -1,0 +1,49 @@
+{
+  "artifact_type": "mrx1000_wave90_two_image_compliance_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-23T22:59:51Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-14",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0275",
+  "slug": "texas-rrc-drilling-permit-query-retrieval-provenance-worksheet",
+  "title": "Texas RRC Drilling-Permit Query Retrieval Provenance Worksheet",
+  "canonical_url": "https://mineralrightsxchange.com/blog/texas-rrc-drilling-permit-query-retrieval-provenance-worksheet/",
+  "source_path": "src/content/posts/texas-rrc-drilling-permit-query-retrieval-provenance-worksheet.mdx",
+  "input_body_sha256": "7db599bed3732224865516d91304b38d17ab613c10ead32e76d35ea7cb34e128",
+  "input_frontmatter_sha256": "ef657569dab6aa0462d377364335c747f65cd480b2f7925803470182c69b26c9",
+  "expected_repo_sha256": "7db599bed3732224865516d91304b38d17ab613c10ead32e76d35ea7cb34e128",
+  "two_image_manifest_sha256": "75440838e34ac9df725b7ce00237aaf72f85734a00dbc268aea4077cd02461e5",
+  "visual_metadata": {
+    "hero_alt": "An archival Texas permit-query counter appears beside the exact article title.",
+    "social_alt": "An archival Texas permit-query counter appears beside the exact article title.",
+    "inline_alt": "A top-down query-provenance worksheet appears above the exact keyword."
+  },
+  "reviewer_id": "codex_wave90_compliance",
+  "review_run_id": "mrx1000-wave90-compliance-20260823T225951Z",
+  "capability": "compliance",
+  "expected_hero_sha256": "71e2deffffa7abccafcfd3799106773a7451da45ef4f68e5cb566ae7266d490e",
+  "expected_inline_sha256": "e5058131e0893078f0299db7070b02a77415314579786ea8b92de287aacef3f0",
+  "findings": [
+    "Complete current MDX SHA-256 is 7db599bed3732224865516d91304b38d17ab613c10ead32e76d35ea7cb34e128; hero/share and inline image hashes are separately locked.",
+    "The article preserves source identity and uncertainty; uses only located, not located, or unverified; separates query criteria, result headers, rows, and detail routes; converts gaps into neutral retrieval questions; controls private identifiers; and stops before interpretation or downstream property, regulatory, operational, analytical, valuation, offer, or transaction decisions.",
+    "Image text is limited to the exact article title and approved keyword and adds no real permit, identifier, result, signature, seal, logo, acreage, legal conclusion, value, recommendation, guarantee, or transaction outcome."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "hero_share_sha256_identity",
+    "inline_image_distinct_sha256",
+    "exact_text_ocr_pass",
+    "filename_text_identity_pass",
+    "texas_rrc_drilling_permit_query_retrieval_no_interpretation_property_connection_title_ownership_acreage_lease_entitlement_compliance_drilling_production_value_offer_or_transaction_conclusion_boundary_pass",
+    "owner_agency_privacy_and_possible_buyer_interest_disclosure_preserved",
+    "no_unsupported_visual_or_decision_claims"
+  ],
+  "sources_inspected": [
+    "src/content/posts/texas-rrc-drilling-permit-query-retrieval-provenance-worksheet.mdx",
+    "/assets/articles/hero/texas-rrc-drilling-permit-query-retrieval-provenance-worksheet.webp",
+    "/assets/articles/inline/texas-rrc-drilling-permit-query-retrieval-provenance-worksheet/texas-rrc-drilling-permit-query-retrieval.webp"
+  ]
+}

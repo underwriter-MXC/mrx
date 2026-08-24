@@ -1,0 +1,43 @@
+{
+  "artifact_type": "mrx1000_two_image_compliance_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-11T22:44:38Z",
+  "decision_authority": {
+    "source": "Daryl owner directive, 2026-08-11",
+    "policy": "MRX two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0634",
+  "slug": "how-to-report-a-mineral-rights-sale-on-your-federal-tax-return",
+  "title": "How to Report a Mineral Rights Sale on Your Federal Tax Return",
+  "canonical_url": "https://mineralrightsxchange.com/blog/how-to-report-a-mineral-rights-sale-on-your-federal-tax-return/",
+  "source_path": "src/content/posts/how-to-report-a-mineral-rights-sale-on-your-federal-tax-return.mdx",
+  "input_body_sha256": "8d0e5e9abf44e990d73f0c0b9b649066bc32f5ac64b25a7cb63c6781640a5dd0",
+  "input_frontmatter_sha256": "6332f8266d7a6917e421db3fc9ef1976f6cdc8a476e981e1b3f3496ee82fd327",
+  "expected_repo_sha256": "8d0e5e9abf44e990d73f0c0b9b649066bc32f5ac64b25a7cb63c6781640a5dd0",
+  "two_image_manifest_sha256": "802512b5dab8eae7592be5934f97a6a8989125fb8f65d3f37ee3cdeb2d35dc10",
+  "reviewer_id": "codex_two_image_compliance",
+  "review_run_id": "mrx1000-two-image-retrofit-20260811T224438Z",
+  "capability": "compliance",
+  "expected_hero_sha256": "cf9769bd9c464e47b2aaf296280ede01b7f7dc617d5c42d02d36623995c5299e",
+  "expected_inline_sha256": "70721990bdd7acd3cad4e347b509ee72850571824107ede86c83f1fe42733485",
+  "findings": [
+    "Complete current MDX SHA-256 is 8d0e5e9abf44e990d73f0c0b9b649066bc32f5ac64b25a7cb63c6781640a5dd0; hero/share and in-body image hashes are separately locked.",
+    "Image text is limited to the exact article title and declared page keyword; it adds no guarantee, price, deadline, legal conclusion, or tax conclusion.",
+    "The article retains its educational and professional-boundary language and current disclosure treatment."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "hero_share_sha256_identity",
+    "inline_image_distinct_sha256",
+    "exact_text_ocr_pass",
+    "filename_text_identity_pass",
+    "no_unsupported_visual_claims",
+    "educational_and_professional_boundaries_preserved"
+  ],
+  "sources_inspected": [
+    "src/content/posts/how-to-report-a-mineral-rights-sale-on-your-federal-tax-return.mdx",
+    "/assets/articles/hero/how-to-report-a-mineral-rights-sale-on-your-federal-tax-return.webp",
+    "/assets/articles/inline/how-to-report-a-mineral-rights-sale-on-your-federal-tax-return/report-mineral-rights-sale-federal-tax-return.webp"
+  ]
+}

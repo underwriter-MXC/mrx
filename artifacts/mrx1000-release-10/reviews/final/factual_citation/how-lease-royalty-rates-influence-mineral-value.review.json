@@ -1,0 +1,128 @@
+{
+  "artifact_type": "mrx1000_two_image_factual_citation_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-12T10:08:27Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-11",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0182",
+  "slug": "how-lease-royalty-rates-influence-mineral-value",
+  "title": "How Lease Royalty Rates Influence Mineral Value",
+  "canonical_url": "https://mineralrightsxchange.com/blog/how-lease-royalty-rates-influence-mineral-value/",
+  "source_path": "src/content/posts/how-lease-royalty-rates-influence-mineral-value.mdx",
+  "input_body_sha256": "2cc3b0be9908eaa7e1cf4d008d92312aa608f959867dc361e792bfc32b74f83f",
+  "input_frontmatter_sha256": "1cbd8a81143ee0e1125fbd549ab2ebfbfa30a917f74b5a9d705fe21a93fce4bd",
+  "expected_repo_sha256": "2cc3b0be9908eaa7e1cf4d008d92312aa608f959867dc361e792bfc32b74f83f",
+  "two_image_manifest_sha256": "42d952c9558b93bb02abee89a27a355a1ccb526a886e1fc9be3f8d236107d759",
+  "reviewer_id": "codex_wave24_factual",
+  "review_run_id": "mrx1000-wave24-factual-20260812T100827Z",
+  "capability": "factual_citation",
+  "findings": [
+    "Complete current MDX SHA-256 is 2cc3b0be9908eaa7e1cf4d008d92312aa608f959867dc361e792bfc32b74f83f; all 7 declared official sources passed live access review.",
+    "MRX terminology and methodology claims remain bounded to current first-party pages; Texas statute, RRC, and GLO claims remain bounded to official payment, production-data, state-lease, and state-leasing descriptions and limitations.",
+    "The article uses labeled hypothetical rate multipliers and no fabricated owners, deeds, wells, leases, production, payments, offers, prices, acreage, ownership decimals, valuation ranges, testimonials, or owner-specific title, legal, tax, accounting, engineering, or valuation conclusions."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "minimum_three_distinct_https_sources",
+    "current_source_access_review_pass",
+    "claim_to_source_scope_present",
+    "official_primary_source_priority_pass",
+    "unsupported_high_risk_claim_scan_pass"
+  ],
+  "sources_inspected": [
+    {
+      "label": "Mineral Rights Xchange, Published DCF Methodology (accessed 2026-08-11)",
+      "url": "https://mineralrightsxchange.com/methodology/",
+      "publisher": "mineralrightsxchange.com",
+      "accessed_at": "2026-08-12T10:08:27Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://mineralrightsxchange.com/methodology/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The current MRX methodology describes a discounted-cash-flow review of expected royalty income and a directional range with stated production, decline, royalty, discount-rate, commodity, title-confidence, and offer inputs.",
+      "claim_scope": "The article uses the methodology to keep the lease royalty fraction separate from production, timing, and risk inputs; it does not present a formal credentialed valuation, title opinion, legal or tax opinion, payment audit, guaranteed value, guaranteed offer, or recommendation to sell."
+    },
+    {
+      "label": "Mineral Rights Xchange, What Is a Net Royalty Acre? (accessed 2026-08-11)",
+      "url": "https://mineralrightsxchange.com/blog/what-is-a-net-royalty-acre/",
+      "publisher": "mineralrightsxchange.com",
+      "accessed_at": "2026-08-12T10:08:27Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://mineralrightsxchange.com/blog/what-is-a-net-royalty-acre/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The MRX net royalty acre guide distinguishes mineral ownership, lease royalty fraction, net revenue interest, and royalty-acre conventions and presents simplified arithmetic with explicit limitations.",
+      "claim_scope": "The article uses that guide for terminology and an organizing equation only; it does not claim a universal title formula, a standard royalty rate, an owner-specific decimal, or a value conclusion."
+    },
+    {
+      "label": "Mineral Rights Xchange, How Royalty Payments Work for Texas Mineral Owners (accessed 2026-08-11)",
+      "url": "https://mineralrightsxchange.com/blog/how-royalty-payments-work-for-texas-mineral-rights-owners/",
+      "publisher": "mineralrightsxchange.com",
+      "accessed_at": "2026-08-12T10:08:27Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://mineralrightsxchange.com/blog/how-royalty-payments-work-for-texas-mineral-rights-owners/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The MRX royalty-payment guide explains the production-to-payment path, distinguishes lease terms from payment records, and warns that royalty rates are contract-specific rather than a Texas-wide standard.",
+      "claim_scope": "The article uses that guide to distinguish payment mechanics from valuation sensitivity; it does not infer that a statement proves title, lease meaning, deduction rights, or correct payment."
+    },
+    {
+      "label": "Texas Natural Resources Code, Chapter 91 (accessed 2026-08-11)",
+      "url": "https://statutes.capitol.texas.gov/Docs/NR/pdf/NR.91.pdf",
+      "publisher": "statutes.capitol.texas.gov",
+      "accessed_at": "2026-08-12T10:08:27Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://statutes.capitol.texas.gov/Docs/NR/pdf/NR.91.pdf",
+        "content_type": "text/html"
+      },
+      "source_location_or_paraphrase": "Texas Natural Resources Code Chapter 91 defines payee, payor, and division order and provides statutory payment-timing rules for oil-and-gas proceeds.",
+      "claim_scope": "The article uses the statute only for those payment and division-order descriptions; it does not treat the statute or a division order as an owner-specific lease interpretation, title opinion, royalty-rate determination, or decimal audit."
+    },
+    {
+      "label": "Texas General Land Office, Oil and Gas Royalty Audit General Information (accessed 2026-08-11)",
+      "url": "https://www.glo.texas.gov/sites/default/files/resources/glo/energy-business/oil-gas/rrac/forms/oil-gas-royalty-audit.pdf",
+      "publisher": "www.glo.texas.gov",
+      "accessed_at": "2026-08-12T10:08:27Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.glo.texas.gov/sites/default/files/resources/glo/energy-business/oil-gas/rrac/forms/oil-gas-royalty-audit.pdf",
+        "content_type": "application/pdf"
+      },
+      "source_location_or_paraphrase": "The Texas General Land Office royalty-audit guide states that a state lease agreement specifies the valuation method for royalty calculation and illustrates distinct oil, non-processed-gas, processed-gas, fuel, and disposition provisions.",
+      "claim_scope": "The article uses the guide to show that a royalty fraction must be read with its calculation and product language; it expressly does not apply a state-lease example as a legal interpretation of a private lease."
+    },
+    {
+      "label": "Texas General Land Office, Mineral Leasing (accessed 2026-08-11)",
+      "url": "https://www.glo.texas.gov/energy/mineral-leasing/leasing",
+      "publisher": "www.glo.texas.gov",
+      "accessed_at": "2026-08-12T10:08:27Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.glo.texas.gov/energy/mineral-leasing/leasing",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The Texas General Land Office mineral-leasing page describes state-managed leasing programs, including approval, filing, and revenue-allocation requirements for identified state interests.",
+      "claim_scope": "The article uses those state examples only to reinforce the need to identify the estate, authority, instrument, and effective scope; it does not apply state procedures to a private lease or infer owner-specific rights."
+    },
+    {
+      "label": "Railroad Commission of Texas, Production Data Query (accessed 2026-08-11)",
+      "url": "https://webapps2.rrc.texas.gov/EWA/ewaPdqMain.do",
+      "publisher": "webapps2.rrc.texas.gov",
+      "accessed_at": "2026-08-12T10:08:27Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://webapps2.rrc.texas.gov/EWA/ewaPdqMain.do",
+        "content_type": "text/html; charset=UTF-8"
+      },
+      "source_location_or_paraphrase": "The Railroad Commission of Texas Production Data Query provides reported Texas production searches using available geographic, operator, lease, well, field, and time-period identifiers.",
+      "claim_scope": "The article uses reported production as regulatory and timing context only; it does not treat a query result as proof of title, lease meaning, owner decimal, deduction rights, payment entitlement, future production, or value."
+    }
+  ]
+}

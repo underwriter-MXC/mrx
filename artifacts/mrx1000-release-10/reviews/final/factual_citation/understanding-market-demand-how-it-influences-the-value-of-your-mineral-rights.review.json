@@ -1,0 +1,115 @@
+{
+  "artifact_type": "mrx1000_two_image_factual_citation_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-12T18:17:40Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-12",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0121",
+  "slug": "understanding-market-demand-how-it-influences-the-value-of-your-mineral-rights",
+  "title": "Understanding Market Demand: How It Influences the Value of Your Mineral Rights",
+  "canonical_url": "https://mineralrightsxchange.com/blog/understanding-market-demand-how-it-influences-the-value-of-your-mineral-rights/",
+  "source_path": "src/content/posts/understanding-market-demand-how-it-influences-the-value-of-your-mineral-rights.mdx",
+  "input_body_sha256": "995da27e6ee414a1348f5d2679d49eff5fd008e2853ef4f1b15c96c849c59e55",
+  "input_frontmatter_sha256": "5346486b6673d53ce222f18a9b9a89796a0df544c91e3f80cbca4bb2b3dea2cc",
+  "expected_repo_sha256": "995da27e6ee414a1348f5d2679d49eff5fd008e2853ef4f1b15c96c849c59e55",
+  "two_image_manifest_sha256": "0b904a72d9f07514eb93d8dd5c43a1c71a5ad8d8e6795025511c23786420f062",
+  "reviewer_id": "codex_wave41_factual",
+  "review_run_id": "mrx1000-wave41-factual-20260812T181740Z",
+  "capability": "factual_citation",
+  "findings": [
+    "Complete current MDX SHA-256 is 995da27e6ee414a1348f5d2679d49eff5fd008e2853ef4f1b15c96c849c59e55; all 6 declared sources passed live access review.",
+    "MRX claims remain bounded to its current methodology and FAQ; commodity-market claims remain bounded to EIA oil and natural-gas explanations; development-activity claims remain bounded to Railroad Commission query and dataset scope and limitations.",
+    "The article uses no fabricated owners, buyers, contracts, deeds, prices, acreage, ownership decimals, tax results, offers, testimonials, success rates, or owner-specific title, legal, tax, accounting, appraisal, investment, or transaction conclusions."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "minimum_three_distinct_https_sources",
+    "current_source_access_review_pass",
+    "claim_to_source_scope_present",
+    "official_primary_source_priority_pass",
+    "unsupported_high_risk_claim_scan_pass"
+  ],
+  "sources_inspected": [
+    {
+      "label": "Mineral Rights Xchange, Published DCF Methodology (accessed 2026-08-12)",
+      "url": "https://mineralrightsxchange.com/methodology/",
+      "publisher": "mineralrightsxchange.com",
+      "accessed_at": "2026-08-12T18:17:40Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://mineralrightsxchange.com/methodology/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The current MRX methodology describes a directional DCF range with dated inputs, assumptions, limitations, and sensitivity, and separates asset range from offer consideration and expected owner net.",
+      "claim_scope": "The article uses the methodology only for the disclosed directional framework, input-status discipline, sensitivity review, and transaction separation; it does not value a specific interest, establish ownership, or recommend a transaction."
+    },
+    {
+      "label": "Mineral Rights Xchange, Frequently Asked Questions (accessed 2026-08-12)",
+      "url": "https://mineralrightsxchange.com/faq/",
+      "publisher": "mineralrightsxchange.com",
+      "accessed_at": "2026-08-12T18:17:40Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://mineralrightsxchange.com/faq/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The current MRX FAQ describes the review as educational, directional, and not certified, and states that a possible later MRX buyer relationship is disclosed when applicable.",
+      "claim_scope": "The article uses the FAQ only for the professional boundary and potential economic-interest disclosure; it does not promise value, price, an offer, payment, or closing."
+    },
+    {
+      "label": "U.S. Energy Information Administration, Oil Prices and Outlook (accessed 2026-08-12)",
+      "url": "https://www.eia.gov/energyexplained/oil-and-petroleum-products/prices-and-outlook.php",
+      "publisher": "www.eia.gov",
+      "accessed_at": "2026-08-12T18:17:40Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.eia.gov/energyexplained/oil-and-petroleum-products/prices-and-outlook.php",
+        "content_type": "text/html; charset=UTF-8"
+      },
+      "source_location_or_paraphrase": "The U.S. Energy Information Administration explains that global supply and demand drive crude-oil prices, inventories help balance the market, short-run constraints can contribute to volatility, and price outlooks remain uncertain.",
+      "claim_scope": "The article uses the page only for the commodity-market demand layer and forecast-uncertainty boundary; it does not convert broad oil-market conditions into a property-specific realized price, value, or offer."
+    },
+    {
+      "label": "U.S. Energy Information Administration, Factors Affecting Natural Gas Prices (accessed 2026-08-12)",
+      "url": "https://www.eia.gov/energyexplained/natural-gas/factors-affecting-natural-gas-prices.php",
+      "publisher": "www.eia.gov",
+      "accessed_at": "2026-08-12T18:17:40Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.eia.gov/energyexplained/natural-gas/factors-affecting-natural-gas-prices.php",
+        "content_type": "text/html; charset=UTF-8"
+      },
+      "source_location_or_paraphrase": "The U.S. Energy Information Administration explains that natural-gas prices respond to market supply and demand, including production, storage, imports and exports, weather, economic conditions, infrastructure, and other fuels.",
+      "claim_scope": "The article uses the page only for the natural-gas commodity-demand layer and its stated drivers; it does not convert broad or national gas-market conditions into a property-specific realized price, value, or offer."
+    },
+    {
+      "label": "Railroad Commission of Texas, Online Research Queries (accessed 2026-08-12)",
+      "url": "https://www.rrc.texas.gov/resource-center/research/research-queries/",
+      "publisher": "www.rrc.texas.gov",
+      "accessed_at": "2026-08-12T18:17:40Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.rrc.texas.gov/resource-center/research/research-queries/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The Railroad Commission of Texas provides public research-query surfaces for Texas production, drilling permits, well records, operators, fields, and related oil-and-gas information.",
+      "claim_scope": "The article uses these queries only for dated development and operational context; it does not treat a query result as proof of ownership, tract inclusion, drilling, production, payment, buyer demand, or future development."
+    },
+    {
+      "label": "Railroad Commission of Texas, Data Sets Available for Download (accessed 2026-08-12)",
+      "url": "https://www.rrc.texas.gov/resource-center/research/data-sets-available-for-download/",
+      "publisher": "www.rrc.texas.gov",
+      "accessed_at": "2026-08-12T18:17:40Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.rrc.texas.gov/resource-center/research/data-sets-available-for-download/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The Railroad Commission of Texas describes downloadable drilling-permit, wellbore, field, and production-related datasets, their fields, and their update schedules.",
+      "claim_scope": "The article uses the datasets only to define available dated activity evidence and reporting scope; it does not infer a property-specific commitment, result, value, private transaction price, or buyer mandate."
+    }
+  ]
+}

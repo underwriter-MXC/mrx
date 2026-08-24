@@ -1,0 +1,107 @@
+{
+  "artifact_type": "mrx1000_wave84_two_image_factual_citation_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-23T15:45:09Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-14",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0269",
+  "slug": "refrac-workover-event-claim-register-source-preserving-record-template",
+  "title": "Refrac and Workover Event-Claim Register: A Source-Preserving Record Template",
+  "canonical_url": "https://mineralrightsxchange.com/blog/refrac-workover-event-claim-register-source-preserving-record-template/",
+  "source_path": "src/content/posts/refrac-workover-event-claim-register-source-preserving-record-template.mdx",
+  "input_body_sha256": "a0a5f257a46ff7a8a29ba33b91f094f3119c412897e220964b3be2835b8de5d1",
+  "input_frontmatter_sha256": "786dfd8719a8205f77267ab9721766c67d9695cd14a0c41a9e84c485f619a1e2",
+  "expected_repo_sha256": "a0a5f257a46ff7a8a29ba33b91f094f3119c412897e220964b3be2835b8de5d1",
+  "two_image_manifest_sha256": "591eb4eedc3405f3ecc29261e82f11c351b97441fc00f51ec0098800993f6d00",
+  "visual_metadata": {
+    "hero_alt": "A source-separated event-claim register appears beside the exact article title.",
+    "social_alt": "A source-separated event-claim register appears beside the exact article title.",
+    "inline_alt": "A blank overhead event-claim worksheet appears above the exact keyword."
+  },
+  "reviewer_id": "codex_wave84_factual",
+  "review_run_id": "mrx1000-wave84-factual-20260823T154509Z",
+  "capability": "factual_citation",
+  "findings": [
+    "Complete current MDX SHA-256 is a0a5f257a46ff7a8a29ba33b91f094f3119c412897e220964b3be2835b8de5d1; all 5 declared sources passed current HTTPS access review.",
+    "Claims remain bounded to current RRC well-record, online-record, form, and production-query channels plus SEC filing-search logistics. Each source role preserves source identity and agency limits and is not converted into event confirmation, causation, property connection, operational status, reserves, production forecast, or value.",
+    "The article invents no event, operator, well, API number, property connection, production figure, decline curve, reserve estimate, valuation input, offer, owner, title, lease, payment, or transaction fact and supplies no universal numerical assumption or result."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "five_distinct_https_sources",
+    "current_source_access_review_pass",
+    "claim_to_source_scope_present",
+    "official_source_priority_pass",
+    "unsupported_high_risk_claim_scan_pass"
+  ],
+  "sources_inspected": [
+    {
+      "label": "Railroad Commission of Texas, oil and gas well records (accessed 2026-08-23)",
+      "url": "https://www.rrc.texas.gov/oil-and-gas/research-and-statistics/obtaining-commission-records/oil-and-gas-well-records/",
+      "publisher": "www.rrc.texas.gov",
+      "accessed_at": "2026-08-23T15:45:09Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.rrc.texas.gov/oil-and-gas/research-and-statistics/obtaining-commission-records/oil-and-gas-well-records/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The Railroad Commission well-records page describes well-file channels, completion or recompletion records, and identifiers useful when locating or requesting a record.",
+      "claim_scope": "The article uses the page only to preserve a record identity, request path, source date, page or locator, and source-stated event wording; it does not interpret a filing or confirm an intervention."
+    },
+    {
+      "label": "Railroad Commission of Texas, online well records (accessed 2026-08-23)",
+      "url": "https://www.rrc.texas.gov/oil-and-gas/research-and-statistics/obtaining-commission-records/oil-and-gas-well-records-online/",
+      "publisher": "www.rrc.texas.gov",
+      "accessed_at": "2026-08-23T15:45:09Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.rrc.texas.gov/oil-and-gas/research-and-statistics/obtaining-commission-records/oil-and-gas-well-records-online/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The Railroad Commission online well-records page explains how lease PDFs organize completion packets, drilling permits, plugging reports, transportation authority records, and miscellaneous documents.",
+      "claim_scope": "The article uses the page only to log the located PDF, profile, well or lease identifier, page, retrieval date, and exact source passage without deciding what the record proves."
+    },
+    {
+      "label": "Railroad Commission of Texas, oil and gas forms (accessed 2026-08-23)",
+      "url": "https://www.rrc.texas.gov/oil-and-gas/oil-and-gas-forms/",
+      "publisher": "www.rrc.texas.gov",
+      "accessed_at": "2026-08-23T15:45:09Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.rrc.texas.gov/oil-and-gas/oil-and-gas-forms/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The Railroad Commission forms page lists official form names and revisions, including forms whose titles reference completion or recompletion.",
+      "claim_scope": "The article uses the page only to preserve the exact form name, revision, filing date if shown, identifier, and locator; it does not classify the operation or interpret the filing."
+    },
+    {
+      "label": "Railroad Commission of Texas, production data (accessed 2026-08-23)",
+      "url": "https://www.rrc.texas.gov/oil-and-gas/research-and-statistics/production-data/",
+      "publisher": "www.rrc.texas.gov",
+      "accessed_at": "2026-08-23T15:45:09Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.rrc.texas.gov/oil-and-gas/research-and-statistics/production-data/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The Railroad Commission production-data page identifies official Texas production-query channels and describes reported production information.",
+      "claim_scope": "The article uses a dated result only to log displayed reporting periods and source identifiers as non-causal observations; it does not attribute a change to an event, forecast production, or estimate reserves or value."
+    },
+    {
+      "label": "U.S. Securities and Exchange Commission, filing search (accessed 2026-08-23)",
+      "url": "https://www.sec.gov/search-filings",
+      "publisher": "www.sec.gov",
+      "accessed_at": "2026-08-23T15:45:09Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.sec.gov/search-filings",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The SEC filing-search page provides public access to company filings and search tools for filer, form, filing date, and filing records.",
+      "claim_scope": "The article uses the page only to preserve the filer, form, filing date, accession or stable filing reference, and exact passage locator; it does not treat a company filing as property-specific event confirmation or interpret its economic meaning."
+    }
+  ]
+}

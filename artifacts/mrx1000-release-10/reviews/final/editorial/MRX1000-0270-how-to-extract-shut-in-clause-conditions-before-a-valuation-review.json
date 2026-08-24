@@ -1,0 +1,66 @@
+{
+  "artifact_type": "mrx1000_wave86_two_image_editorial_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-23T18:23:39Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-14",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0270",
+  "slug": "how-to-extract-shut-in-clause-conditions-before-a-valuation-review",
+  "title": "How to Extract Shut-In Clause Conditions Before a Valuation Review",
+  "canonical_url": "https://mineralrightsxchange.com/blog/how-to-extract-shut-in-clause-conditions-before-a-valuation-review/",
+  "source_path": "src/content/posts/how-to-extract-shut-in-clause-conditions-before-a-valuation-review.mdx",
+  "input_body_sha256": "6bcbb31c3e2ffd22de4503f2a64cf4d6216382a855b17167ef6cac788bdfe066",
+  "input_frontmatter_sha256": "98366542a0d55b9fb1ae821dbaac7861ba6e09390e6e94b3f2d12f710784ffc9",
+  "expected_repo_sha256": "6bcbb31c3e2ffd22de4503f2a64cf4d6216382a855b17167ef6cac788bdfe066",
+  "two_image_manifest_sha256": "8f25fe5b1f8366be4ded464b6eec405677be9e5b49adccd46dbf5431c77dc597",
+  "visual_metadata": {
+    "hero_alt": "An open lease packet and clause worksheet appear beside the exact article title.",
+    "social_alt": "An open lease packet and clause worksheet appear beside the exact article title.",
+    "inline_alt": "A top-down clause extraction worksheet appears above the exact keyword."
+  },
+  "reviewer_id": "codex_wave86_editorial",
+  "review_run_id": "mrx1000-wave86-editorial-20260823T182339Z",
+  "capability": "editorial",
+  "findings": [
+    "Complete current MDX SHA-256 is 6bcbb31c3e2ffd22de4503f2a64cf4d6216382a855b17167ef6cac788bdfe066; the answer-first article contains 1973 body tokens and five FAQs.",
+    "The article replaces a colliding shut-in valuation explainer with a single administrative job: extract source-located private clause wording, condition fields, cross-references, version conflicts, and neutral questions before qualified review.",
+    "Exact-title hero/share OCR passed and distinct in-body keyword OCR passed. The eye-level lease-review desk and people-free strict-overhead worksheet differ in camera angle, subject arrangement, composition, and evidence function with matching alt metadata."
+  ],
+  "checks": [
+    {
+      "name": "complete_file_sha256_match",
+      "status": "PASS",
+      "evidence": "6bcbb31c3e2ffd22de4503f2a64cf4d6216382a855b17167ef6cac788bdfe066"
+    },
+    {
+      "name": "answer_first_article_depth_and_five_faqs",
+      "status": "PASS",
+      "evidence": {
+        "word_count": 1973,
+        "minimum_word_count": 700,
+        "faq_count": 5
+      }
+    },
+    {
+      "name": "two_image_exact_text_identity",
+      "status": "PASS",
+      "evidence": {
+        "hero_ocr": true,
+        "inline_ocr": true,
+        "social_reuses_hero": true,
+        "hero_social_alt_match": true,
+        "inline_alt_match": true,
+        "filename_identity": true,
+        "distinct_binaries": true
+      }
+    }
+  ],
+  "sources_inspected": [
+    "src/content/posts/how-to-extract-shut-in-clause-conditions-before-a-valuation-review.mdx",
+    "/assets/articles/hero/how-to-extract-shut-in-clause-conditions-before-a-valuation-review.webp",
+    "/assets/articles/inline/how-to-extract-shut-in-clause-conditions-before-a-valuation-review/shut-in-clause-conditions-valuation-review.webp"
+  ]
+}

@@ -1,0 +1,167 @@
+{
+  "artifact_type": "mrx1000_two_image_factual_citation_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-12T22:12:05Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-12",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0127",
+  "slug": "understanding-texas-mineral-rights-transactions-today",
+  "title": "Understanding Texas Mineral Rights Transactions Today",
+  "canonical_url": "https://mineralrightsxchange.com/blog/understanding-texas-mineral-rights-transactions-today/",
+  "source_path": "src/content/posts/understanding-texas-mineral-rights-transactions-today.mdx",
+  "input_body_sha256": "14c1811377388de980de9621a6b4a2c804936ab18fc74f3ad0e8574ea17cd002",
+  "input_frontmatter_sha256": "d4a4adb33010ddcf17d057edbc7c184796bf19375491da1b835c451cb26a8b39",
+  "expected_repo_sha256": "14c1811377388de980de9621a6b4a2c804936ab18fc74f3ad0e8574ea17cd002",
+  "two_image_manifest_sha256": "a13762a0c18d6572edec3fa5a9027d9e339a9933e7f97445815332b6a5767445",
+  "reviewer_id": "codex_wave47_factual",
+  "review_run_id": "mrx1000-wave47-factual-20260812T221205Z",
+  "capability": "factual_citation",
+  "findings": [
+    "Complete current MDX SHA-256 is 14c1811377388de980de9621a6b4a2c804936ab18fc74f3ad0e8574ea17cd002; all 10 declared sources passed live access review.",
+    "MRX claims remain bounded to its current FAQ, methodology, How It Works page, and terms; Railroad Commission query, production, and royalty guidance stays within the agency’s stated operational and informational boundaries; Texas business and recording sources are expressly limited; and IRS claims remain general disposition concepts.",
+    "The article uses no fabricated owners, buyers, contracts, deeds, prices, acreage, ownership decimals, tax results, offers, testimonials, success rates, or owner-specific title, legal, tax, accounting, appraisal, investment, or transaction conclusions."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "minimum_three_distinct_https_sources",
+    "current_source_access_review_pass",
+    "claim_to_source_scope_present",
+    "official_primary_source_priority_pass",
+    "unsupported_high_risk_claim_scan_pass"
+  ],
+  "sources_inspected": [
+    {
+      "label": "Mineral Rights Xchange, Published DCF Methodology (accessed 2026-08-12)",
+      "url": "https://mineralrightsxchange.com/methodology/",
+      "publisher": "mineralrightsxchange.com",
+      "accessed_at": "2026-08-12T22:12:05Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://mineralrightsxchange.com/methodology/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The current MRX methodology separates a directional asset range from actual buyer offers and expected owner net, and requires dated inputs, assumptions, and limitations.",
+      "claim_scope": "The article uses the methodology only to distinguish property evidence, a directional range, complete proposal terms, and owner net; it does not value a specific interest, establish legal rights, or predict a transaction result."
+    },
+    {
+      "label": "Mineral Rights Xchange, Frequently Asked Questions (accessed 2026-08-12)",
+      "url": "https://mineralrightsxchange.com/faq/",
+      "publisher": "mineralrightsxchange.com",
+      "accessed_at": "2026-08-12T22:12:05Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://mineralrightsxchange.com/faq/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The current MRX FAQ describes a no-obligation directional underwriter assessment, not a certified valuation, and discloses that MRX may ultimately want to buy an interest.",
+      "claim_scope": "The article uses the FAQ only for MRX’s current service boundaries and provider-interest disclosure; it does not promise a result, interpret an agreement, or recommend a transaction."
+    },
+    {
+      "label": "Mineral Rights Xchange, How It Works (accessed 2026-08-12)",
+      "url": "https://mineralrightsxchange.com/how-it-works/",
+      "publisher": "mineralrightsxchange.com",
+      "accessed_at": "2026-08-12T22:12:05Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://mineralrightsxchange.com/how-it-works/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The current MRX How It Works page distinguishes intake and a directional underwriter review from the path for organizing a complete written offer.",
+      "claim_scope": "The article uses the page only to separate the property-and-range gate from the written-proposal gate; it does not promise eligibility, a value, an offer, payment, sale, or closing."
+    },
+    {
+      "label": "Mineral Rights Xchange, Terms of Use (accessed 2026-08-12)",
+      "url": "https://mineralrightsxchange.com/terms/",
+      "publisher": "mineralrightsxchange.com",
+      "accessed_at": "2026-08-12T22:12:05Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://mineralrightsxchange.com/terms/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The current MRX terms state that website information is educational and not legal, tax, financial, investment, engineering, or certified appraisal advice.",
+      "claim_scope": "The article uses the terms only to preserve educational and professional boundaries; it does not use them to interpret a buyer contract or determine an owner’s rights."
+    },
+    {
+      "label": "Railroad Commission of Texas, Online Research Queries (accessed 2026-08-12)",
+      "url": "https://www.rrc.texas.gov/resource-center/research/research-queries/",
+      "publisher": "www.rrc.texas.gov",
+      "accessed_at": "2026-08-12T22:12:05Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.rrc.texas.gov/resource-center/research/research-queries/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The Railroad Commission of Texas provides online query routes for production, drilling permits, well records, organization records, GIS, imaged records, and other operational data, while expressly describing the continually updated datasets as informational, non-authoritative, and without legal force.",
+      "claim_scope": "The article uses the query menu only to route operational research and preserve the Commission’s stated limitations; it does not treat a query as proof of ownership, title, acreage, payment, contract effect, authority, value, or a transaction result."
+    },
+    {
+      "label": "Railroad Commission of Texas, Production Data Query System FAQ (accessed 2026-08-12)",
+      "url": "https://www.rrc.texas.gov/about-us/faqs/oil-gas-faq/production-data-query-system-faqs/",
+      "publisher": "www.rrc.texas.gov",
+      "accessed_at": "2026-08-12T22:12:05Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.rrc.texas.gov/about-us/faqs/oil-gas-faq/production-data-query-system-faqs/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The Railroad Commission PDQ FAQ explains operator-reported production scope, lease-level reporting for oil, reporting lag, later revisions, historical completeness, update frequency, and identifiers used to navigate production queries.",
+      "claim_scope": "The article uses the FAQ only to explain why source identifiers, scope, periods, access dates, and later corrections must be reconciled; it does not conclude that a public query proves an owner’s payment decimal, royalty amount, title, value, or contract rights."
+    },
+    {
+      "label": "Railroad Commission of Texas, Royalties FAQ (accessed 2026-08-12)",
+      "url": "https://www.rrc.texas.gov/about-us/faqs/royalties-faq/",
+      "publisher": "www.rrc.texas.gov",
+      "accessed_at": "2026-08-12T22:12:05Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.rrc.texas.gov/about-us/faqs/royalties-faq/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The Railroad Commission royalties FAQ separates county lease or royalty records and Commission operational records from private royalty, lease, payment, and legal matters outside the Commission’s authority, and notes that production identifiers may differ from payment-document identifiers.",
+      "claim_scope": "The article uses the FAQ only to route county, operational, identifier, and professional questions to the correct lane; it does not interpret a lease, calculate a royalty, determine ownership, or state an owner-specific remedy."
+    },
+    {
+      "label": "Texas Secretary of State, Business Services (accessed 2026-08-12)",
+      "url": "https://www.sos.state.tx.us/corp/index.shtml",
+      "publisher": "www.sos.state.tx.us",
+      "accessed_at": "2026-08-12T22:12:05Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.sos.state.tx.us/corp/index.shtml",
+        "content_type": "text/html"
+      },
+      "source_location_or_paraphrase": "The Texas Secretary of State provides official routes to online business filings, searches, copies, certificates, and related business information.",
+      "claim_scope": "The article uses the page only as an official entity-record routing source. A filing or search result is not treated as an endorsement, proof of representative authority, funding evidence, fair-terms conclusion, or transaction-safety conclusion."
+    },
+    {
+      "label": "Texas Legislature, Property Code Chapter 12, Recording of Instruments (accessed 2026-08-12)",
+      "url": "https://statutes.capitol.texas.gov/?artSec=12.001&chapter=PR.12&code=PR&tab=1",
+      "publisher": "statutes.capitol.texas.gov",
+      "accessed_at": "2026-08-12T22:12:05Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://statutes.capitol.texas.gov/?artSec=12.001&chapter=PR.12&code=PR&tab=1",
+        "content_type": "text/html"
+      },
+      "source_location_or_paraphrase": "Texas Property Code Chapter 12 provides a state-specific example of formal requirements associated with recording instruments concerning real or personal property.",
+      "claim_scope": "The article uses Chapter 12 only to show why deed, acknowledgment, delivery, and recording instructions deserve attorney review in a Texas transaction; it does not extend Texas law elsewhere or claim that recordability proves validity, title, authority, delivery, consideration, priority, or an owner-specific result."
+    },
+    {
+      "label": "Internal Revenue Service, Publication 544, Sales and Other Dispositions of Assets (accessed 2026-08-12)",
+      "url": "https://www.irs.gov/publications/p544",
+      "publisher": "www.irs.gov",
+      "accessed_at": "2026-08-12T22:12:05Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.irs.gov/publications/p544",
+        "content_type": "text/html; charset=UTF-8"
+      },
+      "source_location_or_paraphrase": "IRS Publication 544 explains that gain or loss on a sale or other disposition generally depends on the amount realized and adjusted basis, with treatment depending on the property and transaction facts.",
+      "claim_scope": "The article uses the publication only to distinguish gross consideration from owner net and to prompt a transaction-specific tax handoff; it does not classify an owner’s asset, calculate basis, gain, loss, tax, or filing treatment."
+    }
+  ]
+}

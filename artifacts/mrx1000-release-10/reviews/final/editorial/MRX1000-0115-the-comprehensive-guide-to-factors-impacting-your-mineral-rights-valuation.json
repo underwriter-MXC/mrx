@@ -1,0 +1,59 @@
+{
+  "artifact_type": "mrx1000_two_image_editorial_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-12T15:12:21Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-12",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0115",
+  "slug": "the-comprehensive-guide-to-factors-impacting-your-mineral-rights-valuation",
+  "title": "The Comprehensive Guide to Factors Impacting Your Mineral Rights Valuation",
+  "canonical_url": "https://mineralrightsxchange.com/blog/the-comprehensive-guide-to-factors-impacting-your-mineral-rights-valuation/",
+  "source_path": "src/content/posts/the-comprehensive-guide-to-factors-impacting-your-mineral-rights-valuation.mdx",
+  "input_body_sha256": "30c3639a637223247d3c1e36250837f3f2f76adf6c282886f31e6c0560744208",
+  "input_frontmatter_sha256": "d47633078562f5aeb43401f567f88962a45b1a2c371701e92d1b7290ac89ef89",
+  "expected_repo_sha256": "30c3639a637223247d3c1e36250837f3f2f76adf6c282886f31e6c0560744208",
+  "two_image_manifest_sha256": "4aab20f999d47419eb658e6b4efd5a5909e0895b412b53d04a27cffb570db426",
+  "reviewer_id": "codex_wave35_editorial",
+  "review_run_id": "mrx1000-wave35-editorial-20260812T151221Z",
+  "capability": "editorial",
+  "findings": [
+    "Complete current MDX SHA-256 is 30c3639a637223247d3c1e36250837f3f2f76adf6c282886f31e6c0560744208; the answer-first article contains 3142 body tokens and five FAQs.",
+    "The article owns the factor-to-range traceability job: it separates property scope, evidence classes, assumptions, scenario interactions, directional asset range, complete buyer terms, and expected owner net, then supplies a factor register, sensitivity bridge, source-aware limitations, stop rules, and professional handoffs.",
+    "Exact-title hero/share OCR passed for “The Comprehensive Guide to Factors Impacting Your Mineral Rights Valuation”; distinct in-body OCR passed for “What Factors Influence the Price You Suggest for My Mineral Rights Assessment?”."
+  ],
+  "checks": [
+    {
+      "name": "complete_file_sha256_match",
+      "status": "PASS",
+      "evidence": "30c3639a637223247d3c1e36250837f3f2f76adf6c282886f31e6c0560744208"
+    },
+    {
+      "name": "answer_first_article_depth_and_five_faqs",
+      "status": "PASS",
+      "evidence": {
+        "word_count": 3142,
+        "minimum_word_count": 700,
+        "faq_count": 5
+      }
+    },
+    {
+      "name": "two_image_exact_text_identity",
+      "status": "PASS",
+      "evidence": {
+        "hero_ocr": true,
+        "inline_ocr": true,
+        "social_reuses_hero": true,
+        "filename_identity": true,
+        "distinct_binaries": true
+      }
+    }
+  ],
+  "sources_inspected": [
+    "src/content/posts/the-comprehensive-guide-to-factors-impacting-your-mineral-rights-valuation.mdx",
+    "/assets/articles/hero/the-comprehensive-guide-to-factors-impacting-your-mineral-rights-valuation.webp",
+    "/assets/articles/inline/the-comprehensive-guide-to-factors-impacting-your-mineral-rights-valuation/what-factors-influence-the-price-you-suggest-for-my-mineral-rights-assessment.webp"
+  ]
+}

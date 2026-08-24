@@ -1,0 +1,49 @@
+{
+  "artifact_type": "mrx1000_wave84_two_image_compliance_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-23T15:45:09Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-14",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0269",
+  "slug": "refrac-workover-event-claim-register-source-preserving-record-template",
+  "title": "Refrac and Workover Event-Claim Register: A Source-Preserving Record Template",
+  "canonical_url": "https://mineralrightsxchange.com/blog/refrac-workover-event-claim-register-source-preserving-record-template/",
+  "source_path": "src/content/posts/refrac-workover-event-claim-register-source-preserving-record-template.mdx",
+  "input_body_sha256": "a0a5f257a46ff7a8a29ba33b91f094f3119c412897e220964b3be2835b8de5d1",
+  "input_frontmatter_sha256": "786dfd8719a8205f77267ab9721766c67d9695cd14a0c41a9e84c485f619a1e2",
+  "expected_repo_sha256": "a0a5f257a46ff7a8a29ba33b91f094f3119c412897e220964b3be2835b8de5d1",
+  "two_image_manifest_sha256": "591eb4eedc3405f3ecc29261e82f11c351b97441fc00f51ec0098800993f6d00",
+  "visual_metadata": {
+    "hero_alt": "A source-separated event-claim register appears beside the exact article title.",
+    "social_alt": "A source-separated event-claim register appears beside the exact article title.",
+    "inline_alt": "A blank overhead event-claim worksheet appears above the exact keyword."
+  },
+  "reviewer_id": "codex_wave84_compliance",
+  "review_run_id": "mrx1000-wave84-compliance-20260823T154509Z",
+  "capability": "compliance",
+  "expected_hero_sha256": "16436d31026ec5fd2415a2945c716ed49c4e46614647c8c0dcf034760d7e5bd3",
+  "expected_inline_sha256": "a5f7bfc5729b292acdf611b6ef57703b14b24994aac9e2fdd02990505d5e073e",
+  "findings": [
+    "Complete current MDX SHA-256 is a0a5f257a46ff7a8a29ba33b91f094f3119c412897e220964b3be2835b8de5d1; hero/share and inline image hashes are separately locked.",
+    "The article labels every event as a claim, separates sources and conflicts, limits connection labels, marks reported periods as non-causal, turns gaps into neutral questions, assigns follow-up without predetermining an answer, discloses possible MRX buyer interest, and preserves qualified-review boundaries.",
+    "Image text is limited to the exact article title and approved keyword and adds no operator, well, property, source result, event conclusion, production figure, curve, reserve, value, verification, seal, recommendation, guarantee, or transaction outcome."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "hero_share_sha256_identity",
+    "inline_image_distinct_sha256",
+    "exact_text_ocr_pass",
+    "filename_text_identity_pass",
+    "source_preserving_event_claim_register_no_confirmation_causation_curve_forecast_reserve_valuation_offer_or_property_decision_boundary_pass",
+    "owner_agency_and_possible_buyer_interest_disclosure_preserved",
+    "no_unsupported_visual_or_decision_claims"
+  ],
+  "sources_inspected": [
+    "src/content/posts/refrac-workover-event-claim-register-source-preserving-record-template.mdx",
+    "/assets/articles/hero/refrac-and-workover-event-claim-register-a-source-preserving-record-template.webp",
+    "/assets/articles/inline/refrac-workover-event-claim-register-source-preserving-record-template/refrac-workover-event-claim-register.webp"
+  ]
+}

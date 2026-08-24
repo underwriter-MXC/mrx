@@ -1,0 +1,141 @@
+{
+  "artifact_type": "mrx1000_two_image_factual_citation_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-12T13:38:20Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-12",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0112",
+  "slug": "selling-mineral-rights-valuation-factors-in-2026",
+  "title": "Selling Mineral Rights: Valuation Factors In 2026",
+  "canonical_url": "https://mineralrightsxchange.com/blog/selling-mineral-rights-valuation-factors-in-2026/",
+  "source_path": "src/content/posts/selling-mineral-rights-valuation-factors-in-2026.mdx",
+  "input_body_sha256": "ba3aa0913e434c3ab4d007b0b1e1233ab78d87b6bb91072f8242d8c1cbf96694",
+  "input_frontmatter_sha256": "64a1a5988a58aa9e96383efc2ff2ca107d2b71ac55e26b0937376e10c0f4f2c5",
+  "expected_repo_sha256": "ba3aa0913e434c3ab4d007b0b1e1233ab78d87b6bb91072f8242d8c1cbf96694",
+  "two_image_manifest_sha256": "cd440e31ee83047815e1c8a89c7930250bdfffec437ed5c7dea60600d0ad9119",
+  "reviewer_id": "codex_wave32_factual",
+  "review_run_id": "mrx1000-wave32-factual-20260812T133820Z",
+  "capability": "factual_citation",
+  "findings": [
+    "Complete current MDX SHA-256 is ba3aa0913e434c3ab4d007b0b1e1233ab78d87b6bb91072f8242d8c1cbf96694; all 8 declared sources passed live access review.",
+    "MRX claims remain bounded to the current methodology and factor companions; EIA claims remain bounded to dated public data series; the SEC claim remains bounded to public-company reserve-reporting convention; the Texas regulator claim remains bounded to operator-reported production data; and IRS claims remain bounded to general disposition and basis-record distinctions.",
+    "The article uses no fabricated owners, buyers, deeds, prices, factor weights, multiples, acreage, ownership decimals, production, reserves, development events, tax results, offers, testimonials, or owner-specific title, legal, tax, accounting, engineering, appraisal, investment, or transaction conclusions."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "minimum_three_distinct_https_sources",
+    "current_source_access_review_pass",
+    "claim_to_source_scope_present",
+    "official_primary_source_priority_pass",
+    "unsupported_high_risk_claim_scan_pass"
+  ],
+  "sources_inspected": [
+    {
+      "label": "Mineral Rights Xchange, Published DCF Methodology (accessed 2026-08-12)",
+      "url": "https://mineralrightsxchange.com/methodology/",
+      "publisher": "mineralrightsxchange.com",
+      "accessed_at": "2026-08-12T13:38:20Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://mineralrightsxchange.com/methodology/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The current MRX methodology identifies production history, decline context, operator and development evidence, royalty terms, commodity assumptions, discounting, title and acreage, and offer terms as dated inputs to a directional range with assumptions stated.",
+      "claim_scope": "The article uses the methodology to preserve the directional-range, scenario, and limitation boundaries while owning the seller-facing factor register and offer bridge; it does not calculate a property-specific value, prove title or reserves, guarantee an outcome, or recommend a transaction."
+    },
+    {
+      "label": "Mineral Rights Xchange, Key Factors That Determine Your Mineral Rights Assessment Pricing Range (accessed 2026-08-12)",
+      "url": "https://mineralrightsxchange.com/blog/key-factors-that-determine-your-mineral-rights-assessment-pricing-range/",
+      "publisher": "mineralrightsxchange.com",
+      "accessed_at": "2026-08-12T13:38:20Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://mineralrightsxchange.com/blog/key-factors-that-determine-your-mineral-rights-assessment-pricing-range/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The current MRX assessment-range article identifies producing status, production and decline, ownership and acreage, lease and royalty terms, commodity assumptions, operator and development context, title and data confidence, and transaction terms as principal review inputs.",
+      "claim_scope": "Wave 32 uses that page as the concise factor companion while adding a three-ledger evidence register, source dates, confidence labels, scenario effects, reset triggers, and a factor-by-factor comparison bridge; it does not duplicate the concise factor summary."
+    },
+    {
+      "label": "Mineral Rights Xchange, Understanding the Key Factors Influencing Your Mineral Rights Offer Range (accessed 2026-08-12)",
+      "url": "https://mineralrightsxchange.com/blog/understanding-the-key-factors-influencing-your-mineral-rights-offer-range/",
+      "publisher": "mineralrightsxchange.com",
+      "accessed_at": "2026-08-12T13:38:20Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://mineralrightsxchange.com/blog/understanding-the-key-factors-influencing-your-mineral-rights-offer-range/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The current MRX offer-range article explains how the exact interest, ownership evidence, production, lease economics, commodity assumptions, development timing, risk, buyer scope, contract conditions, and expected net proceeds can make buyer ranges differ.",
+      "claim_scope": "Wave 32 uses that page as the detailed range-difference companion while owning the owner-controlled 2026 factor register and bridge; it does not claim that every buyer discloses its strategy, weighting, return requirement, or full underwriting model."
+    },
+    {
+      "label": "U.S. Energy Information Administration, Natural Gas Data (accessed 2026-08-12)",
+      "url": "https://www.eia.gov/naturalgas/data.php",
+      "publisher": "www.eia.gov",
+      "accessed_at": "2026-08-12T13:38:20Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.eia.gov/naturalgas/data.php",
+        "content_type": "text/html; charset=UTF-8"
+      },
+      "source_location_or_paraphrase": "The current EIA natural-gas data directory publishes price, production, reserves, drilling, supply, and other series with stated geographic scopes, frequencies, and release dates that differ by dataset.",
+      "claim_scope": "The article uses EIA only to require a named benchmark or series, retrieval date, geography, differential, and scenario; it does not treat an EIA series as the realized price, production, reserves, forecast, or value of a specific mineral interest."
+    },
+    {
+      "label": "U.S. Securities and Exchange Commission, Oil and Gas Reporting Modernization: Small Entity Compliance Guide (accessed 2026-08-12)",
+      "url": "https://www.sec.gov/rules-regulations/oil-gas-reporting-modernization-small-entity-compliance-guide",
+      "publisher": "www.sec.gov",
+      "accessed_at": "2026-08-12T13:38:20Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.sec.gov/rules-regulations/oil-gas-reporting-modernization-small-entity-compliance-guide",
+        "content_type": "text/html; charset=UTF-8"
+      },
+      "source_location_or_paraphrase": "The SEC oil-and-gas reporting modernization guide explains the 12-month first-of-month average-price convention and supporting reserves definitions used for public-company disclosure comparability.",
+      "claim_scope": "The article uses the guide only to illustrate why a pricing convention and purpose must be explicit; it states that SEC public-company reserves rules do not prescribe a private owner’s fair market value, sale price, forecast method, or reserves conclusion."
+    },
+    {
+      "label": "Railroad Commission of Texas, Oil & Gas Production Data (accessed 2026-08-12)",
+      "url": "https://www.rrc.texas.gov/oil-and-gas/research-and-statistics/production-data/",
+      "publisher": "www.rrc.texas.gov",
+      "accessed_at": "2026-08-12T13:38:20Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.rrc.texas.gov/oil-and-gas/research-and-statistics/production-data/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The Railroad Commission of Texas production-data page provides compilations and queries based on production information reported by Texas operators, including monthly and historical datasets.",
+      "claim_scope": "The article uses the page only as a Texas example of dated operating-history evidence and reporting scope; it does not treat a Commission record as proof of an owner’s title, decimal, reserves, future production, development, or value."
+    },
+    {
+      "label": "Internal Revenue Service, Publication 544, Sales and Other Dispositions of Assets (accessed 2026-08-12)",
+      "url": "https://www.irs.gov/publications/p544",
+      "publisher": "www.irs.gov",
+      "accessed_at": "2026-08-12T13:38:20Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.irs.gov/publications/p544",
+        "content_type": "text/html; charset=UTF-8"
+      },
+      "source_location_or_paraphrase": "IRS Publication 544 explains that gain or loss and tax treatment for a sale or other disposition depend on the property and transaction facts and on adjusted basis and amount realized.",
+      "claim_scope": "The article uses the publication only to require a transaction-specific tax handoff and final record archive; it does not classify the owner’s asset, calculate gain or loss, select a tax form, or state an owner-specific tax result."
+    },
+    {
+      "label": "Internal Revenue Service, Publication 551, Basis of Assets (accessed 2026-08-12)",
+      "url": "https://www.irs.gov/publications/p551",
+      "publisher": "www.irs.gov",
+      "accessed_at": "2026-08-12T13:38:20Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.irs.gov/publications/p551",
+        "content_type": "text/html; charset=UTF-8"
+      },
+      "source_location_or_paraphrase": "IRS Publication 551 describes basis as an amount used for tax computations including depletion and gain or loss and directs taxpayers to keep accurate records of items affecting basis.",
+      "claim_scope": "The article uses the publication only to require preservation of basis-relevant records and a qualified tax handoff; it does not calculate basis, depletion, gain, loss, liability, or a retention period for a specific owner."
+    }
+  ]
+}

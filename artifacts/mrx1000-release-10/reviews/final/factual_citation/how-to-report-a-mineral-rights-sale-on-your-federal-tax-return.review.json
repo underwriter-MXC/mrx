@@ -1,0 +1,100 @@
+{
+  "artifact_type": "mrx1000_two_image_factual_citation_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-11T22:44:38Z",
+  "decision_authority": {
+    "source": "Daryl owner directive, 2026-08-11",
+    "policy": "MRX two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0634",
+  "slug": "how-to-report-a-mineral-rights-sale-on-your-federal-tax-return",
+  "title": "How to Report a Mineral Rights Sale on Your Federal Tax Return",
+  "canonical_url": "https://mineralrightsxchange.com/blog/how-to-report-a-mineral-rights-sale-on-your-federal-tax-return/",
+  "source_path": "src/content/posts/how-to-report-a-mineral-rights-sale-on-your-federal-tax-return.mdx",
+  "input_body_sha256": "8d0e5e9abf44e990d73f0c0b9b649066bc32f5ac64b25a7cb63c6781640a5dd0",
+  "input_frontmatter_sha256": "6332f8266d7a6917e421db3fc9ef1976f6cdc8a476e981e1b3f3496ee82fd327",
+  "expected_repo_sha256": "8d0e5e9abf44e990d73f0c0b9b649066bc32f5ac64b25a7cb63c6781640a5dd0",
+  "two_image_manifest_sha256": "802512b5dab8eae7592be5934f97a6a8989125fb8f65d3f37ee3cdeb2d35dc10",
+  "reviewer_id": "codex_two_image_factual",
+  "review_run_id": "mrx1000-two-image-retrofit-20260811T224438Z",
+  "capability": "factual_citation",
+  "findings": [
+    "Complete current MDX SHA-256 is 8d0e5e9abf44e990d73f0c0b9b649066bc32f5ac64b25a7cb63c6781640a5dd0; all 5 declared sources passed live access review.",
+    "The retrofit changes image metadata and assets, not the bounded claim-to-source relationships in the article body.",
+    "The two images make no fabricated numeric, legal, tax, valuation, testimonial, or document claims."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "minimum_two_distinct_https_sources",
+    "current_source_access_review_pass",
+    "two_image_unsupported_claim_scan_pass"
+  ],
+  "sources_inspected": [
+    {
+      "label": "IRS Publication 544, Sales and Other Dispositions of Assets, 2025 (accessed 2026-08-06)",
+      "url": "https://www.irs.gov/publications/p544",
+      "publisher": "www.irs.gov",
+      "accessed_at": "2026-08-11T22:44:38Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.irs.gov/publications/p544",
+        "content_type": "text/html; charset=UTF-8"
+      },
+      "source_location_or_paraphrase": "The article cites IRS Publication 544, Sales and Other Dispositions of Assets, 2025 (accessed 2026-08-06) only for the bounded context attributed in its body and source notes.",
+      "claim_scope": "Owner-specific legal, tax, title, accounting, brokerage, engineering, appraisal, eligibility, value, and transaction conclusions remain outside this source use."
+    },
+    {
+      "label": "IRS Publication 551, Basis of Assets, 2025 (accessed 2026-08-06)",
+      "url": "https://www.irs.gov/publications/p551",
+      "publisher": "www.irs.gov",
+      "accessed_at": "2026-08-11T22:44:38Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.irs.gov/publications/p551",
+        "content_type": "text/html; charset=UTF-8"
+      },
+      "source_location_or_paraphrase": "The article cites IRS Publication 551, Basis of Assets, 2025 (accessed 2026-08-06) only for the bounded context attributed in its body and source notes.",
+      "claim_scope": "Owner-specific legal, tax, title, accounting, brokerage, engineering, appraisal, eligibility, value, and transaction conclusions remain outside this source use."
+    },
+    {
+      "label": "IRS Instructions for Form 4797, 2025 (accessed 2026-08-06)",
+      "url": "https://www.irs.gov/instructions/i4797",
+      "publisher": "www.irs.gov",
+      "accessed_at": "2026-08-11T22:44:38Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.irs.gov/instructions/i4797",
+        "content_type": "text/html; charset=UTF-8"
+      },
+      "source_location_or_paraphrase": "The article cites IRS Instructions for Form 4797, 2025 (accessed 2026-08-06) only for the bounded context attributed in its body and source notes.",
+      "claim_scope": "Owner-specific legal, tax, title, accounting, brokerage, engineering, appraisal, eligibility, value, and transaction conclusions remain outside this source use."
+    },
+    {
+      "label": "IRS Instructions for Form 8949, 2025 (accessed 2026-08-06)",
+      "url": "https://www.irs.gov/instructions/i8949",
+      "publisher": "www.irs.gov",
+      "accessed_at": "2026-08-11T22:44:38Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.irs.gov/instructions/i8949",
+        "content_type": "text/html; charset=UTF-8"
+      },
+      "source_location_or_paraphrase": "The article cites IRS Instructions for Form 8949, 2025 (accessed 2026-08-06) only for the bounded context attributed in its body and source notes.",
+      "claim_scope": "Owner-specific legal, tax, title, accounting, brokerage, engineering, appraisal, eligibility, value, and transaction conclusions remain outside this source use."
+    },
+    {
+      "label": "IRS Instructions for Schedule D, Form 1040, 2025 (accessed 2026-08-06)",
+      "url": "https://www.irs.gov/instructions/i1040sd",
+      "publisher": "www.irs.gov",
+      "accessed_at": "2026-08-11T22:44:38Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.irs.gov/instructions/i1040sd",
+        "content_type": "text/html; charset=UTF-8"
+      },
+      "source_location_or_paraphrase": "The article cites IRS Instructions for Schedule D, Form 1040, 2025 (accessed 2026-08-06) only for the bounded context attributed in its body and source notes.",
+      "claim_scope": "Owner-specific legal, tax, title, accounting, brokerage, engineering, appraisal, eligibility, value, and transaction conclusions remain outside this source use."
+    }
+  ]
+}

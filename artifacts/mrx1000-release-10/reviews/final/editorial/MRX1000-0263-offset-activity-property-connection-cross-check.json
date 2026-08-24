@@ -1,0 +1,66 @@
+{
+  "artifact_type": "mrx1000_two_image_editorial_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-23T07:28:24Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-14",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0263",
+  "slug": "offset-activity-property-connection-cross-check",
+  "title": "Offset Activity Records: Building a Property-Connection Cross-Check",
+  "canonical_url": "https://mineralrightsxchange.com/blog/offset-activity-property-connection-cross-check/",
+  "source_path": "src/content/posts/offset-activity-property-connection-cross-check.mdx",
+  "input_body_sha256": "e11b1b6ab3d0bcaaa918ee18c839cac7b6c0b685d1cbdbc5ba516ed11c7c2571",
+  "input_frontmatter_sha256": "8819e5f2c8849de79874bd54b302f9286cacaa8fae894ab9682d0b9cc9c50e5b",
+  "expected_repo_sha256": "e11b1b6ab3d0bcaaa918ee18c839cac7b6c0b685d1cbdbc5ba516ed11c7c2571",
+  "two_image_manifest_sha256": "3db9fe7e6ac88af6096842592af68f3199167196dcb52ef0b4dc784f9f9fb55d",
+  "visual_metadata": {
+    "hero_alt": "A regulatory well record, private property folder, and three status tokens appear beside the exact article title.",
+    "social_alt": "A regulatory well record, private property folder, and three status tokens appear beside the exact article title.",
+    "inline_alt": "A top-down cross-check matrix compares a blank wellbore card with blank owner-record cards under the exact keyword."
+  },
+  "reviewer_id": "codex_wave78_editorial",
+  "review_run_id": "mrx1000-wave78-editorial-20260823T072824Z",
+  "capability": "editorial",
+  "findings": [
+    "Complete current MDX SHA-256 is e11b1b6ab3d0bcaaa918ee18c839cac7b6c0b685d1cbdbc5ba516ed11c7c2571; the answer-first article contains 1788 body tokens and five FAQs.",
+    "The article owns only a field-level property-connection matrix for one identified offset record. It preserves source context, compares one named field at a time, uses only match, mismatch, or unverified, and stops before development, title, production, payment, valuation, offer, or transaction conclusions.",
+    "Exact-title hero/share OCR passed for “Offset Activity Records: Building a Property-Connection Cross-Check”; distinct in-body OCR passed for “offset activity property connection”; the side-angle regulatory/private-record hero and people-free overhead cross-check matrix are materially different compositions with matching alt metadata."
+  ],
+  "checks": [
+    {
+      "name": "complete_file_sha256_match",
+      "status": "PASS",
+      "evidence": "e11b1b6ab3d0bcaaa918ee18c839cac7b6c0b685d1cbdbc5ba516ed11c7c2571"
+    },
+    {
+      "name": "answer_first_article_depth_and_five_faqs",
+      "status": "PASS",
+      "evidence": {
+        "word_count": 1788,
+        "minimum_word_count": 700,
+        "faq_count": 5
+      }
+    },
+    {
+      "name": "two_image_exact_text_identity",
+      "status": "PASS",
+      "evidence": {
+        "hero_ocr": true,
+        "inline_ocr": true,
+        "social_reuses_hero": true,
+        "hero_social_alt_match": true,
+        "inline_alt_match": true,
+        "filename_identity": true,
+        "distinct_binaries": true
+      }
+    }
+  ],
+  "sources_inspected": [
+    "src/content/posts/offset-activity-property-connection-cross-check.mdx",
+    "/assets/articles/hero/offset-activity-records-building-a-property-connection-cross-check.webp",
+    "/assets/articles/inline/offset-activity-property-connection-cross-check/offset-activity-property-connection.webp"
+  ]
+}

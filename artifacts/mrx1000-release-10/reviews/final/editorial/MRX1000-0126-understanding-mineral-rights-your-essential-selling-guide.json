@@ -1,0 +1,59 @@
+{
+  "artifact_type": "mrx1000_two_image_editorial_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-12T21:31:25Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-12",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0126",
+  "slug": "understanding-mineral-rights-your-essential-selling-guide",
+  "title": "Understanding Mineral Rights: Your Essential Selling Guide",
+  "canonical_url": "https://mineralrightsxchange.com/blog/understanding-mineral-rights-your-essential-selling-guide/",
+  "source_path": "src/content/posts/understanding-mineral-rights-your-essential-selling-guide.mdx",
+  "input_body_sha256": "3e8200d9a7b42f281272978023ddbfe88050c04283e6fed5bf939d1702358f23",
+  "input_frontmatter_sha256": "d75c09fb32ba9e7e0b7b6ea56d4cb25fefe64a321387c9cc91fb9b341956447b",
+  "expected_repo_sha256": "3e8200d9a7b42f281272978023ddbfe88050c04283e6fed5bf939d1702358f23",
+  "two_image_manifest_sha256": "dd453b25c7a3f6c67d1bc8b815e8856f95ce2bef1e358a089898147f3dd5c764",
+  "reviewer_id": "codex_wave46_editorial",
+  "review_run_id": "mrx1000-wave46-editorial-20260812T213125Z",
+  "capability": "editorial",
+  "findings": [
+    "Complete current MDX SHA-256 is 3e8200d9a7b42f281272978023ddbfe88050c04283e6fed5bf939d1702358f23; the answer-first article contains 2788 body tokens and five FAQs.",
+    "The article owns a seven-gate seller-readiness job: objective and exact asset scope, indexed evidence, directional value context, complete written proposal, counterparty and channel verification, professional review and version lock, and controlled closing plus retained records. Each gate ends in an observable advance, pause, or stop decision and routes deeper mistake, clause, process, and fraud-awareness questions to existing pages.",
+    "Exact-title hero/share OCR passed for “Understanding Mineral Rights: Your Essential Selling Guide”; distinct in-body OCR passed for “How to Avoid Mineral Rights Selling Pitfalls”."
+  ],
+  "checks": [
+    {
+      "name": "complete_file_sha256_match",
+      "status": "PASS",
+      "evidence": "3e8200d9a7b42f281272978023ddbfe88050c04283e6fed5bf939d1702358f23"
+    },
+    {
+      "name": "answer_first_article_depth_and_five_faqs",
+      "status": "PASS",
+      "evidence": {
+        "word_count": 2788,
+        "minimum_word_count": 700,
+        "faq_count": 5
+      }
+    },
+    {
+      "name": "two_image_exact_text_identity",
+      "status": "PASS",
+      "evidence": {
+        "hero_ocr": true,
+        "inline_ocr": true,
+        "social_reuses_hero": true,
+        "filename_identity": true,
+        "distinct_binaries": true
+      }
+    }
+  ],
+  "sources_inspected": [
+    "src/content/posts/understanding-mineral-rights-your-essential-selling-guide.mdx",
+    "/assets/articles/hero/understanding-mineral-rights-your-essential-selling-guide.webp",
+    "/assets/articles/inline/understanding-mineral-rights-your-essential-selling-guide/how-to-avoid-mineral-rights-selling-pitfalls.webp"
+  ]
+}

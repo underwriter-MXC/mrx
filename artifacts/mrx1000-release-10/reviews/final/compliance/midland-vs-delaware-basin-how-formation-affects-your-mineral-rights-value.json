@@ -1,0 +1,43 @@
+{
+  "artifact_type": "mrx1000_two_image_compliance_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-11T22:44:38Z",
+  "decision_authority": {
+    "source": "Daryl owner directive, 2026-08-11",
+    "policy": "MRX two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0158",
+  "slug": "midland-vs-delaware-basin-how-formation-affects-your-mineral-rights-value",
+  "title": "Midland vs. Delaware Basin Mineral Rights",
+  "canonical_url": "https://mineralrightsxchange.com/blog/midland-vs-delaware-basin-how-formation-affects-your-mineral-rights-value/",
+  "source_path": "src/content/posts/midland-vs-delaware-basin-how-formation-affects-your-mineral-rights-value.mdx",
+  "input_body_sha256": "bfd3a3423df1c4b07e755fea89b21682dd3c907ec5c5ed1ae8fabb114602b172",
+  "input_frontmatter_sha256": "d089d18a47cf90535cf385c2a41bdbf0227d90bea99999a92467001a996c64fb",
+  "expected_repo_sha256": "bfd3a3423df1c4b07e755fea89b21682dd3c907ec5c5ed1ae8fabb114602b172",
+  "two_image_manifest_sha256": "802512b5dab8eae7592be5934f97a6a8989125fb8f65d3f37ee3cdeb2d35dc10",
+  "reviewer_id": "codex_two_image_compliance",
+  "review_run_id": "mrx1000-two-image-retrofit-20260811T224438Z",
+  "capability": "compliance",
+  "expected_hero_sha256": "bfa2c66cf19349e675c62475a033430630b7f6ecc92ffa504b5f3dace1a7764f",
+  "expected_inline_sha256": "45c7ab4378f0e8e50f938f2ac334b707ac2b344ad84ef8aad29d816e1a36e86a",
+  "findings": [
+    "Complete current MDX SHA-256 is bfd3a3423df1c4b07e755fea89b21682dd3c907ec5c5ed1ae8fabb114602b172; hero/share and in-body image hashes are separately locked.",
+    "Image text is limited to the exact article title and declared page keyword; it adds no guarantee, price, deadline, legal conclusion, or tax conclusion.",
+    "The article retains its educational and professional-boundary language and current disclosure treatment."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "hero_share_sha256_identity",
+    "inline_image_distinct_sha256",
+    "exact_text_ocr_pass",
+    "filename_text_identity_pass",
+    "no_unsupported_visual_claims",
+    "educational_and_professional_boundaries_preserved"
+  ],
+  "sources_inspected": [
+    "src/content/posts/midland-vs-delaware-basin-how-formation-affects-your-mineral-rights-value.mdx",
+    "/assets/articles/hero/midland-vs-delaware-basin-mineral-rights.webp",
+    "/assets/articles/inline/midland-vs-delaware-basin-how-formation-affects-your-mineral-rights-value/midland-vs-delaware-basin-how-formation-affects-your-mineral-rights-value.webp"
+  ]
+}

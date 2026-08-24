@@ -1,0 +1,59 @@
+{
+  "artifact_type": "mrx1000_two_image_editorial_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-12T18:17:40Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-12",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0121",
+  "slug": "understanding-market-demand-how-it-influences-the-value-of-your-mineral-rights",
+  "title": "Understanding Market Demand: How It Influences the Value of Your Mineral Rights",
+  "canonical_url": "https://mineralrightsxchange.com/blog/understanding-market-demand-how-it-influences-the-value-of-your-mineral-rights/",
+  "source_path": "src/content/posts/understanding-market-demand-how-it-influences-the-value-of-your-mineral-rights.mdx",
+  "input_body_sha256": "995da27e6ee414a1348f5d2679d49eff5fd008e2853ef4f1b15c96c849c59e55",
+  "input_frontmatter_sha256": "5346486b6673d53ce222f18a9b9a89796a0df544c91e3f80cbca4bb2b3dea2cc",
+  "expected_repo_sha256": "995da27e6ee414a1348f5d2679d49eff5fd008e2853ef4f1b15c96c849c59e55",
+  "two_image_manifest_sha256": "0b904a72d9f07514eb93d8dd5c43a1c71a5ad8d8e6795025511c23786420f062",
+  "reviewer_id": "codex_wave41_editorial",
+  "review_run_id": "mrx1000-wave41-editorial-20260812T181740Z",
+  "capability": "editorial",
+  "findings": [
+    "Complete current MDX SHA-256 is 995da27e6ee414a1348f5d2679d49eff5fd008e2853ef4f1b15c96c849c59e55; the answer-first article contains 2239 body tokens and five FAQs.",
+    "The article owns the three-layer market-demand transmission-audit job: it separates commodity-market demand, tract-connected development activity, and observable acquisition demand, then supplies a thirteen-field dated demand snapshot and stop conditions.",
+    "Exact-title hero/share OCR passed for “Understanding Market Demand: How It Influences the Value of Your Mineral Rights”; distinct in-body OCR passed for “How Does the Market Demand Affect the Price I Can Expect for My Rights?”."
+  ],
+  "checks": [
+    {
+      "name": "complete_file_sha256_match",
+      "status": "PASS",
+      "evidence": "995da27e6ee414a1348f5d2679d49eff5fd008e2853ef4f1b15c96c849c59e55"
+    },
+    {
+      "name": "answer_first_article_depth_and_five_faqs",
+      "status": "PASS",
+      "evidence": {
+        "word_count": 2239,
+        "minimum_word_count": 700,
+        "faq_count": 5
+      }
+    },
+    {
+      "name": "two_image_exact_text_identity",
+      "status": "PASS",
+      "evidence": {
+        "hero_ocr": true,
+        "inline_ocr": true,
+        "social_reuses_hero": true,
+        "filename_identity": true,
+        "distinct_binaries": true
+      }
+    }
+  ],
+  "sources_inspected": [
+    "src/content/posts/understanding-market-demand-how-it-influences-the-value-of-your-mineral-rights.mdx",
+    "/assets/articles/hero/understanding-market-demand-how-it-influences-the-value-of-your-mineral-rights.webp",
+    "/assets/articles/inline/understanding-market-demand-how-it-influences-the-value-of-your-mineral-rights/how-does-the-market-demand-affect-the-price-i-can-expect-for-my-rights.webp"
+  ]
+}

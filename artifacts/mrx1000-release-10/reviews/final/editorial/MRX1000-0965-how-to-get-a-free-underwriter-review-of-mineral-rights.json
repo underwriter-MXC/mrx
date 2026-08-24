@@ -1,0 +1,62 @@
+{
+  "artifact_type": "mrx1000_two_image_editorial_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-11T22:44:38Z",
+  "decision_authority": {
+    "source": "Daryl owner directive, 2026-08-11",
+    "policy": "MRX two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0965",
+  "slug": "how-to-get-a-free-underwriter-review-of-mineral-rights",
+  "title": "How to Get a Free Underwriter Review of Mineral Rights",
+  "canonical_url": "https://mineralrightsxchange.com/blog/how-to-get-a-free-underwriter-review-of-mineral-rights/",
+  "source_path": "src/content/posts/how-to-get-a-free-underwriter-review-of-mineral-rights.mdx",
+  "input_body_sha256": "2ad8ca1586bbceb980ef3d2faa0a67ac1ea2021c33785d4e87c875536bd79cd7",
+  "input_frontmatter_sha256": "e0407e3bd434875e03f6e75285294f86bca9e2d74418be5523eaec28cb8a2f41",
+  "expected_repo_sha256": "2ad8ca1586bbceb980ef3d2faa0a67ac1ea2021c33785d4e87c875536bd79cd7",
+  "two_image_manifest_sha256": "802512b5dab8eae7592be5934f97a6a8989125fb8f65d3f37ee3cdeb2d35dc10",
+  "reviewer_id": "codex_two_image_editorial",
+  "review_run_id": "mrx1000-two-image-retrofit-20260811T224438Z",
+  "capability": "editorial",
+  "findings": [
+    "Complete current MDX SHA-256 is 2ad8ca1586bbceb980ef3d2faa0a67ac1ea2021c33785d4e87c875536bd79cd7; article has 1183 body tokens and five FAQs.",
+    "Exact-title hero/share OCR passed for “How to Get a Free Underwriter Review of Mineral Rights”; distinct in-body OCR passed for “free mineral rights underwriter review”.",
+    "Both text treatments remain deterministic, descriptive, filename-matched, article-specific, and bound to the current source."
+  ],
+  "checks": [
+    {
+      "name": "complete_file_sha256_match",
+      "status": "PASS",
+      "evidence": "2ad8ca1586bbceb980ef3d2faa0a67ac1ea2021c33785d4e87c875536bd79cd7"
+    },
+    {
+      "name": "answer_first_depth_and_five_faqs",
+      "status": "PASS",
+      "evidence": {
+        "word_count": 1183,
+        "minimum_word_count": 700,
+        "faq_count": 5
+      }
+    },
+    {
+      "name": "two_image_exact_text_identity",
+      "status": "PASS",
+      "evidence": {
+        "hero_path": true,
+        "social_identity": true,
+        "inline_path": true,
+        "inline_text": true,
+        "hero_ocr": true,
+        "inline_ocr": true,
+        "filename_identity": true,
+        "distinct_binaries": true
+      }
+    }
+  ],
+  "sources_inspected": [
+    "src/content/posts/how-to-get-a-free-underwriter-review-of-mineral-rights.mdx",
+    "/assets/articles/hero/how-to-get-a-free-underwriter-review-of-mineral-rights.webp",
+    "/assets/articles/inline/how-to-get-a-free-underwriter-review-of-mineral-rights/free-mineral-rights-underwriter-review.webp"
+  ]
+}

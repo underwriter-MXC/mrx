@@ -1,0 +1,100 @@
+{
+  "artifact_type": "mrx1000_two_image_factual_citation_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-11T22:44:38Z",
+  "decision_authority": {
+    "source": "Daryl owner directive, 2026-08-11",
+    "policy": "MRX two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0529",
+  "slug": "understanding-your-mineral-royalty-checks-value",
+  "title": "Understanding Your Mineral Royalty Checks Value",
+  "canonical_url": "https://mineralrightsxchange.com/blog/understanding-your-mineral-royalty-checks-value/",
+  "source_path": "src/content/posts/understanding-your-mineral-royalty-checks-value.mdx",
+  "input_body_sha256": "2f926e4790da7e70ff060779e83972c5b6408b7bfa4964b4ce348677e9adf1a1",
+  "input_frontmatter_sha256": "29e6e958f4a2016b7c50069607c3fc6172e7616106f8c54a20263a2672896434",
+  "expected_repo_sha256": "2f926e4790da7e70ff060779e83972c5b6408b7bfa4964b4ce348677e9adf1a1",
+  "two_image_manifest_sha256": "802512b5dab8eae7592be5934f97a6a8989125fb8f65d3f37ee3cdeb2d35dc10",
+  "reviewer_id": "codex_two_image_factual",
+  "review_run_id": "mrx1000-two-image-retrofit-20260811T224438Z",
+  "capability": "factual_citation",
+  "findings": [
+    "Complete current MDX SHA-256 is 2f926e4790da7e70ff060779e83972c5b6408b7bfa4964b4ce348677e9adf1a1; all 5 declared sources passed live access review.",
+    "The retrofit changes image metadata and assets, not the bounded claim-to-source relationships in the article body.",
+    "The two images make no fabricated numeric, legal, tax, valuation, testimonial, or document claims."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "minimum_two_distinct_https_sources",
+    "current_source_access_review_pass",
+    "two_image_unsupported_claim_scan_pass"
+  ],
+  "sources_inspected": [
+    {
+      "label": "Texas Natural Resources Code Chapter 91, Subchapter J, payment of proceeds (accessed 2026-08-06)",
+      "url": "https://statutes.capitol.texas.gov/Docs/NR/pdf/NR.91.pdf",
+      "publisher": "statutes.capitol.texas.gov",
+      "accessed_at": "2026-08-11T22:44:38Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://statutes.capitol.texas.gov/Docs/NR/pdf/NR.91.pdf",
+        "content_type": "text/html"
+      },
+      "source_location_or_paraphrase": "The article cites Texas Natural Resources Code Chapter 91, Subchapter J, payment of proceeds (accessed 2026-08-06) only for the bounded context attributed in its body and source notes.",
+      "claim_scope": "Owner-specific legal, tax, title, accounting, brokerage, engineering, appraisal, eligibility, value, and transaction conclusions remain outside this source use."
+    },
+    {
+      "label": "Railroad Commission of Texas production data (accessed 2026-08-06)",
+      "url": "https://www.rrc.texas.gov/oil-and-gas/research-and-statistics/production-data/",
+      "publisher": "www.rrc.texas.gov",
+      "accessed_at": "2026-08-11T22:44:38Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.rrc.texas.gov/oil-and-gas/research-and-statistics/production-data/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The article cites Railroad Commission of Texas production data (accessed 2026-08-06) only for the bounded context attributed in its body and source notes.",
+      "claim_scope": "Owner-specific legal, tax, title, accounting, brokerage, engineering, appraisal, eligibility, value, and transaction conclusions remain outside this source use."
+    },
+    {
+      "label": "Texas Comptroller, crude oil and natural gas tax FAQ (accessed 2026-08-06)",
+      "url": "https://comptroller.texas.gov/taxes/crude-oil/oil-gas-faq.php",
+      "publisher": "comptroller.texas.gov",
+      "accessed_at": "2026-08-11T22:44:38Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://comptroller.texas.gov/taxes/crude-oil/oil-gas-faq.php",
+        "content_type": "text/html; charset=UTF-8"
+      },
+      "source_location_or_paraphrase": "The article cites Texas Comptroller, crude oil and natural gas tax FAQ (accessed 2026-08-06) only for the bounded context attributed in its body and source notes.",
+      "claim_scope": "Owner-specific legal, tax, title, accounting, brokerage, engineering, appraisal, eligibility, value, and transaction conclusions remain outside this source use."
+    },
+    {
+      "label": "U.S. EIA monthly crude-oil spot prices (accessed 2026-08-06)",
+      "url": "https://www.eia.gov/dnav/pet/pet_pri_spt_s1_m.htm",
+      "publisher": "www.eia.gov",
+      "accessed_at": "2026-08-11T22:44:38Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.eia.gov/dnav/pet/pet_pri_spt_s1_m.htm",
+        "content_type": "text/html"
+      },
+      "source_location_or_paraphrase": "The article cites U.S. EIA monthly crude-oil spot prices (accessed 2026-08-06) only for the bounded context attributed in its body and source notes.",
+      "claim_scope": "Owner-specific legal, tax, title, accounting, brokerage, engineering, appraisal, eligibility, value, and transaction conclusions remain outside this source use."
+    },
+    {
+      "label": "U.S. EIA Texas natural-gas prices (accessed 2026-08-06)",
+      "url": "https://www.eia.gov/dnav/ng/ng_pri_sum_dcu_stx_m.htm",
+      "publisher": "www.eia.gov",
+      "accessed_at": "2026-08-11T22:44:38Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.eia.gov/dnav/ng/ng_pri_sum_dcu_stx_m.htm",
+        "content_type": "text/html"
+      },
+      "source_location_or_paraphrase": "The article cites U.S. EIA Texas natural-gas prices (accessed 2026-08-06) only for the bounded context attributed in its body and source notes.",
+      "claim_scope": "Owner-specific legal, tax, title, accounting, brokerage, engineering, appraisal, eligibility, value, and transaction conclusions remain outside this source use."
+    }
+  ]
+}

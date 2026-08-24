@@ -1,0 +1,59 @@
+{
+  "artifact_type": "mrx1000_two_image_editorial_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-12T22:47:38Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-12",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0128",
+  "slug": "understanding-texas-mineral-rights-valuation-process",
+  "title": "Understanding Texas Mineral Rights Valuation Process",
+  "canonical_url": "https://mineralrightsxchange.com/blog/understanding-texas-mineral-rights-valuation-process/",
+  "source_path": "src/content/posts/understanding-texas-mineral-rights-valuation-process.mdx",
+  "input_body_sha256": "47dff07799bf4fd398158db1c9533c7635db78e1d4d46ddb9bc4e881c5adc63b",
+  "input_frontmatter_sha256": "8ece11eef1d88fc927e89d9b5490dea77005941df2f8b3307f58a966eea33b5b",
+  "expected_repo_sha256": "47dff07799bf4fd398158db1c9533c7635db78e1d4d46ddb9bc4e881c5adc63b",
+  "two_image_manifest_sha256": "59f579348d35c06c4f3e061f6836ca086b5195cb6be2b1175df484136565dc4c",
+  "reviewer_id": "codex_wave48_editorial",
+  "review_run_id": "mrx1000-wave48-editorial-20260812T224738Z",
+  "capability": "editorial",
+  "findings": [
+    "Complete current MDX SHA-256 is 47dff07799bf4fd398158db1c9533c7635db78e1d4d46ddb9bc4e881c5adc63b; the answer-first article contains 2312 body tokens and five FAQs.",
+    "The article owns an end-to-end Texas valuation-process audit trail: decision and date, exact interest scope, identifier reconciliation, normalized production and payment evidence, labeled economic assumptions, method fit, sensitivities, output reconciliation, and decision record. It routes factor, method-overview, pathway-selection, provider-routing, and existing-result reperformance jobs to their established pages.",
+    "Exact-title hero/share OCR passed for “Understanding Texas Mineral Rights Valuation Process”; distinct in-body OCR passed for “Texas Mineral Rights Valuation Process”."
+  ],
+  "checks": [
+    {
+      "name": "complete_file_sha256_match",
+      "status": "PASS",
+      "evidence": "47dff07799bf4fd398158db1c9533c7635db78e1d4d46ddb9bc4e881c5adc63b"
+    },
+    {
+      "name": "answer_first_article_depth_and_five_faqs",
+      "status": "PASS",
+      "evidence": {
+        "word_count": 2312,
+        "minimum_word_count": 700,
+        "faq_count": 5
+      }
+    },
+    {
+      "name": "two_image_exact_text_identity",
+      "status": "PASS",
+      "evidence": {
+        "hero_ocr": true,
+        "inline_ocr": true,
+        "social_reuses_hero": true,
+        "filename_identity": true,
+        "distinct_binaries": true
+      }
+    }
+  ],
+  "sources_inspected": [
+    "src/content/posts/understanding-texas-mineral-rights-valuation-process.mdx",
+    "/assets/articles/hero/understanding-texas-mineral-rights-valuation-process.webp",
+    "/assets/articles/inline/understanding-texas-mineral-rights-valuation-process/texas-mineral-rights-valuation-process.webp"
+  ]
+}

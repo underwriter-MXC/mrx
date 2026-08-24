@@ -1,0 +1,49 @@
+{
+  "artifact_type": "mrx1000_two_image_compliance_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-15T04:53:49Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-14",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0143",
+  "slug": "what-a-mineral-rights-assessment-does-and-does-not-tell-you",
+  "title": "What a Mineral Rights Assessment Does and Does Not Tell You",
+  "canonical_url": "https://mineralrightsxchange.com/blog/what-a-mineral-rights-assessment-does-and-does-not-tell-you/",
+  "source_path": "src/content/posts/what-a-mineral-rights-assessment-does-and-does-not-tell-you.mdx",
+  "input_body_sha256": "3a9059f9de3c9bdc412a79e87c225f378eb8390109bb29e4760951d9f4970181",
+  "input_frontmatter_sha256": "b91cf5a1377a19e81ca50552f10cab56f147cb5f9be4ddfeda72cd011ae95c23",
+  "expected_repo_sha256": "3a9059f9de3c9bdc412a79e87c225f378eb8390109bb29e4760951d9f4970181",
+  "two_image_manifest_sha256": "3b98c962b237ccc084956355feab8daef41da6264447d0ba13b1512938a68a61",
+  "visual_metadata": {
+    "hero_alt": "An analyst reviews a packet beside “What a Mineral Rights Assessment Does and Does Not Tell You”.",
+    "social_alt": "An analyst reviews a packet beside “What a Mineral Rights Assessment Does and Does Not Tell You”.",
+    "inline_alt": "A bounded document review appears above “Mineral Rights Assessment Scope”."
+  },
+  "reviewer_id": "codex_wave63_compliance",
+  "review_run_id": "mrx1000-wave63-compliance-20260815T045349Z",
+  "capability": "compliance",
+  "expected_hero_sha256": "78975fec43ba33dc4d38aa240a3e3a8b7b11f8972c06fca01b636dcd491962a9",
+  "expected_inline_sha256": "d6f400bbcfe564a7ad6c9c8bf635945b658cd6f29700af9fb0f35fd0a7ac7e95",
+  "findings": [
+    "Complete current MDX SHA-256 is 3a9059f9de3c9bdc412a79e87c225f378eb8390109bb29e4760951d9f4970181; hero/share and inline image hashes are separately locked.",
+    "The article states educational and professional boundaries, discloses possible MRX buyer interest, preserves owner agency, and makes no owner-specific title, acreage, value, fairness, buyer, contract, legal, tax, suitability, investment, or transaction conclusion.",
+    "Image text is limited to the exact article title and approved scope phrase and adds no account data, property identifier, amount, date, equation, official seal, title conclusion, value conclusion, appraisal claim, recommendation, offer, guarantee, buyer endorsement, or transaction result."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "hero_share_sha256_identity",
+    "inline_image_distinct_sha256",
+    "exact_text_ocr_pass",
+    "filename_text_identity_pass",
+    "educational_and_professional_boundaries_preserved",
+    "owner_agency_and_possible_buyer_interest_disclosure_preserved",
+    "no_unsupported_visual_or_decision_claims"
+  ],
+  "sources_inspected": [
+    "src/content/posts/what-a-mineral-rights-assessment-does-and-does-not-tell-you.mdx",
+    "/assets/articles/hero/what-a-mineral-rights-assessment-does-and-does-not-tell-you.webp",
+    "/assets/articles/inline/what-a-mineral-rights-assessment-does-and-does-not-tell-you/mineral-rights-assessment-scope.webp"
+  ]
+}

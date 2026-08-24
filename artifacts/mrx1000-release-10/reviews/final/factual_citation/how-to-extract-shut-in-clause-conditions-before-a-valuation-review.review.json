@@ -1,0 +1,133 @@
+{
+  "artifact_type": "mrx1000_wave86_two_image_factual_citation_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-23T18:23:39Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-14",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0270",
+  "slug": "how-to-extract-shut-in-clause-conditions-before-a-valuation-review",
+  "title": "How to Extract Shut-In Clause Conditions Before a Valuation Review",
+  "canonical_url": "https://mineralrightsxchange.com/blog/how-to-extract-shut-in-clause-conditions-before-a-valuation-review/",
+  "source_path": "src/content/posts/how-to-extract-shut-in-clause-conditions-before-a-valuation-review.mdx",
+  "input_body_sha256": "6bcbb31c3e2ffd22de4503f2a64cf4d6216382a855b17167ef6cac788bdfe066",
+  "input_frontmatter_sha256": "98366542a0d55b9fb1ae821dbaac7861ba6e09390e6e94b3f2d12f710784ffc9",
+  "expected_repo_sha256": "6bcbb31c3e2ffd22de4503f2a64cf4d6216382a855b17167ef6cac788bdfe066",
+  "two_image_manifest_sha256": "8f25fe5b1f8366be4ded464b6eec405677be9e5b49adccd46dbf5431c77dc597",
+  "visual_metadata": {
+    "hero_alt": "An open lease packet and clause worksheet appear beside the exact article title.",
+    "social_alt": "An open lease packet and clause worksheet appear beside the exact article title.",
+    "inline_alt": "A top-down clause extraction worksheet appears above the exact keyword."
+  },
+  "reviewer_id": "codex_wave86_factual",
+  "review_run_id": "mrx1000-wave86-factual-20260823T182339Z",
+  "capability": "factual_citation",
+  "findings": [
+    "Complete current MDX SHA-256 is 6bcbb31c3e2ffd22de4503f2a64cf4d6216382a855b17167ef6cac788bdfe066; all 7 declared sources passed current HTTPS access review.",
+    "Claims remain bounded to current official GLO and RRC source roles, form examples, record locators, reporting limits, and no-legal-force or no-private-authority boundaries. Private lease language remains controlling and is not supplied by a public example.",
+    "The article publishes no owner document, signature, address, payment instruction, private amount, account detail, well-status finding, lease-effect conclusion, production forecast, valuation input, value, offer, or transaction claim."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "seven_distinct_https_sources",
+    "current_source_access_review_pass",
+    "claim_to_source_scope_present",
+    "official_source_priority_pass",
+    "unsupported_high_risk_claim_scan_pass"
+  ],
+  "sources_inspected": [
+    {
+      "label": "Texas General Land Office, Lease Maintenance (accessed 2026-08-23)",
+      "url": "https://www.glo.texas.gov/energy/mineral-leasing/lease-maintenance",
+      "publisher": "www.glo.texas.gov",
+      "accessed_at": "2026-08-23T18:23:39Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.glo.texas.gov/energy/mineral-leasing/lease-maintenance",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The official GLO page identifies state-lease maintenance record categories including shut-in payments and affidavits.",
+      "claim_scope": "The article uses the page only as a bounded public-administration example and expressly rejects importing state-lease requirements or outcomes into a private lease."
+    },
+    {
+      "label": "Texas General Land Office, Leasing (accessed 2026-08-23)",
+      "url": "https://www.glo.texas.gov/energy/mineral-leasing/leasing",
+      "publisher": "www.glo.texas.gov",
+      "accessed_at": "2026-08-23T18:23:39Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.glo.texas.gov/energy/mineral-leasing/leasing",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The official GLO leasing page supplies the state-leasing context and official form route.",
+      "claim_scope": "The article uses that route only to identify the source and public-example boundary; it does not substitute GLO materials for an owner controlling document stack."
+    },
+    {
+      "label": "Texas General Land Office, Relinquishment Act Lease Form (accessed 2026-08-23)",
+      "url": "https://www.glo.texas.gov/sites/default/files/2025-02/Form_Relinquishment_Act_Lease.pdf",
+      "publisher": "www.glo.texas.gov",
+      "accessed_at": "2026-08-23T18:23:39Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.glo.texas.gov/sites/default/files/2025-02/Form_Relinquishment_Act_Lease.pdf",
+        "content_type": "application/pdf"
+      },
+      "source_location_or_paraphrase": "The official GLO lease form demonstrates that trigger, covered subject, payment, timing, accompanying-record, duration, and cross-reference wording can occupy separate provisions.",
+      "claim_scope": "The article uses the form only to justify worksheet fields and labels it a state-lease example that supplies no private lease term, deadline, amount, filing duty, or legal result."
+    },
+    {
+      "label": "Railroad Commission of Texas, Research Queries (accessed 2026-08-23)",
+      "url": "https://www.rrc.texas.gov/resource-center/research/research-queries/",
+      "publisher": "www.rrc.texas.gov",
+      "accessed_at": "2026-08-23T18:23:39Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.rrc.texas.gov/resource-center/research/research-queries/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The official RRC directory links production, permit, well-record, and other regulatory systems and states that online data is informational and lacks legal force.",
+      "claim_scope": "The article requires the exact query, field, identifier, access date, and limitation to remain in a regulatory-context row rather than a private-contract conclusion."
+    },
+    {
+      "label": "Railroad Commission of Texas, Oil and Gas Production Data (accessed 2026-08-23)",
+      "url": "https://www.rrc.texas.gov/oil-and-gas/research-and-statistics/production-data/",
+      "publisher": "www.rrc.texas.gov",
+      "accessed_at": "2026-08-23T18:23:39Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.rrc.texas.gov/oil-and-gas/research-and-statistics/production-data/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The official RRC production page routes users to compilations and summaries of production information reported by operators.",
+      "claim_scope": "The article uses the page only to identify the regulatory source class and does not infer a shut-in cause, private clause trigger, production treatment, or value."
+    },
+    {
+      "label": "Railroad Commission of Texas, Production Data Query System FAQs (accessed 2026-08-23)",
+      "url": "https://www.rrc.texas.gov/about-us/faqs/oil-gas-faq/production-data-query-system-faqs/",
+      "publisher": "www.rrc.texas.gov",
+      "accessed_at": "2026-08-23T18:23:39Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.rrc.texas.gov/about-us/faqs/oil-gas-faq/production-data-query-system-faqs/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The official PDQ FAQs explain reporting level, reporting lag, revisions, and snapshot limitations.",
+      "claim_scope": "The article uses those limits to prevent a blank, zero, late, or changed row from becoming proof of a private contract condition or valuation effect."
+    },
+    {
+      "label": "Railroad Commission of Texas, Oil and Gas Well Records (accessed 2026-08-23)",
+      "url": "https://www.rrc.texas.gov/oil-and-gas/research-and-statistics/obtaining-commission-records/oil-and-gas-well-records/",
+      "publisher": "www.rrc.texas.gov",
+      "accessed_at": "2026-08-23T18:23:39Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.rrc.texas.gov/oil-and-gas/research-and-statistics/obtaining-commission-records/oil-and-gas-well-records/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The official well-records page identifies useful file-locator fields and states that the Commission lacks authority over private lease, royalty, and property-right matters.",
+      "claim_scope": "The article uses a well record only as separately labeled regulatory context and does not establish a property connection, status, lease effect, entitlement, or value."
+    }
+  ]
+}

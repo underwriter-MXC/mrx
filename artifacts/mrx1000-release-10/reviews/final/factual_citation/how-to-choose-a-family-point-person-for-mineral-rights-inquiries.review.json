@@ -1,0 +1,133 @@
+{
+  "artifact_type": "mrx1000_two_image_factual_citation_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-15T06:51:27Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-14",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0147",
+  "slug": "how-to-choose-a-family-point-person-for-mineral-rights-inquiries",
+  "title": "How to Choose a Family Point Person for Mineral Rights Inquiries",
+  "canonical_url": "https://mineralrightsxchange.com/blog/how-to-choose-a-family-point-person-for-mineral-rights-inquiries/",
+  "source_path": "src/content/posts/how-to-choose-a-family-point-person-for-mineral-rights-inquiries.mdx",
+  "input_body_sha256": "ae5cc492ae161e65822b5ae0e300a7a10d777e783ca713ce6436b8734110bae1",
+  "input_frontmatter_sha256": "13d11f08cfa341b46515890dc959efd8ddd6e5dac606914f5d3ba91ac7953741",
+  "expected_repo_sha256": "ae5cc492ae161e65822b5ae0e300a7a10d777e783ca713ce6436b8734110bae1",
+  "two_image_manifest_sha256": "0d2c2f92b634861a9c60fc7dd21f9ad7ce99e82cc18706f11adf3f2a71c7804c",
+  "visual_metadata": {
+    "hero_alt": "A family chooses one notebook holder beside “How to Choose a Family Point Person for Mineral Rights Inquiries”.",
+    "social_alt": "A family chooses one notebook holder beside “How to Choose a Family Point Person for Mineral Rights Inquiries”.",
+    "inline_alt": "Blank envelopes surround one notebook above “One Contact, Shared Information”."
+  },
+  "reviewer_id": "codex_wave67_factual",
+  "review_run_id": "mrx1000-wave67-factual-20260815T065127Z",
+  "capability": "factual_citation",
+  "findings": [
+    "Complete current MDX SHA-256 is ae5cc492ae161e65822b5ae0e300a7a10d777e783ca713ce6436b8734110bae1; all 7 declared sources passed current access review.",
+    "Claims remain bounded to adaptable communication practices from university extension sources, professional-representation principles limited to AAPL members, the legal distinction between an informal contact and a power of attorney, and current MRX family-conversation and seller-control boundaries. No source is converted into a private title, probate, authority, consent, value, tax, contract, or transaction conclusion.",
+    "The article invents no real owner, property, buyer, contract, transaction, price range, production, reserves, forecast, testimonial, success rate, or owner-specific legal, tax, accounting, title, appraisal, engineering, investment, or transaction conclusion."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "minimum_three_distinct_https_sources",
+    "current_source_access_review_pass",
+    "claim_to_source_scope_present",
+    "official_and_first_party_source_priority_pass",
+    "unsupported_high_risk_claim_scan_pass"
+  ],
+  "sources_inspected": [
+    {
+      "label": "University of Minnesota Extension, Preparing to meet with your transition and estate planning team (reviewed 2023; accessed 2026-08-14)",
+      "url": "https://extension.umn.edu/transfer-and-estate-planning/preparing-meet-your-transition-and-estate-planning-team",
+      "publisher": "extension.umn.edu",
+      "accessed_at": "2026-08-15T06:51:27Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://extension.umn.edu/transfer-and-estate-planning/preparing-meet-your-transition-and-estate-planning-team",
+        "content_type": "text/html; charset=UTF-8"
+      },
+      "source_location_or_paraphrase": "University of Minnesota Extension transition-planning guidance recommends preparing goals and questions in writing and involving affected people in a fact-based planning process.",
+      "claim_scope": "The article adapts only those preparation practices to defining and routing a narrow family-contact role. It does not treat farm or estate guidance as mineral-rights law or use it to determine ownership, authority, consent, title, value, tax, or whether to sell."
+    },
+    {
+      "label": "University of Minnesota Extension, Farm business transfer strategies (accessed 2026-08-14)",
+      "url": "https://extension.umn.edu/transfer-and-estate-planning/farm-business-transfer-strategies",
+      "publisher": "extension.umn.edu",
+      "accessed_at": "2026-08-15T06:51:27Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://extension.umn.edu/transfer-and-estate-planning/farm-business-transfer-strategies",
+        "content_type": "text/html; charset=UTF-8"
+      },
+      "source_location_or_paraphrase": "University of Minnesota Extension farm-business transfer guidance recommends brief, specific communication that avoids accusation, insult, and blame and describes structured family-business communication.",
+      "claim_scope": "The article adapts only those communication disciplines to neutral acknowledgment and forwarding. It does not equate a mineral interest with a farm business or derive any legal, ownership, authority, consent, valuation, tax, or transaction conclusion from the source."
+    },
+    {
+      "label": "Utah State University Extension, Estate Planning Toolkit: Starting the Estate Planning Conversation (accessed 2026-08-14)",
+      "url": "https://extension.usu.edu/finance/files/estate-planning-toolkit.pdf",
+      "publisher": "extension.usu.edu",
+      "accessed_at": "2026-08-15T06:51:27Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://extension.usu.edu/finance/files/estate-planning-toolkit.pdf",
+        "content_type": "application/pdf"
+      },
+      "source_location_or_paraphrase": "The Utah State University Extension Estate Planning Toolkit recommends a clear intention, input from people directly affected, an agenda, and recognition that a family discussion may require multiple conversations.",
+      "claim_scope": "The article adapts only those communication practices to establishing and resetting a limited contact protocol. It does not treat the source as mineral-specific advice or use it to determine probate, title, ownership, authority, consent, value, tax, or disposition."
+    },
+    {
+      "label": "American Association of Professional Landmen, Code of Ethics and Standards of Practice (accessed 2026-08-14)",
+      "url": "https://www.landman.org/discover-the-land-profession/about-us/code-of-ethic.html",
+      "publisher": "www.landman.org",
+      "accessed_at": "2026-08-15T06:51:27Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.landman.org/discover-the-land-profession/about-us/code-of-ethic.html",
+        "content_type": "text/html;charset=UTF-8"
+      },
+      "source_location_or_paraphrase": "The American Association of Professional Landmen code addresses fair dealing, accurate representations, confidentiality, competence, and disclosure of interests for AAPL members.",
+      "claim_scope": "The article uses the source only as a bounded reason to preserve original sender information, written representations, and stated affiliations. It does not imply that every caller is an AAPL member or use the code to validate a person, offer, authority, contract, or transaction."
+    },
+    {
+      "label": "Texas Law Help, Powers of Attorney Fact Sheet (last legal review 2025-07-31; accessed 2026-08-14)",
+      "url": "https://texaslawhelp.org/article/powers-of-attorney-fact-sheet",
+      "publisher": "texaslawhelp.org",
+      "accessed_at": "2026-08-15T06:51:27Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://texaslawhelp.org/article/powers-of-attorney-fact-sheet",
+        "content_type": "text/html; charset=UTF-8"
+      },
+      "source_location_or_paraphrase": "Texas Law Help explains that a power of attorney is a legal document that grants another person specified authority and describes distinct kinds and effects of that authority.",
+      "claim_scope": "The article uses the source only to contrast a non-legal administrative contact protocol with legally operative authority. It does not determine whether a power of attorney exists, is valid, is sufficient, or is appropriate for any reader."
+    },
+    {
+      "label": "Mineral Rights Xchange, How to Talk to Your Family Before You Decide to Sell Mineral Rights (accessed 2026-08-14)",
+      "url": "https://mineralrightsxchange.com/blog/how-to-talk-to-your-family-before-you-decide-to-sell-mineral-rights/",
+      "publisher": "mineralrightsxchange.com",
+      "accessed_at": "2026-08-15T06:51:27Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://mineralrightsxchange.com/blog/how-to-talk-to-your-family-before-you-decide-to-sell-mineral-rights/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The current MRX family-conversation guide covers the earlier decision about whether the family wants to receive information or consider later steps.",
+      "claim_scope": "The article links to that guide only as the prerequisite decision boundary. It starts after engagement intent is settled and does not repeat the family-alignment meeting, decide whether to sell, or determine ownership, authority, consent, value, tax, or transaction terms."
+    },
+    {
+      "label": "Mineral Rights Xchange, Selling Mineral Rights: Selling Process For Mineral Owners (accessed 2026-08-14)",
+      "url": "https://mineralrightsxchange.com/blog/selling-mineral-rights-selling-process-for-mineral-owners/",
+      "publisher": "mineralrightsxchange.com",
+      "accessed_at": "2026-08-15T06:51:27Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://mineralrightsxchange.com/blog/selling-mineral-rights-selling-process-for-mineral-owners/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The current MRX seller-control guide separates written proposals, agreements, deeds, payment, delivery, and recording into later transaction states that remain under owner control.",
+      "claim_scope": "The article uses it only to mark where the point-person protocol ends. It does not retell the selling sequence, compare offers, interpret documents, determine value, negotiate, sign, or recommend a sale."
+    }
+  ]
+}

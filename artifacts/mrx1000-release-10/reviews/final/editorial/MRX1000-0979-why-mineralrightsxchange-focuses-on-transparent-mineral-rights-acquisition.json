@@ -1,0 +1,62 @@
+{
+  "artifact_type": "mrx1000_two_image_editorial_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-11T22:44:38Z",
+  "decision_authority": {
+    "source": "Daryl owner directive, 2026-08-11",
+    "policy": "MRX two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0979",
+  "slug": "why-mineralrightsxchange-focuses-on-transparent-mineral-rights-acquisition",
+  "title": "Why MineralRightsXchange Focuses on Transparent Mineral Rights Acquisition",
+  "canonical_url": "https://mineralrightsxchange.com/blog/why-mineralrightsxchange-focuses-on-transparent-mineral-rights-acquisition/",
+  "source_path": "src/content/posts/why-mineralrightsxchange-focuses-on-transparent-mineral-rights-acquisition.mdx",
+  "input_body_sha256": "6a9a924daeec0289df13a0336398f93f95bd3772a55a0dacc6ccbe1a080c9083",
+  "input_frontmatter_sha256": "c09819080ba46e012fce1a92dbc0158cdcd0c85dc7a6ed3b014275fd75c44145",
+  "expected_repo_sha256": "6a9a924daeec0289df13a0336398f93f95bd3772a55a0dacc6ccbe1a080c9083",
+  "two_image_manifest_sha256": "802512b5dab8eae7592be5934f97a6a8989125fb8f65d3f37ee3cdeb2d35dc10",
+  "reviewer_id": "codex_two_image_editorial",
+  "review_run_id": "mrx1000-two-image-retrofit-20260811T224438Z",
+  "capability": "editorial",
+  "findings": [
+    "Complete current MDX SHA-256 is 6a9a924daeec0289df13a0336398f93f95bd3772a55a0dacc6ccbe1a080c9083; article has 538 body tokens and five FAQs.",
+    "Exact-title hero/share OCR passed for “Why MineralRightsXchange Focuses on Transparent Mineral Rights Acquisition”; distinct in-body OCR passed for “why mineralrightsxchange focuses on transparent mineral rights acquisition”.",
+    "Both text treatments remain deterministic, descriptive, filename-matched, article-specific, and bound to the current source."
+  ],
+  "checks": [
+    {
+      "name": "complete_file_sha256_match",
+      "status": "PASS",
+      "evidence": "6a9a924daeec0289df13a0336398f93f95bd3772a55a0dacc6ccbe1a080c9083"
+    },
+    {
+      "name": "answer_first_depth_and_five_faqs",
+      "status": "PASS",
+      "evidence": {
+        "word_count": 538,
+        "minimum_word_count": 0,
+        "faq_count": 5
+      }
+    },
+    {
+      "name": "two_image_exact_text_identity",
+      "status": "PASS",
+      "evidence": {
+        "hero_path": true,
+        "social_identity": true,
+        "inline_path": true,
+        "inline_text": true,
+        "hero_ocr": true,
+        "inline_ocr": true,
+        "filename_identity": true,
+        "distinct_binaries": true
+      }
+    }
+  ],
+  "sources_inspected": [
+    "src/content/posts/why-mineralrightsxchange-focuses-on-transparent-mineral-rights-acquisition.mdx",
+    "/assets/articles/hero/why-mineralrightsxchange-focuses-on-transparent-mineral-rights-acquisition.webp",
+    "/assets/articles/inline/why-mineralrightsxchange-focuses-on-transparent-mineral-rights-acquisition/why-mineralrightsxchange-focuses-on-transparent-mineral-rights-acquisition.webp"
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "artifact_type": "mrx1000_two_image_compliance_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-13T00:19:27Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-12",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0131",
+  "slug": "understanding-the-mineral-rights-assessment-errors",
+  "title": "Understanding the Mineral Rights Assessment Errors",
+  "canonical_url": "https://mineralrightsxchange.com/blog/understanding-the-mineral-rights-assessment-errors/",
+  "source_path": "src/content/posts/understanding-the-mineral-rights-assessment-errors.mdx",
+  "input_body_sha256": "5af96792a7ef4208dd4d2f9863b3a2435c77507c6dff9820e8858f35bb8daa98",
+  "input_frontmatter_sha256": "1cff0924cea99ab30749d2585275edbb5d7086887119ab3be79be35885aef66c",
+  "expected_repo_sha256": "5af96792a7ef4208dd4d2f9863b3a2435c77507c6dff9820e8858f35bb8daa98",
+  "two_image_manifest_sha256": "02524f667bd24b68149eedc778daccb462678043f8980928510a5ed1029e0c96",
+  "reviewer_id": "codex_wave51_compliance",
+  "review_run_id": "mrx1000-wave51-compliance-20260813T001927Z",
+  "capability": "compliance",
+  "expected_hero_sha256": "e800024c0e6cc41ca44215aeca13242e8759a6992ef2e215b36c9072b3051ff8",
+  "expected_inline_sha256": "6fa38301c00ed0b2c430d22b461407b35f17764306fa6a4f0ad993c9c24a16eb",
+  "findings": [
+    "Complete current MDX SHA-256 is 5af96792a7ef4208dd4d2f9863b3a2435c77507c6dff9820e8858f35bb8daa98; hero/share and inline image hashes are separately locked.",
+    "The article states educational and professional boundaries, distinguishes error from gap and scenario difference, keeps production, payment, benchmark, proposal, owner-net, and version evidence separate, and routes unresolved land, title, legal, tax, accounting, engineering, reserves, appraisal, and transaction questions without making owner-specific conclusions.",
+    "Image text is limited to the exact article title and exact canonical keyword and adds no owner data, buyer endorsement, property identifier, price, acreage, decimal, formula, reserves claim, forecast, success claim, appraisal result, tax outcome, or transaction conclusion."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "hero_share_sha256_identity",
+    "inline_image_distinct_sha256",
+    "exact_text_ocr_pass",
+    "filename_text_identity_pass",
+    "educational_and_professional_boundaries_preserved",
+    "no_unsupported_visual_or_valuation_claims"
+  ],
+  "sources_inspected": [
+    "src/content/posts/understanding-the-mineral-rights-assessment-errors.mdx",
+    "/assets/articles/hero/understanding-the-mineral-rights-assessment-errors.webp",
+    "/assets/articles/inline/understanding-the-mineral-rights-assessment-errors/mineral-rights-selling-process-errors.webp"
+  ]
+}

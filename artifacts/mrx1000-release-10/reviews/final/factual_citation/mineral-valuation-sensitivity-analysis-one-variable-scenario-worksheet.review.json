@@ -1,0 +1,94 @@
+{
+  "artifact_type": "mrx1000_two_image_factual_citation_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-23T04:21:16Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-14",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0261",
+  "slug": "mineral-valuation-sensitivity-analysis-one-variable-scenario-worksheet",
+  "title": "Mineral Valuation Sensitivity Analysis: A One-Variable Scenario Worksheet",
+  "canonical_url": "https://mineralrightsxchange.com/blog/mineral-valuation-sensitivity-analysis-one-variable-scenario-worksheet/",
+  "source_path": "src/content/posts/mineral-valuation-sensitivity-analysis-one-variable-scenario-worksheet.mdx",
+  "input_body_sha256": "ec4d7d0f278c5ec46477247567d42085e4e07be9aaeaf49d1f7593c867f34bfc",
+  "input_frontmatter_sha256": "1d756fba21cebf14e49788adf83bc06d3b30d67732f46485a9f8ac15048702a0",
+  "expected_repo_sha256": "ec4d7d0f278c5ec46477247567d42085e4e07be9aaeaf49d1f7593c867f34bfc",
+  "two_image_manifest_sha256": "9ffe4b947a15b95b05443775784bc2fb5493de05794da7efcdc043a3e155a19f",
+  "visual_metadata": {
+    "hero_alt": "A reviewer examines five blank scenario cards with one changed card beside the exact article title.",
+    "social_alt": "A reviewer examines five blank scenario cards with one changed card beside the exact article title.",
+    "inline_alt": "A top-down blank worksheet changes one highlighted input row while adjacent fields stay fixed under the exact keyword."
+  },
+  "reviewer_id": "codex_wave76_factual",
+  "review_run_id": "mrx1000-wave76-factual-20260823T042116Z",
+  "capability": "factual_citation",
+  "findings": [
+    "Complete current MDX SHA-256 is ec4d7d0f278c5ec46477247567d42085e4e07be9aaeaf49d1f7593c867f34bfc; all 4 declared sources passed current HTTPS access review.",
+    "Claims remain bounded to RRC operator-reported production data and reporting limitations plus EIA dated commodity-data series. None is converted into a property-specific input, price deck, forecast, title fact, ownership fact, payment entitlement, appraisal, offer analysis, or value.",
+    "The article supplies no proprietary, universal, market, or owner-specific numerical assumptions; invents no owner, record, model output, public-record match, acreage, decimal, offer, or development result; and makes no owner-specific legal, tax, title, valuation, engineering, financial, or transaction conclusion."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "four_distinct_https_sources",
+    "current_source_access_review_pass",
+    "claim_to_source_scope_present",
+    "official_source_priority_pass",
+    "unsupported_high_risk_claim_scan_pass"
+  ],
+  "sources_inspected": [
+    {
+      "label": "Railroad Commission of Texas, Production Data (accessed 2026-08-22)",
+      "url": "https://www.rrc.texas.gov/oil-and-gas/research-and-statistics/production-data/",
+      "publisher": "www.rrc.texas.gov",
+      "accessed_at": "2026-08-23T04:21:16Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.rrc.texas.gov/oil-and-gas/research-and-statistics/production-data/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The Railroad Commission of Texas describes production-data compilations and summaries based on information reported by Texas oil and gas operators and provides current and historical query routes.",
+      "claim_scope": "The article uses the page only to identify the reporting source and query context; it does not treat operator-reported production as ownership, title, acreage, payment, valuation, or forecast evidence."
+    },
+    {
+      "label": "Railroad Commission of Texas, Production Data Query System FAQs (accessed 2026-08-22)",
+      "url": "https://www.rrc.texas.gov/about-us/faqs/oil-gas-faq/production-data-query-system-faqs/",
+      "publisher": "www.rrc.texas.gov",
+      "accessed_at": "2026-08-23T04:21:16Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.rrc.texas.gov/about-us/faqs/oil-gas-faq/production-data-query-system-faqs/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The Railroad Commission explains that Production Data Query reports lease-level information, recent data have a reporting lag, reported data may be revised, and the latest months are not yet substantially complete.",
+      "claim_scope": "The article preserves the agency limitations and requires exact identifiers, reporting period, access date, and unresolved matching questions; it makes no owner-specific production or title conclusion."
+    },
+    {
+      "label": "U.S. Energy Information Administration, Oil Spot Prices (accessed 2026-08-22)",
+      "url": "https://www.eia.gov/dnav/pet/pet_pri_spt_s1_m.htm",
+      "publisher": "www.eia.gov",
+      "accessed_at": "2026-08-23T04:21:16Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.eia.gov/dnav/pet/pet_pri_spt_s1_m.htm",
+        "content_type": "text/html"
+      },
+      "source_location_or_paraphrase": "The U.S. Energy Information Administration publishes dated public oil spot-price observations and identifies their series and periods.",
+      "claim_scope": "The article uses the page only as an example of a specifically identified dated public series; it does not convert a spot observation into a property-specific price deck, forecast, realized price, or value."
+    },
+    {
+      "label": "U.S. Energy Information Administration, Natural Gas Data (accessed 2026-08-22)",
+      "url": "https://www.eia.gov/naturalgas/data.php",
+      "publisher": "www.eia.gov",
+      "accessed_at": "2026-08-23T04:21:16Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.eia.gov/naturalgas/data.php",
+        "content_type": "text/html; charset=UTF-8"
+      },
+      "source_location_or_paraphrase": "The U.S. Energy Information Administration publishes a directory of dated natural-gas data series and related official data products.",
+      "claim_scope": "The article uses the directory only as an example of a specifically identified public data source; it does not supply a property-specific price deck, forecast, realized price, or value."
+    }
+  ]
+}

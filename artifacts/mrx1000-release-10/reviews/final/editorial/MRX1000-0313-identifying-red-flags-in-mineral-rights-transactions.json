@@ -1,0 +1,62 @@
+{
+  "artifact_type": "mrx1000_two_image_editorial_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-11T22:44:38Z",
+  "decision_authority": {
+    "source": "Daryl owner directive, 2026-08-11",
+    "policy": "MRX two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0313",
+  "slug": "identifying-red-flags-in-mineral-rights-transactions",
+  "title": "Identifying Red Flags in Mineral Rights Transactions",
+  "canonical_url": "https://mineralrightsxchange.com/blog/identifying-red-flags-in-mineral-rights-transactions/",
+  "source_path": "src/content/posts/identifying-red-flags-in-mineral-rights-transactions.mdx",
+  "input_body_sha256": "dbf81106c4e0e5b2a577ac8b15967f5da2af8382105726032d834b3cda59b3b7",
+  "input_frontmatter_sha256": "9f2472f4ee5171ec4444fa27e326bb46dfa17df4909c5ca81ad4badb731aa030",
+  "expected_repo_sha256": "dbf81106c4e0e5b2a577ac8b15967f5da2af8382105726032d834b3cda59b3b7",
+  "two_image_manifest_sha256": "802512b5dab8eae7592be5934f97a6a8989125fb8f65d3f37ee3cdeb2d35dc10",
+  "reviewer_id": "codex_two_image_editorial",
+  "review_run_id": "mrx1000-two-image-retrofit-20260811T224438Z",
+  "capability": "editorial",
+  "findings": [
+    "Complete current MDX SHA-256 is dbf81106c4e0e5b2a577ac8b15967f5da2af8382105726032d834b3cda59b3b7; article has 873 body tokens and five FAQs.",
+    "Exact-title hero/share OCR passed for “Identifying Red Flags in Mineral Rights Transactions”; distinct in-body OCR passed for “mineral rights transaction red flags”.",
+    "Both text treatments remain deterministic, descriptive, filename-matched, article-specific, and bound to the current source."
+  ],
+  "checks": [
+    {
+      "name": "complete_file_sha256_match",
+      "status": "PASS",
+      "evidence": "dbf81106c4e0e5b2a577ac8b15967f5da2af8382105726032d834b3cda59b3b7"
+    },
+    {
+      "name": "answer_first_depth_and_five_faqs",
+      "status": "PASS",
+      "evidence": {
+        "word_count": 873,
+        "minimum_word_count": 700,
+        "faq_count": 5
+      }
+    },
+    {
+      "name": "two_image_exact_text_identity",
+      "status": "PASS",
+      "evidence": {
+        "hero_path": true,
+        "social_identity": true,
+        "inline_path": true,
+        "inline_text": true,
+        "hero_ocr": true,
+        "inline_ocr": true,
+        "filename_identity": true,
+        "distinct_binaries": true
+      }
+    }
+  ],
+  "sources_inspected": [
+    "src/content/posts/identifying-red-flags-in-mineral-rights-transactions.mdx",
+    "/assets/articles/hero/identifying-red-flags-in-mineral-rights-transactions.webp",
+    "/assets/articles/inline/identifying-red-flags-in-mineral-rights-transactions/mineral-rights-transaction-red-flags.webp"
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "artifact_type": "mrx1000_two_image_editorial_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-13T00:49:55Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-12",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0132",
+  "slug": "understanding-the-steps-to-book-your-free-no-obligation-mineral-rights-review",
+  "title": "Understanding the Steps to Book Your Free No-Obligation Mineral Rights Review",
+  "canonical_url": "https://mineralrightsxchange.com/blog/understanding-the-steps-to-book-your-free-no-obligation-mineral-rights-review/",
+  "source_path": "src/content/posts/understanding-the-steps-to-book-your-free-no-obligation-mineral-rights-review.mdx",
+  "input_body_sha256": "941032278411870467a216054458698c8162a9d23a8d455d3336e23226a12024",
+  "input_frontmatter_sha256": "7c3d2a325f1731125049b3709e7fd981b6125445cd0495759e2a72e9b6840013",
+  "expected_repo_sha256": "941032278411870467a216054458698c8162a9d23a8d455d3336e23226a12024",
+  "two_image_manifest_sha256": "1de92373d0ed9472ebd421f1f67cac7816b145da32cf90f38d41837d2cbbcdc7",
+  "reviewer_id": "codex_wave52_editorial",
+  "review_run_id": "mrx1000-wave52-editorial-20260813T004955Z",
+  "capability": "editorial",
+  "findings": [
+    "Complete current MDX SHA-256 is 941032278411870467a216054458698c8162a9d23a8d455d3336e23226a12024; the answer-first article contains 1969 body tokens and five FAQs.",
+    "The article owns the current booking transaction. It covers private assistant entry, timezone and timing-window selection, live slot choice, appointment contact details, separate permissions, booked-versus-not-booked states, failure recovery, and routes broader review preparation, fee, and substantive review-process jobs to established pages.",
+    "Exact-title hero/share OCR passed for “Understanding the Steps to Book Your Free No-Obligation Mineral Rights Review”; distinct in-body OCR passed for “What Steps Are Involved in Getting a No-Obligation Review of My Mineral Rights?”."
+  ],
+  "checks": [
+    {
+      "name": "complete_file_sha256_match",
+      "status": "PASS",
+      "evidence": "941032278411870467a216054458698c8162a9d23a8d455d3336e23226a12024"
+    },
+    {
+      "name": "answer_first_article_depth_and_five_faqs",
+      "status": "PASS",
+      "evidence": {
+        "word_count": 1969,
+        "minimum_word_count": 700,
+        "faq_count": 5
+      }
+    },
+    {
+      "name": "two_image_exact_text_identity",
+      "status": "PASS",
+      "evidence": {
+        "hero_ocr": true,
+        "inline_ocr": true,
+        "social_reuses_hero": true,
+        "filename_identity": true,
+        "distinct_binaries": true
+      }
+    }
+  ],
+  "sources_inspected": [
+    "src/content/posts/understanding-the-steps-to-book-your-free-no-obligation-mineral-rights-review.mdx",
+    "/assets/articles/hero/understanding-the-steps-to-book-your-free-no-obligation-mineral-rights-review.webp",
+    "/assets/articles/inline/understanding-the-steps-to-book-your-free-no-obligation-mineral-rights-review/what-steps-are-involved-in-getting-a-no-obligation-review-of-my-mineral-rights.webp"
+  ]
+}

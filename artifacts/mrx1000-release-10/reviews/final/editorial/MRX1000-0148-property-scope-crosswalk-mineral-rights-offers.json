@@ -1,0 +1,66 @@
+{
+  "artifact_type": "mrx1000_two_image_editorial_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-22T18:34:39Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-14",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0148",
+  "slug": "property-scope-crosswalk-mineral-rights-offers",
+  "title": "How to Build a Property-Scope Crosswalk Before Comparing Mineral Rights Offers",
+  "canonical_url": "https://mineralrightsxchange.com/blog/property-scope-crosswalk-mineral-rights-offers/",
+  "source_path": "src/content/posts/property-scope-crosswalk-mineral-rights-offers.mdx",
+  "input_body_sha256": "7f2e631f3e89874ec99900784a51f0690f3d7babeca185d27827dc093f06bbfe",
+  "input_frontmatter_sha256": "a84fb91986be2aa8a87870a8637bc079a95f878aac46967e3c70a90d17ec1072",
+  "expected_repo_sha256": "7f2e631f3e89874ec99900784a51f0690f3d7babeca185d27827dc093f06bbfe",
+  "two_image_manifest_sha256": "c9dfebd0cdfcfc93a3707c155374452a9a2542ec1f6c339b616152525b3b9962",
+  "visual_metadata": {
+    "hero_alt": "A mineral owner compares documents beside “How to Build a Property-Scope Crosswalk Before Comparing Mineral Rights Offers”.",
+    "social_alt": "A mineral owner compares documents beside “How to Build a Property-Scope Crosswalk Before Comparing Mineral Rights Offers”.",
+    "inline_alt": "Two offer folders frame a blank crosswalk worksheet above “Mineral Rights Offer Property Scope Checklist”."
+  },
+  "reviewer_id": "codex_wave68_editorial",
+  "review_run_id": "mrx1000-wave68-editorial-20260822T183439Z",
+  "capability": "editorial",
+  "findings": [
+    "Complete current MDX SHA-256 is 7f2e631f3e89874ec99900784a51f0690f3d7babeca185d27827dc093f06bbfe; the answer-first article contains 2009 body tokens and five FAQs.",
+    "The article owns the narrow pre-comparison property-scope-crosswalk job. It transcribes source-page, land-description, interest, depth, formation, substance, lease, unit, well, reservation, and exception fields while explicitly withholding ownership, title, acreage, legal-effect, valuation, fairness, negotiation, and transaction conclusions.",
+    "Exact-title hero/share OCR passed for “How to Build a Property-Scope Crosswalk Before Comparing Mineral Rights Offers”; distinct in-body OCR passed for “Mineral Rights Offer Property Scope Checklist”; composition-accurate hero/social and inline alt metadata matched the final visual audit."
+  ],
+  "checks": [
+    {
+      "name": "complete_file_sha256_match",
+      "status": "PASS",
+      "evidence": "7f2e631f3e89874ec99900784a51f0690f3d7babeca185d27827dc093f06bbfe"
+    },
+    {
+      "name": "answer_first_article_depth_and_five_faqs",
+      "status": "PASS",
+      "evidence": {
+        "word_count": 2009,
+        "minimum_word_count": 700,
+        "faq_count": 5
+      }
+    },
+    {
+      "name": "two_image_exact_text_identity",
+      "status": "PASS",
+      "evidence": {
+        "hero_ocr": true,
+        "inline_ocr": true,
+        "social_reuses_hero": true,
+        "hero_social_alt_match": true,
+        "inline_alt_match": true,
+        "filename_identity": true,
+        "distinct_binaries": true
+      }
+    }
+  ],
+  "sources_inspected": [
+    "src/content/posts/property-scope-crosswalk-mineral-rights-offers.mdx",
+    "/assets/articles/hero/how-to-build-a-property-scope-crosswalk-before-comparing-mineral-rights-offers.webp",
+    "/assets/articles/inline/property-scope-crosswalk-mineral-rights-offers/mineral-rights-offer-property-scope-checklist.webp"
+  ]
+}

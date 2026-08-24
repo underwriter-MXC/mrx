@@ -1,0 +1,128 @@
+{
+  "artifact_type": "mrx1000_two_image_factual_citation_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-12T07:18:05Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-11",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0177",
+  "slug": "discount-rates-in-mineral-rights-dcf-a-plain-language-guide",
+  "title": "Discount Rates in Mineral Rights DCF: A Plain-Language Guide",
+  "canonical_url": "https://mineralrightsxchange.com/blog/discount-rates-in-mineral-rights-dcf-a-plain-language-guide/",
+  "source_path": "src/content/posts/discount-rates-in-mineral-rights-dcf-a-plain-language-guide.mdx",
+  "input_body_sha256": "787870b5263f66eed90e1cafe4b568f59580adf3f576f01c58dfe3cd1251688d",
+  "input_frontmatter_sha256": "3bc238960ee7d124d848f6653d651cc6449f127de07c2f1da0fde0306ae52115",
+  "expected_repo_sha256": "787870b5263f66eed90e1cafe4b568f59580adf3f576f01c58dfe3cd1251688d",
+  "two_image_manifest_sha256": "6ab8e943d2a499382b73d811d540e1b3d4825ebcda76f1d066666bf82e59ef1b",
+  "reviewer_id": "codex_wave19_factual",
+  "review_run_id": "mrx1000-wave19-factual-20260812T071805Z",
+  "capability": "factual_citation",
+  "findings": [
+    "Complete current MDX SHA-256 is 787870b5263f66eed90e1cafe4b568f59580adf3f576f01c58dfe3cd1251688d; all 7 declared official sources passed live access review.",
+    "Rate consistency, standardized reserve disclosure, Treasury market-reference, regulatory production-data, and public property-appraisal claims remain bounded to their official government sources.",
+    "The article uses no fabricated owners, wells, leases, production, forecasts, prices, costs, rates, reserves, transaction values, market evidence, testimonials, or owner-specific legal, tax, investment, reserve, engineering, or valuation conclusions."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "minimum_three_distinct_https_sources",
+    "current_source_access_review_pass",
+    "claim_to_source_scope_present",
+    "official_primary_source_priority_pass",
+    "unsupported_high_risk_claim_scan_pass"
+  ],
+  "sources_inspected": [
+    {
+      "label": "Internal Revenue Service, Business Valuation Guidelines, IRM 4.48.4 (accessed 2026-08-11)",
+      "url": "https://www.irs.gov/irm/part4/irm_04-048-004",
+      "publisher": "www.irs.gov",
+      "accessed_at": "2026-08-12T07:18:05Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.irs.gov/irm/part4/irm_04-048-004",
+        "content_type": "text/html; charset=UTF-8"
+      },
+      "source_location_or_paraphrase": "The IRS Business Valuation Guidelines state that an appraiser should select a benefit stream and discount or capitalization rate consistent with the selected valuation method and consider relevant risk factors.",
+      "claim_scope": "The article uses the guidelines only for a general valuation-consistency principle; it does not present the IRS material as a mineral-property formula, owner-specific appraisal, tax conclusion, or universal rate."
+    },
+    {
+      "label": "U.S. Securities and Exchange Commission, Staff Accounting Bulletin Topic 12: Oil and Gas Producing Activities (accessed 2026-08-11)",
+      "url": "https://www.sec.gov/interps/account/sabcodet12.htm",
+      "publisher": "www.sec.gov",
+      "accessed_at": "2026-08-12T07:18:05Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.sec.gov/interps/account/sabcodet12.htm",
+        "content_type": "text/html"
+      },
+      "source_location_or_paraphrase": "SEC Staff Accounting Bulletin Topic 12 explains that U.S. GAAP requires disclosure of the standardized measure of discounted future net cash flows from production of proved oil-and-gas reserves.",
+      "claim_scope": "The article uses this material only to identify the specified reporting context; it does not equate that measure with a private mineral-owner offer, fair market value, or an owner-specific DCF."
+    },
+    {
+      "label": "U.S. Securities and Exchange Commission, Accounting and Reporting for Oil and Gas Producing Activities, Release No. 33-10002 (accessed 2026-08-11)",
+      "url": "https://www.sec.gov/file/33-10002pdf",
+      "publisher": "www.sec.gov",
+      "accessed_at": "2026-08-12T07:18:05Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.sec.gov/file/33-10002pdf",
+        "content_type": "text/html; charset=UTF-8"
+      },
+      "source_location_or_paraphrase": "The SEC release describes the standardized measure as after-tax future net cash flows discounted at 10 percent and notes that the standardized measure is neither fair market value nor the present value of expected future cash flows.",
+      "claim_scope": "The article uses the release to distinguish a prescribed disclosure convention from owner-specific valuation and does not claim that 10 percent is appropriate for a particular mineral interest."
+    },
+    {
+      "label": "U.S. Department of the Treasury, Daily Treasury Par Yield Curve Rates (accessed 2026-08-11)",
+      "url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?page=1&type=daily_treasury_yield_curve",
+      "publisher": "home.treasury.gov",
+      "accessed_at": "2026-08-12T07:18:05Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?page=1&type=daily_treasury_yield_curve",
+        "content_type": "text/html; charset=UTF-8"
+      },
+      "source_location_or_paraphrase": "The U.S. Treasury publishes daily par yield curves derived from indicative market quotations for Treasury securities at fixed maturities.",
+      "claim_scope": "The article uses Treasury data only as dated market-reference context and does not treat a Treasury yield as a complete mineral-rights discount rate or owner-specific conclusion."
+    },
+    {
+      "label": "Railroad Commission of Texas, Oil and Gas Production Data (accessed 2026-08-11)",
+      "url": "https://www.rrc.texas.gov/oil-and-gas/research-and-statistics/production-data/",
+      "publisher": "www.rrc.texas.gov",
+      "accessed_at": "2026-08-12T07:18:05Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.rrc.texas.gov/oil-and-gas/research-and-statistics/production-data/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The Railroad Commission of Texas publishes production compilations and summaries based on information reported to the Commission by operators and provides multiple production-query and download paths.",
+      "claim_scope": "The article uses the page to identify a public regulatory production source and does not treat reported production as a complete owner cash flow, reserve report, or forecast."
+    },
+    {
+      "label": "Railroad Commission of Texas, Production Data Query System FAQs (accessed 2026-08-11)",
+      "url": "https://www.rrc.texas.gov/about-us/faqs/oil-gas-faq/production-data-query-system-faqs/",
+      "publisher": "www.rrc.texas.gov",
+      "accessed_at": "2026-08-12T07:18:05Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.rrc.texas.gov/about-us/faqs/oil-gas-faq/production-data-query-system-faqs/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The Railroad Commission explains that Texas oil production may be reported at the lease level, online production information has a reporting lag, and records can change as corrected, revised, or delinquent reports arrive.",
+      "claim_scope": "The article uses these limitations to bound production-history work and does not infer individual-well volumes, payment ownership, title, or future production from a regulatory record."
+    },
+    {
+      "label": "Texas Comptroller, Valuing Property (accessed 2026-08-11)",
+      "url": "https://comptroller.texas.gov/taxes/property-tax/valuing-property.php",
+      "publisher": "comptroller.texas.gov",
+      "accessed_at": "2026-08-12T07:18:05Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://comptroller.texas.gov/taxes/property-tax/valuing-property.php",
+        "content_type": "text/html; charset=UTF-8"
+      },
+      "source_location_or_paraphrase": "The Texas Comptroller describes the sales-comparison, income, and cost approaches and explains that the income approach estimates the present worth of anticipated future benefits.",
+      "claim_scope": "The article preserves the public property-tax context and does not present the page as a private-sale formula, professional appraisal, title conclusion, or owner-specific value."
+    }
+  ]
+}

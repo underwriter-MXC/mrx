@@ -1,0 +1,43 @@
+{
+  "artifact_type": "mrx1000_two_image_compliance_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-12T16:43:03Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-12",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0118",
+  "slug": "uncovering-hidden-costs-what-every-mineral-rights-seller-should-know-before-the-review",
+  "title": "Uncovering Hidden Costs: What Every Mineral Rights Seller Should Know Before the Review",
+  "canonical_url": "https://mineralrightsxchange.com/blog/uncovering-hidden-costs-what-every-mineral-rights-seller-should-know-before-the-review/",
+  "source_path": "src/content/posts/uncovering-hidden-costs-what-every-mineral-rights-seller-should-know-before-the-review.mdx",
+  "input_body_sha256": "980e9ffe2d862957155e1d82c529547627d6d8f5a179072816380ebc48e22578",
+  "input_frontmatter_sha256": "1de201f3282626831e3ea92d2cc7f08c56e78411d232f59cc7f973a1a2db203e",
+  "expected_repo_sha256": "980e9ffe2d862957155e1d82c529547627d6d8f5a179072816380ebc48e22578",
+  "two_image_manifest_sha256": "d6dab7c26bdb23820ae1f284338840279c2831dc8f25edf6dfe3921ddc46df4e",
+  "reviewer_id": "codex_wave38_compliance",
+  "review_run_id": "mrx1000-wave38-compliance-20260812T164303Z",
+  "capability": "compliance",
+  "expected_hero_sha256": "ffffe76bd181b7a7080cebe5a0416bbb2edce3a14aa573af74339216fa65dfdf",
+  "expected_inline_sha256": "3831bb72948d66af217bebf1ea6da7320230c11ee31dbf05a700646d9c5ed888",
+  "findings": [
+    "Complete current MDX SHA-256 is 980e9ffe2d862957155e1d82c529547627d6d8f5a179072816380ebc48e22578; hero/share and inline image hashes are separately locked.",
+    "The article states educational and professional boundaries, discloses MRX’s potential economic interest, separates the review price from records, outside engagements, later adjustments, closing deductions, taxes, and owner time, supplies explicit authorization and stop conditions, labels MRX review as directional, and routes unresolved title, legal, tax, accounting, appraisal, land, closing, and transaction questions without making owner-specific conclusions.",
+    "Image text is limited to the exact article title and canonical question after incidental generated document and calculator text was neutralized; the images add no owner data, provider endorsement, contract interpretation, deed language, price, fee, acreage, decimal, formula, success claim, appraisal result, tax outcome, or transaction conclusion."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "hero_share_sha256_identity",
+    "inline_image_distinct_sha256",
+    "exact_text_ocr_pass",
+    "filename_text_identity_pass",
+    "educational_and_professional_boundaries_preserved",
+    "no_unsupported_visual_or_valuation_claims"
+  ],
+  "sources_inspected": [
+    "src/content/posts/uncovering-hidden-costs-what-every-mineral-rights-seller-should-know-before-the-review.mdx",
+    "/assets/articles/hero/uncovering-hidden-costs-what-every-mineral-rights-seller-should-know-before-the-review.webp",
+    "/assets/articles/inline/uncovering-hidden-costs-what-every-mineral-rights-seller-should-know-before-the-review/are-there-any-hidden-costs-i-should-be-aware-of-during-the-review.webp"
+  ]
+}

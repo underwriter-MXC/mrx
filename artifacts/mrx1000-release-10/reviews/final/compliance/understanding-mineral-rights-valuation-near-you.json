@@ -1,0 +1,43 @@
+{
+  "artifact_type": "mrx1000_two_image_compliance_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-12T20:33:53Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-12",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0125",
+  "slug": "understanding-mineral-rights-valuation-near-you",
+  "title": "Understanding Mineral Rights Valuation Near You",
+  "canonical_url": "https://mineralrightsxchange.com/blog/understanding-mineral-rights-valuation-near-you/",
+  "source_path": "src/content/posts/understanding-mineral-rights-valuation-near-you.mdx",
+  "input_body_sha256": "46119e11fd375db8f54ffe3d9150b6c2a54ca75cf1c56e53102a0bb36b6cb1c3",
+  "input_frontmatter_sha256": "d129097bb925c73bd63642d8a10af4d26324801a15979d42b1699a15cf42702a",
+  "expected_repo_sha256": "46119e11fd375db8f54ffe3d9150b6c2a54ca75cf1c56e53102a0bb36b6cb1c3",
+  "two_image_manifest_sha256": "5face8f3f6b73074b315e67ead51ce76eede4a1b0998d028a3af2bf51f38593b",
+  "reviewer_id": "codex_wave45_compliance",
+  "review_run_id": "mrx1000-wave45-compliance-20260812T203353Z",
+  "capability": "compliance",
+  "expected_hero_sha256": "fa2f18d16339dedfdda898fee89ca312667c5695b9d4b1186c98d330e0a84e13",
+  "expected_inline_sha256": "0a6e061a6054af3d6c1944ff59e0773f593e1b61f2e75d85107e1af15edee9ce",
+  "findings": [
+    "Complete current MDX SHA-256 is 46119e11fd375db8f54ffe3d9150b6c2a54ca75cf1c56e53102a0bb36b6cb1c3; hero/share and inline image hashes are separately locked.",
+    "The article routes location-aware records and specialist questions without making an owner-specific title, reserve, engineering, appraisal, legal, tax, value, payment, eligibility, or transaction conclusion; discloses MRX’s possible economic interest; preserves separate evidence lanes and uncertainty; and does not present proximity as proof of qualification or independence.",
+    "Image text is limited to the exact article title and canonical phrase; the abstract county, map, record, device, and office objects add no owner data, jurisdictional endorsement, professional credential, ownership conclusion, production value, commodity price, acreage, decimal, formula result, offer, transaction term, appraisal result, tax outcome, legal conclusion, or private information."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "hero_share_sha256_identity",
+    "inline_image_distinct_sha256",
+    "exact_text_ocr_pass",
+    "filename_text_identity_pass",
+    "educational_and_professional_boundaries_preserved",
+    "no_unsupported_visual_or_valuation_claims"
+  ],
+  "sources_inspected": [
+    "src/content/posts/understanding-mineral-rights-valuation-near-you.mdx",
+    "/assets/articles/hero/understanding-mineral-rights-valuation-near-you.webp",
+    "/assets/articles/inline/understanding-mineral-rights-valuation-near-you/mineral-rights-appraisal-near-me.webp"
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "artifact_type": "mrx1000_two_image_compliance_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-23T00:27:25Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-14",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-1001",
+  "slug": "robertson-county-mineral-rights-public-record-locator",
+  "title": "How to Build a Robertson County Mineral Rights Public-Record Locator",
+  "canonical_url": "https://mineralrightsxchange.com/blog/robertson-county-mineral-rights-public-record-locator/",
+  "source_path": "src/content/posts/robertson-county-mineral-rights-public-record-locator.mdx",
+  "input_body_sha256": "3a7725e9dcfb9d70e89e7c5705574ccc3476d1d85797b4aeb265d5e7a1193d0f",
+  "input_frontmatter_sha256": "6bea9bc0c7ecac39acd8d248d02309f5a8e7ad5a3ddac30ec5a960ce9acb5015",
+  "expected_repo_sha256": "3a7725e9dcfb9d70e89e7c5705574ccc3476d1d85797b4aeb265d5e7a1193d0f",
+  "two_image_manifest_sha256": "8de5e5cda69e337c34bb473803f1bb31c1aae53e96426085798d0b55709a033a",
+  "visual_metadata": {
+    "hero_alt": "Owner and researcher organize a locator beside “How to Build a Robertson County Mineral Rights Public-Record Locator”.",
+    "social_alt": "Owner and researcher organize a locator beside “How to Build a Robertson County Mineral Rights Public-Record Locator”.",
+    "inline_alt": "Three separate public-record source groups surround a blank locator above “Robertson County mineral rights public records”."
+  },
+  "reviewer_id": "codex_wave73_compliance",
+  "review_run_id": "mrx1000-wave73-compliance-20260823T002725Z",
+  "capability": "compliance",
+  "expected_hero_sha256": "f95a082e17723d9b281159adbfb1192f8c74f182d4a157abbfaf81cc15222f64",
+  "expected_inline_sha256": "629f76a59b4238861039bf8e56aa6f4c32df44c945fcb7208d27755088dadf79",
+  "findings": [
+    "Complete current MDX SHA-256 is 3a7725e9dcfb9d70e89e7c5705574ccc3476d1d85797b4aeb265d5e7a1193d0f; hero/share and inline image hashes are separately locked.",
+    "The article states educational and professional boundaries, separates a public-record locator from title, ownership, acreage, legal-description, lease, payment, production, value, offer, and transaction decisions, discloses possible MRX buyer interest, and preserves owner agency.",
+    "Image text is limited to the exact article title and approved keyword and adds no owner name, instrument, abstract, survey, operator, well, lease, map result, property identifier, amount, seal, title finding, ownership conclusion, ranking, recommendation, guarantee, buyer endorsement, or transaction result."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "hero_share_sha256_identity",
+    "inline_image_distinct_sha256",
+    "exact_text_ocr_pass",
+    "filename_text_identity_pass",
+    "educational_and_professional_boundaries_preserved",
+    "owner_agency_and_possible_buyer_interest_disclosure_preserved",
+    "no_unsupported_visual_or_decision_claims"
+  ],
+  "sources_inspected": [
+    "src/content/posts/robertson-county-mineral-rights-public-record-locator.mdx",
+    "/assets/articles/hero/how-to-build-a-robertson-county-mineral-rights-public-record-locator.webp",
+    "/assets/articles/inline/robertson-county-mineral-rights-public-record-locator/robertson-county-mineral-rights-public-records.webp"
+  ]
+}

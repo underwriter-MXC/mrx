@@ -1,0 +1,62 @@
+{
+  "artifact_type": "mrx1000_two_image_editorial_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-11T22:44:38Z",
+  "decision_authority": {
+    "source": "Daryl owner directive, 2026-08-11",
+    "policy": "MRX two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0303",
+  "slug": "how-to-find-a-reputable-mineral-rights-buyer-in-texas",
+  "title": "How to Find a Reputable Mineral Rights Buyer in Texas",
+  "canonical_url": "https://mineralrightsxchange.com/blog/how-to-find-a-reputable-mineral-rights-buyer-in-texas/",
+  "source_path": "src/content/posts/how-to-find-a-reputable-mineral-rights-buyer-in-texas.mdx",
+  "input_body_sha256": "3e82f2f8459cb7cabb57e6f5bbd0fae69889646e738099bd282f2159d4520e1f",
+  "input_frontmatter_sha256": "4af4e7b7d68b65811d882a8f8bd7ec0f3887258b8211be10c101d70599c1a8c8",
+  "expected_repo_sha256": "3e82f2f8459cb7cabb57e6f5bbd0fae69889646e738099bd282f2159d4520e1f",
+  "two_image_manifest_sha256": "802512b5dab8eae7592be5934f97a6a8989125fb8f65d3f37ee3cdeb2d35dc10",
+  "reviewer_id": "codex_two_image_editorial",
+  "review_run_id": "mrx1000-two-image-retrofit-20260811T224438Z",
+  "capability": "editorial",
+  "findings": [
+    "Complete current MDX SHA-256 is 3e82f2f8459cb7cabb57e6f5bbd0fae69889646e738099bd282f2159d4520e1f; article has 489 body tokens and five FAQs.",
+    "Exact-title hero/share OCR passed for “How to Find a Reputable Mineral Rights Buyer in Texas”; distinct in-body OCR passed for “sell mineral rights texas”.",
+    "Both text treatments remain deterministic, descriptive, filename-matched, article-specific, and bound to the current source."
+  ],
+  "checks": [
+    {
+      "name": "complete_file_sha256_match",
+      "status": "PASS",
+      "evidence": "3e82f2f8459cb7cabb57e6f5bbd0fae69889646e738099bd282f2159d4520e1f"
+    },
+    {
+      "name": "answer_first_depth_and_five_faqs",
+      "status": "PASS",
+      "evidence": {
+        "word_count": 489,
+        "minimum_word_count": 0,
+        "faq_count": 5
+      }
+    },
+    {
+      "name": "two_image_exact_text_identity",
+      "status": "PASS",
+      "evidence": {
+        "hero_path": true,
+        "social_identity": true,
+        "inline_path": true,
+        "inline_text": true,
+        "hero_ocr": true,
+        "inline_ocr": true,
+        "filename_identity": true,
+        "distinct_binaries": true
+      }
+    }
+  ],
+  "sources_inspected": [
+    "src/content/posts/how-to-find-a-reputable-mineral-rights-buyer-in-texas.mdx",
+    "/assets/articles/hero/how-to-find-a-reputable-mineral-rights-buyer-in-texas.webp",
+    "/assets/articles/inline/how-to-find-a-reputable-mineral-rights-buyer-in-texas/sell-mineral-rights-texas.webp"
+  ]
+}

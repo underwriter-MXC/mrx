@@ -1,0 +1,128 @@
+{
+  "artifact_type": "mrx1000_two_image_factual_citation_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-13T21:56:11Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-11",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0135",
+  "slug": "understanding-the-value-of-your-mineral-rights-essential-factors-to-consider",
+  "title": "Understanding the Value of Your Mineral Rights: Essential Factors to Consider",
+  "canonical_url": "https://mineralrightsxchange.com/blog/understanding-the-value-of-your-mineral-rights-essential-factors-to-consider/",
+  "source_path": "src/content/posts/understanding-the-value-of-your-mineral-rights-essential-factors-to-consider.mdx",
+  "input_body_sha256": "33b8565a8265e3e42939d1f41bc08ad3210e721501c1372fd5a4dd5640291043",
+  "input_frontmatter_sha256": "058a2982ea5d278e615f60745bf9f4ef25f5e16e7070a09610f8ccd16aba8599",
+  "expected_repo_sha256": "33b8565a8265e3e42939d1f41bc08ad3210e721501c1372fd5a4dd5640291043",
+  "two_image_manifest_sha256": "3433b7d941e51b71d7eb361409d2393527678cf2a777fd0db41b59f7584eb725",
+  "reviewer_id": "codex_wave55_factual",
+  "review_run_id": "mrx1000-wave55-factual-20260813T215611Z",
+  "capability": "factual_citation",
+  "findings": [
+    "Complete current MDX SHA-256 is 33b8565a8265e3e42939d1f41bc08ad3210e721501c1372fd5a4dd5640291043; all 7 declared sources passed live access review.",
+    "Claims remain bounded to current RRC production, query-lag, correction, and data-set context; EIA commodity-series context; and current MRX methodology and selling-options scope. The article preserves source purpose and does not turn any source into an owner-specific title, reserves, development, price, value, offer, or decision result.",
+    "The article uses no fabricated owners, properties, buyers, contracts, prices, acreage, ownership decimals, production, reserves, forecasts, tax results, offers, testimonials, success rates, or owner-specific title, legal, tax, accounting, appraisal, investment, or transaction conclusions."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "minimum_three_distinct_https_sources",
+    "current_source_access_review_pass",
+    "claim_to_source_scope_present",
+    "official_primary_source_priority_pass",
+    "unsupported_high_risk_claim_scan_pass"
+  ],
+  "sources_inspected": [
+    {
+      "label": "Railroad Commission of Texas production data (accessed 2026-08-13)",
+      "url": "https://www.rrc.texas.gov/oil-and-gas/research-and-statistics/production-data/",
+      "publisher": "www.rrc.texas.gov",
+      "accessed_at": "2026-08-13T21:56:11Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.rrc.texas.gov/oil-and-gas/research-and-statistics/production-data/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The Railroad Commission of Texas describes the production page as compilations and summaries of production information reported by Texas operators and links production queries, downloads, and visualizations.",
+      "claim_scope": "The article uses the page only for dated reported Texas production context; it does not establish private title, an owner decimal, realized royalty price, reserves, future production, or value."
+    },
+    {
+      "label": "Railroad Commission of Texas Production Data Query FAQs (accessed 2026-08-13)",
+      "url": "https://www.rrc.texas.gov/about-us/faqs/oil-gas-faq/production-data-query-system-faqs/",
+      "publisher": "www.rrc.texas.gov",
+      "accessed_at": "2026-08-13T21:56:11Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.rrc.texas.gov/about-us/faqs/oil-gas-faq/production-data-query-system-faqs/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The RRC PDQ FAQs explain Texas reporting organization, reporting lag, operator-submitted data, revisions, corrections, delinquent reports, and the snapshot nature of query results.",
+      "claim_scope": "The article uses the page only to explain why production evidence needs property, period, retrieval-date, and version controls; it does not resolve owner-specific title, payment, reserves, development, or value."
+    },
+    {
+      "label": "Railroad Commission of Texas data sets available for download (accessed 2026-08-13)",
+      "url": "https://www.rrc.texas.gov/resource-center/research/data-sets-available-for-download/",
+      "publisher": "www.rrc.texas.gov",
+      "accessed_at": "2026-08-13T21:56:11Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.rrc.texas.gov/resource-center/research/data-sets-available-for-download/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The Railroad Commission of Texas lists current production and operating data sets, their formats, update cadence, coverage, and data-set descriptions.",
+      "claim_scope": "The article uses the page only for dated Texas production and operating-data availability; it does not establish private title, an owner decimal, realized royalty price, reserves, future development, or value."
+    },
+    {
+      "label": "U.S. EIA crude-oil spot prices (accessed 2026-08-13)",
+      "url": "https://www.eia.gov/dnav/pet/pet_pri_spt_s1_m.htm",
+      "publisher": "www.eia.gov",
+      "accessed_at": "2026-08-13T21:56:11Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.eia.gov/dnav/pet/pet_pri_spt_s1_m.htm",
+        "content_type": "text/html"
+      },
+      "source_location_or_paraphrase": "The U.S. Energy Information Administration publishes dated monthly crude-oil spot-price series.",
+      "claim_scope": "The article uses the series only as an example of reproducible dated commodity context; it does not treat a benchmark as a property-specific realized price, forecast, or value conclusion."
+    },
+    {
+      "label": "U.S. EIA natural-gas data (accessed 2026-08-13)",
+      "url": "https://www.eia.gov/naturalgas/data.php",
+      "publisher": "www.eia.gov",
+      "accessed_at": "2026-08-13T21:56:11Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.eia.gov/naturalgas/data.php",
+        "content_type": "text/html; charset=UTF-8"
+      },
+      "source_location_or_paraphrase": "The U.S. Energy Information Administration publishes natural-gas price data, including dated spot and futures price series.",
+      "claim_scope": "The article uses the page only as an example of dated market evidence; it does not establish a property-specific realized price, differential, forecast, or value."
+    },
+    {
+      "label": "MRX methodology (accessed 2026-08-13)",
+      "url": "https://mineralrightsxchange.com/methodology/",
+      "publisher": "mineralrightsxchange.com",
+      "accessed_at": "2026-08-13T21:56:11Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://mineralrightsxchange.com/methodology/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The current MRX methodology describes a directional discounted-cash-flow review with dated evidence, stated production, decline, operator, royalty, commodity, discount, title, acreage, and offer-term inputs and ranges under assumptions.",
+      "claim_scope": "The article uses the page only for the directional-range output lane and professional limits; it does not establish owner-specific title, reserves, value, tax treatment, suitability, or a transaction result."
+    },
+    {
+      "label": "MRX Sell Mineral Rights (accessed 2026-08-13)",
+      "url": "https://mineralrightsxchange.com/sell-mineral-rights/",
+      "publisher": "mineralrightsxchange.com",
+      "accessed_at": "2026-08-13T21:56:11Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://mineralrightsxchange.com/sell-mineral-rights/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The current MRX Sell Mineral Rights page separates selling all, selling a defined portion, and holding and identifies scope, complete proposals, adjustment rights, diligence, professional review, funding, timing, and recording as decision topics.",
+      "claim_scope": "The article uses the page only for seller-option and complete-proposal comparison categories; it does not recommend a path or establish a particular agreement’s meaning, fairness, legal effect, or suitability."
+    }
+  ]
+}

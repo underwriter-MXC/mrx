@@ -1,0 +1,107 @@
+{
+  "artifact_type": "mrx1000_two_image_factual_citation_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-23T09:26:23Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-14",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0265",
+  "slug": "pdp-pud-and-undeveloped-acreage-terminology-register",
+  "title": "How to Build a PDP, PUD, and Undeveloped Acreage Terminology Register",
+  "canonical_url": "https://mineralrightsxchange.com/blog/pdp-pud-and-undeveloped-acreage-terminology-register/",
+  "source_path": "src/content/posts/pdp-pud-and-undeveloped-acreage-terminology-register.mdx",
+  "input_body_sha256": "aa58e028fd589197216100eb52bc77c24335c71cbb6d6f5f6e504bae7d8e63ea",
+  "input_frontmatter_sha256": "1a38cb2c81a7950c692f8d7408ad805c8b1d470e7faea7cc5a96c6a0747cbd7b",
+  "expected_repo_sha256": "aa58e028fd589197216100eb52bc77c24335c71cbb6d6f5f6e504bae7d8e63ea",
+  "two_image_manifest_sha256": "777740123846573be7cfc4d304e62e462ec2feaf01634e7403553dc3cba32cfb",
+  "visual_metadata": {
+    "hero_alt": "Three blank archival category folders and a source-reference card appear beside the exact article title.",
+    "social_alt": "Three blank archival category folders and a source-reference card appear beside the exact article title.",
+    "inline_alt": "An overhead three-source terminology register and neutral-question card appear above the exact keyword."
+  },
+  "reviewer_id": "codex_wave80_factual",
+  "review_run_id": "mrx1000-wave80-factual-20260823T092623Z",
+  "capability": "factual_citation",
+  "findings": [
+    "Complete current MDX SHA-256 is aa58e028fd589197216100eb52bc77c24335c71cbb6d6f5f6e504bae7d8e63ea; all 5 declared sources passed current HTTPS access review.",
+    "Claims remain bounded to SEC definitions and disclosure context, a named PRMS edition, and RRC production-query reporting limitations. None is converted into a reserve classification, standards-comparability decision, compliance conclusion, property attribution, development forecast, DCF input, offer, or value.",
+    "The article supplies no proprietary, universal, market, or owner-specific numerical assumptions; invents no term, standard, preparer, date, scope, classification, property fact, reserve quantity, production result, offer, or development outcome; and makes no owner-specific legal, tax, title, valuation, engineering, accounting, financial, or transaction conclusion."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "five_distinct_https_sources",
+    "current_source_access_review_pass",
+    "claim_to_source_scope_present",
+    "official_source_priority_pass",
+    "unsupported_high_risk_claim_scan_pass"
+  ],
+  "sources_inspected": [
+    {
+      "label": "GovInfo, 17 CFR 210.4-10 (2025 edition; accessed 2026-08-23)",
+      "url": "https://www.govinfo.gov/content/pkg/CFR-2025-title17-vol3/pdf/CFR-2025-title17-vol3-sec210-4-10.pdf",
+      "publisher": "www.govinfo.gov",
+      "accessed_at": "2026-08-23T09:26:23Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.govinfo.gov/content/pkg/CFR-2025-title17-vol3/pdf/CFR-2025-title17-vol3-sec210-4-10.pdf",
+        "content_type": "application/pdf"
+      },
+      "source_location_or_paraphrase": "17 CFR 210.4-10 supplies SEC-framework definitions for developed, proved, and undeveloped oil and gas reserves.",
+      "claim_scope": "The article uses the rule only to show why a named definition and governing framework must remain attached to a displayed term; it does not classify reserves, certify a report, or apply the rule to an owner property."
+    },
+    {
+      "label": "GovInfo, 17 CFR 229.1208 (2025 edition; accessed 2026-08-23)",
+      "url": "https://www.govinfo.gov/content/pkg/CFR-2025-title17-vol3/pdf/CFR-2025-title17-vol3-sec229-1208.pdf",
+      "publisher": "www.govinfo.gov",
+      "accessed_at": "2026-08-23T09:26:23Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.govinfo.gov/content/pkg/CFR-2025-title17-vol3/pdf/CFR-2025-title17-vol3-sec229-1208.pdf",
+        "content_type": "application/pdf"
+      },
+      "source_location_or_paraphrase": "17 CFR 229.1208 separately describes developed and undeveloped acreage in an SEC registrant disclosure context.",
+      "claim_scope": "The article uses the provision only to preserve the distinct acreage-disclosure context and rejects converting an acreage label into a reserve status, well count, property attribution, development forecast, or valuation input."
+    },
+    {
+      "label": "SEC, Oil and Gas Reporting Modernization: Small Entity Compliance Guide (accessed 2026-08-23)",
+      "url": "https://www.sec.gov/rules-regulations/oil-gas-reporting-modernization-small-entity-compliance-guide",
+      "publisher": "www.sec.gov",
+      "accessed_at": "2026-08-23T09:26:23Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.sec.gov/rules-regulations/oil-gas-reporting-modernization-small-entity-compliance-guide",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The SEC guide describes the modernized oil-and-gas rule framework, preparer and auditor context, and separate proved-undeveloped-reserves disclosure requirements.",
+      "claim_scope": "The article uses that guidance only to preserve source, preparer, standard, and scope fields and repeats the SEC boundary that the guide is not a substitute for the rule."
+    },
+    {
+      "label": "Society of Petroleum Engineers, 2018 Petroleum Resources Management System (accessed 2026-08-23)",
+      "url": "https://info.specommunications.org/rs/833-LLT-087/images/petroleum_resources_management_system-2018.pdf",
+      "publisher": "info.specommunications.org",
+      "accessed_at": "2026-08-23T09:26:23Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://info.specommunications.org/rs/833-LLT-087/images/petroleum_resources_management_system-2018.pdf",
+        "content_type": "application/pdf"
+      },
+      "source_location_or_paraphrase": "The 2018 Petroleum Resources Management System is a named resources-classification system with defined classes, subclasses, categories, status definitions, and terminology.",
+      "claim_scope": "The article uses PRMS only as evidence that the named standard and edition must be preserved; it does not assume a document follows PRMS or translate, compare, validate, or assign a classification."
+    },
+    {
+      "label": "Railroad Commission of Texas, Production Data Query FAQs (accessed 2026-08-23)",
+      "url": "https://www.rrc.texas.gov/about-us/faqs/oil-gas-faq/production-data-query-system-faqs/",
+      "publisher": "www.rrc.texas.gov",
+      "accessed_at": "2026-08-23T09:26:23Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.rrc.texas.gov/about-us/faqs/oil-gas-faq/production-data-query-system-faqs/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The Railroad Commission explains the lease-level or gas-well-level reporting basis, online reporting lag, update cadence, and possibility of revised, corrected, or delinquent production reports.",
+      "claim_scope": "The article uses that source only to keep regulator production observations in a separate evidence lane and rejects turning a production result into a reserve classification, acreage conclusion, property attribution, development forecast, or value."
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "artifact_type": "mrx1000_two_image_editorial_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-11T22:44:38Z",
+  "decision_authority": {
+    "source": "Daryl owner directive, 2026-08-11",
+    "policy": "MRX two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0319",
+  "slug": "understanding-the-key-factors-influencing-your-mineral-rights-offer-range",
+  "title": "Understanding the Key Factors Influencing Your Mineral Rights Offer Range",
+  "canonical_url": "https://mineralrightsxchange.com/blog/understanding-the-key-factors-influencing-your-mineral-rights-offer-range/",
+  "source_path": "src/content/posts/understanding-the-key-factors-influencing-your-mineral-rights-offer-range.mdx",
+  "input_body_sha256": "200e138e75b86a43aff1aab4638c67a8c9cbe4c9bfe5ccfbbe70d821159f711a",
+  "input_frontmatter_sha256": "2f43efa74bcd490fd52644a823a98f160ce2d2073a934504793d0a262df8e925",
+  "expected_repo_sha256": "200e138e75b86a43aff1aab4638c67a8c9cbe4c9bfe5ccfbbe70d821159f711a",
+  "two_image_manifest_sha256": "802512b5dab8eae7592be5934f97a6a8989125fb8f65d3f37ee3cdeb2d35dc10",
+  "reviewer_id": "codex_two_image_editorial",
+  "review_run_id": "mrx1000-two-image-retrofit-20260811T224438Z",
+  "capability": "editorial",
+  "findings": [
+    "Complete current MDX SHA-256 is 200e138e75b86a43aff1aab4638c67a8c9cbe4c9bfe5ccfbbe70d821159f711a; article has 1074 body tokens and five FAQs.",
+    "Exact-title hero/share OCR passed for “Understanding the Key Factors Influencing Your Mineral Rights Offer Range”; distinct in-body OCR passed for “key factors influencing mineral rights offer range”.",
+    "Both text treatments remain deterministic, descriptive, filename-matched, article-specific, and bound to the current source."
+  ],
+  "checks": [
+    {
+      "name": "complete_file_sha256_match",
+      "status": "PASS",
+      "evidence": "200e138e75b86a43aff1aab4638c67a8c9cbe4c9bfe5ccfbbe70d821159f711a"
+    },
+    {
+      "name": "answer_first_depth_and_five_faqs",
+      "status": "PASS",
+      "evidence": {
+        "word_count": 1074,
+        "minimum_word_count": 0,
+        "faq_count": 5
+      }
+    },
+    {
+      "name": "two_image_exact_text_identity",
+      "status": "PASS",
+      "evidence": {
+        "hero_path": true,
+        "social_identity": true,
+        "inline_path": true,
+        "inline_text": true,
+        "hero_ocr": true,
+        "inline_ocr": true,
+        "filename_identity": true,
+        "distinct_binaries": true
+      }
+    }
+  ],
+  "sources_inspected": [
+    "src/content/posts/understanding-the-key-factors-influencing-your-mineral-rights-offer-range.mdx",
+    "/assets/articles/hero/understanding-the-key-factors-influencing-your-mineral-rights-offer-range.webp",
+    "/assets/articles/inline/understanding-the-key-factors-influencing-your-mineral-rights-offer-range/key-factors-influencing-mineral-rights-offer-range.webp"
+  ]
+}

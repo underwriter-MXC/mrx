@@ -1,0 +1,49 @@
+{
+  "artifact_type": "mrx1000_wave87_two_image_compliance_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-23T19:05:43Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-14",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0271",
+  "slug": "how-to-build-a-mineral-rights-valuation-evidence-cutoff-log",
+  "title": "How to Build a Mineral Rights Valuation Evidence-Cutoff Log",
+  "canonical_url": "https://mineralrightsxchange.com/blog/how-to-build-a-mineral-rights-valuation-evidence-cutoff-log/",
+  "source_path": "src/content/posts/how-to-build-a-mineral-rights-valuation-evidence-cutoff-log.mdx",
+  "input_body_sha256": "09f5e8bcb908f3c6df0ba6998a9031d8b0ec7ff07d91730471cfe564e771916f",
+  "input_frontmatter_sha256": "950a28317a2e354963a9c4e5fc32c9914537469ff6092f61035676c64a065dd2",
+  "expected_repo_sha256": "09f5e8bcb908f3c6df0ba6998a9031d8b0ec7ff07d91730471cfe564e771916f",
+  "two_image_manifest_sha256": "370337a16e0e9f81153100aa2ffe38b8e4c2c148c5bfbe92ff4e0e6086e399e9",
+  "visual_metadata": {
+    "hero_alt": "A dated evidence-control worksheet and source files appear beside the exact article title.",
+    "social_alt": "A dated evidence-control worksheet and source files appear beside the exact article title.",
+    "inline_alt": "A top-down six-column evidence-cutoff worksheet appears above the exact keyword."
+  },
+  "reviewer_id": "codex_wave87_compliance",
+  "review_run_id": "mrx1000-wave87-compliance-20260823T190543Z",
+  "capability": "compliance",
+  "expected_hero_sha256": "e9edb54acc3eda27706d3b604ef36a2d54323c320556609747be4549afa549ba",
+  "expected_inline_sha256": "69db70c472b817dd98c7c43469ac498bfdfa278f58d63605b564f94468d96c23",
+  "findings": [
+    "Complete current MDX SHA-256 is 09f5e8bcb908f3c6df0ba6998a9031d8b0ec7ff07d91730471cfe564e771916f; hero/share and inline image hashes are separately locked.",
+    "The article separates source objects, working notes, later outputs, and later-received evidence; preserves version history and privacy; converts gaps into neutral requests; and stops before valuation, legal, operational, offer, or transaction decisions.",
+    "Image text is limited to the exact article title and approved keyword and adds no real document text, owner identifier, signature, logo, seal, price, valuation output, recommendation, guarantee, or transaction outcome."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "hero_share_sha256_identity",
+    "inline_image_distinct_sha256",
+    "exact_text_ocr_pass",
+    "filename_text_identity_pass",
+    "evidence_cutoff_log_no_value_method_input_accuracy_review_reset_offer_or_transaction_conclusion_boundary_pass",
+    "owner_agency_privacy_and_possible_buyer_interest_disclosure_preserved",
+    "no_unsupported_visual_or_decision_claims"
+  ],
+  "sources_inspected": [
+    "src/content/posts/how-to-build-a-mineral-rights-valuation-evidence-cutoff-log.mdx",
+    "/assets/articles/hero/how-to-build-a-mineral-rights-valuation-evidence-cutoff-log.webp",
+    "/assets/articles/inline/how-to-build-a-mineral-rights-valuation-evidence-cutoff-log/mineral-rights-valuation-evidence-cutoff-log.webp"
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "artifact_type": "mrx1000_two_image_compliance_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-11T22:44:38Z",
+  "decision_authority": {
+    "source": "Daryl owner directive, 2026-08-11",
+    "policy": "MRX two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0637",
+  "slug": "title-curative-for-mineral-rights-what-it-is-and-why-it-matters-before-you-sell",
+  "title": "Title Curative for Mineral Rights: What It Is and Why It Matters Before You Sell",
+  "canonical_url": "https://mineralrightsxchange.com/blog/title-curative-for-mineral-rights-what-it-is-and-why-it-matters-before-you-sell/",
+  "source_path": "src/content/posts/title-curative-for-mineral-rights-what-it-is-and-why-it-matters-before-you-sell.mdx",
+  "input_body_sha256": "37d8f6194b13153ac39800b171d54034f23d05eb8fc2eccab2760f522dd2f0db",
+  "input_frontmatter_sha256": "ba8fade288324f26cc963a813fdc81a0b786fe6dcc2357b565096d80cde8280a",
+  "expected_repo_sha256": "37d8f6194b13153ac39800b171d54034f23d05eb8fc2eccab2760f522dd2f0db",
+  "two_image_manifest_sha256": "802512b5dab8eae7592be5934f97a6a8989125fb8f65d3f37ee3cdeb2d35dc10",
+  "reviewer_id": "codex_two_image_compliance",
+  "review_run_id": "mrx1000-two-image-retrofit-20260811T224438Z",
+  "capability": "compliance",
+  "expected_hero_sha256": "f5409bdeaf194555d539eebc7fac21673fb9adcaf2ba84b523dcaaf3683cae7d",
+  "expected_inline_sha256": "d8b4dfbba958914f5c497c6a5ec321e5f1043c004a3783f4349dbda778cac8d1",
+  "findings": [
+    "Complete current MDX SHA-256 is 37d8f6194b13153ac39800b171d54034f23d05eb8fc2eccab2760f522dd2f0db; hero/share and in-body image hashes are separately locked.",
+    "Image text is limited to the exact article title and declared page keyword; it adds no guarantee, price, deadline, legal conclusion, or tax conclusion.",
+    "The article retains its educational and professional-boundary language and current disclosure treatment."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "hero_share_sha256_identity",
+    "inline_image_distinct_sha256",
+    "exact_text_ocr_pass",
+    "filename_text_identity_pass",
+    "no_unsupported_visual_claims",
+    "educational_and_professional_boundaries_preserved"
+  ],
+  "sources_inspected": [
+    "src/content/posts/title-curative-for-mineral-rights-what-it-is-and-why-it-matters-before-you-sell.mdx",
+    "/assets/articles/hero/title-curative-for-mineral-rights-what-it-is-and-why-it-matters-before-you-sell.webp",
+    "/assets/articles/inline/title-curative-for-mineral-rights-what-it-is-and-why-it-matters-before-you-sell/title-curative-for-mineral-rights-what-it-is-and-why-it-matters-before-you-sell.webp"
+  ]
+}

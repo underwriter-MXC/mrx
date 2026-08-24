@@ -1,0 +1,43 @@
+{
+  "artifact_type": "mrx1000_two_image_compliance_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-13T21:04:21Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-11",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0134",
+  "slug": "understanding-the-value-of-texas-mineral-rights",
+  "title": "Understanding the Value of Texas Mineral Rights",
+  "canonical_url": "https://mineralrightsxchange.com/blog/understanding-the-value-of-texas-mineral-rights/",
+  "source_path": "src/content/posts/understanding-the-value-of-texas-mineral-rights.mdx",
+  "input_body_sha256": "c2c470e23c0162bbd2de3d2b12e76f342aacf4e4680036cd48be3ac7d12a940b",
+  "input_frontmatter_sha256": "45ac1dae305b74d5e5a3a04aee178be6a49d0c36a425aee8bbe93cc09d70fbd5",
+  "expected_repo_sha256": "c2c470e23c0162bbd2de3d2b12e76f342aacf4e4680036cd48be3ac7d12a940b",
+  "two_image_manifest_sha256": "9bd88e0daf1ff9e40983500638c4b2a3f813a8cffb346a3587562ec912644c07",
+  "reviewer_id": "codex_wave54_compliance",
+  "review_run_id": "mrx1000-wave54-compliance-20260813T210421Z",
+  "capability": "compliance",
+  "expected_hero_sha256": "8612f573c6316a869e0e01fdcfa19737f66c0438c268cef9863c9848cc310d9b",
+  "expected_inline_sha256": "97fa2d3bbc01d7c1df4371b1e7738a5db2daf21646310833897764faa2ad8e03",
+  "findings": [
+    "Complete current MDX SHA-256 is c2c470e23c0162bbd2de3d2b12e76f342aacf4e4680036cd48be3ac7d12a940b; hero/share and inline image hashes are separately locked.",
+    "The article states educational and professional boundaries, separates the four output lanes, labels unresolved title and tax questions, discloses possible MRX buyer interest, and makes no owner-specific title, value, legal, tax, investment, appraisal, or transaction conclusion.",
+    "Image text is limited to the exact article title and exact canonical keyword and adds no owner data, property identifier, price, percentage, buyer endorsement, title conclusion, valuation conclusion, tax result, guarantee, or transaction conclusion."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "hero_share_sha256_identity",
+    "inline_image_distinct_sha256",
+    "exact_text_ocr_pass",
+    "filename_text_identity_pass",
+    "educational_and_professional_boundaries_preserved",
+    "no_unsupported_visual_or_valuation_claims"
+  ],
+  "sources_inspected": [
+    "src/content/posts/understanding-the-value-of-texas-mineral-rights.mdx",
+    "/assets/articles/hero/understanding-the-value-of-texas-mineral-rights.webp",
+    "/assets/articles/inline/understanding-the-value-of-texas-mineral-rights/understanding-texas-mineral-rights-worth.webp"
+  ]
+}

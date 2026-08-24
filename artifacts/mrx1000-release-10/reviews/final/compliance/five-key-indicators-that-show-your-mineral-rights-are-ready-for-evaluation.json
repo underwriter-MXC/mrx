@@ -1,0 +1,43 @@
+{
+  "artifact_type": "mrx1000_two_image_compliance_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-12T08:46:35Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-11",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0180",
+  "slug": "five-key-indicators-that-show-your-mineral-rights-are-ready-for-evaluation",
+  "title": "Five Key Indicators That Show Your Mineral Rights Are Ready for Evaluation",
+  "canonical_url": "https://mineralrightsxchange.com/blog/five-key-indicators-that-show-your-mineral-rights-are-ready-for-evaluation/",
+  "source_path": "src/content/posts/five-key-indicators-that-show-your-mineral-rights-are-ready-for-evaluation.mdx",
+  "input_body_sha256": "26b25fb7934c47f105a5b7e1efdae96fc91d9c5d39ffe1e95bce93f46f3aea64",
+  "input_frontmatter_sha256": "7ad410fe044cf4c588c348a2fa8c97cee3a44407c1ece5a65dde64865a0e8c0f",
+  "expected_repo_sha256": "26b25fb7934c47f105a5b7e1efdae96fc91d9c5d39ffe1e95bce93f46f3aea64",
+  "two_image_manifest_sha256": "0e70bcb313d25b4021b03ea287f76a7f1650f2ffc26c9f7260d417ae9458a83c",
+  "reviewer_id": "codex_wave22_compliance",
+  "review_run_id": "mrx1000-wave22-compliance-20260812T084635Z",
+  "capability": "compliance",
+  "expected_hero_sha256": "3848064fd447d460b3abd68e16015172b7b3d48663dcc6767d720a08a8599614",
+  "expected_inline_sha256": "358c51f2b52be0b6bd845c3d4a0d00b88dc8cf5310497533058a6cd85a4b1bd7",
+  "findings": [
+    "Complete current MDX SHA-256 is 26b25fb7934c47f105a5b7e1efdae96fc91d9c5d39ffe1e95bce93f46f3aea64; hero/share and inline image hashes are separately locked.",
+    "The article states educational and professional boundaries, discloses MRX’s potential economic interest, and avoids title, probate, lease, legal, tax, investment, surveying, engineering, appraisal, offer-eligibility, transaction-suitability, or owner-specific value conclusions.",
+    "Image text is limited to the exact article title and canonical keyword question and adds no owner, deed, probate, trust, well, lease, production, price, acreage, decimal, offer, market, legal, tax, surveying, engineering, or valuation conclusion."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "hero_share_sha256_identity",
+    "inline_image_distinct_sha256",
+    "exact_text_ocr_pass",
+    "filename_text_identity_pass",
+    "educational_and_professional_boundaries_preserved",
+    "no_unsupported_visual_or_payment_claims"
+  ],
+  "sources_inspected": [
+    "src/content/posts/five-key-indicators-that-show-your-mineral-rights-are-ready-for-evaluation.mdx",
+    "/assets/articles/hero/five-key-indicators-that-show-your-mineral-rights-are-ready-for-evaluation.webp",
+    "/assets/articles/inline/five-key-indicators-that-show-your-mineral-rights-are-ready-for-evaluation/how-do-i-know-if-my-mineral-rights-qualify-for-evaluation.webp"
+  ]
+}

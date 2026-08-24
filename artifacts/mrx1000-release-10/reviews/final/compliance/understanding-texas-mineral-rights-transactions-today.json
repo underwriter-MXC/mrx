@@ -1,0 +1,43 @@
+{
+  "artifact_type": "mrx1000_two_image_compliance_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-12T22:12:05Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-12",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0127",
+  "slug": "understanding-texas-mineral-rights-transactions-today",
+  "title": "Understanding Texas Mineral Rights Transactions Today",
+  "canonical_url": "https://mineralrightsxchange.com/blog/understanding-texas-mineral-rights-transactions-today/",
+  "source_path": "src/content/posts/understanding-texas-mineral-rights-transactions-today.mdx",
+  "input_body_sha256": "14c1811377388de980de9621a6b4a2c804936ab18fc74f3ad0e8574ea17cd002",
+  "input_frontmatter_sha256": "d4a4adb33010ddcf17d057edbc7c184796bf19375491da1b835c451cb26a8b39",
+  "expected_repo_sha256": "14c1811377388de980de9621a6b4a2c804936ab18fc74f3ad0e8574ea17cd002",
+  "two_image_manifest_sha256": "a13762a0c18d6572edec3fa5a9027d9e339a9933e7f97445815332b6a5767445",
+  "reviewer_id": "codex_wave47_compliance",
+  "review_run_id": "mrx1000-wave47-compliance-20260812T221205Z",
+  "capability": "compliance",
+  "expected_hero_sha256": "6598411b5635c3c07f1e19c323d4972ab28289409c1d90bb6168dbdf54b8063b",
+  "expected_inline_sha256": "fb9a473e2322cb194d5e9264898b00b6e9034f699a8dd58b48b24693d9ef3904",
+  "findings": [
+    "Complete current MDX SHA-256 is 14c1811377388de980de9621a6b4a2c804936ab18fc74f3ad0e8574ea17cd002; hero/share and inline image hashes are separately locked.",
+    "The article states educational and professional boundaries, discloses MRX’s potential economic interest, separates county, regulatory, payor, value, proposal, entity, professional, closing, recording, and tax evidence, labels MRX review as directional, and routes unresolved title, legal, tax, accounting, appraisal, land, engineering, cybersecurity, authority, escrow, closing, and transaction questions without making owner-specific conclusions.",
+    "Image text is limited to the exact article title and canonical question and adds no owner data, buyer endorsement, contract interpretation, deed, price, acreage, decimal, formula, success claim, appraisal result, tax outcome, or transaction conclusion."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "hero_share_sha256_identity",
+    "inline_image_distinct_sha256",
+    "exact_text_ocr_pass",
+    "filename_text_identity_pass",
+    "educational_and_professional_boundaries_preserved",
+    "no_unsupported_visual_or_valuation_claims"
+  ],
+  "sources_inspected": [
+    "src/content/posts/understanding-texas-mineral-rights-transactions-today.mdx",
+    "/assets/articles/hero/understanding-texas-mineral-rights-transactions-today.webp",
+    "/assets/articles/inline/understanding-texas-mineral-rights-transactions-today/navigating-mineral-rights-transactions-texas.webp"
+  ]
+}

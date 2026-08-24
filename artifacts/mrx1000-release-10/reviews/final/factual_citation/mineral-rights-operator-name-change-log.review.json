@@ -1,0 +1,94 @@
+{
+  "artifact_type": "mrx1000_two_image_factual_citation_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-23T08:34:01Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-14",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0264",
+  "slug": "mineral-rights-operator-name-change-log",
+  "title": "How to Build a Mineral Rights Operator-Name Change Log",
+  "canonical_url": "https://mineralrightsxchange.com/blog/mineral-rights-operator-name-change-log/",
+  "source_path": "src/content/posts/mineral-rights-operator-name-change-log.mdx",
+  "input_body_sha256": "af3061d5cacb25f846f57d11018c3cf1aa2359e62ec024ce73cc1faed91130e0",
+  "input_frontmatter_sha256": "b727953fdd91e64eceb5c5aaeab13a79908abe89d330d2104e03ff25edf571ae",
+  "expected_repo_sha256": "af3061d5cacb25f846f57d11018c3cf1aa2359e62ec024ce73cc1faed91130e0",
+  "two_image_manifest_sha256": "fd907abcd84ecd90d3f77048ac70f6003f9df39464e8dd823c989b0f833fa2de",
+  "visual_metadata": {
+    "hero_alt": "Three blank archival folders and a source-reference card appear beside the exact article title.",
+    "social_alt": "Three blank archival folders and a source-reference card appear beside the exact article title.",
+    "inline_alt": "An overhead three-source name-history strip and blank question-routing card appear above the exact keyword."
+  },
+  "reviewer_id": "codex_wave79_factual",
+  "review_run_id": "mrx1000-wave79-factual-20260823T083401Z",
+  "capability": "factual_citation",
+  "findings": [
+    "Complete current MDX SHA-256 is af3061d5cacb25f846f57d11018c3cf1aa2359e62ec024ce73cc1faed91130e0; all 4 declared sources passed current HTTPS access review.",
+    "Claims remain bounded to online-query limitations and displayed wellbore, organization, and drilling-permit names, identifiers, dates, statuses, and query scope. None is converted into a corporate-identity, responsibility, property, development, title, production, payment, or value conclusion.",
+    "The article supplies no proprietary, universal, market, or owner-specific numerical assumptions; invents no name, identifier, date, status, relationship, property fact, payment fact, offer, or development result; and makes no owner-specific legal, tax, title, valuation, engineering, financial, or transaction conclusion."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "four_distinct_https_sources",
+    "current_source_access_review_pass",
+    "claim_to_source_scope_present",
+    "official_source_priority_pass",
+    "unsupported_high_risk_claim_scan_pass"
+  ],
+  "sources_inspected": [
+    {
+      "label": "Railroad Commission of Texas, Online Research Queries (accessed 2026-08-23)",
+      "url": "https://www.rrc.texas.gov/resource-center/research/research-queries/",
+      "publisher": "www.rrc.texas.gov",
+      "accessed_at": "2026-08-23T08:34:01Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.rrc.texas.gov/resource-center/research/research-queries/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The Railroad Commission provides separate online research query systems and states that the continually updated data sets are informational, non-authoritative, and without legal force or effect.",
+      "claim_scope": "The article uses that guidance only to preserve the exact source system and retrieval date and rejects corporate, responsibility, property, payment, development, and value conclusions from a query result."
+    },
+    {
+      "label": "Railroad Commission of Texas, Wellbore Query Help (accessed 2026-08-23)",
+      "url": "https://webapps2.rrc.texas.gov/EWA/help/WellboreGeneralHowTo.html",
+      "publisher": "webapps2.rrc.texas.gov",
+      "accessed_at": "2026-08-23T08:34:01Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://webapps2.rrc.texas.gov/EWA/help/WellboreGeneralHowTo.html",
+        "content_type": "text/html; charset=UTF-8"
+      },
+      "source_location_or_paraphrase": "The Railroad Commission Wellbore Query help describes operator search, displayed result fields including operator name and well identifiers, and current or historical query scope.",
+      "claim_scope": "The article uses those fields only to preserve which identified wellbore result displayed a name; it does not treat the result as proof of a private-property, corporate, responsibility, payment, or economic conclusion."
+    },
+    {
+      "label": "Railroad Commission of Texas, P-5 Organization Query About (accessed 2026-08-23)",
+      "url": "https://webapps2.rrc.texas.gov/EWA/help/P5Organization_About.html",
+      "publisher": "webapps2.rrc.texas.gov",
+      "accessed_at": "2026-08-23T08:34:01Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://webapps2.rrc.texas.gov/EWA/help/P5Organization_About.html",
+        "content_type": "text/html; charset=UTF-8"
+      },
+      "source_location_or_paraphrase": "The Railroad Commission P-5 Organization Query help describes displayed operator number, operator name, organization status and type, and organization-detail fields including filing dates.",
+      "claim_scope": "The article uses those fields only to preserve an identified organization record and expressly rejects inferences about successor, affiliate, responsibility, property, payment, development, or value."
+    },
+    {
+      "label": "Railroad Commission of Texas, Drilling Permit Query Results Help (accessed 2026-08-23)",
+      "url": "https://webapps2.rrc.texas.gov/EWA/help/DPQuery_results_howto.htm",
+      "publisher": "webapps2.rrc.texas.gov",
+      "accessed_at": "2026-08-23T08:34:01Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://webapps2.rrc.texas.gov/EWA/help/DPQuery_results_howto.htm",
+        "content_type": "text/html; charset=UTF-8"
+      },
+      "source_location_or_paraphrase": "The Railroad Commission drilling-permit results help describes the permitted-operator field and operator number, permit identifiers and dates, current status, and that an operator name can change at completion.",
+      "claim_scope": "The article uses those descriptions only to preserve what identified permit and later records display; it does not infer a transfer, corporate relationship, property connection, payment duty, development result, or value."
+    }
+  ]
+}

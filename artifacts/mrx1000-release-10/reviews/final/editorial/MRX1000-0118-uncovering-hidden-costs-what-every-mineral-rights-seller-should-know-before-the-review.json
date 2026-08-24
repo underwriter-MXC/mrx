@@ -1,0 +1,59 @@
+{
+  "artifact_type": "mrx1000_two_image_editorial_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-12T16:43:03Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-12",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0118",
+  "slug": "uncovering-hidden-costs-what-every-mineral-rights-seller-should-know-before-the-review",
+  "title": "Uncovering Hidden Costs: What Every Mineral Rights Seller Should Know Before the Review",
+  "canonical_url": "https://mineralrightsxchange.com/blog/uncovering-hidden-costs-what-every-mineral-rights-seller-should-know-before-the-review/",
+  "source_path": "src/content/posts/uncovering-hidden-costs-what-every-mineral-rights-seller-should-know-before-the-review.mdx",
+  "input_body_sha256": "980e9ffe2d862957155e1d82c529547627d6d8f5a179072816380ebc48e22578",
+  "input_frontmatter_sha256": "1de201f3282626831e3ea92d2cc7f08c56e78411d232f59cc7f973a1a2db203e",
+  "expected_repo_sha256": "980e9ffe2d862957155e1d82c529547627d6d8f5a179072816380ebc48e22578",
+  "two_image_manifest_sha256": "d6dab7c26bdb23820ae1f284338840279c2831dc8f25edf6dfe3921ddc46df4e",
+  "reviewer_id": "codex_wave38_editorial",
+  "review_run_id": "mrx1000-wave38-editorial-20260812T164303Z",
+  "capability": "editorial",
+  "findings": [
+    "Complete current MDX SHA-256 is 980e9ffe2d862957155e1d82c529547627d6d8f5a179072816380ebc48e22578; the answer-first article contains 2464 body tokens and five FAQs.",
+    "The article owns a pre-review cost-boundary and authorization job: it separates the free MRX review, records, independently engaged professional services, later proposal adjustments and closing deductions, and tax or basis questions, then supplies a nine-field authorization register and explicit stop rules.",
+    "Exact-title hero/share OCR passed for “Uncovering Hidden Costs: What Every Mineral Rights Seller Should Know Before the Review”; distinct in-body OCR passed for “Are There Any Hidden Costs I Should Be Aware of During the Review?”."
+  ],
+  "checks": [
+    {
+      "name": "complete_file_sha256_match",
+      "status": "PASS",
+      "evidence": "980e9ffe2d862957155e1d82c529547627d6d8f5a179072816380ebc48e22578"
+    },
+    {
+      "name": "answer_first_article_depth_and_five_faqs",
+      "status": "PASS",
+      "evidence": {
+        "word_count": 2464,
+        "minimum_word_count": 700,
+        "faq_count": 5
+      }
+    },
+    {
+      "name": "two_image_exact_text_identity",
+      "status": "PASS",
+      "evidence": {
+        "hero_ocr": true,
+        "inline_ocr": true,
+        "social_reuses_hero": true,
+        "filename_identity": true,
+        "distinct_binaries": true
+      }
+    }
+  ],
+  "sources_inspected": [
+    "src/content/posts/uncovering-hidden-costs-what-every-mineral-rights-seller-should-know-before-the-review.mdx",
+    "/assets/articles/hero/uncovering-hidden-costs-what-every-mineral-rights-seller-should-know-before-the-review.webp",
+    "/assets/articles/inline/uncovering-hidden-costs-what-every-mineral-rights-seller-should-know-before-the-review/are-there-any-hidden-costs-i-should-be-aware-of-during-the-review.webp"
+  ]
+}

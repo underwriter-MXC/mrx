@@ -1,0 +1,94 @@
+{
+  "artifact_type": "mrx1000_two_image_factual_citation_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-23T07:28:24Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-14",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0263",
+  "slug": "offset-activity-property-connection-cross-check",
+  "title": "Offset Activity Records: Building a Property-Connection Cross-Check",
+  "canonical_url": "https://mineralrightsxchange.com/blog/offset-activity-property-connection-cross-check/",
+  "source_path": "src/content/posts/offset-activity-property-connection-cross-check.mdx",
+  "input_body_sha256": "e11b1b6ab3d0bcaaa918ee18c839cac7b6c0b685d1cbdbc5ba516ed11c7c2571",
+  "input_frontmatter_sha256": "8819e5f2c8849de79874bd54b302f9286cacaa8fae894ab9682d0b9cc9c50e5b",
+  "expected_repo_sha256": "e11b1b6ab3d0bcaaa918ee18c839cac7b6c0b685d1cbdbc5ba516ed11c7c2571",
+  "two_image_manifest_sha256": "3db9fe7e6ac88af6096842592af68f3199167196dcb52ef0b4dc784f9f9fb55d",
+  "visual_metadata": {
+    "hero_alt": "A regulatory well record, private property folder, and three status tokens appear beside the exact article title.",
+    "social_alt": "A regulatory well record, private property folder, and three status tokens appear beside the exact article title.",
+    "inline_alt": "A top-down cross-check matrix compares a blank wellbore card with blank owner-record cards under the exact keyword."
+  },
+  "reviewer_id": "codex_wave78_factual",
+  "review_run_id": "mrx1000-wave78-factual-20260823T072824Z",
+  "capability": "factual_citation",
+  "findings": [
+    "Complete current MDX SHA-256 is e11b1b6ab3d0bcaaa918ee18c839cac7b6c0b685d1cbdbc5ba516ed11c7c2571; all 4 declared sources passed current HTTPS access review.",
+    "Claims remain bounded to displayed permit and wellbore identifiers, query scope, GIS limitations, and PDQ reporting level, lag, update, and revision context. None is converted into a property, development, title, production, payment, or value conclusion.",
+    "The article supplies no proprietary, universal, market, or owner-specific numerical assumptions; invents no owner, instrument language, regulatory result, property match, acreage, decimal, production figure, offer, or development result; and makes no owner-specific legal, tax, title, valuation, engineering, financial, or transaction conclusion."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "four_distinct_https_sources",
+    "current_source_access_review_pass",
+    "claim_to_source_scope_present",
+    "official_source_priority_pass",
+    "unsupported_high_risk_claim_scan_pass"
+  ],
+  "sources_inspected": [
+    {
+      "label": "Railroad Commission of Texas, Drilling Permit Query Results Help (accessed 2026-08-23)",
+      "url": "https://webapps2.rrc.texas.gov/EWA/help/DPQuery_results_howto.htm",
+      "publisher": "webapps2.rrc.texas.gov",
+      "accessed_at": "2026-08-23T07:28:24Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://webapps2.rrc.texas.gov/EWA/help/DPQuery_results_howto.htm",
+        "content_type": "text/html; charset=UTF-8"
+      },
+      "source_location_or_paraphrase": "The Railroad Commission drilling-permit results help describes displayed fields including API number, permit status, lease, wellbore profile, filing purpose, amendment indicator, total depth, and links to related detail records.",
+      "claim_scope": "The article uses those descriptions only to define fields that may be copied into a neutral comparison matrix; it does not infer property inclusion, development, ownership, production, payment, or value."
+    },
+    {
+      "label": "Railroad Commission of Texas, Wellbore Query (accessed 2026-08-23)",
+      "url": "https://webapps2.rrc.texas.gov/EWA/wellboreQueryAction.do",
+      "publisher": "webapps2.rrc.texas.gov",
+      "accessed_at": "2026-08-23T07:28:24Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://webapps2.rrc.texas.gov/EWA/wellboreQueryAction.do",
+        "content_type": "text/html; charset=UTF-8"
+      },
+      "source_location_or_paraphrase": "The Railroad Commission Wellbore Query exposes search fields for oil or gas, district, lease or gas-well ID, county, field, operator, drilling-permit number, API number, and current or historical scope.",
+      "claim_scope": "The article uses those fields only to preserve record identity and query scope; it does not treat a query match as a private-title or economic conclusion."
+    },
+    {
+      "label": "Railroad Commission of Texas, Public GIS Viewer (accessed 2026-08-23)",
+      "url": "https://www.rrc.texas.gov/resource-center/research/gis-viewer/",
+      "publisher": "www.rrc.texas.gov",
+      "accessed_at": "2026-08-23T07:28:24Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.rrc.texas.gov/resource-center/research/gis-viewer/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The Railroad Commission describes the Public GIS Viewer as a map view and states that its data is informational, approximate, non-authoritative, and without legal force or effect.",
+      "claim_scope": "The article uses GIS only as a locator for a record identifier and expressly rejects map proximity as proof of tract, lease, depth, title, development, production, payment, or value."
+    },
+    {
+      "label": "Railroad Commission of Texas, Production Data Query System FAQs (accessed 2026-08-23)",
+      "url": "https://www.rrc.texas.gov/about-us/faqs/oil-gas-faq/production-data-query-system-faqs/",
+      "publisher": "www.rrc.texas.gov",
+      "accessed_at": "2026-08-23T07:28:24Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.rrc.texas.gov/about-us/faqs/oil-gas-faq/production-data-query-system-faqs/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The Railroad Commission explains lease-level oil-production reporting, monthly updates, reporting lag, and later revisions.",
+      "claim_scope": "The article uses those limits only to keep reporting level, period, retrieval date, and revision context inside a field comparison; it does not attribute production to a private interest or infer payment or value."
+    }
+  ]
+}

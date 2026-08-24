@@ -1,0 +1,107 @@
+{
+  "artifact_type": "mrx1000_two_image_factual_citation_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-23T03:11:21Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-14",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0034",
+  "slug": "mineral-rights-ai-source-trace",
+  "title": "How to Keep an AI Source Trace for a Mineral Rights Review",
+  "canonical_url": "https://mineralrightsxchange.com/blog/mineral-rights-ai-source-trace/",
+  "source_path": "src/content/posts/mineral-rights-ai-source-trace.mdx",
+  "input_body_sha256": "81b68a6c72193f71603d2b1b23f1cf943697a6cc1daefd36f9fbabded39e3695",
+  "input_frontmatter_sha256": "d5460037fb0b63916d4e7c8cae01fa23bab8925ebc99ece8efe20fb854497dbd",
+  "expected_repo_sha256": "81b68a6c72193f71603d2b1b23f1cf943697a6cc1daefd36f9fbabded39e3695",
+  "two_image_manifest_sha256": "402a01516bbe0a95c0cb283371b8da2ffb552a0831d338c616c147967b633dc6",
+  "visual_metadata": {
+    "hero_alt": "A reviewer checks source records and three blank status cards beside the exact article title.",
+    "social_alt": "A reviewer checks source records and three blank status cards beside the exact article title.",
+    "inline_alt": "A top-down provenance grid links a blank output card to source records and an unresolved marker under the exact keyword."
+  },
+  "reviewer_id": "codex_wave75_factual",
+  "review_run_id": "mrx1000-wave75-factual-20260823T031121Z",
+  "capability": "factual_citation",
+  "findings": [
+    "Complete current MDX SHA-256 is 81b68a6c72193f71603d2b1b23f1cf943697a6cc1daefd36f9fbabded39e3695; all 5 declared sources passed current HTTPS access review.",
+    "Claims remain bounded to MRX first-party source and privacy disclosures, NIST voluntary risk-management context, and the FTC evidence boundary for specified AI accuracy or efficacy claims. None is converted into a promise of accuracy, completeness, reliability, safety, certification, or reduced risk.",
+    "The article invents no owner, record, public-source result, source match, review result, buyer, offer, title fact, acreage, tax result, testimonial, success rate, or owner-specific legal, tax, title, valuation, engineering, or transaction conclusion."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "five_distinct_https_sources",
+    "current_source_access_review_pass",
+    "claim_to_source_scope_present",
+    "official_and_first_party_source_priority_pass",
+    "unsupported_high_risk_claim_scan_pass"
+  ],
+  "sources_inspected": [
+    {
+      "label": "Mineral Rights Xchange, Terms of Use and AI Disclosure (accessed 2026-08-22)",
+      "url": "https://mineralrightsxchange.com/terms/",
+      "publisher": "mineralrightsxchange.com",
+      "accessed_at": "2026-08-23T03:11:21Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://mineralrightsxchange.com/terms/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The MRX terms disclose fictional AI interfaces, define website and chat content as educational, state that sources may be incomplete, delayed, or changed, and tell users to verify material facts.",
+      "claim_scope": "The article uses the terms only for AI-interface, source-limitation, and material-fact-verification boundaries; it makes no appraisal, title, legal, tax, or professional conclusion."
+    },
+    {
+      "label": "Mineral Rights Xchange, Privacy Policy (accessed 2026-08-22)",
+      "url": "https://mineralrightsxchange.com/privacy-policy/",
+      "publisher": "mineralrightsxchange.com",
+      "accessed_at": "2026-08-23T03:11:21Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://mineralrightsxchange.com/privacy-policy/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The MRX privacy policy describes source citations, structured owner facts with source and confidence information, authorized files, AI-assisted processing, and sensitive-information limits.",
+      "claim_scope": "The article uses this first-party policy only to support stable private source references and data minimization; it does not promise confidentiality, security, correctness, or legal compliance."
+    },
+    {
+      "label": "NIST, AI Risk Management Framework 1.0 (accessed 2026-08-22)",
+      "url": "https://www.nist.gov/itl/ai-risk-management-framework",
+      "publisher": "www.nist.gov",
+      "accessed_at": "2026-08-23T03:11:21Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.nist.gov/itl/ai-risk-management-framework",
+        "content_type": "text/html; charset=UTF-8"
+      },
+      "source_location_or_paraphrase": "NIST describes AI RMF 1.0 as a voluntary framework for managing AI risks and organizes the core around Govern, Map, Measure, and Manage functions.",
+      "claim_scope": "The article uses the framework only as voluntary risk-management context and expressly does not claim that NIST requires, validates, or certifies the MRX three-label worksheet."
+    },
+    {
+      "label": "NIST, AI Risk Management Framework: Generative Artificial Intelligence Profile (accessed 2026-08-22)",
+      "url": "https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence",
+      "publisher": "www.nist.gov",
+      "accessed_at": "2026-08-23T03:11:21Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence",
+        "content_type": "text/html; charset=UTF-8"
+      },
+      "source_location_or_paraphrase": "NIST identifies NIST.AI.600-1 as a cross-sectoral Generative AI Profile and companion to AI RMF 1.0 that proposes voluntary actions for generative-AI risk management.",
+      "claim_scope": "The article uses the profile only as generative-AI risk context and does not convert it into proof of an output, owner fact, source match, or professional conclusion."
+    },
+    {
+      "label": "Federal Trade Commission, Final Workado AI Accuracy Order (accessed 2026-08-22)",
+      "url": "https://www.ftc.gov/news-events/news/press-releases/2025/08/ftc-approves-final-order-against-workado-llc-which-misrepresented-accuracy-its-artificial",
+      "publisher": "www.ftc.gov",
+      "accessed_at": "2026-08-23T03:11:21Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.ftc.gov/news-events/news/press-releases/2025/08/ftc-approves-final-order-against-workado-llc-which-misrepresented-accuracy-its-artificial",
+        "content_type": "text/html; charset=UTF-8"
+      },
+      "source_location_or_paraphrase": "The FTC final Workado order requires evidence for the AI accuracy or efficacy claims described by the agency.",
+      "claim_scope": "The article uses the order only to prohibit treating the existence of a source trace as evidence that an AI output is accurate, effective, or reliable; it makes no broader legal conclusion."
+    }
+  ]
+}

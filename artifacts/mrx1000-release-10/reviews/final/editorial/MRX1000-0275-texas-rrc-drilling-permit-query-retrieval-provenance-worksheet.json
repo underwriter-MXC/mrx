@@ -1,0 +1,66 @@
+{
+  "artifact_type": "mrx1000_wave90_two_image_editorial_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-23T22:59:51Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-14",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0275",
+  "slug": "texas-rrc-drilling-permit-query-retrieval-provenance-worksheet",
+  "title": "Texas RRC Drilling-Permit Query Retrieval Provenance Worksheet",
+  "canonical_url": "https://mineralrightsxchange.com/blog/texas-rrc-drilling-permit-query-retrieval-provenance-worksheet/",
+  "source_path": "src/content/posts/texas-rrc-drilling-permit-query-retrieval-provenance-worksheet.mdx",
+  "input_body_sha256": "7db599bed3732224865516d91304b38d17ab613c10ead32e76d35ea7cb34e128",
+  "input_frontmatter_sha256": "ef657569dab6aa0462d377364335c747f65cd480b2f7925803470182c69b26c9",
+  "expected_repo_sha256": "7db599bed3732224865516d91304b38d17ab613c10ead32e76d35ea7cb34e128",
+  "two_image_manifest_sha256": "75440838e34ac9df725b7ce00237aaf72f85734a00dbc268aea4077cd02461e5",
+  "visual_metadata": {
+    "hero_alt": "An archival Texas permit-query counter appears beside the exact article title.",
+    "social_alt": "An archival Texas permit-query counter appears beside the exact article title.",
+    "inline_alt": "A top-down query-provenance worksheet appears above the exact keyword."
+  },
+  "reviewer_id": "codex_wave90_editorial",
+  "review_run_id": "mrx1000-wave90-editorial-20260823T225951Z",
+  "capability": "editorial",
+  "findings": [
+    "Complete current MDX SHA-256 is 7db599bed3732224865516d91304b38d17ab613c10ead32e76d35ea7cb34e128; the answer-first article contains 1978 body tokens and five FAQs.",
+    "The article replaces a colliding location-and-value explainer with one administrative job: preserve a reproducible provenance trail for a single official RRC drilling-permit query through its entry route, criteria snapshot, navigation steps, result-header state, result-row fields, detail routes, access timestamp, source limits, retained reference, and bounded status.",
+    "Exact-title hero/share OCR passed and distinct in-body keyword OCR passed. The oblique warm archival permit-query counter and people-free strict-overhead cool-gray eight-field technical worksheet differ materially in camera angle, subject arrangement, composition, palette, and evidence function with matching alt metadata."
+  ],
+  "checks": [
+    {
+      "name": "complete_file_sha256_match",
+      "status": "PASS",
+      "evidence": "7db599bed3732224865516d91304b38d17ab613c10ead32e76d35ea7cb34e128"
+    },
+    {
+      "name": "answer_first_article_depth_and_five_faqs",
+      "status": "PASS",
+      "evidence": {
+        "word_count": 1978,
+        "minimum_word_count": 700,
+        "faq_count": 5
+      }
+    },
+    {
+      "name": "two_image_exact_text_identity",
+      "status": "PASS",
+      "evidence": {
+        "hero_ocr": true,
+        "inline_ocr": true,
+        "social_reuses_hero": true,
+        "hero_social_alt_match": true,
+        "inline_alt_match": true,
+        "filename_identity": true,
+        "distinct_binaries": true
+      }
+    }
+  ],
+  "sources_inspected": [
+    "src/content/posts/texas-rrc-drilling-permit-query-retrieval-provenance-worksheet.mdx",
+    "/assets/articles/hero/texas-rrc-drilling-permit-query-retrieval-provenance-worksheet.webp",
+    "/assets/articles/inline/texas-rrc-drilling-permit-query-retrieval-provenance-worksheet/texas-rrc-drilling-permit-query-retrieval.webp"
+  ]
+}

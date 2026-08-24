@@ -1,0 +1,139 @@
+{
+  "artifact_type": "mrx1000_two_image_factual_citation_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-11T22:44:38Z",
+  "decision_authority": {
+    "source": "Daryl owner directive, 2026-08-11",
+    "policy": "MRX two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0171",
+  "slug": "basis-differentials-and-mineral-rights-cash-flow",
+  "title": "Basis Differentials and Mineral Rights Cash Flow",
+  "canonical_url": "https://mineralrightsxchange.com/blog/basis-differentials-and-mineral-rights-cash-flow/",
+  "source_path": "src/content/posts/basis-differentials-and-mineral-rights-cash-flow.mdx",
+  "input_body_sha256": "5dbfcf2e9bbbae02dbdacdba4b1007798a6a2d4f03dd32188b08867404764523",
+  "input_frontmatter_sha256": "64bdc8f35a8ebba0e105aba2a1a0cd14795d1de06c32e5f5c82c8ac595470a49",
+  "expected_repo_sha256": "5dbfcf2e9bbbae02dbdacdba4b1007798a6a2d4f03dd32188b08867404764523",
+  "two_image_manifest_sha256": "802512b5dab8eae7592be5934f97a6a8989125fb8f65d3f37ee3cdeb2d35dc10",
+  "reviewer_id": "codex_two_image_factual",
+  "review_run_id": "mrx1000-two-image-retrofit-20260811T224438Z",
+  "capability": "factual_citation",
+  "findings": [
+    "Complete current MDX SHA-256 is 5dbfcf2e9bbbae02dbdacdba4b1007798a6a2d4f03dd32188b08867404764523; all 8 declared sources passed live access review.",
+    "The retrofit changes image metadata and assets, not the bounded claim-to-source relationships in the article body.",
+    "The two images make no fabricated numeric, legal, tax, valuation, testimonial, or document claims."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "minimum_two_distinct_https_sources",
+    "current_source_access_review_pass",
+    "two_image_unsupported_claim_scan_pass"
+  ],
+  "sources_inspected": [
+    {
+      "label": "Federal Energy Regulatory Commission Energy Markets Primer (2024)",
+      "url": "https://www.ferc.gov/sites/default/files/2024-01/24_Energy-Markets-Primer_0117_DIGITAL_0.pdf",
+      "publisher": "www.ferc.gov",
+      "accessed_at": "2026-08-11T22:44:38Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.ferc.gov/sites/default/files/2024-01/24_Energy-Markets-Primer_0117_DIGITAL_0.pdf",
+        "content_type": "application/pdf"
+      },
+      "source_location_or_paraphrase": "The article cites Federal Energy Regulatory Commission Energy Markets Primer (2024) only for the bounded context attributed in its body and source notes.",
+      "claim_scope": "Owner-specific legal, tax, title, accounting, brokerage, engineering, appraisal, eligibility, value, and transaction conclusions remain outside this source use."
+    },
+    {
+      "label": "U.S. Energy Information Administration natural gas prices (accessed 2026-08-11)",
+      "url": "https://www.eia.gov/energyexplained/natural-gas/prices.php",
+      "publisher": "www.eia.gov",
+      "accessed_at": "2026-08-11T22:44:38Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.eia.gov/energyexplained/natural-gas/prices.php",
+        "content_type": "text/html; charset=UTF-8"
+      },
+      "source_location_or_paraphrase": "The article cites U.S. Energy Information Administration natural gas prices (accessed 2026-08-11) only for the bounded context attributed in its body and source notes.",
+      "claim_scope": "Owner-specific legal, tax, title, accounting, brokerage, engineering, appraisal, eligibility, value, and transaction conclusions remain outside this source use."
+    },
+    {
+      "label": "U.S. Energy Information Administration factors affecting natural gas prices (accessed 2026-08-11)",
+      "url": "https://www.eia.gov/energyexplained/natural-gas/factors-affecting-natural-gas-prices.php",
+      "publisher": "www.eia.gov",
+      "accessed_at": "2026-08-11T22:44:38Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.eia.gov/energyexplained/natural-gas/factors-affecting-natural-gas-prices.php",
+        "content_type": "text/html; charset=UTF-8"
+      },
+      "source_location_or_paraphrase": "The article cites U.S. Energy Information Administration factors affecting natural gas prices (accessed 2026-08-11) only for the bounded context attributed in its body and source notes.",
+      "claim_scope": "Owner-specific legal, tax, title, accounting, brokerage, engineering, appraisal, eligibility, value, and transaction conclusions remain outside this source use."
+    },
+    {
+      "label": "U.S. Energy Information Administration regional natural gas pricing hubs (2024)",
+      "url": "https://www.eia.gov/todayinenergy/detail.php?id=63504",
+      "publisher": "www.eia.gov",
+      "accessed_at": "2026-08-11T22:44:38Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.eia.gov/todayinenergy/detail.php?id=63504",
+        "content_type": "text/html; charset=UTF-8"
+      },
+      "source_location_or_paraphrase": "The article cites U.S. Energy Information Administration regional natural gas pricing hubs (2024) only for the bounded context attributed in its body and source notes.",
+      "claim_scope": "Owner-specific legal, tax, title, accounting, brokerage, engineering, appraisal, eligibility, value, and transaction conclusions remain outside this source use."
+    },
+    {
+      "label": "U.S. Energy Information Administration Waha basis and pipeline capacity (2022)",
+      "url": "https://www.eia.gov/todayinenergy/detail.php?id=53919",
+      "publisher": "www.eia.gov",
+      "accessed_at": "2026-08-11T22:44:38Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.eia.gov/todayinenergy/detail.php?id=53919",
+        "content_type": "text/html; charset=UTF-8"
+      },
+      "source_location_or_paraphrase": "The article cites U.S. Energy Information Administration Waha basis and pipeline capacity (2022) only for the bounded context attributed in its body and source notes.",
+      "claim_scope": "Owner-specific legal, tax, title, accounting, brokerage, engineering, appraisal, eligibility, value, and transaction conclusions remain outside this source use."
+    },
+    {
+      "label": "Texas Natural Resources Code Chapter 91, including Section 91.502 (accessed 2026-08-11)",
+      "url": "https://statutes.capitol.texas.gov/Docs/NR/pdf/NR.91.pdf",
+      "publisher": "statutes.capitol.texas.gov",
+      "accessed_at": "2026-08-11T22:44:38Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://statutes.capitol.texas.gov/Docs/NR/pdf/NR.91.pdf",
+        "content_type": "text/html"
+      },
+      "source_location_or_paraphrase": "The article cites Texas Natural Resources Code Chapter 91, including Section 91.502 (accessed 2026-08-11) only for the bounded context attributed in its body and source notes.",
+      "claim_scope": "Owner-specific legal, tax, title, accounting, brokerage, engineering, appraisal, eligibility, value, and transaction conclusions remain outside this source use."
+    },
+    {
+      "label": "Railroad Commission of Texas production data (accessed 2026-08-11)",
+      "url": "https://www.rrc.texas.gov/oil-and-gas/research-and-statistics/production-data/",
+      "publisher": "www.rrc.texas.gov",
+      "accessed_at": "2026-08-11T22:44:38Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.rrc.texas.gov/oil-and-gas/research-and-statistics/production-data/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The article cites Railroad Commission of Texas production data (accessed 2026-08-11) only for the bounded context attributed in its body and source notes.",
+      "claim_scope": "Owner-specific legal, tax, title, accounting, brokerage, engineering, appraisal, eligibility, value, and transaction conclusions remain outside this source use."
+    },
+    {
+      "label": "Railroad Commission of Texas production-data query FAQ (accessed 2026-08-11)",
+      "url": "https://www.rrc.texas.gov/about-us/faqs/oil-gas-faq/production-data-query-system-faqs/",
+      "publisher": "www.rrc.texas.gov",
+      "accessed_at": "2026-08-11T22:44:38Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.rrc.texas.gov/about-us/faqs/oil-gas-faq/production-data-query-system-faqs/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The article cites Railroad Commission of Texas production-data query FAQ (accessed 2026-08-11) only for the bounded context attributed in its body and source notes.",
+      "claim_scope": "Owner-specific legal, tax, title, accounting, brokerage, engineering, appraisal, eligibility, value, and transaction conclusions remain outside this source use."
+    }
+  ]
+}

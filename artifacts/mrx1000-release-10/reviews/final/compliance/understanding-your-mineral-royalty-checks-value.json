@@ -1,0 +1,43 @@
+{
+  "artifact_type": "mrx1000_two_image_compliance_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-11T22:44:38Z",
+  "decision_authority": {
+    "source": "Daryl owner directive, 2026-08-11",
+    "policy": "MRX two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0529",
+  "slug": "understanding-your-mineral-royalty-checks-value",
+  "title": "Understanding Your Mineral Royalty Checks Value",
+  "canonical_url": "https://mineralrightsxchange.com/blog/understanding-your-mineral-royalty-checks-value/",
+  "source_path": "src/content/posts/understanding-your-mineral-royalty-checks-value.mdx",
+  "input_body_sha256": "2f926e4790da7e70ff060779e83972c5b6408b7bfa4964b4ce348677e9adf1a1",
+  "input_frontmatter_sha256": "29e6e958f4a2016b7c50069607c3fc6172e7616106f8c54a20263a2672896434",
+  "expected_repo_sha256": "2f926e4790da7e70ff060779e83972c5b6408b7bfa4964b4ce348677e9adf1a1",
+  "two_image_manifest_sha256": "802512b5dab8eae7592be5934f97a6a8989125fb8f65d3f37ee3cdeb2d35dc10",
+  "reviewer_id": "codex_two_image_compliance",
+  "review_run_id": "mrx1000-two-image-retrofit-20260811T224438Z",
+  "capability": "compliance",
+  "expected_hero_sha256": "2edfd34833f159e6e6b365d79697470918a821510a5582160ba1528239f7bf58",
+  "expected_inline_sha256": "0f32e3bf83644ebe7d48ca3ec8ab29638d5639b3ca1542c94ef072ec1cb990ad",
+  "findings": [
+    "Complete current MDX SHA-256 is 2f926e4790da7e70ff060779e83972c5b6408b7bfa4964b4ce348677e9adf1a1; hero/share and in-body image hashes are separately locked.",
+    "Image text is limited to the exact article title and declared page keyword; it adds no guarantee, price, deadline, legal conclusion, or tax conclusion.",
+    "The article retains its educational and professional-boundary language and current disclosure treatment."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "hero_share_sha256_identity",
+    "inline_image_distinct_sha256",
+    "exact_text_ocr_pass",
+    "filename_text_identity_pass",
+    "no_unsupported_visual_claims",
+    "educational_and_professional_boundaries_preserved"
+  ],
+  "sources_inspected": [
+    "src/content/posts/understanding-your-mineral-royalty-checks-value.mdx",
+    "/assets/articles/hero/understanding-your-mineral-royalty-checks-value.webp",
+    "/assets/articles/inline/understanding-your-mineral-royalty-checks-value/mineral-royalty-checks-value.webp"
+  ]
+}

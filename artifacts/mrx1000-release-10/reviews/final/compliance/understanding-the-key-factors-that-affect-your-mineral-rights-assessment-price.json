@@ -1,0 +1,43 @@
+{
+  "artifact_type": "mrx1000_two_image_compliance_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-12T23:43:49Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-12",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0130",
+  "slug": "understanding-the-key-factors-that-affect-your-mineral-rights-assessment-price",
+  "title": "Understanding the Key Factors That Affect Your Mineral Rights Assessment Price",
+  "canonical_url": "https://mineralrightsxchange.com/blog/understanding-the-key-factors-that-affect-your-mineral-rights-assessment-price/",
+  "source_path": "src/content/posts/understanding-the-key-factors-that-affect-your-mineral-rights-assessment-price.mdx",
+  "input_body_sha256": "64ee61b373039ec33b1620826ed50a14c07b1a524b103876075cbdd9690328e1",
+  "input_frontmatter_sha256": "58a4122201d9f29d32851dbb3acd4012766532d93a6ed08d3e2b80446d231200",
+  "expected_repo_sha256": "64ee61b373039ec33b1620826ed50a14c07b1a524b103876075cbdd9690328e1",
+  "two_image_manifest_sha256": "3d25ad0be9467c9950ebca46ecea88f5a1a6d11bbaa788ce9c5597ed1d62326e",
+  "reviewer_id": "codex_wave50_compliance",
+  "review_run_id": "mrx1000-wave50-compliance-20260812T234349Z",
+  "capability": "compliance",
+  "expected_hero_sha256": "f1e87cc3df43029fb44988874db9eceb77880df4cd4274845d37b9ebeeda83cd",
+  "expected_inline_sha256": "27f475a755960b9cc65041e40b05b7abcec579cf513dc127eb0b30fb9bc98c36",
+  "findings": [
+    "Complete current MDX SHA-256 is 64ee61b373039ec33b1620826ed50a14c07b1a524b103876075cbdd9690328e1; hero/share and inline image hashes are separately locked.",
+    "The article states educational and professional boundaries, separates the gross conditional range, evidence support, transaction proposal, and expected owner net, labels source and input status, prohibits unexplained title haircuts, and routes unresolved title, legal, tax, accounting, appraisal, land, engineering, geology, reserves, commodity, and transaction questions without making owner-specific conclusions.",
+    "Image text is limited to the exact article title and exact canonical keyword and adds no owner data, buyer endorsement, property identifier, price, acreage, decimal, formula, reserves claim, forecast, success claim, appraisal result, tax outcome, or transaction conclusion."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "hero_share_sha256_identity",
+    "inline_image_distinct_sha256",
+    "exact_text_ocr_pass",
+    "filename_text_identity_pass",
+    "educational_and_professional_boundaries_preserved",
+    "no_unsupported_visual_or_valuation_claims"
+  ],
+  "sources_inspected": [
+    "src/content/posts/understanding-the-key-factors-that-affect-your-mineral-rights-assessment-price.mdx",
+    "/assets/articles/hero/understanding-the-key-factors-that-affect-your-mineral-rights-assessment-price.webp",
+    "/assets/articles/inline/understanding-the-key-factors-that-affect-your-mineral-rights-assessment-price/what-factors-influence-the-price-you-suggest-for-my-mineral-rights-assessment.webp"
+  ]
+}

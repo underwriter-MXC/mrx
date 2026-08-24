@@ -1,0 +1,43 @@
+{
+  "artifact_type": "mrx1000_two_image_compliance_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-12T18:17:40Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-12",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0121",
+  "slug": "understanding-market-demand-how-it-influences-the-value-of-your-mineral-rights",
+  "title": "Understanding Market Demand: How It Influences the Value of Your Mineral Rights",
+  "canonical_url": "https://mineralrightsxchange.com/blog/understanding-market-demand-how-it-influences-the-value-of-your-mineral-rights/",
+  "source_path": "src/content/posts/understanding-market-demand-how-it-influences-the-value-of-your-mineral-rights.mdx",
+  "input_body_sha256": "995da27e6ee414a1348f5d2679d49eff5fd008e2853ef4f1b15c96c849c59e55",
+  "input_frontmatter_sha256": "5346486b6673d53ce222f18a9b9a89796a0df544c91e3f80cbca4bb2b3dea2cc",
+  "expected_repo_sha256": "995da27e6ee414a1348f5d2679d49eff5fd008e2853ef4f1b15c96c849c59e55",
+  "two_image_manifest_sha256": "0b904a72d9f07514eb93d8dd5c43a1c71a5ad8d8e6795025511c23786420f062",
+  "reviewer_id": "codex_wave41_compliance",
+  "review_run_id": "mrx1000-wave41-compliance-20260812T181740Z",
+  "capability": "compliance",
+  "expected_hero_sha256": "f73508ffe2cb82e667502362ce5fb51e238931066ccc66a028623e54e1cc646e",
+  "expected_inline_sha256": "81eba66147846b857195b2039c2881b88a34116656cb63fee0119548219a51ec",
+  "findings": [
+    "Complete current MDX SHA-256 is 995da27e6ee414a1348f5d2679d49eff5fd008e2853ef4f1b15c96c849c59e55; hero/share and inline image hashes are separately locked.",
+    "The article separates commodity-market demand, tract-connected development activity, and acquisition demand rather than making an owner-specific market-value conclusion; discloses MRX’s possible economic interest; dates and scopes each signal; separates public context from property evidence; normalizes buyer terms; separates asset range from transaction scope; and routes professional questions without making owner-specific conclusions.",
+    "Image text is limited to the exact article title and canonical question after incidental generated screen, chart, coin, seal, and folder marks were neutralized; the images add no owner data, ownership conclusion, production value, commodity price, acreage, decimal, formula, offer, transaction term, appraisal result, regulatory endorsement, tax outcome, or private information."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "hero_share_sha256_identity",
+    "inline_image_distinct_sha256",
+    "exact_text_ocr_pass",
+    "filename_text_identity_pass",
+    "educational_and_professional_boundaries_preserved",
+    "no_unsupported_visual_or_valuation_claims"
+  ],
+  "sources_inspected": [
+    "src/content/posts/understanding-market-demand-how-it-influences-the-value-of-your-mineral-rights.mdx",
+    "/assets/articles/hero/understanding-market-demand-how-it-influences-the-value-of-your-mineral-rights.webp",
+    "/assets/articles/inline/understanding-market-demand-how-it-influences-the-value-of-your-mineral-rights/how-does-the-market-demand-affect-the-price-i-can-expect-for-my-rights.webp"
+  ]
+}

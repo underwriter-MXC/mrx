@@ -1,0 +1,141 @@
+{
+  "artifact_type": "mrx1000_two_image_factual_citation_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-12T09:40:44Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-11",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0173",
+  "slug": "converting-monthly-royalty-history-into-a-valuation-baseline",
+  "title": "Converting Monthly Royalty History Into a Valuation Baseline",
+  "canonical_url": "https://mineralrightsxchange.com/blog/converting-monthly-royalty-history-into-a-valuation-baseline/",
+  "source_path": "src/content/posts/converting-monthly-royalty-history-into-a-valuation-baseline.mdx",
+  "input_body_sha256": "4cc74029733ace842907d69e8ab006b47516c4ce6eec67189cf058ad04abcb30",
+  "input_frontmatter_sha256": "41a9959f1489ce701df4e9e8739d3c1fe2a4d96252149fb78e73d9a0473a0bf5",
+  "expected_repo_sha256": "4cc74029733ace842907d69e8ab006b47516c4ce6eec67189cf058ad04abcb30",
+  "two_image_manifest_sha256": "a785fd32cad6858ef6c41e25351e84462a350f34df8bc37abc54015bf05afeca",
+  "reviewer_id": "codex_wave15_factual",
+  "review_run_id": "mrx1000-wave15-factual-20260812T094044Z",
+  "capability": "factual_citation",
+  "findings": [
+    "Complete current MDX SHA-256 is 4cc74029733ace842907d69e8ab006b47516c4ce6eec67189cf058ad04abcb30; all 8 declared official sources passed live access review.",
+    "Statement fields remain bounded to Texas statute; tax-appraisal, tax-administration, public-production, and benchmark-price claims remain bounded to their official sources.",
+    "The article uses no fabricated statement figures, production history, price, decimal, tax result, title fact, testimonial, underpayment conclusion, or owner-specific value conclusion."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "minimum_three_distinct_https_sources",
+    "current_source_access_review_pass",
+    "claim_to_source_scope_present",
+    "official_primary_source_priority_pass",
+    "unsupported_high_risk_claim_scan_pass"
+  ],
+  "sources_inspected": [
+    {
+      "label": "Texas Natural Resources Code Chapter 91, including Sections 91.402 and 91.502 (accessed 2026-08-11)",
+      "url": "https://statutes.capitol.texas.gov/Docs/NR/pdf/NR.91.pdf",
+      "publisher": "statutes.capitol.texas.gov",
+      "accessed_at": "2026-08-12T09:40:44Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://statutes.capitol.texas.gov/Docs/NR/pdf/NR.91.pdf",
+        "content_type": "text/html"
+      },
+      "source_location_or_paraphrase": "Texas Natural Resources Code Sections 91.402 and 91.502 address payment timing and specify statement information including property identification, sales period, volume, price, taxes, deductions, net value, and owner decimal.",
+      "claim_scope": "The statute supports the statement-field and payment-context discussion; it does not establish title, an owner-specific amount due, or a valuation conclusion."
+    },
+    {
+      "label": "Railroad Commission of Texas production data (accessed 2026-08-11)",
+      "url": "https://www.rrc.texas.gov/oil-and-gas/research-and-statistics/production-data/",
+      "publisher": "www.rrc.texas.gov",
+      "accessed_at": "2026-08-12T09:40:44Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.rrc.texas.gov/oil-and-gas/research-and-statistics/production-data/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The Railroad Commission describes operator-reported Texas oil and gas production resources, monthly ledgers, and production query tools.",
+      "claim_scope": "The source can support a dated production-context check but not title, owner decimal, private pricing, deductions, or a particular owner payment."
+    },
+    {
+      "label": "Railroad Commission of Texas downloadable oil and gas data sets (accessed 2026-08-11)",
+      "url": "https://www.rrc.texas.gov/resource-center/research/data-sets-available-for-download/",
+      "publisher": "www.rrc.texas.gov",
+      "accessed_at": "2026-08-12T09:40:44Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.rrc.texas.gov/resource-center/research/data-sets-available-for-download/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The Railroad Commission lists downloadable well, field, permit, and production data resources and their data context.",
+      "claim_scope": "The source provides public research inputs and does not prove private payor accounting, title, future production, or owner-specific value."
+    },
+    {
+      "label": "Texas Comptroller Manual for Discounting Oil and Gas Income (accessed 2026-08-11)",
+      "url": "https://comptroller.texas.gov/taxes/property-tax/docs/96-1703.pdf",
+      "publisher": "comptroller.texas.gov",
+      "accessed_at": "2026-08-12T09:40:44Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://comptroller.texas.gov/taxes/property-tax/docs/96-1703.pdf",
+        "content_type": "application/octet-stream"
+      },
+      "source_location_or_paraphrase": "The Texas Comptroller manual documents an income-discounting framework for Texas oil and gas property-tax appraisal, including production, price, expenses, taxes, decline, reserves, discounting, and risk.",
+      "claim_scope": "The article preserves that property-tax context and does not present the manual as a private-sale pricing rule or owner-specific valuation."
+    },
+    {
+      "label": "Texas Comptroller crude oil production tax (accessed 2026-08-11)",
+      "url": "https://comptroller.texas.gov/taxes/crude-oil/",
+      "publisher": "comptroller.texas.gov",
+      "accessed_at": "2026-08-12T09:40:44Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://comptroller.texas.gov/taxes/crude-oil/",
+        "content_type": "text/html; charset=UTF-8"
+      },
+      "source_location_or_paraphrase": "The Texas Comptroller explains current crude-oil production-tax administration, rates, fees, exemptions, and reporting context.",
+      "claim_scope": "The source supports preserving taxes as a separate worksheet field and does not decide an individual owner statement or tax position."
+    },
+    {
+      "label": "Texas Comptroller natural gas production tax (accessed 2026-08-11)",
+      "url": "https://comptroller.texas.gov/taxes/natural-gas/",
+      "publisher": "comptroller.texas.gov",
+      "accessed_at": "2026-08-12T09:40:44Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://comptroller.texas.gov/taxes/natural-gas/",
+        "content_type": "text/html; charset=UTF-8"
+      },
+      "source_location_or_paraphrase": "The Texas Comptroller explains current natural-gas production-tax administration, rates, fees, exemptions, and reporting context.",
+      "claim_scope": "The source supports tax context and does not establish how every payor must present an owner statement or how an owner should report taxes."
+    },
+    {
+      "label": "U.S. Energy Information Administration petroleum and other liquids data (accessed 2026-08-11)",
+      "url": "https://www.eia.gov/petroleum/data.php",
+      "publisher": "www.eia.gov",
+      "accessed_at": "2026-08-12T09:40:44Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.eia.gov/petroleum/data.php",
+        "content_type": "text/html; charset=UTF-8"
+      },
+      "source_location_or_paraphrase": "EIA publishes dated petroleum production and price data, including historical price series and market summaries.",
+      "claim_scope": "The source provides broad market context and does not prove a property-level realized price, deduction, or future price."
+    },
+    {
+      "label": "U.S. Energy Information Administration natural gas data (accessed 2026-08-11)",
+      "url": "https://www.eia.gov/naturalgas/data.php",
+      "publisher": "www.eia.gov",
+      "accessed_at": "2026-08-12T09:40:44Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.eia.gov/naturalgas/data.php",
+        "content_type": "text/html; charset=UTF-8"
+      },
+      "source_location_or_paraphrase": "EIA publishes dated natural-gas price, production, reserves, and drilling data for market context.",
+      "claim_scope": "The source does not establish a property-level realized price, payor accounting result, or future cash flow."
+    }
+  ]
+}

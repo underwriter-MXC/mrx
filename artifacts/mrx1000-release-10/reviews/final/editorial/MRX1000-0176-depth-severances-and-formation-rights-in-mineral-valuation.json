@@ -1,0 +1,59 @@
+{
+  "artifact_type": "mrx1000_two_image_editorial_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-12T06:50:25Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-11",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0176",
+  "slug": "depth-severances-and-formation-rights-in-mineral-valuation",
+  "title": "Depth Severances and Formation Rights in Mineral Valuation",
+  "canonical_url": "https://mineralrightsxchange.com/blog/depth-severances-and-formation-rights-in-mineral-valuation/",
+  "source_path": "src/content/posts/depth-severances-and-formation-rights-in-mineral-valuation.mdx",
+  "input_body_sha256": "61ce051f7f3f5e475dd9a2d1f39697db83d28fd99f23b1636a9963581464d807",
+  "input_frontmatter_sha256": "f798f3a0740f0d0490d4ad2a2780a43a0d85beb754d1b2d354997c2257002aa9",
+  "expected_repo_sha256": "61ce051f7f3f5e475dd9a2d1f39697db83d28fd99f23b1636a9963581464d807",
+  "two_image_manifest_sha256": "15822b0988960d4122065bc7dfeefd42d59228453a05db98bba98a6a4cc82ff1",
+  "reviewer_id": "codex_wave18_editorial",
+  "review_run_id": "mrx1000-wave18-editorial-20260812T065025Z",
+  "capability": "editorial",
+  "findings": [
+    "Complete current MDX SHA-256 is 61ce051f7f3f5e475dd9a2d1f39697db83d28fd99f23b1636a9963581464d807; the answer-first article contains 2947 body tokens and five FAQs.",
+    "The document-first framework separates title instruments, technical correlation, interval lease status, production attribution, development evidence, economics, and curative risk without issuing a title, legal, engineering, or owner-specific value conclusion.",
+    "Exact-title hero/share OCR passed for “Depth Severances and Formation Rights in Mineral Valuation”; distinct in-body OCR passed for “depth severance formation rights valuation”."
+  ],
+  "checks": [
+    {
+      "name": "complete_file_sha256_match",
+      "status": "PASS",
+      "evidence": "61ce051f7f3f5e475dd9a2d1f39697db83d28fd99f23b1636a9963581464d807"
+    },
+    {
+      "name": "answer_first_depth_and_five_faqs",
+      "status": "PASS",
+      "evidence": {
+        "word_count": 2947,
+        "minimum_word_count": 700,
+        "faq_count": 5
+      }
+    },
+    {
+      "name": "two_image_exact_text_identity",
+      "status": "PASS",
+      "evidence": {
+        "hero_ocr": true,
+        "inline_ocr": true,
+        "social_reuses_hero": true,
+        "filename_identity": true,
+        "distinct_binaries": true
+      }
+    }
+  ],
+  "sources_inspected": [
+    "src/content/posts/depth-severances-and-formation-rights-in-mineral-valuation.mdx",
+    "/assets/articles/hero/depth-severances-and-formation-rights-in-mineral-valuation.webp",
+    "/assets/articles/inline/depth-severances-and-formation-rights-in-mineral-valuation/depth-severance-formation-rights-valuation.webp"
+  ]
+}

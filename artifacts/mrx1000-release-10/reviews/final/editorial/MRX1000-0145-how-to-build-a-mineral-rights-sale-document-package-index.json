@@ -1,0 +1,66 @@
+{
+  "artifact_type": "mrx1000_two_image_editorial_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-15T06:01:08Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-14",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0145",
+  "slug": "how-to-build-a-mineral-rights-sale-document-package-index",
+  "title": "How to Build a Mineral Rights Sale Document Package Index",
+  "canonical_url": "https://mineralrightsxchange.com/blog/how-to-build-a-mineral-rights-sale-document-package-index/",
+  "source_path": "src/content/posts/how-to-build-a-mineral-rights-sale-document-package-index.mdx",
+  "input_body_sha256": "7897d79c0254549b845aec628079e38e09dee6e96c0723fe32201ca9553bba33",
+  "input_frontmatter_sha256": "af77cd85df3a6ed9f30dbca2e02ce0760ec520ff13fe74106ae2c4b596cf1452",
+  "expected_repo_sha256": "7897d79c0254549b845aec628079e38e09dee6e96c0723fe32201ca9553bba33",
+  "two_image_manifest_sha256": "3f195b924b26a4ec7804db2d684483d6bc1dba4b74c1b39ba4b625d689a15433",
+  "visual_metadata": {
+    "hero_alt": "An open document binder and page stack appear beside “How to Build a Mineral Rights Sale Document Package Index”.",
+    "social_alt": "An open document binder and page stack appear beside “How to Build a Mineral Rights Sale Document Package Index”.",
+    "inline_alt": "Organized document folders and tabs appear above “Mineral Rights Sale Package Index”."
+  },
+  "reviewer_id": "codex_wave65_editorial",
+  "review_run_id": "mrx1000-wave65-editorial-20260815T060108Z",
+  "capability": "editorial",
+  "findings": [
+    "Complete current MDX SHA-256 is 7897d79c0254549b845aec628079e38e09dee6e96c0723fe32201ca9553bba33; the answer-first article contains 2295 body tokens and five FAQs.",
+    "The article owns the narrow page-level package-index job for owners assembling a possible sale document package. It defines source-file intake, page-count reconciliation, cross-reference tracing, signature-copy identity, replacement chains, and privacy limits while stopping before process narration, decision tracking, contract interpretation, value, tax, payment, closing, and transaction selection.",
+    "Exact-title hero/share OCR passed for “How to Build a Mineral Rights Sale Document Package Index”; distinct in-body OCR passed for “Mineral Rights Sale Package Index”; composition-accurate hero/social and inline alt metadata matched the final visual audit."
+  ],
+  "checks": [
+    {
+      "name": "complete_file_sha256_match",
+      "status": "PASS",
+      "evidence": "7897d79c0254549b845aec628079e38e09dee6e96c0723fe32201ca9553bba33"
+    },
+    {
+      "name": "answer_first_article_depth_and_five_faqs",
+      "status": "PASS",
+      "evidence": {
+        "word_count": 2295,
+        "minimum_word_count": 700,
+        "faq_count": 5
+      }
+    },
+    {
+      "name": "two_image_exact_text_identity",
+      "status": "PASS",
+      "evidence": {
+        "hero_ocr": true,
+        "inline_ocr": true,
+        "social_reuses_hero": true,
+        "hero_social_alt_match": true,
+        "inline_alt_match": true,
+        "filename_identity": true,
+        "distinct_binaries": true
+      }
+    }
+  ],
+  "sources_inspected": [
+    "src/content/posts/how-to-build-a-mineral-rights-sale-document-package-index.mdx",
+    "/assets/articles/hero/how-to-build-a-mineral-rights-sale-document-package-index.webp",
+    "/assets/articles/inline/how-to-build-a-mineral-rights-sale-document-package-index/mineral-rights-sale-package-index.webp"
+  ]
+}

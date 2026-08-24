@@ -1,0 +1,128 @@
+{
+  "artifact_type": "mrx1000_two_image_factual_citation_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-12T06:14:22Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-11",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0175",
+  "slug": "decline-curves-and-future-royalty-cash-flow",
+  "title": "Decline Curves and Future Royalty Cash Flow",
+  "canonical_url": "https://mineralrightsxchange.com/blog/decline-curves-and-future-royalty-cash-flow/",
+  "source_path": "src/content/posts/decline-curves-and-future-royalty-cash-flow.mdx",
+  "input_body_sha256": "c3b0e15b5f2d1cc1efe2cee13496b76870e05b287ccfd6e9ed7d2ea0fa646fb8",
+  "input_frontmatter_sha256": "4b464ef62bdd333d3657ced5091ecf4688b127806b740c503e9deb81f3c2331b",
+  "expected_repo_sha256": "c3b0e15b5f2d1cc1efe2cee13496b76870e05b287ccfd6e9ed7d2ea0fa646fb8",
+  "two_image_manifest_sha256": "ec99939c03bd29668af563f3b4bde7d19c8be5083eb6b7c79f35a86c64d13cd6",
+  "reviewer_id": "codex_wave17_factual",
+  "review_run_id": "mrx1000-wave17-factual-20260812T061422Z",
+  "capability": "factual_citation",
+  "findings": [
+    "Complete current MDX SHA-256 is c3b0e15b5f2d1cc1efe2cee13496b76870e05b287ccfd6e9ed7d2ea0fa646fb8; all 7 declared official sources passed live access review.",
+    "Production-data, curve-methodology, regional-metric, property-tax income-analysis, reserve-classification, and price-uncertainty claims remain bounded to their official government sources.",
+    "The article uses no fabricated owner records, well results, production volumes, decline rates, prices, reserves, dollar amounts, percentages, deductions, tax outcomes, testimonials, or owner-specific forecasts or value conclusions."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "minimum_three_distinct_https_sources",
+    "current_source_access_review_pass",
+    "claim_to_source_scope_present",
+    "official_primary_source_priority_pass",
+    "unsupported_high_risk_claim_scan_pass"
+  ],
+  "sources_inspected": [
+    {
+      "label": "U.S. Energy Information Administration, Production Decline Curve Analysis (accessed 2026-08-11)",
+      "url": "https://www.eia.gov/analysis/drilling/curve_analysis/2020/",
+      "publisher": "www.eia.gov",
+      "accessed_at": "2026-08-12T06:14:22Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.eia.gov/analysis/drilling/curve_analysis/2020/",
+        "content_type": "text/html; charset=UTF-8"
+      },
+      "source_location_or_paraphrase": "EIA documents a specific production-decline routine that estimates hyperbolic parameters from observed well-level data, treats the first calendar month separately, normalizes later months, transitions to exponential decline at a defined threshold, and updates play assumptions as data change.",
+      "claim_scope": "The article uses this as a transparent public methodology example and does not claim that EIA validated any owner, well, curve parameters, reserve quantity, forecast horizon, or transaction value."
+    },
+    {
+      "label": "Railroad Commission of Texas Production Data Query (accessed 2026-08-11)",
+      "url": "https://webapps2.rrc.texas.gov/EWA/ewaPdqMain.do",
+      "publisher": "webapps2.rrc.texas.gov",
+      "accessed_at": "2026-08-12T06:14:22Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://webapps2.rrc.texas.gov/EWA/ewaPdqMain.do",
+        "content_type": "text/html; charset=UTF-8"
+      },
+      "source_location_or_paraphrase": "The Railroad Commission Production Data Query provides general and specific query paths and states the processing date and loaded production-data period.",
+      "claim_scope": "The source supports production-history retrieval and identity checks; the article does not treat Commission data as proof of title, decimal interest, payment terms, reserves, or owner cash flow."
+    },
+    {
+      "label": "Railroad Commission of Texas data sets available for download (accessed 2026-08-11)",
+      "url": "https://www.rrc.texas.gov/resource-center/research/data-sets-available-for-download/",
+      "publisher": "www.rrc.texas.gov",
+      "accessed_at": "2026-08-12T06:14:22Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.rrc.texas.gov/resource-center/research/data-sets-available-for-download/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The Railroad Commission describes lease-level, well-level, historical, statewide, master, disposition, and other production-related data sets, including their coverage and update cadence.",
+      "claim_scope": "The article uses these descriptions to preserve reporting-level and correction boundaries and does not equate a regulatory series with one owner’s statement allocation."
+    },
+    {
+      "label": "U.S. Energy Information Administration Drilling Productivity Report FAQ (accessed 2026-08-11)",
+      "url": "https://www.eia.gov/petroleum/drilling/faqs.php",
+      "publisher": "www.eia.gov",
+      "accessed_at": "2026-08-12T06:14:22Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.eia.gov/petroleum/drilling/faqs.php",
+        "content_type": "text/html; charset=UTF-8"
+      },
+      "source_location_or_paraphrase": "EIA explains that its regional legacy-production change separates new-well production from the changing production of an existing-well group and does not directly translate into a traditional individual-well decline curve.",
+      "claim_scope": "The article preserves the regional-versus-individual boundary and does not substitute regional averages for a particular lease, well, owner, reserve estimate, or transaction forecast."
+    },
+    {
+      "label": "Texas Comptroller Manual for Discounting Oil and Gas Income (accessed 2026-08-11)",
+      "url": "https://comptroller.texas.gov/taxes/property-tax/docs/96-1703.pdf",
+      "publisher": "comptroller.texas.gov",
+      "accessed_at": "2026-08-12T06:14:22Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://comptroller.texas.gov/taxes/property-tax/docs/96-1703.pdf",
+        "content_type": "application/octet-stream"
+      },
+      "source_location_or_paraphrase": "The Texas Comptroller manual documents an income-discounting framework for Texas oil and gas property-tax appraisal, including amount, timing, discounting, and risk inputs.",
+      "claim_scope": "The article preserves the property-tax context and does not present the manual as a private-sale formula, reserve report, discount-rate prescription, or owner-specific valuation."
+    },
+    {
+      "label": "SEC Division of Corporation Finance oil and gas rules interpretations (accessed 2026-08-11)",
+      "url": "https://www.sec.gov/rules-regulations/staff-guidance/corporation-finance-interpretations/oil-gas-rules",
+      "publisher": "www.sec.gov",
+      "accessed_at": "2026-08-12T06:14:22Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.sec.gov/rules-regulations/staff-guidance/corporation-finance-interpretations/oil-gas-rules",
+        "content_type": "text/html; charset=UTF-8"
+      },
+      "source_location_or_paraphrase": "SEC staff interpretations preserve different certainty and evidence boundaries for proved, probable, and possible reserves and discuss documentation of reliable technology.",
+      "claim_scope": "The article uses the guidance only to explain why reserve terminology and categories should not be attached casually to an owner worksheet; it does not classify any owner interest or supply a private forecast."
+    },
+    {
+      "label": "U.S. Energy Information Administration, Energy Price Volatility and Forecast Uncertainty (accessed 2026-08-11)",
+      "url": "https://www.eia.gov/analysis/pdfpages/2009_sp_05index.php",
+      "publisher": "www.eia.gov",
+      "accessed_at": "2026-08-12T06:14:22Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.eia.gov/analysis/pdfpages/2009_sp_05index.php",
+        "content_type": "text/html; charset=UTF-8"
+      },
+      "source_location_or_paraphrase": "EIA describes energy-price volatility, market-implied price bands, and the uncertainty surrounding base-case energy forecasts.",
+      "claim_scope": "The article uses the source to support separate price scenarios and does not adopt a current price, promise a price path, or convert an EIA outlook into an owner-specific value."
+    }
+  ]
+}

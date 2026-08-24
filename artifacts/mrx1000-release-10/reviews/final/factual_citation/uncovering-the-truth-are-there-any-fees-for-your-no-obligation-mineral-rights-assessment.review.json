@@ -1,0 +1,115 @@
+{
+  "artifact_type": "mrx1000_two_image_factual_citation_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-12T17:26:52Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-12",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0119",
+  "slug": "uncovering-the-truth-are-there-any-fees-for-your-no-obligation-mineral-rights-assessment",
+  "title": "Uncovering the Truth: Are There Any Fees for Your No-Obligation Mineral Rights Assessment?",
+  "canonical_url": "https://mineralrightsxchange.com/blog/uncovering-the-truth-are-there-any-fees-for-your-no-obligation-mineral-rights-assessment/",
+  "source_path": "src/content/posts/uncovering-the-truth-are-there-any-fees-for-your-no-obligation-mineral-rights-assessment.mdx",
+  "input_body_sha256": "09b95117c11f2f34b7f60fcbdf6dbca4bb7cc6655c2d6154eacba91b72383124",
+  "input_frontmatter_sha256": "5c2b07ff924af67ae1bb233259a0c99c5974a7978c158b34af68362fcdd5f2ed",
+  "expected_repo_sha256": "09b95117c11f2f34b7f60fcbdf6dbca4bb7cc6655c2d6154eacba91b72383124",
+  "two_image_manifest_sha256": "5deaec405eedbaf5902ecddd77cc81b98ac409e20858b592b0423d8c6c8656ee",
+  "reviewer_id": "codex_wave39_factual",
+  "review_run_id": "mrx1000-wave39-factual-20260812T172652Z",
+  "capability": "factual_citation",
+  "findings": [
+    "Complete current MDX SHA-256 is 09b95117c11f2f34b7f60fcbdf6dbca4bb7cc6655c2d6154eacba91b72383124; all 6 declared sources passed live access review.",
+    "MRX claims remain bounded to its current FAQ, booking, How It Works, methodology, Privacy Policy, and Terms pages; the article does not extend the first-party assessment promise to outside services or later transaction documents.",
+    "The article uses no fabricated owners, buyers, contracts, deeds, prices, acreage, ownership decimals, tax results, offers, testimonials, success rates, or owner-specific title, legal, tax, accounting, appraisal, investment, or transaction conclusions."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "minimum_three_distinct_https_sources",
+    "current_source_access_review_pass",
+    "claim_to_source_scope_present",
+    "official_primary_source_priority_pass",
+    "unsupported_high_risk_claim_scan_pass"
+  ],
+  "sources_inspected": [
+    {
+      "label": "Mineral Rights Xchange, Frequently Asked Questions (accessed 2026-08-12)",
+      "url": "https://mineralrightsxchange.com/faq/",
+      "publisher": "mineralrightsxchange.com",
+      "accessed_at": "2026-08-12T17:26:52Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://mineralrightsxchange.com/faq/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The current MRX FAQ states that the directional underwriter review is free, requires no payment card, creates no obligation to sell, is not a certified valuation, and may precede an MRX buyer relationship that is disclosed when applicable.",
+      "claim_scope": "The article uses the FAQ only for MRX’s current review price and service boundaries and its provider-interest disclosure; it does not extend the free-review statement to outside work, promise a result, interpret an agreement, or recommend a transaction."
+    },
+    {
+      "label": "Mineral Rights Xchange, Book a Phone Call (accessed 2026-08-12)",
+      "url": "https://mineralrightsxchange.com/book/",
+      "publisher": "mineralrightsxchange.com",
+      "accessed_at": "2026-08-12T17:26:52Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://mineralrightsxchange.com/book/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The current MRX booking page describes the requested phone appointment as free, asks for appointment details, presents separate communication choices, states that there is no obligation to sell, and discloses that MRX may later be a buyer.",
+      "claim_scope": "The article uses the booking page only for the current request-stage fields, communication-choice separation, no-obligation statement, and possible commercial role; it does not treat an appointment request as consent to a transaction or as proof of an outcome."
+    },
+    {
+      "label": "Mineral Rights Xchange, How It Works (accessed 2026-08-12)",
+      "url": "https://mineralrightsxchange.com/how-it-works/",
+      "publisher": "mineralrightsxchange.com",
+      "accessed_at": "2026-08-12T17:26:52Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://mineralrightsxchange.com/how-it-works/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The current MRX How It Works page describes an owner-controlled sequence and an educational, directional review that is free, requires no card, and creates no obligation to sell.",
+      "claim_scope": "The article uses the page only for the current sequence and directional-deliverable boundary; it does not establish value, title, transaction terms, or an owner-specific result."
+    },
+    {
+      "label": "Mineral Rights Xchange, Published DCF Methodology (accessed 2026-08-12)",
+      "url": "https://mineralrightsxchange.com/methodology/",
+      "publisher": "mineralrightsxchange.com",
+      "accessed_at": "2026-08-12T17:26:52Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://mineralrightsxchange.com/methodology/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The current MRX methodology separates a directional asset range from actual buyer offers and expected owner net, and requires dated inputs, assumptions, and limitations.",
+      "claim_scope": "The article uses the methodology only to distinguish property evidence, a directional range, proposal consideration, adjustments or deductions, and expected owner net; it does not value a specific interest, establish legal rights, or predict a transaction result."
+    },
+    {
+      "label": "Mineral Rights Xchange, Privacy Policy (accessed 2026-08-12)",
+      "url": "https://mineralrightsxchange.com/privacy-policy/",
+      "publisher": "mineralrightsxchange.com",
+      "accessed_at": "2026-08-12T17:26:52Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://mineralrightsxchange.com/privacy-policy/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The current MRX Privacy Policy is the first-party description of MRX information practices and the choices or contact routes it publishes.",
+      "claim_scope": "The article uses the policy only to direct readers to the current first-party information-practice statement; it does not interpret the policy, determine privacy rights, or expand the disclosed practices."
+    },
+    {
+      "label": "Mineral Rights Xchange, Terms of Use and AI Disclosure (accessed 2026-08-12)",
+      "url": "https://mineralrightsxchange.com/terms/",
+      "publisher": "mineralrightsxchange.com",
+      "accessed_at": "2026-08-12T17:26:52Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://mineralrightsxchange.com/terms/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The current MRX terms state that website information is educational rather than owner-specific professional advice and that booking a requested phone call does not require consent to marketing texts.",
+      "claim_scope": "The article uses the terms only to preserve the educational boundary and separate requested-call communications from optional marketing choices; it does not interpret a consent control, agreement, or owner’s rights."
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "artifact_type": "mrx1000_two_image_editorial_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-12T12:08:59Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-12",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0187",
+  "slug": "how-much-are-mineral-rights-worth-due-diligence-step-by-step",
+  "title": "How Much Are Mineral Rights Worth: Due Diligence Step By Step",
+  "canonical_url": "https://mineralrightsxchange.com/blog/how-much-are-mineral-rights-worth-due-diligence-step-by-step/",
+  "source_path": "src/content/posts/how-much-are-mineral-rights-worth-due-diligence-step-by-step.mdx",
+  "input_body_sha256": "da6167122063ceba8043b7ea9ad3e208ccb8b525788ca5395a6dfcca3c64f371",
+  "input_frontmatter_sha256": "b39eacc273f27c7304afa09346e8b28d2d6ceb3234ca4ecb27968f16f350338c",
+  "expected_repo_sha256": "da6167122063ceba8043b7ea9ad3e208ccb8b525788ca5395a6dfcca3c64f371",
+  "two_image_manifest_sha256": "bc391d5e67ef6a4c4f546dff05635cee17287220108575f3266ee94f9d58c1c4",
+  "reviewer_id": "codex_wave29_editorial",
+  "review_run_id": "mrx1000-wave29-editorial-20260812T120859Z",
+  "capability": "editorial",
+  "findings": [
+    "Complete current MDX SHA-256 is da6167122063ceba8043b7ea9ad3e208ccb8b525788ca5395a6dfcca3c64f371; the answer-first article contains 2191 body tokens and five FAQs.",
+    "The article owns the ordered valuation due-diligence workflow by moving from interest scope and match keys through ownership, payments, production, development evidence, normalization, assumptions, a separate tax lane, and a reproducible range with explicit stop conditions and specialist handoffs.",
+    "Exact-title hero/share OCR passed for “How Much Are Mineral Rights Worth: Due Diligence Step By Step”; distinct in-body OCR passed for “how much are mineral rights worth”."
+  ],
+  "checks": [
+    {
+      "name": "complete_file_sha256_match",
+      "status": "PASS",
+      "evidence": "da6167122063ceba8043b7ea9ad3e208ccb8b525788ca5395a6dfcca3c64f371"
+    },
+    {
+      "name": "answer_first_article_depth_and_five_faqs",
+      "status": "PASS",
+      "evidence": {
+        "word_count": 2191,
+        "minimum_word_count": 700,
+        "faq_count": 5
+      }
+    },
+    {
+      "name": "two_image_exact_text_identity",
+      "status": "PASS",
+      "evidence": {
+        "hero_ocr": true,
+        "inline_ocr": true,
+        "social_reuses_hero": true,
+        "filename_identity": true,
+        "distinct_binaries": true
+      }
+    }
+  ],
+  "sources_inspected": [
+    "src/content/posts/how-much-are-mineral-rights-worth-due-diligence-step-by-step.mdx",
+    "/assets/articles/hero/how-much-are-mineral-rights-worth-due-diligence-step-by-step.webp",
+    "/assets/articles/inline/how-much-are-mineral-rights-worth-due-diligence-step-by-step/how-much-are-mineral-rights-worth.webp"
+  ]
+}

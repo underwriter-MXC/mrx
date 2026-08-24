@@ -1,0 +1,59 @@
+{
+  "artifact_type": "mrx1000_two_image_editorial_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-12T19:22:34Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-12",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0123",
+  "slug": "understanding-mineral-rights-how-to-validate-your-asset-s-true-worth",
+  "title": "Understanding Mineral Rights: How to Validate Your Asset’s True Worth",
+  "canonical_url": "https://mineralrightsxchange.com/blog/understanding-mineral-rights-how-to-validate-your-asset-s-true-worth/",
+  "source_path": "src/content/posts/understanding-mineral-rights-how-to-validate-your-asset-s-true-worth.mdx",
+  "input_body_sha256": "e3aa857e91db7625f2baf1a50a110605aaaf76e05c8f0be027c71880989405ea",
+  "input_frontmatter_sha256": "90720d59cc7168ca77bb9d14419110b3d56609f087136e0f256f792d1a0ebd3b",
+  "expected_repo_sha256": "e3aa857e91db7625f2baf1a50a110605aaaf76e05c8f0be027c71880989405ea",
+  "two_image_manifest_sha256": "8207eae7ac97a577501f84b522e43f9bb68f4a3f86b61b3e74734d38180615ff",
+  "reviewer_id": "codex_wave43_editorial",
+  "review_run_id": "mrx1000-wave43-editorial-20260812T192234Z",
+  "capability": "editorial",
+  "findings": [
+    "Complete current MDX SHA-256 is e3aa857e91db7625f2baf1a50a110605aaaf76e05c8f0be027c71880989405ea; the answer-first article contains 2573 body tokens and five FAQs.",
+    "The article owns the valuation-validation and reperformance job: it locks asset scope and evidence dates, traces inputs and transformations, independently reproduces calculations, isolates sensitivities, records variances, and keeps the asset range separate from transaction economics.",
+    "Exact-title hero/share OCR passed for “Understanding Mineral Rights: How to Validate Your Asset’s True Worth”; distinct in-body OCR passed for “How Do I Ensure I'm Receiving a Fair Valuation for My Mineral Rights?”."
+  ],
+  "checks": [
+    {
+      "name": "complete_file_sha256_match",
+      "status": "PASS",
+      "evidence": "e3aa857e91db7625f2baf1a50a110605aaaf76e05c8f0be027c71880989405ea"
+    },
+    {
+      "name": "answer_first_article_depth_and_five_faqs",
+      "status": "PASS",
+      "evidence": {
+        "word_count": 2573,
+        "minimum_word_count": 700,
+        "faq_count": 5
+      }
+    },
+    {
+      "name": "two_image_exact_text_identity",
+      "status": "PASS",
+      "evidence": {
+        "hero_ocr": true,
+        "inline_ocr": true,
+        "social_reuses_hero": true,
+        "filename_identity": true,
+        "distinct_binaries": true
+      }
+    }
+  ],
+  "sources_inspected": [
+    "src/content/posts/understanding-mineral-rights-how-to-validate-your-asset-s-true-worth.mdx",
+    "/assets/articles/hero/understanding-mineral-rights-how-to-validate-your-assets-true-worth.webp",
+    "/assets/articles/inline/understanding-mineral-rights-how-to-validate-your-asset-s-true-worth/how-do-i-ensure-im-receiving-a-fair-valuation-for-my-mineral-rights.webp"
+  ]
+}

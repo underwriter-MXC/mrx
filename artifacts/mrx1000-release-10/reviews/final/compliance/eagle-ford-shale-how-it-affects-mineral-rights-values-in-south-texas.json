@@ -1,0 +1,43 @@
+{
+  "artifact_type": "mrx1000_two_image_compliance_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-11T22:44:38Z",
+  "decision_authority": {
+    "source": "Daryl owner directive, 2026-08-11",
+    "policy": "MRX two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0726",
+  "slug": "eagle-ford-shale-how-it-affects-mineral-rights-values-in-south-texas",
+  "title": "Eagle Ford Shale and South Texas Mineral Rights",
+  "canonical_url": "https://mineralrightsxchange.com/blog/eagle-ford-shale-how-it-affects-mineral-rights-values-in-south-texas/",
+  "source_path": "src/content/posts/eagle-ford-shale-how-it-affects-mineral-rights-values-in-south-texas.mdx",
+  "input_body_sha256": "73da1b3423ee4f0b8e680c3786dc5c85745f45fc461cf1b988544b32dbf5febf",
+  "input_frontmatter_sha256": "cc898a5635f8fea45a1fbc3992c673f9fdd0d01948ca53922a6acd0f4836edd4",
+  "expected_repo_sha256": "73da1b3423ee4f0b8e680c3786dc5c85745f45fc461cf1b988544b32dbf5febf",
+  "two_image_manifest_sha256": "802512b5dab8eae7592be5934f97a6a8989125fb8f65d3f37ee3cdeb2d35dc10",
+  "reviewer_id": "codex_two_image_compliance",
+  "review_run_id": "mrx1000-two-image-retrofit-20260811T224438Z",
+  "capability": "compliance",
+  "expected_hero_sha256": "115270c77e986c5ab250969e25aeff36e0e90eedbb03b65772243560b2a08ecb",
+  "expected_inline_sha256": "0b0ef149ffa911cbac6d43619c19dd097988c71cec0aab41284594bfe1655ea0",
+  "findings": [
+    "Complete current MDX SHA-256 is 73da1b3423ee4f0b8e680c3786dc5c85745f45fc461cf1b988544b32dbf5febf; hero/share and in-body image hashes are separately locked.",
+    "Image text is limited to the exact article title and declared page keyword; it adds no guarantee, price, deadline, legal conclusion, or tax conclusion.",
+    "The article retains its educational and professional-boundary language and current disclosure treatment."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "hero_share_sha256_identity",
+    "inline_image_distinct_sha256",
+    "exact_text_ocr_pass",
+    "filename_text_identity_pass",
+    "no_unsupported_visual_claims",
+    "educational_and_professional_boundaries_preserved"
+  ],
+  "sources_inspected": [
+    "src/content/posts/eagle-ford-shale-how-it-affects-mineral-rights-values-in-south-texas.mdx",
+    "/assets/articles/hero/eagle-ford-shale-and-south-texas-mineral-rights.webp",
+    "/assets/articles/inline/eagle-ford-shale-how-it-affects-mineral-rights-values-in-south-texas/eagle-ford-shale-how-it-affects-mineral-rights-values-in-south-texas.webp"
+  ]
+}

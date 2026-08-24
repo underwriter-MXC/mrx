@@ -1,0 +1,43 @@
+{
+  "artifact_type": "mrx1000_two_image_compliance_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-11T22:44:38Z",
+  "decision_authority": {
+    "source": "Daryl owner directive, 2026-08-11",
+    "policy": "MRX two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0885",
+  "slug": "what-is-an-oil-and-gas-lease-and-how-does-it-affect-your-mineral-rights",
+  "title": "What Is an Oil and Gas Lease and How Does It Affect Your Mineral Rights?",
+  "canonical_url": "https://mineralrightsxchange.com/blog/what-is-an-oil-and-gas-lease-and-how-does-it-affect-your-mineral-rights/",
+  "source_path": "src/content/posts/what-is-an-oil-and-gas-lease-and-how-does-it-affect-your-mineral-rights.mdx",
+  "input_body_sha256": "860349a7fe4c17108ca1353a0755d547251ed1eef3a9969340cb840753cd09e3",
+  "input_frontmatter_sha256": "a186b9212f4e50209032098880d5e60e9ab2567ad77694b3b2afa23beb15dc92",
+  "expected_repo_sha256": "860349a7fe4c17108ca1353a0755d547251ed1eef3a9969340cb840753cd09e3",
+  "two_image_manifest_sha256": "802512b5dab8eae7592be5934f97a6a8989125fb8f65d3f37ee3cdeb2d35dc10",
+  "reviewer_id": "codex_two_image_compliance",
+  "review_run_id": "mrx1000-two-image-retrofit-20260811T224438Z",
+  "capability": "compliance",
+  "expected_hero_sha256": "1181e34ef0268c1819c5234bc40314474703b7ce4c7968f2efde371987cbcf81",
+  "expected_inline_sha256": "9a9da0f969b7e5b2f085584abda1b436be367cb933e23908ace56810967baa0e",
+  "findings": [
+    "Complete current MDX SHA-256 is 860349a7fe4c17108ca1353a0755d547251ed1eef3a9969340cb840753cd09e3; hero/share and in-body image hashes are separately locked.",
+    "Image text is limited to the exact article title and declared page keyword; it adds no guarantee, price, deadline, legal conclusion, or tax conclusion.",
+    "The article retains its educational and professional-boundary language and current disclosure treatment."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "hero_share_sha256_identity",
+    "inline_image_distinct_sha256",
+    "exact_text_ocr_pass",
+    "filename_text_identity_pass",
+    "no_unsupported_visual_claims",
+    "educational_and_professional_boundaries_preserved"
+  ],
+  "sources_inspected": [
+    "src/content/posts/what-is-an-oil-and-gas-lease-and-how-does-it-affect-your-mineral-rights.mdx",
+    "/assets/articles/hero/what-is-an-oil-and-gas-lease-and-how-does-it-affect-your-mineral-rights.webp",
+    "/assets/articles/inline/what-is-an-oil-and-gas-lease-and-how-does-it-affect-your-mineral-rights/what-is-an-oil-and-gas-lease.webp"
+  ]
+}

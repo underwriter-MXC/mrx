@@ -1,0 +1,43 @@
+{
+  "artifact_type": "mrx1000_two_image_compliance_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-12T14:07:53Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-12",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0113",
+  "slug": "selling-mineral-rights-valuation-factors-step-by-step",
+  "title": "Selling Mineral Rights: Valuation Factors Step By Step",
+  "canonical_url": "https://mineralrightsxchange.com/blog/selling-mineral-rights-valuation-factors-step-by-step/",
+  "source_path": "src/content/posts/selling-mineral-rights-valuation-factors-step-by-step.mdx",
+  "input_body_sha256": "7ad41bdd8276561117c10220ae745fbea3ee2cb0d853f945c1cedd0b9c5fd1c8",
+  "input_frontmatter_sha256": "fda458cc21c0ab59b5833a545d63a233fcd31cbaf5614e0c19891820da911394",
+  "expected_repo_sha256": "7ad41bdd8276561117c10220ae745fbea3ee2cb0d853f945c1cedd0b9c5fd1c8",
+  "two_image_manifest_sha256": "db47940a4dab1e9969026bc2eda5f2195d599102b0babb9b8acf7fe62d1faa6d",
+  "reviewer_id": "codex_wave33_compliance",
+  "review_run_id": "mrx1000-wave33-compliance-20260812T140753Z",
+  "capability": "compliance",
+  "expected_hero_sha256": "40149b40e5ca32a92fcc477ebad652c3a5b80897623cdc0dad6ec990ff5e23c3",
+  "expected_inline_sha256": "7b0c71191b1aa709dd75652dc0789faa84eadbabb751f7a8bdbe5be626ba26fc",
+  "findings": [
+    "Complete current MDX SHA-256 is 7ad41bdd8276561117c10220ae745fbea3ee2cb0d853f945c1cedd0b9c5fd1c8; hero/share and inline image hashes are separately locked.",
+    "The article states educational and professional boundaries, discloses MRX’s potential economic interest, separates observed evidence from forward assumptions and negotiated terms, supplies explicit stop conditions, labels MRX review as directional, and routes unresolved title, legal, tax, accounting, engineering, appraisal, investment, and transaction questions without making owner-specific conclusions.",
+    "Image text is limited to the exact article title and canonical keyword and adds no owner data, buyer endorsement, deed, price, factor weight, multiple, acreage, decimal, formula, reserve quantity, appraisal result, tax outcome, or transaction conclusion."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "hero_share_sha256_identity",
+    "inline_image_distinct_sha256",
+    "exact_text_ocr_pass",
+    "filename_text_identity_pass",
+    "educational_and_professional_boundaries_preserved",
+    "no_unsupported_visual_or_valuation_claims"
+  ],
+  "sources_inspected": [
+    "src/content/posts/selling-mineral-rights-valuation-factors-step-by-step.mdx",
+    "/assets/articles/hero/selling-mineral-rights-valuation-factors-step-by-step.webp",
+    "/assets/articles/inline/selling-mineral-rights-valuation-factors-step-by-step/selling-mineral-rights.webp"
+  ]
+}

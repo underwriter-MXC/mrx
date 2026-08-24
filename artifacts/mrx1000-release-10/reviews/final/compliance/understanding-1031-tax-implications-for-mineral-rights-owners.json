@@ -1,0 +1,43 @@
+{
+  "artifact_type": "mrx1000_two_image_compliance_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-11T22:44:38Z",
+  "decision_authority": {
+    "source": "Daryl owner directive, 2026-08-11",
+    "policy": "MRX two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0639",
+  "slug": "understanding-1031-tax-implications-for-mineral-rights-owners",
+  "title": "Understanding 1031 Tax Implications for Mineral Rights Owners",
+  "canonical_url": "https://mineralrightsxchange.com/blog/understanding-1031-tax-implications-for-mineral-rights-owners/",
+  "source_path": "src/content/posts/understanding-1031-tax-implications-for-mineral-rights-owners.mdx",
+  "input_body_sha256": "fa8e3d003b3fdb6142cced19117686e64c31031d70ac2a2d8b36ce548a5ec0ae",
+  "input_frontmatter_sha256": "95662adaea83b68f7ab51b8803fef5e4fb272b115d41990b31f3df4e69c157ce",
+  "expected_repo_sha256": "fa8e3d003b3fdb6142cced19117686e64c31031d70ac2a2d8b36ce548a5ec0ae",
+  "two_image_manifest_sha256": "802512b5dab8eae7592be5934f97a6a8989125fb8f65d3f37ee3cdeb2d35dc10",
+  "reviewer_id": "codex_two_image_compliance",
+  "review_run_id": "mrx1000-two-image-retrofit-20260811T224438Z",
+  "capability": "compliance",
+  "expected_hero_sha256": "eca622d5c7e5ad74c28b8853f94cf1e3f59bf1e31614d3ae4ec6802c4d447af1",
+  "expected_inline_sha256": "058ab4741e1432c0c47b6b0355ad53e28d58e77b55fb5dee38fb5275c7ad18c9",
+  "findings": [
+    "Complete current MDX SHA-256 is fa8e3d003b3fdb6142cced19117686e64c31031d70ac2a2d8b36ce548a5ec0ae; hero/share and in-body image hashes are separately locked.",
+    "Image text is limited to the exact article title and declared page keyword; it adds no guarantee, price, deadline, legal conclusion, or tax conclusion.",
+    "The article retains its educational and professional-boundary language and current disclosure treatment."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "hero_share_sha256_identity",
+    "inline_image_distinct_sha256",
+    "exact_text_ocr_pass",
+    "filename_text_identity_pass",
+    "no_unsupported_visual_claims",
+    "educational_and_professional_boundaries_preserved"
+  ],
+  "sources_inspected": [
+    "src/content/posts/understanding-1031-tax-implications-for-mineral-rights-owners.mdx",
+    "/assets/articles/hero/understanding-1031-tax-implications-for-mineral-rights-owners.webp",
+    "/assets/articles/inline/understanding-1031-tax-implications-for-mineral-rights-owners/1031-tax-implications-mineral-rights.webp"
+  ]
+}

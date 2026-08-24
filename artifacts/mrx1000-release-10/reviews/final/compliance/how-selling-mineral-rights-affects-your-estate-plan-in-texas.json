@@ -1,0 +1,43 @@
+{
+  "artifact_type": "mrx1000_two_image_compliance_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-11T22:44:38Z",
+  "decision_authority": {
+    "source": "Daryl owner directive, 2026-08-11",
+    "policy": "MRX two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0428",
+  "slug": "how-selling-mineral-rights-affects-your-estate-plan-in-texas",
+  "title": "How Selling Mineral Rights Affects Your Estate Plan in Texas",
+  "canonical_url": "https://mineralrightsxchange.com/blog/how-selling-mineral-rights-affects-your-estate-plan-in-texas/",
+  "source_path": "src/content/posts/how-selling-mineral-rights-affects-your-estate-plan-in-texas.mdx",
+  "input_body_sha256": "37060949cfa16d03b9abe6925ab6bafbe22997ca1a8e5173f50c9a4f276abbcd",
+  "input_frontmatter_sha256": "6b813431094f63694ac5ea6b035d7b0a0cc9f55bc498a38d28129c4e6636368a",
+  "expected_repo_sha256": "37060949cfa16d03b9abe6925ab6bafbe22997ca1a8e5173f50c9a4f276abbcd",
+  "two_image_manifest_sha256": "802512b5dab8eae7592be5934f97a6a8989125fb8f65d3f37ee3cdeb2d35dc10",
+  "reviewer_id": "codex_two_image_compliance",
+  "review_run_id": "mrx1000-two-image-retrofit-20260811T224438Z",
+  "capability": "compliance",
+  "expected_hero_sha256": "af3a4668263e816909f6ee02ffd70287997c034dcf5051d3d337646d3ce2423e",
+  "expected_inline_sha256": "5eaa5a877c972c5f0bd141e001efda69217dfeb5d1acfd80ace5a5545eb5a0ec",
+  "findings": [
+    "Complete current MDX SHA-256 is 37060949cfa16d03b9abe6925ab6bafbe22997ca1a8e5173f50c9a4f276abbcd; hero/share and in-body image hashes are separately locked.",
+    "Image text is limited to the exact article title and declared page keyword; it adds no guarantee, price, deadline, legal conclusion, or tax conclusion.",
+    "The article retains its educational and professional-boundary language and current disclosure treatment."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "hero_share_sha256_identity",
+    "inline_image_distinct_sha256",
+    "exact_text_ocr_pass",
+    "filename_text_identity_pass",
+    "no_unsupported_visual_claims",
+    "educational_and_professional_boundaries_preserved"
+  ],
+  "sources_inspected": [
+    "src/content/posts/how-selling-mineral-rights-affects-your-estate-plan-in-texas.mdx",
+    "/assets/articles/hero/how-selling-mineral-rights-affects-your-estate-plan-in-texas.webp",
+    "/assets/articles/inline/how-selling-mineral-rights-affects-your-estate-plan-in-texas/selling-mineral-rights-estate-plan-texas.webp"
+  ]
+}

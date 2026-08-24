@@ -1,0 +1,48 @@
+{
+  "artifact_type": "mrx1000_two_image_compliance_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-14T17:51:25Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-11",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0139",
+  "slug": "what-should-i-do-if-a-texas-mineral-rights-sale-goes-wrong",
+  "title": "What Should I Do If a Texas Mineral Rights Sale Goes Wrong?",
+  "canonical_url": "https://mineralrightsxchange.com/blog/what-should-i-do-if-a-texas-mineral-rights-sale-goes-wrong/",
+  "source_path": "src/content/posts/what-should-i-do-if-a-texas-mineral-rights-sale-goes-wrong.mdx",
+  "input_body_sha256": "c4869bee6b9eba8420d8dec4d669e0790d161c467844947d74d01a851a83657c",
+  "input_frontmatter_sha256": "33f07932068ea873f5fef4ac65d2dcbc444ba8c5aba09901a53ef164bd719ee4",
+  "expected_repo_sha256": "c4869bee6b9eba8420d8dec4d669e0790d161c467844947d74d01a851a83657c",
+  "two_image_manifest_sha256": "9faf4f46e6c4c9703c81913747ed04d2752f19b6b037ef770ca48ffc283ff255",
+  "visual_metadata": {
+    "hero_alt": "A hand holds an envelope beside a tabbed file and “What Should I Do If a Texas Mineral Rights Sale Goes Wrong?”.",
+    "social_alt": "A hand holds an envelope beside a tabbed file and “What Should I Do If a Texas Mineral Rights Sale Goes Wrong?”.",
+    "inline_alt": "Hands hold envelopes and a file folder around a parcel map, an abacus, and “Texas Mineral Rights Sale Problem Triage”."
+  },
+  "reviewer_id": "codex_wave59_compliance",
+  "review_run_id": "mrx1000-wave59-compliance-20260814T175125Z",
+  "capability": "compliance",
+  "expected_hero_sha256": "a5beaa391c46eac8418097f25fc2e44ba44327d7fd4c74ca660f7f3eb25c5e01",
+  "expected_inline_sha256": "8ff0247b0dd8cdaa74aa01c4d2f363483bcda6841ffaf7e6a33fb48270a1cef0",
+  "findings": [
+    "Complete current MDX SHA-256 is c4869bee6b9eba8420d8dec4d669e0790d161c467844947d74d01a851a83657c; hero/share and inline image hashes are separately locked.",
+    "The article states educational and professional boundaries, distinguishes evidence from conclusions, separates ordinary discrepancies from suspected security incidents, preserves exact versions and last-verified-state evidence, discloses possible MRX buyer interest, and makes no owner-specific contract, title, recording, fraud, remedy, payment-recovery, tax, value, appraisal, or transaction conclusion.",
+    "Image text is limited to the exact article title and exact canonical keyword and adds no owner data, property identifier, amount, accusation, buyer endorsement, legal or title conclusion, fraud finding, remedy, recovery claim, tax result, guarantee, or transaction conclusion."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "hero_share_sha256_identity",
+    "inline_image_distinct_sha256",
+    "exact_text_ocr_pass",
+    "filename_text_identity_pass",
+    "educational_and_professional_boundaries_preserved",
+    "no_unsupported_visual_or_valuation_claims"
+  ],
+  "sources_inspected": [
+    "src/content/posts/what-should-i-do-if-a-texas-mineral-rights-sale-goes-wrong.mdx",
+    "/assets/articles/hero/what-should-i-do-if-a-texas-mineral-rights-sale-goes-wrong.webp",
+    "/assets/articles/inline/what-should-i-do-if-a-texas-mineral-rights-sale-goes-wrong/texas-mineral-rights-sale-problem-triage.webp"
+  ]
+}

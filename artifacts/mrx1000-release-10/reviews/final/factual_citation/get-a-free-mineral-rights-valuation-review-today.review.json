@@ -1,0 +1,115 @@
+{
+  "artifact_type": "mrx1000_two_image_factual_citation_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-12T09:40:46Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-11",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0181",
+  "slug": "get-a-free-mineral-rights-valuation-review-today",
+  "title": "Get a Free Mineral Rights Valuation Review Today",
+  "canonical_url": "https://mineralrightsxchange.com/blog/get-a-free-mineral-rights-valuation-review-today/",
+  "source_path": "src/content/posts/get-a-free-mineral-rights-valuation-review-today.mdx",
+  "input_body_sha256": "d6dc2a0274dece43d81392b2882a46512056d9d38ab978dfdf1d286827732cc0",
+  "input_frontmatter_sha256": "f86f11bb72b3f88af3d653fbc1efce8d41a7c99e57374e5150aeaed562bb7322",
+  "expected_repo_sha256": "d6dc2a0274dece43d81392b2882a46512056d9d38ab978dfdf1d286827732cc0",
+  "two_image_manifest_sha256": "53321b57f94d24525a64da4bb149d90be345ff61918c11a563ffe9d1cdb0d9c4",
+  "reviewer_id": "codex_wave23_factual",
+  "review_run_id": "mrx1000-wave23-factual-20260812T094046Z",
+  "capability": "factual_citation",
+  "findings": [
+    "Complete current MDX SHA-256 is d6dc2a0274dece43d81392b2882a46512056d9d38ab978dfdf1d286827732cc0; all 6 declared official sources passed live access review.",
+    "MRX fee, intake, methodology, timing, privacy, and potential-buyer claims remain bounded to current first-party pages; RRC and GLO claims remain bounded to official public-record descriptions and limitations.",
+    "The article uses no fabricated owners, deeds, probates, trusts, wells, leases, production, payments, offers, prices, acreage, ownership decimals, valuation ranges, completion promises, testimonials, or owner-specific title, legal, tax, surveying, engineering, or valuation conclusions."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "minimum_three_distinct_https_sources",
+    "current_source_access_review_pass",
+    "claim_to_source_scope_present",
+    "official_primary_source_priority_pass",
+    "unsupported_high_risk_claim_scan_pass"
+  ],
+  "sources_inspected": [
+    {
+      "label": "Mineral Rights Xchange, Published DCF Methodology (accessed 2026-08-11)",
+      "url": "https://mineralrightsxchange.com/methodology/",
+      "publisher": "mineralrightsxchange.com",
+      "accessed_at": "2026-08-12T09:40:46Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://mineralrightsxchange.com/methodology/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The current MRX methodology describes a discounted-cash-flow review of expected royalty income, a directional range with stated production, decline, royalty, discount-rate, commodity, title-confidence, and offer inputs, and a written follow-up whose timing depends on document completeness and operator-data availability.",
+      "claim_scope": "The article uses the methodology to explain a dated directional review and its inputs, not a formal credentialed valuation, title opinion, legal or tax opinion, independent valuation engagement, guaranteed value, guaranteed sale price, guaranteed offer, or recommendation to sell."
+    },
+    {
+      "label": "Mineral Rights Xchange, Book Your Free Underwriter Review (accessed 2026-08-11)",
+      "url": "https://mineralrightsxchange.com/book/",
+      "publisher": "mineralrightsxchange.com",
+      "accessed_at": "2026-08-12T09:40:46Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://mineralrightsxchange.com/book/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The current MRX booking page states that the review requires no card and creates no obligation, describes a short intake followed by document gathering, a directional range with stated assumptions, a written summary, and a follow-up conversation, and lists useful ownership, lease, royalty, offer, county, section, and depth information.",
+      "claim_scope": "The article uses the page to describe the current first-party request and evidence-organizing process; it does not promise same-day completion, eligibility, a range, an offer, a transaction, payment, production, sale, or closing."
+    },
+    {
+      "label": "Mineral Rights Xchange, Mineral Rights FAQ (accessed 2026-08-11)",
+      "url": "https://mineralrightsxchange.com/faq/",
+      "publisher": "mineralrightsxchange.com",
+      "accessed_at": "2026-08-12T09:40:46Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://mineralrightsxchange.com/faq/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The current MRX FAQ describes a genuinely free review with no obligation to sell, no card, no separate review fee, useful owner records, variable timing, professional-service boundaries, and written disclosure if MRX may become a buyer.",
+      "claim_scope": "The article uses those first-party statements only for MRX process, fee, timing, scope, and commercial-role disclosures; it does not infer independence, certification, a guaranteed result, or the behavior, fees, qualifications, or outcomes of any third party."
+    },
+    {
+      "label": "Mineral Rights Xchange, Privacy Policy (accessed 2026-08-11)",
+      "url": "https://mineralrightsxchange.com/privacy-policy/",
+      "publisher": "mineralrightsxchange.com",
+      "accessed_at": "2026-08-12T09:40:46Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://mineralrightsxchange.com/privacy-policy/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The current MRX privacy policy describes information owners may choose to provide, use of authorized private documents, service-provider sharing, retention and deletion controls, safeguards, and instructions not to upload Social Security numbers, full bank or payment details, passwords, or unrelated information.",
+      "claim_scope": "The article uses the policy for current MRX data-minimization and intended-channel guidance; it does not guarantee perfect security, provide legal privacy advice, expand the policy, or encourage sharing credentials, one-time codes, signatures, full financial details, or irrelevant personal records."
+    },
+    {
+      "label": "Railroad Commission of Texas, About Oil and Gas Data Queries (accessed 2026-08-11)",
+      "url": "https://www.rrc.texas.gov/resource-center/research/research-queries/about-oil-gas-data-queries/",
+      "publisher": "www.rrc.texas.gov",
+      "accessed_at": "2026-08-12T09:40:46Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.rrc.texas.gov/resource-center/research/research-queries/about-oil-gas-data-queries/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The Railroad Commission of Texas explains that its online queries are slices of a larger oil-and-gas system and describes Wellbore Query search identifiers including district, lease or gas-well ID, county, field, operator, permit, API number, status, and well type.",
+      "claim_scope": "The article uses the query descriptions to organize regulatory identity research and does not treat any query result as proof of title, acreage, unit participation, owner payment, future drilling, or value."
+    },
+    {
+      "label": "Texas General Land Office, Minerals FAQ (accessed 2026-08-11)",
+      "url": "https://www.glo.texas.gov/sites/default/files/2025-01/Minerals%20FAQ_updated%202023.pdf",
+      "publisher": "www.glo.texas.gov",
+      "accessed_at": "2026-08-12T09:40:46Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.glo.texas.gov/sites/default/files/2025-01/Minerals%20FAQ_updated%202023.pdf",
+        "content_type": "application/pdf"
+      },
+      "source_location_or_paraphrase": "The Texas General Land Office explains that it keeps primordial land-grant files, that later conveyance records are generally found in the county deed records, and that mineral ownership requires examination of the deeds and leases affecting the claim.",
+      "claim_scope": "The article uses the FAQ to distinguish historical land-grant evidence from later title evidence and does not infer current ownership, acreage, inheritance, title, lease rights, or value from ancestry or an original grant."
+    }
+  ]
+}

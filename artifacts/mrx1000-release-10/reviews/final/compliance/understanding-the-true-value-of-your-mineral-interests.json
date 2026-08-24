@@ -1,0 +1,43 @@
+{
+  "artifact_type": "mrx1000_two_image_compliance_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-13T18:53:27Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-12",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0133",
+  "slug": "understanding-the-true-value-of-your-mineral-interests",
+  "title": "Understanding the True Value of Your Mineral Interests",
+  "canonical_url": "https://mineralrightsxchange.com/blog/understanding-the-true-value-of-your-mineral-interests/",
+  "source_path": "src/content/posts/understanding-the-true-value-of-your-mineral-interests.mdx",
+  "input_body_sha256": "979b72c2a98b2f35799d02bf6ef8da2941ec6dae59bc325ad6c6047a08f39c9b",
+  "input_frontmatter_sha256": "026ecf008306d200b5370fb8ade26dc731942e6c0ea2a7f7b4703a251e5db184",
+  "expected_repo_sha256": "979b72c2a98b2f35799d02bf6ef8da2941ec6dae59bc325ad6c6047a08f39c9b",
+  "two_image_manifest_sha256": "d45450a194d21f029fd07ee10d6f05904a1d0dd6a43672d8f5bc58a59e921109",
+  "reviewer_id": "codex_wave53_compliance",
+  "review_run_id": "mrx1000-wave53-compliance-20260813T185327Z",
+  "capability": "compliance",
+  "expected_hero_sha256": "753d3b5ccf17f33bdf298088d6bd76934760415390986b8168ddbc5bd286cec0",
+  "expected_inline_sha256": "eb14d26e24aab959108a09ba63ab67af0951a89b2959897d6ba3167feb7778cc",
+  "findings": [
+    "Complete current MDX SHA-256 is 979b72c2a98b2f35799d02bf6ef8da2941ec6dae59bc325ad6c6047a08f39c9b; hero/share and inline image hashes are separately locked.",
+    "The article states educational and professional boundaries, separates asset range, written proposal, expected net, and owner preference, labels unresolved title and tax questions, discloses possible MRX buyer interest, and makes no owner-specific title, value, legal, tax, investment, appraisal, or transaction conclusion.",
+    "Image text is limited to the exact article title and exact canonical keyword and adds no owner data, property identifier, price, percentage, buyer endorsement, title conclusion, valuation conclusion, tax result, guarantee, or transaction conclusion."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "hero_share_sha256_identity",
+    "inline_image_distinct_sha256",
+    "exact_text_ocr_pass",
+    "filename_text_identity_pass",
+    "educational_and_professional_boundaries_preserved",
+    "no_unsupported_visual_or_valuation_claims"
+  ],
+  "sources_inspected": [
+    "src/content/posts/understanding-the-true-value-of-your-mineral-interests.mdx",
+    "/assets/articles/hero/understanding-the-true-value-of-your-mineral-interests.webp",
+    "/assets/articles/inline/understanding-the-true-value-of-your-mineral-interests/what-to-know-before-selling-mineral-rights.webp"
+  ]
+}

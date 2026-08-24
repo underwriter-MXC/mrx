@@ -1,0 +1,141 @@
+{
+  "artifact_type": "mrx1000_two_image_factual_citation_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-11T23:07:13Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-11",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0172",
+  "slug": "comparable-mineral-sales-what-makes-a-transaction-relevant",
+  "title": "Comparable Mineral Sales: What Makes a Transaction Relevant?",
+  "canonical_url": "https://mineralrightsxchange.com/blog/comparable-mineral-sales-what-makes-a-transaction-relevant/",
+  "source_path": "src/content/posts/comparable-mineral-sales-what-makes-a-transaction-relevant.mdx",
+  "input_body_sha256": "dbb6b87f3ed351f4eb73c4d85ea2406cc44a9ac08ec52c0fa520992cee328f3a",
+  "input_frontmatter_sha256": "c33242ce61b605a7133a6e8cce988d49168391e6cf4d41769646139a7f21c11b",
+  "expected_repo_sha256": "dbb6b87f3ed351f4eb73c4d85ea2406cc44a9ac08ec52c0fa520992cee328f3a",
+  "two_image_manifest_sha256": "e4c9774895df24092a5020642dae355be68675a6d054da517bc5962b47982ed3",
+  "reviewer_id": "codex_wave14_factual",
+  "review_run_id": "mrx1000-wave14-factual-20260811T230713Z",
+  "capability": "factual_citation",
+  "findings": [
+    "Complete current MDX SHA-256 is dbb6b87f3ed351f4eb73c4d85ea2406cc44a9ac08ec52c0fa520992cee328f3a; all 8 declared official sources passed live access review.",
+    "Comparable-sale principles remain bounded to federal valuation guidance; Texas tax-appraisal and public oil-and-gas-data claims remain bounded to their official sources.",
+    "The article uses no fabricated sale price, per-acre benchmark, title fact, transaction term, testimonial, or owner-specific value conclusion."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "minimum_three_distinct_https_sources",
+    "current_source_access_review_pass",
+    "claim_to_source_scope_present",
+    "official_primary_source_priority_pass",
+    "unsupported_high_risk_claim_scan_pass"
+  ],
+  "sources_inspected": [
+    {
+      "label": "Bureau of Land Management Oil and Gas Leasing Procedures Handbook H-3070-2 (accessed 2026-08-11)",
+      "url": "https://www.blm.gov/sites/blm.gov/files/uploads/Media_Library_BLM_Policy_h3070-2.pdf",
+      "publisher": "www.blm.gov",
+      "accessed_at": "2026-08-11T23:07:13Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.blm.gov/sites/blm.gov/files/uploads/Media_Library_BLM_Policy_h3070-2.pdf",
+        "content_type": "application/pdf"
+      },
+      "source_location_or_paraphrase": "The BLM oil and gas evaluation handbook describes comparable sales as prior transactions involving similar rights or properties and identifies time, location, geology, engineering, market conditions, and lease terms as comparison dimensions.",
+      "claim_scope": "This federal evaluation guidance supplies a comparison framework, not a private Texas transaction value or required adjustment."
+    },
+    {
+      "label": "Uniform Appraisal Standards for Federal Land Acquisitions, sixth edition (accessed 2026-08-11)",
+      "url": "https://www.ntc.blm.gov/krc/uploads/984/uniform-appraisal-standards%206th-TheYellowBook.pdf",
+      "publisher": "www.ntc.blm.gov",
+      "accessed_at": "2026-08-11T23:07:13Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.ntc.blm.gov/krc/system/files?file=legacy/uploads/23304/uniform-appraisal-standards%206th-TheYellowBook.pdf",
+        "content_type": "application/pdf"
+      },
+      "source_location_or_paraphrase": "The federal land-acquisition standards emphasize identifying the property interest, verifying sales data, and selecting an appropriate market unit of comparison for mineral properties.",
+      "claim_scope": "The federal-acquisition requirements do not control private Texas mineral sales and are not presented as a certified appraisal of any owner interest."
+    },
+    {
+      "label": "Texas Comptroller Manual for Discounting Oil and Gas Income (accessed 2026-08-11)",
+      "url": "https://comptroller.texas.gov/taxes/property-tax/docs/96-1703.pdf",
+      "publisher": "comptroller.texas.gov",
+      "accessed_at": "2026-08-11T23:07:13Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://comptroller.texas.gov/taxes/property-tax/docs/96-1703.pdf",
+        "content_type": "application/octet-stream"
+      },
+      "source_location_or_paraphrase": "The Texas Comptroller manual documents an income-discounting framework used in Texas oil and gas property-tax appraisal.",
+      "claim_scope": "This source supports the limited point that producing-interest analysis can require property-specific income inputs; it is not a private-offer formula."
+    },
+    {
+      "label": "Texas Tax Code Chapter 23, including Section 23.175 (accessed 2026-08-11)",
+      "url": "https://statutes.capitol.texas.gov/Docs/TX/pdf/TX.23.pdf",
+      "publisher": "statutes.capitol.texas.gov",
+      "accessed_at": "2026-08-11T23:07:13Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://statutes.capitol.texas.gov/Docs/TX/pdf/TX.23.pdf",
+        "content_type": "text/html"
+      },
+      "source_location_or_paraphrase": "Texas Tax Code Section 23.175 prescribes certain price inputs when a property-tax appraisal method considers future income from an oil or gas interest.",
+      "claim_scope": "The article preserves the property-tax context and does not transplant the statutory method into a private sale valuation."
+    },
+    {
+      "label": "Railroad Commission of Texas production data (accessed 2026-08-11)",
+      "url": "https://www.rrc.texas.gov/oil-and-gas/research-and-statistics/production-data/",
+      "publisher": "www.rrc.texas.gov",
+      "accessed_at": "2026-08-11T23:07:13Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.rrc.texas.gov/oil-and-gas/research-and-statistics/production-data/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The Railroad Commission describes operator-reported Texas oil and gas production resources.",
+      "claim_scope": "The source can support property and production context but not private consideration, title, owner decimal, reserves, or future development."
+    },
+    {
+      "label": "Railroad Commission of Texas downloadable oil and gas data sets (accessed 2026-08-11)",
+      "url": "https://www.rrc.texas.gov/resource-center/research/data-sets-available-for-download/",
+      "publisher": "www.rrc.texas.gov",
+      "accessed_at": "2026-08-11T23:07:13Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.rrc.texas.gov/resource-center/research/data-sets-available-for-download/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The Railroad Commission lists drilling-permit, field, well, and production data sets and describes their contents and update patterns.",
+      "claim_scope": "The source does not prove buyer assumptions, title, complete transaction terms, or a future drilling schedule."
+    },
+    {
+      "label": "Railroad Commission of Texas oil and gas well records (accessed 2026-08-11)",
+      "url": "https://www.rrc.texas.gov/oil-and-gas/research-and-statistics/obtaining-commission-records/oil-and-gas-well-records/",
+      "publisher": "www.rrc.texas.gov",
+      "accessed_at": "2026-08-11T23:07:13Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.rrc.texas.gov/oil-and-gas/research-and-statistics/obtaining-commission-records/oil-and-gas-well-records/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The Railroad Commission describes public well records including permit applications, completion reports, plugging reports, and related filings.",
+      "claim_scope": "These records provide dated regulatory evidence and do not establish private transaction consideration or owner-specific value."
+    },
+    {
+      "label": "U.S. Energy Information Administration natural gas data (accessed 2026-08-11)",
+      "url": "https://www.eia.gov/naturalgas/data.php",
+      "publisher": "www.eia.gov",
+      "accessed_at": "2026-08-11T23:07:13Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.eia.gov/naturalgas/data.php",
+        "content_type": "text/html; charset=UTF-8"
+      },
+      "source_location_or_paraphrase": "EIA publishes dated natural-gas price, production, reserves, and drilling data that can document broader market conditions.",
+      "claim_scope": "This source does not establish a property-level realized price, buyer forecast, or comparable-sale adjustment."
+    }
+  ]
+}

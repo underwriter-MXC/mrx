@@ -1,0 +1,43 @@
+{
+  "artifact_type": "mrx1000_two_image_compliance_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-14T05:39:41Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-11",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0137",
+  "slug": "unlocking-the-mystery-key-details-for-an-accurate-mineral-rights-review-process",
+  "title": "Unlocking the Mystery: Key Details for an Accurate Mineral Rights Review Process",
+  "canonical_url": "https://mineralrightsxchange.com/blog/unlocking-the-mystery-key-details-for-an-accurate-mineral-rights-review-process/",
+  "source_path": "src/content/posts/unlocking-the-mystery-key-details-for-an-accurate-mineral-rights-review-process.mdx",
+  "input_body_sha256": "96e5fb89381484fc079f61ec944519064badac05515d540f7bc91418f091cfd2",
+  "input_frontmatter_sha256": "346b61d3617ef0ce27fd7c10463c4e98ef46eaab8efca3c95d32d48d4b4617af",
+  "expected_repo_sha256": "96e5fb89381484fc079f61ec944519064badac05515d540f7bc91418f091cfd2",
+  "two_image_manifest_sha256": "f7d53137d03e201b8283e332507abb2acd22d63990850c8a3cc9905d2914b068",
+  "reviewer_id": "codex_wave57_compliance",
+  "review_run_id": "mrx1000-wave57-compliance-20260814T053941Z",
+  "capability": "compliance",
+  "expected_hero_sha256": "673f83d735ebe78985738490af8ac0afc4a6c02866d474b9df5109e758bb334a",
+  "expected_inline_sha256": "ea09587590523034c6ff5d4b595e270c72deb05fd899b8ff5641f96f1df2a788",
+  "findings": [
+    "Complete current MDX SHA-256 is 96e5fb89381484fc079f61ec944519064badac05515d540f7bc91418f091cfd2; hero/share and inline image hashes are separately locked.",
+    "The article states educational and professional boundaries, separates evidence lanes, labels supported, owner-reported, assumed, conflicted, missing, and professional-review-needed fields, preserves identity conflicts, protects sensitive data, discloses possible MRX buyer interest, and makes no owner-specific title, authority, value, legal, tax, investment, appraisal, or transaction conclusion.",
+    "Image text is limited to the exact article title and exact canonical keyword and adds no owner data, property identifier, price, percentage, buyer endorsement, title conclusion, valuation conclusion, tax result, guarantee, or transaction conclusion."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "hero_share_sha256_identity",
+    "inline_image_distinct_sha256",
+    "exact_text_ocr_pass",
+    "filename_text_identity_pass",
+    "educational_and_professional_boundaries_preserved",
+    "no_unsupported_visual_or_valuation_claims"
+  ],
+  "sources_inspected": [
+    "src/content/posts/unlocking-the-mystery-key-details-for-an-accurate-mineral-rights-review-process.mdx",
+    "/assets/articles/hero/unlocking-the-mystery-key-details-for-an-accurate-mineral-rights-review-process.webp",
+    "/assets/articles/inline/unlocking-the-mystery-key-details-for-an-accurate-mineral-rights-review-process/what-information-do-i-need-to-provide-for-a-mineral-rights-review.webp"
+  ]
+}

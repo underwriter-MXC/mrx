@@ -1,0 +1,59 @@
+{
+  "artifact_type": "mrx1000_two_image_editorial_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-12T00:42:13Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-11",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0174",
+  "slug": "curative-title-risk-as-a-valuation-adjustment",
+  "title": "Curative Title Risk as a Valuation Adjustment",
+  "canonical_url": "https://mineralrightsxchange.com/blog/curative-title-risk-as-a-valuation-adjustment/",
+  "source_path": "src/content/posts/curative-title-risk-as-a-valuation-adjustment.mdx",
+  "input_body_sha256": "687581b6137f8455ab24b6f398293e6a986bb16fb95120ebe0529b4e33d277cd",
+  "input_frontmatter_sha256": "6f24d486038f192140ebfb47cf42be2922429dee1d5463cd0bd0da43f35bf0d2",
+  "expected_repo_sha256": "687581b6137f8455ab24b6f398293e6a986bb16fb95120ebe0529b4e33d277cd",
+  "two_image_manifest_sha256": "45493b966155226cbc8b55905932c2e6bff61ba391af1db53a647f68947cd1f3",
+  "reviewer_id": "codex_wave16_editorial",
+  "review_run_id": "mrx1000-wave16-editorial-20260812T004213Z",
+  "capability": "editorial",
+  "findings": [
+    "Complete current MDX SHA-256 is 687581b6137f8455ab24b6f398293e6a986bb16fb95120ebe0529b4e33d277cd; the answer-first article contains 2554 body tokens and five FAQs.",
+    "The worksheet framework separates issue identity, affected-interest scope, evidence, proposed cure path, direct cost, timing, outcome uncertainty, and residual risk without issuing an owner-specific title or value conclusion.",
+    "Exact-title hero/share OCR passed for “Curative Title Risk as a Valuation Adjustment”; distinct in-body OCR passed for “curative title risk worksheet”."
+  ],
+  "checks": [
+    {
+      "name": "complete_file_sha256_match",
+      "status": "PASS",
+      "evidence": "687581b6137f8455ab24b6f398293e6a986bb16fb95120ebe0529b4e33d277cd"
+    },
+    {
+      "name": "answer_first_depth_and_five_faqs",
+      "status": "PASS",
+      "evidence": {
+        "word_count": 2554,
+        "minimum_word_count": 700,
+        "faq_count": 5
+      }
+    },
+    {
+      "name": "two_image_exact_text_identity",
+      "status": "PASS",
+      "evidence": {
+        "hero_ocr": true,
+        "inline_ocr": true,
+        "social_reuses_hero": true,
+        "filename_identity": true,
+        "distinct_binaries": true
+      }
+    }
+  ],
+  "sources_inspected": [
+    "src/content/posts/curative-title-risk-as-a-valuation-adjustment.mdx",
+    "/assets/articles/hero/curative-title-risk-as-a-valuation-adjustment.webp",
+    "/assets/articles/inline/curative-title-risk-as-a-valuation-adjustment/curative-title-risk-worksheet.webp"
+  ]
+}

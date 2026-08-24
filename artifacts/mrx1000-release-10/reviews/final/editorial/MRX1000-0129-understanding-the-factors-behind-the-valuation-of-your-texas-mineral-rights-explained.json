@@ -1,0 +1,59 @@
+{
+  "artifact_type": "mrx1000_two_image_editorial_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-12T23:14:27Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-12",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0129",
+  "slug": "understanding-the-factors-behind-the-valuation-of-your-texas-mineral-rights-explained",
+  "title": "Understanding the Factors Behind the Valuation of Your Texas Mineral Rights Explained",
+  "canonical_url": "https://mineralrightsxchange.com/blog/understanding-the-factors-behind-the-valuation-of-your-texas-mineral-rights-explained/",
+  "source_path": "src/content/posts/understanding-the-factors-behind-the-valuation-of-your-texas-mineral-rights-explained.mdx",
+  "input_body_sha256": "3aa9c79ba394e56db51255e0adede234df47e8451597588bed1151c45acab8b1",
+  "input_frontmatter_sha256": "be832f29ba489b5d7ac01967da9ea651b4aa205596bbe67917e60f7bbee55f7d",
+  "expected_repo_sha256": "3aa9c79ba394e56db51255e0adede234df47e8451597588bed1151c45acab8b1",
+  "two_image_manifest_sha256": "94b548bd2ea8ab45cc2b2fb0cd752d2c291dad6b469066166ec1826dc8510e59",
+  "reviewer_id": "codex_wave49_editorial",
+  "review_run_id": "mrx1000-wave49-editorial-20260812T231427Z",
+  "capability": "editorial",
+  "findings": [
+    "Complete current MDX SHA-256 is 3aa9c79ba394e56db51255e0adede234df47e8451597588bed1151c45acab8b1; the answer-first article contains 2608 body tokens and five FAQs.",
+    "The article owns the Texas valuation mechanics and evidence-confidence job. It shows where interest quantity, matched owner cash flow, current production, conditional development, market and forecast assumptions, method reconciliation, and transaction scope enter a range; grades evidence separately; and routes the end-to-end process, factor-list, factor-to-range, and introductory value-driver jobs to their established pages.",
+    "Exact-title hero/share OCR passed for “Understanding the Factors Behind the Valuation of Your Texas Mineral Rights Explained”; distinct in-body OCR passed for “How Is the Value of My Texas Mineral Rights Determined and Assessed?”."
+  ],
+  "checks": [
+    {
+      "name": "complete_file_sha256_match",
+      "status": "PASS",
+      "evidence": "3aa9c79ba394e56db51255e0adede234df47e8451597588bed1151c45acab8b1"
+    },
+    {
+      "name": "answer_first_article_depth_and_five_faqs",
+      "status": "PASS",
+      "evidence": {
+        "word_count": 2608,
+        "minimum_word_count": 700,
+        "faq_count": 5
+      }
+    },
+    {
+      "name": "two_image_exact_text_identity",
+      "status": "PASS",
+      "evidence": {
+        "hero_ocr": true,
+        "inline_ocr": true,
+        "social_reuses_hero": true,
+        "filename_identity": true,
+        "distinct_binaries": true
+      }
+    }
+  ],
+  "sources_inspected": [
+    "src/content/posts/understanding-the-factors-behind-the-valuation-of-your-texas-mineral-rights-explained.mdx",
+    "/assets/articles/hero/understanding-the-factors-behind-the-valuation-of-your-texas-mineral-rights-explained.webp",
+    "/assets/articles/inline/understanding-the-factors-behind-the-valuation-of-your-texas-mineral-rights-explained/how-is-the-value-of-my-texas-mineral-rights-determined-and-assessed.webp"
+  ]
+}

@@ -1,0 +1,128 @@
+{
+  "artifact_type": "mrx1000_two_image_factual_citation_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-12T06:50:25Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-11",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0176",
+  "slug": "depth-severances-and-formation-rights-in-mineral-valuation",
+  "title": "Depth Severances and Formation Rights in Mineral Valuation",
+  "canonical_url": "https://mineralrightsxchange.com/blog/depth-severances-and-formation-rights-in-mineral-valuation/",
+  "source_path": "src/content/posts/depth-severances-and-formation-rights-in-mineral-valuation.mdx",
+  "input_body_sha256": "61ce051f7f3f5e475dd9a2d1f39697db83d28fd99f23b1636a9963581464d807",
+  "input_frontmatter_sha256": "f798f3a0740f0d0490d4ad2a2780a43a0d85beb754d1b2d354997c2257002aa9",
+  "expected_repo_sha256": "61ce051f7f3f5e475dd9a2d1f39697db83d28fd99f23b1636a9963581464d807",
+  "two_image_manifest_sha256": "15822b0988960d4122065bc7dfeefd42d59228453a05db98bba98a6a4cc82ff1",
+  "reviewer_id": "codex_wave18_factual",
+  "review_run_id": "mrx1000-wave18-factual-20260812T065025Z",
+  "capability": "factual_citation",
+  "findings": [
+    "Complete current MDX SHA-256 is 61ce051f7f3f5e475dd9a2d1f39697db83d28fd99f23b1636a9963581464d807; all 7 declared official sources passed live access review.",
+    "Deed-construction, subsurface-property, recording, regulatory-field, well-log, completion, and property-appraisal claims remain bounded to their official court and government sources.",
+    "The article uses no fabricated instruments, legal descriptions, depth cutoffs, formations, owners, wells, production, leases, prices, reserves, percentages, disputes, transaction values, testimonials, or owner-specific legal or valuation conclusions."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "minimum_three_distinct_https_sources",
+    "current_source_access_review_pass",
+    "claim_to_source_scope_present",
+    "official_primary_source_priority_pass",
+    "unsupported_high_risk_claim_scan_pass"
+  ],
+  "sources_inspected": [
+    {
+      "label": "Supreme Court of Texas, Wenske v. Ealy, No. 16-0353 (accessed 2026-08-11)",
+      "url": "https://www.txcourts.gov/media/1438302/160353.pdf",
+      "publisher": "www.txcourts.gov",
+      "accessed_at": "2026-08-12T06:50:25Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.txcourts.gov/media/1438302/160353.pdf",
+        "content_type": "application/pdf"
+      },
+      "source_location_or_paraphrase": "The Supreme Court of Texas explains that an unambiguous deed is construed from the intent expressed within the instrument as a whole, with provisions harmonized where possible.",
+      "claim_scope": "The article uses the opinion only for the general deed-construction boundary and does not interpret a private instrument, resolve ambiguity, determine title, or apply the holding to an owner-specific dispute."
+    },
+    {
+      "label": "Supreme Court of Texas, Myers-Woodward, LLC v. Underground Services Markham, LLC, No. 22-0878 (accessed 2026-08-11)",
+      "url": "https://www.txcourts.gov/media/1460523/220878.pdf",
+      "publisher": "www.txcourts.gov",
+      "accessed_at": "2026-08-12T06:50:25Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.txcourts.gov/media/1460523/220878.pdf",
+        "content_type": "application/pdf"
+      },
+      "source_location_or_paraphrase": "The Supreme Court of Texas distinguishes a conveyed mineral estate and associated production rights from underground empty space and evaluates the deed language and legal character of the claimed property interest.",
+      "claim_scope": "The article uses the opinion as a limited illustration that subsurface property categories must be identified precisely; it does not extend the salt-cavern holding to a different mineral deed or depth boundary."
+    },
+    {
+      "label": "Texas Legislature, Property Code (accessed 2026-08-11)",
+      "url": "https://statutes.capitol.texas.gov/Docs/SDocs/PROPERTYCODE.pdf",
+      "publisher": "statutes.capitol.texas.gov",
+      "accessed_at": "2026-08-12T06:50:25Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://statutes.capitol.texas.gov/Docs/SDocs/PROPERTYCODE.pdf",
+        "content_type": "text/html"
+      },
+      "source_location_or_paraphrase": "The Texas Property Code provides the statutory recording framework for instruments concerning real property, including execution and acknowledgment requirements addressed by the cited provisions.",
+      "claim_scope": "The article uses the Code only as recording context and does not claim that recording alone resolves title, instrument interpretation, notice disputes, or the validity of an owner-specific conveyance."
+    },
+    {
+      "label": "Railroad Commission of Texas, Oil and Gas Glossary (accessed 2026-08-11)",
+      "url": "https://webapps2.rrc.texas.gov/EWA/help/DP_gloss.htm",
+      "publisher": "webapps2.rrc.texas.gov",
+      "accessed_at": "2026-08-12T06:50:25Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://webapps2.rrc.texas.gov/EWA/help/DP_gloss.htm",
+        "content_type": "text/html; charset=UTF-8"
+      },
+      "source_location_or_paraphrase": "The Railroad Commission glossary distinguishes fields, reservoirs, completion depth, and total depth, and explains that a field can contain separate reservoirs at different depths.",
+      "claim_scope": "The article uses these definitions to prevent regulatory and geological terms from being collapsed together; it does not treat a field assignment or reported depth as ownership evidence."
+    },
+    {
+      "label": "Railroad Commission of Texas, Glossary for Well Log List (accessed 2026-08-11)",
+      "url": "https://www.rrc.texas.gov/oil-and-gas/research-and-statistics/obtaining-commission-records/glossary-for-well-log-list/",
+      "publisher": "www.rrc.texas.gov",
+      "accessed_at": "2026-08-12T06:50:25Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.rrc.texas.gov/oil-and-gas/research-and-statistics/obtaining-commission-records/glossary-for-well-log-list/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The Railroad Commission well-log glossary identifies top and bottom log intervals, field, lease, API, survey, and total-depth data used to locate and understand Commission records.",
+      "claim_scope": "The article uses the glossary for data-field boundaries and does not claim that a log interval, well identifier, or survey reference establishes private title or a legal depth cutoff."
+    },
+    {
+      "label": "Railroad Commission of Texas, About Oil and Gas Data Queries (accessed 2026-08-11)",
+      "url": "https://www.rrc.texas.gov/resource-center/research/research-queries/about-oil-gas-data-queries/",
+      "publisher": "www.rrc.texas.gov",
+      "accessed_at": "2026-08-12T06:50:25Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.rrc.texas.gov/resource-center/research/research-queries/about-oil-gas-data-queries/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The Railroad Commission explains that a wellbore is the hole in the ground and can contain one or more completions, and that its query systems expose different regulatory data slices.",
+      "claim_scope": "The article uses this distinction for careful identity and completion matching and does not infer title, lease continuation, or payment ownership from the wellbore record."
+    },
+    {
+      "label": "Texas Comptroller, Valuing Property (accessed 2026-08-11)",
+      "url": "https://comptroller.texas.gov/taxes/property-tax/valuing-property.php",
+      "publisher": "comptroller.texas.gov",
+      "accessed_at": "2026-08-12T06:50:25Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://comptroller.texas.gov/taxes/property-tax/valuing-property.php",
+        "content_type": "text/html; charset=UTF-8"
+      },
+      "source_location_or_paraphrase": "The Texas Comptroller describes the sales-comparison, income, and cost approaches and explains that the income approach estimates the present worth of anticipated future benefits.",
+      "claim_scope": "The article preserves the public property-tax context and does not present the page as a private-sale formula, professional appraisal, title conclusion, or owner-specific value."
+    }
+  ]
+}

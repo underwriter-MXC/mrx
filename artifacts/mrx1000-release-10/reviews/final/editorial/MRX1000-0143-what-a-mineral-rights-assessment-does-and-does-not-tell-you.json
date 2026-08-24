@@ -1,0 +1,66 @@
+{
+  "artifact_type": "mrx1000_two_image_editorial_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-15T04:53:49Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-14",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0143",
+  "slug": "what-a-mineral-rights-assessment-does-and-does-not-tell-you",
+  "title": "What a Mineral Rights Assessment Does and Does Not Tell You",
+  "canonical_url": "https://mineralrightsxchange.com/blog/what-a-mineral-rights-assessment-does-and-does-not-tell-you/",
+  "source_path": "src/content/posts/what-a-mineral-rights-assessment-does-and-does-not-tell-you.mdx",
+  "input_body_sha256": "3a9059f9de3c9bdc412a79e87c225f378eb8390109bb29e4760951d9f4970181",
+  "input_frontmatter_sha256": "b91cf5a1377a19e81ca50552f10cab56f147cb5f9be4ddfeda72cd011ae95c23",
+  "expected_repo_sha256": "3a9059f9de3c9bdc412a79e87c225f378eb8390109bb29e4760951d9f4970181",
+  "two_image_manifest_sha256": "3b98c962b237ccc084956355feab8daef41da6264447d0ba13b1512938a68a61",
+  "visual_metadata": {
+    "hero_alt": "An analyst reviews a packet beside “What a Mineral Rights Assessment Does and Does Not Tell You”.",
+    "social_alt": "An analyst reviews a packet beside “What a Mineral Rights Assessment Does and Does Not Tell You”.",
+    "inline_alt": "A bounded document review appears above “Mineral Rights Assessment Scope”."
+  },
+  "reviewer_id": "codex_wave63_editorial",
+  "review_run_id": "mrx1000-wave63-editorial-20260815T045349Z",
+  "capability": "editorial",
+  "findings": [
+    "Complete current MDX SHA-256 is 3a9059f9de3c9bdc412a79e87c225f378eb8390109bb29e4760951d9f4970181; the answer-first article contains 1681 body tokens and five FAQs.",
+    "The article owns the narrow scope-and-limitations job for a directional assessment deliverable. It requires defined-interest, date, evidence, assumption, scenario, limitation, and reset fields and stops before valuation factors, methodology, timing, fees, eligibility, offer comparison, document preparation, or transaction selection.",
+    "Exact-title hero/share OCR passed for “What a Mineral Rights Assessment Does and Does Not Tell You”; distinct in-body OCR passed for “Mineral Rights Assessment Scope”; composition-accurate hero/social and inline alt metadata matched the final visual audit."
+  ],
+  "checks": [
+    {
+      "name": "complete_file_sha256_match",
+      "status": "PASS",
+      "evidence": "3a9059f9de3c9bdc412a79e87c225f378eb8390109bb29e4760951d9f4970181"
+    },
+    {
+      "name": "answer_first_article_depth_and_five_faqs",
+      "status": "PASS",
+      "evidence": {
+        "word_count": 1681,
+        "minimum_word_count": 700,
+        "faq_count": 5
+      }
+    },
+    {
+      "name": "two_image_exact_text_identity",
+      "status": "PASS",
+      "evidence": {
+        "hero_ocr": true,
+        "inline_ocr": true,
+        "social_reuses_hero": true,
+        "hero_social_alt_match": true,
+        "inline_alt_match": true,
+        "filename_identity": true,
+        "distinct_binaries": true
+      }
+    }
+  ],
+  "sources_inspected": [
+    "src/content/posts/what-a-mineral-rights-assessment-does-and-does-not-tell-you.mdx",
+    "/assets/articles/hero/what-a-mineral-rights-assessment-does-and-does-not-tell-you.webp",
+    "/assets/articles/inline/what-a-mineral-rights-assessment-does-and-does-not-tell-you/mineral-rights-assessment-scope.webp"
+  ]
+}

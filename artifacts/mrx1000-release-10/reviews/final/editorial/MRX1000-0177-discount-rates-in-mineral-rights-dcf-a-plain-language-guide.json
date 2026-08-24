@@ -1,0 +1,59 @@
+{
+  "artifact_type": "mrx1000_two_image_editorial_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-12T07:18:05Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-11",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0177",
+  "slug": "discount-rates-in-mineral-rights-dcf-a-plain-language-guide",
+  "title": "Discount Rates in Mineral Rights DCF: A Plain-Language Guide",
+  "canonical_url": "https://mineralrightsxchange.com/blog/discount-rates-in-mineral-rights-dcf-a-plain-language-guide/",
+  "source_path": "src/content/posts/discount-rates-in-mineral-rights-dcf-a-plain-language-guide.mdx",
+  "input_body_sha256": "787870b5263f66eed90e1cafe4b568f59580adf3f576f01c58dfe3cd1251688d",
+  "input_frontmatter_sha256": "3bc238960ee7d124d848f6653d651cc6449f127de07c2f1da0fde0306ae52115",
+  "expected_repo_sha256": "787870b5263f66eed90e1cafe4b568f59580adf3f576f01c58dfe3cd1251688d",
+  "two_image_manifest_sha256": "6ab8e943d2a499382b73d811d540e1b3d4825ebcda76f1d066666bf82e59ef1b",
+  "reviewer_id": "codex_wave19_editorial",
+  "review_run_id": "mrx1000-wave19-editorial-20260812T071805Z",
+  "capability": "editorial",
+  "findings": [
+    "Complete current MDX SHA-256 is 787870b5263f66eed90e1cafe4b568f59580adf3f576f01c58dfe3cd1251688d; the answer-first article contains 2296 body tokens and five FAQs.",
+    "The assumptions-first framework separates cash-flow construction, timing, convention matching, risk location, rate support, sensitivity, and market reconciliation without selecting a universal rate or issuing an owner-specific value conclusion.",
+    "Exact-title hero/share OCR passed for “Discount Rates in Mineral Rights DCF: A Plain-Language Guide”; distinct in-body OCR passed for “discount rates in mineral rights DCF”."
+  ],
+  "checks": [
+    {
+      "name": "complete_file_sha256_match",
+      "status": "PASS",
+      "evidence": "787870b5263f66eed90e1cafe4b568f59580adf3f576f01c58dfe3cd1251688d"
+    },
+    {
+      "name": "answer_first_article_depth_and_five_faqs",
+      "status": "PASS",
+      "evidence": {
+        "word_count": 2296,
+        "minimum_word_count": 700,
+        "faq_count": 5
+      }
+    },
+    {
+      "name": "two_image_exact_text_identity",
+      "status": "PASS",
+      "evidence": {
+        "hero_ocr": true,
+        "inline_ocr": true,
+        "social_reuses_hero": true,
+        "filename_identity": true,
+        "distinct_binaries": true
+      }
+    }
+  ],
+  "sources_inspected": [
+    "src/content/posts/discount-rates-in-mineral-rights-dcf-a-plain-language-guide.mdx",
+    "/assets/articles/hero/discount-rates-in-mineral-rights-dcf-a-plain-language-guide.webp",
+    "/assets/articles/inline/discount-rates-in-mineral-rights-dcf-a-plain-language-guide/discount-rates-in-mineral-rights-dcf.webp"
+  ]
+}

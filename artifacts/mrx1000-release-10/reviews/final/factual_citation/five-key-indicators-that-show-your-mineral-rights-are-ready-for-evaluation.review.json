@@ -1,0 +1,128 @@
+{
+  "artifact_type": "mrx1000_two_image_factual_citation_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-12T08:46:35Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-11",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0180",
+  "slug": "five-key-indicators-that-show-your-mineral-rights-are-ready-for-evaluation",
+  "title": "Five Key Indicators That Show Your Mineral Rights Are Ready for Evaluation",
+  "canonical_url": "https://mineralrightsxchange.com/blog/five-key-indicators-that-show-your-mineral-rights-are-ready-for-evaluation/",
+  "source_path": "src/content/posts/five-key-indicators-that-show-your-mineral-rights-are-ready-for-evaluation.mdx",
+  "input_body_sha256": "26b25fb7934c47f105a5b7e1efdae96fc91d9c5d39ffe1e95bce93f46f3aea64",
+  "input_frontmatter_sha256": "7ad410fe044cf4c588c348a2fa8c97cee3a44407c1ece5a65dde64865a0e8c0f",
+  "expected_repo_sha256": "26b25fb7934c47f105a5b7e1efdae96fc91d9c5d39ffe1e95bce93f46f3aea64",
+  "two_image_manifest_sha256": "0e70bcb313d25b4021b03ea287f76a7f1650f2ffc26c9f7260d417ae9458a83c",
+  "reviewer_id": "codex_wave22_factual",
+  "review_run_id": "mrx1000-wave22-factual-20260812T084635Z",
+  "capability": "factual_citation",
+  "findings": [
+    "Complete current MDX SHA-256 is 26b25fb7934c47f105a5b7e1efdae96fc91d9c5d39ffe1e95bce93f46f3aea64; all 7 declared official sources passed live access review.",
+    "Land-grant, county-record, well, production, GIS, payment, and unclaimed-property claims remain bounded to their official government sources and stated limitations.",
+    "The article uses no fabricated owners, deeds, probates, trusts, wells, leases, production, payments, offers, prices, acreage, ownership decimals, transaction values, testimonials, or owner-specific title, legal, tax, surveying, engineering, or valuation conclusions."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "minimum_three_distinct_https_sources",
+    "current_source_access_review_pass",
+    "claim_to_source_scope_present",
+    "official_primary_source_priority_pass",
+    "unsupported_high_risk_claim_scan_pass"
+  ],
+  "sources_inspected": [
+    {
+      "label": "Texas General Land Office, Minerals FAQ (accessed 2026-08-11)",
+      "url": "https://www.glo.texas.gov/sites/default/files/2025-01/Minerals%20FAQ_updated%202023.pdf",
+      "publisher": "www.glo.texas.gov",
+      "accessed_at": "2026-08-12T08:46:35Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.glo.texas.gov/sites/default/files/2025-01/Minerals%20FAQ_updated%202023.pdf",
+        "content_type": "application/pdf"
+      },
+      "source_location_or_paraphrase": "The Texas General Land Office explains that it keeps primordial land-grant files, that later conveyance records are generally found in the county deed records, and that mineral ownership requires examination of the deeds and leases affecting the claim.",
+      "claim_scope": "The article uses the FAQ to distinguish historical land-grant evidence from later title evidence and does not infer current ownership, acreage, inheritance, title, lease rights, or value from ancestry or an original grant."
+    },
+    {
+      "label": "Texas General Land Office, Land Grant Database (accessed 2026-08-11)",
+      "url": "https://www.glo.texas.gov/archives-heritage/search-our-collections/land-grant-search",
+      "publisher": "www.glo.texas.gov",
+      "accessed_at": "2026-08-12T08:46:35Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.glo.texas.gov/archives-heritage/search-our-collections/land-grant-search",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The Texas General Land Office Land Grant Database exposes search fields such as county, abstract number, original grantee, patentee, file number, survey, block, township, and title or patent date.",
+      "claim_scope": "The article uses the database only as a historical property-research starting point and not as a complete present-day chain of title, authoritative survey, ownership determination, or valuation source."
+    },
+    {
+      "label": "Railroad Commission of Texas, About Oil and Gas Data Queries (accessed 2026-08-11)",
+      "url": "https://www.rrc.texas.gov/resource-center/research/research-queries/about-oil-gas-data-queries/",
+      "publisher": "www.rrc.texas.gov",
+      "accessed_at": "2026-08-12T08:46:35Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.rrc.texas.gov/resource-center/research/research-queries/about-oil-gas-data-queries/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The Railroad Commission of Texas explains that its online queries are slices of a larger oil-and-gas system and describes Wellbore Query search identifiers including district, lease or gas-well ID, county, field, operator, permit, API number, status, and well type.",
+      "claim_scope": "The article uses the query descriptions to organize regulatory identity research and does not treat any query result as proof of title, acreage, unit participation, owner payment, future drilling, or value."
+    },
+    {
+      "label": "Railroad Commission of Texas, Oil and Gas Well Records (accessed 2026-08-11)",
+      "url": "https://www.rrc.texas.gov/oil-and-gas/research-and-statistics/obtaining-commission-records/oil-and-gas-well-records/",
+      "publisher": "www.rrc.texas.gov",
+      "accessed_at": "2026-08-12T08:46:35Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.rrc.texas.gov/oil-and-gas/research-and-statistics/obtaining-commission-records/oil-and-gas-well-records/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The Railroad Commission identifies online well-record access through imaged records, the GIS viewer, and Wellbore Query, and identifies online production-query availability for production from 1993 forward.",
+      "claim_scope": "The article uses the page to identify official research channels and does not infer complete well history, owner participation, owner revenue, title, future production, or value from availability of a record."
+    },
+    {
+      "label": "Railroad Commission of Texas, Production Data Query (accessed 2026-08-11)",
+      "url": "https://webapps2.rrc.texas.gov/EWA/ewaPdqMain.do",
+      "publisher": "webapps2.rrc.texas.gov",
+      "accessed_at": "2026-08-12T08:46:35Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://webapps2.rrc.texas.gov/EWA/ewaPdqMain.do",
+        "content_type": "text/html; charset=UTF-8"
+      },
+      "source_location_or_paraphrase": "The Railroad Commission Production Data Query provides general and specific-lease searches and displays the reporting-through date and loaded production range.",
+      "claim_scope": "The article uses the query only for reported production context and does not treat it as an owner cash-flow ledger, a title record, a guarantee of completeness, an individual-well allocation in every case, or a value conclusion."
+    },
+    {
+      "label": "Railroad Commission of Texas, Public GIS Viewer (accessed 2026-08-11)",
+      "url": "https://www.rrc.texas.gov/resource-center/research/gis-viewer/",
+      "publisher": "www.rrc.texas.gov",
+      "accessed_at": "2026-08-12T08:46:35Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.rrc.texas.gov/resource-center/research/gis-viewer/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The Railroad Commission Public GIS Viewer provides map context for oil, gas, pipeline, survey, lease, permit, and well information and warns that mapped boundaries can be approximate and are not authoritative legal, engineering, or surveying records.",
+      "claim_scope": "The article uses GIS only for location and regulatory context and does not infer title, exact boundaries, legal descriptions, unit participation, future development, surveying conclusions, or owner-specific value from the map."
+    },
+    {
+      "label": "Texas Comptroller of Public Accounts, Unclaimed Property (accessed 2026-08-11)",
+      "url": "https://comptroller.texas.gov/programs/unclaimed/",
+      "publisher": "comptroller.texas.gov",
+      "accessed_at": "2026-08-12T08:46:35Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://comptroller.texas.gov/programs/unclaimed/",
+        "content_type": "text/html; charset=UTF-8"
+      },
+      "source_location_or_paraphrase": "The Texas Comptroller identifies mineral interests among examples of unclaimed property and directs individuals to the state claim-search process.",
+      "claim_scope": "The article uses an unclaimed-property result only as an investigation lead and does not treat it as complete ownership proof, a title opinion, the correct payment decimal, a diagnosis of why payments stopped, or a value conclusion."
+    }
+  ]
+}

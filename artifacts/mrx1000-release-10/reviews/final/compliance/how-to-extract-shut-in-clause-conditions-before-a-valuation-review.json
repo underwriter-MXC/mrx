@@ -1,0 +1,49 @@
+{
+  "artifact_type": "mrx1000_wave86_two_image_compliance_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-23T18:23:39Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-14",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0270",
+  "slug": "how-to-extract-shut-in-clause-conditions-before-a-valuation-review",
+  "title": "How to Extract Shut-In Clause Conditions Before a Valuation Review",
+  "canonical_url": "https://mineralrightsxchange.com/blog/how-to-extract-shut-in-clause-conditions-before-a-valuation-review/",
+  "source_path": "src/content/posts/how-to-extract-shut-in-clause-conditions-before-a-valuation-review.mdx",
+  "input_body_sha256": "6bcbb31c3e2ffd22de4503f2a64cf4d6216382a855b17167ef6cac788bdfe066",
+  "input_frontmatter_sha256": "98366542a0d55b9fb1ae821dbaac7861ba6e09390e6e94b3f2d12f710784ffc9",
+  "expected_repo_sha256": "6bcbb31c3e2ffd22de4503f2a64cf4d6216382a855b17167ef6cac788bdfe066",
+  "two_image_manifest_sha256": "8f25fe5b1f8366be4ded464b6eec405677be9e5b49adccd46dbf5431c77dc597",
+  "visual_metadata": {
+    "hero_alt": "An open lease packet and clause worksheet appear beside the exact article title.",
+    "social_alt": "An open lease packet and clause worksheet appear beside the exact article title.",
+    "inline_alt": "A top-down clause extraction worksheet appears above the exact keyword."
+  },
+  "reviewer_id": "codex_wave86_compliance",
+  "review_run_id": "mrx1000-wave86-compliance-20260823T182339Z",
+  "capability": "compliance",
+  "expected_hero_sha256": "7832571f916ec9ad8bbee6d242c9dbe2517569382e8b4a06e9dfdd1050b35380",
+  "expected_inline_sha256": "2635883b58e314541c671c83e6dc82b244ebde01b59c3f9b196f20f62cee8452",
+  "findings": [
+    "Complete current MDX SHA-256 is 6bcbb31c3e2ffd22de4503f2a64cf4d6216382a855b17167ef6cac788bdfe066; hero/share and inline image hashes are separately locked.",
+    "The article separates controlling contracts, performance records, regulatory context, and later professional conclusions; requires source locators and version control; converts ambiguity into neutral questions; and preserves owner privacy, agency, and possible MRX buyer-interest disclosure.",
+    "Image text is limited to the exact article title and approved keyword and adds no real document text, signature, owner identifier, seal, logo, price, payment, status, lease-effect, production, valuation, offer, recommendation, guarantee, or transaction outcome."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "hero_share_sha256_identity",
+    "inline_image_distinct_sha256",
+    "exact_text_ocr_pass",
+    "filename_text_identity_pass",
+    "shut_in_clause_extraction_no_status_lease_effect_payment_sufficiency_production_valuation_value_offer_or_transaction_boundary_pass",
+    "owner_agency_privacy_and_possible_buyer_interest_disclosure_preserved",
+    "no_unsupported_visual_or_decision_claims"
+  ],
+  "sources_inspected": [
+    "src/content/posts/how-to-extract-shut-in-clause-conditions-before-a-valuation-review.mdx",
+    "/assets/articles/hero/how-to-extract-shut-in-clause-conditions-before-a-valuation-review.webp",
+    "/assets/articles/inline/how-to-extract-shut-in-clause-conditions-before-a-valuation-review/shut-in-clause-conditions-valuation-review.webp"
+  ]
+}

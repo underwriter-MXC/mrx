@@ -1,0 +1,66 @@
+{
+  "artifact_type": "mrx1000_two_image_editorial_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-15T03:53:20Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-11",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0142",
+  "slug": "calculate-price-per-net-mineral-acre",
+  "title": "How to Calculate Price per Net Mineral Acre From a Mineral Rights Offer",
+  "canonical_url": "https://mineralrightsxchange.com/blog/calculate-price-per-net-mineral-acre/",
+  "source_path": "src/content/posts/calculate-price-per-net-mineral-acre.mdx",
+  "input_body_sha256": "184b38ccec22fd4c4cd287785d9905fdec39186f007a8ed6eed34cb882c1d00d",
+  "input_frontmatter_sha256": "9b5bfff28666aa5d4228dc628a9ad4bb54e00a9159ddce947d92beb51f72a60d",
+  "expected_repo_sha256": "184b38ccec22fd4c4cd287785d9905fdec39186f007a8ed6eed34cb882c1d00d",
+  "two_image_manifest_sha256": "e477074747ea1acf218978f2c3acc43221c91c3ddfa0e477bd7cea66631770d5",
+  "visual_metadata": {
+    "hero_alt": "Two people study a tract map beside “How to Calculate Price per Net Mineral Acre From a Mineral Rights Offer”.",
+    "social_alt": "Two people study a tract map beside “How to Calculate Price per Net Mineral Acre From a Mineral Rights Offer”.",
+    "inline_alt": "A top-down offer worksheet uses unmarked acreage tiles above “Calculate Price per Net Mineral Acre”."
+  },
+  "reviewer_id": "codex_wave62_editorial",
+  "review_run_id": "mrx1000-wave62-editorial-20260815T035320Z",
+  "capability": "editorial",
+  "findings": [
+    "Complete current MDX SHA-256 is 184b38ccec22fd4c4cd287785d9905fdec39186f007a8ed6eed34cb882c1d00d; the answer-first article contains 1772 body tokens and five FAQs.",
+    "The article owns a narrow calculation and input-validation worksheet. It divides one written total offer by the confirmed NMA covered by that same scope, labels every worked number hypothetical, and stops before valuation, fairness, buyer ranking, transaction selection, title, contract, legal, tax, or financial advice.",
+    "Exact-title hero/share OCR passed for “How to Calculate Price per Net Mineral Acre From a Mineral Rights Offer”; distinct in-body OCR passed for “Calculate Price per Net Mineral Acre”; composition-accurate hero/social and inline alt metadata matched the final visual audit."
+  ],
+  "checks": [
+    {
+      "name": "complete_file_sha256_match",
+      "status": "PASS",
+      "evidence": "184b38ccec22fd4c4cd287785d9905fdec39186f007a8ed6eed34cb882c1d00d"
+    },
+    {
+      "name": "answer_first_article_depth_and_five_faqs",
+      "status": "PASS",
+      "evidence": {
+        "word_count": 1772,
+        "minimum_word_count": 700,
+        "faq_count": 5
+      }
+    },
+    {
+      "name": "two_image_exact_text_identity",
+      "status": "PASS",
+      "evidence": {
+        "hero_ocr": true,
+        "inline_ocr": true,
+        "social_reuses_hero": true,
+        "hero_social_alt_match": true,
+        "inline_alt_match": true,
+        "filename_identity": true,
+        "distinct_binaries": true
+      }
+    }
+  ],
+  "sources_inspected": [
+    "src/content/posts/calculate-price-per-net-mineral-acre.mdx",
+    "/assets/articles/hero/how-to-calculate-price-per-net-mineral-acre-from-a-mineral-rights-offer.webp",
+    "/assets/articles/inline/calculate-price-per-net-mineral-acre/calculate-price-per-net-mineral-acre.webp"
+  ]
+}

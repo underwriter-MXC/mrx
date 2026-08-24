@@ -1,0 +1,107 @@
+{
+  "artifact_type": "mrx1000_two_image_factual_citation_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-23T10:44:53Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-14",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0266",
+  "slug": "post-production-cost-evidence-packet-for-royalty-records",
+  "title": "Post-Production Cost Evidence Packet for Royalty Records",
+  "canonical_url": "https://mineralrightsxchange.com/blog/post-production-cost-evidence-packet-for-royalty-records/",
+  "source_path": "src/content/posts/post-production-cost-evidence-packet-for-royalty-records.mdx",
+  "input_body_sha256": "8528e6f97b85b6ad8fac6f77a71920371e60321d96ccceb3fb2fedbc114dfb0b",
+  "input_frontmatter_sha256": "84c646e6a8a70affafdb2d6cf0d87975167aad055cf195ac9b21c8c7d424f0ca",
+  "expected_repo_sha256": "8528e6f97b85b6ad8fac6f77a71920371e60321d96ccceb3fb2fedbc114dfb0b",
+  "two_image_manifest_sha256": "26de9260b28b431f76b5f99bddab7349d1151dc1a940038692ab2f0356a528f0",
+  "visual_metadata": {
+    "hero_alt": "A blank royalty-record evidence packet appears beside the exact article title.",
+    "social_alt": "A blank royalty-record evidence packet appears beside the exact article title.",
+    "inline_alt": "An overhead royalty-record source matrix appears above the exact keyword."
+  },
+  "reviewer_id": "codex_wave81_factual",
+  "review_run_id": "mrx1000-wave81-factual-20260823T104453Z",
+  "capability": "factual_citation",
+  "findings": [
+    "Complete current MDX SHA-256 is 8528e6f97b85b6ad8fac6f77a71920371e60321d96ccceb3fb2fedbc114dfb0b; all 5 declared sources passed current HTTPS access review.",
+    "Claims remain bounded to Texas statutory payment-information context, Railroad Commission production-query limits, and separate Comptroller tax-administration source lanes. None is converted into private-instrument interpretation, a cost classification, a deduction-permissibility decision, payment validation, liability, cash-flow calculation, offer, or value.",
+    "The article supplies no proprietary, universal, market, or owner-specific numerical assumptions; invents no code definition, cost category, amount, source, identifier, period, document relationship, payment result, or tax treatment; and makes no owner-specific legal, tax, title, valuation, accounting, audit, financial, or transaction conclusion."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "five_distinct_https_sources",
+    "current_source_access_review_pass",
+    "claim_to_source_scope_present",
+    "official_source_priority_pass",
+    "unsupported_high_risk_claim_scan_pass"
+  ],
+  "sources_inspected": [
+    {
+      "label": "Texas Natural Resources Code, Chapter 91 (accessed 2026-08-23)",
+      "url": "https://statutes.capitol.texas.gov/Docs/NR/pdf/NR.91.pdf",
+      "publisher": "statutes.capitol.texas.gov",
+      "accessed_at": "2026-08-23T10:44:53Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://statutes.capitol.texas.gov/Docs/NR/pdf/NR.91.pdf",
+        "content_type": "text/html"
+      },
+      "source_location_or_paraphrase": "Texas Natural Resources Code Chapter 91 supplies the current statutory source for the bounded payment-information and written-request context described from Sections 91.502, 91.504, 91.505, and 91.507.",
+      "claim_scope": "The article uses the code only to identify source fields and preserve a dated request trail; it does not interpret the statute, a private instrument, deadlines, rights, remedies, payment correctness, or liability for an owner."
+    },
+    {
+      "label": "Railroad Commission of Texas, Production Data Query FAQs (accessed 2026-08-23)",
+      "url": "https://www.rrc.texas.gov/about-us/faqs/oil-gas-faq/production-data-query-system-faqs/",
+      "publisher": "www.rrc.texas.gov",
+      "accessed_at": "2026-08-23T10:44:53Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.rrc.texas.gov/about-us/faqs/oil-gas-faq/production-data-query-system-faqs/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The Railroad Commission explains the lease-level or gas-well-level reporting basis, online reporting lag, update cadence, and possibility of revised, corrected, or delinquent production reports.",
+      "claim_scope": "The article uses the FAQ only to preserve query criteria, identifiers, periods, retrieval dates, and public-record limits; it rejects turning regulator production into owner payment accounting, a deduction result, a decimal, or entitlement."
+    },
+    {
+      "label": "Railroad Commission of Texas, Production Data Query (accessed 2026-08-23)",
+      "url": "https://webapps2.rrc.texas.gov/EWA/ewaPdqMain.do",
+      "publisher": "webapps2.rrc.texas.gov",
+      "accessed_at": "2026-08-23T10:44:53Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://webapps2.rrc.texas.gov/EWA/ewaPdqMain.do",
+        "content_type": "text/html; charset=UTF-8"
+      },
+      "source_location_or_paraphrase": "The Railroad Commission Production Data Query is the current first-party query surface for reported Texas production by its available lease, gas-well, operator, field, district, county, and period criteria.",
+      "claim_scope": "The article retains the query only as identifier and period context and does not use it to verify a royalty statement amount, cost, realized price, owner decimal, lease meaning, or payment entitlement."
+    },
+    {
+      "label": "Texas Comptroller, Crude Oil Production Tax (accessed 2026-08-23)",
+      "url": "https://comptroller.texas.gov/taxes/crude-oil/",
+      "publisher": "comptroller.texas.gov",
+      "accessed_at": "2026-08-23T10:44:53Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://comptroller.texas.gov/taxes/crude-oil/",
+        "content_type": "text/html; charset=UTF-8"
+      },
+      "source_location_or_paraphrase": "The Texas Comptroller page supplies the current first-party crude-oil production-tax administration and reporting context.",
+      "claim_scope": "The article uses the page only to keep an official tax-reference lane separate from other reported statement entries; it does not apply a tax rule to an owner or validate a statement label, calculation, allocation, or withholding."
+    },
+    {
+      "label": "Texas Comptroller, Natural Gas Production Tax (accessed 2026-08-23)",
+      "url": "https://comptroller.texas.gov/taxes/natural-gas/",
+      "publisher": "comptroller.texas.gov",
+      "accessed_at": "2026-08-23T10:44:53Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://comptroller.texas.gov/taxes/natural-gas/",
+        "content_type": "text/html; charset=UTF-8"
+      },
+      "source_location_or_paraphrase": "The Texas Comptroller page supplies the current first-party natural-gas production-tax administration and reporting context.",
+      "claim_scope": "The article uses the page only to keep an official tax-reference lane separate from other reported statement entries; it does not apply a tax rule to an owner or validate a statement label, calculation, allocation, or withholding."
+    }
+  ]
+}

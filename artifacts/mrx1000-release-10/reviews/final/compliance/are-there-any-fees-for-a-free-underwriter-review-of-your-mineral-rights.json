@@ -1,0 +1,43 @@
+{
+  "artifact_type": "mrx1000_two_image_compliance_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-11T22:44:38Z",
+  "decision_authority": {
+    "source": "Daryl owner directive, 2026-08-11",
+    "policy": "MRX two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0951",
+  "slug": "are-there-any-fees-for-a-free-underwriter-review-of-your-mineral-rights",
+  "title": "Are There Any Fees for a Free Underwriter Review of Your Mineral Rights?",
+  "canonical_url": "https://mineralrightsxchange.com/blog/are-there-any-fees-for-a-free-underwriter-review-of-your-mineral-rights/",
+  "source_path": "src/content/posts/are-there-any-fees-for-a-free-underwriter-review-of-your-mineral-rights.mdx",
+  "input_body_sha256": "dbf605dfb3bc43098befd3be7385039a86f0834804e90b0601f9c7f19c752dbd",
+  "input_frontmatter_sha256": "3dc5549664a562bcf5eb0782da91719f636773ebed7c054a7a1fe7e968129914",
+  "expected_repo_sha256": "dbf605dfb3bc43098befd3be7385039a86f0834804e90b0601f9c7f19c752dbd",
+  "two_image_manifest_sha256": "802512b5dab8eae7592be5934f97a6a8989125fb8f65d3f37ee3cdeb2d35dc10",
+  "reviewer_id": "codex_two_image_compliance",
+  "review_run_id": "mrx1000-two-image-retrofit-20260811T224438Z",
+  "capability": "compliance",
+  "expected_hero_sha256": "7653bdb55c8c88edf75205c71b322c50a278485ec4033aa7bbf421b985587d4b",
+  "expected_inline_sha256": "f9e70b60bef3208af4b08975bbc784a9419a40f4f7cbc461f2a08e58d20ec2ed",
+  "findings": [
+    "Complete current MDX SHA-256 is dbf605dfb3bc43098befd3be7385039a86f0834804e90b0601f9c7f19c752dbd; hero/share and in-body image hashes are separately locked.",
+    "Image text is limited to the exact article title and declared page keyword; it adds no guarantee, price, deadline, legal conclusion, or tax conclusion.",
+    "The article retains its educational and professional-boundary language and current disclosure treatment."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "hero_share_sha256_identity",
+    "inline_image_distinct_sha256",
+    "exact_text_ocr_pass",
+    "filename_text_identity_pass",
+    "no_unsupported_visual_claims",
+    "educational_and_professional_boundaries_preserved"
+  ],
+  "sources_inspected": [
+    "src/content/posts/are-there-any-fees-for-a-free-underwriter-review-of-your-mineral-rights.mdx",
+    "/assets/articles/hero/are-there-any-fees-for-a-free-underwriter-review-of-your-mineral-rights.webp",
+    "/assets/articles/inline/are-there-any-fees-for-a-free-underwriter-review-of-your-mineral-rights/mineral-rights-underwriter-review-fees.webp"
+  ]
+}

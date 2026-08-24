@@ -1,0 +1,43 @@
+{
+  "artifact_type": "mrx1000_two_image_compliance_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-11T22:44:38Z",
+  "decision_authority": {
+    "source": "Daryl owner directive, 2026-08-11",
+    "policy": "MRX two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0628",
+  "slug": "1031-exchange-vs-traditional-sales-for-mineral-rights",
+  "title": "1031 Exchange vs. Traditional Sales for Mineral Rights",
+  "canonical_url": "https://mineralrightsxchange.com/blog/1031-exchange-vs-traditional-sales-for-mineral-rights/",
+  "source_path": "src/content/posts/1031-exchange-vs-traditional-sales-for-mineral-rights.mdx",
+  "input_body_sha256": "9e333051dace33c31c65585c92a26e05cdbf3cc094e3413cd03c57bea945277d",
+  "input_frontmatter_sha256": "c2fac9a56e33b7346bf225e0a5d783f49282e58fb26271ed429a474a359fa552",
+  "expected_repo_sha256": "9e333051dace33c31c65585c92a26e05cdbf3cc094e3413cd03c57bea945277d",
+  "two_image_manifest_sha256": "802512b5dab8eae7592be5934f97a6a8989125fb8f65d3f37ee3cdeb2d35dc10",
+  "reviewer_id": "codex_two_image_compliance",
+  "review_run_id": "mrx1000-two-image-retrofit-20260811T224438Z",
+  "capability": "compliance",
+  "expected_hero_sha256": "04c05f4c6419d5cc190a4c51566ef8f511ff9771594110497c20c1e17bae9d4d",
+  "expected_inline_sha256": "d89a0878acd22b1abf92408901ed1a580c33514381e64201f94a6de54f9d8798",
+  "findings": [
+    "Complete current MDX SHA-256 is 9e333051dace33c31c65585c92a26e05cdbf3cc094e3413cd03c57bea945277d; hero/share and in-body image hashes are separately locked.",
+    "Image text is limited to the exact article title and declared page keyword; it adds no guarantee, price, deadline, legal conclusion, or tax conclusion.",
+    "The article retains its educational and professional-boundary language and current disclosure treatment."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "hero_share_sha256_identity",
+    "inline_image_distinct_sha256",
+    "exact_text_ocr_pass",
+    "filename_text_identity_pass",
+    "no_unsupported_visual_claims",
+    "educational_and_professional_boundaries_preserved"
+  ],
+  "sources_inspected": [
+    "src/content/posts/1031-exchange-vs-traditional-sales-for-mineral-rights.mdx",
+    "/assets/articles/hero/1031-exchange-vs-traditional-sales-for-mineral-rights.webp",
+    "/assets/articles/inline/1031-exchange-vs-traditional-sales-for-mineral-rights/1031-exchange-vs-traditional-sale-mineral-rights.webp"
+  ]
+}

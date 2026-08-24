@@ -1,0 +1,49 @@
+{
+  "artifact_type": "mrx1000_two_image_compliance_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-23T01:42:01Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-14",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0007",
+  "slug": "mineral-rights-document-redaction-checklist-before-sharing-records",
+  "title": "Mineral Rights Document Redaction Checklist Before You Share Records",
+  "canonical_url": "https://mineralrightsxchange.com/blog/mineral-rights-document-redaction-checklist-before-sharing-records/",
+  "source_path": "src/content/posts/mineral-rights-document-redaction-checklist-before-sharing-records.mdx",
+  "input_body_sha256": "bd84af1051d1ce4bfc12b73b979b51a76245b26da8daed7bb8ef05434d738bdf",
+  "input_frontmatter_sha256": "810b918d905a3d2e856152be2c5dc1de43df78907b7d8ed947969a1a68575b04",
+  "expected_repo_sha256": "bd84af1051d1ce4bfc12b73b979b51a76245b26da8daed7bb8ef05434d738bdf",
+  "two_image_manifest_sha256": "280f6b4b13d408705ab48cc8d879aaff9699cae4557590a62f53163a70de070d",
+  "visual_metadata": {
+    "hero_alt": "A hand places a redacted share copy beside preserved originals under the exact article title.",
+    "social_alt": "A hand places a redacted share copy beside preserved originals under the exact article title.",
+    "inline_alt": "An overhead workflow separates preserved originals, a redacted share copy, and a blank log under the exact keyword."
+  },
+  "reviewer_id": "codex_wave74_compliance",
+  "review_run_id": "mrx1000-wave74-compliance-20260823T014201Z",
+  "capability": "compliance",
+  "expected_hero_sha256": "43b4241d19329b5b0bb57fd5a706ea5069c6835bf33151f442520f726686845f",
+  "expected_inline_sha256": "23c20014fa83388eb50663d3ffc636acebdce19dc59fc4efc3793e16eff47058",
+  "findings": [
+    "Complete current MDX SHA-256 is bd84af1051d1ce4bfc12b73b979b51a76245b26da8daed7bb8ef05434d738bdf; hero/share and inline image hashes are separately locked.",
+    "The article preserves originals, forbids concealing material facts, stops before omitting information that may be required for a tax, title, legal, regulatory, or transaction purpose, discloses possible MRX buyer interest, and preserves owner agency.",
+    "Image text is limited to the exact article title and approved keyword and adds no owner name, account value, tax identifier, property fact, recipient verification, seal, recommendation, confidentiality claim, security claim, guarantee, or transaction outcome."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "hero_share_sha256_identity",
+    "inline_image_distinct_sha256",
+    "exact_text_ocr_pass",
+    "filename_text_identity_pass",
+    "original_preservation_and_required-field-stop_rule_pass",
+    "owner_agency_and_possible_buyer_interest_disclosure_preserved",
+    "no_unsupported_visual_or_decision_claims"
+  ],
+  "sources_inspected": [
+    "src/content/posts/mineral-rights-document-redaction-checklist-before-sharing-records.mdx",
+    "/assets/articles/hero/mineral-rights-document-redaction-checklist-before-you-share-records.webp",
+    "/assets/articles/inline/mineral-rights-document-redaction-checklist-before-sharing-records/mineral-rights-document-redaction-checklist.webp"
+  ]
+}

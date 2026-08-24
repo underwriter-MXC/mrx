@@ -1,0 +1,43 @@
+{
+  "artifact_type": "mrx1000_two_image_compliance_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-12T23:14:27Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-12",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0129",
+  "slug": "understanding-the-factors-behind-the-valuation-of-your-texas-mineral-rights-explained",
+  "title": "Understanding the Factors Behind the Valuation of Your Texas Mineral Rights Explained",
+  "canonical_url": "https://mineralrightsxchange.com/blog/understanding-the-factors-behind-the-valuation-of-your-texas-mineral-rights-explained/",
+  "source_path": "src/content/posts/understanding-the-factors-behind-the-valuation-of-your-texas-mineral-rights-explained.mdx",
+  "input_body_sha256": "3aa9c79ba394e56db51255e0adede234df47e8451597588bed1151c45acab8b1",
+  "input_frontmatter_sha256": "be832f29ba489b5d7ac01967da9ea651b4aa205596bbe67917e60f7bbee55f7d",
+  "expected_repo_sha256": "3aa9c79ba394e56db51255e0adede234df47e8451597588bed1151c45acab8b1",
+  "two_image_manifest_sha256": "94b548bd2ea8ab45cc2b2fb0cd752d2c291dad6b469066166ec1826dc8510e59",
+  "reviewer_id": "codex_wave49_compliance",
+  "review_run_id": "mrx1000-wave49-compliance-20260812T231427Z",
+  "capability": "compliance",
+  "expected_hero_sha256": "8c4d70d5a48178e6efbea489867f5b5f5f0b5dd146a6ffe35d7e6d01dcdf7a97",
+  "expected_inline_sha256": "f22a08b88fe389d6a12d5f202d9460fa01dd84589ee7388adfcf3f9de91cc682",
+  "findings": [
+    "Complete current MDX SHA-256 is 3aa9c79ba394e56db51255e0adede234df47e8451597588bed1151c45acab8b1; hero/share and inline image hashes are separately locked.",
+    "The article states educational and professional boundaries, discloses MRX’s potential economic interest, separates the conditional range from its evidence-confidence grade and from an appraisal conclusion, written proposal, owner net, and tax record, labels input status, prohibits automatic confidence haircuts, and routes unresolved title, legal, tax, accounting, appraisal, land, engineering, geology, reserves, commodity, and transaction questions without making owner-specific conclusions.",
+    "Image text is limited to the exact article title and exact canonical keyword and adds no owner data, buyer endorsement, property identifier, price, acreage, decimal, formula, reserves claim, forecast, success claim, appraisal result, tax outcome, or transaction conclusion."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "hero_share_sha256_identity",
+    "inline_image_distinct_sha256",
+    "exact_text_ocr_pass",
+    "filename_text_identity_pass",
+    "educational_and_professional_boundaries_preserved",
+    "no_unsupported_visual_or_valuation_claims"
+  ],
+  "sources_inspected": [
+    "src/content/posts/understanding-the-factors-behind-the-valuation-of-your-texas-mineral-rights-explained.mdx",
+    "/assets/articles/hero/understanding-the-factors-behind-the-valuation-of-your-texas-mineral-rights-explained.webp",
+    "/assets/articles/inline/understanding-the-factors-behind-the-valuation-of-your-texas-mineral-rights-explained/how-is-the-value-of-my-texas-mineral-rights-determined-and-assessed.webp"
+  ]
+}

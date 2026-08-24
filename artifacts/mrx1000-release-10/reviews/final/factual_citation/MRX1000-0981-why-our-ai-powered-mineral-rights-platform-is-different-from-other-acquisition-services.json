@@ -1,0 +1,74 @@
+{
+  "artifact_type": "mrx1000_two_image_factual_citation_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-11T22:44:38Z",
+  "decision_authority": {
+    "source": "Daryl owner directive, 2026-08-11",
+    "policy": "MRX two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0981",
+  "slug": "why-our-ai-powered-mineral-rights-platform-is-different-from-other-acquisition-services",
+  "title": "Why Our AI-Powered Mineral Rights Platform Is Different From Other Acquisition Services",
+  "canonical_url": "https://mineralrightsxchange.com/blog/why-our-ai-powered-mineral-rights-platform-is-different-from-other-acquisition-services/",
+  "source_path": "src/content/posts/why-our-ai-powered-mineral-rights-platform-is-different-from-other-acquisition-services.mdx",
+  "input_body_sha256": "a528aeb27863ea640bcac4a0c8510a52a31c45bea8776cd15981448f0d821aa3",
+  "input_frontmatter_sha256": "d533bb1ee84889741142d063f2ff6fd44c64771ceed73e06a1e34e0824c25d13",
+  "expected_repo_sha256": "a528aeb27863ea640bcac4a0c8510a52a31c45bea8776cd15981448f0d821aa3",
+  "two_image_manifest_sha256": "802512b5dab8eae7592be5934f97a6a8989125fb8f65d3f37ee3cdeb2d35dc10",
+  "reviewer_id": "codex_two_image_factual",
+  "review_run_id": "mrx1000-two-image-retrofit-20260811T224438Z",
+  "capability": "factual_citation",
+  "findings": [
+    "Complete current MDX SHA-256 is a528aeb27863ea640bcac4a0c8510a52a31c45bea8776cd15981448f0d821aa3; all 3 declared sources passed live access review.",
+    "The retrofit changes image metadata and assets, not the bounded claim-to-source relationships in the article body.",
+    "The two images make no fabricated numeric, legal, tax, valuation, testimonial, or document claims."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "minimum_two_distinct_https_sources",
+    "current_source_access_review_pass",
+    "two_image_unsupported_claim_scan_pass"
+  ],
+  "sources_inspected": [
+    {
+      "label": "MRX published review methodology (accessed 2026-08-06)",
+      "url": "https://mineralrightsxchange.com/methodology/",
+      "publisher": "mineralrightsxchange.com",
+      "accessed_at": "2026-08-11T22:44:38Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://mineralrightsxchange.com/methodology/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The article cites MRX published review methodology (accessed 2026-08-06) only for the bounded context attributed in its body and source notes.",
+      "claim_scope": "Owner-specific legal, tax, title, accounting, brokerage, engineering, appraisal, eligibility, value, and transaction conclusions remain outside this source use."
+    },
+    {
+      "label": "MRX privacy policy and AI-assisted processing disclosure (accessed 2026-08-06)",
+      "url": "https://mineralrightsxchange.com/privacy-policy/",
+      "publisher": "mineralrightsxchange.com",
+      "accessed_at": "2026-08-11T22:44:38Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://mineralrightsxchange.com/privacy-policy/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The article cites MRX privacy policy and AI-assisted processing disclosure (accessed 2026-08-06) only for the bounded context attributed in its body and source notes.",
+      "claim_scope": "Owner-specific legal, tax, title, accounting, brokerage, engineering, appraisal, eligibility, value, and transaction conclusions remain outside this source use."
+    },
+    {
+      "label": "Railroad Commission of Texas online research queries (accessed 2026-08-06)",
+      "url": "https://www.rrc.texas.gov/resource-center/research/research-queries/",
+      "publisher": "www.rrc.texas.gov",
+      "accessed_at": "2026-08-11T22:44:38Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.rrc.texas.gov/resource-center/research/research-queries/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The article cites Railroad Commission of Texas online research queries (accessed 2026-08-06) only for the bounded context attributed in its body and source notes.",
+      "claim_scope": "Owner-specific legal, tax, title, accounting, brokerage, engineering, appraisal, eligibility, value, and transaction conclusions remain outside this source use."
+    }
+  ]
+}

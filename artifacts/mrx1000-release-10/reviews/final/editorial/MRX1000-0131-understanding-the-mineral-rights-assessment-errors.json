@@ -1,0 +1,59 @@
+{
+  "artifact_type": "mrx1000_two_image_editorial_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-13T00:19:27Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-12",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0131",
+  "slug": "understanding-the-mineral-rights-assessment-errors",
+  "title": "Understanding the Mineral Rights Assessment Errors",
+  "canonical_url": "https://mineralrightsxchange.com/blog/understanding-the-mineral-rights-assessment-errors/",
+  "source_path": "src/content/posts/understanding-the-mineral-rights-assessment-errors.mdx",
+  "input_body_sha256": "5af96792a7ef4208dd4d2f9863b3a2435c77507c6dff9820e8858f35bb8daa98",
+  "input_frontmatter_sha256": "1cff0924cea99ab30749d2585275edbb5d7086887119ab3be79be35885aef66c",
+  "expected_repo_sha256": "5af96792a7ef4208dd4d2f9863b3a2435c77507c6dff9820e8858f35bb8daa98",
+  "two_image_manifest_sha256": "02524f667bd24b68149eedc778daccb462678043f8980928510a5ed1029e0c96",
+  "reviewer_id": "codex_wave51_editorial",
+  "review_run_id": "mrx1000-wave51-editorial-20260813T001927Z",
+  "capability": "editorial",
+  "findings": [
+    "Complete current MDX SHA-256 is 5af96792a7ef4208dd4d2f9863b3a2435c77507c6dff9820e8858f35bb8daa98; the answer-first article contains 3473 body tokens and five FAQs.",
+    "The article owns the assessment-error detection and correction job. It distinguishes errors, evidence gaps, and scenario differences; defines eight error classes; gives each a detection, containment, correction, and rerun protocol; and routes end-to-end sale missteps, clause traps, seller-readiness gates, and the suggested-price bridge to their established pages.",
+    "Exact-title hero/share OCR passed for “Understanding the Mineral Rights Assessment Errors”; distinct in-body OCR passed for “Mineral Rights Selling Process Errors”."
+  ],
+  "checks": [
+    {
+      "name": "complete_file_sha256_match",
+      "status": "PASS",
+      "evidence": "5af96792a7ef4208dd4d2f9863b3a2435c77507c6dff9820e8858f35bb8daa98"
+    },
+    {
+      "name": "answer_first_article_depth_and_five_faqs",
+      "status": "PASS",
+      "evidence": {
+        "word_count": 3473,
+        "minimum_word_count": 700,
+        "faq_count": 5
+      }
+    },
+    {
+      "name": "two_image_exact_text_identity",
+      "status": "PASS",
+      "evidence": {
+        "hero_ocr": true,
+        "inline_ocr": true,
+        "social_reuses_hero": true,
+        "filename_identity": true,
+        "distinct_binaries": true
+      }
+    }
+  ],
+  "sources_inspected": [
+    "src/content/posts/understanding-the-mineral-rights-assessment-errors.mdx",
+    "/assets/articles/hero/understanding-the-mineral-rights-assessment-errors.webp",
+    "/assets/articles/inline/understanding-the-mineral-rights-assessment-errors/mineral-rights-selling-process-errors.webp"
+  ]
+}

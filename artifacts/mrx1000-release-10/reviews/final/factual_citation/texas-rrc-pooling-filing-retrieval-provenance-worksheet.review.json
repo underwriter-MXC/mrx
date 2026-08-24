@@ -1,0 +1,120 @@
+{
+  "artifact_type": "mrx1000_wave89_two_image_factual_citation_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-23T21:11:27Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-14",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0286",
+  "slug": "texas-rrc-pooling-filing-retrieval-provenance-worksheet",
+  "title": "Texas RRC Pooling-Filing Retrieval Provenance Worksheet",
+  "canonical_url": "https://mineralrightsxchange.com/blog/texas-rrc-pooling-filing-retrieval-provenance-worksheet/",
+  "source_path": "src/content/posts/texas-rrc-pooling-filing-retrieval-provenance-worksheet.mdx",
+  "input_body_sha256": "67973f95b615135a2bb8f0d7bf16b59ea2cb803634e3c7eff3d2f0198a1b4dbd",
+  "input_frontmatter_sha256": "341fe4b41c7467c5eb1066a541407b26930e0c056f8fe831791e189de514db30",
+  "expected_repo_sha256": "67973f95b615135a2bb8f0d7bf16b59ea2cb803634e3c7eff3d2f0198a1b4dbd",
+  "two_image_manifest_sha256": "4709e9b34f9f62898b1f0a3abe300944eb8497d84e8b73c160ca06596f6253a2",
+  "visual_metadata": {
+    "hero_alt": "A Texas public-record filing desk appears beside the exact article title.",
+    "social_alt": "A Texas public-record filing desk appears beside the exact article title.",
+    "inline_alt": "A top-down filing-retrieval provenance worksheet appears above the exact keyword."
+  },
+  "reviewer_id": "codex_wave89_factual",
+  "review_run_id": "mrx1000-wave89-factual-20260823T211127Z",
+  "capability": "factual_citation",
+  "findings": [
+    "Complete current MDX SHA-256 is 67973f95b615135a2bb8f0d7bf16b59ea2cb803634e3c7eff3d2f0198a1b4dbd; all 6 declared sources passed current HTTPS access review.",
+    "Claims remain bounded to current official RRC source routes, system and form labels, displayed search-identifier categories, record classes, coverage descriptions, access paths, and published limitations. None of the sources is used to interpret a filing or establish ownership, title, tract inclusion, lease effect, pooling authority, entitlement, compliance, completeness, accuracy, development, production, value, or a transaction result.",
+    "The article publishes no completed filing, private owner document, signature, address, legal description, account data, actual property identifier, correspondence, production result, acreage result, drilling forecast, valuation input, price, value, offer, or transaction claim."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "six_distinct_https_sources",
+    "current_source_access_review_pass",
+    "claim_to_source_scope_present",
+    "official_source_priority_pass",
+    "unsupported_high_risk_claim_scan_pass"
+  ],
+  "sources_inspected": [
+    {
+      "label": "Railroad Commission of Texas, Research Queries (accessed 2026-08-23)",
+      "url": "https://www.rrc.texas.gov/resource-center/research/research-queries/",
+      "publisher": "www.rrc.texas.gov",
+      "accessed_at": "2026-08-23T21:11:27Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.rrc.texas.gov/resource-center/research/research-queries/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The official RRC directory identifies named oil-and-gas query systems and publishes the limitation that online data is informational, continually updated, non-authoritative, and without legal force.",
+      "claim_scope": "The article records the exact official route and repeats the published limitation; it does not convert the route or a result into proof of property connection, ownership, filing effect, completeness, accuracy, compliance, or value."
+    },
+    {
+      "label": "Railroad Commission of Texas, About Oil and Gas Data Queries (accessed 2026-08-23)",
+      "url": "https://www.rrc.texas.gov/resource-center/research/research-queries/about-oil-gas-data-queries/",
+      "publisher": "www.rrc.texas.gov",
+      "accessed_at": "2026-08-23T21:11:27Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.rrc.texas.gov/resource-center/research/research-queries/about-oil-gas-data-queries/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The official RRC page describes displayed search-identifier categories for public oil-and-gas queries, including API, district, lease or gas ID, county, field, operator, and permit fields.",
+      "claim_scope": "The article uses those categories only as paired locator labels and controlled values; it does not connect identifiers to a private property or interpret their relationship."
+    },
+    {
+      "label": "Railroad Commission of Texas, Oil and Gas Forms (accessed 2026-08-23)",
+      "url": "https://www.rrc.texas.gov/oil-and-gas/oil-and-gas-forms/",
+      "publisher": "www.rrc.texas.gov",
+      "accessed_at": "2026-08-23T21:11:27Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.rrc.texas.gov/oil-and-gas/oil-and-gas-forms/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The official current forms library lists P-12 as Certificate of Pooling Authority and supplies the official blank-form route.",
+      "claim_scope": "The article records only the displayed form label and route. It does not state that a particular filing exists or interpret a completed form."
+    },
+    {
+      "label": "Railroad Commission of Texas, Form P-12 Certificate of Pooling Authority (accessed 2026-08-23)",
+      "url": "https://www.rrc.texas.gov/media/wzfgzr45/p-12p.pdf",
+      "publisher": "www.rrc.texas.gov",
+      "accessed_at": "2026-08-23T21:11:27Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.rrc.texas.gov/media/wzfgzr45/p-12p.pdf",
+        "content_type": "application/pdf"
+      },
+      "source_location_or_paraphrase": "The official blank P-12 displays locator fields including field, lease or ID, district, operator and P-5, well, pooled-unit, API, filing-purpose, county, acreage, and tract-table labels.",
+      "claim_scope": "The article names displayed field types only to help identify a document and expressly rejects any conclusion about property connection, tract inclusion, acreage, lease effect, pooling authority, entitlement, compliance, or value."
+    },
+    {
+      "label": "Railroad Commission of Texas, Oil and Gas Imaged Records Menu (accessed 2026-08-23)",
+      "url": "https://www.rrc.texas.gov/resource-center/research/research-queries/imaged-records/imaged-records-menu/",
+      "publisher": "www.rrc.texas.gov",
+      "accessed_at": "2026-08-23T21:11:27Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.rrc.texas.gov/resource-center/research/research-queries/imaged-records/imaged-records-menu/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The official imaged-records menu describes record classes, coverage periods, and online or historical access routes.",
+      "claim_scope": "The article preserves the displayed class and coverage description only as retrieval context; it does not infer existence, absence, completeness, filing quality, or legal effect."
+    },
+    {
+      "label": "Railroad Commission of Texas, Drilling Permit W-1 Query (accessed 2026-08-23)",
+      "url": "https://webapps2.rrc.texas.gov/EWA/drillingPermitsQueryAction.do",
+      "publisher": "webapps2.rrc.texas.gov",
+      "accessed_at": "2026-08-23T21:11:27Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://webapps2.rrc.texas.gov/EWA/drillingPermitsQueryAction.do",
+        "content_type": "text/html; charset=UTF-8"
+      },
+      "source_location_or_paraphrase": "The official W-1 query entry supplies a public permit-search route and displayed search fields.",
+      "claim_scope": "The article records the route and actual navigation steps only; it does not reproduce or interpret a particular permit, certificate, plat, tract table, attachment, or property relationship."
+    }
+  ]
+}

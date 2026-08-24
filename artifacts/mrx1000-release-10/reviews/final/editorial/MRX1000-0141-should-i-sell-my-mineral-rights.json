@@ -1,0 +1,66 @@
+{
+  "artifact_type": "mrx1000_two_image_editorial_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-14T20:37:18Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-11",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0141",
+  "slug": "should-i-sell-my-mineral-rights",
+  "title": "Should I Sell My Mineral Rights?",
+  "canonical_url": "https://mineralrightsxchange.com/blog/should-i-sell-my-mineral-rights/",
+  "source_path": "src/content/posts/should-i-sell-my-mineral-rights.mdx",
+  "input_body_sha256": "638c478784325e2645ece02bb47a812cbdc2a60795a1677feaeafa4fb6a62ac4",
+  "input_frontmatter_sha256": "0fc5b498ce2a8524915b0711a6e76924c769a8fb1171fde37b0dfeea4389a88d",
+  "expected_repo_sha256": "638c478784325e2645ece02bb47a812cbdc2a60795a1677feaeafa4fb6a62ac4",
+  "two_image_manifest_sha256": "677e2ff092de68a38cc2f21310d849b98c1966ce5f729efa5e3dba3c0d744af3",
+  "visual_metadata": {
+    "hero_alt": "A mineral owner compares a royalty statement and a sale folder beside “Should I Sell My Mineral Rights?”.",
+    "social_alt": "A mineral owner compares a royalty statement and a sale folder beside “Should I Sell My Mineral Rights?”.",
+    "inline_alt": "A parcel map separates a sale folder from royalty statements above “Sell Mineral Rights or Keep Receiving Royalties”."
+  },
+  "reviewer_id": "codex_wave61_editorial",
+  "review_run_id": "mrx1000-wave61-editorial-20260814T203718Z",
+  "capability": "editorial",
+  "findings": [
+    "Complete current MDX SHA-256 is 638c478784325e2645ece02bb47a812cbdc2a60795a1677feaeafa4fb6a62ac4; the answer-first article contains 2268 body tokens and five FAQs.",
+    "The article owns a structured sell-versus-keep decision record. It compares the exact rights under consideration, current royalty evidence, timing, uncertainty, liquidity purpose, alternatives, reversibility, and professional-review questions without deciding for the owner or producing an owner-specific value.",
+    "Exact-title hero/share OCR passed for “Should I Sell My Mineral Rights?”; distinct in-body OCR passed for “Sell Mineral Rights or Keep Receiving Royalties”; composition-accurate hero/social and inline alt metadata matched the final visual audit."
+  ],
+  "checks": [
+    {
+      "name": "complete_file_sha256_match",
+      "status": "PASS",
+      "evidence": "638c478784325e2645ece02bb47a812cbdc2a60795a1677feaeafa4fb6a62ac4"
+    },
+    {
+      "name": "answer_first_article_depth_and_five_faqs",
+      "status": "PASS",
+      "evidence": {
+        "word_count": 2268,
+        "minimum_word_count": 700,
+        "faq_count": 5
+      }
+    },
+    {
+      "name": "two_image_exact_text_identity",
+      "status": "PASS",
+      "evidence": {
+        "hero_ocr": true,
+        "inline_ocr": true,
+        "social_reuses_hero": true,
+        "hero_social_alt_match": true,
+        "inline_alt_match": true,
+        "filename_identity": true,
+        "distinct_binaries": true
+      }
+    }
+  ],
+  "sources_inspected": [
+    "src/content/posts/should-i-sell-my-mineral-rights.mdx",
+    "/assets/articles/hero/should-i-sell-my-mineral-rights.webp",
+    "/assets/articles/inline/should-i-sell-my-mineral-rights/sell-mineral-rights-or-keep-receiving-royalties.webp"
+  ]
+}

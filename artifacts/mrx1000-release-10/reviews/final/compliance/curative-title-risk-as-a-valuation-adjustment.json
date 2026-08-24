@@ -1,0 +1,43 @@
+{
+  "artifact_type": "mrx1000_two_image_compliance_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-12T00:42:13Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-11",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0174",
+  "slug": "curative-title-risk-as-a-valuation-adjustment",
+  "title": "Curative Title Risk as a Valuation Adjustment",
+  "canonical_url": "https://mineralrightsxchange.com/blog/curative-title-risk-as-a-valuation-adjustment/",
+  "source_path": "src/content/posts/curative-title-risk-as-a-valuation-adjustment.mdx",
+  "input_body_sha256": "687581b6137f8455ab24b6f398293e6a986bb16fb95120ebe0529b4e33d277cd",
+  "input_frontmatter_sha256": "6f24d486038f192140ebfb47cf42be2922429dee1d5463cd0bd0da43f35bf0d2",
+  "expected_repo_sha256": "687581b6137f8455ab24b6f398293e6a986bb16fb95120ebe0529b4e33d277cd",
+  "two_image_manifest_sha256": "45493b966155226cbc8b55905932c2e6bff61ba391af1db53a647f68947cd1f3",
+  "reviewer_id": "codex_wave16_compliance",
+  "review_run_id": "mrx1000-wave16-compliance-20260812T004213Z",
+  "capability": "compliance",
+  "expected_hero_sha256": "aead9ed9bad9d04dd5591d2beeae0205217a3139b5ab997cf9059ea0fcd14184",
+  "expected_inline_sha256": "ef0ae23d48385249d3dd88e35516ceffc996e62ca1be7c07d394852a06c90ae0",
+  "findings": [
+    "Complete current MDX SHA-256 is 687581b6137f8455ab24b6f398293e6a986bb16fb95120ebe0529b4e33d277cd; hero/share and inline image hashes are separately locked.",
+    "The article states educational and professional boundaries, discloses MRX’s potential economic interest, and avoids cure promises, fixed percentage haircuts, unsupported title conclusions, double counting, or an owner-specific value conclusion.",
+    "Image text is limited to the exact article title and an authorized supporting keyword and adds no document, owner, title, cost, timing, percentage, or cure-outcome claim."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "hero_share_sha256_identity",
+    "inline_image_distinct_sha256",
+    "exact_text_ocr_pass",
+    "filename_text_identity_pass",
+    "educational_and_professional_boundaries_preserved",
+    "no_unsupported_visual_or_payment_claims"
+  ],
+  "sources_inspected": [
+    "src/content/posts/curative-title-risk-as-a-valuation-adjustment.mdx",
+    "/assets/articles/hero/curative-title-risk-as-a-valuation-adjustment.webp",
+    "/assets/articles/inline/curative-title-risk-as-a-valuation-adjustment/curative-title-risk-worksheet.webp"
+  ]
+}

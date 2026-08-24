@@ -1,0 +1,43 @@
+{
+  "artifact_type": "mrx1000_two_image_compliance_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-12T13:11:15Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-12",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0111",
+  "slug": "selling-mineral-rights-timeline-in-2026",
+  "title": "Selling Mineral Rights: Timeline In 2026",
+  "canonical_url": "https://mineralrightsxchange.com/blog/selling-mineral-rights-timeline-in-2026/",
+  "source_path": "src/content/posts/selling-mineral-rights-timeline-in-2026.mdx",
+  "input_body_sha256": "28922213d449f95874fbd6a8fa7e55963eb5fbb63f2321f2bab02b2f879402ae",
+  "input_frontmatter_sha256": "3cae7d3b04eee9c4dcade24d6524dcc4f30021fbee532c64a4b7ef074f18e2d0",
+  "expected_repo_sha256": "28922213d449f95874fbd6a8fa7e55963eb5fbb63f2321f2bab02b2f879402ae",
+  "two_image_manifest_sha256": "cb0d79dcefce493cda8280fcecf26d84cb6024672be96d17bc022e6a4f7cdb69",
+  "reviewer_id": "codex_wave31_compliance",
+  "review_run_id": "mrx1000-wave31-compliance-20260812T131115Z",
+  "capability": "compliance",
+  "expected_hero_sha256": "8138e91cdccc664539be42c9e2747197fc06a4b9c087cea2e39048ce65d066fc",
+  "expected_inline_sha256": "c99faa309ff7454e349cfbae110cf20fbfb8482d90b35e679bd9bee6ac5a6415",
+  "findings": [
+    "Complete current MDX SHA-256 is 28922213d449f95874fbd6a8fa7e55963eb5fbb63f2321f2bab02b2f879402ae; hero/share and inline image hashes are separately locked.",
+    "The article states educational and professional boundaries, discloses MRX’s potential economic interest, separates planning targets from contractual deadlines and transaction states, and routes unresolved title, legal, tax, accounting, valuation, cybersecurity, escrow, payment, recording, and contract questions without making owner-specific conclusions.",
+    "Image text is limited to the exact article title and canonical keyword and adds no owner data, buyer endorsement, deed, payment instruction, price, acreage, decimal, deadline, settlement status, recording number, legal, tax, cybersecurity, escrow, or transaction conclusion."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "hero_share_sha256_identity",
+    "inline_image_distinct_sha256",
+    "exact_text_ocr_pass",
+    "filename_text_identity_pass",
+    "educational_and_professional_boundaries_preserved",
+    "no_unsupported_visual_or_payment_claims"
+  ],
+  "sources_inspected": [
+    "src/content/posts/selling-mineral-rights-timeline-in-2026.mdx",
+    "/assets/articles/hero/selling-mineral-rights-timeline-in-2026.webp",
+    "/assets/articles/inline/selling-mineral-rights-timeline-in-2026/selling-mineral-rights.webp"
+  ]
+}

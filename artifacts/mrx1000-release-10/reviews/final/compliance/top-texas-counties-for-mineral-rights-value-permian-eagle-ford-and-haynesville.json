@@ -1,0 +1,43 @@
+{
+  "artifact_type": "mrx1000_two_image_compliance_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-11T22:44:38Z",
+  "decision_authority": {
+    "source": "Daryl owner directive, 2026-08-11",
+    "policy": "MRX two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0734",
+  "slug": "top-texas-counties-for-mineral-rights-value-permian-eagle-ford-and-haynesville",
+  "title": "Top Texas Counties for Mineral Rights Value: Permian, Eagle Ford, and Haynesville",
+  "canonical_url": "https://mineralrightsxchange.com/blog/top-texas-counties-for-mineral-rights-value-permian-eagle-ford-and-haynesville/",
+  "source_path": "src/content/posts/top-texas-counties-for-mineral-rights-value-permian-eagle-ford-and-haynesville.mdx",
+  "input_body_sha256": "d46058d6c772045c2f02812765a6cf4c9d9ffff91af801b2bcb9236e84f6c464",
+  "input_frontmatter_sha256": "1dd4d0586a35693a56a2c9d47520bf8a52dafc4ee82800fb0b872c1d3cec48ec",
+  "expected_repo_sha256": "d46058d6c772045c2f02812765a6cf4c9d9ffff91af801b2bcb9236e84f6c464",
+  "two_image_manifest_sha256": "802512b5dab8eae7592be5934f97a6a8989125fb8f65d3f37ee3cdeb2d35dc10",
+  "reviewer_id": "codex_two_image_compliance",
+  "review_run_id": "mrx1000-two-image-retrofit-20260811T224438Z",
+  "capability": "compliance",
+  "expected_hero_sha256": "3d01b41ca857ea83a5ecc5be1f450130845ece36e10402b35af1a33b61899473",
+  "expected_inline_sha256": "16f736c14364bf15c16c96ae3fa0c26181ac94aeb58e1e0b86a7a72b25c37f40",
+  "findings": [
+    "Complete current MDX SHA-256 is d46058d6c772045c2f02812765a6cf4c9d9ffff91af801b2bcb9236e84f6c464; hero/share and in-body image hashes are separately locked.",
+    "Image text is limited to the exact article title and declared page keyword; it adds no guarantee, price, deadline, legal conclusion, or tax conclusion.",
+    "The article retains its educational and professional-boundary language and current disclosure treatment."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "hero_share_sha256_identity",
+    "inline_image_distinct_sha256",
+    "exact_text_ocr_pass",
+    "filename_text_identity_pass",
+    "no_unsupported_visual_claims",
+    "educational_and_professional_boundaries_preserved"
+  ],
+  "sources_inspected": [
+    "src/content/posts/top-texas-counties-for-mineral-rights-value-permian-eagle-ford-and-haynesville.mdx",
+    "/assets/articles/hero/top-texas-counties-for-mineral-rights-value-permian-eagle-ford-and-haynesville.webp",
+    "/assets/articles/inline/top-texas-counties-for-mineral-rights-value-permian-eagle-ford-and-haynesville/top-texas-counties-for-mineral-rights-value.webp"
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "artifact_type": "mrx1000_two_image_factual_citation_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-11T22:44:38Z",
+  "decision_authority": {
+    "source": "Daryl owner directive, 2026-08-11",
+    "policy": "MRX two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0313",
+  "slug": "identifying-red-flags-in-mineral-rights-transactions",
+  "title": "Identifying Red Flags in Mineral Rights Transactions",
+  "canonical_url": "https://mineralrightsxchange.com/blog/identifying-red-flags-in-mineral-rights-transactions/",
+  "source_path": "src/content/posts/identifying-red-flags-in-mineral-rights-transactions.mdx",
+  "input_body_sha256": "dbf81106c4e0e5b2a577ac8b15967f5da2af8382105726032d834b3cda59b3b7",
+  "input_frontmatter_sha256": "9f2472f4ee5171ec4444fa27e326bb46dfa17df4909c5ca81ad4badb731aa030",
+  "expected_repo_sha256": "dbf81106c4e0e5b2a577ac8b15967f5da2af8382105726032d834b3cda59b3b7",
+  "two_image_manifest_sha256": "802512b5dab8eae7592be5934f97a6a8989125fb8f65d3f37ee3cdeb2d35dc10",
+  "reviewer_id": "codex_two_image_factual",
+  "review_run_id": "mrx1000-two-image-retrofit-20260811T224438Z",
+  "capability": "factual_citation",
+  "findings": [
+    "Complete current MDX SHA-256 is dbf81106c4e0e5b2a577ac8b15967f5da2af8382105726032d834b3cda59b3b7; all 4 declared sources passed live access review.",
+    "The retrofit changes image metadata and assets, not the bounded claim-to-source relationships in the article body.",
+    "The two images make no fabricated numeric, legal, tax, valuation, testimonial, or document claims."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "minimum_two_distinct_https_sources",
+    "current_source_access_review_pass",
+    "two_image_unsupported_claim_scan_pass"
+  ],
+  "sources_inspected": [
+    {
+      "label": "Texas Property Code Chapter 5 (accessed 2026-08-06)",
+      "url": "https://statutes.capitol.texas.gov/Docs/PR/pdf/PR.5.pdf",
+      "publisher": "statutes.capitol.texas.gov",
+      "accessed_at": "2026-08-11T22:44:38Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://statutes.capitol.texas.gov/Docs/PR/pdf/PR.5.pdf",
+        "content_type": "text/html"
+      },
+      "source_location_or_paraphrase": "The article cites Texas Property Code Chapter 5 (accessed 2026-08-06) only for the bounded context attributed in its body and source notes.",
+      "claim_scope": "Owner-specific legal, tax, title, accounting, brokerage, engineering, appraisal, eligibility, value, and transaction conclusions remain outside this source use."
+    },
+    {
+      "label": "Texas Railroad Commission land and mineral owner resources (accessed 2026-08-06)",
+      "url": "https://www.rrc.texas.gov/about-us/audience-pages/land-mineral-owners/",
+      "publisher": "www.rrc.texas.gov",
+      "accessed_at": "2026-08-11T22:44:38Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.rrc.texas.gov/about-us/audience-pages/land-mineral-owners/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The article cites Texas Railroad Commission land and mineral owner resources (accessed 2026-08-06) only for the bounded context attributed in its body and source notes.",
+      "claim_scope": "Owner-specific legal, tax, title, accounting, brokerage, engineering, appraisal, eligibility, value, and transaction conclusions remain outside this source use."
+    },
+    {
+      "label": "Texas Railroad Commission royalties FAQ (accessed 2026-08-06)",
+      "url": "https://www.rrc.texas.gov/about-us/faqs/royalties-faq/",
+      "publisher": "www.rrc.texas.gov",
+      "accessed_at": "2026-08-11T22:44:38Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.rrc.texas.gov/about-us/faqs/royalties-faq/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The article cites Texas Railroad Commission royalties FAQ (accessed 2026-08-06) only for the bounded context attributed in its body and source notes.",
+      "claim_scope": "Owner-specific legal, tax, title, accounting, brokerage, engineering, appraisal, eligibility, value, and transaction conclusions remain outside this source use."
+    },
+    {
+      "label": "MRX FAQ on review boundaries and potential buyer role (accessed 2026-08-06)",
+      "url": "https://mineralrightsxchange.com/faq/",
+      "publisher": "mineralrightsxchange.com",
+      "accessed_at": "2026-08-11T22:44:38Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://mineralrightsxchange.com/faq/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The article cites MRX FAQ on review boundaries and potential buyer role (accessed 2026-08-06) only for the bounded context attributed in its body and source notes.",
+      "claim_scope": "Owner-specific legal, tax, title, accounting, brokerage, engineering, appraisal, eligibility, value, and transaction conclusions remain outside this source use."
+    }
+  ]
+}

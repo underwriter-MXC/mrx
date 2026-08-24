@@ -1,0 +1,49 @@
+{
+  "artifact_type": "mrx1000_two_image_compliance_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-23T09:26:23Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-14",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0265",
+  "slug": "pdp-pud-and-undeveloped-acreage-terminology-register",
+  "title": "How to Build a PDP, PUD, and Undeveloped Acreage Terminology Register",
+  "canonical_url": "https://mineralrightsxchange.com/blog/pdp-pud-and-undeveloped-acreage-terminology-register/",
+  "source_path": "src/content/posts/pdp-pud-and-undeveloped-acreage-terminology-register.mdx",
+  "input_body_sha256": "aa58e028fd589197216100eb52bc77c24335c71cbb6d6f5f6e504bae7d8e63ea",
+  "input_frontmatter_sha256": "1a38cb2c81a7950c692f8d7408ad805c8b1d470e7faea7cc5a96c6a0747cbd7b",
+  "expected_repo_sha256": "aa58e028fd589197216100eb52bc77c24335c71cbb6d6f5f6e504bae7d8e63ea",
+  "two_image_manifest_sha256": "777740123846573be7cfc4d304e62e462ec2feaf01634e7403553dc3cba32cfb",
+  "visual_metadata": {
+    "hero_alt": "Three blank archival category folders and a source-reference card appear beside the exact article title.",
+    "social_alt": "Three blank archival category folders and a source-reference card appear beside the exact article title.",
+    "inline_alt": "An overhead three-source terminology register and neutral-question card appear above the exact keyword."
+  },
+  "reviewer_id": "codex_wave80_compliance",
+  "review_run_id": "mrx1000-wave80-compliance-20260823T092623Z",
+  "capability": "compliance",
+  "expected_hero_sha256": "7a56863d0d39b0a63b88173dbf43b629c33f9650303dd5c9a3fed9bd5f3ae68f",
+  "expected_inline_sha256": "9d7114d07214446614ebc3ca2b27704d8a68676163c95138cb9d6b76c439266b",
+  "findings": [
+    "Complete current MDX SHA-256 is aa58e028fd589197216100eb52bc77c24335c71cbb6d6f5f6e504bae7d8e63ea; hero/share and inline image hashes are separately locked.",
+    "The article preserves exact displayed terms, source, date, preparer, stated standard and edition, and stated scope; limits each result to term displayed, standard stated, or standard not stated; turns gaps into neutral questions; discloses possible MRX buyer interest; and preserves owner agency and qualified-review boundaries.",
+    "Image text is limited to the exact article title and approved keyword and adds no owner name, property fact, source result, model output, numerical assumption, seal, recommendation, appraisal claim, forecast, guarantee, or transaction outcome."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "hero_share_sha256_identity",
+    "inline_image_distinct_sha256",
+    "exact_text_ocr_pass",
+    "filename_text_identity_pass",
+    "terminology_no_classification_compliance_property_development_or_value_conclusion_boundary_pass",
+    "owner_agency_and_possible_buyer_interest_disclosure_preserved",
+    "no_unsupported_visual_or_decision_claims"
+  ],
+  "sources_inspected": [
+    "src/content/posts/pdp-pud-and-undeveloped-acreage-terminology-register.mdx",
+    "/assets/articles/hero/how-to-build-a-pdp-pud-and-undeveloped-acreage-terminology-register.webp",
+    "/assets/articles/inline/pdp-pud-and-undeveloped-acreage-terminology-register/pdp-pud-undeveloped-acreage-terminology-register.webp"
+  ]
+}

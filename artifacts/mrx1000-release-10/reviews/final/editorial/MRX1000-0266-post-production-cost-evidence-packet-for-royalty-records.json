@@ -1,0 +1,66 @@
+{
+  "artifact_type": "mrx1000_two_image_editorial_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-23T10:44:53Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-14",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0266",
+  "slug": "post-production-cost-evidence-packet-for-royalty-records",
+  "title": "Post-Production Cost Evidence Packet for Royalty Records",
+  "canonical_url": "https://mineralrightsxchange.com/blog/post-production-cost-evidence-packet-for-royalty-records/",
+  "source_path": "src/content/posts/post-production-cost-evidence-packet-for-royalty-records.mdx",
+  "input_body_sha256": "8528e6f97b85b6ad8fac6f77a71920371e60321d96ccceb3fb2fedbc114dfb0b",
+  "input_frontmatter_sha256": "84c646e6a8a70affafdb2d6cf0d87975167aad055cf195ac9b21c8c7d424f0ca",
+  "expected_repo_sha256": "8528e6f97b85b6ad8fac6f77a71920371e60321d96ccceb3fb2fedbc114dfb0b",
+  "two_image_manifest_sha256": "26de9260b28b431f76b5f99bddab7349d1151dc1a940038692ab2f0356a528f0",
+  "visual_metadata": {
+    "hero_alt": "A blank royalty-record evidence packet appears beside the exact article title.",
+    "social_alt": "A blank royalty-record evidence packet appears beside the exact article title.",
+    "inline_alt": "An overhead royalty-record source matrix appears above the exact keyword."
+  },
+  "reviewer_id": "codex_wave81_editorial",
+  "review_run_id": "mrx1000-wave81-editorial-20260823T104453Z",
+  "capability": "editorial",
+  "findings": [
+    "Complete current MDX SHA-256 is 8528e6f97b85b6ad8fac6f77a71920371e60321d96ccceb3fb2fedbc114dfb0b; the answer-first article contains 1707 body tokens and five FAQs.",
+    "The article owns only a source-preserving packet for reported post-production-cost entries and related royalty records. It uses matched, conflict, missing, or unresolved and stops before statement decoding, lease interpretation, deduction-permissibility judgments, royalty auditing, payment resolution, owner-decimal validation, cash-flow calculation, valuation, offer, or transaction conclusions.",
+    "Exact-title hero/share OCR passed for “Post-Production Cost Evidence Packet for Royalty Records”; distinct in-body OCR passed for “post-production cost evidence packet royalty records”; the front-facing archival evidence-packet hero and people-free overhead royalty-record source matrix are materially different compositions with matching alt metadata."
+  ],
+  "checks": [
+    {
+      "name": "complete_file_sha256_match",
+      "status": "PASS",
+      "evidence": "8528e6f97b85b6ad8fac6f77a71920371e60321d96ccceb3fb2fedbc114dfb0b"
+    },
+    {
+      "name": "answer_first_article_depth_and_five_faqs",
+      "status": "PASS",
+      "evidence": {
+        "word_count": 1707,
+        "minimum_word_count": 700,
+        "faq_count": 5
+      }
+    },
+    {
+      "name": "two_image_exact_text_identity",
+      "status": "PASS",
+      "evidence": {
+        "hero_ocr": true,
+        "inline_ocr": true,
+        "social_reuses_hero": true,
+        "hero_social_alt_match": true,
+        "inline_alt_match": true,
+        "filename_identity": true,
+        "distinct_binaries": true
+      }
+    }
+  ],
+  "sources_inspected": [
+    "src/content/posts/post-production-cost-evidence-packet-for-royalty-records.mdx",
+    "/assets/articles/hero/post-production-cost-evidence-packet-for-royalty-records.webp",
+    "/assets/articles/inline/post-production-cost-evidence-packet-for-royalty-records/post-production-cost-evidence-packet-royalty-records.webp"
+  ]
+}

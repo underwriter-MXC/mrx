@@ -1,0 +1,43 @@
+{
+  "artifact_type": "mrx1000_two_image_compliance_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-11T22:44:38Z",
+  "decision_authority": {
+    "source": "Daryl owner directive, 2026-08-11",
+    "policy": "MRX two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0635",
+  "slug": "maximize-gains-with-1031-exchange-for-texas-mineral-rights",
+  "title": "Maximize Gains With 1031 Exchange for Texas Mineral Rights",
+  "canonical_url": "https://mineralrightsxchange.com/blog/maximize-gains-with-1031-exchange-for-texas-mineral-rights/",
+  "source_path": "src/content/posts/maximize-gains-with-1031-exchange-for-texas-mineral-rights.mdx",
+  "input_body_sha256": "25268d1bd8718dc6ef506aca58cfcecf2499c6efdeb0d2012863061bdc187f56",
+  "input_frontmatter_sha256": "74daf42b0f5ad2dc654875891558ba6503c436e46d15099adf2427da810adcc9",
+  "expected_repo_sha256": "25268d1bd8718dc6ef506aca58cfcecf2499c6efdeb0d2012863061bdc187f56",
+  "two_image_manifest_sha256": "802512b5dab8eae7592be5934f97a6a8989125fb8f65d3f37ee3cdeb2d35dc10",
+  "reviewer_id": "codex_two_image_compliance",
+  "review_run_id": "mrx1000-two-image-retrofit-20260811T224438Z",
+  "capability": "compliance",
+  "expected_hero_sha256": "d8dbd43be08c4e94c052f60aec98c7b68f11ea3f53af1811e1ea339140dff9ea",
+  "expected_inline_sha256": "a5c00dfe32a68d61cbd7b32303aec36703da0fb041b29c8cb207bf974e99502e",
+  "findings": [
+    "Complete current MDX SHA-256 is 25268d1bd8718dc6ef506aca58cfcecf2499c6efdeb0d2012863061bdc187f56; hero/share and in-body image hashes are separately locked.",
+    "Image text is limited to the exact article title and declared page keyword; it adds no guarantee, price, deadline, legal conclusion, or tax conclusion.",
+    "The article retains its educational and professional-boundary language and current disclosure treatment."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "hero_share_sha256_identity",
+    "inline_image_distinct_sha256",
+    "exact_text_ocr_pass",
+    "filename_text_identity_pass",
+    "no_unsupported_visual_claims",
+    "educational_and_professional_boundaries_preserved"
+  ],
+  "sources_inspected": [
+    "src/content/posts/maximize-gains-with-1031-exchange-for-texas-mineral-rights.mdx",
+    "/assets/articles/hero/maximize-gains-with-1031-exchange-for-texas-mineral-rights.webp",
+    "/assets/articles/inline/maximize-gains-with-1031-exchange-for-texas-mineral-rights/maximize-gains-with-1031-exchange-texas-mineral-rights.webp"
+  ]
+}

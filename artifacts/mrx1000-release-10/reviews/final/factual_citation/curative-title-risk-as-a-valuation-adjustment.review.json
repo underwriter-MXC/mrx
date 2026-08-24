@@ -1,0 +1,141 @@
+{
+  "artifact_type": "mrx1000_two_image_factual_citation_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-12T00:42:13Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-11",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0174",
+  "slug": "curative-title-risk-as-a-valuation-adjustment",
+  "title": "Curative Title Risk as a Valuation Adjustment",
+  "canonical_url": "https://mineralrightsxchange.com/blog/curative-title-risk-as-a-valuation-adjustment/",
+  "source_path": "src/content/posts/curative-title-risk-as-a-valuation-adjustment.mdx",
+  "input_body_sha256": "687581b6137f8455ab24b6f398293e6a986bb16fb95120ebe0529b4e33d277cd",
+  "input_frontmatter_sha256": "6f24d486038f192140ebfb47cf42be2922429dee1d5463cd0bd0da43f35bf0d2",
+  "expected_repo_sha256": "687581b6137f8455ab24b6f398293e6a986bb16fb95120ebe0529b4e33d277cd",
+  "two_image_manifest_sha256": "45493b966155226cbc8b55905932c2e6bff61ba391af1db53a647f68947cd1f3",
+  "reviewer_id": "codex_wave16_factual",
+  "review_run_id": "mrx1000-wave16-factual-20260812T004213Z",
+  "capability": "factual_citation",
+  "findings": [
+    "Complete current MDX SHA-256 is 687581b6137f8455ab24b6f398293e6a986bb16fb95120ebe0529b4e33d277cd; all 8 declared official sources passed live access review.",
+    "Recording, conveyance, succession, payment-suspense, agency-jurisdiction, property-tax income-analysis, and archival-record claims remain bounded to their official Texas sources.",
+    "The article uses no fabricated documents, owner facts, legal conclusions, cure deadlines, dollar amounts, percentages, title standards, testimonials, or owner-specific value conclusions."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "minimum_three_distinct_https_sources",
+    "current_source_access_review_pass",
+    "claim_to_source_scope_present",
+    "official_primary_source_priority_pass",
+    "unsupported_high_risk_claim_scan_pass"
+  ],
+  "sources_inspected": [
+    {
+      "label": "Texas Natural Resources Code Chapter 91, including Section 91.402 (accessed 2026-08-11)",
+      "url": "https://statutes.capitol.texas.gov/Docs/NR/pdf/NR.91.pdf",
+      "publisher": "statutes.capitol.texas.gov",
+      "accessed_at": "2026-08-12T00:42:13Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://statutes.capitol.texas.gov/Docs/NR/pdf/NR.91.pdf",
+        "content_type": "text/html"
+      },
+      "source_location_or_paraphrase": "Texas Natural Resources Code Section 91.402 addresses time for payment and circumstances involving title disputes, reasonable doubt as to clear title, and unsatisfied curative requirements.",
+      "claim_scope": "The statute supports payment and suspense context; it does not determine private ownership, prescribe a sale-price adjustment, or supply an owner-specific title conclusion."
+    },
+    {
+      "label": "Texas Property Code Chapter 13, Effects of Recording (accessed 2026-08-11)",
+      "url": "https://statutes.capitol.texas.gov/Docs/PR/pdf/PR.13.pdf",
+      "publisher": "statutes.capitol.texas.gov",
+      "accessed_at": "2026-08-12T00:42:13Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://statutes.capitol.texas.gov/Docs/PR/pdf/PR.13.pdf",
+        "content_type": "text/html"
+      },
+      "source_location_or_paraphrase": "Texas Property Code Sections 13.001 and 13.002 address unrecorded instruments and the notice and inspection effects of instruments properly recorded in the proper county.",
+      "claim_scope": "The article uses the chapter for recording context and does not treat an index search or recorded instrument alone as a complete owner-specific title conclusion."
+    },
+    {
+      "label": "Texas Property Code Chapter 5, Conveyances (accessed 2026-08-11)",
+      "url": "https://statutes.capitol.texas.gov/Docs/PR/pdf/PR.5.pdf",
+      "publisher": "statutes.capitol.texas.gov",
+      "accessed_at": "2026-08-12T00:42:13Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://statutes.capitol.texas.gov/Docs/PR/pdf/PR.5.pdf",
+        "content_type": "text/html"
+      },
+      "source_location_or_paraphrase": "Texas Property Code Chapter 5 contains rules governing conveyances of real property and the instruments and disclosures used in that setting.",
+      "claim_scope": "The source supports reviewing actual conveyance language and related instruments; the article does not decide what a particular deed conveyed or reserved."
+    },
+    {
+      "label": "Texas Estates Code Chapter 101, Estate Assets in General (accessed 2026-08-11)",
+      "url": "https://statutes.capitol.texas.gov/Docs/ES/pdf/ES.101.pdf",
+      "publisher": "statutes.capitol.texas.gov",
+      "accessed_at": "2026-08-12T00:42:13Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://statutes.capitol.texas.gov/Docs/ES/pdf/ES.101.pdf",
+        "content_type": "text/html"
+      },
+      "source_location_or_paraphrase": "Texas Estates Code Section 101.001 states that estate property generally vests immediately at death in devisees or heirs, subject to Section 101.051 and administration-related provisions.",
+      "claim_scope": "The article preserves those statutory qualifications and does not claim that a death, missing filing, or vesting rule proves a transaction-ready ownership chain."
+    },
+    {
+      "label": "Railroad Commission of Texas authority and jurisdiction (accessed 2026-08-11)",
+      "url": "https://www.rrc.texas.gov/about-us/faqs/rrc-authority-and-jurisdiction/",
+      "publisher": "www.rrc.texas.gov",
+      "accessed_at": "2026-08-12T00:42:13Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.rrc.texas.gov/about-us/faqs/rrc-authority-and-jurisdiction/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The Railroad Commission states that oil and gas leases and agreements, pipeline easements, and royalty payments are outside its jurisdiction.",
+      "claim_scope": "The source supports the jurisdiction boundary; regulatory records are not presented as private ownership or title determinations."
+    },
+    {
+      "label": "Railroad Commission of Texas royalties FAQ (accessed 2026-08-11)",
+      "url": "https://www.rrc.texas.gov/about-us/faqs/royalties-faq/",
+      "publisher": "www.rrc.texas.gov",
+      "accessed_at": "2026-08-12T00:42:13Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.rrc.texas.gov/about-us/faqs/royalties-faq/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The Railroad Commission royalty FAQ explains that lease and royalty matters are private matters outside Commission authority and summarizes payment and title-suspense provisions.",
+      "claim_scope": "The article uses the page for public payment context and does not ask the Commission source to resolve a private title dispute or transaction value."
+    },
+    {
+      "label": "Texas Comptroller Manual for Discounting Oil and Gas Income (accessed 2026-08-11)",
+      "url": "https://comptroller.texas.gov/taxes/property-tax/docs/96-1703.pdf",
+      "publisher": "comptroller.texas.gov",
+      "accessed_at": "2026-08-12T00:42:13Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://comptroller.texas.gov/taxes/property-tax/docs/96-1703.pdf",
+        "content_type": "application/octet-stream"
+      },
+      "source_location_or_paraphrase": "The Texas Comptroller manual documents an income-discounting framework for Texas oil and gas property-tax appraisal, including amount, timing, discounting, and risk inputs.",
+      "claim_scope": "The article preserves the property-tax context and does not present the manual as a private-sale formula, cure-cost schedule, or owner-specific valuation."
+    },
+    {
+      "label": "Texas General Land Office search collections (accessed 2026-08-11)",
+      "url": "https://www.glo.texas.gov/archives-and-heritage/search-our-collections",
+      "publisher": "www.glo.texas.gov",
+      "accessed_at": "2026-08-12T00:42:13Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.glo.texas.gov/archives-and-heritage/search-our-collections",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The Texas General Land Office provides searchable historical land-grant, map, surname-index, and archival collections for Texas land research.",
+      "claim_scope": "The article presents those collections as supplemental historical and survey evidence, not a replacement for county records, controlling private instruments, or professional title review."
+    }
+  ]
+}

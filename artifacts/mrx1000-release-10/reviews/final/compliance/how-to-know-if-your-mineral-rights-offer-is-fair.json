@@ -1,0 +1,43 @@
+{
+  "artifact_type": "mrx1000_two_image_compliance_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-11T22:44:38Z",
+  "decision_authority": {
+    "source": "Daryl owner directive, 2026-08-11",
+    "policy": "MRX two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0309",
+  "slug": "how-to-know-if-your-mineral-rights-offer-is-fair",
+  "title": "How to Know if Your Mineral Rights Offer Is Fair",
+  "canonical_url": "https://mineralrightsxchange.com/blog/how-to-know-if-your-mineral-rights-offer-is-fair/",
+  "source_path": "src/content/posts/how-to-know-if-your-mineral-rights-offer-is-fair.mdx",
+  "input_body_sha256": "3c2ffc8adb978bc5e0cf92a20cb2780633e8be12a53e12322fffad28f7d14693",
+  "input_frontmatter_sha256": "a0db77d78050f1d8611a31b52004e3c9f8950ba9c179ad7adde11e9ca35ba00f",
+  "expected_repo_sha256": "3c2ffc8adb978bc5e0cf92a20cb2780633e8be12a53e12322fffad28f7d14693",
+  "two_image_manifest_sha256": "802512b5dab8eae7592be5934f97a6a8989125fb8f65d3f37ee3cdeb2d35dc10",
+  "reviewer_id": "codex_two_image_compliance",
+  "review_run_id": "mrx1000-two-image-retrofit-20260811T224438Z",
+  "capability": "compliance",
+  "expected_hero_sha256": "f9edc07b76938253d0b4348ce58f55e842deb9badaef9a5b9b03c2860b8816ce",
+  "expected_inline_sha256": "739dd68de3a9356233f31ccffb0a2bd60f47988f71d65931acd5312fe27538e6",
+  "findings": [
+    "Complete current MDX SHA-256 is 3c2ffc8adb978bc5e0cf92a20cb2780633e8be12a53e12322fffad28f7d14693; hero/share and in-body image hashes are separately locked.",
+    "Image text is limited to the exact article title and declared page keyword; it adds no guarantee, price, deadline, legal conclusion, or tax conclusion.",
+    "The article retains its educational and professional-boundary language and current disclosure treatment."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "hero_share_sha256_identity",
+    "inline_image_distinct_sha256",
+    "exact_text_ocr_pass",
+    "filename_text_identity_pass",
+    "no_unsupported_visual_claims",
+    "educational_and_professional_boundaries_preserved"
+  ],
+  "sources_inspected": [
+    "src/content/posts/how-to-know-if-your-mineral-rights-offer-is-fair.mdx",
+    "/assets/articles/hero/how-to-know-if-your-mineral-rights-offer-is-fair.webp",
+    "/assets/articles/inline/how-to-know-if-your-mineral-rights-offer-is-fair/fair-mineral-rights-offer.webp"
+  ]
+}

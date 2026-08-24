@@ -1,0 +1,59 @@
+{
+  "artifact_type": "mrx1000_two_image_editorial_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-12T11:04:56Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-12",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0184",
+  "slug": "how-much-are-mineral-rights-worth-checklist-for-mineral-owners",
+  "title": "How Much Are Mineral Rights Worth: Checklist For Mineral Owners",
+  "canonical_url": "https://mineralrightsxchange.com/blog/how-much-are-mineral-rights-worth-checklist-for-mineral-owners/",
+  "source_path": "src/content/posts/how-much-are-mineral-rights-worth-checklist-for-mineral-owners.mdx",
+  "input_body_sha256": "2eb737e495a6d100d496b6d24a1b5d4ceef77fe3b81319be354e581ee91a4b66",
+  "input_frontmatter_sha256": "7b0a7c6b39ae97e95ff195a3edc79792183a0fb8216be77e0958cff2bf26026d",
+  "expected_repo_sha256": "2eb737e495a6d100d496b6d24a1b5d4ceef77fe3b81319be354e581ee91a4b66",
+  "two_image_manifest_sha256": "2b28f23b40312a77535ba2d4ce7bc4706cd309df06acc3cbd7ea3290e9241b8a",
+  "reviewer_id": "codex_wave26_editorial",
+  "review_run_id": "mrx1000-wave26-editorial-20260812T110456Z",
+  "capability": "editorial",
+  "findings": [
+    "Complete current MDX SHA-256 is 2eb737e495a6d100d496b6d24a1b5d4ceef77fe3b81319be354e581ee91a4b66; the answer-first article contains 2220 body tokens and five FAQs.",
+    "The article owns the pre-estimate evidence-readiness checklist by organizing ownership and tract identity, payment evidence, production context, lease and burden terms, and dated assumptions with verified, owner-provided, inferred, missing, and professional-review-needed labels.",
+    "Exact-title hero/share OCR passed for “How Much Are Mineral Rights Worth: Checklist For Mineral Owners”; distinct in-body OCR passed for “how much are mineral rights worth”."
+  ],
+  "checks": [
+    {
+      "name": "complete_file_sha256_match",
+      "status": "PASS",
+      "evidence": "2eb737e495a6d100d496b6d24a1b5d4ceef77fe3b81319be354e581ee91a4b66"
+    },
+    {
+      "name": "answer_first_article_depth_and_five_faqs",
+      "status": "PASS",
+      "evidence": {
+        "word_count": 2220,
+        "minimum_word_count": 700,
+        "faq_count": 5
+      }
+    },
+    {
+      "name": "two_image_exact_text_identity",
+      "status": "PASS",
+      "evidence": {
+        "hero_ocr": true,
+        "inline_ocr": true,
+        "social_reuses_hero": true,
+        "filename_identity": true,
+        "distinct_binaries": true
+      }
+    }
+  ],
+  "sources_inspected": [
+    "src/content/posts/how-much-are-mineral-rights-worth-checklist-for-mineral-owners.mdx",
+    "/assets/articles/hero/how-much-are-mineral-rights-worth-checklist-for-mineral-owners.webp",
+    "/assets/articles/inline/how-much-are-mineral-rights-worth-checklist-for-mineral-owners/how-much-are-mineral-rights-worth.webp"
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "artifact_type": "mrx1000_wave88_two_image_compliance_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-23T20:04:27Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-14",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0272",
+  "slug": "how-to-build-a-texas-mineral-production-record-locator-sheet",
+  "title": "How to Build a Texas Mineral Production Record Locator Sheet",
+  "canonical_url": "https://mineralrightsxchange.com/blog/how-to-build-a-texas-mineral-production-record-locator-sheet/",
+  "source_path": "src/content/posts/how-to-build-a-texas-mineral-production-record-locator-sheet.mdx",
+  "input_body_sha256": "a2583b6d4292f287b1da327668566f54615d5c174f3aed760a107826c2baf768",
+  "input_frontmatter_sha256": "c1ef4c53cb7e474ee60f3fb8eef1382fd99f910bcabacf71da581c136a8ad93c",
+  "expected_repo_sha256": "a2583b6d4292f287b1da327668566f54615d5c174f3aed760a107826c2baf768",
+  "two_image_manifest_sha256": "36df54e162b9e997e61d8e566824947f128106f2b6d0eb47f636bff550dbd152",
+  "visual_metadata": {
+    "hero_alt": "A Texas public-record research desk appears beside the exact article title.",
+    "social_alt": "A Texas public-record research desk appears beside the exact article title.",
+    "inline_alt": "A top-down production-record locator worksheet appears above the exact keyword."
+  },
+  "reviewer_id": "codex_wave88_compliance",
+  "review_run_id": "mrx1000-wave88-compliance-20260823T200427Z",
+  "capability": "compliance",
+  "expected_hero_sha256": "d3b9cfee1942df6bd518025d23425f4597596fb583197f902e4ac045908f1ddb",
+  "expected_inline_sha256": "6f1869c8fda0c99de6637cad22c8a51a1a698735da098c5ba8c1929df09222a1",
+  "findings": [
+    "Complete current MDX SHA-256 is a2583b6d4292f287b1da327668566f54615d5c174f3aed760a107826c2baf768; hero/share and inline image hashes are separately locked.",
+    "The article preserves source identity and uncertainty; uses only located, not located, or unverified; converts gaps into neutral retrieval questions; protects private identifiers; and stops before property, title, ownership, payment, operational, regulatory, analytical, valuation, offer, or transaction decisions.",
+    "Image text is limited to the exact article title and approved keyword and adds no real record, identifier, result, signature, seal, logo, value, recommendation, guarantee, or transaction outcome."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "hero_share_sha256_identity",
+    "inline_image_distinct_sha256",
+    "exact_text_ocr_pass",
+    "filename_text_identity_pass",
+    "texas_production_record_locator_no_interpretation_connection_performance_completeness_accuracy_value_offer_or_transaction_conclusion_boundary_pass",
+    "owner_agency_privacy_and_possible_buyer_interest_disclosure_preserved",
+    "no_unsupported_visual_or_decision_claims"
+  ],
+  "sources_inspected": [
+    "src/content/posts/how-to-build-a-texas-mineral-production-record-locator-sheet.mdx",
+    "/assets/articles/hero/how-to-build-a-texas-mineral-production-record-locator-sheet.webp",
+    "/assets/articles/inline/how-to-build-a-texas-mineral-production-record-locator-sheet/texas-mineral-production-record-locator-sheet.webp"
+  ]
+}

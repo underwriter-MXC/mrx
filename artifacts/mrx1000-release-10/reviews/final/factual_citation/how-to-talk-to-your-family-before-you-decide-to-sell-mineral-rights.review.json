@@ -1,0 +1,120 @@
+{
+  "artifact_type": "mrx1000_two_image_factual_citation_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-15T06:22:17Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-14",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0146",
+  "slug": "how-to-talk-to-your-family-before-you-decide-to-sell-mineral-rights",
+  "title": "How to Talk to Your Family Before You Decide to Sell Mineral Rights",
+  "canonical_url": "https://mineralrightsxchange.com/blog/how-to-talk-to-your-family-before-you-decide-to-sell-mineral-rights/",
+  "source_path": "src/content/posts/how-to-talk-to-your-family-before-you-decide-to-sell-mineral-rights.mdx",
+  "input_body_sha256": "4f98b66f3894e35188822c8717780952df0cc38531265713ead922d4595190ed",
+  "input_frontmatter_sha256": "3962e433ca25231cb27a6705ff17a1bbf5fd936c361f20bde1e4460b364ed84b",
+  "expected_repo_sha256": "4f98b66f3894e35188822c8717780952df0cc38531265713ead922d4595190ed",
+  "two_image_manifest_sha256": "a11a26ae04cb9c5d9bbbb2d0d1d90768e3d092948f0d3b48a4d363bddb9899b1",
+  "visual_metadata": {
+    "hero_alt": "Three adult family members talk at a table beside “How to Talk to Your Family Before You Decide to Sell Mineral Rights”.",
+    "social_alt": "Three adult family members talk at a table beside “How to Talk to Your Family Before You Decide to Sell Mineral Rights”.",
+    "inline_alt": "Three notebooks surround a table above “One Family, One Decision, One Honest Conversation”."
+  },
+  "reviewer_id": "codex_wave66_factual",
+  "review_run_id": "mrx1000-wave66-factual-20260815T062217Z",
+  "capability": "factual_citation",
+  "findings": [
+    "Complete current MDX SHA-256 is 4f98b66f3894e35188822c8717780952df0cc38531265713ead922d4595190ed; all 6 declared sources passed current access review.",
+    "Claims remain bounded to adaptable family-meeting and communication practices from university extension sources, general inherited-property context from the USDA Forest Service, and current MRX inheritance and seller-control guidance. No source is converted into a private title, probate, authority, consent, value, tax, contract, or transaction conclusion.",
+    "The article invents no real owner, property, buyer, contract, transaction, price range, production, reserves, forecast, testimonial, success rate, or owner-specific legal, tax, accounting, title, appraisal, engineering, investment, or transaction conclusion."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "minimum_three_distinct_https_sources",
+    "current_source_access_review_pass",
+    "claim_to_source_scope_present",
+    "official_and_first_party_source_priority_pass",
+    "unsupported_high_risk_claim_scan_pass"
+  ],
+  "sources_inspected": [
+    {
+      "label": "University of Minnesota Extension, Preparing to meet with your transition and estate planning team (reviewed 2023; accessed 2026-08-14)",
+      "url": "https://extension.umn.edu/transfer-and-estate-planning/preparing-meet-your-transition-and-estate-planning-team",
+      "publisher": "extension.umn.edu",
+      "accessed_at": "2026-08-15T06:22:17Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://extension.umn.edu/transfer-and-estate-planning/preparing-meet-your-transition-and-estate-planning-team",
+        "content_type": "text/html; charset=UTF-8"
+      },
+      "source_location_or_paraphrase": "University of Minnesota Extension transition-planning guidance recommends preparing goals and questions in writing, involving affected parties, and using family meetings as part of a fact-based planning process.",
+      "claim_scope": "The article adapts only those meeting-preparation practices to a pre-assessment family conversation. It does not treat farm or estate guidance as mineral-rights law or use it to determine ownership, authority, consent, title, value, tax, or whether to sell."
+    },
+    {
+      "label": "University of Minnesota Extension, Farm business transfer strategies (accessed 2026-08-14)",
+      "url": "https://extension.umn.edu/transfer-and-estate-planning/farm-business-transfer-strategies",
+      "publisher": "extension.umn.edu",
+      "accessed_at": "2026-08-15T06:22:17Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://extension.umn.edu/transfer-and-estate-planning/farm-business-transfer-strategies",
+        "content_type": "text/html; charset=UTF-8"
+      },
+      "source_location_or_paraphrase": "University of Minnesota Extension farm-business transfer guidance recommends brief and specific communication that avoids accusation, insult, and blame and describes structured family-business meetings.",
+      "claim_scope": "The article adapts only those communication disciplines. It does not equate a mineral interest with a farm business or derive any legal, ownership, authority, consent, valuation, tax, or transaction conclusion from the source."
+    },
+    {
+      "label": "Utah State University Extension, Estate Planning Toolkit: Starting the Estate Planning Conversation (accessed 2026-08-14)",
+      "url": "https://extension.usu.edu/finance/files/estate-planning-toolkit.pdf",
+      "publisher": "extension.usu.edu",
+      "accessed_at": "2026-08-15T06:22:17Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://extension.usu.edu/finance/files/estate-planning-toolkit.pdf",
+        "content_type": "application/pdf"
+      },
+      "source_location_or_paraphrase": "The Utah State University Extension Estate Planning Toolkit recommends a calm setting, a clear intention, input from people directly affected, and an agenda that may span multiple conversations.",
+      "claim_scope": "The article adapts only those conversation practices. It does not treat the source as mineral-specific advice or use it to determine probate, title, ownership, authority, consent, value, tax, or disposition."
+    },
+    {
+      "label": "USDA Forest Service, Heirs Property: Legal and Cultural Dimensions of Collective Landownership (accessed 2026-08-14)",
+      "url": "https://www.srs.fs.usda.gov/pubs/gtr/gtr_srs225.pdf",
+      "publisher": "www.srs.fs.usda.gov",
+      "accessed_at": "2026-08-15T06:22:17Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.srs.fs.usda.gov/pubs/gtr/gtr_srs225.pdf",
+        "content_type": "application/pdf"
+      },
+      "source_location_or_paraphrase": "The USDA Forest Service overview describes heirs property as inherited real property that can involve multiple heirs and fragmented collective ownership.",
+      "claim_scope": "The article uses it only as general background that family shorthand may conceal distinct interests and unresolved records. It does not apply heirs-property law to mineral ownership or determine any reader’s title, authority, consent, signature, probate, or sale rights."
+    },
+    {
+      "label": "Mineral Rights Xchange, Mineral Rights Inheritance in Texas: What Heirs Need to Know Before Selling (accessed 2026-08-14)",
+      "url": "https://mineralrightsxchange.com/blog/mineral-rights-inheritance-in-texas-what-heirs-need-to-know-before-selling/",
+      "publisher": "mineralrightsxchange.com",
+      "accessed_at": "2026-08-15T06:22:17Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://mineralrightsxchange.com/blog/mineral-rights-inheritance-in-texas-what-heirs-need-to-know-before-selling/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The current MRX inherited-mineral-rights guide explains that inherited-interest review depends on the actual estate, deed, trust, operator, and title records and that family relationship alone does not settle ownership or sale authority.",
+      "claim_scope": "The article uses it only to separate a family conversation from professional ownership and authority review. It does not restate the inheritance workflow or decide title, acreage, probate, authority, signatures, value, tax, or whether to sell."
+    },
+    {
+      "label": "Mineral Rights Xchange, Selling Mineral Rights: Selling Process For Mineral Owners (accessed 2026-08-14)",
+      "url": "https://mineralrightsxchange.com/blog/selling-mineral-rights-selling-process-for-mineral-owners/",
+      "publisher": "mineralrightsxchange.com",
+      "accessed_at": "2026-08-15T06:22:17Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://mineralrightsxchange.com/blog/selling-mineral-rights-selling-process-for-mineral-owners/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The current MRX seller-control guide explains that owners can gather information, request written terms, pause, seek independent advice, and decline to proceed through a possible sale process.",
+      "claim_scope": "The article uses it only to preserve owner agency when the family selects a later information-gathering step. It does not retell the selling sequence, compare offers, interpret documents, determine value, or recommend a sale."
+    }
+  ]
+}

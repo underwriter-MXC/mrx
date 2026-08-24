@@ -1,0 +1,167 @@
+{
+  "artifact_type": "mrx1000_two_image_factual_citation_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-14T05:39:41Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-11",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0137",
+  "slug": "unlocking-the-mystery-key-details-for-an-accurate-mineral-rights-review-process",
+  "title": "Unlocking the Mystery: Key Details for an Accurate Mineral Rights Review Process",
+  "canonical_url": "https://mineralrightsxchange.com/blog/unlocking-the-mystery-key-details-for-an-accurate-mineral-rights-review-process/",
+  "source_path": "src/content/posts/unlocking-the-mystery-key-details-for-an-accurate-mineral-rights-review-process.mdx",
+  "input_body_sha256": "96e5fb89381484fc079f61ec944519064badac05515d540f7bc91418f091cfd2",
+  "input_frontmatter_sha256": "346b61d3617ef0ce27fd7c10463c4e98ef46eaab8efca3c95d32d48d4b4617af",
+  "expected_repo_sha256": "96e5fb89381484fc079f61ec944519064badac05515d540f7bc91418f091cfd2",
+  "two_image_manifest_sha256": "f7d53137d03e201b8283e332507abb2acd22d63990850c8a3cc9905d2914b068",
+  "reviewer_id": "codex_wave57_factual",
+  "review_run_id": "mrx1000-wave57-factual-20260814T053941Z",
+  "capability": "factual_citation",
+  "findings": [
+    "Complete current MDX SHA-256 is 96e5fb89381484fc079f61ec944519064badac05515d540f7bc91418f091cfd2; all 10 declared sources passed live access review.",
+    "Claims remain bounded to current RRC royalty-payment, division-order, well-record, query-identity, reporting-lag, and correction context; Texas recording, county-record, estate, and payor-information statutes; and current MRX methodology and selling-options scope. The article preserves each source purpose and does not turn any source into an owner-specific title, authority, legal effect, reserves, future production, value, tax result, offer, or decision result.",
+    "The article uses no fabricated owners, properties, buyers, contracts, prices, acreage, ownership decimals, production, reserves, forecasts, tax results, offers, testimonials, success rates, or owner-specific title, legal, tax, accounting, appraisal, investment, or transaction conclusions."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "minimum_three_distinct_https_sources",
+    "current_source_access_review_pass",
+    "claim_to_source_scope_present",
+    "official_primary_source_priority_pass",
+    "unsupported_high_risk_claim_scan_pass"
+  ],
+  "sources_inspected": [
+    {
+      "label": "Railroad Commission of Texas Royalties FAQ (accessed 2026-08-13)",
+      "url": "https://www.rrc.texas.gov/about-us/faqs/royalties-faq/",
+      "publisher": "www.rrc.texas.gov",
+      "accessed_at": "2026-08-14T05:39:41Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.rrc.texas.gov/about-us/faqs/royalties-faq/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The Railroad Commission of Texas Royalties FAQ describes information associated with royalty payments and division orders and identifies paths for requesting certain lease, property, or well identifiers.",
+      "claim_scope": "The article uses the page only for payment-record fields, division-order matching, and identifier follow-up; it does not establish complete title, ownership, reserves, future production, value, or legal effect."
+    },
+    {
+      "label": "Railroad Commission of Texas oil and gas well records (accessed 2026-08-13)",
+      "url": "https://www.rrc.texas.gov/oil-and-gas/research-and-statistics/obtaining-commission-records/oil-and-gas-well-records/",
+      "publisher": "www.rrc.texas.gov",
+      "accessed_at": "2026-08-14T05:39:41Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.rrc.texas.gov/oil-and-gas/research-and-statistics/obtaining-commission-records/oil-and-gas-well-records/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The Railroad Commission of Texas well-records page describes public search paths and identifiers such as county, operator, field, API number, drilling-permit number, lease or gas-well identity, survey, abstract, section, and block.",
+      "claim_scope": "The article uses the page only to explain reproducible property and well identity; it does not prove private title, tract inclusion, owner decimal, reserves, future development, or value."
+    },
+    {
+      "label": "Railroad Commission of Texas About Oil & Gas Data Queries (accessed 2026-08-13)",
+      "url": "https://www.rrc.texas.gov/resource-center/research/research-queries/about-oil-gas-data-queries/",
+      "publisher": "www.rrc.texas.gov",
+      "accessed_at": "2026-08-14T05:39:41Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.rrc.texas.gov/resource-center/research/research-queries/about-oil-gas-data-queries/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The Railroad Commission of Texas query guide explains public oil-and-gas data identities, including API wellbore identity and lease or gas-well completion identifiers.",
+      "claim_scope": "The article uses the page only to keep record identifiers and query paths explicit; it does not resolve private ownership, title, contract effect, production entitlement, or value."
+    },
+    {
+      "label": "Railroad Commission of Texas Production Data Query FAQs (accessed 2026-08-13)",
+      "url": "https://www.rrc.texas.gov/about-us/faqs/oil-gas-faq/production-data-query-system-faqs/",
+      "publisher": "www.rrc.texas.gov",
+      "accessed_at": "2026-08-14T05:39:41Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.rrc.texas.gov/about-us/faqs/oil-gas-faq/production-data-query-system-faqs/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The RRC Production Data Query FAQs explain operator-reported production, Texas lease-versus-well reporting, reporting lag, and later revisions, corrections, or late filings.",
+      "claim_scope": "The article uses the page only to require retrieval dates, periods, identifiers, and version controls for public operating evidence; it does not establish owner-specific title, payment, reserves, future production, or value."
+    },
+    {
+      "label": "Texas Property Code Chapter 12 (accessed 2026-08-13)",
+      "url": "https://statutes.capitol.texas.gov/Docs/PR/htm/PR.12.htm",
+      "publisher": "statutes.capitol.texas.gov",
+      "accessed_at": "2026-08-14T05:39:41Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://statutes.capitol.texas.gov/Docs/PR/htm/PR.12.htm",
+        "content_type": "text/html"
+      },
+      "source_location_or_paraphrase": "Texas Property Code Chapter 12 provides statutory context for recording instruments concerning property.",
+      "claim_scope": "The article uses the chapter only to explain why complete recorded instruments and recording references may matter; it does not interpret a particular instrument or establish an owner-specific title conclusion."
+    },
+    {
+      "label": "Texas Local Government Code Chapter 191 (accessed 2026-08-13)",
+      "url": "https://statutes.capitol.texas.gov/Docs/LG/htm/LG.191.htm",
+      "publisher": "statutes.capitol.texas.gov",
+      "accessed_at": "2026-08-14T05:39:41Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://statutes.capitol.texas.gov/Docs/LG/htm/LG.191.htm",
+        "content_type": "text/html"
+      },
+      "source_location_or_paraphrase": "Texas Local Government Code Chapter 191 identifies the county clerk as county recorder and addresses authorized records and indexing.",
+      "claim_scope": "The article uses the chapter only for county-record context; it does not determine the legal effect, priority, completeness, or ownership result of any record."
+    },
+    {
+      "label": "Texas Estates Code Chapter 101 (accessed 2026-08-13)",
+      "url": "https://statutes.capitol.texas.gov/Docs/ES/htm/ES.101.htm",
+      "publisher": "statutes.capitol.texas.gov",
+      "accessed_at": "2026-08-14T05:39:41Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://statutes.capitol.texas.gov/Docs/ES/htm/ES.101.htm",
+        "content_type": "text/html"
+      },
+      "source_location_or_paraphrase": "Texas Estates Code Chapter 101 provides statutory context for estate vesting subject to administration and liabilities.",
+      "claim_scope": "The article uses the chapter only to explain why estate records and authority may be relevant; it does not decide inheritance, probate, heirship, authority, curative requirements, or title."
+    },
+    {
+      "label": "Texas Natural Resources Code Chapter 91 (accessed 2026-08-13)",
+      "url": "https://statutes.capitol.texas.gov/Docs/NR/htm/NR.91.htm",
+      "publisher": "statutes.capitol.texas.gov",
+      "accessed_at": "2026-08-14T05:39:41Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://statutes.capitol.texas.gov/Docs/NR/htm/NR.91.htm",
+        "content_type": "text/html"
+      },
+      "source_location_or_paraphrase": "Texas Natural Resources Code Chapter 91 provides statutory context for certain payor information and identification requests discussed by the RRC.",
+      "claim_scope": "The article uses the chapter only for record-retrieval and payment-information context; it does not establish complete ownership, lease interpretation, title, production entitlement, or value."
+    },
+    {
+      "label": "MRX methodology (accessed 2026-08-13)",
+      "url": "https://mineralrightsxchange.com/methodology/",
+      "publisher": "mineralrightsxchange.com",
+      "accessed_at": "2026-08-14T05:39:41Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://mineralrightsxchange.com/methodology/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The current MRX methodology describes the evidence, assumptions, scenarios, and professional limits of a directional mineral-rights review.",
+      "claim_scope": "The article uses the page only to bound a scoped directional review and its handoffs; it does not establish owner-specific title, reserves, value, legal effect, tax treatment, suitability, or a transaction result."
+    },
+    {
+      "label": "MRX Sell Mineral Rights (accessed 2026-08-13)",
+      "url": "https://mineralrightsxchange.com/sell-mineral-rights/",
+      "publisher": "mineralrightsxchange.com",
+      "accessed_at": "2026-08-14T05:39:41Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://mineralrightsxchange.com/sell-mineral-rights/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The current MRX Sell Mineral Rights page separates holding, selling all, and selling a defined portion and identifies written-proposal and process considerations.",
+      "claim_scope": "The article uses the page only for owner-option and complete-proposal organization; it does not recommend a path or establish a particular agreement’s meaning, fairness, legal effect, or suitability."
+    }
+  ]
+}

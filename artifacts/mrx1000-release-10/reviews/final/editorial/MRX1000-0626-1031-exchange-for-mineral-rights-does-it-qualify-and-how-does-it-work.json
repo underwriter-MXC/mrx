@@ -1,0 +1,62 @@
+{
+  "artifact_type": "mrx1000_two_image_editorial_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-11T22:44:38Z",
+  "decision_authority": {
+    "source": "Daryl owner directive, 2026-08-11",
+    "policy": "MRX two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0626",
+  "slug": "1031-exchange-for-mineral-rights-does-it-qualify-and-how-does-it-work",
+  "title": "1031 Exchange for Mineral Rights: Does It Qualify and How Does It Work?",
+  "canonical_url": "https://mineralrightsxchange.com/blog/1031-exchange-for-mineral-rights-does-it-qualify-and-how-does-it-work/",
+  "source_path": "src/content/posts/1031-exchange-for-mineral-rights-does-it-qualify-and-how-does-it-work.mdx",
+  "input_body_sha256": "681a3a92996527bfcb0f7bd63c15a90692df89f9d2442885f410d35e11606e11",
+  "input_frontmatter_sha256": "0e59021a8a4342770f39b618379c421aadf080d58e91fcd27cc93644655c3131",
+  "expected_repo_sha256": "681a3a92996527bfcb0f7bd63c15a90692df89f9d2442885f410d35e11606e11",
+  "two_image_manifest_sha256": "802512b5dab8eae7592be5934f97a6a8989125fb8f65d3f37ee3cdeb2d35dc10",
+  "reviewer_id": "codex_two_image_editorial",
+  "review_run_id": "mrx1000-two-image-retrofit-20260811T224438Z",
+  "capability": "editorial",
+  "findings": [
+    "Complete current MDX SHA-256 is 681a3a92996527bfcb0f7bd63c15a90692df89f9d2442885f410d35e11606e11; article has 1151 body tokens and five FAQs.",
+    "Exact-title hero/share OCR passed for “1031 Exchange for Mineral Rights: Does It Qualify and How Does It Work?”; distinct in-body OCR passed for “1031 exchange mineral rights”.",
+    "Both text treatments remain deterministic, descriptive, filename-matched, article-specific, and bound to the current source."
+  ],
+  "checks": [
+    {
+      "name": "complete_file_sha256_match",
+      "status": "PASS",
+      "evidence": "681a3a92996527bfcb0f7bd63c15a90692df89f9d2442885f410d35e11606e11"
+    },
+    {
+      "name": "answer_first_depth_and_five_faqs",
+      "status": "PASS",
+      "evidence": {
+        "word_count": 1151,
+        "minimum_word_count": 700,
+        "faq_count": 5
+      }
+    },
+    {
+      "name": "two_image_exact_text_identity",
+      "status": "PASS",
+      "evidence": {
+        "hero_path": true,
+        "social_identity": true,
+        "inline_path": true,
+        "inline_text": true,
+        "hero_ocr": true,
+        "inline_ocr": true,
+        "filename_identity": true,
+        "distinct_binaries": true
+      }
+    }
+  ],
+  "sources_inspected": [
+    "src/content/posts/1031-exchange-for-mineral-rights-does-it-qualify-and-how-does-it-work.mdx",
+    "/assets/articles/hero/1031-exchange-for-mineral-rights-does-it-qualify-and-how-does-it-work.webp",
+    "/assets/articles/inline/1031-exchange-for-mineral-rights-does-it-qualify-and-how-does-it-work/1031-exchange-mineral-rights.webp"
+  ]
+}

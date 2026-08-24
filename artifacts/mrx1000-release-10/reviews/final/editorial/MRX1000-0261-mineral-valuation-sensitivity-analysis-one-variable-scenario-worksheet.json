@@ -1,0 +1,66 @@
+{
+  "artifact_type": "mrx1000_two_image_editorial_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-23T04:21:16Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-14",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0261",
+  "slug": "mineral-valuation-sensitivity-analysis-one-variable-scenario-worksheet",
+  "title": "Mineral Valuation Sensitivity Analysis: A One-Variable Scenario Worksheet",
+  "canonical_url": "https://mineralrightsxchange.com/blog/mineral-valuation-sensitivity-analysis-one-variable-scenario-worksheet/",
+  "source_path": "src/content/posts/mineral-valuation-sensitivity-analysis-one-variable-scenario-worksheet.mdx",
+  "input_body_sha256": "ec4d7d0f278c5ec46477247567d42085e4e07be9aaeaf49d1f7593c867f34bfc",
+  "input_frontmatter_sha256": "1d756fba21cebf14e49788adf83bc06d3b30d67732f46485a9f8ac15048702a0",
+  "expected_repo_sha256": "ec4d7d0f278c5ec46477247567d42085e4e07be9aaeaf49d1f7593c867f34bfc",
+  "two_image_manifest_sha256": "9ffe4b947a15b95b05443775784bc2fb5493de05794da7efcdc043a3e155a19f",
+  "visual_metadata": {
+    "hero_alt": "A reviewer examines five blank scenario cards with one changed card beside the exact article title.",
+    "social_alt": "A reviewer examines five blank scenario cards with one changed card beside the exact article title.",
+    "inline_alt": "A top-down blank worksheet changes one highlighted input row while adjacent fields stay fixed under the exact keyword."
+  },
+  "reviewer_id": "codex_wave76_editorial",
+  "review_run_id": "mrx1000-wave76-editorial-20260823T042116Z",
+  "capability": "editorial",
+  "findings": [
+    "Complete current MDX SHA-256 is ec4d7d0f278c5ec46477247567d42085e4e07be9aaeaf49d1f7593c867f34bfc; the answer-first article contains 1630 body tokens and five FAQs.",
+    "The article owns only a one-variable control worksheet for an existing model: one sourced input changes per row, all other assumptions and conventions remain fixed, and the existing model output is copied. It does not teach the underlying valuation factors, create assumptions, rank variables, or establish value.",
+    "Exact-title hero/share OCR passed for “Mineral Valuation Sensitivity Analysis: A One-Variable Scenario Worksheet”; distinct in-body OCR passed for “mineral valuation sensitivity analysis worksheet”; the side-angle reviewer-and-cards hero and people-free overhead worksheet grid are materially different compositions with matching alt metadata."
+  ],
+  "checks": [
+    {
+      "name": "complete_file_sha256_match",
+      "status": "PASS",
+      "evidence": "ec4d7d0f278c5ec46477247567d42085e4e07be9aaeaf49d1f7593c867f34bfc"
+    },
+    {
+      "name": "answer_first_article_depth_and_five_faqs",
+      "status": "PASS",
+      "evidence": {
+        "word_count": 1630,
+        "minimum_word_count": 700,
+        "faq_count": 5
+      }
+    },
+    {
+      "name": "two_image_exact_text_identity",
+      "status": "PASS",
+      "evidence": {
+        "hero_ocr": true,
+        "inline_ocr": true,
+        "social_reuses_hero": true,
+        "hero_social_alt_match": true,
+        "inline_alt_match": true,
+        "filename_identity": true,
+        "distinct_binaries": true
+      }
+    }
+  ],
+  "sources_inspected": [
+    "src/content/posts/mineral-valuation-sensitivity-analysis-one-variable-scenario-worksheet.mdx",
+    "/assets/articles/hero/mineral-valuation-sensitivity-analysis-a-one-variable-scenario-worksheet.webp",
+    "/assets/articles/inline/mineral-valuation-sensitivity-analysis-one-variable-scenario-worksheet/mineral-valuation-sensitivity-analysis-worksheet.webp"
+  ]
+}

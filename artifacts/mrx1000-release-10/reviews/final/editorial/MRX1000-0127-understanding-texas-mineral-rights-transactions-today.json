@@ -1,0 +1,59 @@
+{
+  "artifact_type": "mrx1000_two_image_editorial_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-12T22:12:05Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-12",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0127",
+  "slug": "understanding-texas-mineral-rights-transactions-today",
+  "title": "Understanding Texas Mineral Rights Transactions Today",
+  "canonical_url": "https://mineralrightsxchange.com/blog/understanding-texas-mineral-rights-transactions-today/",
+  "source_path": "src/content/posts/understanding-texas-mineral-rights-transactions-today.mdx",
+  "input_body_sha256": "14c1811377388de980de9621a6b4a2c804936ab18fc74f3ad0e8574ea17cd002",
+  "input_frontmatter_sha256": "d4a4adb33010ddcf17d057edbc7c184796bf19375491da1b835c451cb26a8b39",
+  "expected_repo_sha256": "14c1811377388de980de9621a6b4a2c804936ab18fc74f3ad0e8574ea17cd002",
+  "two_image_manifest_sha256": "a13762a0c18d6572edec3fa5a9027d9e339a9933e7f97445815332b6a5767445",
+  "reviewer_id": "codex_wave47_editorial",
+  "review_run_id": "mrx1000-wave47-editorial-20260812T221205Z",
+  "capability": "editorial",
+  "findings": [
+    "Complete current MDX SHA-256 is 14c1811377388de980de9621a6b4a2c804936ab18fc74f3ad0e8574ea17cd002; the answer-first article contains 2495 body tokens and five FAQs.",
+    "The article owns a Texas transaction-source routing job: ownership and authority, asset and operating identity, payment history, directional economics, counterparty and proposal evidence, and document-closing-post-closing records. Every lane records the source, identifier, as-of date, supported question, limitation, conflict status, and professional handoff while routing sequential selling and stage-gate jobs to existing pages.",
+    "Exact-title hero/share OCR passed for “Understanding Texas Mineral Rights Transactions Today”; distinct in-body OCR passed for “Navigating Mineral Rights Transactions Texas”."
+  ],
+  "checks": [
+    {
+      "name": "complete_file_sha256_match",
+      "status": "PASS",
+      "evidence": "14c1811377388de980de9621a6b4a2c804936ab18fc74f3ad0e8574ea17cd002"
+    },
+    {
+      "name": "answer_first_article_depth_and_five_faqs",
+      "status": "PASS",
+      "evidence": {
+        "word_count": 2495,
+        "minimum_word_count": 700,
+        "faq_count": 5
+      }
+    },
+    {
+      "name": "two_image_exact_text_identity",
+      "status": "PASS",
+      "evidence": {
+        "hero_ocr": true,
+        "inline_ocr": true,
+        "social_reuses_hero": true,
+        "filename_identity": true,
+        "distinct_binaries": true
+      }
+    }
+  ],
+  "sources_inspected": [
+    "src/content/posts/understanding-texas-mineral-rights-transactions-today.mdx",
+    "/assets/articles/hero/understanding-texas-mineral-rights-transactions-today.webp",
+    "/assets/articles/inline/understanding-texas-mineral-rights-transactions-today/navigating-mineral-rights-transactions-texas.webp"
+  ]
+}

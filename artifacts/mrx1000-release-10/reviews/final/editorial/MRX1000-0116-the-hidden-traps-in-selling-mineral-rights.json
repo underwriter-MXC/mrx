@@ -1,0 +1,59 @@
+{
+  "artifact_type": "mrx1000_two_image_editorial_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-12T15:43:41Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-12",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0116",
+  "slug": "the-hidden-traps-in-selling-mineral-rights",
+  "title": "The Hidden Traps in Selling Mineral Rights",
+  "canonical_url": "https://mineralrightsxchange.com/blog/the-hidden-traps-in-selling-mineral-rights/",
+  "source_path": "src/content/posts/the-hidden-traps-in-selling-mineral-rights.mdx",
+  "input_body_sha256": "aede6336d8d120a09eed78b630aa8dbd61a853373505b5233714c633eae16e01",
+  "input_frontmatter_sha256": "340bd08f6b1632952d716765389eefc692a9c6b65fcf8a40b644422fab63373c",
+  "expected_repo_sha256": "aede6336d8d120a09eed78b630aa8dbd61a853373505b5233714c633eae16e01",
+  "two_image_manifest_sha256": "a2258407c3f43fec103d8352d1d1c73968b5175dd91bf5076ad8ea805c57edcc",
+  "reviewer_id": "codex_wave36_editorial",
+  "review_run_id": "mrx1000-wave36-editorial-20260812T154341Z",
+  "capability": "editorial",
+  "findings": [
+    "Complete current MDX SHA-256 is aede6336d8d120a09eed78b630aa8dbd61a853373505b5233714c633eae16e01; the answer-first article contains 2949 body tokens and five FAQs.",
+    "The article owns the quiet clause-trigger and cross-document dependency job: it separates headline terms from operative definitions, exhibits, diligence rights, price adjustments, exclusivity, deed and payment sequencing, remedies, and owner net, then supplies a trap register, stop rules, and professional handoffs.",
+    "Exact-title hero/share OCR passed for “The Hidden Traps in Selling Mineral Rights”; distinct in-body OCR passed for “Common Mistakes Selling Mineral Rights”."
+  ],
+  "checks": [
+    {
+      "name": "complete_file_sha256_match",
+      "status": "PASS",
+      "evidence": "aede6336d8d120a09eed78b630aa8dbd61a853373505b5233714c633eae16e01"
+    },
+    {
+      "name": "answer_first_article_depth_and_five_faqs",
+      "status": "PASS",
+      "evidence": {
+        "word_count": 2949,
+        "minimum_word_count": 700,
+        "faq_count": 5
+      }
+    },
+    {
+      "name": "two_image_exact_text_identity",
+      "status": "PASS",
+      "evidence": {
+        "hero_ocr": true,
+        "inline_ocr": true,
+        "social_reuses_hero": true,
+        "filename_identity": true,
+        "distinct_binaries": true
+      }
+    }
+  ],
+  "sources_inspected": [
+    "src/content/posts/the-hidden-traps-in-selling-mineral-rights.mdx",
+    "/assets/articles/hero/the-hidden-traps-in-selling-mineral-rights.webp",
+    "/assets/articles/inline/the-hidden-traps-in-selling-mineral-rights/common-mistakes-selling-mineral-rights.webp"
+  ]
+}

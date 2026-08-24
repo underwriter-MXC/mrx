@@ -1,0 +1,59 @@
+{
+  "artifact_type": "mrx1000_two_image_editorial_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-12T14:39:21Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-12",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0114",
+  "slug": "selling-mineral-rights-valuation-factors-without-obligation",
+  "title": "Selling Mineral Rights: Valuation Factors Without Obligation",
+  "canonical_url": "https://mineralrightsxchange.com/blog/selling-mineral-rights-valuation-factors-without-obligation/",
+  "source_path": "src/content/posts/selling-mineral-rights-valuation-factors-without-obligation.mdx",
+  "input_body_sha256": "a38e73e29b65c978f57ff784b72b1fa979034411318ed43511053a1d0d127784",
+  "input_frontmatter_sha256": "cf7382ea1c25ab72e0bb14bae3910cf526f21fd4ab9e3f74cdcc3ed0f7c41201",
+  "expected_repo_sha256": "a38e73e29b65c978f57ff784b72b1fa979034411318ed43511053a1d0d127784",
+  "two_image_manifest_sha256": "89cdebe1266976697a77cb749f484abe6b926cbf5866a3c34c0e16115b5e9e3c",
+  "reviewer_id": "codex_wave34_editorial",
+  "review_run_id": "mrx1000-wave34-editorial-20260812T143921Z",
+  "capability": "editorial",
+  "findings": [
+    "Complete current MDX SHA-256 is a38e73e29b65c978f57ff784b72b1fa979034411318ed43511053a1d0d127784; the answer-first article contains 3155 body tokens and five FAQs.",
+    "The article owns the no-obligation review and privacy journey: it separates evidence review, permission to process deliberately supplied records, any later buyer proposal, and the owner’s transaction decision, then supplies a staged permission ladder, minimum-necessary record controls, an assumption-and-permission register, stop rules, and explicit next-step choices.",
+    "Exact-title hero/share OCR passed for “Selling Mineral Rights: Valuation Factors Without Obligation”; distinct in-body OCR passed for “selling mineral rights”."
+  ],
+  "checks": [
+    {
+      "name": "complete_file_sha256_match",
+      "status": "PASS",
+      "evidence": "a38e73e29b65c978f57ff784b72b1fa979034411318ed43511053a1d0d127784"
+    },
+    {
+      "name": "answer_first_article_depth_and_five_faqs",
+      "status": "PASS",
+      "evidence": {
+        "word_count": 3155,
+        "minimum_word_count": 700,
+        "faq_count": 5
+      }
+    },
+    {
+      "name": "two_image_exact_text_identity",
+      "status": "PASS",
+      "evidence": {
+        "hero_ocr": true,
+        "inline_ocr": true,
+        "social_reuses_hero": true,
+        "filename_identity": true,
+        "distinct_binaries": true
+      }
+    }
+  ],
+  "sources_inspected": [
+    "src/content/posts/selling-mineral-rights-valuation-factors-without-obligation.mdx",
+    "/assets/articles/hero/selling-mineral-rights-valuation-factors-without-obligation.webp",
+    "/assets/articles/inline/selling-mineral-rights-valuation-factors-without-obligation/selling-mineral-rights.webp"
+  ]
+}

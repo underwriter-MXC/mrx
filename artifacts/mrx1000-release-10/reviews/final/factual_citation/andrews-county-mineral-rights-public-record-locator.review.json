@@ -1,0 +1,146 @@
+{
+  "artifact_type": "mrx1000_wave85_two_image_factual_citation_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-23T17:10:56Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-14",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0741",
+  "slug": "andrews-county-mineral-rights-public-record-locator",
+  "title": "How to Build an Andrews County Mineral Rights Public-Record Locator",
+  "canonical_url": "https://mineralrightsxchange.com/blog/andrews-county-mineral-rights-public-record-locator/",
+  "source_path": "src/content/posts/andrews-county-mineral-rights-public-record-locator.mdx",
+  "input_body_sha256": "a4764e033823a46aec67b0df58da1bd8227c2248078d0c6f0ecda06aea538fcc",
+  "input_frontmatter_sha256": "f2b13f1faaaf12477c8d82c9b8f4660c31a81540567b58235bdc11bd6f039b90",
+  "expected_repo_sha256": "a4764e033823a46aec67b0df58da1bd8227c2248078d0c6f0ecda06aea538fcc",
+  "two_image_manifest_sha256": "140fa3c826df128317e98aba409b578dced6db03c88063dc66c0cd814f77b61c",
+  "visual_metadata": {
+    "hero_alt": "An Andrews County records desk appears beside the exact article title.",
+    "social_alt": "An Andrews County records desk appears beside the exact article title.",
+    "inline_alt": "A top-down four-source locator worksheet appears above the exact keyword."
+  },
+  "reviewer_id": "codex_wave85_factual",
+  "review_run_id": "mrx1000-wave85-factual-20260823T171056Z",
+  "capability": "factual_citation",
+  "findings": [
+    "Complete current MDX SHA-256 is a4764e033823a46aec67b0df58da1bd8227c2248078d0c6f0ecda06aea538fcc; all 8 declared sources passed current HTTPS access review.",
+    "Claims remain bounded to current official county, appraisal-district, GLO, and RRC access routes, displayed fields, identifiers, posting or update limitations, and source roles. No record system is converted into title, ownership, acreage, legal effect, tract connection, production, development, value, offer, or transaction proof.",
+    "The article publishes no real owner name, property identifier, instrument result, tax account, API number, tract match, acreage, appraisal amount, mineral value, offer, royalty decimal, production number, or transaction fact and supplies no universal numerical conclusion."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "eight_distinct_https_sources",
+    "current_source_access_review_pass",
+    "claim_to_source_scope_present",
+    "official_source_priority_pass",
+    "unsupported_high_risk_claim_scan_pass"
+  ],
+  "sources_inspected": [
+    {
+      "label": "Andrews County, Online Official Public Records Search (accessed 2026-08-23)",
+      "url": "https://www.co.andrews.tx.us/322/Online-Official-Public-Records-Search",
+      "publisher": "www.co.andrews.tx.us",
+      "accessed_at": "2026-08-23T17:10:56Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.co.andrews.tx.us/322/Online-Official-Public-Records-Search",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The official Andrews County page identifies the County Clerk as recorder and custodian of official public records, links the county-selected online search portal, states a normal two-to-three-business-day posting interval from filing, and lists explicit limits on title, validity, ownership, and legal-opinion work.",
+      "claim_scope": "The article uses the page only to preserve the official starting page, linked portal, field entered, displayed index identifier, search date, normal posting note, and county-stated limitation; it does not conduct or imply a title search."
+    },
+    {
+      "label": "Andrews County, County Clerk (accessed 2026-08-23)",
+      "url": "https://www.co.andrews.tx.us/181/County-Clerk",
+      "publisher": "www.co.andrews.tx.us",
+      "accessed_at": "2026-08-23T17:10:56Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.co.andrews.tx.us/181/County-Clerk",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The official County Clerk page identifies land and real-property records among the office records and notes that some records may be closed by law.",
+      "claim_scope": "The article uses the page only to identify the responsible office and route a record-access question; it does not assume every record is online, open, complete, or sufficient."
+    },
+    {
+      "label": "Andrews County Appraisal District (accessed 2026-08-23)",
+      "url": "https://andrewscad.org/",
+      "publisher": "andrewscad.org",
+      "accessed_at": "2026-08-23T17:10:56Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://andrewscad.org/",
+        "content_type": "text/html; charset=UTF-8"
+      },
+      "source_location_or_paraphrase": "The official Andrews County Appraisal District site identifies the district appraisal role and links its property-search system.",
+      "claim_scope": "The article uses the site only to preserve the official route into the appraisal search and the system role; it does not convert an appraisal record or value into title, ownership, mineral-sale value, or transaction evidence."
+    },
+    {
+      "label": "Andrews CAD Property Search (accessed 2026-08-23)",
+      "url": "https://esearch.andrewscad.org/",
+      "publisher": "esearch.andrewscad.org",
+      "accessed_at": "2026-08-23T17:10:56Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://esearch.andrewscad.org/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The Andrews CAD search interface exposes fields including owner, address, abstract, property ID, owner ID, Geographic ID, tax year, property type, and subdivision and displays research-use limitations for legal descriptions and acreage.",
+      "claim_scope": "The article uses the interface only to record the exact field and displayed identifier used for a reproducible administrative lead; it does not publish a real owner search or treat appraisal data as legal or valuation proof."
+    },
+    {
+      "label": "Texas General Land Office, Land Grant Search (accessed 2026-08-23)",
+      "url": "https://www.glo.texas.gov/archives-heritage/search-our-collections/land-grant-search",
+      "publisher": "www.glo.texas.gov",
+      "accessed_at": "2026-08-23T17:10:56Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.glo.texas.gov/archives-heritage/search-our-collections/land-grant-search",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The Texas General Land Office land-grant search provides historical fields such as county, abstract, original grantee, patentee, file number, certificate, patent data, survey, block, and township.",
+      "claim_scope": "The article uses the system only to preserve a historical archive locator and its displayed identifier; it does not bridge that result to current ownership, acreage, title, or a private tract."
+    },
+    {
+      "label": "Railroad Commission of Texas, Research Queries (accessed 2026-08-23)",
+      "url": "https://www.rrc.texas.gov/resource-center/research/research-queries/",
+      "publisher": "www.rrc.texas.gov",
+      "accessed_at": "2026-08-23T17:10:56Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.rrc.texas.gov/resource-center/research/research-queries/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The Railroad Commission research directory links official regulatory query systems and describes online data as informational and continually updated rather than authoritative legal records.",
+      "claim_scope": "The article uses the directory only to choose and log the exact regulatory system and query field; it does not treat a result as ownership, title, lease, payment, development, or value evidence."
+    },
+    {
+      "label": "Railroad Commission of Texas, Public GIS Viewer (accessed 2026-08-23)",
+      "url": "https://www.rrc.texas.gov/resource-center/research/gis-viewer/",
+      "publisher": "www.rrc.texas.gov",
+      "accessed_at": "2026-08-23T17:10:56Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.rrc.texas.gov/resource-center/research/gis-viewer/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The Railroad Commission GIS page describes map and popup use and states that displayed datasets are informational, may be approximate, and have no legal force.",
+      "claim_scope": "The article uses a GIS result only as a separately labeled map locator with the system limitation preserved; it does not establish a boundary, survey, tract match, well-to-interest connection, or value conclusion."
+    },
+    {
+      "label": "Railroad Commission of Texas, Oil and Gas Well Records (accessed 2026-08-23)",
+      "url": "https://www.rrc.texas.gov/oil-and-gas/research-and-statistics/obtaining-commission-records/oil-and-gas-well-records/",
+      "publisher": "www.rrc.texas.gov",
+      "accessed_at": "2026-08-23T17:10:56Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.rrc.texas.gov/oil-and-gas/research-and-statistics/obtaining-commission-records/oil-and-gas-well-records/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The Railroad Commission well-records page describes well-file access and useful request identifiers including county, operator, field, lease or well name and number, Commission identifiers, survey, abstract, section, and block.",
+      "claim_scope": "The article uses the page only to preserve a regulatory record request or locator row; it does not establish a private property connection, operating conclusion, production entitlement, ownership, or value."
+    }
+  ]
+}

@@ -1,0 +1,100 @@
+{
+  "artifact_type": "mrx1000_two_image_factual_citation_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-11T22:44:38Z",
+  "decision_authority": {
+    "source": "Daryl owner directive, 2026-08-11",
+    "policy": "MRX two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0311",
+  "slug": "how-to-spot-predatory-mineral-rights-offers",
+  "title": "How to Spot Predatory Mineral Rights Offers",
+  "canonical_url": "https://mineralrightsxchange.com/blog/how-to-spot-predatory-mineral-rights-offers/",
+  "source_path": "src/content/posts/how-to-spot-predatory-mineral-rights-offers.mdx",
+  "input_body_sha256": "eda8292efe8d5c0e62ec91c4201110c737a898df914a5e02b5d27b448dd6869e",
+  "input_frontmatter_sha256": "34c7f955700ef4653aea1369cae9d0f2c73df38b0141586e172591f4c79f05ab",
+  "expected_repo_sha256": "eda8292efe8d5c0e62ec91c4201110c737a898df914a5e02b5d27b448dd6869e",
+  "two_image_manifest_sha256": "802512b5dab8eae7592be5934f97a6a8989125fb8f65d3f37ee3cdeb2d35dc10",
+  "reviewer_id": "codex_two_image_factual",
+  "review_run_id": "mrx1000-two-image-retrofit-20260811T224438Z",
+  "capability": "factual_citation",
+  "findings": [
+    "Complete current MDX SHA-256 is eda8292efe8d5c0e62ec91c4201110c737a898df914a5e02b5d27b448dd6869e; all 5 declared sources passed live access review.",
+    "The retrofit changes image metadata and assets, not the bounded claim-to-source relationships in the article body.",
+    "The two images make no fabricated numeric, legal, tax, valuation, testimonial, or document claims."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "minimum_two_distinct_https_sources",
+    "current_source_access_review_pass",
+    "two_image_unsupported_claim_scan_pass"
+  ],
+  "sources_inspected": [
+    {
+      "label": "Federal Trade Commission, How To Avoid a Scam (accessed 2026-08-06)",
+      "url": "https://consumer.ftc.gov/articles/how-avoid-scam",
+      "publisher": "consumer.ftc.gov",
+      "accessed_at": "2026-08-11T22:44:38Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://consumer.ftc.gov/articles/how-avoid-scam",
+        "content_type": "text/html; charset=UTF-8"
+      },
+      "source_location_or_paraphrase": "The article cites Federal Trade Commission, How To Avoid a Scam (accessed 2026-08-06) only for the bounded context attributed in its body and source notes.",
+      "claim_scope": "Owner-specific legal, tax, title, accounting, brokerage, engineering, appraisal, eligibility, value, and transaction conclusions remain outside this source use."
+    },
+    {
+      "label": "Federal Trade Commission, What are the signs of a scam? (accessed 2026-08-06)",
+      "url": "https://consumer.ftc.gov/consumer-alerts/2025/03/what-are-signs-scam",
+      "publisher": "consumer.ftc.gov",
+      "accessed_at": "2026-08-11T22:44:38Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://consumer.ftc.gov/consumer-alerts/2025/03/what-are-signs-scam",
+        "content_type": "text/html; charset=UTF-8"
+      },
+      "source_location_or_paraphrase": "The article cites Federal Trade Commission, What are the signs of a scam? (accessed 2026-08-06) only for the bounded context attributed in its body and source notes.",
+      "claim_scope": "Owner-specific legal, tax, title, accounting, brokerage, engineering, appraisal, eligibility, value, and transaction conclusions remain outside this source use."
+    },
+    {
+      "label": "Railroad Commission of Texas online research queries (accessed 2026-08-06)",
+      "url": "https://www.rrc.texas.gov/resource-center/research/research-queries/",
+      "publisher": "www.rrc.texas.gov",
+      "accessed_at": "2026-08-11T22:44:38Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.rrc.texas.gov/resource-center/research/research-queries/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The article cites Railroad Commission of Texas online research queries (accessed 2026-08-06) only for the bounded context attributed in its body and source notes.",
+      "claim_scope": "Owner-specific legal, tax, title, accounting, brokerage, engineering, appraisal, eligibility, value, and transaction conclusions remain outside this source use."
+    },
+    {
+      "label": "Texas Secretary of State business resources (accessed 2026-08-06)",
+      "url": "https://www.sos.state.tx.us/corp/do-business.shtml",
+      "publisher": "www.sos.state.tx.us",
+      "accessed_at": "2026-08-11T22:44:38Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.sos.state.tx.us/corp/do-business.shtml",
+        "content_type": "text/html"
+      },
+      "source_location_or_paraphrase": "The article cites Texas Secretary of State business resources (accessed 2026-08-06) only for the bounded context attributed in its body and source notes.",
+      "claim_scope": "Owner-specific legal, tax, title, accounting, brokerage, engineering, appraisal, eligibility, value, and transaction conclusions remain outside this source use."
+    },
+    {
+      "label": "Texas Property Code Chapter 5, Conveyances (accessed 2026-08-06)",
+      "url": "https://statutes.capitol.texas.gov/Docs/PR/pdf/PR.5.pdf",
+      "publisher": "statutes.capitol.texas.gov",
+      "accessed_at": "2026-08-11T22:44:38Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://statutes.capitol.texas.gov/Docs/PR/pdf/PR.5.pdf",
+        "content_type": "text/html"
+      },
+      "source_location_or_paraphrase": "The article cites Texas Property Code Chapter 5, Conveyances (accessed 2026-08-06) only for the bounded context attributed in its body and source notes.",
+      "claim_scope": "Owner-specific legal, tax, title, accounting, brokerage, engineering, appraisal, eligibility, value, and transaction conclusions remain outside this source use."
+    }
+  ]
+}

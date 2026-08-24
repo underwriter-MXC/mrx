@@ -1,0 +1,102 @@
+{
+  "artifact_type": "mrx1000_two_image_factual_citation_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-13T18:53:27Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-12",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0133",
+  "slug": "understanding-the-true-value-of-your-mineral-interests",
+  "title": "Understanding the True Value of Your Mineral Interests",
+  "canonical_url": "https://mineralrightsxchange.com/blog/understanding-the-true-value-of-your-mineral-interests/",
+  "source_path": "src/content/posts/understanding-the-true-value-of-your-mineral-interests.mdx",
+  "input_body_sha256": "979b72c2a98b2f35799d02bf6ef8da2941ec6dae59bc325ad6c6047a08f39c9b",
+  "input_frontmatter_sha256": "026ecf008306d200b5370fb8ade26dc731942e6c0ea2a7f7b4703a251e5db184",
+  "expected_repo_sha256": "979b72c2a98b2f35799d02bf6ef8da2941ec6dae59bc325ad6c6047a08f39c9b",
+  "two_image_manifest_sha256": "d45450a194d21f029fd07ee10d6f05904a1d0dd6a43672d8f5bc58a59e921109",
+  "reviewer_id": "codex_wave53_factual",
+  "review_run_id": "mrx1000-wave53-factual-20260813T185327Z",
+  "capability": "factual_citation",
+  "findings": [
+    "Complete current MDX SHA-256 is 979b72c2a98b2f35799d02bf6ef8da2941ec6dae59bc325ad6c6047a08f39c9b; all 5 declared sources passed live access review.",
+    "MRX claims remain bounded to the current methodology, Sell Mineral Rights, How It Works, FAQ, and terms pages. The article distinguishes a directional range from transaction consideration, provisional owner net, and personal decision threshold; labels uncertainty; preserves professional handoffs; and does not turn a first-party framework into an owner-specific conclusion.",
+    "The article uses no fabricated owners, properties, buyers, contracts, prices, acreage, ownership decimals, production, reserves, forecasts, tax results, offers, testimonials, success rates, or owner-specific title, legal, tax, accounting, appraisal, investment, or transaction conclusions."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "minimum_three_distinct_https_sources",
+    "current_source_access_review_pass",
+    "claim_to_source_scope_present",
+    "official_primary_source_priority_pass",
+    "unsupported_high_risk_claim_scan_pass"
+  ],
+  "sources_inspected": [
+    {
+      "label": "Mineral Rights Xchange, Published DCF Methodology (accessed 2026-08-12)",
+      "url": "https://mineralrightsxchange.com/methodology/",
+      "publisher": "mineralrightsxchange.com",
+      "accessed_at": "2026-08-13T18:53:27Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://mineralrightsxchange.com/methodology/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The current MRX methodology describes a directional discounted-cash-flow review with stated production, decline, operator, royalty, commodity, discount, title, acreage, and offer-term inputs and presents the result as a range under assumptions.",
+      "claim_scope": "The article uses the page only for the dated directional-range, stated-input, stated-assumption, sensitivity, and professional-limit framework; it does not establish owner-specific title, reserves, value, tax treatment, suitability, or a transaction result."
+    },
+    {
+      "label": "Mineral Rights Xchange, Sell Mineral Rights (accessed 2026-08-12)",
+      "url": "https://mineralrightsxchange.com/sell-mineral-rights/",
+      "publisher": "mineralrightsxchange.com",
+      "accessed_at": "2026-08-13T18:53:27Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://mineralrightsxchange.com/sell-mineral-rights/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The current MRX Sell Mineral Rights page separates selling all, selling a defined portion, and holding, and identifies exact asset scope, complete written proposals, adjustment rights, diligence, funding, timing, professional review, and recording as decision topics.",
+      "claim_scope": "The article uses the page only for seller-option, transaction-scope, complete-proposal, expected-net-question, and stop-condition categories; it does not recommend a path or establish a particular agreement’s meaning, fairness, or legal effect."
+    },
+    {
+      "label": "Mineral Rights Xchange, How It Works (accessed 2026-08-12)",
+      "url": "https://mineralrightsxchange.com/how-it-works/",
+      "publisher": "mineralrightsxchange.com",
+      "accessed_at": "2026-08-13T18:53:27Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://mineralrightsxchange.com/how-it-works/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The current MRX How It Works page describes an evidence-organizing review of production, royalty income, offer terms, operator context, title and acreage confidence, and professional routing.",
+      "claim_scope": "The article uses the page only for review-input categories, stated uncertainty, owner control, and professional routing; it does not establish ownership, reserves, value, tax treatment, or a transaction result."
+    },
+    {
+      "label": "Mineral Rights Xchange, Frequently Asked Questions (accessed 2026-08-12)",
+      "url": "https://mineralrightsxchange.com/faq/",
+      "publisher": "mineralrightsxchange.com",
+      "accessed_at": "2026-08-13T18:53:27Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://mineralrightsxchange.com/faq/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The current MRX FAQ describes the free no-card no-obligation directional underwriter assessment, distinguishes it from a formal appraisal, identifies useful records, and discloses that MRX may ultimately want to buy an interest.",
+      "claim_scope": "The article uses the FAQ only for current service, fee, document, professional-boundary, no-obligation, and possible-provider-interest disclosures; it does not value an interest or recommend a transaction."
+    },
+    {
+      "label": "Mineral Rights Xchange, Terms of Use and AI Disclosure (accessed 2026-08-12)",
+      "url": "https://mineralrightsxchange.com/terms/",
+      "publisher": "mineralrightsxchange.com",
+      "accessed_at": "2026-08-13T18:53:27Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://mineralrightsxchange.com/terms/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The current MRX terms identify the AI interfaces, preserve educational and professional limits, describe account responsibility, and distinguish the informational service from professional advice and transaction documents.",
+      "claim_scope": "The article uses the terms only for AI identity, account responsibility, educational limits, possible commercial interest, and professional boundaries; it does not establish authority, consent, title, value, or legal effect for a particular transaction."
+    }
+  ]
+}

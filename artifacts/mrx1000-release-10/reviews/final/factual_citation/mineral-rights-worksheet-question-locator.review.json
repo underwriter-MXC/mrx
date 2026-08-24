@@ -1,0 +1,94 @@
+{
+  "artifact_type": "mrx1000_two_image_factual_citation_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-23T05:43:53Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-14",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0262",
+  "slug": "mineral-rights-worksheet-question-locator",
+  "title": "How to Locate an Unanswered Question in a Mineral Rights Worksheet",
+  "canonical_url": "https://mineralrightsxchange.com/blog/mineral-rights-worksheet-question-locator/",
+  "source_path": "src/content/posts/mineral-rights-worksheet-question-locator.mdx",
+  "input_body_sha256": "174e87b1ab2848d86be83832ebb6f42ebaea3881bba2b1fd485efb903230cf4f",
+  "input_frontmatter_sha256": "ae831c893be6350668a5b881e065e3505afc31eda226c3d518078b7153ee98e4",
+  "expected_repo_sha256": "174e87b1ab2848d86be83832ebb6f42ebaea3881bba2b1fd485efb903230cf4f",
+  "two_image_manifest_sha256": "4acf05af151194c01355de90dc950ab6ec37dd3465ed3039fb07bb24a186d13e",
+  "visual_metadata": {
+    "hero_alt": "A blank worksheet, callout bracket, and question card appear beside the exact article title.",
+    "social_alt": "A blank worksheet, callout bracket, and question card appear beside the exact article title.",
+    "inline_alt": "A top-down locator board outlines one blank worksheet cell beside a source tag and question-routing card."
+  },
+  "reviewer_id": "codex_wave77_factual",
+  "review_run_id": "mrx1000-wave77-factual-20260823T054353Z",
+  "capability": "factual_citation",
+  "findings": [
+    "Complete current MDX SHA-256 is 174e87b1ab2848d86be83832ebb6f42ebaea3881bba2b1fd485efb903230cf4f; all 4 declared sources passed current HTTPS access review.",
+    "Claims remain bounded to record identifiers and dates, spreadsheet location references, RRC query types and update context, and PDQ navigation/reporting limitations. None is converted into a source-validation judgment or owner-specific fact.",
+    "The article supplies no proprietary, universal, market, or owner-specific numerical assumptions; invents no owner, worksheet entry, source result, public-record match, acreage, decimal, offer, or development result; and makes no owner-specific legal, tax, title, valuation, engineering, financial, or transaction conclusion."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "four_distinct_https_sources",
+    "current_source_access_review_pass",
+    "claim_to_source_scope_present",
+    "official_source_priority_pass",
+    "unsupported_high_risk_claim_scan_pass"
+  ],
+  "sources_inspected": [
+    {
+      "label": "National Archives, Bulletin 2015-01 Appendix A (accessed 2026-08-22)",
+      "url": "https://www.archives.gov/records-mgmt/bulletins/2015/2015-01-appendix-a.html",
+      "publisher": "www.archives.gov",
+      "accessed_at": "2026-08-23T05:43:53Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.archives.gov/records-mgmt/bulletins/2015/2015-01-appendix-a.html",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The National Archives metadata guidance identifies file name, unique record identifier, title, and creation date as record-description fields in its federal records context.",
+      "claim_scope": "The article borrows only the general locator principle of naming the reviewed file and displayed version or date; it does not claim that a private worksheet is a federal record or subject to NARA requirements."
+    },
+    {
+      "label": "Microsoft Support, Overview of formulas in Excel (accessed 2026-08-22)",
+      "url": "https://support.microsoft.com/en-us/Excel/get-started/overview-of-formulas-in-excel",
+      "publisher": "support.microsoft.com",
+      "accessed_at": "2026-08-23T05:43:53Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://support.microsoft.com/en-us/Excel/get-started/overview-of-formulas-in-excel",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "Microsoft documents that a worksheet cell or range can be identified by a reference and that Excel supports A1 and R1C1 reference styles.",
+      "claim_scope": "The article uses this only to explain how to copy a visible worksheet location such as a tab and cell or range; it does not inspect formulas, recalculate values, or prescribe a workbook structure."
+    },
+    {
+      "label": "Railroad Commission of Texas, Online Research Queries (accessed 2026-08-22)",
+      "url": "https://www.rrc.texas.gov/resource-center/research/research-queries/",
+      "publisher": "www.rrc.texas.gov",
+      "accessed_at": "2026-08-23T05:43:53Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.rrc.texas.gov/resource-center/research/research-queries/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The Railroad Commission lists distinct oil-and-gas query systems, their update frequencies, and an informational-use disclaimer for online data sets.",
+      "claim_scope": "The article uses this only to show why a locator should preserve the exact displayed query or record reference and access context; it makes no owner-specific record match, title, ownership, production, payment, or value conclusion."
+    },
+    {
+      "label": "Railroad Commission of Texas, Production Data Query System FAQs (accessed 2026-08-22)",
+      "url": "https://www.rrc.texas.gov/about-us/faqs/oil-gas-faq/production-data-query-system-faqs/",
+      "publisher": "www.rrc.texas.gov",
+      "accessed_at": "2026-08-23T05:43:53Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.rrc.texas.gov/about-us/faqs/oil-gas-faq/production-data-query-system-faqs/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The Railroad Commission explains PDQ query-path navigation, lease-level reporting, monthly updates, reporting lag, and later revisions.",
+      "claim_scope": "The article uses this only to preserve the visible source reference and formulate an unanswered matching question; it does not validate the record or infer a private-interest fact."
+    }
+  ]
+}

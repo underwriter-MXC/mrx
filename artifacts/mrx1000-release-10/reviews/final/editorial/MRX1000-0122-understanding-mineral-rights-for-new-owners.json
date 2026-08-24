@@ -1,0 +1,59 @@
+{
+  "artifact_type": "mrx1000_two_image_editorial_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-12T18:51:03Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-12",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0122",
+  "slug": "understanding-mineral-rights-for-new-owners",
+  "title": "Understanding Mineral Rights for New Owners",
+  "canonical_url": "https://mineralrightsxchange.com/blog/understanding-mineral-rights-for-new-owners/",
+  "source_path": "src/content/posts/understanding-mineral-rights-for-new-owners.mdx",
+  "input_body_sha256": "7daa4944534a0349b2de103eb8d0970c99ca6bcbd14682fed0d8a4b2d215a588",
+  "input_frontmatter_sha256": "2101c21fbbe5b7f52f8a5723459a129d3b84846fac94b03b1115f3bc834e548f",
+  "expected_repo_sha256": "7daa4944534a0349b2de103eb8d0970c99ca6bcbd14682fed0d8a4b2d215a588",
+  "two_image_manifest_sha256": "577b21f167c112824b3014c730ffb279d734143e24e7f2a3565fd66f589e13d9",
+  "reviewer_id": "codex_wave42_editorial",
+  "review_run_id": "mrx1000-wave42-editorial-20260812T185103Z",
+  "capability": "editorial",
+  "findings": [
+    "Complete current MDX SHA-256 is 7daa4944534a0349b2de103eb8d0970c99ca6bcbd14682fed0d8a4b2d215a588; the answer-first article contains 2658 body tokens and five FAQs.",
+    "The article owns the new-owner first-30-days control-record job: it separates source and county records, surface and mineral evidence, operational data, payor and tax records, professional questions, and stop conditions.",
+    "Exact-title hero/share OCR passed for “Understanding Mineral Rights for New Owners”; distinct in-body OCR passed for “Mineral Rights Explained for Beginners”."
+  ],
+  "checks": [
+    {
+      "name": "complete_file_sha256_match",
+      "status": "PASS",
+      "evidence": "7daa4944534a0349b2de103eb8d0970c99ca6bcbd14682fed0d8a4b2d215a588"
+    },
+    {
+      "name": "answer_first_article_depth_and_five_faqs",
+      "status": "PASS",
+      "evidence": {
+        "word_count": 2658,
+        "minimum_word_count": 700,
+        "faq_count": 5
+      }
+    },
+    {
+      "name": "two_image_exact_text_identity",
+      "status": "PASS",
+      "evidence": {
+        "hero_ocr": true,
+        "inline_ocr": true,
+        "social_reuses_hero": true,
+        "filename_identity": true,
+        "distinct_binaries": true
+      }
+    }
+  ],
+  "sources_inspected": [
+    "src/content/posts/understanding-mineral-rights-for-new-owners.mdx",
+    "/assets/articles/hero/understanding-mineral-rights-for-new-owners.webp",
+    "/assets/articles/inline/understanding-mineral-rights-for-new-owners/mineral-rights-explained-for-beginners.webp"
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "artifact_type": "mrx1000_wave83_two_image_compliance_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-23T13:31:32Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-14",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0268",
+  "slug": "inventory-mixed-status-mineral-interests-before-valuation-review",
+  "title": "How to Inventory Mixed-Status Mineral Interests Before a Valuation Review",
+  "canonical_url": "https://mineralrightsxchange.com/blog/inventory-mixed-status-mineral-interests-before-valuation-review/",
+  "source_path": "src/content/posts/inventory-mixed-status-mineral-interests-before-valuation-review.mdx",
+  "input_body_sha256": "bde02b409d35e4723822fed05e87b967246e8779117c8b7e692034db5667da18",
+  "input_frontmatter_sha256": "5442e1133d3279cd79e0b327871bfbfa4f9f88440f2ce35da5f9370f30f8e2bc",
+  "expected_repo_sha256": "bde02b409d35e4723822fed05e87b967246e8779117c8b7e692034db5667da18",
+  "two_image_manifest_sha256": "a872d84227703f2df658ce9214b022d216ef8df0a55c62adbf9e5eea6e1c6758",
+  "visual_metadata": {
+    "hero_alt": "A mixed-status mineral portfolio folder appears beside the exact article title.",
+    "social_alt": "A mixed-status mineral portfolio folder appears beside the exact article title.",
+    "inline_alt": "A blank overhead evidence inventory worksheet appears above the exact keyword."
+  },
+  "reviewer_id": "codex_wave83_compliance",
+  "review_run_id": "mrx1000-wave83-compliance-20260823T133132Z",
+  "capability": "compliance",
+  "expected_hero_sha256": "adc86940ec5e195d0c0b1d913afb78fe4196df94576eb15f8c373b1564305889",
+  "expected_inline_sha256": "2f790894d9db1f251bcea14310d7eeb6a4e11346b5d5b61118fec1454c642471",
+  "findings": [
+    "Complete current MDX SHA-256 is bde02b409d35e4723822fed05e87b967246e8779117c8b7e692034db5667da18; hero/share and inline image hashes are separately locked.",
+    "The article repeatedly labels status as claimed, keeps conflicting evidence separate, turns gaps into neutral questions, assigns follow-up without predetermining a conclusion, discloses possible MRX buyer interest, and preserves qualified-review boundaries.",
+    "Image text is limited to the exact article title and approved keyword and adds no owner name, property fact, document result, status conclusion, numerical assumption, seal, verification claim, appraisal claim, guarantee, or transaction outcome."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "hero_share_sha256_identity",
+    "inline_image_distinct_sha256",
+    "exact_text_ocr_pass",
+    "filename_text_identity_pass",
+    "administrative_inventory_only_no_status_interpretation_ownership_entitlement_valuation_or_offer_boundary_pass",
+    "owner_agency_and_possible_buyer_interest_disclosure_preserved",
+    "no_unsupported_visual_or_decision_claims"
+  ],
+  "sources_inspected": [
+    "src/content/posts/inventory-mixed-status-mineral-interests-before-valuation-review.mdx",
+    "/assets/articles/hero/how-to-inventory-mixed-status-mineral-interests-before-a-valuation-review.webp",
+    "/assets/articles/inline/inventory-mixed-status-mineral-interests-before-valuation-review/mixed-status-mineral-interest-inventory.webp"
+  ]
+}

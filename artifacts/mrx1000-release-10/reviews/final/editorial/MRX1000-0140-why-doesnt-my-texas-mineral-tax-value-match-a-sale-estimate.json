@@ -1,0 +1,66 @@
+{
+  "artifact_type": "mrx1000_two_image_editorial_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-14T18:52:09Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-11",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0140",
+  "slug": "why-doesnt-my-texas-mineral-tax-value-match-a-sale-estimate",
+  "title": "Why Doesn’t My Texas Mineral Tax Value Match a Sale Estimate?",
+  "canonical_url": "https://mineralrightsxchange.com/blog/why-doesnt-my-texas-mineral-tax-value-match-a-sale-estimate/",
+  "source_path": "src/content/posts/why-doesnt-my-texas-mineral-tax-value-match-a-sale-estimate.mdx",
+  "input_body_sha256": "c6126d77e9e5bbf27418b479ddda49d8745dda36b7af4a3936692281fe4514e3",
+  "input_frontmatter_sha256": "98129ea76bb45d797b2b5c00875952323325d7dfcda0cc1a67a8c7a0959145f1",
+  "expected_repo_sha256": "c6126d77e9e5bbf27418b479ddda49d8745dda36b7af4a3936692281fe4514e3",
+  "two_image_manifest_sha256": "afabaf6a64ad4f064c087d055d3e7236af57165f3c8164415b6e208ab45a9027",
+  "visual_metadata": {
+    "hero_alt": "Two document stacks sit beside a parcel map and “Why Doesn’t My Texas Mineral Tax Value Match a Sale Estimate?”.",
+    "social_alt": "Two document stacks sit beside a parcel map and “Why Doesn’t My Texas Mineral Tax Value Match a Sale Estimate?”.",
+    "inline_alt": "Two parcel folders flank a central comparison grid above “Texas Mineral Tax Value vs. Sale Estimate”."
+  },
+  "reviewer_id": "codex_wave60_editorial",
+  "review_run_id": "mrx1000-wave60-editorial-20260814T185209Z",
+  "capability": "editorial",
+  "findings": [
+    "Complete current MDX SHA-256 is c6126d77e9e5bbf27418b479ddda49d8745dda36b7af4a3936692281fe4514e3; the answer-first article contains 2025 body tokens and five FAQs.",
+    "The article owns reconciliation between an appraisal-district mineral tax value and a voluntary directional sale estimate. It matches interest scope, purpose, effective date, evidence cutoff, production identity, assumptions, rights, and exclusions, then limits the output to matched, not comparable, conflicted, or professional review needed.",
+    "Exact-title hero/share OCR passed for “Why Doesn’t My Texas Mineral Tax Value Match a Sale Estimate?”; distinct in-body OCR passed for “Texas Mineral Tax Value vs. Sale Estimate”; composition-accurate hero/social and inline alt metadata matched the final visual audit."
+  ],
+  "checks": [
+    {
+      "name": "complete_file_sha256_match",
+      "status": "PASS",
+      "evidence": "c6126d77e9e5bbf27418b479ddda49d8745dda36b7af4a3936692281fe4514e3"
+    },
+    {
+      "name": "answer_first_article_depth_and_five_faqs",
+      "status": "PASS",
+      "evidence": {
+        "word_count": 2025,
+        "minimum_word_count": 700,
+        "faq_count": 5
+      }
+    },
+    {
+      "name": "two_image_exact_text_identity",
+      "status": "PASS",
+      "evidence": {
+        "hero_ocr": true,
+        "inline_ocr": true,
+        "social_reuses_hero": true,
+        "hero_social_alt_match": true,
+        "inline_alt_match": true,
+        "filename_identity": true,
+        "distinct_binaries": true
+      }
+    }
+  ],
+  "sources_inspected": [
+    "src/content/posts/why-doesnt-my-texas-mineral-tax-value-match-a-sale-estimate.mdx",
+    "/assets/articles/hero/why-doesnt-my-texas-mineral-tax-value-match-a-sale-estimate.webp",
+    "/assets/articles/inline/why-doesnt-my-texas-mineral-tax-value-match-a-sale-estimate/texas-mineral-tax-value-vs-sale-estimate.webp"
+  ]
+}

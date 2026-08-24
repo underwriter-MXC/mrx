@@ -1,0 +1,128 @@
+{
+  "artifact_type": "mrx1000_two_image_factual_citation_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-12T10:39:39Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-11",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0183",
+  "slug": "how-mineral-rights-valuation-affects-your-asset-decisions",
+  "title": "How Mineral Rights Valuation Affects Your Asset Decisions",
+  "canonical_url": "https://mineralrightsxchange.com/blog/how-mineral-rights-valuation-affects-your-asset-decisions/",
+  "source_path": "src/content/posts/how-mineral-rights-valuation-affects-your-asset-decisions.mdx",
+  "input_body_sha256": "823ea71a79ed4f43e4dc1bfe07da3222cc03f7d0370d971bf3ae9e358c9cec77",
+  "input_frontmatter_sha256": "abec18fc70d44ff25c2e39f81b305d090ac18eb37ffdd7078d79b306a9b65c5d",
+  "expected_repo_sha256": "823ea71a79ed4f43e4dc1bfe07da3222cc03f7d0370d971bf3ae9e358c9cec77",
+  "two_image_manifest_sha256": "fb35fcfd6e60cb24e9f850e4ed0dff508c9963b98d5c62e1c5e5c7f87535c0e1",
+  "reviewer_id": "codex_wave25_factual",
+  "review_run_id": "mrx1000-wave25-factual-20260812T103939Z",
+  "capability": "factual_citation",
+  "findings": [
+    "Complete current MDX SHA-256 is 823ea71a79ed4f43e4dc1bfe07da3222cc03f7d0370d971bf3ae9e358c9cec77; all 7 declared official sources passed live access review.",
+    "MRX methodology, value-driver, and partial-transfer claims remain bounded to current first-party pages; RRC and GLO claims remain bounded to official production-query and archival-collection descriptions; Investor.gov concepts remain bounded to general time-horizon, risk-tolerance, asset-allocation, diversification, and risk education.",
+    "The article uses no fabricated owners, deeds, wells, leases, production, payments, offers, prices, acreage, ownership decimals, valuation ranges, portfolio allocations, testimonials, or owner-specific title, legal, tax, accounting, engineering, investment, or valuation conclusions."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "minimum_three_distinct_https_sources",
+    "current_source_access_review_pass",
+    "claim_to_source_scope_present",
+    "official_primary_source_priority_pass",
+    "unsupported_high_risk_claim_scan_pass"
+  ],
+  "sources_inspected": [
+    {
+      "label": "Mineral Rights Xchange, Published DCF Methodology (accessed 2026-08-11)",
+      "url": "https://mineralrightsxchange.com/methodology/",
+      "publisher": "mineralrightsxchange.com",
+      "accessed_at": "2026-08-12T10:39:39Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://mineralrightsxchange.com/methodology/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The current MRX methodology describes a discounted-cash-flow review of expected royalty income and a directional range with stated production, decline, royalty, discount-rate, commodity, title-confidence, and offer inputs.",
+      "claim_scope": "The article uses the methodology to distinguish property evidence, model assumptions, scenario outputs, and confidence from the owner’s personal decision criteria; it does not present a formal credentialed valuation, financial plan, investment recommendation, title opinion, legal or tax opinion, guaranteed value, or recommendation to sell."
+    },
+    {
+      "label": "Mineral Rights Xchange, What Determines the Value of Your Mineral Rights? (accessed 2026-08-11)",
+      "url": "https://mineralrightsxchange.com/blog/what-determines-the-value-of-your-mineral-rights/",
+      "publisher": "mineralrightsxchange.com",
+      "accessed_at": "2026-08-12T10:39:39Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://mineralrightsxchange.com/blog/what-determines-the-value-of-your-mineral-rights/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The MRX value-driver guide identifies ownership scope, location, lease terms, production, development evidence, commodity and timing assumptions, title certainty, and transaction scope as distinct inputs to a directional mineral-rights value range.",
+      "claim_scope": "The article summarizes those inputs only to explain how the resulting dated range can support an option comparison; it does not duplicate the broad factor catalog or claim that one factor determines an owner-specific value or decision."
+    },
+    {
+      "label": "Mineral Rights Xchange, Can You Sell Part of Your Mineral Rights? (accessed 2026-08-11)",
+      "url": "https://mineralrightsxchange.com/blog/can-you-sell-part-of-your-mineral-rights-partial-interest-sales-explained/",
+      "publisher": "mineralrightsxchange.com",
+      "accessed_at": "2026-08-12T10:39:39Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://mineralrightsxchange.com/blog/can-you-sell-part-of-your-mineral-rights-partial-interest-sales-explained/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The MRX partial-interest guide explains that a proposed transfer must define the fraction, tract, depths, formations, royalty rights, reservations, and related conveyance scope rather than relying on a headline percentage alone.",
+      "claim_scope": "The article uses that guide to identify partial transfer as one option and to require separate transferred-and-retained scope; it does not interpret, draft, or approve owner-specific conveyance language."
+    },
+    {
+      "label": "Railroad Commission of Texas, Production Data Query (accessed 2026-08-11)",
+      "url": "https://webapps2.rrc.texas.gov/EWA/ewaPdqMain.do",
+      "publisher": "webapps2.rrc.texas.gov",
+      "accessed_at": "2026-08-12T10:39:39Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://webapps2.rrc.texas.gov/EWA/ewaPdqMain.do",
+        "content_type": "text/html; charset=UTF-8"
+      },
+      "source_location_or_paraphrase": "The Railroad Commission of Texas Production Data Query provides reported Texas production searches using available geographic, operator, lease, well, field, and time-period identifiers.",
+      "claim_scope": "The article uses reported production as operating and timing context only; it does not treat a query result as proof of title, lease meaning, owner decimal, payment entitlement, future production, or value."
+    },
+    {
+      "label": "Texas General Land Office, Search Our Collections (accessed 2026-08-11)",
+      "url": "https://www.glo.texas.gov/archives-and-heritage/search-our-collections",
+      "publisher": "www.glo.texas.gov",
+      "accessed_at": "2026-08-12T10:39:39Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.glo.texas.gov/archives-and-heritage/search-our-collections",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The Texas General Land Office describes searchable archival collections that include digitized land-grant records, historical maps, and related public-land materials.",
+      "claim_scope": "The article uses those collections as possible survey and historical research leads only; it does not treat an archival record or map as a current county title record, legal description verification, or owner-specific title opinion."
+    },
+    {
+      "label": "Investor.gov, Asset Allocation and Diversification (accessed 2026-08-11)",
+      "url": "https://www.investor.gov/introduction-investing/getting-started/asset-allocation",
+      "publisher": "www.investor.gov",
+      "accessed_at": "2026-08-12T10:39:39Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.investor.gov/introduction-investing/getting-started/asset-allocation",
+        "content_type": "text/html; charset=UTF-8"
+      },
+      "source_location_or_paraphrase": "Investor.gov explains that asset allocation is personal and depends in part on an investor’s time horizon and risk tolerance, and that diversification spreads exposure among different assets.",
+      "claim_scope": "The article uses those concepts only as general prompts for a qualified financial-planning discussion; it does not classify mineral interests as securities, prescribe an allocation, compare expected returns, or recommend a transaction."
+    },
+    {
+      "label": "Investor.gov, What Is Risk? (accessed 2026-08-11)",
+      "url": "https://www.investor.gov/introduction-investing/investing-basics/what-risk",
+      "publisher": "www.investor.gov",
+      "accessed_at": "2026-08-12T10:39:39Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.investor.gov/introduction-investing/investing-basics/what-risk",
+        "content_type": "text/html; charset=UTF-8"
+      },
+      "source_location_or_paraphrase": "Investor.gov defines financial risk in terms of uncertainty and potential financial loss and describes that different assets can carry different risk, return, liquidity, and safety characteristics.",
+      "claim_scope": "The article uses uncertainty and risk tolerance only as owner criteria outside the mineral valuation model; it does not provide individualized investment advice, a risk score, or a conclusion about transaction suitability."
+    }
+  ]
+}

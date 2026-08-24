@@ -1,0 +1,62 @@
+{
+  "artifact_type": "mrx1000_two_image_editorial_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-11T22:44:38Z",
+  "decision_authority": {
+    "source": "Daryl owner directive, 2026-08-11",
+    "policy": "MRX two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0728",
+  "slug": "how-royalty-payments-work-for-texas-mineral-rights-owners",
+  "title": "How Royalty Payments Work for Texas Mineral Owners",
+  "canonical_url": "https://mineralrightsxchange.com/blog/how-royalty-payments-work-for-texas-mineral-rights-owners/",
+  "source_path": "src/content/posts/how-royalty-payments-work-for-texas-mineral-rights-owners.mdx",
+  "input_body_sha256": "38b75311c3ab861c9438506356bd3a5415225210aa332a3d3b853313f714d60f",
+  "input_frontmatter_sha256": "176806ef3262c432fcd50c0725c78cd9e3323c810dc78c70fb2d565fa7ef0011",
+  "expected_repo_sha256": "38b75311c3ab861c9438506356bd3a5415225210aa332a3d3b853313f714d60f",
+  "two_image_manifest_sha256": "802512b5dab8eae7592be5934f97a6a8989125fb8f65d3f37ee3cdeb2d35dc10",
+  "reviewer_id": "codex_two_image_editorial",
+  "review_run_id": "mrx1000-two-image-retrofit-20260811T224438Z",
+  "capability": "editorial",
+  "findings": [
+    "Complete current MDX SHA-256 is 38b75311c3ab861c9438506356bd3a5415225210aa332a3d3b853313f714d60f; article has 1040 body tokens and five FAQs.",
+    "Exact-title hero/share OCR passed for “How Royalty Payments Work for Texas Mineral Owners”; distinct in-body OCR passed for “how royalty payments work for texas mineral rights owners”.",
+    "Both text treatments remain deterministic, descriptive, filename-matched, article-specific, and bound to the current source."
+  ],
+  "checks": [
+    {
+      "name": "complete_file_sha256_match",
+      "status": "PASS",
+      "evidence": "38b75311c3ab861c9438506356bd3a5415225210aa332a3d3b853313f714d60f"
+    },
+    {
+      "name": "answer_first_depth_and_five_faqs",
+      "status": "PASS",
+      "evidence": {
+        "word_count": 1040,
+        "minimum_word_count": 0,
+        "faq_count": 5
+      }
+    },
+    {
+      "name": "two_image_exact_text_identity",
+      "status": "PASS",
+      "evidence": {
+        "hero_path": true,
+        "social_identity": true,
+        "inline_path": true,
+        "inline_text": true,
+        "hero_ocr": true,
+        "inline_ocr": true,
+        "filename_identity": true,
+        "distinct_binaries": true
+      }
+    }
+  ],
+  "sources_inspected": [
+    "src/content/posts/how-royalty-payments-work-for-texas-mineral-rights-owners.mdx",
+    "/assets/articles/hero/how-royalty-payments-work-for-texas-mineral-owners.webp",
+    "/assets/articles/inline/how-royalty-payments-work-for-texas-mineral-rights-owners/how-royalty-payments-work-for-texas-mineral-rights-owners.webp"
+  ]
+}

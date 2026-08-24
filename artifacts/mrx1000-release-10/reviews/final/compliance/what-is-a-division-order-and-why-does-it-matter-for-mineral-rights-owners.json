@@ -1,0 +1,43 @@
+{
+  "artifact_type": "mrx1000_two_image_compliance_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-11T22:44:38Z",
+  "decision_authority": {
+    "source": "Daryl owner directive, 2026-08-11",
+    "policy": "MRX two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0883",
+  "slug": "what-is-a-division-order-and-why-does-it-matter-for-mineral-rights-owners",
+  "title": "What Is a Division Order and Why Does It Matter for Mineral Rights Owners?",
+  "canonical_url": "https://mineralrightsxchange.com/blog/what-is-a-division-order-and-why-does-it-matter-for-mineral-rights-owners/",
+  "source_path": "src/content/posts/what-is-a-division-order-and-why-does-it-matter-for-mineral-rights-owners.mdx",
+  "input_body_sha256": "3737fbcbff4867bd47a3bb3ee1661d644e9c9bf4d2921ffeb121c9156bf2a3da",
+  "input_frontmatter_sha256": "6af397f969b8d44d71d987ab8f2c8dff0b70b2982da6263e007761bd21860fbe",
+  "expected_repo_sha256": "3737fbcbff4867bd47a3bb3ee1661d644e9c9bf4d2921ffeb121c9156bf2a3da",
+  "two_image_manifest_sha256": "802512b5dab8eae7592be5934f97a6a8989125fb8f65d3f37ee3cdeb2d35dc10",
+  "reviewer_id": "codex_two_image_compliance",
+  "review_run_id": "mrx1000-two-image-retrofit-20260811T224438Z",
+  "capability": "compliance",
+  "expected_hero_sha256": "456aa0a777cf0288d9bd7f358930ed3a5535cd3e462be91506676b6509d5e12b",
+  "expected_inline_sha256": "a7beb11a4b7b8bb9c50f8d30871a4d37f30eb5c7864f876f49cbfe125b14ecd7",
+  "findings": [
+    "Complete current MDX SHA-256 is 3737fbcbff4867bd47a3bb3ee1661d644e9c9bf4d2921ffeb121c9156bf2a3da; hero/share and in-body image hashes are separately locked.",
+    "Image text is limited to the exact article title and declared page keyword; it adds no guarantee, price, deadline, legal conclusion, or tax conclusion.",
+    "The article retains its educational and professional-boundary language and current disclosure treatment."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "hero_share_sha256_identity",
+    "inline_image_distinct_sha256",
+    "exact_text_ocr_pass",
+    "filename_text_identity_pass",
+    "no_unsupported_visual_claims",
+    "educational_and_professional_boundaries_preserved"
+  ],
+  "sources_inspected": [
+    "src/content/posts/what-is-a-division-order-and-why-does-it-matter-for-mineral-rights-owners.mdx",
+    "/assets/articles/hero/what-is-a-division-order-and-why-does-it-matter-for-mineral-rights-owners.webp",
+    "/assets/articles/inline/what-is-a-division-order-and-why-does-it-matter-for-mineral-rights-owners/what-is-a-division-order.webp"
+  ]
+}

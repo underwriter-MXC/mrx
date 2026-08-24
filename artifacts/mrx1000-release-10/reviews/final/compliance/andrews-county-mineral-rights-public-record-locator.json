@@ -1,0 +1,49 @@
+{
+  "artifact_type": "mrx1000_wave85_two_image_compliance_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-23T17:10:56Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-14",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0741",
+  "slug": "andrews-county-mineral-rights-public-record-locator",
+  "title": "How to Build an Andrews County Mineral Rights Public-Record Locator",
+  "canonical_url": "https://mineralrightsxchange.com/blog/andrews-county-mineral-rights-public-record-locator/",
+  "source_path": "src/content/posts/andrews-county-mineral-rights-public-record-locator.mdx",
+  "input_body_sha256": "a4764e033823a46aec67b0df58da1bd8227c2248078d0c6f0ecda06aea538fcc",
+  "input_frontmatter_sha256": "f2b13f1faaaf12477c8d82c9b8f4660c31a81540567b58235bdc11bd6f039b90",
+  "expected_repo_sha256": "a4764e033823a46aec67b0df58da1bd8227c2248078d0c6f0ecda06aea538fcc",
+  "two_image_manifest_sha256": "140fa3c826df128317e98aba409b578dced6db03c88063dc66c0cd814f77b61c",
+  "visual_metadata": {
+    "hero_alt": "An Andrews County records desk appears beside the exact article title.",
+    "social_alt": "An Andrews County records desk appears beside the exact article title.",
+    "inline_alt": "A top-down four-source locator worksheet appears above the exact keyword."
+  },
+  "reviewer_id": "codex_wave85_compliance",
+  "review_run_id": "mrx1000-wave85-compliance-20260823T171056Z",
+  "capability": "compliance",
+  "expected_hero_sha256": "c651b77b496cbdc25491617dd50872f972eb2c01fa0575ef0062c13e935b41bc",
+  "expected_inline_sha256": "7be198091d268da2ef4da4c44353876b2594cc93ff16c45cc8070772d8d088e0",
+  "findings": [
+    "Complete current MDX SHA-256 is a4764e033823a46aec67b0df58da1bd8227c2248078d0c6f0ecda06aea538fcc; hero/share and inline image hashes are separately locked.",
+    "The article separates the four source roles, requires exact field and identifier capture, preserves access date and source limitation, labels conflicts and empty results without inference, routes restricted or interpretive work to the appropriate office or qualified professional, discloses possible MRX buyer interest, and preserves owner agency.",
+    "Image text is limited to the exact article title and approved keyword and adds no owner, property, record result, seal, logo, title conclusion, ownership claim, acreage, price, value, offer, well, production, recommendation, guarantee, or transaction outcome."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "hero_share_sha256_identity",
+    "inline_image_distinct_sha256",
+    "exact_text_ocr_pass",
+    "filename_text_identity_pass",
+    "andrews_county_source_map_no_title_ownership_acreage_legal_effect_property_connection_production_value_offer_or_transaction_boundary_pass",
+    "owner_agency_and_possible_buyer_interest_disclosure_preserved",
+    "no_unsupported_visual_or_decision_claims"
+  ],
+  "sources_inspected": [
+    "src/content/posts/andrews-county-mineral-rights-public-record-locator.mdx",
+    "/assets/articles/hero/how-to-build-an-andrews-county-mineral-rights-public-record-locator.webp",
+    "/assets/articles/inline/andrews-county-mineral-rights-public-record-locator/andrews-county-mineral-rights-public-record-locator.webp"
+  ]
+}

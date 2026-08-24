@@ -1,0 +1,49 @@
+{
+  "artifact_type": "mrx1000_two_image_compliance_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-23T08:34:01Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-14",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0264",
+  "slug": "mineral-rights-operator-name-change-log",
+  "title": "How to Build a Mineral Rights Operator-Name Change Log",
+  "canonical_url": "https://mineralrightsxchange.com/blog/mineral-rights-operator-name-change-log/",
+  "source_path": "src/content/posts/mineral-rights-operator-name-change-log.mdx",
+  "input_body_sha256": "af3061d5cacb25f846f57d11018c3cf1aa2359e62ec024ce73cc1faed91130e0",
+  "input_frontmatter_sha256": "b727953fdd91e64eceb5c5aaeab13a79908abe89d330d2104e03ff25edf571ae",
+  "expected_repo_sha256": "af3061d5cacb25f846f57d11018c3cf1aa2359e62ec024ce73cc1faed91130e0",
+  "two_image_manifest_sha256": "fd907abcd84ecd90d3f77048ac70f6003f9df39464e8dd823c989b0f833fa2de",
+  "visual_metadata": {
+    "hero_alt": "Three blank archival folders and a source-reference card appear beside the exact article title.",
+    "social_alt": "Three blank archival folders and a source-reference card appear beside the exact article title.",
+    "inline_alt": "An overhead three-source name-history strip and blank question-routing card appear above the exact keyword."
+  },
+  "reviewer_id": "codex_wave79_compliance",
+  "review_run_id": "mrx1000-wave79-compliance-20260823T083401Z",
+  "capability": "compliance",
+  "expected_hero_sha256": "ff3217d9896ff93e7f37911968290978fa5e9022d25543dc2802b251f1ebc460",
+  "expected_inline_sha256": "23f4c68927cd5d99434a18bc88ed45430c5082b824aed51a3234b3a67251a0db",
+  "findings": [
+    "Complete current MDX SHA-256 is af3061d5cacb25f846f57d11018c3cf1aa2359e62ec024ce73cc1faed91130e0; hero/share and inline image hashes are separately locked.",
+    "The article preserves exact displayed names, limits each result to same displayed name, different displayed name, or unavailable, turns differences and unavailable fields into neutral questions, discloses possible MRX buyer interest, and preserves owner agency and qualified-review boundaries.",
+    "Image text is limited to the exact article title and approved keyword and adds no owner name, property fact, source result, model output, numerical assumption, seal, recommendation, appraisal claim, forecast, guarantee, or transaction outcome."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "hero_share_sha256_identity",
+    "inline_image_distinct_sha256",
+    "exact_text_ocr_pass",
+    "filename_text_identity_pass",
+    "displayed_name_no_corporate_property_payment_development_or_value_conclusion_boundary_pass",
+    "owner_agency_and_possible_buyer_interest_disclosure_preserved",
+    "no_unsupported_visual_or_decision_claims"
+  ],
+  "sources_inspected": [
+    "src/content/posts/mineral-rights-operator-name-change-log.mdx",
+    "/assets/articles/hero/how-to-build-a-mineral-rights-operator-name-change-log.webp",
+    "/assets/articles/inline/mineral-rights-operator-name-change-log/mineral-rights-operator-name-change-log.webp"
+  ]
+}

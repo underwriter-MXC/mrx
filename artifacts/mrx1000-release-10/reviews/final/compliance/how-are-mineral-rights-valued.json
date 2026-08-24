@@ -1,0 +1,49 @@
+{
+  "artifact_type": "mrx1000_two_image_compliance_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-22T21:32:00Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-14",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0151",
+  "slug": "how-are-mineral-rights-valued",
+  "title": "How Are Mineral Rights Valued?",
+  "canonical_url": "https://mineralrightsxchange.com/blog/how-are-mineral-rights-valued/",
+  "source_path": "src/content/posts/how-are-mineral-rights-valued.mdx",
+  "input_body_sha256": "c7b809e91a09e06d4d6403af004e3274abb44743b8b76aa30c137d214862984c",
+  "input_frontmatter_sha256": "86e02f2d756458e8494e048de37878390242a91785bc0d0f43a3e41b5d99b73a",
+  "expected_repo_sha256": "c7b809e91a09e06d4d6403af004e3274abb44743b8b76aa30c137d214862984c",
+  "two_image_manifest_sha256": "d7530a40a4a2e731486d5d5d7ed0a9b6648c4039a908bbd20551327be0ca2ee3",
+  "visual_metadata": {
+    "hero_alt": "An owner and analyst review blank cash-flow evidence beside “How Are Mineral Rights Valued?”.",
+    "social_alt": "An owner and analyst review blank cash-flow evidence beside “How Are Mineral Rights Valued?”.",
+    "inline_alt": "Blank production, royalty-term, assumption, and market-check records appear above “how are mineral rights valued”."
+  },
+  "reviewer_id": "codex_wave71_compliance",
+  "review_run_id": "mrx1000-wave71-compliance-20260822T213200Z",
+  "capability": "compliance",
+  "expected_hero_sha256": "26dcaf56a0993d7919ed349541404a5a6c6ff3442a060058af79adc80d4a9ff4",
+  "expected_inline_sha256": "1a15494830e2ecb50201cf12d4e0c30c2a1ae1f2e8d1089c1254dc91cb692b18",
+  "findings": [
+    "Complete current MDX SHA-256 is c7b809e91a09e06d4d6403af004e3274abb44743b8b76aa30c137d214862984c; hero/share and inline image hashes are separately locked.",
+    "The article states educational and professional boundaries, labels inputs and modeled outcomes as conditional, separates conceptual valuation from process, validation, sensitivity auditing, title, reserves, engineering, appraisal, legal, tax, offer, and transaction decisions, discloses possible MRX buyer interest, and preserves owner agency.",
+    "Image text is limited to the exact article title and approved lowercase keyword and adds no record content, name, address, account data, property identifier, amount, acreage, decimal, date, signature, official seal, numerical result, legal conclusion, value conclusion, ranking, recommendation, offer, guarantee, buyer endorsement, or transaction result."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "hero_share_sha256_identity",
+    "inline_image_distinct_sha256",
+    "exact_text_ocr_pass",
+    "filename_text_identity_pass",
+    "educational_and_professional_boundaries_preserved",
+    "owner_agency_and_possible_buyer_interest_disclosure_preserved",
+    "no_unsupported_visual_or_decision_claims"
+  ],
+  "sources_inspected": [
+    "src/content/posts/how-are-mineral-rights-valued.mdx",
+    "/assets/articles/hero/how-are-mineral-rights-valued.webp",
+    "/assets/articles/inline/how-are-mineral-rights-valued/how-are-mineral-rights-valued.webp"
+  ]
+}

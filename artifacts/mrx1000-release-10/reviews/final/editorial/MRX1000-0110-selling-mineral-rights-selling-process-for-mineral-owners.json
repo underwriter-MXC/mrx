@@ -1,0 +1,59 @@
+{
+  "artifact_type": "mrx1000_two_image_editorial_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-12T12:46:26Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-12",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0110",
+  "slug": "selling-mineral-rights-selling-process-for-mineral-owners",
+  "title": "Selling Mineral Rights: Selling Process For Mineral Owners",
+  "canonical_url": "https://mineralrightsxchange.com/blog/selling-mineral-rights-selling-process-for-mineral-owners/",
+  "source_path": "src/content/posts/selling-mineral-rights-selling-process-for-mineral-owners.mdx",
+  "input_body_sha256": "3413a2a6e515ba2d35ee451fa1d03326a18b4a58c6579e1613a67e0282c0baf4",
+  "input_frontmatter_sha256": "d05c1739a7b4dac65d9e99fa12bb610ac6cca1db69bfd18f7fa8a28976000973",
+  "expected_repo_sha256": "3413a2a6e515ba2d35ee451fa1d03326a18b4a58c6579e1613a67e0282c0baf4",
+  "two_image_manifest_sha256": "6ac764a57c519c97d20512c68c0327c18a7f1f3293f76b1e6da52345c1742a9a",
+  "reviewer_id": "codex_wave30_editorial",
+  "review_run_id": "mrx1000-wave30-editorial-20260812T124626Z",
+  "capability": "editorial",
+  "findings": [
+    "Complete current MDX SHA-256 is 3413a2a6e515ba2d35ee451fa1d03326a18b4a58c6579e1613a67e0282c0baf4; the answer-first article contains 2238 body tokens and five FAQs.",
+    "The article owns the nationwide seller-control file by moving from a locked interest scope through complete written proposals, diligence issues, final transaction documents, independent payment-instruction verification, controlled closing, recording evidence, and a post-closing archive with explicit stop conditions.",
+    "Exact-title hero/share OCR passed for “Selling Mineral Rights: Selling Process For Mineral Owners”; distinct in-body OCR passed for “selling mineral rights”."
+  ],
+  "checks": [
+    {
+      "name": "complete_file_sha256_match",
+      "status": "PASS",
+      "evidence": "3413a2a6e515ba2d35ee451fa1d03326a18b4a58c6579e1613a67e0282c0baf4"
+    },
+    {
+      "name": "answer_first_article_depth_and_five_faqs",
+      "status": "PASS",
+      "evidence": {
+        "word_count": 2238,
+        "minimum_word_count": 700,
+        "faq_count": 5
+      }
+    },
+    {
+      "name": "two_image_exact_text_identity",
+      "status": "PASS",
+      "evidence": {
+        "hero_ocr": true,
+        "inline_ocr": true,
+        "social_reuses_hero": true,
+        "filename_identity": true,
+        "distinct_binaries": true
+      }
+    }
+  ],
+  "sources_inspected": [
+    "src/content/posts/selling-mineral-rights-selling-process-for-mineral-owners.mdx",
+    "/assets/articles/hero/selling-mineral-rights-selling-process-for-mineral-owners.webp",
+    "/assets/articles/inline/selling-mineral-rights-selling-process-for-mineral-owners/selling-mineral-rights.webp"
+  ]
+}

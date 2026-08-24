@@ -1,0 +1,66 @@
+{
+  "artifact_type": "mrx1000_wave85_two_image_editorial_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-23T17:10:56Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-14",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0741",
+  "slug": "andrews-county-mineral-rights-public-record-locator",
+  "title": "How to Build an Andrews County Mineral Rights Public-Record Locator",
+  "canonical_url": "https://mineralrightsxchange.com/blog/andrews-county-mineral-rights-public-record-locator/",
+  "source_path": "src/content/posts/andrews-county-mineral-rights-public-record-locator.mdx",
+  "input_body_sha256": "a4764e033823a46aec67b0df58da1bd8227c2248078d0c6f0ecda06aea538fcc",
+  "input_frontmatter_sha256": "f2b13f1faaaf12477c8d82c9b8f4660c31a81540567b58235bdc11bd6f039b90",
+  "expected_repo_sha256": "a4764e033823a46aec67b0df58da1bd8227c2248078d0c6f0ecda06aea538fcc",
+  "two_image_manifest_sha256": "140fa3c826df128317e98aba409b578dced6db03c88063dc66c0cd814f77b61c",
+  "visual_metadata": {
+    "hero_alt": "An Andrews County records desk appears beside the exact article title.",
+    "social_alt": "An Andrews County records desk appears beside the exact article title.",
+    "inline_alt": "A top-down four-source locator worksheet appears above the exact keyword."
+  },
+  "reviewer_id": "codex_wave85_editorial",
+  "review_run_id": "mrx1000-wave85-editorial-20260823T171056Z",
+  "capability": "editorial",
+  "findings": [
+    "Complete current MDX SHA-256 is a4764e033823a46aec67b0df58da1bd8227c2248078d0c6f0ecda06aea538fcc; the answer-first article contains 2022 body tokens and five FAQs.",
+    "The article owns an Andrews-specific administrative source map: county starting page and Tyler route, normal posting note, county office limits, Andrews CAD entry point and search fields, historical GLO fields, and separate RRC query, GIS, and well-record roles. It does not repeat general county valuation or family-decision guidance.",
+    "Exact-title hero/share OCR passed and distinct in-body keyword OCR passed. The eye-level courthouse records desk and people-free strict-overhead four-source worksheet differ in camera angle, object arrangement, composition, and evidence function with matching alt metadata."
+  ],
+  "checks": [
+    {
+      "name": "complete_file_sha256_match",
+      "status": "PASS",
+      "evidence": "a4764e033823a46aec67b0df58da1bd8227c2248078d0c6f0ecda06aea538fcc"
+    },
+    {
+      "name": "answer_first_article_depth_and_five_faqs",
+      "status": "PASS",
+      "evidence": {
+        "word_count": 2022,
+        "minimum_word_count": 700,
+        "faq_count": 5
+      }
+    },
+    {
+      "name": "two_image_exact_text_identity",
+      "status": "PASS",
+      "evidence": {
+        "hero_ocr": true,
+        "inline_ocr": true,
+        "social_reuses_hero": true,
+        "hero_social_alt_match": true,
+        "inline_alt_match": true,
+        "filename_identity": true,
+        "distinct_binaries": true
+      }
+    }
+  ],
+  "sources_inspected": [
+    "src/content/posts/andrews-county-mineral-rights-public-record-locator.mdx",
+    "/assets/articles/hero/how-to-build-an-andrews-county-mineral-rights-public-record-locator.webp",
+    "/assets/articles/inline/andrews-county-mineral-rights-public-record-locator/andrews-county-mineral-rights-public-record-locator.webp"
+  ]
+}

@@ -1,0 +1,167 @@
+{
+  "artifact_type": "mrx1000_two_image_factual_citation_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-12T23:43:49Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-12",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0130",
+  "slug": "understanding-the-key-factors-that-affect-your-mineral-rights-assessment-price",
+  "title": "Understanding the Key Factors That Affect Your Mineral Rights Assessment Price",
+  "canonical_url": "https://mineralrightsxchange.com/blog/understanding-the-key-factors-that-affect-your-mineral-rights-assessment-price/",
+  "source_path": "src/content/posts/understanding-the-key-factors-that-affect-your-mineral-rights-assessment-price.mdx",
+  "input_body_sha256": "64ee61b373039ec33b1620826ed50a14c07b1a524b103876075cbdd9690328e1",
+  "input_frontmatter_sha256": "58a4122201d9f29d32851dbb3acd4012766532d93a6ed08d3e2b80446d231200",
+  "expected_repo_sha256": "64ee61b373039ec33b1620826ed50a14c07b1a524b103876075cbdd9690328e1",
+  "two_image_manifest_sha256": "3d25ad0be9467c9950ebca46ecea88f5a1a6d11bbaa788ce9c5597ed1d62326e",
+  "reviewer_id": "codex_wave50_factual",
+  "review_run_id": "mrx1000-wave50-factual-20260812T234349Z",
+  "capability": "factual_citation",
+  "findings": [
+    "Complete current MDX SHA-256 is 64ee61b373039ec33b1620826ed50a14c07b1a524b103876075cbdd9690328e1; all 10 declared sources passed live access review.",
+    "MRX claims remain bounded to its current FAQ, methodology, and terms; Railroad Commission query and production guidance stays within the agency’s stated operational and informational limits; EIA oil and natural-gas benchmarks retain source, units, date, and property-bridge limits; the Comptroller manual remains confined to its Texas property-tax purpose; and IRS claims remain general value and disposition concepts.",
+    "The article uses no fabricated owners, properties, buyers, contracts, prices, acreage, ownership decimals, production, reserves, forecasts, tax results, offers, testimonials, success rates, or owner-specific title, legal, tax, accounting, appraisal, investment, or transaction conclusions."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "minimum_three_distinct_https_sources",
+    "current_source_access_review_pass",
+    "claim_to_source_scope_present",
+    "official_primary_source_priority_pass",
+    "unsupported_high_risk_claim_scan_pass"
+  ],
+  "sources_inspected": [
+    {
+      "label": "Mineral Rights Xchange, Published DCF Methodology (accessed 2026-08-12)",
+      "url": "https://mineralrightsxchange.com/methodology/",
+      "publisher": "mineralrightsxchange.com",
+      "accessed_at": "2026-08-12T23:43:49Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://mineralrightsxchange.com/methodology/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The current MRX methodology describes a directional DCF process using dated evidence, explicit inputs and assumptions, sensitivity analysis, and separate asset-range, written-offer, and expected-owner-net layers.",
+      "claim_scope": "The article uses the methodology only as MRX’s published directional process boundary; it does not value a specific interest, establish legal rights or reserves, or predict an offer or transaction result."
+    },
+    {
+      "label": "Mineral Rights Xchange, Frequently Asked Questions (accessed 2026-08-12)",
+      "url": "https://mineralrightsxchange.com/faq/",
+      "publisher": "mineralrightsxchange.com",
+      "accessed_at": "2026-08-12T23:43:49Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://mineralrightsxchange.com/faq/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The current MRX FAQ describes a no-obligation directional underwriter assessment, distinguishes it from a formal appraisal, and discloses that MRX may ultimately want to buy an interest.",
+      "claim_scope": "The article uses the FAQ only for MRX’s current service boundaries and provider-interest disclosure; it does not value an interest, promise a result, or recommend a transaction."
+    },
+    {
+      "label": "Mineral Rights Xchange, Terms of Use (accessed 2026-08-12)",
+      "url": "https://mineralrightsxchange.com/terms/",
+      "publisher": "mineralrightsxchange.com",
+      "accessed_at": "2026-08-12T23:43:49Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://mineralrightsxchange.com/terms/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The current MRX terms state that website information is educational and not legal, tax, financial, investment, engineering, or appraisal advice.",
+      "claim_scope": "The article uses the terms only to preserve educational and professional boundaries; it does not use them to determine ownership, reserves, value, tax treatment, or an owner’s rights."
+    },
+    {
+      "label": "Railroad Commission of Texas, Oil and Gas Production Data (accessed 2026-08-12)",
+      "url": "https://www.rrc.texas.gov/oil-and-gas/research-and-statistics/production-data/",
+      "publisher": "www.rrc.texas.gov",
+      "accessed_at": "2026-08-12T23:43:49Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.rrc.texas.gov/oil-and-gas/research-and-statistics/production-data/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The Railroad Commission production-data page describes compilations and summaries of production information reported to the Commission by Texas operators and routes users to production queries, downloads, summaries, and visualizations.",
+      "claim_scope": "The article uses the page only to identify operator-reported production as one input source; it does not treat production data as an owner payment ledger, title record, reserves conclusion, forecast, or value conclusion."
+    },
+    {
+      "label": "Railroad Commission of Texas, Production Data Query System FAQ (accessed 2026-08-12)",
+      "url": "https://www.rrc.texas.gov/about-us/faqs/oil-gas-faq/production-data-query-system-faqs/",
+      "publisher": "www.rrc.texas.gov",
+      "accessed_at": "2026-08-12T23:43:49Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.rrc.texas.gov/about-us/faqs/oil-gas-faq/production-data-query-system-faqs/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The Railroad Commission PDQ FAQ explains operator-reported production scope, lease-level reporting for oil, reporting lag, later revisions, historical completeness guidance, update frequency, and query identifiers.",
+      "claim_scope": "The article uses the FAQ only to explain why production scope, identifiers, periods, access dates, and later corrections must be reconciled; it does not conclude that a public query proves an owner’s decimal, royalty amount, title, reserves, forecast, or value."
+    },
+    {
+      "label": "Railroad Commission of Texas, Online Research Queries (accessed 2026-08-12)",
+      "url": "https://www.rrc.texas.gov/resource-center/research/research-queries/",
+      "publisher": "www.rrc.texas.gov",
+      "accessed_at": "2026-08-12T23:43:49Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.rrc.texas.gov/resource-center/research/research-queries/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The Railroad Commission provides online query routes for production, drilling permits, well records, organization records, GIS, imaged records, and other operational data, while describing the continually updated datasets as informational, non-authoritative, and without legal force.",
+      "claim_scope": "The article uses the query menu only to build an operational identifier crosswalk and preserve the Commission’s stated limitations; it does not treat a query as proof of ownership, title, acreage, payment, reserves, value, or a transaction result."
+    },
+    {
+      "label": "U.S. Energy Information Administration, Spot Prices for Crude Oil and Petroleum Products (accessed 2026-08-12)",
+      "url": "https://www.eia.gov/dnav/pet/pet_pri_spt_s1_m.htm",
+      "publisher": "www.eia.gov",
+      "accessed_at": "2026-08-12T23:43:49Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.eia.gov/dnav/pet/pet_pri_spt_s1_m.htm",
+        "content_type": "text/html"
+      },
+      "source_location_or_paraphrase": "The U.S. Energy Information Administration spot-price table publishes dated benchmark series with named products, stated units, frequency choices, history, release information, and source notes.",
+      "claim_scope": "The article uses the table only as an example of a dated public benchmark whose product, units, frequency, geography, and release date must be retained; it does not treat WTI or any benchmark as a tract-specific realized price or forecast."
+    },
+    {
+      "label": "U.S. Energy Information Administration, Henry Hub Natural Gas Spot Price (accessed 2026-08-12)",
+      "url": "https://www.eia.gov/dnav/ng/hist/rngwhhdD.htm",
+      "publisher": "www.eia.gov",
+      "accessed_at": "2026-08-12T23:43:49Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.eia.gov/dnav/ng/hist/rngwhhdD.htm",
+        "content_type": "text/html"
+      },
+      "source_location_or_paraphrase": "The U.S. Energy Information Administration Henry Hub series publishes dated natural-gas spot prices with stated units and historical observations.",
+      "claim_scope": "The article uses the series only as an example of a named and dated public benchmark that still requires a property-specific product, location, unit, frequency, differential, deduction, and forecast bridge; it does not treat Henry Hub as an owner realized price or predict a future price."
+    },
+    {
+      "label": "Texas Comptroller of Public Accounts, Manual for Discounting Oil and Gas Income (accessed 2026-08-12)",
+      "url": "https://comptroller.texas.gov/taxes/property-tax/docs/96-1703.pdf",
+      "publisher": "comptroller.texas.gov",
+      "accessed_at": "2026-08-12T23:43:49Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://comptroller.texas.gov/taxes/property-tax/docs/96-1703.pdf",
+        "content_type": "application/octet-stream"
+      },
+      "source_location_or_paraphrase": "The Texas Comptroller’s Manual for Discounting Oil and Gas Income explains DCF appraisal and discount-rate techniques in the specific context of Texas oil-and-gas property-tax appraisal requirements.",
+      "claim_scope": "The article uses the manual only as an official purpose-specific example of DCF components and discount-rate techniques; it does not apply the tax-appraisal rules as a voluntary transaction formula or owner-specific value conclusion."
+    },
+    {
+      "label": "Internal Revenue Service, Publication 544, Sales and Other Dispositions of Assets (accessed 2026-08-12)",
+      "url": "https://www.irs.gov/publications/p544",
+      "publisher": "www.irs.gov",
+      "accessed_at": "2026-08-12T23:43:49Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.irs.gov/publications/p544",
+        "content_type": "text/html; charset=UTF-8"
+      },
+      "source_location_or_paraphrase": "IRS Publication 544 describes the general willing-buyer and willing-seller fair-market-value concept and separately explains amount realized, adjusted basis, and possible gain or loss in a sale or other disposition.",
+      "claim_scope": "The article uses the publication only to distinguish a general value concept from transaction proceeds and to prompt an owner-specific tax handoff; it does not classify the asset or calculate value, basis, gain, loss, allocation, tax, or filing treatment."
+    }
+  ]
+}

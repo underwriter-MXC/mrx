@@ -1,0 +1,146 @@
+{
+  "artifact_type": "mrx1000_two_image_factual_citation_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-22T23:09:02Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-14",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0962",
+  "slug": "mineral-rights-offer-sender-identity-cross-check",
+  "title": "How to Build a Mineral Rights Offer Sender Identity Cross-Check",
+  "canonical_url": "https://mineralrightsxchange.com/blog/mineral-rights-offer-sender-identity-cross-check/",
+  "source_path": "src/content/posts/mineral-rights-offer-sender-identity-cross-check.mdx",
+  "input_body_sha256": "8dfbf8a57d0a02539e9adfb3de6cdd5cff99e20abeb9308f53a2a2845c063119",
+  "input_frontmatter_sha256": "786f982b004e06ba6b3c083a69ab03e8abc8a766ae1381f9ba7647f65c7af6ef",
+  "expected_repo_sha256": "8dfbf8a57d0a02539e9adfb3de6cdd5cff99e20abeb9308f53a2a2845c063119",
+  "two_image_manifest_sha256": "58d88427daaf536607f1e31e90cdd993084aace3d0904eb102e4778683dc807e",
+  "visual_metadata": {
+    "hero_alt": "Owner and analyst review a sender checklist beside “How to Build a Mineral Rights Offer Sender Identity Cross-Check”.",
+    "social_alt": "Owner and analyst review a sender checklist beside “How to Build a Mineral Rights Offer Sender Identity Cross-Check”.",
+    "inline_alt": "Blank offer, entity, and contact cards form a matrix above “mineral rights offer sender identity cross-check”."
+  },
+  "reviewer_id": "codex_wave72_factual",
+  "review_run_id": "mrx1000-wave72-factual-20260822T230902Z",
+  "capability": "factual_citation",
+  "findings": [
+    "Complete current MDX SHA-256 is 8dfbf8a57d0a02539e9adfb3de6cdd5cff99e20abeb9308f53a2a2845c063119; all 8 declared sources passed current access review.",
+    "Claims remain bounded to the public-record scope of Texas Comptroller and Secretary of State pages, the FTC practice of independently locating contact information, and the Texas Attorney General page’s record-preservation fields. No source is converted into authentication, authority, legitimacy, reputation, fairness, fraud, value, legal effect, contract, or transaction advice.",
+    "The article invents no real owner, sender, entity, representative, address, phone, domain, source result, offer, property, contract, transaction, price, testimonial, success rate, or owner-specific legal, tax, accounting, title, appraisal, investment, or transaction conclusion."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "minimum_three_distinct_https_sources",
+    "current_source_access_review_pass",
+    "claim_to_source_scope_present",
+    "official_and_first_party_source_priority_pass",
+    "unsupported_high_risk_claim_scan_pass"
+  ],
+  "sources_inspected": [
+    {
+      "label": "Texas Comptroller, Comptroller’s Databases (accessed 2026-08-22)",
+      "url": "https://comptroller.texas.gov/transparency/open-data/cpa-databases/",
+      "publisher": "comptroller.texas.gov",
+      "accessed_at": "2026-08-22T23:09:02Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://comptroller.texas.gov/transparency/open-data/cpa-databases/",
+        "content_type": "text/html; charset=UTF-8"
+      },
+      "source_location_or_paraphrase": "The Texas Comptroller database directory identifies the Taxable Entity Search and the recorded right-to-transact-business status available from Comptroller records.",
+      "claim_scope": "The article uses the result only as one public-record column at query time; it does not treat a status result as authentication of a person, offer, authority, reputation, or transaction."
+    },
+    {
+      "label": "Texas Comptroller, Franchise Tax Account Status (accessed 2026-08-22)",
+      "url": "https://comptroller.texas.gov/taxes/franchise/coas-instructions.php",
+      "publisher": "comptroller.texas.gov",
+      "accessed_at": "2026-08-22T23:09:02Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://comptroller.texas.gov/taxes/franchise/coas-instructions.php",
+        "content_type": "text/html; charset=UTF-8"
+      },
+      "source_location_or_paraphrase": "The Texas Comptroller account-status instructions describe the scope of franchise-tax account-status searches and certificates.",
+      "claim_scope": "The article records only what the selected status source displays and does not infer representative authority, offer authenticity, buyer quality, legal effect, or a transaction decision."
+    },
+    {
+      "label": "Texas Secretary of State, Let’s Do Business (accessed 2026-08-22)",
+      "url": "https://www.sos.state.tx.us/corp/do-business.shtml",
+      "publisher": "www.sos.state.tx.us",
+      "accessed_at": "2026-08-22T23:09:02Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.sos.state.tx.us/corp/do-business.shtml",
+        "content_type": "text/html"
+      },
+      "source_location_or_paraphrase": "The Texas Secretary of State page describes business-organization filings and public-record services.",
+      "claim_scope": "The article treats those records as entity-record evidence only and does not claim that a filing authenticates the contacting person or approves an offer."
+    },
+    {
+      "label": "Texas Secretary of State, Filing Options (accessed 2026-08-22)",
+      "url": "https://www.sos.state.tx.us/corp/options.shtml",
+      "publisher": "www.sos.state.tx.us",
+      "accessed_at": "2026-08-22T23:09:02Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.sos.state.tx.us/corp/options.shtml",
+        "content_type": "text/html"
+      },
+      "source_location_or_paraphrase": "The Texas Secretary of State filing-options page identifies available filing and record-request channels.",
+      "claim_scope": "The article mentions the official channel only as a way to locate entity-record evidence and makes no claim about record sufficiency, authority, legitimacy, or offer quality."
+    },
+    {
+      "label": "Texas Secretary of State, Business Organization FAQs (accessed 2026-08-22)",
+      "url": "https://www.sos.state.tx.us/corp/generalfaqs.shtml",
+      "publisher": "www.sos.state.tx.us",
+      "accessed_at": "2026-08-22T23:09:02Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.sos.state.tx.us/corp/generalfaqs.shtml",
+        "content_type": "text/html"
+      },
+      "source_location_or_paraphrase": "The Texas Secretary of State business-organization FAQs explain the limited public-record role of the office and identify record questions owners may research.",
+      "claim_scope": "The article preserves that limited scope and does not convert a record match into proof of a sender’s identity, authority, reputation, or transaction legitimacy."
+    },
+    {
+      "label": "Federal Trade Commission, Business Impersonator Scams (accessed 2026-08-22)",
+      "url": "https://consumer.ftc.gov/features/pass-it-on/impersonator-scams/business-impersonator-scams",
+      "publisher": "consumer.ftc.gov",
+      "accessed_at": "2026-08-22T23:09:02Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://consumer.ftc.gov/features/pass-it-on/impersonator-scams/business-impersonator-scams",
+        "content_type": "text/html; charset=UTF-8"
+      },
+      "source_location_or_paraphrase": "The FTC business-impersonator guidance supports contacting a business through independently located contact information rather than relying only on an unexpected message.",
+      "claim_scope": "The article uses that practice only to create an independent-contact comparison column and does not label a mismatch as impersonation or fraud."
+    },
+    {
+      "label": "Federal Trade Commission, Online Search Results: The Good, the Bad, and the Scammy (accessed 2026-08-22)",
+      "url": "https://consumer.ftc.gov/consumer-alerts/2025/04/online-search-results-good-bad-scammy",
+      "publisher": "consumer.ftc.gov",
+      "accessed_at": "2026-08-22T23:09:02Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://consumer.ftc.gov/consumer-alerts/2025/04/online-search-results-good-bad-scammy",
+        "content_type": "text/html; charset=UTF-8"
+      },
+      "source_location_or_paraphrase": "The FTC alert warns that some search results and sponsored listings can lead to impostor contact information.",
+      "claim_scope": "The article therefore asks owners to record how independent contact details were located and does not treat the first search result as verified evidence."
+    },
+    {
+      "label": "Texas Attorney General, File a Consumer Complaint (accessed 2026-08-22)",
+      "url": "https://www.texasattorneygeneral.gov/consumer-protection/file-consumer-complaint",
+      "publisher": "www.texasattorneygeneral.gov",
+      "accessed_at": "2026-08-22T23:09:02Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.texasattorneygeneral.gov/consumer-protection/file-consumer-complaint",
+        "content_type": "text/html; charset=UTF-8"
+      },
+      "source_location_or_paraphrase": "The Texas Attorney General complaint page identifies business and contact details that may be preserved with a consumer record.",
+      "claim_scope": "The article borrows only the record-preservation fields; it does not say a mismatch warrants a complaint or treat a complaint number as a merits decision."
+    }
+  ]
+}

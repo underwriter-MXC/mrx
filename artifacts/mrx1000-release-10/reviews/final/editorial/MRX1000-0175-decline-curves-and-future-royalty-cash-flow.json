@@ -1,0 +1,59 @@
+{
+  "artifact_type": "mrx1000_two_image_editorial_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-12T06:14:22Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-11",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0175",
+  "slug": "decline-curves-and-future-royalty-cash-flow",
+  "title": "Decline Curves and Future Royalty Cash Flow",
+  "canonical_url": "https://mineralrightsxchange.com/blog/decline-curves-and-future-royalty-cash-flow/",
+  "source_path": "src/content/posts/decline-curves-and-future-royalty-cash-flow.mdx",
+  "input_body_sha256": "c3b0e15b5f2d1cc1efe2cee13496b76870e05b287ccfd6e9ed7d2ea0fa646fb8",
+  "input_frontmatter_sha256": "4b464ef62bdd333d3657ced5091ecf4688b127806b740c503e9deb81f3c2331b",
+  "expected_repo_sha256": "c3b0e15b5f2d1cc1efe2cee13496b76870e05b287ccfd6e9ed7d2ea0fa646fb8",
+  "two_image_manifest_sha256": "ec99939c03bd29668af563f3b4bde7d19c8be5083eb6b7c79f35a86c64d13cd6",
+  "reviewer_id": "codex_wave17_editorial",
+  "review_run_id": "mrx1000-wave17-editorial-20260812T061422Z",
+  "capability": "editorial",
+  "findings": [
+    "Complete current MDX SHA-256 is c3b0e15b5f2d1cc1efe2cee13496b76870e05b287ccfd6e9ed7d2ea0fa646fb8; the answer-first article contains 2403 body tokens and five FAQs.",
+    "The worksheet framework separates reported and normalized production, model choice, future-volume scenarios, price, ownership, deductions, taxes, payment timing, and discounting without issuing a reserve report or owner-specific cash-flow or value conclusion.",
+    "Exact-title hero/share OCR passed for “Decline Curves and Future Royalty Cash Flow”; distinct in-body OCR passed for “decline curve royalty cash flow worksheet”."
+  ],
+  "checks": [
+    {
+      "name": "complete_file_sha256_match",
+      "status": "PASS",
+      "evidence": "c3b0e15b5f2d1cc1efe2cee13496b76870e05b287ccfd6e9ed7d2ea0fa646fb8"
+    },
+    {
+      "name": "answer_first_depth_and_five_faqs",
+      "status": "PASS",
+      "evidence": {
+        "word_count": 2403,
+        "minimum_word_count": 700,
+        "faq_count": 5
+      }
+    },
+    {
+      "name": "two_image_exact_text_identity",
+      "status": "PASS",
+      "evidence": {
+        "hero_ocr": true,
+        "inline_ocr": true,
+        "social_reuses_hero": true,
+        "filename_identity": true,
+        "distinct_binaries": true
+      }
+    }
+  ],
+  "sources_inspected": [
+    "src/content/posts/decline-curves-and-future-royalty-cash-flow.mdx",
+    "/assets/articles/hero/decline-curves-and-future-royalty-cash-flow.webp",
+    "/assets/articles/inline/decline-curves-and-future-royalty-cash-flow/decline-curve-royalty-cash-flow-worksheet.webp"
+  ]
+}

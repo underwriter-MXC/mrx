@@ -1,0 +1,66 @@
+{
+  "artifact_type": "mrx1000_wave91_two_image_editorial_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-24T00:23:26Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-14",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0276",
+  "slug": "texas-rrc-wellbore-query-retrieval-provenance-worksheet",
+  "title": "Texas RRC Wellbore Query Retrieval Provenance Worksheet",
+  "canonical_url": "https://mineralrightsxchange.com/blog/texas-rrc-wellbore-query-retrieval-provenance-worksheet/",
+  "source_path": "src/content/posts/texas-rrc-wellbore-query-retrieval-provenance-worksheet.mdx",
+  "input_body_sha256": "9c37a3a47aeecc7184e1467497ed2a0cc5ed0b2e82c3bb224bd6850e10d97151",
+  "input_frontmatter_sha256": "dd5910719c0a9ce0b08631e17f29a03859b73c6212b6a64d16ac47fa863b08b5",
+  "expected_repo_sha256": "9c37a3a47aeecc7184e1467497ed2a0cc5ed0b2e82c3bb224bd6850e10d97151",
+  "two_image_manifest_sha256": "26af3f5637262d084556825d388e90dc0f18dcf396a5acfcf3b58e2e6568baa3",
+  "visual_metadata": {
+    "hero_alt": "A Texas wellbore-query research counter appears beside the exact article title.",
+    "social_alt": "A Texas wellbore-query research counter appears beside the exact article title.",
+    "inline_alt": "A people-free overhead wellbore-query provenance worksheet appears above the exact keyword."
+  },
+  "reviewer_id": "codex_wave91_editorial",
+  "review_run_id": "mrx1000-wave91-editorial-20260824T002326Z",
+  "capability": "editorial",
+  "findings": [
+    "Complete current MDX SHA-256 is 9c37a3a47aeecc7184e1467497ed2a0cc5ed0b2e82c3bb224bd6850e10d97151; the answer-first article contains 1985 body tokens and five FAQs.",
+    "The article replaces a colliding value-assessment explainer with one administrative job: preserve a reproducible provenance trail for a single official RRC Wellbore Query through its entry route, criteria snapshot, navigation steps, result-header state, result-row labels, detail routes, access timestamp, source limits, retained reference, bounded status, and neutral next question.",
+    "Exact-title hero/share OCR passed and distinct in-body keyword OCR passed. The oblique warm public-record counter and people-free strict-overhead cool-gray eight-field technical worksheet differ materially in camera angle, subject arrangement, composition, palette, and evidence function with matching alt metadata."
+  ],
+  "checks": [
+    {
+      "name": "complete_file_sha256_match",
+      "status": "PASS",
+      "evidence": "9c37a3a47aeecc7184e1467497ed2a0cc5ed0b2e82c3bb224bd6850e10d97151"
+    },
+    {
+      "name": "answer_first_article_depth_and_five_faqs",
+      "status": "PASS",
+      "evidence": {
+        "word_count": 1985,
+        "minimum_word_count": 700,
+        "faq_count": 5
+      }
+    },
+    {
+      "name": "two_image_exact_text_identity",
+      "status": "PASS",
+      "evidence": {
+        "hero_ocr": true,
+        "inline_ocr": true,
+        "social_reuses_hero": true,
+        "hero_social_alt_match": true,
+        "inline_alt_match": true,
+        "filename_identity": true,
+        "distinct_binaries": true
+      }
+    }
+  ],
+  "sources_inspected": [
+    "src/content/posts/texas-rrc-wellbore-query-retrieval-provenance-worksheet.mdx",
+    "/assets/articles/hero/texas-rrc-wellbore-query-retrieval-provenance-worksheet.webp",
+    "/assets/articles/inline/texas-rrc-wellbore-query-retrieval-provenance-worksheet/texas-rrc-wellbore-query-retrieval.webp"
+  ]
+}

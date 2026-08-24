@@ -1,0 +1,120 @@
+{
+  "artifact_type": "mrx1000_two_image_factual_citation_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-15T05:30:55Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-14",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0144",
+  "slug": "mineral-rights-sale-decision-log",
+  "title": "How to Build a Mineral Rights Sale Decision Log",
+  "canonical_url": "https://mineralrightsxchange.com/blog/mineral-rights-sale-decision-log/",
+  "source_path": "src/content/posts/mineral-rights-sale-decision-log.mdx",
+  "input_body_sha256": "5592194f9cf2d20c3b933ebc1b5095909fd54c9813fef9d33f0c74d7d6d4e0ee",
+  "input_frontmatter_sha256": "25f19b9ee3412295db37b9bb423109e0b7f56f72da5316c3b1170737c1556842",
+  "expected_repo_sha256": "5592194f9cf2d20c3b933ebc1b5095909fd54c9813fef9d33f0c74d7d6d4e0ee",
+  "two_image_manifest_sha256": "8a152f8302780a09dee373162e277202edf2f0b913544f34e673f81b836957d6",
+  "visual_metadata": {
+    "hero_alt": "A mineral owner reviews an organized folder beside “How to Build a Mineral Rights Sale Decision Log”.",
+    "social_alt": "A mineral owner reviews an organized folder beside “How to Build a Mineral Rights Sale Decision Log”.",
+    "inline_alt": "An open blank ledger and document tools appear above “Mineral Rights Sale Decision Log”."
+  },
+  "reviewer_id": "codex_wave64_factual",
+  "review_run_id": "mrx1000-wave64-factual-20260815T053055Z",
+  "capability": "factual_citation",
+  "findings": [
+    "Complete current MDX SHA-256 is 5592194f9cf2d20c3b933ebc1b5095909fd54c9813fef9d33f0c74d7d6d4e0ee; all 6 declared sources passed current access review.",
+    "Claims remain bounded to MRX evidence and professional-limit language, Texas recording-law context, Texas Secretary of State entity-record services, and RRC informational-query limitations. No source is converted into private title, document validity, counterparty endorsement, reserves, offer terms, owner net, legal or tax treatment, or transaction advice.",
+    "The article invents no real owner, property, buyer, contract, transaction, price range, production, reserves, forecast, testimonial, success rate, or owner-specific legal, tax, accounting, title, appraisal, engineering, investment, or transaction conclusion."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "minimum_three_distinct_https_sources",
+    "current_source_access_review_pass",
+    "claim_to_source_scope_present",
+    "official_and_first_party_source_priority_pass",
+    "unsupported_high_risk_claim_scan_pass"
+  ],
+  "sources_inspected": [
+    {
+      "label": "Mineral Rights Xchange, Published DCF Methodology (accessed 2026-08-14)",
+      "url": "https://mineralrightsxchange.com/methodology/",
+      "publisher": "mineralrightsxchange.com",
+      "accessed_at": "2026-08-15T05:30:55Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://mineralrightsxchange.com/methodology/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The current MRX methodology describes a directional range with stated evidence, assumptions, scenarios, and professional limits rather than a teaser number or certified valuation.",
+      "claim_scope": "The article uses it only to explain why a decision log should keep source records, reported facts, assumptions, conflicts, scenarios, and professional conclusions distinct; it does not establish title, value, legal or tax treatment, an offer, owner net, or a sell decision."
+    },
+    {
+      "label": "Mineral Rights Xchange, Frequently Asked Questions (accessed 2026-08-14)",
+      "url": "https://mineralrightsxchange.com/faq/",
+      "publisher": "mineralrightsxchange.com",
+      "accessed_at": "2026-08-15T05:30:55Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://mineralrightsxchange.com/faq/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The current MRX FAQ describes the service as a directional underwriter assessment and distinguishes it from a certified valuation, legal opinion, or tax opinion.",
+      "claim_scope": "The article uses it only to label professional-referral states and first-party scope limits; it does not establish owner-specific title, value, taxes, suitability, an offer, payment, closing, or a sell-versus-hold recommendation."
+    },
+    {
+      "label": "Mineral Rights Xchange, Terms and AI Disclosure (accessed 2026-08-14)",
+      "url": "https://mineralrightsxchange.com/terms/",
+      "publisher": "mineralrightsxchange.com",
+      "accessed_at": "2026-08-15T05:30:55Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://mineralrightsxchange.com/terms/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The current MRX terms state that public content is educational and is not a certified appraisal, title opinion, reserve certification, or individualized professional conclusion.",
+      "claim_scope": "The article uses it only to keep an organizational log from being presented as a professional or transaction conclusion; it does not derive owner-specific legal, tax, title, appraisal, engineering, value, offer, or transaction conclusions."
+    },
+    {
+      "label": "Texas Legislature, Property Code Chapter 12, Recording of Instruments (accessed 2026-08-14)",
+      "url": "https://statutes.capitol.texas.gov/?artSec=12.001&chapter=PR.12&code=PR&tab=1",
+      "publisher": "statutes.capitol.texas.gov",
+      "accessed_at": "2026-08-15T05:30:55Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://statutes.capitol.texas.gov/?artSec=12.001&chapter=PR.12&code=PR&tab=1",
+        "content_type": "text/html"
+      },
+      "source_location_or_paraphrase": "Texas Property Code Chapter 12 addresses recording instruments concerning property and states conditions under which an instrument may be recorded.",
+      "claim_scope": "The article uses it only to distinguish a potentially recordable instrument from a private process log; it does not determine the validity, recordability, legal effect, ownership result, or sufficiency of any document."
+    },
+    {
+      "label": "Texas Secretary of State, Business Filing Options (accessed 2026-08-14)",
+      "url": "https://www.sos.state.tx.us/corp/options.shtml",
+      "publisher": "www.sos.state.tx.us",
+      "accessed_at": "2026-08-15T05:30:55Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.sos.state.tx.us/corp/options.shtml",
+        "content_type": "text/html"
+      },
+      "source_location_or_paraphrase": "The Texas Secretary of State describes online services that can search business entities, obtain entity information, and order copies or certificates.",
+      "claim_scope": "The article uses it only as an example of recording the exact entity name, official source, access date, and result type; it does not endorse a counterparty or establish authority, financial capacity, reliability, or transaction quality."
+    },
+    {
+      "label": "Railroad Commission of Texas, Online Research Queries (accessed 2026-08-14)",
+      "url": "https://www.rrc.texas.gov/resource-center/research/research-queries/",
+      "publisher": "www.rrc.texas.gov",
+      "accessed_at": "2026-08-15T05:30:55Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.rrc.texas.gov/resource-center/research/research-queries/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The Railroad Commission of Texas provides research queries for production, wells, permits, operators, and related records and states that its continually updated data sets are informational, non-authoritative, and have no legal force or effect.",
+      "claim_scope": "The article uses it only as an example of preserving query fields, reporting period, access date, export identity, and source limitations; it does not treat the data as title, ownership, acreage, reserves, value, or transaction advice."
+    }
+  ]
+}

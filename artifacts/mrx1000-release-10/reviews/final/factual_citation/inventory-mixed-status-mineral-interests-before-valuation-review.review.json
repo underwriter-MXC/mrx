@@ -1,0 +1,107 @@
+{
+  "artifact_type": "mrx1000_wave83_two_image_factual_citation_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-23T13:31:32Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-14",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0268",
+  "slug": "inventory-mixed-status-mineral-interests-before-valuation-review",
+  "title": "How to Inventory Mixed-Status Mineral Interests Before a Valuation Review",
+  "canonical_url": "https://mineralrightsxchange.com/blog/inventory-mixed-status-mineral-interests-before-valuation-review/",
+  "source_path": "src/content/posts/inventory-mixed-status-mineral-interests-before-valuation-review.mdx",
+  "input_body_sha256": "bde02b409d35e4723822fed05e87b967246e8779117c8b7e692034db5667da18",
+  "input_frontmatter_sha256": "5442e1133d3279cd79e0b327871bfbfa4f9f88440f2ce35da5f9370f30f8e2bc",
+  "expected_repo_sha256": "bde02b409d35e4723822fed05e87b967246e8779117c8b7e692034db5667da18",
+  "two_image_manifest_sha256": "a872d84227703f2df658ce9214b022d216ef8df0a55c62adbf9e5eea6e1c6758",
+  "visual_metadata": {
+    "hero_alt": "A mixed-status mineral portfolio folder appears beside the exact article title.",
+    "social_alt": "A mixed-status mineral portfolio folder appears beside the exact article title.",
+    "inline_alt": "A blank overhead evidence inventory worksheet appears above the exact keyword."
+  },
+  "reviewer_id": "codex_wave83_factual",
+  "review_run_id": "mrx1000-wave83-factual-20260823T133132Z",
+  "capability": "factual_citation",
+  "findings": [
+    "Complete current MDX SHA-256 is bde02b409d35e4723822fed05e87b967246e8779117c8b7e692034db5667da18; all 5 declared sources passed current HTTPS access review.",
+    "Claims remain bounded to official Texas record-location, query, mapping, well-file, state-land, and unclaimed-property logistics. Each source role preserves the agency limits and is not converted into ownership, status, payment, entitlement, or value proof.",
+    "The article invents no owner, tract, acreage, decimal, lease, well, production, payment, suspense, shut-in, title, economic, valuation, or offer fact and supplies no universal numerical assumption or result."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "five_distinct_https_sources",
+    "current_source_access_review_pass",
+    "claim_to_source_scope_present",
+    "official_source_priority_pass",
+    "unsupported_high_risk_claim_scan_pass"
+  ],
+  "sources_inspected": [
+    {
+      "label": "Railroad Commission of Texas, oil and gas production data (accessed 2026-08-23)",
+      "url": "https://www.rrc.texas.gov/oil-and-gas/research-and-statistics/production-data/",
+      "publisher": "www.rrc.texas.gov",
+      "accessed_at": "2026-08-23T13:31:32Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.rrc.texas.gov/oil-and-gas/research-and-statistics/production-data/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The Railroad Commission production-data page identifies official Texas production-query channels and describes the data as production information reported by operators.",
+      "claim_scope": "The article uses the page only to log a query date, located lease or well reference, reported period, and evidence location; it does not infer private ownership, payment entitlement, current operating status, or value."
+    },
+    {
+      "label": "Railroad Commission of Texas, Public GIS Viewer (accessed 2026-08-23)",
+      "url": "https://www.rrc.texas.gov/resource-center/research/gis-viewer/",
+      "publisher": "www.rrc.texas.gov",
+      "accessed_at": "2026-08-23T13:31:32Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.rrc.texas.gov/resource-center/research/gis-viewer/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The Railroad Commission GIS page describes survey, lease, API, well, and mapping search features and warns that viewer information has no legal force or effect.",
+      "claim_scope": "The article uses the page only to locate and preserve record identifiers and the query date; it does not treat a map result as authoritative location, title, status, entitlement, or value evidence."
+    },
+    {
+      "label": "Railroad Commission of Texas, oil and gas well records (accessed 2026-08-23)",
+      "url": "https://www.rrc.texas.gov/oil-and-gas/research-and-statistics/obtaining-commission-records/oil-and-gas-well-records/",
+      "publisher": "www.rrc.texas.gov",
+      "accessed_at": "2026-08-23T13:31:32Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.rrc.texas.gov/oil-and-gas/research-and-statistics/obtaining-commission-records/oil-and-gas-well-records/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The Railroad Commission well-records page describes available well-file channels and the identifiers useful when requesting records.",
+      "claim_scope": "The article uses the page only to log a request, request date, identifiers supplied, and response location; it does not interpret the contents of a well file."
+    },
+    {
+      "label": "Texas General Land Office, energy and mapping resources (accessed 2026-08-23)",
+      "url": "https://www.glo.texas.gov/energy",
+      "publisher": "www.glo.texas.gov",
+      "accessed_at": "2026-08-23T13:31:32Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.glo.texas.gov/energy",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The Texas General Land Office energy page identifies state-land, lease, scanned-record, and mapping resources.",
+      "claim_scope": "The article uses the page only to locate a state-land or state-lease record reference when applicable; it does not construe a state record or decide ownership or lease rights."
+    },
+    {
+      "label": "Texas Comptroller, Texas Unclaimed Property (accessed 2026-08-23)",
+      "url": "https://www.claimittexas.gov/",
+      "publisher": "www.claimittexas.gov",
+      "accessed_at": "2026-08-23T13:31:32Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.claimittexas.gov/",
+        "content_type": "text/html"
+      },
+      "source_location_or_paraphrase": "Texas Unclaimed Property provides the official state search and claim-status channel.",
+      "claim_scope": "The article uses the site only to log the searched name, date, result or claim reference, holder name, and follow-up owner; it does not treat a result as proof of mineral ownership, suspense, entitlement, or payable funds."
+    }
+  ]
+}

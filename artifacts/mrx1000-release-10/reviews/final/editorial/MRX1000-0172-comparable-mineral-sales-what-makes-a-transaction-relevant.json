@@ -1,0 +1,59 @@
+{
+  "artifact_type": "mrx1000_two_image_editorial_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-11T23:07:13Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-11",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0172",
+  "slug": "comparable-mineral-sales-what-makes-a-transaction-relevant",
+  "title": "Comparable Mineral Sales: What Makes a Transaction Relevant?",
+  "canonical_url": "https://mineralrightsxchange.com/blog/comparable-mineral-sales-what-makes-a-transaction-relevant/",
+  "source_path": "src/content/posts/comparable-mineral-sales-what-makes-a-transaction-relevant.mdx",
+  "input_body_sha256": "dbb6b87f3ed351f4eb73c4d85ea2406cc44a9ac08ec52c0fa520992cee328f3a",
+  "input_frontmatter_sha256": "c33242ce61b605a7133a6e8cce988d49168391e6cf4d41769646139a7f21c11b",
+  "expected_repo_sha256": "dbb6b87f3ed351f4eb73c4d85ea2406cc44a9ac08ec52c0fa520992cee328f3a",
+  "two_image_manifest_sha256": "e4c9774895df24092a5020642dae355be68675a6d054da517bc5962b47982ed3",
+  "reviewer_id": "codex_wave14_editorial",
+  "review_run_id": "mrx1000-wave14-editorial-20260811T230713Z",
+  "capability": "editorial",
+  "findings": [
+    "Complete current MDX SHA-256 is dbb6b87f3ed351f4eb73c4d85ea2406cc44a9ac08ec52c0fa520992cee328f3a; the answer-first article contains 2171 body tokens and five FAQs.",
+    "The comparability framework separates interest type, acreage convention, royalty burden, property evidence, transaction timing, consideration, and conditions of sale without asserting an owner-specific value.",
+    "Exact-title hero/share OCR passed for “Comparable Mineral Sales: What Makes a Transaction Relevant?”; distinct in-body OCR passed for “mineral sale comparability checklist”."
+  ],
+  "checks": [
+    {
+      "name": "complete_file_sha256_match",
+      "status": "PASS",
+      "evidence": "dbb6b87f3ed351f4eb73c4d85ea2406cc44a9ac08ec52c0fa520992cee328f3a"
+    },
+    {
+      "name": "answer_first_depth_and_five_faqs",
+      "status": "PASS",
+      "evidence": {
+        "word_count": 2171,
+        "minimum_word_count": 700,
+        "faq_count": 5
+      }
+    },
+    {
+      "name": "two_image_exact_text_identity",
+      "status": "PASS",
+      "evidence": {
+        "hero_ocr": true,
+        "inline_ocr": true,
+        "social_reuses_hero": true,
+        "filename_identity": true,
+        "distinct_binaries": true
+      }
+    }
+  ],
+  "sources_inspected": [
+    "src/content/posts/comparable-mineral-sales-what-makes-a-transaction-relevant.mdx",
+    "/assets/articles/hero/comparable-mineral-sales-what-makes-a-transaction-relevant.webp",
+    "/assets/articles/inline/comparable-mineral-sales-what-makes-a-transaction-relevant/mineral-sale-comparability-checklist.webp"
+  ]
+}

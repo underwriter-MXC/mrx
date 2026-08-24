@@ -1,0 +1,43 @@
+{
+  "artifact_type": "mrx1000_two_image_compliance_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-11T22:44:38Z",
+  "decision_authority": {
+    "source": "Daryl owner directive, 2026-08-11",
+    "policy": "MRX two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0876",
+  "slug": "how-to-find-out-if-you-own-mineral-rights-in-texas",
+  "title": "How to Find Out If You Own Mineral Rights in Texas",
+  "canonical_url": "https://mineralrightsxchange.com/blog/how-to-find-out-if-you-own-mineral-rights-in-texas/",
+  "source_path": "src/content/posts/how-to-find-out-if-you-own-mineral-rights-in-texas.mdx",
+  "input_body_sha256": "4b4747467baa841dd16e8b8d1f43df6398703adf9b652b1e19add5896240e49c",
+  "input_frontmatter_sha256": "e798e64aabb2f4f7de5a7bb2be4c4310625644a28c3241771833306df30bd67a",
+  "expected_repo_sha256": "4b4747467baa841dd16e8b8d1f43df6398703adf9b652b1e19add5896240e49c",
+  "two_image_manifest_sha256": "802512b5dab8eae7592be5934f97a6a8989125fb8f65d3f37ee3cdeb2d35dc10",
+  "reviewer_id": "codex_two_image_compliance",
+  "review_run_id": "mrx1000-two-image-retrofit-20260811T224438Z",
+  "capability": "compliance",
+  "expected_hero_sha256": "6ca5e7e61a97e945b058c8f979d838f4255d11f753d7f1db4ab4c7a339d418a4",
+  "expected_inline_sha256": "493d2acc71ce73acac5ada7d3eddd1f4a41f1e62967468559a0ce3e64f636353",
+  "findings": [
+    "Complete current MDX SHA-256 is 4b4747467baa841dd16e8b8d1f43df6398703adf9b652b1e19add5896240e49c; hero/share and in-body image hashes are separately locked.",
+    "Image text is limited to the exact article title and declared page keyword; it adds no guarantee, price, deadline, legal conclusion, or tax conclusion.",
+    "The article retains its educational and professional-boundary language and current disclosure treatment."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "hero_share_sha256_identity",
+    "inline_image_distinct_sha256",
+    "exact_text_ocr_pass",
+    "filename_text_identity_pass",
+    "no_unsupported_visual_claims",
+    "educational_and_professional_boundaries_preserved"
+  ],
+  "sources_inspected": [
+    "src/content/posts/how-to-find-out-if-you-own-mineral-rights-in-texas.mdx",
+    "/assets/articles/hero/how-to-find-out-if-you-own-mineral-rights-in-texas.webp",
+    "/assets/articles/inline/how-to-find-out-if-you-own-mineral-rights-in-texas/how-to-find-out-if-you-own-mineral-rights-in-texas.webp"
+  ]
+}

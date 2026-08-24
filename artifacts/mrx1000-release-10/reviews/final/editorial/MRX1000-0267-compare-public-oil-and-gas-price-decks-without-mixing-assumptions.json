@@ -1,0 +1,66 @@
+{
+  "artifact_type": "mrx1000_two_image_editorial_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-23T12:35:01Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-14",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0267",
+  "slug": "compare-public-oil-and-gas-price-decks-without-mixing-assumptions",
+  "title": "How to Compare Public Oil and Gas Price Decks Without Mixing Assumptions",
+  "canonical_url": "https://mineralrightsxchange.com/blog/compare-public-oil-and-gas-price-decks-without-mixing-assumptions/",
+  "source_path": "src/content/posts/compare-public-oil-and-gas-price-decks-without-mixing-assumptions.mdx",
+  "input_body_sha256": "66aa85b03205f914c6c319fb3ea05c03fdeb64e2518e55417d3113da4449a0c2",
+  "input_frontmatter_sha256": "116cb0445ac9f9fe5099f50a63e52d3283e8e564712a971e275a7a3ac3332bf4",
+  "expected_repo_sha256": "66aa85b03205f914c6c319fb3ea05c03fdeb64e2518e55417d3113da4449a0c2",
+  "two_image_manifest_sha256": "90fc1a11049fdf97e84e79883679f96c2cf263b9a39e6c6fcc7453b3146b2984",
+  "visual_metadata": {
+    "hero_alt": "Two separate published price-deck booklets appear beside the exact article title.",
+    "social_alt": "Two separate published price-deck booklets appear beside the exact article title.",
+    "inline_alt": "An overhead public price-deck comparison matrix appears above the exact keyword."
+  },
+  "reviewer_id": "codex_wave82_editorial",
+  "review_run_id": "mrx1000-wave82-editorial-20260823T123501Z",
+  "capability": "editorial",
+  "findings": [
+    "Complete current MDX SHA-256 is 66aa85b03205f914c6c319fb3ea05c03fdeb64e2518e55417d3113da4449a0c2; the answer-first article contains 1804 body tokens and five FAQs.",
+    "The article owns only a source-preserving comparison of publication identity, dates, commodity, benchmark, geography, units, nominal-or-real basis, interval, horizon, and stated use case. It stops before creating, extending, blending, converting, normalizing, selecting, validating, or recommending a deck; forecasting prices; applying property-level assumptions; or calculating cash flow, present value, value, an offer, or a transaction result.",
+    "Exact-title hero/share OCR passed for “How to Compare Public Oil and Gas Price Decks Without Mixing Assumptions”; distinct in-body OCR passed for “compare public oil and gas price decks”; the elevated two-booklet hero and people-free strict-overhead two-source comparison matrix are materially different compositions with matching alt metadata."
+  ],
+  "checks": [
+    {
+      "name": "complete_file_sha256_match",
+      "status": "PASS",
+      "evidence": "66aa85b03205f914c6c319fb3ea05c03fdeb64e2518e55417d3113da4449a0c2"
+    },
+    {
+      "name": "answer_first_article_depth_and_five_faqs",
+      "status": "PASS",
+      "evidence": {
+        "word_count": 1804,
+        "minimum_word_count": 700,
+        "faq_count": 5
+      }
+    },
+    {
+      "name": "two_image_exact_text_identity",
+      "status": "PASS",
+      "evidence": {
+        "hero_ocr": true,
+        "inline_ocr": true,
+        "social_reuses_hero": true,
+        "hero_social_alt_match": true,
+        "inline_alt_match": true,
+        "filename_identity": true,
+        "distinct_binaries": true
+      }
+    }
+  ],
+  "sources_inspected": [
+    "src/content/posts/compare-public-oil-and-gas-price-decks-without-mixing-assumptions.mdx",
+    "/assets/articles/hero/how-to-compare-public-oil-and-gas-price-decks-without-mixing-assumptions.webp",
+    "/assets/articles/inline/compare-public-oil-and-gas-price-decks-without-mixing-assumptions/compare-public-oil-and-gas-price-decks.webp"
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "artifact_type": "mrx1000_two_image_compliance_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-11T22:44:38Z",
+  "decision_authority": {
+    "source": "Daryl owner directive, 2026-08-11",
+    "policy": "MRX two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0736",
+  "slug": "what-are-mineral-rights-a-complete-guide-for-texas-landowners",
+  "title": "What Are Mineral Rights? A Complete Guide for Texas Landowners",
+  "canonical_url": "https://mineralrightsxchange.com/blog/what-are-mineral-rights-a-complete-guide-for-texas-landowners/",
+  "source_path": "src/content/posts/what-are-mineral-rights-a-complete-guide-for-texas-landowners.mdx",
+  "input_body_sha256": "7dd629e87d01bd73edbb3d52fd883f14752cf5e9fff1c353795483ae19d1b58f",
+  "input_frontmatter_sha256": "7d2477ac1df726756b37459ad7172ea6df465b6a610b2969d5d0357b35e631fc",
+  "expected_repo_sha256": "7dd629e87d01bd73edbb3d52fd883f14752cf5e9fff1c353795483ae19d1b58f",
+  "two_image_manifest_sha256": "802512b5dab8eae7592be5934f97a6a8989125fb8f65d3f37ee3cdeb2d35dc10",
+  "reviewer_id": "codex_two_image_compliance",
+  "review_run_id": "mrx1000-two-image-retrofit-20260811T224438Z",
+  "capability": "compliance",
+  "expected_hero_sha256": "5b35390c804cef1739f9e88051eec1aa89e524de572b3e0f27d3bb79625c3708",
+  "expected_inline_sha256": "e2b03ef54cd95bce881897971e032ba62cb122bfbff8db299fb9a23aed21a4c9",
+  "findings": [
+    "Complete current MDX SHA-256 is 7dd629e87d01bd73edbb3d52fd883f14752cf5e9fff1c353795483ae19d1b58f; hero/share and in-body image hashes are separately locked.",
+    "Image text is limited to the exact article title and declared page keyword; it adds no guarantee, price, deadline, legal conclusion, or tax conclusion.",
+    "The article retains its educational and professional-boundary language and current disclosure treatment."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "hero_share_sha256_identity",
+    "inline_image_distinct_sha256",
+    "exact_text_ocr_pass",
+    "filename_text_identity_pass",
+    "no_unsupported_visual_claims",
+    "educational_and_professional_boundaries_preserved"
+  ],
+  "sources_inspected": [
+    "src/content/posts/what-are-mineral-rights-a-complete-guide-for-texas-landowners.mdx",
+    "/assets/articles/hero/what-are-mineral-rights-a-complete-guide-for-texas-landowners.webp",
+    "/assets/articles/inline/what-are-mineral-rights-a-complete-guide-for-texas-landowners/what-are-mineral-rights-texas-landowners.webp"
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "artifact_type": "mrx1000_two_image_compliance_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-11T22:44:38Z",
+  "decision_authority": {
+    "source": "Daryl owner directive, 2026-08-11",
+    "policy": "MRX two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0728",
+  "slug": "how-royalty-payments-work-for-texas-mineral-rights-owners",
+  "title": "How Royalty Payments Work for Texas Mineral Owners",
+  "canonical_url": "https://mineralrightsxchange.com/blog/how-royalty-payments-work-for-texas-mineral-rights-owners/",
+  "source_path": "src/content/posts/how-royalty-payments-work-for-texas-mineral-rights-owners.mdx",
+  "input_body_sha256": "38b75311c3ab861c9438506356bd3a5415225210aa332a3d3b853313f714d60f",
+  "input_frontmatter_sha256": "176806ef3262c432fcd50c0725c78cd9e3323c810dc78c70fb2d565fa7ef0011",
+  "expected_repo_sha256": "38b75311c3ab861c9438506356bd3a5415225210aa332a3d3b853313f714d60f",
+  "two_image_manifest_sha256": "802512b5dab8eae7592be5934f97a6a8989125fb8f65d3f37ee3cdeb2d35dc10",
+  "reviewer_id": "codex_two_image_compliance",
+  "review_run_id": "mrx1000-two-image-retrofit-20260811T224438Z",
+  "capability": "compliance",
+  "expected_hero_sha256": "0e74de698a30081f6327896138fc861dd0237f9f9d5e3cf23fc4904f03b7136c",
+  "expected_inline_sha256": "b3e670ebc7a3da9bc0b32818800490ab8439b6a9019d00b41fc0742560900e04",
+  "findings": [
+    "Complete current MDX SHA-256 is 38b75311c3ab861c9438506356bd3a5415225210aa332a3d3b853313f714d60f; hero/share and in-body image hashes are separately locked.",
+    "Image text is limited to the exact article title and declared page keyword; it adds no guarantee, price, deadline, legal conclusion, or tax conclusion.",
+    "The article retains its educational and professional-boundary language and current disclosure treatment."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "hero_share_sha256_identity",
+    "inline_image_distinct_sha256",
+    "exact_text_ocr_pass",
+    "filename_text_identity_pass",
+    "no_unsupported_visual_claims",
+    "educational_and_professional_boundaries_preserved"
+  ],
+  "sources_inspected": [
+    "src/content/posts/how-royalty-payments-work-for-texas-mineral-rights-owners.mdx",
+    "/assets/articles/hero/how-royalty-payments-work-for-texas-mineral-owners.webp",
+    "/assets/articles/inline/how-royalty-payments-work-for-texas-mineral-rights-owners/how-royalty-payments-work-for-texas-mineral-rights-owners.webp"
+  ]
+}

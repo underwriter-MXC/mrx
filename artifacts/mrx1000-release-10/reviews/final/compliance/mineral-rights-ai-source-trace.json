@@ -1,0 +1,49 @@
+{
+  "artifact_type": "mrx1000_two_image_compliance_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-23T03:11:21Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-14",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0034",
+  "slug": "mineral-rights-ai-source-trace",
+  "title": "How to Keep an AI Source Trace for a Mineral Rights Review",
+  "canonical_url": "https://mineralrightsxchange.com/blog/mineral-rights-ai-source-trace/",
+  "source_path": "src/content/posts/mineral-rights-ai-source-trace.mdx",
+  "input_body_sha256": "81b68a6c72193f71603d2b1b23f1cf943697a6cc1daefd36f9fbabded39e3695",
+  "input_frontmatter_sha256": "d5460037fb0b63916d4e7c8cae01fa23bab8925ebc99ece8efe20fb854497dbd",
+  "expected_repo_sha256": "81b68a6c72193f71603d2b1b23f1cf943697a6cc1daefd36f9fbabded39e3695",
+  "two_image_manifest_sha256": "402a01516bbe0a95c0cb283371b8da2ffb552a0831d338c616c147967b633dc6",
+  "visual_metadata": {
+    "hero_alt": "A reviewer checks source records and three blank status cards beside the exact article title.",
+    "social_alt": "A reviewer checks source records and three blank status cards beside the exact article title.",
+    "inline_alt": "A top-down provenance grid links a blank output card to source records and an unresolved marker under the exact keyword."
+  },
+  "reviewer_id": "codex_wave75_compliance",
+  "review_run_id": "mrx1000-wave75-compliance-20260823T031121Z",
+  "capability": "compliance",
+  "expected_hero_sha256": "fd10890f2b0f5af47af296628e7187cbcf450d951ce9ffee6e4d63c73f60e10e",
+  "expected_inline_sha256": "db4dcdf797671a3207ed90a9493418fab779a66f589c4bcd40e46f8066035e04",
+  "findings": [
+    "Complete current MDX SHA-256 is 81b68a6c72193f71603d2b1b23f1cf943697a6cc1daefd36f9fbabded39e3695; hero/share and inline image hashes are separately locked.",
+    "The article leaves unsupported, conflicting, or ambiguous output unresolved; separates provenance labels from verification; discloses possible MRX buyer interest; and preserves owner agency and qualified-review boundaries.",
+    "Image text is limited to the exact article title and approved keyword and adds no owner name, property fact, source result, review result, seal, recommendation, accuracy claim, guarantee, or transaction outcome."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "hero_share_sha256_identity",
+    "inline_image_distinct_sha256",
+    "exact_text_ocr_pass",
+    "filename_text_identity_pass",
+    "unresolved_inference_and_human_review_boundary_pass",
+    "owner_agency_and_possible_buyer_interest_disclosure_preserved",
+    "no_unsupported_visual_or_decision_claims"
+  ],
+  "sources_inspected": [
+    "src/content/posts/mineral-rights-ai-source-trace.mdx",
+    "/assets/articles/hero/how-to-keep-an-ai-source-trace-for-a-mineral-rights-review.webp",
+    "/assets/articles/inline/mineral-rights-ai-source-trace/mineral-rights-ai-source-trace.webp"
+  ]
+}

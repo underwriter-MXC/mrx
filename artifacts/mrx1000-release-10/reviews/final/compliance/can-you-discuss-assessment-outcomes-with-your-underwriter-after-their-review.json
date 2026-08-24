@@ -1,0 +1,43 @@
+{
+  "artifact_type": "mrx1000_two_image_compliance_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-11T22:44:38Z",
+  "decision_authority": {
+    "source": "Daryl owner directive, 2026-08-11",
+    "policy": "MRX two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0953",
+  "slug": "can-you-discuss-assessment-outcomes-with-your-underwriter-after-their-review",
+  "title": "Can You Discuss Assessment Outcomes With Your Underwriter After Their Review?",
+  "canonical_url": "https://mineralrightsxchange.com/blog/can-you-discuss-assessment-outcomes-with-your-underwriter-after-their-review/",
+  "source_path": "src/content/posts/can-you-discuss-assessment-outcomes-with-your-underwriter-after-their-review.mdx",
+  "input_body_sha256": "ad4c2e7b9f31993bd16bd6c07eda49aab3c2df25e80aac3e8d40b9470cd3ae62",
+  "input_frontmatter_sha256": "86125a1558ecd4e4e34c8d211db61112274b6b976a8bb8c44cee0a09ac716577",
+  "expected_repo_sha256": "ad4c2e7b9f31993bd16bd6c07eda49aab3c2df25e80aac3e8d40b9470cd3ae62",
+  "two_image_manifest_sha256": "802512b5dab8eae7592be5934f97a6a8989125fb8f65d3f37ee3cdeb2d35dc10",
+  "reviewer_id": "codex_two_image_compliance",
+  "review_run_id": "mrx1000-two-image-retrofit-20260811T224438Z",
+  "capability": "compliance",
+  "expected_hero_sha256": "4ea64eb6222def30811f229b199fa71196415f94b4d2bb3f9583cc14ff9bdb88",
+  "expected_inline_sha256": "82ec4787627102d3e7da0443331f2655cba58b70543cae507e9ebcf0a1472eac",
+  "findings": [
+    "Complete current MDX SHA-256 is ad4c2e7b9f31993bd16bd6c07eda49aab3c2df25e80aac3e8d40b9470cd3ae62; hero/share and in-body image hashes are separately locked.",
+    "Image text is limited to the exact article title and declared page keyword; it adds no guarantee, price, deadline, legal conclusion, or tax conclusion.",
+    "The article retains its educational and professional-boundary language and current disclosure treatment."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "hero_share_sha256_identity",
+    "inline_image_distinct_sha256",
+    "exact_text_ocr_pass",
+    "filename_text_identity_pass",
+    "no_unsupported_visual_claims",
+    "educational_and_professional_boundaries_preserved"
+  ],
+  "sources_inspected": [
+    "src/content/posts/can-you-discuss-assessment-outcomes-with-your-underwriter-after-their-review.mdx",
+    "/assets/articles/hero/can-you-discuss-assessment-outcomes-with-your-underwriter-after-their-review.webp",
+    "/assets/articles/inline/can-you-discuss-assessment-outcomes-with-your-underwriter-after-their-review/discuss-mineral-rights-underwriter-review-outcomes.webp"
+  ]
+}

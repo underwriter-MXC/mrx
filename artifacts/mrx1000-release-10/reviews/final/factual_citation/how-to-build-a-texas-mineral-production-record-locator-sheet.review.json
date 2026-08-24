@@ -1,0 +1,107 @@
+{
+  "artifact_type": "mrx1000_wave88_two_image_factual_citation_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-23T20:04:27Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-14",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0272",
+  "slug": "how-to-build-a-texas-mineral-production-record-locator-sheet",
+  "title": "How to Build a Texas Mineral Production Record Locator Sheet",
+  "canonical_url": "https://mineralrightsxchange.com/blog/how-to-build-a-texas-mineral-production-record-locator-sheet/",
+  "source_path": "src/content/posts/how-to-build-a-texas-mineral-production-record-locator-sheet.mdx",
+  "input_body_sha256": "a2583b6d4292f287b1da327668566f54615d5c174f3aed760a107826c2baf768",
+  "input_frontmatter_sha256": "c1ef4c53cb7e474ee60f3fb8eef1382fd99f910bcabacf71da581c136a8ad93c",
+  "expected_repo_sha256": "a2583b6d4292f287b1da327668566f54615d5c174f3aed760a107826c2baf768",
+  "two_image_manifest_sha256": "36df54e162b9e997e61d8e566824947f128106f2b6d0eb47f636bff550dbd152",
+  "visual_metadata": {
+    "hero_alt": "A Texas public-record research desk appears beside the exact article title.",
+    "social_alt": "A Texas public-record research desk appears beside the exact article title.",
+    "inline_alt": "A top-down production-record locator worksheet appears above the exact keyword."
+  },
+  "reviewer_id": "codex_wave88_factual",
+  "review_run_id": "mrx1000-wave88-factual-20260823T200427Z",
+  "capability": "factual_citation",
+  "findings": [
+    "Complete current MDX SHA-256 is a2583b6d4292f287b1da327668566f54615d5c174f3aed760a107826c2baf768; all 5 declared sources passed current HTTPS access review.",
+    "Claims remain bounded to current official RRC source routes, system and dataset names, reporting-level and coverage context, update notes, locator fields, and published limitations. None of the sources is used to interpret a record or establish ownership, title, entitlement, performance, completeness, accuracy, suitability, value, or a transaction result.",
+    "The article publishes no private owner document, signature, address, account data, payment instruction, private amount, legal description, actual property identifier, production result, trend, forecast, valuation input, price, value, offer, or transaction claim."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "five_distinct_https_sources",
+    "current_source_access_review_pass",
+    "claim_to_source_scope_present",
+    "official_source_priority_pass",
+    "unsupported_high_risk_claim_scan_pass"
+  ],
+  "sources_inspected": [
+    {
+      "label": "Railroad Commission of Texas, Research Queries (accessed 2026-08-23)",
+      "url": "https://www.rrc.texas.gov/resource-center/research/research-queries/",
+      "publisher": "www.rrc.texas.gov",
+      "accessed_at": "2026-08-23T20:04:27Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.rrc.texas.gov/resource-center/research/research-queries/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The official RRC directory identifies named production, well-record, and related query systems and publishes update-frequency labels.",
+      "claim_scope": "The article records the exact official route and system name and repeats the RRC boundary that online datasets are informational, continually updated, non-authoritative, and without legal force."
+    },
+    {
+      "label": "Railroad Commission of Texas, Oil and Gas Production Data (accessed 2026-08-23)",
+      "url": "https://www.rrc.texas.gov/oil-and-gas/research-and-statistics/production-data/",
+      "publisher": "www.rrc.texas.gov",
+      "accessed_at": "2026-08-23T20:04:27Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.rrc.texas.gov/oil-and-gas/research-and-statistics/production-data/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The official RRC production page describes compilations and summaries of production information reported by Texas operators and links the PDQ and Production Reports Query routes.",
+      "claim_scope": "The article uses the page only to identify a source class and route; it does not analyze production or draw an ownership, payment, property-connection, forecast, or value conclusion."
+    },
+    {
+      "label": "Railroad Commission of Texas, Production Data Query System FAQs (accessed 2026-08-23)",
+      "url": "https://www.rrc.texas.gov/about-us/faqs/oil-gas-faq/production-data-query-system-faqs/",
+      "publisher": "www.rrc.texas.gov",
+      "accessed_at": "2026-08-23T20:04:27Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.rrc.texas.gov/about-us/faqs/oil-gas-faq/production-data-query-system-faqs/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The official PDQ FAQs state the reporting levels for oil and gas, reporting lag, revision and correction behavior, snapshot character, coverage period, query navigation, and monthly update cadence.",
+      "claim_scope": "The article converts those source-stated limits only into locator fields and status labels; it does not classify a result as complete, current, accurate, applicable, connected to private property, or suitable for review."
+    },
+    {
+      "label": "Railroad Commission of Texas, Oil and Gas Well Records (accessed 2026-08-23)",
+      "url": "https://www.rrc.texas.gov/oil-and-gas/research-and-statistics/obtaining-commission-records/oil-and-gas-well-records/",
+      "publisher": "www.rrc.texas.gov",
+      "accessed_at": "2026-08-23T20:04:27Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.rrc.texas.gov/oil-and-gas/research-and-statistics/obtaining-commission-records/oil-and-gas-well-records/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The official well-records page identifies useful request fields, record classes, coverage periods, online and historical channels, and the Commission private-rights authority boundary.",
+      "claim_scope": "The article records a locator without interpreting a filing or establishing lease effect, royalty rights, payment entitlement, property connection, operator responsibility, or regulatory compliance."
+    },
+    {
+      "label": "Railroad Commission of Texas, Data Sets Available for Download (accessed 2026-08-23)",
+      "url": "https://www.rrc.texas.gov/resource-center/research/data-sets-available-for-download/",
+      "publisher": "www.rrc.texas.gov",
+      "accessed_at": "2026-08-23T20:04:27Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.rrc.texas.gov/resource-center/research/data-sets-available-for-download/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The official download page identifies free dataset names, file formats, and stated update schedules, including a Production Data Query Dump.",
+      "claim_scope": "The article records only the official dataset label, format, stated update cadence, access date, and result-reference location. It does not download, convert, analyze, select, or recommend a dataset."
+    }
+  ]
+}

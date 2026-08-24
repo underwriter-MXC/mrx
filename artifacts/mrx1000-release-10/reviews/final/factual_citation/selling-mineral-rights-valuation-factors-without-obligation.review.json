@@ -1,0 +1,141 @@
+{
+  "artifact_type": "mrx1000_two_image_factual_citation_review",
+  "schema_version": "2.0.0",
+  "disposition": "PASS",
+  "reviewed_at": "2026-08-12T14:39:21Z",
+  "decision_authority": {
+    "source": "Daryl owner directives, 2026-08-04 and 2026-08-12",
+    "policy": "MRX continuous quality-gated publication and two-image article creative directive"
+  },
+  "program_row_id": "MRX1000-0114",
+  "slug": "selling-mineral-rights-valuation-factors-without-obligation",
+  "title": "Selling Mineral Rights: Valuation Factors Without Obligation",
+  "canonical_url": "https://mineralrightsxchange.com/blog/selling-mineral-rights-valuation-factors-without-obligation/",
+  "source_path": "src/content/posts/selling-mineral-rights-valuation-factors-without-obligation.mdx",
+  "input_body_sha256": "a38e73e29b65c978f57ff784b72b1fa979034411318ed43511053a1d0d127784",
+  "input_frontmatter_sha256": "cf7382ea1c25ab72e0bb14bae3910cf526f21fd4ab9e3f74cdcc3ed0f7c41201",
+  "expected_repo_sha256": "a38e73e29b65c978f57ff784b72b1fa979034411318ed43511053a1d0d127784",
+  "two_image_manifest_sha256": "89cdebe1266976697a77cb749f484abe6b926cbf5866a3c34c0e16115b5e9e3c",
+  "reviewer_id": "codex_wave34_factual",
+  "review_run_id": "mrx1000-wave34-factual-20260812T143921Z",
+  "capability": "factual_citation",
+  "findings": [
+    "Complete current MDX SHA-256 is a38e73e29b65c978f57ff784b72b1fa979034411318ed43511053a1d0d127784; all 8 declared sources passed live access review.",
+    "MRX claims remain bounded to its current FAQ, booking, methodology, Privacy Policy, and Terms of Use; NIST remains a voluntary organizational privacy-risk framework; EIA remains dated public data series; and IRS claims remain general disposition and record distinctions.",
+    "The article uses no fabricated owners, buyers, deeds, privacy rights, permissions, prices, factor weights, multiples, acreage, ownership decimals, production, reserves, development events, tax results, offers, testimonials, or owner-specific title, legal, privacy, tax, accounting, engineering, appraisal, investment, or transaction conclusions."
+  ],
+  "checks": [
+    "complete_file_sha256_match",
+    "minimum_three_distinct_https_sources",
+    "current_source_access_review_pass",
+    "claim_to_source_scope_present",
+    "official_primary_source_priority_pass",
+    "unsupported_high_risk_claim_scan_pass"
+  ],
+  "sources_inspected": [
+    {
+      "label": "Mineral Rights Xchange, Frequently Asked Questions (accessed 2026-08-12)",
+      "url": "https://mineralrightsxchange.com/faq/",
+      "publisher": "mineralrightsxchange.com",
+      "accessed_at": "2026-08-12T14:39:21Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://mineralrightsxchange.com/faq/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The current MRX FAQ states that its review is a free, no-obligation directional underwriter assessment, not a certified valuation, and states its no-pressure and potential-buyer disclosure boundaries.",
+      "claim_scope": "The article uses the FAQ only for MRX’s current first-party review policy and limitations; it does not convert “no obligation” into a universal legal term, promise a result, or interpret a separate agreement."
+    },
+    {
+      "label": "Mineral Rights Xchange, Book a Free Underwriter Review (accessed 2026-08-12)",
+      "url": "https://mineralrightsxchange.com/book/",
+      "publisher": "mineralrightsxchange.com",
+      "accessed_at": "2026-08-12T14:39:21Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://mineralrightsxchange.com/book/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The current MRX booking page describes a confidential review path with no card and no obligation while preserving separate intake and later decision steps.",
+      "claim_scope": "The article uses the booking page only for the current first-party intake description; it does not promise eligibility, completion timing, a range, an offer, payment, sale, or closing."
+    },
+    {
+      "label": "Mineral Rights Xchange, Published DCF Methodology (accessed 2026-08-12)",
+      "url": "https://mineralrightsxchange.com/methodology/",
+      "publisher": "mineralrightsxchange.com",
+      "accessed_at": "2026-08-12T14:39:21Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://mineralrightsxchange.com/methodology/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The current MRX methodology identifies production history, decline context, operator and development evidence, royalty terms, commodity assumptions, discounting, title and acreage, and offer terms as dated inputs to a directional range with assumptions stated.",
+      "claim_scope": "The article uses the methodology to preserve the directional-range, stated-assumption, offer-separation, and professional boundaries while owning the no-obligation permission journey; it does not calculate a property-specific value, prove title or reserves, promise an outcome, or recommend a transaction."
+    },
+    {
+      "label": "Mineral Rights Xchange, Privacy Policy (accessed 2026-08-12)",
+      "url": "https://mineralrightsxchange.com/privacy-policy/",
+      "publisher": "mineralrightsxchange.com",
+      "accessed_at": "2026-08-12T14:39:21Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://mineralrightsxchange.com/privacy-policy/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The current MRX Privacy Policy describes first-party information collection, use, sharing, retention, export, deletion, and related choices and exceptions.",
+      "claim_scope": "The article points readers to the policy as controlling and uses it only to require purpose-specific record handling; it does not expand the policy, guarantee deletion, or state an owner-specific privacy right or compliance result."
+    },
+    {
+      "label": "Mineral Rights Xchange, Terms of Use (accessed 2026-08-12)",
+      "url": "https://mineralrightsxchange.com/terms/",
+      "publisher": "mineralrightsxchange.com",
+      "accessed_at": "2026-08-12T14:39:21Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://mineralrightsxchange.com/terms/",
+        "content_type": "text/html; charset=utf-8"
+      },
+      "source_location_or_paraphrase": "The current MRX Terms of Use govern the service and state educational, non-certified, non-title, and non-reserves boundaries alongside other applicable terms.",
+      "claim_scope": "The article preserves the terms as controlling and does not interpret enforceability, obligations, rights, remedies, or a particular agreement."
+    },
+    {
+      "label": "National Institute of Standards and Technology, Privacy Framework (accessed 2026-08-12)",
+      "url": "https://www.nist.gov/privacy-framework",
+      "publisher": "www.nist.gov",
+      "accessed_at": "2026-08-12T14:39:21Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.nist.gov/privacy-framework",
+        "content_type": "text/html; charset=UTF-8"
+      },
+      "source_location_or_paraphrase": "The NIST Privacy Framework is a voluntary, risk- and outcome-based organizational tool for identifying and managing privacy risk from data processing.",
+      "claim_scope": "The article uses NIST only for the general discipline of connecting processing to a stated purpose and considering privacy risk; it does not treat the framework as law, certification, or proof of an owner-specific right or MRX compliance result."
+    },
+    {
+      "label": "U.S. Energy Information Administration, Natural Gas Data (accessed 2026-08-12)",
+      "url": "https://www.eia.gov/naturalgas/data.php",
+      "publisher": "www.eia.gov",
+      "accessed_at": "2026-08-12T14:39:21Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.eia.gov/naturalgas/data.php",
+        "content_type": "text/html; charset=UTF-8"
+      },
+      "source_location_or_paraphrase": "The current EIA natural-gas data directory publishes price, production, reserves, drilling, supply, and other series with stated geographic scopes, frequencies, and release dates that differ by dataset.",
+      "claim_scope": "The article uses EIA only to require a named series, retrieval date, frequency, and geography; it does not treat an EIA series as the realized price, production history, reserves, forecast, or value of a specific mineral interest."
+    },
+    {
+      "label": "Internal Revenue Service, Publication 544, Sales and Other Dispositions of Assets (accessed 2026-08-12)",
+      "url": "https://www.irs.gov/publications/p544",
+      "publisher": "www.irs.gov",
+      "accessed_at": "2026-08-12T14:39:21Z",
+      "http_access_result": {
+        "status": 200,
+        "final_url": "https://www.irs.gov/publications/p544",
+        "content_type": "text/html; charset=UTF-8"
+      },
+      "source_location_or_paraphrase": "IRS Publication 544 explains that gain or loss and tax treatment for a sale or other disposition depend on the property and transaction facts and on adjusted basis and amount realized.",
+      "claim_scope": "The article uses the publication only to require preservation of disposition- and basis-relevant records and a transaction-specific tax handoff; it does not classify the owner’s asset, calculate basis, gain, loss, liability, choose a form or election, or state an owner-specific tax result."
+    }
+  ]
+}
