@@ -1,7 +1,7 @@
 {
   "program": "MRX 1,000 Article SEO+AEO Production Program",
   "artifact_type": "authorized_release_10_batch",
-  "evidence_scaffold_generated_at_utc": "2026-08-24T00:24:44Z",
+  "evidence_scaffold_generated_at_utc": "2026-08-24T01:13:57Z",
   "decision_authority": {
     "successor_gate_decision_id": "D-2026-0804-16",
     "successor_gate_decision_path": "docs/governance/mrx1000-owner-continuous-publication-directive-2026-08-04.md",
@@ -297,13 +297,16 @@
     "wave90_selection_decision_sha256": "ff9948aacfc68c5cc348672bbf9662439cdf437861af55572e9282e00b95a228",
     "wave91_selection_decision_id": "MRX1000-W91-SELECT-2026-08-23",
     "wave91_selection_decision_path": "docs/governance/mrx1000-wave91-selection-decision-2026-08-23.md",
-    "wave91_selection_decision_sha256": "dc983f428ef5696747ded9b68b17c09888dbb1d81d8deb9b3107e23029cf0aec"
+    "wave91_selection_decision_sha256": "dc983f428ef5696747ded9b68b17c09888dbb1d81d8deb9b3107e23029cf0aec",
+    "wave92_selection_decision_id": "MRX1000-W92-SELECT-2026-08-24",
+    "wave92_selection_decision_path": "docs/governance/mrx1000-wave92-selection-decision-2026-08-24.md",
+    "wave92_selection_decision_sha256": "0324abdeec4354173ca54458d000fe9d9852004b3b75201be4972f10147690e1"
   },
   "identity_authority": {
     "scope_key": "canonical_slug",
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_sha256": "c5b89c8379ac5ca400b3526546326cc4449c49324b48bc12c4239943f97abf83",
-    "canonical_ledger_generated_at": "2026-07-20T04:07:40.744Z",
+    "canonical_ledger_sha256": "5bd9ae6c87d47a7c968fe938b8dd04126c31819dd6e7c124ce3004b7e30df3e7",
+    "canonical_ledger_generated_at": "2026-07-20T03:42:41.739Z",
     "successor_ledger_decision_id": "D-2026-0723-LEDGER-04",
     "successor_ledger_decision_path": "artifacts/mrx1000-release-10/decisions/mrx-ceo-ledger-provenance-successor-20260723-04.md",
     "successor_ledger_decision_sha256": "09eca24bcd0e71563f2ac4197f564eec0ccb43a5ee955216da5c4a2543d04978",
@@ -317,11 +320,11 @@
     "authorization_scope": "declared_program_size_not_a_staged_release_cap",
     "admission_mode": "continuous_quality_gated",
     "continuous_quality_gated_from_selection_rank": 26,
-    "prior_verified_article_count": 170,
+    "prior_verified_article_count": 171,
     "fail_closed": true,
     "earned_scale_gates": [],
-    "exact_admitted_count": 171,
-    "exact_admitted_slate_sha256": "3458c3f699c22a4ef915d3549be43a80e928f099732dd462c374b36771a1059a"
+    "exact_admitted_count": 172,
+    "exact_admitted_slate_sha256": "dfb870f12d03715b6261457eb9a377c87eadb38f15bee1e3ad539ef128628673"
   },
   "articles": [
     {
@@ -5925,10 +5928,44 @@
       "inline_path": "/assets/articles/inline/texas-rrc-wellbore-query-retrieval-provenance-worksheet/texas-rrc-wellbore-query-retrieval.webp",
       "inline_asset_sha256": "2928cff15f071cf2c9a7860eace4aa483a2df13a3d1b9df51c95a6ee11c07439",
       "inline_rendered_text": "Texas RRC wellbore query retrieval"
+    },
+    {
+      "selection_rank": 172,
+      "program_row_id": "MRX1000-0290",
+      "source_shortlist_program_row_id": "MRX1000-0290",
+      "slug": "texas-rrc-p-4-gatherer-purchaser-query-retrieval-provenance-worksheet",
+      "title": "Texas RRC P-4 Gatherer/Purchaser Query Retrieval Provenance Worksheet",
+      "source_shortlist_title": "Texas RRC P-4 Gatherer/Purchaser Query Retrieval Provenance Worksheet",
+      "canonical_url": "https://mineralrightsxchange.com/blog/texas-rrc-p-4-gatherer-purchaser-query-retrieval-provenance-worksheet/",
+      "pillar": "mineral-rights-value",
+      "cluster": "valuation-methodology-drivers",
+      "content_genius_article_uuid": null,
+      "archive_evidence_sha256": "b5430bd1d56d264abf120d48a448fb7d230639f3b6f526e9eb0e71c72d6d18f0",
+      "repo_path": "src/content/posts/texas-rrc-p-4-gatherer-purchaser-query-retrieval-provenance-worksheet.mdx",
+      "repo_sha256": "b69508cce2db98f96fef9136e7f50573354dea2861962f42885e50d4c44d84a0",
+      "article_sha256": "b69508cce2db98f96fef9136e7f50573354dea2861962f42885e50d4c44d84a0",
+      "hero_path": "/assets/articles/hero/texas-rrc-p-4-gatherer-purchaser-query-retrieval-provenance-worksheet.webp",
+      "hero_sha256": "f6e33f9dc6f5b7573c6156fa257c4ca301272eed14670ba3b926e8afd7f19044",
+      "hero_asset_sha256": "f6e33f9dc6f5b7573c6156fa257c4ca301272eed14670ba3b926e8afd7f19044",
+      "admission_status": "admitted_quality_gated",
+      "finalization_state": "draft_noindex_admitted",
+      "searchatlas_content_score": null,
+      "searchatlas_word_count": 1892,
+      "risk_citation_remediation": [
+        "The original mineral-value question was rejected for material corpus overlap. The admitted replacement owns only a source-preserving provenance worksheet for one official Texas RRC P-4 Gatherer/Purchaser Query attempt.",
+        "Current official Railroad Commission sources support only official routes, source-displayed query criteria and labels, daily update context, separate record-access context, and data limitations. None establishes property connection, title, ownership, acreage, lease effect, payment responsibility, entitlement, compliance, production, value, or a transaction result.",
+        "The article remains distinct from the Wellbore, Drilling-Permit, and Pooling-Filing retrieval worksheets, production-record locator, broad RRC tutorial, operator-name log, property-connection cross-check, and development or DCF corpus because it records one P-4 query execution without interpreting a result or using it downstream.",
+        "Continuous quality-gated admission under D-2026-0804-16, the 2026-08-14 no-approval owner directive, and MRX1000-W92-SELECT-2026-08-24; publication remains conditional on every article-specific gate and no owner publication approval applies."
+      ],
+      "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/texas-rrc-p-4-gatherer-purchaser-query-retrieval-provenance-worksheet.json",
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/texas-rrc-p-4-gatherer-purchaser-query-retrieval-provenance-worksheet/texas-rrc-p-4-gatherer-purchaser-query-retrieval.webp",
+      "inline_asset_sha256": "b419c212037b461eceb62bb73cd676e2358504fdce219603e164b49fb161491a",
+      "inline_rendered_text": "Texas RRC P-4 gatherer/purchaser query retrieval"
     }
   ],
   "admission_audit": {
-    "admitted_article_count": 171,
+    "admitted_article_count": 172,
     "selection_ranks": [
       1,
       2,
@@ -6100,7 +6137,8 @@
       168,
       169,
       170,
-      171
+      171,
+      172
     ],
     "duplicate_program_row_ids": [],
     "duplicate_slugs": [],
@@ -6159,9 +6197,9 @@
   "two_image_policy": {
     "directive": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
     "retrofit_manifest_path": "config/mrx-article-two-image-retrofit.json",
-    "retrofit_manifest_sha256": "3ebb71e41e5301beb67ddf688730ddd32d5a5186c250d91e4114237cb20fb0fb",
-    "public_article_count": 179,
-    "batch_article_count": 171,
+    "retrofit_manifest_sha256": "0df47f33763f54ed1e546b0aba931d38d8913c8b92852f384353181d0487cdf5",
+    "public_article_count": 180,
+    "batch_article_count": 172,
     "assets_per_article": 2,
     "hero_share_identity_required": true,
     "inline_image_distinct_required": true,

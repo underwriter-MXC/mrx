@@ -1,18 +1,18 @@
 {
   "artifact_type": "mrx_article_two_image_retrofit",
   "schema_version": 1,
-  "generated_at_utc": "2026-08-24T00:08:21Z",
+  "generated_at_utc": "2026-08-24T01:08:31Z",
   "policy_source": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
   "summary": {
-    "article_count": 179,
-    "asset_count": 358,
-    "unique_source_art_count": 179,
-    "unique_hero_sha256_count": 179,
-    "unique_inline_sha256_count": 179,
-    "distinct_article_pair_count": 179,
-    "hero_ocr_pass_count": 179,
-    "inline_ocr_pass_count": 179,
-    "exact_filename_identity_count": 179
+    "article_count": 180,
+    "asset_count": 360,
+    "unique_source_art_count": 180,
+    "unique_hero_sha256_count": 180,
+    "unique_inline_sha256_count": 180,
+    "distinct_article_pair_count": 180,
+    "hero_ocr_pass_count": 180,
+    "inline_ocr_pass_count": 180,
+    "exact_filename_identity_count": 180
   },
   "contact_sheets": {
     "hero": [
@@ -5156,6 +5156,56 @@
           "actual": "Texas RRC drilling permit\nquery retrieval",
           "normalized_expected": "texas rrc drilling permit query retrieval",
           "normalized_actual": "texas rrc drilling permit query retrieval",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      }
+    },
+    {
+      "slug": "texas-rrc-p-4-gatherer-purchaser-query-retrieval-provenance-worksheet",
+      "title": "Texas RRC P-4 Gatherer/Purchaser Query Retrieval Provenance Worksheet",
+      "keyword": "Texas RRC P-4 gatherer/purchaser query retrieval",
+      "file_path": "src/content/posts/texas-rrc-p-4-gatherer-purchaser-query-retrieval-provenance-worksheet.mdx",
+      "source_public_path": "/assets/articles/hero/texas-rrc-p-4-gatherer-purchaser-query-retrieval-provenance-worksheet.webp",
+      "source_artifact_paths": [
+        "artifacts/mrx1000-wave92-creative-sources/texas-rrc-p-4-gatherer-purchaser-query-retrieval-provenance-worksheet-hero-base.png",
+        "artifacts/mrx1000-wave92-creative-sources/texas-rrc-p-4-gatherer-purchaser-query-retrieval-provenance-worksheet-inline-base.png"
+      ],
+      "generated_at_utc": "2026-08-24T01:06:36.450Z",
+      "hero": {
+        "public_path": "/assets/articles/hero/texas-rrc-p-4-gatherer-purchaser-query-retrieval-provenance-worksheet.webp",
+        "alt": "A Texas P-4 query research counter appears beside the exact article title.",
+        "width": 1200,
+        "height": 630,
+        "mime_type": "image/webp",
+        "sha256": "f6e33f9dc6f5b7573c6156fa257c4ca301272eed14670ba3b926e8afd7f19044",
+        "perceptual_hash": "0000000000000000000000000000000000000000001000000000000001111100000000000111111100000000011111110000000001111111000000000111111100000000011111110000000011111111000000001111111100000000111111010000000011111111000000001111111100000000111111010000000011111111",
+        "neutralized_art_text_region_count": 1,
+        "ocr": {
+          "expected": "Texas RRC P-4 Gatherer/Purchaser Query Retrieval Provenance Worksheet",
+          "actual": "Texas RRC P-4\nGatherer/Purchaser Query\nRetrieval Provenance\nWorksheet",
+          "normalized_expected": "texas rrc p 4 gatherer purchaser query retrieval provenance worksheet",
+          "normalized_actual": "texas rrc p 4 gatherer purchaser query retrieval provenance worksheet",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      },
+      "inline": {
+        "public_path": "/assets/articles/inline/texas-rrc-p-4-gatherer-purchaser-query-retrieval-provenance-worksheet/texas-rrc-p-4-gatherer-purchaser-query-retrieval.webp",
+        "alt": "A people-free overhead P-4 query provenance worksheet appears above the exact keyword.",
+        "rendered_text": "Texas RRC P-4 gatherer/purchaser query retrieval",
+        "visual_variant": "wave92-distinct-generated-overhead-eight-field-p4-query-provenance-worksheet",
+        "width": 1200,
+        "height": 675,
+        "mime_type": "image/webp",
+        "sha256": "b419c212037b461eceb62bb73cd676e2358504fdce219603e164b49fb161491a",
+        "perceptual_hash": "1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111110000000011011100000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "neutralized_art_text_region_count": 1,
+        "ocr": {
+          "expected": "Texas RRC P-4 gatherer/purchaser query retrieval",
+          "actual": "Texas RRC P-4 gatherer/purchaser\nquery retrieval",
+          "normalized_expected": "texas rrc p 4 gatherer purchaser query retrieval",
+          "normalized_actual": "texas rrc p 4 gatherer purchaser query retrieval",
           "uppercase_i_confusable_accepted": false,
           "pass": true
         }
