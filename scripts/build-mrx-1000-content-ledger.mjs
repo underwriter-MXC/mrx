@@ -571,11 +571,28 @@ function frontmatter(source) {
   const match = source.match(/^---\s*\n([\s\S]*?)\n---/);
   if (!match) return {};
   const data = {};
-  for (const line of match[1].split(/\r?\n/)) {
+  const lines = match[1].split(/\r?\n/);
+  for (let index = 0; index < lines.length; index += 1) {
+    const line = lines[index];
     const scalar = line.match(/^([a-zA-Z0-9_]+):\s*(.*)$/);
     if (!scalar) continue;
     const [, key, raw] = scalar;
     let value = raw.trim();
+    if (!value) {
+      const list = [];
+      let listIndex = index + 1;
+      while (listIndex < lines.length) {
+        const item = lines[listIndex].match(/^\s+-\s+(.*)$/);
+        if (!item) break;
+        list.push(item[1].trim().replace(/^['"]|['"]$/g, ''));
+        listIndex += 1;
+      }
+      if (list.length) {
+        data[key] = list;
+        index = listIndex - 1;
+        continue;
+      }
+    }
     if (
       (value.startsWith("'") && value.endsWith("'")) ||
       (value.startsWith('"') && value.endsWith('"'))
