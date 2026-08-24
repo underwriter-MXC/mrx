@@ -2,6 +2,9 @@
   "buildCommand": "pnpm build:vercel",
   "installCommand": "pnpm install --frozen-lockfile",
   "framework": "astro",
+  "git": {
+    "deploymentEnabled": false
+  },
   "redirects": [
     {
       "source": "/2026/06/02/:slug",
