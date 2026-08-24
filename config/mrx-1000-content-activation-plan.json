@@ -4,10 +4,10 @@
   "generated_at": "2026-07-20T08:14:48.753Z",
   "generated_at_method": "canonical_ledger_generated_at",
   "generator": "scripts/build-mrx-1000-activation-plan.mjs",
-  "content_fingerprint_sha256": "5cead916d54314faf60a6103ffc49b94400175ed974a323b24ab46fed0c0ad77",
+  "content_fingerprint_sha256": "a93f38bbffc20fb3e618dcf1ab12e0ee70d2dbc55a8a83f2731fbea111bea1d2",
   "inputs": {
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_fingerprint_sha256": "2f7a310fca9bc3543ea80d8063c36e07de252a4bce7b7489415bbf8929bc61d1",
+    "canonical_ledger_fingerprint_sha256": "457fec65f6d25b9474bd69027e83f78601eb6176f286a18d870801bbdf522c0e",
     "canonical_ledger_fingerprint_verified": true,
     "canonical_ledger_generated_at": "2026-07-20T08:14:48.753Z",
     "owner_decision": {
@@ -115,9 +115,9 @@
     },
     "by_source_preservation_classification": {
       "incumbent_draft_nonpublic_held": 27,
-      "live_public_published_route": 188,
+      "live_public_published_route": 189,
       "pilot_draft_noindex_stage": 25,
-      "planning_only_inventory": 760
+      "planning_only_inventory": 759
     }
   },
   "rows": [
@@ -17464,11 +17464,11 @@
       },
       "sibling_link": {
         "target_program_row_id": "MRX1000-0284",
-        "target_title": "Understanding Your Mineral Rights: How to Determine Eligibility for Evaluation Today",
-        "url": "/blog/understanding-your-mineral-rights-how-to-determine-eligibility-for-evaluation-today/",
+        "target_title": "Texas RRC Completions Query Retrieval Provenance Worksheet",
+        "url": "/blog/texas-rrc-completions-query-retrieval-provenance-worksheet/",
         "relationship": "same_cluster_next_by_program_row_id_cyclic",
-        "target_source_preservation_classification": "planning_only_inventory",
-        "target_route_live": false,
+        "target_source_preservation_classification": "live_public_published_route",
+        "target_route_live": true,
         "status": "planned_local_only"
       },
       "primary_cta": {
@@ -17511,15 +17511,15 @@
     },
     {
       "program_row_id": "MRX1000-0284",
-      "canonical_title": "Understanding Your Mineral Rights: How to Determine Eligibility for Evaluation Today",
-      "canonical_slug": "understanding-your-mineral-rights-how-to-determine-eligibility-for-evaluation-today",
-      "canonical_url": "/blog/understanding-your-mineral-rights-how-to-determine-eligibility-for-evaluation-today/",
+      "canonical_title": "Texas RRC Completions Query Retrieval Provenance Worksheet",
+      "canonical_slug": "texas-rrc-completions-query-retrieval-provenance-worksheet",
+      "canonical_url": "/blog/texas-rrc-completions-query-retrieval-provenance-worksheet/",
       "cluster": "valuation-methodology-drivers",
       "pillar": "mineral-rights-value",
       "search_intent": "informational",
       "funnel_stage": "consideration",
-      "source_preservation_classification": "planning_only_inventory",
-      "source_route_live": false,
+      "source_preservation_classification": "live_public_published_route",
+      "source_route_live": true,
       "pillar_link": {
         "url": "/mineral-rights-value/",
         "route_evidence": "src/pages/mineral-rights-value.astro",
@@ -17568,7 +17568,7 @@
         "rendered_triangle_verified": false,
         "live_status": "not_published_or_verified_by_this_plan",
         "live_triangle_verified": false,
-        "release_status": "eligible_for_continuous_quality_review_not_yet_cleared",
+        "release_status": "released_under_d16_continuous_quality_gate",
         "numerical_release_cap_applies": false
       }
     },
