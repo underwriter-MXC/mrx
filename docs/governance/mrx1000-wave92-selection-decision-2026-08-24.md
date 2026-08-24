@@ -11,7 +11,9 @@
 
 The canonical MRX1000 ledger is production verified through 171 released rows and the public site has 179 article routes after the Article 171 deployment. Article 172 means the next incremental verified-count release, not program row `MRX1000-0172`.
 
-The configured Chesty / `mrx_ceo` advisory profile is not callable in this runtime, so no advisory result is represented as evidence. Codex completed the read-only source, corpus, collision, and compliance review and remains the sole implementation and release owner. No advisory lane has article, image, deployment, publication, or external-system mutation authority.
+Chesty routed the identity through a strict read-only `mrx_ceo` review. The initial review held the candidate after two official routes were reachable but candidate-specific routes failed transiently. Codex then independently rechecked the five exact official RRC sources below and received HTTP 200 from every route, including the P-4 query screen, before sending that new evidence through Chesty for one fail-closed reconsideration.
+
+The controlling reconsideration returned `MRX_CEO_RECONSIDERATION: APPROVE_REDEFINED` for program row `MRX1000-0290`, the exact title and slug locked below, five-source sufficiency, job-level separation from the named collision candidates, and the stated compliance boundaries. The advisory lane remained read-only throughout. Codex remains the sole implementation and release owner; no advisory lane had article, image, deployment, publication, or external-system mutation authority.
 
 ## Rejected original identity
 
