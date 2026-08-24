@@ -1,9 +1,11 @@
 import { access, readFile, readdir } from 'node:fs/promises';
 import { extname, join, relative } from 'node:path';
-import * as harper from 'harper.js';
-import { binary } from 'harper.js/binary';
+import { Worker } from 'node:worker_threads';
 
 const reportAll = process.argv.includes('--report-all');
+// Smaller chunks keep native lint calls responsive for the growing rendered
+// corpus while preserving the same prose extraction and finding rules.
+const MAX_GRAMMAR_CHUNK_CHARS = 25_000;
 const vercelRoot = new URL('../dist/client/', import.meta.url);
 const genericRoot = new URL('../dist/', import.meta.url);
 let root = genericRoot;
@@ -74,10 +76,6 @@ async function htmlFiles(directory) {
   return files;
 }
 
-const linter = new harper.LocalLinter({
-  binary,
-  dialect: harper.Dialect.American,
-});
 const findings = [];
 const reviewedFalsePositives = [
   {
@@ -134,7 +132,7 @@ for (const segment of uniqueProse.values()) {
   const separator = /[.!?]["')\]]?$/.test(segment.text)
     ? '\n\nGrammar boundary.\n\n'
     : '.\n\nGrammar boundary.\n\n';
-  if (currentChunk.text.length + segment.text.length + separator.length > 75_000) {
+  if (currentChunk.text.length + segment.text.length + separator.length > MAX_GRAMMAR_CHUNK_CHARS) {
     chunks.push(currentChunk);
     currentChunk = { text: '', segments: [] };
   }
@@ -146,32 +144,52 @@ for (const segment of uniqueProse.values()) {
 }
 if (currentChunk.text) chunks.push(currentChunk);
 
-try {
-  for (const chunk of chunks) {
-    for (const lint of await linter.lint(chunk.text)) {
-      const kind = lint.lint_kind();
-      if (!reportAll && ignoredKinds.has(kind)) continue;
-      const span = lint.span();
-      const segment = chunk.segments.find(
-        (candidate) => span.start >= candidate.start && span.end <= candidate.end,
-      );
-      if (!segment) continue;
-      const suggestions = lint.suggestions().map((suggestion) => suggestion.get_replacement_text());
-      const finding = {
-        file: [...segment.files][0],
-        duplicateCount: segment.files.size - 1,
-        kind,
-        message: lint.message(),
-        problem: chunk.text.slice(span.start, span.end),
-        suggestions,
-        context: segment.text,
-      };
-      if (!reportAll && isReviewedFalsePositive(finding)) continue;
-      findings.push(finding);
-    }
-  }
-} finally {
-  await linter.dispose();
+function lintChunkBatch(chunksForWorker) {
+  return new Promise((resolve, reject) => {
+    const worker = new Worker(new URL('./lint-rendered-grammar-worker.mjs', import.meta.url), {
+      workerData: { chunks: chunksForWorker },
+    });
+    worker.once('message', (message) => {
+      if (message.error) reject(new Error(message.error));
+      else resolve(message.findings);
+    });
+    worker.once('error', reject);
+    worker.once('exit', (code) => {
+      if (code !== 0) reject(new Error(`Grammar worker exited with code ${code}.`));
+    });
+  });
+}
+
+const workerCount = Math.min(6, chunks.length);
+const workerBatches = Array.from({ length: workerCount }, () => []);
+for (const [index, chunk] of chunks.entries()) {
+  workerBatches[index % workerCount].push({ index, text: chunk.text });
+}
+
+console.log(`Grammar check: linting ${chunks.length} chunks across ${workerCount} workers.`);
+const lintResults = (await Promise.all(workerBatches.map(lintChunkBatch)))
+  .flat()
+  .sort((left, right) => left.chunkIndex - right.chunkIndex || left.span.start - right.span.start);
+
+for (const lint of lintResults) {
+  const kind = lint.kind;
+  if (!reportAll && ignoredKinds.has(kind)) continue;
+  const chunk = chunks[lint.chunkIndex];
+  const segment = chunk.segments.find(
+    (candidate) => lint.span.start >= candidate.start && lint.span.end <= candidate.end,
+  );
+  if (!segment) continue;
+  const finding = {
+    file: [...segment.files][0],
+    duplicateCount: segment.files.size - 1,
+    kind,
+    message: lint.message,
+    problem: chunk.text.slice(lint.span.start, lint.span.end),
+    suggestions: lint.suggestions,
+    context: segment.text,
+  };
+  if (!reportAll && isReviewedFalsePositive(finding)) continue;
+  findings.push(finding);
 }
 
 if (findings.length) {

@@ -4,6 +4,8 @@ import { createHash } from 'node:crypto';
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { basename, dirname, join, resolve } from 'node:path';
 
+import { assertExecutiveSelectionDecision } from './lib/mrx-executive-selection-decision.mjs';
+
 const root = resolve(import.meta.dirname, '..');
 const waveNumber = process.env.MRX_WAVE_NUMBER ?? '82';
 const waveKey = `wave${waveNumber}`;
@@ -201,6 +203,7 @@ if (
     `Wave ${waveNumber} selection decision remains draft-only and is not publication authority`,
   );
 }
+assertExecutiveSelectionDecision({ waveNumber, decisionSource });
 
 if (
   scalar(fm, 'title') !== title ||

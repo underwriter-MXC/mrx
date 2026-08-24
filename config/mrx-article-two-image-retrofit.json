@@ -1,18 +1,18 @@
 {
   "artifact_type": "mrx_article_two_image_retrofit",
   "schema_version": 1,
-  "generated_at_utc": "2026-08-24T01:57:12Z",
+  "generated_at_utc": "2026-08-24T02:31:11Z",
   "policy_source": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
   "summary": {
-    "article_count": 181,
-    "asset_count": 362,
-    "unique_source_art_count": 181,
-    "unique_hero_sha256_count": 181,
-    "unique_inline_sha256_count": 181,
-    "distinct_article_pair_count": 181,
-    "hero_ocr_pass_count": 181,
-    "inline_ocr_pass_count": 181,
-    "exact_filename_identity_count": 181
+    "article_count": 182,
+    "asset_count": 364,
+    "unique_source_art_count": 182,
+    "unique_hero_sha256_count": 182,
+    "unique_inline_sha256_count": 182,
+    "distinct_article_pair_count": 182,
+    "hero_ocr_pass_count": 182,
+    "inline_ocr_pass_count": 182,
+    "exact_filename_identity_count": 182
   },
   "contact_sheets": {
     "hero": [
@@ -5156,6 +5156,56 @@
           "actual": "Texas RRC drilling permit\nquery retrieval",
           "normalized_expected": "texas rrc drilling permit query retrieval",
           "normalized_actual": "texas rrc drilling permit query retrieval",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      }
+    },
+    {
+      "slug": "texas-rrc-h-10-query-retrieval-provenance-worksheet",
+      "title": "Texas RRC H-10 Query Retrieval Provenance Worksheet",
+      "keyword": "Texas RRC H-10 query retrieval",
+      "file_path": "src/content/posts/texas-rrc-h-10-query-retrieval-provenance-worksheet.mdx",
+      "source_public_path": "/assets/articles/hero/texas-rrc-h-10-query-retrieval-provenance-worksheet.webp",
+      "source_artifact_paths": [
+        "artifacts/mrx1000-wave94-creative-sources/texas-rrc-h-10-query-retrieval-provenance-worksheet-hero-base.png",
+        "artifacts/mrx1000-wave94-creative-sources/texas-rrc-h-10-query-retrieval-provenance-worksheet-inline-base.png"
+      ],
+      "generated_at_utc": "2026-08-24T02:27:04.554Z",
+      "hero": {
+        "public_path": "/assets/articles/hero/texas-rrc-h-10-query-retrieval-provenance-worksheet.webp",
+        "alt": "A Texas H-10 query research counter appears beside the exact article title.",
+        "width": 1200,
+        "height": 630,
+        "mime_type": "image/webp",
+        "sha256": "c7f58bb86c7a337e823c4946ca8bea4eade142db1554368eae0e4ac7be2c9971",
+        "perceptual_hash": "0000000011111111000000001111111100000000111111110000000011110011000000001110001100000000111100110000000011111011000000001111101100000000111110110000000011111011000000001111111100000000111111110000000011111111000000001111111100000000000011100000000000000000",
+        "neutralized_art_text_region_count": 1,
+        "ocr": {
+          "expected": "Texas RRC H-10 Query Retrieval Provenance Worksheet",
+          "actual": "Texas RRC H-10\nQuery Retrieval\nProvenance Worksheet",
+          "normalized_expected": "texas rrc h 10 query retrieval provenance worksheet",
+          "normalized_actual": "texas rrc h 10 query retrieval provenance worksheet",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      },
+      "inline": {
+        "public_path": "/assets/articles/inline/texas-rrc-h-10-query-retrieval-provenance-worksheet/texas-rrc-h-10-query-retrieval.webp",
+        "alt": "A people-free overhead H-10 query provenance worksheet appears above the exact keyword.",
+        "rendered_text": "Texas RRC H-10 query retrieval",
+        "visual_variant": "wave94-distinct-generated-overhead-h10-query-provenance-worksheet",
+        "width": 1200,
+        "height": 675,
+        "mime_type": "image/webp",
+        "sha256": "ddbbfb92c08998b49b42cc70566029cab86ea1df83f800b3a594232989b019c0",
+        "perceptual_hash": "0000000000000000000011111111111000001111111111100000111111111000000011111111111000001111111111100000111111111000000001111111000000001111111111000000111111111100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "neutralized_art_text_region_count": 1,
+        "ocr": {
+          "expected": "Texas RRC H-10 query retrieval",
+          "actual": "Texas RRC H-10\nquery retrieval",
+          "normalized_expected": "texas rrc h 10 query retrieval",
+          "normalized_actual": "texas rrc h 10 query retrieval",
           "uppercase_i_confusable_accepted": false,
           "pass": true
         }
