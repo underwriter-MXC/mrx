@@ -1,7 +1,7 @@
 {
   "program": "MRX 1,000 Article SEO+AEO Production Program",
   "artifact_type": "authorized_release_10_batch",
-  "evidence_scaffold_generated_at_utc": "2026-08-24T16:12:53Z",
+  "evidence_scaffold_generated_at_utc": "2026-08-24T16:47:17Z",
   "decision_authority": {
     "successor_gate_decision_id": "D-2026-0804-16",
     "successor_gate_decision_path": "docs/governance/mrx1000-owner-continuous-publication-directive-2026-08-04.md",
@@ -351,13 +351,16 @@
     "wave108_selection_decision_sha256": "c71c47dc09185f4659723c71306c95b20f5271c702b6a44ab40f1d304ab2e4e7",
     "wave110_selection_decision_id": "MRX1000-W110-SELECT-2026-08-24",
     "wave110_selection_decision_path": "docs/governance/mrx1000-wave110-selection-decision-2026-08-24.md",
-    "wave110_selection_decision_sha256": "2665f920abc0eb8319ffe4f7d13acba71f5f865c1c2e4fd8a0f02dc57eaf1eee"
+    "wave110_selection_decision_sha256": "2665f920abc0eb8319ffe4f7d13acba71f5f865c1c2e4fd8a0f02dc57eaf1eee",
+    "wave112_selection_decision_id": "MRX1000-W112-SELECT-2026-08-24",
+    "wave112_selection_decision_path": "docs/governance/mrx1000-wave112-selection-decision-2026-08-24.md",
+    "wave112_selection_decision_sha256": "276d12850994fa721b2f4b7e3d04caaaecc6c6a93c409bc606c77450eb466748"
   },
   "identity_authority": {
     "scope_key": "canonical_slug",
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_sha256": "5f7745400d73d4983fbd65de684783ca4bb2fa41e317c129992f94b3186b5c3c",
-    "canonical_ledger_generated_at": "2026-07-20T09:22:55.932Z",
+    "canonical_ledger_sha256": "24be4948b5276ca1eecfb39caa42175186a56f4c7393c0c19dd4b29a5c90803d",
+    "canonical_ledger_generated_at": "2026-07-20T16:58:18.060Z",
     "successor_ledger_decision_id": "D-2026-0723-LEDGER-04",
     "successor_ledger_decision_path": "artifacts/mrx1000-release-10/decisions/mrx-ceo-ledger-provenance-successor-20260723-04.md",
     "successor_ledger_decision_sha256": "09eca24bcd0e71563f2ac4197f564eec0ccb43a5ee955216da5c4a2543d04978",
@@ -371,11 +374,11 @@
     "authorization_scope": "declared_program_size_not_a_staged_release_cap",
     "admission_mode": "continuous_quality_gated",
     "continuous_quality_gated_from_selection_rank": 26,
-    "prior_verified_article_count": 188,
+    "prior_verified_article_count": 189,
     "fail_closed": true,
     "earned_scale_gates": [],
-    "exact_admitted_count": 189,
-    "exact_admitted_slate_sha256": "3e32c70903db07efad4dc3eef4a86315f8fceb95d95ece8ca90806b810f71d06"
+    "exact_admitted_count": 190,
+    "exact_admitted_slate_sha256": "fb99942043b4cc766f4e13cb847e23a395080b122711ff16bc405bee3d45eb21"
   },
   "articles": [
     {
@@ -6591,10 +6594,45 @@
       "inline_path": "/assets/articles/inline/texas-rrc-h-9-query-retrieval-provenance-worksheet/texas-rrc-h-9-query-retrieval.webp",
       "inline_asset_sha256": "2e367c971d16919df1a4d1f847cde857ad74155f654ea602268996ac19e4df64",
       "inline_rendered_text": "Texas RRC H-9 Query retrieval"
+    },
+    {
+      "selection_rank": 190,
+      "program_row_id": "MRX1000-0297",
+      "source_shortlist_program_row_id": "MRX1000-0297",
+      "slug": "texas-rrc-production-data-query-retrieval-provenance-worksheet",
+      "title": "Texas RRC Production Data Query Retrieval Provenance Worksheet",
+      "source_shortlist_title": "Texas RRC Production Data Query Retrieval Provenance Worksheet",
+      "canonical_url": "https://mineralrightsxchange.com/blog/texas-rrc-production-data-query-retrieval-provenance-worksheet/",
+      "pillar": "mineral-rights-value",
+      "cluster": "valuation-methodology-drivers",
+      "content_genius_article_uuid": null,
+      "archive_evidence_sha256": "0f5193fc49c0225b134e0df00c73087acf51277835a72b9cf1dc0ff5fec0aa06",
+      "repo_path": "src/content/posts/texas-rrc-production-data-query-retrieval-provenance-worksheet.mdx",
+      "repo_sha256": "b2a6dace5f4ae3e1070ff804ece2d1f9516fb530b462dd63c22ddfe9d68e608f",
+      "article_sha256": "b2a6dace5f4ae3e1070ff804ece2d1f9516fb530b462dd63c22ddfe9d68e608f",
+      "hero_path": "/assets/articles/hero/texas-rrc-production-data-query-retrieval-provenance-worksheet.webp",
+      "hero_sha256": "4f5b88aa310c8cdd74e67cf2ab1848983c9bb472b8d7182895fbca246061d38b",
+      "hero_asset_sha256": "4f5b88aa310c8cdd74e67cf2ab1848983c9bb472b8d7182895fbca246061d38b",
+      "admission_status": "admitted_quality_gated",
+      "finalization_state": "draft_noindex_admitted",
+      "searchatlas_content_score": null,
+      "searchatlas_word_count": 1812,
+      "risk_citation_remediation": [
+        "The original evaluation-benefits identity was rejected for material overlap. The replacement owns only one authorized manual attempt in the official limited-area Production Data Query application.",
+        "Official RRC sources support route identity, General Production Query versus Specific Lease Query separation, source-displayed coverage and update state, navigation limitations, operator-report context, lag, revision risk, and retrieval mechanics only. None establishes production attribution, property connection, title, ownership, acreage, reserves, value, legal effect, offer quality, or a transaction conclusion.",
+        "The article remains distinct from Production Reports Query Form PR, any separately routed statewide PDQ surface, Wellbore, New Lease IDs, proration, the broad production-record locator, and other retrieval jobs because it records only one limited-area PDQ attempt.",
+        "The article expressly prohibits automated or bulk RRC retrieval and preserves the source system warning.",
+        "Continuous quality-gated admission under the owner no-approval directives; no owner publication approval applies."
+      ],
+      "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/texas-rrc-production-data-query-retrieval-provenance-worksheet.json",
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/texas-rrc-production-data-query-retrieval-provenance-worksheet/texas-rrc-production-data-query-retrieval.webp",
+      "inline_asset_sha256": "b2e8fee531cbdbcfdff7194147defd51bb47d19cd60f80fff25c24f13aa7b119",
+      "inline_rendered_text": "Texas RRC Production Data Query retrieval"
     }
   ],
   "admission_audit": {
-    "admitted_article_count": 189,
+    "admitted_article_count": 190,
     "selection_ranks": [
       1,
       2,
@@ -6784,7 +6822,8 @@
       186,
       187,
       188,
-      189
+      189,
+      190
     ],
     "duplicate_program_row_ids": [],
     "duplicate_slugs": [],
@@ -6843,9 +6882,9 @@
   "two_image_policy": {
     "directive": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
     "retrofit_manifest_path": "config/mrx-article-two-image-retrofit.json",
-    "retrofit_manifest_sha256": "c74c0b0f2c18f357aa821b87bcebb7905feb955e2086d70fcd892cf28db125c9",
-    "public_article_count": 197,
-    "batch_article_count": 189,
+    "retrofit_manifest_sha256": "1484540522757d91a36f6d3754d38dd0e7d521eadcbfd7788a4ce507ea97c17d",
+    "public_article_count": 198,
+    "batch_article_count": 190,
     "assets_per_article": 2,
     "hero_share_identity_required": true,
     "inline_image_distinct_required": true,

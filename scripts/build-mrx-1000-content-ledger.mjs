@@ -66,6 +66,7 @@ const SUPERSEDED_CANONICAL_SLUGS = new Set([
   'what-factors-impact-your-mineral-rights-valuation',
   'what-factors-influence-mineral-rights-valuation',
   'what-influences-the-value-of-your-mineral-rights-during-the-assessment-process',
+  'what-to-expect-from-your-mineral-rights-evaluation',
   'what-influences-the-suggested-price-for-your-mineral-rights-assessment',
   'what-sellers-get-wrong-about-mineral-rights',
   'what-to-avoid-in-the-mineral-rights-selling-process',
@@ -128,6 +129,10 @@ const SUCCESSOR_CANONICAL_SLUGS = new Map([
   [
     'what-influences-the-value-of-your-mineral-rights-during-the-assessment-process',
     'texas-rrc-h-9-query-retrieval-provenance-worksheet',
+  ],
+  [
+    'what-to-expect-from-your-mineral-rights-evaluation',
+    'texas-rrc-production-data-query-retrieval-provenance-worksheet',
   ],
   [
     'what-influences-the-suggested-price-for-your-mineral-rights-assessment',
@@ -335,6 +340,7 @@ const APPROVED_REKEY_SEARCH_INTENT_BY_SLUG = new Map([
   ['texas-rrc-new-lease-ids-built-query-retrieval-provenance-worksheet', 'informational'],
   ['texas-rrc-g-10-w-10-well-status-report-query-retrieval-provenance-worksheet', 'informational'],
   ['texas-rrc-h-9-query-retrieval-provenance-worksheet', 'informational'],
+  ['texas-rrc-production-data-query-retrieval-provenance-worksheet', 'informational'],
 ]);
 
 const EXECUTIVE_MANUAL_CANNIBALIZATION_REVIEW_PASS_SLUGS = new Set([
