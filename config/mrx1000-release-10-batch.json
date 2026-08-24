@@ -1,7 +1,7 @@
 {
   "program": "MRX 1,000 Article SEO+AEO Production Program",
   "artifact_type": "authorized_release_10_batch",
-  "evidence_scaffold_generated_at_utc": "2026-08-24T04:32:20Z",
+  "evidence_scaffold_generated_at_utc": "2026-08-24T04:54:14Z",
   "decision_authority": {
     "successor_gate_decision_id": "D-2026-0804-16",
     "successor_gate_decision_path": "docs/governance/mrx1000-owner-continuous-publication-directive-2026-08-04.md",
@@ -309,13 +309,16 @@
     "wave94_selection_decision_sha256": "48f3e78fd02ad1a07df31037fdce5b7235a18e3a8e4489c8956d688e41cb7995",
     "wave95_selection_decision_id": "MRX1000-W95-SELECT-2026-08-24",
     "wave95_selection_decision_path": "docs/governance/mrx1000-wave95-selection-decision-2026-08-24.md",
-    "wave95_selection_decision_sha256": "d8883aa55b53cbb3de21c7cd6c67f297e9dedd9251a625c39956bbc80da775ef"
+    "wave95_selection_decision_sha256": "d8883aa55b53cbb3de21c7cd6c67f297e9dedd9251a625c39956bbc80da775ef",
+    "wave96_selection_decision_id": "MRX1000-W96-SELECT-2026-08-24",
+    "wave96_selection_decision_path": "docs/governance/mrx1000-wave96-selection-decision-2026-08-24.md",
+    "wave96_selection_decision_sha256": "d927003943e6162cadfc768ea586f4f0894298a5494f3fc65ab71550950b71cf"
   },
   "identity_authority": {
     "scope_key": "canonical_slug",
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_sha256": "3629ac5afce8db09c81cc393b611779891191881d53d85caa108780ca658f8bd",
-    "canonical_ledger_generated_at": "2026-07-20T03:40:33.484Z",
+    "canonical_ledger_sha256": "8db7da5ad00a897644037297a033ea0be0292b317e9f2f896563e1b0dc85f2ee",
+    "canonical_ledger_generated_at": "2026-07-20T16:39:54.115Z",
     "successor_ledger_decision_id": "D-2026-0723-LEDGER-04",
     "successor_ledger_decision_path": "artifacts/mrx1000-release-10/decisions/mrx-ceo-ledger-provenance-successor-20260723-04.md",
     "successor_ledger_decision_sha256": "09eca24bcd0e71563f2ac4197f564eec0ccb43a5ee955216da5c4a2543d04978",
@@ -329,11 +332,11 @@
     "authorization_scope": "declared_program_size_not_a_staged_release_cap",
     "admission_mode": "continuous_quality_gated",
     "continuous_quality_gated_from_selection_rank": 26,
-    "prior_verified_article_count": 174,
+    "prior_verified_article_count": 175,
     "fail_closed": true,
     "earned_scale_gates": [],
-    "exact_admitted_count": 175,
-    "exact_admitted_slate_sha256": "0c3e8caf0ef0466df46716ebbcd8c76922b8745b94a256a8415bc0e6d0050e5a"
+    "exact_admitted_count": 176,
+    "exact_admitted_slate_sha256": "6efe2fc36e8dbdab9e4f9f4deb22c76826310c894327345bd0f7e2d6dd59997f"
   },
   "articles": [
     {
@@ -6073,10 +6076,44 @@
       "inline_path": "/assets/articles/inline/texas-rrc-inactive-well-query-retrieval-provenance-worksheet/texas-rrc-inactive-well-query-retrieval.webp",
       "inline_asset_sha256": "e886e95b2b05eea421f48e8e7eeaf7c5094a30dd17b8867e7312ba9ca9e8fa27",
       "inline_rendered_text": "Texas RRC Inactive Well query retrieval"
+    },
+    {
+      "selection_rank": 176,
+      "program_row_id": "MRX1000-0279",
+      "source_shortlist_program_row_id": "MRX1000-0279",
+      "slug": "texas-rrc-oil-proration-query-retrieval-provenance-worksheet",
+      "title": "Texas RRC Oil Proration Query Retrieval Provenance Worksheet",
+      "source_shortlist_title": "Texas RRC Oil Proration Query Retrieval Provenance Worksheet",
+      "canonical_url": "https://mineralrightsxchange.com/blog/texas-rrc-oil-proration-query-retrieval-provenance-worksheet/",
+      "pillar": "mineral-rights-value",
+      "cluster": "valuation-methodology-drivers",
+      "content_genius_article_uuid": null,
+      "archive_evidence_sha256": "1093faa5a7367897a6b1dc7b88a240895f85df73e1c3643e55faec035fab3fd4",
+      "repo_path": "src/content/posts/texas-rrc-oil-proration-query-retrieval-provenance-worksheet.mdx",
+      "repo_sha256": "a46359db4146a6f89a22826cd3917e3f8c0c4c7cf504dbe9aea81b70182ea2c7",
+      "article_sha256": "a46359db4146a6f89a22826cd3917e3f8c0c4c7cf504dbe9aea81b70182ea2c7",
+      "hero_path": "/assets/articles/hero/texas-rrc-oil-proration-query-retrieval-provenance-worksheet.webp",
+      "hero_sha256": "1742d7994676d46bd29183f0a4d0d487cf04c1f3524ecb8695ed1f7805214c6f",
+      "hero_asset_sha256": "1742d7994676d46bd29183f0a4d0d487cf04c1f3524ecb8695ed1f7805214c6f",
+      "admission_status": "admitted_quality_gated",
+      "finalization_state": "draft_noindex_admitted",
+      "searchatlas_content_score": null,
+      "searchatlas_word_count": 1668,
+      "risk_citation_remediation": [
+        "The original mineral-value assessment identity was rejected for material corpus overlap. The admitted replacement owns only a source-preserving provenance worksheet for one official Texas RRC Oil Proration Schedule Query attempt.",
+        "Current official Railroad Commission sources support only official routes, source-displayed criteria and instructions, navigation labels, query-screen context, and stated limitations. None establishes property connection, title, ownership, acreage, lease effect, payment responsibility, entitlement, compliance, environmental condition, operating status, production, value, or a transaction result.",
+        "The article remains distinct from the Wellbore, Inactive Well, Organization P-5, P-4, H-10, Drilling-Permit, and Pooling-Filing worksheets because it records one Oil Proration Schedule Query execution without interpreting a result or using it downstream.",
+        "Continuous quality-gated admission under D-2026-0804-16 and the 2026-08-14 no-approval owner directive; publication remains conditional on every article-specific gate and no owner publication approval applies."
+      ],
+      "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/texas-rrc-oil-proration-query-retrieval-provenance-worksheet.json",
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/texas-rrc-oil-proration-query-retrieval-provenance-worksheet/texas-rrc-oil-proration-query-retrieval.webp",
+      "inline_asset_sha256": "c224b2149afce99998c32b946e13743a8e9c41f257a9c7889ec8b03cc99c5118",
+      "inline_rendered_text": "Texas RRC Oil Proration query retrieval"
     }
   ],
   "admission_audit": {
-    "admitted_article_count": 175,
+    "admitted_article_count": 176,
     "selection_ranks": [
       1,
       2,
@@ -6252,7 +6289,8 @@
       172,
       173,
       174,
-      175
+      175,
+      176
     ],
     "duplicate_program_row_ids": [],
     "duplicate_slugs": [],
@@ -6311,9 +6349,9 @@
   "two_image_policy": {
     "directive": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
     "retrofit_manifest_path": "config/mrx-article-two-image-retrofit.json",
-    "retrofit_manifest_sha256": "d78855b3722370973773cc953f75f119fe7cb411936bdf8974561c865e38d426",
-    "public_article_count": 183,
-    "batch_article_count": 175,
+    "retrofit_manifest_sha256": "d743070182839f8ba6609b8a62f39476907a0230482778c9da1d195cbe026d4c",
+    "public_article_count": 184,
+    "batch_article_count": 176,
     "assets_per_article": 2,
     "hero_share_identity_required": true,
     "inline_image_distinct_required": true,
