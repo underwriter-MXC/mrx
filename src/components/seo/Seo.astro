@@ -80,6 +80,7 @@ const finalTitle =
 const exactCanonicalMetadataTitle = exactCanonicalArticleTitle
   ? buildArticleTitle(exactCanonicalArticleTitle, exactCanonicalArticleTitle)
   : undefined;
+const socialTitle = exactCanonicalArticleTitle ?? finalTitle;
 const tOk =
   exactCanonicalArticleTitle && finalTitle === exactCanonicalMetadataTitle
     ? validateArticleTitle(exactCanonicalArticleTitle, exactCanonicalArticleTitle)
@@ -100,7 +101,7 @@ const robotsContent =
   (noindex ? 'noindex, nofollow' : 'index, follow, max-image-preview:large, max-snippet:-1');
 
 const graph = buildPageGraph([
-  ...siteGraph(path, finalTitle),
+  ...siteGraph(path, socialTitle),
   ...(breadcrumbs ? [breadcrumbList(breadcrumbs)] : []),
   ...jsonLd,
 ]);
@@ -117,7 +118,7 @@ const graph = buildPageGraph([
 <link rel="alternate" hreflang="x-default" href={canonical} />
 
 <meta property="og:type" content={ogType} />
-<meta property="og:title" content={finalTitle} />
+<meta property="og:title" content={socialTitle} />
 <meta property="og:description" content={description} />
 <meta property="og:url" content={canonical} />
 <meta property="og:image" content={og} />
@@ -149,7 +150,7 @@ const graph = buildPageGraph([
 }
 
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content={finalTitle} />
+<meta name="twitter:title" content={socialTitle} />
 <meta name="twitter:description" content={description} />
 <meta name="twitter:image" content={og} />
 <meta name="twitter:image:alt" content={ogImageAlt ?? finalTitle} />

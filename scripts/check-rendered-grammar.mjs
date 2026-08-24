@@ -103,6 +103,11 @@ const reviewedFalsePositives = [
     problem: 'a dealbreaker',
     context: 'Any such clause should be a dealbreaker.',
   },
+  {
+    kind: 'Grammar',
+    problem: ' ',
+    context: 'Report Summary Status',
+  },
 ];
 
 function isReviewedFalsePositive(finding) {

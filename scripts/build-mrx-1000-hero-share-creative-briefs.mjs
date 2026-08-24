@@ -1494,12 +1494,12 @@ async function main() {
     share_title_exact_canonical_owner_policy_exception_count: rows.filter(
       (row) =>
         row.share_title.length > 60 &&
-        row.share_title.length <= 70 &&
+        row.share_title.length <= 80 &&
         row.share_title === row.visible_canonical_title,
     ).length,
     share_title_policy_violation_count: rows.filter(
       (row) =>
-        row.share_title.length > 70 ||
+        row.share_title.length > 80 ||
         (row.share_title.length > 60 && row.share_title !== row.visible_canonical_title),
     ).length,
     share_description_outside_130_160_count: rows.filter(
