@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import { createHash } from 'node:crypto';
-import { access, readFile, writeFile } from 'node:fs/promises';
+import { access, mkdir, readFile, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { format as formatWithPrettier } from 'prettier';
@@ -1683,6 +1683,11 @@ async function main() {
   });
   const csv = buildCsv(rows);
   const report = buildReport(plan);
+  await Promise.all(
+    [...new Set(Object.values(OUTPUTS).map((output) => path.dirname(output)))].map((directory) =>
+      mkdir(directory, { recursive: true }),
+    ),
+  );
   await Promise.all([
     writeFile(OUTPUTS.json, json),
     writeFile(OUTPUTS.csv, csv),
