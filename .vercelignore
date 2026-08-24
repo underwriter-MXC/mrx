@@ -15,7 +15,9 @@ tmp/
 
 # Generated evidence and local verification output are rebuilt by the release
 # workflow; uploading them both slows production releases and can exceed
-# Vercel's per-deployment file limit.
+# Vercel's per-deployment file limit. Production archive deployments use
+# scripts/prepare-vercel-deploy-stage.sh to add only the signed inputs needed
+# by the fail-closed MRX1000 release gate.
 artifacts/
 reports/
 
