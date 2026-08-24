@@ -63,6 +63,7 @@ const SUPERSEDED_CANONICAL_SLUGS = new Set([
   'what-every-mineral-rights-owner-needs-to-know',
   'what-factors-determine-your-mineral-rights-value',
   'what-factors-determine-the-value-of-mineral-rights',
+  'what-factors-impact-your-mineral-rights-valuation',
   'what-influences-the-suggested-price-for-your-mineral-rights-assessment',
   'what-sellers-get-wrong-about-mineral-rights',
   'what-to-avoid-in-the-mineral-rights-selling-process',
@@ -113,6 +114,10 @@ const SUCCESSOR_CANONICAL_SLUGS = new Map([
   [
     'what-factors-determine-the-value-of-mineral-rights',
     'texas-rrc-online-inspection-lookup-retrieval-provenance-worksheet',
+  ],
+  [
+    'what-factors-impact-your-mineral-rights-valuation',
+    'texas-rrc-new-lease-ids-built-query-retrieval-provenance-worksheet',
   ],
   [
     'what-influences-the-suggested-price-for-your-mineral-rights-assessment',
@@ -317,6 +322,7 @@ const APPROVED_REKEY_SEARCH_INTENT_BY_SLUG = new Map([
   ['texas-rrc-p-5-renewal-status-query-retrieval-provenance-worksheet', 'informational'],
   ['texas-rrc-orphan-well-query-retrieval-provenance-worksheet', 'informational'],
   ['texas-rrc-online-inspection-lookup-retrieval-provenance-worksheet', 'informational'],
+  ['texas-rrc-new-lease-ids-built-query-retrieval-provenance-worksheet', 'informational'],
 ]);
 
 // Wave 100 and 101 were first materialized before their successor mappings
