@@ -50,9 +50,9 @@ const SCRIPT = path.join(MRX_ROOT, 'scripts/build-mrx-1000-content-ledger.mjs');
 const CANONICAL_JSON = path.join(MRX_ROOT, 'config/mrx-1000-canonical-content-ledger.json');
 const CANONICAL_CSV = path.join(MRX_ROOT, 'config/mrx-1000-canonical-content-ledger.csv');
 const EXPECTED_CANONICAL_JSON_SHA256 =
-  'b2a31c431795bed66c8c3032d2c6e2f0accf3aa2d42a91bd5e48ccc1abbfb2e3';
+  '143182db3447363abd8d9291daa674fa934f3dfefcb951b410cccef7ecd71e98';
 const EXPECTED_CANONICAL_CSV_SHA256 =
-  '1bcd7dcc710053c2af6d41c1f071a251bea996ef1b7cf3cc907be3cbbab97e81';
+  '7530e4294309cab9e24d1a94c721d2f460c3c3808736f312c3aef5e043452d63';
 const TEST_OUTPUT_DIR = mkdtempSync(path.join(tmpdir(), 'mrx1000-ledger-idempotency-'));
 const JSON_OUT = path.join(TEST_OUTPUT_DIR, 'mrx-1000-canonical-content-ledger.json');
 const CSV_OUT = path.join(TEST_OUTPUT_DIR, 'mrx-1000-canonical-content-ledger.csv');
@@ -159,6 +159,12 @@ interface LedgerArticleRow {
 interface Ledger {
   generated_at: string;
   content_fingerprint_sha256: string;
+  identity_registry: {
+    preserved_existing_id_count: number;
+    newly_allocated_id_count: number;
+    wave100_rekey?: { program_row_id: string };
+    wave101_rekey?: { program_row_id: string };
+  };
   policy: {
     pilot_aware: boolean;
     deterministic_generated_at_from_input_state: boolean;
@@ -298,6 +304,26 @@ describe('MRX1000 canonical ledger generator (pilot-aware + idempotent)', () => 
     expect(ledger.verification.unique_slug_count).toBe(1000);
     expect(ledger.verification.unique_normalized_title_count).toBe(1000);
     expect(ledger.verification.all_quota_checks_pass).toBe(true);
+  });
+
+  it('preserves post-Wave-99 rekeys and restores the two displaced planning identities', () => {
+    const bySlug = new Map(ledger.articles.map((row) => [row.canonical_slug, row]));
+    expect(ledger.identity_registry.preserved_existing_id_count).toBe(1000);
+    expect(ledger.identity_registry.newly_allocated_id_count).toBe(0);
+    expect(ledger.identity_registry.wave100_rekey?.program_row_id).toBe('MRX1000-0283');
+    expect(ledger.identity_registry.wave101_rekey?.program_row_id).toBe('MRX1000-0284');
+    expect(bySlug.has('understanding-the-true-worth-of-your-mineral-interests')).toBe(false);
+    expect(
+      bySlug.has(
+        'understanding-your-mineral-rights-how-to-determine-eligibility-for-evaluation-today',
+      ),
+    ).toBe(false);
+    expect(
+      bySlug.get('mineral-rights-valuation-checklist-without-obligation')?.program_row_id,
+    ).toBe('MRX1000-0237');
+    expect(
+      bySlug.get('mineral-rights-valuation-negotiation-tips-without-obligation')?.program_row_id,
+    ).toBe('MRX1000-0252');
   });
 
   it('separates the growing incumbent corpus from 25 pilot rows with no slug collision', () => {

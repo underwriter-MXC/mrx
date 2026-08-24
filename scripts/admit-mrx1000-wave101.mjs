@@ -1,14 +1,11 @@
 #!/usr/bin/env node
 
 process.env.MRX_WAVE_NUMBER = '101';
-process.env.MRX_ARTICLE_SLUG =
-  'texas-rrc-completions-query-retrieval-provenance-worksheet';
-process.env.MRX_ARTICLE_TITLE =
-  'Texas RRC Completions Query Retrieval Provenance Worksheet';
+process.env.MRX_ARTICLE_SLUG = 'texas-rrc-completions-query-retrieval-provenance-worksheet';
+process.env.MRX_ARTICLE_TITLE = 'Texas RRC Completions Query Retrieval Provenance Worksheet';
 process.env.MRX_PRIMARY_KEYWORD = 'Texas RRC Completions Query retrieval';
 process.env.MRX_INLINE_KEYWORD = 'Texas RRC Completions Query retrieval';
-process.env.MRX_HERO_FILENAME =
-  'texas-rrc-completions-query-retrieval-provenance-worksheet';
+process.env.MRX_HERO_FILENAME = 'texas-rrc-completions-query-retrieval-provenance-worksheet';
 process.env.MRX_HERO_ALT =
   'A blank completion-packet archive appears beside the exact article title.';
 process.env.MRX_INLINE_ALT =
@@ -16,8 +13,7 @@ process.env.MRX_INLINE_ALT =
 process.env.MRX_PROGRAM_ROW_ID = 'MRX1000-0284';
 process.env.MRX_SELECTION_RANK = '181';
 process.env.MRX_DECISION_ID = 'MRX1000-W101-SELECT-2026-08-24';
-process.env.MRX_DECISION_PATH =
-  'docs/governance/mrx1000-wave101-selection-decision-2026-08-24.md';
+process.env.MRX_DECISION_PATH = 'docs/governance/mrx1000-wave101-selection-decision-2026-08-24.md';
 process.env.MRX_REVIEWED_BY = 'mrx_compliance-continuous-wave101';
 process.env.MRX_PRIOR_TITLE =
   'Understanding Your Mineral Rights: How to Determine Eligibility for Evaluation Today';
@@ -32,8 +28,8 @@ process.env.MRX_SECONDARY_KEYWORDS_JSON = JSON.stringify([
   'completion packet retrieval worksheet',
 ]);
 process.env.MRX_NEAREST_SAME_CLUSTER_SLUG =
-  'texas-rrc-wellbore-query-retrieval-provenance-worksheet';
-process.env.MRX_CANNIBALIZATION_SCORE = '0.75';
+  'texas-rrc-severance-query-retrieval-provenance-worksheet';
+process.env.MRX_CANNIBALIZATION_SCORE = '0.7143';
 process.env.MRX_INLINE_VISUAL_VARIANT =
   'wave101-distinct-generated-overhead-completions-query-criteria-and-route-worksheet';
 process.env.MRX_PILLAR = 'mineral-rights-value';

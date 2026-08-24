@@ -99,6 +99,8 @@ const SUPERSEDED_CANONICAL_SLUGS = new Set([
   'understanding-mineral-rights-valuation-calculations',
   'understanding-mineral-rights-valuation-methods',
   'understanding-mineral-rights-value-assessment',
+  'understanding-the-true-worth-of-your-mineral-interests',
+  'understanding-your-mineral-rights-how-to-determine-eligibility-for-evaluation-today',
 ]);
 const SUCCESSOR_CANONICAL_SLUGS = new Map([
   ['what-every-mineral-rights-owner-needs-to-know', 'should-i-sell-my-mineral-rights'],
@@ -242,6 +244,14 @@ const SUCCESSOR_CANONICAL_SLUGS = new Map([
     'understanding-mineral-rights-value-assessment',
     'texas-rrc-oil-proration-query-retrieval-provenance-worksheet',
   ],
+  [
+    'understanding-the-true-worth-of-your-mineral-interests',
+    'texas-rrc-flare-vent-exception-query-retrieval-provenance-worksheet',
+  ],
+  [
+    'understanding-your-mineral-rights-how-to-determine-eligibility-for-evaluation-today',
+    'texas-rrc-completions-query-retrieval-provenance-worksheet',
+  ],
 ]);
 const APPROVED_REKEY_SEARCH_INTENT_BY_SLUG = new Map([
   ['should-i-sell-my-mineral-rights', 'transactional'],
@@ -275,6 +285,17 @@ const APPROVED_REKEY_SEARCH_INTENT_BY_SLUG = new Map([
   ['texas-rrc-h-10-query-retrieval-provenance-worksheet', 'informational'],
   ['texas-rrc-inactive-well-query-retrieval-provenance-worksheet', 'informational'],
   ['texas-rrc-oil-proration-query-retrieval-provenance-worksheet', 'informational'],
+  ['texas-rrc-flare-vent-exception-query-retrieval-provenance-worksheet', 'informational'],
+  ['texas-rrc-completions-query-retrieval-provenance-worksheet', 'informational'],
+]);
+
+// Wave 100 and 101 were first materialized before their successor mappings
+// landed here. Those two rebuilds temporarily displaced these durable planning
+// identities. Seed the historical IDs so a corrected rebuild restores them
+// instead of allocating new program-row IDs.
+const PROGRAM_ROW_ID_RECOVERY_BY_SLUG = new Map([
+  ['mineral-rights-valuation-checklist-without-obligation', 'MRX1000-0237'],
+  ['mineral-rights-valuation-negotiation-tips-without-obligation', 'MRX1000-0252'],
 ]);
 
 async function loadPriorProgramRowIds() {
@@ -288,6 +309,7 @@ async function loadPriorProgramRowIds() {
         sourceSystemBySlug: new Map(),
         incumbentRepoCount: 0,
         maxSequenceEver: 0,
+        waveMetadata: {},
         wave58Rekey: null,
         wave59Rekey: null,
         wave60Rekey: null,
@@ -358,6 +380,17 @@ async function loadPriorProgramRowIds() {
     seenIds.add(id);
     maxSequenceEver = Math.max(maxSequenceEver, Number(match[1]));
   }
+  for (const [slug, id] of PROGRAM_ROW_ID_RECOVERY_BY_SLUG) {
+    if (bySlug.has(slug) || seenIds.has(id)) continue;
+    bySlug.set(slug, id);
+    sourceSystemBySlug.set(slug, 'factory_queue_title_metadata');
+    seenIds.add(id);
+  }
+  const waveMetadata = Object.fromEntries(
+    Object.entries(prior.identity_registry ?? {}).filter(([key]) =>
+      /^wave\d+_(?:rekey|refresh)$/.test(key),
+    ),
+  );
   return {
     bySlug,
     sourceSystemBySlug,
@@ -365,6 +398,7 @@ async function loadPriorProgramRowIds() {
       (row) => String(row.source_system ?? '') === 'astro_repo',
     ).length,
     maxSequenceEver,
+    waveMetadata,
     wave58Rekey: prior.identity_registry?.wave58_rekey ?? null,
     wave59Rekey: prior.identity_registry?.wave59_rekey ?? null,
     wave60Rekey: prior.identity_registry?.wave60_rekey ?? null,
@@ -1753,48 +1787,7 @@ async function main() {
       max_sequence_ever: maxProgramRowSequenceEver,
       preserved_existing_id_count: preservedProgramRowIdCount,
       newly_allocated_id_count: selected.length - preservedProgramRowIdCount,
-      ...(priorIdentity.wave58Rekey ? { wave58_rekey: priorIdentity.wave58Rekey } : {}),
-      ...(priorIdentity.wave59Rekey ? { wave59_rekey: priorIdentity.wave59Rekey } : {}),
-      ...(priorIdentity.wave60Rekey ? { wave60_rekey: priorIdentity.wave60Rekey } : {}),
-      ...(priorIdentity.wave61Rekey ? { wave61_rekey: priorIdentity.wave61Rekey } : {}),
-      ...(priorIdentity.wave62Rekey ? { wave62_rekey: priorIdentity.wave62Rekey } : {}),
-      ...(priorIdentity.wave63Rekey ? { wave63_rekey: priorIdentity.wave63Rekey } : {}),
-      ...(priorIdentity.wave64Rekey ? { wave64_rekey: priorIdentity.wave64Rekey } : {}),
-      ...(priorIdentity.wave65Rekey ? { wave65_rekey: priorIdentity.wave65Rekey } : {}),
-      ...(priorIdentity.wave66Rekey ? { wave66_rekey: priorIdentity.wave66Rekey } : {}),
-      ...(priorIdentity.wave67Rekey ? { wave67_rekey: priorIdentity.wave67Rekey } : {}),
-      ...(priorIdentity.wave68Rekey ? { wave68_rekey: priorIdentity.wave68Rekey } : {}),
-      ...(priorIdentity.wave69Rekey ? { wave69_rekey: priorIdentity.wave69Rekey } : {}),
-      ...(priorIdentity.wave70Rekey ? { wave70_rekey: priorIdentity.wave70Rekey } : {}),
-      ...(priorIdentity.wave71Refresh ? { wave71_refresh: priorIdentity.wave71Refresh } : {}),
-      ...(priorIdentity.wave72Rekey ? { wave72_rekey: priorIdentity.wave72Rekey } : {}),
-      ...(priorIdentity.wave73Rekey ? { wave73_rekey: priorIdentity.wave73Rekey } : {}),
-      ...(priorIdentity.wave74Rekey ? { wave74_rekey: priorIdentity.wave74Rekey } : {}),
-      ...(priorIdentity.wave75Rekey ? { wave75_rekey: priorIdentity.wave75Rekey } : {}),
-      ...(priorIdentity.wave76Rekey ? { wave76_rekey: priorIdentity.wave76Rekey } : {}),
-      ...(priorIdentity.wave77Rekey ? { wave77_rekey: priorIdentity.wave77Rekey } : {}),
-      ...(priorIdentity.wave78Rekey ? { wave78_rekey: priorIdentity.wave78Rekey } : {}),
-      ...(priorIdentity.wave79Rekey ? { wave79_rekey: priorIdentity.wave79Rekey } : {}),
-      ...(priorIdentity.wave80Rekey ? { wave80_rekey: priorIdentity.wave80Rekey } : {}),
-      ...(priorIdentity.wave81Rekey ? { wave81_rekey: priorIdentity.wave81Rekey } : {}),
-      ...(priorIdentity.wave82Rekey ? { wave82_rekey: priorIdentity.wave82Rekey } : {}),
-      ...(priorIdentity.wave83Rekey ? { wave83_rekey: priorIdentity.wave83Rekey } : {}),
-      ...(priorIdentity.wave84Rekey ? { wave84_rekey: priorIdentity.wave84Rekey } : {}),
-      ...(priorIdentity.wave85Rekey ? { wave85_rekey: priorIdentity.wave85Rekey } : {}),
-      ...(priorIdentity.wave86Rekey ? { wave86_rekey: priorIdentity.wave86Rekey } : {}),
-      ...(priorIdentity.wave87Rekey ? { wave87_rekey: priorIdentity.wave87Rekey } : {}),
-      ...(priorIdentity.wave88Rekey ? { wave88_rekey: priorIdentity.wave88Rekey } : {}),
-      ...(priorIdentity.wave89Rekey ? { wave89_rekey: priorIdentity.wave89Rekey } : {}),
-      ...(priorIdentity.wave90Rekey ? { wave90_rekey: priorIdentity.wave90Rekey } : {}),
-      ...(priorIdentity.wave91Rekey ? { wave91_rekey: priorIdentity.wave91Rekey } : {}),
-      ...(priorIdentity.wave92Rekey ? { wave92_rekey: priorIdentity.wave92Rekey } : {}),
-      ...(priorIdentity.wave93Rekey ? { wave93_rekey: priorIdentity.wave93Rekey } : {}),
-      ...(priorIdentity.wave94Rekey ? { wave94_rekey: priorIdentity.wave94Rekey } : {}),
-      ...(priorIdentity.wave95Rekey ? { wave95_rekey: priorIdentity.wave95Rekey } : {}),
-      ...(priorIdentity.wave96Rekey ? { wave96_rekey: priorIdentity.wave96Rekey } : {}),
-      ...(priorIdentity.wave97Rekey ? { wave97_rekey: priorIdentity.wave97Rekey } : {}),
-      ...(priorIdentity.wave98Rekey ? { wave98_rekey: priorIdentity.wave98Rekey } : {}),
-      ...(priorIdentity.wave99Rekey ? { wave99_rekey: priorIdentity.wave99Rekey } : {}),
+      ...priorIdentity.waveMetadata,
     },
     content_fingerprint_sha256: hashRows(selected),
     policy: {
