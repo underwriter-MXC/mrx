@@ -1,0 +1,1374 @@
+=== runtime_node ===
+v20.20.2
+=== EXIT 0 ===
+=== runtime_pnpm ===
+9.15.9
+=== EXIT 0 ===
+=== full_test ===
+
+> mrx-web@0.1.0 test /Users/darylhill/Documents/MineralRightsXchange.com/mrx
+> vitest run --minWorkers=1 --maxWorkers=2
+
+
+ RUN  v2.1.9 /Users/darylhill/Documents/MineralRightsXchange.com/mrx
+
+ ✓ tests/unit/mrx1000-searchatlas-llm-execution-manifest.spec.ts (11 tests) 1018ms
+ ✓ tests/unit/release-lifecycle.spec.ts (36 tests) 11ms
+ ✓ tests/unit/mrx1000-readiness-matrix.spec.ts (36 tests) 1256ms
+   ✓ MRX1000 readiness matrix > generated output is deterministic aside from generated_at 323ms
+ ✓ tests/unit/mrx1000-ledger-idempotency.spec.ts (17 tests) 3783ms
+   ✓ MRX1000 canonical ledger generator (pilot-aware + idempotent) > idempotent: two consecutive runs produce byte-identical output for unchanged inputs 1833ms
+ ✓ tests/unit/platform-ghl-messaging.spec.ts (29 tests) 41ms
+stderr | tests/unit/staff-case-review.spec.ts
+⚠️  Node.js 20 and below are deprecated and will no longer be supported in future versions of @supabase/supabase-js. Please upgrade to Node.js 22 or later. For more information, visit: https://github.com/orgs/supabase/discussions/45715
+
+ ✓ tests/unit/staff-case-review.spec.ts (16 tests) 18ms
+ ✓ tests/unit/mrx1000-hero-share-creative-briefs.spec.ts (10 tests) 4684ms
+ ✓ tests/unit/underwriting-packet.spec.ts (12 tests) 18ms
+ ✓ tests/unit/ga4-article-taxonomy.spec.ts (33 tests) 7ms
+ ✓ tests/unit/check-mrx1000-release-gates.spec.ts (11 tests) 736ms
+ ✓ tests/unit/content-graph.spec.ts (30 tests) 19ms
+ ✓ tests/unit/human-call-disclosure-parity.spec.ts (9 tests) 91ms
+stderr | tests/unit/ghl.spec.ts > submitToGHL > short-circuits with pending-stage08 when env is missing
+[ghl] MRX_GHL_API_KEY / MRX_GHL_LOCATION_ID not set; form submission for book from carolyn@example.com NOT sent to GHL. Set secrets in Cloudflare Pages.
+
+stderr | tests/unit/ghl.spec.ts > submitToGHL > honors the default E2E provider-write kill switch even when GHL credentials exist
+[ghl] MRX_DISABLE_GHL_PROVIDER_WRITES=1; form submission for book from carolyn@example.com NOT sent to GHL.
+
+stderr | tests/unit/ghl.spec.ts > submitToGHL > continues with contactId even when tag-add fails (non-fatal)
+[ghl] tag-add failed for contact C-789 (status 500): boom.
+
+ ✓ tests/unit/ghl.spec.ts (19 tests) 26ms
+ ✓ tests/unit/migration.spec.ts (19 tests) 5ms
+ ✓ tests/unit/account-signup-consent-api.spec.ts (6 tests) 96ms
+stderr | tests/unit/test-owner-profiles.spec.ts
+⚠️  Node.js 20 and below are deprecated and will no longer be supported in future versions of @supabase/supabase-js. Please upgrade to Node.js 22 or later. For more information, visit: https://github.com/orgs/supabase/discussions/45715
+
+ ✓ tests/unit/test-owner-profiles.spec.ts (12 tests) 45ms
+ ✓ tests/unit/internal-test-contact-consent.spec.ts (15 tests) 17ms
+ ✓ tests/unit/mrx1000-activation-plan.spec.ts (14 tests) 406ms
+stderr | tests/unit/staff-workflow.spec.ts
+⚠️  Node.js 20 and below are deprecated and will no longer be supported in future versions of @supabase/supabase-js. Please upgrade to Node.js 22 or later. For more information, visit: https://github.com/orgs/supabase/discussions/45715
+
+ ✓ tests/unit/staff-workflow.spec.ts (12 tests) 5ms
+ ✓ tests/unit/account-onboarding-source.spec.ts (5 tests) 3ms
+stderr | tests/unit/geography.spec.ts
+⚠️  Node.js 20 and below are deprecated and will no longer be supported in future versions of @supabase/supabase-js. Please upgrade to Node.js 22 or later. For more information, visit: https://github.com/orgs/supabase/discussions/45715
+
+ ✓ tests/unit/geography.spec.ts (7 tests) 29ms
+ ✓ tests/unit/account-deletion.spec.ts (5 tests) 83ms
+ ✓ tests/unit/pillar-inventory.spec.ts (13 tests) 21ms
+ ✓ tests/unit/dkn39003-mrx1000-consistency-audit.spec.ts (7 tests) 191ms
+ ✓ tests/unit/mrx1000-pilot-stage.spec.ts (8 tests) 79ms
+ ✓ tests/unit/appointments-api.spec.ts (2 tests) 64ms
+stderr | tests/unit/ask-tommy-document-grounding.spec.ts
+⚠️  Node.js 20 and below are deprecated and will no longer be supported in future versions of @supabase/supabase-js. Please upgrade to Node.js 22 or later. For more information, visit: https://github.com/orgs/supabase/discussions/45715
+
+ ✓ tests/unit/article-share-image-guardrails.spec.ts (4 tests) 25ms
+ ✓ tests/unit/ask-tommy-document-grounding.spec.ts (8 tests) 13ms
+ ✓ tests/unit/staff-route-hardening.spec.ts (16 tests) 4ms
+stderr | tests/unit/staff-dashboard.spec.ts
+⚠️  Node.js 20 and below are deprecated and will no longer be supported in future versions of @supabase/supabase-js. Please upgrade to Node.js 22 or later. For more information, visit: https://github.com/orgs/supabase/discussions/45715
+
+ ✓ tests/unit/staff-dashboard.spec.ts (5 tests) 6ms
+ ✓ tests/unit/consent.spec.ts (5 tests) 4ms
+ ✓ tests/unit/mrx-mcp.spec.ts (7 tests) 27ms
+ ✓ tests/unit/underwriting-packet-api.spec.ts (5 tests) 3ms
+ ✓ tests/unit/sell-search-leadership.spec.ts (5 tests) 81ms
+ ✓ tests/unit/tommy-conversation.spec.ts (14 tests) 6ms
+ ✓ tests/unit/publication-gate.spec.ts (5 tests) 16ms
+ ✓ tests/unit/archive-pagination.spec.ts (8 tests) 9ms
+ ✓ tests/unit/guides.spec.ts (23 tests) 4ms
+ ✓ tests/unit/test-owner-cleanup-api.spec.ts (1 test) 24ms
+ ✓ tests/unit/platform-ghl.spec.ts (6 tests) 36ms
+ ✓ tests/unit/pillar-hubs.spec.ts (5 tests) 4ms
+ ✓ tests/unit/form.spec.ts (8 tests) 5ms
+ ✓ tests/unit/mrx1000-wave2-title-policy.spec.ts (4 tests) 4ms
+ ✓ tests/unit/sitemap-discovery.spec.ts (4 tests) 11ms
+ ✓ tests/unit/ghl-business-plan.spec.ts (3 tests) 3ms
+stderr | tests/unit/runtime-compliance.spec.ts
+⚠️  Node.js 20 and below are deprecated and will no longer be supported in future versions of @supabase/supabase-js. Please upgrade to Node.js 22 or later. For more information, visit: https://github.com/orgs/supabase/discussions/45715
+
+ ✓ tests/unit/runtime-compliance.spec.ts (10 tests) 4ms
+ ✓ tests/unit/llms.spec.ts (3 tests) 10ms
+ ✓ tests/unit/analytics-lifecycle.spec.ts (3 tests) 14ms
+ ✓ tests/unit/ask-tommy-100.spec.ts (3 tests) 9ms
+ ✓ tests/unit/article-seo-titles.spec.ts (2 tests) 22ms
+ ✓ tests/unit/schema.spec.ts (5 tests) 3ms
+ ✓ tests/unit/aeo-cited-answer.spec.ts (6 tests) 3ms
+ ✓ tests/unit/contact-page.spec.ts (4 tests) 39ms
+ ✓ tests/unit/signoff.spec.ts (3 tests) 3ms
+stderr | tests/unit/identity.spec.ts
+⚠️  Node.js 20 and below are deprecated and will no longer be supported in future versions of @supabase/supabase-js. Please upgrade to Node.js 22 or later. For more information, visit: https://github.com/orgs/supabase/discussions/45715
+
+ ✓ tests/unit/identity.spec.ts (5 tests) 8ms
+stderr | tests/unit/document-security.spec.ts
+⚠️  Node.js 20 and below are deprecated and will no longer be supported in future versions of @supabase/supabase-js. Please upgrade to Node.js 22 or later. For more information, visit: https://github.com/orgs/supabase/discussions/45715
+
+ ✓ tests/unit/category-description.spec.ts (7 tests) 4ms
+ ✓ tests/unit/document-security.spec.ts (3 tests) 19ms
+ ✓ tests/unit/redirects.spec.ts (3 tests) 2ms
+ ✓ tests/unit/google-tag.spec.ts (4 tests) 2ms
+ ✓ tests/unit/article-schema.spec.ts (2 tests) 2ms
+ ✓ tests/unit/underwriting-situations.spec.ts (2 tests) 3ms
+ ✓ tests/unit/seo-frontmatter.spec.ts (7 tests) 2ms
+ ✓ tests/unit/chat-timing-style.spec.ts (4 tests) 2ms
+ ✓ tests/unit/disclaimer.spec.ts (5 tests) 2ms
+ ✓ tests/unit/security.spec.ts (2 tests) 14ms
+
+ Test Files  65 passed (65)
+      Tests  613 passed (613)
+   Start at  17:26:42
+   Duration  11.89s (transform 702ms, setup 0ms, collect 1.78s, tests 13.20s, environment 7ms, prepare 2.42s)
+
+=== EXIT 0 ===
+=== check_copy ===
+
+> mrx-web@0.1.0 check:copy /Users/darylhill/Documents/MineralRightsXchange.com/mrx
+> node scripts/check-visible-copy.mjs
+
+MRX source visible-copy check passed.
+=== EXIT 0 ===
+=== check_compliance ===
+
+> mrx-web@0.1.0 check-compliance /Users/darylhill/Documents/MineralRightsXchange.com/mrx
+> node compliance/scripts/check-compliance.mjs
+
+✅ Compliance check passed.
+   Scanned 6 roots, 43 disallowed phrases, 5 superlative patterns, 4 personal-knowledge patterns, 0 named competitors.
+=== EXIT 0 ===
+=== build_default ===
+
+> mrx-web@0.1.0 build /Users/darylhill/Documents/MineralRightsXchange.com/mrx
+> pnpm build:sell-search-dashboard && pnpm build:llms && pnpm check:copy && pnpm content:check-headings && node compliance/scripts/check-compliance.mjs && astro check && astro build && pnpm check:copy:rendered && pnpm check:grammar
+
+
+> mrx-web@0.1.0 build:sell-search-dashboard /Users/darylhill/Documents/MineralRightsXchange.com/mrx
+> node scripts/build-mrx-sell-search-dashboard.mjs
+
+MRX sell-search dashboard passed: 50 queries, 25 held release rows, 2 live sell-pillar guides.
+
+> mrx-web@0.1.0 build:llms /Users/darylhill/Documents/MineralRightsXchange.com/mrx
+> node scripts/build-llms-index.mjs
+
+[build-llms-index] wrote 19 public article URLs to /Users/darylhill/Documents/MineralRightsXchange.com/mrx/public/llms-full.txt
+
+> mrx-web@0.1.0 check:copy /Users/darylhill/Documents/MineralRightsXchange.com/mrx
+> node scripts/check-visible-copy.mjs
+
+MRX source visible-copy check passed.
+
+> mrx-web@0.1.0 content:check-headings /Users/darylhill/Documents/MineralRightsXchange.com/mrx
+> node scripts/normalize-post-headings.mjs --check
+
+[normalize-post-headings] 153 posts have no body H1s or adjacent duplicate H2s.
+✅ Compliance check passed.
+   Scanned 6 roots, 43 disallowed phrases, 5 superlative patterns, 4 personal-knowledge patterns, 0 named competitors.
+17:26:58 [@astrojs/cloudflare] Enabling sessions with Cloudflare KV with the "SESSION" KV binding.
+17:26:58 [@astrojs/cloudflare] If you see the error "Invalid binding `SESSION`" in your build output, you need to add the binding to your wrangler config file.
+17:26:58 [WARN] [adapter] Cloudflare does not support sharp at runtime. However, you can configure `imageService: "compile"` to optimize images with sharp on prerendered pages during build time.
+17:26:59 [content] Syncing content
+17:26:59 [content] Synced content
+17:26:59 [types] Generated 377ms
+17:26:59 [check] Getting diagnostics for Astro files in /Users/darylhill/Documents/MineralRightsXchange.com/mrx...
+[96mcompliance/scripts/check-compliance.mjs[0m:[93m15[0m:[93m29[0m - [93mwarning[0m[90m ts(6133): [0m'stat' is declared but its value is never read.
+
+[7m15[0m import { readFile, readdir, stat } from 'node:fs/promises';
+[7m  [0m [93m                            ~~~~[0m
+
+[96mscripts/build-mrx-1000-content-ledger.mjs[0m:[93m1130[0m:[93m10[0m - [93mwarning[0m[90m ts(6133): [0m'sha256File' is declared but its value is never read.
+
+[7m1130[0m function sha256File(path) {
+[7m    [0m [93m         ~~~~~~~~~~[0m
+
+[96mscripts/build-mrx1000-wave2-creative-assets.mjs[0m:[93m37[0m:[93m7[0m - [93mwarning[0m[90m ts(6133): [0m'SAFE' is declared but its value is never read.
+
+[7m37[0m const SAFE = 72;
+[7m  [0m [93m      ~~~~[0m
+
+[96mscripts/build-searchatlas-completed-archive-reconciliation.mjs[0m:[93m4[0m:[93m47[0m - [93mwarning[0m[90m ts(6133): [0m'statSync' is declared but its value is never read.
+
+[7m4[0m import { existsSync, mkdirSync, readFileSync, statSync, writeFileSync } from 'node:fs';
+[7m [0m [93m                                              ~~~~~~~~[0m
+
+[96mscripts/check-secrets.mjs[0m:[93m14[0m:[93m1[0m - [93mwarning[0m[90m ts(6133): [0m'existsSync' is declared but its value is never read.
+
+[7m14[0m import { existsSync } from 'node:fs';
+[7m  [0m [93m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96mscripts/check-visible-copy.mjs[0m:[93m51[0m:[93m10[0m - [93mwarning[0m[90m ts(80006): [0mThis may be converted to an async function.
+
+[7m51[0m function inspectFile(path, displayRoot) {
+[7m  [0m [93m         ~~~~~~~~~~~[0m
+
+[96msrc/components/organisms/PillarNavGrid.astro[0m:[93m24[0m:[93m7[0m - [93mwarning[0m[90m ts(6133): [0m'defaultEyebrow' is declared but its value is never read.
+
+[7m24[0m const defaultEyebrow = 'Pillar navigation';
+[7m  [0m [93m      ~~~~~~~~~~~~~~[0m
+
+[96msrc/components/react/AccountHub.tsx[0m:[93m751[0m:[93m42[0m - [93mwarning[0m[90m ts(6385): [0m'FormEvent' is deprecated.
+
+[7m751[0m   async function saveGuidedIntake(event: FormEvent<HTMLFormElement>) {
+[7m   [0m [93m                                         ~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/components/react/AccountHub.tsx[0m:[93m739[0m:[93m45[0m - [93mwarning[0m[90m ts(6385): [0m'FormEvent' is deprecated.
+
+[7m739[0m   async function saveMineralInterest(event: FormEvent<HTMLFormElement>) {
+[7m   [0m [93m                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/components/react/AccountHub.tsx[0m:[93m634[0m:[93m37[0m - [93mwarning[0m[90m ts(6385): [0m'FormEvent' is deprecated.
+
+[7m634[0m   async function saveProfile(event: FormEvent<HTMLFormElement>) {
+[7m   [0m [93m                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/components/react/AccountHub.tsx[0m:[93m374[0m:[93m37[0m - [93mwarning[0m[90m ts(6385): [0m'FormEvent' is deprecated.
+
+[7m374[0m   async function requestLink(event: FormEvent<HTMLFormElement>) {
+[7m   [0m [93m                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/components/react/AccountHub.tsx[0m:[93m1[0m:[93m48[0m - [93mwarning[0m[90m ts(6385): [0m'FormEvent' is deprecated.
+
+[7m1[0m import { useEffect, useMemo, useRef, useState, type FormEvent } from 'react';
+[7m [0m [93m                                               ~~~~~~~~~~~~~~[0m
+
+[96msrc/components/react/AskTommy 2.tsx[0m:[93m1517[0m:[93m46[0m - [93mwarning[0m[90m ts(6385): [0m'FormEvent' is deprecated.
+
+[7m1517[0m   async function handleComposer(event: React.FormEvent<HTMLFormElement>) {
+[7m    [0m [93m                                             ~~~~~~~~~[0m
+[96msrc/components/react/AskTommy 2.tsx[0m:[93m58[0m:[93m10[0m - [93mwarning[0m[90m ts(6133): [0m'requestedUpdatePrompt' is declared but its value is never read.
+
+[7m58[0m function requestedUpdatePrompt(channel: RequestedUpdateChannel) {
+[7m  [0m [93m         ~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/components/react/AskTommy.tsx[0m:[93m1521[0m:[93m46[0m - [93mwarning[0m[90m ts(6385): [0m'FormEvent' is deprecated.
+
+[7m1521[0m   async function handleComposer(event: React.FormEvent<HTMLFormElement>) {
+[7m    [0m [93m                                             ~~~~~~~~~[0m
+
+[96msrc/components/react/StaffPortal.tsx[0m:[93m1311[0m:[93m57[0m - [93mwarning[0m[90m ts(6385): [0m'FormEvent' is deprecated.
+
+[7m1311[0m   async function saveWorkspace(owner: StaffCase, event: FormEvent<HTMLFormElement>) {
+[7m    [0m [93m                                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/components/react/StaffPortal.tsx[0m:[93m1252[0m:[93m61[0m - [93mwarning[0m[90m ts(6385): [0m'FormEvent' is deprecated.
+
+[7m1252[0m   async function uploadInternalFile(ownerId: string, event: FormEvent<HTMLFormElement>) {
+[7m    [0m [93m                                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/components/react/StaffPortal.tsx[0m:[93m1198[0m:[93m12[0m - [93mwarning[0m[90m ts(6385): [0m'FormEvent' is deprecated.
+
+[7m1198[0m     event: FormEvent<HTMLFormElement>,
+[7m    [0m [93m           ~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/components/react/StaffPortal.tsx[0m:[93m1164[0m:[93m58[0m - [93mwarning[0m[90m ts(6385): [0m'FormEvent' is deprecated.
+
+[7m1164[0m   async function addInternalNote(ownerId: string, event: FormEvent<HTMLFormElement>) {
+[7m    [0m [93m                                                         ~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/components/react/StaffPortal.tsx[0m:[93m1123[0m:[93m12[0m - [93mwarning[0m[90m ts(6385): [0m'FormEvent' is deprecated.
+
+[7m1123[0m     event: FormEvent<HTMLFormElement>,
+[7m    [0m [93m           ~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/components/react/StaffPortal.tsx[0m:[93m1037[0m:[93m46[0m - [93mwarning[0m[90m ts(6385): [0m'FormEvent' is deprecated.
+
+[7m1037[0m   async function setRecoveredPassword(event: FormEvent<HTMLFormElement>) {
+[7m    [0m [93m                                             ~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/components/react/StaffPortal.tsx[0m:[93m1015[0m:[93m49[0m - [93mwarning[0m[90m ts(6385): [0m'FormEvent' is deprecated.
+
+[7m1015[0m   async function requestPasswordRecovery(event: FormEvent<HTMLFormElement>) {
+[7m    [0m [93m                                                ~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/components/react/StaffPortal.tsx[0m:[93m991[0m:[93m44[0m - [93mwarning[0m[90m ts(6385): [0m'FormEvent' is deprecated.
+
+[7m991[0m   async function signInWithPassword(event: FormEvent<HTMLFormElement>) {
+[7m   [0m [93m                                           ~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/components/react/StaffPortal.tsx[0m:[93m614[0m:[93m10[0m - [93mwarning[0m[90m ts(6133): [0m'ghlSummaryLabel' is declared but its value is never read.
+
+[7m614[0m function ghlSummaryLabel(workspace?: InternalWorkspace | null) {
+[7m   [0m [93m         ~~~~~~~~~~~~~~~[0m
+[96msrc/components/react/StaffPortal.tsx[0m:[93m351[0m:[93m21[0m - [93mwarning[0m[90m ts(6385): [0m'FormEvent' is deprecated.
+
+[7m351[0m   onSubmit: (event: FormEvent<HTMLFormElement>) => void;
+[7m   [0m [93m                    ~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/components/react/StaffPortal.tsx[0m:[93m1[0m:[93m58[0m - [93mwarning[0m[90m ts(6385): [0m'FormEvent' is deprecated.
+
+[7m1[0m import { useDeferredValue, useEffect, useMemo, useState, type FormEvent } from 'react';
+[7m [0m [93m                                                         ~~~~~~~~~~~~~~[0m
+
+[96msrc/lib/platform/facts.ts[0m:[93m66[0m:[93m42[0m - [93mwarning[0m[90m ts(6133): [0m'field' is declared but its value is never read.
+
+[7m66[0m export function sanitizeVisibleFactValue(field: string, value: string) {
+[7m  [0m [93m                                         ~~~~~[0m
+
+[96mtests/e2e/learning-center-layout.spec.ts[0m:[93m16[0m:[93m10[0m - [93mwarning[0m[90m ts(6133): [0m'countFailClosedPublished' is declared but its value is never read.
+
+[7m16[0m function countFailClosedPublished(): number {
+[7m  [0m [93m         ~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96mtests/e2e/smoke.spec.ts[0m:[93m38[0m:[93m20[0m - [93mwarning[0m[90m ts(80007): [0m'await' has no effect on the type of this expression.
+
+[7m38[0m     const footer = await page.locator('.mrx-disclaimer-footer').first();
+[7m  [0m [93m                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96mtests/e2e/smoke.spec.ts[0m:[93m23[0m:[93m22[0m - [93mwarning[0m[90m ts(80007): [0m'await' has no effect on the type of this expression.
+
+[7m23[0m       const footer = await page.locator('.mrx-disclaimer-footer').first();
+[7m  [0m [93m                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96mtests/unit/release-lifecycle.spec.ts[0m:[93m612[0m:[93m34[0m - [93mwarning[0m[90m ts(6133): [0m'i' is declared but its value is never read.
+
+[7m612[0m     const rows = entries.map((e, i) => row('authorized_admitted', e.slug, e.program_row_id));
+[7m   [0m [93m                                 ~[0m
+
+[96mtmp/mrx1000-f9-retry-missing-clusters.mjs[0m:[93m38[0m:[93m13[0m - [93mwarning[0m[90m ts(6133): [0m'k' is declared but its value is never read.
+
+[7m38[0m   .filter(([k, v]) => !ok(v))
+[7m  [0m [93m            ~[0m
+
+Result (393 files): 
+- 0 errors
+- 0 warnings
+- 32 hints
+
+17:27:19 [@astrojs/cloudflare] Enabling sessions with Cloudflare KV with the "SESSION" KV binding.
+17:27:19 [@astrojs/cloudflare] If you see the error "Invalid binding `SESSION`" in your build output, you need to add the binding to your wrangler config file.
+17:27:19 [WARN] [adapter] Cloudflare does not support sharp at runtime. However, you can configure `imageService: "compile"` to optimize images with sharp on prerendered pages during build time.
+17:27:19 [content] Syncing content
+17:27:19 [content] Synced content
+17:27:19 [types] Generated 322ms
+17:27:19 [build] output: "server"
+17:27:19 [build] mode: "server"
+17:27:19 [build] directory: /Users/darylhill/Documents/MineralRightsXchange.com/mrx/dist/
+17:27:19 [build] adapter: @astrojs/cloudflare
+17:27:19 [build] Collecting build info...
+17:27:19 [build] ✓ Completed in 361ms.
+17:27:19 [build] Building server entrypoints...
+17:27:26 [vite] ✓ built in 6.97s
+17:27:26 [build] ✓ Completed in 6.99s.
+
+ building client (vite) 
+17:27:26 [vite] transforming...
+17:27:27 [vite] ✓ 224 modules transformed.
+17:27:28 [vite] rendering chunks...
+17:27:28 [vite] computing gzip size...
+17:27:28 [vite] dist/_astro/style.bofZPjT6.js          1.02 kB │ gzip:  0.53 kB
+17:27:28 [vite] dist/_astro/page.DGRhADao.js           2.25 kB │ gzip:  1.01 kB
+17:27:28 [vite] dist/_astro/guides.C6M9o9ux.js         6.50 kB │ gzip:  2.27 kB
+17:27:28 [vite] dist/_astro/index.DBy5LfQW.js          7.85 kB │ gzip:  3.05 kB
+17:27:28 [vite] dist/_astro/AccountHub.Bl91KR7Y.js    44.91 kB │ gzip: 12.26 kB
+17:27:28 [vite] dist/_astro/AskTommy.ISo6gnCj.js      48.69 kB │ gzip: 15.78 kB
+17:27:28 [vite] dist/_astro/StaffPortal.DkOP0qQd.js   74.14 kB │ gzip: 18.44 kB
+17:27:28 [vite] dist/_astro/client.nFz3bvDj.js       186.62 kB │ gzip: 58.54 kB
+17:27:28 [vite] dist/_astro/index.C6AK2WTb.js        211.99 kB │ gzip: 55.35 kB
+17:27:28 [vite] ✓ built in 1.63s
+
+ prerendering static routes 
+⚠️  Node.js 20 and below are deprecated and will no longer be supported in future versions of @supabase/supabase-js. Please upgrade to Node.js 22 or later. For more information, visit: https://github.com/orgs/supabase/discussions/45715
+17:27:28 ▶ src/pages/404.astro
+17:27:28   └─ /404.html (+17ms) 
+17:27:28 ▶ src/pages/500.astro
+17:27:28   └─ /500.html (+4ms) 
+17:27:28 ▶ src/pages/[situation].astro
+17:27:28   ├─ /estate-heir/index.html (+4ms) 
+17:27:28   ├─ /confused-inheritor/index.html (+3ms) 
+17:27:28   ├─ /suspicious-seller/index.html (+3ms) 
+17:27:28   ├─ /cash-strapped-owner/index.html (+3ms) 
+17:27:28   ├─ /suspense-funds/index.html (+3ms) 
+17:27:28   ├─ /1031-exchange/index.html (+3ms) 
+17:27:28   ├─ /reluctant-environmentalist/index.html (+3ms) 
+17:27:28   └─ /multi-state-inheritor/index.html (+3ms) 
+17:27:28 ▶ src/pages/about.astro
+17:27:28   └─ /about/index.html (+27ms) 
+17:27:28 ▶ src/pages/authors/[slug]/page/[page].astro
+17:27:28 ▶ src/pages/authors/[slug].astro
+17:27:28   ├─ /authors/dale/index.html (+11ms) 
+17:27:28   ├─ /authors/ariana/index.html (+7ms) 
+17:27:28   ├─ /authors/monty/index.html (+6ms) 
+17:27:28   ├─ /authors/rebecca/index.html (+7ms) 
+17:27:28   ├─ /authors/tommy/index.html (+7ms) 
+17:27:28   └─ /authors/walt/index.html (+7ms) 
+17:27:28 ▶ src/pages/authors/mrx-editorial-team.astro
+17:27:28   └─ /authors/mrx-editorial-team/index.html (+8ms) 
+17:27:28 ▶ src/pages/blog/[...slug].astro
+17:27:28   ├─ /blog/eagle-ford-shale-how-it-affects-mineral-rights-values-in-south-texas/index.html (+10ms) 
+17:27:28   ├─ /blog/how-are-mineral-rights-valued/index.html (+7ms) 
+17:27:28   ├─ /blog/how-horizontal-drilling-changed-mineral-rights-values-in-texas/index.html (+6ms) 
+17:27:28   ├─ /blog/how-oil-price-fluctuations-affect-texas-mineral-rights-values/index.html (+5ms) 
+17:27:28   ├─ /blog/how-texas-mineral-rights-are-valued-producing-vs-non-producing-interests/index.html (+5ms) 
+17:27:28   ├─ /blog/how-royalty-payments-work-for-texas-mineral-rights-owners/index.html (+6ms) 
+17:27:28   ├─ /blog/how-title-defects-change-mineral-rights-offer/index.html (+7ms) 
+17:27:28   ├─ /blog/how-to-compare-mineral-rights-buyers-in-texas/index.html (+4ms) 
+17:27:28   ├─ /blog/how-to-sell-mineral-rights-in-texas/index.html (+6ms) 
+17:27:28   ├─ /blog/midland-vs-delaware-basin-how-formation-affects-your-mineral-rights-value/index.html (+5ms) 
+17:27:28   ├─ /blog/natural-gas-vs-oil-mineral-rights-in-texas-how-production-type-affects-value/index.html (+5ms) 
+17:27:28   ├─ /blog/texas-oil-and-gas-production-by-county-what-mineral-rights-owners-should-know/index.html (+13ms) 
+17:27:28   ├─ /blog/texas-railroad-commission-how-to-use-public-records-to-understand-your-mineral-rights/index.html (+6ms) 
+17:27:28   ├─ /blog/texas-severance-tax-what-mineral-rights-owners-need-to-know/index.html (+6ms) 
+17:27:28   ├─ /blog/the-permian-basin-explained-what-texas-mineral-rights-owners-need-to-know/index.html (+5ms) 
+17:27:28   ├─ /blog/what-documents-do-you-need-to-sell-mineral-rights-in-texas/index.html (+4ms) 
+17:27:28   ├─ /blog/what-is-a-clawback-clause-in-a-mineral-rights-sale/index.html (+5ms) 
+17:27:28   ├─ /blog/what-is-a-net-royalty-acre/index.html (+4ms) 
+17:27:28   └─ /blog/why-did-my-royalty-check-go-down/index.html (+4ms) 
+17:27:28 ▶ src/pages/blog/category/[category]/page/[page].astro
+17:27:28 ▶ src/pages/blog/category/[category].astro
+17:27:28   ├─ /blog/category/competing-offers/index.html (+7ms) 
+17:27:28   ├─ /blog/category/mineral-rights/index.html (+6ms) 
+17:27:28   ├─ /blog/category/tax-legal/index.html (+6ms) 
+17:27:28   ├─ /blog/category/texas-oil-gas/index.html (+6ms) 
+17:27:28   ├─ /blog/category/understanding-mineral-rights/index.html (+7ms) 
+17:27:28   ├─ /blog/category/selling-process/index.html (+7ms) 
+17:27:28   └─ /blog/category/valuation/index.html (+7ms) 
+17:27:28 ▶ src/pages/book/thank-you.astro
+17:27:28   └─ /book/thank-you/index.html (+2ms) 
+17:27:28 ▶ src/pages/book.astro
+17:27:28   └─ /book/index.html (+2ms) 
+17:27:29 ▶ src/pages/communication-preferences.astro
+17:27:29   └─ /communication-preferences/index.html (+2ms) 
+17:27:29 ▶ src/pages/contact/thank-you.astro
+17:27:29   └─ /contact/thank-you/index.html (+2ms) 
+17:27:29 ▶ src/pages/contact.astro
+17:27:29   └─ /contact/index.html (+2ms) 
+17:27:29 ▶ src/pages/faq.astro
+17:27:29   └─ /faq/index.html (+5ms) 
+17:27:29 ▶ src/pages/free-guide/thank-you.astro
+17:27:29   └─ /free-guide/thank-you/index.html (+2ms) 
+17:27:29 ▶ src/pages/free-guide.astro
+17:27:29   └─ /free-guide/index.html (+4ms) 
+17:27:29 ▶ src/pages/how-it-works.astro
+17:27:29   └─ /how-it-works/index.html (+4ms) 
+17:27:29 ▶ src/pages/index.astro
+17:27:29   └─ /index.html (+7ms) 
+17:27:29 ▶ src/pages/inherited-mineral-rights/page/[page].astro
+17:27:29 ▶ src/pages/inherited-mineral-rights.astro
+17:27:29   └─ /inherited-mineral-rights/index.html (+6ms) 
+17:27:29 ▶ src/pages/learning-center/index.astro
+17:27:29   └─ /learning-center/index.html (+10ms) 
+17:27:29 ▶ src/pages/learning-center/mineral-rights-taxes/index.astro
+17:27:29   └─ /learning-center/mineral-rights-taxes/index.html (+10ms) 
+17:27:29 ▶ src/pages/learning-center/mineral-rights-taxes/page/[page].astro
+17:27:29 ▶ src/pages/learning-center/oil-and-gas-royalties/index.astro
+17:27:29   └─ /learning-center/oil-and-gas-royalties/index.html (+12ms) 
+17:27:29 ▶ src/pages/learning-center/oil-and-gas-royalties/page/[page].astro
+17:27:29 ▶ src/pages/learning-center/page/[page].astro
+17:27:29 ▶ src/pages/learning-center/title-lease-ownership/index.astro
+17:27:29   └─ /learning-center/title-lease-ownership/index.html (+11ms) 
+17:27:29 ▶ src/pages/learning-center/title-lease-ownership/page/[page].astro
+17:27:29 ▶ src/pages/methodology/page/[page].astro
+17:27:29 ▶ src/pages/methodology.astro
+17:27:29   └─ /methodology/index.html (+8ms) 
+17:27:29 ▶ src/pages/mineral-rights-value/page/[page].astro
+17:27:29 ▶ src/pages/mineral-rights-value.astro
+17:27:29   └─ /mineral-rights-value/index.html (+8ms) 
+17:27:29 ▶ src/pages/mineral-rights/[state].astro
+17:27:29   ├─ /mineral-rights/texas/index.html (+7ms) 
+17:27:29   ├─ /mineral-rights/new-mexico/index.html (+2ms) 
+17:27:29   ├─ /mineral-rights/oklahoma/index.html (+2ms) 
+17:27:29   ├─ /mineral-rights/north-dakota/index.html (+2ms) 
+17:27:29   ├─ /mineral-rights/colorado/index.html (+2ms) 
+17:27:29   ├─ /mineral-rights/wyoming/index.html (+2ms) 
+17:27:29   ├─ /mineral-rights/pennsylvania/index.html (+2ms) 
+17:27:29   ├─ /mineral-rights/west-virginia/index.html (+2ms) 
+17:27:29   ├─ /mineral-rights/ohio/index.html (+2ms) 
+17:27:29   └─ /mineral-rights/louisiana/index.html (+2ms) 
+17:27:29 ▶ src/pages/mineral-rights/texas/page/[page].astro
+17:27:29 ▶ src/pages/offer-review/page/[page].astro
+17:27:29 ▶ src/pages/offer-review.astro
+17:27:29   └─ /offer-review/index.html (+7ms) 
+17:27:29 ▶ src/pages/privacy-policy.astro
+17:27:29   └─ /privacy-policy/index.html (+4ms) 
+17:27:29 ▶ src/pages/sell-mineral-rights/page/[page].astro
+17:27:29 ▶ src/pages/sell-mineral-rights.astro
+17:27:29   └─ /sell-mineral-rights/index.html (+9ms) 
+17:27:29 ▶ src/pages/staged/mrx1000/pilot-001/[slug].astro
+17:27:29   ├─ /staged/mrx1000/pilot-001/1031-exchange-fees-for-mineral-rights-sales/index.html (+6ms) 
+17:27:29   ├─ /staged/mrx1000/pilot-001/1031-exchange-rules-for-mineral-rights-owners/index.html (+4ms) 
+17:27:29   ├─ /staged/mrx1000/pilot-001/1031-exchange-steps-for-mineral-rights-sellers/index.html (+3ms) 
+17:27:29   ├─ /staged/mrx1000/pilot-001/documents-needed-for-a-mineral-rights-1031-exchange/index.html (+4ms) 
+17:27:29   ├─ /staged/mrx1000/pilot-001/factors-that-affect-mineral-rights-value/index.html (+3ms) 
+17:27:29   ├─ /staged/mrx1000/pilot-001/hidden-terms-in-a-mineral-rights-offer/index.html (+3ms) 
+17:27:29   ├─ /staged/mrx1000/pilot-001/how-mineral-rights-ownership-works/index.html (+4ms) 
+17:27:29   ├─ /staged/mrx1000/pilot-001/how-mineral-rights-offer-analysis-works/index.html (+3ms) 
+17:27:29   ├─ /staged/mrx1000/pilot-001/how-to-evaluate-mineral-production-in-texas/index.html (+3ms) 
+17:27:29   ├─ /staged/mrx1000/pilot-001/how-to-evaluate-royalties-and-mineral-leases/index.html (+4ms) 
+17:27:29   ├─ /staged/mrx1000/pilot-001/how-to-read-key-terms-in-a-mineral-lease/index.html (+4ms) 
+17:27:29   ├─ /staged/mrx1000/pilot-001/how-to-read-texas-mineral-production-reports/index.html (+3ms) 
+17:27:29   ├─ /staged/mrx1000/pilot-001/key-factors-comparing-mineral-purchase-offers/index.html (+4ms) 
+17:27:29   ├─ /staged/mrx1000/pilot-001/inherited-mineral-rights-buyers-compared/index.html (+4ms) 
+17:27:29   ├─ /staged/mrx1000/pilot-001/mineral-rights-market-analysis-valuation/index.html (+3ms) 
+17:27:29   ├─ /staged/mrx1000/pilot-001/mineral-rights-offer-comparison-checklist/index.html (+4ms) 
+17:27:29   ├─ /staged/mrx1000/pilot-001/mineral-rights-offers-explained-for-inherited-properties/index.html (+4ms) 
+17:27:29   ├─ /staged/mrx1000/pilot-001/mineral-rights-title-ownership-explained/index.html (+4ms) 
+17:27:29   ├─ /staged/mrx1000/pilot-001/oil-and-gas-lease-vs-royalty-agreement/index.html (+4ms) 
+17:27:29   ├─ /staged/mrx1000/pilot-001/oil-and-gas-royalty-payment-structures/index.html (+6ms) 
+17:27:29   ├─ /staged/mrx1000/pilot-001/oil-royalties-vs-leases/index.html (+5ms) 
+17:27:29   ├─ /staged/mrx1000/pilot-001/royalty-management-for-inherited-mineral-rights/index.html (+5ms) 
+17:27:29   ├─ /staged/mrx1000/pilot-001/steps-for-evaluating-inherited-mineral-rights/index.html (+4ms) 
+17:27:29   ├─ /staged/mrx1000/pilot-001/understanding-texas-mineral-production-rates/index.html (+3ms) 
+17:27:29   └─ /staged/mrx1000/pilot-001/why-clear-mineral-title-matters-before-a-sale/index.html (+4ms) 
+17:27:29 ▶ src/pages/team/[slug].astro
+17:27:29   ├─ /team/tommy/index.html (+2ms) 
+17:27:29   ├─ /team/cooper/index.html (+2ms) 
+17:27:29   ├─ /team/charlie/index.html (+2ms) 
+17:27:29   ├─ /team/dale/index.html (+2ms) 
+17:27:29   ├─ /team/rebecca/index.html (+2ms) 
+17:27:29   ├─ /team/angela/index.html (+2ms) 
+17:27:29   ├─ /team/walt/index.html (+2ms) 
+17:27:29   ├─ /team/monty/index.html (+2ms) 
+17:27:29   ├─ /team/cami/index.html (+2ms) 
+17:27:29   ├─ /team/ariana/index.html (+2ms) 
+17:27:29   └─ /team/ainsley/index.html (+4ms) 
+17:27:29 ▶ src/pages/team/index.astro
+17:27:29   └─ /team/index.html (+2ms) 
+17:27:29 ▶ src/pages/terms.astro
+17:27:29   └─ /terms/index.html (+2ms) 
+17:27:29 ✓ Completed in 704ms.
+
+17:27:29 [build] Rearranging server assets...
+17:27:29 [@astrojs/sitemap] `sitemap-index.xml` created at `dist`
+[postbuild-sitemap] Rewrote priority on 77 <url> entries in /Users/darylhill/Documents/MineralRightsXchange.com/mrx/dist/sitemap-0.xml
+[postbuild-sitemap] Canonicalized 1 redirecting /blog/ entry/entries to the Learning Center hub (https://mineralrightsxchange.com/learning-center/)
+[postbuild-sitemap] Wrote canonical sitemap_index.xml with 6 public-content segments
+[postbuild-sitemap] Wrote unsubmitted sitemap-staged.xml with 25 noindex QA URLs
+17:27:29 [build] Server built in 10.27s
+17:27:29 [build] Complete!
+
+> mrx-web@0.1.0 check:copy:rendered /Users/darylhill/Documents/MineralRightsXchange.com/mrx
+> node scripts/check-visible-copy.mjs --rendered
+
+MRX rendered visible-copy check passed.
+
+> mrx-web@0.1.0 check:grammar /Users/darylhill/Documents/MineralRightsXchange.com/mrx
+> node scripts/check-rendered-grammar.mjs
+
+MRX rendered grammar check passed.
+=== EXIT 0 ===
+=== build_hetzner ===
+
+> mrx-web@0.1.0 build:hetzner /Users/darylhill/Documents/MineralRightsXchange.com/mrx
+> pnpm build:sell-search-dashboard && pnpm build:llms && pnpm check:copy && pnpm content:check-headings && DEPLOY_TARGET=hetzner node compliance/scripts/check-compliance.mjs && DEPLOY_TARGET=hetzner astro check && DEPLOY_TARGET=hetzner astro build && pnpm check:copy:rendered && pnpm check:grammar
+
+
+> mrx-web@0.1.0 build:sell-search-dashboard /Users/darylhill/Documents/MineralRightsXchange.com/mrx
+> node scripts/build-mrx-sell-search-dashboard.mjs
+
+MRX sell-search dashboard passed: 50 queries, 25 held release rows, 2 live sell-pillar guides.
+
+> mrx-web@0.1.0 build:llms /Users/darylhill/Documents/MineralRightsXchange.com/mrx
+> node scripts/build-llms-index.mjs
+
+[build-llms-index] wrote 19 public article URLs to /Users/darylhill/Documents/MineralRightsXchange.com/mrx/public/llms-full.txt
+
+> mrx-web@0.1.0 check:copy /Users/darylhill/Documents/MineralRightsXchange.com/mrx
+> node scripts/check-visible-copy.mjs
+
+MRX source visible-copy check passed.
+
+> mrx-web@0.1.0 content:check-headings /Users/darylhill/Documents/MineralRightsXchange.com/mrx
+> node scripts/normalize-post-headings.mjs --check
+
+[normalize-post-headings] 153 posts have no body H1s or adjacent duplicate H2s.
+✅ Compliance check passed.
+   Scanned 6 roots, 43 disallowed phrases, 5 superlative patterns, 4 personal-knowledge patterns, 0 named competitors.
+17:27:46 [@astrojs/node] Enabling sessions with filesystem storage
+17:27:46 [content] Syncing content
+17:27:46 [content] Synced content
+17:27:46 [types] Generated 321ms
+17:27:46 [check] Getting diagnostics for Astro files in /Users/darylhill/Documents/MineralRightsXchange.com/mrx...
+[96mcompliance/scripts/check-compliance.mjs[0m:[93m15[0m:[93m29[0m - [93mwarning[0m[90m ts(6133): [0m'stat' is declared but its value is never read.
+
+[7m15[0m import { readFile, readdir, stat } from 'node:fs/promises';
+[7m  [0m [93m                            ~~~~[0m
+
+[96mscripts/build-mrx-1000-content-ledger.mjs[0m:[93m1130[0m:[93m10[0m - [93mwarning[0m[90m ts(6133): [0m'sha256File' is declared but its value is never read.
+
+[7m1130[0m function sha256File(path) {
+[7m    [0m [93m         ~~~~~~~~~~[0m
+
+[96mscripts/build-mrx1000-wave2-creative-assets.mjs[0m:[93m37[0m:[93m7[0m - [93mwarning[0m[90m ts(6133): [0m'SAFE' is declared but its value is never read.
+
+[7m37[0m const SAFE = 72;
+[7m  [0m [93m      ~~~~[0m
+
+[96mscripts/build-searchatlas-completed-archive-reconciliation.mjs[0m:[93m4[0m:[93m47[0m - [93mwarning[0m[90m ts(6133): [0m'statSync' is declared but its value is never read.
+
+[7m4[0m import { existsSync, mkdirSync, readFileSync, statSync, writeFileSync } from 'node:fs';
+[7m [0m [93m                                              ~~~~~~~~[0m
+
+[96mscripts/check-secrets.mjs[0m:[93m14[0m:[93m1[0m - [93mwarning[0m[90m ts(6133): [0m'existsSync' is declared but its value is never read.
+
+[7m14[0m import { existsSync } from 'node:fs';
+[7m  [0m [93m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96mscripts/check-visible-copy.mjs[0m:[93m51[0m:[93m10[0m - [93mwarning[0m[90m ts(80006): [0mThis may be converted to an async function.
+
+[7m51[0m function inspectFile(path, displayRoot) {
+[7m  [0m [93m         ~~~~~~~~~~~[0m
+
+[96msrc/components/organisms/PillarNavGrid.astro[0m:[93m24[0m:[93m7[0m - [93mwarning[0m[90m ts(6133): [0m'defaultEyebrow' is declared but its value is never read.
+
+[7m24[0m const defaultEyebrow = 'Pillar navigation';
+[7m  [0m [93m      ~~~~~~~~~~~~~~[0m
+
+[96msrc/components/react/AccountHub.tsx[0m:[93m751[0m:[93m42[0m - [93mwarning[0m[90m ts(6385): [0m'FormEvent' is deprecated.
+
+[7m751[0m   async function saveGuidedIntake(event: FormEvent<HTMLFormElement>) {
+[7m   [0m [93m                                         ~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/components/react/AccountHub.tsx[0m:[93m739[0m:[93m45[0m - [93mwarning[0m[90m ts(6385): [0m'FormEvent' is deprecated.
+
+[7m739[0m   async function saveMineralInterest(event: FormEvent<HTMLFormElement>) {
+[7m   [0m [93m                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/components/react/AccountHub.tsx[0m:[93m634[0m:[93m37[0m - [93mwarning[0m[90m ts(6385): [0m'FormEvent' is deprecated.
+
+[7m634[0m   async function saveProfile(event: FormEvent<HTMLFormElement>) {
+[7m   [0m [93m                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/components/react/AccountHub.tsx[0m:[93m374[0m:[93m37[0m - [93mwarning[0m[90m ts(6385): [0m'FormEvent' is deprecated.
+
+[7m374[0m   async function requestLink(event: FormEvent<HTMLFormElement>) {
+[7m   [0m [93m                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/components/react/AccountHub.tsx[0m:[93m1[0m:[93m48[0m - [93mwarning[0m[90m ts(6385): [0m'FormEvent' is deprecated.
+
+[7m1[0m import { useEffect, useMemo, useRef, useState, type FormEvent } from 'react';
+[7m [0m [93m                                               ~~~~~~~~~~~~~~[0m
+
+[96msrc/components/react/AskTommy 2.tsx[0m:[93m1517[0m:[93m46[0m - [93mwarning[0m[90m ts(6385): [0m'FormEvent' is deprecated.
+
+[7m1517[0m   async function handleComposer(event: React.FormEvent<HTMLFormElement>) {
+[7m    [0m [93m                                             ~~~~~~~~~[0m
+[96msrc/components/react/AskTommy 2.tsx[0m:[93m58[0m:[93m10[0m - [93mwarning[0m[90m ts(6133): [0m'requestedUpdatePrompt' is declared but its value is never read.
+
+[7m58[0m function requestedUpdatePrompt(channel: RequestedUpdateChannel) {
+[7m  [0m [93m         ~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/components/react/AskTommy.tsx[0m:[93m1521[0m:[93m46[0m - [93mwarning[0m[90m ts(6385): [0m'FormEvent' is deprecated.
+
+[7m1521[0m   async function handleComposer(event: React.FormEvent<HTMLFormElement>) {
+[7m    [0m [93m                                             ~~~~~~~~~[0m
+
+[96msrc/components/react/StaffPortal.tsx[0m:[93m1311[0m:[93m57[0m - [93mwarning[0m[90m ts(6385): [0m'FormEvent' is deprecated.
+
+[7m1311[0m   async function saveWorkspace(owner: StaffCase, event: FormEvent<HTMLFormElement>) {
+[7m    [0m [93m                                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/components/react/StaffPortal.tsx[0m:[93m1252[0m:[93m61[0m - [93mwarning[0m[90m ts(6385): [0m'FormEvent' is deprecated.
+
+[7m1252[0m   async function uploadInternalFile(ownerId: string, event: FormEvent<HTMLFormElement>) {
+[7m    [0m [93m                                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/components/react/StaffPortal.tsx[0m:[93m1198[0m:[93m12[0m - [93mwarning[0m[90m ts(6385): [0m'FormEvent' is deprecated.
+
+[7m1198[0m     event: FormEvent<HTMLFormElement>,
+[7m    [0m [93m           ~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/components/react/StaffPortal.tsx[0m:[93m1164[0m:[93m58[0m - [93mwarning[0m[90m ts(6385): [0m'FormEvent' is deprecated.
+
+[7m1164[0m   async function addInternalNote(ownerId: string, event: FormEvent<HTMLFormElement>) {
+[7m    [0m [93m                                                         ~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/components/react/StaffPortal.tsx[0m:[93m1123[0m:[93m12[0m - [93mwarning[0m[90m ts(6385): [0m'FormEvent' is deprecated.
+
+[7m1123[0m     event: FormEvent<HTMLFormElement>,
+[7m    [0m [93m           ~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/components/react/StaffPortal.tsx[0m:[93m1037[0m:[93m46[0m - [93mwarning[0m[90m ts(6385): [0m'FormEvent' is deprecated.
+
+[7m1037[0m   async function setRecoveredPassword(event: FormEvent<HTMLFormElement>) {
+[7m    [0m [93m                                             ~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/components/react/StaffPortal.tsx[0m:[93m1015[0m:[93m49[0m - [93mwarning[0m[90m ts(6385): [0m'FormEvent' is deprecated.
+
+[7m1015[0m   async function requestPasswordRecovery(event: FormEvent<HTMLFormElement>) {
+[7m    [0m [93m                                                ~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/components/react/StaffPortal.tsx[0m:[93m991[0m:[93m44[0m - [93mwarning[0m[90m ts(6385): [0m'FormEvent' is deprecated.
+
+[7m991[0m   async function signInWithPassword(event: FormEvent<HTMLFormElement>) {
+[7m   [0m [93m                                           ~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/components/react/StaffPortal.tsx[0m:[93m614[0m:[93m10[0m - [93mwarning[0m[90m ts(6133): [0m'ghlSummaryLabel' is declared but its value is never read.
+
+[7m614[0m function ghlSummaryLabel(workspace?: InternalWorkspace | null) {
+[7m   [0m [93m         ~~~~~~~~~~~~~~~[0m
+[96msrc/components/react/StaffPortal.tsx[0m:[93m351[0m:[93m21[0m - [93mwarning[0m[90m ts(6385): [0m'FormEvent' is deprecated.
+
+[7m351[0m   onSubmit: (event: FormEvent<HTMLFormElement>) => void;
+[7m   [0m [93m                    ~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/components/react/StaffPortal.tsx[0m:[93m1[0m:[93m58[0m - [93mwarning[0m[90m ts(6385): [0m'FormEvent' is deprecated.
+
+[7m1[0m import { useDeferredValue, useEffect, useMemo, useState, type FormEvent } from 'react';
+[7m [0m [93m                                                         ~~~~~~~~~~~~~~[0m
+
+[96msrc/lib/platform/facts.ts[0m:[93m66[0m:[93m42[0m - [93mwarning[0m[90m ts(6133): [0m'field' is declared but its value is never read.
+
+[7m66[0m export function sanitizeVisibleFactValue(field: string, value: string) {
+[7m  [0m [93m                                         ~~~~~[0m
+
+[96mtests/e2e/learning-center-layout.spec.ts[0m:[93m16[0m:[93m10[0m - [93mwarning[0m[90m ts(6133): [0m'countFailClosedPublished' is declared but its value is never read.
+
+[7m16[0m function countFailClosedPublished(): number {
+[7m  [0m [93m         ~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96mtests/e2e/smoke.spec.ts[0m:[93m38[0m:[93m20[0m - [93mwarning[0m[90m ts(80007): [0m'await' has no effect on the type of this expression.
+
+[7m38[0m     const footer = await page.locator('.mrx-disclaimer-footer').first();
+[7m  [0m [93m                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96mtests/e2e/smoke.spec.ts[0m:[93m23[0m:[93m22[0m - [93mwarning[0m[90m ts(80007): [0m'await' has no effect on the type of this expression.
+
+[7m23[0m       const footer = await page.locator('.mrx-disclaimer-footer').first();
+[7m  [0m [93m                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96mtests/unit/release-lifecycle.spec.ts[0m:[93m612[0m:[93m34[0m - [93mwarning[0m[90m ts(6133): [0m'i' is declared but its value is never read.
+
+[7m612[0m     const rows = entries.map((e, i) => row('authorized_admitted', e.slug, e.program_row_id));
+[7m   [0m [93m                                 ~[0m
+
+[96mtmp/mrx1000-f9-retry-missing-clusters.mjs[0m:[93m38[0m:[93m13[0m - [93mwarning[0m[90m ts(6133): [0m'k' is declared but its value is never read.
+
+[7m38[0m   .filter(([k, v]) => !ok(v))
+[7m  [0m [93m            ~[0m
+
+Result (393 files): 
+- 0 errors
+- 0 warnings
+- 32 hints
+
+17:28:07 [@astrojs/node] Enabling sessions with filesystem storage
+17:28:07 [content] Syncing content
+17:28:07 [content] Synced content
+17:28:07 [types] Generated 332ms
+17:28:07 [build] output: "server"
+17:28:07 [build] mode: "server"
+17:28:07 [build] directory: /Users/darylhill/Documents/MineralRightsXchange.com/mrx/dist/
+17:28:07 [build] adapter: @astrojs/node
+17:28:07 [build] Collecting build info...
+17:28:07 [build] ✓ Completed in 365ms.
+17:28:07 [build] Building server entrypoints...
+17:28:13 [vite] ✓ built in 5.87s
+17:28:13 [build] ✓ Completed in 5.89s.
+
+ building client (vite) 
+17:28:13 [vite] transforming...
+17:28:14 [vite] ✓ 224 modules transformed.
+17:28:15 [vite] rendering chunks...
+17:28:15 [vite] computing gzip size...
+17:28:15 [vite] dist/client/_astro/style.bofZPjT6.js          1.02 kB │ gzip:  0.53 kB
+17:28:15 [vite] dist/client/_astro/page.DGRhADao.js           2.25 kB │ gzip:  1.01 kB
+17:28:15 [vite] dist/client/_astro/guides.C6M9o9ux.js         6.50 kB │ gzip:  2.27 kB
+17:28:15 [vite] dist/client/_astro/index.DBy5LfQW.js          7.85 kB │ gzip:  3.05 kB
+17:28:15 [vite] dist/client/_astro/AccountHub.Bl91KR7Y.js    44.91 kB │ gzip: 12.26 kB
+17:28:15 [vite] dist/client/_astro/AskTommy.ISo6gnCj.js      48.69 kB │ gzip: 15.78 kB
+17:28:15 [vite] dist/client/_astro/StaffPortal.DkOP0qQd.js   74.14 kB │ gzip: 18.44 kB
+17:28:15 [vite] dist/client/_astro/client.nFz3bvDj.js       186.62 kB │ gzip: 58.54 kB
+17:28:15 [vite] dist/client/_astro/index.C6AK2WTb.js        211.99 kB │ gzip: 55.35 kB
+17:28:15 [vite] ✓ built in 1.87s
+
+ prerendering static routes 
+⚠️  Node.js 20 and below are deprecated and will no longer be supported in future versions of @supabase/supabase-js. Please upgrade to Node.js 22 or later. For more information, visit: https://github.com/orgs/supabase/discussions/45715
+17:28:15 ▶ src/pages/404.astro
+17:28:15   └─ /404.html (+18ms) 
+17:28:15 ▶ src/pages/500.astro
+17:28:15   └─ /500.html (+3ms) 
+17:28:15 ▶ src/pages/[situation].astro
+17:28:15   ├─ /estate-heir/index.html (+4ms) 
+17:28:15   ├─ /confused-inheritor/index.html (+3ms) 
+17:28:15   ├─ /suspicious-seller/index.html (+3ms) 
+17:28:15   ├─ /cash-strapped-owner/index.html (+4ms) 
+17:28:15   ├─ /suspense-funds/index.html (+3ms) 
+17:28:15   ├─ /1031-exchange/index.html (+3ms) 
+17:28:15   ├─ /reluctant-environmentalist/index.html (+3ms) 
+17:28:15   └─ /multi-state-inheritor/index.html (+5ms) 
+17:28:15 ▶ src/pages/about.astro
+17:28:15   └─ /about/index.html (+21ms) 
+17:28:15 ▶ src/pages/authors/[slug]/page/[page].astro
+17:28:15 ▶ src/pages/authors/[slug].astro
+17:28:15   ├─ /authors/ariana/index.html (+9ms) 
+17:28:16   ├─ /authors/monty/index.html (+5ms) 
+17:28:16   ├─ /authors/dale/index.html (+7ms) 
+17:28:16   ├─ /authors/rebecca/index.html (+7ms) 
+17:28:16   ├─ /authors/tommy/index.html (+6ms) 
+17:28:16   └─ /authors/walt/index.html (+7ms) 
+17:28:16 ▶ src/pages/authors/mrx-editorial-team.astro
+17:28:16   └─ /authors/mrx-editorial-team/index.html (+6ms) 
+17:28:16 ▶ src/pages/blog/[...slug].astro
+17:28:16   ├─ /blog/eagle-ford-shale-how-it-affects-mineral-rights-values-in-south-texas/index.html (+11ms) 
+17:28:16   ├─ /blog/how-are-mineral-rights-valued/index.html (+8ms) 
+17:28:16   ├─ /blog/how-horizontal-drilling-changed-mineral-rights-values-in-texas/index.html (+5ms) 
+17:28:16   ├─ /blog/how-oil-price-fluctuations-affect-texas-mineral-rights-values/index.html (+5ms) 
+17:28:16   ├─ /blog/how-royalty-payments-work-for-texas-mineral-rights-owners/index.html (+5ms) 
+17:28:16   ├─ /blog/how-texas-mineral-rights-are-valued-producing-vs-non-producing-interests/index.html (+4ms) 
+17:28:16   ├─ /blog/how-title-defects-change-mineral-rights-offer/index.html (+4ms) 
+17:28:16   ├─ /blog/how-to-compare-mineral-rights-buyers-in-texas/index.html (+5ms) 
+17:28:16   ├─ /blog/how-to-sell-mineral-rights-in-texas/index.html (+5ms) 
+17:28:16   ├─ /blog/midland-vs-delaware-basin-how-formation-affects-your-mineral-rights-value/index.html (+7ms) 
+17:28:16   ├─ /blog/natural-gas-vs-oil-mineral-rights-in-texas-how-production-type-affects-value/index.html (+6ms) 
+17:28:16   ├─ /blog/texas-oil-and-gas-production-by-county-what-mineral-rights-owners-should-know/index.html (+9ms) 
+17:28:16   ├─ /blog/texas-railroad-commission-how-to-use-public-records-to-understand-your-mineral-rights/index.html (+8ms) 
+17:28:16   ├─ /blog/texas-severance-tax-what-mineral-rights-owners-need-to-know/index.html (+5ms) 
+17:28:16   ├─ /blog/the-permian-basin-explained-what-texas-mineral-rights-owners-need-to-know/index.html (+5ms) 
+17:28:16   ├─ /blog/what-documents-do-you-need-to-sell-mineral-rights-in-texas/index.html (+5ms) 
+17:28:16   ├─ /blog/what-is-a-clawback-clause-in-a-mineral-rights-sale/index.html (+5ms) 
+17:28:16   ├─ /blog/what-is-a-net-royalty-acre/index.html (+5ms) 
+17:28:16   └─ /blog/why-did-my-royalty-check-go-down/index.html (+4ms) 
+17:28:16 ▶ src/pages/blog/category/[category]/page/[page].astro
+17:28:16 ▶ src/pages/blog/category/[category].astro
+17:28:16   ├─ /blog/category/competing-offers/index.html (+8ms) 
+17:28:16   ├─ /blog/category/selling-process/index.html (+7ms) 
+17:28:16   ├─ /blog/category/mineral-rights/index.html (+6ms) 
+17:28:16   ├─ /blog/category/texas-oil-gas/index.html (+8ms) 
+17:28:16   ├─ /blog/category/tax-legal/index.html (+6ms) 
+17:28:16   ├─ /blog/category/understanding-mineral-rights/index.html (+7ms) 
+17:28:16   └─ /blog/category/valuation/index.html (+7ms) 
+17:28:16 ▶ src/pages/book/thank-you.astro
+17:28:16   └─ /book/thank-you/index.html (+2ms) 
+17:28:16 ▶ src/pages/book.astro
+17:28:16   └─ /book/index.html (+2ms) 
+17:28:16 ▶ src/pages/communication-preferences.astro
+17:28:16   └─ /communication-preferences/index.html (+2ms) 
+17:28:16 ▶ src/pages/contact/thank-you.astro
+17:28:16   └─ /contact/thank-you/index.html (+2ms) 
+17:28:16 ▶ src/pages/contact.astro
+17:28:16   └─ /contact/index.html (+2ms) 
+17:28:16 ▶ src/pages/faq.astro
+17:28:16   └─ /faq/index.html (+5ms) 
+17:28:16 ▶ src/pages/free-guide/thank-you.astro
+17:28:16   └─ /free-guide/thank-you/index.html (+2ms) 
+17:28:16 ▶ src/pages/free-guide.astro
+17:28:16   └─ /free-guide/index.html (+4ms) 
+17:28:16 ▶ src/pages/how-it-works.astro
+17:28:16   └─ /how-it-works/index.html (+5ms) 
+17:28:16 ▶ src/pages/index.astro
+17:28:16   └─ /index.html (+7ms) 
+17:28:16 ▶ src/pages/inherited-mineral-rights/page/[page].astro
+17:28:16 ▶ src/pages/inherited-mineral-rights.astro
+17:28:16   └─ /inherited-mineral-rights/index.html (+7ms) 
+17:28:16 ▶ src/pages/learning-center/index.astro
+17:28:16   └─ /learning-center/index.html (+10ms) 
+17:28:16 ▶ src/pages/learning-center/mineral-rights-taxes/index.astro
+17:28:16   └─ /learning-center/mineral-rights-taxes/index.html (+11ms) 
+17:28:16 ▶ src/pages/learning-center/mineral-rights-taxes/page/[page].astro
+17:28:16 ▶ src/pages/learning-center/oil-and-gas-royalties/index.astro
+17:28:16   └─ /learning-center/oil-and-gas-royalties/index.html (+10ms) 
+17:28:16 ▶ src/pages/learning-center/oil-and-gas-royalties/page/[page].astro
+17:28:16 ▶ src/pages/learning-center/page/[page].astro
+17:28:16 ▶ src/pages/learning-center/title-lease-ownership/index.astro
+17:28:16   └─ /learning-center/title-lease-ownership/index.html (+10ms) 
+17:28:16 ▶ src/pages/learning-center/title-lease-ownership/page/[page].astro
+17:28:16 ▶ src/pages/methodology/page/[page].astro
+17:28:16 ▶ src/pages/methodology.astro
+17:28:16   └─ /methodology/index.html (+7ms) 
+17:28:16 ▶ src/pages/mineral-rights-value/page/[page].astro
+17:28:16 ▶ src/pages/mineral-rights-value.astro
+17:28:16   └─ /mineral-rights-value/index.html (+8ms) 
+17:28:16 ▶ src/pages/mineral-rights/[state].astro
+17:28:16   ├─ /mineral-rights/texas/index.html (+7ms) 
+17:28:16   ├─ /mineral-rights/new-mexico/index.html (+2ms) 
+17:28:16   ├─ /mineral-rights/oklahoma/index.html (+4ms) 
+17:28:16   ├─ /mineral-rights/north-dakota/index.html (+2ms) 
+17:28:16   ├─ /mineral-rights/colorado/index.html (+2ms) 
+17:28:16   ├─ /mineral-rights/wyoming/index.html (+2ms) 
+17:28:16   ├─ /mineral-rights/pennsylvania/index.html (+2ms) 
+17:28:16   ├─ /mineral-rights/west-virginia/index.html (+2ms) 
+17:28:16   ├─ /mineral-rights/ohio/index.html (+2ms) 
+17:28:16   └─ /mineral-rights/louisiana/index.html (+2ms) 
+17:28:16 ▶ src/pages/mineral-rights/texas/page/[page].astro
+17:28:16 ▶ src/pages/offer-review/page/[page].astro
+17:28:16 ▶ src/pages/offer-review.astro
+17:28:16   └─ /offer-review/index.html (+7ms) 
+17:28:16 ▶ src/pages/privacy-policy.astro
+17:28:16   └─ /privacy-policy/index.html (+5ms) 
+17:28:16 ▶ src/pages/sell-mineral-rights/page/[page].astro
+17:28:16 ▶ src/pages/sell-mineral-rights.astro
+17:28:16   └─ /sell-mineral-rights/index.html (+11ms) 
+17:28:16 ▶ src/pages/staged/mrx1000/pilot-001/[slug].astro
+17:28:16   ├─ /staged/mrx1000/pilot-001/1031-exchange-fees-for-mineral-rights-sales/index.html (+5ms) 
+17:28:16   ├─ /staged/mrx1000/pilot-001/1031-exchange-rules-for-mineral-rights-owners/index.html (+3ms) 
+17:28:16   ├─ /staged/mrx1000/pilot-001/1031-exchange-steps-for-mineral-rights-sellers/index.html (+3ms) 
+17:28:16   ├─ /staged/mrx1000/pilot-001/documents-needed-for-a-mineral-rights-1031-exchange/index.html (+4ms) 
+17:28:16   ├─ /staged/mrx1000/pilot-001/factors-that-affect-mineral-rights-value/index.html (+3ms) 
+17:28:16   ├─ /staged/mrx1000/pilot-001/hidden-terms-in-a-mineral-rights-offer/index.html (+3ms) 
+17:28:16   ├─ /staged/mrx1000/pilot-001/how-mineral-rights-offer-analysis-works/index.html (+3ms) 
+17:28:16   ├─ /staged/mrx1000/pilot-001/how-mineral-rights-ownership-works/index.html (+5ms) 
+17:28:16   ├─ /staged/mrx1000/pilot-001/how-to-evaluate-mineral-production-in-texas/index.html (+4ms) 
+17:28:16   ├─ /staged/mrx1000/pilot-001/how-to-evaluate-royalties-and-mineral-leases/index.html (+5ms) 
+17:28:16   ├─ /staged/mrx1000/pilot-001/how-to-read-texas-mineral-production-reports/index.html (+4ms) 
+17:28:16   ├─ /staged/mrx1000/pilot-001/how-to-read-key-terms-in-a-mineral-lease/index.html (+6ms) 
+17:28:16   ├─ /staged/mrx1000/pilot-001/inherited-mineral-rights-buyers-compared/index.html (+11ms) 
+17:28:16   ├─ /staged/mrx1000/pilot-001/key-factors-comparing-mineral-purchase-offers/index.html (+6ms) 
+17:28:16   ├─ /staged/mrx1000/pilot-001/mineral-rights-market-analysis-valuation/index.html (+4ms) 
+17:28:16   ├─ /staged/mrx1000/pilot-001/mineral-rights-offer-comparison-checklist/index.html (+4ms) 
+17:28:16   ├─ /staged/mrx1000/pilot-001/mineral-rights-offers-explained-for-inherited-properties/index.html (+4ms) 
+17:28:16   ├─ /staged/mrx1000/pilot-001/mineral-rights-title-ownership-explained/index.html (+6ms) 
+17:28:16   ├─ /staged/mrx1000/pilot-001/oil-and-gas-lease-vs-royalty-agreement/index.html (+4ms) 
+17:28:16   ├─ /staged/mrx1000/pilot-001/oil-and-gas-royalty-payment-structures/index.html (+5ms) 
+17:28:16   ├─ /staged/mrx1000/pilot-001/oil-royalties-vs-leases/index.html (+4ms) 
+17:28:16   ├─ /staged/mrx1000/pilot-001/steps-for-evaluating-inherited-mineral-rights/index.html (+4ms) 
+17:28:16   ├─ /staged/mrx1000/pilot-001/royalty-management-for-inherited-mineral-rights/index.html (+4ms) 
+17:28:16   ├─ /staged/mrx1000/pilot-001/understanding-texas-mineral-production-rates/index.html (+4ms) 
+17:28:16   └─ /staged/mrx1000/pilot-001/why-clear-mineral-title-matters-before-a-sale/index.html (+3ms) 
+17:28:16 ▶ src/pages/team/[slug].astro
+17:28:16   ├─ /team/tommy/index.html (+2ms) 
+17:28:16   ├─ /team/cooper/index.html (+2ms) 
+17:28:16   ├─ /team/charlie/index.html (+2ms) 
+17:28:16   ├─ /team/dale/index.html (+2ms) 
+17:28:16   ├─ /team/rebecca/index.html (+5ms) 
+17:28:16   ├─ /team/angela/index.html (+2ms) 
+17:28:16   ├─ /team/walt/index.html (+2ms) 
+17:28:16   ├─ /team/monty/index.html (+2ms) 
+17:28:16   ├─ /team/cami/index.html (+2ms) 
+17:28:16   ├─ /team/ariana/index.html (+2ms) 
+17:28:16   └─ /team/ainsley/index.html (+2ms) 
+17:28:16 ▶ src/pages/team/index.astro
+17:28:16   └─ /team/index.html (+2ms) 
+17:28:16 ▶ src/pages/terms.astro
+17:28:16   └─ /terms/index.html (+2ms) 
+17:28:16 ✓ Completed in 764ms.
+
+17:28:16 [build] Rearranging server assets...
+17:28:16 [@astrojs/sitemap] `sitemap-index.xml` created at `dist/client`
+[postbuild-sitemap] Rewrote priority on 77 <url> entries in /Users/darylhill/Documents/MineralRightsXchange.com/mrx/dist/client/sitemap-0.xml
+[postbuild-sitemap] Canonicalized 1 redirecting /blog/ entry/entries to the Learning Center hub (https://mineralrightsxchange.com/learning-center/)
+[postbuild-sitemap] Wrote canonical sitemap_index.xml with 6 public-content segments
+[postbuild-sitemap] Wrote unsubmitted sitemap-staged.xml with 25 noindex QA URLs
+17:28:16 [build] Server built in 9.40s
+17:28:16 [build] Complete!
+
+> mrx-web@0.1.0 check:copy:rendered /Users/darylhill/Documents/MineralRightsXchange.com/mrx
+> node scripts/check-visible-copy.mjs --rendered
+
+MRX rendered visible-copy check passed.
+
+> mrx-web@0.1.0 check:grammar /Users/darylhill/Documents/MineralRightsXchange.com/mrx
+> node scripts/check-rendered-grammar.mjs
+
+MRX rendered grammar check passed.
+=== EXIT 0 ===
+=== build_vercel ===
+
+> mrx-web@0.1.0 build:vercel /Users/darylhill/Documents/MineralRightsXchange.com/mrx
+> pnpm build:mrx1000:asset-evidence && pnpm build:mrx1000:publication-manifest && pnpm build:mrx1000:review-artifacts && pnpm build:mrx1000:evidence-packets && bash -c 'if [ "${MRX_SKIP_RELEASE_GATE:-0}" != "1" ]; then pnpm check:mrx1000:release-gates; fi' && pnpm build:mrx1000:lifecycle-dashboard && pnpm build:sell-search-dashboard && pnpm build:llms && pnpm check:copy && pnpm content:check-headings && pnpm check:legal-release && DEPLOY_TARGET=vercel node compliance/scripts/check-compliance.mjs && DEPLOY_TARGET=vercel astro check && DEPLOY_TARGET=vercel astro build && pnpm check:copy:rendered && pnpm check:grammar
+
+
+> mrx-web@0.1.0 build:mrx1000:asset-evidence /Users/darylhill/Documents/MineralRightsXchange.com/mrx
+> node scripts/build-mrx1000-release-10-asset-evidence.mjs
+
+Asset evidence: PASS (10 articles, 142 library images).
+
+> mrx-web@0.1.0 build:mrx1000:publication-manifest /Users/darylhill/Documents/MineralRightsXchange.com/mrx
+> node scripts/build-mrx1000-release-10-publication-manifest.mjs
+
+Publication manifest: READY (10/10).
+
+> mrx-web@0.1.0 build:mrx1000:review-artifacts /Users/darylhill/Documents/MineralRightsXchange.com/mrx
+> node scripts/assemble-mrx1000-release-10-review-artifacts.mjs
+
+Assembled 10/10 normalized review artifacts (all PASS).
+
+> mrx-web@0.1.0 build:mrx1000:evidence-packets /Users/darylhill/Documents/MineralRightsXchange.com/mrx
+> node scripts/build-mrx1000-release-10-evidence-packets.mjs
+
+Wrote 10 evidence packets under artifacts/mrx1000-release-10/evidence/.
+Wrote manifest at artifacts/mrx1000-release-10/evidence/_manifest.json.
+Disposition summary: 10 PASS, 0 HOLD.
+  - artifacts/mrx1000-release-10/evidence/texas-railroad-commission-how-to-use-public-records-to-understand-your-mineral-rights.json (PASS)
+  - artifacts/mrx1000-release-10/evidence/texas-oil-and-gas-production-by-county-what-mineral-rights-owners-should-know.json (PASS)
+  - artifacts/mrx1000-release-10/evidence/the-permian-basin-explained-what-texas-mineral-rights-owners-need-to-know.json (PASS)
+  - artifacts/mrx1000-release-10/evidence/eagle-ford-shale-how-it-affects-mineral-rights-values-in-south-texas.json (PASS)
+  - artifacts/mrx1000-release-10/evidence/how-royalty-payments-work-for-texas-mineral-rights-owners.json (PASS)
+  - artifacts/mrx1000-release-10/evidence/how-horizontal-drilling-changed-mineral-rights-values-in-texas.json (PASS)
+  - artifacts/mrx1000-release-10/evidence/how-oil-price-fluctuations-affect-texas-mineral-rights-values.json (PASS)
+  - artifacts/mrx1000-release-10/evidence/natural-gas-vs-oil-mineral-rights-in-texas-how-production-type-affects-value.json (PASS)
+  - artifacts/mrx1000-release-10/evidence/midland-vs-delaware-basin-how-formation-affects-your-mineral-rights-value.json (PASS)
+  - artifacts/mrx1000-release-10/evidence/how-texas-mineral-rights-are-valued-producing-vs-non-producing-interests.json (PASS)
+
+> mrx-web@0.1.0 check:mrx1000:release-gates /Users/darylhill/Documents/MineralRightsXchange.com/mrx
+> node scripts/check-mrx1000-release-gates.mjs
+
+Wrote reports/mrx1000-release-10-lifecycle/check-gates.json
+Wrote reports/mrx1000-release-10-lifecycle/check-gates.md
+Cap: 10 (observed 10, remaining 0); packets passing 10/10; blocking findings 0.
+
+> mrx-web@0.1.0 build:mrx1000:lifecycle-dashboard /Users/darylhill/Documents/MineralRightsXchange.com/mrx
+> node scripts/build-mrx1000-lifecycle-dashboard.mjs
+
+Wrote reports/mrx1000-release-10-lifecycle/dashboard.json
+Wrote reports/mrx1000-release-10-lifecycle/dashboard.md
+Authorization cap: 10; observed: 10; remaining: 0; exceeded: false.
+Blocking findings: 0; earned scale gates: 2.
+
+> mrx-web@0.1.0 build:sell-search-dashboard /Users/darylhill/Documents/MineralRightsXchange.com/mrx
+> node scripts/build-mrx-sell-search-dashboard.mjs
+
+MRX sell-search dashboard passed: 50 queries, 25 held release rows, 2 live sell-pillar guides.
+
+> mrx-web@0.1.0 build:llms /Users/darylhill/Documents/MineralRightsXchange.com/mrx
+> node scripts/build-llms-index.mjs
+
+[build-llms-index] wrote 19 public article URLs to /Users/darylhill/Documents/MineralRightsXchange.com/mrx/public/llms-full.txt
+
+> mrx-web@0.1.0 check:copy /Users/darylhill/Documents/MineralRightsXchange.com/mrx
+> node scripts/check-visible-copy.mjs
+
+MRX source visible-copy check passed.
+
+> mrx-web@0.1.0 content:check-headings /Users/darylhill/Documents/MineralRightsXchange.com/mrx
+> node scripts/normalize-post-headings.mjs --check
+
+[normalize-post-headings] 153 posts have no body H1s or adjacent duplicate H2s.
+
+> mrx-web@0.1.0 check:legal-release /Users/darylhill/Documents/MineralRightsXchange.com/mrx
+> node --env-file-if-exists=.env --env-file-if-exists=.env.local scripts/check-legal-release-gates.mjs
+
+.env not found. Continuing without it.
+Legal release gates are not enforced.
+✅ Compliance check passed.
+   Scanned 6 roots, 43 disallowed phrases, 5 superlative patterns, 4 personal-knowledge patterns, 0 named competitors.
+17:28:37 [vite] Re-optimizing dependencies because vite config has changed
+17:28:37 [content] Syncing content
+17:28:37 [content] Astro config changed
+17:28:37 [content] Clearing content store
+17:28:37 [content] Synced content
+17:28:37 [types] Generated 486ms
+17:28:37 [check] Getting diagnostics for Astro files in /Users/darylhill/Documents/MineralRightsXchange.com/mrx...
+[96mcompliance/scripts/check-compliance.mjs[0m:[93m15[0m:[93m29[0m - [93mwarning[0m[90m ts(6133): [0m'stat' is declared but its value is never read.
+
+[7m15[0m import { readFile, readdir, stat } from 'node:fs/promises';
+[7m  [0m [93m                            ~~~~[0m
+
+[96mscripts/build-mrx-1000-content-ledger.mjs[0m:[93m1130[0m:[93m10[0m - [93mwarning[0m[90m ts(6133): [0m'sha256File' is declared but its value is never read.
+
+[7m1130[0m function sha256File(path) {
+[7m    [0m [93m         ~~~~~~~~~~[0m
+
+[96mscripts/build-mrx1000-wave2-creative-assets.mjs[0m:[93m37[0m:[93m7[0m - [93mwarning[0m[90m ts(6133): [0m'SAFE' is declared but its value is never read.
+
+[7m37[0m const SAFE = 72;
+[7m  [0m [93m      ~~~~[0m
+
+[96mscripts/build-searchatlas-completed-archive-reconciliation.mjs[0m:[93m4[0m:[93m47[0m - [93mwarning[0m[90m ts(6133): [0m'statSync' is declared but its value is never read.
+
+[7m4[0m import { existsSync, mkdirSync, readFileSync, statSync, writeFileSync } from 'node:fs';
+[7m [0m [93m                                              ~~~~~~~~[0m
+
+[96mscripts/check-secrets.mjs[0m:[93m14[0m:[93m1[0m - [93mwarning[0m[90m ts(6133): [0m'existsSync' is declared but its value is never read.
+
+[7m14[0m import { existsSync } from 'node:fs';
+[7m  [0m [93m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96mscripts/check-visible-copy.mjs[0m:[93m51[0m:[93m10[0m - [93mwarning[0m[90m ts(80006): [0mThis may be converted to an async function.
+
+[7m51[0m function inspectFile(path, displayRoot) {
+[7m  [0m [93m         ~~~~~~~~~~~[0m
+
+[96msrc/components/organisms/PillarNavGrid.astro[0m:[93m24[0m:[93m7[0m - [93mwarning[0m[90m ts(6133): [0m'defaultEyebrow' is declared but its value is never read.
+
+[7m24[0m const defaultEyebrow = 'Pillar navigation';
+[7m  [0m [93m      ~~~~~~~~~~~~~~[0m
+
+[96msrc/components/react/AccountHub.tsx[0m:[93m751[0m:[93m42[0m - [93mwarning[0m[90m ts(6385): [0m'FormEvent' is deprecated.
+
+[7m751[0m   async function saveGuidedIntake(event: FormEvent<HTMLFormElement>) {
+[7m   [0m [93m                                         ~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/components/react/AccountHub.tsx[0m:[93m739[0m:[93m45[0m - [93mwarning[0m[90m ts(6385): [0m'FormEvent' is deprecated.
+
+[7m739[0m   async function saveMineralInterest(event: FormEvent<HTMLFormElement>) {
+[7m   [0m [93m                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/components/react/AccountHub.tsx[0m:[93m634[0m:[93m37[0m - [93mwarning[0m[90m ts(6385): [0m'FormEvent' is deprecated.
+
+[7m634[0m   async function saveProfile(event: FormEvent<HTMLFormElement>) {
+[7m   [0m [93m                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/components/react/AccountHub.tsx[0m:[93m374[0m:[93m37[0m - [93mwarning[0m[90m ts(6385): [0m'FormEvent' is deprecated.
+
+[7m374[0m   async function requestLink(event: FormEvent<HTMLFormElement>) {
+[7m   [0m [93m                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/components/react/AccountHub.tsx[0m:[93m1[0m:[93m48[0m - [93mwarning[0m[90m ts(6385): [0m'FormEvent' is deprecated.
+
+[7m1[0m import { useEffect, useMemo, useRef, useState, type FormEvent } from 'react';
+[7m [0m [93m                                               ~~~~~~~~~~~~~~[0m
+
+[96msrc/components/react/AskTommy 2.tsx[0m:[93m1517[0m:[93m46[0m - [93mwarning[0m[90m ts(6385): [0m'FormEvent' is deprecated.
+
+[7m1517[0m   async function handleComposer(event: React.FormEvent<HTMLFormElement>) {
+[7m    [0m [93m                                             ~~~~~~~~~[0m
+[96msrc/components/react/AskTommy 2.tsx[0m:[93m58[0m:[93m10[0m - [93mwarning[0m[90m ts(6133): [0m'requestedUpdatePrompt' is declared but its value is never read.
+
+[7m58[0m function requestedUpdatePrompt(channel: RequestedUpdateChannel) {
+[7m  [0m [93m         ~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/components/react/AskTommy.tsx[0m:[93m1521[0m:[93m46[0m - [93mwarning[0m[90m ts(6385): [0m'FormEvent' is deprecated.
+
+[7m1521[0m   async function handleComposer(event: React.FormEvent<HTMLFormElement>) {
+[7m    [0m [93m                                             ~~~~~~~~~[0m
+
+[96msrc/components/react/StaffPortal.tsx[0m:[93m1311[0m:[93m57[0m - [93mwarning[0m[90m ts(6385): [0m'FormEvent' is deprecated.
+
+[7m1311[0m   async function saveWorkspace(owner: StaffCase, event: FormEvent<HTMLFormElement>) {
+[7m    [0m [93m                                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/components/react/StaffPortal.tsx[0m:[93m1252[0m:[93m61[0m - [93mwarning[0m[90m ts(6385): [0m'FormEvent' is deprecated.
+
+[7m1252[0m   async function uploadInternalFile(ownerId: string, event: FormEvent<HTMLFormElement>) {
+[7m    [0m [93m                                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/components/react/StaffPortal.tsx[0m:[93m1198[0m:[93m12[0m - [93mwarning[0m[90m ts(6385): [0m'FormEvent' is deprecated.
+
+[7m1198[0m     event: FormEvent<HTMLFormElement>,
+[7m    [0m [93m           ~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/components/react/StaffPortal.tsx[0m:[93m1164[0m:[93m58[0m - [93mwarning[0m[90m ts(6385): [0m'FormEvent' is deprecated.
+
+[7m1164[0m   async function addInternalNote(ownerId: string, event: FormEvent<HTMLFormElement>) {
+[7m    [0m [93m                                                         ~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/components/react/StaffPortal.tsx[0m:[93m1123[0m:[93m12[0m - [93mwarning[0m[90m ts(6385): [0m'FormEvent' is deprecated.
+
+[7m1123[0m     event: FormEvent<HTMLFormElement>,
+[7m    [0m [93m           ~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/components/react/StaffPortal.tsx[0m:[93m1037[0m:[93m46[0m - [93mwarning[0m[90m ts(6385): [0m'FormEvent' is deprecated.
+
+[7m1037[0m   async function setRecoveredPassword(event: FormEvent<HTMLFormElement>) {
+[7m    [0m [93m                                             ~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/components/react/StaffPortal.tsx[0m:[93m1015[0m:[93m49[0m - [93mwarning[0m[90m ts(6385): [0m'FormEvent' is deprecated.
+
+[7m1015[0m   async function requestPasswordRecovery(event: FormEvent<HTMLFormElement>) {
+[7m    [0m [93m                                                ~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/components/react/StaffPortal.tsx[0m:[93m991[0m:[93m44[0m - [93mwarning[0m[90m ts(6385): [0m'FormEvent' is deprecated.
+
+[7m991[0m   async function signInWithPassword(event: FormEvent<HTMLFormElement>) {
+[7m   [0m [93m                                           ~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/components/react/StaffPortal.tsx[0m:[93m614[0m:[93m10[0m - [93mwarning[0m[90m ts(6133): [0m'ghlSummaryLabel' is declared but its value is never read.
+
+[7m614[0m function ghlSummaryLabel(workspace?: InternalWorkspace | null) {
+[7m   [0m [93m         ~~~~~~~~~~~~~~~[0m
+[96msrc/components/react/StaffPortal.tsx[0m:[93m351[0m:[93m21[0m - [93mwarning[0m[90m ts(6385): [0m'FormEvent' is deprecated.
+
+[7m351[0m   onSubmit: (event: FormEvent<HTMLFormElement>) => void;
+[7m   [0m [93m                    ~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/components/react/StaffPortal.tsx[0m:[93m1[0m:[93m58[0m - [93mwarning[0m[90m ts(6385): [0m'FormEvent' is deprecated.
+
+[7m1[0m import { useDeferredValue, useEffect, useMemo, useState, type FormEvent } from 'react';
+[7m [0m [93m                                                         ~~~~~~~~~~~~~~[0m
+
+[96msrc/lib/platform/facts.ts[0m:[93m66[0m:[93m42[0m - [93mwarning[0m[90m ts(6133): [0m'field' is declared but its value is never read.
+
+[7m66[0m export function sanitizeVisibleFactValue(field: string, value: string) {
+[7m  [0m [93m                                         ~~~~~[0m
+
+[96mtests/e2e/learning-center-layout.spec.ts[0m:[93m16[0m:[93m10[0m - [93mwarning[0m[90m ts(6133): [0m'countFailClosedPublished' is declared but its value is never read.
+
+[7m16[0m function countFailClosedPublished(): number {
+[7m  [0m [93m         ~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96mtests/e2e/smoke.spec.ts[0m:[93m38[0m:[93m20[0m - [93mwarning[0m[90m ts(80007): [0m'await' has no effect on the type of this expression.
+
+[7m38[0m     const footer = await page.locator('.mrx-disclaimer-footer').first();
+[7m  [0m [93m                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96mtests/e2e/smoke.spec.ts[0m:[93m23[0m:[93m22[0m - [93mwarning[0m[90m ts(80007): [0m'await' has no effect on the type of this expression.
+
+[7m23[0m       const footer = await page.locator('.mrx-disclaimer-footer').first();
+[7m  [0m [93m                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96mtests/unit/release-lifecycle.spec.ts[0m:[93m612[0m:[93m34[0m - [93mwarning[0m[90m ts(6133): [0m'i' is declared but its value is never read.
+
+[7m612[0m     const rows = entries.map((e, i) => row('authorized_admitted', e.slug, e.program_row_id));
+[7m   [0m [93m                                 ~[0m
+
+[96mtmp/mrx1000-f9-retry-missing-clusters.mjs[0m:[93m38[0m:[93m13[0m - [93mwarning[0m[90m ts(6133): [0m'k' is declared but its value is never read.
+
+[7m38[0m   .filter(([k, v]) => !ok(v))
+[7m  [0m [93m            ~[0m
+
+Result (393 files): 
+- 0 errors
+- 0 warnings
+- 32 hints
+
+17:28:59 [content] Syncing content
+17:28:59 [content] Synced content
+17:28:59 [types] Generated 363ms
+17:28:59 [build] output: "server"
+17:28:59 [build] mode: "server"
+17:28:59 [build] directory: /Users/darylhill/Documents/MineralRightsXchange.com/mrx/dist/
+17:28:59 [build] adapter: @astrojs/vercel
+17:28:59 [build] Collecting build info...
+17:28:59 [build] ✓ Completed in 445ms.
+17:28:59 [build] Building server entrypoints...
+17:29:06 [vite] ✓ built in 6.81s
+17:29:06 [build] ✓ Completed in 6.83s.
+
+ building client (vite) 
+17:29:06 [vite] transforming...
+17:29:07 [vite] ✓ 224 modules transformed.
+17:29:08 [vite] rendering chunks...
+17:29:08 [vite] computing gzip size...
+17:29:08 [vite] dist/client/_astro/style.bofZPjT6.js          1.02 kB │ gzip:  0.53 kB
+17:29:08 [vite] dist/client/_astro/page.DGRhADao.js           2.25 kB │ gzip:  1.01 kB
+17:29:08 [vite] dist/client/_astro/guides.C6M9o9ux.js         6.50 kB │ gzip:  2.27 kB
+17:29:08 [vite] dist/client/_astro/index.DBy5LfQW.js          7.85 kB │ gzip:  3.05 kB
+17:29:08 [vite] dist/client/_astro/AccountHub.Bl91KR7Y.js    44.91 kB │ gzip: 12.26 kB
+17:29:08 [vite] dist/client/_astro/AskTommy.ISo6gnCj.js      48.69 kB │ gzip: 15.78 kB
+17:29:08 [vite] dist/client/_astro/StaffPortal.DkOP0qQd.js   74.14 kB │ gzip: 18.44 kB
+17:29:08 [vite] dist/client/_astro/client.nFz3bvDj.js       186.62 kB │ gzip: 58.54 kB
+17:29:08 [vite] dist/client/_astro/index.C6AK2WTb.js        211.99 kB │ gzip: 55.35 kB
+17:29:08 [vite] ✓ built in 1.88s
+
+ prerendering static routes 
+⚠️  Node.js 20 and below are deprecated and will no longer be supported in future versions of @supabase/supabase-js. Please upgrade to Node.js 22 or later. For more information, visit: https://github.com/orgs/supabase/discussions/45715
+17:29:08 ▶ src/pages/404.astro
+17:29:08   └─ /404.html (+17ms) 
+17:29:08 ▶ src/pages/500.astro
+17:29:08   └─ /500.html (+4ms) 
+17:29:08 ▶ src/pages/[situation].astro
+17:29:08   ├─ /estate-heir/index.html (+4ms) 
+17:29:08   ├─ /confused-inheritor/index.html (+3ms) 
+17:29:08   ├─ /suspicious-seller/index.html (+4ms) 
+17:29:08   ├─ /cash-strapped-owner/index.html (+3ms) 
+17:29:08   ├─ /suspense-funds/index.html (+3ms) 
+17:29:08   ├─ /1031-exchange/index.html (+3ms) 
+17:29:08   ├─ /reluctant-environmentalist/index.html (+3ms) 
+17:29:08   └─ /multi-state-inheritor/index.html (+3ms) 
+17:29:08 ▶ src/pages/about.astro
+17:29:08   └─ /about/index.html (+27ms) 
+17:29:08 ▶ src/pages/authors/[slug]/page/[page].astro
+17:29:08 ▶ src/pages/authors/[slug].astro
+17:29:08   ├─ /authors/ariana/index.html (+9ms) 
+17:29:08   ├─ /authors/dale/index.html (+7ms) 
+17:29:08   ├─ /authors/monty/index.html (+8ms) 
+17:29:08   ├─ /authors/rebecca/index.html (+7ms) 
+17:29:08   ├─ /authors/tommy/index.html (+7ms) 
+17:29:08   └─ /authors/walt/index.html (+6ms) 
+17:29:08 ▶ src/pages/authors/mrx-editorial-team.astro
+17:29:08   └─ /authors/mrx-editorial-team/index.html (+7ms) 
+17:29:08 ▶ src/pages/blog/[...slug].astro
+17:29:08   ├─ /blog/eagle-ford-shale-how-it-affects-mineral-rights-values-in-south-texas/index.html (+10ms) 
+17:29:08   ├─ /blog/how-are-mineral-rights-valued/index.html (+7ms) 
+17:29:08   ├─ /blog/how-horizontal-drilling-changed-mineral-rights-values-in-texas/index.html (+6ms) 
+17:29:08   ├─ /blog/how-oil-price-fluctuations-affect-texas-mineral-rights-values/index.html (+6ms) 
+17:29:08   ├─ /blog/how-royalty-payments-work-for-texas-mineral-rights-owners/index.html (+9ms) 
+17:29:08   ├─ /blog/how-texas-mineral-rights-are-valued-producing-vs-non-producing-interests/index.html (+6ms) 
+17:29:08   ├─ /blog/how-title-defects-change-mineral-rights-offer/index.html (+5ms) 
+17:29:08   ├─ /blog/how-to-compare-mineral-rights-buyers-in-texas/index.html (+6ms) 
+17:29:08   ├─ /blog/how-to-sell-mineral-rights-in-texas/index.html (+6ms) 
+17:29:08   ├─ /blog/midland-vs-delaware-basin-how-formation-affects-your-mineral-rights-value/index.html (+5ms) 
+17:29:08   ├─ /blog/natural-gas-vs-oil-mineral-rights-in-texas-how-production-type-affects-value/index.html (+6ms) 
+17:29:08   ├─ /blog/texas-railroad-commission-how-to-use-public-records-to-understand-your-mineral-rights/index.html (+6ms) 
+17:29:08   ├─ /blog/texas-severance-tax-what-mineral-rights-owners-need-to-know/index.html (+6ms) 
+17:29:08   ├─ /blog/texas-oil-and-gas-production-by-county-what-mineral-rights-owners-should-know/index.html (+7ms) 
+17:29:08   ├─ /blog/the-permian-basin-explained-what-texas-mineral-rights-owners-need-to-know/index.html (+5ms) 
+17:29:08   ├─ /blog/what-documents-do-you-need-to-sell-mineral-rights-in-texas/index.html (+5ms) 
+17:29:08   ├─ /blog/what-is-a-clawback-clause-in-a-mineral-rights-sale/index.html (+5ms) 
+17:29:08   ├─ /blog/what-is-a-net-royalty-acre/index.html (+5ms) 
+17:29:08   └─ /blog/why-did-my-royalty-check-go-down/index.html (+6ms) 
+17:29:08 ▶ src/pages/blog/category/[category]/page/[page].astro
+17:29:08 ▶ src/pages/blog/category/[category].astro
+17:29:08   ├─ /blog/category/competing-offers/index.html (+8ms) 
+17:29:08   ├─ /blog/category/mineral-rights/index.html (+6ms) 
+17:29:08   ├─ /blog/category/selling-process/index.html (+5ms) 
+17:29:08   ├─ /blog/category/tax-legal/index.html (+8ms) 
+17:29:08   ├─ /blog/category/understanding-mineral-rights/index.html (+8ms) 
+17:29:08   ├─ /blog/category/texas-oil-gas/index.html (+8ms) 
+17:29:08   └─ /blog/category/valuation/index.html (+9ms) 
+17:29:08 ▶ src/pages/book/thank-you.astro
+17:29:08   └─ /book/thank-you/index.html (+2ms) 
+17:29:08 ▶ src/pages/book.astro
+17:29:08   └─ /book/index.html (+2ms) 
+17:29:08 ▶ src/pages/communication-preferences.astro
+17:29:08   └─ /communication-preferences/index.html (+2ms) 
+17:29:08 ▶ src/pages/contact/thank-you.astro
+17:29:08   └─ /contact/thank-you/index.html (+2ms) 
+17:29:08 ▶ src/pages/contact.astro
+17:29:08   └─ /contact/index.html (+2ms) 
+17:29:08 ▶ src/pages/faq.astro
+17:29:08   └─ /faq/index.html (+8ms) 
+17:29:08 ▶ src/pages/free-guide/thank-you.astro
+17:29:08   └─ /free-guide/thank-you/index.html (+3ms) 
+17:29:08 ▶ src/pages/free-guide.astro
+17:29:08   └─ /free-guide/index.html (+5ms) 
+17:29:08 ▶ src/pages/how-it-works.astro
+17:29:08   └─ /how-it-works/index.html (+5ms) 
+17:29:08 ▶ src/pages/index.astro
+17:29:08   └─ /index.html (+8ms) 
+17:29:08 ▶ src/pages/inherited-mineral-rights/page/[page].astro
+17:29:08 ▶ src/pages/inherited-mineral-rights.astro
+17:29:08   └─ /inherited-mineral-rights/index.html (+15ms) 
+17:29:08 ▶ src/pages/learning-center/index.astro
+17:29:08   └─ /learning-center/index.html (+16ms) 
+17:29:08 ▶ src/pages/learning-center/mineral-rights-taxes/index.astro
+17:29:08   └─ /learning-center/mineral-rights-taxes/index.html (+11ms) 
+17:29:08 ▶ src/pages/learning-center/mineral-rights-taxes/page/[page].astro
+17:29:08 ▶ src/pages/learning-center/oil-and-gas-royalties/index.astro
+17:29:08   └─ /learning-center/oil-and-gas-royalties/index.html (+17ms) 
+17:29:08 ▶ src/pages/learning-center/oil-and-gas-royalties/page/[page].astro
+17:29:08 ▶ src/pages/learning-center/page/[page].astro
+17:29:08 ▶ src/pages/learning-center/title-lease-ownership/index.astro
+17:29:08   └─ /learning-center/title-lease-ownership/index.html (+11ms) 
+17:29:08 ▶ src/pages/learning-center/title-lease-ownership/page/[page].astro
+17:29:08 ▶ src/pages/methodology/page/[page].astro
+17:29:08 ▶ src/pages/methodology.astro
+17:29:08   └─ /methodology/index.html (+8ms) 
+17:29:08 ▶ src/pages/mineral-rights-value/page/[page].astro
+17:29:08 ▶ src/pages/mineral-rights-value.astro
+17:29:08   └─ /mineral-rights-value/index.html (+7ms) 
+17:29:08 ▶ src/pages/mineral-rights/[state].astro
+17:29:08   ├─ /mineral-rights/texas/index.html (+8ms) 
+17:29:08   ├─ /mineral-rights/new-mexico/index.html (+2ms) 
+17:29:08   ├─ /mineral-rights/oklahoma/index.html (+2ms) 
+17:29:08   ├─ /mineral-rights/north-dakota/index.html (+2ms) 
+17:29:08   ├─ /mineral-rights/colorado/index.html (+2ms) 
+17:29:08   ├─ /mineral-rights/wyoming/index.html (+2ms) 
+17:29:08   ├─ /mineral-rights/pennsylvania/index.html (+2ms) 
+17:29:08   ├─ /mineral-rights/west-virginia/index.html (+2ms) 
+17:29:08   ├─ /mineral-rights/ohio/index.html (+3ms) 
+17:29:08   └─ /mineral-rights/louisiana/index.html (+3ms) 
+17:29:08 ▶ src/pages/mineral-rights/texas/page/[page].astro
+17:29:09 ▶ src/pages/offer-review/page/[page].astro
+17:29:09 ▶ src/pages/offer-review.astro
+17:29:09   └─ /offer-review/index.html (+7ms) 
+17:29:09 ▶ src/pages/privacy-policy.astro
+17:29:09   └─ /privacy-policy/index.html (+4ms) 
+17:29:09 ▶ src/pages/sell-mineral-rights/page/[page].astro
+17:29:09 ▶ src/pages/sell-mineral-rights.astro
+17:29:09   └─ /sell-mineral-rights/index.html (+10ms) 
+17:29:09 ▶ src/pages/staged/mrx1000/pilot-001/[slug].astro
+17:29:09   ├─ /staged/mrx1000/pilot-001/1031-exchange-steps-for-mineral-rights-sellers/index.html (+7ms) 
+17:29:09   ├─ /staged/mrx1000/pilot-001/1031-exchange-fees-for-mineral-rights-sales/index.html (+4ms) 
+17:29:09   ├─ /staged/mrx1000/pilot-001/1031-exchange-rules-for-mineral-rights-owners/index.html (+4ms) 
+17:29:09   ├─ /staged/mrx1000/pilot-001/documents-needed-for-a-mineral-rights-1031-exchange/index.html (+4ms) 
+17:29:09   ├─ /staged/mrx1000/pilot-001/factors-that-affect-mineral-rights-value/index.html (+6ms) 
+17:29:09   ├─ /staged/mrx1000/pilot-001/hidden-terms-in-a-mineral-rights-offer/index.html (+24ms) 
+17:29:09   ├─ /staged/mrx1000/pilot-001/how-mineral-rights-offer-analysis-works/index.html (+9ms) 
+17:29:09   ├─ /staged/mrx1000/pilot-001/how-mineral-rights-ownership-works/index.html (+9ms) 
+17:29:09   ├─ /staged/mrx1000/pilot-001/how-to-evaluate-mineral-production-in-texas/index.html (+5ms) 
+17:29:09   ├─ /staged/mrx1000/pilot-001/how-to-evaluate-royalties-and-mineral-leases/index.html (+8ms) 
+17:29:09   ├─ /staged/mrx1000/pilot-001/how-to-read-key-terms-in-a-mineral-lease/index.html (+4ms) 
+17:29:09   ├─ /staged/mrx1000/pilot-001/how-to-read-texas-mineral-production-reports/index.html (+4ms) 
+17:29:09   ├─ /staged/mrx1000/pilot-001/inherited-mineral-rights-buyers-compared/index.html (+4ms) 
+17:29:09   ├─ /staged/mrx1000/pilot-001/key-factors-comparing-mineral-purchase-offers/index.html (+4ms) 
+17:29:09   ├─ /staged/mrx1000/pilot-001/mineral-rights-market-analysis-valuation/index.html (+5ms) 
+17:29:09   ├─ /staged/mrx1000/pilot-001/mineral-rights-offer-comparison-checklist/index.html (+4ms) 
+17:29:09   ├─ /staged/mrx1000/pilot-001/mineral-rights-title-ownership-explained/index.html (+6ms) 
+17:29:09   ├─ /staged/mrx1000/pilot-001/oil-and-gas-lease-vs-royalty-agreement/index.html (+4ms) 
+17:29:09   ├─ /staged/mrx1000/pilot-001/mineral-rights-offers-explained-for-inherited-properties/index.html (+4ms) 
+17:29:09   ├─ /staged/mrx1000/pilot-001/oil-royalties-vs-leases/index.html (+4ms) 
+17:29:09   ├─ /staged/mrx1000/pilot-001/oil-and-gas-royalty-payment-structures/index.html (+4ms) 
+17:29:09   ├─ /staged/mrx1000/pilot-001/steps-for-evaluating-inherited-mineral-rights/index.html (+3ms) 
+17:29:09   ├─ /staged/mrx1000/pilot-001/royalty-management-for-inherited-mineral-rights/index.html (+4ms) 
+17:29:09   ├─ /staged/mrx1000/pilot-001/understanding-texas-mineral-production-rates/index.html (+3ms) 
+17:29:09   └─ /staged/mrx1000/pilot-001/why-clear-mineral-title-matters-before-a-sale/index.html (+4ms) 
+17:29:09 ▶ src/pages/team/[slug].astro
+17:29:09   ├─ /team/tommy/index.html (+2ms) 
+17:29:09   ├─ /team/cooper/index.html (+2ms) 
+17:29:09   ├─ /team/charlie/index.html (+2ms) 
+17:29:09   ├─ /team/dale/index.html (+2ms) 
+17:29:09   ├─ /team/rebecca/index.html (+2ms) 
+17:29:09   ├─ /team/angela/index.html (+2ms) 
+17:29:09   ├─ /team/walt/index.html (+2ms) 
+17:29:09   ├─ /team/monty/index.html (+2ms) 
+17:29:09   ├─ /team/cami/index.html (+2ms) 
+17:29:09   ├─ /team/ariana/index.html (+2ms) 
+17:29:09   └─ /team/ainsley/index.html (+2ms) 
+17:29:09 ▶ src/pages/team/index.astro
+17:29:09   └─ /team/index.html (+3ms) 
+17:29:09 ▶ src/pages/terms.astro
+17:29:09   └─ /terms/index.html (+6ms) 
+17:29:09 ✓ Completed in 874ms.
+
+17:29:09 [build] Rearranging server assets...
+17:29:09 [@astrojs/vercel] Bundling function ../../../../dist/server/entry.mjs
+17:29:12 [build] Waiting for integration "@astrojs/vercel", hook "astro:build:done"...
+17:29:14 [@astrojs/sitemap] `sitemap-index.xml` created at `dist/client`
+[postbuild-sitemap] Rewrote priority on 77 <url> entries in /Users/darylhill/Documents/MineralRightsXchange.com/mrx/dist/client/sitemap-0.xml
+[postbuild-sitemap] Canonicalized 1 redirecting /blog/ entry/entries to the Learning Center hub (https://mineralrightsxchange.com/learning-center/)
+[postbuild-sitemap] Wrote canonical sitemap_index.xml with 6 public-content segments
+[postbuild-sitemap] Wrote unsubmitted sitemap-staged.xml with 25 noindex QA URLs
+17:29:14 [@astrojs/vercel] Copying static files to .vercel/output/static
+17:29:15 [build] Server built in 16.88s
+17:29:15 [build] Complete!
+
+> mrx-web@0.1.0 check:copy:rendered /Users/darylhill/Documents/MineralRightsXchange.com/mrx
+> node scripts/check-visible-copy.mjs --rendered
+
+MRX rendered visible-copy check passed.
+
+> mrx-web@0.1.0 check:grammar /Users/darylhill/Documents/MineralRightsXchange.com/mrx
+> node scripts/check-rendered-grammar.mjs
+
+STALE_WRITER_TERMINATED pid=88517 pgid=88514
+MRX rendered grammar check passed.
+=== EXIT 0 ===

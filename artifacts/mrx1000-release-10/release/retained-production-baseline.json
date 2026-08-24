@@ -1,0 +1,85 @@
+{
+  "artifact_type": "mrx1000_retained_production_baseline",
+  "schema_version": "2.0.0",
+  "generated_at_utc": "2026-08-11T19:04:08Z",
+  "source_authority": {
+    "decision_id": "D-2026-0811-17",
+    "source_deployment_id": "dpl_819hrDevPMibhKha8SiVhKFDBYLw",
+    "current_active_deployment_id": "dpl_819hrDevPMibhKha8SiVhKFDBYLw",
+    "note": "The two historical retained routes are rebound to the owner-authorized two-image corpus; all nine legacy public routes are independently covered by the corpus manifest and production verifier."
+  },
+  "files": [
+    {
+      "path": "src/content/posts/how-are-mineral-rights-valued.mdx",
+      "role": "page_source",
+      "sha256": "97eaa4a030a85a104c45a8cd151e92256679f0be2bf2a40c095baa5d3db20b1f",
+      "page_url": "https://mineralrightsxchange.com/blog/how-are-mineral-rights-valued/",
+      "expected_h1": "How Are Mineral Rights Valued?",
+      "hero_path": "/assets/articles/hero/how-are-mineral-rights-valued.webp",
+      "hero_sha256": "5bbec5b77e9baa2c9de9a6b7012a7571ddcf248b70e90545042f0b302778ad9f",
+      "inline_path": "/assets/articles/inline/how-are-mineral-rights-valued/how-are-mineral-rights-valued.webp",
+      "inline_sha256": "51834286eaf6b7d2261127fb1127c914cb573a1cd22b5c56d37048aec681a035"
+    },
+    {
+      "path": "public/assets/articles/hero/how-are-mineral-rights-valued.webp",
+      "role": "hero_asset",
+      "sha256": "5bbec5b77e9baa2c9de9a6b7012a7571ddcf248b70e90545042f0b302778ad9f",
+      "page_url": "https://mineralrightsxchange.com/blog/how-are-mineral-rights-valued/"
+    },
+    {
+      "path": "public/assets/articles/inline/how-are-mineral-rights-valued/how-are-mineral-rights-valued.webp",
+      "role": "inline_asset",
+      "sha256": "51834286eaf6b7d2261127fb1127c914cb573a1cd22b5c56d37048aec681a035",
+      "page_url": "https://mineralrightsxchange.com/blog/how-are-mineral-rights-valued/"
+    },
+    {
+      "path": "src/content/posts/texas-severance-tax-what-mineral-rights-owners-need-to-know.mdx",
+      "role": "page_source",
+      "sha256": "9091e687df42019e032a5d03597a94b0c1cf2b109d38ad84e037685f82fda747",
+      "page_url": "https://mineralrightsxchange.com/blog/texas-severance-tax-what-mineral-rights-owners-need-to-know/",
+      "expected_h1": "Texas Severance Tax: What Owners Need to Know",
+      "hero_path": "/assets/articles/hero/texas-severance-tax-what-owners-need-to-know.webp",
+      "hero_sha256": "1c4f93312a833a895cdd72128651d9695a495a242e6efb1d6d319bb8625269b9",
+      "inline_path": "/assets/articles/inline/texas-severance-tax-what-mineral-rights-owners-need-to-know/texas-severance-tax-what-owners-need-to-know.webp",
+      "inline_sha256": "7d5bb66378e04c13e6fdbab3b4dfbc90b5a48ca3df21dc8dbb2becf9b808ef83"
+    },
+    {
+      "path": "public/assets/articles/hero/texas-severance-tax-what-owners-need-to-know.webp",
+      "role": "hero_asset",
+      "sha256": "1c4f93312a833a895cdd72128651d9695a495a242e6efb1d6d319bb8625269b9",
+      "page_url": "https://mineralrightsxchange.com/blog/texas-severance-tax-what-mineral-rights-owners-need-to-know/"
+    },
+    {
+      "path": "public/assets/articles/inline/texas-severance-tax-what-mineral-rights-owners-need-to-know/texas-severance-tax-what-owners-need-to-know.webp",
+      "role": "inline_asset",
+      "sha256": "7d5bb66378e04c13e6fdbab3b4dfbc90b5a48ca3df21dc8dbb2becf9b808ef83",
+      "page_url": "https://mineralrightsxchange.com/blog/texas-severance-tax-what-mineral-rights-owners-need-to-know/"
+    }
+  ],
+  "retained_routes": [
+    {
+      "slug": "how-are-mineral-rights-valued",
+      "page_url": "https://mineralrightsxchange.com/blog/how-are-mineral-rights-valued/",
+      "expected_h1": "How Are Mineral Rights Valued?",
+      "source_path": "src/content/posts/how-are-mineral-rights-valued.mdx",
+      "source_sha256": "97eaa4a030a85a104c45a8cd151e92256679f0be2bf2a40c095baa5d3db20b1f",
+      "hero_path": "/assets/articles/hero/how-are-mineral-rights-valued.webp",
+      "hero_sha256": "5bbec5b77e9baa2c9de9a6b7012a7571ddcf248b70e90545042f0b302778ad9f",
+      "inline_path": "/assets/articles/inline/how-are-mineral-rights-valued/how-are-mineral-rights-valued.webp",
+      "inline_sha256": "51834286eaf6b7d2261127fb1127c914cb573a1cd22b5c56d37048aec681a035",
+      "inline_rendered_text": "how are mineral rights valued"
+    },
+    {
+      "slug": "texas-severance-tax-what-mineral-rights-owners-need-to-know",
+      "page_url": "https://mineralrightsxchange.com/blog/texas-severance-tax-what-mineral-rights-owners-need-to-know/",
+      "expected_h1": "Texas Severance Tax: What Owners Need to Know",
+      "source_path": "src/content/posts/texas-severance-tax-what-mineral-rights-owners-need-to-know.mdx",
+      "source_sha256": "9091e687df42019e032a5d03597a94b0c1cf2b109d38ad84e037685f82fda747",
+      "hero_path": "/assets/articles/hero/texas-severance-tax-what-owners-need-to-know.webp",
+      "hero_sha256": "1c4f93312a833a895cdd72128651d9695a495a242e6efb1d6d319bb8625269b9",
+      "inline_path": "/assets/articles/inline/texas-severance-tax-what-mineral-rights-owners-need-to-know/texas-severance-tax-what-owners-need-to-know.webp",
+      "inline_sha256": "7d5bb66378e04c13e6fdbab3b4dfbc90b5a48ca3df21dc8dbb2becf9b808ef83",
+      "inline_rendered_text": "texas severance tax what owners need to know"
+    }
+  ]
+}

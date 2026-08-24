@@ -1,0 +1,1252 @@
+{
+  "artifact_type": "mrx1000_wave2_creative_revalidate_9x8",
+  "generated_at_utc": "20260801T021210Z",
+  "scope": "Wave2 exact batch articles[10:25] final independent hero QA",
+  "task_id": "t_d1f85fe8",
+  "source_batch_path": "config/mrx1000-release-10-batch.json",
+  "comparison_universe": {
+    "path": "public/assets/articles/**/*.{webp,jpg,jpeg,png,avif}",
+    "image_count": 142,
+    "exact_hash_algorithm": "SHA-256",
+    "perceptual_hash_algorithm": "64-bit grayscale difference hash (9x8 fill resize)",
+    "minimum_allowed_nearest_nonself_hamming_distance": 9
+  },
+  "contact_sheets": {
+    "full_1200": "reports/mrx1000-wave2-creative-revalidate-9x8-20260801T021210Z/mrx1000-wave2-creative-revalidate-9x8-20260801T021210Z-contact-sheet-1200.webp",
+    "social_600": "reports/mrx1000-wave2-creative-revalidate-9x8-20260801T021210Z/mrx1000-wave2-creative-revalidate-9x8-20260801T021210Z-contact-sheet-600.webp",
+    "card_300": "reports/mrx1000-wave2-creative-revalidate-9x8-20260801T021210Z/mrx1000-wave2-creative-revalidate-9x8-20260801T021210Z-contact-sheet-300.webp",
+    "sidecars": "reports/mrx1000-wave2-creative-revalidate-9x8-20260801T021210Z/mrx1000-wave2-creative-revalidate-9x8-20260801T021210Z-contact-sheet-sidecars.webp"
+  },
+  "rows": [
+    {
+      "batch_index": 10,
+      "selection_rank": 11,
+      "program_row_id": "MRX1000-0736",
+      "slug": "what-are-mineral-rights-a-complete-guide-for-texas-landowners",
+      "title": "What Are Mineral Rights? A Complete Guide for Texas Landowners",
+      "repo_path": "src/content/posts/what-are-mineral-rights-a-complete-guide-for-texas-landowners.mdx",
+      "hero_path_from_batch": "/assets/articles/what-are-mineral-rights-texas-landowners.webp",
+      "hero_frontmatter": {
+        "src": "/assets/articles/what-are-mineral-rights-texas-landowners.webp",
+        "alt": "What Are Mineral Rights? A Complete Guide for Texas Landowners educational illustration",
+        "width": 1200,
+        "height": 630,
+        "mime_type": "image/webp",
+        "social_src": "/assets/articles/what-are-mineral-rights-texas-landowners.webp",
+        "social_alt": "What Are Mineral Rights? A Complete Guide for Texas Landowners educational illustration",
+        "social_width": 1200,
+        "social_height": 630,
+        "social_mime_type": "image/webp",
+        "source": "MRX-owned",
+        "license": "MRX-owned"
+      },
+      "hero_schema_path": "/assets/articles/what-are-mineral-rights-texas-landowners.webp",
+      "social_meta_path": "/assets/articles/what-are-mineral-rights-texas-landowners.webp",
+      "same_hero_social_schema_path": true,
+      "body_sha256": "b24c1e1da727689305355708081b78b301a7b58942e084c44a40738761e6749d",
+      "asset": {
+        "repo_path": "public/assets/articles/what-are-mineral-rights-texas-landowners.webp",
+        "sha256": "a58aa883cf9684b7cd9dec63ed34df492f8d9cab670c5037bb5f1f8584ed8d25",
+        "perceptual_hash_9x8": "00804d722e4c8206",
+        "nearest_nonself_path": "public/assets/articles/fair-mineral-rights-offer-2.webp",
+        "nearest_nonself_hamming_distance": 15,
+        "exact_duplicate_paths": [],
+        "observed_width": 1200,
+        "observed_height": 630,
+        "observed_mime_type": "image/webp",
+        "declared_width": 1200,
+        "declared_height": 630,
+        "declared_mime_type": "image/webp",
+        "social_declared_width": 1200,
+        "social_declared_height": 630,
+        "social_declared_mime_type": "image/webp"
+      },
+      "metadata_checks": {
+        "hero_dimensions_match": true,
+        "hero_mime_match": true,
+        "social_dimensions_match": true,
+        "social_mime_match": true,
+        "hero_alt_present": true,
+        "social_alt_present": true,
+        "provenance_present": true,
+        "license_present": true
+      },
+      "duplicate_checks": {
+        "exact_sha_duplicates_absent": true,
+        "nearest_nonself_distance_gte_9": true
+      },
+      "visual_checks": {
+        "exact_title_visible_in_1200x630": true,
+        "exact_title_visible_in_600x315": true,
+        "exact_title_visible_in_300x158": true,
+        "tiny_metadata_absent": true,
+        "truncation_absent": true,
+        "overlap_absent": true,
+        "clipping_absent": true,
+        "generic_duplicate_composition_absent": true,
+        "closing_costs_table_inside_frame": "not_applicable",
+        "notes": [
+          "Title remains fully visible at 1200/600/300 with no clipping or overlap; distinct guide/icon composition."
+        ]
+      },
+      "evidence_paths": {
+        "sidecar_path": "reports/mrx1000-wave2-creative-revalidate-9x8-20260801T021210Z/sidecars/MRX1000-0736-what-are-mineral-rights-a-complete-guide-for-texas-landowners.webp",
+        "resized_paths": {
+          "full": "reports/mrx1000-wave2-creative-revalidate-9x8-20260801T021210Z/full/MRX1000-0736-what-are-mineral-rights-a-complete-guide-for-texas-landowners-1200x630.webp",
+          "social": "reports/mrx1000-wave2-creative-revalidate-9x8-20260801T021210Z/social/MRX1000-0736-what-are-mineral-rights-a-complete-guide-for-texas-landowners-600x315.webp",
+          "card": "reports/mrx1000-wave2-creative-revalidate-9x8-20260801T021210Z/card/MRX1000-0736-what-are-mineral-rights-a-complete-guide-for-texas-landowners-300x158.webp"
+        }
+      },
+      "final_disposition": "PASS"
+    },
+    {
+      "batch_index": 11,
+      "selection_rank": 12,
+      "program_row_id": "MRX1000-0876",
+      "slug": "how-to-find-out-if-you-own-mineral-rights-in-texas",
+      "title": "How to Find Out If You Own Mineral Rights in Texas",
+      "repo_path": "src/content/posts/how-to-find-out-if-you-own-mineral-rights-in-texas.mdx",
+      "hero_path_from_batch": "/assets/articles/how-to-find-out-if-you-own-mineral-rights-in-texas.webp",
+      "hero_frontmatter": {
+        "src": "/assets/articles/how-to-find-out-if-you-own-mineral-rights-in-texas.webp",
+        "alt": "How to Find Out If You Own Mineral Rights in Texas educational illustration",
+        "width": 1200,
+        "height": 630,
+        "mime_type": "image/webp",
+        "social_src": "/assets/articles/how-to-find-out-if-you-own-mineral-rights-in-texas.webp",
+        "social_alt": "How to Find Out If You Own Mineral Rights in Texas educational illustration",
+        "social_width": 1200,
+        "social_height": 630,
+        "social_mime_type": "image/webp",
+        "source": "MRX-owned",
+        "license": "MRX-owned"
+      },
+      "hero_schema_path": "/assets/articles/how-to-find-out-if-you-own-mineral-rights-in-texas.webp",
+      "social_meta_path": "/assets/articles/how-to-find-out-if-you-own-mineral-rights-in-texas.webp",
+      "same_hero_social_schema_path": true,
+      "body_sha256": "6f7fa0ff0d863774c52e81f0167dff79ab59aeb56b13c0eb8dd041c86ad756ab",
+      "asset": {
+        "repo_path": "public/assets/articles/how-to-find-out-if-you-own-mineral-rights-in-texas.webp",
+        "sha256": "185fca9f780564d50575c93a510c065ea7c6ca99e7de14577fb5baf40aad82e5",
+        "perceptual_hash_9x8": "287132313192d3a2",
+        "nearest_nonself_path": "public/assets/articles/risks-of-skipping-an-independent-assessment-for-mineral-rights.webp",
+        "nearest_nonself_hamming_distance": 21,
+        "exact_duplicate_paths": [],
+        "observed_width": 1200,
+        "observed_height": 630,
+        "observed_mime_type": "image/webp",
+        "declared_width": 1200,
+        "declared_height": 630,
+        "declared_mime_type": "image/webp",
+        "social_declared_width": 1200,
+        "social_declared_height": 630,
+        "social_declared_mime_type": "image/webp"
+      },
+      "metadata_checks": {
+        "hero_dimensions_match": true,
+        "hero_mime_match": true,
+        "social_dimensions_match": true,
+        "social_mime_match": true,
+        "hero_alt_present": true,
+        "social_alt_present": true,
+        "provenance_present": true,
+        "license_present": true
+      },
+      "duplicate_checks": {
+        "exact_sha_duplicates_absent": true,
+        "nearest_nonself_distance_gte_9": true
+      },
+      "visual_checks": {
+        "exact_title_visible_in_1200x630": true,
+        "exact_title_visible_in_600x315": true,
+        "exact_title_visible_in_300x158": true,
+        "tiny_metadata_absent": true,
+        "truncation_absent": true,
+        "overlap_absent": true,
+        "clipping_absent": true,
+        "generic_duplicate_composition_absent": true,
+        "closing_costs_table_inside_frame": "not_applicable",
+        "notes": [
+          "Title remains fully visible at all three sizes; smaller previews stay legible without truncation."
+        ]
+      },
+      "evidence_paths": {
+        "sidecar_path": "reports/mrx1000-wave2-creative-revalidate-9x8-20260801T021210Z/sidecars/MRX1000-0876-how-to-find-out-if-you-own-mineral-rights-in-texas.webp",
+        "resized_paths": {
+          "full": "reports/mrx1000-wave2-creative-revalidate-9x8-20260801T021210Z/full/MRX1000-0876-how-to-find-out-if-you-own-mineral-rights-in-texas-1200x630.webp",
+          "social": "reports/mrx1000-wave2-creative-revalidate-9x8-20260801T021210Z/social/MRX1000-0876-how-to-find-out-if-you-own-mineral-rights-in-texas-600x315.webp",
+          "card": "reports/mrx1000-wave2-creative-revalidate-9x8-20260801T021210Z/card/MRX1000-0876-how-to-find-out-if-you-own-mineral-rights-in-texas-300x158.webp"
+        }
+      },
+      "final_disposition": "PASS"
+    },
+    {
+      "batch_index": 12,
+      "selection_rank": 13,
+      "program_row_id": "MRX1000-0429",
+      "slug": "how-to-trust-that-your-mineral-rights-will-be-valued-fairly",
+      "title": "How to Trust That Your Mineral Rights Will Be Valued Fairly",
+      "repo_path": "src/content/posts/how-to-trust-that-your-mineral-rights-will-be-valued-fairly.mdx",
+      "hero_path_from_batch": "/assets/articles/fair-mineral-rights-offer-2.webp",
+      "hero_frontmatter": {
+        "src": "/assets/articles/fair-mineral-rights-offer-2.webp",
+        "alt": "How to Trust That Your Mineral Rights Will Be Valued Fairly educational illustration",
+        "width": 1200,
+        "height": 630,
+        "mime_type": "image/webp",
+        "social_src": "/assets/articles/fair-mineral-rights-offer-2.webp",
+        "social_alt": "How to Trust That Your Mineral Rights Will Be Valued Fairly educational illustration",
+        "social_width": 1200,
+        "social_height": 630,
+        "social_mime_type": "image/webp",
+        "source": "MRX-owned",
+        "license": "MRX-owned"
+      },
+      "hero_schema_path": "/assets/articles/fair-mineral-rights-offer-2.webp",
+      "social_meta_path": "/assets/articles/fair-mineral-rights-offer-2.webp",
+      "same_hero_social_schema_path": true,
+      "body_sha256": "27528ce4d7a610694f4fe7dc505c7880dc8d6d2f40b2b2c8509c777ef083fcac",
+      "asset": {
+        "repo_path": "public/assets/articles/fair-mineral-rights-offer-2.webp",
+        "sha256": "58a456b846f4d7d41149c4363465e8d4a93c4ee5aef3fd483ba9256ccc496340",
+        "perceptual_hash_9x8": "00ac4d3a5a598906",
+        "nearest_nonself_path": "public/assets/articles/why-mineral-rights-are-separate-from-surface-rights-in-texas-a-landowner-s-guide.webp",
+        "nearest_nonself_hamming_distance": 13,
+        "exact_duplicate_paths": [],
+        "observed_width": 1200,
+        "observed_height": 630,
+        "observed_mime_type": "image/webp",
+        "declared_width": 1200,
+        "declared_height": 630,
+        "declared_mime_type": "image/webp",
+        "social_declared_width": 1200,
+        "social_declared_height": 630,
+        "social_declared_mime_type": "image/webp"
+      },
+      "metadata_checks": {
+        "hero_dimensions_match": true,
+        "hero_mime_match": true,
+        "social_dimensions_match": true,
+        "social_mime_match": true,
+        "hero_alt_present": true,
+        "social_alt_present": true,
+        "provenance_present": true,
+        "license_present": true
+      },
+      "duplicate_checks": {
+        "exact_sha_duplicates_absent": true,
+        "nearest_nonself_distance_gte_9": true
+      },
+      "visual_checks": {
+        "exact_title_visible_in_1200x630": true,
+        "exact_title_visible_in_600x315": true,
+        "exact_title_visible_in_300x158": true,
+        "tiny_metadata_absent": true,
+        "truncation_absent": true,
+        "overlap_absent": true,
+        "clipping_absent": true,
+        "generic_duplicate_composition_absent": true,
+        "closing_costs_table_inside_frame": "not_applicable",
+        "notes": [
+          "Three-line title treatment stays intact across all sizes; no duplicate-composition concern."
+        ]
+      },
+      "evidence_paths": {
+        "sidecar_path": "reports/mrx1000-wave2-creative-revalidate-9x8-20260801T021210Z/sidecars/MRX1000-0429-how-to-trust-that-your-mineral-rights-will-be-valued-fairly.webp",
+        "resized_paths": {
+          "full": "reports/mrx1000-wave2-creative-revalidate-9x8-20260801T021210Z/full/MRX1000-0429-how-to-trust-that-your-mineral-rights-will-be-valued-fairly-1200x630.webp",
+          "social": "reports/mrx1000-wave2-creative-revalidate-9x8-20260801T021210Z/social/MRX1000-0429-how-to-trust-that-your-mineral-rights-will-be-valued-fairly-600x315.webp",
+          "card": "reports/mrx1000-wave2-creative-revalidate-9x8-20260801T021210Z/card/MRX1000-0429-how-to-trust-that-your-mineral-rights-will-be-valued-fairly-300x158.webp"
+        }
+      },
+      "final_disposition": "PASS"
+    },
+    {
+      "batch_index": 13,
+      "selection_rank": 14,
+      "program_row_id": "MRX1000-0632",
+      "slug": "how-texas-mineral-rights-ownership-works-deeds-conveyances-and-title",
+      "title": "How Texas Mineral Rights Ownership Works: Deeds, Conveyances, and Title",
+      "repo_path": "src/content/posts/how-texas-mineral-rights-ownership-works-deeds-conveyances-and-title.mdx",
+      "hero_path_from_batch": "/assets/articles/how-texas-mineral-rights-ownership-works-deeds-conveyances-and-title.webp",
+      "hero_frontmatter": {
+        "src": "/assets/articles/how-texas-mineral-rights-ownership-works-deeds-conveyances-and-title.webp",
+        "alt": "How Texas Mineral Rights Ownership Works: Deeds, Conveyances, and Title educational illustration",
+        "width": 1200,
+        "height": 630,
+        "mime_type": "image/webp",
+        "social_src": "/assets/articles/how-texas-mineral-rights-ownership-works-deeds-conveyances-and-title.webp",
+        "social_alt": "How Texas Mineral Rights Ownership Works: Deeds, Conveyances, and Title educational illustration",
+        "social_width": 1200,
+        "social_height": 630,
+        "social_mime_type": "image/webp",
+        "source": "MRX-owned",
+        "license": "MRX-owned"
+      },
+      "hero_schema_path": "/assets/articles/how-texas-mineral-rights-ownership-works-deeds-conveyances-and-title.webp",
+      "social_meta_path": "/assets/articles/how-texas-mineral-rights-ownership-works-deeds-conveyances-and-title.webp",
+      "same_hero_social_schema_path": true,
+      "body_sha256": "3c145fb97ab7e7112b8c80440ec2721fc0fa1f0651cf6442eb874a643b149786",
+      "asset": {
+        "repo_path": "public/assets/articles/how-texas-mineral-rights-ownership-works-deeds-conveyances-and-title.webp",
+        "sha256": "8e09d28960248de7c59db0acc552a46c894d0dac4bd1264394f15e8613f6314a",
+        "perceptual_hash_9x8": "b28b4b6f6b74b234",
+        "nearest_nonself_path": "public/assets/articles/free-assessment-of-mineral-rights.webp",
+        "nearest_nonself_hamming_distance": 20,
+        "exact_duplicate_paths": [],
+        "observed_width": 1200,
+        "observed_height": 630,
+        "observed_mime_type": "image/webp",
+        "declared_width": 1200,
+        "declared_height": 630,
+        "declared_mime_type": "image/webp",
+        "social_declared_width": 1200,
+        "social_declared_height": 630,
+        "social_declared_mime_type": "image/webp"
+      },
+      "metadata_checks": {
+        "hero_dimensions_match": true,
+        "hero_mime_match": true,
+        "social_dimensions_match": true,
+        "social_mime_match": true,
+        "hero_alt_present": true,
+        "social_alt_present": true,
+        "provenance_present": true,
+        "license_present": true
+      },
+      "duplicate_checks": {
+        "exact_sha_duplicates_absent": true,
+        "nearest_nonself_distance_gte_9": true
+      },
+      "visual_checks": {
+        "exact_title_visible_in_1200x630": true,
+        "exact_title_visible_in_600x315": true,
+        "exact_title_visible_in_300x158": true,
+        "tiny_metadata_absent": true,
+        "truncation_absent": true,
+        "overlap_absent": true,
+        "clipping_absent": true,
+        "generic_duplicate_composition_absent": true,
+        "closing_costs_table_inside_frame": "not_applicable",
+        "notes": [
+          "Four-line title remains intact across all sizes with no clipping or overlap."
+        ]
+      },
+      "evidence_paths": {
+        "sidecar_path": "reports/mrx1000-wave2-creative-revalidate-9x8-20260801T021210Z/sidecars/MRX1000-0632-how-texas-mineral-rights-ownership-works-deeds-conveyances-and-title.webp",
+        "resized_paths": {
+          "full": "reports/mrx1000-wave2-creative-revalidate-9x8-20260801T021210Z/full/MRX1000-0632-how-texas-mineral-rights-ownership-works-deeds-conveyances-and-title-1200x630.webp",
+          "social": "reports/mrx1000-wave2-creative-revalidate-9x8-20260801T021210Z/social/MRX1000-0632-how-texas-mineral-rights-ownership-works-deeds-conveyances-and-title-600x315.webp",
+          "card": "reports/mrx1000-wave2-creative-revalidate-9x8-20260801T021210Z/card/MRX1000-0632-how-texas-mineral-rights-ownership-works-deeds-conveyances-and-title-300x158.webp"
+        }
+      },
+      "final_disposition": "PASS"
+    },
+    {
+      "batch_index": 14,
+      "selection_rank": 15,
+      "program_row_id": "MRX1000-0303",
+      "slug": "how-to-find-a-reputable-mineral-rights-buyer-in-texas",
+      "title": "How to Find a Reputable Mineral Rights Buyer in Texas",
+      "repo_path": "src/content/posts/how-to-find-a-reputable-mineral-rights-buyer-in-texas.mdx",
+      "hero_path_from_batch": "/assets/articles/sell-mineral-rights-texas.webp",
+      "hero_frontmatter": {
+        "src": "/assets/articles/sell-mineral-rights-texas.webp",
+        "alt": "How to Find a Reputable Mineral Rights Buyer in Texas educational illustration",
+        "width": 1200,
+        "height": 630,
+        "mime_type": "image/webp",
+        "social_src": "/assets/articles/sell-mineral-rights-texas.webp",
+        "social_alt": "How to Find a Reputable Mineral Rights Buyer in Texas educational illustration",
+        "social_width": 1200,
+        "social_height": 630,
+        "social_mime_type": "image/webp",
+        "source": "MRX-owned",
+        "license": "MRX-owned"
+      },
+      "hero_schema_path": "/assets/articles/sell-mineral-rights-texas.webp",
+      "social_meta_path": "/assets/articles/sell-mineral-rights-texas.webp",
+      "same_hero_social_schema_path": true,
+      "body_sha256": "c92d82150c14af9b36748e0fd2d3d1416b13995fa09619caeac0b9a1e7452f44",
+      "asset": {
+        "repo_path": "public/assets/articles/sell-mineral-rights-texas.webp",
+        "sha256": "c25e9582f697dac9340b018fd8bea31f96d136443111d47fec06744a389d242c",
+        "perceptual_hash_9x8": "4c5e698991393b78",
+        "nearest_nonself_path": "public/assets/articles/royalty-checks-after-inheriting-mineral-rights.webp",
+        "nearest_nonself_hamming_distance": 21,
+        "exact_duplicate_paths": [],
+        "observed_width": 1200,
+        "observed_height": 630,
+        "observed_mime_type": "image/webp",
+        "declared_width": 1200,
+        "declared_height": 630,
+        "declared_mime_type": "image/webp",
+        "social_declared_width": 1200,
+        "social_declared_height": 630,
+        "social_declared_mime_type": "image/webp"
+      },
+      "metadata_checks": {
+        "hero_dimensions_match": true,
+        "hero_mime_match": true,
+        "social_dimensions_match": true,
+        "social_mime_match": true,
+        "hero_alt_present": true,
+        "social_alt_present": true,
+        "provenance_present": true,
+        "license_present": true
+      },
+      "duplicate_checks": {
+        "exact_sha_duplicates_absent": true,
+        "nearest_nonself_distance_gte_9": true
+      },
+      "visual_checks": {
+        "exact_title_visible_in_1200x630": true,
+        "exact_title_visible_in_600x315": true,
+        "exact_title_visible_in_300x158": true,
+        "tiny_metadata_absent": true,
+        "truncation_absent": true,
+        "overlap_absent": true,
+        "clipping_absent": true,
+        "generic_duplicate_composition_absent": true,
+        "closing_costs_table_inside_frame": "not_applicable",
+        "notes": [
+          "Title and icon stay balanced across all sizes; composition remains distinct in-batch."
+        ]
+      },
+      "evidence_paths": {
+        "sidecar_path": "reports/mrx1000-wave2-creative-revalidate-9x8-20260801T021210Z/sidecars/MRX1000-0303-how-to-find-a-reputable-mineral-rights-buyer-in-texas.webp",
+        "resized_paths": {
+          "full": "reports/mrx1000-wave2-creative-revalidate-9x8-20260801T021210Z/full/MRX1000-0303-how-to-find-a-reputable-mineral-rights-buyer-in-texas-1200x630.webp",
+          "social": "reports/mrx1000-wave2-creative-revalidate-9x8-20260801T021210Z/social/MRX1000-0303-how-to-find-a-reputable-mineral-rights-buyer-in-texas-600x315.webp",
+          "card": "reports/mrx1000-wave2-creative-revalidate-9x8-20260801T021210Z/card/MRX1000-0303-how-to-find-a-reputable-mineral-rights-buyer-in-texas-300x158.webp"
+        }
+      },
+      "final_disposition": "PASS"
+    },
+    {
+      "batch_index": 15,
+      "selection_rank": 16,
+      "program_row_id": "MRX1000-0970",
+      "slug": "understanding-our-transparent-approach-to-mineral-rights-reviews-versus-traditional-selling-tactics",
+      "title": "Understanding Our Transparent Approach to Mineral Rights Reviews Versus Traditional Selling Tactics",
+      "repo_path": "src/content/posts/understanding-our-transparent-approach-to-mineral-rights-reviews-versus-traditional-selling-tactics.mdx",
+      "hero_path_from_batch": "/assets/articles/transparent-approach-to-mineral-rights-reviews-versus-traditional-selling-tactics.webp",
+      "hero_frontmatter": {
+        "src": "/assets/articles/transparent-approach-to-mineral-rights-reviews-versus-traditional-selling-tactics.webp",
+        "alt": "Understanding Our Transparent Approach to Mineral Rights Reviews Versus Traditional Selling Tactics educational illustration",
+        "width": 1200,
+        "height": 630,
+        "mime_type": "image/webp",
+        "social_src": "/assets/articles/transparent-approach-to-mineral-rights-reviews-versus-traditional-selling-tactics.webp",
+        "social_alt": "Understanding Our Transparent Approach to Mineral Rights Reviews Versus Traditional Selling Tactics educational illustration",
+        "social_width": 1200,
+        "social_height": 630,
+        "social_mime_type": "image/webp",
+        "source": "MRX-owned",
+        "license": "MRX-owned"
+      },
+      "hero_schema_path": "/assets/articles/transparent-approach-to-mineral-rights-reviews-versus-traditional-selling-tactics.webp",
+      "social_meta_path": "/assets/articles/transparent-approach-to-mineral-rights-reviews-versus-traditional-selling-tactics.webp",
+      "same_hero_social_schema_path": true,
+      "body_sha256": "7c3929b9df488aa0336aa93b110267f7606650bab5c1a9ea3b11d5fc4752b44b",
+      "asset": {
+        "repo_path": "public/assets/articles/transparent-approach-to-mineral-rights-reviews-versus-traditional-selling-tactics.webp",
+        "sha256": "736991e4de773e2703ebce9d35312cfd71d3b527fc2137e2b593885ae0c9fec7",
+        "perceptual_hash_9x8": "56ae1618765f4e81",
+        "nearest_nonself_path": "public/assets/articles/mineral-rights-acquisition-platform.webp",
+        "nearest_nonself_hamming_distance": 23,
+        "exact_duplicate_paths": [],
+        "observed_width": 1200,
+        "observed_height": 630,
+        "observed_mime_type": "image/webp",
+        "declared_width": 1200,
+        "declared_height": 630,
+        "declared_mime_type": "image/webp",
+        "social_declared_width": 1200,
+        "social_declared_height": 630,
+        "social_declared_mime_type": "image/webp"
+      },
+      "metadata_checks": {
+        "hero_dimensions_match": true,
+        "hero_mime_match": true,
+        "social_dimensions_match": true,
+        "social_mime_match": true,
+        "hero_alt_present": true,
+        "social_alt_present": true,
+        "provenance_present": true,
+        "license_present": true
+      },
+      "duplicate_checks": {
+        "exact_sha_duplicates_absent": true,
+        "nearest_nonself_distance_gte_9": true
+      },
+      "visual_checks": {
+        "exact_title_visible_in_1200x630": true,
+        "exact_title_visible_in_600x315": true,
+        "exact_title_visible_in_300x158": true,
+        "tiny_metadata_absent": true,
+        "truncation_absent": true,
+        "overlap_absent": true,
+        "clipping_absent": true,
+        "generic_duplicate_composition_absent": true,
+        "closing_costs_table_inside_frame": "not_applicable",
+        "notes": [
+          "Longest title remains fully visible at 1200/600/300; dense but still legible at 300 with no truncation."
+        ]
+      },
+      "evidence_paths": {
+        "sidecar_path": "reports/mrx1000-wave2-creative-revalidate-9x8-20260801T021210Z/sidecars/MRX1000-0970-understanding-our-transparent-approach-to-mineral-rights-reviews-versus-traditional-selling-tactics.webp",
+        "resized_paths": {
+          "full": "reports/mrx1000-wave2-creative-revalidate-9x8-20260801T021210Z/full/MRX1000-0970-understanding-our-transparent-approach-to-mineral-rights-reviews-versus-traditional-selling-tactics-1200x630.webp",
+          "social": "reports/mrx1000-wave2-creative-revalidate-9x8-20260801T021210Z/social/MRX1000-0970-understanding-our-transparent-approach-to-mineral-rights-reviews-versus-traditional-selling-tactics-600x315.webp",
+          "card": "reports/mrx1000-wave2-creative-revalidate-9x8-20260801T021210Z/card/MRX1000-0970-understanding-our-transparent-approach-to-mineral-rights-reviews-versus-traditional-selling-tactics-300x158.webp"
+        }
+      },
+      "final_disposition": "PASS"
+    },
+    {
+      "batch_index": 16,
+      "selection_rank": 17,
+      "program_row_id": "MRX1000-0001",
+      "slug": "can-you-sell-part-of-your-mineral-rights-partial-interest-sales-explained",
+      "title": "Can You Sell Part of Your Mineral Rights? Partial Interest Sales Explained",
+      "repo_path": "src/content/posts/can-you-sell-part-of-your-mineral-rights-partial-interest-sales-explained.mdx",
+      "hero_path_from_batch": "/assets/articles/can-you-sell-part-of-mineral-rights-partial-interest-sales.webp",
+      "hero_frontmatter": {
+        "src": "/assets/articles/can-you-sell-part-of-mineral-rights-partial-interest-sales.webp",
+        "alt": "Can You Sell Part of Your Mineral Rights? Partial Interest Sales Explained educational illustration",
+        "width": 1200,
+        "height": 630,
+        "mime_type": "image/webp",
+        "social_src": "/assets/articles/can-you-sell-part-of-mineral-rights-partial-interest-sales.webp",
+        "social_alt": "Can You Sell Part of Your Mineral Rights? Partial Interest Sales Explained educational illustration",
+        "social_width": 1200,
+        "social_height": 630,
+        "social_mime_type": "image/webp",
+        "source": "MRX-owned",
+        "license": "MRX-owned"
+      },
+      "hero_schema_path": "/assets/articles/can-you-sell-part-of-mineral-rights-partial-interest-sales.webp",
+      "social_meta_path": "/assets/articles/can-you-sell-part-of-mineral-rights-partial-interest-sales.webp",
+      "same_hero_social_schema_path": true,
+      "body_sha256": "9e90ad08d21c010641dcc6f12d68522b3e0e67cdd6ebbc03ff349032479d664f",
+      "asset": {
+        "repo_path": "public/assets/articles/can-you-sell-part-of-mineral-rights-partial-interest-sales.webp",
+        "sha256": "2a2b6f9be5a47b27babe339c1f166690c8d33c2beac142ed81ab9a3d20c90266",
+        "perceptual_hash_9x8": "eddd1c96c4c4d0c5",
+        "nearest_nonself_path": "public/assets/articles/predatory-mineral-rights-buyers.webp",
+        "nearest_nonself_hamming_distance": 21,
+        "exact_duplicate_paths": [],
+        "observed_width": 1200,
+        "observed_height": 630,
+        "observed_mime_type": "image/webp",
+        "declared_width": 1200,
+        "declared_height": 630,
+        "declared_mime_type": "image/webp",
+        "social_declared_width": 1200,
+        "social_declared_height": 630,
+        "social_declared_mime_type": "image/webp"
+      },
+      "metadata_checks": {
+        "hero_dimensions_match": true,
+        "hero_mime_match": true,
+        "social_dimensions_match": true,
+        "social_mime_match": true,
+        "hero_alt_present": true,
+        "social_alt_present": true,
+        "provenance_present": true,
+        "license_present": true
+      },
+      "duplicate_checks": {
+        "exact_sha_duplicates_absent": true,
+        "nearest_nonself_distance_gte_9": true
+      },
+      "visual_checks": {
+        "exact_title_visible_in_1200x630": true,
+        "exact_title_visible_in_600x315": true,
+        "exact_title_visible_in_300x158": true,
+        "tiny_metadata_absent": true,
+        "truncation_absent": true,
+        "overlap_absent": true,
+        "clipping_absent": true,
+        "generic_duplicate_composition_absent": true,
+        "closing_costs_table_inside_frame": "not_applicable",
+        "notes": [
+          "Four-line title stays readable and complete across all sizes; no generic duplicate composition."
+        ]
+      },
+      "evidence_paths": {
+        "sidecar_path": "reports/mrx1000-wave2-creative-revalidate-9x8-20260801T021210Z/sidecars/MRX1000-0001-can-you-sell-part-of-your-mineral-rights-partial-interest-sales-explained.webp",
+        "resized_paths": {
+          "full": "reports/mrx1000-wave2-creative-revalidate-9x8-20260801T021210Z/full/MRX1000-0001-can-you-sell-part-of-your-mineral-rights-partial-interest-sales-explained-1200x630.webp",
+          "social": "reports/mrx1000-wave2-creative-revalidate-9x8-20260801T021210Z/social/MRX1000-0001-can-you-sell-part-of-your-mineral-rights-partial-interest-sales-explained-600x315.webp",
+          "card": "reports/mrx1000-wave2-creative-revalidate-9x8-20260801T021210Z/card/MRX1000-0001-can-you-sell-part-of-your-mineral-rights-partial-interest-sales-explained-300x158.webp"
+        }
+      },
+      "final_disposition": "PASS"
+    },
+    {
+      "batch_index": 17,
+      "selection_rank": 18,
+      "program_row_id": "MRX1000-0160",
+      "slug": "understanding-the-risks-of-skipping-an-independent-assessment-for-your-mineral-rights",
+      "title": "Understanding the Risks of Skipping an Independent Assessment for Your Mineral Rights",
+      "repo_path": "src/content/posts/understanding-the-risks-of-skipping-an-independent-assessment-for-your-mineral-rights.mdx",
+      "hero_path_from_batch": "/assets/articles/risks-of-skipping-an-independent-assessment-for-mineral-rights.webp",
+      "hero_frontmatter": {
+        "src": "/assets/articles/risks-of-skipping-an-independent-assessment-for-mineral-rights.webp",
+        "alt": "Understanding the Risks of Skipping an Independent Assessment for Your Mineral Rights educational illustration",
+        "width": 1200,
+        "height": 630,
+        "mime_type": "image/webp",
+        "social_src": "/assets/articles/risks-of-skipping-an-independent-assessment-for-mineral-rights.webp",
+        "social_alt": "Understanding the Risks of Skipping an Independent Assessment for Your Mineral Rights educational illustration",
+        "social_width": 1200,
+        "social_height": 630,
+        "social_mime_type": "image/webp",
+        "source": "MRX-owned",
+        "license": "MRX-owned"
+      },
+      "hero_schema_path": "/assets/articles/risks-of-skipping-an-independent-assessment-for-mineral-rights.webp",
+      "social_meta_path": "/assets/articles/risks-of-skipping-an-independent-assessment-for-mineral-rights.webp",
+      "same_hero_social_schema_path": true,
+      "body_sha256": "097c738c326ee7863ae92f27f84db9e7b0c8786b5763cdb76d20653096cea6d8",
+      "asset": {
+        "repo_path": "public/assets/articles/risks-of-skipping-an-independent-assessment-for-mineral-rights.webp",
+        "sha256": "9f2f63fb37f9e6b00ea8ba6606010f0549f6c496b250bfcd43d18c9024a37d1f",
+        "perceptual_hash_9x8": "c139317933962206",
+        "nearest_nonself_path": "public/assets/articles/how-mineralrightsxchange-upholds-transparency-in-mineral-rights-valuation-and-review-process.webp",
+        "nearest_nonself_hamming_distance": 21,
+        "exact_duplicate_paths": [],
+        "observed_width": 1200,
+        "observed_height": 630,
+        "observed_mime_type": "image/webp",
+        "declared_width": 1200,
+        "declared_height": 630,
+        "declared_mime_type": "image/webp",
+        "social_declared_width": 1200,
+        "social_declared_height": 630,
+        "social_declared_mime_type": "image/webp"
+      },
+      "metadata_checks": {
+        "hero_dimensions_match": true,
+        "hero_mime_match": true,
+        "social_dimensions_match": true,
+        "social_mime_match": true,
+        "hero_alt_present": true,
+        "social_alt_present": true,
+        "provenance_present": true,
+        "license_present": true
+      },
+      "duplicate_checks": {
+        "exact_sha_duplicates_absent": true,
+        "nearest_nonself_distance_gte_9": true
+      },
+      "visual_checks": {
+        "exact_title_visible_in_1200x630": true,
+        "exact_title_visible_in_600x315": true,
+        "exact_title_visible_in_300x158": true,
+        "tiny_metadata_absent": true,
+        "truncation_absent": true,
+        "overlap_absent": true,
+        "clipping_absent": true,
+        "generic_duplicate_composition_absent": true,
+        "closing_costs_table_inside_frame": "not_applicable",
+        "notes": [
+          "Long title remains fully visible at all sizes with clean spacing and no clipping."
+        ]
+      },
+      "evidence_paths": {
+        "sidecar_path": "reports/mrx1000-wave2-creative-revalidate-9x8-20260801T021210Z/sidecars/MRX1000-0160-understanding-the-risks-of-skipping-an-independent-assessment-for-your-mineral-rights.webp",
+        "resized_paths": {
+          "full": "reports/mrx1000-wave2-creative-revalidate-9x8-20260801T021210Z/full/MRX1000-0160-understanding-the-risks-of-skipping-an-independent-assessment-for-your-mineral-rights-1200x630.webp",
+          "social": "reports/mrx1000-wave2-creative-revalidate-9x8-20260801T021210Z/social/MRX1000-0160-understanding-the-risks-of-skipping-an-independent-assessment-for-your-mineral-rights-600x315.webp",
+          "card": "reports/mrx1000-wave2-creative-revalidate-9x8-20260801T021210Z/card/MRX1000-0160-understanding-the-risks-of-skipping-an-independent-assessment-for-your-mineral-rights-300x158.webp"
+        }
+      },
+      "final_disposition": "PASS"
+    },
+    {
+      "batch_index": 18,
+      "selection_rank": 19,
+      "program_row_id": "MRX1000-0528",
+      "slug": "steps-to-take-if-your-royalty-checks-are-inconsistent-a-mineral-owners-guide",
+      "title": "Steps to Take if Your Royalty Checks Are Inconsistent: A Mineral Owner's Guide",
+      "repo_path": "src/content/posts/steps-to-take-if-your-royalty-checks-are-inconsistent-a-mineral-owners-guide.mdx",
+      "hero_path_from_batch": "/assets/articles/steps-to-take-if-royalty-checks-are-inconsistent-a-mineral-owner-s-guide.webp",
+      "hero_frontmatter": {
+        "src": "/assets/articles/steps-to-take-if-royalty-checks-are-inconsistent-a-mineral-owner-s-guide.webp",
+        "alt": "Steps to Take if Your Royalty Checks Are Inconsistent: A Mineral Owner's Guide educational illustration",
+        "width": 1200,
+        "height": 630,
+        "mime_type": "image/webp",
+        "social_src": "/assets/articles/steps-to-take-if-royalty-checks-are-inconsistent-a-mineral-owner-s-guide.webp",
+        "social_alt": "Steps to Take if Your Royalty Checks Are Inconsistent: A Mineral Owner's Guide educational illustration",
+        "social_width": 1200,
+        "social_height": 630,
+        "social_mime_type": "image/webp",
+        "source": "MRX-owned",
+        "license": "MRX-owned"
+      },
+      "hero_schema_path": "/assets/articles/steps-to-take-if-royalty-checks-are-inconsistent-a-mineral-owner-s-guide.webp",
+      "social_meta_path": "/assets/articles/steps-to-take-if-royalty-checks-are-inconsistent-a-mineral-owner-s-guide.webp",
+      "same_hero_social_schema_path": true,
+      "body_sha256": "45718f12f425e8e4754ff946e3a1ed2cd443a62c7c1b8ecf08e08fa986a75077",
+      "asset": {
+        "repo_path": "public/assets/articles/steps-to-take-if-royalty-checks-are-inconsistent-a-mineral-owner-s-guide.webp",
+        "sha256": "7a38173699e2e85cf7d0dc0d025eb6b7220fc27ec6d1274b20f82529bc30126b",
+        "perceptual_hash_9x8": "694b266763ec7579",
+        "nearest_nonself_path": "public/assets/articles/what-is-a-net-royalty-acre.webp",
+        "nearest_nonself_hamming_distance": 21,
+        "exact_duplicate_paths": [],
+        "observed_width": 1200,
+        "observed_height": 630,
+        "observed_mime_type": "image/webp",
+        "declared_width": 1200,
+        "declared_height": 630,
+        "declared_mime_type": "image/webp",
+        "social_declared_width": 1200,
+        "social_declared_height": 630,
+        "social_declared_mime_type": "image/webp"
+      },
+      "metadata_checks": {
+        "hero_dimensions_match": true,
+        "hero_mime_match": true,
+        "social_dimensions_match": true,
+        "social_mime_match": true,
+        "hero_alt_present": true,
+        "social_alt_present": true,
+        "provenance_present": true,
+        "license_present": true
+      },
+      "duplicate_checks": {
+        "exact_sha_duplicates_absent": true,
+        "nearest_nonself_distance_gte_9": true
+      },
+      "visual_checks": {
+        "exact_title_visible_in_1200x630": true,
+        "exact_title_visible_in_600x315": true,
+        "exact_title_visible_in_300x158": true,
+        "tiny_metadata_absent": true,
+        "truncation_absent": true,
+        "overlap_absent": true,
+        "clipping_absent": true,
+        "generic_duplicate_composition_absent": true,
+        "closing_costs_table_inside_frame": "not_applicable",
+        "notes": [
+          "Five-line title remains complete at all sizes; 300-wide preview still readable and unclipped."
+        ]
+      },
+      "evidence_paths": {
+        "sidecar_path": "reports/mrx1000-wave2-creative-revalidate-9x8-20260801T021210Z/sidecars/MRX1000-0528-steps-to-take-if-your-royalty-checks-are-inconsistent-a-mineral-owners-guide.webp",
+        "resized_paths": {
+          "full": "reports/mrx1000-wave2-creative-revalidate-9x8-20260801T021210Z/full/MRX1000-0528-steps-to-take-if-your-royalty-checks-are-inconsistent-a-mineral-owners-guide-1200x630.webp",
+          "social": "reports/mrx1000-wave2-creative-revalidate-9x8-20260801T021210Z/social/MRX1000-0528-steps-to-take-if-your-royalty-checks-are-inconsistent-a-mineral-owners-guide-600x315.webp",
+          "card": "reports/mrx1000-wave2-creative-revalidate-9x8-20260801T021210Z/card/MRX1000-0528-steps-to-take-if-your-royalty-checks-are-inconsistent-a-mineral-owners-guide-300x158.webp"
+        }
+      },
+      "final_disposition": "PASS"
+    },
+    {
+      "batch_index": 19,
+      "selection_rank": 20,
+      "program_row_id": "MRX1000-0737",
+      "slug": "what-is-your-texas-mineral-rights-worth",
+      "title": "What Is Your Texas Mineral Rights Worth?",
+      "repo_path": "src/content/posts/what-is-your-texas-mineral-rights-worth.mdx",
+      "hero_path_from_batch": "/assets/articles/what-are-mineral-rights-worth.webp",
+      "hero_frontmatter": {
+        "src": "/assets/articles/what-are-mineral-rights-worth.webp",
+        "alt": "What Is Your Texas Mineral Rights Worth? educational illustration",
+        "width": 1200,
+        "height": 630,
+        "mime_type": "image/webp",
+        "social_src": "/assets/articles/what-are-mineral-rights-worth.webp",
+        "social_alt": "What Is Your Texas Mineral Rights Worth? educational illustration",
+        "social_width": 1200,
+        "social_height": 630,
+        "social_mime_type": "image/webp",
+        "source": "MRX-owned",
+        "license": "MRX-owned"
+      },
+      "hero_schema_path": "/assets/articles/what-are-mineral-rights-worth.webp",
+      "social_meta_path": "/assets/articles/what-are-mineral-rights-worth.webp",
+      "same_hero_social_schema_path": true,
+      "body_sha256": "cba2a771f5b4aa61b64cf307d782a66d096e0b83a76a517bc6b26ea046b191d8",
+      "asset": {
+        "repo_path": "public/assets/articles/what-are-mineral-rights-worth.webp",
+        "sha256": "997740163e40a740b514f10732011dc89cd79665d0413a214ebb9f0d51ed5ac5",
+        "perceptual_hash_9x8": "00805919597a8606",
+        "nearest_nonself_path": "public/assets/articles/title-curative-for-mineral-rights-what-it-is-and-why-it-matters-before-you-sell.webp",
+        "nearest_nonself_hamming_distance": 16,
+        "exact_duplicate_paths": [],
+        "observed_width": 1200,
+        "observed_height": 630,
+        "observed_mime_type": "image/webp",
+        "declared_width": 1200,
+        "declared_height": 630,
+        "declared_mime_type": "image/webp",
+        "social_declared_width": 1200,
+        "social_declared_height": 630,
+        "social_declared_mime_type": "image/webp"
+      },
+      "metadata_checks": {
+        "hero_dimensions_match": true,
+        "hero_mime_match": true,
+        "social_dimensions_match": true,
+        "social_mime_match": true,
+        "hero_alt_present": true,
+        "social_alt_present": true,
+        "provenance_present": true,
+        "license_present": true
+      },
+      "duplicate_checks": {
+        "exact_sha_duplicates_absent": true,
+        "nearest_nonself_distance_gte_9": true
+      },
+      "visual_checks": {
+        "exact_title_visible_in_1200x630": true,
+        "exact_title_visible_in_600x315": true,
+        "exact_title_visible_in_300x158": true,
+        "tiny_metadata_absent": true,
+        "truncation_absent": true,
+        "overlap_absent": true,
+        "clipping_absent": true,
+        "generic_duplicate_composition_absent": true,
+        "closing_costs_table_inside_frame": "not_applicable",
+        "notes": [
+          "Short title remains clear and fully visible across all three renders."
+        ]
+      },
+      "evidence_paths": {
+        "sidecar_path": "reports/mrx1000-wave2-creative-revalidate-9x8-20260801T021210Z/sidecars/MRX1000-0737-what-is-your-texas-mineral-rights-worth.webp",
+        "resized_paths": {
+          "full": "reports/mrx1000-wave2-creative-revalidate-9x8-20260801T021210Z/full/MRX1000-0737-what-is-your-texas-mineral-rights-worth-1200x630.webp",
+          "social": "reports/mrx1000-wave2-creative-revalidate-9x8-20260801T021210Z/social/MRX1000-0737-what-is-your-texas-mineral-rights-worth-600x315.webp",
+          "card": "reports/mrx1000-wave2-creative-revalidate-9x8-20260801T021210Z/card/MRX1000-0737-what-is-your-texas-mineral-rights-worth-300x158.webp"
+        }
+      },
+      "final_disposition": "PASS"
+    },
+    {
+      "batch_index": 20,
+      "selection_rank": 21,
+      "program_row_id": "MRX1000-0880",
+      "slug": "types-of-mineral-rights-in-texas-royalty-interests-working-interests-and-overriding-royalties-explained",
+      "title": "Types of Mineral Rights in Texas: Royalty Interests, Working Interests, and Overriding Royalties Explained",
+      "repo_path": "src/content/posts/types-of-mineral-rights-in-texas-royalty-interests-working-interests-and-overriding-royalties-explained.mdx",
+      "hero_path_from_batch": "/assets/articles/types-of-mineral-rights-in-texas-royalty-interests-working-interests-and-overriding-royalties.webp",
+      "hero_frontmatter": {
+        "src": "/assets/articles/types-of-mineral-rights-in-texas-royalty-interests-working-interests-and-overriding-royalties.webp",
+        "alt": "Educational illustration of Texas royalty interests, working interests, and overriding royalties",
+        "width": 1200,
+        "height": 630,
+        "mime_type": "image/webp",
+        "social_src": "/assets/articles/types-of-mineral-rights-in-texas-royalty-interests-working-interests-and-overriding-royalties.webp",
+        "social_alt": "Educational illustration of Texas royalty interests, working interests, and overriding royalties",
+        "social_width": 1200,
+        "social_height": 630,
+        "social_mime_type": "image/webp",
+        "source": "MRX-owned",
+        "license": "MRX-owned"
+      },
+      "hero_schema_path": "/assets/articles/types-of-mineral-rights-in-texas-royalty-interests-working-interests-and-overriding-royalties.webp",
+      "social_meta_path": "/assets/articles/types-of-mineral-rights-in-texas-royalty-interests-working-interests-and-overriding-royalties.webp",
+      "same_hero_social_schema_path": true,
+      "body_sha256": "9a104d6e247ce9b92dd90f84fbe0d40dba7336b3b1997949d0247a5338f2b5c2",
+      "asset": {
+        "repo_path": "public/assets/articles/types-of-mineral-rights-in-texas-royalty-interests-working-interests-and-overriding-royalties.webp",
+        "sha256": "979cc3d7ad4ab9d83c0939fe60247ee8c3e3ae8850861a35161682d17daf1c3b",
+        "perceptual_hash_9x8": "515933797869e5c6",
+        "nearest_nonself_path": "public/assets/articles/why-mineral-rights-are-separate-from-surface-rights-in-texas-a-landowner-s-guide.webp",
+        "nearest_nonself_hamming_distance": 17,
+        "exact_duplicate_paths": [],
+        "observed_width": 1200,
+        "observed_height": 630,
+        "observed_mime_type": "image/webp",
+        "declared_width": 1200,
+        "declared_height": 630,
+        "declared_mime_type": "image/webp",
+        "social_declared_width": 1200,
+        "social_declared_height": 630,
+        "social_declared_mime_type": "image/webp"
+      },
+      "metadata_checks": {
+        "hero_dimensions_match": true,
+        "hero_mime_match": true,
+        "social_dimensions_match": true,
+        "social_mime_match": true,
+        "hero_alt_present": true,
+        "social_alt_present": true,
+        "provenance_present": true,
+        "license_present": true
+      },
+      "duplicate_checks": {
+        "exact_sha_duplicates_absent": true,
+        "nearest_nonself_distance_gte_9": true
+      },
+      "visual_checks": {
+        "exact_title_visible_in_1200x630": true,
+        "exact_title_visible_in_600x315": true,
+        "exact_title_visible_in_300x158": true,
+        "tiny_metadata_absent": true,
+        "truncation_absent": true,
+        "overlap_absent": true,
+        "clipping_absent": true,
+        "generic_duplicate_composition_absent": true,
+        "closing_costs_table_inside_frame": "not_applicable",
+        "notes": [
+          "Longest taxonomy title remains fully visible at 1200/600/300; 300-wide preview is dense but readable and not truncated."
+        ]
+      },
+      "evidence_paths": {
+        "sidecar_path": "reports/mrx1000-wave2-creative-revalidate-9x8-20260801T021210Z/sidecars/MRX1000-0880-types-of-mineral-rights-in-texas-royalty-interests-working-interests-and-overriding-royalties-explained.webp",
+        "resized_paths": {
+          "full": "reports/mrx1000-wave2-creative-revalidate-9x8-20260801T021210Z/full/MRX1000-0880-types-of-mineral-rights-in-texas-royalty-interests-working-interests-and-overriding-royalties-explained-1200x630.webp",
+          "social": "reports/mrx1000-wave2-creative-revalidate-9x8-20260801T021210Z/social/MRX1000-0880-types-of-mineral-rights-in-texas-royalty-interests-working-interests-and-overriding-royalties-explained-600x315.webp",
+          "card": "reports/mrx1000-wave2-creative-revalidate-9x8-20260801T021210Z/card/MRX1000-0880-types-of-mineral-rights-in-texas-royalty-interests-working-interests-and-overriding-royalties-explained-300x158.webp"
+        }
+      },
+      "final_disposition": "PASS"
+    },
+    {
+      "batch_index": 21,
+      "selection_rank": 22,
+      "program_row_id": "MRX1000-0630",
+      "slug": "closing-costs-and-fees-when-selling-mineral-rights-in-texas",
+      "title": "Closing Costs and Fees When Selling Mineral Rights in Texas",
+      "repo_path": "src/content/posts/closing-costs-and-fees-when-selling-mineral-rights-in-texas.mdx",
+      "hero_path_from_batch": "/assets/articles/mineral-rights-closing-costs-texas.webp",
+      "hero_frontmatter": {
+        "src": "/assets/articles/mineral-rights-closing-costs-texas.webp",
+        "alt": "Closing Costs and Fees When Selling Mineral Rights in Texas educational illustration",
+        "width": 1200,
+        "height": 630,
+        "mime_type": "image/webp",
+        "social_src": "/assets/articles/mineral-rights-closing-costs-texas.webp",
+        "social_alt": "Closing Costs and Fees When Selling Mineral Rights in Texas educational illustration",
+        "social_width": 1200,
+        "social_height": 630,
+        "social_mime_type": "image/webp",
+        "source": "MRX-owned",
+        "license": "MRX-owned"
+      },
+      "hero_schema_path": "/assets/articles/mineral-rights-closing-costs-texas.webp",
+      "social_meta_path": "/assets/articles/mineral-rights-closing-costs-texas.webp",
+      "same_hero_social_schema_path": true,
+      "body_sha256": "58cbeb7f8c9d9e837042bbe4d88fc1aa4c5cf591d374c7e28ae0313a810ea438",
+      "asset": {
+        "repo_path": "public/assets/articles/mineral-rights-closing-costs-texas.webp",
+        "sha256": "744c59a79d92f0ae9cf053c5fe186f3d273bddf127927915cdc01644c4047c4b",
+        "perceptual_hash_9x8": "2652534b1765e46b",
+        "nearest_nonself_path": "public/assets/articles/share/eagle-ford-shale-how-it-affects-mineral-rights-values-in-south-texas-share.jpg",
+        "nearest_nonself_hamming_distance": 21,
+        "exact_duplicate_paths": [],
+        "observed_width": 1200,
+        "observed_height": 630,
+        "observed_mime_type": "image/webp",
+        "declared_width": 1200,
+        "declared_height": 630,
+        "declared_mime_type": "image/webp",
+        "social_declared_width": 1200,
+        "social_declared_height": 630,
+        "social_declared_mime_type": "image/webp"
+      },
+      "metadata_checks": {
+        "hero_dimensions_match": true,
+        "hero_mime_match": true,
+        "social_dimensions_match": true,
+        "social_mime_match": true,
+        "hero_alt_present": true,
+        "social_alt_present": true,
+        "provenance_present": true,
+        "license_present": true
+      },
+      "duplicate_checks": {
+        "exact_sha_duplicates_absent": true,
+        "nearest_nonself_distance_gte_9": true
+      },
+      "visual_checks": {
+        "exact_title_visible_in_1200x630": true,
+        "exact_title_visible_in_600x315": true,
+        "exact_title_visible_in_300x158": true,
+        "tiny_metadata_absent": true,
+        "truncation_absent": true,
+        "overlap_absent": true,
+        "clipping_absent": true,
+        "generic_duplicate_composition_absent": true,
+        "closing_costs_table_inside_frame": true,
+        "notes": [
+          "Closing-costs title remains fully visible at all sizes and the calculator/table graphic stays inside its circular frame/canvas."
+        ]
+      },
+      "evidence_paths": {
+        "sidecar_path": "reports/mrx1000-wave2-creative-revalidate-9x8-20260801T021210Z/sidecars/MRX1000-0630-closing-costs-and-fees-when-selling-mineral-rights-in-texas.webp",
+        "resized_paths": {
+          "full": "reports/mrx1000-wave2-creative-revalidate-9x8-20260801T021210Z/full/MRX1000-0630-closing-costs-and-fees-when-selling-mineral-rights-in-texas-1200x630.webp",
+          "social": "reports/mrx1000-wave2-creative-revalidate-9x8-20260801T021210Z/social/MRX1000-0630-closing-costs-and-fees-when-selling-mineral-rights-in-texas-600x315.webp",
+          "card": "reports/mrx1000-wave2-creative-revalidate-9x8-20260801T021210Z/card/MRX1000-0630-closing-costs-and-fees-when-selling-mineral-rights-in-texas-300x158.webp"
+        }
+      },
+      "final_disposition": "PASS"
+    },
+    {
+      "batch_index": 22,
+      "selection_rank": 23,
+      "program_row_id": "MRX1000-0637",
+      "slug": "title-curative-for-mineral-rights-what-it-is-and-why-it-matters-before-you-sell",
+      "title": "Title Curative for Mineral Rights: What It Is and Why It Matters Before You Sell",
+      "repo_path": "src/content/posts/title-curative-for-mineral-rights-what-it-is-and-why-it-matters-before-you-sell.mdx",
+      "hero_path_from_batch": "/assets/articles/title-curative-for-mineral-rights-what-it-is-and-why-it-matters-before-you-sell.webp",
+      "hero_frontmatter": {
+        "src": "/assets/articles/title-curative-for-mineral-rights-what-it-is-and-why-it-matters-before-you-sell.webp",
+        "alt": "Title Curative for Mineral Rights: What It Is and Why It Matters Before You Sell educational illustration",
+        "width": 1200,
+        "height": 630,
+        "mime_type": "image/webp",
+        "social_src": "/assets/articles/title-curative-for-mineral-rights-what-it-is-and-why-it-matters-before-you-sell.webp",
+        "social_alt": "Title Curative for Mineral Rights: What It Is and Why It Matters Before You Sell educational illustration",
+        "social_width": 1200,
+        "social_height": 630,
+        "social_mime_type": "image/webp",
+        "source": "MRX-owned",
+        "license": "MRX-owned"
+      },
+      "hero_schema_path": "/assets/articles/title-curative-for-mineral-rights-what-it-is-and-why-it-matters-before-you-sell.webp",
+      "social_meta_path": "/assets/articles/title-curative-for-mineral-rights-what-it-is-and-why-it-matters-before-you-sell.webp",
+      "same_hero_social_schema_path": true,
+      "body_sha256": "ed6e547bd789843f42acee5a569caa079cb95bb30ef638999ecdc99dce62914f",
+      "asset": {
+        "repo_path": "public/assets/articles/title-curative-for-mineral-rights-what-it-is-and-why-it-matters-before-you-sell.webp",
+        "sha256": "3cbfc96287a4c8947c6780a8d869d9cfa61d630cd18c18f6a78e0fe84fa45551",
+        "perceptual_hash_9x8": "00f8393e79d9c606",
+        "nearest_nonself_path": "public/assets/articles/why-mineral-rights-are-separate-from-surface-rights-in-texas-a-landowner-s-guide.webp",
+        "nearest_nonself_hamming_distance": 14,
+        "exact_duplicate_paths": [],
+        "observed_width": 1200,
+        "observed_height": 630,
+        "observed_mime_type": "image/webp",
+        "declared_width": 1200,
+        "declared_height": 630,
+        "declared_mime_type": "image/webp",
+        "social_declared_width": 1200,
+        "social_declared_height": 630,
+        "social_declared_mime_type": "image/webp"
+      },
+      "metadata_checks": {
+        "hero_dimensions_match": true,
+        "hero_mime_match": true,
+        "social_dimensions_match": true,
+        "social_mime_match": true,
+        "hero_alt_present": true,
+        "social_alt_present": true,
+        "provenance_present": true,
+        "license_present": true
+      },
+      "duplicate_checks": {
+        "exact_sha_duplicates_absent": true,
+        "nearest_nonself_distance_gte_9": true
+      },
+      "visual_checks": {
+        "exact_title_visible_in_1200x630": true,
+        "exact_title_visible_in_600x315": true,
+        "exact_title_visible_in_300x158": true,
+        "tiny_metadata_absent": true,
+        "truncation_absent": true,
+        "overlap_absent": true,
+        "clipping_absent": true,
+        "generic_duplicate_composition_absent": true,
+        "closing_costs_table_inside_frame": "not_applicable",
+        "notes": [
+          "Long title remains complete across all sizes with no overlap or clipping."
+        ]
+      },
+      "evidence_paths": {
+        "sidecar_path": "reports/mrx1000-wave2-creative-revalidate-9x8-20260801T021210Z/sidecars/MRX1000-0637-title-curative-for-mineral-rights-what-it-is-and-why-it-matters-before-you-sell.webp",
+        "resized_paths": {
+          "full": "reports/mrx1000-wave2-creative-revalidate-9x8-20260801T021210Z/full/MRX1000-0637-title-curative-for-mineral-rights-what-it-is-and-why-it-matters-before-you-sell-1200x630.webp",
+          "social": "reports/mrx1000-wave2-creative-revalidate-9x8-20260801T021210Z/social/MRX1000-0637-title-curative-for-mineral-rights-what-it-is-and-why-it-matters-before-you-sell-600x315.webp",
+          "card": "reports/mrx1000-wave2-creative-revalidate-9x8-20260801T021210Z/card/MRX1000-0637-title-curative-for-mineral-rights-what-it-is-and-why-it-matters-before-you-sell-300x158.webp"
+        }
+      },
+      "final_disposition": "PASS"
+    },
+    {
+      "batch_index": 23,
+      "selection_rank": 24,
+      "program_row_id": "MRX1000-0642",
+      "slug": "what-is-a-mineral-rights-purchase-agreement-and-what-should-it-include",
+      "title": "What Is a Mineral Rights Purchase Agreement and What Should It Include?",
+      "repo_path": "src/content/posts/what-is-a-mineral-rights-purchase-agreement-and-what-should-it-include.mdx",
+      "hero_path_from_batch": "/assets/articles/mineral-rights-purchase-agreement.webp",
+      "hero_frontmatter": {
+        "src": "/assets/articles/mineral-rights-purchase-agreement.webp",
+        "alt": "What Is a Mineral Rights Purchase Agreement and What Should It Include? educational illustration",
+        "width": 1200,
+        "height": 630,
+        "mime_type": "image/webp",
+        "social_src": "/assets/articles/mineral-rights-purchase-agreement.webp",
+        "social_alt": "What Is a Mineral Rights Purchase Agreement and What Should It Include? educational illustration",
+        "social_width": 1200,
+        "social_height": 630,
+        "social_mime_type": "image/webp",
+        "source": "MRX-owned",
+        "license": "MRX-owned"
+      },
+      "hero_schema_path": "/assets/articles/mineral-rights-purchase-agreement.webp",
+      "social_meta_path": "/assets/articles/mineral-rights-purchase-agreement.webp",
+      "same_hero_social_schema_path": true,
+      "body_sha256": "24161c29ad76ca410cfe7f34bb8872ccf0ef7033c6bfd7305c8449f8b355b885",
+      "asset": {
+        "repo_path": "public/assets/articles/mineral-rights-purchase-agreement.webp",
+        "sha256": "e899154dbd361aa60353dfd4ea811ec5b65b30fd7ddc6f0ea76451971c899d81",
+        "perceptual_hash_9x8": "90980d5d2d092e28",
+        "nearest_nonself_path": "public/assets/articles/texas-severance-tax.webp",
+        "nearest_nonself_hamming_distance": 19,
+        "exact_duplicate_paths": [],
+        "observed_width": 1200,
+        "observed_height": 630,
+        "observed_mime_type": "image/webp",
+        "declared_width": 1200,
+        "declared_height": 630,
+        "declared_mime_type": "image/webp",
+        "social_declared_width": 1200,
+        "social_declared_height": 630,
+        "social_declared_mime_type": "image/webp"
+      },
+      "metadata_checks": {
+        "hero_dimensions_match": true,
+        "hero_mime_match": true,
+        "social_dimensions_match": true,
+        "social_mime_match": true,
+        "hero_alt_present": true,
+        "social_alt_present": true,
+        "provenance_present": true,
+        "license_present": true
+      },
+      "duplicate_checks": {
+        "exact_sha_duplicates_absent": true,
+        "nearest_nonself_distance_gte_9": true
+      },
+      "visual_checks": {
+        "exact_title_visible_in_1200x630": true,
+        "exact_title_visible_in_600x315": true,
+        "exact_title_visible_in_300x158": true,
+        "tiny_metadata_absent": true,
+        "truncation_absent": true,
+        "overlap_absent": true,
+        "clipping_absent": true,
+        "generic_duplicate_composition_absent": true,
+        "closing_costs_table_inside_frame": "not_applicable",
+        "notes": [
+          "Title remains fully visible at all sizes with balanced spacing and no clipping."
+        ]
+      },
+      "evidence_paths": {
+        "sidecar_path": "reports/mrx1000-wave2-creative-revalidate-9x8-20260801T021210Z/sidecars/MRX1000-0642-what-is-a-mineral-rights-purchase-agreement-and-what-should-it-include.webp",
+        "resized_paths": {
+          "full": "reports/mrx1000-wave2-creative-revalidate-9x8-20260801T021210Z/full/MRX1000-0642-what-is-a-mineral-rights-purchase-agreement-and-what-should-it-include-1200x630.webp",
+          "social": "reports/mrx1000-wave2-creative-revalidate-9x8-20260801T021210Z/social/MRX1000-0642-what-is-a-mineral-rights-purchase-agreement-and-what-should-it-include-600x315.webp",
+          "card": "reports/mrx1000-wave2-creative-revalidate-9x8-20260801T021210Z/card/MRX1000-0642-what-is-a-mineral-rights-purchase-agreement-and-what-should-it-include-300x158.webp"
+        }
+      },
+      "final_disposition": "PASS"
+    },
+    {
+      "batch_index": 24,
+      "selection_rank": 25,
+      "program_row_id": "MRX1000-0886",
+      "slug": "why-mineral-rights-are-separate-from-surface-rights-in-texas-a-landowners-guide",
+      "title": "Why Mineral Rights Are Separate From Surface Rights in Texas: A Landowner's Guide",
+      "repo_path": "src/content/posts/why-mineral-rights-are-separate-from-surface-rights-in-texas-a-landowners-guide.mdx",
+      "hero_path_from_batch": "/assets/articles/why-mineral-rights-are-separate-from-surface-rights-in-texas-a-landowner-s-guide.webp",
+      "hero_frontmatter": {
+        "src": "/assets/articles/why-mineral-rights-are-separate-from-surface-rights-in-texas-a-landowner-s-guide.webp",
+        "alt": "Why Mineral Rights Are Separate From Surface Rights in Texas: A Landowner's Guide educational illustration",
+        "width": 1200,
+        "height": 630,
+        "mime_type": "image/webp",
+        "social_src": "/assets/articles/why-mineral-rights-are-separate-from-surface-rights-in-texas-a-landowner-s-guide.webp",
+        "social_alt": "Why Mineral Rights Are Separate From Surface Rights in Texas: A Landowner's Guide educational illustration",
+        "social_width": 1200,
+        "social_height": 630,
+        "social_mime_type": "image/webp",
+        "source": "MRX-owned",
+        "license": "MRX-owned"
+      },
+      "hero_schema_path": "/assets/articles/why-mineral-rights-are-separate-from-surface-rights-in-texas-a-landowner-s-guide.webp",
+      "social_meta_path": "/assets/articles/why-mineral-rights-are-separate-from-surface-rights-in-texas-a-landowner-s-guide.webp",
+      "same_hero_social_schema_path": true,
+      "body_sha256": "7e15432ac09c7dc8c56ae4a8d0df88e2710799f4eb9bad3a4b0fcdeeef6fb7e1",
+      "asset": {
+        "repo_path": "public/assets/articles/why-mineral-rights-are-separate-from-surface-rights-in-texas-a-landowner-s-guide.webp",
+        "sha256": "286969babce22ea681f888a452425bf2561d93368d25b95a6f1983763d1cd46e",
+        "perceptual_hash_9x8": "00d82d395949e906",
+        "nearest_nonself_path": "public/assets/articles/fair-mineral-rights-offer-2.webp",
+        "nearest_nonself_hamming_distance": 13,
+        "exact_duplicate_paths": [],
+        "observed_width": 1200,
+        "observed_height": 630,
+        "observed_mime_type": "image/webp",
+        "declared_width": 1200,
+        "declared_height": 630,
+        "declared_mime_type": "image/webp",
+        "social_declared_width": 1200,
+        "social_declared_height": 630,
+        "social_declared_mime_type": "image/webp"
+      },
+      "metadata_checks": {
+        "hero_dimensions_match": true,
+        "hero_mime_match": true,
+        "social_dimensions_match": true,
+        "social_mime_match": true,
+        "hero_alt_present": true,
+        "social_alt_present": true,
+        "provenance_present": true,
+        "license_present": true
+      },
+      "duplicate_checks": {
+        "exact_sha_duplicates_absent": true,
+        "nearest_nonself_distance_gte_9": true
+      },
+      "visual_checks": {
+        "exact_title_visible_in_1200x630": true,
+        "exact_title_visible_in_600x315": true,
+        "exact_title_visible_in_300x158": true,
+        "tiny_metadata_absent": true,
+        "truncation_absent": true,
+        "overlap_absent": true,
+        "clipping_absent": true,
+        "generic_duplicate_composition_absent": true,
+        "closing_costs_table_inside_frame": "not_applicable",
+        "notes": [
+          "Four-line title remains complete across all sizes; composition is distinct despite shared abstract style language."
+        ]
+      },
+      "evidence_paths": {
+        "sidecar_path": "reports/mrx1000-wave2-creative-revalidate-9x8-20260801T021210Z/sidecars/MRX1000-0886-why-mineral-rights-are-separate-from-surface-rights-in-texas-a-landowners-guide.webp",
+        "resized_paths": {
+          "full": "reports/mrx1000-wave2-creative-revalidate-9x8-20260801T021210Z/full/MRX1000-0886-why-mineral-rights-are-separate-from-surface-rights-in-texas-a-landowners-guide-1200x630.webp",
+          "social": "reports/mrx1000-wave2-creative-revalidate-9x8-20260801T021210Z/social/MRX1000-0886-why-mineral-rights-are-separate-from-surface-rights-in-texas-a-landowners-guide-600x315.webp",
+          "card": "reports/mrx1000-wave2-creative-revalidate-9x8-20260801T021210Z/card/MRX1000-0886-why-mineral-rights-are-separate-from-surface-rights-in-texas-a-landowners-guide-300x158.webp"
+        }
+      },
+      "final_disposition": "PASS"
+    }
+  ],
+  "summary": {
+    "article_count": 15,
+    "pass_count": 15,
+    "hold_count": 0,
+    "all_pass": true,
+    "exact_sha_duplicates_found": 0,
+    "minimum_nearest_nonself_hamming_distance": 13,
+    "minimum_distance_rows": [
+      "MRX1000-0429",
+      "MRX1000-0886"
+    ],
+    "same_hero_social_schema_path_count": 15
+  },
+  "final_disposition": "PASS",
+  "manual_visual_inspection_note": "Visual inspection completed against generated per-row sidecars plus contact sheets at 1200x630, 600x315, and 300x158. Prior 16x16 reports were not used for the decision."
+}

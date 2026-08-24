@@ -1,0 +1,867 @@
+{
+  "generated_at_utc": "20260801T003929Z",
+  "version": "20260801T003929Z",
+  "decision": "PASS",
+  "scope": "Exactly 15 MRX1000 Wave 2 draft rows; prepare only, no publish/deploy/status/SearchAtlas/GSC mutation",
+  "runtime": {
+    "node": "v20.20.2",
+    "pnpm": "9.15.9"
+  },
+  "gates": {
+    "runtime_node": true,
+    "runtime_pnpm": true,
+    "full_suite": true,
+    "check_visible_copy": true,
+    "compliance": true,
+    "build_default": true,
+    "build_hetzner": true,
+    "build_vercel": true
+  },
+  "canonical_hashes": {
+    "expected": {
+      "ledger_json": "897de9c3aa0f40bc32f63638f2fd847e9788b7100a1c97d6ffbe23f226957559",
+      "ledger_csv": "027691327d6c7cb93a2ab93340275e48c9ccfa21caf01fe3a01d0830e4b8006a",
+      "batch": "9fe2474131062dba5961ae9248b7e93271e0e9b54d60b60351da40ad04e278ec"
+    },
+    "observed": {
+      "ledger_json": "897de9c3aa0f40bc32f63638f2fd847e9788b7100a1c97d6ffbe23f226957559",
+      "ledger_csv": "027691327d6c7cb93a2ab93340275e48c9ccfa21caf01fe3a01d0830e4b8006a",
+      "batch": "9fe2474131062dba5961ae9248b7e93271e0e9b54d60b60351da40ad04e278ec"
+    },
+    "unchanged": true
+  },
+  "asset_summary": {
+    "count": 15,
+    "unique_sha256_count": 15,
+    "all_1200x630_webp": true,
+    "preview_evidence": [
+      {
+        "kind": "preview_sheet",
+        "path": "reports/mrx1000-wave2-creative-preview-sheet.webp",
+        "sha256": "db08e5f67274c6a4f5d9e23ffffc20be4b2280fee6bcb0010aafaf698c779ab3",
+        "width": 960,
+        "height": 1030,
+        "mime": "image/webp"
+      },
+      {
+        "kind": "title_strip_600",
+        "path": "reports/mrx1000-wave2-creative-title-strip-600.webp",
+        "sha256": "367b7a258ed1d6a63122f5b4003affefec5d6e675e62d050d63142df51594d05",
+        "width": 600,
+        "height": 5325,
+        "mime": "image/webp"
+      },
+      {
+        "kind": "title_strip_300",
+        "path": "reports/mrx1000-wave2-creative-title-strip-300.webp",
+        "sha256": "2f426764619b88a44cdf173ce2ce6f697da5244e289106f93e688af36c43cef3",
+        "width": 300,
+        "height": 2910,
+        "mime": "image/webp"
+      }
+    ],
+    "independent_visual_inspection": "PASS: all 15 exact titles are present, legible, and unclipped in the approved full/600/300 evidence."
+  },
+  "row_status_counts": {
+    "PASS": 15,
+    "HOLD": 0
+  },
+  "rows": [
+    {
+      "row_id": "MRX1000-0736",
+      "slug": "what-are-mineral-rights-a-complete-guide-for-texas-landowners",
+      "title": "What Are Mineral Rights? A Complete Guide for Texas Landowners",
+      "repo_path": "src/content/posts/what-are-mineral-rights-a-complete-guide-for-texas-landowners.mdx",
+      "article_sha256": "b24c1e1da727689305355708081b78b301a7b58942e084c44a40738761e6749d",
+      "publication_status": "draft",
+      "noindex": true,
+      "word_count": 655,
+      "sources_count": 4,
+      "citation_urls": [
+        "https://statutes.capitol.texas.gov/Docs/PR/htm/PR.5.htm#5.021",
+        "https://statutes.capitol.texas.gov/Docs/PR/htm/PR.13.htm#13.001",
+        "https://www.rrc.texas.gov/oil-and-gas/research-and-statistics/production-data/",
+        "https://www.irs.gov/publications/p525"
+      ],
+      "faq_count": 5,
+      "internal_links": {
+        "hub": "/mineral-rights/texas/",
+        "sibling": "/blog/what-is-your-texas-mineral-rights-worth/",
+        "conversion": "/book/"
+      },
+      "asset": {
+        "path": "/assets/articles/what-are-mineral-rights-texas-landowners.webp",
+        "sha256": "2f4fdbf69d6d44a55e8ae0c04a1320394653292aecac1f533f12308be8eb2ff1",
+        "dimensions": {
+          "width": 1200,
+          "height": 630
+        },
+        "mime": "image/webp",
+        "alt": "What Are Mineral Rights? A Complete Guide for Texas Landowners educational illustration"
+      },
+      "checks": {
+        "row_id_reconciled": true,
+        "exact_title": true,
+        "slug": true,
+        "draft_noindex": true,
+        "sources_citations": true,
+        "body_threshold": true,
+        "answer_first": true,
+        "faq_schema": true,
+        "internal_links": true,
+        "analytics_taxonomy": true,
+        "canonical_preview_control": true,
+        "asset_exists_unique": true,
+        "asset_dimensions_mime": true,
+        "hero_social_identity": true,
+        "alt": true,
+        "visual_title_evidence": true
+      },
+      "final_status": "PASS",
+      "hold_reasons": []
+    },
+    {
+      "row_id": "MRX1000-0876",
+      "slug": "how-to-find-out-if-you-own-mineral-rights-in-texas",
+      "title": "How to Find Out If You Own Mineral Rights in Texas",
+      "repo_path": "src/content/posts/how-to-find-out-if-you-own-mineral-rights-in-texas.mdx",
+      "article_sha256": "6f7fa0ff0d863774c52e81f0167dff79ab59aeb56b13c0eb8dd041c86ad756ab",
+      "publication_status": "draft",
+      "noindex": true,
+      "word_count": 561,
+      "sources_count": 3,
+      "citation_urls": [
+        "https://statutes.capitol.texas.gov/Docs/PR/htm/PR.13.htm#13.001",
+        "https://statutes.capitol.texas.gov/Docs/PR/htm/PR.5.htm#5.021",
+        "https://www.rrc.texas.gov/oil-and-gas/research-and-statistics/production-data/"
+      ],
+      "faq_count": 5,
+      "internal_links": {
+        "hub": "/learning-center/title-lease-ownership/",
+        "sibling": "/blog/net-mineral-acres-vs-royalty-acres-what-texas-mineral-rights-owners-need-to-know/",
+        "conversion": "/book/"
+      },
+      "asset": {
+        "path": "/assets/articles/how-to-find-out-if-you-own-mineral-rights-in-texas.webp",
+        "sha256": "f2662764cce19f9cf20ddea775299646e7fc6d76c67d001b53af7a5e3146f086",
+        "dimensions": {
+          "width": 1200,
+          "height": 630
+        },
+        "mime": "image/webp",
+        "alt": "How to Find Out If You Own Mineral Rights in Texas educational illustration"
+      },
+      "checks": {
+        "row_id_reconciled": true,
+        "exact_title": true,
+        "slug": true,
+        "draft_noindex": true,
+        "sources_citations": true,
+        "body_threshold": true,
+        "answer_first": true,
+        "faq_schema": true,
+        "internal_links": true,
+        "analytics_taxonomy": true,
+        "canonical_preview_control": true,
+        "asset_exists_unique": true,
+        "asset_dimensions_mime": true,
+        "hero_social_identity": true,
+        "alt": true,
+        "visual_title_evidence": true
+      },
+      "final_status": "PASS",
+      "hold_reasons": []
+    },
+    {
+      "row_id": "MRX1000-0429",
+      "slug": "how-to-trust-that-your-mineral-rights-will-be-valued-fairly",
+      "title": "How to Trust That Your Mineral Rights Will Be Valued Fairly",
+      "repo_path": "src/content/posts/how-to-trust-that-your-mineral-rights-will-be-valued-fairly.mdx",
+      "article_sha256": "27528ce4d7a610694f4fe7dc505c7880dc8d6d2f40b2b2c8509c777ef083fcac",
+      "publication_status": "draft",
+      "noindex": true,
+      "word_count": 557,
+      "sources_count": 5,
+      "citation_urls": [
+        "https://www.rrc.texas.gov/oil-and-gas/research-and-statistics/production-data/",
+        "https://www.irs.gov/publications/p544",
+        "https://www.irs.gov/forms-pubs/about-publication-551",
+        "https://mineralrightsxchange.com/how-it-works/",
+        "https://mineralrightsxchange.com/faq/"
+      ],
+      "faq_count": 5,
+      "internal_links": {
+        "hub": "/inherited-mineral-rights/",
+        "sibling": "/blog/managing-mineral-interests-in-estate-planning-explained/",
+        "conversion": "/book/"
+      },
+      "asset": {
+        "path": "/assets/articles/fair-mineral-rights-offer-2.webp",
+        "sha256": "4e1337b1a4e09229f88434e996e0f3f9e6814f7fd5a0d52128237bd0941952f8",
+        "dimensions": {
+          "width": 1200,
+          "height": 630
+        },
+        "mime": "image/webp",
+        "alt": "How to Trust That Your Mineral Rights Will Be Valued Fairly educational illustration"
+      },
+      "checks": {
+        "row_id_reconciled": true,
+        "exact_title": true,
+        "slug": true,
+        "draft_noindex": true,
+        "sources_citations": true,
+        "body_threshold": true,
+        "answer_first": true,
+        "faq_schema": true,
+        "internal_links": true,
+        "analytics_taxonomy": true,
+        "canonical_preview_control": true,
+        "asset_exists_unique": true,
+        "asset_dimensions_mime": true,
+        "hero_social_identity": true,
+        "alt": true,
+        "visual_title_evidence": true
+      },
+      "final_status": "PASS",
+      "hold_reasons": []
+    },
+    {
+      "row_id": "MRX1000-0632",
+      "slug": "how-texas-mineral-rights-ownership-works-deeds-conveyances-and-title",
+      "title": "How Texas Mineral Rights Ownership Works: Deeds, Conveyances, and Title",
+      "repo_path": "src/content/posts/how-texas-mineral-rights-ownership-works-deeds-conveyances-and-title.mdx",
+      "article_sha256": "3c145fb97ab7e7112b8c80440ec2721fc0fa1f0651cf6442eb874a643b149786",
+      "publication_status": "draft",
+      "noindex": true,
+      "word_count": 515,
+      "sources_count": 3,
+      "citation_urls": [
+        "https://statutes.capitol.texas.gov/Docs/PR/htm/PR.5.htm#5.021",
+        "https://statutes.capitol.texas.gov/Docs/PR/htm/PR.13.htm#13.001",
+        "https://www.rrc.texas.gov/oil-and-gas/research-and-statistics/production-data/"
+      ],
+      "faq_count": 5,
+      "internal_links": {
+        "hub": "/learning-center/mineral-rights-taxes/",
+        "sibling": "/blog/how-to-navigate-a-1031-exchange-for-mineral-rights/",
+        "conversion": "/book/"
+      },
+      "asset": {
+        "path": "/assets/articles/how-texas-mineral-rights-ownership-works-deeds-conveyances-and-title.webp",
+        "sha256": "613e0cd7d76d33f8d4be77266c71e4707e942288f774a94fc313025011073d91",
+        "dimensions": {
+          "width": 1200,
+          "height": 630
+        },
+        "mime": "image/webp",
+        "alt": "How Texas Mineral Rights Ownership Works: Deeds, Conveyances, and Title educational illustration"
+      },
+      "checks": {
+        "row_id_reconciled": true,
+        "exact_title": true,
+        "slug": true,
+        "draft_noindex": true,
+        "sources_citations": true,
+        "body_threshold": true,
+        "answer_first": true,
+        "faq_schema": true,
+        "internal_links": true,
+        "analytics_taxonomy": true,
+        "canonical_preview_control": true,
+        "asset_exists_unique": true,
+        "asset_dimensions_mime": true,
+        "hero_social_identity": true,
+        "alt": true,
+        "visual_title_evidence": true
+      },
+      "final_status": "PASS",
+      "hold_reasons": []
+    },
+    {
+      "row_id": "MRX1000-0303",
+      "slug": "how-to-find-a-reputable-mineral-rights-buyer-in-texas",
+      "title": "How to Find a Reputable Mineral Rights Buyer in Texas",
+      "repo_path": "src/content/posts/how-to-find-a-reputable-mineral-rights-buyer-in-texas.mdx",
+      "article_sha256": "c92d82150c14af9b36748e0fd2d3d1416b13995fa09619caeac0b9a1e7452f44",
+      "publication_status": "draft",
+      "noindex": true,
+      "word_count": 504,
+      "sources_count": 3,
+      "citation_urls": [
+        "https://statutes.capitol.texas.gov/Docs/PR/htm/PR.13.htm#13.001",
+        "https://mineralrightsxchange.com/how-it-works/",
+        "https://mineralrightsxchange.com/faq/"
+      ],
+      "faq_count": 5,
+      "internal_links": {
+        "hub": "/offer-review/",
+        "sibling": "/blog/how-to-get-multiple-offers-for-your-texas-mineral-rights/",
+        "conversion": "/book/"
+      },
+      "asset": {
+        "path": "/assets/articles/sell-mineral-rights-texas.webp",
+        "sha256": "50b60a104f5fa55a82b4ff28107889a7f2b2e2716e48eea57c3045645026224c",
+        "dimensions": {
+          "width": 1200,
+          "height": 630
+        },
+        "mime": "image/webp",
+        "alt": "How to Find a Reputable Mineral Rights Buyer in Texas educational illustration"
+      },
+      "checks": {
+        "row_id_reconciled": true,
+        "exact_title": true,
+        "slug": true,
+        "draft_noindex": true,
+        "sources_citations": true,
+        "body_threshold": true,
+        "answer_first": true,
+        "faq_schema": true,
+        "internal_links": true,
+        "analytics_taxonomy": true,
+        "canonical_preview_control": true,
+        "asset_exists_unique": true,
+        "asset_dimensions_mime": true,
+        "hero_social_identity": true,
+        "alt": true,
+        "visual_title_evidence": true
+      },
+      "final_status": "PASS",
+      "hold_reasons": []
+    },
+    {
+      "row_id": "MRX1000-0970",
+      "slug": "understanding-our-transparent-approach-to-mineral-rights-reviews-versus-traditional-selling-tactics",
+      "title": "Understanding Our Transparent Approach to Mineral Rights Reviews Versus Traditional Selling Tactics",
+      "repo_path": "src/content/posts/understanding-our-transparent-approach-to-mineral-rights-reviews-versus-traditional-selling-tactics.mdx",
+      "article_sha256": "7c3929b9df488aa0336aa93b110267f7606650bab5c1a9ea3b11d5fc4752b44b",
+      "publication_status": "draft",
+      "noindex": true,
+      "word_count": 514,
+      "sources_count": 3,
+      "citation_urls": [
+        "https://mineralrightsxchange.com/how-it-works/",
+        "https://mineralrightsxchange.com/faq/",
+        "https://www.rrc.texas.gov/oil-and-gas/research-and-statistics/production-data/"
+      ],
+      "faq_count": 5,
+      "internal_links": {
+        "hub": "/methodology/",
+        "sibling": "/blog/understanding-our-valuation-methodology-ensuring-fairness-and-accuracy-in-your-mineral-rights-review/",
+        "conversion": "/book/"
+      },
+      "asset": {
+        "path": "/assets/articles/transparent-approach-to-mineral-rights-reviews-versus-traditional-selling-tactics.webp",
+        "sha256": "81c92aae49b92197bb298cf9b400a21719a5990888451649f5a45adeac4b3059",
+        "dimensions": {
+          "width": 1200,
+          "height": 630
+        },
+        "mime": "image/webp",
+        "alt": "Understanding Our Transparent Approach to Mineral Rights Reviews Versus Traditional Selling Tactics educational illustration"
+      },
+      "checks": {
+        "row_id_reconciled": true,
+        "exact_title": true,
+        "slug": true,
+        "draft_noindex": true,
+        "sources_citations": true,
+        "body_threshold": true,
+        "answer_first": true,
+        "faq_schema": true,
+        "internal_links": true,
+        "analytics_taxonomy": true,
+        "canonical_preview_control": true,
+        "asset_exists_unique": true,
+        "asset_dimensions_mime": true,
+        "hero_social_identity": true,
+        "alt": true,
+        "visual_title_evidence": true
+      },
+      "final_status": "PASS",
+      "hold_reasons": []
+    },
+    {
+      "row_id": "MRX1000-0001",
+      "slug": "can-you-sell-part-of-your-mineral-rights-partial-interest-sales-explained",
+      "title": "Can You Sell Part of Your Mineral Rights? Partial Interest Sales Explained",
+      "repo_path": "src/content/posts/can-you-sell-part-of-your-mineral-rights-partial-interest-sales-explained.mdx",
+      "article_sha256": "9e90ad08d21c010641dcc6f12d68522b3e0e67cdd6ebbc03ff349032479d664f",
+      "publication_status": "draft",
+      "noindex": true,
+      "word_count": 532,
+      "sources_count": 3,
+      "citation_urls": [
+        "https://statutes.capitol.texas.gov/Docs/PR/htm/PR.5.htm#5.021",
+        "https://statutes.capitol.texas.gov/Docs/PR/htm/PR.13.htm#13.001",
+        "https://statutes.capitol.texas.gov/Docs/BC/htm/BC.26.htm#26.01"
+      ],
+      "faq_count": 5,
+      "internal_links": {
+        "hub": "/sell-mineral-rights/",
+        "sibling": "/blog/how-long-does-it-take-to-sell-mineral-rights-in-texas/",
+        "conversion": "/book/"
+      },
+      "asset": {
+        "path": "/assets/articles/can-you-sell-part-of-mineral-rights-partial-interest-sales.webp",
+        "sha256": "43858d61baa12079d4950b8c68a0be2134f69ed334ef3a9f3fd6d451bb47ad03",
+        "dimensions": {
+          "width": 1200,
+          "height": 630
+        },
+        "mime": "image/webp",
+        "alt": "Can You Sell Part of Your Mineral Rights? Partial Interest Sales Explained educational illustration"
+      },
+      "checks": {
+        "row_id_reconciled": true,
+        "exact_title": true,
+        "slug": true,
+        "draft_noindex": true,
+        "sources_citations": true,
+        "body_threshold": true,
+        "answer_first": true,
+        "faq_schema": true,
+        "internal_links": true,
+        "analytics_taxonomy": true,
+        "canonical_preview_control": true,
+        "asset_exists_unique": true,
+        "asset_dimensions_mime": true,
+        "hero_social_identity": true,
+        "alt": true,
+        "visual_title_evidence": true
+      },
+      "final_status": "PASS",
+      "hold_reasons": []
+    },
+    {
+      "row_id": "MRX1000-0160",
+      "slug": "understanding-the-risks-of-skipping-an-independent-assessment-for-your-mineral-rights",
+      "title": "Understanding the Risks of Skipping an Independent Assessment for Your Mineral Rights",
+      "repo_path": "src/content/posts/understanding-the-risks-of-skipping-an-independent-assessment-for-your-mineral-rights.mdx",
+      "article_sha256": "097c738c326ee7863ae92f27f84db9e7b0c8786b5763cdb76d20653096cea6d8",
+      "publication_status": "draft",
+      "noindex": true,
+      "word_count": 513,
+      "sources_count": 3,
+      "citation_urls": [
+        "https://www.rrc.texas.gov/oil-and-gas/research-and-statistics/production-data/",
+        "https://mineralrightsxchange.com/how-it-works/",
+        "https://mineralrightsxchange.com/faq/"
+      ],
+      "faq_count": 5,
+      "internal_links": {
+        "hub": "/mineral-rights-value/",
+        "sibling": "/blog/understanding-the-value-of-your-mineral-rights/",
+        "conversion": "/book/"
+      },
+      "asset": {
+        "path": "/assets/articles/risks-of-skipping-an-independent-assessment-for-mineral-rights.webp",
+        "sha256": "6ef30ebaa0e7f5da0e2a24874556ddace4b156f91dd3b8d74459f4ada881184c",
+        "dimensions": {
+          "width": 1200,
+          "height": 630
+        },
+        "mime": "image/webp",
+        "alt": "Understanding the Risks of Skipping an Independent Assessment for Your Mineral Rights educational illustration"
+      },
+      "checks": {
+        "row_id_reconciled": true,
+        "exact_title": true,
+        "slug": true,
+        "draft_noindex": true,
+        "sources_citations": true,
+        "body_threshold": true,
+        "answer_first": true,
+        "faq_schema": true,
+        "internal_links": true,
+        "analytics_taxonomy": true,
+        "canonical_preview_control": true,
+        "asset_exists_unique": true,
+        "asset_dimensions_mime": true,
+        "hero_social_identity": true,
+        "alt": true,
+        "visual_title_evidence": true
+      },
+      "final_status": "PASS",
+      "hold_reasons": []
+    },
+    {
+      "row_id": "MRX1000-0528",
+      "slug": "steps-to-take-if-your-royalty-checks-are-inconsistent-a-mineral-owners-guide",
+      "title": "Steps to Take if Your Royalty Checks Are Inconsistent: A Mineral Owner's Guide",
+      "repo_path": "src/content/posts/steps-to-take-if-your-royalty-checks-are-inconsistent-a-mineral-owners-guide.mdx",
+      "article_sha256": "45718f12f425e8e4754ff946e3a1ed2cd443a62c7c1b8ecf08e08fa986a75077",
+      "publication_status": "draft",
+      "noindex": true,
+      "word_count": 536,
+      "sources_count": 4,
+      "citation_urls": [
+        "https://statutes.capitol.texas.gov/Docs/NR/htm/NR.91.htm#91.402",
+        "https://statutes.capitol.texas.gov/Docs/NR/htm/NR.91.htm#91.403",
+        "https://www.rrc.texas.gov/oil-and-gas/research-and-statistics/production-data/",
+        "https://www.irs.gov/publications/p525"
+      ],
+      "faq_count": 5,
+      "internal_links": {
+        "hub": "/learning-center/oil-and-gas-royalties/",
+        "sibling": "/blog/understanding-your-mineral-royalty-checks-value/",
+        "conversion": "/book/"
+      },
+      "asset": {
+        "path": "/assets/articles/steps-to-take-if-royalty-checks-are-inconsistent-a-mineral-owner-s-guide.webp",
+        "sha256": "ed8823c9546ac010eb6551d1b62e5529a17af1ca7f807cea3996cd34f6d6b006",
+        "dimensions": {
+          "width": 1200,
+          "height": 630
+        },
+        "mime": "image/webp",
+        "alt": "Steps to Take if Your Royalty Checks Are Inconsistent: A Mineral Owner's Guide educational illustration"
+      },
+      "checks": {
+        "row_id_reconciled": true,
+        "exact_title": true,
+        "slug": true,
+        "draft_noindex": true,
+        "sources_citations": true,
+        "body_threshold": true,
+        "answer_first": true,
+        "faq_schema": true,
+        "internal_links": true,
+        "analytics_taxonomy": true,
+        "canonical_preview_control": true,
+        "asset_exists_unique": true,
+        "asset_dimensions_mime": true,
+        "hero_social_identity": true,
+        "alt": true,
+        "visual_title_evidence": true
+      },
+      "final_status": "PASS",
+      "hold_reasons": []
+    },
+    {
+      "row_id": "MRX1000-0737",
+      "slug": "what-is-your-texas-mineral-rights-worth",
+      "title": "What Is Your Texas Mineral Rights Worth?",
+      "repo_path": "src/content/posts/what-is-your-texas-mineral-rights-worth.mdx",
+      "article_sha256": "cba2a771f5b4aa61b64cf307d782a66d096e0b83a76a517bc6b26ea046b191d8",
+      "publication_status": "draft",
+      "noindex": true,
+      "word_count": 528,
+      "sources_count": 5,
+      "citation_urls": [
+        "https://www.rrc.texas.gov/oil-and-gas/research-and-statistics/production-data/",
+        "https://mineralrightsxchange.com/how-it-works/",
+        "https://mineralrightsxchange.com/faq/",
+        "https://www.irs.gov/publications/p544",
+        "https://www.irs.gov/forms-pubs/about-publication-551"
+      ],
+      "faq_count": 5,
+      "internal_links": {
+        "hub": "/mineral-rights/texas/",
+        "sibling": "/blog/how-to-evaluate-mineral-production-in-texas/",
+        "conversion": "/book/"
+      },
+      "asset": {
+        "path": "/assets/articles/what-are-mineral-rights-worth.webp",
+        "sha256": "ae4fffeca4df8226fd52bde816de28fcbcfc2e7c639273b998b72489fe7ad30a",
+        "dimensions": {
+          "width": 1200,
+          "height": 630
+        },
+        "mime": "image/webp",
+        "alt": "What Is Your Texas Mineral Rights Worth? educational illustration"
+      },
+      "checks": {
+        "row_id_reconciled": true,
+        "exact_title": true,
+        "slug": true,
+        "draft_noindex": true,
+        "sources_citations": true,
+        "body_threshold": true,
+        "answer_first": true,
+        "faq_schema": true,
+        "internal_links": true,
+        "analytics_taxonomy": true,
+        "canonical_preview_control": true,
+        "asset_exists_unique": true,
+        "asset_dimensions_mime": true,
+        "hero_social_identity": true,
+        "alt": true,
+        "visual_title_evidence": true
+      },
+      "final_status": "PASS",
+      "hold_reasons": []
+    },
+    {
+      "row_id": "MRX1000-0880",
+      "slug": "types-of-mineral-rights-in-texas-royalty-interests-working-interests-and-overriding-royalties-explained",
+      "title": "Types of Mineral Rights in Texas: Royalty Interests, Working Interests, and Overriding Royalties Explained",
+      "repo_path": "src/content/posts/types-of-mineral-rights-in-texas-royalty-interests-working-interests-and-overriding-royalties-explained.mdx",
+      "article_sha256": "9a104d6e247ce9b92dd90f84fbe0d40dba7336b3b1997949d0247a5338f2b5c2",
+      "publication_status": "draft",
+      "noindex": true,
+      "word_count": 539,
+      "sources_count": 3,
+      "citation_urls": [
+        "https://statutes.capitol.texas.gov/Docs/PR/htm/PR.5.htm#5.021",
+        "https://statutes.capitol.texas.gov/Docs/PR/htm/PR.13.htm#13.001",
+        "https://www.rrc.texas.gov/oil-and-gas/research-and-statistics/production-data/"
+      ],
+      "faq_count": 5,
+      "internal_links": {
+        "hub": "/learning-center/title-lease-ownership/",
+        "sibling": "/blog/understanding-your-mineral-royalty-checks-breakdown/",
+        "conversion": "/book/"
+      },
+      "asset": {
+        "path": "/assets/articles/types-of-mineral-rights-in-texas-royalty-interests-working-interests-and-overriding-royalties.webp",
+        "sha256": "8add19f905c1331035897210477a314c30afc495c974baa0ddceee7a6a7b5723",
+        "dimensions": {
+          "width": 1200,
+          "height": 630
+        },
+        "mime": "image/webp",
+        "alt": "Educational illustration of Texas royalty interests, working interests, and overriding royalties"
+      },
+      "checks": {
+        "row_id_reconciled": true,
+        "exact_title": true,
+        "slug": true,
+        "draft_noindex": true,
+        "sources_citations": true,
+        "body_threshold": true,
+        "answer_first": true,
+        "faq_schema": true,
+        "internal_links": true,
+        "analytics_taxonomy": true,
+        "canonical_preview_control": true,
+        "asset_exists_unique": true,
+        "asset_dimensions_mime": true,
+        "hero_social_identity": true,
+        "alt": true,
+        "visual_title_evidence": true
+      },
+      "final_status": "PASS",
+      "hold_reasons": []
+    },
+    {
+      "row_id": "MRX1000-0630",
+      "slug": "closing-costs-and-fees-when-selling-mineral-rights-in-texas",
+      "title": "Closing Costs and Fees When Selling Mineral Rights in Texas",
+      "repo_path": "src/content/posts/closing-costs-and-fees-when-selling-mineral-rights-in-texas.mdx",
+      "article_sha256": "58cbeb7f8c9d9e837042bbe4d88fc1aa4c5cf591d374c7e28ae0313a810ea438",
+      "publication_status": "draft",
+      "noindex": true,
+      "word_count": 510,
+      "sources_count": 4,
+      "citation_urls": [
+        "https://comptroller.texas.gov/taxes/crude-oil/",
+        "https://comptroller.texas.gov/taxes/natural-gas/",
+        "https://www.irs.gov/publications/p544",
+        "https://www.irs.gov/forms-pubs/about-publication-551"
+      ],
+      "faq_count": 5,
+      "internal_links": {
+        "hub": "/learning-center/mineral-rights-taxes/",
+        "sibling": "/blog/how-a-1031-exchange-benefits-mineral-rights-owners/",
+        "conversion": "/book/"
+      },
+      "asset": {
+        "path": "/assets/articles/mineral-rights-closing-costs-texas.webp",
+        "sha256": "82f4693e8dfc844391fecc4794f902adeb354550bfcd384070869970c0a0d275",
+        "dimensions": {
+          "width": 1200,
+          "height": 630
+        },
+        "mime": "image/webp",
+        "alt": "Closing Costs and Fees When Selling Mineral Rights in Texas educational illustration"
+      },
+      "checks": {
+        "row_id_reconciled": true,
+        "exact_title": true,
+        "slug": true,
+        "draft_noindex": true,
+        "sources_citations": true,
+        "body_threshold": true,
+        "answer_first": true,
+        "faq_schema": true,
+        "internal_links": true,
+        "analytics_taxonomy": true,
+        "canonical_preview_control": true,
+        "asset_exists_unique": true,
+        "asset_dimensions_mime": true,
+        "hero_social_identity": true,
+        "alt": true,
+        "visual_title_evidence": true
+      },
+      "final_status": "PASS",
+      "hold_reasons": []
+    },
+    {
+      "row_id": "MRX1000-0637",
+      "slug": "title-curative-for-mineral-rights-what-it-is-and-why-it-matters-before-you-sell",
+      "title": "Title Curative for Mineral Rights: What It Is and Why It Matters Before You Sell",
+      "repo_path": "src/content/posts/title-curative-for-mineral-rights-what-it-is-and-why-it-matters-before-you-sell.mdx",
+      "article_sha256": "ed6e547bd789843f42acee5a569caa079cb95bb30ef638999ecdc99dce62914f",
+      "publication_status": "draft",
+      "noindex": true,
+      "word_count": 503,
+      "sources_count": 3,
+      "citation_urls": [
+        "https://statutes.capitol.texas.gov/Docs/PR/htm/PR.13.htm#13.001",
+        "https://statutes.capitol.texas.gov/Docs/PR/htm/PR.5.htm#5.021",
+        "https://statutes.capitol.texas.gov/Docs/BC/htm/BC.26.htm#26.01"
+      ],
+      "faq_count": 5,
+      "internal_links": {
+        "hub": "/learning-center/mineral-rights-taxes/",
+        "sibling": "/blog/understanding-1031-exchange-benefits-for-mineral-rights-owners/",
+        "conversion": "/book/"
+      },
+      "asset": {
+        "path": "/assets/articles/title-curative-for-mineral-rights-what-it-is-and-why-it-matters-before-you-sell.webp",
+        "sha256": "0bff11a938c5efd71b307a1e538449e1663d8f40ceeb1cae15a6a9957355e7e1",
+        "dimensions": {
+          "width": 1200,
+          "height": 630
+        },
+        "mime": "image/webp",
+        "alt": "Title Curative for Mineral Rights: What It Is and Why It Matters Before You Sell educational illustration"
+      },
+      "checks": {
+        "row_id_reconciled": true,
+        "exact_title": true,
+        "slug": true,
+        "draft_noindex": true,
+        "sources_citations": true,
+        "body_threshold": true,
+        "answer_first": true,
+        "faq_schema": true,
+        "internal_links": true,
+        "analytics_taxonomy": true,
+        "canonical_preview_control": true,
+        "asset_exists_unique": true,
+        "asset_dimensions_mime": true,
+        "hero_social_identity": true,
+        "alt": true,
+        "visual_title_evidence": true
+      },
+      "final_status": "PASS",
+      "hold_reasons": []
+    },
+    {
+      "row_id": "MRX1000-0642",
+      "slug": "what-is-a-mineral-rights-purchase-agreement-and-what-should-it-include",
+      "title": "What Is a Mineral Rights Purchase Agreement and What Should It Include?",
+      "repo_path": "src/content/posts/what-is-a-mineral-rights-purchase-agreement-and-what-should-it-include.mdx",
+      "article_sha256": "24161c29ad76ca410cfe7f34bb8872ccf0ef7033c6bfd7305c8449f8b355b885",
+      "publication_status": "draft",
+      "noindex": true,
+      "word_count": 532,
+      "sources_count": 3,
+      "citation_urls": [
+        "https://statutes.capitol.texas.gov/Docs/BC/htm/BC.26.htm#26.01",
+        "https://statutes.capitol.texas.gov/Docs/PR/htm/PR.5.htm#5.021",
+        "https://statutes.capitol.texas.gov/Docs/PR/htm/PR.13.htm#13.001"
+      ],
+      "faq_count": 5,
+      "internal_links": {
+        "hub": "/learning-center/mineral-rights-taxes/",
+        "sibling": "/blog/1031-exchange-fees-for-mineral-rights-sales/",
+        "conversion": "/book/"
+      },
+      "asset": {
+        "path": "/assets/articles/mineral-rights-purchase-agreement.webp",
+        "sha256": "107bbc257e03ad114cd957777c70e2ea34380459c59f2e8007424a7626bfb758",
+        "dimensions": {
+          "width": 1200,
+          "height": 630
+        },
+        "mime": "image/webp",
+        "alt": "What Is a Mineral Rights Purchase Agreement and What Should It Include? educational illustration"
+      },
+      "checks": {
+        "row_id_reconciled": true,
+        "exact_title": true,
+        "slug": true,
+        "draft_noindex": true,
+        "sources_citations": true,
+        "body_threshold": true,
+        "answer_first": true,
+        "faq_schema": true,
+        "internal_links": true,
+        "analytics_taxonomy": true,
+        "canonical_preview_control": true,
+        "asset_exists_unique": true,
+        "asset_dimensions_mime": true,
+        "hero_social_identity": true,
+        "alt": true,
+        "visual_title_evidence": true
+      },
+      "final_status": "PASS",
+      "hold_reasons": []
+    },
+    {
+      "row_id": "MRX1000-0886",
+      "slug": "why-mineral-rights-are-separate-from-surface-rights-in-texas-a-landowners-guide",
+      "title": "Why Mineral Rights Are Separate From Surface Rights in Texas: A Landowner's Guide",
+      "repo_path": "src/content/posts/why-mineral-rights-are-separate-from-surface-rights-in-texas-a-landowners-guide.mdx",
+      "article_sha256": "7e15432ac09c7dc8c56ae4a8d0df88e2710799f4eb9bad3a4b0fcdeeef6fb7e1",
+      "publication_status": "draft",
+      "noindex": true,
+      "word_count": 539,
+      "sources_count": 3,
+      "citation_urls": [
+        "https://statutes.capitol.texas.gov/Docs/PR/htm/PR.5.htm#5.021",
+        "https://statutes.capitol.texas.gov/Docs/PR/htm/PR.13.htm#13.001",
+        "https://www.rrc.texas.gov/oil-and-gas/research-and-statistics/production-data/"
+      ],
+      "faq_count": 5,
+      "internal_links": {
+        "hub": "/learning-center/title-lease-ownership/",
+        "sibling": "/blog/how-mineral-rights-ownership-works/",
+        "conversion": "/book/"
+      },
+      "asset": {
+        "path": "/assets/articles/why-mineral-rights-are-separate-from-surface-rights-in-texas-a-landowner-s-guide.webp",
+        "sha256": "3e2de648206102d07faeb3ed859c1171ac3430cc447962d0d4037965e12c6593",
+        "dimensions": {
+          "width": 1200,
+          "height": 630
+        },
+        "mime": "image/webp",
+        "alt": "Why Mineral Rights Are Separate From Surface Rights in Texas: A Landowner's Guide educational illustration"
+      },
+      "checks": {
+        "row_id_reconciled": true,
+        "exact_title": true,
+        "slug": true,
+        "draft_noindex": true,
+        "sources_citations": true,
+        "body_threshold": true,
+        "answer_first": true,
+        "faq_schema": true,
+        "internal_links": true,
+        "analytics_taxonomy": true,
+        "canonical_preview_control": true,
+        "asset_exists_unique": true,
+        "asset_dimensions_mime": true,
+        "hero_social_identity": true,
+        "alt": true,
+        "visual_title_evidence": true
+      },
+      "final_status": "PASS",
+      "hold_reasons": []
+    }
+  ],
+  "controls": {
+    "publication_status_unchanged": true,
+    "noindex_unchanged": true,
+    "published_or_deployed": false,
+    "searchatlas_or_gsc_mutated": false
+  },
+  "evidence_log": "reports/mrx1000-wave2-final2-gates.log",
+  "evidence_log_sha256": "c66a572ee9a33a7c3981d51f0af544ab3ae01cbc19757d62f3fc17e506087dc0",
+  "stale_canonical_writer_events": 1
+}
