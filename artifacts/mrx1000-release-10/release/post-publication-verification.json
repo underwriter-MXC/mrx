@@ -1,14 +1,14 @@
 {
   "artifact_type": "mrx1000_release_10_post_publication_verification",
   "schema_version": 1,
-  "generated_at_utc": "2026-08-24T00:52:03.364Z",
+  "generated_at_utc": "2026-08-24T01:35:29.041Z",
   "verifier": "Codex independent production verification",
   "deployment": {
     "provider": "vercel",
     "project": "team-mrx/mrx-web",
-    "deployment_id": "dpl_EwBc13uWrwxgubhgYTmphdLyxRku",
-    "deployment_url": "https://mrx-a57frgyh4-team-mrx.vercel.app",
-    "inspect_url": "https://vercel.com/team-mrx/mrx-web/EwBc13uWrwxgubhgYTmphdLyxRku",
+    "deployment_id": "dpl_Fs9vRcwGU5p5dXaugfHFZYJnbk7w",
+    "deployment_url": "https://mrx-1k9efejva-team-mrx.vercel.app",
+    "inspect_url": "https://vercel.com/team-mrx/mrx-web/Fs9vRcwGU5p5dXaugfHFZYJnbk7w",
     "promoted_alias": "https://mineralrightsxchange.com"
   },
   "deployment_expectations": {
@@ -49,13 +49,8 @@
     ]
   },
   "browser_verification": {
-    "generated_at_utc": "2026-08-24T00:52:03.293Z",
+    "generated_at_utc": "2026-08-24T01:26:20.416Z",
     "canonical_origin": "https://mineralrightsxchange.com",
-    "browser": {
-      "family": "Google Chrome",
-      "surface": "extension-backed-google-chrome",
-      "note": "Articles 162–170 retain their prior Chrome verification. Article 171 was opened at its canonical production URL in extension-backed Chrome; the Chrome title and URL match the live route. The exact hero and inline pixels were independently viewed, and the production-served binaries match their inspected SHA-256 values."
-    },
     "homepage": {
       "top_disclosure_count": 0,
       "footer_disclosure_count": 1
@@ -63,7 +58,6 @@
     "wave10": {
       "article_count": 10,
       "slugs": [
-        "compare-public-oil-and-gas-price-decks-without-mixing-assumptions",
         "inventory-mixed-status-mineral-interests-before-valuation-review",
         "refrac-workover-event-claim-register-source-preserving-record-template",
         "andrews-county-mineral-rights-public-record-locator",
@@ -72,7 +66,8 @@
         "how-to-build-a-texas-mineral-production-record-locator-sheet",
         "texas-rrc-pooling-filing-retrieval-provenance-worksheet",
         "texas-rrc-drilling-permit-query-retrieval-provenance-worksheet",
-        "texas-rrc-wellbore-query-retrieval-provenance-worksheet"
+        "texas-rrc-wellbore-query-retrieval-provenance-worksheet",
+        "texas-rrc-p-4-gatherer-purchaser-query-retrieval-provenance-worksheet"
       ],
       "exact_titles_visible": true,
       "hero_images_visible": true,
@@ -83,111 +78,932 @@
       "exact_alt_text": true,
       "one_footer_disclosure_each": true,
       "no_clipping_overlap_or_garbling": true,
-      "no_horizontal_overflow": true,
-      "desktop_result_count": 10,
-      "mobile_result_count": 10,
-      "desktop_pass_count": 10,
-      "mobile_pass_count": 10
+      "no_horizontal_overflow": true
     },
-    "article_170": {
-      "title": "Texas RRC Drilling-Permit Query Retrieval Provenance Worksheet",
-      "slug": "texas-rrc-drilling-permit-query-retrieval-provenance-worksheet",
-      "url": "https://mineralrightsxchange.com/blog/texas-rrc-drilling-permit-query-retrieval-provenance-worksheet/",
-      "desktop": {
-        "viewport": {
-          "width": 1440,
-          "height": 1000
+    "results": [
+      {
+        "profile": "desktop",
+        "slug": "inventory-mixed-status-mineral-interests-before-valuation-review",
+        "url": "https://mineralrightsxchange.com/blog/inventory-mixed-status-mineral-interests-before-valuation-review/",
+        "observed": {
+          "h1": "How to Inventory Mixed-Status Mineral Interests Before a Valuation Review",
+          "hero": {
+            "src": "/assets/articles/hero/how-to-inventory-mixed-status-mineral-interests-before-a-valuation-review.webp",
+            "alt": "A mixed-status mineral portfolio folder appears beside the exact article title.",
+            "naturalWidth": 1200,
+            "naturalHeight": 630,
+            "visible": true,
+            "renderedWidth": 449.421875,
+            "renderedHeight": 235.9375
+          },
+          "inline": {
+            "src": "/assets/articles/inline/inventory-mixed-status-mineral-interests-before-valuation-review/mixed-status-mineral-interest-inventory.webp",
+            "alt": "A blank overhead evidence inventory worksheet appears above the exact keyword.",
+            "naturalWidth": 1200,
+            "naturalHeight": 675,
+            "visible": true,
+            "renderedWidth": 698,
+            "renderedHeight": 392.625
+          },
+          "footerDisclosureCount": 1,
+          "documentScrollWidth": 1440,
+          "viewportWidth": 1440
         },
-        "h1": "Texas RRC Drilling-Permit Query Retrieval Provenance Worksheet",
-        "hero": {
-          "src": "/assets/articles/hero/texas-rrc-drilling-permit-query-retrieval-provenance-worksheet.webp",
-          "alt": "An archival Texas permit-query counter appears beside the exact article title.",
-          "natural_width": 1200,
-          "natural_height": 630,
-          "rendered_width": 449.421875,
-          "rendered_height": 235.9453125,
-          "visible": true
+        "assertions": {
+          "exact_title_visible": true,
+          "hero_visible": true,
+          "hero_natural_1200x630": true,
+          "hero_src_exact": true,
+          "hero_alt_exact": true,
+          "hero_rendered_ratio_exact": true,
+          "inline_visible": true,
+          "inline_natural_1200x675": true,
+          "inline_src_exact": true,
+          "inline_alt_exact": true,
+          "inline_rendered_ratio_exact": true,
+          "inline_exact_text_evidence": true,
+          "one_footer_disclosure": true,
+          "no_horizontal_overflow": true
         },
-        "inline": {
-          "src": "/assets/articles/inline/texas-rrc-drilling-permit-query-retrieval-provenance-worksheet/texas-rrc-drilling-permit-query-retrieval.webp",
-          "alt": "A top-down query-provenance worksheet appears above the exact keyword.",
-          "natural_width": 1200,
-          "natural_height": 675,
-          "rendered_width": 698,
-          "rendered_height": 392.625,
-          "visible": true
-        },
-        "document_scroll_width": 1440,
-        "footer_disclosure_count": 1,
         "disposition": "PASS"
       },
-      "mobile": {
-        "viewport": {
-          "width": 390,
-          "height": 844
+      {
+        "profile": "desktop",
+        "slug": "refrac-workover-event-claim-register-source-preserving-record-template",
+        "url": "https://mineralrightsxchange.com/blog/refrac-workover-event-claim-register-source-preserving-record-template/",
+        "observed": {
+          "h1": "Refrac and Workover Event-Claim Register: A Source-Preserving Record Template",
+          "hero": {
+            "src": "/assets/articles/hero/refrac-and-workover-event-claim-register-a-source-preserving-record-template.webp",
+            "alt": "A source-separated event-claim register appears beside the exact article title.",
+            "naturalWidth": 1200,
+            "naturalHeight": 630,
+            "visible": true,
+            "renderedWidth": 449.421875,
+            "renderedHeight": 235.9375
+          },
+          "inline": {
+            "src": "/assets/articles/inline/refrac-workover-event-claim-register-source-preserving-record-template/refrac-workover-event-claim-register.webp",
+            "alt": "A blank overhead event-claim worksheet appears above the exact keyword.",
+            "naturalWidth": 1200,
+            "naturalHeight": 675,
+            "visible": true,
+            "renderedWidth": 698,
+            "renderedHeight": 392.625
+          },
+          "footerDisclosureCount": 1,
+          "documentScrollWidth": 1440,
+          "viewportWidth": 1440
         },
-        "h1": "Texas RRC Drilling-Permit Query Retrieval Provenance Worksheet",
-        "hero": {
-          "src": "/assets/articles/hero/texas-rrc-drilling-permit-query-retrieval-provenance-worksheet.webp",
-          "alt": "An archival Texas permit-query counter appears beside the exact article title.",
-          "natural_width": 1200,
-          "natural_height": 630,
-          "rendered_width": 356,
-          "rendered_height": 186.8984375,
-          "visible": true
+        "assertions": {
+          "exact_title_visible": true,
+          "hero_visible": true,
+          "hero_natural_1200x630": true,
+          "hero_src_exact": true,
+          "hero_alt_exact": true,
+          "hero_rendered_ratio_exact": true,
+          "inline_visible": true,
+          "inline_natural_1200x675": true,
+          "inline_src_exact": true,
+          "inline_alt_exact": true,
+          "inline_rendered_ratio_exact": true,
+          "inline_exact_text_evidence": true,
+          "one_footer_disclosure": true,
+          "no_horizontal_overflow": true
         },
-        "inline": {
-          "src": "/assets/articles/inline/texas-rrc-drilling-permit-query-retrieval-provenance-worksheet/texas-rrc-drilling-permit-query-retrieval.webp",
-          "alt": "A top-down query-provenance worksheet appears above the exact keyword.",
-          "natural_width": 1200,
-          "natural_height": 675,
-          "rendered_width": 356,
-          "rendered_height": 200.25,
-          "visible": true
-        },
-        "document_scroll_width": 390,
-        "footer_disclosure_count": 1,
         "disposition": "PASS"
       },
-      "visual_assertions": {
-        "exact_title_pixels_visible": true,
-        "hero_and_inline_materially_distinct": true,
-        "article_title_and_media_no_clipping_or_overlap": true,
-        "article_title_and_media_no_garbling": true,
-        "no_horizontal_overflow": true
-      }
-    },
-    "disposition": "PASS",
-    "article_171": {
-      "title": "Texas RRC Wellbore Query Retrieval Provenance Worksheet",
-      "slug": "texas-rrc-wellbore-query-retrieval-provenance-worksheet",
-      "url": "https://mineralrightsxchange.com/blog/texas-rrc-wellbore-query-retrieval-provenance-worksheet/",
-      "chrome_title": "Texas RRC Wellbore Query Worksheet · MRX",
-      "visual_asset_evidence": {
-        "hero": {
-          "src": "/assets/articles/hero/texas-rrc-wellbore-query-retrieval-provenance-worksheet.webp",
-          "sha256": "4603109bf5df6fb3cb1228200fefed7e5f7f7a63dd93e320c556bb55eb624fe4",
-          "natural_width": 1200,
-          "natural_height": 630,
-          "exact_title_visible": true
+      {
+        "profile": "desktop",
+        "slug": "andrews-county-mineral-rights-public-record-locator",
+        "url": "https://mineralrightsxchange.com/blog/andrews-county-mineral-rights-public-record-locator/",
+        "observed": {
+          "h1": "How to Build an Andrews County Mineral Rights Public-Record Locator",
+          "hero": {
+            "src": "/assets/articles/hero/how-to-build-an-andrews-county-mineral-rights-public-record-locator.webp",
+            "alt": "An Andrews County records desk appears beside the exact article title.",
+            "naturalWidth": 1200,
+            "naturalHeight": 630,
+            "visible": true,
+            "renderedWidth": 449.421875,
+            "renderedHeight": 235.9375
+          },
+          "inline": {
+            "src": "/assets/articles/inline/andrews-county-mineral-rights-public-record-locator/andrews-county-mineral-rights-public-record-locator.webp",
+            "alt": "A top-down four-source locator worksheet appears above the exact keyword.",
+            "naturalWidth": 1200,
+            "naturalHeight": 675,
+            "visible": true,
+            "renderedWidth": 698,
+            "renderedHeight": 392.625
+          },
+          "footerDisclosureCount": 1,
+          "documentScrollWidth": 1440,
+          "viewportWidth": 1440
         },
-        "inline": {
-          "src": "/assets/articles/inline/texas-rrc-wellbore-query-retrieval-provenance-worksheet/texas-rrc-wellbore-query-retrieval.webp",
-          "sha256": "2928cff15f071cf2c9a7860eace4aa483a2df13a3d1b9df51c95a6ee11c07439",
-          "natural_width": 1200,
-          "natural_height": 675,
-          "exact_text_visible": true
+        "assertions": {
+          "exact_title_visible": true,
+          "hero_visible": true,
+          "hero_natural_1200x630": true,
+          "hero_src_exact": true,
+          "hero_alt_exact": true,
+          "hero_rendered_ratio_exact": true,
+          "inline_visible": true,
+          "inline_natural_1200x675": true,
+          "inline_src_exact": true,
+          "inline_alt_exact": true,
+          "inline_rendered_ratio_exact": true,
+          "inline_exact_text_evidence": true,
+          "one_footer_disclosure": true,
+          "no_horizontal_overflow": true
         },
-        "production_binary_identity": true
+        "disposition": "PASS"
       },
-      "visual_assertions": {
-        "exact_title_pixels_visible": true,
-        "hero_and_inline_materially_distinct": true,
-        "article_title_and_media_no_clipping_or_overlap": true,
-        "article_title_and_media_no_garbling": true,
-        "no_horizontal_overflow": true
+      {
+        "profile": "desktop",
+        "slug": "how-to-extract-shut-in-clause-conditions-before-a-valuation-review",
+        "url": "https://mineralrightsxchange.com/blog/how-to-extract-shut-in-clause-conditions-before-a-valuation-review/",
+        "observed": {
+          "h1": "How to Extract Shut-In Clause Conditions Before a Valuation Review",
+          "hero": {
+            "src": "/assets/articles/hero/how-to-extract-shut-in-clause-conditions-before-a-valuation-review.webp",
+            "alt": "An open lease packet and clause worksheet appear beside the exact article title.",
+            "naturalWidth": 1200,
+            "naturalHeight": 630,
+            "visible": true,
+            "renderedWidth": 449.421875,
+            "renderedHeight": 235.9375
+          },
+          "inline": {
+            "src": "/assets/articles/inline/how-to-extract-shut-in-clause-conditions-before-a-valuation-review/shut-in-clause-conditions-valuation-review.webp",
+            "alt": "A top-down clause extraction worksheet appears above the exact keyword.",
+            "naturalWidth": 1200,
+            "naturalHeight": 675,
+            "visible": true,
+            "renderedWidth": 698,
+            "renderedHeight": 392.625
+          },
+          "footerDisclosureCount": 1,
+          "documentScrollWidth": 1440,
+          "viewportWidth": 1440
+        },
+        "assertions": {
+          "exact_title_visible": true,
+          "hero_visible": true,
+          "hero_natural_1200x630": true,
+          "hero_src_exact": true,
+          "hero_alt_exact": true,
+          "hero_rendered_ratio_exact": true,
+          "inline_visible": true,
+          "inline_natural_1200x675": true,
+          "inline_src_exact": true,
+          "inline_alt_exact": true,
+          "inline_rendered_ratio_exact": true,
+          "inline_exact_text_evidence": true,
+          "one_footer_disclosure": true,
+          "no_horizontal_overflow": true
+        },
+        "disposition": "PASS"
+      },
+      {
+        "profile": "desktop",
+        "slug": "how-to-build-a-mineral-rights-valuation-evidence-cutoff-log",
+        "url": "https://mineralrightsxchange.com/blog/how-to-build-a-mineral-rights-valuation-evidence-cutoff-log/",
+        "observed": {
+          "h1": "How to Build a Mineral Rights Valuation Evidence-Cutoff Log",
+          "hero": {
+            "src": "/assets/articles/hero/how-to-build-a-mineral-rights-valuation-evidence-cutoff-log.webp",
+            "alt": "A dated evidence-control worksheet and source files appear beside the exact article title.",
+            "naturalWidth": 1200,
+            "naturalHeight": 630,
+            "visible": true,
+            "renderedWidth": 449.421875,
+            "renderedHeight": 235.9375
+          },
+          "inline": {
+            "src": "/assets/articles/inline/how-to-build-a-mineral-rights-valuation-evidence-cutoff-log/mineral-rights-valuation-evidence-cutoff-log.webp",
+            "alt": "A top-down six-column evidence-cutoff worksheet appears above the exact keyword.",
+            "naturalWidth": 1200,
+            "naturalHeight": 675,
+            "visible": true,
+            "renderedWidth": 698,
+            "renderedHeight": 392.625
+          },
+          "footerDisclosureCount": 1,
+          "documentScrollWidth": 1440,
+          "viewportWidth": 1440
+        },
+        "assertions": {
+          "exact_title_visible": true,
+          "hero_visible": true,
+          "hero_natural_1200x630": true,
+          "hero_src_exact": true,
+          "hero_alt_exact": true,
+          "hero_rendered_ratio_exact": true,
+          "inline_visible": true,
+          "inline_natural_1200x675": true,
+          "inline_src_exact": true,
+          "inline_alt_exact": true,
+          "inline_rendered_ratio_exact": true,
+          "inline_exact_text_evidence": true,
+          "one_footer_disclosure": true,
+          "no_horizontal_overflow": true
+        },
+        "disposition": "PASS"
+      },
+      {
+        "profile": "desktop",
+        "slug": "how-to-build-a-texas-mineral-production-record-locator-sheet",
+        "url": "https://mineralrightsxchange.com/blog/how-to-build-a-texas-mineral-production-record-locator-sheet/",
+        "observed": {
+          "h1": "How to Build a Texas Mineral Production Record Locator Sheet",
+          "hero": {
+            "src": "/assets/articles/hero/how-to-build-a-texas-mineral-production-record-locator-sheet.webp",
+            "alt": "A Texas public-record research desk appears beside the exact article title.",
+            "naturalWidth": 1200,
+            "naturalHeight": 630,
+            "visible": true,
+            "renderedWidth": 449.421875,
+            "renderedHeight": 235.9375
+          },
+          "inline": {
+            "src": "/assets/articles/inline/how-to-build-a-texas-mineral-production-record-locator-sheet/texas-mineral-production-record-locator-sheet.webp",
+            "alt": "A top-down production-record locator worksheet appears above the exact keyword.",
+            "naturalWidth": 1200,
+            "naturalHeight": 675,
+            "visible": true,
+            "renderedWidth": 698,
+            "renderedHeight": 392.625
+          },
+          "footerDisclosureCount": 1,
+          "documentScrollWidth": 1440,
+          "viewportWidth": 1440
+        },
+        "assertions": {
+          "exact_title_visible": true,
+          "hero_visible": true,
+          "hero_natural_1200x630": true,
+          "hero_src_exact": true,
+          "hero_alt_exact": true,
+          "hero_rendered_ratio_exact": true,
+          "inline_visible": true,
+          "inline_natural_1200x675": true,
+          "inline_src_exact": true,
+          "inline_alt_exact": true,
+          "inline_rendered_ratio_exact": true,
+          "inline_exact_text_evidence": true,
+          "one_footer_disclosure": true,
+          "no_horizontal_overflow": true
+        },
+        "disposition": "PASS"
+      },
+      {
+        "profile": "desktop",
+        "slug": "texas-rrc-pooling-filing-retrieval-provenance-worksheet",
+        "url": "https://mineralrightsxchange.com/blog/texas-rrc-pooling-filing-retrieval-provenance-worksheet/",
+        "observed": {
+          "h1": "Texas RRC Pooling-Filing Retrieval Provenance Worksheet",
+          "hero": {
+            "src": "/assets/articles/hero/texas-rrc-pooling-filing-retrieval-provenance-worksheet.webp",
+            "alt": "A Texas public-record filing desk appears beside the exact article title.",
+            "naturalWidth": 1200,
+            "naturalHeight": 630,
+            "visible": true,
+            "renderedWidth": 449.421875,
+            "renderedHeight": 235.9375
+          },
+          "inline": {
+            "src": "/assets/articles/inline/texas-rrc-pooling-filing-retrieval-provenance-worksheet/texas-rrc-pooling-filing-retrieval.webp",
+            "alt": "A top-down filing-retrieval provenance worksheet appears above the exact keyword.",
+            "naturalWidth": 1200,
+            "naturalHeight": 675,
+            "visible": true,
+            "renderedWidth": 698,
+            "renderedHeight": 392.625
+          },
+          "footerDisclosureCount": 1,
+          "documentScrollWidth": 1440,
+          "viewportWidth": 1440
+        },
+        "assertions": {
+          "exact_title_visible": true,
+          "hero_visible": true,
+          "hero_natural_1200x630": true,
+          "hero_src_exact": true,
+          "hero_alt_exact": true,
+          "hero_rendered_ratio_exact": true,
+          "inline_visible": true,
+          "inline_natural_1200x675": true,
+          "inline_src_exact": true,
+          "inline_alt_exact": true,
+          "inline_rendered_ratio_exact": true,
+          "inline_exact_text_evidence": true,
+          "one_footer_disclosure": true,
+          "no_horizontal_overflow": true
+        },
+        "disposition": "PASS"
+      },
+      {
+        "profile": "desktop",
+        "slug": "texas-rrc-drilling-permit-query-retrieval-provenance-worksheet",
+        "url": "https://mineralrightsxchange.com/blog/texas-rrc-drilling-permit-query-retrieval-provenance-worksheet/",
+        "observed": {
+          "h1": "Texas RRC Drilling-Permit Query Retrieval Provenance Worksheet",
+          "hero": {
+            "src": "/assets/articles/hero/texas-rrc-drilling-permit-query-retrieval-provenance-worksheet.webp",
+            "alt": "An archival Texas permit-query counter appears beside the exact article title.",
+            "naturalWidth": 1200,
+            "naturalHeight": 630,
+            "visible": true,
+            "renderedWidth": 449.421875,
+            "renderedHeight": 235.9375
+          },
+          "inline": {
+            "src": "/assets/articles/inline/texas-rrc-drilling-permit-query-retrieval-provenance-worksheet/texas-rrc-drilling-permit-query-retrieval.webp",
+            "alt": "A top-down query-provenance worksheet appears above the exact keyword.",
+            "naturalWidth": 1200,
+            "naturalHeight": 675,
+            "visible": true,
+            "renderedWidth": 698,
+            "renderedHeight": 392.625
+          },
+          "footerDisclosureCount": 1,
+          "documentScrollWidth": 1440,
+          "viewportWidth": 1440
+        },
+        "assertions": {
+          "exact_title_visible": true,
+          "hero_visible": true,
+          "hero_natural_1200x630": true,
+          "hero_src_exact": true,
+          "hero_alt_exact": true,
+          "hero_rendered_ratio_exact": true,
+          "inline_visible": true,
+          "inline_natural_1200x675": true,
+          "inline_src_exact": true,
+          "inline_alt_exact": true,
+          "inline_rendered_ratio_exact": true,
+          "inline_exact_text_evidence": true,
+          "one_footer_disclosure": true,
+          "no_horizontal_overflow": true
+        },
+        "disposition": "PASS"
+      },
+      {
+        "profile": "desktop",
+        "slug": "texas-rrc-wellbore-query-retrieval-provenance-worksheet",
+        "url": "https://mineralrightsxchange.com/blog/texas-rrc-wellbore-query-retrieval-provenance-worksheet/",
+        "observed": {
+          "h1": "Texas RRC Wellbore Query Retrieval Provenance Worksheet",
+          "hero": {
+            "src": "/assets/articles/hero/texas-rrc-wellbore-query-retrieval-provenance-worksheet.webp",
+            "alt": "A Texas wellbore-query research counter appears beside the exact article title.",
+            "naturalWidth": 1200,
+            "naturalHeight": 630,
+            "visible": true,
+            "renderedWidth": 449.421875,
+            "renderedHeight": 235.9375
+          },
+          "inline": {
+            "src": "/assets/articles/inline/texas-rrc-wellbore-query-retrieval-provenance-worksheet/texas-rrc-wellbore-query-retrieval.webp",
+            "alt": "A people-free overhead wellbore-query provenance worksheet appears above the exact keyword.",
+            "naturalWidth": 1200,
+            "naturalHeight": 675,
+            "visible": true,
+            "renderedWidth": 698,
+            "renderedHeight": 392.625
+          },
+          "footerDisclosureCount": 1,
+          "documentScrollWidth": 1440,
+          "viewportWidth": 1440
+        },
+        "assertions": {
+          "exact_title_visible": true,
+          "hero_visible": true,
+          "hero_natural_1200x630": true,
+          "hero_src_exact": true,
+          "hero_alt_exact": true,
+          "hero_rendered_ratio_exact": true,
+          "inline_visible": true,
+          "inline_natural_1200x675": true,
+          "inline_src_exact": true,
+          "inline_alt_exact": true,
+          "inline_rendered_ratio_exact": true,
+          "inline_exact_text_evidence": true,
+          "one_footer_disclosure": true,
+          "no_horizontal_overflow": true
+        },
+        "disposition": "PASS"
+      },
+      {
+        "profile": "desktop",
+        "slug": "texas-rrc-p-4-gatherer-purchaser-query-retrieval-provenance-worksheet",
+        "url": "https://mineralrightsxchange.com/blog/texas-rrc-p-4-gatherer-purchaser-query-retrieval-provenance-worksheet/",
+        "observed": {
+          "h1": "Texas RRC P-4 Gatherer/Purchaser Query Retrieval Provenance Worksheet",
+          "hero": {
+            "src": "/assets/articles/hero/texas-rrc-p-4-gatherer-purchaser-query-retrieval-provenance-worksheet.webp",
+            "alt": "A Texas P-4 query research counter appears beside the exact article title.",
+            "naturalWidth": 1200,
+            "naturalHeight": 630,
+            "visible": true,
+            "renderedWidth": 449.421875,
+            "renderedHeight": 235.9375
+          },
+          "inline": {
+            "src": "/assets/articles/inline/texas-rrc-p-4-gatherer-purchaser-query-retrieval-provenance-worksheet/texas-rrc-p-4-gatherer-purchaser-query-retrieval.webp",
+            "alt": "A people-free overhead P-4 query provenance worksheet appears above the exact keyword.",
+            "naturalWidth": 1200,
+            "naturalHeight": 675,
+            "visible": true,
+            "renderedWidth": 698,
+            "renderedHeight": 392.625
+          },
+          "footerDisclosureCount": 1,
+          "documentScrollWidth": 1440,
+          "viewportWidth": 1440
+        },
+        "assertions": {
+          "exact_title_visible": true,
+          "hero_visible": true,
+          "hero_natural_1200x630": true,
+          "hero_src_exact": true,
+          "hero_alt_exact": true,
+          "hero_rendered_ratio_exact": true,
+          "inline_visible": true,
+          "inline_natural_1200x675": true,
+          "inline_src_exact": true,
+          "inline_alt_exact": true,
+          "inline_rendered_ratio_exact": true,
+          "inline_exact_text_evidence": true,
+          "one_footer_disclosure": true,
+          "no_horizontal_overflow": true
+        },
+        "disposition": "PASS"
+      },
+      {
+        "profile": "mobile",
+        "slug": "inventory-mixed-status-mineral-interests-before-valuation-review",
+        "url": "https://mineralrightsxchange.com/blog/inventory-mixed-status-mineral-interests-before-valuation-review/",
+        "observed": {
+          "h1": "How to Inventory Mixed-Status Mineral Interests Before a Valuation Review",
+          "hero": {
+            "src": "/assets/articles/hero/how-to-inventory-mixed-status-mineral-interests-before-a-valuation-review.webp",
+            "alt": "A mixed-status mineral portfolio folder appears beside the exact article title.",
+            "naturalWidth": 1200,
+            "naturalHeight": 630,
+            "visible": true,
+            "renderedWidth": 356,
+            "renderedHeight": 186.890625
+          },
+          "inline": {
+            "src": "/assets/articles/inline/inventory-mixed-status-mineral-interests-before-valuation-review/mixed-status-mineral-interest-inventory.webp",
+            "alt": "A blank overhead evidence inventory worksheet appears above the exact keyword.",
+            "naturalWidth": 1200,
+            "naturalHeight": 675,
+            "visible": true,
+            "renderedWidth": 356,
+            "renderedHeight": 200.25
+          },
+          "footerDisclosureCount": 1,
+          "documentScrollWidth": 390,
+          "viewportWidth": 390
+        },
+        "assertions": {
+          "exact_title_visible": true,
+          "hero_visible": true,
+          "hero_natural_1200x630": true,
+          "hero_src_exact": true,
+          "hero_alt_exact": true,
+          "hero_rendered_ratio_exact": true,
+          "inline_visible": true,
+          "inline_natural_1200x675": true,
+          "inline_src_exact": true,
+          "inline_alt_exact": true,
+          "inline_rendered_ratio_exact": true,
+          "inline_exact_text_evidence": true,
+          "one_footer_disclosure": true,
+          "no_horizontal_overflow": true
+        },
+        "disposition": "PASS"
+      },
+      {
+        "profile": "mobile",
+        "slug": "refrac-workover-event-claim-register-source-preserving-record-template",
+        "url": "https://mineralrightsxchange.com/blog/refrac-workover-event-claim-register-source-preserving-record-template/",
+        "observed": {
+          "h1": "Refrac and Workover Event-Claim Register: A Source-Preserving Record Template",
+          "hero": {
+            "src": "/assets/articles/hero/refrac-and-workover-event-claim-register-a-source-preserving-record-template.webp",
+            "alt": "A source-separated event-claim register appears beside the exact article title.",
+            "naturalWidth": 1200,
+            "naturalHeight": 630,
+            "visible": true,
+            "renderedWidth": 356,
+            "renderedHeight": 186.890625
+          },
+          "inline": {
+            "src": "/assets/articles/inline/refrac-workover-event-claim-register-source-preserving-record-template/refrac-workover-event-claim-register.webp",
+            "alt": "A blank overhead event-claim worksheet appears above the exact keyword.",
+            "naturalWidth": 1200,
+            "naturalHeight": 675,
+            "visible": true,
+            "renderedWidth": 356,
+            "renderedHeight": 200.25
+          },
+          "footerDisclosureCount": 1,
+          "documentScrollWidth": 390,
+          "viewportWidth": 390
+        },
+        "assertions": {
+          "exact_title_visible": true,
+          "hero_visible": true,
+          "hero_natural_1200x630": true,
+          "hero_src_exact": true,
+          "hero_alt_exact": true,
+          "hero_rendered_ratio_exact": true,
+          "inline_visible": true,
+          "inline_natural_1200x675": true,
+          "inline_src_exact": true,
+          "inline_alt_exact": true,
+          "inline_rendered_ratio_exact": true,
+          "inline_exact_text_evidence": true,
+          "one_footer_disclosure": true,
+          "no_horizontal_overflow": true
+        },
+        "disposition": "PASS"
+      },
+      {
+        "profile": "mobile",
+        "slug": "andrews-county-mineral-rights-public-record-locator",
+        "url": "https://mineralrightsxchange.com/blog/andrews-county-mineral-rights-public-record-locator/",
+        "observed": {
+          "h1": "How to Build an Andrews County Mineral Rights Public-Record Locator",
+          "hero": {
+            "src": "/assets/articles/hero/how-to-build-an-andrews-county-mineral-rights-public-record-locator.webp",
+            "alt": "An Andrews County records desk appears beside the exact article title.",
+            "naturalWidth": 1200,
+            "naturalHeight": 630,
+            "visible": true,
+            "renderedWidth": 356,
+            "renderedHeight": 186.890625
+          },
+          "inline": {
+            "src": "/assets/articles/inline/andrews-county-mineral-rights-public-record-locator/andrews-county-mineral-rights-public-record-locator.webp",
+            "alt": "A top-down four-source locator worksheet appears above the exact keyword.",
+            "naturalWidth": 1200,
+            "naturalHeight": 675,
+            "visible": true,
+            "renderedWidth": 356,
+            "renderedHeight": 200.25
+          },
+          "footerDisclosureCount": 1,
+          "documentScrollWidth": 390,
+          "viewportWidth": 390
+        },
+        "assertions": {
+          "exact_title_visible": true,
+          "hero_visible": true,
+          "hero_natural_1200x630": true,
+          "hero_src_exact": true,
+          "hero_alt_exact": true,
+          "hero_rendered_ratio_exact": true,
+          "inline_visible": true,
+          "inline_natural_1200x675": true,
+          "inline_src_exact": true,
+          "inline_alt_exact": true,
+          "inline_rendered_ratio_exact": true,
+          "inline_exact_text_evidence": true,
+          "one_footer_disclosure": true,
+          "no_horizontal_overflow": true
+        },
+        "disposition": "PASS"
+      },
+      {
+        "profile": "mobile",
+        "slug": "how-to-extract-shut-in-clause-conditions-before-a-valuation-review",
+        "url": "https://mineralrightsxchange.com/blog/how-to-extract-shut-in-clause-conditions-before-a-valuation-review/",
+        "observed": {
+          "h1": "How to Extract Shut-In Clause Conditions Before a Valuation Review",
+          "hero": {
+            "src": "/assets/articles/hero/how-to-extract-shut-in-clause-conditions-before-a-valuation-review.webp",
+            "alt": "An open lease packet and clause worksheet appear beside the exact article title.",
+            "naturalWidth": 1200,
+            "naturalHeight": 630,
+            "visible": true,
+            "renderedWidth": 356,
+            "renderedHeight": 186.890625
+          },
+          "inline": {
+            "src": "/assets/articles/inline/how-to-extract-shut-in-clause-conditions-before-a-valuation-review/shut-in-clause-conditions-valuation-review.webp",
+            "alt": "A top-down clause extraction worksheet appears above the exact keyword.",
+            "naturalWidth": 1200,
+            "naturalHeight": 675,
+            "visible": true,
+            "renderedWidth": 356,
+            "renderedHeight": 200.25
+          },
+          "footerDisclosureCount": 1,
+          "documentScrollWidth": 390,
+          "viewportWidth": 390
+        },
+        "assertions": {
+          "exact_title_visible": true,
+          "hero_visible": true,
+          "hero_natural_1200x630": true,
+          "hero_src_exact": true,
+          "hero_alt_exact": true,
+          "hero_rendered_ratio_exact": true,
+          "inline_visible": true,
+          "inline_natural_1200x675": true,
+          "inline_src_exact": true,
+          "inline_alt_exact": true,
+          "inline_rendered_ratio_exact": true,
+          "inline_exact_text_evidence": true,
+          "one_footer_disclosure": true,
+          "no_horizontal_overflow": true
+        },
+        "disposition": "PASS"
+      },
+      {
+        "profile": "mobile",
+        "slug": "how-to-build-a-mineral-rights-valuation-evidence-cutoff-log",
+        "url": "https://mineralrightsxchange.com/blog/how-to-build-a-mineral-rights-valuation-evidence-cutoff-log/",
+        "observed": {
+          "h1": "How to Build a Mineral Rights Valuation Evidence-Cutoff Log",
+          "hero": {
+            "src": "/assets/articles/hero/how-to-build-a-mineral-rights-valuation-evidence-cutoff-log.webp",
+            "alt": "A dated evidence-control worksheet and source files appear beside the exact article title.",
+            "naturalWidth": 1200,
+            "naturalHeight": 630,
+            "visible": true,
+            "renderedWidth": 356,
+            "renderedHeight": 186.890625
+          },
+          "inline": {
+            "src": "/assets/articles/inline/how-to-build-a-mineral-rights-valuation-evidence-cutoff-log/mineral-rights-valuation-evidence-cutoff-log.webp",
+            "alt": "A top-down six-column evidence-cutoff worksheet appears above the exact keyword.",
+            "naturalWidth": 1200,
+            "naturalHeight": 675,
+            "visible": true,
+            "renderedWidth": 356,
+            "renderedHeight": 200.25
+          },
+          "footerDisclosureCount": 1,
+          "documentScrollWidth": 390,
+          "viewportWidth": 390
+        },
+        "assertions": {
+          "exact_title_visible": true,
+          "hero_visible": true,
+          "hero_natural_1200x630": true,
+          "hero_src_exact": true,
+          "hero_alt_exact": true,
+          "hero_rendered_ratio_exact": true,
+          "inline_visible": true,
+          "inline_natural_1200x675": true,
+          "inline_src_exact": true,
+          "inline_alt_exact": true,
+          "inline_rendered_ratio_exact": true,
+          "inline_exact_text_evidence": true,
+          "one_footer_disclosure": true,
+          "no_horizontal_overflow": true
+        },
+        "disposition": "PASS"
+      },
+      {
+        "profile": "mobile",
+        "slug": "how-to-build-a-texas-mineral-production-record-locator-sheet",
+        "url": "https://mineralrightsxchange.com/blog/how-to-build-a-texas-mineral-production-record-locator-sheet/",
+        "observed": {
+          "h1": "How to Build a Texas Mineral Production Record Locator Sheet",
+          "hero": {
+            "src": "/assets/articles/hero/how-to-build-a-texas-mineral-production-record-locator-sheet.webp",
+            "alt": "A Texas public-record research desk appears beside the exact article title.",
+            "naturalWidth": 1200,
+            "naturalHeight": 630,
+            "visible": true,
+            "renderedWidth": 356,
+            "renderedHeight": 186.890625
+          },
+          "inline": {
+            "src": "/assets/articles/inline/how-to-build-a-texas-mineral-production-record-locator-sheet/texas-mineral-production-record-locator-sheet.webp",
+            "alt": "A top-down production-record locator worksheet appears above the exact keyword.",
+            "naturalWidth": 1200,
+            "naturalHeight": 675,
+            "visible": true,
+            "renderedWidth": 356,
+            "renderedHeight": 200.25
+          },
+          "footerDisclosureCount": 1,
+          "documentScrollWidth": 390,
+          "viewportWidth": 390
+        },
+        "assertions": {
+          "exact_title_visible": true,
+          "hero_visible": true,
+          "hero_natural_1200x630": true,
+          "hero_src_exact": true,
+          "hero_alt_exact": true,
+          "hero_rendered_ratio_exact": true,
+          "inline_visible": true,
+          "inline_natural_1200x675": true,
+          "inline_src_exact": true,
+          "inline_alt_exact": true,
+          "inline_rendered_ratio_exact": true,
+          "inline_exact_text_evidence": true,
+          "one_footer_disclosure": true,
+          "no_horizontal_overflow": true
+        },
+        "disposition": "PASS"
+      },
+      {
+        "profile": "mobile",
+        "slug": "texas-rrc-pooling-filing-retrieval-provenance-worksheet",
+        "url": "https://mineralrightsxchange.com/blog/texas-rrc-pooling-filing-retrieval-provenance-worksheet/",
+        "observed": {
+          "h1": "Texas RRC Pooling-Filing Retrieval Provenance Worksheet",
+          "hero": {
+            "src": "/assets/articles/hero/texas-rrc-pooling-filing-retrieval-provenance-worksheet.webp",
+            "alt": "A Texas public-record filing desk appears beside the exact article title.",
+            "naturalWidth": 1200,
+            "naturalHeight": 630,
+            "visible": true,
+            "renderedWidth": 356,
+            "renderedHeight": 186.890625
+          },
+          "inline": {
+            "src": "/assets/articles/inline/texas-rrc-pooling-filing-retrieval-provenance-worksheet/texas-rrc-pooling-filing-retrieval.webp",
+            "alt": "A top-down filing-retrieval provenance worksheet appears above the exact keyword.",
+            "naturalWidth": 1200,
+            "naturalHeight": 675,
+            "visible": true,
+            "renderedWidth": 356,
+            "renderedHeight": 200.25
+          },
+          "footerDisclosureCount": 1,
+          "documentScrollWidth": 390,
+          "viewportWidth": 390
+        },
+        "assertions": {
+          "exact_title_visible": true,
+          "hero_visible": true,
+          "hero_natural_1200x630": true,
+          "hero_src_exact": true,
+          "hero_alt_exact": true,
+          "hero_rendered_ratio_exact": true,
+          "inline_visible": true,
+          "inline_natural_1200x675": true,
+          "inline_src_exact": true,
+          "inline_alt_exact": true,
+          "inline_rendered_ratio_exact": true,
+          "inline_exact_text_evidence": true,
+          "one_footer_disclosure": true,
+          "no_horizontal_overflow": true
+        },
+        "disposition": "PASS"
+      },
+      {
+        "profile": "mobile",
+        "slug": "texas-rrc-drilling-permit-query-retrieval-provenance-worksheet",
+        "url": "https://mineralrightsxchange.com/blog/texas-rrc-drilling-permit-query-retrieval-provenance-worksheet/",
+        "observed": {
+          "h1": "Texas RRC Drilling-Permit Query Retrieval Provenance Worksheet",
+          "hero": {
+            "src": "/assets/articles/hero/texas-rrc-drilling-permit-query-retrieval-provenance-worksheet.webp",
+            "alt": "An archival Texas permit-query counter appears beside the exact article title.",
+            "naturalWidth": 1200,
+            "naturalHeight": 630,
+            "visible": true,
+            "renderedWidth": 356,
+            "renderedHeight": 186.890625
+          },
+          "inline": {
+            "src": "/assets/articles/inline/texas-rrc-drilling-permit-query-retrieval-provenance-worksheet/texas-rrc-drilling-permit-query-retrieval.webp",
+            "alt": "A top-down query-provenance worksheet appears above the exact keyword.",
+            "naturalWidth": 1200,
+            "naturalHeight": 675,
+            "visible": true,
+            "renderedWidth": 356,
+            "renderedHeight": 200.25
+          },
+          "footerDisclosureCount": 1,
+          "documentScrollWidth": 390,
+          "viewportWidth": 390
+        },
+        "assertions": {
+          "exact_title_visible": true,
+          "hero_visible": true,
+          "hero_natural_1200x630": true,
+          "hero_src_exact": true,
+          "hero_alt_exact": true,
+          "hero_rendered_ratio_exact": true,
+          "inline_visible": true,
+          "inline_natural_1200x675": true,
+          "inline_src_exact": true,
+          "inline_alt_exact": true,
+          "inline_rendered_ratio_exact": true,
+          "inline_exact_text_evidence": true,
+          "one_footer_disclosure": true,
+          "no_horizontal_overflow": true
+        },
+        "disposition": "PASS"
+      },
+      {
+        "profile": "mobile",
+        "slug": "texas-rrc-wellbore-query-retrieval-provenance-worksheet",
+        "url": "https://mineralrightsxchange.com/blog/texas-rrc-wellbore-query-retrieval-provenance-worksheet/",
+        "observed": {
+          "h1": "Texas RRC Wellbore Query Retrieval Provenance Worksheet",
+          "hero": {
+            "src": "/assets/articles/hero/texas-rrc-wellbore-query-retrieval-provenance-worksheet.webp",
+            "alt": "A Texas wellbore-query research counter appears beside the exact article title.",
+            "naturalWidth": 1200,
+            "naturalHeight": 630,
+            "visible": true,
+            "renderedWidth": 356,
+            "renderedHeight": 186.890625
+          },
+          "inline": {
+            "src": "/assets/articles/inline/texas-rrc-wellbore-query-retrieval-provenance-worksheet/texas-rrc-wellbore-query-retrieval.webp",
+            "alt": "A people-free overhead wellbore-query provenance worksheet appears above the exact keyword.",
+            "naturalWidth": 1200,
+            "naturalHeight": 675,
+            "visible": true,
+            "renderedWidth": 356,
+            "renderedHeight": 200.25
+          },
+          "footerDisclosureCount": 1,
+          "documentScrollWidth": 390,
+          "viewportWidth": 390
+        },
+        "assertions": {
+          "exact_title_visible": true,
+          "hero_visible": true,
+          "hero_natural_1200x630": true,
+          "hero_src_exact": true,
+          "hero_alt_exact": true,
+          "hero_rendered_ratio_exact": true,
+          "inline_visible": true,
+          "inline_natural_1200x675": true,
+          "inline_src_exact": true,
+          "inline_alt_exact": true,
+          "inline_rendered_ratio_exact": true,
+          "inline_exact_text_evidence": true,
+          "one_footer_disclosure": true,
+          "no_horizontal_overflow": true
+        },
+        "disposition": "PASS"
+      },
+      {
+        "profile": "mobile",
+        "slug": "texas-rrc-p-4-gatherer-purchaser-query-retrieval-provenance-worksheet",
+        "url": "https://mineralrightsxchange.com/blog/texas-rrc-p-4-gatherer-purchaser-query-retrieval-provenance-worksheet/",
+        "observed": {
+          "h1": "Texas RRC P-4 Gatherer/Purchaser Query Retrieval Provenance Worksheet",
+          "hero": {
+            "src": "/assets/articles/hero/texas-rrc-p-4-gatherer-purchaser-query-retrieval-provenance-worksheet.webp",
+            "alt": "A Texas P-4 query research counter appears beside the exact article title.",
+            "naturalWidth": 1200,
+            "naturalHeight": 630,
+            "visible": true,
+            "renderedWidth": 356,
+            "renderedHeight": 186.890625
+          },
+          "inline": {
+            "src": "/assets/articles/inline/texas-rrc-p-4-gatherer-purchaser-query-retrieval-provenance-worksheet/texas-rrc-p-4-gatherer-purchaser-query-retrieval.webp",
+            "alt": "A people-free overhead P-4 query provenance worksheet appears above the exact keyword.",
+            "naturalWidth": 1200,
+            "naturalHeight": 675,
+            "visible": true,
+            "renderedWidth": 356,
+            "renderedHeight": 200.25
+          },
+          "footerDisclosureCount": 1,
+          "documentScrollWidth": 390,
+          "viewportWidth": 390
+        },
+        "assertions": {
+          "exact_title_visible": true,
+          "hero_visible": true,
+          "hero_natural_1200x630": true,
+          "hero_src_exact": true,
+          "hero_alt_exact": true,
+          "hero_rendered_ratio_exact": true,
+          "inline_visible": true,
+          "inline_natural_1200x675": true,
+          "inline_src_exact": true,
+          "inline_alt_exact": true,
+          "inline_rendered_ratio_exact": true,
+          "inline_exact_text_evidence": true,
+          "one_footer_disclosure": true,
+          "no_horizontal_overflow": true
+        },
+        "disposition": "PASS"
       }
-    }
+    ],
+    "visual_inspection_completed": true,
+    "disposition": "PASS"
   },
   "article_results": [
     {
@@ -261,9 +1077,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:11 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:26:43 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::gj6nz-1787532723854-f111c71dbd3c",
+        "x_vercel_id": "pdx1::hr6jc-1787535329380-4a4c94309fe7",
         "x_robots_tag": null
       },
       "assertions": {
@@ -365,9 +1181,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:11 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:26:44 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::5sdns-1787532724377-db3c966a31bb",
+        "x_vercel_id": "pdx1::n589n-1787535330161-e3ddee6f7846",
         "x_robots_tag": null
       },
       "assertions": {
@@ -469,9 +1285,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:12 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:26:45 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::5sdns-1787532724734-2f089247ed82",
+        "x_vercel_id": "pdx1::z6dfk-1787535330895-39774cf363cc",
         "x_robots_tag": null
       },
       "assertions": {
@@ -573,9 +1389,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:09 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:26:46 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::v5bw6-1787532725084-7b0fb5773da8",
+        "x_vercel_id": "pdx1::hpt2r-1787535331601-f4f50e0db1e1",
         "x_robots_tag": null
       },
       "assertions": {
@@ -677,9 +1493,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:10 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:26:47 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::v5bw6-1787532725433-2744ad6ca919",
+        "x_vercel_id": "pdx1::l7nmz-1787535332278-4d450c189415",
         "x_robots_tag": null
       },
       "assertions": {
@@ -781,9 +1597,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:09 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:26:48 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::2ks7c-1787532725844-646807c09146",
+        "x_vercel_id": "pdx1::wwvb6-1787535332930-c45e3f54eec3",
         "x_robots_tag": null
       },
       "assertions": {
@@ -885,9 +1701,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:10 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:26:49 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::bnwq6-1787532726195-6c1a11a322c0",
+        "x_vercel_id": "pdx1::wwvb6-1787535333597-35972a268160",
         "x_robots_tag": null
       },
       "assertions": {
@@ -989,9 +1805,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:11 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:26:50 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::87vdk-1787532726567-d1b76f828a33",
+        "x_vercel_id": "pdx1::srm5l-1787535334257-de992586db7f",
         "x_robots_tag": null
       },
       "assertions": {
@@ -1093,9 +1909,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:11 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:26:51 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::hc7pc-1787532726908-cd15e4d9b561",
+        "x_vercel_id": "pdx1::zhpfv-1787535334866-8c5b9900f6a4",
         "x_robots_tag": null
       },
       "assertions": {
@@ -1197,9 +2013,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:10 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:26:51 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::5sdns-1787532727262-0186419399f1",
+        "x_vercel_id": "pdx1::l7nmz-1787535335525-a4b15d07e2f5",
         "x_robots_tag": null
       },
       "assertions": {
@@ -1301,9 +2117,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:13 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:26:52 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::hc7pc-1787532727624-8330554c76b7",
+        "x_vercel_id": "pdx1::l7nmz-1787535336182-0b346c20068c",
         "x_robots_tag": null
       },
       "assertions": {
@@ -1405,9 +2221,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:10 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:26:53 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::stxhq-1787532727983-44d9997d0950",
+        "x_vercel_id": "pdx1::nrbld-1787535336848-0e6e36a46523",
         "x_robots_tag": null
       },
       "assertions": {
@@ -1509,9 +2325,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:10 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:26:54 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::djqlv-1787532728396-2f1c8ab261d0",
+        "x_vercel_id": "pdx1::zhpfv-1787535337772-bad0310ce7cc",
         "x_robots_tag": null
       },
       "assertions": {
@@ -1613,9 +2429,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:10 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:26:55 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::vnh7q-1787532728817-8b40cb6b5660",
+        "x_vercel_id": "pdx1::7w6jv-1787535338420-07035e9b888f",
         "x_robots_tag": null
       },
       "assertions": {
@@ -1717,9 +2533,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:10 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:26:55 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::hc7pc-1787532729231-8ff3745ca683",
+        "x_vercel_id": "pdx1::tpwtn-1787535339060-371ad7cfc544",
         "x_robots_tag": null
       },
       "assertions": {
@@ -1821,9 +2637,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:12 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:26:56 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::hnlxx-1787532729592-bf58024d3629",
+        "x_vercel_id": "pdx1::wwvb6-1787535339926-8922d6ca6695",
         "x_robots_tag": null
       },
       "assertions": {
@@ -1925,9 +2741,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:09 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:26:57 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::stxhq-1787532729981-47b2b0afb834",
+        "x_vercel_id": "pdx1::vcblx-1787535340645-9a0b3e92b2b8",
         "x_robots_tag": null
       },
       "assertions": {
@@ -2029,9 +2845,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:12 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:26:58 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::pxf2f-1787532730352-59020cf4690c",
+        "x_vercel_id": "pdx1::htd5n-1787535341328-813a8b2209f4",
         "x_robots_tag": null
       },
       "assertions": {
@@ -2133,9 +2949,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:11 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:26:59 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::bnwq6-1787532730739-17e3d813d558",
+        "x_vercel_id": "pdx1::hpt2r-1787535341955-c33be7b4608a",
         "x_robots_tag": null
       },
       "assertions": {
@@ -2237,9 +3053,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:13 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:27:00 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::phcqw-1787532731121-828a087cc19e",
+        "x_vercel_id": "pdx1::btvfv-1787535342822-4956c3f765ef",
         "x_robots_tag": null
       },
       "assertions": {
@@ -2341,9 +3157,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:12 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:27:02 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::9mwvq-1787532731515-e3a3a4b460bd",
+        "x_vercel_id": "pdx1::dmgtx-1787535343511-b76713e55958",
         "x_robots_tag": null
       },
       "assertions": {
@@ -2445,9 +3261,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:09 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:28:06 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::5xd5q-1787532731854-ecae75c58c59",
+        "x_vercel_id": "pdx1::6v7zj-1787535344296-824dbe2b74b4",
         "x_robots_tag": null
       },
       "assertions": {
@@ -2549,9 +3365,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:12 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:28:06 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::stxhq-1787532732299-845da66518de",
+        "x_vercel_id": "pdx1::98ffk-1787535345054-bb470c8fc58b",
         "x_robots_tag": null
       },
       "assertions": {
@@ -2653,9 +3469,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:13 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:28:07 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::g9lz8-1787532733668-2d1dfea89dd9",
+        "x_vercel_id": "pdx1::n589n-1787535345890-54b64e9c0ae6",
         "x_robots_tag": null
       },
       "assertions": {
@@ -2757,9 +3573,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:13 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:28:08 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::7b2w5-1787532734429-65f0a4f84247",
+        "x_vercel_id": "pdx1::w7lwx-1787535346718-37989de74aaa",
         "x_robots_tag": null
       },
       "assertions": {
@@ -2861,9 +3677,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:09 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:28:09 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::hhg9q-1787532735207-eec318dc92e2",
+        "x_vercel_id": "pdx1::98qpf-1787535347497-152b95d826ed",
         "x_robots_tag": null
       },
       "assertions": {
@@ -2965,9 +3781,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:12 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:28:10 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::7b2w5-1787532735612-b4c110eaed2e",
+        "x_vercel_id": "pdx1::cgsgl-1787535348276-296039f97547",
         "x_robots_tag": null
       },
       "assertions": {
@@ -3069,9 +3885,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:10 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:28:11 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::9xmkz-1787532736173-5c5f9d28e13a",
+        "x_vercel_id": "pdx1::jbrz8-1787535349017-48b78318bc58",
         "x_robots_tag": null
       },
       "assertions": {
@@ -3173,9 +3989,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:13 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:28:12 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::snd5c-1787532736584-d8b34c2a59b4",
+        "x_vercel_id": "pdx1::rsjcj-1787535349760-6308998d8837",
         "x_robots_tag": null
       },
       "assertions": {
@@ -3277,9 +4093,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:09 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:28:12 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::7hgjf-1787532737164-ce8f0c7c09c8",
+        "x_vercel_id": "pdx1::98qbm-1787535350483-8382c72a7fc0",
         "x_robots_tag": null
       },
       "assertions": {
@@ -3381,9 +4197,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:13 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:28:13 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::m8hfw-1787532737618-66da124979fe",
+        "x_vercel_id": "pdx1::w7lwx-1787535351351-95ab53f226e6",
         "x_robots_tag": null
       },
       "assertions": {
@@ -3485,9 +4301,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:10 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:28:14 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::snd5c-1787532738132-61cac17745d6",
+        "x_vercel_id": "pdx1::n589n-1787535352028-403ef2e8d2c7",
         "x_robots_tag": null
       },
       "assertions": {
@@ -3589,9 +4405,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:11 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:28:15 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::f5d5s-1787532738521-b50ff973ca45",
+        "x_vercel_id": "pdx1::flpcr-1787535352750-580d184449a6",
         "x_robots_tag": null
       },
       "assertions": {
@@ -3693,9 +4509,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:10 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:28:16 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::bpf2s-1787532738933-4f0af03be660",
+        "x_vercel_id": "pdx1::wwvb6-1787535353552-d586bf087089",
         "x_robots_tag": null
       },
       "assertions": {
@@ -3797,9 +4613,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:10 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:28:17 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::bpf2s-1787532739365-ee3be1502db8",
+        "x_vercel_id": "pdx1::srm5l-1787535354368-bf9252b03e39",
         "x_robots_tag": null
       },
       "assertions": {
@@ -3901,9 +4717,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:09 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:28:17 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::mzq8w-1787532739755-6020645bd6e2",
+        "x_vercel_id": "pdx1::wwvb6-1787535355111-cc0cf71efecd",
         "x_robots_tag": null
       },
       "assertions": {
@@ -4005,9 +4821,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:10 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:28:18 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::2hgkl-1787532740136-6c84f952f0d7",
+        "x_vercel_id": "pdx1::9qz5q-1787535355846-69083f98dd15",
         "x_robots_tag": null
       },
       "assertions": {
@@ -4109,9 +4925,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:13 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:28:19 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::ff8vk-1787532740750-ae3fc79ba99c",
+        "x_vercel_id": "pdx1::srm5l-1787535356654-33b1bff6f5c1",
         "x_robots_tag": null
       },
       "assertions": {
@@ -4213,9 +5029,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:10 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:28:20 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::87vdk-1787532741162-65c538e4b9a0",
+        "x_vercel_id": "pdx1::n589n-1787535357376-b2a16fed84d1",
         "x_robots_tag": null
       },
       "assertions": {
@@ -4317,9 +5133,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:12 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:28:21 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::2ks7c-1787532741579-3ea5e9c29aef",
+        "x_vercel_id": "pdx1::98qbm-1787535358066-759c75b0c99b",
         "x_robots_tag": null
       },
       "assertions": {
@@ -4421,9 +5237,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:11 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:28:22 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::8rhdr-1787532741998-6c52de44b632",
+        "x_vercel_id": "pdx1::cgsgl-1787535358739-63517e045643",
         "x_robots_tag": null
       },
       "assertions": {
@@ -4525,9 +5341,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:13 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:28:23 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::8rhdr-1787532742405-70cb6488e760",
+        "x_vercel_id": "pdx1::62nwj-1787535359442-dd8773b498c9",
         "x_robots_tag": null
       },
       "assertions": {
@@ -4629,9 +5445,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:13 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:28:24 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::5vtdb-1787532742851-d1e843665413",
+        "x_vercel_id": "pdx1::blsp4-1787535360185-78a7a3eb7ae7",
         "x_robots_tag": null
       },
       "assertions": {
@@ -4733,9 +5549,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:13 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:28:24 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::xjxhb-1787532743296-0e82479a26d5",
+        "x_vercel_id": "pdx1::jhq6t-1787535360868-a940b06ac75f",
         "x_robots_tag": null
       },
       "assertions": {
@@ -4837,9 +5653,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:10 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:28:25 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::2hgkl-1787532743790-f53fabf8fcd0",
+        "x_vercel_id": "pdx1::5kv9l-1787535361574-2f75866070c7",
         "x_robots_tag": null
       },
       "assertions": {
@@ -4941,9 +5757,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:12 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:28:26 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::dzcrj-1787532744198-3c7ef3466660",
+        "x_vercel_id": "pdx1::btvfv-1787535362261-6e774186bbbb",
         "x_robots_tag": null
       },
       "assertions": {
@@ -5045,9 +5861,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:11 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:28:27 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::s2bpc-1787532744598-439615d397b6",
+        "x_vercel_id": "pdx1::cbgpp-1787535362923-7b4917329843",
         "x_robots_tag": null
       },
       "assertions": {
@@ -5149,9 +5965,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:09 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:28:28 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::4wmb7-1787532745003-673fe8b9a342",
+        "x_vercel_id": "pdx1::tbdt8-1787535363553-6e1abdcd927a",
         "x_robots_tag": null
       },
       "assertions": {
@@ -5253,9 +6069,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:13 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:28:29 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::s2bpc-1787532745422-c523223eaf42",
+        "x_vercel_id": "pdx1::d4624-1787535364217-d9182933c9d2",
         "x_robots_tag": null
       },
       "assertions": {
@@ -5357,9 +6173,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:09 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:28:29 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::8rhdr-1787532745924-03ec069a2af8",
+        "x_vercel_id": "pdx1::4fn59-1787535364867-20f0d021848a",
         "x_robots_tag": null
       },
       "assertions": {
@@ -5461,9 +6277,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:13 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:28:30 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::4wmb7-1787532746301-1bfbea6d10a9",
+        "x_vercel_id": "pdx1::7b2w5-1787535365585-3544584c326b",
         "x_robots_tag": null
       },
       "assertions": {
@@ -5565,9 +6381,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:13 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:28:31 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::2ks7c-1787532746700-6ef3f76be125",
+        "x_vercel_id": "pdx1::rxzcl-1787535366316-c6b1b89159d0",
         "x_robots_tag": null
       },
       "assertions": {
@@ -5669,9 +6485,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:10 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:28:32 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::f5d5s-1787532747120-3c26ceed6d01",
+        "x_vercel_id": "pdx1::jhq6t-1787535367052-6c3831cd2121",
         "x_robots_tag": null
       },
       "assertions": {
@@ -5773,9 +6589,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:10 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:28:33 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::rnfvb-1787532747452-a032291e0449",
+        "x_vercel_id": "pdx1::9pg48-1787535367858-03a35aeab1a7",
         "x_robots_tag": null
       },
       "assertions": {
@@ -5877,9 +6693,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:10 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:28:34 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::9mwvq-1787532747809-d0a567f66114",
+        "x_vercel_id": "pdx1::wkv26-1787535368492-a716b7df5955",
         "x_robots_tag": null
       },
       "assertions": {
@@ -5981,9 +6797,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:12 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:28:35 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::gj6nz-1787532748163-ac0569279acf",
+        "x_vercel_id": "pdx1::tgwh2-1787535369155-52a31a430ad4",
         "x_robots_tag": null
       },
       "assertions": {
@@ -6085,9 +6901,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:12 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:28:35 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::lp2jv-1787532748531-0d39dd23f550",
+        "x_vercel_id": "pdx1::phcqw-1787535369892-383725d3bab5",
         "x_robots_tag": null
       },
       "assertions": {
@@ -6189,9 +7005,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:11 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:28:36 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::ct4gh-1787532748914-4b7645325afb",
+        "x_vercel_id": "pdx1::btvfv-1787535370597-cba51e5ebf8f",
         "x_robots_tag": null
       },
       "assertions": {
@@ -6293,9 +7109,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:09 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:28:37 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::hnlxx-1787532749299-0acb8d51e212",
+        "x_vercel_id": "pdx1::cgsgl-1787535371239-6967ac4ec4e2",
         "x_robots_tag": null
       },
       "assertions": {
@@ -6397,9 +7213,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:13 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:28:38 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::2hgkl-1787532749765-72da786bba11",
+        "x_vercel_id": "pdx1::xqn6n-1787535371929-f652edc72900",
         "x_robots_tag": null
       },
       "assertions": {
@@ -6501,9 +7317,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:09 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:28:39 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::dbvhn-1787532750168-d6a0c643e012",
+        "x_vercel_id": "pdx1::rsjcj-1787535372819-39b750e3c0b8",
         "x_robots_tag": null
       },
       "assertions": {
@@ -6605,9 +7421,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:10 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:28:40 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::ct4gh-1787532750612-e0be715a21d5",
+        "x_vercel_id": "pdx1::ff8vk-1787535373568-7c977d06a5ab",
         "x_robots_tag": null
       },
       "assertions": {
@@ -6709,9 +7525,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:12 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:28:41 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::f5d5s-1787532750982-8b7f438a18f8",
+        "x_vercel_id": "pdx1::xf4hb-1787535374382-367db6306350",
         "x_robots_tag": null
       },
       "assertions": {
@@ -6813,9 +7629,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:10 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:28:42 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::fppkl-1787532751306-0c68af59a3e5",
+        "x_vercel_id": "pdx1::62nwj-1787535375085-11c6e3f2422c",
         "x_robots_tag": null
       },
       "assertions": {
@@ -6917,9 +7733,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:09 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:28:42 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::dbvhn-1787532751689-51962a3d8779",
+        "x_vercel_id": "pdx1::lzkhl-1787535375766-0134a6928731",
         "x_robots_tag": null
       },
       "assertions": {
@@ -7021,9 +7837,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:09 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:28:43 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::5ztqh-1787532752050-1959a90bf24b",
+        "x_vercel_id": "pdx1::lzkhl-1787535376462-c4045802a133",
         "x_robots_tag": null
       },
       "assertions": {
@@ -7125,9 +7941,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:10 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:28:44 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::h5b7z-1787532752385-ef6a4878823d",
+        "x_vercel_id": "pdx1::62nwj-1787535377101-7c9a0b71cc57",
         "x_robots_tag": null
       },
       "assertions": {
@@ -7229,9 +8045,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:09 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:28:45 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::l88zl-1787532752764-6d9ed9548ced",
+        "x_vercel_id": "pdx1::phcqw-1787535378346-46c7f36c5206",
         "x_robots_tag": null
       },
       "assertions": {
@@ -7333,9 +8149,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:09 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:28:46 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::rsjcj-1787532753133-a30ae67e2410",
+        "x_vercel_id": "pdx1::wkv26-1787535379169-bd03196abe10",
         "x_robots_tag": null
       },
       "assertions": {
@@ -7437,9 +8253,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:10 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:28:47 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::2hgkl-1787532753573-e698da856337",
+        "x_vercel_id": "pdx1::6v7zj-1787535380000-4ab145931dbe",
         "x_robots_tag": null
       },
       "assertions": {
@@ -7541,9 +8357,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:13 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:28:48 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::5xd5q-1787532753919-8f69725db28c",
+        "x_vercel_id": "pdx1::4lxff-1787535380810-a498812972a5",
         "x_robots_tag": null
       },
       "assertions": {
@@ -7645,9 +8461,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:10 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:28:48 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::l88zl-1787532754256-0460214806f1",
+        "x_vercel_id": "pdx1::mzq8w-1787535381479-33eea8839395",
         "x_robots_tag": null
       },
       "assertions": {
@@ -7749,9 +8565,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:11 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:28:49 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::f47bz-1787532754586-9ff1b74ba5bc",
+        "x_vercel_id": "pdx1::9569v-1787535382128-44046149cb9e",
         "x_robots_tag": null
       },
       "assertions": {
@@ -7853,9 +8669,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:12 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:28:50 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::rnfvb-1787532754961-5abf025d77dd",
+        "x_vercel_id": "pdx1::rxrxm-1787535382800-609d1bcc0e10",
         "x_robots_tag": null
       },
       "assertions": {
@@ -7957,9 +8773,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:10 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:28:51 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::nrbld-1787532755317-acc2bba92491",
+        "x_vercel_id": "pdx1::98qpf-1787535383472-c6d11545ec27",
         "x_robots_tag": null
       },
       "assertions": {
@@ -8061,9 +8877,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:12 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:28:52 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::rnfvb-1787532755714-e13ea3e527e2",
+        "x_vercel_id": "pdx1::lzkhl-1787535384259-97b61264226d",
         "x_robots_tag": null
       },
       "assertions": {
@@ -8165,9 +8981,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:12 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:28:52 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::nrbld-1787532756056-c4b94e7c996c",
+        "x_vercel_id": "pdx1::xqw2v-1787535384987-925b25079b14",
         "x_robots_tag": null
       },
       "assertions": {
@@ -8269,9 +9085,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:10 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:28:53 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::rnfvb-1787532756430-acb5f06b6e72",
+        "x_vercel_id": "pdx1::zhpfv-1787535385800-17c837f19c9d",
         "x_robots_tag": null
       },
       "assertions": {
@@ -8373,9 +9189,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:13 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:28:54 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::smxbg-1787532756825-83daa45c2480",
+        "x_vercel_id": "pdx1::9ktcn-1787535386613-02267257c069",
         "x_robots_tag": null
       },
       "assertions": {
@@ -8477,9 +9293,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:12 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:28:55 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::m7kbr-1787532757191-5cbfbdce0399",
+        "x_vercel_id": "pdx1::xqw2v-1787535387361-7b04f9a8f63a",
         "x_robots_tag": null
       },
       "assertions": {
@@ -8581,9 +9397,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:09 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:28:56 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::v5bw6-1787532757597-a8f9745aa2d7",
+        "x_vercel_id": "pdx1::wwvb6-1787535388172-8574db3164f7",
         "x_robots_tag": null
       },
       "assertions": {
@@ -8685,9 +9501,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:11 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:28:57 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::2hgkl-1787532757949-88fed59c6cfb",
+        "x_vercel_id": "pdx1::d4624-1787535388869-a3fdab1d7164",
         "x_robots_tag": null
       },
       "assertions": {
@@ -8789,9 +9605,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:13 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:28:58 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::7hff6-1787532758404-8db77a0597a0",
+        "x_vercel_id": "pdx1::hz8wd-1787535389591-7fa362c172a0",
         "x_robots_tag": null
       },
       "assertions": {
@@ -8893,9 +9709,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:12 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:28:59 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::rsjcj-1787532758803-3f88703a1fc0",
+        "x_vercel_id": "pdx1::dzcrj-1787535390335-385eef39bbc5",
         "x_robots_tag": null
       },
       "assertions": {
@@ -8997,9 +9813,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:13 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:28:59 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::rsjcj-1787532759136-e592a65e2ae3",
+        "x_vercel_id": "pdx1::98ffk-1787535391006-3a3ecdf7f7a1",
         "x_robots_tag": null
       },
       "assertions": {
@@ -9101,9 +9917,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:10 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:29:00 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::crqbn-1787532759503-94e8fa516f7d",
+        "x_vercel_id": "pdx1::6v7zj-1787535391790-1ac7b98b25ea",
         "x_robots_tag": null
       },
       "assertions": {
@@ -9205,9 +10021,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:13 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:29:01 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::jbd9z-1787532759887-ee10758b9027",
+        "x_vercel_id": "pdx1::6v7zj-1787535392784-d6e07f0794c9",
         "x_robots_tag": null
       },
       "assertions": {
@@ -9309,9 +10125,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:10 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:29:02 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::9mwvq-1787532760257-958d0259b171",
+        "x_vercel_id": "pdx1::4tqv9-1787535393436-69052dc21cbf",
         "x_robots_tag": null
       },
       "assertions": {
@@ -9413,9 +10229,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:13 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:29:03 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::4wmb7-1787532760616-f4de573660e8",
+        "x_vercel_id": "pdx1::stxhq-1787535394110-4b382222f595",
         "x_robots_tag": null
       },
       "assertions": {
@@ -9517,9 +10333,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:12 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:29:04 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::98qbm-1787532761126-9dba2f09b744",
+        "x_vercel_id": "pdx1::wwvb6-1787535394800-3e735cee370a",
         "x_robots_tag": null
       },
       "assertions": {
@@ -9621,9 +10437,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:10 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:29:04 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::rsjcj-1787532761463-b1aff517d96f",
+        "x_vercel_id": "pdx1::cbgdx-1787535395399-403f5d0add07",
         "x_robots_tag": null
       },
       "assertions": {
@@ -9725,9 +10541,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:09 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:29:05 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::pxf2f-1787532761925-02eab48a74a8",
+        "x_vercel_id": "pdx1::98qpf-1787535396093-011109fdf3e5",
         "x_robots_tag": null
       },
       "assertions": {
@@ -9829,9 +10645,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:09 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:29:06 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::gj6nz-1787532762714-393d64bd56a2",
+        "x_vercel_id": "pdx1::jtsm8-1787535396893-026a34bfff53",
         "x_robots_tag": null
       },
       "assertions": {
@@ -9933,9 +10749,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:09 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:29:07 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::snd5c-1787532763138-898acf33a16e",
+        "x_vercel_id": "pdx1::8sgxx-1787535397748-97efec0deb79",
         "x_robots_tag": null
       },
       "assertions": {
@@ -10037,9 +10853,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:09 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:29:08 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::dbvhn-1787532763674-ac46f38e4c4a",
+        "x_vercel_id": "pdx1::f9gwx-1787535398438-7799dc9b0434",
         "x_robots_tag": null
       },
       "assertions": {
@@ -10141,9 +10957,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:09 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:29:09 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::lp2jv-1787532764125-1c39d302322c",
+        "x_vercel_id": "pdx1::nrbld-1787535399198-188b8a72513c",
         "x_robots_tag": null
       },
       "assertions": {
@@ -10245,9 +11061,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:09 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:29:09 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::m7kbr-1787532764529-ab97a5f978b1",
+        "x_vercel_id": "pdx1::f9gwx-1787535399953-189a1aea4aaf",
         "x_robots_tag": null
       },
       "assertions": {
@@ -10349,9 +11165,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:09 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:29:10 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::smxbg-1787532765016-62df7670752c",
+        "x_vercel_id": "pdx1::zhpfv-1787535400823-48b4c5190683",
         "x_robots_tag": null
       },
       "assertions": {
@@ -10453,9 +11269,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:09 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:29:11 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::hnlxx-1787532765405-c055828b99e1",
+        "x_vercel_id": "pdx1::rpk84-1787535401578-16a2cfdcbdc8",
         "x_robots_tag": null
       },
       "assertions": {
@@ -10557,9 +11373,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:09 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:29:12 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::4fn59-1787532765758-629881faae67",
+        "x_vercel_id": "pdx1::zhpfv-1787535402437-546977a13c5b",
         "x_robots_tag": null
       },
       "assertions": {
@@ -10661,9 +11477,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:09 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:29:13 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::lp2jv-1787532766198-58dfb88eecbd",
+        "x_vercel_id": "pdx1::htd5n-1787535403284-df34e6a48ee5",
         "x_robots_tag": null
       },
       "assertions": {
@@ -10765,9 +11581,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:09 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:29:14 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::hc7pc-1787532766620-8ffb7d7a03b9",
+        "x_vercel_id": "pdx1::h5b7z-1787535404102-109f05166ab9",
         "x_robots_tag": null
       },
       "assertions": {
@@ -10869,9 +11685,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:09 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:29:15 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::9xmkz-1787532767042-612dd4a7b822",
+        "x_vercel_id": "pdx1::f9gwx-1787535404987-f0c151387811",
         "x_robots_tag": null
       },
       "assertions": {
@@ -10973,9 +11789,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:09 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:29:16 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::9xmkz-1787532767430-3c6494f0f5fd",
+        "x_vercel_id": "pdx1::pz85l-1787535405964-cf4e3204a586",
         "x_robots_tag": null
       },
       "assertions": {
@@ -11077,9 +11893,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:09 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:29:17 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::5xd5q-1787532767950-ab5bc426a173",
+        "x_vercel_id": "pdx1::f9gwx-1787535406787-ec36bcbf05ef",
         "x_robots_tag": null
       },
       "assertions": {
@@ -11181,9 +11997,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:09 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:29:18 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::smxbg-1787532768374-af7c429180ef",
+        "x_vercel_id": "pdx1::dzcrj-1787535407587-6bdcb2959f3f",
         "x_robots_tag": null
       },
       "assertions": {
@@ -11285,9 +12101,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:10 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:29:19 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::9xmkz-1787532768814-09866d107efc",
+        "x_vercel_id": "pdx1::7w6jv-1787535408416-90bb305cf8ae",
         "x_robots_tag": null
       },
       "assertions": {
@@ -11389,9 +12205,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:09 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:29:20 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::mzq8w-1787532769207-ffeaaa295417",
+        "x_vercel_id": "pdx1::9ltmf-1787535409176-10f43244bf1c",
         "x_robots_tag": null
       },
       "assertions": {
@@ -11493,9 +12309,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:10 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:29:21 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::7hff6-1787532769714-7563e17b9af8",
+        "x_vercel_id": "pdx1::dzcrj-1787535409985-5a0c7b6bcf02",
         "x_robots_tag": null
       },
       "assertions": {
@@ -11597,9 +12413,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:11 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:29:22 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::jbrz8-1787532770264-701a5d30a529",
+        "x_vercel_id": "pdx1::sgp98-1787535410844-8dd752e88adc",
         "x_robots_tag": null
       },
       "assertions": {
@@ -11701,9 +12517,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:11 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:29:23 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::4lxff-1787532770809-121bb508de53",
+        "x_vercel_id": "pdx1::phcqw-1787535411682-352fa4c2f1b4",
         "x_robots_tag": null
       },
       "assertions": {
@@ -11805,9 +12621,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:11 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:29:24 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::dbvhn-1787532771355-14f0a9a4ca96",
+        "x_vercel_id": "pdx1::hsw4s-1787535412505-1a7fb6f993e9",
         "x_robots_tag": null
       },
       "assertions": {
@@ -11909,9 +12725,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:11 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:29:26 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::dbvhn-1787532771840-ca59d02425a0",
+        "x_vercel_id": "pdx1::nhdnf-1787535413506-85c9e4706c12",
         "x_robots_tag": null
       },
       "assertions": {
@@ -12013,9 +12829,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:11 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:29:27 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::b2g77-1787532772352-c0e4274d5600",
+        "x_vercel_id": "pdx1::phcqw-1787535414318-25ce93d05162",
         "x_robots_tag": null
       },
       "assertions": {
@@ -12117,9 +12933,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:11 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:29:28 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::8rhdr-1787532772790-9a9335c0d865",
+        "x_vercel_id": "pdx1::vh8rz-1787535415336-a08dc85d00dc",
         "x_robots_tag": null
       },
       "assertions": {
@@ -12221,9 +13037,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:11 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:29:29 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::wqdd9-1787532773216-296339e951c4",
+        "x_vercel_id": "pdx1::r5sp9-1787535416330-05a41c8b62b2",
         "x_robots_tag": null
       },
       "assertions": {
@@ -12325,9 +13141,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:12 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:29:30 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::m7kbr-1787532773598-be7a6cee2d80",
+        "x_vercel_id": "pdx1::hz8wd-1787535417179-4ab66102f41f",
         "x_robots_tag": null
       },
       "assertions": {
@@ -12429,9 +13245,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:12 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:29:31 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::l88zl-1787532774062-8b963b36409f",
+        "x_vercel_id": "pdx1::98qpf-1787535417999-dd23f89f4414",
         "x_robots_tag": null
       },
       "assertions": {
@@ -12533,9 +13349,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:12 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:29:32 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::h5b7z-1787532774478-1ba69eb51929",
+        "x_vercel_id": "pdx1::f9gwx-1787535418782-080c2f47187c",
         "x_robots_tag": null
       },
       "assertions": {
@@ -12637,9 +13453,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:12 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:29:33 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::h5b7z-1787532774843-7c1f5d7c5ed9",
+        "x_vercel_id": "pdx1::flpcr-1787535419480-ad299ed96356",
         "x_robots_tag": null
       },
       "assertions": {
@@ -12741,9 +13557,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:12 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:29:34 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::kkm8b-1787532775274-5335f1a76579",
+        "x_vercel_id": "pdx1::ktvbt-1787535420351-24f8b8d08161",
         "x_robots_tag": null
       },
       "assertions": {
@@ -12845,9 +13661,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:12 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:29:35 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::crqbn-1787532775702-733caa5e253d",
+        "x_vercel_id": "pdx1::stxhq-1787535421257-49dbc8560bfe",
         "x_robots_tag": null
       },
       "assertions": {
@@ -12949,9 +13765,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:12 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:29:36 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::4fn59-1787532776174-ee55a04ba0fa",
+        "x_vercel_id": "pdx1::hpt2r-1787535421965-09f4edf1c098",
         "x_robots_tag": null
       },
       "assertions": {
@@ -13053,9 +13869,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:12 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:29:37 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::2ks7c-1787532776625-ff23d641ae68",
+        "x_vercel_id": "pdx1::544h9-1787535422686-09a9c47ab12f",
         "x_robots_tag": null
       },
       "assertions": {
@@ -13157,9 +13973,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:12 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:29:38 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::kkm8b-1787532777078-b19cebc5e90f",
+        "x_vercel_id": "pdx1::xf4hb-1787535423379-6a8001cc7389",
         "x_robots_tag": null
       },
       "assertions": {
@@ -13261,9 +14077,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:12 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:29:39 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::87vdk-1787532777567-24e68df668ce",
+        "x_vercel_id": "pdx1::rpk84-1787535424161-d0cd4f2f9651",
         "x_robots_tag": null
       },
       "assertions": {
@@ -13365,9 +14181,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:12 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:29:40 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::5xd5q-1787532778063-b3e855506729",
+        "x_vercel_id": "pdx1::htd5n-1787535424901-ca9e075ce7a3",
         "x_robots_tag": null
       },
       "assertions": {
@@ -13469,9 +14285,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:12 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:29:41 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::87vdk-1787532778476-fd2ef9296c1b",
+        "x_vercel_id": "pdx1::jtsm8-1787535425645-303567a40000",
         "x_robots_tag": null
       },
       "assertions": {
@@ -13573,9 +14389,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:12 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:29:41 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::t2jgh-1787532778883-071db42edf14",
+        "x_vercel_id": "pdx1::jtsm8-1787535426518-a1057e705e0a",
         "x_robots_tag": null
       },
       "assertions": {
@@ -13677,9 +14493,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:12 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:29:42 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::crqbn-1787532779315-70a0200644d9",
+        "x_vercel_id": "pdx1::vh8rz-1787535427406-86c9160cb16d",
         "x_robots_tag": null
       },
       "assertions": {
@@ -13781,9 +14597,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:12 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:29:43 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::m7kbr-1787532779770-f191178d1529",
+        "x_vercel_id": "pdx1::95lt8-1787535428089-070dcfd52e3a",
         "x_robots_tag": null
       },
       "assertions": {
@@ -13885,9 +14701,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:12 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:29:45 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::4lxff-1787532780223-ae66cb414d73",
+        "x_vercel_id": "pdx1::rsjcj-1787535428874-a4a0b107352c",
         "x_robots_tag": null
       },
       "assertions": {
@@ -13989,9 +14805,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:12 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:29:46 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::crqbn-1787532780592-e9723cdcd45e",
+        "x_vercel_id": "pdx1::nrbld-1787535429593-fd44a5c26791",
         "x_robots_tag": null
       },
       "assertions": {
@@ -14093,9 +14909,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:12 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:29:46 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::4fn59-1787532781053-f2b8021bf43e",
+        "x_vercel_id": "pdx1::dsx75-1787535430351-f6af2151f11b",
         "x_robots_tag": null
       },
       "assertions": {
@@ -14197,9 +15013,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:12 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:29:47 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::ngr75-1787532781530-4ad0fc5a2dad",
+        "x_vercel_id": "pdx1::gg292-1787535431089-3ccdd9ac9468",
         "x_robots_tag": null
       },
       "assertions": {
@@ -14301,9 +15117,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:12 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:29:49 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::87vdk-1787532782057-fa6778ce0f13",
+        "x_vercel_id": "pdx1::98qpf-1787535431829-9e484b979f02",
         "x_robots_tag": null
       },
       "assertions": {
@@ -14405,9 +15221,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:13 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:29:50 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::jbd9z-1787532782526-afb3b8d4fd17",
+        "x_vercel_id": "pdx1::vh8rz-1787535432609-72a0850635d3",
         "x_robots_tag": null
       },
       "assertions": {
@@ -14509,9 +15325,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:13 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:29:51 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::jbrz8-1787532782933-1dc718b4b263",
+        "x_vercel_id": "pdx1::dmgtx-1787535433469-69f83b9ece29",
         "x_robots_tag": null
       },
       "assertions": {
@@ -14613,9 +15429,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:13 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:29:51 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::hnlxx-1787532783345-67d2d92a6495",
+        "x_vercel_id": "pdx1::hr6jc-1787535434405-d6a844ea0013",
         "x_robots_tag": null
       },
       "assertions": {
@@ -14717,9 +15533,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:13 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:29:52 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::9mwvq-1787532783712-ceceae76663c",
+        "x_vercel_id": "pdx1::cw4x5-1787535435178-dd5f75739537",
         "x_robots_tag": null
       },
       "assertions": {
@@ -14821,9 +15637,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:11 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:29:53 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::jbd9z-1787532784188-4ea132458b54",
+        "x_vercel_id": "pdx1::rsjcj-1787535436062-cc2aef396d7e",
         "x_robots_tag": null
       },
       "assertions": {
@@ -14925,9 +15741,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:09 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:29:54 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::cw4x5-1787532784631-8c6067e538ee",
+        "x_vercel_id": "pdx1::rsjcj-1787535436854-5016a2d1a01c",
         "x_robots_tag": null
       },
       "assertions": {
@@ -15029,9 +15845,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:13 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:29:55 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::9mwvq-1787532785026-2e6a4cbe5b70",
+        "x_vercel_id": "pdx1::dgsg6-1787535437651-e242896dac0d",
         "x_robots_tag": null
       },
       "assertions": {
@@ -15133,9 +15949,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:11 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:29:56 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::srxnl-1787532785413-b3b056c5a1bc",
+        "x_vercel_id": "pdx1::9569v-1787535438462-231b54467a1a",
         "x_robots_tag": null
       },
       "assertions": {
@@ -15237,9 +16053,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:10 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:29:57 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::4fn59-1787532785995-e6d816ccbf66",
+        "x_vercel_id": "pdx1::dmgtx-1787535439494-5bf8d2af0a74",
         "x_robots_tag": null
       },
       "assertions": {
@@ -15341,9 +16157,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:10 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:29:58 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::pxf2f-1787532786386-0a23ccdc0949",
+        "x_vercel_id": "pdx1::gcqr7-1787535440365-3515c8dc4e82",
         "x_robots_tag": null
       },
       "assertions": {
@@ -15445,9 +16261,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:10 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:29:59 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::hc7pc-1787532786758-532583416511",
+        "x_vercel_id": "pdx1::jtsm8-1787535441343-b7f8bdd63d4b",
         "x_robots_tag": null
       },
       "assertions": {
@@ -15549,9 +16365,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:11 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:30:00 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::tgwh2-1787532787133-b0ed854103b3",
+        "x_vercel_id": "pdx1::7b2w5-1787535442121-020fd42b31ea",
         "x_robots_tag": null
       },
       "assertions": {
@@ -15653,9 +16469,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:11 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:30:00 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::52ttr-1787532787434-d1cf132dc301",
+        "x_vercel_id": "pdx1::5kv9l-1787535442867-c84806d221f1",
         "x_robots_tag": null
       },
       "assertions": {
@@ -15757,9 +16573,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:11 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:30:01 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::5sdns-1787532787798-24ee42e4dd5a",
+        "x_vercel_id": "pdx1::dzcrj-1787535443638-29241c847c9e",
         "x_robots_tag": null
       },
       "assertions": {
@@ -15861,9 +16677,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:09 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:30:02 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::hr6jc-1787532788217-fbd6bc3944f6",
+        "x_vercel_id": "pdx1::4fn59-1787535444485-562317975ae9",
         "x_robots_tag": null
       },
       "assertions": {
@@ -15965,9 +16781,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:11 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:30:03 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::5sdns-1787532788596-9dbd391be5bf",
+        "x_vercel_id": "pdx1::ff8vk-1787535445264-4220e03526e0",
         "x_robots_tag": null
       },
       "assertions": {
@@ -16069,9 +16885,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:11 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:30:04 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::ktvbt-1787532788985-a6ea3800fbb0",
+        "x_vercel_id": "pdx1::8p8t9-1787535446094-ae3e7be0e93c",
         "x_robots_tag": null
       },
       "assertions": {
@@ -16173,9 +16989,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:11 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:30:05 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::4fn59-1787532789378-522b10c05dec",
+        "x_vercel_id": "pdx1::9pg48-1787535446943-4ae52ecbad1e",
         "x_robots_tag": null
       },
       "assertions": {
@@ -16277,9 +17093,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:11 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:30:06 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::52ttr-1787532789791-630cb43feb39",
+        "x_vercel_id": "pdx1::stxhq-1787535447843-92093daf304b",
         "x_robots_tag": null
       },
       "assertions": {
@@ -16381,9 +17197,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:11 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:30:07 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::4wmb7-1787532790275-f4890230b093",
+        "x_vercel_id": "pdx1::sgp98-1787535448750-3bcbd901f720",
         "x_robots_tag": null
       },
       "assertions": {
@@ -16485,9 +17301,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:11 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:30:07 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::hnlxx-1787532790802-c7c2f6da62d7",
+        "x_vercel_id": "pdx1::sgp98-1787535449509-84deeb1416ad",
         "x_robots_tag": null
       },
       "assertions": {
@@ -16589,9 +17405,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:11 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:30:08 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::52ttr-1787532791638-5e8fb0f63a6c",
+        "x_vercel_id": "pdx1::xf4hb-1787535450308-2b407b3a123a",
         "x_robots_tag": null
       },
       "assertions": {
@@ -16693,9 +17509,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:11 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:30:09 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::djqlv-1787532792079-afc149d11859",
+        "x_vercel_id": "pdx1::95lt8-1787535451122-540eaffd6644",
         "x_robots_tag": null
       },
       "assertions": {
@@ -16797,9 +17613,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:11 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:30:10 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::4fn59-1787532792417-2eefd27ace42",
+        "x_vercel_id": "pdx1::4tqv9-1787535451923-594fc31da0c1",
         "x_robots_tag": null
       },
       "assertions": {
@@ -16901,9 +17717,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:11 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:30:11 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::pz85l-1787532792793-33cbcadfa608",
+        "x_vercel_id": "pdx1::dzcrj-1787535452722-7486f46332bd",
         "x_robots_tag": null
       },
       "assertions": {
@@ -17005,9 +17821,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:09 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:30:12 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::mzq8w-1787532793130-ecaeff1513ab",
+        "x_vercel_id": "pdx1::dzcrj-1787535453669-6b5656a29181",
         "x_robots_tag": null
       },
       "assertions": {
@@ -17109,9 +17925,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:10 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:24:56 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::kkm8b-1787532793492-39ddc39eb4a9",
+        "x_vercel_id": "pdx1::btvfv-1787535454508-f5e7c2f8621c",
         "x_robots_tag": null
       },
       "assertions": {
@@ -17213,9 +18029,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:11 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:25:00 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::pz85l-1787532793826-cfc0ef32f69b",
+        "x_vercel_id": "pdx1::95lt8-1787535455381-1c09a5dfd94d",
         "x_robots_tag": null
       },
       "assertions": {
@@ -17317,9 +18133,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:09 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:25:02 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::tqvhw-1787532794199-add4e362d340",
+        "x_vercel_id": "pdx1::nhdnf-1787535456183-d76e6d0d52d2",
         "x_robots_tag": null
       },
       "assertions": {
@@ -17421,9 +18237,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:10 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:25:04 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::nbl6m-1787532794575-05d3c14a1029",
+        "x_vercel_id": "pdx1::dzcrj-1787535457070-c1842f1ca89b",
         "x_robots_tag": null
       },
       "assertions": {
@@ -17525,9 +18341,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:10 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:25:06 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::pxf2f-1787532794990-6996a6e271d6",
+        "x_vercel_id": "pdx1::cw4x5-1787535457807-fc5328e7f2b4",
         "x_robots_tag": null
       },
       "assertions": {
@@ -17629,9 +18445,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:10 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:25:08 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::4lxff-1787532795420-d70636751431",
+        "x_vercel_id": "pdx1::9pg48-1787535458683-204c3892e7d9",
         "x_robots_tag": null
       },
       "assertions": {
@@ -17733,9 +18549,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:11 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:25:10 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::s2bpc-1787532795796-adb2f1e52f0f",
+        "x_vercel_id": "pdx1::nhdnf-1787535459495-8e92d6b573cf",
         "x_robots_tag": null
       },
       "assertions": {
@@ -17837,9 +18653,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:46:11 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:25:12 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::pxf2f-1787532796194-49334d9683f0",
+        "x_vercel_id": "pdx1::sgp98-1787535460378-999b1f367f1c",
         "x_robots_tag": null
       },
       "assertions": {
@@ -17941,9 +18757,113 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 00:45:55 GMT",
+        "last_modified": "Mon, 24 Aug 2026 01:25:14 GMT",
         "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::dbvhn-1787532796525-53b700000f18",
+        "x_vercel_id": "pdx1::r5sp9-1787535461141-2b6a36aefa5f",
+        "x_robots_tag": null
+      },
+      "assertions": {
+        "http_200": true,
+        "final_url_exact": true,
+        "canonical_exact": true,
+        "x_robots_indexable": true,
+        "meta_robots_indexable": true,
+        "h1_exact": true,
+        "meaningful_rendered_content": true,
+        "article_schema": true,
+        "faq_schema": true,
+        "five_faqs": true,
+        "breadcrumb_schema": true,
+        "every_reviewed_source_rendered": true,
+        "every_approved_asset_rendered": true,
+        "visible_hero_exact": true,
+        "og_image_exact": true,
+        "twitter_image_exact": true,
+        "same_canonical_hero_share_asset": true,
+        "visible_inline_exact": true,
+        "inline_image_binary_exact": true,
+        "article_schema_image_exact": true,
+        "canonical_image_binary_exact": true,
+        "footer_disclosure_once": true,
+        "top_disclosure_absent": true,
+        "analytics_present": true
+      },
+      "disposition": "PASS"
+    },
+    {
+      "program_row_id": "MRX1000-0290",
+      "slug": "texas-rrc-p-4-gatherer-purchaser-query-retrieval-provenance-worksheet",
+      "title": "Texas RRC P-4 Gatherer/Purchaser Query Retrieval Provenance Worksheet",
+      "url": "https://mineralrightsxchange.com/blog/texas-rrc-p-4-gatherer-purchaser-query-retrieval-provenance-worksheet/",
+      "observed_status": 200,
+      "observed_final_url": "https://mineralrightsxchange.com/blog/texas-rrc-p-4-gatherer-purchaser-query-retrieval-provenance-worksheet/",
+      "observed_canonical": "https://mineralrightsxchange.com/blog/texas-rrc-p-4-gatherer-purchaser-query-retrieval-provenance-worksheet/",
+      "observed_h1": "Texas RRC P-4 Gatherer/Purchaser Query Retrieval Provenance Worksheet",
+      "observed_schema_types": [
+        "Article",
+        "BreadcrumbList",
+        "FAQPage",
+        "Organization",
+        "ProfessionalService",
+        "WebPage",
+        "WebSite"
+      ],
+      "observed_faq_count": 5,
+      "observed_source_url_count": 5,
+      "expected_source_url_count": 5,
+      "observed_asset_count": 3,
+      "expected_asset_count": 3,
+      "expected_canonical_hero_url": "https://mineralrightsxchange.com/assets/articles/hero/texas-rrc-p-4-gatherer-purchaser-query-retrieval-provenance-worksheet.webp",
+      "expected_canonical_hero_sha256": "f6e33f9dc6f5b7573c6156fa257c4ca301272eed14670ba3b926e8afd7f19044",
+      "expected_canonical_hero_alt": "A Texas P-4 query research counter appears beside the exact article title.",
+      "expected_share_url": "https://mineralrightsxchange.com/assets/articles/hero/texas-rrc-p-4-gatherer-purchaser-query-retrieval-provenance-worksheet.webp",
+      "expected_share_sha256": "f6e33f9dc6f5b7573c6156fa257c4ca301272eed14670ba3b926e8afd7f19044",
+      "expected_inline_url": "https://mineralrightsxchange.com/assets/articles/inline/texas-rrc-p-4-gatherer-purchaser-query-retrieval-provenance-worksheet/texas-rrc-p-4-gatherer-purchaser-query-retrieval.webp",
+      "expected_inline_sha256": "b419c212037b461eceb62bb73cd676e2358504fdce219603e164b49fb161491a",
+      "expected_inline_rendered_text": "Texas RRC P-4 gatherer/purchaser query retrieval",
+      "exact_wave2_owner_policy": false,
+      "observed_canonical_hero": {
+        "visible_src": "/assets/articles/hero/texas-rrc-p-4-gatherer-purchaser-query-retrieval-provenance-worksheet.webp",
+        "visible_alt": "A Texas P-4 query research counter appears beside the exact article title.",
+        "visible_width": 1200,
+        "visible_height": 630,
+        "og_image": "https://mineralrightsxchange.com/assets/articles/hero/texas-rrc-p-4-gatherer-purchaser-query-retrieval-provenance-worksheet.webp",
+        "og_image_alt": "A Texas P-4 query research counter appears beside the exact article title.",
+        "og_image_width": 1200,
+        "og_image_height": 630,
+        "og_image_type": "image/webp",
+        "twitter_image": "https://mineralrightsxchange.com/assets/articles/hero/texas-rrc-p-4-gatherer-purchaser-query-retrieval-provenance-worksheet.webp",
+        "twitter_image_alt": "A Texas P-4 query research counter appears beside the exact article title.",
+        "schema_image": "https://mineralrightsxchange.com/assets/articles/hero/texas-rrc-p-4-gatherer-purchaser-query-retrieval-provenance-worksheet.webp",
+        "fetched_url": "https://mineralrightsxchange.com/assets/articles/hero/texas-rrc-p-4-gatherer-purchaser-query-retrieval-provenance-worksheet.webp",
+        "fetched_status": 200,
+        "fetched_content_type": "image/webp",
+        "fetched_sha256": "f6e33f9dc6f5b7573c6156fa257c4ca301272eed14670ba3b926e8afd7f19044",
+        "fetched_dimensions": {
+          "width": 1200,
+          "height": 630
+        }
+      },
+      "observed_inline_image": {
+        "visible_src": "/assets/articles/inline/texas-rrc-p-4-gatherer-purchaser-query-retrieval-provenance-worksheet/texas-rrc-p-4-gatherer-purchaser-query-retrieval.webp",
+        "visible_alt": "A people-free overhead P-4 query provenance worksheet appears above the exact keyword.",
+        "visible_width": 1200,
+        "visible_height": 675,
+        "rendered_text": "Texas RRC P-4 gatherer/purchaser query retrieval",
+        "fetched_url": "https://mineralrightsxchange.com/assets/articles/inline/texas-rrc-p-4-gatherer-purchaser-query-retrieval-provenance-worksheet/texas-rrc-p-4-gatherer-purchaser-query-retrieval.webp",
+        "fetched_status": 200,
+        "fetched_content_type": "image/webp",
+        "fetched_sha256": "b419c212037b461eceb62bb73cd676e2358504fdce219603e164b49fb161491a",
+        "fetched_dimensions": {
+          "width": 1200,
+          "height": 675
+        }
+      },
+      "response_headers": {
+        "cache_status": "DYNAMIC",
+        "last_modified": "Mon, 24 Aug 2026 01:23:57 GMT",
+        "x_vercel_cache": "HIT",
+        "x_vercel_id": "pdx1::nrbld-1787535461974-b53558b6f786",
         "x_robots_tag": null
       },
       "assertions": {
@@ -18479,9 +19399,9 @@
   },
   "interface_results": {
     "homepage_status": 200,
-    "sitemap_article_url_count": 179,
-    "expected_public_article_url_count": 179,
-    "batch_article_url_count": 171,
+    "sitemap_article_url_count": 180,
+    "expected_public_article_url_count": 180,
+    "batch_article_url_count": 172,
     "www_status": 308,
     "www_location": "https://mineralrightsxchange.com/",
     "assertions": {
@@ -18507,7 +19427,7 @@
     "disposition": "PASS"
   },
   "rollback": {
-    "prior_verified_production_deployment": "Use deployment history immediately before dpl_EwBc13uWrwxgubhgYTmphdLyxRku.",
+    "prior_verified_production_deployment": "Use deployment history immediately before dpl_Fs9vRcwGU5p5dXaugfHFZYJnbk7w.",
     "per_article": [
       {
         "program_row_id": "MRX1000-0732",
@@ -19533,14 +20453,20 @@
         "program_row_id": "MRX1000-0276",
         "slug": "texas-rrc-wellbore-query-retrieval-provenance-worksheet",
         "rollback_reference": "rollback:texas-rrc-wellbore-query-retrieval-provenance-worksheet",
+        "procedure": "Redeploy the previous verified Vercel production deployment and verify the incumbent article remains public."
+      },
+      {
+        "program_row_id": "MRX1000-0290",
+        "slug": "texas-rrc-p-4-gatherer-purchaser-query-retrieval-provenance-worksheet",
+        "rollback_reference": "rollback:texas-rrc-p-4-gatherer-purchaser-query-retrieval-provenance-worksheet",
         "procedure": "Restore only publication_status to draft and noindex to true for this exact source path; verify the restored file SHA-256 equals reviewed_source_sha256; rebuild through every release gate; redeploy the previous verified Vercel production deployment; and verify the URL is absent from article sitemap and LLM indexes."
       }
     ]
   },
   "summary": {
-    "expected_articles": 171,
-    "expected_live_blog_count": 179,
-    "passing_articles": 171,
+    "expected_articles": 172,
+    "expected_live_blog_count": 180,
+    "passing_articles": 172,
     "failing_articles": 0,
     "retained_production_baseline_disposition": "PASS",
     "deployment_disposition": "PASS",
