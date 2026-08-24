@@ -23,6 +23,13 @@ Article 182 is assigned to program row `MRX1000-0285`, with the generic valuatio
 
 Article 182 must state that the official research index labels its launch link `Field Rules Query`, while the launched official application labels itself `Field Search`; each label may appear only in its respective source context. It may not assert that the labels identify the same record class, interpret field rules, or infer field identity or boundary, acreage, well or property connection, title, ownership, lease effect, production, reserves, regulatory or compliance status, legal effect, value, offer quality, or whether to transact. `Not located` means only that one recorded attempt did not locate a result. The article must remain distinct from the broad RRC public-record guide and every released retrieval-provenance worksheet by focusing only on the Field Search interface and its attempt-level provenance.
 
+Articles 183 and 184 are also admitted, committed release candidates but remain unverified and uncounted until every active production alias passes the required live checks. Their locked identities are:
+
+- Article 183 / `MRX1000-0287`: `Texas RRC Inactive Well Aging Report Retrieval Provenance Worksheet` / `texas-rrc-inactive-well-aging-report-retrieval-provenance-worksheet` / `Texas RRC Inactive Well Aging Report retrieval`. It owns only the `inactiveWellQueryAction.do` IWAR attempt-level provenance job defined in `docs/governance/mrx1000-wave103-selection-decision-2026-08-24.md`.
+- Article 184 / `MRX1000-0288`: `Texas RRC P-5 Renewal Status Query Retrieval Provenance Worksheet` / `texas-rrc-p-5-renewal-status-query-retrieval-provenance-worksheet` / `Texas RRC P-5 Renewal Status Query retrieval`. It owns only the `inactiveWellStatusQueryAction.do` attempt-level provenance job defined in `docs/governance/mrx1000-wave104-selection-decision-2026-08-24.md`.
+
+Future selection packets must exclude all three pending identities and their exact route-specific jobs. Do not advance the production-verified ledger above 181 until the corresponding public apex, `www`, metadata, schema, and image-byte checks pass and reconciliation is committed.
+
 ## Chesty decision routing
 
 Chesty is advisory and read-only for article identity and specialist review. Invoke the `chestyorchestrator` profile with the already-authorized `openai-codex` provider, explicitly name every authoritative absolute source path, state the verified isolated worktree and branch, and prohibit file, repository, deployment, and external-system writes. Route the executive verdict through `mrx_ceo` and relevant MRX specialists.
