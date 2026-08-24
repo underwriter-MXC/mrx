@@ -11,6 +11,12 @@ playwright-report/
 test-results/
 tmp/
 .worktrees/
+.vercel/
+
+# Generated evidence and local verification output are rebuilt by the release
+# workflow; uploading them both slows production releases and can exceed
+# Vercel's per-deployment file limit.
+artifacts/
 
 # Planning artifacts are not part of the public Vercel site. Keep only the
 # hash-bound governance receipts required by the fail-closed release gate.
