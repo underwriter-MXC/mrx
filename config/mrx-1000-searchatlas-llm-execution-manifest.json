@@ -1,7 +1,7 @@
 {
   "program": "MRX1000",
   "artifact_type": "searchatlas_ordered_llm_local_execution_manifest",
-  "generated_at": "2026-07-20T16:39:54.115Z",
+  "generated_at": "2026-07-20T08:25:37.000Z",
   "deterministic": true,
   "local_only": true,
   "external_services_called": false,
@@ -9,8 +9,8 @@
   "inputs": {
     "ledger": {
       "path": "config/mrx-1000-canonical-content-ledger.json",
-      "sha256": "e7e1d332961888c79034ca6365cdc4184dc54bebb718bb005829932370244826",
-      "bytes": 4549195
+      "sha256": "3d45becf2e4bae3cf97727fbdf77d93b9e007e3aab3a7177478f219f46e40b53",
+      "bytes": 4549553
     },
     "readiness": {
       "path": "reports/mrx-1000-readiness-matrix.json",
@@ -105605,7 +105605,7 @@
       "primary_keyword": "Texas RRC Oil Proration query retrieval",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -351450,5 +351450,5 @@
       ]
     }
   ],
-  "content_fingerprint_sha256": "fbb4ad9c6e2a83511a3dd3aa79345979e4a56861f4e7524baa77011470134468"
+  "content_fingerprint_sha256": "5f397a28d7f64eea1afabdf3e893207ebb1b84891bf535ee7a423287f20742e5"
 }
