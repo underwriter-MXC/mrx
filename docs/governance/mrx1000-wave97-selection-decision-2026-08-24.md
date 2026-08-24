@@ -6,7 +6,9 @@
 - Decision date: `2026-08-24`
 - Disposition: `APPROVED_FOR_CONTINUOUS_QUALITY_GATED_PUBLICATION`
 - Owner authority: `D-2026-0804-16` and the `2026-08-14` MRX no-approval directive
-- Executive route: `chestyorchestrator` → `mrx_ceo` (the configured Hermes route is unavailable in this workspace; the standing owner directive supplies publication authority)
+- Executive route: `chestyorchestrator` → `mrx_ceo`
+- Chesty read-only coordination session: `20260823_224241_4e9737`
+- mrx_ceo read-only decision session: `20260823_224134_beb9d0`
 
 ## Candidate
 
@@ -19,9 +21,11 @@
 
 MRX_CEO_DECISION: APPROVE_REDEFINED — MRX1000-0280 | Texas RRC Gas Proration Query Retrieval Provenance Worksheet | texas-rrc-gas-proration-query-retrieval-provenance-worksheet | Texas RRC Gas Proration query retrieval
 
+Chesty confirmed that the standing execution prompt is corrected: Hermes performs read-only executive coordination through `mrx_ceo`; Codex is the sole implementation and release writer; ordinary article creation, images, tests, commits, push, deployment, publication, and verification have no generic owner-approval gate; and the workflow pauses only before a genuinely new incremental monetary charge.
+
 The original generic valuation identity materially overlaps the released valuation corpus. The approved replacement owns one narrow, official-source-only provenance worksheet for a Gas Proration Schedule Query attempt. It records route, query criteria, visible instructions, navigation, timestamp, retained reference, source limitation, and only located, not located, or unverified. It does not interpret a result or make an ownership, property, title, lease, payment, compliance, environmental, operating, production, value, offer, or transaction conclusion.
 
-Codex independently verified the six official source URLs on 2026-08-24, confirmed successful HTTPS responses, and checked the scope against the displayed Gas Proration query and help routes. The user’s standing owner authority authorizes implementation and publication only after the article-specific editorial, factual-citation, compliance, image, build, deployment, and independent live-verification gates pass.
+Codex independently verified the six official source URLs on 2026-08-24, confirmed successful HTTPS responses, and checked the scope against the displayed Gas Proration query and help routes. The live query screen displayed `District`, `API Unique No.`, `Oil Lease No./Gas Well ID No.`, `Type Well`, `Field Type`, `Field(s)`, and `Operator(s)`; the article preserves those labels verbatim and does not add `County` to this route. The user’s standing owner authority authorizes implementation and publication only after the article-specific editorial, factual-citation, compliance, image, build, deployment, and independent live-verification gates pass.
 
 ## Official source set
 

@@ -1,7 +1,7 @@
 {
   "program": "MRX 1,000 Article SEO+AEO Production Program",
   "artifact_type": "authorized_release_10_batch",
-  "evidence_scaffold_generated_at_utc": "2026-08-24T05:28:35Z",
+  "evidence_scaffold_generated_at_utc": "2026-08-24T05:49:15Z",
   "decision_authority": {
     "successor_gate_decision_id": "D-2026-0804-16",
     "successor_gate_decision_path": "docs/governance/mrx1000-owner-continuous-publication-directive-2026-08-04.md",
@@ -315,20 +315,20 @@
     "wave96_selection_decision_sha256": "23165038b7b476cd30d4d2a06508a79291e537b5b82d4a913c1bc9af2b610bee",
     "wave97_selection_decision_id": "MRX1000-W97-SELECT-2026-08-24",
     "wave97_selection_decision_path": "docs/governance/mrx1000-wave97-selection-decision-2026-08-24.md",
-    "wave97_selection_decision_sha256": "585ec35a1f5908ba1040c67abcf126d8b27f6c877b49046c2e0110f6ca0aeb0f"
+    "wave97_selection_decision_sha256": "31db42172eb440df065974c588359cbc7166f3cc3bf1f16b019cc52ea4181bc2"
   },
   "identity_authority": {
     "scope_key": "canonical_slug",
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_sha256": "2beddd5be26b8ff4fd57c731d16a22f58cc092936b413c3472abfdfc2cb9d5e2",
-    "canonical_ledger_generated_at": "2026-07-20T05:34:42.464Z",
+    "canonical_ledger_sha256": "60b94bad19b23acabbb377d7fe3715b8c895ea74523e7b391dfa00d8331dadaf",
+    "canonical_ledger_generated_at": "2026-07-20T15:39:58.494Z",
     "successor_ledger_decision_id": "D-2026-0723-LEDGER-04",
     "successor_ledger_decision_path": "artifacts/mrx1000-release-10/decisions/mrx-ceo-ledger-provenance-successor-20260723-04.md",
     "successor_ledger_decision_sha256": "09eca24bcd0e71563f2ac4197f564eec0ccb43a5ee955216da5c4a2543d04978",
     "program_row_id_strategy": "preserve_program_row_id_by_canonical_slug",
     "source_shortlist_identity_field": "source_shortlist_program_row_id",
-    "reconciled_at_utc": "2026-08-24T05:20:26.293Z",
-    "note": "The controlling shortlist authorizes these exact canonical slugs. Historical row IDs remain provenance; current IDs are reconciled to the deterministic post-publication ledger after deployment dpl_7CNktApbHsBZoyDRu2TiRfEPvrHL, with 184 public article routes and 176 live-verified MRX1000 articles."
+    "reconciled_at_utc": "2026-08-24T05:45:35.516Z",
+    "note": "The controlling shortlist authorizes these exact canonical slugs. Historical row IDs remain provenance; current IDs are reconciled to the deterministic post-publication ledger after deployment dpl_DiZSeAMNgMJndQ1D35SGZAv3tKeW, with 185 public article routes and 177 live-verified MRX1000 articles."
   },
   "policy": {
     "authorization_cap_released_articles": 1000,
@@ -339,7 +339,7 @@
     "fail_closed": true,
     "earned_scale_gates": [],
     "exact_admitted_count": 177,
-    "exact_admitted_slate_sha256": "0a45e2f3507bf303be37de371f47c50c6f01e1bbd09dc47029bbbcdf13adc2b8"
+    "exact_admitted_slate_sha256": "22ed05c2696cc19b796761bd1d40977791f9cd3b7955eeacfa9c9dd7d622e0b7"
   },
   "articles": [
     {
@@ -6127,15 +6127,15 @@
       "content_genius_article_uuid": null,
       "archive_evidence_sha256": "a657affad4981c858dad954338ee64326712eef1be328fa4fd4f0a24c5c0c94f",
       "repo_path": "src/content/posts/texas-rrc-gas-proration-query-retrieval-provenance-worksheet.mdx",
-      "repo_sha256": "bf69cbe1eb251cc4212fc46b88c3cf8cbe0f462185f3a5cf0f1ab5caa1745844",
-      "article_sha256": "bf69cbe1eb251cc4212fc46b88c3cf8cbe0f462185f3a5cf0f1ab5caa1745844",
+      "repo_sha256": "d9685fd2d395fd1be7854d3dec01a954be8d8f383f588f275fc867db3ecced2f",
+      "article_sha256": "d9685fd2d395fd1be7854d3dec01a954be8d8f383f588f275fc867db3ecced2f",
       "hero_path": "/assets/articles/hero/texas-rrc-gas-proration-query-retrieval-provenance-worksheet.webp",
       "hero_sha256": "8fd635b136056166e1db4ffff4be2aee6e9cf8d1d452c9543b7c13cfa2b4eac7",
       "hero_asset_sha256": "8fd635b136056166e1db4ffff4be2aee6e9cf8d1d452c9543b7c13cfa2b4eac7",
       "admission_status": "admitted_quality_gated",
       "finalization_state": "draft_noindex_admitted",
       "searchatlas_content_score": null,
-      "searchatlas_word_count": 1163,
+      "searchatlas_word_count": 1177,
       "risk_citation_remediation": [
         "The original generic valuation identity was rejected for material corpus overlap. The admitted replacement owns only a source-preserving provenance worksheet for one official Texas RRC Gas Proration Schedule Query attempt.",
         "Current official Railroad Commission sources support only official routes, source-displayed criteria and instructions, navigation labels, query-screen context, and stated limitations. None establishes property connection, title, ownership, acreage, lease effect, payment responsibility, entitlement, compliance, environmental condition, operating status, production, value, or a transaction result.",
