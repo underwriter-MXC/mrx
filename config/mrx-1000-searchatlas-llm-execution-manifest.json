@@ -1,7 +1,7 @@
 {
   "program": "MRX1000",
   "artifact_type": "searchatlas_ordered_llm_local_execution_manifest",
-  "generated_at": "2026-07-20T08:25:37.000Z",
+  "generated_at": "2026-07-20T18:55:02.016Z",
   "deterministic": true,
   "local_only": true,
   "external_services_called": false,
@@ -9,13 +9,13 @@
   "inputs": {
     "ledger": {
       "path": "config/mrx-1000-canonical-content-ledger.json",
-      "sha256": "9cc55fc3455aa3dbc6b95bf08b349500447a07f72c39a1b1e9c713eb7b9aee87",
-      "bytes": 4545758
+      "sha256": "a283cb69311ee3ab896db4463087bd762e5a3208c242f86f65ad80dad7dd4231",
+      "bytes": 4547183
     },
     "readiness": {
       "path": "reports/mrx-1000-readiness-matrix.json",
-      "sha256": "eeaaba0d37b68b7cb53eaae919db2fec9bb7f8bcd49eb5bc4c8a84ebfa97b1cb",
-      "bytes": 3436683,
+      "sha256": "69555accb32b74d4959e76bc59491e8951a47ea1017853a1b54729751701743a",
+      "bytes": 3437179,
       "sha256_method": "canonical_json_with_top_level_generated_at_masked",
       "generated_at_excluded_from_sha256": true
     },
@@ -366,30 +366,30 @@
     },
     "by_canonical_inventory_state": {
       "incumbent_draft_nonpublic_held": 27,
-      "live_public_published_route": 182,
+      "live_public_published_route": 183,
       "pilot_draft_noindex_stage": 25,
-      "planning_only_inventory": 766
+      "planning_only_inventory": 765
     },
     "by_searchatlas_action_needed": {
-      "preserve_workspace_public_route_and_search_vendor_identity_before_any_creation": 106,
+      "preserve_workspace_public_route_and_search_vendor_identity_before_any_creation": 107,
       "reconcile_artifact_bound_content_genius_record_no_creation": 2,
       "reconcile_pilot_non_creation_workflow_label_then_bind_or_conditionally_create": 23,
       "reconcile_unambiguous_exact_title_vendor_candidate_no_creation": 144,
       "resolve_ambiguous_exact_title_vendor_candidates_no_creation": 6,
-      "search_vendor_identity_then_conditionally_create_after_identity_and_quality_preflight": 719
+      "search_vendor_identity_then_conditionally_create_after_identity_and_quality_preflight": 718
     },
-    "repo_mdx_present": 234,
-    "workspace_public_route_configured": 182,
-    "planning_searchatlas_map_id_count": 245,
-    "planning_searchatlas_title_uuid_count": 220,
+    "repo_mdx_present": 235,
+    "workspace_public_route_configured": 183,
+    "planning_searchatlas_map_id_count": 244,
+    "planning_searchatlas_title_uuid_count": 219,
     "persisted_ledger_content_genius_article_uuid_count": 0,
-    "checksummed_review_candidate_rows": 210,
-    "rows_without_checksummed_review_candidate": 790,
+    "checksummed_review_candidate_rows": 211,
+    "rows_without_checksummed_review_candidate": 789,
     "by_review_candidate_state": {
-      "CHECKSUMMED_EXISTING_PUBLIC_ARTICLE_READY_FOR_LLM_REVIEW": 182,
+      "CHECKSUMMED_EXISTING_PUBLIC_ARTICLE_READY_FOR_LLM_REVIEW": 183,
       "CHECKSUMMED_HELD_SUBSTANTIVE_DRAFT_READY_FOR_LLM_REVIEW": 27,
       "NO_CHECKSUMMED_REVIEW_CANDIDATE_PILOT_QA_SHELL_ONLY": 24,
-      "NO_WORKSPACE_CONTENT_CANDIDATE": 766,
+      "NO_WORKSPACE_CONTENT_CANDIDATE": 765,
       "ROW2_REMEDIATED_NOINDEX_CANDIDATE_VALIDATED_FOR_ORDERED_LLM_REVIEW": 1
     },
     "pilot_workspace_qa_shell_rows": 25,
@@ -105228,32 +105228,56 @@
     },
     {
       "program_row_id": "MRX1000-0278",
-      "canonical_title": "Understanding Mineral Rights Valuation Methods",
-      "canonical_slug": "understanding-mineral-rights-valuation-methods",
-      "canonical_url": "https://mineralrightsxchange.com/blog/understanding-mineral-rights-valuation-methods/",
+      "canonical_title": "Texas RRC Inactive Well Query Retrieval Provenance Worksheet",
+      "canonical_slug": "texas-rrc-inactive-well-query-retrieval-provenance-worksheet",
+      "canonical_url": "https://mineralrightsxchange.com/blog/texas-rrc-inactive-well-query-retrieval-provenance-worksheet/",
       "pillar": "mineral-rights-value",
       "pillar_url": "/mineral-rights-value/",
       "cluster": "valuation-methodology-drivers",
-      "primary_keyword": "Understanding Mineral Rights Valuation Methods",
+      "primary_keyword": "Texas RRC Inactive Well query retrieval",
       "authoritative_current_state": {
-        "canonical_inventory_state": "planning_only_inventory",
-        "normalized_status": "planning_only_topical_map_title_planning_handle",
-        "source_system": "searchatlas_topical_map_export",
+        "canonical_inventory_state": "live_public_published_route",
+        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
-          "state": "NO_WORKSPACE_MDX",
-          "path": null,
-          "mdx_exists": false,
-          "source_sha256": null,
-          "publication_status": null,
+          "state": "WORKSPACE_MDX_PRESENT",
+          "path": "src/content/posts/texas-rrc-inactive-well-query-retrieval-provenance-worksheet.mdx",
+          "mdx_exists": true,
+          "source_sha256": "c3fb89f51f5a1704665bf3c08d8ffd88b8db2ff1045b788d642259bc27b8de0f",
+          "publication_status": "published",
           "frontmatter_noindex": false,
-          "workspace_public_route_configured": false,
+          "workspace_public_route_configured": true,
           "production_live_verified_in_this_local_build": false,
-          "content_evidence": null
+          "content_evidence": {
+            "frontmatter_title": "Texas RRC Inactive Well Query Retrieval Provenance Worksheet",
+            "frontmatter_slug": null,
+            "frontmatter_publication_status": "published",
+            "frontmatter_reviewed_at": "2026-08-24T04:10:00Z",
+            "frontmatter_reviewed_by": "mrx_compliance-continuous-wave95",
+            "frontmatter_article_id": null,
+            "frontmatter_searchatlas_uuid": null,
+            "frontmatter_workflow_status": null,
+            "frontmatter_remediated_from_sha256": null,
+            "frontmatter_body_checksum_sha256": null,
+            "frontmatter_body_length_chars": 0,
+            "frontmatter_body_word_count": 0,
+            "frontmatter_draft": false,
+            "frontmatter_noindex": false,
+            "frontmatter_indexable": null,
+            "body_sha256": "b641db6f051d2262b76639738d794e12aefdea0b80b9bea1ac2ab95ba7fc6af1",
+            "body_bytes": 12577,
+            "body_characters": 12565,
+            "body_word_count": 1703,
+            "explicit_qa_shell_without_final_copy": false,
+            "filename_matches_canonical_slug": true,
+            "frontmatter_title_matches_canonical": true,
+            "frontmatter_publication_status_matches_ledger": true
+          }
         },
         "planning_handles": {
-          "searchatlas_map_id": 255581,
-          "searchatlas_title_uuid": "fd448afd-b7af-4ace-b95b-c5ded6fa2377",
+          "searchatlas_map_id": null,
+          "searchatlas_title_uuid": null,
           "searchatlas_record_id_persisted_in_ledger": null,
           "content_genius_article_uuid_persisted_in_ledger": null,
           "are_content_genius_article_creation_proof": false,
@@ -105272,28 +105296,31 @@
           "manual_reconciliation_required": true
         },
         "review_candidate": {
-          "state": "NO_WORKSPACE_CONTENT_CANDIDATE",
-          "checksummed_review_candidate_present": false,
-          "path": null,
-          "source_sha256": null,
-          "body_sha256": null,
-          "body_word_count": null,
-          "candidate_type": null,
-          "readiness_evidence_verified": false,
-          "readiness_evidence_paths": [],
+          "state": "CHECKSUMMED_EXISTING_PUBLIC_ARTICLE_READY_FOR_LLM_REVIEW",
+          "checksummed_review_candidate_present": true,
+          "path": "src/content/posts/texas-rrc-inactive-well-query-retrieval-provenance-worksheet.mdx",
+          "source_sha256": "c3fb89f51f5a1704665bf3c08d8ffd88b8db2ff1045b788d642259bc27b8de0f",
+          "body_sha256": "b641db6f051d2262b76639738d794e12aefdea0b80b9bea1ac2ab95ba7fc6af1",
+          "body_word_count": 1703,
+          "candidate_type": "existing_public_article",
+          "readiness_evidence_verified": true,
+          "readiness_evidence_paths": [
+            "reports/mrx-1000-readiness-matrix.json",
+            "config/mrx-1000-canonical-content-ledger.json"
+          ],
           "readiness_checks": {
-            "workspace_source_checksum_present": false,
+            "workspace_source_checksum_present": true,
             "readiness_row_identity_verified": true,
-            "filename_matches_canonical_slug": false,
-            "frontmatter_title_matches_canonical": false,
-            "frontmatter_publication_status_matches_ledger": false,
-            "substantive_body_at_least_500_words": false,
-            "explicit_qa_shell_absent": false,
-            "review_metadata_present": false,
-            "canonical_state_supports_content_review": false
+            "filename_matches_canonical_slug": true,
+            "frontmatter_title_matches_canonical": true,
+            "frontmatter_publication_status_matches_ledger": true,
+            "substantive_body_at_least_500_words": true,
+            "explicit_qa_shell_absent": true,
+            "review_metadata_present": true,
+            "canonical_state_supports_content_review": true
           },
-          "workspace_mdx_is_review_candidate": false,
-          "workspace_mdx_rejection_reason": "No workspace MDX exists.",
+          "workspace_mdx_is_review_candidate": true,
+          "workspace_mdx_rejection_reason": null,
           "special_candidate_validation": null
         }
       },
@@ -105304,7 +105331,7 @@
         "position_in_batch": 22,
         "batch_size": 25,
         "assignment_policy": "remaining_rows_by_program_row_id",
-        "action_needed": "search_vendor_identity_then_conditionally_create_after_identity_and_quality_preflight",
+        "action_needed": "preserve_workspace_public_route_and_search_vendor_identity_before_any_creation",
         "execution_state": "WAITING_FOR_IDENTITY_CONTENT_AND_REVIEW_GATES_NO_EXTERNAL_WRITE",
         "execution_eligible_now": false,
         "creation_needed_proven": false,
@@ -105318,9 +105345,9 @@
           "read_only_quota_preflight_required_before_external_write": true,
           "canonical_identity_reconciliation_required": true,
           "checksummed_content_candidate_required_before_review": true,
-          "checksummed_content_candidate_present": false,
-          "review_candidate_path_and_sha256_present": false,
-          "review_readiness_evidence_verified": false,
+          "checksummed_content_candidate_present": true,
+          "review_candidate_path_and_sha256_present": true,
+          "review_readiness_evidence_verified": true,
           "compliance_seo_aeo_editorial_gates_required": true
         },
         "evidence": {
@@ -105347,10 +105374,10 @@
           "availability_state": "NOT_CHECKED_BY_LOCAL_ONLY_BUILD",
           "dispatch_eligible_now": false,
           "prerequisite_gates": {
-            "checksummed_review_candidate_present": false,
-            "review_candidate_path": null,
-            "review_candidate_sha256": null,
-            "review_candidate_readiness_evidence_verified": false,
+            "checksummed_review_candidate_present": true,
+            "review_candidate_path": "src/content/posts/texas-rrc-inactive-well-query-retrieval-provenance-worksheet.mdx",
+            "review_candidate_sha256": "c3fb89f51f5a1704665bf3c08d8ffd88b8db2ff1045b788d642259bc27b8de0f",
+            "review_candidate_readiness_evidence_verified": true,
             "predecessor_key": null,
             "predecessor_pass_required": false,
             "predecessor_pass_observed": false,
@@ -105384,10 +105411,10 @@
           "availability_state": "NOT_CHECKED_BY_LOCAL_ONLY_BUILD",
           "dispatch_eligible_now": false,
           "prerequisite_gates": {
-            "checksummed_review_candidate_present": false,
-            "review_candidate_path": null,
-            "review_candidate_sha256": null,
-            "review_candidate_readiness_evidence_verified": false,
+            "checksummed_review_candidate_present": true,
+            "review_candidate_path": "src/content/posts/texas-rrc-inactive-well-query-retrieval-provenance-worksheet.mdx",
+            "review_candidate_sha256": "c3fb89f51f5a1704665bf3c08d8ffd88b8db2ff1045b788d642259bc27b8de0f",
+            "review_candidate_readiness_evidence_verified": true,
             "predecessor_key": "chatgpt",
             "predecessor_pass_required": true,
             "predecessor_pass_observed": false,
@@ -105421,10 +105448,10 @@
           "availability_state": "UNAVAILABLE_PER_LOCAL_FRAMEWORK_SNAPSHOT",
           "dispatch_eligible_now": false,
           "prerequisite_gates": {
-            "checksummed_review_candidate_present": false,
-            "review_candidate_path": null,
-            "review_candidate_sha256": null,
-            "review_candidate_readiness_evidence_verified": false,
+            "checksummed_review_candidate_present": true,
+            "review_candidate_path": "src/content/posts/texas-rrc-inactive-well-query-retrieval-provenance-worksheet.mdx",
+            "review_candidate_sha256": "c3fb89f51f5a1704665bf3c08d8ffd88b8db2ff1045b788d642259bc27b8de0f",
+            "review_candidate_readiness_evidence_verified": true,
             "predecessor_key": "google_gemini",
             "predecessor_pass_required": true,
             "predecessor_pass_observed": false,
@@ -105458,10 +105485,10 @@
           "availability_state": "NOT_CHECKED_BY_LOCAL_ONLY_BUILD",
           "dispatch_eligible_now": false,
           "prerequisite_gates": {
-            "checksummed_review_candidate_present": false,
-            "review_candidate_path": null,
-            "review_candidate_sha256": null,
-            "review_candidate_readiness_evidence_verified": false,
+            "checksummed_review_candidate_present": true,
+            "review_candidate_path": "src/content/posts/texas-rrc-inactive-well-query-retrieval-provenance-worksheet.mdx",
+            "review_candidate_sha256": "c3fb89f51f5a1704665bf3c08d8ffd88b8db2ff1045b788d642259bc27b8de0f",
+            "review_candidate_readiness_evidence_verified": true,
             "predecessor_key": "claude_opus_4_6",
             "predecessor_pass_required": true,
             "predecessor_pass_observed": false,
@@ -105495,10 +105522,10 @@
           "availability_state": "NOT_CHECKED_BY_LOCAL_ONLY_BUILD",
           "dispatch_eligible_now": false,
           "prerequisite_gates": {
-            "checksummed_review_candidate_present": false,
-            "review_candidate_path": null,
-            "review_candidate_sha256": null,
-            "review_candidate_readiness_evidence_verified": false,
+            "checksummed_review_candidate_present": true,
+            "review_candidate_path": "src/content/posts/texas-rrc-inactive-well-query-retrieval-provenance-worksheet.mdx",
+            "review_candidate_sha256": "c3fb89f51f5a1704665bf3c08d8ffd88b8db2ff1045b788d642259bc27b8de0f",
+            "review_candidate_readiness_evidence_verified": true,
             "predecessor_key": "perplexity",
             "predecessor_pass_required": true,
             "predecessor_pass_observed": false,
@@ -105529,7 +105556,7 @@
           "perplexity",
           "microsoft_copilot"
         ],
-        "next_stage": null,
+        "next_stage": "chatgpt",
         "any_verdict_recorded": false,
         "all_required_verdicts_passed": false,
         "sequence_complete": false,
@@ -105547,7 +105574,7 @@
         "release_action_eligible_now": false,
         "index_submission_eligible_now": false,
         "sitemap_addition_eligible_now": false,
-        "currently_in_workspace_sitemap": false,
+        "currently_in_workspace_sitemap": true,
         "production_live_verified_in_this_local_build": false,
         "release_or_index_action_performed": false,
         "exact_claude_opus_4_6_required_before_release_or_index_transition": true,
@@ -105564,7 +105591,6 @@
         "ORDERED_LLM_REVIEW_SEQUENCE_NOT_COMPLETE",
         "LOCAL_ONLY_MANIFEST_EXTERNAL_DISPATCH_NOT_PERFORMED",
         "ARTICLE_SPECIFIC_QUALITY_CLEARANCE_NOT_COMPLETE",
-        "NO_CHECKSUMMED_REVIEW_CANDIDATE",
         "CONTENT_GENIUS_CANONICAL_ROW_UUID_BINDING_UNPROVEN"
       ]
     },
@@ -351056,7 +351082,7 @@
       ]
     },
     {
-      "program_row_id": "MRX1000-1025",
+      "program_row_id": "MRX1000-1027",
       "canonical_title": "Mineral Appraisal: Guide In 2026",
       "canonical_slug": "mineral-appraisal-guide-in-2026",
       "canonical_url": "https://mineralrightsxchange.com/blog/mineral-appraisal-guide-in-2026/",
@@ -351398,5 +351424,5 @@
       ]
     }
   ],
-  "content_fingerprint_sha256": "3fbdbd70d17778af76dfe5b5e13996092542a19edeb47c2dc734d4a369346a1f"
+  "content_fingerprint_sha256": "bbdc75c894ad90687e29b78e76358712cf595d8b52defc6d7faecda7b0599873"
 }
