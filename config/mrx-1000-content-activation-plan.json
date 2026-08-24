@@ -1,15 +1,15 @@
 {
   "artifact_type": "mrx1000_content_activation_plan",
   "plan_version": "mrx1000-content-activation-v1.1.0",
-  "generated_at": "2026-07-20T03:40:33.484Z",
+  "generated_at": "2026-07-20T16:39:54.115Z",
   "generated_at_method": "canonical_ledger_generated_at",
   "generator": "scripts/build-mrx-1000-activation-plan.mjs",
-  "content_fingerprint_sha256": "2e950ee29f5f042fa8d06119408ba9295a55734bd65353ffe3b2bb59517aa916",
+  "content_fingerprint_sha256": "b0a51c7a7205d02dc5bec85cbfedc0f4002723be6465e756832ed671ec3f5880",
   "inputs": {
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_fingerprint_sha256": "0ffe44468d346ff3a69085cce6425c9805de1c6d8bb1de6ac9f1b968a93ae187",
+    "canonical_ledger_fingerprint_sha256": "2768382ba326240e8e2ec57d529423e9a7668eeddb5675cc96f54e82bf734da5",
     "canonical_ledger_fingerprint_verified": true,
-    "canonical_ledger_generated_at": "2026-07-20T03:40:33.484Z",
+    "canonical_ledger_generated_at": "2026-07-20T16:39:54.115Z",
     "owner_decision": {
       "decision_id": "D-2026-0804-16",
       "signed_disposition": "APPROVED_CONTINUOUS_QUALITY_GATED_ARTICLE_PUBLICATION",
@@ -115,9 +115,9 @@
     },
     "by_source_preservation_classification": {
       "incumbent_draft_nonpublic_held": 27,
-      "live_public_published_route": 183,
+      "live_public_published_route": 184,
       "pilot_draft_noindex_stage": 25,
-      "planning_only_inventory": 765
+      "planning_only_inventory": 764
     }
   },
   "rows": [
@@ -17338,11 +17338,11 @@
       },
       "sibling_link": {
         "target_program_row_id": "MRX1000-0279",
-        "target_title": "Understanding Mineral Rights Value Assessment",
-        "url": "/blog/understanding-mineral-rights-value-assessment/",
+        "target_title": "Texas RRC Oil Proration Query Retrieval Provenance Worksheet",
+        "url": "/blog/texas-rrc-oil-proration-query-retrieval-provenance-worksheet/",
         "relationship": "same_cluster_next_by_program_row_id_cyclic",
-        "target_source_preservation_classification": "planning_only_inventory",
-        "target_route_live": false,
+        "target_source_preservation_classification": "live_public_published_route",
+        "target_route_live": true,
         "status": "planned_local_only"
       },
       "primary_cta": {
@@ -17385,15 +17385,15 @@
     },
     {
       "program_row_id": "MRX1000-0279",
-      "canonical_title": "Understanding Mineral Rights Value Assessment",
-      "canonical_slug": "understanding-mineral-rights-value-assessment",
-      "canonical_url": "/blog/understanding-mineral-rights-value-assessment/",
+      "canonical_title": "Texas RRC Oil Proration Query Retrieval Provenance Worksheet",
+      "canonical_slug": "texas-rrc-oil-proration-query-retrieval-provenance-worksheet",
+      "canonical_url": "/blog/texas-rrc-oil-proration-query-retrieval-provenance-worksheet/",
       "cluster": "valuation-methodology-drivers",
       "pillar": "mineral-rights-value",
       "search_intent": "informational",
       "funnel_stage": "consideration",
-      "source_preservation_classification": "planning_only_inventory",
-      "source_route_live": false,
+      "source_preservation_classification": "live_public_published_route",
+      "source_route_live": true,
       "pillar_link": {
         "url": "/mineral-rights-value/",
         "route_evidence": "src/pages/mineral-rights-value.astro",
@@ -17442,7 +17442,7 @@
         "rendered_triangle_verified": false,
         "live_status": "not_published_or_verified_by_this_plan",
         "live_triangle_verified": false,
-        "release_status": "eligible_for_continuous_quality_review_not_yet_cleared",
+        "release_status": "released_under_d16_continuous_quality_gate",
         "numerical_release_cap_applies": false
       }
     },

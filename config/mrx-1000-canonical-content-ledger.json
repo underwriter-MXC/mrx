@@ -439,8 +439,8 @@
       "selection_decision": "docs/governance/mrx1000-wave96-selection-decision-2026-08-24.md",
       "draft_selection_decision_sha256": "d927003943e6162cadfc768ea586f4f0894298a5494f3fc65ab71550950b71cf",
       "draft_article_sha256": "a46359db4146a6f89a22826cd3917e3f8c0c4c7cf504dbe9aea81b70182ea2c7",
-      "selection_decision_sha256": "d927003943e6162cadfc768ea586f4f0894298a5494f3fc65ab71550950b71cf",
-      "release_candidate_article_sha256": "a46359db4146a6f89a22826cd3917e3f8c0c4c7cf504dbe9aea81b70182ea2c7",
+      "selection_decision_sha256": "23165038b7b476cd30d4d2a06508a79291e537b5b82d4a913c1bc9af2b610bee",
+      "release_candidate_article_sha256": "fdbcfcac7082b4aac6b8fcb3c2e9711528ffeef7b5cf5cc0674d7bdcbed55485",
       "promoted_at_utc": "2026-08-24T04:48:00Z"
     }
   },
@@ -18287,6 +18287,7 @@
       "cluster": "valuation-methodology-drivers",
       "primary_keyword": "Texas RRC Oil Proration query retrieval",
       "secondary_keywords": [
+        "Texas RRC Oil Proration query retrieval",
         "oil proration query worksheet",
         "Texas oil proration provenance record",
         "RRC oil proration schedule query"
@@ -18340,7 +18341,7 @@
       "dedupe_group_id": "canonical:texas-rrc-oil-proration-query-retrieval-provenance-worksheet",
       "canonical_group_owner_url": "https://mineralrightsxchange.com/blog/texas-rrc-oil-proration-query-retrieval-provenance-worksheet/",
       "action": "release_only_after_exact_batch_gate_and_production_verification",
-      "action_reason": "The original mineral-value assessment explainer was rejected for material corpus overlap. The admitted replacement owns only a source-preserving provenance worksheet for one official Texas RRC Oil Proration Schedule Query attempt.",
+      "action_reason": "The source is prepared for the exact release-10 build, but publication remains controlled by the signed batch, matching evidence, production deployment, and independent verification.",
       "compliance_status": "release_10_hash_locked_review_required",
       "schema_status": "article_schema_path_present_revalidation_required",
       "internal_link_role": "incumbent_supporting_article",
@@ -18359,14 +18360,14 @@
         "normalized_title": "texas rrc oil proration query retrieval provenance worksheet",
         "exact_slug_unique": true,
         "exact_title_unique": true,
-        "nearest_same_cluster_slug": "texas-rrc-inactive-well-query-retrieval-provenance-worksheet",
-        "nearest_same_cluster_title_token_jaccard": 0.5,
+        "nearest_same_cluster_slug": "texas-rrc-wellbore-query-retrieval-provenance-worksheet",
+        "nearest_same_cluster_title_token_jaccard": 0.625,
         "review_status": "exact_and_fuzzy_title_check_pass"
       },
       "exact_slug_unique": true,
       "exact_title_unique": true,
-      "nearest_same_cluster_slug": "texas-rrc-inactive-well-query-retrieval-provenance-worksheet",
-      "cannibalization_score": 0.5,
+      "nearest_same_cluster_slug": "texas-rrc-wellbore-query-retrieval-provenance-worksheet",
+      "cannibalization_score": 0.625,
       "dedupe_review_status": "exact_and_fuzzy_title_check_pass",
       "last_verified_at": "2026-07-20T16:39:54.115Z"
     },

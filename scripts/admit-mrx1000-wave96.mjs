@@ -20,13 +20,14 @@ process.env.MRX_PRIOR_SLUG = 'understanding-mineral-rights-value-assessment';
 process.env.MRX_PRIOR_SOURCE_HANDLE =
   'searchatlas-topical-map:255581:title:c1198cca-5b3b-442a-925a-f79b0a66e6d5';
 process.env.MRX_SECONDARY_KEYWORDS_JSON = JSON.stringify([
+  'Texas RRC Oil Proration query retrieval',
   'oil proration query worksheet',
   'Texas oil proration provenance record',
   'RRC oil proration schedule query',
 ]);
 process.env.MRX_NEAREST_SAME_CLUSTER_SLUG =
-  'texas-rrc-inactive-well-query-retrieval-provenance-worksheet';
-process.env.MRX_CANNIBALIZATION_SCORE = '0.5';
+  'texas-rrc-wellbore-query-retrieval-provenance-worksheet';
+process.env.MRX_CANNIBALIZATION_SCORE = '0.625';
 process.env.MRX_INLINE_VISUAL_VARIANT =
   'wave96-distinct-generated-overhead-oil-proration-query-provenance-worksheet';
 process.env.MRX_PILLAR = 'mineral-rights-value';
@@ -34,7 +35,7 @@ process.env.MRX_PILLAR_URL = '/mineral-rights-value/';
 process.env.MRX_CLUSTER = 'valuation-methodology-drivers';
 process.env.MRX_FUNNEL_STAGE = 'consideration';
 process.env.MRX_ACTION_REASON =
-  'The original mineral-value assessment explainer was rejected for material corpus overlap. The admitted replacement owns only a source-preserving provenance worksheet for one official Texas RRC Oil Proration Schedule Query attempt.';
+  'The source is prepared for the exact release-10 build, but publication remains controlled by the signed batch, matching evidence, production deployment, and independent verification.';
 process.env.MRX_RISK_REMEDIATION_JSON = JSON.stringify([
   'The original mineral-value assessment identity was rejected for material corpus overlap. The admitted replacement owns only a source-preserving provenance worksheet for one official Texas RRC Oil Proration Schedule Query attempt.',
   'Current official Railroad Commission sources support only official routes, source-displayed criteria and instructions, navigation labels, query-screen context, and stated limitations. None establishes property connection, title, ownership, acreage, lease effect, payment responsibility, entitlement, compliance, environmental condition, operating status, production, value, or a transaction result.',
