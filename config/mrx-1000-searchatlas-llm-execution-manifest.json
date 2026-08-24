@@ -1,7 +1,7 @@
 {
   "program": "MRX1000",
   "artifact_type": "searchatlas_ordered_llm_local_execution_manifest",
-  "generated_at": "2026-07-20T12:38:22.591Z",
+  "generated_at": "2026-07-20T08:25:37.000Z",
   "deterministic": true,
   "local_only": true,
   "external_services_called": false,
@@ -9,13 +9,13 @@
   "inputs": {
     "ledger": {
       "path": "config/mrx-1000-canonical-content-ledger.json",
-      "sha256": "e838454a900991b0f1980982c2db876cc22a495d1f1d13a9e0cef79259bd62b9",
+      "sha256": "4ffce3e24babebbea09ac9729f8dad223af0dd94dadfefbdc76af9ac020756c9",
       "bytes": 4553585
     },
     "readiness": {
       "path": "reports/mrx-1000-readiness-matrix.json",
-      "sha256": "180cb2874147f885de46ff9429d2c2e06bebea33db50b183a0e76043e6508fa2",
-      "bytes": 3438689,
+      "sha256": "8ef9bbcb96ea8d60cfad3f249ee11364a22f5b1ca6420a162d53f59b1427a306",
+      "bytes": 3438717,
       "sha256_method": "canonical_json_with_top_level_generated_at_masked",
       "generated_at_excluded_from_sha256": true
     },
@@ -351502,5 +351502,5 @@
       ]
     }
   ],
-  "content_fingerprint_sha256": "648c251aad8d0d8b6131dad35c686b4df32ffd8e6dd760d935b961553ca6d5f3"
+  "content_fingerprint_sha256": "03126ff360c33a920cddd946f2f47fe7417d0098a9133bb6d47d41e804a98164"
 }
