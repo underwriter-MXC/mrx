@@ -1,14 +1,14 @@
 {
   "artifact_type": "mrx1000_release_10_post_publication_verification",
   "schema_version": 1,
-  "generated_at_utc": "2026-08-24T06:16:06.948Z",
+  "generated_at_utc": "2026-08-24T06:58:47.270Z",
   "verifier": "Codex independent production verification",
   "deployment": {
     "provider": "vercel",
     "project": "team-mrx/mrx-web",
-    "deployment_id": "dpl_6A65xY7Hq3MGAFSxvFm8UJCUCXQv",
-    "deployment_url": "https://mrx-9ixrlnbco-team-mrx.vercel.app",
-    "inspect_url": "https://vercel.com/team-mrx/mrx-web/6A65xY7Hq3MGAFSxvFm8UJCUCXQv",
+    "deployment_id": "dpl_WRU1KL5nBR9VRge896PZmd9XesvY",
+    "deployment_url": "https://mrx-l9xxrtgxc-team-mrx.vercel.app",
+    "inspect_url": "https://vercel.com/team-mrx/mrx-web/WRU1KL5nBR9VRge896PZmd9XesvY",
     "promoted_alias": "https://mineralrightsxchange.com"
   },
   "deployment_expectations": {
@@ -37,8 +37,7 @@
   },
   "production_registry": {
     "confirmed_active_targets_at_release": [
-      "https://mineralrightsxchange.com",
-      "https://www.mineralrightsxchange.com"
+      "vercel-origin-via-cloudflare-apex"
     ],
     "canonical_origin": "https://mineralrightsxchange.com",
     "redirect_aliases": [
@@ -49,7 +48,7 @@
     ]
   },
   "browser_verification": {
-    "generated_at_utc": "2026-08-24T06:16:00.734Z",
+    "generated_at_utc": "2026-08-24T06:58:38.560Z",
     "canonical_origin": "https://mineralrightsxchange.com",
     "homepage": {
       "top_disclosure_count": 0,
@@ -58,7 +57,6 @@
     "wave10": {
       "article_count": 10,
       "slugs": [
-        "how-to-build-a-texas-mineral-production-record-locator-sheet",
         "texas-rrc-pooling-filing-retrieval-provenance-worksheet",
         "texas-rrc-drilling-permit-query-retrieval-provenance-worksheet",
         "texas-rrc-wellbore-query-retrieval-provenance-worksheet",
@@ -67,7 +65,8 @@
         "texas-rrc-h-10-query-retrieval-provenance-worksheet",
         "texas-rrc-inactive-well-query-retrieval-provenance-worksheet",
         "texas-rrc-oil-proration-query-retrieval-provenance-worksheet",
-        "texas-rrc-gas-proration-query-retrieval-provenance-worksheet"
+        "texas-rrc-gas-proration-query-retrieval-provenance-worksheet",
+        "texas-rrc-injection-storage-permit-query-retrieval-provenance-worksheet"
       ],
       "exact_titles_visible": true,
       "hero_images_visible": true,
@@ -83,52 +82,6 @@
     "results": [
       {
         "profile": "desktop",
-        "slug": "how-to-build-a-texas-mineral-production-record-locator-sheet",
-        "url": "https://mineralrightsxchange.com/blog/how-to-build-a-texas-mineral-production-record-locator-sheet/",
-        "observed": {
-          "h1": "How to Build a Texas Mineral Production Record Locator Sheet",
-          "hero": {
-            "src": "/assets/articles/hero/how-to-build-a-texas-mineral-production-record-locator-sheet.webp",
-            "alt": "A Texas public-record research desk appears beside the exact article title.",
-            "naturalWidth": 1200,
-            "naturalHeight": 630,
-            "visible": true,
-            "renderedWidth": 449.421875,
-            "renderedHeight": 235.9375
-          },
-          "inline": {
-            "src": "/assets/articles/inline/how-to-build-a-texas-mineral-production-record-locator-sheet/texas-mineral-production-record-locator-sheet.webp",
-            "alt": "A top-down production-record locator worksheet appears above the exact keyword.",
-            "naturalWidth": 1200,
-            "naturalHeight": 675,
-            "visible": true,
-            "renderedWidth": 698,
-            "renderedHeight": 392.625
-          },
-          "footerDisclosureCount": 1,
-          "documentScrollWidth": 1440,
-          "viewportWidth": 1440
-        },
-        "assertions": {
-          "exact_title_visible": true,
-          "hero_visible": true,
-          "hero_natural_1200x630": true,
-          "hero_src_exact": true,
-          "hero_alt_exact": true,
-          "hero_rendered_ratio_exact": true,
-          "inline_visible": true,
-          "inline_natural_1200x675": true,
-          "inline_src_exact": true,
-          "inline_alt_exact": true,
-          "inline_rendered_ratio_exact": true,
-          "inline_exact_text_evidence": true,
-          "one_footer_disclosure": true,
-          "no_horizontal_overflow": true
-        },
-        "disposition": "PASS"
-      },
-      {
-        "profile": "desktop",
         "slug": "texas-rrc-pooling-filing-retrieval-provenance-worksheet",
         "url": "https://mineralrightsxchange.com/blog/texas-rrc-pooling-filing-retrieval-provenance-worksheet/",
         "observed": {
@@ -542,32 +495,32 @@
         "disposition": "PASS"
       },
       {
-        "profile": "mobile",
-        "slug": "how-to-build-a-texas-mineral-production-record-locator-sheet",
-        "url": "https://mineralrightsxchange.com/blog/how-to-build-a-texas-mineral-production-record-locator-sheet/",
+        "profile": "desktop",
+        "slug": "texas-rrc-injection-storage-permit-query-retrieval-provenance-worksheet",
+        "url": "https://mineralrightsxchange.com/blog/texas-rrc-injection-storage-permit-query-retrieval-provenance-worksheet/",
         "observed": {
-          "h1": "How to Build a Texas Mineral Production Record Locator Sheet",
+          "h1": "Texas RRC Injection-Storage Permit Query Retrieval Provenance Worksheet",
           "hero": {
-            "src": "/assets/articles/hero/how-to-build-a-texas-mineral-production-record-locator-sheet.webp",
-            "alt": "A Texas public-record research desk appears beside the exact article title.",
+            "src": "/assets/articles/hero/texas-rrc-injection-storage-permit-query-retrieval-provenance-worksheet.webp",
+            "alt": "An injection-storage permit query research counter appears beside the exact article title.",
             "naturalWidth": 1200,
             "naturalHeight": 630,
             "visible": true,
-            "renderedWidth": 356,
-            "renderedHeight": 186.890625
+            "renderedWidth": 449.421875,
+            "renderedHeight": 235.9375
           },
           "inline": {
-            "src": "/assets/articles/inline/how-to-build-a-texas-mineral-production-record-locator-sheet/texas-mineral-production-record-locator-sheet.webp",
-            "alt": "A top-down production-record locator worksheet appears above the exact keyword.",
+            "src": "/assets/articles/inline/texas-rrc-injection-storage-permit-query-retrieval-provenance-worksheet/texas-rrc-injection-storage-permit-query-retrieval.webp",
+            "alt": "A people-free overhead injection-storage permit query provenance worksheet appears above the exact keyword.",
             "naturalWidth": 1200,
             "naturalHeight": 675,
             "visible": true,
-            "renderedWidth": 356,
-            "renderedHeight": 200.25
+            "renderedWidth": 698,
+            "renderedHeight": 392.625
           },
           "footerDisclosureCount": 1,
-          "documentScrollWidth": 390,
-          "viewportWidth": 390
+          "documentScrollWidth": 1440,
+          "viewportWidth": 1440
         },
         "assertions": {
           "exact_title_visible": true,
@@ -973,6 +926,52 @@
           "inline": {
             "src": "/assets/articles/inline/texas-rrc-gas-proration-query-retrieval-provenance-worksheet/texas-rrc-gas-proration-query-retrieval.webp",
             "alt": "A people-free overhead gas-proration query provenance worksheet appears above the exact keyword.",
+            "naturalWidth": 1200,
+            "naturalHeight": 675,
+            "visible": true,
+            "renderedWidth": 356,
+            "renderedHeight": 200.25
+          },
+          "footerDisclosureCount": 1,
+          "documentScrollWidth": 390,
+          "viewportWidth": 390
+        },
+        "assertions": {
+          "exact_title_visible": true,
+          "hero_visible": true,
+          "hero_natural_1200x630": true,
+          "hero_src_exact": true,
+          "hero_alt_exact": true,
+          "hero_rendered_ratio_exact": true,
+          "inline_visible": true,
+          "inline_natural_1200x675": true,
+          "inline_src_exact": true,
+          "inline_alt_exact": true,
+          "inline_rendered_ratio_exact": true,
+          "inline_exact_text_evidence": true,
+          "one_footer_disclosure": true,
+          "no_horizontal_overflow": true
+        },
+        "disposition": "PASS"
+      },
+      {
+        "profile": "mobile",
+        "slug": "texas-rrc-injection-storage-permit-query-retrieval-provenance-worksheet",
+        "url": "https://mineralrightsxchange.com/blog/texas-rrc-injection-storage-permit-query-retrieval-provenance-worksheet/",
+        "observed": {
+          "h1": "Texas RRC Injection-Storage Permit Query Retrieval Provenance Worksheet",
+          "hero": {
+            "src": "/assets/articles/hero/texas-rrc-injection-storage-permit-query-retrieval-provenance-worksheet.webp",
+            "alt": "An injection-storage permit query research counter appears beside the exact article title.",
+            "naturalWidth": 1200,
+            "naturalHeight": 630,
+            "visible": true,
+            "renderedWidth": 356,
+            "renderedHeight": 186.890625
+          },
+          "inline": {
+            "src": "/assets/articles/inline/texas-rrc-injection-storage-permit-query-retrieval-provenance-worksheet/texas-rrc-injection-storage-permit-query-retrieval.webp",
+            "alt": "A people-free overhead injection-storage permit query provenance worksheet appears above the exact keyword.",
             "naturalWidth": 1200,
             "naturalHeight": 675,
             "visible": true,
@@ -1077,9 +1076,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:16:07 GMT",
-        "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::h7lks-1787552167225-3323cae7037e",
+        "last_modified": "Mon, 24 Aug 2026 06:56:35 GMT",
+        "x_vercel_cache": "HIT",
+        "x_vercel_id": "pdx1::vwnvw-1787554727527-f317a220dee1",
         "x_robots_tag": null
       },
       "assertions": {
@@ -1181,9 +1180,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:16:08 GMT",
-        "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::gjhws-1787552168282-1e38e7a8dd83",
+        "last_modified": "Mon, 24 Aug 2026 06:56:36 GMT",
+        "x_vercel_cache": "HIT",
+        "x_vercel_id": "pdx1::vwnvw-1787554728063-1f26f1912459",
         "x_robots_tag": null
       },
       "assertions": {
@@ -1285,9 +1284,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:16:09 GMT",
-        "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::gqn6b-1787552169140-632382da5e11",
+        "last_modified": "Mon, 24 Aug 2026 06:56:37 GMT",
+        "x_vercel_cache": "HIT",
+        "x_vercel_id": "pdx1::7t7cl-1787554728718-a5620f77427d",
         "x_robots_tag": null
       },
       "assertions": {
@@ -1389,9 +1388,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:16:09 GMT",
-        "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::dmch9-1787552169870-def678a8195d",
+        "last_modified": "Mon, 24 Aug 2026 06:56:37 GMT",
+        "x_vercel_cache": "HIT",
+        "x_vercel_id": "pdx1::dbr28-1787554729355-4eb082012a61",
         "x_robots_tag": null
       },
       "assertions": {
@@ -1493,9 +1492,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:16:10 GMT",
-        "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::kqk5t-1787552170606-0ac7f8f78a88",
+        "last_modified": "Mon, 24 Aug 2026 06:56:38 GMT",
+        "x_vercel_cache": "HIT",
+        "x_vercel_id": "pdx1::7sgzv-1787554729919-08c26f129d46",
         "x_robots_tag": null
       },
       "assertions": {
@@ -1597,9 +1596,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:16:11 GMT",
-        "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::j7rkl-1787552171344-a400a39df4f0",
+        "last_modified": "Mon, 24 Aug 2026 06:56:38 GMT",
+        "x_vercel_cache": "HIT",
+        "x_vercel_id": "pdx1::br6dx-1787554730533-b41f784f5df6",
         "x_robots_tag": null
       },
       "assertions": {
@@ -1701,9 +1700,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:16:12 GMT",
-        "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::lt5f6-1787552172095-1754c4380415",
+        "last_modified": "Mon, 24 Aug 2026 06:56:39 GMT",
+        "x_vercel_cache": "HIT",
+        "x_vercel_id": "pdx1::c7m2h-1787554731134-d94fe7ad76c1",
         "x_robots_tag": null
       },
       "assertions": {
@@ -1805,9 +1804,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:16:13 GMT",
-        "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::8cvp6-1787552172900-770c2ed25f40",
+        "last_modified": "Mon, 24 Aug 2026 06:56:39 GMT",
+        "x_vercel_cache": "HIT",
+        "x_vercel_id": "pdx1::br6dx-1787554731697-775dc19985bc",
         "x_robots_tag": null
       },
       "assertions": {
@@ -1909,9 +1908,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:16:13 GMT",
-        "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::dmch9-1787552173616-ff27616bb94a",
+        "last_modified": "Mon, 24 Aug 2026 06:56:40 GMT",
+        "x_vercel_cache": "HIT",
+        "x_vercel_id": "pdx1::7f22f-1787554732244-109c49bf7d62",
         "x_robots_tag": null
       },
       "assertions": {
@@ -2013,9 +2012,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:16:14 GMT",
-        "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::br6dx-1787552174313-20c9980bf027",
+        "last_modified": "Mon, 24 Aug 2026 06:56:40 GMT",
+        "x_vercel_cache": "HIT",
+        "x_vercel_id": "pdx1::7t7cl-1787554732765-768950194ee3",
         "x_robots_tag": null
       },
       "assertions": {
@@ -2117,9 +2116,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:16:15 GMT",
-        "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::bbvp2-1787552175019-231d14fbe6e5",
+        "last_modified": "Mon, 24 Aug 2026 06:56:40 GMT",
+        "x_vercel_cache": "HIT",
+        "x_vercel_id": "pdx1::dbr28-1787554733311-c863be576230",
         "x_robots_tag": null
       },
       "assertions": {
@@ -2221,9 +2220,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:16:15 GMT",
-        "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::82k4g-1787552175733-3ffe7d4ac7fc",
+        "last_modified": "Mon, 24 Aug 2026 06:56:41 GMT",
+        "x_vercel_cache": "HIT",
+        "x_vercel_id": "pdx1::dbr28-1787554733825-c2b7d42b11ae",
         "x_robots_tag": null
       },
       "assertions": {
@@ -2325,9 +2324,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:16:16 GMT",
-        "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::hptn5-1787552176456-a3d1d1c608d8",
+        "last_modified": "Mon, 24 Aug 2026 06:56:41 GMT",
+        "x_vercel_cache": "HIT",
+        "x_vercel_id": "pdx1::vpcqf-1787554734367-c69654db3a96",
         "x_robots_tag": null
       },
       "assertions": {
@@ -2429,9 +2428,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:16:17 GMT",
-        "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::zvm2f-1787552177231-995dd3fc05fc",
+        "last_modified": "Mon, 24 Aug 2026 06:56:42 GMT",
+        "x_vercel_cache": "HIT",
+        "x_vercel_id": "pdx1::f4f4m-1787554734907-c1c9f310703b",
         "x_robots_tag": null
       },
       "assertions": {
@@ -2533,9 +2532,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:16:18 GMT",
-        "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::446l5-1787552177899-45317cf42fde",
+        "last_modified": "Mon, 24 Aug 2026 06:56:42 GMT",
+        "x_vercel_cache": "HIT",
+        "x_vercel_id": "pdx1::wdtw6-1787554735457-0d665735d7a8",
         "x_robots_tag": null
       },
       "assertions": {
@@ -2637,9 +2636,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:16:18 GMT",
-        "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::mqkml-1787552178599-c6222de5aa9b",
+        "last_modified": "Mon, 24 Aug 2026 06:56:43 GMT",
+        "x_vercel_cache": "HIT",
+        "x_vercel_id": "pdx1::549lw-1787554736005-0cc622d9d725",
         "x_robots_tag": null
       },
       "assertions": {
@@ -2741,9 +2740,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:16:19 GMT",
-        "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::nfmd6-1787552179296-6228cad82798",
+        "last_modified": "Mon, 24 Aug 2026 06:56:43 GMT",
+        "x_vercel_cache": "HIT",
+        "x_vercel_id": "pdx1::kqk5t-1787554736614-34f5f302a361",
         "x_robots_tag": null
       },
       "assertions": {
@@ -2845,9 +2844,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:16:20 GMT",
-        "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::tfc4j-1787552180216-8174ffe1b90f",
+        "last_modified": "Mon, 24 Aug 2026 06:56:44 GMT",
+        "x_vercel_cache": "HIT",
+        "x_vercel_id": "pdx1::9th2g-1787554737166-3d5e15d40d20",
         "x_robots_tag": null
       },
       "assertions": {
@@ -2949,9 +2948,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:16:21 GMT",
-        "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::9x8nt-1787552180944-a73011fbc516",
+        "last_modified": "Mon, 24 Aug 2026 06:56:44 GMT",
+        "x_vercel_cache": "HIT",
+        "x_vercel_id": "pdx1::wfsbc-1787554737723-a8b096d77ce2",
         "x_robots_tag": null
       },
       "assertions": {
@@ -3053,9 +3052,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:16:21 GMT",
-        "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::8cvp6-1787552181654-955aa1d48093",
+        "last_modified": "Mon, 24 Aug 2026 06:56:45 GMT",
+        "x_vercel_cache": "HIT",
+        "x_vercel_id": "pdx1::2bfj4-1787554738323-241a6a8d2cdc",
         "x_robots_tag": null
       },
       "assertions": {
@@ -3157,9 +3156,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:16:22 GMT",
-        "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::qxgmc-1787552182342-5e5fc7b9b306",
+        "last_modified": "Mon, 24 Aug 2026 06:56:45 GMT",
+        "x_vercel_cache": "HIT",
+        "x_vercel_id": "pdx1::8t54r-1787554738917-9ea64303b25c",
         "x_robots_tag": null
       },
       "assertions": {
@@ -3261,9 +3260,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:16:23 GMT",
-        "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::8vldb-1787552183155-972d1541ffaa",
+        "last_modified": "Mon, 24 Aug 2026 06:56:46 GMT",
+        "x_vercel_cache": "HIT",
+        "x_vercel_id": "pdx1::g74xx-1787554739530-5dfc6d7fd0a9",
         "x_robots_tag": null
       },
       "assertions": {
@@ -3365,9 +3364,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:16:23 GMT",
-        "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::fr4hk-1787552183857-3e509772622d",
+        "last_modified": "Mon, 24 Aug 2026 06:56:46 GMT",
+        "x_vercel_cache": "HIT",
+        "x_vercel_id": "pdx1::c7m2h-1787554740094-cca7ca0ab839",
         "x_robots_tag": null
       },
       "assertions": {
@@ -3469,9 +3468,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:16:24 GMT",
-        "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::4f29k-1787552184565-2820f2924f37",
+        "last_modified": "Mon, 24 Aug 2026 06:56:47 GMT",
+        "x_vercel_cache": "HIT",
+        "x_vercel_id": "pdx1::b5vlv-1787554740651-0d071707587a",
         "x_robots_tag": null
       },
       "assertions": {
@@ -3573,9 +3572,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:16:25 GMT",
-        "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::hnsbm-1787552185312-a0076ac49719",
+        "last_modified": "Mon, 24 Aug 2026 06:56:47 GMT",
+        "x_vercel_cache": "HIT",
+        "x_vercel_id": "pdx1::dmch9-1787554741218-76fe0ef435fb",
         "x_robots_tag": null
       },
       "assertions": {
@@ -3677,9 +3676,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:16:26 GMT",
-        "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::pthbw-1787552186048-03d8718ae9bc",
+        "last_modified": "Mon, 24 Aug 2026 06:56:47 GMT",
+        "x_vercel_cache": "HIT",
+        "x_vercel_id": "pdx1::9x8nt-1787554741825-ee2b81480803",
         "x_robots_tag": null
       },
       "assertions": {
@@ -3781,9 +3780,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:16:26 GMT",
-        "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::qxgmc-1787552186729-0e4f77593f4f",
+        "last_modified": "Mon, 24 Aug 2026 06:56:48 GMT",
+        "x_vercel_cache": "HIT",
+        "x_vercel_id": "pdx1::f4f4m-1787554742389-c69aaffad77c",
         "x_robots_tag": null
       },
       "assertions": {
@@ -3885,9 +3884,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:16:27 GMT",
-        "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::mtl8v-1787552187731-087c22114aeb",
+        "last_modified": "Mon, 24 Aug 2026 06:56:48 GMT",
+        "x_vercel_cache": "HIT",
+        "x_vercel_id": "pdx1::9th2g-1787554743001-f5c148005462",
         "x_robots_tag": null
       },
       "assertions": {
@@ -3989,9 +3988,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:16:28 GMT",
-        "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::7f22f-1787552188429-b23cef058ff1",
+        "last_modified": "Mon, 24 Aug 2026 06:56:49 GMT",
+        "x_vercel_cache": "HIT",
+        "x_vercel_id": "pdx1::g5jvs-1787554743564-cb68c0f52afd",
         "x_robots_tag": null
       },
       "assertions": {
@@ -4093,9 +4092,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:16:29 GMT",
-        "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::sbxnl-1787552189107-d8a305fa9aac",
+        "last_modified": "Mon, 24 Aug 2026 06:56:49 GMT",
+        "x_vercel_cache": "HIT",
+        "x_vercel_id": "pdx1::mtl8v-1787554744419-a7107791ef38",
         "x_robots_tag": null
       },
       "assertions": {
@@ -4197,9 +4196,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:16:30 GMT",
-        "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::qxgmc-1787552189911-771d2ddc4e76",
+        "last_modified": "Mon, 24 Aug 2026 06:56:50 GMT",
+        "x_vercel_cache": "HIT",
+        "x_vercel_id": "pdx1::khrwk-1787554745024-315ce84f85e0",
         "x_robots_tag": null
       },
       "assertions": {
@@ -4301,9 +4300,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:16:30 GMT",
-        "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::lxmbk-1787552190644-ae797a223553",
+        "last_modified": "Mon, 24 Aug 2026 06:56:50 GMT",
+        "x_vercel_cache": "HIT",
+        "x_vercel_id": "pdx1::fnhv8-1787554745601-dbe165e3e21a",
         "x_robots_tag": null
       },
       "assertions": {
@@ -4405,9 +4404,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:16:31 GMT",
-        "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::qxgmc-1787552191401-75436ad148dc",
+        "last_modified": "Mon, 24 Aug 2026 06:56:50 GMT",
+        "x_vercel_cache": "HIT",
+        "x_vercel_id": "pdx1::j7rkl-1787554746311-58699698df24",
         "x_robots_tag": null
       },
       "assertions": {
@@ -4509,9 +4508,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:16:32 GMT",
-        "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::kqk5t-1787552192158-e36bbcf41984",
+        "last_modified": "Mon, 24 Aug 2026 06:56:51 GMT",
+        "x_vercel_cache": "HIT",
+        "x_vercel_id": "pdx1::zqdd5-1787554746924-eb805c04b15d",
         "x_robots_tag": null
       },
       "assertions": {
@@ -4613,9 +4612,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:16:32 GMT",
-        "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::ffsqr-1787552192839-722bae3d4f89",
+        "last_modified": "Mon, 24 Aug 2026 06:56:51 GMT",
+        "x_vercel_cache": "HIT",
+        "x_vercel_id": "pdx1::g5jvs-1787554747496-a19ebbe3e02d",
         "x_robots_tag": null
       },
       "assertions": {
@@ -4717,9 +4716,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:16:33 GMT",
-        "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::fnhv8-1787552193545-815f24f54a4c",
+        "last_modified": "Mon, 24 Aug 2026 06:56:52 GMT",
+        "x_vercel_cache": "HIT",
+        "x_vercel_id": "pdx1::zvm2f-1787554748083-f93740f62312",
         "x_robots_tag": null
       },
       "assertions": {
@@ -4821,9 +4820,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:16:34 GMT",
-        "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::9bz87-1787552194221-bacd703599e5",
+        "last_modified": "Mon, 24 Aug 2026 06:56:52 GMT",
+        "x_vercel_cache": "HIT",
+        "x_vercel_id": "pdx1::2bfj4-1787554748685-1ce4aa9bacd5",
         "x_robots_tag": null
       },
       "assertions": {
@@ -4925,9 +4924,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:16:35 GMT",
-        "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::r5sfk-1787552195071-a565ce3c7606",
+        "last_modified": "Mon, 24 Aug 2026 06:56:53 GMT",
+        "x_vercel_cache": "HIT",
+        "x_vercel_id": "pdx1::bvmzm-1787554749245-341302020199",
         "x_robots_tag": null
       },
       "assertions": {
@@ -5029,9 +5028,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:16:35 GMT",
-        "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::br6dx-1787552195806-225acb2736b1",
+        "last_modified": "Mon, 24 Aug 2026 06:56:53 GMT",
+        "x_vercel_cache": "HIT",
+        "x_vercel_id": "pdx1::ppzl8-1787554749828-f65353ba2ad4",
         "x_robots_tag": null
       },
       "assertions": {
@@ -5133,9 +5132,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:16:36 GMT",
-        "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::prrqb-1787552196518-7cb31b80fdd7",
+        "last_modified": "Mon, 24 Aug 2026 06:56:54 GMT",
+        "x_vercel_cache": "HIT",
+        "x_vercel_id": "pdx1::mtl8v-1787554750392-24dc3a4a23d9",
         "x_robots_tag": null
       },
       "assertions": {
@@ -5237,9 +5236,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:16:37 GMT",
-        "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::z28s9-1787552197249-4d7398738619",
+        "last_modified": "Mon, 24 Aug 2026 06:56:54 GMT",
+        "x_vercel_cache": "HIT",
+        "x_vercel_id": "pdx1::mqkml-1787554750972-2a2da0baf622",
         "x_robots_tag": null
       },
       "assertions": {
@@ -5341,9 +5340,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:16:38 GMT",
-        "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::zmxdh-1787552197911-878812c48e51",
+        "last_modified": "Mon, 24 Aug 2026 06:56:55 GMT",
+        "x_vercel_cache": "HIT",
+        "x_vercel_id": "pdx1::r65lf-1787554751623-b07451a50d0f",
         "x_robots_tag": null
       },
       "assertions": {
@@ -5445,9 +5444,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:16:38 GMT",
-        "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::82k4g-1787552198676-2e33d3b9393b",
+        "last_modified": "Mon, 24 Aug 2026 06:56:55 GMT",
+        "x_vercel_cache": "HIT",
+        "x_vercel_id": "pdx1::mqkml-1787554752313-9cd349de84ab",
         "x_robots_tag": null
       },
       "assertions": {
@@ -5549,9 +5548,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:16:39 GMT",
-        "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::g5jvs-1787552199361-0430f2c56ae5",
+        "last_modified": "Mon, 24 Aug 2026 06:56:55 GMT",
+        "x_vercel_cache": "HIT",
+        "x_vercel_id": "pdx1::6gg2t-1787554752987-a2603f9c9722",
         "x_robots_tag": null
       },
       "assertions": {
@@ -5653,9 +5652,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:16:40 GMT",
-        "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::549lw-1787552200104-22866f5cdb1a",
+        "last_modified": "Mon, 24 Aug 2026 06:56:56 GMT",
+        "x_vercel_cache": "HIT",
+        "x_vercel_id": "pdx1::bvmzm-1787554753522-6a27760d575b",
         "x_robots_tag": null
       },
       "assertions": {
@@ -5757,9 +5756,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:16:40 GMT",
-        "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::ppzl8-1787552200811-6b78fda98bda",
+        "last_modified": "Mon, 24 Aug 2026 06:56:56 GMT",
+        "x_vercel_cache": "HIT",
+        "x_vercel_id": "pdx1::6xqkc-1787554754275-092f2d86596e",
         "x_robots_tag": null
       },
       "assertions": {
@@ -5861,9 +5860,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:16:41 GMT",
-        "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::g5jvs-1787552201506-61633ed4b350",
+        "last_modified": "Mon, 24 Aug 2026 06:56:57 GMT",
+        "x_vercel_cache": "HIT",
+        "x_vercel_id": "pdx1::vv657-1787554754864-b8e80de87b36",
         "x_robots_tag": null
       },
       "assertions": {
@@ -5965,9 +5964,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:16:42 GMT",
-        "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::kqk5t-1787552202291-ad48c989818c",
+        "last_modified": "Mon, 24 Aug 2026 06:56:57 GMT",
+        "x_vercel_cache": "HIT",
+        "x_vercel_id": "pdx1::f9mzg-1787554755382-12efd10befae",
         "x_robots_tag": null
       },
       "assertions": {
@@ -6069,9 +6068,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:16:43 GMT",
-        "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::nfmd6-1787552202996-046570cd9523",
+        "last_modified": "Mon, 24 Aug 2026 06:56:58 GMT",
+        "x_vercel_cache": "HIT",
+        "x_vercel_id": "pdx1::9x8nt-1787554756214-30b588ab841b",
         "x_robots_tag": null
       },
       "assertions": {
@@ -6173,9 +6172,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:16:43 GMT",
-        "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::z7bfx-1787552203822-a8369fd853f0",
+        "last_modified": "Mon, 24 Aug 2026 06:56:58 GMT",
+        "x_vercel_cache": "HIT",
+        "x_vercel_id": "pdx1::gqn6b-1787554756822-63e6f2428f79",
         "x_robots_tag": null
       },
       "assertions": {
@@ -6277,9 +6276,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:16:44 GMT",
-        "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::z7bfx-1787552204502-1142970e4429",
+        "last_modified": "Mon, 24 Aug 2026 06:56:58 GMT",
+        "x_vercel_cache": "HIT",
+        "x_vercel_id": "pdx1::kv6dm-1787554757391-e2a72da1c116",
         "x_robots_tag": null
       },
       "assertions": {
@@ -6381,9 +6380,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:16:45 GMT",
-        "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::g5jvs-1787552205303-569553e3c5ef",
+        "last_modified": "Mon, 24 Aug 2026 06:56:59 GMT",
+        "x_vercel_cache": "HIT",
+        "x_vercel_id": "pdx1::bvmzm-1787554758121-96e26bbfecfe",
         "x_robots_tag": null
       },
       "assertions": {
@@ -6485,9 +6484,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:16:46 GMT",
-        "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::g5jvs-1787552206007-b185aba3babe",
+        "last_modified": "Mon, 24 Aug 2026 06:56:59 GMT",
+        "x_vercel_cache": "HIT",
+        "x_vercel_id": "pdx1::bbvp2-1787554758662-4ac403c5ed18",
         "x_robots_tag": null
       },
       "assertions": {
@@ -6589,9 +6588,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:16:46 GMT",
-        "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::r5sfk-1787552206685-10348fe0d2ef",
+        "last_modified": "Mon, 24 Aug 2026 06:57:00 GMT",
+        "x_vercel_cache": "HIT",
+        "x_vercel_id": "pdx1::9th2g-1787554759223-db43274fd4a3",
         "x_robots_tag": null
       },
       "assertions": {
@@ -6693,9 +6692,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:16:47 GMT",
-        "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::f4f4m-1787552207386-b4362302e27b",
+        "last_modified": "Mon, 24 Aug 2026 06:57:00 GMT",
+        "x_vercel_cache": "HIT",
+        "x_vercel_id": "pdx1::4f29k-1787554759768-74622d609491",
         "x_robots_tag": null
       },
       "assertions": {
@@ -6797,9 +6796,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:16:48 GMT",
-        "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::8cnxq-1787552208043-246c5361e6de",
+        "last_modified": "Mon, 24 Aug 2026 06:57:01 GMT",
+        "x_vercel_cache": "HIT",
+        "x_vercel_id": "pdx1::wfsbc-1787554760313-e71c7d6a1c33",
         "x_robots_tag": null
       },
       "assertions": {
@@ -6901,9 +6900,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:16:48 GMT",
-        "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::dbr28-1787552208816-27e9e7b09aa7",
+        "last_modified": "Mon, 24 Aug 2026 06:57:01 GMT",
+        "x_vercel_cache": "HIT",
+        "x_vercel_id": "pdx1::b5vlv-1787554761141-35f4b33f220e",
         "x_robots_tag": null
       },
       "assertions": {
@@ -7005,9 +7004,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:16:49 GMT",
-        "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::wn5ql-1787552209529-e7c8a7a9684f",
+        "last_modified": "Mon, 24 Aug 2026 06:57:02 GMT",
+        "x_vercel_cache": "HIT",
+        "x_vercel_id": "pdx1::g5jvs-1787554761678-aeb81f446ca9",
         "x_robots_tag": null
       },
       "assertions": {
@@ -7109,9 +7108,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:16:50 GMT",
-        "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::bvchg-1787552210293-71d839b15c27",
+        "last_modified": "Mon, 24 Aug 2026 06:57:02 GMT",
+        "x_vercel_cache": "HIT",
+        "x_vercel_id": "pdx1::7f22f-1787554762195-a232b1c5e59c",
         "x_robots_tag": null
       },
       "assertions": {
@@ -7213,9 +7212,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:16:51 GMT",
-        "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::nfmd6-1787552211028-dfe2618ec6e1",
+        "last_modified": "Mon, 24 Aug 2026 06:57:02 GMT",
+        "x_vercel_cache": "HIT",
+        "x_vercel_id": "pdx1::b5vlv-1787554762755-7702bc3dd7fb",
         "x_robots_tag": null
       },
       "assertions": {
@@ -7317,9 +7316,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:16:51 GMT",
-        "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::bvmzm-1787552211792-3ad236b96055",
+        "last_modified": "Mon, 24 Aug 2026 06:57:03 GMT",
+        "x_vercel_cache": "HIT",
+        "x_vercel_id": "pdx1::fr4hk-1787554763295-974943a188fc",
         "x_robots_tag": null
       },
       "assertions": {
@@ -7421,9 +7420,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:16:52 GMT",
-        "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::zqdd5-1787552212475-98d1b7809ce9",
+        "last_modified": "Mon, 24 Aug 2026 06:57:03 GMT",
+        "x_vercel_cache": "HIT",
+        "x_vercel_id": "pdx1::7f22f-1787554763887-7394c7887bda",
         "x_robots_tag": null
       },
       "assertions": {
@@ -7525,9 +7524,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:16:53 GMT",
-        "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::r5sfk-1787552213293-03af74af0790",
+        "last_modified": "Mon, 24 Aug 2026 06:57:04 GMT",
+        "x_vercel_cache": "HIT",
+        "x_vercel_id": "pdx1::b5vlv-1787554764409-79387f85cb18",
         "x_robots_tag": null
       },
       "assertions": {
@@ -7629,9 +7628,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:16:54 GMT",
-        "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::wdtw6-1787552214007-41df5f68ff98",
+        "last_modified": "Mon, 24 Aug 2026 06:57:04 GMT",
+        "x_vercel_cache": "HIT",
+        "x_vercel_id": "pdx1::ckxmr-1787554764972-59083d990f90",
         "x_robots_tag": null
       },
       "assertions": {
@@ -7733,9 +7732,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:16:54 GMT",
-        "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::82k4g-1787552214711-aee3d73adeed",
+        "last_modified": "Mon, 24 Aug 2026 06:57:05 GMT",
+        "x_vercel_cache": "HIT",
+        "x_vercel_id": "pdx1::g74xx-1787554765734-6e382325bf8a",
         "x_robots_tag": null
       },
       "assertions": {
@@ -7837,9 +7836,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:16:55 GMT",
-        "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::hnsbm-1787552215419-7cf8d72ae3a8",
+        "last_modified": "Mon, 24 Aug 2026 06:57:05 GMT",
+        "x_vercel_cache": "HIT",
+        "x_vercel_id": "pdx1::mqkml-1787554766306-2d072c6fff20",
         "x_robots_tag": null
       },
       "assertions": {
@@ -7941,9 +7940,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:16:56 GMT",
-        "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::ffsqr-1787552216172-7a62ef23498f",
+        "last_modified": "Mon, 24 Aug 2026 06:57:06 GMT",
+        "x_vercel_cache": "HIT",
+        "x_vercel_id": "pdx1::r5sfk-1787554766852-f784ecba440b",
         "x_robots_tag": null
       },
       "assertions": {
@@ -8045,9 +8044,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:16:57 GMT",
-        "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::kqk5t-1787552217069-201d390bba0a",
+        "last_modified": "Mon, 24 Aug 2026 06:57:06 GMT",
+        "x_vercel_cache": "HIT",
+        "x_vercel_id": "pdx1::gjhws-1787554767434-acb7c2100255",
         "x_robots_tag": null
       },
       "assertions": {
@@ -8149,9 +8148,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:16:57 GMT",
-        "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::mqkml-1787552217786-3b11a0f46509",
+        "last_modified": "Mon, 24 Aug 2026 06:57:06 GMT",
+        "x_vercel_cache": "HIT",
+        "x_vercel_id": "pdx1::qxgmc-1787554767914-107f2bd73e8d",
         "x_robots_tag": null
       },
       "assertions": {
@@ -8253,9 +8252,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:16:58 GMT",
+        "last_modified": "Mon, 24 Aug 2026 06:59:28 GMT",
         "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::lt5f6-1787552218520-ae98cf69d129",
+        "x_vercel_id": "pdx1::8x9nc-1787554768666-362a4aac181c",
         "x_robots_tag": null
       },
       "assertions": {
@@ -8357,9 +8356,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:16:59 GMT",
+        "last_modified": "Mon, 24 Aug 2026 06:59:29 GMT",
         "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::khrwk-1787552219249-495e6fe073c7",
+        "x_vercel_id": "pdx1::vpcqf-1787554769669-0989c75c4528",
         "x_robots_tag": null
       },
       "assertions": {
@@ -8461,9 +8460,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:17:00 GMT",
+        "last_modified": "Mon, 24 Aug 2026 06:59:30 GMT",
         "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::2bfj4-1787552219955-2ff0e5ab594b",
+        "x_vercel_id": "pdx1::cpq2j-1787554770660-11690539c82c",
         "x_robots_tag": null
       },
       "assertions": {
@@ -8565,9 +8564,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:17:00 GMT",
-        "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::2bfj4-1787552220693-b536b844da26",
+        "last_modified": "Mon, 24 Aug 2026 06:57:08 GMT",
+        "x_vercel_cache": "HIT",
+        "x_vercel_id": "pdx1::g74xx-1787554771338-07c630d4f286",
         "x_robots_tag": null
       },
       "assertions": {
@@ -8669,9 +8668,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:17:01 GMT",
+        "last_modified": "Mon, 24 Aug 2026 06:59:32 GMT",
         "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::gjhws-1787552221438-784f6f796774",
+        "x_vercel_id": "pdx1::sbxnl-1787554771892-1b3c8a353dfa",
         "x_robots_tag": null
       },
       "assertions": {
@@ -8773,9 +8772,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:17:02 GMT",
+        "last_modified": "Mon, 24 Aug 2026 06:59:32 GMT",
         "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::bvmzm-1787552222197-3e853a8c8fe1",
+        "x_vercel_id": "pdx1::wfsbc-1787554772584-8f4ee10ba3c4",
         "x_robots_tag": null
       },
       "assertions": {
@@ -8877,9 +8876,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:17:03 GMT",
+        "last_modified": "Mon, 24 Aug 2026 06:59:33 GMT",
         "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::l8h5l-1787552222973-45382992823d",
+        "x_vercel_id": "pdx1::lm8dl-1787554773220-7207743d1a6a",
         "x_robots_tag": null
       },
       "assertions": {
@@ -8981,9 +8980,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:17:03 GMT",
+        "last_modified": "Mon, 24 Aug 2026 06:59:33 GMT",
         "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::gjhws-1787552223666-c42c9d8cd88a",
+        "x_vercel_id": "pdx1::hptn5-1787554773842-2344cd97f53f",
         "x_robots_tag": null
       },
       "assertions": {
@@ -9085,9 +9084,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:17:04 GMT",
+        "last_modified": "Mon, 24 Aug 2026 06:59:34 GMT",
         "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::r5sfk-1787552224417-b84b9671af44",
+        "x_vercel_id": "pdx1::2bfj4-1787554774559-fedf0c3ea11a",
         "x_robots_tag": null
       },
       "assertions": {
@@ -9189,9 +9188,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:17:05 GMT",
+        "last_modified": "Mon, 24 Aug 2026 06:59:35 GMT",
         "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::gqn6b-1787552225170-7fb7fd7f5c50",
+        "x_vercel_id": "pdx1::vdzvw-1787554775264-a0f6cf4500b3",
         "x_robots_tag": null
       },
       "assertions": {
@@ -9293,9 +9292,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:17:06 GMT",
+        "last_modified": "Mon, 24 Aug 2026 06:59:35 GMT",
         "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::6gg2t-1787552225991-409f0d185335",
+        "x_vercel_id": "pdx1::g74xx-1787554775859-71364f57a3ae",
         "x_robots_tag": null
       },
       "assertions": {
@@ -9397,9 +9396,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:17:06 GMT",
+        "last_modified": "Mon, 24 Aug 2026 06:59:36 GMT",
         "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::8cvp6-1787552226717-9d8935d58173",
+        "x_vercel_id": "pdx1::khrwk-1787554776454-8c5a1529ce4b",
         "x_robots_tag": null
       },
       "assertions": {
@@ -9501,9 +9500,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:17:07 GMT",
+        "last_modified": "Mon, 24 Aug 2026 06:59:37 GMT",
         "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::r65lf-1787552227468-8d3150eb2b92",
+        "x_vercel_id": "pdx1::lm8dl-1787554777113-090810ef31f3",
         "x_robots_tag": null
       },
       "assertions": {
@@ -9605,9 +9604,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:17:08 GMT",
+        "last_modified": "Mon, 24 Aug 2026 06:59:37 GMT",
         "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::f9mzg-1787552228214-69ba17d7c5b1",
+        "x_vercel_id": "pdx1::kqk5t-1787554777760-ca1c0c0aca41",
         "x_robots_tag": null
       },
       "assertions": {
@@ -9709,9 +9708,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:17:09 GMT",
+        "last_modified": "Mon, 24 Aug 2026 06:59:38 GMT",
         "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::tvnhb-1787552228912-cef709183582",
+        "x_vercel_id": "pdx1::z28s9-1787554778435-287c6348a727",
         "x_robots_tag": null
       },
       "assertions": {
@@ -9813,9 +9812,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:17:09 GMT",
+        "last_modified": "Mon, 24 Aug 2026 06:59:39 GMT",
         "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::mqkml-1787552229643-b3fc87c0dcdf",
+        "x_vercel_id": "pdx1::mtl8v-1787554779089-7f3b719e86c2",
         "x_robots_tag": null
       },
       "assertions": {
@@ -9917,9 +9916,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:17:10 GMT",
+        "last_modified": "Mon, 24 Aug 2026 06:59:39 GMT",
         "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::fnhv8-1787552230398-a59c5c656b59",
+        "x_vercel_id": "pdx1::g5jvs-1787554779726-ff66a299cac9",
         "x_robots_tag": null
       },
       "assertions": {
@@ -10021,9 +10020,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:17:11 GMT",
+        "last_modified": "Mon, 24 Aug 2026 06:59:40 GMT",
         "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::8x9nc-1787552231134-e3ca60044287",
+        "x_vercel_id": "pdx1::vwnvw-1787554780427-04e54b51eb87",
         "x_robots_tag": null
       },
       "assertions": {
@@ -10125,9 +10124,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:17:12 GMT",
+        "last_modified": "Mon, 24 Aug 2026 06:59:41 GMT",
         "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::8x9nc-1787552231946-2c4af1ad2a39",
+        "x_vercel_id": "pdx1::4f29k-1787554781105-e013953d3b3a",
         "x_robots_tag": null
       },
       "assertions": {
@@ -10229,9 +10228,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:17:12 GMT",
+        "last_modified": "Mon, 24 Aug 2026 06:59:41 GMT",
         "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::6xqkc-1787552232720-eec07a0a0332",
+        "x_vercel_id": "pdx1::549lw-1787554781772-f148ca242bfb",
         "x_robots_tag": null
       },
       "assertions": {
@@ -10333,9 +10332,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:17:13 GMT",
+        "last_modified": "Mon, 24 Aug 2026 06:59:42 GMT",
         "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::4f29k-1787552233469-cdb1e63064da",
+        "x_vercel_id": "pdx1::kqk5t-1787554782469-24aa91405f75",
         "x_robots_tag": null
       },
       "assertions": {
@@ -10437,9 +10436,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:17:14 GMT",
+        "last_modified": "Mon, 24 Aug 2026 06:59:43 GMT",
         "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::6xtdg-1787552234281-754bd347a35a",
+        "x_vercel_id": "pdx1::549lw-1787554783121-9f38d24fb793",
         "x_robots_tag": null
       },
       "assertions": {
@@ -10541,9 +10540,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:17:15 GMT",
+        "last_modified": "Mon, 24 Aug 2026 06:59:43 GMT",
         "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::ckxmr-1787552235047-ea6347381dc4",
+        "x_vercel_id": "pdx1::kqk5t-1787554783802-834e14d491da",
         "x_robots_tag": null
       },
       "assertions": {
@@ -10645,9 +10644,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:17:16 GMT",
+        "last_modified": "Mon, 24 Aug 2026 06:59:44 GMT",
         "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::zvm2f-1787552235876-44dbc3e658a0",
+        "x_vercel_id": "pdx1::bbvp2-1787554784594-75a622a09232",
         "x_robots_tag": null
       },
       "assertions": {
@@ -10749,9 +10748,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:17:16 GMT",
+        "last_modified": "Mon, 24 Aug 2026 06:59:45 GMT",
         "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::7t7cl-1787552236686-a554835f2577",
+        "x_vercel_id": "pdx1::g5jvs-1787554785301-343ac768631b",
         "x_robots_tag": null
       },
       "assertions": {
@@ -10853,9 +10852,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:17:17 GMT",
+        "last_modified": "Mon, 24 Aug 2026 06:59:46 GMT",
         "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::8x9nc-1787552237544-43b2ad2e5ae5",
+        "x_vercel_id": "pdx1::kqk5t-1787554786096-53ab35a2a532",
         "x_robots_tag": null
       },
       "assertions": {
@@ -10957,9 +10956,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:17:18 GMT",
+        "last_modified": "Mon, 24 Aug 2026 06:59:46 GMT",
         "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::kqk5t-1787552238315-a15b38cb8bee",
+        "x_vercel_id": "pdx1::nfmd6-1787554786816-d626b8f74def",
         "x_robots_tag": null
       },
       "assertions": {
@@ -11061,9 +11060,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:17:19 GMT",
+        "last_modified": "Mon, 24 Aug 2026 06:59:47 GMT",
         "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::wfsbc-1787552239108-700cbfe19335",
+        "x_vercel_id": "pdx1::dmch9-1787554787564-147bde6eaf17",
         "x_robots_tag": null
       },
       "assertions": {
@@ -11165,9 +11164,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:17:20 GMT",
+        "last_modified": "Mon, 24 Aug 2026 06:59:48 GMT",
         "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::fnhv8-1787552239912-3be3ebca9d56",
+        "x_vercel_id": "pdx1::6gg2t-1787554788271-c498a84dfabb",
         "x_robots_tag": null
       },
       "assertions": {
@@ -11269,9 +11268,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:17:20 GMT",
+        "last_modified": "Mon, 24 Aug 2026 06:59:49 GMT",
         "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::7sgzv-1787552240684-35d7f5d6a080",
+        "x_vercel_id": "pdx1::9x8nt-1787554789027-1f0e09ce9cd9",
         "x_robots_tag": null
       },
       "assertions": {
@@ -11373,9 +11372,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:17:21 GMT",
+        "last_modified": "Mon, 24 Aug 2026 06:59:49 GMT",
         "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::pthbw-1787552241454-57e2f8775cea",
+        "x_vercel_id": "pdx1::vpcqf-1787554789757-225f46267667",
         "x_robots_tag": null
       },
       "assertions": {
@@ -11477,9 +11476,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:17:22 GMT",
+        "last_modified": "Mon, 24 Aug 2026 06:59:50 GMT",
         "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::br6dx-1787552242306-5b26c3172cb2",
+        "x_vercel_id": "pdx1::mqkml-1787554790465-3d567fdde64d",
         "x_robots_tag": null
       },
       "assertions": {
@@ -11581,9 +11580,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:17:23 GMT",
+        "last_modified": "Mon, 24 Aug 2026 06:59:51 GMT",
         "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::pthbw-1787552243146-b51203fc8095",
+        "x_vercel_id": "pdx1::mqkml-1787554791168-73ce5c5a2805",
         "x_robots_tag": null
       },
       "assertions": {
@@ -11685,9 +11684,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:17:24 GMT",
+        "last_modified": "Mon, 24 Aug 2026 06:59:51 GMT",
         "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::mqkml-1787552243990-07a98a5abe4b",
+        "x_vercel_id": "pdx1::fr4hk-1787554791886-ad85ae3de70c",
         "x_robots_tag": null
       },
       "assertions": {
@@ -11789,9 +11788,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:17:24 GMT",
+        "last_modified": "Mon, 24 Aug 2026 06:59:52 GMT",
         "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::vpcqf-1787552244836-7750c75f0460",
+        "x_vercel_id": "pdx1::tvnhb-1787554792653-a52826ed0076",
         "x_robots_tag": null
       },
       "assertions": {
@@ -11893,9 +11892,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:17:25 GMT",
+        "last_modified": "Mon, 24 Aug 2026 06:59:53 GMT",
         "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::f9mzg-1787552245728-292bd258d099",
+        "x_vercel_id": "pdx1::kv6dm-1787554793438-6d274faf3804",
         "x_robots_tag": null
       },
       "assertions": {
@@ -11997,9 +11996,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:17:26 GMT",
+        "last_modified": "Mon, 24 Aug 2026 06:59:54 GMT",
         "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::kqk5t-1787552246568-509ed5878caf",
+        "x_vercel_id": "pdx1::kv6dm-1787554794157-29a498dc4e31",
         "x_robots_tag": null
       },
       "assertions": {
@@ -12101,9 +12100,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:17:27 GMT",
+        "last_modified": "Mon, 24 Aug 2026 06:59:55 GMT",
         "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::kv6dm-1787552247478-db21de5051d9",
+        "x_vercel_id": "pdx1::kv6dm-1787554794902-3ba7a8064bfa",
         "x_robots_tag": null
       },
       "assertions": {
@@ -12205,9 +12204,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:17:28 GMT",
+        "last_modified": "Mon, 24 Aug 2026 06:59:55 GMT",
         "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::wdtw6-1787552248272-74e8b6f781b2",
+        "x_vercel_id": "pdx1::b5vlv-1787554795600-0ccd412e0b9b",
         "x_robots_tag": null
       },
       "assertions": {
@@ -12309,9 +12308,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:17:29 GMT",
+        "last_modified": "Mon, 24 Aug 2026 06:59:56 GMT",
         "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::twhn8-1787552249215-bf14c69e0a9a",
+        "x_vercel_id": "pdx1::mqkml-1787554796375-4dce8cd7f1ff",
         "x_robots_tag": null
       },
       "assertions": {
@@ -12413,9 +12412,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:17:30 GMT",
+        "last_modified": "Mon, 24 Aug 2026 06:59:57 GMT",
         "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::l8h5l-1787552250045-c054b820f8fc",
+        "x_vercel_id": "pdx1::fn8tf-1787554797142-7db6eef52ece",
         "x_robots_tag": null
       },
       "assertions": {
@@ -12517,9 +12516,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:17:30 GMT",
+        "last_modified": "Mon, 24 Aug 2026 06:59:58 GMT",
         "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::wn5ql-1787552250879-ee1029c142ee",
+        "x_vercel_id": "pdx1::ppzl8-1787554797894-7fb2330c4c3b",
         "x_robots_tag": null
       },
       "assertions": {
@@ -12621,9 +12620,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:17:32 GMT",
+        "last_modified": "Mon, 24 Aug 2026 06:59:58 GMT",
         "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::prrqb-1787552252067-b831ec326bf5",
+        "x_vercel_id": "pdx1::z7bfx-1787554798613-53341c21d780",
         "x_robots_tag": null
       },
       "assertions": {
@@ -12725,9 +12724,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:17:33 GMT",
+        "last_modified": "Mon, 24 Aug 2026 06:59:59 GMT",
         "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::h7lks-1787552252948-389db7a7ed5c",
+        "x_vercel_id": "pdx1::j7rkl-1787554799348-9bea6a2978d2",
         "x_robots_tag": null
       },
       "assertions": {
@@ -12829,9 +12828,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:17:34 GMT",
+        "last_modified": "Mon, 24 Aug 2026 07:00:00 GMT",
         "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::zmxdh-1787552253945-d8c77f9a22d2",
+        "x_vercel_id": "pdx1::fnhv8-1787554800064-927629ef5535",
         "x_robots_tag": null
       },
       "assertions": {
@@ -12933,9 +12932,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:17:34 GMT",
+        "last_modified": "Mon, 24 Aug 2026 07:00:00 GMT",
         "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::qxgmc-1787552254837-7edf17696239",
+        "x_vercel_id": "pdx1::vdzvw-1787554800807-094e1938764d",
         "x_robots_tag": null
       },
       "assertions": {
@@ -13037,9 +13036,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:17:35 GMT",
+        "last_modified": "Mon, 24 Aug 2026 07:00:01 GMT",
         "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::lw44g-1787552255637-757c7665c4cc",
+        "x_vercel_id": "pdx1::zqdd5-1787554801556-a1b496007ec5",
         "x_robots_tag": null
       },
       "assertions": {
@@ -13141,9 +13140,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:17:36 GMT",
+        "last_modified": "Mon, 24 Aug 2026 07:00:02 GMT",
         "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::2bfj4-1787552256444-c6423f5aa5f1",
+        "x_vercel_id": "pdx1::g74xx-1787554802345-cf9b1f59972c",
         "x_robots_tag": null
       },
       "assertions": {
@@ -13245,9 +13244,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:17:37 GMT",
+        "last_modified": "Mon, 24 Aug 2026 07:00:03 GMT",
         "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::bbvp2-1787552257343-90458ec83fe1",
+        "x_vercel_id": "pdx1::f4f4m-1787554803122-1d4751ad9e30",
         "x_robots_tag": null
       },
       "assertions": {
@@ -13349,9 +13348,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:17:38 GMT",
+        "last_modified": "Mon, 24 Aug 2026 07:00:04 GMT",
         "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::vv657-1787552258190-bb0807faffd6",
+        "x_vercel_id": "pdx1::mtl8v-1787554803962-c366bc5deeec",
         "x_robots_tag": null
       },
       "assertions": {
@@ -13453,9 +13452,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:17:39 GMT",
+        "last_modified": "Mon, 24 Aug 2026 07:00:04 GMT",
         "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::9x8nt-1787552258989-356ab9f3a230",
+        "x_vercel_id": "pdx1::mtl8v-1787554804737-4559b9bf0357",
         "x_robots_tag": null
       },
       "assertions": {
@@ -13557,9 +13556,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:17:39 GMT",
+        "last_modified": "Mon, 24 Aug 2026 07:00:05 GMT",
         "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::bvchg-1787552259732-d87746afc9ba",
+        "x_vercel_id": "pdx1::mqkml-1787554805433-573758e28402",
         "x_robots_tag": null
       },
       "assertions": {
@@ -13661,9 +13660,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:17:40 GMT",
+        "last_modified": "Mon, 24 Aug 2026 07:00:06 GMT",
         "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::td9hs-1787552260529-739e28f1147a",
+        "x_vercel_id": "pdx1::549lw-1787554806226-3cdd7df2ce06",
         "x_robots_tag": null
       },
       "assertions": {
@@ -13765,9 +13764,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:17:41 GMT",
+        "last_modified": "Mon, 24 Aug 2026 07:00:07 GMT",
         "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::8x9nc-1787552261333-917aa646b637",
+        "x_vercel_id": "pdx1::twhn8-1787554806957-4c4650133129",
         "x_robots_tag": null
       },
       "assertions": {
@@ -13869,9 +13868,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:17:42 GMT",
+        "last_modified": "Mon, 24 Aug 2026 07:00:07 GMT",
         "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::pthbw-1787552262349-003e96035cba",
+        "x_vercel_id": "pdx1::nfmd6-1787554807740-b8f19f2a94e5",
         "x_robots_tag": null
       },
       "assertions": {
@@ -13973,9 +13972,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:17:43 GMT",
+        "last_modified": "Mon, 24 Aug 2026 07:00:08 GMT",
         "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::549lw-1787552263309-dfd7665e6030",
+        "x_vercel_id": "pdx1::z7bfx-1787554808523-4e4ee543f863",
         "x_robots_tag": null
       },
       "assertions": {
@@ -14077,9 +14076,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:17:44 GMT",
+        "last_modified": "Mon, 24 Aug 2026 07:00:09 GMT",
         "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::v8hqm-1787552264427-7bf5a2c23a02",
+        "x_vercel_id": "pdx1::lxmbk-1787554809277-90352713f56a",
         "x_robots_tag": null
       },
       "assertions": {
@@ -14181,9 +14180,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:17:45 GMT",
+        "last_modified": "Mon, 24 Aug 2026 07:00:10 GMT",
         "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::lw44g-1787552265451-887ecbd38140",
+        "x_vercel_id": "pdx1::7t7cl-1787554810035-e0b9411211e5",
         "x_robots_tag": null
       },
       "assertions": {
@@ -14285,9 +14284,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:17:46 GMT",
+        "last_modified": "Mon, 24 Aug 2026 07:00:10 GMT",
         "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::8t54r-1787552266405-238efa5bc6a2",
+        "x_vercel_id": "pdx1::h7lks-1787554810759-220c07a05a82",
         "x_robots_tag": null
       },
       "assertions": {
@@ -14389,9 +14388,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:17:47 GMT",
+        "last_modified": "Mon, 24 Aug 2026 07:00:11 GMT",
         "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::vv657-1787552267431-e6c79ba7c0ce",
+        "x_vercel_id": "pdx1::l8h5l-1787554811477-9f2cd983c3e0",
         "x_robots_tag": null
       },
       "assertions": {
@@ -14493,9 +14492,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:17:48 GMT",
+        "last_modified": "Mon, 24 Aug 2026 07:00:12 GMT",
         "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::lxmbk-1787552268560-f2c7eb7bc49e",
+        "x_vercel_id": "pdx1::6xqkc-1787554812233-5d89813a6cbc",
         "x_robots_tag": null
       },
       "assertions": {
@@ -14597,9 +14596,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:17:49 GMT",
+        "last_modified": "Mon, 24 Aug 2026 07:00:13 GMT",
         "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::lt5f6-1787552269590-0173baafe9c8",
+        "x_vercel_id": "pdx1::tfc4j-1787554813023-1b8a056027da",
         "x_robots_tag": null
       },
       "assertions": {
@@ -14701,9 +14700,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:17:50 GMT",
+        "last_modified": "Mon, 24 Aug 2026 07:00:13 GMT",
         "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::br6dx-1787552270612-a4e2dc7db75c",
+        "x_vercel_id": "pdx1::vv657-1787554813797-1cb1bf46c7ab",
         "x_robots_tag": null
       },
       "assertions": {
@@ -14805,9 +14804,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:17:51 GMT",
+        "last_modified": "Mon, 24 Aug 2026 07:00:14 GMT",
         "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::8x9nc-1787552271544-3dcd2322f0af",
+        "x_vercel_id": "pdx1::l8h5l-1787554814503-a0a901dcbbb2",
         "x_robots_tag": null
       },
       "assertions": {
@@ -14909,9 +14908,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:17:52 GMT",
+        "last_modified": "Mon, 24 Aug 2026 07:00:15 GMT",
         "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::hptn5-1787552272685-b2f98e57e556",
+        "x_vercel_id": "pdx1::lxmbk-1787554815218-03460c82ede2",
         "x_robots_tag": null
       },
       "assertions": {
@@ -15013,9 +15012,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:17:53 GMT",
+        "last_modified": "Mon, 24 Aug 2026 07:00:16 GMT",
         "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::fnhv8-1787552273633-5b3d79fe72fd",
+        "x_vercel_id": "pdx1::z28s9-1787554815960-218f76986760",
         "x_robots_tag": null
       },
       "assertions": {
@@ -15117,9 +15116,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:17:54 GMT",
+        "last_modified": "Mon, 24 Aug 2026 07:00:16 GMT",
         "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::lm8dl-1787552274582-f89990a8dee2",
+        "x_vercel_id": "pdx1::2bfj4-1787554816763-3055c1e7cf18",
         "x_robots_tag": null
       },
       "assertions": {
@@ -15221,9 +15220,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:17:55 GMT",
+        "last_modified": "Mon, 24 Aug 2026 07:00:17 GMT",
         "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::v8hqm-1787552275676-367e6e003535",
+        "x_vercel_id": "pdx1::h7lks-1787554817508-8f2f86b656e5",
         "x_robots_tag": null
       },
       "assertions": {
@@ -15325,9 +15324,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:17:56 GMT",
+        "last_modified": "Mon, 24 Aug 2026 07:00:18 GMT",
         "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::zvm2f-1787552276630-f73561730eba",
+        "x_vercel_id": "pdx1::bbvp2-1787554818303-36678db51762",
         "x_robots_tag": null
       },
       "assertions": {
@@ -15429,9 +15428,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:17:58 GMT",
+        "last_modified": "Mon, 24 Aug 2026 07:00:19 GMT",
         "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::wn5ql-1787552277888-ab04c468d06a",
+        "x_vercel_id": "pdx1::fnhv8-1787554819449-a7a110acb2ff",
         "x_robots_tag": null
       },
       "assertions": {
@@ -15533,9 +15532,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:17:58 GMT",
+        "last_modified": "Mon, 24 Aug 2026 07:00:20 GMT",
         "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::wfsbc-1787552278588-67907f317179",
+        "x_vercel_id": "pdx1::9th2g-1787554820210-aa89a07eee0e",
         "x_robots_tag": null
       },
       "assertions": {
@@ -15637,9 +15636,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:17:59 GMT",
+        "last_modified": "Mon, 24 Aug 2026 07:00:21 GMT",
         "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::hptn5-1787552279452-7426455be6e8",
+        "x_vercel_id": "pdx1::pthbw-1787554820949-e7eea82777b4",
         "x_robots_tag": null
       },
       "assertions": {
@@ -15741,9 +15740,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:18:00 GMT",
+        "last_modified": "Mon, 24 Aug 2026 07:00:21 GMT",
         "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::br6dx-1787552280271-28b1b930841c",
+        "x_vercel_id": "pdx1::twhn8-1787554821672-47d37e4bc07a",
         "x_robots_tag": null
       },
       "assertions": {
@@ -15845,9 +15844,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:18:01 GMT",
+        "last_modified": "Mon, 24 Aug 2026 07:00:22 GMT",
         "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::549lw-1787552281108-7515bc4643d4",
+        "x_vercel_id": "pdx1::tvnhb-1787554822449-cdb09e24dd9c",
         "x_robots_tag": null
       },
       "assertions": {
@@ -15949,9 +15948,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:18:02 GMT",
+        "last_modified": "Mon, 24 Aug 2026 07:00:23 GMT",
         "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::fnhv8-1787552281902-c000fecdf888",
+        "x_vercel_id": "pdx1::bvchg-1787554823167-6173e9999212",
         "x_robots_tag": null
       },
       "assertions": {
@@ -16053,9 +16052,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:18:02 GMT",
+        "last_modified": "Mon, 24 Aug 2026 07:00:24 GMT",
         "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::h7lks-1787552282720-64eb3a795a76",
+        "x_vercel_id": "pdx1::9x8nt-1787554823882-983bb63fe5e8",
         "x_robots_tag": null
       },
       "assertions": {
@@ -16157,9 +16156,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:18:03 GMT",
+        "last_modified": "Mon, 24 Aug 2026 07:00:24 GMT",
         "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::vdzvw-1787552283571-a74ecf33c17b",
+        "x_vercel_id": "pdx1::wfsbc-1787554824603-85a058c89361",
         "x_robots_tag": null
       },
       "assertions": {
@@ -16261,9 +16260,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:18:04 GMT",
+        "last_modified": "Mon, 24 Aug 2026 07:00:25 GMT",
         "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::j7rkl-1787552284410-a8ffb3f43806",
+        "x_vercel_id": "pdx1::c7m2h-1787554825317-29742c26b3a5",
         "x_robots_tag": null
       },
       "assertions": {
@@ -16365,9 +16364,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:18:05 GMT",
+        "last_modified": "Mon, 24 Aug 2026 07:00:26 GMT",
         "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::6xtdg-1787552285176-057ef9da2abd",
+        "x_vercel_id": "pdx1::c7m2h-1787554826009-a82be2e5220b",
         "x_robots_tag": null
       },
       "assertions": {
@@ -16469,9 +16468,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:18:06 GMT",
+        "last_modified": "Mon, 24 Aug 2026 07:00:27 GMT",
         "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::lm8dl-1787552285905-4239ed6fc2aa",
+        "x_vercel_id": "pdx1::b5vlv-1787554826907-69b14c3b1381",
         "x_robots_tag": null
       },
       "assertions": {
@@ -16573,9 +16572,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:18:06 GMT",
+        "last_modified": "Mon, 24 Aug 2026 07:00:27 GMT",
         "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::z7bfx-1787552286670-9b8bdf5874f8",
+        "x_vercel_id": "pdx1::2bfj4-1787554827619-6df3608f7f66",
         "x_robots_tag": null
       },
       "assertions": {
@@ -16677,9 +16676,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:18:07 GMT",
+        "last_modified": "Mon, 24 Aug 2026 07:00:28 GMT",
         "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::r5sfk-1787552287632-f4a7811a9944",
+        "x_vercel_id": "pdx1::8x9nc-1787554828347-72953f77d762",
         "x_robots_tag": null
       },
       "assertions": {
@@ -16781,9 +16780,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:18:08 GMT",
+        "last_modified": "Mon, 24 Aug 2026 07:00:29 GMT",
         "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::8cnxq-1787552288420-3f4bc591c463",
+        "x_vercel_id": "pdx1::br6dx-1787554829103-f283c3417a9b",
         "x_robots_tag": null
       },
       "assertions": {
@@ -16885,9 +16884,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:18:09 GMT",
+        "last_modified": "Mon, 24 Aug 2026 07:00:29 GMT",
         "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::dmch9-1787552289214-144ea623e66d",
+        "x_vercel_id": "pdx1::8cnxq-1787554829842-1a9528d5edd1",
         "x_robots_tag": null
       },
       "assertions": {
@@ -16989,9 +16988,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:18:10 GMT",
+        "last_modified": "Mon, 24 Aug 2026 07:00:30 GMT",
         "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::khrwk-1787552290004-cc939eb308f0",
+        "x_vercel_id": "pdx1::nfmd6-1787554830636-8eeb6a287ec7",
         "x_robots_tag": null
       },
       "assertions": {
@@ -17093,9 +17092,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:18:10 GMT",
+        "last_modified": "Mon, 24 Aug 2026 07:00:31 GMT",
         "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::6qm2z-1787552290706-dc6e5cf87b15",
+        "x_vercel_id": "pdx1::mtl8v-1787554831452-38a2a6fa6154",
         "x_robots_tag": null
       },
       "assertions": {
@@ -17197,9 +17196,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:18:11 GMT",
+        "last_modified": "Mon, 24 Aug 2026 07:00:32 GMT",
         "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::hptn5-1787552291525-9bb355784b60",
+        "x_vercel_id": "pdx1::9x8nt-1787554832177-d1bf73fd92e7",
         "x_robots_tag": null
       },
       "assertions": {
@@ -17301,9 +17300,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:18:12 GMT",
+        "last_modified": "Mon, 24 Aug 2026 07:00:33 GMT",
         "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::82k4g-1787552292307-07224d8bf5fa",
+        "x_vercel_id": "pdx1::vv657-1787554832976-159e53cea0c9",
         "x_robots_tag": null
       },
       "assertions": {
@@ -17405,9 +17404,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:18:13 GMT",
+        "last_modified": "Mon, 24 Aug 2026 07:00:33 GMT",
         "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::dbr28-1787552293097-06811da2ea92",
+        "x_vercel_id": "pdx1::6xqkc-1787554833648-988317fbd47c",
         "x_robots_tag": null
       },
       "assertions": {
@@ -17509,9 +17508,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:18:14 GMT",
+        "last_modified": "Mon, 24 Aug 2026 07:00:34 GMT",
         "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::dbr28-1787552293926-0df81cf2882e",
+        "x_vercel_id": "pdx1::ffsqr-1787554834473-65d394612839",
         "x_robots_tag": null
       },
       "assertions": {
@@ -17613,9 +17612,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:18:15 GMT",
+        "last_modified": "Mon, 24 Aug 2026 07:00:35 GMT",
         "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::gjhws-1787552294811-5e2e2203bbea",
+        "x_vercel_id": "pdx1::nfmd6-1787554835187-6472be117645",
         "x_robots_tag": null
       },
       "assertions": {
@@ -17717,9 +17716,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:18:16 GMT",
+        "last_modified": "Mon, 24 Aug 2026 07:00:36 GMT",
         "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::nfmd6-1787552295909-528b071b5644",
+        "x_vercel_id": "pdx1::7t7cl-1787554835902-4b0bc9baefaf",
         "x_robots_tag": null
       },
       "assertions": {
@@ -17821,9 +17820,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:18:16 GMT",
+        "last_modified": "Mon, 24 Aug 2026 07:00:36 GMT",
         "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::khrwk-1787552296687-9d84aa079e18",
+        "x_vercel_id": "pdx1::hptn5-1787554836629-20035c7861f0",
         "x_robots_tag": null
       },
       "assertions": {
@@ -17925,9 +17924,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:18:17 GMT",
+        "last_modified": "Mon, 24 Aug 2026 07:00:37 GMT",
         "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::sbxnl-1787552297515-a6059f5e3472",
+        "x_vercel_id": "pdx1::2bfj4-1787554837390-845e99b06c28",
         "x_robots_tag": null
       },
       "assertions": {
@@ -18029,9 +18028,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:18:18 GMT",
+        "last_modified": "Mon, 24 Aug 2026 07:00:38 GMT",
         "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::kv6dm-1787552298357-b3c7922c88c9",
+        "x_vercel_id": "pdx1::h7lks-1787554838076-9a90dc60bde7",
         "x_robots_tag": null
       },
       "assertions": {
@@ -18133,9 +18132,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:18:19 GMT",
+        "last_modified": "Mon, 24 Aug 2026 07:00:38 GMT",
         "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::sbxnl-1787552299207-eba7f7eb9cc1",
+        "x_vercel_id": "pdx1::pthbw-1787554838791-efe0ca9e2ee1",
         "x_robots_tag": null
       },
       "assertions": {
@@ -18237,9 +18236,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:18:20 GMT",
+        "last_modified": "Mon, 24 Aug 2026 07:00:39 GMT",
         "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::mtl8v-1787552300082-bfa21943a2ec",
+        "x_vercel_id": "pdx1::9th2g-1787554839553-9fd0450a29ab",
         "x_robots_tag": null
       },
       "assertions": {
@@ -18341,9 +18340,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:18:21 GMT",
+        "last_modified": "Mon, 24 Aug 2026 07:00:40 GMT",
         "x_vercel_cache": "MISS",
-        "x_vercel_id": "pdx1::gjhws-1787552300903-f5802dd40f89",
+        "x_vercel_id": "pdx1::vpcqf-1787554840267-7b78b7958e57",
         "x_robots_tag": null
       },
       "assertions": {
@@ -18445,9 +18444,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:15:47 GMT",
-        "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::qxgmc-1787552301777-bfffd79d0968",
+        "last_modified": "Mon, 24 Aug 2026 07:00:41 GMT",
+        "x_vercel_cache": "MISS",
+        "x_vercel_id": "pdx1::r65lf-1787554841004-73cadead4319",
         "x_robots_tag": null
       },
       "assertions": {
@@ -18549,9 +18548,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:15:47 GMT",
-        "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::bvmzm-1787552302459-8044cda0a252",
+        "last_modified": "Mon, 24 Aug 2026 07:00:41 GMT",
+        "x_vercel_cache": "MISS",
+        "x_vercel_id": "pdx1::khrwk-1787554841822-acb9538c5545",
         "x_robots_tag": null
       },
       "assertions": {
@@ -18653,9 +18652,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:15:48 GMT",
-        "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::wdtw6-1787552303208-efc386e85004",
+        "last_modified": "Mon, 24 Aug 2026 07:00:42 GMT",
+        "x_vercel_cache": "MISS",
+        "x_vercel_id": "pdx1::br6dx-1787554842785-f956deef2909",
         "x_robots_tag": null
       },
       "assertions": {
@@ -18757,9 +18756,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:15:48 GMT",
-        "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::z28s9-1787552303839-79efa5134eb8",
+        "last_modified": "Mon, 24 Aug 2026 07:00:43 GMT",
+        "x_vercel_cache": "MISS",
+        "x_vercel_id": "pdx1::mtl8v-1787554843616-7fb3b3104165",
         "x_robots_tag": null
       },
       "assertions": {
@@ -18861,9 +18860,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:15:49 GMT",
-        "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::5knpx-1787552304485-16ae6f933683",
+        "last_modified": "Mon, 24 Aug 2026 07:00:44 GMT",
+        "x_vercel_cache": "MISS",
+        "x_vercel_id": "pdx1::9x8nt-1787554844449-37ed7a087494",
         "x_robots_tag": null
       },
       "assertions": {
@@ -18965,9 +18964,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:15:50 GMT",
-        "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::j7rkl-1787552305116-0c789d4d7ddb",
+        "last_modified": "Mon, 24 Aug 2026 07:00:45 GMT",
+        "x_vercel_cache": "MISS",
+        "x_vercel_id": "pdx1::ffsqr-1787554845179-bb60a9ff1067",
         "x_robots_tag": null
       },
       "assertions": {
@@ -19069,9 +19068,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:15:50 GMT",
-        "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::prrqb-1787552305824-3fcbe0a3b347",
+        "last_modified": "Mon, 24 Aug 2026 07:00:46 GMT",
+        "x_vercel_cache": "MISS",
+        "x_vercel_id": "pdx1::pthbw-1787554845914-3e9f28eecc56",
         "x_robots_tag": null
       },
       "assertions": {
@@ -19173,9 +19172,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:15:51 GMT",
-        "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::nfmd6-1787552306458-1a7e03daf51a",
+        "last_modified": "Mon, 24 Aug 2026 07:00:46 GMT",
+        "x_vercel_cache": "MISS",
+        "x_vercel_id": "pdx1::h7lks-1787554846816-f7c86153f30e",
         "x_robots_tag": null
       },
       "assertions": {
@@ -19277,9 +19276,9 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:15:51 GMT",
-        "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::ffsqr-1787552307075-7c38f46873ef",
+        "last_modified": "Mon, 24 Aug 2026 07:00:47 GMT",
+        "x_vercel_cache": "MISS",
+        "x_vercel_id": "pdx1::khrwk-1787554847656-69167ea316a8",
         "x_robots_tag": null
       },
       "assertions": {
@@ -19381,9 +19380,113 @@
       },
       "response_headers": {
         "cache_status": "DYNAMIC",
-        "last_modified": "Mon, 24 Aug 2026 06:15:52 GMT",
-        "x_vercel_cache": "HIT",
-        "x_vercel_id": "pdx1::r65lf-1787552307816-5c96a705ff28",
+        "last_modified": "Mon, 24 Aug 2026 07:00:48 GMT",
+        "x_vercel_cache": "MISS",
+        "x_vercel_id": "pdx1::lt5f6-1787554848552-d2d39870373a",
+        "x_robots_tag": null
+      },
+      "assertions": {
+        "http_200": true,
+        "final_url_exact": true,
+        "canonical_exact": true,
+        "x_robots_indexable": true,
+        "meta_robots_indexable": true,
+        "h1_exact": true,
+        "meaningful_rendered_content": true,
+        "article_schema": true,
+        "faq_schema": true,
+        "five_faqs": true,
+        "breadcrumb_schema": true,
+        "every_reviewed_source_rendered": true,
+        "every_approved_asset_rendered": true,
+        "visible_hero_exact": true,
+        "og_image_exact": true,
+        "twitter_image_exact": true,
+        "same_canonical_hero_share_asset": true,
+        "visible_inline_exact": true,
+        "inline_image_binary_exact": true,
+        "article_schema_image_exact": true,
+        "canonical_image_binary_exact": true,
+        "footer_disclosure_once": true,
+        "top_disclosure_absent": true,
+        "analytics_present": true
+      },
+      "disposition": "PASS"
+    },
+    {
+      "program_row_id": "MRX1000-0281",
+      "slug": "texas-rrc-injection-storage-permit-query-retrieval-provenance-worksheet",
+      "title": "Texas RRC Injection-Storage Permit Query Retrieval Provenance Worksheet",
+      "url": "https://mineralrightsxchange.com/blog/texas-rrc-injection-storage-permit-query-retrieval-provenance-worksheet/",
+      "observed_status": 200,
+      "observed_final_url": "https://mineralrightsxchange.com/blog/texas-rrc-injection-storage-permit-query-retrieval-provenance-worksheet/",
+      "observed_canonical": "https://mineralrightsxchange.com/blog/texas-rrc-injection-storage-permit-query-retrieval-provenance-worksheet/",
+      "observed_h1": "Texas RRC Injection-Storage Permit Query Retrieval Provenance Worksheet",
+      "observed_schema_types": [
+        "Article",
+        "BreadcrumbList",
+        "FAQPage",
+        "Organization",
+        "ProfessionalService",
+        "WebPage",
+        "WebSite"
+      ],
+      "observed_faq_count": 5,
+      "observed_source_url_count": 6,
+      "expected_source_url_count": 6,
+      "observed_asset_count": 3,
+      "expected_asset_count": 3,
+      "expected_canonical_hero_url": "https://mineralrightsxchange.com/assets/articles/hero/texas-rrc-injection-storage-permit-query-retrieval-provenance-worksheet.webp",
+      "expected_canonical_hero_sha256": "d6d7c4aaeecbf0bb391c42235d61098e69d8dbc8bd39a3e3a5fddbbd98f50059",
+      "expected_canonical_hero_alt": "An injection-storage permit query research counter appears beside the exact article title.",
+      "expected_share_url": "https://mineralrightsxchange.com/assets/articles/hero/texas-rrc-injection-storage-permit-query-retrieval-provenance-worksheet.webp",
+      "expected_share_sha256": "d6d7c4aaeecbf0bb391c42235d61098e69d8dbc8bd39a3e3a5fddbbd98f50059",
+      "expected_inline_url": "https://mineralrightsxchange.com/assets/articles/inline/texas-rrc-injection-storage-permit-query-retrieval-provenance-worksheet/texas-rrc-injection-storage-permit-query-retrieval.webp",
+      "expected_inline_sha256": "def21a52c824d4bc4fe69d9d36bf3ee44b6fc35685b6a19e7a76598d1557f6a6",
+      "expected_inline_rendered_text": "Texas RRC injection-storage permit query retrieval",
+      "exact_wave2_owner_policy": false,
+      "observed_canonical_hero": {
+        "visible_src": "/assets/articles/hero/texas-rrc-injection-storage-permit-query-retrieval-provenance-worksheet.webp",
+        "visible_alt": "An injection-storage permit query research counter appears beside the exact article title.",
+        "visible_width": 1200,
+        "visible_height": 630,
+        "og_image": "https://mineralrightsxchange.com/assets/articles/hero/texas-rrc-injection-storage-permit-query-retrieval-provenance-worksheet.webp",
+        "og_image_alt": "An injection-storage permit query research counter appears beside the exact article title.",
+        "og_image_width": 1200,
+        "og_image_height": 630,
+        "og_image_type": "image/webp",
+        "twitter_image": "https://mineralrightsxchange.com/assets/articles/hero/texas-rrc-injection-storage-permit-query-retrieval-provenance-worksheet.webp",
+        "twitter_image_alt": "An injection-storage permit query research counter appears beside the exact article title.",
+        "schema_image": "https://mineralrightsxchange.com/assets/articles/hero/texas-rrc-injection-storage-permit-query-retrieval-provenance-worksheet.webp",
+        "fetched_url": "https://mineralrightsxchange.com/assets/articles/hero/texas-rrc-injection-storage-permit-query-retrieval-provenance-worksheet.webp",
+        "fetched_status": 200,
+        "fetched_content_type": "image/webp",
+        "fetched_sha256": "d6d7c4aaeecbf0bb391c42235d61098e69d8dbc8bd39a3e3a5fddbbd98f50059",
+        "fetched_dimensions": {
+          "width": 1200,
+          "height": 630
+        }
+      },
+      "observed_inline_image": {
+        "visible_src": "/assets/articles/inline/texas-rrc-injection-storage-permit-query-retrieval-provenance-worksheet/texas-rrc-injection-storage-permit-query-retrieval.webp",
+        "visible_alt": "A people-free overhead injection-storage permit query provenance worksheet appears above the exact keyword.",
+        "visible_width": 1200,
+        "visible_height": 675,
+        "rendered_text": "Texas RRC injection-storage permit query retrieval",
+        "fetched_url": "https://mineralrightsxchange.com/assets/articles/inline/texas-rrc-injection-storage-permit-query-retrieval-provenance-worksheet/texas-rrc-injection-storage-permit-query-retrieval.webp",
+        "fetched_status": 200,
+        "fetched_content_type": "image/webp",
+        "fetched_sha256": "def21a52c824d4bc4fe69d9d36bf3ee44b6fc35685b6a19e7a76598d1557f6a6",
+        "fetched_dimensions": {
+          "width": 1200,
+          "height": 675
+        }
+      },
+      "response_headers": {
+        "cache_status": "DYNAMIC",
+        "last_modified": "Mon, 24 Aug 2026 07:00:49 GMT",
+        "x_vercel_cache": "MISS",
+        "x_vercel_id": "pdx1::4f29k-1787554849297-e15c5ea23e57",
         "x_robots_tag": null
       },
       "assertions": {
@@ -19919,9 +20022,9 @@
   },
   "interface_results": {
     "homepage_status": 200,
-    "sitemap_article_url_count": 185,
-    "expected_public_article_url_count": 185,
-    "batch_article_url_count": 177,
+    "sitemap_article_url_count": 186,
+    "expected_public_article_url_count": 186,
+    "batch_article_url_count": 178,
     "www_status": 308,
     "www_location": "https://mineralrightsxchange.com/",
     "assertions": {
@@ -19947,7 +20050,7 @@
     "disposition": "PASS"
   },
   "rollback": {
-    "prior_verified_production_deployment": "Use deployment history immediately before dpl_6A65xY7Hq3MGAFSxvFm8UJCUCXQv.",
+    "prior_verified_production_deployment": "Use deployment history immediately before dpl_WRU1KL5nBR9VRge896PZmd9XesvY.",
     "per_article": [
       {
         "program_row_id": "MRX1000-0732",
@@ -21009,14 +21112,20 @@
         "program_row_id": "MRX1000-0280",
         "slug": "texas-rrc-gas-proration-query-retrieval-provenance-worksheet",
         "rollback_reference": "rollback:texas-rrc-gas-proration-query-retrieval-provenance-worksheet",
+        "procedure": "Redeploy the previous verified Vercel production deployment and verify the incumbent article remains public."
+      },
+      {
+        "program_row_id": "MRX1000-0281",
+        "slug": "texas-rrc-injection-storage-permit-query-retrieval-provenance-worksheet",
+        "rollback_reference": "rollback:texas-rrc-injection-storage-permit-query-retrieval-provenance-worksheet",
         "procedure": "Restore only publication_status to draft and noindex to true for this exact source path; verify the restored file SHA-256 equals reviewed_source_sha256; rebuild through every release gate; redeploy the previous verified Vercel production deployment; and verify the URL is absent from article sitemap and LLM indexes."
       }
     ]
   },
   "summary": {
-    "expected_articles": 177,
-    "expected_live_blog_count": 185,
-    "passing_articles": 177,
+    "expected_articles": 178,
+    "expected_live_blog_count": 186,
+    "passing_articles": 178,
     "failing_articles": 0,
     "retained_production_baseline_disposition": "PASS",
     "deployment_disposition": "PASS",
