@@ -1,7 +1,7 @@
 {
   "program": "MRX1000",
   "artifact_type": "searchatlas_ordered_llm_local_execution_manifest",
-  "generated_at": "2026-07-20T22:24:31.332Z",
+  "generated_at": "2026-07-20T08:25:37.000Z",
   "deterministic": true,
   "local_only": true,
   "external_services_called": false,
@@ -9,8 +9,8 @@
   "inputs": {
     "ledger": {
       "path": "config/mrx-1000-canonical-content-ledger.json",
-      "sha256": "0f83463f32108c1613f82b03dd103e807f974f56044efaa1ab7e543169e9e55b",
-      "bytes": 4556589
+      "sha256": "fe38792468efb75acb28f3c04b2049b1d11c455554f493a6bc15082da29c725d",
+      "bytes": 4556948
     },
     "readiness": {
       "path": "reports/mrx-1000-readiness-matrix.json",
@@ -106051,7 +106051,7 @@
       "primary_keyword": "Texas RRC Flare/Vent Exception query retrieval",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -351554,5 +351554,5 @@
       ]
     }
   ],
-  "content_fingerprint_sha256": "fee37b1c870d8f50ab6fbf8b89c11aad72339cb9e6dd9b9499322a9db37d083f"
+  "content_fingerprint_sha256": "6adfc30f7e42a140f8fb3285dde8dc9857170fd4c91c207808a0279d4784b93f"
 }
