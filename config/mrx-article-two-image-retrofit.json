@@ -1,18 +1,18 @@
 {
   "artifact_type": "mrx_article_two_image_retrofit",
   "schema_version": 1,
-  "generated_at_utc": "2026-08-24T02:31:11Z",
+  "generated_at_utc": "2026-08-24T04:14:42Z",
   "policy_source": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
   "summary": {
-    "article_count": 182,
-    "asset_count": 364,
-    "unique_source_art_count": 182,
-    "unique_hero_sha256_count": 182,
-    "unique_inline_sha256_count": 182,
-    "distinct_article_pair_count": 182,
-    "hero_ocr_pass_count": 182,
-    "inline_ocr_pass_count": 182,
-    "exact_filename_identity_count": 182
+    "article_count": 183,
+    "asset_count": 366,
+    "unique_source_art_count": 183,
+    "unique_hero_sha256_count": 183,
+    "unique_inline_sha256_count": 183,
+    "distinct_article_pair_count": 183,
+    "hero_ocr_pass_count": 183,
+    "inline_ocr_pass_count": 183,
+    "exact_filename_identity_count": 183
   },
   "contact_sheets": {
     "hero": [
@@ -5206,6 +5206,56 @@
           "actual": "Texas RRC H-10\nquery retrieval",
           "normalized_expected": "texas rrc h 10 query retrieval",
           "normalized_actual": "texas rrc h 10 query retrieval",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      }
+    },
+    {
+      "slug": "texas-rrc-inactive-well-query-retrieval-provenance-worksheet",
+      "title": "Texas RRC Inactive Well Query Retrieval Provenance Worksheet",
+      "keyword": "Texas RRC Inactive Well query retrieval",
+      "file_path": "src/content/posts/texas-rrc-inactive-well-query-retrieval-provenance-worksheet.mdx",
+      "source_public_path": "/assets/articles/hero/texas-rrc-inactive-well-query-retrieval-provenance-worksheet.webp",
+      "source_artifact_paths": [
+        "artifacts/mrx1000-wave95-creative-sources/texas-rrc-inactive-well-query-retrieval-provenance-worksheet-hero-base.png",
+        "artifacts/mrx1000-wave95-creative-sources/texas-rrc-inactive-well-query-retrieval-provenance-worksheet-inline-base.png"
+      ],
+      "generated_at_utc": "2026-08-24T04:13:42.999Z",
+      "hero": {
+        "public_path": "/assets/articles/hero/texas-rrc-inactive-well-query-retrieval-provenance-worksheet.webp",
+        "alt": "A Texas inactive-well query research counter appears beside the exact article title.",
+        "width": 1200,
+        "height": 630,
+        "mime_type": "image/webp",
+        "sha256": "98a4248e315f398de26dcb339281c1ea0fb9508251285435ac2b3ba97fdaa22c",
+        "perceptual_hash": "0000000000110011000000000011101100000000001111110000000001111111000000000111110000000000011111000000000001111110000000000111111100000000011111110000000001111101000000000111111100000000111111110000000011111111000000000111111100000000011111110000000001111111",
+        "neutralized_art_text_region_count": 1,
+        "ocr": {
+          "expected": "Texas RRC Inactive Well Query Retrieval Provenance Worksheet",
+          "actual": "Texas RRC Inactive Well\nQuery Retrieval\nProvenance Worksheet",
+          "normalized_expected": "texas rrc inactive well query retrieval provenance worksheet",
+          "normalized_actual": "texas rrc inactive well query retrieval provenance worksheet",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      },
+      "inline": {
+        "public_path": "/assets/articles/inline/texas-rrc-inactive-well-query-retrieval-provenance-worksheet/texas-rrc-inactive-well-query-retrieval.webp",
+        "alt": "A people-free overhead inactive-well query provenance worksheet appears above the exact keyword.",
+        "rendered_text": "Texas RRC Inactive Well query retrieval",
+        "visual_variant": "wave95-distinct-generated-overhead-inactive-well-query-provenance-worksheet",
+        "width": 1200,
+        "height": 675,
+        "mime_type": "image/webp",
+        "sha256": "e886e95b2b05eea421f48e8e7eeaf7c5094a30dd17b8867e7312ba9ca9e8fa27",
+        "perceptual_hash": "0111111000000000111111111111111011111111111111101111111111111110111111111111011011111111111101101111111011100110111111101100001011111110000000000111111000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "neutralized_art_text_region_count": 1,
+        "ocr": {
+          "expected": "Texas RRC Inactive Well query retrieval",
+          "actual": "Texas RRC Inactive Well\nquery retrieval",
+          "normalized_expected": "texas rrc inactive well query retrieval",
+          "normalized_actual": "texas rrc inactive well query retrieval",
           "uppercase_i_confusable_accepted": false,
           "pass": true
         }
