@@ -1,18 +1,18 @@
 {
   "artifact_type": "mrx_article_two_image_retrofit",
   "schema_version": 1,
-  "generated_at_utc": "2026-08-24T10:57:59Z",
+  "generated_at_utc": "2026-08-24T12:03:53Z",
   "policy_source": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
   "summary": {
-    "article_count": 189,
-    "asset_count": 378,
-    "unique_source_art_count": 189,
-    "unique_hero_sha256_count": 189,
-    "unique_inline_sha256_count": 189,
-    "distinct_article_pair_count": 189,
-    "hero_ocr_pass_count": 189,
-    "inline_ocr_pass_count": 189,
-    "exact_filename_identity_count": 189
+    "article_count": 190,
+    "asset_count": 380,
+    "unique_source_art_count": 190,
+    "unique_hero_sha256_count": 190,
+    "unique_inline_sha256_count": 190,
+    "distinct_article_pair_count": 190,
+    "hero_ocr_pass_count": 190,
+    "inline_ocr_pass_count": 190,
+    "exact_filename_identity_count": 190
   },
   "contact_sheets": {
     "hero": [
@@ -5206,6 +5206,56 @@
           "actual": "Texas RRC drilling permit\nquery retrieval",
           "normalized_expected": "texas rrc drilling permit query retrieval",
           "normalized_actual": "texas rrc drilling permit query retrieval",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      }
+    },
+    {
+      "slug": "texas-rrc-field-search-retrieval-provenance-worksheet",
+      "title": "Texas RRC Field Search Retrieval Provenance Worksheet",
+      "keyword": "Texas RRC Field Search retrieval",
+      "file_path": "src/content/posts/texas-rrc-field-search-retrieval-provenance-worksheet.mdx",
+      "source_public_path": "/assets/articles/hero/texas-rrc-field-search-retrieval-provenance-worksheet.webp",
+      "source_artifact_paths": [
+        "artifacts/mrx1000-wave102-creative-sources/texas-rrc-field-search-retrieval-provenance-worksheet-hero-base.png",
+        "artifacts/mrx1000-wave102-creative-sources/texas-rrc-field-search-retrieval-provenance-worksheet-inline-base.png"
+      ],
+      "generated_at_utc": "2026-08-24T11:59:52.757Z",
+      "hero": {
+        "public_path": "/assets/articles/hero/texas-rrc-field-search-retrieval-provenance-worksheet.webp",
+        "alt": "A blank Field Search terminal and neutral retained-reference desk appear beside the exact article title.",
+        "width": 1200,
+        "height": 630,
+        "mime_type": "image/webp",
+        "sha256": "d7e49ce1528416be39017ced2260459e67309f70984b7143fc807600a31c2581",
+        "perceptual_hash": "0000000001111100000000000111110000000000000000000000000001111100000000000111110001100000011111000111100001111110011000000111111000000000011111100000000001000011000000001111111100000000111111110000000011100100000000001110111000000000111001100000000000000001",
+        "neutralized_art_text_region_count": 1,
+        "ocr": {
+          "expected": "Texas RRC Field Search Retrieval Provenance Worksheet",
+          "actual": "Texas RRC\nField Search\nRetrieval Provenance\nWorksheet",
+          "normalized_expected": "texas rrc field search retrieval provenance worksheet",
+          "normalized_actual": "texas rrc field search retrieval provenance worksheet",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      },
+      "inline": {
+        "public_path": "/assets/articles/inline/texas-rrc-field-search-retrieval-provenance-worksheet/texas-rrc-field-search-retrieval.webp",
+        "alt": "A people-free overhead three-mode Field Search criteria worksheet appears above the exact keyword.",
+        "rendered_text": "Texas RRC Field Search retrieval",
+        "visual_variant": "wave102-distinct-generated-overhead-three-mode-field-search-criteria-worksheet",
+        "width": 1200,
+        "height": 675,
+        "mime_type": "image/webp",
+        "sha256": "e2b3dd39603f289dbac8014d91597e628764506db57229507421699ba02b6733",
+        "perceptual_hash": "1111111111111111001111111111111100111111111111111011111111111111111111111111111011111111111111101111111111111011111111111111111111111111111111110011111111111001001111111111100000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "neutralized_art_text_region_count": 1,
+        "ocr": {
+          "expected": "Texas RRC Field Search retrieval",
+          "actual": "Texas RRC Field Search\nretrieval",
+          "normalized_expected": "texas rrc field search retrieval",
+          "normalized_actual": "texas rrc field search retrieval",
           "uppercase_i_confusable_accepted": false,
           "pass": true
         }

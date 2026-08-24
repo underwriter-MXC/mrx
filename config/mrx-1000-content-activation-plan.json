@@ -1,15 +1,15 @@
 {
   "artifact_type": "mrx1000_content_activation_plan",
   "plan_version": "mrx1000-content-activation-v1.1.0",
-  "generated_at": "2026-07-20T01:55:06.360Z",
+  "generated_at": "2026-07-20T23:18:47.754Z",
   "generated_at_method": "canonical_ledger_generated_at",
   "generator": "scripts/build-mrx-1000-activation-plan.mjs",
-  "content_fingerprint_sha256": "1a73446a22db509d2464dbebcb526bf0f1a72f2acf99c62823d3eafcc59a419e",
+  "content_fingerprint_sha256": "54b1e0dffd1d470168c0e1b977c2f35b73ee563c3a81d724c66e3803e84ca99e",
   "inputs": {
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_fingerprint_sha256": "624cb38f0ff0b3b1050f850875baec1f482688df3b39bfb0737e82f679c4991b",
+    "canonical_ledger_fingerprint_sha256": "0a62849e8af0ba89b628e2927285bb81fce9c5dd0ccdbb7b6f94efdd1aac8d01",
     "canonical_ledger_fingerprint_verified": true,
-    "canonical_ledger_generated_at": "2026-07-20T01:55:06.360Z",
+    "canonical_ledger_generated_at": "2026-07-20T23:18:47.754Z",
     "owner_decision": {
       "decision_id": "D-2026-0804-16",
       "signed_disposition": "APPROVED_CONTINUOUS_QUALITY_GATED_ARTICLE_PUBLICATION",
@@ -115,9 +115,9 @@
     },
     "by_source_preservation_classification": {
       "incumbent_draft_nonpublic_held": 27,
-      "live_public_published_route": 189,
+      "live_public_published_route": 190,
       "pilot_draft_noindex_stage": 25,
-      "planning_only_inventory": 759
+      "planning_only_inventory": 758
     }
   },
   "rows": [
@@ -17590,11 +17590,11 @@
       },
       "sibling_link": {
         "target_program_row_id": "MRX1000-0285",
-        "target_title": "Understanding Your Mineral Rights: Uncovering Their True Value and Potential for Fair Assessment",
-        "url": "/blog/understanding-your-mineral-rights-uncovering-their-true-value-and-potential-for-fair-assessment/",
+        "target_title": "Texas RRC Field Search Retrieval Provenance Worksheet",
+        "url": "/blog/texas-rrc-field-search-retrieval-provenance-worksheet/",
         "relationship": "same_cluster_next_by_program_row_id_cyclic",
-        "target_source_preservation_classification": "planning_only_inventory",
-        "target_route_live": false,
+        "target_source_preservation_classification": "live_public_published_route",
+        "target_route_live": true,
         "status": "planned_local_only"
       },
       "primary_cta": {
@@ -17637,15 +17637,15 @@
     },
     {
       "program_row_id": "MRX1000-0285",
-      "canonical_title": "Understanding Your Mineral Rights: Uncovering Their True Value and Potential for Fair Assessment",
-      "canonical_slug": "understanding-your-mineral-rights-uncovering-their-true-value-and-potential-for-fair-assessment",
-      "canonical_url": "/blog/understanding-your-mineral-rights-uncovering-their-true-value-and-potential-for-fair-assessment/",
+      "canonical_title": "Texas RRC Field Search Retrieval Provenance Worksheet",
+      "canonical_slug": "texas-rrc-field-search-retrieval-provenance-worksheet",
+      "canonical_url": "/blog/texas-rrc-field-search-retrieval-provenance-worksheet/",
       "cluster": "valuation-methodology-drivers",
       "pillar": "mineral-rights-value",
       "search_intent": "informational",
       "funnel_stage": "consideration",
-      "source_preservation_classification": "planning_only_inventory",
-      "source_route_live": false,
+      "source_preservation_classification": "live_public_published_route",
+      "source_route_live": true,
       "pillar_link": {
         "url": "/mineral-rights-value/",
         "route_evidence": "src/pages/mineral-rights-value.astro",
@@ -17694,7 +17694,7 @@
         "rendered_triangle_verified": false,
         "live_status": "not_published_or_verified_by_this_plan",
         "live_triangle_verified": false,
-        "release_status": "eligible_for_continuous_quality_review_not_yet_cleared",
+        "release_status": "released_under_d16_continuous_quality_gate",
         "numerical_release_cap_applies": false
       }
     },
