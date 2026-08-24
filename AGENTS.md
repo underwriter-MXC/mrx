@@ -1,31 +1,35 @@
 # MRX Article Production and Release Control Policy
 
-Effective: 2026-08-21
+Effective: 2026-08-24
 
-Scope: MRX1000 Article 148 onward and every future MineralRightsXchange.com article workflow
+Scope: MRX1000 Article 179 onward and every future MineralRightsXchange.com article workflow
 
-Authority: Daryl Hill owner directive, with read-only Chesty recommendation and `mrx_ceo` approval with changes
+Authority: Daryl Hill owner directive, with the 2026-08-24 read-only Chesty prompt-contract review and `mrx_ceo` approval with changes
 
 This repository-root file is the single controlling prompt for MRX article planning, creation, images, review, release, and reconciliation. Historical governance records, staged drafts, manifests, task cards, title lists, keyword lists, and specialist instructions are inputs or evidence only. They do not override this file or create a publication-approval gate.
 
 ## Current release boundary
 
-The canonical MRX1000 program is production verified and reconciled through release-sequence Article 151. The canonical ledger records 151 `released_public_article` rows and 159 public article routes after Vercel deployment `dpl_AVAZY84GaRptfUwHXCMvdqKT5CmG`.
+The canonical MRX1000 program is production verified and reconciled through release-sequence Article 178. The canonical ledger records 178 `released_public_article` rows and 186 public article routes after Vercel deployment `dpl_7mLeQosbuAZMyVopLGy3fPvnDi91`.
 
 Release-sequence article numbers are incremental verified-count labels, not assumptions that the same-numbered `MRX1000-####` program row is unreleased. Before every selection, use the current canonical ledger plus fresh live HTTP checks to exclude rows and routes that are already released. Republishing or refreshing an already released row does not advance the MRX1000 verified count.
 
-Article 152 is assigned to program row `MRX1000-0962`, with the planning identity rejected and the following exact identity locked by the Wave 72 read-only Chesty/`mrx_ceo` decision:
+Article 179 is assigned to program row `MRX1000-0282`, with the generic valuation planning identity rejected for cannibalization and the following exact identity locked by the Wave 99 read-only Chesty/`mrx_ceo` decision:
 
-- Title: `How to Build a Mineral Rights Offer Sender Identity Cross-Check`
-- Slug: `mineral-rights-offer-sender-identity-cross-check`
-- Primary keyword: `mineral rights offer sender identity cross-check`
-- Job: build a reusable field-level matrix for the stated sender, acquiring entity, signer, email/reply-to domain, business address, phone, and website; compare those fields across the offer, Texas public entity/status records, and independently located company contact sources; record only `match`, `mismatch`, or `unverified`; and turn discrepancies into neutral clarification questions.
+- Title: `Texas RRC Severance Query Retrieval Provenance Worksheet`
+- Slug: `texas-rrc-severance-query-retrieval-provenance-worksheet`
+- Primary keyword: `Texas RRC severance query retrieval`
+- Job: document one Texas RRC Severance Query retrieval attempt by recording the official route, visible search labels and entered criteria, result/help navigation, access time, retained reference, source limitations, and only the bounded outcome `located`, `not located`, or `unverified`.
 
-Article 152 may not determine legitimacy, authenticity, authority, reputation, fairness, fraud, value, legal effect, or whether to transact. It must remain distinct from the live predatory-buyer, offer-risk, scam-response, and seller-protection guides and from planning row `MRX1000-0326`, which retains the broader candidate job of verifying an offer's legitimacy.
+Article 179 may not infer or determine severance status, legal effect, compliance, reconnection eligibility, production, property connection, title, ownership, acreage, lease effect, value, offer quality, or whether to transact. It must remain distinct from every released RRC retrieval-provenance worksheet by focusing only on the Severance Query route and source-displayed retrieval evidence.
 
 ## Chesty decision routing
 
 Chesty is advisory and read-only for article identity and specialist review. Invoke the `chestyorchestrator` profile with the already-authorized `openai-codex` provider, explicitly name every authoritative absolute source path, state the verified isolated worktree and branch, and prohibit file, repository, deployment, and external-system writes. Route the executive verdict through `mrx_ceo` and relevant MRX specialists.
+
+Before any Chesty or nested Hermes filesystem or terminal use, verify `pwd -P`, `git rev-parse --show-toplevel`, `git branch --show-current`, and `git status --short`. On any path, worktree, branch, or release-lane mismatch, terminate that advisory subprocess without writing. Chesty returns text evidence only; Codex remains the sole implementation and release owner unless it explicitly assigns a bounded, non-conflicting mutation.
+
+This file is the controlling execution prompt. The canonical ledger is authoritative evidence and state, but it never creates an owner-approval, numerical, observation-window, or status-report gate that overrides this prompt.
 
 Independently verify Chesty's candidate against the current isolated ledger, repository corpus, and live routes. If a nested Hermes call changes to an unverified working directory, omits the corrected provider, uses stale ledger state, or hangs, terminate only that verified advisory process and rerun the final read-only decision through `mrx_ceo` with `--provider openai-codex`. Never allow Chesty or a specialist to write the release worktree.
 
