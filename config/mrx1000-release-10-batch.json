@@ -1,7 +1,7 @@
 {
   "program": "MRX 1,000 Article SEO+AEO Production Program",
   "artifact_type": "authorized_release_10_batch",
-  "evidence_scaffold_generated_at_utc": "2026-08-23T23:30:10Z",
+  "evidence_scaffold_generated_at_utc": "2026-08-24T00:24:44Z",
   "decision_authority": {
     "successor_gate_decision_id": "D-2026-0804-16",
     "successor_gate_decision_path": "docs/governance/mrx1000-owner-continuous-publication-directive-2026-08-04.md",
@@ -294,13 +294,16 @@
     "wave89_selection_decision_sha256": "abd592e9d3db9cf5373b66753c024246fff9044b1e7680c043d5eb82c0d7c332",
     "wave90_selection_decision_id": "MRX1000-W90-SELECT-2026-08-23",
     "wave90_selection_decision_path": "docs/governance/mrx1000-wave90-selection-decision-2026-08-23.md",
-    "wave90_selection_decision_sha256": "ff9948aacfc68c5cc348672bbf9662439cdf437861af55572e9282e00b95a228"
+    "wave90_selection_decision_sha256": "ff9948aacfc68c5cc348672bbf9662439cdf437861af55572e9282e00b95a228",
+    "wave91_selection_decision_id": "MRX1000-W91-SELECT-2026-08-23",
+    "wave91_selection_decision_path": "docs/governance/mrx1000-wave91-selection-decision-2026-08-23.md",
+    "wave91_selection_decision_sha256": "dc983f428ef5696747ded9b68b17c09888dbb1d81d8deb9b3107e23029cf0aec"
   },
   "identity_authority": {
     "scope_key": "canonical_slug",
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_sha256": "2a992462b1a2cadd39e0aa7b77f7caa125749d56299548718e494d39cdba8522",
-    "canonical_ledger_generated_at": "2026-07-20T23:37:49.007Z",
+    "canonical_ledger_sha256": "38e4e34a5d10936f035e51ea8af8abc2e8040e154796d85b97c6308855611252",
+    "canonical_ledger_generated_at": "2026-07-20T20:49:31.291Z",
     "successor_ledger_decision_id": "D-2026-0723-LEDGER-04",
     "successor_ledger_decision_path": "artifacts/mrx1000-release-10/decisions/mrx-ceo-ledger-provenance-successor-20260723-04.md",
     "successor_ledger_decision_sha256": "09eca24bcd0e71563f2ac4197f564eec0ccb43a5ee955216da5c4a2543d04978",
@@ -314,11 +317,11 @@
     "authorization_scope": "declared_program_size_not_a_staged_release_cap",
     "admission_mode": "continuous_quality_gated",
     "continuous_quality_gated_from_selection_rank": 26,
-    "prior_verified_article_count": 169,
+    "prior_verified_article_count": 170,
     "fail_closed": true,
     "earned_scale_gates": [],
-    "exact_admitted_count": 170,
-    "exact_admitted_slate_sha256": "d283c79552a211023fc5be31238485043b6a755526da7db36a093ae3462b6052"
+    "exact_admitted_count": 171,
+    "exact_admitted_slate_sha256": "3458c3f699c22a4ef915d3549be43a80e928f099732dd462c374b36771a1059a"
   },
   "articles": [
     {
@@ -5888,10 +5891,44 @@
       "inline_path": "/assets/articles/inline/texas-rrc-drilling-permit-query-retrieval-provenance-worksheet/texas-rrc-drilling-permit-query-retrieval.webp",
       "inline_asset_sha256": "e5058131e0893078f0299db7070b02a77415314579786ea8b92de287aacef3f0",
       "inline_rendered_text": "Texas RRC drilling permit query retrieval"
+    },
+    {
+      "selection_rank": 171,
+      "program_row_id": "MRX1000-0276",
+      "source_shortlist_program_row_id": "MRX1000-0276",
+      "slug": "texas-rrc-wellbore-query-retrieval-provenance-worksheet",
+      "title": "Texas RRC Wellbore Query Retrieval Provenance Worksheet",
+      "source_shortlist_title": "Texas RRC Wellbore Query Retrieval Provenance Worksheet",
+      "canonical_url": "https://mineralrightsxchange.com/blog/texas-rrc-wellbore-query-retrieval-provenance-worksheet/",
+      "pillar": "mineral-rights-value",
+      "cluster": "valuation-methodology-drivers",
+      "content_genius_article_uuid": null,
+      "archive_evidence_sha256": "22f310cb56ff184bf819a0ca8a8bba9c102d8b702be552e00e676901679ff042",
+      "repo_path": "src/content/posts/texas-rrc-wellbore-query-retrieval-provenance-worksheet.mdx",
+      "repo_sha256": "9c37a3a47aeecc7184e1467497ed2a0cc5ed0b2e82c3bb224bd6850e10d97151",
+      "article_sha256": "9c37a3a47aeecc7184e1467497ed2a0cc5ed0b2e82c3bb224bd6850e10d97151",
+      "hero_path": "/assets/articles/hero/texas-rrc-wellbore-query-retrieval-provenance-worksheet.webp",
+      "hero_sha256": "4603109bf5df6fb3cb1228200fefed7e5f7f7a63dd93e320c556bb55eb624fe4",
+      "hero_asset_sha256": "4603109bf5df6fb3cb1228200fefed7e5f7f7a63dd93e320c556bb55eb624fe4",
+      "admission_status": "admitted_quality_gated",
+      "finalization_state": "draft_noindex_admitted",
+      "searchatlas_content_score": null,
+      "searchatlas_word_count": 1985,
+      "risk_citation_remediation": [
+        "The original broad value-assessment identity was rejected for material corpus overlap. The admitted replacement owns only a source-preserving provenance worksheet for one official Texas RRC Wellbore Query attempt.",
+        "Current official Railroad Commission sources support only the named query route, source-displayed criteria and result labels, navigation behavior, record-access context, update notes, and data limitations. None establishes property connection, title, ownership, acreage, unit inclusion, lease effect, entitlement, compliance, drilling, completion, production, development, reserves, value, or a transaction result.",
+        "The article remains distinct from the drilling-permit query worksheet, pooling-filing worksheet, production-record locator, broad RRC tutorial, property-connection cross-check, and development or DCF corpus because it records one Wellbore Query execution without interpreting a result or using it downstream.",
+        "Continuous quality-gated admission under D-2026-0804-16, the 2026-08-14 no-approval owner directive, and MRX1000-W91-SELECT-2026-08-23; publication remains conditional on every article-specific gate and no owner publication approval applies."
+      ],
+      "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/texas-rrc-wellbore-query-retrieval-provenance-worksheet.json",
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/texas-rrc-wellbore-query-retrieval-provenance-worksheet/texas-rrc-wellbore-query-retrieval.webp",
+      "inline_asset_sha256": "2928cff15f071cf2c9a7860eace4aa483a2df13a3d1b9df51c95a6ee11c07439",
+      "inline_rendered_text": "Texas RRC wellbore query retrieval"
     }
   ],
   "admission_audit": {
-    "admitted_article_count": 170,
+    "admitted_article_count": 171,
     "selection_ranks": [
       1,
       2,
@@ -6062,7 +6099,8 @@
       167,
       168,
       169,
-      170
+      170,
+      171
     ],
     "duplicate_program_row_ids": [],
     "duplicate_slugs": [],
@@ -6121,9 +6159,9 @@
   "two_image_policy": {
     "directive": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
     "retrofit_manifest_path": "config/mrx-article-two-image-retrofit.json",
-    "retrofit_manifest_sha256": "acaf37346cfe7a4535cda01325d76ab6b8bf0c30e793f9dbe80722bfaae0a6ae",
-    "public_article_count": 178,
-    "batch_article_count": 170,
+    "retrofit_manifest_sha256": "3ebb71e41e5301beb67ddf688730ddd32d5a5186c250d91e4114237cb20fb0fb",
+    "public_article_count": 179,
+    "batch_article_count": 171,
     "assets_per_article": 2,
     "hero_share_identity_required": true,
     "inline_image_distinct_required": true,

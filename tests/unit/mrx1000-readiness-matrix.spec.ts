@@ -299,8 +299,8 @@ describe('MRX1000 readiness matrix', () => {
     for (const r of ledger.articles) {
       if (r.searchatlas_title_uuid) ledgerTitleUuids.add(String(r.searchatlas_title_uuid));
     }
-    expect(ledgerTitleUuids.size).toBe(224);
-    expect(matrix.aggregate.ledger_searchatlas_title_uuid_planning_handle_count).toBe(224);
+    expect(ledgerTitleUuids.size).toBe(223);
+    expect(matrix.aggregate.ledger_searchatlas_title_uuid_planning_handle_count).toBe(223);
     // Authoritative evidence still requires the title UUID to actually appear
     // in a current readonly artifact. None of the 224 ledger UUIDs match any
     // readonly UUID in the current snapshot.
@@ -823,9 +823,9 @@ describe('MRX1000 readiness matrix — load-bearing fact regressions', () => {
     expect(d11Sha).toBe(D11_EXPECTED_SHA256);
   });
 
-  it('224 topical-map planning handles report map IDs and do not claim article-created proof', () => {
+  it('223 topical-map planning handles report map IDs and do not claim article-created proof', () => {
     const evidence = matrix.searchatlas_evidence.topical_map_planning_handles;
-    expect(evidence.ledger_searchatlas_title_uuid_planning_handle_count).toBe(224);
+    expect(evidence.ledger_searchatlas_title_uuid_planning_handle_count).toBe(223);
     expect(evidence.ledger_searchatlas_map_id_planning_handle_count).toBeGreaterThan(0);
     expect(evidence.readonly_distinct_map_ids).toBe(readonlyMapIds.size);
     expect(evidence.article_created_proof_claimed).toBe(false);
