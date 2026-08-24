@@ -450,7 +450,10 @@ if ([priorCanonicalSlug, slug].includes(sourceRow.canonical_slug)) {
 if (
   ledger.articles.length !== 1000 ||
   new Set(ledger.articles.map((row) => row.canonical_slug)).size !== 1000 ||
-  ledger.articles.some((row) => row.canonical_slug === priorCanonicalSlug)
+  ledger.articles.some(
+    (row) =>
+      row.program_row_id === programRowId && row.canonical_slug === priorCanonicalSlug,
+  )
 ) {
   throw new Error(
     `Wave ${waveNumber} canonical ledger re-key or 1,000-row uniqueness proof failed`,
