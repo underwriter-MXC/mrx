@@ -1,7 +1,7 @@
 {
   "program": "MRX1000",
   "artifact_type": "searchatlas_ordered_llm_local_execution_manifest",
-  "generated_at": "2026-07-20T18:55:02.016Z",
+  "generated_at": "2026-07-20T08:25:37.000Z",
   "deterministic": true,
   "local_only": true,
   "external_services_called": false,
@@ -9,8 +9,8 @@
   "inputs": {
     "ledger": {
       "path": "config/mrx-1000-canonical-content-ledger.json",
-      "sha256": "a283cb69311ee3ab896db4463087bd762e5a3208c242f86f65ad80dad7dd4231",
-      "bytes": 4547183
+      "sha256": "3629ac5afce8db09c81cc393b611779891191881d53d85caa108780ca658f8bd",
+      "bytes": 4547510
     },
     "readiness": {
       "path": "reports/mrx-1000-readiness-matrix.json",
@@ -105237,7 +105237,7 @@
       "primary_keyword": "Texas RRC Inactive Well query retrieval",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -351424,5 +351424,5 @@
       ]
     }
   ],
-  "content_fingerprint_sha256": "bbdc75c894ad90687e29b78e76358712cf595d8b52defc6d7faecda7b0599873"
+  "content_fingerprint_sha256": "068b74e22a163881758525107bc1a308694fda5a78c620527a8ca3fb5d63f90a"
 }
