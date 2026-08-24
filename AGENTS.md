@@ -10,18 +10,18 @@ This repository-root file is the single controlling prompt for MRX article plann
 
 ## Current release boundary
 
-The canonical MRX1000 program is production verified and reconciled through release-sequence Article 178. The canonical ledger records 178 `released_public_article` rows and 186 public article routes after Vercel deployment `dpl_7mLeQosbuAZMyVopLGy3fPvnDi91`.
+The canonical MRX1000 program is production verified and reconciled through release-sequence Article 181. The canonical ledger records 181 `released_public_article` rows and 189 public article routes after Vercel deployment `dpl_7gq41hERaok8Siq733MexAXEfFFg`.
 
 Release-sequence article numbers are incremental verified-count labels, not assumptions that the same-numbered `MRX1000-####` program row is unreleased. Before every selection, use the current canonical ledger plus fresh live HTTP checks to exclude rows and routes that are already released. Republishing or refreshing an already released row does not advance the MRX1000 verified count.
 
-Article 179 is assigned to program row `MRX1000-0282`, with the generic valuation planning identity rejected for cannibalization and the following exact identity locked by the Wave 99 read-only Chesty/`mrx_ceo` decision:
+Article 182 is assigned to program row `MRX1000-0285`, with the generic valuation planning identity rejected for cannibalization and the following exact identity locked by the Wave 102 read-only Chesty/`mrx_ceo` decision:
 
-- Title: `Texas RRC Severance Query Retrieval Provenance Worksheet`
-- Slug: `texas-rrc-severance-query-retrieval-provenance-worksheet`
-- Primary keyword: `Texas RRC severance query retrieval`
-- Job: document one Texas RRC Severance Query retrieval attempt by recording the official route, visible search labels and entered criteria, result/help navigation, access time, retained reference, source limitations, and only the bounded outcome `located`, `not located`, or `unverified`.
+- Title: `Texas RRC Field Search Retrieval Provenance Worksheet`
+- Slug: `texas-rrc-field-search-retrieval-provenance-worksheet`
+- Primary keyword: `Texas RRC Field Search retrieval`
+- Job: document one official Texas RRC Field Search attempt by recording the route, access timestamp and timezone, selected search mode, exact entered criterion, source-displayed minimum-character rule, displayed result/navigation or error state, controlled retained reference, source limitations, and only the bounded outcome `located`, `not located`, or `unverified`.
 
-Article 179 may not infer or determine severance status, legal effect, compliance, reconnection eligibility, production, property connection, title, ownership, acreage, lease effect, value, offer quality, or whether to transact. It must remain distinct from every released RRC retrieval-provenance worksheet by focusing only on the Severance Query route and source-displayed retrieval evidence.
+Article 182 must state that the official research index labels its launch link `Field Rules Query`, while the launched official application labels itself `Field Search`; each label may appear only in its respective source context. It may not assert that the labels identify the same record class, interpret field rules, or infer field identity or boundary, acreage, well or property connection, title, ownership, lease effect, production, reserves, regulatory or compliance status, legal effect, value, offer quality, or whether to transact. `Not located` means only that one recorded attempt did not locate a result. The article must remain distinct from the broad RRC public-record guide and every released retrieval-provenance worksheet by focusing only on the Field Search interface and its attempt-level provenance.
 
 ## Chesty decision routing
 
