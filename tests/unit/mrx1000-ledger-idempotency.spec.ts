@@ -50,9 +50,9 @@ const SCRIPT = path.join(MRX_ROOT, 'scripts/build-mrx-1000-content-ledger.mjs');
 const CANONICAL_JSON = path.join(MRX_ROOT, 'config/mrx-1000-canonical-content-ledger.json');
 const CANONICAL_CSV = path.join(MRX_ROOT, 'config/mrx-1000-canonical-content-ledger.csv');
 const EXPECTED_CANONICAL_JSON_SHA256 =
-  '74dc69d9ca0a279f03cfdcef0ac5771d937e84a77f0514fa7e91355ac0c55692';
+  '5f7745400d73d4983fbd65de684783ca4bb2fa41e317c129992f94b3186b5c3c';
 const EXPECTED_CANONICAL_CSV_SHA256 =
-  'abcf231d05d0c677c9b151a2db5b1c207eaecd3cc421c96da201cac1fba81402';
+  '953074d47c5597ce115781aaca0b7dadb5c1b151fd13ce71929bffab9ffa7e9c';
 const TEST_OUTPUT_DIR = mkdtempSync(path.join(tmpdir(), 'mrx1000-ledger-idempotency-'));
 const JSON_OUT = path.join(TEST_OUTPUT_DIR, 'mrx-1000-canonical-content-ledger.json');
 const CSV_OUT = path.join(TEST_OUTPUT_DIR, 'mrx-1000-canonical-content-ledger.csv');
@@ -171,6 +171,7 @@ interface Ledger {
     wave106_rekey?: { program_row_id: string };
     wave107_rekey?: { program_row_id: string };
     wave108_rekey?: { program_row_id: string };
+    wave110_rekey?: { program_row_id: string };
   };
   policy: {
     pilot_aware: boolean;
@@ -326,6 +327,7 @@ describe('MRX1000 canonical ledger generator (pilot-aware + idempotent)', () => 
     expect(ledger.identity_registry.wave106_rekey?.program_row_id).toBe('MRX1000-0291');
     expect(ledger.identity_registry.wave107_rekey?.program_row_id).toBe('MRX1000-0292');
     expect(ledger.identity_registry.wave108_rekey?.program_row_id).toBe('MRX1000-0293');
+    expect(ledger.identity_registry.wave110_rekey?.program_row_id).toBe('MRX1000-0295');
     expect(bySlug.has('understanding-the-true-worth-of-your-mineral-interests')).toBe(false);
     expect(
       bySlug.has(
@@ -371,10 +373,15 @@ describe('MRX1000 canonical ledger generator (pilot-aware + idempotent)', () => 
     ).toBe('MRX1000-0292');
     expect(bySlug.has('what-factors-influence-mineral-rights-valuation')).toBe(false);
     expect(
-      bySlug.get(
-        'texas-rrc-g-10-w-10-well-status-report-query-retrieval-provenance-worksheet',
-      )?.program_row_id,
+      bySlug.get('texas-rrc-g-10-w-10-well-status-report-query-retrieval-provenance-worksheet')
+        ?.program_row_id,
     ).toBe('MRX1000-0293');
+    expect(
+      bySlug.has('what-influences-the-value-of-your-mineral-rights-during-the-assessment-process'),
+    ).toBe(false);
+    expect(bySlug.get('texas-rrc-h-9-query-retrieval-provenance-worksheet')?.program_row_id).toBe(
+      'MRX1000-0295',
+    );
     expect(
       bySlug.get('mineral-rights-valuation-checklist-without-obligation')?.program_row_id,
     ).toBe('MRX1000-0237');

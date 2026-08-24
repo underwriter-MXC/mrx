@@ -1,15 +1,15 @@
 {
   "artifact_type": "mrx1000_content_activation_plan",
   "plan_version": "mrx1000-content-activation-v1.1.0",
-  "generated_at": "2026-07-20T18:29:27.806Z",
+  "generated_at": "2026-07-20T09:22:55.932Z",
   "generated_at_method": "canonical_ledger_generated_at",
   "generator": "scripts/build-mrx-1000-activation-plan.mjs",
-  "content_fingerprint_sha256": "d9b1d49316a33239ec89699c6f87808c8ccf6d06ba3528cc3ee439fc10498e52",
+  "content_fingerprint_sha256": "5902bfc09dbde05d12d3edb5ef16e8a5650da808b22f90ed237f44696898e317",
   "inputs": {
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_fingerprint_sha256": "dd40e9729ffc4e64c3b9438aeab108e278c22597b5a455292723332165ab2fe7",
+    "canonical_ledger_fingerprint_sha256": "b63154a83fa3fdbee023a0cdeea66e25083d55abb01626d1226fdf54e2e397ee",
     "canonical_ledger_fingerprint_verified": true,
-    "canonical_ledger_generated_at": "2026-07-20T18:29:27.806Z",
+    "canonical_ledger_generated_at": "2026-07-20T09:22:55.932Z",
     "owner_decision": {
       "decision_id": "D-2026-0804-16",
       "signed_disposition": "APPROVED_CONTINUOUS_QUALITY_GATED_ARTICLE_PUBLICATION",
@@ -115,9 +115,9 @@
     },
     "by_source_preservation_classification": {
       "incumbent_draft_nonpublic_held": 27,
-      "live_public_published_route": 196,
+      "live_public_published_route": 197,
       "pilot_draft_noindex_stage": 25,
-      "planning_only_inventory": 752
+      "planning_only_inventory": 751
     }
   },
   "rows": [
@@ -18220,11 +18220,11 @@
       },
       "sibling_link": {
         "target_program_row_id": "MRX1000-0295",
-        "target_title": "What Influences the Value of Your Mineral Rights During the Assessment Process?",
-        "url": "/blog/what-influences-the-value-of-your-mineral-rights-during-the-assessment-process/",
+        "target_title": "Texas RRC H-9 Query Retrieval Provenance Worksheet",
+        "url": "/blog/texas-rrc-h-9-query-retrieval-provenance-worksheet/",
         "relationship": "same_cluster_next_by_program_row_id_cyclic",
-        "target_source_preservation_classification": "planning_only_inventory",
-        "target_route_live": false,
+        "target_source_preservation_classification": "live_public_published_route",
+        "target_route_live": true,
         "status": "planned_local_only"
       },
       "primary_cta": {
@@ -18267,15 +18267,15 @@
     },
     {
       "program_row_id": "MRX1000-0295",
-      "canonical_title": "What Influences the Value of Your Mineral Rights During the Assessment Process?",
-      "canonical_slug": "what-influences-the-value-of-your-mineral-rights-during-the-assessment-process",
-      "canonical_url": "/blog/what-influences-the-value-of-your-mineral-rights-during-the-assessment-process/",
+      "canonical_title": "Texas RRC H-9 Query Retrieval Provenance Worksheet",
+      "canonical_slug": "texas-rrc-h-9-query-retrieval-provenance-worksheet",
+      "canonical_url": "/blog/texas-rrc-h-9-query-retrieval-provenance-worksheet/",
       "cluster": "valuation-methodology-drivers",
       "pillar": "mineral-rights-value",
       "search_intent": "informational",
       "funnel_stage": "consideration",
-      "source_preservation_classification": "planning_only_inventory",
-      "source_route_live": false,
+      "source_preservation_classification": "live_public_published_route",
+      "source_route_live": true,
       "pillar_link": {
         "url": "/mineral-rights-value/",
         "route_evidence": "src/pages/mineral-rights-value.astro",
@@ -18324,7 +18324,7 @@
         "rendered_triangle_verified": false,
         "live_status": "not_published_or_verified_by_this_plan",
         "live_triangle_verified": false,
-        "release_status": "eligible_for_continuous_quality_review_not_yet_cleared",
+        "release_status": "released_under_d16_continuous_quality_gate",
         "numerical_release_cap_applies": false
       }
     },

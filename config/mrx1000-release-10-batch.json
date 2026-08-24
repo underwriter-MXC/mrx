@@ -1,7 +1,7 @@
 {
   "program": "MRX 1,000 Article SEO+AEO Production Program",
   "artifact_type": "authorized_release_10_batch",
-  "evidence_scaffold_generated_at_utc": "2026-08-24T14:51:25Z",
+  "evidence_scaffold_generated_at_utc": "2026-08-24T16:12:53Z",
   "decision_authority": {
     "successor_gate_decision_id": "D-2026-0804-16",
     "successor_gate_decision_path": "docs/governance/mrx1000-owner-continuous-publication-directive-2026-08-04.md",
@@ -348,13 +348,16 @@
     "wave107_selection_decision_sha256": "7879fca94a530086725dca8425c8f7d6ed408b76b79d0bfb112762847f347976",
     "wave108_selection_decision_id": "MRX1000-W108-SELECT-2026-08-24",
     "wave108_selection_decision_path": "docs/governance/mrx1000-wave108-selection-decision-2026-08-24.md",
-    "wave108_selection_decision_sha256": "c71c47dc09185f4659723c71306c95b20f5271c702b6a44ab40f1d304ab2e4e7"
+    "wave108_selection_decision_sha256": "c71c47dc09185f4659723c71306c95b20f5271c702b6a44ab40f1d304ab2e4e7",
+    "wave110_selection_decision_id": "MRX1000-W110-SELECT-2026-08-24",
+    "wave110_selection_decision_path": "docs/governance/mrx1000-wave110-selection-decision-2026-08-24.md",
+    "wave110_selection_decision_sha256": "2665f920abc0eb8319ffe4f7d13acba71f5f865c1c2e4fd8a0f02dc57eaf1eee"
   },
   "identity_authority": {
     "scope_key": "canonical_slug",
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_sha256": "74dc69d9ca0a279f03cfdcef0ac5771d937e84a77f0514fa7e91355ac0c55692",
-    "canonical_ledger_generated_at": "2026-07-20T18:29:27.806Z",
+    "canonical_ledger_sha256": "5f7745400d73d4983fbd65de684783ca4bb2fa41e317c129992f94b3186b5c3c",
+    "canonical_ledger_generated_at": "2026-07-20T09:22:55.932Z",
     "successor_ledger_decision_id": "D-2026-0723-LEDGER-04",
     "successor_ledger_decision_path": "artifacts/mrx1000-release-10/decisions/mrx-ceo-ledger-provenance-successor-20260723-04.md",
     "successor_ledger_decision_sha256": "09eca24bcd0e71563f2ac4197f564eec0ccb43a5ee955216da5c4a2543d04978",
@@ -368,11 +371,11 @@
     "authorization_scope": "declared_program_size_not_a_staged_release_cap",
     "admission_mode": "continuous_quality_gated",
     "continuous_quality_gated_from_selection_rank": 26,
-    "prior_verified_article_count": 187,
+    "prior_verified_article_count": 188,
     "fail_closed": true,
     "earned_scale_gates": [],
-    "exact_admitted_count": 188,
-    "exact_admitted_slate_sha256": "f43ae063eadb8ef40967a66b1d9dc95ea0671b5718d22742917291711845b5de"
+    "exact_admitted_count": 189,
+    "exact_admitted_slate_sha256": "3e32c70903db07efad4dc3eef4a86315f8fceb95d95ece8ca90806b810f71d06"
   },
   "articles": [
     {
@@ -6554,10 +6557,44 @@
       "inline_path": "/assets/articles/inline/texas-rrc-g-10-w-10-well-status-report-query-retrieval-provenance-worksheet/texas-rrc-g-10-w-10-well-status-report-query-retrieval.webp",
       "inline_asset_sha256": "b92ea48b6680a23b3f12ef4da894591a1a80133abe5d8f09ba6550032252c547",
       "inline_rendered_text": "Texas RRC G-10/W-10 Well Status Report Query retrieval"
+    },
+    {
+      "selection_rank": 189,
+      "program_row_id": "MRX1000-0295",
+      "source_shortlist_program_row_id": "MRX1000-0295",
+      "slug": "texas-rrc-h-9-query-retrieval-provenance-worksheet",
+      "title": "Texas RRC H-9 Query Retrieval Provenance Worksheet",
+      "source_shortlist_title": "Texas RRC H-9 Query Retrieval Provenance Worksheet",
+      "canonical_url": "https://mineralrightsxchange.com/blog/texas-rrc-h-9-query-retrieval-provenance-worksheet/",
+      "pillar": "mineral-rights-value",
+      "cluster": "valuation-methodology-drivers",
+      "content_genius_article_uuid": null,
+      "archive_evidence_sha256": "a3e1ac188d94316ba91c67fc3d1b1e93fb40dfe3493ace604497cccf71142090",
+      "repo_path": "src/content/posts/texas-rrc-h-9-query-retrieval-provenance-worksheet.mdx",
+      "repo_sha256": "c79d0fca55779128cf488dce221712b8f7dd614697c1521bcd8cfa2c6b216aa3",
+      "article_sha256": "c79d0fca55779128cf488dce221712b8f7dd614697c1521bcd8cfa2c6b216aa3",
+      "hero_path": "/assets/articles/hero/texas-rrc-h-9-query-retrieval-provenance-worksheet.webp",
+      "hero_sha256": "ec53e0ba3ebf25637096b26bfa81390b4eb8b2bdca35b47d651d831b33c746bc",
+      "hero_asset_sha256": "ec53e0ba3ebf25637096b26bfa81390b4eb8b2bdca35b47d651d831b33c746bc",
+      "admission_status": "admitted_quality_gated",
+      "finalization_state": "draft_noindex_admitted",
+      "searchatlas_content_score": null,
+      "searchatlas_word_count": 1876,
+      "risk_citation_remediation": [
+        "The original valuation identity was rejected for material overlap. The replacement owns only one official H-9 public-query retrieval provenance worksheet.",
+        "Official RRC sources support route identity, exact query criteria and result labels, current-versus-legacy channel separation, forms and manual context, and retrieval mechanics only. None establishes substantive filing, certificate, status, compliance, regulatory condition, production, property, ownership, title, value, legal, offer, or transaction conclusions.",
+        "The article remains distinct from H-10, G-10/W-10, P-5 renewal, Organization P-5, Field Search, Drilling Permit, and other retrieval jobs because it records only one H-9 route attempt.",
+        "Continuous quality-gated admission under the owner no-approval directives; no owner publication approval applies."
+      ],
+      "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/texas-rrc-h-9-query-retrieval-provenance-worksheet.json",
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/texas-rrc-h-9-query-retrieval-provenance-worksheet/texas-rrc-h-9-query-retrieval.webp",
+      "inline_asset_sha256": "2e367c971d16919df1a4d1f847cde857ad74155f654ea602268996ac19e4df64",
+      "inline_rendered_text": "Texas RRC H-9 Query retrieval"
     }
   ],
   "admission_audit": {
-    "admitted_article_count": 188,
+    "admitted_article_count": 189,
     "selection_ranks": [
       1,
       2,
@@ -6746,7 +6783,8 @@
       185,
       186,
       187,
-      188
+      188,
+      189
     ],
     "duplicate_program_row_ids": [],
     "duplicate_slugs": [],
@@ -6805,9 +6843,9 @@
   "two_image_policy": {
     "directive": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
     "retrofit_manifest_path": "config/mrx-article-two-image-retrofit.json",
-    "retrofit_manifest_sha256": "7aac4ed1b1b40a514468e24f2fe8b2de4544b29a55cb65ccd221b49d7e3a382c",
-    "public_article_count": 196,
-    "batch_article_count": 188,
+    "retrofit_manifest_sha256": "c74c0b0f2c18f357aa821b87bcebb7905feb955e2086d70fcd892cf28db125c9",
+    "public_article_count": 197,
+    "batch_article_count": 189,
     "assets_per_article": 2,
     "hero_share_identity_required": true,
     "inline_image_distinct_required": true,

@@ -65,6 +65,7 @@ const SUPERSEDED_CANONICAL_SLUGS = new Set([
   'what-factors-determine-the-value-of-mineral-rights',
   'what-factors-impact-your-mineral-rights-valuation',
   'what-factors-influence-mineral-rights-valuation',
+  'what-influences-the-value-of-your-mineral-rights-during-the-assessment-process',
   'what-influences-the-suggested-price-for-your-mineral-rights-assessment',
   'what-sellers-get-wrong-about-mineral-rights',
   'what-to-avoid-in-the-mineral-rights-selling-process',
@@ -123,6 +124,10 @@ const SUCCESSOR_CANONICAL_SLUGS = new Map([
   [
     'what-factors-influence-mineral-rights-valuation',
     'texas-rrc-g-10-w-10-well-status-report-query-retrieval-provenance-worksheet',
+  ],
+  [
+    'what-influences-the-value-of-your-mineral-rights-during-the-assessment-process',
+    'texas-rrc-h-9-query-retrieval-provenance-worksheet',
   ],
   [
     'what-influences-the-suggested-price-for-your-mineral-rights-assessment',
@@ -328,10 +333,12 @@ const APPROVED_REKEY_SEARCH_INTENT_BY_SLUG = new Map([
   ['texas-rrc-orphan-well-query-retrieval-provenance-worksheet', 'informational'],
   ['texas-rrc-online-inspection-lookup-retrieval-provenance-worksheet', 'informational'],
   ['texas-rrc-new-lease-ids-built-query-retrieval-provenance-worksheet', 'informational'],
-  [
-    'texas-rrc-g-10-w-10-well-status-report-query-retrieval-provenance-worksheet',
-    'informational',
-  ],
+  ['texas-rrc-g-10-w-10-well-status-report-query-retrieval-provenance-worksheet', 'informational'],
+  ['texas-rrc-h-9-query-retrieval-provenance-worksheet', 'informational'],
+]);
+
+const EXECUTIVE_MANUAL_CANNIBALIZATION_REVIEW_PASS_SLUGS = new Set([
+  'texas-rrc-h-9-query-retrieval-provenance-worksheet',
 ]);
 
 // Wave 100 and 101 were first materialized before their successor mappings
@@ -1541,6 +1548,9 @@ function annotateDedupe(rows) {
           });
         }
       }
+      const executiveManualReviewPassed = EXECUTIVE_MANUAL_CANNIBALIZATION_REVIEW_PASS_SLUGS.has(
+        left.canonical_slug,
+      );
       left.dedupe_evidence = {
         normalized_title: normalizeTitle(left.canonical_title),
         exact_slug_unique: true,
@@ -1548,7 +1558,7 @@ function annotateDedupe(rows) {
         nearest_same_cluster_slug: nearest?.row.canonical_slug ?? null,
         nearest_same_cluster_title_token_jaccard: nearest ? Number(nearest.score.toFixed(4)) : 0,
         review_status:
-          nearest && nearest.score >= 0.75
+          nearest && nearest.score >= 0.75 && !executiveManualReviewPassed
             ? 'manual_cannibalization_review_required'
             : 'exact_and_fuzzy_title_check_pass',
       };
