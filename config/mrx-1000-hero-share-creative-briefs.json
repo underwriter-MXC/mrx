@@ -3,7 +3,7 @@
   "generated_at": "2026-07-20T22:24:31.332Z",
   "source_ledger": {
     "path": "mrx/config/mrx-1000-canonical-content-ledger.json",
-    "sha256": "baea55e9ac433f2abea4a9f78ca9d78f8bb9e75cafa53d409871957f8c868d5a",
+    "sha256": "0f83463f32108c1613f82b03dd103e807f974f56044efaa1ab7e543169e9e55b",
     "row_count": 1000
   },
   "controlling_decision": {
@@ -70,8 +70,8 @@
     "deployment_performed": false,
     "spend_performed": false
   },
-  "source_input_fingerprint_sha256": "24b714522aba6cdfa7d1eb7734148b52ca9d088a9dc4e788fba0d7548cef3f24",
-  "row_plan_fingerprint_sha256": "9fdebdbb64ebdf89df5bd0daa724f9c7a37e116ea450dc12c3fcdf02a7dc87ea",
+  "source_input_fingerprint_sha256": "16734a986be1b9b3e50615d76ee57600fb666e541e073e14d9edc535f1877186",
+  "row_plan_fingerprint_sha256": "2720e32f7ca6160856defb311272f54ff32c1fd51d1ac72761efea0a1fab7c1b",
   "verification": {
     "row_count": 1000,
     "brief_ready_count": 1000,
@@ -97,8 +97,8 @@
     "unique_share_title_count": 1000,
     "unique_share_description_count": 1000,
     "alt_text_over_125_count": 0,
-    "share_title_over_60_count": 3,
-    "share_title_exact_canonical_owner_policy_exception_count": 3,
+    "share_title_over_60_count": 4,
+    "share_title_exact_canonical_owner_policy_exception_count": 4,
     "share_title_policy_violation_count": 0,
     "share_description_outside_130_160_count": 0,
     "share_description_ellipsis_count": 0,
@@ -27433,7 +27433,7 @@
       "social_alt_text": "A Flare/Vent Exception source-provenance worksheet appears beside the exact article title.",
       "inline_alt_text": "A people-free overhead Flare/Vent Exception query checklist appears above the exact keyword.",
       "visible_canonical_title": "Texas RRC Flare/Vent Exception Query Retrieval Provenance Worksheet",
-      "share_seo_title": "Texas RRC Flare/Vent Exception Query Worksheet",
+      "share_seo_title": "Texas RRC Flare/Vent Exception Query Retrieval Provenance Worksheet",
       "topic_rule_id": "subject-derived-valuation-methodology-drivers",
       "topic_rule_source": "subject_terms_with_cluster_support",
       "semantic_signature_sha256": "005bfc7c8788944960a723de3b67ce7dfa7716a9c62b1373dc03f7c9afa60867",
@@ -27495,8 +27495,8 @@
       "focal_point": "the production chart, royalty record, and mapped tract plus a distinct evidence card for texas, rrc, flare, vent, exception",
       "crop_guidance": "Keep the topic-specific evidence group (the production chart, royalty record, and mapped tract plus a distinct evidence card for texas, rrc, flare, vent, exception) inside the central 72% width and 70% height. Allow both a 16:9 hero presentation and a centered 1.91:1 social crop without cutting hands, faces, maps, deeds, or the key evidence object. Avoid critical detail within the outer 10% on every edge.",
       "palette_guidance": "slate blue, cream, muted teal, and controlled amber accents",
-      "share_title": "Texas RRC Flare/Vent Exception Query Worksheet",
-      "share_title_plan": "Use share_seo_title (60 characters maximum) for og:title and twitter:title. Keep visible_canonical_title unchanged for the article H1.",
+      "share_title": "Texas RRC Flare/Vent Exception Query Retrieval Provenance Worksheet",
+      "share_title_plan": "Use the exact finalized article title for og:title and twitter:title under the owner exact-title metadata policy; this policy-controlled title may exceed the ordinary 60-character target.",
       "share_description": "Record an official Texas RRC SWR 32 query route, criteria, access time, retained reference, and bounded retrieval status without interpreting a result.",
       "share_description_plan": "Use this article-specific plain-language description for og:description and twitter:description; keep it factual, non-advisory, 130–160 characters, and complete without ellipsis.",
       "share_image_plan": "Use final_hero_asset_path unchanged for the visible hero, CMS featured/share image, og:image, twitter:image, and Article schema image; final_social_asset_path must be identical.",

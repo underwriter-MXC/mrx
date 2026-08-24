@@ -9,7 +9,7 @@
   "inputs": {
     "ledger": {
       "path": "config/mrx-1000-canonical-content-ledger.json",
-      "sha256": "baea55e9ac433f2abea4a9f78ca9d78f8bb9e75cafa53d409871957f8c868d5a",
+      "sha256": "0f83463f32108c1613f82b03dd103e807f974f56044efaa1ab7e543169e9e55b",
       "bytes": 4556589
     },
     "readiness": {
@@ -106058,7 +106058,7 @@
           "state": "WORKSPACE_MDX_PRESENT",
           "path": "src/content/posts/texas-rrc-flare-vent-exception-query-retrieval-provenance-worksheet.mdx",
           "mdx_exists": true,
-          "source_sha256": "3150961aea3cddbcca6986038d747aab0aaa3ffddb9e122a255fceaf9c80030c",
+          "source_sha256": "56d9d09a31dc911b7b68aad5d1fe73e8e871d29c501605c10f704f186f4f17c4",
           "publication_status": "published",
           "frontmatter_noindex": false,
           "workspace_public_route_configured": true,
@@ -106113,7 +106113,7 @@
           "state": "CHECKSUMMED_EXISTING_PUBLIC_ARTICLE_READY_FOR_LLM_REVIEW",
           "checksummed_review_candidate_present": true,
           "path": "src/content/posts/texas-rrc-flare-vent-exception-query-retrieval-provenance-worksheet.mdx",
-          "source_sha256": "3150961aea3cddbcca6986038d747aab0aaa3ffddb9e122a255fceaf9c80030c",
+          "source_sha256": "56d9d09a31dc911b7b68aad5d1fe73e8e871d29c501605c10f704f186f4f17c4",
           "body_sha256": "2d7a24a830af6c9bc0dfcbf21cffa90ca12d0f64e999243650cf74d2de506e29",
           "body_word_count": 1585,
           "candidate_type": "existing_public_article",
@@ -106190,7 +106190,7 @@
           "prerequisite_gates": {
             "checksummed_review_candidate_present": true,
             "review_candidate_path": "src/content/posts/texas-rrc-flare-vent-exception-query-retrieval-provenance-worksheet.mdx",
-            "review_candidate_sha256": "3150961aea3cddbcca6986038d747aab0aaa3ffddb9e122a255fceaf9c80030c",
+            "review_candidate_sha256": "56d9d09a31dc911b7b68aad5d1fe73e8e871d29c501605c10f704f186f4f17c4",
             "review_candidate_readiness_evidence_verified": true,
             "predecessor_key": null,
             "predecessor_pass_required": false,
@@ -106227,7 +106227,7 @@
           "prerequisite_gates": {
             "checksummed_review_candidate_present": true,
             "review_candidate_path": "src/content/posts/texas-rrc-flare-vent-exception-query-retrieval-provenance-worksheet.mdx",
-            "review_candidate_sha256": "3150961aea3cddbcca6986038d747aab0aaa3ffddb9e122a255fceaf9c80030c",
+            "review_candidate_sha256": "56d9d09a31dc911b7b68aad5d1fe73e8e871d29c501605c10f704f186f4f17c4",
             "review_candidate_readiness_evidence_verified": true,
             "predecessor_key": "chatgpt",
             "predecessor_pass_required": true,
@@ -106264,7 +106264,7 @@
           "prerequisite_gates": {
             "checksummed_review_candidate_present": true,
             "review_candidate_path": "src/content/posts/texas-rrc-flare-vent-exception-query-retrieval-provenance-worksheet.mdx",
-            "review_candidate_sha256": "3150961aea3cddbcca6986038d747aab0aaa3ffddb9e122a255fceaf9c80030c",
+            "review_candidate_sha256": "56d9d09a31dc911b7b68aad5d1fe73e8e871d29c501605c10f704f186f4f17c4",
             "review_candidate_readiness_evidence_verified": true,
             "predecessor_key": "google_gemini",
             "predecessor_pass_required": true,
@@ -106301,7 +106301,7 @@
           "prerequisite_gates": {
             "checksummed_review_candidate_present": true,
             "review_candidate_path": "src/content/posts/texas-rrc-flare-vent-exception-query-retrieval-provenance-worksheet.mdx",
-            "review_candidate_sha256": "3150961aea3cddbcca6986038d747aab0aaa3ffddb9e122a255fceaf9c80030c",
+            "review_candidate_sha256": "56d9d09a31dc911b7b68aad5d1fe73e8e871d29c501605c10f704f186f4f17c4",
             "review_candidate_readiness_evidence_verified": true,
             "predecessor_key": "claude_opus_4_6",
             "predecessor_pass_required": true,
@@ -106338,7 +106338,7 @@
           "prerequisite_gates": {
             "checksummed_review_candidate_present": true,
             "review_candidate_path": "src/content/posts/texas-rrc-flare-vent-exception-query-retrieval-provenance-worksheet.mdx",
-            "review_candidate_sha256": "3150961aea3cddbcca6986038d747aab0aaa3ffddb9e122a255fceaf9c80030c",
+            "review_candidate_sha256": "56d9d09a31dc911b7b68aad5d1fe73e8e871d29c501605c10f704f186f4f17c4",
             "review_candidate_readiness_evidence_verified": true,
             "predecessor_key": "perplexity",
             "predecessor_pass_required": true,
@@ -351554,5 +351554,5 @@
       ]
     }
   ],
-  "content_fingerprint_sha256": "b366bfab2852438b99cf63db4d17b3147fbb20e7052c483e608c172e62486cd4"
+  "content_fingerprint_sha256": "fee37b1c870d8f50ab6fbf8b89c11aad72339cb9e6dd9b9499322a9db37d083f"
 }
