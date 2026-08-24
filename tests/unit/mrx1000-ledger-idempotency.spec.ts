@@ -50,9 +50,9 @@ const SCRIPT = path.join(MRX_ROOT, 'scripts/build-mrx-1000-content-ledger.mjs');
 const CANONICAL_JSON = path.join(MRX_ROOT, 'config/mrx-1000-canonical-content-ledger.json');
 const CANONICAL_CSV = path.join(MRX_ROOT, 'config/mrx-1000-canonical-content-ledger.csv');
 const EXPECTED_CANONICAL_JSON_SHA256 =
-  '025e7a74cdcda44048385fc7eb053598104a27cbe794a1875c77c3c7b8fd3747';
+  'cd97cf4b9f3aaa5a6a8174aa6bca6b93ea9c5b53a228043f5e744db4175e6954';
 const EXPECTED_CANONICAL_CSV_SHA256 =
-  'e2d5f67aa5ea619ea4fd64833811f10fda303cbfdbba6dbe549bdafca9433ef9';
+  '5abc345f790d3a7f29a889d0254a3613331fae1e760b4e6b1e63d7d3da6ecfe0';
 const TEST_OUTPUT_DIR = mkdtempSync(path.join(tmpdir(), 'mrx1000-ledger-idempotency-'));
 const JSON_OUT = path.join(TEST_OUTPUT_DIR, 'mrx-1000-canonical-content-ledger.json');
 const CSV_OUT = path.join(TEST_OUTPUT_DIR, 'mrx-1000-canonical-content-ledger.csv');
@@ -165,6 +165,7 @@ interface Ledger {
     wave100_rekey?: { program_row_id: string };
     wave101_rekey?: { program_row_id: string };
     wave102_rekey?: { program_row_id: string };
+    wave103_rekey?: { program_row_id: string };
   };
   policy: {
     pilot_aware: boolean;
@@ -307,13 +308,14 @@ describe('MRX1000 canonical ledger generator (pilot-aware + idempotent)', () => 
     expect(ledger.verification.all_quota_checks_pass).toBe(true);
   });
 
-  it('preserves post-Wave-99 rekeys and restores the two displaced planning identities', () => {
+  it('preserves post-Wave-99 rekeys and restores displaced planning identities', () => {
     const bySlug = new Map(ledger.articles.map((row) => [row.canonical_slug, row]));
     expect(ledger.identity_registry.preserved_existing_id_count).toBe(1000);
     expect(ledger.identity_registry.newly_allocated_id_count).toBe(0);
     expect(ledger.identity_registry.wave100_rekey?.program_row_id).toBe('MRX1000-0283');
     expect(ledger.identity_registry.wave101_rekey?.program_row_id).toBe('MRX1000-0284');
     expect(ledger.identity_registry.wave102_rekey?.program_row_id).toBe('MRX1000-0285');
+    expect(ledger.identity_registry.wave103_rekey?.program_row_id).toBe('MRX1000-0287');
     expect(bySlug.has('understanding-the-true-worth-of-your-mineral-interests')).toBe(false);
     expect(
       bySlug.has(
@@ -325,6 +327,15 @@ describe('MRX1000 canonical ledger generator (pilot-aware + idempotent)', () => 
         'understanding-your-mineral-rights-uncovering-their-true-value-and-potential-for-fair-assessment',
       ),
     ).toBe(false);
+    expect(
+      bySlug.has(
+        'unlocking-the-hidden-worth-of-your-mineral-rights-what-every-owner-needs-to-know',
+      ),
+    ).toBe(false);
+    expect(
+      bySlug.get('texas-rrc-inactive-well-aging-report-retrieval-provenance-worksheet')
+        ?.program_row_id,
+    ).toBe('MRX1000-0287');
     expect(
       bySlug.get('mineral-rights-valuation-checklist-without-obligation')?.program_row_id,
     ).toBe('MRX1000-0237');
