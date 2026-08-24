@@ -11,7 +11,7 @@
 
 Article 174 is the next incremental verified-count release after Article 173. It does not mean program row `MRX1000-0174`. At selection, the release batch has 173 production-verified MRX1000 articles and the public site has 181 blog routes.
 
-Chesty was invoked as the sole read-only coordinator with the compact Wave 94 selection packet, every authoritative path named explicitly, the verified isolated worktree and branch stated, and all file, repository, deployment, and external-system writes prohibited. The `mrx_ceo` review lane then verified the decision record, release batch, ledger, MDX, and both image assets and issued the controlling `APPROVE_REDEFINED` verdict below. Codex independently verified the selected identity, official-source reachability, corpus separation, and implementation evidence.
+Chesty session `20260823_194547_adfc89` was invoked as the sole read-only coordinator with the compact Wave 94 selection packet, every authoritative path named explicitly, the verified isolated worktree and branch stated, and all file, repository, deployment, and external-system writes prohibited. After an initial relative-path lookup failed, Chesty reissued the same packet to `mrx_ceo` with absolute paths. The corrected `mrx_ceo` review verified the decision record, release batch, ledger, MDX, and both image paths and issued the controlling `APPROVE_REDEFINED` verdict below. Codex independently verified the selected identity, official-source reachability, corpus separation, and implementation evidence before regenerating the two canonical image compositions.
 
 ## Rejected original identity
 

@@ -43,10 +43,10 @@ process.env.MRX_SOURCE_SCOPES_JSON = JSON.stringify([
     ],
   ],
   [
-    'https://www.rrc.texas.gov/resource-center/research/data-sets-available-for-download/',
+    'https://webapps2.rrc.texas.gov/EWA/help/P5Organization_About.html',
     [
-      'The official data-set directory identifies organizations with an Organization Report (Form P-5) as a separate downloadable source context.',
-      'The article uses that context only to identify a neutral next retrieval route; it does not treat a name, number, address, or status as a property connection or legal conclusion.',
+      'The official P-5 Organization Query help page identifies the available search criteria, displayed result columns, and the operator-number detail route with its displayed organization fields.',
+      'The article uses those field descriptions only to preserve a distinct retrieval step; it does not interpret a name, number, address, status, financial-assurance field, resident-agent field, or officer field as a property connection, payment obligation, legal authority, or compliance conclusion.',
     ],
   ],
 ]);

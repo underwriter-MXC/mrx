@@ -11,7 +11,7 @@
 
 Article 173 is the next incremental verified-count release after Article 172. It does not mean program row `MRX1000-0173`. The released public corpus has 180 article routes and the MRX1000 ledger has 172 production-verified release rows at this decision point.
 
-The configured Hermes advisory profiles were not callable in this task, so no Chesty or `mrx_ceo` advisory result is represented here. This is a Codex implementation decision under the standing owner directives; it does not claim an unavailable executive review.
+Chesty was invoked as the sole read-only coordinator with the compact Wave 93 selection packet, every authoritative path named explicitly, the verified isolated worktree and branch stated, and all file, repository, deployment, and external-system writes prohibited. The verified advisory process exceeded the four-minute selection timebox and was terminated without a verdict. The same compact packet was then routed directly through `mrx_ceo --provider openai-codex`, which issued the controlling `APPROVE_REDEFINED` verdict recorded below. Codex independently verified the selected identity, official-source reachability, corpus separation, and implementation evidence.
 
 ## Rejected original identity
 
@@ -62,7 +62,7 @@ The article may not:
 2. [About Oil & Gas Data Queries](https://www.rrc.texas.gov/resource-center/research/research-queries/about-oil-gas-data-queries/) supplies the source-stated P-5 query description, search-by-operator context, and daily-update context.
 3. [Oil & Gas Data Query](https://webapps2.rrc.texas.gov/EWA/ewaMain.do) establishes the Organization (P-5) Query as a separate route among named public query systems.
 4. [Organization (P-5) Query](https://webapps2.rrc.texas.gov/EWA/organizationQueryAction.do) supplies the current public criteria screen and official execution route.
-5. [Data Sets Available for Download](https://www.rrc.texas.gov/resource-center/research/data-sets-available-for-download/) supplies limited context that the Commission identifies P-5-filed organizations in a separate downloadable data set; it is a distinct record source, not a conclusion about any company or property.
+5. [About P-5 Organization Query](https://webapps2.rrc.texas.gov/EWA/help/P5Organization_About.html) supplies the official search-criteria, displayed-result, and organization-detail field descriptions used to separate retrieval provenance from interpretation.
 
 All five official sources returned current HTTP 200 responses during Codex's independent source review. The proposed public MRX route returned HTTP 404 before implementation.
 
@@ -74,6 +74,6 @@ The 1200×675 inline image is materially different: a people-free strict-overhea
 
 ## Executive disposition
 
-`CODEX_SELECTION: APPROVE_REDEFINED — MRX1000-0169 | Texas RRC Organization (P-5) Query Retrieval Provenance Worksheet | texas-rrc-organization-p-5-query-retrieval-provenance-worksheet | Texas RRC Organization (P-5) query retrieval`
+MRX_CEO_DECISION: APPROVE_REDEFINED — MRX1000-0169 | Texas RRC Organization (P-5) Query Retrieval Provenance Worksheet | texas-rrc-organization-p-5-query-retrieval-provenance-worksheet | Texas RRC Organization (P-5) query retrieval
 
 Program row `MRX1000-0169` is approved only under the locked redefinition above. Publication remains fail closed until every article-specific editorial, factual, citation, compliance, originality, exact-title image, metadata, accessibility, build, rollback, deployment, public HTTP, rendered HTML, image-byte, Chrome visual, and reconciliation gate passes. No owner publication approval is required, and no new monetary charge is authorized by this decision.

@@ -15,6 +15,7 @@ process.env.MRX_INLINE_LINES_JSON = JSON.stringify([
   'Texas RRC H-10',
   'query retrieval',
 ]);
+process.env.MRX_INLINE_FONT_FAMILY = 'Arial, Helvetica, sans-serif';
 process.env.MRX_HERO_GENERATION_PROMPT =
   'Premium photorealistic oblique public-record research counter in pale limestone and brushed steel, on the right: a blank annual-monitoring-report folder, abstract blank H-10 criteria card, blank route card, date-time stamp tool, neutral magnifier, and unlabeled Texas-shaped brass paperweight beside an uninterrupted navy title field on the left; no people, hands, money, offers, prices, graphs, maps with labels, wells, rigs, interpretable H-10 results, readable text, numbers, dates, signatures, seals, logos, trademarks, or watermark.';
 process.env.MRX_INLINE_GENERATION_PROMPT =

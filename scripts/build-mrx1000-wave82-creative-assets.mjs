@@ -25,6 +25,10 @@ const heroLines = JSON.parse(
 const inlineLines = JSON.parse(
   process.env.MRX_INLINE_LINES_JSON ?? '["compare public oil and gas","price decks"]',
 );
+const heroFontFamily =
+  process.env.MRX_HERO_FONT_FAMILY ?? "Georgia, 'Times New Roman', serif";
+const inlineFontFamily =
+  process.env.MRX_INLINE_FONT_FAMILY ?? "Georgia, 'Times New Roman', serif";
 const paths = {
   heroSource: join(root, `artifacts/mrx1000-wave${waveNumber}-creative-sources/${slug}-hero-base.png`),
   inlineSource: join(root, `artifacts/mrx1000-wave${waveNumber}-creative-sources/${slug}-inline-base.png`),
@@ -75,7 +79,7 @@ function heroTypography() {
         </linearGradient>
       </defs>
       <style>
-        .title { fill: #fffaf0; font-family: Georgia, 'Times New Roman', serif; font-size: 32px; font-weight: 700; letter-spacing: -0.4px; }
+        .title { fill: #fffaf0; font-family: ${heroFontFamily}; font-size: 32px; font-weight: 700; letter-spacing: -0.4px; }
         .rule { fill: #d79a2b; }
       </style>
       <rect x="0" y="0" width="640" height="630" fill="url(#navy)" />
@@ -98,7 +102,7 @@ function inlineTypography() {
         </linearGradient>
       </defs>
       <style>
-        .keyword { fill: #fffaf0; font-family: Georgia, 'Times New Roman', serif; font-size: 37px; font-weight: 700; text-anchor: middle; letter-spacing: -0.25px; }
+        .keyword { fill: #fffaf0; font-family: ${inlineFontFamily}; font-size: 37px; font-weight: 700; text-anchor: middle; letter-spacing: -0.25px; }
         .rule { fill: #d79a2b; }
       </style>
       <rect x="0" y="455" width="1200" height="220" fill="url(#navy)" />

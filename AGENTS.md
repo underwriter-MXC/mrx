@@ -43,6 +43,8 @@ Timebox the read-only executive selection to four minutes. If a defensible disti
 
 This protocol removes duplicated orchestration and redundant retrieval only. It does not relax the source, originality, compliance, two-image, metadata, test, deployment, or live-verification gates below.
 
+For every admission after Article 172, the governing selection record must contain one explicit `MRX_CEO_DECISION: APPROVE_REDEFINED` or `MRX_CEO_DECISION: SELECT_ONE` line produced by the read-only Chesty/`mrx_ceo` decision lane. A `CODEX_SELECTION` line is not executive publication authority and must be rejected even when the surrounding document says approved. The shared admission code must enforce both requirements before it writes release state. If Chesty exceeds the four-minute timebox, record that timeout and route the same compact packet directly through `mrx_ceo --provider openai-codex`; do not replace the executive verdict with a Codex-only selection.
+
 ## Autonomous execution and the sole approval exception
 
 Do not request owner approval, confirmation, an "Allow once" response, or similar permission for ordinary work within an approved MRX article workflow. Standing authorization includes:

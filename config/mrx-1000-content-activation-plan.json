@@ -1,15 +1,15 @@
 {
   "artifact_type": "mrx1000_content_activation_plan",
   "plan_version": "mrx1000-content-activation-v1.1.0",
-  "generated_at": "2026-07-20T23:37:49.007Z",
+  "generated_at": "2026-07-20T00:35:50.444Z",
   "generated_at_method": "canonical_ledger_generated_at",
   "generator": "scripts/build-mrx-1000-activation-plan.mjs",
-  "content_fingerprint_sha256": "8354bcb5ac2f84c6d4d5cddaee9ae2c242ae355aa56deb729e4eb16d48f41084",
+  "content_fingerprint_sha256": "59c1b9554a28cd6599bbde7ace8254388441edfb67b585706c722a8216e7807e",
   "inputs": {
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_fingerprint_sha256": "73edc3806f99db0686841f289b9f63504b0da974674951745883e1c7c6449940",
+    "canonical_ledger_fingerprint_sha256": "5682e862c982c3232cc90ceb60d50b1a9ca148c3b2a38a217392b22c01dc07fb",
     "canonical_ledger_fingerprint_verified": true,
-    "canonical_ledger_generated_at": "2026-07-20T23:37:49.007Z",
+    "canonical_ledger_generated_at": "2026-07-20T00:35:50.444Z",
     "owner_decision": {
       "decision_id": "D-2026-0804-16",
       "signed_disposition": "APPROVED_CONTINUOUS_QUALITY_GATED_ARTICLE_PUBLICATION",
@@ -115,9 +115,9 @@
     },
     "by_source_preservation_classification": {
       "incumbent_draft_nonpublic_held": 27,
-      "live_public_published_route": 178,
+      "live_public_published_route": 182,
       "pilot_draft_noindex_stage": 25,
-      "planning_only_inventory": 770
+      "planning_only_inventory": 766
     }
   },
   "rows": [
@@ -10534,11 +10534,11 @@
       },
       "sibling_link": {
         "target_program_row_id": "MRX1000-0169",
-        "target_title": "5 Essential Steps to Ensure a Fair Assessment of Your Mineral Interests",
-        "url": "/blog/5-essential-steps-to-ensure-a-fair-assessment-of-your-mineral-interests/",
+        "target_title": "Texas RRC Organization (P-5) Query Retrieval Provenance Worksheet",
+        "url": "/blog/texas-rrc-organization-p-5-query-retrieval-provenance-worksheet/",
         "relationship": "same_cluster_next_by_program_row_id_cyclic",
-        "target_source_preservation_classification": "planning_only_inventory",
-        "target_route_live": false,
+        "target_source_preservation_classification": "live_public_published_route",
+        "target_route_live": true,
         "status": "planned_local_only"
       },
       "primary_cta": {
@@ -10581,15 +10581,15 @@
     },
     {
       "program_row_id": "MRX1000-0169",
-      "canonical_title": "5 Essential Steps to Ensure a Fair Assessment of Your Mineral Interests",
-      "canonical_slug": "5-essential-steps-to-ensure-a-fair-assessment-of-your-mineral-interests",
-      "canonical_url": "/blog/5-essential-steps-to-ensure-a-fair-assessment-of-your-mineral-interests/",
+      "canonical_title": "Texas RRC Organization (P-5) Query Retrieval Provenance Worksheet",
+      "canonical_slug": "texas-rrc-organization-p-5-query-retrieval-provenance-worksheet",
+      "canonical_url": "/blog/texas-rrc-organization-p-5-query-retrieval-provenance-worksheet/",
       "cluster": "valuation-methodology-drivers",
       "pillar": "mineral-rights-value",
       "search_intent": "informational",
       "funnel_stage": "consideration",
-      "source_preservation_classification": "planning_only_inventory",
-      "source_route_live": false,
+      "source_preservation_classification": "live_public_published_route",
+      "source_route_live": true,
       "pillar_link": {
         "url": "/mineral-rights-value/",
         "route_evidence": "src/pages/mineral-rights-value.astro",
@@ -10638,7 +10638,7 @@
         "rendered_triangle_verified": false,
         "live_status": "not_published_or_verified_by_this_plan",
         "live_triangle_verified": false,
-        "release_status": "eligible_for_continuous_quality_review_not_yet_cleared",
+        "release_status": "released_under_d16_continuous_quality_gate",
         "numerical_release_cap_applies": false
       }
     },
@@ -17149,11 +17149,11 @@
       },
       "sibling_link": {
         "target_program_row_id": "MRX1000-0276",
-        "target_title": "Understanding Mineral Rights: How Assessments Determine Their True Value and Potential",
-        "url": "/blog/understanding-mineral-rights-how-assessments-determine-their-true-value-and-potential/",
+        "target_title": "Texas RRC Wellbore Query Retrieval Provenance Worksheet",
+        "url": "/blog/texas-rrc-wellbore-query-retrieval-provenance-worksheet/",
         "relationship": "same_cluster_next_by_program_row_id_cyclic",
-        "target_source_preservation_classification": "planning_only_inventory",
-        "target_route_live": false,
+        "target_source_preservation_classification": "live_public_published_route",
+        "target_route_live": true,
         "status": "planned_local_only"
       },
       "primary_cta": {
@@ -17196,15 +17196,15 @@
     },
     {
       "program_row_id": "MRX1000-0276",
-      "canonical_title": "Understanding Mineral Rights: How Assessments Determine Their True Value and Potential",
-      "canonical_slug": "understanding-mineral-rights-how-assessments-determine-their-true-value-and-potential",
-      "canonical_url": "/blog/understanding-mineral-rights-how-assessments-determine-their-true-value-and-potential/",
+      "canonical_title": "Texas RRC Wellbore Query Retrieval Provenance Worksheet",
+      "canonical_slug": "texas-rrc-wellbore-query-retrieval-provenance-worksheet",
+      "canonical_url": "/blog/texas-rrc-wellbore-query-retrieval-provenance-worksheet/",
       "cluster": "valuation-methodology-drivers",
       "pillar": "mineral-rights-value",
       "search_intent": "informational",
       "funnel_stage": "consideration",
-      "source_preservation_classification": "planning_only_inventory",
-      "source_route_live": false,
+      "source_preservation_classification": "live_public_published_route",
+      "source_route_live": true,
       "pillar_link": {
         "url": "/mineral-rights-value/",
         "route_evidence": "src/pages/mineral-rights-value.astro",
@@ -17212,11 +17212,11 @@
       },
       "sibling_link": {
         "target_program_row_id": "MRX1000-0277",
-        "target_title": "Understanding Mineral Rights Valuation Calculations",
-        "url": "/blog/understanding-mineral-rights-valuation-calculations/",
+        "target_title": "Texas RRC H-10 Query Retrieval Provenance Worksheet",
+        "url": "/blog/texas-rrc-h-10-query-retrieval-provenance-worksheet/",
         "relationship": "same_cluster_next_by_program_row_id_cyclic",
-        "target_source_preservation_classification": "planning_only_inventory",
-        "target_route_live": false,
+        "target_source_preservation_classification": "live_public_published_route",
+        "target_route_live": true,
         "status": "planned_local_only"
       },
       "primary_cta": {
@@ -17253,21 +17253,21 @@
         "rendered_triangle_verified": false,
         "live_status": "not_published_or_verified_by_this_plan",
         "live_triangle_verified": false,
-        "release_status": "eligible_for_continuous_quality_review_not_yet_cleared",
+        "release_status": "released_under_d16_continuous_quality_gate",
         "numerical_release_cap_applies": false
       }
     },
     {
       "program_row_id": "MRX1000-0277",
-      "canonical_title": "Understanding Mineral Rights Valuation Calculations",
-      "canonical_slug": "understanding-mineral-rights-valuation-calculations",
-      "canonical_url": "/blog/understanding-mineral-rights-valuation-calculations/",
+      "canonical_title": "Texas RRC H-10 Query Retrieval Provenance Worksheet",
+      "canonical_slug": "texas-rrc-h-10-query-retrieval-provenance-worksheet",
+      "canonical_url": "/blog/texas-rrc-h-10-query-retrieval-provenance-worksheet/",
       "cluster": "valuation-methodology-drivers",
       "pillar": "mineral-rights-value",
       "search_intent": "informational",
       "funnel_stage": "consideration",
-      "source_preservation_classification": "planning_only_inventory",
-      "source_route_live": false,
+      "source_preservation_classification": "live_public_published_route",
+      "source_route_live": true,
       "pillar_link": {
         "url": "/mineral-rights-value/",
         "route_evidence": "src/pages/mineral-rights-value.astro",
@@ -17316,7 +17316,7 @@
         "rendered_triangle_verified": false,
         "live_status": "not_published_or_verified_by_this_plan",
         "live_triangle_verified": false,
-        "release_status": "eligible_for_continuous_quality_review_not_yet_cleared",
+        "release_status": "released_under_d16_continuous_quality_gate",
         "numerical_release_cap_applies": false
       }
     },
@@ -18031,11 +18031,11 @@
       },
       "sibling_link": {
         "target_program_row_id": "MRX1000-0290",
-        "target_title": "What Are Your Mineral Rights Really Worth?",
-        "url": "/blog/what-are-your-mineral-rights-really-worth/",
+        "target_title": "Texas RRC P-4 Gatherer/Purchaser Query Retrieval Provenance Worksheet",
+        "url": "/blog/texas-rrc-p-4-gatherer-purchaser-query-retrieval-provenance-worksheet/",
         "relationship": "same_cluster_next_by_program_row_id_cyclic",
-        "target_source_preservation_classification": "planning_only_inventory",
-        "target_route_live": false,
+        "target_source_preservation_classification": "live_public_published_route",
+        "target_route_live": true,
         "status": "planned_local_only"
       },
       "primary_cta": {
@@ -18078,15 +18078,15 @@
     },
     {
       "program_row_id": "MRX1000-0290",
-      "canonical_title": "What Are Your Mineral Rights Really Worth?",
-      "canonical_slug": "what-are-your-mineral-rights-really-worth",
-      "canonical_url": "/blog/what-are-your-mineral-rights-really-worth/",
+      "canonical_title": "Texas RRC P-4 Gatherer/Purchaser Query Retrieval Provenance Worksheet",
+      "canonical_slug": "texas-rrc-p-4-gatherer-purchaser-query-retrieval-provenance-worksheet",
+      "canonical_url": "/blog/texas-rrc-p-4-gatherer-purchaser-query-retrieval-provenance-worksheet/",
       "cluster": "valuation-methodology-drivers",
       "pillar": "mineral-rights-value",
       "search_intent": "informational",
       "funnel_stage": "consideration",
-      "source_preservation_classification": "planning_only_inventory",
-      "source_route_live": false,
+      "source_preservation_classification": "live_public_published_route",
+      "source_route_live": true,
       "pillar_link": {
         "url": "/mineral-rights-value/",
         "route_evidence": "src/pages/mineral-rights-value.astro",
@@ -18135,7 +18135,7 @@
         "rendered_triangle_verified": false,
         "live_status": "not_published_or_verified_by_this_plan",
         "live_triangle_verified": false,
-        "release_status": "eligible_for_continuous_quality_review_not_yet_cleared",
+        "release_status": "released_under_d16_continuous_quality_gate",
         "numerical_release_cap_applies": false
       }
     },
@@ -63012,7 +63012,7 @@
         "status": "planned_local_only"
       },
       "sibling_link": {
-        "target_program_row_id": "MRX1000-1021",
+        "target_program_row_id": "MRX1000-1025",
         "target_title": "Mineral Appraisal: Guide In 2026",
         "url": "/blog/mineral-appraisal-guide-in-2026/",
         "relationship": "same_cluster_next_by_program_row_id_cyclic",
@@ -63059,7 +63059,7 @@
       }
     },
     {
-      "program_row_id": "MRX1000-1021",
+      "program_row_id": "MRX1000-1025",
       "canonical_title": "Mineral Appraisal: Guide In 2026",
       "canonical_slug": "mineral-appraisal-guide-in-2026",
       "canonical_url": "/blog/mineral-appraisal-guide-in-2026/",

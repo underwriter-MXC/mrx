@@ -1,7 +1,7 @@
 {
   "program": "MRX 1,000 Article SEO+AEO Production Program",
   "artifact_type": "authorized_release_10_batch",
-  "evidence_scaffold_generated_at_utc": "2026-08-24T02:49:55Z",
+  "evidence_scaffold_generated_at_utc": "2026-08-24T03:05:54Z",
   "decision_authority": {
     "successor_gate_decision_id": "D-2026-0804-16",
     "successor_gate_decision_path": "docs/governance/mrx1000-owner-continuous-publication-directive-2026-08-04.md",
@@ -306,20 +306,20 @@
     "wave93_selection_decision_sha256": "cea0e0ac5888d7b2334f190a4ad0aa7b04de1098f03713caa29eb6e5867e2f8c",
     "wave94_selection_decision_id": "MRX1000-W94-SELECT-2026-08-24",
     "wave94_selection_decision_path": "docs/governance/mrx1000-wave94-selection-decision-2026-08-24.md",
-    "wave94_selection_decision_sha256": "c9ad3bbff94a3f420df956736e74e2459040a772efdba670620248bdb28310a0"
+    "wave94_selection_decision_sha256": "48f3e78fd02ad1a07df31037fdce5b7235a18e3a8e4489c8956d688e41cb7995"
   },
   "identity_authority": {
     "scope_key": "canonical_slug",
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_sha256": "9fd4d09021c867f0fb06a56b67cf4c4030f6cd39b34819c2b098ddd9bd3d04a8",
-    "canonical_ledger_generated_at": "2026-07-20T12:22:19.327Z",
+    "canonical_ledger_sha256": "9cc55fc3455aa3dbc6b95bf08b349500447a07f72c39a1b1e9c713eb7b9aee87",
+    "canonical_ledger_generated_at": "2026-07-20T00:35:50.444Z",
     "successor_ledger_decision_id": "D-2026-0723-LEDGER-04",
     "successor_ledger_decision_path": "artifacts/mrx1000-release-10/decisions/mrx-ceo-ledger-provenance-successor-20260723-04.md",
     "successor_ledger_decision_sha256": "09eca24bcd0e71563f2ac4197f564eec0ccb43a5ee955216da5c4a2543d04978",
     "program_row_id_strategy": "preserve_program_row_id_by_canonical_slug",
     "source_shortlist_identity_field": "source_shortlist_program_row_id",
-    "reconciled_at_utc": "2026-08-24T02:09:36.891Z",
-    "note": "The controlling shortlist authorizes these exact canonical slugs. Historical row IDs remain provenance; current IDs are reconciled to the deterministic post-publication ledger after deployment dpl_76JWV1FG7E7g8JMwfHWBmf4nTfVh, with 181 public article routes and 173 live-verified MRX1000 articles."
+    "reconciled_at_utc": "2026-08-24T02:58:13.627Z",
+    "note": "The controlling shortlist authorizes these exact canonical slugs. Historical row IDs remain provenance; current IDs are reconciled to the deterministic post-publication ledger after deployment dpl_GVy3btRB6a2WAFnai6TfXKi8Arko, with 182 public article routes and 174 live-verified MRX1000 articles."
   },
   "policy": {
     "authorization_cap_released_articles": 1000,
@@ -330,7 +330,7 @@
     "fail_closed": true,
     "earned_scale_gates": [],
     "exact_admitted_count": 174,
-    "exact_admitted_slate_sha256": "0fd8330a83b891793be5b30deed361ce6b84c1edebf2c979cb574bf7efaaba3a"
+    "exact_admitted_slate_sha256": "b116eea0a3d6ff57ae601aec83d8be882d8be5118b88958a2e777b728b67931d"
   },
   "articles": [
     {
@@ -6016,11 +6016,11 @@
       "content_genius_article_uuid": null,
       "archive_evidence_sha256": "99264b5a27c0f95473d737c2ff83275a0498608f4a8ed663be3941af51024c42",
       "repo_path": "src/content/posts/texas-rrc-h-10-query-retrieval-provenance-worksheet.mdx",
-      "repo_sha256": "0037bce903b3039850864b3d22fad73961172e0bee5a03cff58b6d13ba352338",
-      "article_sha256": "0037bce903b3039850864b3d22fad73961172e0bee5a03cff58b6d13ba352338",
+      "repo_sha256": "858740d9b76f3b57d13a6c10e6d827864c9d88c61d1ef92bc8955fbe80db6d49",
+      "article_sha256": "858740d9b76f3b57d13a6c10e6d827864c9d88c61d1ef92bc8955fbe80db6d49",
       "hero_path": "/assets/articles/hero/texas-rrc-h-10-query-retrieval-provenance-worksheet.webp",
-      "hero_sha256": "c7f58bb86c7a337e823c4946ca8bea4eade142db1554368eae0e4ac7be2c9971",
-      "hero_asset_sha256": "c7f58bb86c7a337e823c4946ca8bea4eade142db1554368eae0e4ac7be2c9971",
+      "hero_sha256": "bbbe14377f39b4ecd61d0b87e4de145eed6dab3f2a15b6ef50c09f2a8b291bb8",
+      "hero_asset_sha256": "bbbe14377f39b4ecd61d0b87e4de145eed6dab3f2a15b6ef50c09f2a8b291bb8",
       "admission_status": "admitted_quality_gated",
       "finalization_state": "draft_noindex_admitted",
       "searchatlas_content_score": null,
@@ -6034,7 +6034,7 @@
       "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/texas-rrc-h-10-query-retrieval-provenance-worksheet.json",
       "evidence_packet_path_required": true,
       "inline_path": "/assets/articles/inline/texas-rrc-h-10-query-retrieval-provenance-worksheet/texas-rrc-h-10-query-retrieval.webp",
-      "inline_asset_sha256": "ddbbfb92c08998b49b42cc70566029cab86ea1df83f800b3a594232989b019c0",
+      "inline_asset_sha256": "7d77d65b1a4dbb5135090a0d140bfdf81e0dc79a9cd9a33c0d7c6982278aa02e",
       "inline_rendered_text": "Texas RRC H-10 query retrieval"
     }
   ],
@@ -6273,7 +6273,7 @@
   "two_image_policy": {
     "directive": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
     "retrofit_manifest_path": "config/mrx-article-two-image-retrofit.json",
-    "retrofit_manifest_sha256": "0be95f36c94e8bb1c49a489a9eb9e2f2fa7b76da2d228665c63bcf4ab49d17a6",
+    "retrofit_manifest_sha256": "2b597a17ae0a527b632445a9ca3f83d5e546590614fe1a196e7a1006acd48200",
     "public_article_count": 182,
     "batch_article_count": 174,
     "assets_per_article": 2,
