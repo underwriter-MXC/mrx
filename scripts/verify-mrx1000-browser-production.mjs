@@ -46,7 +46,10 @@ try {
       invariant(inline, `${article.slug}: missing inline evidence`);
 
       const response = await page.goto(article.canonical_url, {
-        waitUntil: 'networkidle',
+        // Analytics and other background requests can remain open indefinitely.
+        // The explicit visibility and decoded-image assertions below are the
+        // meaningful readiness checks for this verifier.
+        waitUntil: 'domcontentloaded',
         timeout: 60_000,
       });
       invariant(response?.status() === 200, `${article.slug}: HTTP ${response?.status()}`);
@@ -154,7 +157,7 @@ let homepage;
 try {
   const page = await homepageContext.newPage({ viewport: { width: 1440, height: 1000 } });
   const response = await page.goto(`${CANONICAL_ORIGIN}/`, {
-    waitUntil: 'networkidle',
+    waitUntil: 'domcontentloaded',
     timeout: 60_000,
   });
   invariant(response?.status() === 200, `Homepage HTTP ${response?.status()}`);
