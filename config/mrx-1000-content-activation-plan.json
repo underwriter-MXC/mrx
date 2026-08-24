@@ -1,15 +1,15 @@
 {
   "artifact_type": "mrx1000_content_activation_plan",
   "plan_version": "mrx1000-content-activation-v1.1.0",
-  "generated_at": "2026-07-20T17:30:10.487Z",
+  "generated_at": "2026-07-20T07:42:39.937Z",
   "generated_at_method": "canonical_ledger_generated_at",
   "generator": "scripts/build-mrx-1000-activation-plan.mjs",
-  "content_fingerprint_sha256": "993e4a4282b8bc6ebfaa76c3744c9abe57db6c18affc19e08df2ae540fae24c6",
+  "content_fingerprint_sha256": "f3aa833af17a8d89ebb4643c9a1fa382b78e4b58b1ac0348d190deebe9ef1c8d",
   "inputs": {
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_fingerprint_sha256": "36f828e4f62fee29771bf8585dd2603a8cf6ee7c3a214edeef2b631ea2a56930",
+    "canonical_ledger_fingerprint_sha256": "5b9f62ecc7fc58149ab6e4f2f108e729c01f7c5d256b86a17fe513f664b3ef77",
     "canonical_ledger_fingerprint_verified": true,
-    "canonical_ledger_generated_at": "2026-07-20T17:30:10.487Z",
+    "canonical_ledger_generated_at": "2026-07-20T07:42:39.937Z",
     "owner_decision": {
       "decision_id": "D-2026-0804-16",
       "signed_disposition": "APPROVED_CONTINUOUS_QUALITY_GATED_ARTICLE_PUBLICATION",
@@ -115,9 +115,9 @@
     },
     "by_source_preservation_classification": {
       "incumbent_draft_nonpublic_held": 27,
-      "live_public_published_route": 193,
+      "live_public_published_route": 194,
       "pilot_draft_noindex_stage": 25,
-      "planning_only_inventory": 755
+      "planning_only_inventory": 754
     }
   },
   "rows": [
@@ -17968,11 +17968,11 @@
       },
       "sibling_link": {
         "target_program_row_id": "MRX1000-0291",
-        "target_title": "What Factors Determine the Value of Mineral Rights",
-        "url": "/blog/what-factors-determine-the-value-of-mineral-rights/",
+        "target_title": "Texas RRC Online Inspection Lookup Retrieval Provenance Worksheet",
+        "url": "/blog/texas-rrc-online-inspection-lookup-retrieval-provenance-worksheet/",
         "relationship": "same_cluster_next_by_program_row_id_cyclic",
-        "target_source_preservation_classification": "planning_only_inventory",
-        "target_route_live": false,
+        "target_source_preservation_classification": "live_public_published_route",
+        "target_route_live": true,
         "status": "planned_local_only"
       },
       "primary_cta": {
@@ -18015,15 +18015,15 @@
     },
     {
       "program_row_id": "MRX1000-0291",
-      "canonical_title": "What Factors Determine the Value of Mineral Rights",
-      "canonical_slug": "what-factors-determine-the-value-of-mineral-rights",
-      "canonical_url": "/blog/what-factors-determine-the-value-of-mineral-rights/",
+      "canonical_title": "Texas RRC Online Inspection Lookup Retrieval Provenance Worksheet",
+      "canonical_slug": "texas-rrc-online-inspection-lookup-retrieval-provenance-worksheet",
+      "canonical_url": "/blog/texas-rrc-online-inspection-lookup-retrieval-provenance-worksheet/",
       "cluster": "valuation-methodology-drivers",
       "pillar": "mineral-rights-value",
       "search_intent": "informational",
       "funnel_stage": "consideration",
-      "source_preservation_classification": "planning_only_inventory",
-      "source_route_live": false,
+      "source_preservation_classification": "live_public_published_route",
+      "source_route_live": true,
       "pillar_link": {
         "url": "/mineral-rights-value/",
         "route_evidence": "src/pages/mineral-rights-value.astro",
@@ -18072,7 +18072,7 @@
         "rendered_triangle_verified": false,
         "live_status": "not_published_or_verified_by_this_plan",
         "live_triangle_verified": false,
-        "release_status": "eligible_for_continuous_quality_review_not_yet_cleared",
+        "release_status": "released_under_d16_continuous_quality_gate",
         "numerical_release_cap_applies": false
       }
     },

@@ -50,9 +50,9 @@ const SCRIPT = path.join(MRX_ROOT, 'scripts/build-mrx-1000-content-ledger.mjs');
 const CANONICAL_JSON = path.join(MRX_ROOT, 'config/mrx-1000-canonical-content-ledger.json');
 const CANONICAL_CSV = path.join(MRX_ROOT, 'config/mrx-1000-canonical-content-ledger.csv');
 const EXPECTED_CANONICAL_JSON_SHA256 =
-  '2041cf0b995a5424426f8b36b2f6bc08f7e344893df2251c8199c00d671ec8c8';
+  'd946e68892c8b03fdeeb8981c25b7139508f41320b2b082d11690342dacba028';
 const EXPECTED_CANONICAL_CSV_SHA256 =
-  '5193232c5b64c349c2d65eaea179d2185423c70d72cddbbf46a6bdc54fd13a15';
+  '29a41ea785079c1e2daf84f6e509055f245f4a23b83fbb975d520d2e2e0bce15';
 const TEST_OUTPUT_DIR = mkdtempSync(path.join(tmpdir(), 'mrx1000-ledger-idempotency-'));
 const JSON_OUT = path.join(TEST_OUTPUT_DIR, 'mrx-1000-canonical-content-ledger.json');
 const CSV_OUT = path.join(TEST_OUTPUT_DIR, 'mrx-1000-canonical-content-ledger.csv');
@@ -168,6 +168,7 @@ interface Ledger {
     wave103_rekey?: { program_row_id: string };
     wave104_rekey?: { program_row_id: string };
     wave105_rekey?: { program_row_id: string };
+    wave106_rekey?: { program_row_id: string };
   };
   policy: {
     pilot_aware: boolean;
@@ -320,6 +321,7 @@ describe('MRX1000 canonical ledger generator (pilot-aware + idempotent)', () => 
     expect(ledger.identity_registry.wave103_rekey?.program_row_id).toBe('MRX1000-0287');
     expect(ledger.identity_registry.wave104_rekey?.program_row_id).toBe('MRX1000-0288');
     expect(ledger.identity_registry.wave105_rekey?.program_row_id).toBe('MRX1000-0289');
+    expect(ledger.identity_registry.wave106_rekey?.program_row_id).toBe('MRX1000-0291');
     expect(bySlug.has('understanding-the-true-worth-of-your-mineral-interests')).toBe(false);
     expect(
       bySlug.has(
@@ -353,6 +355,11 @@ describe('MRX1000 canonical ledger generator (pilot-aware + idempotent)', () => 
     expect(
       bySlug.get('texas-rrc-orphan-well-query-retrieval-provenance-worksheet')?.program_row_id,
     ).toBe('MRX1000-0289');
+    expect(bySlug.has('what-factors-determine-the-value-of-mineral-rights')).toBe(false);
+    expect(
+      bySlug.get('texas-rrc-online-inspection-lookup-retrieval-provenance-worksheet')
+        ?.program_row_id,
+    ).toBe('MRX1000-0291');
     expect(
       bySlug.get('mineral-rights-valuation-checklist-without-obligation')?.program_row_id,
     ).toBe('MRX1000-0237');

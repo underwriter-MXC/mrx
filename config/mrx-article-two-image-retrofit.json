@@ -1,18 +1,18 @@
 {
   "artifact_type": "mrx_article_two_image_retrofit",
   "schema_version": 1,
-  "generated_at_utc": "2026-08-24T13:21:11Z",
+  "generated_at_utc": "2026-08-24T13:56:12Z",
   "policy_source": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
   "summary": {
-    "article_count": 193,
-    "asset_count": 386,
-    "unique_source_art_count": 193,
-    "unique_hero_sha256_count": 193,
-    "unique_inline_sha256_count": 193,
-    "distinct_article_pair_count": 193,
-    "hero_ocr_pass_count": 193,
-    "inline_ocr_pass_count": 193,
-    "exact_filename_identity_count": 193
+    "article_count": 194,
+    "asset_count": 388,
+    "unique_source_art_count": 194,
+    "unique_hero_sha256_count": 194,
+    "unique_inline_sha256_count": 194,
+    "distinct_article_pair_count": 194,
+    "hero_ocr_pass_count": 194,
+    "inline_ocr_pass_count": 194,
+    "exact_filename_identity_count": 194
   },
   "contact_sheets": {
     "hero": [
@@ -5606,6 +5606,56 @@
           "actual": "Texas RRC Oil Proration\nquery retrieval",
           "normalized_expected": "texas rrc oil proration query retrieval",
           "normalized_actual": "texas rrc oil proration query retrieval",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      }
+    },
+    {
+      "slug": "texas-rrc-online-inspection-lookup-retrieval-provenance-worksheet",
+      "title": "Texas RRC Online Inspection Lookup Retrieval Provenance Worksheet",
+      "keyword": "Texas RRC Online Inspection Lookup retrieval",
+      "file_path": "src/content/posts/texas-rrc-online-inspection-lookup-retrieval-provenance-worksheet.mdx",
+      "source_public_path": "/assets/articles/hero/texas-rrc-online-inspection-lookup-retrieval-provenance-worksheet.webp",
+      "source_artifact_paths": [
+        "artifacts/mrx1000-wave106-creative-sources/texas-rrc-online-inspection-lookup-retrieval-provenance-worksheet-hero-base.png",
+        "artifacts/mrx1000-wave106-creative-sources/texas-rrc-online-inspection-lookup-retrieval-provenance-worksheet-inline-base.png"
+      ],
+      "generated_at_utc": "2026-08-24T13:53:17.198Z",
+      "hero": {
+        "public_path": "/assets/articles/hero/texas-rrc-online-inspection-lookup-retrieval-provenance-worksheet.webp",
+        "alt": "A modern inspection-retrieval evidence station appears beside the exact article title.",
+        "width": 1200,
+        "height": 630,
+        "mime_type": "image/webp",
+        "sha256": "09aaa259356609e9c2b13dfbc4293b7d7428a0d92031a5cbbbce95a477f6d391",
+        "perceptual_hash": "0000000001111111000000000111111100000000011001110000000001100111000000000100000101110000010000010111100001100001011000000111100100000000011110110000000001111000000000001111100000000000111111110000000011111111000000001111101000000000000100000000000000000000",
+        "neutralized_art_text_region_count": 1,
+        "ocr": {
+          "expected": "Texas RRC Online Inspection Lookup Retrieval Provenance Worksheet",
+          "actual": "Texas RRC Online\nInspection Lookup\nRetrieval Provenance\nWorksheet",
+          "normalized_expected": "texas rrc online inspection lookup retrieval provenance worksheet",
+          "normalized_actual": "texas rrc online inspection lookup retrieval provenance worksheet",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      },
+      "inline": {
+        "public_path": "/assets/articles/inline/texas-rrc-online-inspection-lookup-retrieval-provenance-worksheet/texas-rrc-online-inspection-lookup-retrieval.webp",
+        "alt": "A people-free overhead retrieval-state matrix appears above the exact keyword.",
+        "rendered_text": "Texas RRC Online Inspection Lookup retrieval",
+        "visual_variant": "wave106-distinct-generated-overhead-rrc-oil-retrieval-state-matrix",
+        "width": 1200,
+        "height": 675,
+        "mime_type": "image/webp",
+        "sha256": "1d8c40a9ad42d79407b325d96dcf3000f53a3219c5ce357af752a6f7181433bf",
+        "perceptual_hash": "1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111100001111111111110110111111111111111111111111111000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "neutralized_art_text_region_count": 1,
+        "ocr": {
+          "expected": "Texas RRC Online Inspection Lookup retrieval",
+          "actual": "Texas RRC Online Inspection\nLookup retrieval",
+          "normalized_expected": "texas rrc online inspection lookup retrieval",
+          "normalized_actual": "texas rrc online inspection lookup retrieval",
           "uppercase_i_confusable_accepted": false,
           "pass": true
         }
