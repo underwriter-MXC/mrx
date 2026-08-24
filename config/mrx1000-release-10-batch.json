@@ -1,7 +1,7 @@
 {
   "program": "MRX 1,000 Article SEO+AEO Production Program",
   "artifact_type": "authorized_release_10_batch",
-  "evidence_scaffold_generated_at_utc": "2026-08-24T16:47:17Z",
+  "evidence_scaffold_generated_at_utc": "2026-08-24T18:12:33Z",
   "decision_authority": {
     "successor_gate_decision_id": "D-2026-0804-16",
     "successor_gate_decision_path": "docs/governance/mrx1000-owner-continuous-publication-directive-2026-08-04.md",
@@ -354,13 +354,16 @@
     "wave110_selection_decision_sha256": "2665f920abc0eb8319ffe4f7d13acba71f5f865c1c2e4fd8a0f02dc57eaf1eee",
     "wave112_selection_decision_id": "MRX1000-W112-SELECT-2026-08-24",
     "wave112_selection_decision_path": "docs/governance/mrx1000-wave112-selection-decision-2026-08-24.md",
-    "wave112_selection_decision_sha256": "276d12850994fa721b2f4b7e3d04caaaecc6c6a93c409bc606c77450eb466748"
+    "wave112_selection_decision_sha256": "276d12850994fa721b2f4b7e3d04caaaecc6c6a93c409bc606c77450eb466748",
+    "wave114_selection_decision_id": "MRX1000-W114-SELECT-2026-08-24",
+    "wave114_selection_decision_path": "docs/governance/mrx1000-wave114-selection-decision-2026-08-24.md",
+    "wave114_selection_decision_sha256": "832fdbe678f8b67bc625f0c041c49e0d7cfe23660cafc68cf3980983d7fe9d1c"
   },
   "identity_authority": {
     "scope_key": "canonical_slug",
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_sha256": "24be4948b5276ca1eecfb39caa42175186a56f4c7393c0c19dd4b29a5c90803d",
-    "canonical_ledger_generated_at": "2026-07-20T16:58:18.060Z",
+    "canonical_ledger_sha256": "f28dafa5b5de75344613c4e263e11e8ea6cf5b26440f05e34241c4fa8d311bff",
+    "canonical_ledger_generated_at": "2026-07-20T21:07:18.597Z",
     "successor_ledger_decision_id": "D-2026-0723-LEDGER-04",
     "successor_ledger_decision_path": "artifacts/mrx1000-release-10/decisions/mrx-ceo-ledger-provenance-successor-20260723-04.md",
     "successor_ledger_decision_sha256": "09eca24bcd0e71563f2ac4197f564eec0ccb43a5ee955216da5c4a2543d04978",
@@ -374,11 +377,11 @@
     "authorization_scope": "declared_program_size_not_a_staged_release_cap",
     "admission_mode": "continuous_quality_gated",
     "continuous_quality_gated_from_selection_rank": 26,
-    "prior_verified_article_count": 189,
+    "prior_verified_article_count": 190,
     "fail_closed": true,
     "earned_scale_gates": [],
-    "exact_admitted_count": 190,
-    "exact_admitted_slate_sha256": "fb99942043b4cc766f4e13cb847e23a395080b122711ff16bc405bee3d45eb21"
+    "exact_admitted_count": 191,
+    "exact_admitted_slate_sha256": "f6f91db03c3b663d0ce271ca187ca270e52ebc2f079edcc63de17f98e6849510"
   },
   "articles": [
     {
@@ -6629,10 +6632,45 @@
       "inline_path": "/assets/articles/inline/texas-rrc-production-data-query-retrieval-provenance-worksheet/texas-rrc-production-data-query-retrieval.webp",
       "inline_asset_sha256": "b2e8fee531cbdbcfdff7194147defd51bb47d19cd60f80fff25c24f13aa7b119",
       "inline_rendered_text": "Texas RRC Production Data Query retrieval"
+    },
+    {
+      "selection_rank": 191,
+      "program_row_id": "MRX1000-0298",
+      "source_shortlist_program_row_id": "MRX1000-0298",
+      "slug": "texas-comptroller-lease-drop-retrieval-provenance-worksheet",
+      "title": "Texas Comptroller Lease Drop Retrieval Provenance Worksheet",
+      "source_shortlist_title": "Texas Comptroller Lease Drop Retrieval Provenance Worksheet",
+      "canonical_url": "https://mineralrightsxchange.com/blog/texas-comptroller-lease-drop-retrieval-provenance-worksheet/",
+      "pillar": "mineral-rights-value",
+      "cluster": "valuation-methodology-drivers",
+      "content_genius_article_uuid": null,
+      "archive_evidence_sha256": "4a3c636ebcb03d7a3a0f09b74d480a6b3f5214eef01163be8481ee7b9ce6bf47",
+      "repo_path": "src/content/posts/texas-comptroller-lease-drop-retrieval-provenance-worksheet.mdx",
+      "repo_sha256": "4c99c9bea9aad0c69f624e3c690f9b02141a01da0b358d0731c97f93a84ab8c7",
+      "article_sha256": "4c99c9bea9aad0c69f624e3c690f9b02141a01da0b358d0731c97f93a84ab8c7",
+      "hero_path": "/assets/articles/hero/texas-comptroller-lease-drop-retrieval-provenance-worksheet.webp",
+      "hero_sha256": "728b104a36204786cba4051832d1eac7e51433a9c22fbc279ef10a417a412a25",
+      "hero_asset_sha256": "728b104a36204786cba4051832d1eac7e51433a9c22fbc279ef10a417a412a25",
+      "admission_status": "admitted_quality_gated",
+      "finalization_state": "draft_noindex_admitted",
+      "searchatlas_content_score": null,
+      "searchatlas_word_count": 1849,
+      "risk_citation_remediation": [
+        "The original predatory-offer identity and a first unclaimed-property replacement were both rejected for material overlap. The approved replacement owns only one authorized manual no-login public Lease Drop attempt.",
+        "Official Texas Comptroller sources support route identity, product-path separation, public no-login access, RRC reference categories, and displayed access or result state only. None establishes production attribution, payer liability, property connection, title, ownership, payment entitlement, value, legal effect, offer quality, or a transaction conclusion.",
+        "The article remains distinct from secure CONG account functions, open-records submission, RRC route worksheets, the broad production-record locator, the Texas severance-tax explainer, royalty-check guides, and post-production-cost evidence work.",
+        "The article prohibits automated or bulk retrieval and preserves cookie, JavaScript, access, validation, result, and error states without bypassing them.",
+        "Continuous quality-gated admission under the owner no-approval directives; no owner publication approval applies."
+      ],
+      "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/texas-comptroller-lease-drop-retrieval-provenance-worksheet.json",
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/texas-comptroller-lease-drop-retrieval-provenance-worksheet/texas-comptroller-lease-drop-retrieval.webp",
+      "inline_asset_sha256": "135b5a18f146cc18d57b04ef272671ae682f9ec88a0a6c7959138f261e49997b",
+      "inline_rendered_text": "Texas Comptroller Lease Drop retrieval"
     }
   ],
   "admission_audit": {
-    "admitted_article_count": 190,
+    "admitted_article_count": 191,
     "selection_ranks": [
       1,
       2,
@@ -6823,7 +6861,8 @@
       187,
       188,
       189,
-      190
+      190,
+      191
     ],
     "duplicate_program_row_ids": [],
     "duplicate_slugs": [],
@@ -6882,9 +6921,9 @@
   "two_image_policy": {
     "directive": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
     "retrofit_manifest_path": "config/mrx-article-two-image-retrofit.json",
-    "retrofit_manifest_sha256": "1484540522757d91a36f6d3754d38dd0e7d521eadcbfd7788a4ce507ea97c17d",
-    "public_article_count": 198,
-    "batch_article_count": 190,
+    "retrofit_manifest_sha256": "f3550fdd9aaac77989f6b6b04bff542f3513dbb25ed20c55ea381df03859efb2",
+    "public_article_count": 199,
+    "batch_article_count": 191,
     "assets_per_article": 2,
     "hero_share_identity_required": true,
     "inline_image_distinct_required": true,

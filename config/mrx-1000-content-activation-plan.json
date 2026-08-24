@@ -1,15 +1,15 @@
 {
   "artifact_type": "mrx1000_content_activation_plan",
   "plan_version": "mrx1000-content-activation-v1.1.0",
-  "generated_at": "2026-07-20T16:58:18.060Z",
+  "generated_at": "2026-07-20T21:07:18.597Z",
   "generated_at_method": "canonical_ledger_generated_at",
   "generator": "scripts/build-mrx-1000-activation-plan.mjs",
-  "content_fingerprint_sha256": "659d734bbe0d772f91cbba60b670c22fed866bd81057e17defb994ac09c86fc7",
+  "content_fingerprint_sha256": "8508cec3b3efe8108bdbf33dfd3d446a01d62d9ea2d23dcabf13b89f9aa9ec42",
   "inputs": {
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_fingerprint_sha256": "c845e7fb1befda0c93444c053e4270802510e629ce1446d97f9f636eac0aeb6e",
+    "canonical_ledger_fingerprint_sha256": "ff6ae1620b485cc6fe407fb46ef07e5d055786f71d4dde0ae9e855a92ac46580",
     "canonical_ledger_fingerprint_verified": true,
-    "canonical_ledger_generated_at": "2026-07-20T16:58:18.060Z",
+    "canonical_ledger_generated_at": "2026-07-20T21:07:18.597Z",
     "owner_decision": {
       "decision_id": "D-2026-0804-16",
       "signed_disposition": "APPROVED_CONTINUOUS_QUALITY_GATED_ARTICLE_PUBLICATION",
@@ -115,9 +115,9 @@
     },
     "by_source_preservation_classification": {
       "incumbent_draft_nonpublic_held": 27,
-      "live_public_published_route": 198,
+      "live_public_published_route": 199,
       "pilot_draft_noindex_stage": 25,
-      "planning_only_inventory": 750
+      "planning_only_inventory": 749
     }
   },
   "rows": [
@@ -18409,11 +18409,11 @@
       },
       "sibling_link": {
         "target_program_row_id": "MRX1000-0298",
-        "target_title": "What Variables Should Mineral Rights Owners Know to Determine Asset Value?",
-        "url": "/blog/what-variables-should-mineral-rights-owners-know-to-determine-asset-value/",
+        "target_title": "Texas Comptroller Lease Drop Retrieval Provenance Worksheet",
+        "url": "/blog/texas-comptroller-lease-drop-retrieval-provenance-worksheet/",
         "relationship": "same_cluster_next_by_program_row_id_cyclic",
-        "target_source_preservation_classification": "planning_only_inventory",
-        "target_route_live": false,
+        "target_source_preservation_classification": "live_public_published_route",
+        "target_route_live": true,
         "status": "planned_local_only"
       },
       "primary_cta": {
@@ -18456,15 +18456,15 @@
     },
     {
       "program_row_id": "MRX1000-0298",
-      "canonical_title": "What Variables Should Mineral Rights Owners Know to Determine Asset Value?",
-      "canonical_slug": "what-variables-should-mineral-rights-owners-know-to-determine-asset-value",
-      "canonical_url": "/blog/what-variables-should-mineral-rights-owners-know-to-determine-asset-value/",
+      "canonical_title": "Texas Comptroller Lease Drop Retrieval Provenance Worksheet",
+      "canonical_slug": "texas-comptroller-lease-drop-retrieval-provenance-worksheet",
+      "canonical_url": "/blog/texas-comptroller-lease-drop-retrieval-provenance-worksheet/",
       "cluster": "valuation-methodology-drivers",
       "pillar": "mineral-rights-value",
       "search_intent": "informational",
       "funnel_stage": "consideration",
-      "source_preservation_classification": "planning_only_inventory",
-      "source_route_live": false,
+      "source_preservation_classification": "live_public_published_route",
+      "source_route_live": true,
       "pillar_link": {
         "url": "/mineral-rights-value/",
         "route_evidence": "src/pages/mineral-rights-value.astro",
@@ -18513,7 +18513,7 @@
         "rendered_triangle_verified": false,
         "live_status": "not_published_or_verified_by_this_plan",
         "live_triangle_verified": false,
-        "release_status": "eligible_for_continuous_quality_review_not_yet_cleared",
+        "release_status": "released_under_d16_continuous_quality_gate",
         "numerical_release_cap_applies": false
       }
     },
