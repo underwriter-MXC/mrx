@@ -1,15 +1,15 @@
 {
   "artifact_type": "mrx1000_content_activation_plan",
   "plan_version": "mrx1000-content-activation-v1.1.0",
-  "generated_at": "2026-07-20T07:31:17.276Z",
+  "generated_at": "2026-07-20T12:42:53.674Z",
   "generated_at_method": "canonical_ledger_generated_at",
   "generator": "scripts/build-mrx-1000-activation-plan.mjs",
-  "content_fingerprint_sha256": "4586d9acc155f88deda6a2acf411c337a702810268b7cca5407d0c578e67722f",
+  "content_fingerprint_sha256": "d70804035e6684e350fd489d960641a5c69ab22f31ff1b627baa6b691681ff86",
   "inputs": {
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_fingerprint_sha256": "83dceab065942bd2078a759f7026097be5264a448abc92950790129fe662d784",
+    "canonical_ledger_fingerprint_sha256": "37780ca2813cc8065fcb716c04efd85bd4a40059037a7ebf2b301bd4d3dd53b1",
     "canonical_ledger_fingerprint_verified": true,
-    "canonical_ledger_generated_at": "2026-07-20T07:31:17.276Z",
+    "canonical_ledger_generated_at": "2026-07-20T12:42:53.674Z",
     "owner_decision": {
       "decision_id": "D-2026-0804-16",
       "signed_disposition": "APPROVED_CONTINUOUS_QUALITY_GATED_ARTICLE_PUBLICATION",
@@ -115,9 +115,9 @@
     },
     "by_source_preservation_classification": {
       "incumbent_draft_nonpublic_held": 27,
-      "live_public_published_route": 191,
+      "live_public_published_route": 192,
       "pilot_draft_noindex_stage": 25,
-      "planning_only_inventory": 757
+      "planning_only_inventory": 756
     }
   },
   "rows": [
@@ -17779,11 +17779,11 @@
       },
       "sibling_link": {
         "target_program_row_id": "MRX1000-0288",
-        "target_title": "Unlocking the Secrets: How to Determine the Worth of Your Mineral Rights",
-        "url": "/blog/unlocking-the-secrets-how-to-determine-the-worth-of-your-mineral-rights/",
+        "target_title": "Texas RRC P-5 Renewal Status Query Retrieval Provenance Worksheet",
+        "url": "/blog/texas-rrc-p-5-renewal-status-query-retrieval-provenance-worksheet/",
         "relationship": "same_cluster_next_by_program_row_id_cyclic",
-        "target_source_preservation_classification": "planning_only_inventory",
-        "target_route_live": false,
+        "target_source_preservation_classification": "live_public_published_route",
+        "target_route_live": true,
         "status": "planned_local_only"
       },
       "primary_cta": {
@@ -17826,15 +17826,15 @@
     },
     {
       "program_row_id": "MRX1000-0288",
-      "canonical_title": "Unlocking the Secrets: How to Determine the Worth of Your Mineral Rights",
-      "canonical_slug": "unlocking-the-secrets-how-to-determine-the-worth-of-your-mineral-rights",
-      "canonical_url": "/blog/unlocking-the-secrets-how-to-determine-the-worth-of-your-mineral-rights/",
+      "canonical_title": "Texas RRC P-5 Renewal Status Query Retrieval Provenance Worksheet",
+      "canonical_slug": "texas-rrc-p-5-renewal-status-query-retrieval-provenance-worksheet",
+      "canonical_url": "/blog/texas-rrc-p-5-renewal-status-query-retrieval-provenance-worksheet/",
       "cluster": "valuation-methodology-drivers",
       "pillar": "mineral-rights-value",
       "search_intent": "informational",
       "funnel_stage": "consideration",
-      "source_preservation_classification": "planning_only_inventory",
-      "source_route_live": false,
+      "source_preservation_classification": "live_public_published_route",
+      "source_route_live": true,
       "pillar_link": {
         "url": "/mineral-rights-value/",
         "route_evidence": "src/pages/mineral-rights-value.astro",
@@ -17883,7 +17883,7 @@
         "rendered_triangle_verified": false,
         "live_status": "not_published_or_verified_by_this_plan",
         "live_triangle_verified": false,
-        "release_status": "eligible_for_continuous_quality_review_not_yet_cleared",
+        "release_status": "released_under_d16_continuous_quality_gate",
         "numerical_release_cap_applies": false
       }
     },

@@ -50,9 +50,9 @@ const SCRIPT = path.join(MRX_ROOT, 'scripts/build-mrx-1000-content-ledger.mjs');
 const CANONICAL_JSON = path.join(MRX_ROOT, 'config/mrx-1000-canonical-content-ledger.json');
 const CANONICAL_CSV = path.join(MRX_ROOT, 'config/mrx-1000-canonical-content-ledger.csv');
 const EXPECTED_CANONICAL_JSON_SHA256 =
-  'cd97cf4b9f3aaa5a6a8174aa6bca6b93ea9c5b53a228043f5e744db4175e6954';
+  'ef9b728898424ec31e9ebeb694c64527eb5429b2a45d6482236dbd62bd1350c8';
 const EXPECTED_CANONICAL_CSV_SHA256 =
-  '5abc345f790d3a7f29a889d0254a3613331fae1e760b4e6b1e63d7d3da6ecfe0';
+  '20a89b9bc912ecb572c2533e12f26383c42c86160622869b52d5c714a6878280';
 const TEST_OUTPUT_DIR = mkdtempSync(path.join(tmpdir(), 'mrx1000-ledger-idempotency-'));
 const JSON_OUT = path.join(TEST_OUTPUT_DIR, 'mrx-1000-canonical-content-ledger.json');
 const CSV_OUT = path.join(TEST_OUTPUT_DIR, 'mrx-1000-canonical-content-ledger.csv');
@@ -166,6 +166,7 @@ interface Ledger {
     wave101_rekey?: { program_row_id: string };
     wave102_rekey?: { program_row_id: string };
     wave103_rekey?: { program_row_id: string };
+    wave104_rekey?: { program_row_id: string };
   };
   policy: {
     pilot_aware: boolean;
@@ -316,6 +317,7 @@ describe('MRX1000 canonical ledger generator (pilot-aware + idempotent)', () => 
     expect(ledger.identity_registry.wave101_rekey?.program_row_id).toBe('MRX1000-0284');
     expect(ledger.identity_registry.wave102_rekey?.program_row_id).toBe('MRX1000-0285');
     expect(ledger.identity_registry.wave103_rekey?.program_row_id).toBe('MRX1000-0287');
+    expect(ledger.identity_registry.wave104_rekey?.program_row_id).toBe('MRX1000-0288');
     expect(bySlug.has('understanding-the-true-worth-of-your-mineral-interests')).toBe(false);
     expect(
       bySlug.has(
@@ -336,6 +338,13 @@ describe('MRX1000 canonical ledger generator (pilot-aware + idempotent)', () => 
       bySlug.get('texas-rrc-inactive-well-aging-report-retrieval-provenance-worksheet')
         ?.program_row_id,
     ).toBe('MRX1000-0287');
+    expect(
+      bySlug.has('unlocking-the-secrets-how-to-determine-the-worth-of-your-mineral-rights'),
+    ).toBe(false);
+    expect(
+      bySlug.get('texas-rrc-p-5-renewal-status-query-retrieval-provenance-worksheet')
+        ?.program_row_id,
+    ).toBe('MRX1000-0288');
     expect(
       bySlug.get('mineral-rights-valuation-checklist-without-obligation')?.program_row_id,
     ).toBe('MRX1000-0237');
