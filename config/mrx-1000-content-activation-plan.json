@@ -1,15 +1,15 @@
 {
   "artifact_type": "mrx1000_content_activation_plan",
   "plan_version": "mrx1000-content-activation-v1.1.0",
-  "generated_at": "2026-07-20T14:42:20.785Z",
+  "generated_at": "2026-07-20T05:12:15.627Z",
   "generated_at_method": "canonical_ledger_generated_at",
   "generator": "scripts/build-mrx-1000-activation-plan.mjs",
-  "content_fingerprint_sha256": "5d7558ab19efc141642012f1baabb87135e11c68d70641f620b73702dca1680e",
+  "content_fingerprint_sha256": "ac83bd59575a60d8d1bfa17105fc6a256b64d125204cf5b47e99c7acd5e76dd9",
   "inputs": {
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_fingerprint_sha256": "aed20de97012740ea65466a7a836ae2a9e5263b8cff60e71293a9b459c7975fc",
+    "canonical_ledger_fingerprint_sha256": "1c54917320eb7784e715216d4b51e75aaaac86b4454cf950cb89e405d3a53d67",
     "canonical_ledger_fingerprint_verified": true,
-    "canonical_ledger_generated_at": "2026-07-20T14:42:20.785Z",
+    "canonical_ledger_generated_at": "2026-07-20T05:12:15.627Z",
     "owner_decision": {
       "decision_id": "D-2026-0804-16",
       "signed_disposition": "APPROVED_CONTINUOUS_QUALITY_GATED_ARTICLE_PUBLICATION",
@@ -115,9 +115,9 @@
     },
     "by_source_preservation_classification": {
       "incumbent_draft_nonpublic_held": 27,
-      "live_public_published_route": 185,
+      "live_public_published_route": 186,
       "pilot_draft_noindex_stage": 25,
-      "planning_only_inventory": 763
+      "planning_only_inventory": 762
     }
   },
   "rows": [
@@ -12486,69 +12486,6 @@
         "status": "planned_local_only"
       },
       "sibling_link": {
-        "target_program_row_id": "MRX1000-0200",
-        "target_title": "How Much Are Mineral Rights Worth: Negotiation Tips Without Obligation",
-        "url": "/blog/how-much-are-mineral-rights-worth-negotiation-tips-without-obligation/",
-        "relationship": "same_cluster_next_by_program_row_id_cyclic",
-        "target_source_preservation_classification": "planning_only_inventory",
-        "target_route_live": false,
-        "status": "planned_local_only"
-      },
-      "primary_cta": {
-        "url": "/book/",
-        "label": "Understand My Value Factors",
-        "name": "mrx1000-mineral-rights-value-book_review-contextual_inline",
-        "placement_code": "contextual_inline",
-        "placement_guidance": "Place after the first comparison, risk, document, or decision-framework section.",
-        "assignment_rule": "consideration_stage_assisted_review",
-        "assignment_basis": "consideration:valuation",
-        "approved_route_evidence": "src/pages/book.astro",
-        "role": "primary_appointment",
-        "is_appointment_cta": true,
-        "status": "planned_local_only"
-      },
-      "appointment_cta": {
-        "url": "/book/",
-        "label": "Understand My Value Factors",
-        "name": "mrx1000-mineral-rights-value-book_review-contextual_inline",
-        "placement_code": "contextual_inline",
-        "placement_guidance": "Place after the first comparison, risk, document, or decision-framework section.",
-        "assignment_rule": "consideration_stage_assisted_review",
-        "assignment_basis": "consideration:valuation",
-        "approved_route_evidence": "src/pages/book.astro",
-        "role": "same_as_primary_appointment",
-        "distinct_from_primary_cta": false,
-        "status": "planned_local_only"
-      },
-      "evidence": {
-        "triangle_plan_status": "planned_complete",
-        "primary_cta_plan_status": "planned_complete",
-        "appointment_cta_plan_status": "planned_complete",
-        "rendered_status": "not_rendered_or_verified_by_this_plan",
-        "rendered_triangle_verified": false,
-        "live_status": "not_published_or_verified_by_this_plan",
-        "live_triangle_verified": false,
-        "release_status": "eligible_for_continuous_quality_review_not_yet_cleared",
-        "numerical_release_cap_applies": false
-      }
-    },
-    {
-      "program_row_id": "MRX1000-0200",
-      "canonical_title": "How Much Are Mineral Rights Worth: Negotiation Tips Without Obligation",
-      "canonical_slug": "how-much-are-mineral-rights-worth-negotiation-tips-without-obligation",
-      "canonical_url": "/blog/how-much-are-mineral-rights-worth-negotiation-tips-without-obligation/",
-      "cluster": "valuation-methodology-drivers",
-      "pillar": "mineral-rights-value",
-      "search_intent": "inherited-rights",
-      "funnel_stage": "consideration",
-      "source_preservation_classification": "planning_only_inventory",
-      "source_route_live": false,
-      "pillar_link": {
-        "url": "/mineral-rights-value/",
-        "route_evidence": "src/pages/mineral-rights-value.astro",
-        "status": "planned_local_only"
-      },
-      "sibling_link": {
         "target_program_row_id": "MRX1000-0201",
         "target_title": "How Much Are Mineral Rights Worth: Risk Checklist In 2026",
         "url": "/blog/how-much-are-mineral-rights-worth-risk-checklist-in-2026/",
@@ -12564,7 +12501,7 @@
         "placement_code": "contextual_inline",
         "placement_guidance": "Place after the first comparison, risk, document, or decision-framework section.",
         "assignment_rule": "consideration_stage_assisted_review",
-        "assignment_basis": "consideration:inherited-rights",
+        "assignment_basis": "consideration:valuation",
         "approved_route_evidence": "src/pages/book.astro",
         "role": "primary_appointment",
         "is_appointment_cta": true,
@@ -12577,7 +12514,7 @@
         "placement_code": "contextual_inline",
         "placement_guidance": "Place after the first comparison, risk, document, or decision-framework section.",
         "assignment_rule": "consideration_stage_assisted_review",
-        "assignment_basis": "consideration:inherited-rights",
+        "assignment_basis": "consideration:valuation",
         "approved_route_evidence": "src/pages/book.astro",
         "role": "same_as_primary_appointment",
         "distinct_from_primary_cta": false,
@@ -17464,11 +17401,11 @@
       },
       "sibling_link": {
         "target_program_row_id": "MRX1000-0281",
-        "target_title": "Understanding the Difference Between Market and Fair Value of Mineral Rights",
-        "url": "/blog/understanding-the-difference-between-market-and-fair-value-of-mineral-rights/",
+        "target_title": "Texas RRC Injection-Storage Permit Query Retrieval Provenance Worksheet",
+        "url": "/blog/texas-rrc-injection-storage-permit-query-retrieval-provenance-worksheet/",
         "relationship": "same_cluster_next_by_program_row_id_cyclic",
-        "target_source_preservation_classification": "planning_only_inventory",
-        "target_route_live": false,
+        "target_source_preservation_classification": "live_public_published_route",
+        "target_route_live": true,
         "status": "planned_local_only"
       },
       "primary_cta": {
@@ -17511,15 +17448,15 @@
     },
     {
       "program_row_id": "MRX1000-0281",
-      "canonical_title": "Understanding the Difference Between Market and Fair Value of Mineral Rights",
-      "canonical_slug": "understanding-the-difference-between-market-and-fair-value-of-mineral-rights",
-      "canonical_url": "/blog/understanding-the-difference-between-market-and-fair-value-of-mineral-rights/",
+      "canonical_title": "Texas RRC Injection-Storage Permit Query Retrieval Provenance Worksheet",
+      "canonical_slug": "texas-rrc-injection-storage-permit-query-retrieval-provenance-worksheet",
+      "canonical_url": "/blog/texas-rrc-injection-storage-permit-query-retrieval-provenance-worksheet/",
       "cluster": "valuation-methodology-drivers",
       "pillar": "mineral-rights-value",
       "search_intent": "informational",
       "funnel_stage": "consideration",
-      "source_preservation_classification": "planning_only_inventory",
-      "source_route_live": false,
+      "source_preservation_classification": "live_public_published_route",
+      "source_route_live": true,
       "pillar_link": {
         "url": "/mineral-rights-value/",
         "route_evidence": "src/pages/mineral-rights-value.astro",
@@ -17568,7 +17505,7 @@
         "rendered_triangle_verified": false,
         "live_status": "not_published_or_verified_by_this_plan",
         "live_triangle_verified": false,
-        "release_status": "eligible_for_continuous_quality_review_not_yet_cleared",
+        "release_status": "released_under_d16_continuous_quality_gate",
         "numerical_release_cap_applies": false
       }
     },
@@ -63063,6 +63000,69 @@
       "canonical_title": "Understanding Mineral Valuation: How to Secure a Fair Assessment for Your Interests",
       "canonical_slug": "understanding-mineral-valuation-how-to-secure-a-fair-assessment-for-your-interests",
       "canonical_url": "/blog/understanding-mineral-valuation-how-to-secure-a-fair-assessment-for-your-interests/",
+      "cluster": "valuation-methodology-drivers",
+      "pillar": "mineral-rights-value",
+      "search_intent": "informational",
+      "funnel_stage": "consideration",
+      "source_preservation_classification": "planning_only_inventory",
+      "source_route_live": false,
+      "pillar_link": {
+        "url": "/mineral-rights-value/",
+        "route_evidence": "src/pages/mineral-rights-value.astro",
+        "status": "planned_local_only"
+      },
+      "sibling_link": {
+        "target_program_row_id": "MRX1000-1029",
+        "target_title": "Understanding the Difference Between Market and Fair Value of Mineral Rights",
+        "url": "/blog/understanding-the-difference-between-market-and-fair-value-of-mineral-rights/",
+        "relationship": "same_cluster_next_by_program_row_id_cyclic",
+        "target_source_preservation_classification": "planning_only_inventory",
+        "target_route_live": false,
+        "status": "planned_local_only"
+      },
+      "primary_cta": {
+        "url": "/book/",
+        "label": "Understand My Value Factors",
+        "name": "mrx1000-mineral-rights-value-book_review-contextual_inline",
+        "placement_code": "contextual_inline",
+        "placement_guidance": "Place after the first comparison, risk, document, or decision-framework section.",
+        "assignment_rule": "consideration_stage_assisted_review",
+        "assignment_basis": "consideration:informational",
+        "approved_route_evidence": "src/pages/book.astro",
+        "role": "primary_appointment",
+        "is_appointment_cta": true,
+        "status": "planned_local_only"
+      },
+      "appointment_cta": {
+        "url": "/book/",
+        "label": "Understand My Value Factors",
+        "name": "mrx1000-mineral-rights-value-book_review-contextual_inline",
+        "placement_code": "contextual_inline",
+        "placement_guidance": "Place after the first comparison, risk, document, or decision-framework section.",
+        "assignment_rule": "consideration_stage_assisted_review",
+        "assignment_basis": "consideration:informational",
+        "approved_route_evidence": "src/pages/book.astro",
+        "role": "same_as_primary_appointment",
+        "distinct_from_primary_cta": false,
+        "status": "planned_local_only"
+      },
+      "evidence": {
+        "triangle_plan_status": "planned_complete",
+        "primary_cta_plan_status": "planned_complete",
+        "appointment_cta_plan_status": "planned_complete",
+        "rendered_status": "not_rendered_or_verified_by_this_plan",
+        "rendered_triangle_verified": false,
+        "live_status": "not_published_or_verified_by_this_plan",
+        "live_triangle_verified": false,
+        "release_status": "eligible_for_continuous_quality_review_not_yet_cleared",
+        "numerical_release_cap_applies": false
+      }
+    },
+    {
+      "program_row_id": "MRX1000-1029",
+      "canonical_title": "Understanding the Difference Between Market and Fair Value of Mineral Rights",
+      "canonical_slug": "understanding-the-difference-between-market-and-fair-value-of-mineral-rights",
+      "canonical_url": "/blog/understanding-the-difference-between-market-and-fair-value-of-mineral-rights/",
       "cluster": "valuation-methodology-drivers",
       "pillar": "mineral-rights-value",
       "search_intent": "informational",

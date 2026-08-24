@@ -327,6 +327,8 @@ async function loadPriorProgramRowIds() {
         wave94Rekey: null,
         wave95Rekey: null,
         wave96Rekey: null,
+        wave97Rekey: null,
+        wave98Rekey: null,
       };
     }
     throw error;
@@ -401,6 +403,8 @@ async function loadPriorProgramRowIds() {
     wave94Rekey: prior.identity_registry?.wave94_rekey ?? null,
     wave95Rekey: prior.identity_registry?.wave95_rekey ?? null,
     wave96Rekey: prior.identity_registry?.wave96_rekey ?? null,
+    wave97Rekey: prior.identity_registry?.wave97_rekey ?? null,
+    wave98Rekey: prior.identity_registry?.wave98_rekey ?? null,
   };
 }
 
@@ -1786,6 +1790,8 @@ async function main() {
       ...(priorIdentity.wave94Rekey ? { wave94_rekey: priorIdentity.wave94Rekey } : {}),
       ...(priorIdentity.wave95Rekey ? { wave95_rekey: priorIdentity.wave95Rekey } : {}),
       ...(priorIdentity.wave96Rekey ? { wave96_rekey: priorIdentity.wave96Rekey } : {}),
+      ...(priorIdentity.wave97Rekey ? { wave97_rekey: priorIdentity.wave97Rekey } : {}),
+      ...(priorIdentity.wave98Rekey ? { wave98_rekey: priorIdentity.wave98Rekey } : {}),
     },
     content_fingerprint_sha256: hashRows(selected),
     policy: {
