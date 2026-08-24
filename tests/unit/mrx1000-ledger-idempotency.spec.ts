@@ -50,9 +50,9 @@ const SCRIPT = path.join(MRX_ROOT, 'scripts/build-mrx-1000-content-ledger.mjs');
 const CANONICAL_JSON = path.join(MRX_ROOT, 'config/mrx-1000-canonical-content-ledger.json');
 const CANONICAL_CSV = path.join(MRX_ROOT, 'config/mrx-1000-canonical-content-ledger.csv');
 const EXPECTED_CANONICAL_JSON_SHA256 =
-  'ef9b728898424ec31e9ebeb694c64527eb5429b2a45d6482236dbd62bd1350c8';
+  '2041cf0b995a5424426f8b36b2f6bc08f7e344893df2251c8199c00d671ec8c8';
 const EXPECTED_CANONICAL_CSV_SHA256 =
-  '20a89b9bc912ecb572c2533e12f26383c42c86160622869b52d5c714a6878280';
+  '5193232c5b64c349c2d65eaea179d2185423c70d72cddbbf46a6bdc54fd13a15';
 const TEST_OUTPUT_DIR = mkdtempSync(path.join(tmpdir(), 'mrx1000-ledger-idempotency-'));
 const JSON_OUT = path.join(TEST_OUTPUT_DIR, 'mrx-1000-canonical-content-ledger.json');
 const CSV_OUT = path.join(TEST_OUTPUT_DIR, 'mrx-1000-canonical-content-ledger.csv');
@@ -167,6 +167,7 @@ interface Ledger {
     wave102_rekey?: { program_row_id: string };
     wave103_rekey?: { program_row_id: string };
     wave104_rekey?: { program_row_id: string };
+    wave105_rekey?: { program_row_id: string };
   };
   policy: {
     pilot_aware: boolean;
@@ -318,6 +319,7 @@ describe('MRX1000 canonical ledger generator (pilot-aware + idempotent)', () => 
     expect(ledger.identity_registry.wave102_rekey?.program_row_id).toBe('MRX1000-0285');
     expect(ledger.identity_registry.wave103_rekey?.program_row_id).toBe('MRX1000-0287');
     expect(ledger.identity_registry.wave104_rekey?.program_row_id).toBe('MRX1000-0288');
+    expect(ledger.identity_registry.wave105_rekey?.program_row_id).toBe('MRX1000-0289');
     expect(bySlug.has('understanding-the-true-worth-of-your-mineral-interests')).toBe(false);
     expect(
       bySlug.has(
@@ -345,6 +347,12 @@ describe('MRX1000 canonical ledger generator (pilot-aware + idempotent)', () => 
       bySlug.get('texas-rrc-p-5-renewal-status-query-retrieval-provenance-worksheet')
         ?.program_row_id,
     ).toBe('MRX1000-0288');
+    expect(bySlug.has('well-spacing-permits-and-drilling-inventory-in-mineral-valuation')).toBe(
+      false,
+    );
+    expect(
+      bySlug.get('texas-rrc-orphan-well-query-retrieval-provenance-worksheet')?.program_row_id,
+    ).toBe('MRX1000-0289');
     expect(
       bySlug.get('mineral-rights-valuation-checklist-without-obligation')?.program_row_id,
     ).toBe('MRX1000-0237');

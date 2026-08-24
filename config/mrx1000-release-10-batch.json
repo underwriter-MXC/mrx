@@ -1,7 +1,7 @@
 {
   "program": "MRX 1,000 Article SEO+AEO Production Program",
   "artifact_type": "authorized_release_10_batch",
-  "evidence_scaffold_generated_at_utc": "2026-08-24T13:04:12Z",
+  "evidence_scaffold_generated_at_utc": "2026-08-24T13:23:27Z",
   "decision_authority": {
     "successor_gate_decision_id": "D-2026-0804-16",
     "successor_gate_decision_path": "docs/governance/mrx1000-owner-continuous-publication-directive-2026-08-04.md",
@@ -336,13 +336,16 @@
     "wave103_selection_decision_sha256": "4c61523bceee502fd4bbb4746cabeca1af9cb82ca1dbaf60eac61d2e04225f96",
     "wave104_selection_decision_id": "MRX1000-W104-SELECT-2026-08-24",
     "wave104_selection_decision_path": "docs/governance/mrx1000-wave104-selection-decision-2026-08-24.md",
-    "wave104_selection_decision_sha256": "a142052a88a9c2f61d4f6014809c570d2e8dfa8713607da962490018b8a314ae"
+    "wave104_selection_decision_sha256": "a142052a88a9c2f61d4f6014809c570d2e8dfa8713607da962490018b8a314ae",
+    "wave105_selection_decision_id": "MRX1000-W105-SELECT-2026-08-24",
+    "wave105_selection_decision_path": "docs/governance/mrx1000-wave105-selection-decision-2026-08-24.md",
+    "wave105_selection_decision_sha256": "98d1408f78c8e4a5a9eff14c710c335bdfd700d75e9c668ccf7049aae9fda416"
   },
   "identity_authority": {
     "scope_key": "canonical_slug",
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_sha256": "ef9b728898424ec31e9ebeb694c64527eb5429b2a45d6482236dbd62bd1350c8",
-    "canonical_ledger_generated_at": "2026-07-20T12:42:53.674Z",
+    "canonical_ledger_sha256": "2041cf0b995a5424426f8b36b2f6bc08f7e344893df2251c8199c00d671ec8c8",
+    "canonical_ledger_generated_at": "2026-07-20T17:30:10.487Z",
     "successor_ledger_decision_id": "D-2026-0723-LEDGER-04",
     "successor_ledger_decision_path": "artifacts/mrx1000-release-10/decisions/mrx-ceo-ledger-provenance-successor-20260723-04.md",
     "successor_ledger_decision_sha256": "09eca24bcd0e71563f2ac4197f564eec0ccb43a5ee955216da5c4a2543d04978",
@@ -356,11 +359,11 @@
     "authorization_scope": "declared_program_size_not_a_staged_release_cap",
     "admission_mode": "continuous_quality_gated",
     "continuous_quality_gated_from_selection_rank": 26,
-    "prior_verified_article_count": 183,
+    "prior_verified_article_count": 184,
     "fail_closed": true,
     "earned_scale_gates": [],
-    "exact_admitted_count": 184,
-    "exact_admitted_slate_sha256": "fcc90842895afe1103229780103f175a6e134b42686eecf8aa8a408be4059850"
+    "exact_admitted_count": 185,
+    "exact_admitted_slate_sha256": "3516180d88597fced98942d21a632a0ae5f8f174c28cf06fc52aa61fab3ce6d5"
   },
   "articles": [
     {
@@ -6406,10 +6409,44 @@
       "inline_path": "/assets/articles/inline/texas-rrc-p-5-renewal-status-query-retrieval-provenance-worksheet/texas-rrc-p-5-renewal-status-query-retrieval.webp",
       "inline_asset_sha256": "68aa156304b830fc2548dd4bafacdd55a685c3fd8d374ec06827b4344db55845",
       "inline_rendered_text": "Texas RRC P-5 Renewal Status Query retrieval"
+    },
+    {
+      "selection_rank": 185,
+      "program_row_id": "MRX1000-0289",
+      "source_shortlist_program_row_id": "MRX1000-0289",
+      "slug": "texas-rrc-orphan-well-query-retrieval-provenance-worksheet",
+      "title": "Texas RRC Orphan Well Query Retrieval Provenance Worksheet",
+      "source_shortlist_title": "Texas RRC Orphan Well Query Retrieval Provenance Worksheet",
+      "canonical_url": "https://mineralrightsxchange.com/blog/texas-rrc-orphan-well-query-retrieval-provenance-worksheet/",
+      "pillar": "mineral-rights-value",
+      "cluster": "valuation-methodology-drivers",
+      "content_genius_article_uuid": null,
+      "archive_evidence_sha256": "339e945f6a2b229ec9d27070a26e13bab6977e9a65eaf063da5544ca0d3dd78d",
+      "repo_path": "src/content/posts/texas-rrc-orphan-well-query-retrieval-provenance-worksheet.mdx",
+      "repo_sha256": "a0da827db0e97d6d585f8af7369fa5732aced50ec45582aeaf1df3fa821d3abd",
+      "article_sha256": "a0da827db0e97d6d585f8af7369fa5732aced50ec45582aeaf1df3fa821d3abd",
+      "hero_path": "/assets/articles/hero/texas-rrc-orphan-well-query-retrieval-provenance-worksheet.webp",
+      "hero_sha256": "0962a2c2135624720052e6ea7828d856e858f2b60cc70deb55f010abf5e9e1a8",
+      "hero_asset_sha256": "0962a2c2135624720052e6ea7828d856e858f2b60cc70deb55f010abf5e9e1a8",
+      "admission_status": "admitted_quality_gated",
+      "finalization_state": "draft_noindex_admitted",
+      "searchatlas_content_score": null,
+      "searchatlas_word_count": 1801,
+      "risk_citation_remediation": [
+        "The original spacing, permit, drilling-inventory, and valuation identity was rejected for material overlap with the drilling-permit, existing-wells-versus-future-locations, PDP/PUD, acreage-contiguity, DCF, valuation, and broad RRC-guide corpus. The admitted replacement owns only one official Texas RRC Orphan Well Query retrieval provenance worksheet.",
+        "Current official Railroad Commission sources support only the separately named Orphan Well route, exact page and help labels, source-displayed criteria, selector and navigation labels, source description, monthly update label, result-field names, detail navigation, pagination, sorting, and download behavior. None establishes a private-property relationship or an orphan-well, operator, compliance, delinquency, plugging, environmental, ownership, title, valuation, legal, offer, or transaction conclusion.",
+        "The article remains distinct from the separately named IWAR, general Inactive Well, and P-5 Renewal Status jobs because it records only one orphanWellQueryAction.do attempt and never interprets a criterion, selector, source definition, result, or status.",
+        "Continuous quality-gated admission under D-2026-0804-16, the 2026-08-14 no-approval owner directive, and the 2026-08-24 durable Chesty prompt contract; publication remains conditional on every article-specific gate and no owner publication approval applies."
+      ],
+      "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/texas-rrc-orphan-well-query-retrieval-provenance-worksheet.json",
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/texas-rrc-orphan-well-query-retrieval-provenance-worksheet/texas-rrc-orphan-well-query-retrieval.webp",
+      "inline_asset_sha256": "78257d8452a0a305c39a4ecbae19c0570f626a7c927ca17ede98ca28396c87da",
+      "inline_rendered_text": "Texas RRC Orphan Well Query retrieval"
     }
   ],
   "admission_audit": {
-    "admitted_article_count": 184,
+    "admitted_article_count": 185,
     "selection_ranks": [
       1,
       2,
@@ -6594,7 +6631,8 @@
       181,
       182,
       183,
-      184
+      184,
+      185
     ],
     "duplicate_program_row_ids": [],
     "duplicate_slugs": [],
@@ -6653,9 +6691,9 @@
   "two_image_policy": {
     "directive": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
     "retrofit_manifest_path": "config/mrx-article-two-image-retrofit.json",
-    "retrofit_manifest_sha256": "fb66887f73e901a8136b2be8aed58af477e9ab98e699ab8733415f84ab980848",
-    "public_article_count": 192,
-    "batch_article_count": 184,
+    "retrofit_manifest_sha256": "ced6e119261780f1e2755ad4f9fb356a247809b8b41a7a41acb6aff8d2e7dd34",
+    "public_article_count": 193,
+    "batch_article_count": 185,
     "assets_per_article": 2,
     "hero_share_identity_required": true,
     "inline_image_distinct_required": true,

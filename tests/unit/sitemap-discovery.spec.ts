@@ -65,7 +65,7 @@ describe('canonical sitemap discovery', () => {
       }
     ).verification.preservation_classification_counts.live_public_published_route;
     expect(publicPostCount).toBe(canonicalPublicRouteCount);
-    expect(archivePageNumbers(publicPostCount)).toEqual([2, 3, 4, 5, 6, 7, 8]);
+    expect(archivePageNumbers(publicPostCount)).toEqual([2, 3, 4, 5, 6, 7, 8, 9]);
 
     const continuationRoute = readFileSync(
       join(process.cwd(), 'src', 'pages', 'blog', 'category', '[category]', 'page', '[page].astro'),

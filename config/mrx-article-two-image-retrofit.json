@@ -1,18 +1,18 @@
 {
   "artifact_type": "mrx_article_two_image_retrofit",
   "schema_version": 1,
-  "generated_at_utc": "2026-08-24T12:59:20Z",
+  "generated_at_utc": "2026-08-24T13:21:11Z",
   "policy_source": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
   "summary": {
-    "article_count": 192,
-    "asset_count": 384,
-    "unique_source_art_count": 192,
-    "unique_hero_sha256_count": 192,
-    "unique_inline_sha256_count": 192,
-    "distinct_article_pair_count": 192,
-    "hero_ocr_pass_count": 192,
-    "inline_ocr_pass_count": 192,
-    "exact_filename_identity_count": 192
+    "article_count": 193,
+    "asset_count": 386,
+    "unique_source_art_count": 193,
+    "unique_hero_sha256_count": 193,
+    "unique_inline_sha256_count": 193,
+    "distinct_article_pair_count": 193,
+    "hero_ocr_pass_count": 193,
+    "inline_ocr_pass_count": 193,
+    "exact_filename_identity_count": 193
   },
   "contact_sheets": {
     "hero": [
@@ -5656,6 +5656,56 @@
           "actual": "Texas RRC Organization (P-5)\nquery retrieval",
           "normalized_expected": "texas rrc organization p 5 query retrieval",
           "normalized_actual": "texas rrc organization p 5 query retrieval",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      }
+    },
+    {
+      "slug": "texas-rrc-orphan-well-query-retrieval-provenance-worksheet",
+      "title": "Texas RRC Orphan Well Query Retrieval Provenance Worksheet",
+      "keyword": "Texas RRC Orphan Well Query retrieval",
+      "file_path": "src/content/posts/texas-rrc-orphan-well-query-retrieval-provenance-worksheet.mdx",
+      "source_public_path": "/assets/articles/hero/texas-rrc-orphan-well-query-retrieval-provenance-worksheet.webp",
+      "source_artifact_paths": [
+        "artifacts/mrx1000-wave105-creative-sources/texas-rrc-orphan-well-query-retrieval-provenance-worksheet-hero-base.png",
+        "artifacts/mrx1000-wave105-creative-sources/texas-rrc-orphan-well-query-retrieval-provenance-worksheet-inline-base.png"
+      ],
+      "generated_at_utc": "2026-08-24T13:18:55.222Z",
+      "hero": {
+        "public_path": "/assets/articles/hero/texas-rrc-orphan-well-query-retrieval-provenance-worksheet.webp",
+        "alt": "An archival locator rack and blank reference cards appear beside the exact article title.",
+        "width": 1200,
+        "height": 630,
+        "mime_type": "image/webp",
+        "sha256": "0962a2c2135624720052e6ea7828d856e858f2b60cc70deb55f010abf5e9e1a8",
+        "perceptual_hash": "0000000000110000000000000011100000000000001010000111000001101000111110000111000011111000011001111111110001000111000000000001100000000000000110000000000000010000000000000110010000000000111101000000000011111000000000001111101000000001011000000000000100000000",
+        "neutralized_art_text_region_count": 1,
+        "ocr": {
+          "expected": "Texas RRC Orphan Well Query Retrieval Provenance Worksheet",
+          "actual": "Texas RRC Orphan\nWell Query Retrieval\nProvenance Worksheet",
+          "normalized_expected": "texas rrc orphan well query retrieval provenance worksheet",
+          "normalized_actual": "texas rrc orphan well query retrieval provenance worksheet",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      },
+      "inline": {
+        "public_path": "/assets/articles/inline/texas-rrc-orphan-well-query-retrieval-provenance-worksheet/texas-rrc-orphan-well-query-retrieval.webp",
+        "alt": "A people-free overhead criteria grid appears above the exact keyword.",
+        "rendered_text": "Texas RRC Orphan Well Query retrieval",
+        "visual_variant": "wave105-distinct-generated-overhead-orphan-well-query-criteria-grid",
+        "width": 1200,
+        "height": 675,
+        "mime_type": "image/webp",
+        "sha256": "78257d8452a0a305c39a4ecbae19c0570f626a7c927ca17ede98ca28396c87da",
+        "perceptual_hash": "1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111000111111111111111111111111111111111100000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "neutralized_art_text_region_count": 1,
+        "ocr": {
+          "expected": "Texas RRC Orphan Well Query retrieval",
+          "actual": "Texas RRC Orphan Well\nQuery retrieval",
+          "normalized_expected": "texas rrc orphan well query retrieval",
+          "normalized_actual": "texas rrc orphan well query retrieval",
           "uppercase_i_confusable_accepted": false,
           "pass": true
         }

@@ -104,6 +104,7 @@ const SUPERSEDED_CANONICAL_SLUGS = new Set([
   'understanding-your-mineral-rights-uncovering-their-true-value-and-potential-for-fair-assessment',
   'unlocking-the-hidden-worth-of-your-mineral-rights-what-every-owner-needs-to-know',
   'unlocking-the-secrets-how-to-determine-the-worth-of-your-mineral-rights',
+  'well-spacing-permits-and-drilling-inventory-in-mineral-valuation',
 ]);
 const SUCCESSOR_CANONICAL_SLUGS = new Map([
   ['what-every-mineral-rights-owner-needs-to-know', 'should-i-sell-my-mineral-rights'],
@@ -267,6 +268,10 @@ const SUCCESSOR_CANONICAL_SLUGS = new Map([
     'unlocking-the-secrets-how-to-determine-the-worth-of-your-mineral-rights',
     'texas-rrc-p-5-renewal-status-query-retrieval-provenance-worksheet',
   ],
+  [
+    'well-spacing-permits-and-drilling-inventory-in-mineral-valuation',
+    'texas-rrc-orphan-well-query-retrieval-provenance-worksheet',
+  ],
 ]);
 const APPROVED_REKEY_SEARCH_INTENT_BY_SLUG = new Map([
   ['should-i-sell-my-mineral-rights', 'transactional'],
@@ -305,6 +310,7 @@ const APPROVED_REKEY_SEARCH_INTENT_BY_SLUG = new Map([
   ['texas-rrc-field-search-retrieval-provenance-worksheet', 'informational'],
   ['texas-rrc-inactive-well-aging-report-retrieval-provenance-worksheet', 'informational'],
   ['texas-rrc-p-5-renewal-status-query-retrieval-provenance-worksheet', 'informational'],
+  ['texas-rrc-orphan-well-query-retrieval-provenance-worksheet', 'informational'],
 ]);
 
 // Wave 100 and 101 were first materialized before their successor mappings
