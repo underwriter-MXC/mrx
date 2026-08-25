@@ -1,15 +1,15 @@
 {
   "artifact_type": "mrx1000_content_activation_plan",
   "plan_version": "mrx1000-content-activation-v1.1.0",
-  "generated_at": "2026-07-20T04:17:54.196Z",
+  "generated_at": "2026-07-20T14:12:58.664Z",
   "generated_at_method": "canonical_ledger_generated_at",
   "generator": "scripts/build-mrx-1000-activation-plan.mjs",
-  "content_fingerprint_sha256": "8caa4f1412c8a3768cd6a992f6038b70ee62014ea559e460f63270b12d2c98b1",
+  "content_fingerprint_sha256": "bdf1b62d3d889c3aa932cb4433f3c5c29acf80722c17f51484d582b018620a65",
   "inputs": {
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_fingerprint_sha256": "e2b69621186c81543d8c5cbaf9793ecb3f50643b3031ec7306643bc3d0737d79",
+    "canonical_ledger_fingerprint_sha256": "bfd0eb03fa2ce53f3de9caae4f06c72417d55d74f59056844b895c386af4c8f6",
     "canonical_ledger_fingerprint_verified": true,
-    "canonical_ledger_generated_at": "2026-07-20T04:17:54.196Z",
+    "canonical_ledger_generated_at": "2026-07-20T14:12:58.664Z",
     "owner_decision": {
       "decision_id": "D-2026-0804-16",
       "signed_disposition": "APPROVED_CONTINUOUS_QUALITY_GATED_ARTICLE_PUBLICATION",
@@ -92,8 +92,8 @@
       "title-lease-ownership": 75
     },
     "by_funnel_stage": {
-      "consideration": 350,
-      "decision": 275,
+      "consideration": 351,
+      "decision": 274,
       "education": 375
     },
     "by_primary_cta_url": {
@@ -104,18 +104,18 @@
       "/book/": 1000
     },
     "by_primary_cta_placement": {
-      "closing_panel": 275,
-      "contextual_inline": 350,
+      "closing_panel": 274,
+      "contextual_inline": 351,
       "mid_article": 375
     },
     "by_appointment_cta_placement": {
-      "closing_panel": 275,
+      "closing_panel": 274,
       "closing_team_handoff": 375,
-      "contextual_inline": 350
+      "contextual_inline": 351
     },
     "by_source_preservation_classification": {
-      "incumbent_draft_nonpublic_held": 25,
-      "live_public_published_route": 203,
+      "incumbent_draft_nonpublic_held": 24,
+      "live_public_published_route": 204,
       "pilot_draft_noindex_stage": 25,
       "planning_only_inventory": 747
     }
@@ -19480,11 +19480,11 @@
       },
       "sibling_link": {
         "target_program_row_id": "MRX1000-0317",
-        "target_title": "Texas Mineral Rights Valuation vs. Predatory Offers: What to Know",
-        "url": "/blog/texas-mineral-rights-valuation-vs-predatory-offers-what-to-know/",
+        "target_title": "Texas RRC Imaged Well Log Retrieval Provenance Worksheet",
+        "url": "/blog/texas-rrc-imaged-well-log-retrieval-provenance-worksheet/",
         "relationship": "same_cluster_next_by_program_row_id_cyclic",
-        "target_source_preservation_classification": "incumbent_draft_nonpublic_held",
-        "target_route_live": false,
+        "target_source_preservation_classification": "live_public_published_route",
+        "target_route_live": true,
         "status": "planned_local_only"
       },
       "primary_cta": {
@@ -19527,15 +19527,15 @@
     },
     {
       "program_row_id": "MRX1000-0317",
-      "canonical_title": "Texas Mineral Rights Valuation vs. Predatory Offers: What to Know",
-      "canonical_slug": "texas-mineral-rights-valuation-vs-predatory-offers-what-to-know",
-      "canonical_url": "/blog/texas-mineral-rights-valuation-vs-predatory-offers-what-to-know/",
+      "canonical_title": "Texas RRC Imaged Well Log Retrieval Provenance Worksheet",
+      "canonical_slug": "texas-rrc-imaged-well-log-retrieval-provenance-worksheet",
+      "canonical_url": "/blog/texas-rrc-imaged-well-log-retrieval-provenance-worksheet/",
       "cluster": "offer-review-buyer-comparison-safety",
       "pillar": "offer-review",
-      "search_intent": "commercial-investigation",
-      "funnel_stage": "decision",
-      "source_preservation_classification": "incumbent_draft_nonpublic_held",
-      "source_route_live": false,
+      "search_intent": "informational",
+      "funnel_stage": "consideration",
+      "source_preservation_classification": "live_public_published_route",
+      "source_route_live": true,
       "pillar_link": {
         "url": "/offer-review/",
         "route_evidence": "src/pages/offer-review.astro",
@@ -19553,11 +19553,11 @@
       "primary_cta": {
         "url": "/book/",
         "label": "Review My Written Offer",
-        "name": "mrx1000-offer-review-book_review-closing_panel",
-        "placement_code": "closing_panel",
-        "placement_guidance": "Place in the closing decision panel after key takeaways and before related articles.",
-        "assignment_rule": "decision_stage_team_handoff",
-        "assignment_basis": "decision:commercial-investigation",
+        "name": "mrx1000-offer-review-book_review-contextual_inline",
+        "placement_code": "contextual_inline",
+        "placement_guidance": "Place after the first comparison, risk, document, or decision-framework section.",
+        "assignment_rule": "consideration_stage_assisted_review",
+        "assignment_basis": "consideration:informational",
         "approved_route_evidence": "src/pages/book.astro",
         "role": "primary_appointment",
         "is_appointment_cta": true,
@@ -19566,11 +19566,11 @@
       "appointment_cta": {
         "url": "/book/",
         "label": "Review My Written Offer",
-        "name": "mrx1000-offer-review-book_review-closing_panel",
-        "placement_code": "closing_panel",
-        "placement_guidance": "Place in the closing decision panel after key takeaways and before related articles.",
-        "assignment_rule": "decision_stage_team_handoff",
-        "assignment_basis": "decision:commercial-investigation",
+        "name": "mrx1000-offer-review-book_review-contextual_inline",
+        "placement_code": "contextual_inline",
+        "placement_guidance": "Place after the first comparison, risk, document, or decision-framework section.",
+        "assignment_rule": "consideration_stage_assisted_review",
+        "assignment_basis": "consideration:informational",
         "approved_route_evidence": "src/pages/book.astro",
         "role": "same_as_primary_appointment",
         "distinct_from_primary_cta": false,
@@ -19584,7 +19584,7 @@
         "rendered_triangle_verified": false,
         "live_status": "not_published_or_verified_by_this_plan",
         "live_triangle_verified": false,
-        "release_status": "eligible_for_continuous_quality_review_not_yet_cleared",
+        "release_status": "released_under_d16_continuous_quality_gate",
         "numerical_release_cap_applies": false
       }
     },

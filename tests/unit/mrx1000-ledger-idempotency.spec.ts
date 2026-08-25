@@ -50,9 +50,9 @@ const SCRIPT = path.join(MRX_ROOT, 'scripts/build-mrx-1000-content-ledger.mjs');
 const CANONICAL_JSON = path.join(MRX_ROOT, 'config/mrx-1000-canonical-content-ledger.json');
 const CANONICAL_CSV = path.join(MRX_ROOT, 'config/mrx-1000-canonical-content-ledger.csv');
 const EXPECTED_CANONICAL_JSON_SHA256 =
-  '5b27d70774db0756e44bcdd02e561310b045aa0b093bd72e7277503131e8ce0f';
+  '6be138352c70b3fb362ff4ecd44e6f26d2d22bebd3d8b8ed635a261e978dc82b';
 const EXPECTED_CANONICAL_CSV_SHA256 =
-  '1673a6077e86112dac48fb45fe45a7ac3382a2dc02085fe776fa53f5eb1182f3';
+  '053d670e800525cb722db23b3b00d28ed3e913f8daafb95393c1346149139971';
 const TEST_OUTPUT_DIR = mkdtempSync(path.join(tmpdir(), 'mrx1000-ledger-idempotency-'));
 const JSON_OUT = path.join(TEST_OUTPUT_DIR, 'mrx-1000-canonical-content-ledger.json');
 const CSV_OUT = path.join(TEST_OUTPUT_DIR, 'mrx-1000-canonical-content-ledger.csv');
@@ -66,6 +66,7 @@ const POSTS_DIR = path.join(MRX_ROOT, 'src/content/posts');
 const RETIRED_REPO_SOURCE_SLUGS = new Set([
   'avoiding-predatory-offers-fair-valuation-for-mineral-rights',
   'how-to-identify-unfair-offers-for-mineral-rights',
+  'texas-mineral-rights-valuation-vs-predatory-offers-what-to-know',
 ]);
 const RELEASE_BATCH = JSON.parse(
   readFileSync(path.join(MRX_ROOT, 'config/mrx1000-release-10-batch.json'), 'utf8'),
@@ -182,6 +183,7 @@ interface Ledger {
     wave116_rekey?: { program_row_id: string };
     wave117_rekey?: { program_row_id: string };
     wave118_rekey?: { program_row_id: string };
+    wave119_rekey?: { program_row_id: string };
   };
   policy: {
     pilot_aware: boolean;
@@ -345,6 +347,7 @@ describe('MRX1000 canonical ledger generator (pilot-aware + idempotent)', () => 
     expect(ledger.identity_registry.wave116_rekey?.program_row_id).toBe('MRX1000-0300');
     expect(ledger.identity_registry.wave117_rekey?.program_row_id).toBe('MRX1000-0301');
     expect(ledger.identity_registry.wave118_rekey?.program_row_id).toBe('MRX1000-0308');
+    expect(ledger.identity_registry.wave119_rekey?.program_row_id).toBe('MRX1000-0317');
     expect(bySlug.has('understanding-the-true-worth-of-your-mineral-interests')).toBe(false);
     expect(
       bySlug.has(
@@ -430,6 +433,12 @@ describe('MRX1000 canonical ledger generator (pilot-aware + idempotent)', () => 
       bySlug.get('texas-rrc-edms-injection-disposal-permit-document-retrieval-provenance-worksheet')
         ?.program_row_id,
     ).toBe('MRX1000-0308');
+    expect(bySlug.has('texas-mineral-rights-valuation-vs-predatory-offers-what-to-know')).toBe(
+      false,
+    );
+    expect(
+      bySlug.get('texas-rrc-imaged-well-log-retrieval-provenance-worksheet')?.program_row_id,
+    ).toBe('MRX1000-0317');
     expect(
       bySlug.get('mineral-rights-valuation-checklist-without-obligation')?.program_row_id,
     ).toBe('MRX1000-0237');

@@ -72,6 +72,7 @@ const SUPERSEDED_CANONICAL_SLUGS = new Set([
   'your-guide-to-understanding-the-true-value-of-your-mineral-rights-asset',
   'avoiding-predatory-offers-fair-valuation-for-mineral-rights',
   'how-to-identify-unfair-offers-for-mineral-rights',
+  'texas-mineral-rights-valuation-vs-predatory-offers-what-to-know',
   'what-influences-the-suggested-price-for-your-mineral-rights-assessment',
   'what-sellers-get-wrong-about-mineral-rights',
   'what-to-avoid-in-the-mineral-rights-selling-process',
@@ -158,6 +159,10 @@ const SUCCESSOR_CANONICAL_SLUGS = new Map([
   [
     'how-to-identify-unfair-offers-for-mineral-rights',
     'texas-rrc-edms-injection-disposal-permit-document-retrieval-provenance-worksheet',
+  ],
+  [
+    'texas-mineral-rights-valuation-vs-predatory-offers-what-to-know',
+    'texas-rrc-imaged-well-log-retrieval-provenance-worksheet',
   ],
   [
     'what-influences-the-suggested-price-for-your-mineral-rights-assessment',
@@ -374,6 +379,7 @@ const APPROVED_REKEY_SEARCH_INTENT_BY_SLUG = new Map([
     'texas-rrc-edms-injection-disposal-permit-document-retrieval-provenance-worksheet',
     'informational',
   ],
+  ['texas-rrc-imaged-well-log-retrieval-provenance-worksheet', 'informational'],
 ]);
 
 const APPROVED_REKEY_ACTION_REASON_BY_SLUG = new Map([
@@ -384,6 +390,10 @@ const APPROVED_REKEY_ACTION_REASON_BY_SLUG = new Map([
   [
     'texas-rrc-edms-injection-disposal-permit-document-retrieval-provenance-worksheet',
     'The original unfair-offer identity was rejected for material overlap and unsupported high-risk claims. The approved replacement owns one authorized manual Texas RRC EDMS injection/disposal permit application-document search record and remains separate from adjacent RRC query, imaged-record, production, hearing, compliance, offer, and decision tasks. The source is prepared for the exact release-10 build, but publication remains controlled by the signed batch, matching evidence, production deployment, and independent verification.',
+  ],
+  [
+    'texas-rrc-imaged-well-log-retrieval-provenance-worksheet',
+    'The original valuation-versus-predatory-offers identity was rejected for material overlap and unsupported high-risk claims. The approved replacement owns one authorized manual Texas RRC Imaged Records Well Log profile retrieval provenance record and remains separate from adjacent RRC query, potential-file, production, GIS, technical-interpretation, offer, and decision tasks. The source is prepared for the exact release-10 build, but publication remains controlled by the signed batch, matching evidence, production deployment, and independent verification.',
   ],
 ]);
 
