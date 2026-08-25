@@ -1,7 +1,7 @@
 {
   "program": "MRX 1,000 Article SEO+AEO Production Program",
   "artifact_type": "authorized_release_10_batch",
-  "evidence_scaffold_generated_at_utc": "2026-08-25T07:42:07Z",
+  "evidence_scaffold_generated_at_utc": "2026-08-25T08:07:13Z",
   "decision_authority": {
     "successor_gate_decision_id": "D-2026-0804-16",
     "successor_gate_decision_path": "docs/governance/mrx1000-owner-continuous-publication-directive-2026-08-04.md",
@@ -360,13 +360,16 @@
     "wave114_selection_decision_sha256": "832fdbe678f8b67bc625f0c041c49e0d7cfe23660cafc68cf3980983d7fe9d1c",
     "wave115_selection_decision_id": "MRX1000-W115-SELECT-2026-08-25",
     "wave115_selection_decision_path": "docs/governance/mrx1000-wave115-selection-decision-2026-08-25.md",
-    "wave115_selection_decision_sha256": "0b49292b51c0e1f19b92601a65a00be6c11b8ad2392792f07008f05e4fa9cbe8"
+    "wave115_selection_decision_sha256": "0b49292b51c0e1f19b92601a65a00be6c11b8ad2392792f07008f05e4fa9cbe8",
+    "wave116_selection_decision_id": "MRX1000-W116-SELECT-2026-08-25",
+    "wave116_selection_decision_path": "docs/governance/mrx1000-wave116-selection-decision-2026-08-25.md",
+    "wave116_selection_decision_sha256": "52b893d54bd0253fea207eaf9d4b4e1cfeb0a7df75454f163659cafad9a7fb93"
   },
   "identity_authority": {
     "scope_key": "canonical_slug",
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_sha256": "e2bee708eed93a628d14d83c037407b2c2fb8d6906019659d1d2221bb13bb24c",
-    "canonical_ledger_generated_at": "2026-07-20T16:19:37.872Z",
+    "canonical_ledger_sha256": "d40d756180872f9d4ee442945e9a925976741c4fb726cd6069e5f38dab3c8f63",
+    "canonical_ledger_generated_at": "2026-07-20T11:40:29.310Z",
     "successor_ledger_decision_id": "D-2026-0723-LEDGER-04",
     "successor_ledger_decision_path": "artifacts/mrx1000-release-10/decisions/mrx-ceo-ledger-provenance-successor-20260723-04.md",
     "successor_ledger_decision_sha256": "09eca24bcd0e71563f2ac4197f564eec0ccb43a5ee955216da5c4a2543d04978",
@@ -380,11 +383,11 @@
     "authorization_scope": "declared_program_size_not_a_staged_release_cap",
     "admission_mode": "continuous_quality_gated",
     "continuous_quality_gated_from_selection_rank": 26,
-    "prior_verified_article_count": 191,
+    "prior_verified_article_count": 192,
     "fail_closed": true,
     "earned_scale_gates": [],
-    "exact_admitted_count": 192,
-    "exact_admitted_slate_sha256": "d015da4234d87bbb4733ce1db02f485b4a21f585e44fc297756c1d74ed3166d6"
+    "exact_admitted_count": 193,
+    "exact_admitted_slate_sha256": "36bffdafd201a1048e8f54ae3f27121f193873afff6a627aaffc8ce65cfda264"
   },
   "articles": [
     {
@@ -6705,10 +6708,45 @@
       "inline_path": "/assets/articles/inline/texas-rrc-production-by-lease-retrieval-provenance-worksheet/texas-rrc-production-by-lease-retrieval.webp",
       "inline_asset_sha256": "bea1efd16e217a43802271da6f69fdd0540c414b34a875a812de07f07a28af84",
       "inline_rendered_text": "Texas RRC Production by Lease retrieval"
+    },
+    {
+      "selection_rank": 193,
+      "program_row_id": "MRX1000-0300",
+      "source_shortlist_program_row_id": "MRX1000-0300",
+      "slug": "texas-rrc-production-by-filing-operator-retrieval-provenance-worksheet",
+      "title": "Texas RRC Production by Filing Operator Retrieval Provenance Worksheet",
+      "source_shortlist_title": "Texas RRC Production by Filing Operator Retrieval Provenance Worksheet",
+      "canonical_url": "https://mineralrightsxchange.com/blog/texas-rrc-production-by-filing-operator-retrieval-provenance-worksheet/",
+      "pillar": "mineral-rights-value",
+      "cluster": "valuation-methodology-drivers",
+      "content_genius_article_uuid": null,
+      "archive_evidence_sha256": "2b5c166665a35efa8cd7f262827333a2af5ddec7790f9d99a44254a47c49fd61",
+      "repo_path": "src/content/posts/texas-rrc-production-by-filing-operator-retrieval-provenance-worksheet.mdx",
+      "repo_sha256": "7604350acae8b71b719e829dd81ade8349249b458c8c90c2d89b1d4f289f7f8b",
+      "article_sha256": "7604350acae8b71b719e829dd81ade8349249b458c8c90c2d89b1d4f289f7f8b",
+      "hero_path": "/assets/articles/hero/texas-rrc-production-by-filing-operator-retrieval-provenance-worksheet.webp",
+      "hero_sha256": "a6924493c066f1ba3f6152db3e0f6274e2c7a04a753b23d90e22451f4936e089",
+      "hero_asset_sha256": "a6924493c066f1ba3f6152db3e0f6274e2c7a04a753b23d90e22451f4936e089",
+      "admission_status": "admitted_quality_gated",
+      "finalization_state": "draft_noindex_admitted",
+      "searchatlas_content_score": null,
+      "searchatlas_word_count": 1626,
+      "risk_citation_remediation": [
+        "The original generic valuation-guide identity is rejected for material overlap. The approved replacement owns only one authorized manual Production by Filing Operator attempt.",
+        "Official Texas RRC sources support route identity, distinct application paths, the visible Lease Type, Operator No, District, and Prod Month labels, displayed source state, and source-scope limitations only. None establishes production interpretation, property connection, current operator identity, title, ownership, payment, acreage, decimals, taxes, reserves, forecasts, value, legal effect, offer quality, compliance, or a transaction conclusion.",
+        "The article remains distinct from Production by Lease, Operator of Record, Production Data Query, New Lease IDs, proration, Wellbore, broad production-record locator, and all production-history interpretation work.",
+        "The article prohibits automated or bulk retrieval and records validation, result, empty-result, error, timeout, and access states without bypassing them.",
+        "Continuous quality-gated admission under the owner no-approval directives; no owner publication approval applies."
+      ],
+      "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/texas-rrc-production-by-filing-operator-retrieval-provenance-worksheet.json",
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/texas-rrc-production-by-filing-operator-retrieval-provenance-worksheet/texas-rrc-production-by-filing-operator-retrieval.webp",
+      "inline_asset_sha256": "447be20d9f865bb22d6772299b78b6e17ac148b918024dc6bd6fc5ae70e0da34",
+      "inline_rendered_text": "Texas RRC Production by Filing Operator retrieval"
     }
   ],
   "admission_audit": {
-    "admitted_article_count": 192,
+    "admitted_article_count": 193,
     "selection_ranks": [
       1,
       2,
@@ -6901,7 +6939,8 @@
       189,
       190,
       191,
-      192
+      192,
+      193
     ],
     "duplicate_program_row_ids": [],
     "duplicate_slugs": [],
@@ -6960,9 +6999,9 @@
   "two_image_policy": {
     "directive": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
     "retrofit_manifest_path": "config/mrx-article-two-image-retrofit.json",
-    "retrofit_manifest_sha256": "9bdff6fc8d0718b957a7056de1c9c05cf643acd158a0a67e6e72a631dcb5d306",
-    "public_article_count": 200,
-    "batch_article_count": 192,
+    "retrofit_manifest_sha256": "b039ac4b6baacbb6e8ec4b8b0917b68717c0053ac669a94383d33f7be4381f7d",
+    "public_article_count": 201,
+    "batch_article_count": 193,
     "assets_per_article": 2,
     "hero_share_identity_required": true,
     "inline_image_distinct_required": true,

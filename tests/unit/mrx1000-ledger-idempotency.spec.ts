@@ -50,9 +50,9 @@ const SCRIPT = path.join(MRX_ROOT, 'scripts/build-mrx-1000-content-ledger.mjs');
 const CANONICAL_JSON = path.join(MRX_ROOT, 'config/mrx-1000-canonical-content-ledger.json');
 const CANONICAL_CSV = path.join(MRX_ROOT, 'config/mrx-1000-canonical-content-ledger.csv');
 const EXPECTED_CANONICAL_JSON_SHA256 =
-  'e2bee708eed93a628d14d83c037407b2c2fb8d6906019659d1d2221bb13bb24c';
+  'd40d756180872f9d4ee442945e9a925976741c4fb726cd6069e5f38dab3c8f63';
 const EXPECTED_CANONICAL_CSV_SHA256 =
-  '330b1b9ffc9d858a17fc5fcd7a0452cb1c72865dda7dacbf3e421c6e443cebe6';
+  '1ead2b4827e1418eaf61cee34d39ec60755f7fdb2a4db9eee6fd520f6b8ba3a6';
 const TEST_OUTPUT_DIR = mkdtempSync(path.join(tmpdir(), 'mrx1000-ledger-idempotency-'));
 const JSON_OUT = path.join(TEST_OUTPUT_DIR, 'mrx-1000-canonical-content-ledger.json');
 const CSV_OUT = path.join(TEST_OUTPUT_DIR, 'mrx-1000-canonical-content-ledger.csv');
@@ -173,6 +173,9 @@ interface Ledger {
     wave108_rekey?: { program_row_id: string };
     wave110_rekey?: { program_row_id: string };
     wave112_rekey?: { program_row_id: string };
+    wave114_rekey?: { program_row_id: string };
+    wave115_rekey?: { program_row_id: string };
+    wave116_rekey?: { program_row_id: string };
   };
   policy: {
     pilot_aware: boolean;
@@ -332,6 +335,7 @@ describe('MRX1000 canonical ledger generator (pilot-aware + idempotent)', () => 
     expect(ledger.identity_registry.wave112_rekey?.program_row_id).toBe('MRX1000-0297');
     expect(ledger.identity_registry.wave114_rekey?.program_row_id).toBe('MRX1000-0298');
     expect(ledger.identity_registry.wave115_rekey?.program_row_id).toBe('MRX1000-0299');
+    expect(ledger.identity_registry.wave116_rekey?.program_row_id).toBe('MRX1000-0300');
     expect(bySlug.has('understanding-the-true-worth-of-your-mineral-interests')).toBe(false);
     expect(
       bySlug.has(
@@ -400,6 +404,13 @@ describe('MRX1000 canonical ledger generator (pilot-aware + idempotent)', () => 
     expect(
       bySlug.get('texas-rrc-production-by-lease-retrieval-provenance-worksheet')?.program_row_id,
     ).toBe('MRX1000-0299');
+    expect(bySlug.has('your-guide-to-understanding-the-true-value-of-your-mineral-rights-asset')).toBe(
+      false,
+    );
+    expect(
+      bySlug.get('texas-rrc-production-by-filing-operator-retrieval-provenance-worksheet')
+        ?.program_row_id,
+    ).toBe('MRX1000-0300');
     expect(
       bySlug.get('mineral-rights-valuation-checklist-without-obligation')?.program_row_id,
     ).toBe('MRX1000-0237');

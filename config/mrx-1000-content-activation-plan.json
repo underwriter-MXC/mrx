@@ -1,15 +1,15 @@
 {
   "artifact_type": "mrx1000_content_activation_plan",
   "plan_version": "mrx1000-content-activation-v1.1.0",
-  "generated_at": "2026-07-20T16:19:37.872Z",
+  "generated_at": "2026-07-20T11:40:29.310Z",
   "generated_at_method": "canonical_ledger_generated_at",
   "generator": "scripts/build-mrx-1000-activation-plan.mjs",
-  "content_fingerprint_sha256": "b2ebd9498bac2b79fbe5aa499347cc45e1618de2965e9425c7ab6f82f85c4441",
+  "content_fingerprint_sha256": "3e19e6f6d70fe952bcb3e44b32453da0d1620f43f74f94b92097be836e77498f",
   "inputs": {
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_fingerprint_sha256": "b39289e53c48b00526831dd4f775642cd02dc737dd5966c62f288bcb614a1874",
+    "canonical_ledger_fingerprint_sha256": "d177319293d5729427327c38cf2085e36a2716ada36cad405a96d0c33ee58781",
     "canonical_ledger_fingerprint_verified": true,
-    "canonical_ledger_generated_at": "2026-07-20T16:19:37.872Z",
+    "canonical_ledger_generated_at": "2026-07-20T11:40:29.310Z",
     "owner_decision": {
       "decision_id": "D-2026-0804-16",
       "signed_disposition": "APPROVED_CONTINUOUS_QUALITY_GATED_ARTICLE_PUBLICATION",
@@ -115,9 +115,9 @@
     },
     "by_source_preservation_classification": {
       "incumbent_draft_nonpublic_held": 27,
-      "live_public_published_route": 200,
+      "live_public_published_route": 201,
       "pilot_draft_noindex_stage": 25,
-      "planning_only_inventory": 748
+      "planning_only_inventory": 747
     }
   },
   "rows": [
@@ -18535,11 +18535,11 @@
       },
       "sibling_link": {
         "target_program_row_id": "MRX1000-0300",
-        "target_title": "Your Guide to Understanding the True Value of Your Mineral Rights Asset",
-        "url": "/blog/your-guide-to-understanding-the-true-value-of-your-mineral-rights-asset/",
+        "target_title": "Texas RRC Production by Filing Operator Retrieval Provenance Worksheet",
+        "url": "/blog/texas-rrc-production-by-filing-operator-retrieval-provenance-worksheet/",
         "relationship": "same_cluster_next_by_program_row_id_cyclic",
-        "target_source_preservation_classification": "planning_only_inventory",
-        "target_route_live": false,
+        "target_source_preservation_classification": "live_public_published_route",
+        "target_route_live": true,
         "status": "planned_local_only"
       },
       "primary_cta": {
@@ -18582,15 +18582,15 @@
     },
     {
       "program_row_id": "MRX1000-0300",
-      "canonical_title": "Your Guide to Understanding the True Value of Your Mineral Rights Asset",
-      "canonical_slug": "your-guide-to-understanding-the-true-value-of-your-mineral-rights-asset",
-      "canonical_url": "/blog/your-guide-to-understanding-the-true-value-of-your-mineral-rights-asset/",
+      "canonical_title": "Texas RRC Production by Filing Operator Retrieval Provenance Worksheet",
+      "canonical_slug": "texas-rrc-production-by-filing-operator-retrieval-provenance-worksheet",
+      "canonical_url": "/blog/texas-rrc-production-by-filing-operator-retrieval-provenance-worksheet/",
       "cluster": "valuation-methodology-drivers",
       "pillar": "mineral-rights-value",
       "search_intent": "informational",
       "funnel_stage": "consideration",
-      "source_preservation_classification": "planning_only_inventory",
-      "source_route_live": false,
+      "source_preservation_classification": "live_public_published_route",
+      "source_route_live": true,
       "pillar_link": {
         "url": "/mineral-rights-value/",
         "route_evidence": "src/pages/mineral-rights-value.astro",
@@ -18639,7 +18639,7 @@
         "rendered_triangle_verified": false,
         "live_status": "not_published_or_verified_by_this_plan",
         "live_triangle_verified": false,
-        "release_status": "eligible_for_continuous_quality_review_not_yet_cleared",
+        "release_status": "released_under_d16_continuous_quality_gate",
         "numerical_release_cap_applies": false
       }
     },

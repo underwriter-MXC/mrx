@@ -69,6 +69,7 @@ const SUPERSEDED_CANONICAL_SLUGS = new Set([
   'what-to-expect-from-your-mineral-rights-evaluation',
   'what-variables-should-mineral-rights-owners-know-to-determine-asset-value',
   'why-a-mineral-rights-assessment-is-essential-for-owners',
+  'your-guide-to-understanding-the-true-value-of-your-mineral-rights-asset',
   'what-influences-the-suggested-price-for-your-mineral-rights-assessment',
   'what-sellers-get-wrong-about-mineral-rights',
   'what-to-avoid-in-the-mineral-rights-selling-process',
@@ -143,6 +144,10 @@ const SUCCESSOR_CANONICAL_SLUGS = new Map([
   [
     'why-a-mineral-rights-assessment-is-essential-for-owners',
     'texas-rrc-production-by-lease-retrieval-provenance-worksheet',
+  ],
+  [
+    'your-guide-to-understanding-the-true-value-of-your-mineral-rights-asset',
+    'texas-rrc-production-by-filing-operator-retrieval-provenance-worksheet',
   ],
   [
     'what-influences-the-suggested-price-for-your-mineral-rights-assessment',
@@ -353,6 +358,7 @@ const APPROVED_REKEY_SEARCH_INTENT_BY_SLUG = new Map([
   ['texas-rrc-production-data-query-retrieval-provenance-worksheet', 'informational'],
   ['texas-comptroller-lease-drop-retrieval-provenance-worksheet', 'informational'],
   ['texas-rrc-production-by-lease-retrieval-provenance-worksheet', 'informational'],
+  ['texas-rrc-production-by-filing-operator-retrieval-provenance-worksheet', 'informational'],
 ]);
 
 const EXECUTIVE_MANUAL_CANNIBALIZATION_REVIEW_PASS_SLUGS = new Set([
