@@ -1,7 +1,7 @@
 {
   "program": "MRX1000",
   "artifact_type": "searchatlas_ordered_llm_local_execution_manifest",
-  "generated_at": "2026-07-20T21:07:18.597Z",
+  "generated_at": "2026-07-20T16:19:37.872Z",
   "deterministic": true,
   "local_only": true,
   "external_services_called": false,
@@ -9,13 +9,13 @@
   "inputs": {
     "ledger": {
       "path": "config/mrx-1000-canonical-content-ledger.json",
-      "sha256": "f28dafa5b5de75344613c4e263e11e8ea6cf5b26440f05e34241c4fa8d311bff",
-      "bytes": 4506977
+      "sha256": "e2bee708eed93a628d14d83c037407b2c2fb8d6906019659d1d2221bb13bb24c",
+      "bytes": 4573219
     },
     "readiness": {
       "path": "reports/mrx-1000-readiness-matrix.json",
-      "sha256": "699456890a2a4d3c1555f7c6c3d2c08a0819e1096fb74ded9f2c499d9d168343",
-      "bytes": 3444504,
+      "sha256": "5354be169da1bbb69ce0e243c4198ed20dc2d5623c2a3ef588620c6a3a594beb",
+      "bytes": 3444931,
       "sha256_method": "canonical_json_with_top_level_generated_at_masked",
       "generated_at_excluded_from_sha256": true
     },
@@ -366,30 +366,30 @@
     },
     "by_canonical_inventory_state": {
       "incumbent_draft_nonpublic_held": 27,
-      "live_public_published_route": 199,
+      "live_public_published_route": 200,
       "pilot_draft_noindex_stage": 25,
-      "planning_only_inventory": 749
+      "planning_only_inventory": 748
     },
     "by_searchatlas_action_needed": {
-      "preserve_workspace_public_route_and_search_vendor_identity_before_any_creation": 123,
+      "preserve_workspace_public_route_and_search_vendor_identity_before_any_creation": 124,
       "reconcile_artifact_bound_content_genius_record_no_creation": 2,
       "reconcile_pilot_non_creation_workflow_label_then_bind_or_conditionally_create": 23,
       "reconcile_unambiguous_exact_title_vendor_candidate_no_creation": 144,
       "resolve_ambiguous_exact_title_vendor_candidates_no_creation": 6,
-      "search_vendor_identity_then_conditionally_create_after_identity_and_quality_preflight": 702
+      "search_vendor_identity_then_conditionally_create_after_identity_and_quality_preflight": 701
     },
-    "repo_mdx_present": 251,
-    "workspace_public_route_configured": 199,
-    "planning_searchatlas_map_id_count": 232,
-    "planning_searchatlas_title_uuid_count": 207,
+    "repo_mdx_present": 252,
+    "workspace_public_route_configured": 200,
+    "planning_searchatlas_map_id_count": 231,
+    "planning_searchatlas_title_uuid_count": 206,
     "persisted_ledger_content_genius_article_uuid_count": 0,
-    "checksummed_review_candidate_rows": 227,
-    "rows_without_checksummed_review_candidate": 773,
+    "checksummed_review_candidate_rows": 228,
+    "rows_without_checksummed_review_candidate": 772,
     "by_review_candidate_state": {
-      "CHECKSUMMED_EXISTING_PUBLIC_ARTICLE_READY_FOR_LLM_REVIEW": 199,
+      "CHECKSUMMED_EXISTING_PUBLIC_ARTICLE_READY_FOR_LLM_REVIEW": 200,
       "CHECKSUMMED_HELD_SUBSTANTIVE_DRAFT_READY_FOR_LLM_REVIEW": 27,
       "NO_CHECKSUMMED_REVIEW_CANDIDATE_PILOT_QA_SHELL_ONLY": 24,
-      "NO_WORKSPACE_CONTENT_CANDIDATE": 749,
+      "NO_WORKSPACE_CONTENT_CANDIDATE": 748,
       "ROW2_REMEDIATED_NOINDEX_CANDIDATE_VALIDATED_FOR_ORDERED_LLM_REVIEW": 1
     },
     "pilot_workspace_qa_shell_rows": 25,
@@ -9405,7 +9405,7 @@
       "primary_keyword": "can you sell part of mineral rights partial interest sales",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -9793,7 +9793,7 @@
       "primary_keyword": "how long to sell mineral rights texas",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -10181,7 +10181,7 @@
       "primary_keyword": "how the step-by-step process of selling texas mineral rights works",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -10569,7 +10569,7 @@
       "primary_keyword": "after selling mineral rights texas",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -11641,7 +11641,7 @@
       "primary_keyword": "mineral rights document redaction checklist",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -20901,7 +20901,7 @@
       "primary_keyword": "mineral rights AI source trace",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -46235,7 +46235,7 @@
       "primary_keyword": "selling mineral rights",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -46603,7 +46603,7 @@
       "primary_keyword": "selling mineral rights",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -46971,7 +46971,7 @@
       "primary_keyword": "selling mineral rights",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -47339,7 +47339,7 @@
       "primary_keyword": "selling mineral rights",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -47707,7 +47707,7 @@
       "primary_keyword": "selling mineral rights",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -48075,7 +48075,7 @@
       "primary_keyword": "What Factors Influence the Price You Suggest for My Mineral Rights Assessment?",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -48443,7 +48443,7 @@
       "primary_keyword": "Common Mistakes Selling Mineral Rights",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -48811,7 +48811,7 @@
       "primary_keyword": "What Are Common Pitfalls I Should Avoid in Selling Mineral Rights?",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -49179,7 +49179,7 @@
       "primary_keyword": "Are There Any Hidden Costs I Should Be Aware of During the Review?",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -49547,7 +49547,7 @@
       "primary_keyword": "Are There Any Fees Associated With Getting a No-Obligation Assessment?",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -49915,7 +49915,7 @@
       "primary_keyword": "How Will I Know if I'm Receiving a Fair Valuation for My Mineral Rights?",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -50283,7 +50283,7 @@
       "primary_keyword": "How Does the Market Demand Affect the Price I Can Expect for My Rights?",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -50651,7 +50651,7 @@
       "primary_keyword": "Mineral Rights Explained for Beginners",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -51019,7 +51019,7 @@
       "primary_keyword": "How Do I Ensure I'm Receiving a Fair Valuation for My Mineral Rights?",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -51387,7 +51387,7 @@
       "primary_keyword": "How Can I Determine if My Mineral Rights Qualify for a Fair Assessment?",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -51755,7 +51755,7 @@
       "primary_keyword": "Mineral Rights Appraisal Near Me",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -52123,7 +52123,7 @@
       "primary_keyword": "How to Avoid Mineral Rights Selling Pitfalls",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -52491,7 +52491,7 @@
       "primary_keyword": "Navigating Mineral Rights Transactions Texas",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -52859,7 +52859,7 @@
       "primary_keyword": "Texas Mineral Rights Valuation Process",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -53227,7 +53227,7 @@
       "primary_keyword": "How Is the Value of My Texas Mineral Rights Determined and Assessed?",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -53595,7 +53595,7 @@
       "primary_keyword": "What Factors Influence the Price You Suggest for My Mineral Rights Assessment?",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -53963,7 +53963,7 @@
       "primary_keyword": "Mineral Rights Selling Process Errors",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -54331,7 +54331,7 @@
       "primary_keyword": "What Steps Are Involved in Getting a No-Obligation Review of My Mineral Rights?",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -54699,7 +54699,7 @@
       "primary_keyword": "What to Know Before Selling Mineral Rights",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -55067,7 +55067,7 @@
       "primary_keyword": "Understanding Texas Mineral Rights Worth",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -55435,7 +55435,7 @@
       "primary_keyword": "How Do I Know if My Mineral Rights Have Significant Value?",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -55803,7 +55803,7 @@
       "primary_keyword": "What Is the Typical Pricing Range for Mineral Rights in My Area?",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -56171,7 +56171,7 @@
       "primary_keyword": "What Information Do I Need to Provide for a Mineral Rights Review?",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -56539,7 +56539,7 @@
       "primary_keyword": "Why Is My Mineral Rights Valuation Range So Wide?",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -56907,7 +56907,7 @@
       "primary_keyword": "Texas Mineral Rights Sale Problem Triage",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -57275,7 +57275,7 @@
       "primary_keyword": "Texas Mineral Tax Value vs. Sale Estimate",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -57643,7 +57643,7 @@
       "primary_keyword": "should I sell my mineral rights",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -58011,7 +58011,7 @@
       "primary_keyword": "calculate price per net mineral acre",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -58379,7 +58379,7 @@
       "primary_keyword": "what does a mineral rights assessment include",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -58747,7 +58747,7 @@
       "primary_keyword": "mineral rights sale decision log",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -59115,7 +59115,7 @@
       "primary_keyword": "Mineral Rights Sale Document Package Index",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -59483,7 +59483,7 @@
       "primary_keyword": "how do I talk to my family about selling our mineral rights?",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -59851,7 +59851,7 @@
       "primary_keyword": "mineral rights family point person",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -60219,7 +60219,7 @@
       "primary_keyword": "mineral rights offer property scope checklist",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -60587,7 +60587,7 @@
       "primary_keyword": "mineral rights offer correspondence index",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -60955,7 +60955,7 @@
       "primary_keyword": "mineral rights valuation input correction packet",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -61323,7 +61323,7 @@
       "primary_keyword": "how are mineral rights valued",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -61691,7 +61691,7 @@
       "primary_keyword": "how oil price fluctuations affect texas mineral rights values",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -62059,7 +62059,7 @@
       "primary_keyword": "how texas mineral rights are valued producing vs non producing interests",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -63588,7 +63588,7 @@
       "primary_keyword": "mineral rights assessment",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -63976,7 +63976,7 @@
       "primary_keyword": "midland vs delaware basin how formation affects your mineral rights value",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -64344,7 +64344,7 @@
       "primary_keyword": "natural gas vs oil mineral rights in texas how production type affects value",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -64712,7 +64712,7 @@
       "primary_keyword": "risks of skipping an independent assessment for mineral rights",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -65100,7 +65100,7 @@
       "primary_keyword": "value of mineral rights",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -65488,7 +65488,7 @@
       "primary_keyword": "mineral rights valuation methodology",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -65856,7 +65856,7 @@
       "primary_keyword": "assessing mineral rights worth",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -66244,7 +66244,7 @@
       "primary_keyword": "what determines mineral rights value",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -67368,7 +67368,7 @@
       "primary_keyword": "Texas RRC Organization (P-5) query retrieval",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -67736,7 +67736,7 @@
       "primary_keyword": "acreage contiguity development potential",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -68104,7 +68104,7 @@
       "primary_keyword": "basis differentials mineral rights cash flow",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -68472,7 +68472,7 @@
       "primary_keyword": "comparable mineral rights sales",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -68840,7 +68840,7 @@
       "primary_keyword": "monthly royalty history valuation baseline",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -69208,7 +69208,7 @@
       "primary_keyword": "curative title risk valuation adjustment",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -69576,7 +69576,7 @@
       "primary_keyword": "decline curves and future royalty cash flow",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -69944,7 +69944,7 @@
       "primary_keyword": "depth severance formation rights valuation",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -70312,7 +70312,7 @@
       "primary_keyword": "discount rates in mineral rights DCF",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -70680,7 +70680,7 @@
       "primary_keyword": "What Steps Should I Take to Understand My Mineral Rights' Value?",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -71048,7 +71048,7 @@
       "primary_keyword": "existing wells future locations DCF",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -71416,7 +71416,7 @@
       "primary_keyword": "How Do I Know if My Mineral Rights Qualify for Evaluation?",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -71784,7 +71784,7 @@
       "primary_keyword": "Free Mineral Rights Valuation Review",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -72152,7 +72152,7 @@
       "primary_keyword": "lease royalty rates mineral value",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -72520,7 +72520,7 @@
       "primary_keyword": "Factors Affecting Mineral Rights Value",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -72888,7 +72888,7 @@
       "primary_keyword": "how much are mineral rights worth",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -73256,7 +73256,7 @@
       "primary_keyword": "how much are mineral rights worth",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -73624,7 +73624,7 @@
       "primary_keyword": "how much are mineral rights worth",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -73992,7 +73992,7 @@
       "primary_keyword": "how much are mineral rights worth",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -98349,7 +98349,7 @@
       "primary_keyword": "mineral valuation sensitivity analysis worksheet",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -98717,7 +98717,7 @@
       "primary_keyword": "mineral rights worksheet question locator",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -99085,7 +99085,7 @@
       "primary_keyword": "offset activity property connection",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -99453,7 +99453,7 @@
       "primary_keyword": "mineral rights operator name change log",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -99821,7 +99821,7 @@
       "primary_keyword": "PDP PUD undeveloped acreage terminology register",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -100189,7 +100189,7 @@
       "primary_keyword": "post-production cost evidence packet royalty records",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -100557,7 +100557,7 @@
       "primary_keyword": "compare public oil and gas price decks",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -100925,7 +100925,7 @@
       "primary_keyword": "mixed-status mineral interest inventory",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -101293,7 +101293,7 @@
       "primary_keyword": "refrac workover event claim register",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -101661,7 +101661,7 @@
       "primary_keyword": "shut-in clause conditions valuation review",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -102029,7 +102029,7 @@
       "primary_keyword": "mineral rights valuation evidence cutoff log",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -102397,7 +102397,7 @@
       "primary_keyword": "Texas mineral production record locator sheet",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -103449,7 +103449,7 @@
       "primary_keyword": "Texas RRC drilling permit query retrieval",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -103817,7 +103817,7 @@
       "primary_keyword": "Texas RRC wellbore query retrieval",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -104185,7 +104185,7 @@
       "primary_keyword": "Texas RRC H-10 query retrieval",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -104553,7 +104553,7 @@
       "primary_keyword": "Texas RRC Inactive Well query retrieval",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -104921,7 +104921,7 @@
       "primary_keyword": "Texas RRC Oil Proration query retrieval",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -105289,7 +105289,7 @@
       "primary_keyword": "Texas RRC Gas Proration query retrieval",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -105657,7 +105657,7 @@
       "primary_keyword": "Texas RRC injection-storage permit query retrieval",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -106025,7 +106025,7 @@
       "primary_keyword": "Texas RRC severance query retrieval",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -106393,7 +106393,7 @@
       "primary_keyword": "Texas RRC Flare/Vent Exception query retrieval",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -106761,7 +106761,7 @@
       "primary_keyword": "Texas RRC Completions Query retrieval",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -107497,7 +107497,7 @@
       "primary_keyword": "Texas RRC pooling filing retrieval",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -108969,7 +108969,7 @@
       "primary_keyword": "Texas RRC P-4 gatherer/purchaser query retrieval",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -112220,32 +112220,56 @@
     },
     {
       "program_row_id": "MRX1000-0299",
-      "canonical_title": "Why a Mineral Rights Assessment Is Essential for Owners",
-      "canonical_slug": "why-a-mineral-rights-assessment-is-essential-for-owners",
-      "canonical_url": "https://mineralrightsxchange.com/blog/why-a-mineral-rights-assessment-is-essential-for-owners/",
+      "canonical_title": "Texas RRC Production by Lease Retrieval Provenance Worksheet",
+      "canonical_slug": "texas-rrc-production-by-lease-retrieval-provenance-worksheet",
+      "canonical_url": "https://mineralrightsxchange.com/blog/texas-rrc-production-by-lease-retrieval-provenance-worksheet/",
       "pillar": "mineral-rights-value",
       "pillar_url": "/mineral-rights-value/",
       "cluster": "valuation-methodology-drivers",
-      "primary_keyword": "Benefits of Mineral Rights Assessment",
+      "primary_keyword": "Texas RRC Production by Lease retrieval",
       "authoritative_current_state": {
-        "canonical_inventory_state": "planning_only_inventory",
-        "normalized_status": "planning_only_topical_map_title_planning_handle",
-        "source_system": "searchatlas_topical_map_export",
+        "canonical_inventory_state": "live_public_published_route",
+        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
-          "state": "NO_WORKSPACE_MDX",
-          "path": null,
-          "mdx_exists": false,
-          "source_sha256": null,
-          "publication_status": null,
+          "state": "WORKSPACE_MDX_PRESENT",
+          "path": "src/content/posts/texas-rrc-production-by-lease-retrieval-provenance-worksheet.mdx",
+          "mdx_exists": true,
+          "source_sha256": "98849d9b5cd87f9386d8f558560afeeb7e5f277d8fc9a3246daec45d0b20ebe5",
+          "publication_status": "published",
           "frontmatter_noindex": false,
-          "workspace_public_route_configured": false,
+          "workspace_public_route_configured": true,
           "production_live_verified_in_this_local_build": false,
-          "content_evidence": null
+          "content_evidence": {
+            "frontmatter_title": "Texas RRC Production by Lease Retrieval Provenance Worksheet",
+            "frontmatter_slug": null,
+            "frontmatter_publication_status": "published",
+            "frontmatter_reviewed_at": "2026-08-25T07:20:00Z",
+            "frontmatter_reviewed_by": "mrx_compliance-continuous-wave115",
+            "frontmatter_article_id": null,
+            "frontmatter_searchatlas_uuid": null,
+            "frontmatter_workflow_status": null,
+            "frontmatter_remediated_from_sha256": null,
+            "frontmatter_body_checksum_sha256": null,
+            "frontmatter_body_length_chars": 0,
+            "frontmatter_body_word_count": 0,
+            "frontmatter_draft": false,
+            "frontmatter_noindex": false,
+            "frontmatter_indexable": null,
+            "body_sha256": "c8f67c327038414177c04b82541e0b63c466b445dfbab2780e7838ff221f9e3e",
+            "body_bytes": 11844,
+            "body_characters": 11844,
+            "body_word_count": 1617,
+            "explicit_qa_shell_without_final_copy": false,
+            "filename_matches_canonical_slug": true,
+            "frontmatter_title_matches_canonical": true,
+            "frontmatter_publication_status_matches_ledger": true
+          }
         },
         "planning_handles": {
-          "searchatlas_map_id": 255581,
-          "searchatlas_title_uuid": "486733b5-39ba-478c-a04c-2e16c5ccd5c2",
+          "searchatlas_map_id": null,
+          "searchatlas_title_uuid": null,
           "searchatlas_record_id_persisted_in_ledger": null,
           "content_genius_article_uuid_persisted_in_ledger": null,
           "are_content_genius_article_creation_proof": false,
@@ -112264,28 +112288,31 @@
           "manual_reconciliation_required": true
         },
         "review_candidate": {
-          "state": "NO_WORKSPACE_CONTENT_CANDIDATE",
-          "checksummed_review_candidate_present": false,
-          "path": null,
-          "source_sha256": null,
-          "body_sha256": null,
-          "body_word_count": null,
-          "candidate_type": null,
-          "readiness_evidence_verified": false,
-          "readiness_evidence_paths": [],
+          "state": "CHECKSUMMED_EXISTING_PUBLIC_ARTICLE_READY_FOR_LLM_REVIEW",
+          "checksummed_review_candidate_present": true,
+          "path": "src/content/posts/texas-rrc-production-by-lease-retrieval-provenance-worksheet.mdx",
+          "source_sha256": "98849d9b5cd87f9386d8f558560afeeb7e5f277d8fc9a3246daec45d0b20ebe5",
+          "body_sha256": "c8f67c327038414177c04b82541e0b63c466b445dfbab2780e7838ff221f9e3e",
+          "body_word_count": 1617,
+          "candidate_type": "existing_public_article",
+          "readiness_evidence_verified": true,
+          "readiness_evidence_paths": [
+            "reports/mrx-1000-readiness-matrix.json",
+            "config/mrx-1000-canonical-content-ledger.json"
+          ],
           "readiness_checks": {
-            "workspace_source_checksum_present": false,
+            "workspace_source_checksum_present": true,
             "readiness_row_identity_verified": true,
-            "filename_matches_canonical_slug": false,
-            "frontmatter_title_matches_canonical": false,
-            "frontmatter_publication_status_matches_ledger": false,
-            "substantive_body_at_least_500_words": false,
-            "explicit_qa_shell_absent": false,
-            "review_metadata_present": false,
-            "canonical_state_supports_content_review": false
+            "filename_matches_canonical_slug": true,
+            "frontmatter_title_matches_canonical": true,
+            "frontmatter_publication_status_matches_ledger": true,
+            "substantive_body_at_least_500_words": true,
+            "explicit_qa_shell_absent": true,
+            "review_metadata_present": true,
+            "canonical_state_supports_content_review": true
           },
-          "workspace_mdx_is_review_candidate": false,
-          "workspace_mdx_rejection_reason": "No workspace MDX exists.",
+          "workspace_mdx_is_review_candidate": true,
+          "workspace_mdx_rejection_reason": null,
           "special_candidate_validation": null
         }
       },
@@ -112296,7 +112323,7 @@
         "position_in_batch": 16,
         "batch_size": 25,
         "assignment_policy": "remaining_rows_by_program_row_id",
-        "action_needed": "search_vendor_identity_then_conditionally_create_after_identity_and_quality_preflight",
+        "action_needed": "preserve_workspace_public_route_and_search_vendor_identity_before_any_creation",
         "execution_state": "WAITING_FOR_IDENTITY_CONTENT_AND_REVIEW_GATES_NO_EXTERNAL_WRITE",
         "execution_eligible_now": false,
         "creation_needed_proven": false,
@@ -112310,9 +112337,9 @@
           "read_only_quota_preflight_required_before_external_write": true,
           "canonical_identity_reconciliation_required": true,
           "checksummed_content_candidate_required_before_review": true,
-          "checksummed_content_candidate_present": false,
-          "review_candidate_path_and_sha256_present": false,
-          "review_readiness_evidence_verified": false,
+          "checksummed_content_candidate_present": true,
+          "review_candidate_path_and_sha256_present": true,
+          "review_readiness_evidence_verified": true,
           "compliance_seo_aeo_editorial_gates_required": true
         },
         "evidence": {
@@ -112339,10 +112366,10 @@
           "availability_state": "NOT_CHECKED_BY_LOCAL_ONLY_BUILD",
           "dispatch_eligible_now": false,
           "prerequisite_gates": {
-            "checksummed_review_candidate_present": false,
-            "review_candidate_path": null,
-            "review_candidate_sha256": null,
-            "review_candidate_readiness_evidence_verified": false,
+            "checksummed_review_candidate_present": true,
+            "review_candidate_path": "src/content/posts/texas-rrc-production-by-lease-retrieval-provenance-worksheet.mdx",
+            "review_candidate_sha256": "98849d9b5cd87f9386d8f558560afeeb7e5f277d8fc9a3246daec45d0b20ebe5",
+            "review_candidate_readiness_evidence_verified": true,
             "predecessor_key": null,
             "predecessor_pass_required": false,
             "predecessor_pass_observed": false,
@@ -112376,10 +112403,10 @@
           "availability_state": "NOT_CHECKED_BY_LOCAL_ONLY_BUILD",
           "dispatch_eligible_now": false,
           "prerequisite_gates": {
-            "checksummed_review_candidate_present": false,
-            "review_candidate_path": null,
-            "review_candidate_sha256": null,
-            "review_candidate_readiness_evidence_verified": false,
+            "checksummed_review_candidate_present": true,
+            "review_candidate_path": "src/content/posts/texas-rrc-production-by-lease-retrieval-provenance-worksheet.mdx",
+            "review_candidate_sha256": "98849d9b5cd87f9386d8f558560afeeb7e5f277d8fc9a3246daec45d0b20ebe5",
+            "review_candidate_readiness_evidence_verified": true,
             "predecessor_key": "chatgpt",
             "predecessor_pass_required": true,
             "predecessor_pass_observed": false,
@@ -112413,10 +112440,10 @@
           "availability_state": "UNAVAILABLE_PER_LOCAL_FRAMEWORK_SNAPSHOT",
           "dispatch_eligible_now": false,
           "prerequisite_gates": {
-            "checksummed_review_candidate_present": false,
-            "review_candidate_path": null,
-            "review_candidate_sha256": null,
-            "review_candidate_readiness_evidence_verified": false,
+            "checksummed_review_candidate_present": true,
+            "review_candidate_path": "src/content/posts/texas-rrc-production-by-lease-retrieval-provenance-worksheet.mdx",
+            "review_candidate_sha256": "98849d9b5cd87f9386d8f558560afeeb7e5f277d8fc9a3246daec45d0b20ebe5",
+            "review_candidate_readiness_evidence_verified": true,
             "predecessor_key": "google_gemini",
             "predecessor_pass_required": true,
             "predecessor_pass_observed": false,
@@ -112450,10 +112477,10 @@
           "availability_state": "NOT_CHECKED_BY_LOCAL_ONLY_BUILD",
           "dispatch_eligible_now": false,
           "prerequisite_gates": {
-            "checksummed_review_candidate_present": false,
-            "review_candidate_path": null,
-            "review_candidate_sha256": null,
-            "review_candidate_readiness_evidence_verified": false,
+            "checksummed_review_candidate_present": true,
+            "review_candidate_path": "src/content/posts/texas-rrc-production-by-lease-retrieval-provenance-worksheet.mdx",
+            "review_candidate_sha256": "98849d9b5cd87f9386d8f558560afeeb7e5f277d8fc9a3246daec45d0b20ebe5",
+            "review_candidate_readiness_evidence_verified": true,
             "predecessor_key": "claude_opus_4_6",
             "predecessor_pass_required": true,
             "predecessor_pass_observed": false,
@@ -112487,10 +112514,10 @@
           "availability_state": "NOT_CHECKED_BY_LOCAL_ONLY_BUILD",
           "dispatch_eligible_now": false,
           "prerequisite_gates": {
-            "checksummed_review_candidate_present": false,
-            "review_candidate_path": null,
-            "review_candidate_sha256": null,
-            "review_candidate_readiness_evidence_verified": false,
+            "checksummed_review_candidate_present": true,
+            "review_candidate_path": "src/content/posts/texas-rrc-production-by-lease-retrieval-provenance-worksheet.mdx",
+            "review_candidate_sha256": "98849d9b5cd87f9386d8f558560afeeb7e5f277d8fc9a3246daec45d0b20ebe5",
+            "review_candidate_readiness_evidence_verified": true,
             "predecessor_key": "perplexity",
             "predecessor_pass_required": true,
             "predecessor_pass_observed": false,
@@ -112521,7 +112548,7 @@
           "perplexity",
           "microsoft_copilot"
         ],
-        "next_stage": null,
+        "next_stage": "chatgpt",
         "any_verdict_recorded": false,
         "all_required_verdicts_passed": false,
         "sequence_complete": false,
@@ -112539,7 +112566,7 @@
         "release_action_eligible_now": false,
         "index_submission_eligible_now": false,
         "sitemap_addition_eligible_now": false,
-        "currently_in_workspace_sitemap": false,
+        "currently_in_workspace_sitemap": true,
         "production_live_verified_in_this_local_build": false,
         "release_or_index_action_performed": false,
         "exact_claude_opus_4_6_required_before_release_or_index_transition": true,
@@ -112556,7 +112583,6 @@
         "ORDERED_LLM_REVIEW_SEQUENCE_NOT_COMPLETE",
         "LOCAL_ONLY_MANIFEST_EXTERNAL_DISPATCH_NOT_PERFORMED",
         "ARTICLE_SPECIFIC_QUALITY_CLEARANCE_NOT_COMPLETE",
-        "NO_CHECKSUMMED_REVIEW_CANDIDATE",
         "CONTENT_GENIUS_CANONICAL_ROW_UUID_BINDING_UNPROVEN"
       ]
     },
@@ -113669,7 +113695,7 @@
       "primary_keyword": "sell mineral rights texas",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -114057,7 +114083,7 @@
       "primary_keyword": "multiple offers for Texas mineral rights",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -114445,7 +114471,7 @@
       "primary_keyword": "how to identify and avoid hidden fees in mineral rights assessment process",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -114833,7 +114859,7 @@
       "primary_keyword": "lowball mineral rights offers",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -115221,7 +115247,7 @@
       "primary_keyword": "identify predatory mineral buyers",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -115997,7 +116023,7 @@
       "primary_keyword": "fair mineral rights offer",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -116385,7 +116411,7 @@
       "primary_keyword": "how to negotiate a mineral rights sale",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -116773,7 +116799,7 @@
       "primary_keyword": "predatory mineral rights offers",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -117161,7 +117187,7 @@
       "primary_keyword": "predatory mineral rights buyers",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -117549,7 +117575,7 @@
       "primary_keyword": "mineral rights transaction red flags",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -117937,7 +117963,7 @@
       "primary_keyword": "competing mineral rights offers assessment call",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -118325,7 +118351,7 @@
       "primary_keyword": "mineral rights direct buyer risks",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -119489,7 +119515,7 @@
       "primary_keyword": "mineral rights offer scams",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -119877,7 +119903,7 @@
       "primary_keyword": "key factors influencing mineral rights offer range",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -120265,7 +120291,7 @@
       "primary_keyword": "competing offers mineral rights",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -154899,7 +154925,7 @@
       "primary_keyword": "put mineral rights in a trust Texas",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -155287,7 +155313,7 @@
       "primary_keyword": "divorce mineral rights texas",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -155675,7 +155701,7 @@
       "primary_keyword": "selling mineral rights estate plan Texas",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -156063,7 +156089,7 @@
       "primary_keyword": "fair mineral rights offer",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -156451,7 +156477,7 @@
       "primary_keyword": "managing mineral interests estate planning",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -156839,7 +156865,7 @@
       "primary_keyword": "mineral rights inheritance in Texas before selling",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -157227,7 +157253,7 @@
       "primary_keyword": "inherited mineral rights value",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -157615,7 +157641,7 @@
       "primary_keyword": "estate planning inherited mineral rights",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -158003,7 +158029,7 @@
       "primary_keyword": "inherited mineral rights in Texas",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -158391,7 +158417,7 @@
       "primary_keyword": "royalty checks after inheriting mineral rights",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -158779,7 +158805,7 @@
       "primary_keyword": "probate process for mineral interests",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -159167,7 +159193,7 @@
       "primary_keyword": "what happens to mineral rights in probate",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -188283,7 +188309,7 @@
       "primary_keyword": "how to decode your royalty check statement",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -188671,7 +188697,7 @@
       "primary_keyword": "how to interpret mineral rights royalty checks",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -189059,7 +189085,7 @@
       "primary_keyword": "steps to take if royalty checks are inconsistent a mineral owner's guide",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -189447,7 +189473,7 @@
       "primary_keyword": "mineral royalty checks value",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -221374,7 +221400,7 @@
       "primary_keyword": "1031 exchange mineral rights",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -221762,7 +221788,7 @@
       "primary_keyword": "1031 exchange mineral rights Texas",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -222150,7 +222176,7 @@
       "primary_keyword": "1031 exchange vs traditional sale mineral rights",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -222538,7 +222564,7 @@
       "primary_keyword": "capital gains tax on mineral rights sales in Texas",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -222926,7 +222952,7 @@
       "primary_keyword": "mineral rights closing costs texas",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -223702,7 +223728,7 @@
       "primary_keyword": "how texas mineral rights ownership works deeds, conveyances, and title",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -224478,7 +224504,7 @@
       "primary_keyword": "report mineral rights sale federal tax return",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -224866,7 +224892,7 @@
       "primary_keyword": "maximize gains with 1031 exchange Texas mineral rights",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -225622,7 +225648,7 @@
       "primary_keyword": "title curative for mineral rights what it is and why it matters before you sell",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -226398,7 +226424,7 @@
       "primary_keyword": "1031 tax implications mineral rights",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -227542,7 +227568,7 @@
       "primary_keyword": "mineral rights purchase agreement",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -255082,7 +255108,7 @@
       "primary_keyword": "eagle ford shale how it affects mineral rights values in south texas",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -255450,7 +255476,7 @@
       "primary_keyword": "how horizontal drilling changed mineral rights values in texas",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -255818,7 +255844,7 @@
       "primary_keyword": "how royalty payments work for texas mineral rights owners",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -256186,7 +256212,7 @@
       "primary_keyword": "assess Texas mineral rights value",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -256574,7 +256600,7 @@
       "primary_keyword": "determine value Texas mineral rights",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -256962,7 +256988,7 @@
       "primary_keyword": "texas oil and gas production by county what mineral rights owners should know",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -257330,7 +257356,7 @@
       "primary_keyword": "texas railroad commission public records for mineral rights",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -257698,7 +257724,7 @@
       "primary_keyword": "the permian basin explained what texas mineral rights owners need to know",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -258066,7 +258092,7 @@
       "primary_keyword": "top Texas counties for mineral rights value",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -258454,7 +258480,7 @@
       "primary_keyword": "assessing Texas mineral rights",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -258842,7 +258868,7 @@
       "primary_keyword": "what are mineral rights texas landowners",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -259230,7 +259256,7 @@
       "primary_keyword": "what are mineral rights worth",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -259618,7 +259644,7 @@
       "primary_keyword": "Andrews County mineral rights public-record locator",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -305814,7 +305840,7 @@
       "primary_keyword": "how to find out if you own mineral rights in texas",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -306570,7 +306596,7 @@
       "primary_keyword": "net mineral acres vs royalty acres",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -306958,7 +306984,7 @@
       "primary_keyword": "surface rights vs mineral rights Texas",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -307346,7 +307372,7 @@
       "primary_keyword": "types of mineral rights in texas royalty interests, working interests, and overriding royalties",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -307734,7 +307760,7 @@
       "primary_keyword": "mineral royalty checks breakdown",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -308490,7 +308516,7 @@
       "primary_keyword": "what is a division order",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -308878,7 +308904,7 @@
       "primary_keyword": "held by production lease",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -309266,7 +309292,7 @@
       "primary_keyword": "what is an oil and gas lease",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -309654,7 +309680,7 @@
       "primary_keyword": "why mineral rights are separate from surface rights in texas a landowner's guide",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -330662,7 +330688,7 @@
       "primary_keyword": "mineral rights underwriter review fees",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -331050,7 +331076,7 @@
       "primary_keyword": "underwriter review with competing mineral rights offers",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -331438,7 +331464,7 @@
       "primary_keyword": "discuss mineral rights underwriter review outcomes",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -332990,7 +333016,7 @@
       "primary_keyword": "types of Texas mineral rights free underwriter assessment",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -333378,7 +333404,7 @@
       "primary_keyword": "transparent mineral rights review questions",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -334910,7 +334936,7 @@
       "primary_keyword": "mineral rights offer sender identity cross-check",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -336054,7 +336080,7 @@
       "primary_keyword": "free mineral rights underwriter review",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -337218,7 +337244,7 @@
       "primary_keyword": "compare mineral rights review services",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -337974,7 +338000,7 @@
       "primary_keyword": "transparent approach to mineral rights reviews versus traditional selling tactics",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -339526,7 +339552,7 @@
       "primary_keyword": "underwriter review vs mineral rights broker",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -340690,7 +340716,7 @@
       "primary_keyword": "what to bring to an underwriter review call",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -341078,7 +341104,7 @@
       "primary_keyword": "mineral rights underwriter review process",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -341466,7 +341492,7 @@
       "primary_keyword": "why mineralrightsxchange focuses on transparent mineral rights acquisition",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -341834,7 +341860,7 @@
       "primary_keyword": "how mineralrightsxchange approaches mineral rights acquisition",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -342202,7 +342228,7 @@
       "primary_keyword": "mineral rights acquisition platform",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -349088,7 +349114,7 @@
       "primary_keyword": "Robertson County mineral rights public records",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -351840,5 +351866,5 @@
       ]
     }
   ],
-  "content_fingerprint_sha256": "3b8864c740d6babb234191659c6671f36252629fcb8c3b77e32763ee7208e28e"
+  "content_fingerprint_sha256": "77fe0189bc9774f81472f9d363cafac329b41016d529285ca7ddb7de2922a47c"
 }

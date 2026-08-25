@@ -1,18 +1,18 @@
 {
   "artifact_type": "mrx_article_two_image_retrofit",
   "schema_version": 1,
-  "generated_at_utc": "2026-08-24T17:55:16Z",
+  "generated_at_utc": "2026-08-25T07:24:24Z",
   "policy_source": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
   "summary": {
-    "article_count": 199,
-    "asset_count": 398,
-    "unique_source_art_count": 199,
-    "unique_hero_sha256_count": 199,
-    "unique_inline_sha256_count": 199,
-    "distinct_article_pair_count": 199,
-    "hero_ocr_pass_count": 199,
-    "inline_ocr_pass_count": 199,
-    "exact_filename_identity_count": 199
+    "article_count": 200,
+    "asset_count": 400,
+    "unique_source_art_count": 200,
+    "unique_hero_sha256_count": 200,
+    "unique_inline_sha256_count": 200,
+    "distinct_article_pair_count": 200,
+    "hero_ocr_pass_count": 200,
+    "inline_ocr_pass_count": 200,
+    "exact_filename_identity_count": 200
   },
   "contact_sheets": {
     "hero": [
@@ -6106,6 +6106,56 @@
           "actual": "Texas RRC pooling\nfiling retrieval",
           "normalized_expected": "texas rrc pooling filing retrieval",
           "normalized_actual": "texas rrc pooling filing retrieval",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      }
+    },
+    {
+      "slug": "texas-rrc-production-by-lease-retrieval-provenance-worksheet",
+      "title": "Texas RRC Production by Lease Retrieval Provenance Worksheet",
+      "keyword": "Texas RRC Production by Lease retrieval",
+      "file_path": "src/content/posts/texas-rrc-production-by-lease-retrieval-provenance-worksheet.mdx",
+      "source_public_path": "/assets/articles/hero/texas-rrc-production-by-lease-retrieval-provenance-worksheet.webp",
+      "source_artifact_paths": [
+        "artifacts/mrx1000-wave115-creative-sources/texas-rrc-production-by-lease-retrieval-provenance-worksheet-hero-base.png",
+        "artifacts/mrx1000-wave115-creative-sources/texas-rrc-production-by-lease-retrieval-provenance-worksheet-inline-base.png"
+      ],
+      "generated_at_utc": "2026-08-25T07:14:46.451Z",
+      "hero": {
+        "public_path": "/assets/articles/hero/texas-rrc-production-by-lease-retrieval-provenance-worksheet.webp",
+        "alt": "A researcher records a Production by Lease attempt beside the exact article title.",
+        "width": 1200,
+        "height": 630,
+        "mime_type": "image/webp",
+        "sha256": "edc306dfbb96b5d2eb4af8e7ecf066e9081f091056799ccf3c6dff08743ee8ec",
+        "perceptual_hash": "0000000011000111000000001100011000000000011011000110000001111110010000001111001001111000011100111111100001100110111000000111110000000000111101100000000011011110000000001111110000000000111111000000000011111000000000001111100000000000011100000000000011110000",
+        "neutralized_art_text_region_count": 1,
+        "ocr": {
+          "expected": "Texas RRC Production by Lease Retrieval Provenance Worksheet",
+          "actual": "Texas RRC\nProduction by Lease\nRetrieval Provenance\nWorksheet",
+          "normalized_expected": "texas rrc production by lease retrieval provenance worksheet",
+          "normalized_actual": "texas rrc production by lease retrieval provenance worksheet",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      },
+      "inline": {
+        "public_path": "/assets/articles/inline/texas-rrc-production-by-lease-retrieval-provenance-worksheet/texas-rrc-production-by-lease-retrieval.webp",
+        "alt": "An overhead one-attempt provenance worksheet appears above the exact keyword.",
+        "rendered_text": "Texas RRC Production by Lease retrieval",
+        "visual_variant": "wave115-distinct-generated-overhead-production-by-lease-provenance-worksheet",
+        "width": 1200,
+        "height": 675,
+        "mime_type": "image/webp",
+        "sha256": "bea1efd16e217a43802271da6f69fdd0540c414b34a875a812de07f07a28af84",
+        "perceptual_hash": "1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111101111111111111110111111111111111001111111111111000111111111111100010000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "neutralized_art_text_region_count": 1,
+        "ocr": {
+          "expected": "Texas RRC Production by Lease retrieval",
+          "actual": "Texas RRC Production by\nLease retrieval",
+          "normalized_expected": "texas rrc production by lease retrieval",
+          "normalized_actual": "texas rrc production by lease retrieval",
           "uppercase_i_confusable_accepted": false,
           "pass": true
         }

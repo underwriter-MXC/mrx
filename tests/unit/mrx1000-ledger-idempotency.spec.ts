@@ -50,9 +50,9 @@ const SCRIPT = path.join(MRX_ROOT, 'scripts/build-mrx-1000-content-ledger.mjs');
 const CANONICAL_JSON = path.join(MRX_ROOT, 'config/mrx-1000-canonical-content-ledger.json');
 const CANONICAL_CSV = path.join(MRX_ROOT, 'config/mrx-1000-canonical-content-ledger.csv');
 const EXPECTED_CANONICAL_JSON_SHA256 =
-  'f28dafa5b5de75344613c4e263e11e8ea6cf5b26440f05e34241c4fa8d311bff';
+  'e2bee708eed93a628d14d83c037407b2c2fb8d6906019659d1d2221bb13bb24c';
 const EXPECTED_CANONICAL_CSV_SHA256 =
-  '12c6ef9de0a3cda2050ec90377b20dbd7bd52c6e6b6d26e73030add8fdfeffaa';
+  '330b1b9ffc9d858a17fc5fcd7a0452cb1c72865dda7dacbf3e421c6e443cebe6';
 const TEST_OUTPUT_DIR = mkdtempSync(path.join(tmpdir(), 'mrx1000-ledger-idempotency-'));
 const JSON_OUT = path.join(TEST_OUTPUT_DIR, 'mrx-1000-canonical-content-ledger.json');
 const CSV_OUT = path.join(TEST_OUTPUT_DIR, 'mrx-1000-canonical-content-ledger.csv');
@@ -330,6 +330,8 @@ describe('MRX1000 canonical ledger generator (pilot-aware + idempotent)', () => 
     expect(ledger.identity_registry.wave108_rekey?.program_row_id).toBe('MRX1000-0293');
     expect(ledger.identity_registry.wave110_rekey?.program_row_id).toBe('MRX1000-0295');
     expect(ledger.identity_registry.wave112_rekey?.program_row_id).toBe('MRX1000-0297');
+    expect(ledger.identity_registry.wave114_rekey?.program_row_id).toBe('MRX1000-0298');
+    expect(ledger.identity_registry.wave115_rekey?.program_row_id).toBe('MRX1000-0299');
     expect(bySlug.has('understanding-the-true-worth-of-your-mineral-interests')).toBe(false);
     expect(
       bySlug.has(
@@ -388,6 +390,16 @@ describe('MRX1000 canonical ledger generator (pilot-aware + idempotent)', () => 
     expect(
       bySlug.get('texas-rrc-production-data-query-retrieval-provenance-worksheet')?.program_row_id,
     ).toBe('MRX1000-0297');
+    expect(
+      bySlug.has('what-variables-should-mineral-rights-owners-know-to-determine-asset-value'),
+    ).toBe(false);
+    expect(
+      bySlug.get('texas-comptroller-lease-drop-retrieval-provenance-worksheet')?.program_row_id,
+    ).toBe('MRX1000-0298');
+    expect(bySlug.has('why-a-mineral-rights-assessment-is-essential-for-owners')).toBe(false);
+    expect(
+      bySlug.get('texas-rrc-production-by-lease-retrieval-provenance-worksheet')?.program_row_id,
+    ).toBe('MRX1000-0299');
     expect(
       bySlug.get('mineral-rights-valuation-checklist-without-obligation')?.program_row_id,
     ).toBe('MRX1000-0237');
