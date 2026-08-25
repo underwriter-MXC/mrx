@@ -71,6 +71,7 @@ const SUPERSEDED_CANONICAL_SLUGS = new Set([
   'why-a-mineral-rights-assessment-is-essential-for-owners',
   'your-guide-to-understanding-the-true-value-of-your-mineral-rights-asset',
   'avoiding-predatory-offers-fair-valuation-for-mineral-rights',
+  'how-to-identify-unfair-offers-for-mineral-rights',
   'what-influences-the-suggested-price-for-your-mineral-rights-assessment',
   'what-sellers-get-wrong-about-mineral-rights',
   'what-to-avoid-in-the-mineral-rights-selling-process',
@@ -153,6 +154,10 @@ const SUCCESSOR_CANONICAL_SLUGS = new Map([
   [
     'avoiding-predatory-offers-fair-valuation-for-mineral-rights',
     'texas-rrc-production-by-operator-of-record-retrieval-provenance-worksheet',
+  ],
+  [
+    'how-to-identify-unfair-offers-for-mineral-rights',
+    'texas-rrc-edms-injection-disposal-permit-document-retrieval-provenance-worksheet',
   ],
   [
     'what-influences-the-suggested-price-for-your-mineral-rights-assessment',
@@ -365,12 +370,20 @@ const APPROVED_REKEY_SEARCH_INTENT_BY_SLUG = new Map([
   ['texas-rrc-production-by-lease-retrieval-provenance-worksheet', 'informational'],
   ['texas-rrc-production-by-filing-operator-retrieval-provenance-worksheet', 'informational'],
   ['texas-rrc-production-by-operator-of-record-retrieval-provenance-worksheet', 'informational'],
+  [
+    'texas-rrc-edms-injection-disposal-permit-document-retrieval-provenance-worksheet',
+    'informational',
+  ],
 ]);
 
 const APPROVED_REKEY_ACTION_REASON_BY_SLUG = new Map([
   [
     'texas-rrc-production-by-operator-of-record-retrieval-provenance-worksheet',
     'The original generic predatory-offer and fair-valuation identity was rejected for material overlap. The approved replacement owns one authorized manual Production by Operator of Record retrieval provenance record and remains distinct from the two sibling PR paths, adjacent P-4 and production-query routes, and every production-interpretation or decision task. The source is prepared for the exact release-10 build, but publication remains controlled by the signed batch, matching evidence, production deployment, and independent verification.',
+  ],
+  [
+    'texas-rrc-edms-injection-disposal-permit-document-retrieval-provenance-worksheet',
+    'The original unfair-offer identity was rejected for material overlap and unsupported high-risk claims. The approved replacement owns one authorized manual Texas RRC EDMS injection/disposal permit application-document search record and remains separate from adjacent RRC query, imaged-record, production, hearing, compliance, offer, and decision tasks. The source is prepared for the exact release-10 build, but publication remains controlled by the signed batch, matching evidence, production deployment, and independent verification.',
   ],
 ]);
 

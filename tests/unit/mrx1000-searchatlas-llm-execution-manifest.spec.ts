@@ -648,12 +648,12 @@ describe('MRX1000 SearchAtlas + ordered LLM execution manifest', () => {
       planning_searchatlas_map_id_count: 230,
       planning_searchatlas_title_uuid_count: 205,
       persisted_ledger_content_genius_article_uuid_count: 0,
-      vendor_exact_title_match_rows: 151,
-      vendor_unambiguous_candidate_rows: 145,
+      vendor_exact_title_match_rows: 150,
+      vendor_unambiguous_candidate_rows: 144,
       vendor_ambiguous_candidate_rows: 6,
-      vendor_exact_title_candidate_records: 158,
-      unique_vendor_exact_title_candidate_uuids: 158,
-      vendor_candidate_records_reverified_against_source: 158,
+      vendor_exact_title_candidate_records: 157,
+      unique_vendor_exact_title_candidate_uuids: 157,
+      vendor_candidate_records_reverified_against_source: 157,
       artifact_bound_content_genius_uuid_rows: 2,
     });
     expect(

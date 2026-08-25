@@ -1786,12 +1786,12 @@ export function buildManifest() {
     `review-candidate safety partition disagrees with substantive workspace and validated row-2 evidence: checksummed=${aggregate.checksummed_review_candidate_rows}, without=${aggregate.rows_without_checksummed_review_candidate}, pilot_shells=${aggregate.pilot_workspace_qa_shell_rows}, pilot_candidates=${aggregate.pilot_workspace_shells_marked_as_review_candidates}, validated_row2=${Number(row2Remediation.validated)}`,
   );
   invariant(
-    aggregate.vendor_exact_title_match_rows === 151 &&
-      aggregate.vendor_unambiguous_candidate_rows === 145 &&
+    aggregate.vendor_exact_title_match_rows === 150 &&
+      aggregate.vendor_unambiguous_candidate_rows === 144 &&
       aggregate.vendor_ambiguous_candidate_rows === 6 &&
-      aggregate.vendor_exact_title_candidate_records === 158 &&
-      aggregate.unique_vendor_exact_title_candidate_uuids === 158 &&
-      aggregate.vendor_candidate_records_reverified_against_source === 158 &&
+      aggregate.vendor_exact_title_candidate_records === 157 &&
+      aggregate.unique_vendor_exact_title_candidate_uuids === 157 &&
+      aggregate.vendor_candidate_records_reverified_against_source === 157 &&
       aggregate.artifact_bound_content_genius_uuid_rows === 2,
     'Content Genius exact-title reconciliation counts changed',
   );
