@@ -33,6 +33,7 @@ const retiredHistoricalSourceSlugs = new Set([
   '5-essential-steps-to-verify-the-legitimacy-of-your-mineral-rights-offer',
   'are-there-unexpected-fees-when-evaluating-your-mineral-rights-find-out-here',
   'assessing-competing-mineral-rights-offers-what-you-need-to-know',
+  'avoid-surprises-key-costs-to-consider-during-your-mineral-rights-assessment-process',
 ]);
 
 describe('article publication gate', () => {

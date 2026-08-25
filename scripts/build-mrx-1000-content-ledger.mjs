@@ -77,6 +77,7 @@ const SUPERSEDED_CANONICAL_SLUGS = new Set([
   '5-essential-steps-to-verify-the-legitimacy-of-your-mineral-rights-offer',
   'are-there-unexpected-fees-when-evaluating-your-mineral-rights-find-out-here',
   'assessing-competing-mineral-rights-offers-what-you-need-to-know',
+  'avoid-surprises-key-costs-to-consider-during-your-mineral-rights-assessment-process',
   'what-influences-the-suggested-price-for-your-mineral-rights-assessment',
   'what-sellers-get-wrong-about-mineral-rights',
   'what-to-avoid-in-the-mineral-rights-selling-process',
@@ -183,6 +184,10 @@ const SUCCESSOR_CANONICAL_SLUGS = new Map([
   [
     'assessing-competing-mineral-rights-offers-what-you-need-to-know',
     'texas-rrc-form-p-18-skim-oil-condensate-report-retrieval-provenance-worksheet',
+  ],
+  [
+    'avoid-surprises-key-costs-to-consider-during-your-mineral-rights-assessment-process',
+    'texas-rrc-form-t-1-monthly-transportation-storage-report-retrieval-provenance-worksheet',
   ],
   [
     'what-influences-the-suggested-price-for-your-mineral-rights-assessment',
@@ -407,6 +412,10 @@ const APPROVED_REKEY_SEARCH_INTENT_BY_SLUG = new Map([
     'texas-rrc-form-p-18-skim-oil-condensate-report-retrieval-provenance-worksheet',
     'informational',
   ],
+  [
+    'texas-rrc-form-t-1-monthly-transportation-storage-report-retrieval-provenance-worksheet',
+    'informational',
+  ],
 ]);
 
 const APPROVED_REKEY_ACTION_REASON_BY_SLUG = new Map([
@@ -437,6 +446,10 @@ const APPROVED_REKEY_ACTION_REASON_BY_SLUG = new Map([
   [
     'texas-rrc-form-p-18-skim-oil-condensate-report-retrieval-provenance-worksheet',
     'The original competing-offers identity was rejected for direct overlap with the offer-comparison, buyer-review, offer-safety, negotiation, and decision corpus. The approved replacement owns one authorized manual Texas RRC Imaged Records Form P-18 profile retrieval provenance record and remains separate from other imaged-record profiles, P-17, T-1, production systems, downloadable P-18 data, LoneSTAR filing, paid research, interpretation, offer, and decision tasks. Current direct profile access returned HTTP 403, so the article records no completed query and keeps the present attempt unverified. The source is prepared for the exact release-10 build, but publication remains controlled by the signed batch, matching evidence, production deployment, and independent verification.',
+  ],
+  [
+    'texas-rrc-form-t-1-monthly-transportation-storage-report-retrieval-provenance-worksheet',
+    'The original hidden-cost identity was rejected for direct overlap with the assessment-fee, hidden-fee, seller-warning, review, and transaction-cost corpus. The approved replacement owns one authorized manual Texas RRC Imaged Records Form T-1 profile retrieval provenance record and remains separate from other imaged-record profiles, Form P-18, form filing, EDI submission, paid research, interpretation, production, transportation, storage, inventory, facility, operator, royalty, valuation, offer, and decision tasks. Current direct profile access returned HTTP 403, so the article records no completed query and keeps the present attempt unverified. The source is prepared for the exact release-10 build, but publication remains controlled by the signed batch, matching evidence, production deployment, and independent verification.',
   ],
 ]);
 
