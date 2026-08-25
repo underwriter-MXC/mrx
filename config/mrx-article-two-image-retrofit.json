@@ -1,18 +1,18 @@
 {
   "artifact_type": "mrx_article_two_image_retrofit",
   "schema_version": 1,
-  "generated_at_utc": "2026-08-25T10:49:07Z",
+  "generated_at_utc": "2026-08-25T11:32:13Z",
   "policy_source": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
   "summary": {
-    "article_count": 206,
-    "asset_count": 412,
-    "unique_source_art_count": 206,
-    "unique_hero_sha256_count": 206,
-    "unique_inline_sha256_count": 206,
-    "distinct_article_pair_count": 206,
-    "hero_ocr_pass_count": 206,
-    "inline_ocr_pass_count": 206,
-    "exact_filename_identity_count": 206
+    "article_count": 207,
+    "asset_count": 414,
+    "unique_source_art_count": 207,
+    "unique_hero_sha256_count": 207,
+    "unique_inline_sha256_count": 207,
+    "distinct_article_pair_count": 207,
+    "hero_ocr_pass_count": 207,
+    "inline_ocr_pass_count": 207,
+    "exact_filename_identity_count": 207
   },
   "contact_sheets": {
     "hero": [
@@ -5206,6 +5206,56 @@
           "actual": "Texas RRC Completions\nQuery retrieval",
           "normalized_expected": "texas rrc completions query retrieval",
           "normalized_actual": "texas rrc completions query retrieval",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      }
+    },
+    {
+      "slug": "texas-rrc-district-office-well-records-retrieval-provenance-worksheet",
+      "title": "Texas RRC District Office Well Records Retrieval Provenance Worksheet",
+      "keyword": "Texas RRC District Office Well Records retrieval",
+      "file_path": "src/content/posts/texas-rrc-district-office-well-records-retrieval-provenance-worksheet.mdx",
+      "source_public_path": "/assets/articles/hero/texas-rrc-district-office-well-records-retrieval-provenance-worksheet.webp",
+      "source_artifact_paths": [
+        "artifacts/mrx1000-wave122-creative-sources/texas-rrc-district-office-well-records-retrieval-provenance-worksheet-hero-base.png",
+        "artifacts/mrx1000-wave122-creative-sources/texas-rrc-district-office-well-records-retrieval-provenance-worksheet-inline-base.png"
+      ],
+      "generated_at_utc": "2026-08-25T11:28:13.079Z",
+      "hero": {
+        "public_path": "/assets/articles/hero/texas-rrc-district-office-well-records-retrieval-provenance-worksheet.webp",
+        "alt": "A researcher examines blank archival folders beside the exact article title.",
+        "width": 1200,
+        "height": 630,
+        "mime_type": "image/webp",
+        "sha256": "c5c41f1628709e326ef06d9de9e9aa2ca2eb70d4459d9056deb987e4601715e6",
+        "perceptual_hash": "0000000000001110000000000000000000000000000010100111110000000010011111000000110011111100001011101111110000000111000000000011000000000000011100000000000011111100000000001111110000000000111110000000000001110000000000000000000000000000001111000000000000111100",
+        "neutralized_art_text_region_count": 1,
+        "ocr": {
+          "expected": "Texas RRC District Office Well Records Retrieval Provenance Worksheet",
+          "actual": "Texas RRC District Office\nWell Records Retrieval\nProvenance Worksheet",
+          "normalized_expected": "texas rrc district office well records retrieval provenance worksheet",
+          "normalized_actual": "texas rrc district office well records retrieval provenance worksheet",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      },
+      "inline": {
+        "public_path": "/assets/articles/inline/texas-rrc-district-office-well-records-retrieval-provenance-worksheet/texas-rrc-district-office-well-records-retrieval.webp",
+        "alt": "A people-free overhead archival evidence board appears above the exact keyword.",
+        "rendered_text": "Texas RRC District Office Well Records retrieval",
+        "visual_variant": "wave122-distinct-generated-people-free-overhead-district-office-retrieval-evidence-board",
+        "width": 1200,
+        "height": 675,
+        "mime_type": "image/webp",
+        "sha256": "207f80340fc51d3b1178fcd05c91e421aa7a2d99a5cb9953aa657172265dea47",
+        "perceptual_hash": "1111111111111111111111111111111111111111111111111111111111111111111111111111111110011111111111110000001111111111000011011111111100001111111111111001111111111111100111111111111100000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "neutralized_art_text_region_count": 1,
+        "ocr": {
+          "expected": "Texas RRC District Office Well Records retrieval",
+          "actual": "Texas RRC District Office\nWell Records retrieval",
+          "normalized_expected": "texas rrc district office well records retrieval",
+          "normalized_actual": "texas rrc district office well records retrieval",
           "uppercase_i_confusable_accepted": false,
           "pass": true
         }

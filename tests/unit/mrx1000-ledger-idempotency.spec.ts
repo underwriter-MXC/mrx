@@ -50,9 +50,9 @@ const SCRIPT = path.join(MRX_ROOT, 'scripts/build-mrx-1000-content-ledger.mjs');
 const CANONICAL_JSON = path.join(MRX_ROOT, 'config/mrx-1000-canonical-content-ledger.json');
 const CANONICAL_CSV = path.join(MRX_ROOT, 'config/mrx-1000-canonical-content-ledger.csv');
 const EXPECTED_CANONICAL_JSON_SHA256 =
-  '49952a5e78c311a7091af6d96e833ddc9836a4a6504fee58ef074cc8516cbb00';
+  '7b829b1059dd25708d86c8ae5c039afef075fdf6dca59e193b6fe7b63272a5dd';
 const EXPECTED_CANONICAL_CSV_SHA256 =
-  'fb2806a23957c4f9c661863065ad3be1b55099fbf11ed81acf3ca21539429bd1';
+  'fd4b8a74c10b6d5f22318e70d7d7a0e916ad6a0eab5e1b7268a83f139d2770d5';
 const TEST_OUTPUT_DIR = mkdtempSync(path.join(tmpdir(), 'mrx1000-ledger-idempotency-'));
 const JSON_OUT = path.join(TEST_OUTPUT_DIR, 'mrx-1000-canonical-content-ledger.json');
 const CSV_OUT = path.join(TEST_OUTPUT_DIR, 'mrx-1000-canonical-content-ledger.csv');
@@ -69,6 +69,7 @@ const RETIRED_REPO_SOURCE_SLUGS = new Set([
   'texas-mineral-rights-valuation-vs-predatory-offers-what-to-know',
   'what-to-do-when-you-have-multiple-offers-for-your-mineral-rights',
   '5-essential-steps-to-verify-the-legitimacy-of-your-mineral-rights-offer',
+  'are-there-unexpected-fees-when-evaluating-your-mineral-rights-find-out-here',
 ]);
 const RELEASE_BATCH = JSON.parse(
   readFileSync(path.join(MRX_ROOT, 'config/mrx1000-release-10-batch.json'), 'utf8'),
@@ -188,6 +189,7 @@ interface Ledger {
     wave119_rekey?: { program_row_id: string };
     wave120_rekey?: { program_row_id: string };
     wave121_rekey?: { program_row_id: string };
+    wave122_rekey?: { program_row_id: string };
   };
   policy: {
     pilot_aware: boolean;
@@ -284,7 +286,8 @@ describe('MRX1000 canonical ledger generator (pilot-aware + idempotent)', () => 
     const retiredRepoSourceCount = [...RETIRED_REPO_SOURCE_SLUGS].filter((slug) =>
       onDiskMdxSlugs.has(slug),
     ).length;
-    expectedIncumbentCount = onDiskMdxSlugs.size - manifest.articles.length - retiredRepoSourceCount;
+    expectedIncumbentCount =
+      onDiskMdxSlugs.size - manifest.articles.length - retiredRepoSourceCount;
     expectedHeldCount = expectedIncumbentCount - EXPECTED_PUBLIC_COUNT;
     expectedPlanningCount = 1000 - expectedIncumbentCount - manifest.articles.length;
 
@@ -356,6 +359,7 @@ describe('MRX1000 canonical ledger generator (pilot-aware + idempotent)', () => 
     expect(ledger.identity_registry.wave119_rekey?.program_row_id).toBe('MRX1000-0317');
     expect(ledger.identity_registry.wave120_rekey?.program_row_id).toBe('MRX1000-0321');
     expect(ledger.identity_registry.wave121_rekey?.program_row_id).toBe('MRX1000-0326');
+    expect(ledger.identity_registry.wave122_rekey?.program_row_id).toBe('MRX1000-0327');
     expect(bySlug.has('understanding-the-true-worth-of-your-mineral-interests')).toBe(false);
     expect(
       bySlug.has(
@@ -424,9 +428,9 @@ describe('MRX1000 canonical ledger generator (pilot-aware + idempotent)', () => 
     expect(
       bySlug.get('texas-rrc-production-by-lease-retrieval-provenance-worksheet')?.program_row_id,
     ).toBe('MRX1000-0299');
-    expect(bySlug.has('your-guide-to-understanding-the-true-value-of-your-mineral-rights-asset')).toBe(
-      false,
-    );
+    expect(
+      bySlug.has('your-guide-to-understanding-the-true-value-of-your-mineral-rights-asset'),
+    ).toBe(false);
     expect(
       bySlug.get('texas-rrc-production-by-filing-operator-retrieval-provenance-worksheet')
         ?.program_row_id,
@@ -451,8 +455,7 @@ describe('MRX1000 canonical ledger generator (pilot-aware + idempotent)', () => 
       false,
     );
     expect(
-      bySlug.get('texas-rrc-imaged-potential-file-retrieval-provenance-worksheet')
-        ?.program_row_id,
+      bySlug.get('texas-rrc-imaged-potential-file-retrieval-provenance-worksheet')?.program_row_id,
     ).toBe('MRX1000-0321');
     expect(
       bySlug.has('5-essential-steps-to-verify-the-legitimacy-of-your-mineral-rights-offer'),
@@ -460,6 +463,13 @@ describe('MRX1000 canonical ledger generator (pilot-aware + idempotent)', () => 
     expect(
       bySlug.get('texas-rrc-dry-hole-file-retrieval-provenance-worksheet')?.program_row_id,
     ).toBe('MRX1000-0326');
+    expect(
+      bySlug.has('are-there-unexpected-fees-when-evaluating-your-mineral-rights-find-out-here'),
+    ).toBe(false);
+    expect(
+      bySlug.get('texas-rrc-district-office-well-records-retrieval-provenance-worksheet')
+        ?.program_row_id,
+    ).toBe('MRX1000-0327');
     expect(
       bySlug.get('mineral-rights-valuation-checklist-without-obligation')?.program_row_id,
     ).toBe('MRX1000-0237');

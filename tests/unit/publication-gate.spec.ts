@@ -31,6 +31,7 @@ const retiredHistoricalSourceSlugs = new Set([
   'texas-mineral-rights-valuation-vs-predatory-offers-what-to-know',
   'what-to-do-when-you-have-multiple-offers-for-your-mineral-rights',
   '5-essential-steps-to-verify-the-legitimacy-of-your-mineral-rights-offer',
+  'are-there-unexpected-fees-when-evaluating-your-mineral-rights-find-out-here',
 ]);
 
 describe('article publication gate', () => {
