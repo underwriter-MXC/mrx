@@ -29,6 +29,7 @@ const retiredHistoricalSourceSlugs = new Set([
   'avoiding-predatory-offers-fair-valuation-for-mineral-rights',
   'how-to-identify-unfair-offers-for-mineral-rights',
   'texas-mineral-rights-valuation-vs-predatory-offers-what-to-know',
+  'what-to-do-when-you-have-multiple-offers-for-your-mineral-rights',
 ]);
 
 describe('article publication gate', () => {

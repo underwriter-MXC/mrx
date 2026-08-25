@@ -423,10 +423,10 @@ describe('MRX1000 readiness matrix', () => {
       ARCHIVED: 0,
       FAILED: 0,
     });
-    expect(matrix.aggregate.content_genius_exact_title_match_rows).toBe(149);
-    expect(matrix.aggregate.content_genius_exact_title_unambiguous_rows).toBe(143);
+    expect(matrix.aggregate.content_genius_exact_title_match_rows).toBe(148);
+    expect(matrix.aggregate.content_genius_exact_title_unambiguous_rows).toBe(142);
     expect(matrix.aggregate.content_genius_exact_title_ambiguous_rows).toBe(6);
-    expect(matrix.aggregate.content_genius_exact_title_total_records).toBe(156);
+    expect(matrix.aggregate.content_genius_exact_title_total_records).toBe(155);
     expect(matrix.aggregate.ledger_content_genius_article_uuid_count).toBe(0);
 
     const row1 = matrix.rows.find(
@@ -852,10 +852,10 @@ describe('MRX1000 readiness matrix — load-bearing fact regressions', () => {
     const cg = matrix.searchatlas_evidence.content_genius_export;
     expect(cg.list_item_count).toBeGreaterThan(0);
     expect(cg.detail_found_count).toBeGreaterThan(0);
-    expect(matrix.aggregate.content_genius_exact_title_match_rows).toBe(149);
-    expect(matrix.aggregate.content_genius_exact_title_unambiguous_rows).toBe(143);
+    expect(matrix.aggregate.content_genius_exact_title_match_rows).toBe(148);
+    expect(matrix.aggregate.content_genius_exact_title_unambiguous_rows).toBe(142);
     expect(matrix.aggregate.content_genius_exact_title_ambiguous_rows).toBe(6);
-    expect(matrix.aggregate.content_genius_exact_title_total_records).toBe(156);
+    expect(matrix.aggregate.content_genius_exact_title_total_records).toBe(155);
 
     const row1 = matrix.rows.find(
       (r) => r.title === 'Mineral Rights Offers Explained for Inherited Properties',

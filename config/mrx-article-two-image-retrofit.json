@@ -1,18 +1,18 @@
 {
   "artifact_type": "mrx_article_two_image_retrofit",
   "schema_version": 1,
-  "generated_at_utc": "2026-08-25T09:58:49Z",
+  "generated_at_utc": "2026-08-25T10:25:27Z",
   "policy_source": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
   "summary": {
-    "article_count": 204,
-    "asset_count": 408,
-    "unique_source_art_count": 204,
-    "unique_hero_sha256_count": 204,
-    "unique_inline_sha256_count": 204,
-    "distinct_article_pair_count": 204,
-    "hero_ocr_pass_count": 204,
-    "inline_ocr_pass_count": 204,
-    "exact_filename_identity_count": 204
+    "article_count": 205,
+    "asset_count": 410,
+    "unique_source_art_count": 205,
+    "unique_hero_sha256_count": 205,
+    "unique_inline_sha256_count": 205,
+    "distinct_article_pair_count": 205,
+    "hero_ocr_pass_count": 205,
+    "inline_ocr_pass_count": 205,
+    "exact_filename_identity_count": 205
   },
   "contact_sheets": {
     "hero": [
@@ -5606,6 +5606,56 @@
           "actual": "Texas RRC H-9 Query\nretrieval",
           "normalized_expected": "texas rrc h 9 query retrieval",
           "normalized_actual": "texas rrc h 9 query retrieval",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      }
+    },
+    {
+      "slug": "texas-rrc-imaged-potential-file-retrieval-provenance-worksheet",
+      "title": "Texas RRC Imaged Potential File Retrieval Provenance Worksheet",
+      "keyword": "Texas RRC potential file retrieval",
+      "file_path": "src/content/posts/texas-rrc-imaged-potential-file-retrieval-provenance-worksheet.mdx",
+      "source_public_path": "/assets/articles/hero/texas-rrc-imaged-potential-file-retrieval-provenance-worksheet.webp",
+      "source_artifact_paths": [
+        "artifacts/mrx1000-wave120-creative-sources/texas-rrc-imaged-potential-file-retrieval-provenance-worksheet-hero-base.png",
+        "artifacts/mrx1000-wave120-creative-sources/texas-rrc-imaged-potential-file-retrieval-provenance-worksheet-inline-base.png"
+      ],
+      "generated_at_utc": "2026-08-25T10:15:27.892Z",
+      "hero": {
+        "public_path": "/assets/articles/hero/texas-rrc-imaged-potential-file-retrieval-provenance-worksheet.webp",
+        "alt": "A researcher opens a generic archive drawer beside the exact article title.",
+        "width": 1200,
+        "height": 630,
+        "mime_type": "image/webp",
+        "sha256": "b3315b571507d6cc1cbcb6878af78c7b70431da8624adb5d3a766f9182cbc158",
+        "perceptual_hash": "0000000000010011000000000001101100000000000111110111000000011111011110000001101111111000000111111111110000000011000000000001100100000000000110010000000010011001000000001001100100000000111110010000000011111001000000001111000100000000100000010000000000001001",
+        "neutralized_art_text_region_count": 1,
+        "ocr": {
+          "expected": "Texas RRC Imaged Potential File Retrieval Provenance Worksheet",
+          "actual": "Texas RRC Imaged\nPotential File Retrieval\nProvenance Worksheet",
+          "normalized_expected": "texas rrc imaged potential file retrieval provenance worksheet",
+          "normalized_actual": "texas rrc imaged potential file retrieval provenance worksheet",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      },
+      "inline": {
+        "public_path": "/assets/articles/inline/texas-rrc-imaged-potential-file-retrieval-provenance-worksheet/texas-rrc-potential-file-retrieval.webp",
+        "alt": "A people-free overhead potential-file evidence board appears above the exact keyword.",
+        "rendered_text": "Texas RRC potential file retrieval",
+        "visual_variant": "wave120-distinct-generated-people-free-overhead-potential-file-evidence-board",
+        "width": 1200,
+        "height": 675,
+        "mime_type": "image/webp",
+        "sha256": "a1440bcb20df3411859aa20c04bc845615a2bc59efa26bcc230459ad05e01b22",
+        "perceptual_hash": "1111111111111111111110001000111111111010001011111111101101111111111110110010111111111000000011111111111111111111100011110111111110001111011111111000111101111111100001100111100100000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "neutralized_art_text_region_count": 1,
+        "ocr": {
+          "expected": "Texas RRC potential file retrieval",
+          "actual": "Texas RRC potential file retrieval",
+          "normalized_expected": "texas rrc potential file retrieval",
+          "normalized_actual": "texas rrc potential file retrieval",
           "uppercase_i_confusable_accepted": false,
           "pass": true
         }
