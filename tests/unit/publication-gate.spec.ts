@@ -34,6 +34,7 @@ const retiredHistoricalSourceSlugs = new Set([
   'are-there-unexpected-fees-when-evaluating-your-mineral-rights-find-out-here',
   'assessing-competing-mineral-rights-offers-what-you-need-to-know',
   'avoid-surprises-key-costs-to-consider-during-your-mineral-rights-assessment-process',
+  'avoid-these-key-mistakes-when-evaluating-mineral-rights-offers-for-maximum-value',
 ]);
 
 describe('article publication gate', () => {

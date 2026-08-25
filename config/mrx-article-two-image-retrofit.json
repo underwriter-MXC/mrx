@@ -1,18 +1,18 @@
 {
   "artifact_type": "mrx_article_two_image_retrofit",
   "schema_version": 1,
-  "generated_at_utc": "2026-08-25T12:33:13Z",
+  "generated_at_utc": "2026-08-25T14:33:53Z",
   "policy_source": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
   "summary": {
-    "article_count": 209,
-    "asset_count": 418,
-    "unique_source_art_count": 209,
-    "unique_hero_sha256_count": 209,
-    "unique_inline_sha256_count": 209,
-    "distinct_article_pair_count": 209,
-    "hero_ocr_pass_count": 209,
-    "inline_ocr_pass_count": 209,
-    "exact_filename_identity_count": 209
+    "article_count": 210,
+    "asset_count": 420,
+    "unique_source_art_count": 210,
+    "unique_hero_sha256_count": 210,
+    "unique_inline_sha256_count": 210,
+    "distinct_article_pair_count": 210,
+    "hero_ocr_pass_count": 210,
+    "inline_ocr_pass_count": 210,
+    "exact_filename_identity_count": 210
   },
   "contact_sheets": {
     "hero": [
@@ -5706,6 +5706,56 @@
           "actual": "Texas RRC Gas Proration\nquery retrieval",
           "normalized_expected": "texas rrc gas proration query retrieval",
           "normalized_actual": "texas rrc gas proration query retrieval",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      }
+    },
+    {
+      "slug": "texas-rrc-groundwater-protection-determination-letter-retrieval-provenance-worksheet",
+      "title": "Texas RRC Groundwater Protection Determination Letter Retrieval Provenance Worksheet",
+      "keyword": "Texas RRC groundwater determination letter retrieval",
+      "file_path": "src/content/posts/texas-rrc-groundwater-protection-determination-letter-retrieval-provenance-worksheet.mdx",
+      "source_public_path": "/assets/articles/hero/texas-rrc-groundwater-protection-determination-letter-retrieval-provenance-worksheet.webp",
+      "source_artifact_paths": [
+        "artifacts/mrx1000-wave125-creative-sources/texas-rrc-groundwater-protection-determination-letter-retrieval-provenance-worksheet-hero-base.png",
+        "artifacts/mrx1000-wave125-creative-sources/texas-rrc-groundwater-protection-determination-letter-retrieval-provenance-worksheet-inline-base.png"
+      ],
+      "generated_at_utc": "2026-08-25T14:23:32.215Z",
+      "hero": {
+        "public_path": "/assets/articles/hero/texas-rrc-groundwater-protection-determination-letter-retrieval-provenance-worksheet.webp",
+        "alt": "A people-free microfilm station appears beside the exact groundwater-letter worksheet title.",
+        "width": 1200,
+        "height": 630,
+        "mime_type": "image/webp",
+        "sha256": "ef81e6152dc897abf92ea63d7594d4e4106795b57a6d275798257a59d8952d32",
+        "perceptual_hash": "0000000001000100000000000000000000000000000000000010000000011111011110000001110001111100000111000111000000011100011110000000010000000000001111110000000000001111000000000011111100000000011111010000000011111111000000001111111100000000000111010000000000001111",
+        "neutralized_art_text_region_count": 1,
+        "ocr": {
+          "expected": "Texas RRC Groundwater Protection Determination Letter Retrieval Provenance Worksheet",
+          "actual": "Texas RRC Groundwater\nProtection Determination\nLetter Retrieval\nProvenance Worksheet",
+          "normalized_expected": "texas rrc groundwater protection determination letter retrieval provenance worksheet",
+          "normalized_actual": "texas rrc groundwater protection determination letter retrieval provenance worksheet",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      },
+      "inline": {
+        "public_path": "/assets/articles/inline/texas-rrc-groundwater-protection-determination-letter-retrieval-provenance-worksheet/texas-rrc-groundwater-determination-letter-retrieval.webp",
+        "alt": "Three blank groundwater-letter evidence sleeves appear above the exact keyword.",
+        "rendered_text": "Texas RRC groundwater determination letter retrieval",
+        "visual_variant": "wave125-distinct-generated-oblique-three-era-groundwater-letter-evidence-sleeves",
+        "width": 1200,
+        "height": 675,
+        "mime_type": "image/webp",
+        "sha256": "290d122c7bc37760ce452a9089c05ce401c5e1bf41e434215e65ed5c1a8f1ea2",
+        "perceptual_hash": "0110010000000000010011111111100011111111111111000111111111111100011111111111110001111111111111100111111111111100011111110110000000000010011100000000011111111000000001100001100000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "neutralized_art_text_region_count": 1,
+        "ocr": {
+          "expected": "Texas RRC groundwater determination letter retrieval",
+          "actual": "Texas RRC groundwater\ndetermination letter retrieval",
+          "normalized_expected": "texas rrc groundwater determination letter retrieval",
+          "normalized_actual": "texas rrc groundwater determination letter retrieval",
           "uppercase_i_confusable_accepted": false,
           "pass": true
         }
