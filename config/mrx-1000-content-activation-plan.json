@@ -1,15 +1,15 @@
 {
   "artifact_type": "mrx1000_content_activation_plan",
   "plan_version": "mrx1000-content-activation-v1.1.0",
-  "generated_at": "2026-07-20T11:19:49.906Z",
+  "generated_at": "2026-07-20T03:05:59.201Z",
   "generated_at_method": "canonical_ledger_generated_at",
   "generator": "scripts/build-mrx-1000-activation-plan.mjs",
-  "content_fingerprint_sha256": "6af4f6d740ea0e31adf4d45eab14d20357c65824b68a36b82a5013c709f17040",
+  "content_fingerprint_sha256": "ae6163958e42a05761aff985bd4970e2b55b4dfbda6a28fd37ee6a92c264dae4",
   "inputs": {
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_fingerprint_sha256": "243c174f975634280c8d05ec42d6176518665a610a40423d57b3d010d67b1f3b",
+    "canonical_ledger_fingerprint_sha256": "d8c7b3a7aabf0db45eba61ed0442b7634c9a804928b69616ab0a064ffcd80874",
     "canonical_ledger_fingerprint_verified": true,
-    "canonical_ledger_generated_at": "2026-07-20T11:19:49.906Z",
+    "canonical_ledger_generated_at": "2026-07-20T03:05:59.201Z",
     "owner_decision": {
       "decision_id": "D-2026-0804-16",
       "signed_disposition": "APPROVED_CONTINUOUS_QUALITY_GATED_ARTICLE_PUBLICATION",
@@ -115,9 +115,9 @@
     },
     "by_source_preservation_classification": {
       "incumbent_draft_nonpublic_held": 23,
-      "live_public_published_route": 207,
+      "live_public_published_route": 208,
       "pilot_draft_noindex_stage": 25,
-      "planning_only_inventory": 745
+      "planning_only_inventory": 744
     }
   },
   "rows": [
@@ -20163,7 +20163,7 @@
       "cluster": "offer-review-buyer-comparison-safety",
       "pillar": "offer-review",
       "search_intent": "informational",
-      "funnel_stage": "consideration",
+      "funnel_stage": "decision",
       "source_preservation_classification": "live_public_published_route",
       "source_route_live": true,
       "pillar_link": {
@@ -20173,8 +20173,71 @@
       },
       "sibling_link": {
         "target_program_row_id": "MRX1000-0328",
-        "target_title": "Assessing Competing Mineral Rights Offers: What You Need to Know",
-        "url": "/blog/assessing-competing-mineral-rights-offers-what-you-need-to-know/",
+        "target_title": "Texas RRC Form P-18 Skim Oil/Condensate Report Retrieval Provenance Worksheet",
+        "url": "/blog/texas-rrc-form-p-18-skim-oil-condensate-report-retrieval-provenance-worksheet/",
+        "relationship": "same_cluster_next_by_program_row_id_cyclic",
+        "target_source_preservation_classification": "live_public_published_route",
+        "target_route_live": true,
+        "status": "planned_local_only"
+      },
+      "primary_cta": {
+        "url": "/book/",
+        "label": "Review My Written Offer",
+        "name": "mrx1000-offer-review-book_review-closing_panel",
+        "placement_code": "closing_panel",
+        "placement_guidance": "Place in the closing decision panel after key takeaways and before related articles.",
+        "assignment_rule": "decision_stage_team_handoff",
+        "assignment_basis": "decision:informational",
+        "approved_route_evidence": "src/pages/book.astro",
+        "role": "primary_appointment",
+        "is_appointment_cta": true,
+        "status": "planned_local_only"
+      },
+      "appointment_cta": {
+        "url": "/book/",
+        "label": "Review My Written Offer",
+        "name": "mrx1000-offer-review-book_review-closing_panel",
+        "placement_code": "closing_panel",
+        "placement_guidance": "Place in the closing decision panel after key takeaways and before related articles.",
+        "assignment_rule": "decision_stage_team_handoff",
+        "assignment_basis": "decision:informational",
+        "approved_route_evidence": "src/pages/book.astro",
+        "role": "same_as_primary_appointment",
+        "distinct_from_primary_cta": false,
+        "status": "planned_local_only"
+      },
+      "evidence": {
+        "triangle_plan_status": "planned_complete",
+        "primary_cta_plan_status": "planned_complete",
+        "appointment_cta_plan_status": "planned_complete",
+        "rendered_status": "not_rendered_or_verified_by_this_plan",
+        "rendered_triangle_verified": false,
+        "live_status": "not_published_or_verified_by_this_plan",
+        "live_triangle_verified": false,
+        "release_status": "released_under_d16_continuous_quality_gate",
+        "numerical_release_cap_applies": false
+      }
+    },
+    {
+      "program_row_id": "MRX1000-0328",
+      "canonical_title": "Texas RRC Form P-18 Skim Oil/Condensate Report Retrieval Provenance Worksheet",
+      "canonical_slug": "texas-rrc-form-p-18-skim-oil-condensate-report-retrieval-provenance-worksheet",
+      "canonical_url": "/blog/texas-rrc-form-p-18-skim-oil-condensate-report-retrieval-provenance-worksheet/",
+      "cluster": "offer-review-buyer-comparison-safety",
+      "pillar": "offer-review",
+      "search_intent": "informational",
+      "funnel_stage": "consideration",
+      "source_preservation_classification": "live_public_published_route",
+      "source_route_live": true,
+      "pillar_link": {
+        "url": "/offer-review/",
+        "route_evidence": "src/pages/offer-review.astro",
+        "status": "planned_local_only"
+      },
+      "sibling_link": {
+        "target_program_row_id": "MRX1000-0329",
+        "target_title": "Avoid Surprises: Key Costs to Consider During Your Mineral Rights Assessment Process",
+        "url": "/blog/avoid-surprises-key-costs-to-consider-during-your-mineral-rights-assessment-process/",
         "relationship": "same_cluster_next_by_program_row_id_cyclic",
         "target_source_preservation_classification": "planning_only_inventory",
         "target_route_live": false,
@@ -20215,69 +20278,6 @@
         "live_status": "not_published_or_verified_by_this_plan",
         "live_triangle_verified": false,
         "release_status": "released_under_d16_continuous_quality_gate",
-        "numerical_release_cap_applies": false
-      }
-    },
-    {
-      "program_row_id": "MRX1000-0328",
-      "canonical_title": "Assessing Competing Mineral Rights Offers: What You Need to Know",
-      "canonical_slug": "assessing-competing-mineral-rights-offers-what-you-need-to-know",
-      "canonical_url": "/blog/assessing-competing-mineral-rights-offers-what-you-need-to-know/",
-      "cluster": "offer-review-buyer-comparison-safety",
-      "pillar": "offer-review",
-      "search_intent": "commercial-investigation",
-      "funnel_stage": "decision",
-      "source_preservation_classification": "planning_only_inventory",
-      "source_route_live": false,
-      "pillar_link": {
-        "url": "/offer-review/",
-        "route_evidence": "src/pages/offer-review.astro",
-        "status": "planned_local_only"
-      },
-      "sibling_link": {
-        "target_program_row_id": "MRX1000-0329",
-        "target_title": "Avoid Surprises: Key Costs to Consider During Your Mineral Rights Assessment Process",
-        "url": "/blog/avoid-surprises-key-costs-to-consider-during-your-mineral-rights-assessment-process/",
-        "relationship": "same_cluster_next_by_program_row_id_cyclic",
-        "target_source_preservation_classification": "planning_only_inventory",
-        "target_route_live": false,
-        "status": "planned_local_only"
-      },
-      "primary_cta": {
-        "url": "/book/",
-        "label": "Review My Written Offer",
-        "name": "mrx1000-offer-review-book_review-closing_panel",
-        "placement_code": "closing_panel",
-        "placement_guidance": "Place in the closing decision panel after key takeaways and before related articles.",
-        "assignment_rule": "decision_stage_team_handoff",
-        "assignment_basis": "decision:commercial-investigation",
-        "approved_route_evidence": "src/pages/book.astro",
-        "role": "primary_appointment",
-        "is_appointment_cta": true,
-        "status": "planned_local_only"
-      },
-      "appointment_cta": {
-        "url": "/book/",
-        "label": "Review My Written Offer",
-        "name": "mrx1000-offer-review-book_review-closing_panel",
-        "placement_code": "closing_panel",
-        "placement_guidance": "Place in the closing decision panel after key takeaways and before related articles.",
-        "assignment_rule": "decision_stage_team_handoff",
-        "assignment_basis": "decision:commercial-investigation",
-        "approved_route_evidence": "src/pages/book.astro",
-        "role": "same_as_primary_appointment",
-        "distinct_from_primary_cta": false,
-        "status": "planned_local_only"
-      },
-      "evidence": {
-        "triangle_plan_status": "planned_complete",
-        "primary_cta_plan_status": "planned_complete",
-        "appointment_cta_plan_status": "planned_complete",
-        "rendered_status": "not_rendered_or_verified_by_this_plan",
-        "rendered_triangle_verified": false,
-        "live_status": "not_published_or_verified_by_this_plan",
-        "live_triangle_verified": false,
-        "release_status": "eligible_for_continuous_quality_review_not_yet_cleared",
         "numerical_release_cap_applies": false
       }
     },

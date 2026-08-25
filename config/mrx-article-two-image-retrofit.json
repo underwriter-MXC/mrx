@@ -1,18 +1,18 @@
 {
   "artifact_type": "mrx_article_two_image_retrofit",
   "schema_version": 1,
-  "generated_at_utc": "2026-08-25T11:32:13Z",
+  "generated_at_utc": "2026-08-25T12:04:56Z",
   "policy_source": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
   "summary": {
-    "article_count": 207,
-    "asset_count": 414,
-    "unique_source_art_count": 207,
-    "unique_hero_sha256_count": 207,
-    "unique_inline_sha256_count": 207,
-    "distinct_article_pair_count": 207,
-    "hero_ocr_pass_count": 207,
-    "inline_ocr_pass_count": 207,
-    "exact_filename_identity_count": 207
+    "article_count": 208,
+    "asset_count": 416,
+    "unique_source_art_count": 208,
+    "unique_hero_sha256_count": 208,
+    "unique_inline_sha256_count": 208,
+    "distinct_article_pair_count": 208,
+    "hero_ocr_pass_count": 208,
+    "inline_ocr_pass_count": 208,
+    "exact_filename_identity_count": 208
   },
   "contact_sheets": {
     "hero": [
@@ -5506,6 +5506,56 @@
           "actual": "Texas RRC Flare/Vent\nException query retrieval",
           "normalized_expected": "texas rrc flare vent exception query retrieval",
           "normalized_actual": "texas rrc flare vent exception query retrieval",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      }
+    },
+    {
+      "slug": "texas-rrc-form-p-18-skim-oil-condensate-report-retrieval-provenance-worksheet",
+      "title": "Texas RRC Form P-18 Skim Oil/Condensate Report Retrieval Provenance Worksheet",
+      "keyword": "Texas RRC Form P-18 report retrieval",
+      "file_path": "src/content/posts/texas-rrc-form-p-18-skim-oil-condensate-report-retrieval-provenance-worksheet.mdx",
+      "source_public_path": "/assets/articles/hero/texas-rrc-form-p-18-skim-oil-condensate-report-retrieval-provenance-worksheet.webp",
+      "source_artifact_paths": [
+        "artifacts/mrx1000-wave123-creative-sources/texas-rrc-form-p-18-skim-oil-condensate-report-retrieval-provenance-worksheet-hero-base.png",
+        "artifacts/mrx1000-wave123-creative-sources/texas-rrc-form-p-18-skim-oil-condensate-report-retrieval-provenance-worksheet-inline-base.png"
+      ],
+      "generated_at_utc": "2026-08-25T12:02:11.953Z",
+      "hero": {
+        "public_path": "/assets/articles/hero/texas-rrc-form-p-18-skim-oil-condensate-report-retrieval-provenance-worksheet.webp",
+        "alt": "A researcher reviews blank public-record folders beside the exact article title.",
+        "width": 1200,
+        "height": 630,
+        "mime_type": "image/webp",
+        "sha256": "d6852c23e5e76d4125a1de0baf6bfa96047f89b58d4f427f37f4624c6e15db6b",
+        "perceptual_hash": "0000000000111111000000000000000100000000001111110000000001111111000000000110011101111100001111110111100000111111010000000100001100000000011100010000000001110011000000000011011100000000011111110000000011111000000000001111110000000000111110110000000000000111",
+        "neutralized_art_text_region_count": 1,
+        "ocr": {
+          "expected": "Texas RRC Form P-18 Skim Oil/Condensate Report Retrieval Provenance Worksheet",
+          "actual": "Texas RRC Form P-18\nSkim Oil/Condensate Report\nRetrieval Provenance\nWorksheet",
+          "normalized_expected": "texas rrc form p 18 skim oil condensate report retrieval provenance worksheet",
+          "normalized_actual": "texas rrc form p 18 skim oil condensate report retrieval provenance worksheet",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      },
+      "inline": {
+        "public_path": "/assets/articles/inline/texas-rrc-form-p-18-skim-oil-condensate-report-retrieval-provenance-worksheet/texas-rrc-form-p-18-report-retrieval.webp",
+        "alt": "A people-free overhead P-18 retrieval evidence board appears above the exact keyword.",
+        "rendered_text": "Texas RRC Form P-18 report retrieval",
+        "visual_variant": "wave123-distinct-generated-people-free-overhead-p18-retrieval-evidence-board",
+        "width": 1200,
+        "height": 675,
+        "mime_type": "image/webp",
+        "sha256": "d10d23c96fa6921d8a83b3e8a874ee9847598956e146ae2dcc7e4a7bf264f895",
+        "perceptual_hash": "1111111111111111111111111111110111111111111111001111111111111101111111111111111111111111111111111111111111110111111111111110111111111111111111111111111010111101000111111111100000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "neutralized_art_text_region_count": 1,
+        "ocr": {
+          "expected": "Texas RRC Form P-18 report retrieval",
+          "actual": "Texas RRC Form P-18\nreport retrieval",
+          "normalized_expected": "texas rrc form p 18 report retrieval",
+          "normalized_actual": "texas rrc form p 18 report retrieval",
           "uppercase_i_confusable_accepted": false,
           "pass": true
         }
