@@ -25,6 +25,9 @@ const approvedLiveSlugs = [
 const approvedPublicationShapedSlugs = [
   ...new Set([...approvedLiveSlugs, ...releaseBatch.articles.map(({ slug }) => slug)]),
 ].sort();
+const retiredHistoricalSourceSlugs = new Set([
+  'avoiding-predatory-offers-fair-valuation-for-mineral-rights',
+]);
 
 describe('article publication gate', () => {
   it('fails closed when publication_status is omitted', () => {
@@ -70,8 +73,14 @@ describe('article publication gate', () => {
 
     expect(articleFiles).toHaveLength(
       canonicalLedger.verification.incumbent_repo_count +
-        canonicalLedger.verification.pilot_001_count,
+        canonicalLedger.verification.pilot_001_count +
+        retiredHistoricalSourceSlugs.size,
     );
+    expect(
+      statuses
+        .filter(({ slug }) => retiredHistoricalSourceSlugs.has(slug))
+        .every(({ status }) => status === 'draft'),
+    ).toBe(true);
     expect(statuses.every(({ status }) => status === 'draft' || status === 'published')).toBe(true);
     expect(published).toEqual(approvedPublicationShapedSlugs);
     expect(statuses.filter(({ status }) => status === 'draft')).toHaveLength(

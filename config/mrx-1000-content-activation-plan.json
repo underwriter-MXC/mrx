@@ -1,15 +1,15 @@
 {
   "artifact_type": "mrx1000_content_activation_plan",
   "plan_version": "mrx1000-content-activation-v1.1.0",
-  "generated_at": "2026-07-20T11:40:29.310Z",
+  "generated_at": "2026-07-20T01:28:17.768Z",
   "generated_at_method": "canonical_ledger_generated_at",
   "generator": "scripts/build-mrx-1000-activation-plan.mjs",
-  "content_fingerprint_sha256": "3e19e6f6d70fe952bcb3e44b32453da0d1620f43f74f94b92097be836e77498f",
+  "content_fingerprint_sha256": "1d4bf8010d05b6522a478d859524e0fb149cb207c6364b72e78228f768515182",
   "inputs": {
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_fingerprint_sha256": "d177319293d5729427327c38cf2085e36a2716ada36cad405a96d0c33ee58781",
+    "canonical_ledger_fingerprint_sha256": "8d17d1b2e57d239f636cb01eaba6330ca54d1b0f7cba2f1b17e49620ead456e6",
     "canonical_ledger_fingerprint_verified": true,
-    "canonical_ledger_generated_at": "2026-07-20T11:40:29.310Z",
+    "canonical_ledger_generated_at": "2026-07-20T01:28:17.768Z",
     "owner_decision": {
       "decision_id": "D-2026-0804-16",
       "signed_disposition": "APPROVED_CONTINUOUS_QUALITY_GATED_ARTICLE_PUBLICATION",
@@ -114,8 +114,8 @@
       "contextual_inline": 350
     },
     "by_source_preservation_classification": {
-      "incumbent_draft_nonpublic_held": 27,
-      "live_public_published_route": 201,
+      "incumbent_draft_nonpublic_held": 26,
+      "live_public_published_route": 202,
       "pilot_draft_noindex_stage": 25,
       "planning_only_inventory": 747
     }
@@ -15195,69 +15195,6 @@
         "status": "planned_local_only"
       },
       "sibling_link": {
-        "target_program_row_id": "MRX1000-0247",
-        "target_title": "Mineral Rights Valuation: Guide Step By Step",
-        "url": "/blog/mineral-rights-valuation-guide-step-by-step/",
-        "relationship": "same_cluster_next_by_program_row_id_cyclic",
-        "target_source_preservation_classification": "planning_only_inventory",
-        "target_route_live": false,
-        "status": "planned_local_only"
-      },
-      "primary_cta": {
-        "url": "/book/",
-        "label": "Understand My Value Factors",
-        "name": "mrx1000-mineral-rights-value-book_review-contextual_inline",
-        "placement_code": "contextual_inline",
-        "placement_guidance": "Place after the first comparison, risk, document, or decision-framework section.",
-        "assignment_rule": "consideration_stage_assisted_review",
-        "assignment_basis": "consideration:valuation",
-        "approved_route_evidence": "src/pages/book.astro",
-        "role": "primary_appointment",
-        "is_appointment_cta": true,
-        "status": "planned_local_only"
-      },
-      "appointment_cta": {
-        "url": "/book/",
-        "label": "Understand My Value Factors",
-        "name": "mrx1000-mineral-rights-value-book_review-contextual_inline",
-        "placement_code": "contextual_inline",
-        "placement_guidance": "Place after the first comparison, risk, document, or decision-framework section.",
-        "assignment_rule": "consideration_stage_assisted_review",
-        "assignment_basis": "consideration:valuation",
-        "approved_route_evidence": "src/pages/book.astro",
-        "role": "same_as_primary_appointment",
-        "distinct_from_primary_cta": false,
-        "status": "planned_local_only"
-      },
-      "evidence": {
-        "triangle_plan_status": "planned_complete",
-        "primary_cta_plan_status": "planned_complete",
-        "appointment_cta_plan_status": "planned_complete",
-        "rendered_status": "not_rendered_or_verified_by_this_plan",
-        "rendered_triangle_verified": false,
-        "live_status": "not_published_or_verified_by_this_plan",
-        "live_triangle_verified": false,
-        "release_status": "eligible_for_continuous_quality_review_not_yet_cleared",
-        "numerical_release_cap_applies": false
-      }
-    },
-    {
-      "program_row_id": "MRX1000-0247",
-      "canonical_title": "Mineral Rights Valuation: Guide Step By Step",
-      "canonical_slug": "mineral-rights-valuation-guide-step-by-step",
-      "canonical_url": "/blog/mineral-rights-valuation-guide-step-by-step/",
-      "cluster": "valuation-methodology-drivers",
-      "pillar": "mineral-rights-value",
-      "search_intent": "tax-planning",
-      "funnel_stage": "consideration",
-      "source_preservation_classification": "planning_only_inventory",
-      "source_route_live": false,
-      "pillar_link": {
-        "url": "/mineral-rights-value/",
-        "route_evidence": "src/pages/mineral-rights-value.astro",
-        "status": "planned_local_only"
-      },
-      "sibling_link": {
         "target_program_row_id": "MRX1000-0248",
         "target_title": "Mineral Rights Valuation: Market Update For Mineral Owners",
         "url": "/blog/mineral-rights-valuation-market-update-for-mineral-owners/",
@@ -15273,7 +15210,7 @@
         "placement_code": "contextual_inline",
         "placement_guidance": "Place after the first comparison, risk, document, or decision-framework section.",
         "assignment_rule": "consideration_stage_assisted_review",
-        "assignment_basis": "consideration:tax-planning",
+        "assignment_basis": "consideration:valuation",
         "approved_route_evidence": "src/pages/book.astro",
         "role": "primary_appointment",
         "is_appointment_cta": true,
@@ -15286,7 +15223,7 @@
         "placement_code": "contextual_inline",
         "placement_guidance": "Place after the first comparison, risk, document, or decision-framework section.",
         "assignment_rule": "consideration_stage_assisted_review",
-        "assignment_basis": "consideration:tax-planning",
+        "assignment_basis": "consideration:valuation",
         "approved_route_evidence": "src/pages/book.astro",
         "role": "same_as_primary_appointment",
         "distinct_from_primary_cta": false,
@@ -18597,6 +18534,69 @@
         "status": "planned_local_only"
       },
       "sibling_link": {
+        "target_program_row_id": "MRX1000-0301",
+        "target_title": "Texas RRC Production by Operator of Record Retrieval Provenance Worksheet",
+        "url": "/blog/texas-rrc-production-by-operator-of-record-retrieval-provenance-worksheet/",
+        "relationship": "same_cluster_next_by_program_row_id_cyclic",
+        "target_source_preservation_classification": "live_public_published_route",
+        "target_route_live": true,
+        "status": "planned_local_only"
+      },
+      "primary_cta": {
+        "url": "/book/",
+        "label": "Understand My Value Factors",
+        "name": "mrx1000-mineral-rights-value-book_review-contextual_inline",
+        "placement_code": "contextual_inline",
+        "placement_guidance": "Place after the first comparison, risk, document, or decision-framework section.",
+        "assignment_rule": "consideration_stage_assisted_review",
+        "assignment_basis": "consideration:informational",
+        "approved_route_evidence": "src/pages/book.astro",
+        "role": "primary_appointment",
+        "is_appointment_cta": true,
+        "status": "planned_local_only"
+      },
+      "appointment_cta": {
+        "url": "/book/",
+        "label": "Understand My Value Factors",
+        "name": "mrx1000-mineral-rights-value-book_review-contextual_inline",
+        "placement_code": "contextual_inline",
+        "placement_guidance": "Place after the first comparison, risk, document, or decision-framework section.",
+        "assignment_rule": "consideration_stage_assisted_review",
+        "assignment_basis": "consideration:informational",
+        "approved_route_evidence": "src/pages/book.astro",
+        "role": "same_as_primary_appointment",
+        "distinct_from_primary_cta": false,
+        "status": "planned_local_only"
+      },
+      "evidence": {
+        "triangle_plan_status": "planned_complete",
+        "primary_cta_plan_status": "planned_complete",
+        "appointment_cta_plan_status": "planned_complete",
+        "rendered_status": "not_rendered_or_verified_by_this_plan",
+        "rendered_triangle_verified": false,
+        "live_status": "not_published_or_verified_by_this_plan",
+        "live_triangle_verified": false,
+        "release_status": "released_under_d16_continuous_quality_gate",
+        "numerical_release_cap_applies": false
+      }
+    },
+    {
+      "program_row_id": "MRX1000-0301",
+      "canonical_title": "Texas RRC Production by Operator of Record Retrieval Provenance Worksheet",
+      "canonical_slug": "texas-rrc-production-by-operator-of-record-retrieval-provenance-worksheet",
+      "canonical_url": "/blog/texas-rrc-production-by-operator-of-record-retrieval-provenance-worksheet/",
+      "cluster": "valuation-methodology-drivers",
+      "pillar": "mineral-rights-value",
+      "search_intent": "informational",
+      "funnel_stage": "consideration",
+      "source_preservation_classification": "live_public_published_route",
+      "source_route_live": true,
+      "pillar_link": {
+        "url": "/mineral-rights-value/",
+        "route_evidence": "src/pages/mineral-rights-value.astro",
+        "status": "planned_local_only"
+      },
+      "sibling_link": {
         "target_program_row_id": "MRX1000-1017",
         "target_title": "Shut-In Wells: What They Mean for a Valuation Review",
         "url": "/blog/shut-in-wells-what-they-mean-for-a-valuation-review/",
@@ -18640,69 +18640,6 @@
         "live_status": "not_published_or_verified_by_this_plan",
         "live_triangle_verified": false,
         "release_status": "released_under_d16_continuous_quality_gate",
-        "numerical_release_cap_applies": false
-      }
-    },
-    {
-      "program_row_id": "MRX1000-0301",
-      "canonical_title": "Avoiding Predatory Offers: Fair Valuation for Mineral Rights",
-      "canonical_slug": "avoiding-predatory-offers-fair-valuation-for-mineral-rights",
-      "canonical_url": "/blog/avoiding-predatory-offers-fair-valuation-for-mineral-rights/",
-      "cluster": "offer-review-buyer-comparison-safety",
-      "pillar": "offer-review",
-      "search_intent": "commercial-investigation",
-      "funnel_stage": "decision",
-      "source_preservation_classification": "incumbent_draft_nonpublic_held",
-      "source_route_live": false,
-      "pillar_link": {
-        "url": "/offer-review/",
-        "route_evidence": "src/pages/offer-review.astro",
-        "status": "planned_local_only"
-      },
-      "sibling_link": {
-        "target_program_row_id": "MRX1000-0302",
-        "target_title": "How to Compare Mineral Rights Buyers in Texas",
-        "url": "/blog/how-to-compare-mineral-rights-buyers-in-texas/",
-        "relationship": "same_cluster_next_by_program_row_id_cyclic",
-        "target_source_preservation_classification": "live_public_published_route",
-        "target_route_live": true,
-        "status": "planned_local_only"
-      },
-      "primary_cta": {
-        "url": "/book/",
-        "label": "Review My Written Offer",
-        "name": "mrx1000-offer-review-book_review-closing_panel",
-        "placement_code": "closing_panel",
-        "placement_guidance": "Place in the closing decision panel after key takeaways and before related articles.",
-        "assignment_rule": "decision_stage_team_handoff",
-        "assignment_basis": "decision:commercial-investigation",
-        "approved_route_evidence": "src/pages/book.astro",
-        "role": "primary_appointment",
-        "is_appointment_cta": true,
-        "status": "planned_local_only"
-      },
-      "appointment_cta": {
-        "url": "/book/",
-        "label": "Review My Written Offer",
-        "name": "mrx1000-offer-review-book_review-closing_panel",
-        "placement_code": "closing_panel",
-        "placement_guidance": "Place in the closing decision panel after key takeaways and before related articles.",
-        "assignment_rule": "decision_stage_team_handoff",
-        "assignment_basis": "decision:commercial-investigation",
-        "approved_route_evidence": "src/pages/book.astro",
-        "role": "same_as_primary_appointment",
-        "distinct_from_primary_cta": false,
-        "status": "planned_local_only"
-      },
-      "evidence": {
-        "triangle_plan_status": "planned_complete",
-        "primary_cta_plan_status": "planned_complete",
-        "appointment_cta_plan_status": "planned_complete",
-        "rendered_status": "not_rendered_or_verified_by_this_plan",
-        "rendered_triangle_verified": false,
-        "live_status": "not_published_or_verified_by_this_plan",
-        "live_triangle_verified": false,
-        "release_status": "eligible_for_continuous_quality_review_not_yet_cleared",
         "numerical_release_cap_applies": false
       }
     },
@@ -60177,11 +60114,11 @@
         "status": "planned_local_only"
       },
       "sibling_link": {
-        "target_program_row_id": "MRX1000-0301",
-        "target_title": "Avoiding Predatory Offers: Fair Valuation for Mineral Rights",
-        "url": "/blog/avoiding-predatory-offers-fair-valuation-for-mineral-rights/",
+        "target_program_row_id": "MRX1000-1035",
+        "target_title": "Mineral Rights Buyers: Risk Checklist For Royalty Owners",
+        "url": "/blog/mineral-rights-buyers-risk-checklist-for-royalty-owners/",
         "relationship": "same_cluster_next_by_program_row_id_cyclic",
-        "target_source_preservation_classification": "incumbent_draft_nonpublic_held",
+        "target_source_preservation_classification": "planning_only_inventory",
         "target_route_live": false,
         "status": "planned_local_only"
       },
@@ -63104,6 +63041,69 @@
         "placement_guidance": "Place after the first comparison, risk, document, or decision-framework section.",
         "assignment_rule": "consideration_stage_assisted_review",
         "assignment_basis": "consideration:informational",
+        "approved_route_evidence": "src/pages/book.astro",
+        "role": "same_as_primary_appointment",
+        "distinct_from_primary_cta": false,
+        "status": "planned_local_only"
+      },
+      "evidence": {
+        "triangle_plan_status": "planned_complete",
+        "primary_cta_plan_status": "planned_complete",
+        "appointment_cta_plan_status": "planned_complete",
+        "rendered_status": "not_rendered_or_verified_by_this_plan",
+        "rendered_triangle_verified": false,
+        "live_status": "not_published_or_verified_by_this_plan",
+        "live_triangle_verified": false,
+        "release_status": "eligible_for_continuous_quality_review_not_yet_cleared",
+        "numerical_release_cap_applies": false
+      }
+    },
+    {
+      "program_row_id": "MRX1000-1035",
+      "canonical_title": "Mineral Rights Buyers: Risk Checklist For Royalty Owners",
+      "canonical_slug": "mineral-rights-buyers-risk-checklist-for-royalty-owners",
+      "canonical_url": "/blog/mineral-rights-buyers-risk-checklist-for-royalty-owners/",
+      "cluster": "offer-review-buyer-comparison-safety",
+      "pillar": "offer-review",
+      "search_intent": "compare-offers",
+      "funnel_stage": "decision",
+      "source_preservation_classification": "planning_only_inventory",
+      "source_route_live": false,
+      "pillar_link": {
+        "url": "/offer-review/",
+        "route_evidence": "src/pages/offer-review.astro",
+        "status": "planned_local_only"
+      },
+      "sibling_link": {
+        "target_program_row_id": "MRX1000-0302",
+        "target_title": "How to Compare Mineral Rights Buyers in Texas",
+        "url": "/blog/how-to-compare-mineral-rights-buyers-in-texas/",
+        "relationship": "same_cluster_next_by_program_row_id_cyclic",
+        "target_source_preservation_classification": "live_public_published_route",
+        "target_route_live": true,
+        "status": "planned_local_only"
+      },
+      "primary_cta": {
+        "url": "/book/",
+        "label": "Review My Written Offer",
+        "name": "mrx1000-offer-review-book_review-closing_panel",
+        "placement_code": "closing_panel",
+        "placement_guidance": "Place in the closing decision panel after key takeaways and before related articles.",
+        "assignment_rule": "decision_stage_team_handoff",
+        "assignment_basis": "decision:compare-offers",
+        "approved_route_evidence": "src/pages/book.astro",
+        "role": "primary_appointment",
+        "is_appointment_cta": true,
+        "status": "planned_local_only"
+      },
+      "appointment_cta": {
+        "url": "/book/",
+        "label": "Review My Written Offer",
+        "name": "mrx1000-offer-review-book_review-closing_panel",
+        "placement_code": "closing_panel",
+        "placement_guidance": "Place in the closing decision panel after key takeaways and before related articles.",
+        "assignment_rule": "decision_stage_team_handoff",
+        "assignment_basis": "decision:compare-offers",
         "approved_route_evidence": "src/pages/book.astro",
         "role": "same_as_primary_appointment",
         "distinct_from_primary_cta": false,

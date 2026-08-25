@@ -70,6 +70,7 @@ const SUPERSEDED_CANONICAL_SLUGS = new Set([
   'what-variables-should-mineral-rights-owners-know-to-determine-asset-value',
   'why-a-mineral-rights-assessment-is-essential-for-owners',
   'your-guide-to-understanding-the-true-value-of-your-mineral-rights-asset',
+  'avoiding-predatory-offers-fair-valuation-for-mineral-rights',
   'what-influences-the-suggested-price-for-your-mineral-rights-assessment',
   'what-sellers-get-wrong-about-mineral-rights',
   'what-to-avoid-in-the-mineral-rights-selling-process',
@@ -148,6 +149,10 @@ const SUCCESSOR_CANONICAL_SLUGS = new Map([
   [
     'your-guide-to-understanding-the-true-value-of-your-mineral-rights-asset',
     'texas-rrc-production-by-filing-operator-retrieval-provenance-worksheet',
+  ],
+  [
+    'avoiding-predatory-offers-fair-valuation-for-mineral-rights',
+    'texas-rrc-production-by-operator-of-record-retrieval-provenance-worksheet',
   ],
   [
     'what-influences-the-suggested-price-for-your-mineral-rights-assessment',
@@ -359,10 +364,19 @@ const APPROVED_REKEY_SEARCH_INTENT_BY_SLUG = new Map([
   ['texas-comptroller-lease-drop-retrieval-provenance-worksheet', 'informational'],
   ['texas-rrc-production-by-lease-retrieval-provenance-worksheet', 'informational'],
   ['texas-rrc-production-by-filing-operator-retrieval-provenance-worksheet', 'informational'],
+  ['texas-rrc-production-by-operator-of-record-retrieval-provenance-worksheet', 'informational'],
+]);
+
+const APPROVED_REKEY_ACTION_REASON_BY_SLUG = new Map([
+  [
+    'texas-rrc-production-by-operator-of-record-retrieval-provenance-worksheet',
+    'The original generic predatory-offer and fair-valuation identity was rejected for material overlap. The approved replacement owns one authorized manual Production by Operator of Record retrieval provenance record and remains distinct from the two sibling PR paths, adjacent P-4 and production-query routes, and every production-interpretation or decision task. The source is prepared for the exact release-10 build, but publication remains controlled by the signed batch, matching evidence, production deployment, and independent verification.',
+  ],
 ]);
 
 const EXECUTIVE_MANUAL_CANNIBALIZATION_REVIEW_PASS_SLUGS = new Set([
   'texas-rrc-h-9-query-retrieval-provenance-worksheet',
+  'texas-rrc-production-by-operator-of-record-retrieval-provenance-worksheet',
 ]);
 
 // Wave 100 and 101 were first materialized before their successor mappings
@@ -1136,7 +1150,8 @@ async function loadRepoCandidates({
         actionReason: isRelease10ProductionVerified
           ? 'Release-10 passed the signed batch gate, production deployment, and independent post-publication verification. Preserve the canonical URL; measurement informs refresh and prioritization, not a numerical release gate.'
           : isAuthorizedReleaseCandidate
-            ? 'The source is prepared for the exact release-10 build, but publication remains controlled by the signed batch, matching evidence, production deployment, and independent verification.'
+            ? (APPROVED_REKEY_ACTION_REASON_BY_SLUG.get(slug) ??
+              'The source is prepared for the exact release-10 build, but publication remains controlled by the signed batch, matching evidence, production deployment, and independent verification.')
             : isLegacyPublished
               ? 'Existing Astro URL is already public and remains the incumbent owner. This ledger authorizes no additional publication or indexing action.'
               : 'Existing Astro MDX is fail-closed (nonpublic publication_status). Publication is held until program gates pass.',
@@ -1525,6 +1540,7 @@ function selectLedger(quotas, sources) {
 
   for (const row of sources.repo) tryAdd(row, true);
   for (const row of sources.pilot) tryAdd(row, true);
+  for (const row of sources.preservedPlanning ?? []) tryAdd(row, true);
   for (const row of sources.searchatlas) tryAdd(row);
   for (const row of sources.editorialGap) tryAdd(row);
   for (const row of sources.factory) tryAdd(row);
@@ -1756,6 +1772,10 @@ async function main() {
   const priorIdentity = await loadPriorProgramRowIds();
   const withoutSupersededIdentities = (rows) =>
     rows.filter((row) => !SUPERSEDED_CANONICAL_SLUGS.has(row.canonical_slug));
+  // A redefined row can originate from a retained, nonpublic repo draft. Keep
+  // that source file available as historical input without admitting both the
+  // retired identity and its approved successor to the canonical corpus.
+  const canonicalRepo = withoutSupersededIdentities(repo);
   const quotas = Object.fromEntries(
     quotaPlan.cluster_quotas.map((item) => [item.cluster_id, item.quota]),
   );
@@ -1772,7 +1792,7 @@ async function main() {
     ...[...release10Production.batchSlugs].filter(
       (slug) => priorIdentity.sourceSystemBySlug.get(slug) !== 'astro_repo',
     ),
-    ...repo
+    ...canonicalRepo
       .map((row) => row.canonical_slug)
       .filter(
         (slug) =>
@@ -1780,9 +1800,9 @@ async function main() {
       ),
   ]);
   const expectedRepoCount = priorIdentity.incumbentRepoCount + newlyMaterializedRepoSlugs.size;
-  if (priorIdentity.incumbentRepoCount <= 0 || repo.length !== expectedRepoCount)
+  if (priorIdentity.incumbentRepoCount <= 0 || canonicalRepo.length !== expectedRepoCount)
     throw new Error(
-      `Expected ${expectedRepoCount} non-pilot incumbent repo posts from prior-ledger state plus ${newlyMaterializedRepoSlugs.size} newly materialized admitted or approved successor rows, found ${repo.length}.`,
+      `Expected ${expectedRepoCount} non-pilot incumbent repo posts from prior-ledger state plus ${newlyMaterializedRepoSlugs.size} newly materialized admitted or approved successor rows, found ${canonicalRepo.length}.`,
     );
   if (pilotRows.length !== 25)
     throw new Error(`Expected 25 pilot rows, found ${pilotRows.length}.`);
@@ -1798,8 +1818,11 @@ async function main() {
   assertNoExactDuplicate(repo, 'incumbent repo');
   assertNoExactDuplicate(pilotRows, 'pilot manifest');
   const { selected, counts, rejected } = selectLedger(quotas, {
-    repo,
+    repo: canonicalRepo,
     pilot: pilotRows,
+    preservedPlanning: [...searchatlas, ...editorialGap, ...factory].filter((row) =>
+      PROGRAM_ROW_ID_RECOVERY_BY_SLUG.has(row.canonical_slug),
+    ),
     searchatlas: withoutSupersededIdentities(searchatlas),
     editorialGap: withoutSupersededIdentities(editorialGap),
     factory: withoutSupersededIdentities(factory),
@@ -2006,7 +2029,7 @@ async function main() {
     ledger.verification.row_count !== 1000 ||
     ledger.verification.unique_slug_count !== 1000 ||
     ledger.verification.unique_normalized_title_count !== 1000 ||
-    ledger.verification.incumbent_repo_count !== repo.length ||
+    ledger.verification.incumbent_repo_count !== canonicalRepo.length ||
     ledger.verification.pilot_001_count !== 25 ||
     ledger.verification.pilot_001_count_with_repo_mdx !== 25 ||
     !ledger.verification.all_quota_checks_pass

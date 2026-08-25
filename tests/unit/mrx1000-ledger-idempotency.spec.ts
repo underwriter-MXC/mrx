@@ -50,9 +50,9 @@ const SCRIPT = path.join(MRX_ROOT, 'scripts/build-mrx-1000-content-ledger.mjs');
 const CANONICAL_JSON = path.join(MRX_ROOT, 'config/mrx-1000-canonical-content-ledger.json');
 const CANONICAL_CSV = path.join(MRX_ROOT, 'config/mrx-1000-canonical-content-ledger.csv');
 const EXPECTED_CANONICAL_JSON_SHA256 =
-  'd40d756180872f9d4ee442945e9a925976741c4fb726cd6069e5f38dab3c8f63';
+  '16bcba4eb8d42cb3bc46f9a9682a7aab8e3bfb2e2d4d53a45df3cc7359fa3393';
 const EXPECTED_CANONICAL_CSV_SHA256 =
-  '1ead2b4827e1418eaf61cee34d39ec60755f7fdb2a4db9eee6fd520f6b8ba3a6';
+  'dde05bd68036650246e32ae0281478137d218a77091203bd40fce92a25baf35d';
 const TEST_OUTPUT_DIR = mkdtempSync(path.join(tmpdir(), 'mrx1000-ledger-idempotency-'));
 const JSON_OUT = path.join(TEST_OUTPUT_DIR, 'mrx-1000-canonical-content-ledger.json');
 const CSV_OUT = path.join(TEST_OUTPUT_DIR, 'mrx-1000-canonical-content-ledger.csv');
@@ -63,6 +63,9 @@ const POST_PUBLICATION_VERIFICATION = path.join(
 const REPORT_OUT = path.join(TEST_OUTPUT_DIR, 'mrx-1000-canonical-content-ledger-report.md');
 const PILOT_MANIFEST = path.join(MRX_ROOT, 'config/mrx-1000-pilot-batch-001.json');
 const POSTS_DIR = path.join(MRX_ROOT, 'src/content/posts');
+const RETIRED_REPO_SOURCE_SLUGS = new Set([
+  'avoiding-predatory-offers-fair-valuation-for-mineral-rights',
+]);
 const RELEASE_BATCH = JSON.parse(
   readFileSync(path.join(MRX_ROOT, 'config/mrx1000-release-10-batch.json'), 'utf8'),
 ) as { articles: unknown[] };
@@ -176,6 +179,7 @@ interface Ledger {
     wave114_rekey?: { program_row_id: string };
     wave115_rekey?: { program_row_id: string };
     wave116_rekey?: { program_row_id: string };
+    wave117_rekey?: { program_row_id: string };
   };
   policy: {
     pilot_aware: boolean;
@@ -269,7 +273,8 @@ describe('MRX1000 canonical ledger generator (pilot-aware + idempotent)', () => 
         .filter((name) => name.endsWith('.mdx'))
         .map((name) => name.replace(/\.mdx$/, '')),
     );
-    expectedIncumbentCount = onDiskMdxSlugs.size - manifest.articles.length;
+    expectedIncumbentCount =
+      onDiskMdxSlugs.size - manifest.articles.length - RETIRED_REPO_SOURCE_SLUGS.size;
     expectedHeldCount = expectedIncumbentCount - EXPECTED_PUBLIC_COUNT;
     expectedPlanningCount = 1000 - expectedIncumbentCount - manifest.articles.length;
 
@@ -336,6 +341,7 @@ describe('MRX1000 canonical ledger generator (pilot-aware + idempotent)', () => 
     expect(ledger.identity_registry.wave114_rekey?.program_row_id).toBe('MRX1000-0298');
     expect(ledger.identity_registry.wave115_rekey?.program_row_id).toBe('MRX1000-0299');
     expect(ledger.identity_registry.wave116_rekey?.program_row_id).toBe('MRX1000-0300');
+    expect(ledger.identity_registry.wave117_rekey?.program_row_id).toBe('MRX1000-0301');
     expect(bySlug.has('understanding-the-true-worth-of-your-mineral-interests')).toBe(false);
     expect(
       bySlug.has(
@@ -411,6 +417,11 @@ describe('MRX1000 canonical ledger generator (pilot-aware + idempotent)', () => 
       bySlug.get('texas-rrc-production-by-filing-operator-retrieval-provenance-worksheet')
         ?.program_row_id,
     ).toBe('MRX1000-0300');
+    expect(bySlug.has('avoiding-predatory-offers-fair-valuation-for-mineral-rights')).toBe(false);
+    expect(
+      bySlug.get('texas-rrc-production-by-operator-of-record-retrieval-provenance-worksheet')
+        ?.program_row_id,
+    ).toBe('MRX1000-0301');
     expect(
       bySlug.get('mineral-rights-valuation-checklist-without-obligation')?.program_row_id,
     ).toBe('MRX1000-0237');
