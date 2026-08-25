@@ -30,6 +30,7 @@ const retiredHistoricalSourceSlugs = new Set([
   'how-to-identify-unfair-offers-for-mineral-rights',
   'texas-mineral-rights-valuation-vs-predatory-offers-what-to-know',
   'what-to-do-when-you-have-multiple-offers-for-your-mineral-rights',
+  '5-essential-steps-to-verify-the-legitimacy-of-your-mineral-rights-offer',
 ]);
 
 describe('article publication gate', () => {
@@ -62,6 +63,10 @@ describe('article publication gate', () => {
   });
   it('keeps only legacy-live and authorized-batch articles publication-shaped', () => {
     const articleFiles = readdirSync(postsDir).filter((file) => file.endsWith('.mdx'));
+    const articleSlugs = new Set(articleFiles.map((file) => file.replace(/\.mdx$/, '')));
+    const retiredHistoricalSourceCount = [...retiredHistoricalSourceSlugs].filter((slug) =>
+      articleSlugs.has(slug),
+    ).length;
     const statuses = articleFiles.map((file) => {
       const source = readFileSync(join(postsDir, file), 'utf8');
       const frontmatter = source.match(/^---\r?\n([\s\S]*?)\r?\n---/)?.[1] ?? '';
@@ -77,7 +82,7 @@ describe('article publication gate', () => {
     expect(articleFiles).toHaveLength(
       canonicalLedger.verification.incumbent_repo_count +
         canonicalLedger.verification.pilot_001_count +
-        retiredHistoricalSourceSlugs.size,
+        retiredHistoricalSourceCount,
     );
     expect(
       statuses

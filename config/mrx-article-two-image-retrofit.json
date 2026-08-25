@@ -1,18 +1,18 @@
 {
   "artifact_type": "mrx_article_two_image_retrofit",
   "schema_version": 1,
-  "generated_at_utc": "2026-08-25T10:25:27Z",
+  "generated_at_utc": "2026-08-25T10:49:07Z",
   "policy_source": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
   "summary": {
-    "article_count": 205,
-    "asset_count": 410,
-    "unique_source_art_count": 205,
-    "unique_hero_sha256_count": 205,
-    "unique_inline_sha256_count": 205,
-    "distinct_article_pair_count": 205,
-    "hero_ocr_pass_count": 205,
-    "inline_ocr_pass_count": 205,
-    "exact_filename_identity_count": 205
+    "article_count": 206,
+    "asset_count": 412,
+    "unique_source_art_count": 206,
+    "unique_hero_sha256_count": 206,
+    "unique_inline_sha256_count": 206,
+    "distinct_article_pair_count": 206,
+    "hero_ocr_pass_count": 206,
+    "inline_ocr_pass_count": 206,
+    "exact_filename_identity_count": 206
   },
   "contact_sheets": {
     "hero": [
@@ -5256,6 +5256,56 @@
           "actual": "Texas RRC drilling permit\nquery retrieval",
           "normalized_expected": "texas rrc drilling permit query retrieval",
           "normalized_actual": "texas rrc drilling permit query retrieval",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      }
+    },
+    {
+      "slug": "texas-rrc-dry-hole-file-retrieval-provenance-worksheet",
+      "title": "Texas RRC Dry Hole File Retrieval Provenance Worksheet",
+      "keyword": "Texas RRC dry hole file retrieval",
+      "file_path": "src/content/posts/texas-rrc-dry-hole-file-retrieval-provenance-worksheet.mdx",
+      "source_public_path": "/assets/articles/hero/texas-rrc-dry-hole-file-retrieval-provenance-worksheet.webp",
+      "source_artifact_paths": [
+        "artifacts/mrx1000-wave121-creative-sources/texas-rrc-dry-hole-file-retrieval-provenance-worksheet-hero-base.png",
+        "artifacts/mrx1000-wave121-creative-sources/texas-rrc-dry-hole-file-retrieval-provenance-worksheet-inline-base.png"
+      ],
+      "generated_at_utc": "2026-08-25T10:46:16.431Z",
+      "hero": {
+        "public_path": "/assets/articles/hero/texas-rrc-dry-hole-file-retrieval-provenance-worksheet.webp",
+        "alt": "A researcher opens a public-record archive drawer beside the exact article title.",
+        "width": 1200,
+        "height": 630,
+        "mime_type": "image/webp",
+        "sha256": "26cf43a837f12f7e728f2d04a34ea212e899c66929149513ca7c5135b67eed4b",
+        "perceptual_hash": "0000000011111011000000001111101100000000011111110000000011111101010000000110110001100000011111000111100001101100000000000110110000000000000001000000000000110100000000000111100000000000011110000000000000000000000000001100111100000000011100010000000001111110",
+        "neutralized_art_text_region_count": 1,
+        "ocr": {
+          "expected": "Texas RRC Dry Hole File Retrieval Provenance Worksheet",
+          "actual": "Texas RRC Dry Hole\nFile Retrieval\nProvenance Worksheet",
+          "normalized_expected": "texas rrc dry hole file retrieval provenance worksheet",
+          "normalized_actual": "texas rrc dry hole file retrieval provenance worksheet",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      },
+      "inline": {
+        "public_path": "/assets/articles/inline/texas-rrc-dry-hole-file-retrieval-provenance-worksheet/texas-rrc-dry-hole-file-retrieval.webp",
+        "alt": "A people-free overhead dry-hole retrieval evidence board appears above the exact keyword.",
+        "rendered_text": "Texas RRC dry hole file retrieval",
+        "visual_variant": "wave121-distinct-generated-people-free-overhead-dry-hole-retrieval-evidence-board",
+        "width": 1200,
+        "height": 675,
+        "mime_type": "image/webp",
+        "sha256": "ad17d260f0e14719ba5b28473c3138558ce69478539583fabd07964d8080f966",
+        "perceptual_hash": "1111111111111111111111111111101111111111111111111111111111111001111111111100000111111111110000101111111111111111111111011111111111111101111100111111110111110001101110111111111100000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "neutralized_art_text_region_count": 1,
+        "ocr": {
+          "expected": "Texas RRC dry hole file retrieval",
+          "actual": "Texas RRC dry hole file retrieval",
+          "normalized_expected": "texas rrc dry hole file retrieval",
+          "normalized_actual": "texas rrc dry hole file retrieval",
           "uppercase_i_confusable_accepted": false,
           "pass": true
         }

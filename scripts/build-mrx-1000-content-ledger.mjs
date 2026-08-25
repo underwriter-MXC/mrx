@@ -74,6 +74,7 @@ const SUPERSEDED_CANONICAL_SLUGS = new Set([
   'how-to-identify-unfair-offers-for-mineral-rights',
   'texas-mineral-rights-valuation-vs-predatory-offers-what-to-know',
   'what-to-do-when-you-have-multiple-offers-for-your-mineral-rights',
+  '5-essential-steps-to-verify-the-legitimacy-of-your-mineral-rights-offer',
   'what-influences-the-suggested-price-for-your-mineral-rights-assessment',
   'what-sellers-get-wrong-about-mineral-rights',
   'what-to-avoid-in-the-mineral-rights-selling-process',
@@ -168,6 +169,10 @@ const SUCCESSOR_CANONICAL_SLUGS = new Map([
   [
     'what-to-do-when-you-have-multiple-offers-for-your-mineral-rights',
     'texas-rrc-imaged-potential-file-retrieval-provenance-worksheet',
+  ],
+  [
+    '5-essential-steps-to-verify-the-legitimacy-of-your-mineral-rights-offer',
+    'texas-rrc-dry-hole-file-retrieval-provenance-worksheet',
   ],
   [
     'what-influences-the-suggested-price-for-your-mineral-rights-assessment',
@@ -386,6 +391,7 @@ const APPROVED_REKEY_SEARCH_INTENT_BY_SLUG = new Map([
   ],
   ['texas-rrc-imaged-well-log-retrieval-provenance-worksheet', 'informational'],
   ['texas-rrc-imaged-potential-file-retrieval-provenance-worksheet', 'informational'],
+  ['texas-rrc-dry-hole-file-retrieval-provenance-worksheet', 'informational'],
 ]);
 
 const APPROVED_REKEY_ACTION_REASON_BY_SLUG = new Map([
@@ -404,6 +410,10 @@ const APPROVED_REKEY_ACTION_REASON_BY_SLUG = new Map([
   [
     'texas-rrc-imaged-potential-file-retrieval-provenance-worksheet',
     'The original multiple-offers identity was rejected for direct overlap and unsupported high-risk claims. The approved replacement owns one authorized manual Texas RRC Imaged Records Oil and Gas Potential profile retrieval provenance record and remains separate from the Well Log profile, adjacent RRC query and record systems, interpretation, offer, and decision tasks. The source is prepared for the exact release-10 build, but publication remains controlled by the signed batch, matching evidence, production deployment, and independent verification.',
+  ],
+  [
+    'texas-rrc-dry-hole-file-retrieval-provenance-worksheet',
+    'The original offer-legitimacy identity was rejected for direct overlap with the legitimacy, buyer-identity, scam, red-flag, and offer-comparison corpus. The approved replacement owns one authorized manual Texas RRC Imaged Records Dry Hole Files profile retrieval provenance record and remains separate from the Potential and Well Log profiles, adjacent RRC query and record systems, interpretation, offer, and decision tasks. Current direct profile access returned HTTP 403, so the article records no completed query and keeps the present attempt unverified. The source is prepared for the exact release-10 build, but publication remains controlled by the signed batch, matching evidence, production deployment, and independent verification.',
   ],
 ]);
 

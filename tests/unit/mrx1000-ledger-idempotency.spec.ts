@@ -50,9 +50,9 @@ const SCRIPT = path.join(MRX_ROOT, 'scripts/build-mrx-1000-content-ledger.mjs');
 const CANONICAL_JSON = path.join(MRX_ROOT, 'config/mrx-1000-canonical-content-ledger.json');
 const CANONICAL_CSV = path.join(MRX_ROOT, 'config/mrx-1000-canonical-content-ledger.csv');
 const EXPECTED_CANONICAL_JSON_SHA256 =
-  'f79d94507940dc43b6005a4866f620ccd00eee233c573f2d7f0d94f6a0a3a861';
+  '49952a5e78c311a7091af6d96e833ddc9836a4a6504fee58ef074cc8516cbb00';
 const EXPECTED_CANONICAL_CSV_SHA256 =
-  '3f683b13307176f42ad07f63075a135b5341d42b2f65dcb08363a0ccab25e0db';
+  'fb2806a23957c4f9c661863065ad3be1b55099fbf11ed81acf3ca21539429bd1';
 const TEST_OUTPUT_DIR = mkdtempSync(path.join(tmpdir(), 'mrx1000-ledger-idempotency-'));
 const JSON_OUT = path.join(TEST_OUTPUT_DIR, 'mrx-1000-canonical-content-ledger.json');
 const CSV_OUT = path.join(TEST_OUTPUT_DIR, 'mrx-1000-canonical-content-ledger.csv');
@@ -68,6 +68,7 @@ const RETIRED_REPO_SOURCE_SLUGS = new Set([
   'how-to-identify-unfair-offers-for-mineral-rights',
   'texas-mineral-rights-valuation-vs-predatory-offers-what-to-know',
   'what-to-do-when-you-have-multiple-offers-for-your-mineral-rights',
+  '5-essential-steps-to-verify-the-legitimacy-of-your-mineral-rights-offer',
 ]);
 const RELEASE_BATCH = JSON.parse(
   readFileSync(path.join(MRX_ROOT, 'config/mrx1000-release-10-batch.json'), 'utf8'),
@@ -186,6 +187,7 @@ interface Ledger {
     wave118_rekey?: { program_row_id: string };
     wave119_rekey?: { program_row_id: string };
     wave120_rekey?: { program_row_id: string };
+    wave121_rekey?: { program_row_id: string };
   };
   policy: {
     pilot_aware: boolean;
@@ -279,8 +281,10 @@ describe('MRX1000 canonical ledger generator (pilot-aware + idempotent)', () => 
         .filter((name) => name.endsWith('.mdx'))
         .map((name) => name.replace(/\.mdx$/, '')),
     );
-    expectedIncumbentCount =
-      onDiskMdxSlugs.size - manifest.articles.length - RETIRED_REPO_SOURCE_SLUGS.size;
+    const retiredRepoSourceCount = [...RETIRED_REPO_SOURCE_SLUGS].filter((slug) =>
+      onDiskMdxSlugs.has(slug),
+    ).length;
+    expectedIncumbentCount = onDiskMdxSlugs.size - manifest.articles.length - retiredRepoSourceCount;
     expectedHeldCount = expectedIncumbentCount - EXPECTED_PUBLIC_COUNT;
     expectedPlanningCount = 1000 - expectedIncumbentCount - manifest.articles.length;
 
@@ -351,6 +355,7 @@ describe('MRX1000 canonical ledger generator (pilot-aware + idempotent)', () => 
     expect(ledger.identity_registry.wave118_rekey?.program_row_id).toBe('MRX1000-0308');
     expect(ledger.identity_registry.wave119_rekey?.program_row_id).toBe('MRX1000-0317');
     expect(ledger.identity_registry.wave120_rekey?.program_row_id).toBe('MRX1000-0321');
+    expect(ledger.identity_registry.wave121_rekey?.program_row_id).toBe('MRX1000-0326');
     expect(bySlug.has('understanding-the-true-worth-of-your-mineral-interests')).toBe(false);
     expect(
       bySlug.has(
@@ -449,6 +454,12 @@ describe('MRX1000 canonical ledger generator (pilot-aware + idempotent)', () => 
       bySlug.get('texas-rrc-imaged-potential-file-retrieval-provenance-worksheet')
         ?.program_row_id,
     ).toBe('MRX1000-0321');
+    expect(
+      bySlug.has('5-essential-steps-to-verify-the-legitimacy-of-your-mineral-rights-offer'),
+    ).toBe(false);
+    expect(
+      bySlug.get('texas-rrc-dry-hole-file-retrieval-provenance-worksheet')?.program_row_id,
+    ).toBe('MRX1000-0326');
     expect(
       bySlug.get('mineral-rights-valuation-checklist-without-obligation')?.program_row_id,
     ).toBe('MRX1000-0237');
