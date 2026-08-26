@@ -1,7 +1,7 @@
 {
   "program": "MRX1000",
   "artifact_type": "searchatlas_ordered_llm_local_execution_manifest",
-  "generated_at": "2026-07-20T10:32:02.019Z",
+  "generated_at": "2026-07-20T20:59:28.386Z",
   "deterministic": true,
   "local_only": true,
   "external_services_called": false,
@@ -9,13 +9,13 @@
   "inputs": {
     "ledger": {
       "path": "config/mrx-1000-canonical-content-ledger.json",
-      "sha256": "2e88daf9a04d64d668fb706cda13d47090a30b914673cc44ebc6a5d4ddf3d1ec",
-      "bytes": 4616459
+      "sha256": "7ffc5609f2a5d7f5bc9d2cd4f8543196b184743890e5ffb39745db8287626fc1",
+      "bytes": 4616233
     },
     "readiness": {
       "path": "reports/mrx-1000-readiness-matrix.json",
-      "sha256": "8fc79b8ed917064d49d83197050e96ab7d1e279a129377ffb610cf705d74475b",
-      "bytes": 3451061,
+      "sha256": "827e59d7ec8882cab2ddb0c6d620813731064b72f04987237e1e3c9e5a5f3657",
+      "bytes": 3451089,
       "sha256_method": "canonical_json_with_top_level_generated_at_masked",
       "generated_at_excluded_from_sha256": true
     },
@@ -126217,7 +126217,7 @@
       "primary_keyword": "SEC EDGAR mineral rights offeror filing search",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -352254,5 +352254,5 @@
       ]
     }
   ],
-  "content_fingerprint_sha256": "5b6686cf4e210852fe5091266ee7a4983d67a7e0f3cb7a181a6e30156430ebff"
+  "content_fingerprint_sha256": "e13127ae1644b4addf2843116aaf3f486f9e48c1b54284ac6159eb7ba5580796"
 }
