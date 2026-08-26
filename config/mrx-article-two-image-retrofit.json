@@ -1,18 +1,18 @@
 {
   "artifact_type": "mrx_article_two_image_retrofit",
   "schema_version": 1,
-  "generated_at_utc": "2026-08-26T11:15:15Z",
+  "generated_at_utc": "2026-08-26T12:20:44Z",
   "policy_source": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
   "summary": {
-    "article_count": 223,
-    "asset_count": 446,
-    "unique_source_art_count": 223,
-    "unique_hero_sha256_count": 223,
-    "unique_inline_sha256_count": 223,
-    "distinct_article_pair_count": 223,
-    "hero_ocr_pass_count": 223,
-    "inline_ocr_pass_count": 223,
-    "exact_filename_identity_count": 223
+    "article_count": 224,
+    "asset_count": 448,
+    "unique_source_art_count": 224,
+    "unique_hero_sha256_count": 224,
+    "unique_inline_sha256_count": 224,
+    "distinct_article_pair_count": 224,
+    "hero_ocr_pass_count": 224,
+    "inline_ocr_pass_count": 224,
+    "exact_filename_identity_count": 224
   },
   "contact_sheets": {
     "hero": [
@@ -5410,6 +5410,56 @@
           "actual": "texas oil and\ngas\nproduction by\ncounty what\nmineral rights\nowners should\nknow",
           "normalized_expected": "texas oil and gas production by county what mineral rights owners should know",
           "normalized_actual": "texas oil and gas production by county what mineral rights owners should know",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      }
+    },
+    {
+      "slug": "texas-probate-court-appointment-record-retrieval-provenance-worksheet",
+      "title": "Texas Probate Court Appointment Record Retrieval Provenance Worksheet",
+      "keyword": "Texas probate court appointment record retrieval",
+      "file_path": "src/content/posts/texas-probate-court-appointment-record-retrieval-provenance-worksheet.mdx",
+      "source_public_path": "/assets/articles/hero/texas-probate-court-appointment-record-retrieval-provenance-worksheet.webp",
+      "source_artifact_paths": [
+        "artifacts/mrx1000-wave144-creative-sources/texas-probate-court-appointment-record-retrieval-provenance-worksheet-hero-base.png",
+        "artifacts/mrx1000-wave144-creative-sources/texas-probate-court-appointment-record-retrieval-provenance-worksheet-inline-base.png"
+      ],
+      "generated_at_utc": "2026-08-26T12:17:51.701Z",
+      "hero": {
+        "public_path": "/assets/articles/hero/texas-probate-court-appointment-record-retrieval-provenance-worksheet.webp",
+        "alt": "A low-oblique court-directory retrieval station appears beside the exact Texas probate worksheet title.",
+        "width": 1200,
+        "height": 630,
+        "mime_type": "image/webp",
+        "sha256": "0083923b75605f53ef10d0041d289a11c197d045bfa542b205c44e9bc9499ab8",
+        "perceptual_hash": "0000000001111000000000000111100000000000011111000010000001111100011100000111110001111000001100001111100000000000111000000000001100000000000111110000000000010011000000000001000000000000000100000000000000110011000000000001001100000000000011110000000000001110",
+        "neutralized_art_text_region_count": 1,
+        "ocr": {
+          "expected": "Texas Probate Court Appointment Record Retrieval Provenance Worksheet",
+          "actual": "Texas Probate Court\nAppointment Record\nRetrieval Provenance\nWorksheet",
+          "normalized_expected": "texas probate court appointment record retrieval provenance worksheet",
+          "normalized_actual": "texas probate court appointment record retrieval provenance worksheet",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      },
+      "inline": {
+        "public_path": "/assets/articles/inline/texas-probate-court-appointment-record-retrieval-provenance-worksheet/texas-probate-court-appointment-record-retrieval.webp",
+        "alt": "A top-down blank probate record retrieval worksheet appears above the exact Texas appointment-record keyword.",
+        "rendered_text": "Texas probate court appointment record retrieval",
+        "visual_variant": "wave144-distinct-generated-strict-overhead-blank-probate-appointment-record-retrieval-worksheet",
+        "width": 1200,
+        "height": 675,
+        "mime_type": "image/webp",
+        "sha256": "aa3d9a4f266666fbf3c31ee3b2f0f03b167746167563b96ea972366ef9b25c7b",
+        "perceptual_hash": "1111111111111111111111111111111111111111111111111111111111111111111111111111110111111111111111011111111111111111111111111111110111111111111111011111111111111100111111111111111000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "neutralized_art_text_region_count": 1,
+        "ocr": {
+          "expected": "Texas probate court appointment record retrieval",
+          "actual": "Texas probate court\nappointment record retrieval",
+          "normalized_expected": "texas probate court appointment record retrieval",
+          "normalized_actual": "texas probate court appointment record retrieval",
           "uppercase_i_confusable_accepted": false,
           "pass": true
         }

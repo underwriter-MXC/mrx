@@ -1,15 +1,15 @@
 {
   "artifact_type": "mrx1000_content_activation_plan",
   "plan_version": "mrx1000-content-activation-v1.1.0",
-  "generated_at": "2026-07-20T09:42:25.788Z",
+  "generated_at": "2026-07-20T06:54:28.145Z",
   "generated_at_method": "canonical_ledger_generated_at",
   "generator": "scripts/build-mrx-1000-activation-plan.mjs",
-  "content_fingerprint_sha256": "31b8b48088727dcd456d4cd28d6ec080fb14c18e7f21d794ecba7823a8199dde",
+  "content_fingerprint_sha256": "00891926a30e48011152aeddcbb0251695a15017df9e1bd613257e311127ccfb",
   "inputs": {
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_fingerprint_sha256": "8fbb9ae82679151285a203d7158183d315a9ce76dbf6192a6aca2d3a84a20bbf",
+    "canonical_ledger_fingerprint_sha256": "e431a7808aac2182207f9112e9aee7b82f8dc5a34868021b4e04aa57130350fc",
     "canonical_ledger_fingerprint_verified": true,
-    "canonical_ledger_generated_at": "2026-07-20T09:42:25.788Z",
+    "canonical_ledger_generated_at": "2026-07-20T06:54:28.145Z",
     "owner_decision": {
       "decision_id": "D-2026-0804-16",
       "signed_disposition": "APPROVED_CONTINUOUS_QUALITY_GATED_ARTICLE_PUBLICATION",
@@ -115,9 +115,9 @@
     },
     "by_source_preservation_classification": {
       "incumbent_draft_nonpublic_held": 23,
-      "live_public_published_route": 223,
+      "live_public_published_route": 224,
       "pilot_draft_noindex_stage": 25,
-      "planning_only_inventory": 729
+      "planning_only_inventory": 728
     }
   },
   "rows": [
@@ -21170,7 +21170,7 @@
       "canonical_url": "/blog/texas-tdi-title-agent-report-retrieval-provenance-worksheet/",
       "cluster": "offer-review-buyer-comparison-safety",
       "pillar": "offer-review",
-      "search_intent": "informational",
+      "search_intent": "commercial-investigation",
       "funnel_stage": "decision",
       "source_preservation_classification": "live_public_published_route",
       "source_route_live": true,
@@ -21195,7 +21195,7 @@
         "placement_code": "closing_panel",
         "placement_guidance": "Place in the closing decision panel after key takeaways and before related articles.",
         "assignment_rule": "decision_stage_team_handoff",
-        "assignment_basis": "decision:informational",
+        "assignment_basis": "decision:commercial-investigation",
         "approved_route_evidence": "src/pages/book.astro",
         "role": "primary_appointment",
         "is_appointment_cta": true,
@@ -21208,7 +21208,7 @@
         "placement_code": "closing_panel",
         "placement_guidance": "Place in the closing decision panel after key takeaways and before related articles.",
         "assignment_rule": "decision_stage_team_handoff",
-        "assignment_basis": "decision:informational",
+        "assignment_basis": "decision:commercial-investigation",
         "approved_route_evidence": "src/pages/book.astro",
         "role": "same_as_primary_appointment",
         "distinct_from_primary_cta": false,
@@ -26725,11 +26725,11 @@
       },
       "sibling_link": {
         "target_program_row_id": "MRX1000-0442",
-        "target_title": "Avoiding Common Mistakes With Inherited Mineral Rights",
-        "url": "/blog/avoiding-common-mistakes-with-inherited-mineral-rights/",
+        "target_title": "Texas Probate Court Appointment Record Retrieval Provenance Worksheet",
+        "url": "/blog/texas-probate-court-appointment-record-retrieval-provenance-worksheet/",
         "relationship": "same_cluster_next_by_program_row_id_cyclic",
-        "target_source_preservation_classification": "planning_only_inventory",
-        "target_route_live": false,
+        "target_source_preservation_classification": "live_public_published_route",
+        "target_route_live": true,
         "status": "planned_local_only"
       },
       "primary_cta": {
@@ -26772,15 +26772,15 @@
     },
     {
       "program_row_id": "MRX1000-0442",
-      "canonical_title": "Avoiding Common Mistakes With Inherited Mineral Rights",
-      "canonical_slug": "avoiding-common-mistakes-with-inherited-mineral-rights",
-      "canonical_url": "/blog/avoiding-common-mistakes-with-inherited-mineral-rights/",
+      "canonical_title": "Texas Probate Court Appointment Record Retrieval Provenance Worksheet",
+      "canonical_slug": "texas-probate-court-appointment-record-retrieval-provenance-worksheet",
+      "canonical_url": "/blog/texas-probate-court-appointment-record-retrieval-provenance-worksheet/",
       "cluster": "inherited-estate-probate",
       "pillar": "inherited-mineral-rights",
       "search_intent": "informational",
       "funnel_stage": "education",
-      "source_preservation_classification": "planning_only_inventory",
-      "source_route_live": false,
+      "source_preservation_classification": "live_public_published_route",
+      "source_route_live": true,
       "pillar_link": {
         "url": "/inherited-mineral-rights/",
         "route_evidence": "src/pages/inherited-mineral-rights.astro",
@@ -26829,7 +26829,7 @@
         "rendered_triangle_verified": false,
         "live_status": "not_published_or_verified_by_this_plan",
         "live_triangle_verified": false,
-        "release_status": "eligible_for_continuous_quality_review_not_yet_cleared",
+        "release_status": "released_under_d16_continuous_quality_gate",
         "numerical_release_cap_applies": false
       }
     },
@@ -26913,69 +26913,6 @@
         "status": "planned_local_only"
       },
       "sibling_link": {
-        "target_program_row_id": "MRX1000-0445",
-        "target_title": "Cash For Mineral Rights: Executor Guide For Royalty Owners",
-        "url": "/blog/cash-for-mineral-rights-executor-guide-for-royalty-owners/",
-        "relationship": "same_cluster_next_by_program_row_id_cyclic",
-        "target_source_preservation_classification": "planning_only_inventory",
-        "target_route_live": false,
-        "status": "planned_local_only"
-      },
-      "primary_cta": {
-        "url": "/free-guide/",
-        "label": "Get the Free Mineral Rights Guide",
-        "name": "mrx1000-inherited-mineral-rights-free_guide-mid_article",
-        "placement_code": "mid_article",
-        "placement_guidance": "Place after the direct answer or first useful checklist, before the first deep-dive section.",
-        "assignment_rule": "education_stage_nurture",
-        "assignment_basis": "education:sell-now",
-        "approved_route_evidence": "src/pages/free-guide.astro",
-        "role": "primary_nurture",
-        "is_appointment_cta": false,
-        "status": "planned_local_only"
-      },
-      "appointment_cta": {
-        "url": "/book/",
-        "label": "Organize My Inherited-Rights Records",
-        "name": "mrx1000-inherited-mineral-rights-book_review-closing_team_handoff",
-        "placement_code": "closing_team_handoff",
-        "placement_guidance": "Place after the final takeaway and primary guide CTA, before related articles, as the optional MRX team handoff.",
-        "assignment_rule": "education_stage_optional_team_handoff",
-        "assignment_basis": "education:sell-now",
-        "approved_route_evidence": "src/pages/book.astro",
-        "role": "secondary_appointment_after_primary_nurture",
-        "distinct_from_primary_cta": true,
-        "status": "planned_local_only"
-      },
-      "evidence": {
-        "triangle_plan_status": "planned_complete",
-        "primary_cta_plan_status": "planned_complete",
-        "appointment_cta_plan_status": "planned_complete",
-        "rendered_status": "not_rendered_or_verified_by_this_plan",
-        "rendered_triangle_verified": false,
-        "live_status": "not_published_or_verified_by_this_plan",
-        "live_triangle_verified": false,
-        "release_status": "eligible_for_continuous_quality_review_not_yet_cleared",
-        "numerical_release_cap_applies": false
-      }
-    },
-    {
-      "program_row_id": "MRX1000-0445",
-      "canonical_title": "Cash For Mineral Rights: Executor Guide For Royalty Owners",
-      "canonical_slug": "cash-for-mineral-rights-executor-guide-for-royalty-owners",
-      "canonical_url": "/blog/cash-for-mineral-rights-executor-guide-for-royalty-owners/",
-      "cluster": "inherited-estate-probate",
-      "pillar": "inherited-mineral-rights",
-      "search_intent": "compare-offers",
-      "funnel_stage": "education",
-      "source_preservation_classification": "planning_only_inventory",
-      "source_route_live": false,
-      "pillar_link": {
-        "url": "/inherited-mineral-rights/",
-        "route_evidence": "src/pages/inherited-mineral-rights.astro",
-        "status": "planned_local_only"
-      },
-      "sibling_link": {
         "target_program_row_id": "MRX1000-0446",
         "target_title": "Cash For Mineral Rights: Executor Guide In 2026",
         "url": "/blog/cash-for-mineral-rights-executor-guide-in-2026/",
@@ -26991,7 +26928,7 @@
         "placement_code": "mid_article",
         "placement_guidance": "Place after the direct answer or first useful checklist, before the first deep-dive section.",
         "assignment_rule": "education_stage_nurture",
-        "assignment_basis": "education:compare-offers",
+        "assignment_basis": "education:sell-now",
         "approved_route_evidence": "src/pages/free-guide.astro",
         "role": "primary_nurture",
         "is_appointment_cta": false,
@@ -27004,7 +26941,7 @@
         "placement_code": "closing_team_handoff",
         "placement_guidance": "Place after the final takeaway and primary guide CTA, before related articles, as the optional MRX team handoff.",
         "assignment_rule": "education_stage_optional_team_handoff",
-        "assignment_basis": "education:compare-offers",
+        "assignment_basis": "education:sell-now",
         "approved_route_evidence": "src/pages/book.astro",
         "role": "secondary_appointment_after_primary_nurture",
         "distinct_from_primary_cta": true,
@@ -32016,12 +31953,12 @@
         "status": "planned_local_only"
       },
       "sibling_link": {
-        "target_program_row_id": "MRX1000-0426",
-        "target_title": "Can You Put Mineral Rights in a Trust? Texas Estate Planning Explained",
-        "url": "/blog/can-you-put-mineral-rights-in-a-trust-texas-estate-planning-explained/",
+        "target_program_row_id": "MRX1000-1050",
+        "target_title": "Avoiding Common Mistakes With Inherited Mineral Rights",
+        "url": "/blog/avoiding-common-mistakes-with-inherited-mineral-rights/",
         "relationship": "same_cluster_next_by_program_row_id_cyclic",
-        "target_source_preservation_classification": "live_public_published_route",
-        "target_route_live": true,
+        "target_source_preservation_classification": "planning_only_inventory",
+        "target_route_live": false,
         "status": "planned_local_only"
       },
       "primary_cta": {
@@ -63107,6 +63044,69 @@
         "approved_route_evidence": "src/pages/book.astro",
         "role": "same_as_primary_appointment",
         "distinct_from_primary_cta": false,
+        "status": "planned_local_only"
+      },
+      "evidence": {
+        "triangle_plan_status": "planned_complete",
+        "primary_cta_plan_status": "planned_complete",
+        "appointment_cta_plan_status": "planned_complete",
+        "rendered_status": "not_rendered_or_verified_by_this_plan",
+        "rendered_triangle_verified": false,
+        "live_status": "not_published_or_verified_by_this_plan",
+        "live_triangle_verified": false,
+        "release_status": "eligible_for_continuous_quality_review_not_yet_cleared",
+        "numerical_release_cap_applies": false
+      }
+    },
+    {
+      "program_row_id": "MRX1000-1050",
+      "canonical_title": "Avoiding Common Mistakes With Inherited Mineral Rights",
+      "canonical_slug": "avoiding-common-mistakes-with-inherited-mineral-rights",
+      "canonical_url": "/blog/avoiding-common-mistakes-with-inherited-mineral-rights/",
+      "cluster": "inherited-estate-probate",
+      "pillar": "inherited-mineral-rights",
+      "search_intent": "informational",
+      "funnel_stage": "education",
+      "source_preservation_classification": "planning_only_inventory",
+      "source_route_live": false,
+      "pillar_link": {
+        "url": "/inherited-mineral-rights/",
+        "route_evidence": "src/pages/inherited-mineral-rights.astro",
+        "status": "planned_local_only"
+      },
+      "sibling_link": {
+        "target_program_row_id": "MRX1000-0426",
+        "target_title": "Can You Put Mineral Rights in a Trust? Texas Estate Planning Explained",
+        "url": "/blog/can-you-put-mineral-rights-in-a-trust-texas-estate-planning-explained/",
+        "relationship": "same_cluster_next_by_program_row_id_cyclic",
+        "target_source_preservation_classification": "live_public_published_route",
+        "target_route_live": true,
+        "status": "planned_local_only"
+      },
+      "primary_cta": {
+        "url": "/free-guide/",
+        "label": "Get the Free Mineral Rights Guide",
+        "name": "mrx1000-inherited-mineral-rights-free_guide-mid_article",
+        "placement_code": "mid_article",
+        "placement_guidance": "Place after the direct answer or first useful checklist, before the first deep-dive section.",
+        "assignment_rule": "education_stage_nurture",
+        "assignment_basis": "education:informational",
+        "approved_route_evidence": "src/pages/free-guide.astro",
+        "role": "primary_nurture",
+        "is_appointment_cta": false,
+        "status": "planned_local_only"
+      },
+      "appointment_cta": {
+        "url": "/book/",
+        "label": "Organize My Inherited-Rights Records",
+        "name": "mrx1000-inherited-mineral-rights-book_review-closing_team_handoff",
+        "placement_code": "closing_team_handoff",
+        "placement_guidance": "Place after the final takeaway and primary guide CTA, before related articles, as the optional MRX team handoff.",
+        "assignment_rule": "education_stage_optional_team_handoff",
+        "assignment_basis": "education:informational",
+        "approved_route_evidence": "src/pages/book.astro",
+        "role": "secondary_appointment_after_primary_nurture",
+        "distinct_from_primary_cta": true,
         "status": "planned_local_only"
       },
       "evidence": {
