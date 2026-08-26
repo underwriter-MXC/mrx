@@ -1,7 +1,7 @@
 {
   "program": "MRX1000",
   "artifact_type": "searchatlas_ordered_llm_local_execution_manifest",
-  "generated_at": "2026-07-20T22:40:45.914Z",
+  "generated_at": "2026-07-20T08:25:37.000Z",
   "deterministic": true,
   "local_only": true,
   "external_services_called": false,
@@ -9,13 +9,13 @@
   "inputs": {
     "ledger": {
       "path": "config/mrx-1000-canonical-content-ledger.json",
-      "sha256": "bd9252113bdfa18b68d7e211400dfb369982125744a12693be27e931d041ec68",
-      "bytes": 4628300
+      "sha256": "29d0281a0382b4b9818e4d4a77c905877b8f58c012fb150c725c8a4502a08288",
+      "bytes": 4628658
     },
     "readiness": {
       "path": "reports/mrx-1000-readiness-matrix.json",
-      "sha256": "b52b9aa748cb144273419717c0ecfdbd41cb2bc3874b56a5900141d142be3f5d",
-      "bytes": 3453836,
+      "sha256": "d43c0cc439e436c36020315993ac744ef353ceb9e2f1488a82caa1d4cbe3623c",
+      "bytes": 3453864,
       "sha256_method": "canonical_json_with_top_level_generated_at_masked",
       "generated_at_excluded_from_sha256": true
     },
@@ -223692,7 +223692,7 @@
       "primary_keyword": "1031 exchange recordkeeping for mineral interests",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -352416,5 +352416,5 @@
       ]
     }
   ],
-  "content_fingerprint_sha256": "83eba4a2dea55a0b055ca045d453bbb2ae825548bbb2f0f4adfbf362e5174c10"
+  "content_fingerprint_sha256": "d05b62f432f72f651ec8946b8aebed16d6ebbf90ce4748f61bbf87ed50805ce7"
 }
