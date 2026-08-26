@@ -1,7 +1,7 @@
 {
   "program": "MRX1000",
   "artifact_type": "searchatlas_ordered_llm_local_execution_manifest",
-  "generated_at": "2026-07-20T14:26:48.645Z",
+  "generated_at": "2026-07-20T08:25:37.000Z",
   "deterministic": true,
   "local_only": true,
   "external_services_called": false,
@@ -9,13 +9,13 @@
   "inputs": {
     "ledger": {
       "path": "config/mrx-1000-canonical-content-ledger.json",
-      "sha256": "7726f88fcc7a4370728bd5896c4dc5ba121727d018cf346c947a2a210127036e",
-      "bytes": 4634309
+      "sha256": "8a5cfad5d2ca8d73f7f710610f40e2b2a5047ad44ad9258b3c60c4818aca7ca6",
+      "bytes": 4634667
     },
     "readiness": {
       "path": "reports/mrx-1000-readiness-matrix.json",
-      "sha256": "d153c4cc3af8af0499db14df5c4ddf50ad4a6902a19796714e6b641c862df74a",
-      "bytes": 3456025,
+      "sha256": "5d1236a151d5bf67cb23ba2a3ff030e518fcc3976f94c5339927af805e4776cb",
+      "bytes": 3456053,
       "sha256_method": "canonical_json_with_top_level_generated_at_masked",
       "generated_at_excluded_from_sha256": true
     },
@@ -255852,7 +255852,7 @@
       "primary_keyword": "Brazos CAD mineral and industrial account contact",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -352520,5 +352520,5 @@
       ]
     }
   ],
-  "content_fingerprint_sha256": "1779883f69af46bff082a5874de6b9fb64b8d0799dbef3ab02b5db83d82ee20c"
+  "content_fingerprint_sha256": "042d4554f403dfdd7d68f16fea405d478439ba7fe99263719838f15a40db2778"
 }
