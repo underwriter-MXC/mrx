@@ -9,13 +9,13 @@
   "inputs": {
     "ledger": {
       "path": "config/mrx-1000-canonical-content-ledger.json",
-      "sha256": "93065a64ab17d32a72c52adb7fc699aba11cbc156818af46a53d79eabbc6dab4",
-      "bytes": 4620003
+      "sha256": "69b442f7d8d993e0eb2b197ab37a226dbb079f06625ef3a423c2b795b2d67e7a",
+      "bytes": 4619742
     },
     "readiness": {
       "path": "reports/mrx-1000-readiness-matrix.json",
-      "sha256": "ba8191def9a9cfd8070a60c0c9bb4c8154c09a720ec7d39b87fa574bc73f333f",
-      "bytes": 3452012,
+      "sha256": "b247fe90de357887dca2d7b4c2d2dbda01f92e6af10030e6e6d7c4b686b0ebc3",
+      "bytes": 3452040,
       "sha256_method": "canonical_json_with_top_level_generated_at_masked",
       "generated_at_excluded_from_sha256": true
     },
@@ -156233,7 +156233,7 @@
       "primary_keyword": "Texas probate court appointment record retrieval",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -352306,5 +352306,5 @@
       ]
     }
   ],
-  "content_fingerprint_sha256": "f453a1cb8a6226deb10dd52c67d583522b2f6db5af2f9f1ed20b49e02d61a41c"
+  "content_fingerprint_sha256": "ed5e7bd6520bd7ad8f71d4895980022f524437cb8c01455dce8084e9128af974"
 }
