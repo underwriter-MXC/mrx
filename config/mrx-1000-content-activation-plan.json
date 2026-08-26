@@ -1,15 +1,15 @@
 {
   "artifact_type": "mrx1000_content_activation_plan",
   "plan_version": "mrx1000-content-activation-v1.1.0",
-  "generated_at": "2026-07-20T00:37:06.757Z",
+  "generated_at": "2026-07-20T20:58:32.288Z",
   "generated_at_method": "canonical_ledger_generated_at",
   "generator": "scripts/build-mrx-1000-activation-plan.mjs",
-  "content_fingerprint_sha256": "c6008dcd74b5011876e2014bcb9db5d1e7a344bc9125800cef44449928079ed3",
+  "content_fingerprint_sha256": "a5fd6515e9cb0b0ad28ea24fd521f9e2075a25538f38420a0515477cc565cc70",
   "inputs": {
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_fingerprint_sha256": "4d870b2b28848e9c8b59efdc7977844ae9129d0e3ba45c85b3ef009d9b4aeda2",
+    "canonical_ledger_fingerprint_sha256": "60a9670db8fd35d6ca60710069f6940f5dc1c12d0e9c737e2e31031a2906b844",
     "canonical_ledger_fingerprint_verified": true,
-    "canonical_ledger_generated_at": "2026-07-20T00:37:06.757Z",
+    "canonical_ledger_generated_at": "2026-07-20T20:58:32.288Z",
     "owner_decision": {
       "decision_id": "D-2026-0804-16",
       "signed_disposition": "APPROVED_CONTINUOUS_QUALITY_GATED_ARTICLE_PUBLICATION",
@@ -115,9 +115,9 @@
     },
     "by_source_preservation_classification": {
       "incumbent_draft_nonpublic_held": 23,
-      "live_public_published_route": 212,
+      "live_public_published_route": 213,
       "pilot_draft_noindex_stage": 25,
-      "planning_only_inventory": 740
+      "planning_only_inventory": 739
     }
   },
   "rows": [
@@ -20488,11 +20488,11 @@
       },
       "sibling_link": {
         "target_program_row_id": "MRX1000-0333",
-        "target_title": "Cash For Mineral Rights: Royalty Check Review Before Accepting An Offer",
-        "url": "/blog/cash-for-mineral-rights-royalty-check-review-before-accepting-an-offer/",
+        "target_title": "Texas RRC Oil and Gas Lease Name Index Retrieval Provenance Worksheet",
+        "url": "/blog/texas-rrc-oil-and-gas-lease-name-index-retrieval-provenance-worksheet/",
         "relationship": "same_cluster_next_by_program_row_id_cyclic",
-        "target_source_preservation_classification": "planning_only_inventory",
-        "target_route_live": false,
+        "target_source_preservation_classification": "live_public_published_route",
+        "target_route_live": true,
         "status": "planned_local_only"
       },
       "primary_cta": {
@@ -20535,15 +20535,15 @@
     },
     {
       "program_row_id": "MRX1000-0333",
-      "canonical_title": "Cash For Mineral Rights: Royalty Check Review Before Accepting An Offer",
-      "canonical_slug": "cash-for-mineral-rights-royalty-check-review-before-accepting-an-offer",
-      "canonical_url": "/blog/cash-for-mineral-rights-royalty-check-review-before-accepting-an-offer/",
+      "canonical_title": "Texas RRC Oil and Gas Lease Name Index Retrieval Provenance Worksheet",
+      "canonical_slug": "texas-rrc-oil-and-gas-lease-name-index-retrieval-provenance-worksheet",
+      "canonical_url": "/blog/texas-rrc-oil-and-gas-lease-name-index-retrieval-provenance-worksheet/",
       "cluster": "offer-review-buyer-comparison-safety",
       "pillar": "offer-review",
-      "search_intent": "local-buyer",
+      "search_intent": "informational",
       "funnel_stage": "decision",
-      "source_preservation_classification": "planning_only_inventory",
-      "source_route_live": false,
+      "source_preservation_classification": "live_public_published_route",
+      "source_route_live": true,
       "pillar_link": {
         "url": "/offer-review/",
         "route_evidence": "src/pages/offer-review.astro",
@@ -20565,7 +20565,7 @@
         "placement_code": "closing_panel",
         "placement_guidance": "Place in the closing decision panel after key takeaways and before related articles.",
         "assignment_rule": "decision_stage_team_handoff",
-        "assignment_basis": "decision:local-buyer",
+        "assignment_basis": "decision:informational",
         "approved_route_evidence": "src/pages/book.astro",
         "role": "primary_appointment",
         "is_appointment_cta": true,
@@ -20578,7 +20578,7 @@
         "placement_code": "closing_panel",
         "placement_guidance": "Place in the closing decision panel after key takeaways and before related articles.",
         "assignment_rule": "decision_stage_team_handoff",
-        "assignment_basis": "decision:local-buyer",
+        "assignment_basis": "decision:informational",
         "approved_route_evidence": "src/pages/book.astro",
         "role": "same_as_primary_appointment",
         "distinct_from_primary_cta": false,
@@ -20592,7 +20592,7 @@
         "rendered_triangle_verified": false,
         "live_status": "not_published_or_verified_by_this_plan",
         "live_triangle_verified": false,
-        "release_status": "eligible_for_continuous_quality_review_not_yet_cleared",
+        "release_status": "released_under_d16_continuous_quality_gate",
         "numerical_release_cap_applies": false
       }
     },
@@ -63012,9 +63012,9 @@
         "status": "planned_local_only"
       },
       "sibling_link": {
-        "target_program_row_id": "MRX1000-1038",
-        "target_title": "Mineral Rights Buyers: Family Decision Guide In 2026",
-        "url": "/blog/mineral-rights-buyers-family-decision-guide-in-2026/",
+        "target_program_row_id": "MRX1000-1039",
+        "target_title": "Cash For Mineral Rights: Royalty Check Review Before Accepting An Offer",
+        "url": "/blog/cash-for-mineral-rights-royalty-check-review-before-accepting-an-offer/",
         "relationship": "same_cluster_next_by_program_row_id_cyclic",
         "target_source_preservation_classification": "planning_only_inventory",
         "target_route_live": false,
@@ -63059,13 +63059,13 @@
       }
     },
     {
-      "program_row_id": "MRX1000-1038",
-      "canonical_title": "Mineral Rights Buyers: Family Decision Guide In 2026",
-      "canonical_slug": "mineral-rights-buyers-family-decision-guide-in-2026",
-      "canonical_url": "/blog/mineral-rights-buyers-family-decision-guide-in-2026/",
+      "program_row_id": "MRX1000-1039",
+      "canonical_title": "Cash For Mineral Rights: Royalty Check Review Before Accepting An Offer",
+      "canonical_slug": "cash-for-mineral-rights-royalty-check-review-before-accepting-an-offer",
+      "canonical_url": "/blog/cash-for-mineral-rights-royalty-check-review-before-accepting-an-offer/",
       "cluster": "offer-review-buyer-comparison-safety",
       "pillar": "offer-review",
-      "search_intent": "education",
+      "search_intent": "local-buyer",
       "funnel_stage": "decision",
       "source_preservation_classification": "planning_only_inventory",
       "source_route_live": false,
@@ -63090,7 +63090,7 @@
         "placement_code": "closing_panel",
         "placement_guidance": "Place in the closing decision panel after key takeaways and before related articles.",
         "assignment_rule": "decision_stage_team_handoff",
-        "assignment_basis": "decision:education",
+        "assignment_basis": "decision:local-buyer",
         "approved_route_evidence": "src/pages/book.astro",
         "role": "primary_appointment",
         "is_appointment_cta": true,
@@ -63103,7 +63103,7 @@
         "placement_code": "closing_panel",
         "placement_guidance": "Place in the closing decision panel after key takeaways and before related articles.",
         "assignment_rule": "decision_stage_team_handoff",
-        "assignment_basis": "decision:education",
+        "assignment_basis": "decision:local-buyer",
         "approved_route_evidence": "src/pages/book.astro",
         "role": "same_as_primary_appointment",
         "distinct_from_primary_cta": false,

@@ -1,18 +1,18 @@
 {
   "artifact_type": "mrx_article_two_image_retrofit",
   "schema_version": 1,
-  "generated_at_utc": "2026-08-26T05:32:03Z",
+  "generated_at_utc": "2026-08-26T06:16:24Z",
   "policy_source": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
   "summary": {
-    "article_count": 212,
-    "asset_count": 424,
-    "unique_source_art_count": 212,
-    "unique_hero_sha256_count": 212,
-    "unique_inline_sha256_count": 212,
-    "distinct_article_pair_count": 212,
-    "hero_ocr_pass_count": 212,
-    "inline_ocr_pass_count": 212,
-    "exact_filename_identity_count": 212
+    "article_count": 213,
+    "asset_count": 426,
+    "unique_source_art_count": 213,
+    "unique_hero_sha256_count": 213,
+    "unique_inline_sha256_count": 213,
+    "distinct_article_pair_count": 213,
+    "hero_ocr_pass_count": 213,
+    "inline_ocr_pass_count": 213,
+    "exact_filename_identity_count": 213
   },
   "contact_sheets": {
     "hero": [
@@ -6206,6 +6206,56 @@
           "actual": "Texas RRC New Lease IDs\nBuilt Query retrieval",
           "normalized_expected": "texas rrc new lease ids built query retrieval",
           "normalized_actual": "texas rrc new lease ids built query retrieval",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      }
+    },
+    {
+      "slug": "texas-rrc-oil-and-gas-lease-name-index-retrieval-provenance-worksheet",
+      "title": "Texas RRC Oil and Gas Lease Name Index Retrieval Provenance Worksheet",
+      "keyword": "Texas RRC Oil and Gas Lease Name Index retrieval",
+      "file_path": "src/content/posts/texas-rrc-oil-and-gas-lease-name-index-retrieval-provenance-worksheet.mdx",
+      "source_public_path": "/assets/articles/hero/texas-rrc-oil-and-gas-lease-name-index-retrieval-provenance-worksheet.webp",
+      "source_artifact_paths": [
+        "artifacts/mrx1000-wave128-creative-sources/texas-rrc-oil-and-gas-lease-name-index-retrieval-provenance-worksheet-hero-base.png",
+        "artifacts/mrx1000-wave128-creative-sources/texas-rrc-oil-and-gas-lease-name-index-retrieval-provenance-worksheet-inline-base.png"
+      ],
+      "generated_at_utc": "2026-08-26T06:15:39.743Z",
+      "hero": {
+        "public_path": "/assets/articles/hero/texas-rrc-oil-and-gas-lease-name-index-retrieval-provenance-worksheet.webp",
+        "alt": "A dark archival index station appears beside the exact Lease Name Index worksheet title.",
+        "width": 1200,
+        "height": 630,
+        "mime_type": "image/webp",
+        "sha256": "f05c4459bf4e5d0828ea5e4e33eba9e4f807bfe05b33bbf4004ddc0f73ce7d92",
+        "perceptual_hash": "0000000000000010000000000000000000000000000000100110000000111110011110000111100001111100011110000111100001111010000000000111111100000000000001100000000000000110000000000111100000000000011111100000000000011111000000000000101100000000000000000000000000001111",
+        "neutralized_art_text_region_count": 1,
+        "ocr": {
+          "expected": "Texas RRC Oil and Gas Lease Name Index Retrieval Provenance Worksheet",
+          "actual": "Texas RRC Oil and Gas\nLease Name Index Retrieval\nProvenance Worksheet",
+          "normalized_expected": "texas rrc oil and gas lease name index retrieval provenance worksheet",
+          "normalized_actual": "texas rrc oil and gas lease name index retrieval provenance worksheet",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      },
+      "inline": {
+        "public_path": "/assets/articles/inline/texas-rrc-oil-and-gas-lease-name-index-retrieval-provenance-worksheet/texas-rrc-oil-and-gas-lease-name-index-retrieval.webp",
+        "alt": "A top-down PDF retrieval evidence board appears above the exact Lease Name Index retrieval keyword.",
+        "rendered_text": "Texas RRC Oil and Gas Lease Name Index retrieval",
+        "visual_variant": "wave128-distinct-generated-strict-overhead-month-record-class-district-pdf-evidence-board",
+        "width": 1200,
+        "height": 675,
+        "mime_type": "image/webp",
+        "sha256": "197cf6402706b8d8cbdc6042c9b131d2eb3c0a5fc0895572caade68adbc362cd",
+        "perceptual_hash": "1111111111111111111111111111111111111111111111111111111111111111110011111111111111011111111111111111111111110111111111111111111111111111111111111111111111111111111111111111111100000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "neutralized_art_text_region_count": 1,
+        "ocr": {
+          "expected": "Texas RRC Oil and Gas Lease Name Index retrieval",
+          "actual": "Texas RRC Oil and Gas\nLease Name Index retrieval",
+          "normalized_expected": "texas rrc oil and gas lease name index retrieval",
+          "normalized_actual": "texas rrc oil and gas lease name index retrieval",
           "uppercase_i_confusable_accepted": false,
           "pass": true
         }
