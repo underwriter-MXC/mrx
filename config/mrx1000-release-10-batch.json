@@ -1,7 +1,7 @@
 {
   "program": "MRX 1,000 Article SEO+AEO Production Program",
   "artifact_type": "authorized_release_10_batch",
-  "evidence_scaffold_generated_at_utc": "2026-08-26T10:49:29Z",
+  "evidence_scaffold_generated_at_utc": "2026-08-26T11:18:03Z",
   "decision_authority": {
     "successor_gate_decision_id": "D-2026-0804-16",
     "successor_gate_decision_path": "docs/governance/mrx1000-owner-continuous-publication-directive-2026-08-04.md",
@@ -426,13 +426,16 @@
     "wave136_selection_decision_sha256": "7440d2f379ef8ec170a964acc894352861da02372b96a6bea0235fff0c751ab0",
     "wave137_selection_decision_id": "MRX1000-W137-SELECT-2026-08-26",
     "wave137_selection_decision_path": "docs/governance/mrx1000-wave137-selection-decision-2026-08-26.md",
-    "wave137_selection_decision_sha256": "45fae09e964a13f4d5361ee8bf88e4e8d33b67e8b64d054ff4dc12a86f598a57"
+    "wave137_selection_decision_sha256": "45fae09e964a13f4d5361ee8bf88e4e8d33b67e8b64d054ff4dc12a86f598a57",
+    "wave138_selection_decision_id": "MRX1000-W138-SELECT-2026-08-26",
+    "wave138_selection_decision_path": "docs/governance/mrx1000-wave138-selection-decision-2026-08-26.md",
+    "wave138_selection_decision_sha256": "c6650e3209c8cebf6fa2f9b3f8f7d4c5fd8eb6ad554069ce0e6add50f3eb8f2e"
   },
   "identity_authority": {
     "scope_key": "canonical_slug",
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_sha256": "7ffc5609f2a5d7f5bc9d2cd4f8543196b184743890e5ffb39745db8287626fc1",
-    "canonical_ledger_generated_at": "2026-07-20T20:59:28.386Z",
+    "canonical_ledger_sha256": "d1be37b38482889cabb6acf43f8c9f617ee5faa723a1a86b0059659fb14334e1",
+    "canonical_ledger_generated_at": "2026-07-20T17:47:32.343Z",
     "successor_ledger_decision_id": "D-2026-0723-LEDGER-04",
     "successor_ledger_decision_path": "artifacts/mrx1000-release-10/decisions/mrx-ceo-ledger-provenance-successor-20260723-04.md",
     "successor_ledger_decision_sha256": "09eca24bcd0e71563f2ac4197f564eec0ccb43a5ee955216da5c4a2543d04978",
@@ -446,11 +449,11 @@
     "authorization_scope": "declared_program_size_not_a_staged_release_cap",
     "admission_mode": "continuous_quality_gated",
     "continuous_quality_gated_from_selection_rank": 26,
-    "prior_verified_article_count": 213,
+    "prior_verified_article_count": 214,
     "fail_closed": true,
     "earned_scale_gates": [],
-    "exact_admitted_count": 214,
-    "exact_admitted_slate_sha256": "53de63ec87bead6629ff7b6b61d441ca2bb4d3a69eda609e4abf67c939da7e75"
+    "exact_admitted_count": 215,
+    "exact_admitted_slate_sha256": "30ee45ef6ac3833a8f189b03c8b23438a4d23620106f14642a04bd7a48e7f609"
   },
   "articles": [
     {
@@ -7544,10 +7547,46 @@
       "inline_path": "/assets/articles/inline/sec-edgar-mineral-rights-offeror-filing-search-retrieval-provenance-worksheet/sec-edgar-mineral-rights-offeror-filing-search.webp",
       "inline_asset_sha256": "92ea3c8eceb4b26baed6560bec8880542432a6e285dc3bac499686093cebe38b",
       "inline_rendered_text": "SEC EDGAR mineral rights offeror filing search"
+    },
+    {
+      "selection_rank": 215,
+      "program_row_id": "MRX1000-0343",
+      "source_shortlist_program_row_id": "MRX1000-0343",
+      "slug": "texas-tdi-title-agent-report-retrieval-provenance-worksheet",
+      "title": "Texas TDI Title Agent Report Retrieval Provenance Worksheet",
+      "source_shortlist_title": "Texas TDI Title Agent Report Retrieval Provenance Worksheet",
+      "canonical_url": "https://mineralrightsxchange.com/blog/texas-tdi-title-agent-report-retrieval-provenance-worksheet/",
+      "pillar": "offer-review",
+      "cluster": "offer-review-buyer-comparison-safety",
+      "content_genius_article_uuid": null,
+      "archive_evidence_sha256": "cba58e24ef84e1410ee1ec68290b333b63e1f2cf83eb043d8c1af629696a2acb",
+      "repo_path": "src/content/posts/texas-tdi-title-agent-report-retrieval-provenance-worksheet.mdx",
+      "repo_sha256": "147efa11fe28f2cfd4e801b560aab69d4a92067e1b90fe15af77e4a28f6261c7",
+      "article_sha256": "147efa11fe28f2cfd4e801b560aab69d4a92067e1b90fe15af77e4a28f6261c7",
+      "hero_path": "/assets/articles/hero/texas-tdi-title-agent-report-retrieval-provenance-worksheet.webp",
+      "hero_sha256": "2f675282e78717809f9a157676270753d3e0b280713a3b0fa0e7b9a7b32ebe8d",
+      "hero_asset_sha256": "2f675282e78717809f9a157676270753d3e0b280713a3b0fa0e7b9a7b32ebe8d",
+      "admission_status": "admitted_quality_gated",
+      "finalization_state": "draft_noindex_admitted",
+      "searchatlas_content_score": null,
+      "searchatlas_word_count": 1526,
+      "risk_citation_remediation": [
+        "The original generic competing-offer identity and the first broad claim-to-public-record replacement are rejected for material collision with the live corpus.",
+        "Current official Texas Department of Insurance pages support only the described title-agent and escrow-officer report route and source-stated context.",
+        "One worksheet records one authorized manual route, one named report, and one attempt; it never aggregates reports, compares correspondence, or interprets licensure, appointment, conduct, or transaction involvement.",
+        "Located, not located, and unverified are attempt-level observations only and never establish identity, legitimacy, authority, solvency, capacity, affiliation, reputation, offer quality, value, legal effect, or transaction suitability.",
+        "The public article and images expose no actual or fictional party, license, appointment, address, county, offer, property, correspondence, report row, result, status, or conclusion.",
+        "Continuous quality-gated admission under the owner no-approval directives; no owner publication approval applies."
+      ],
+      "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/texas-tdi-title-agent-report-retrieval-provenance-worksheet.json",
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/texas-tdi-title-agent-report-retrieval-provenance-worksheet/texas-tdi-title-agent-report-retrieval.webp",
+      "inline_asset_sha256": "f1f32c8cca06becb75c8af7f186987775cb01248ad86829e035737fc05813805",
+      "inline_rendered_text": "Texas TDI title agent report retrieval"
     }
   ],
   "admission_audit": {
-    "admitted_article_count": 214,
+    "admitted_article_count": 215,
     "selection_ranks": [
       1,
       2,
@@ -7762,7 +7801,8 @@
       211,
       212,
       213,
-      214
+      214,
+      215
     ],
     "duplicate_program_row_ids": [],
     "duplicate_slugs": [],
@@ -7821,9 +7861,9 @@
   "two_image_policy": {
     "directive": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
     "retrofit_manifest_path": "config/mrx-article-two-image-retrofit.json",
-    "retrofit_manifest_sha256": "faf79d02a0f8ce998daf3507d78d4e95a06a5c5b2b61d05ccc0b3fc68c52be48",
-    "public_article_count": 222,
-    "batch_article_count": 214,
+    "retrofit_manifest_sha256": "8ada673c15f8cbc601767d84afd2febf8228691ef5a0c0e02a150bfba4cdb1ba",
+    "public_article_count": 223,
+    "batch_article_count": 215,
     "assets_per_article": 2,
     "hero_share_identity_required": true,
     "inline_image_distinct_required": true,
