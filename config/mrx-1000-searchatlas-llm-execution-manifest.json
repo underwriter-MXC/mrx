@@ -1,7 +1,7 @@
 {
   "program": "MRX1000",
   "artifact_type": "searchatlas_ordered_llm_local_execution_manifest",
-  "generated_at": "2026-07-20T08:25:37.000Z",
+  "generated_at": "2026-07-20T17:53:44.832Z",
   "deterministic": true,
   "local_only": true,
   "external_services_called": false,
@@ -9,13 +9,13 @@
   "inputs": {
     "ledger": {
       "path": "config/mrx-1000-canonical-content-ledger.json",
-      "sha256": "3973eb76f404fa46a5da1324ab05a1e1872e0c7309163d4069ef4fef63dc4233",
-      "bytes": 4621986
+      "sha256": "dde27487b7f40524a2f0bbb8b93045fe47b43f42795a1a33139cc74a84aeab50",
+      "bytes": 4621691
     },
     "readiness": {
       "path": "reports/mrx-1000-readiness-matrix.json",
-      "sha256": "08f9cf5ccc092e85f77d58f5864889a076741ba8055dcdd0452ddc925a407c05",
-      "bytes": 3452626,
+      "sha256": "129bfbed7f8778ddf5b257e83301539357fb6dff238bd549b0e60cd2374f91a2",
+      "bytes": 3452654,
       "sha256_method": "canonical_json_with_top_level_generated_at_masked",
       "generated_at_excluded_from_sha256": true
     },
@@ -161731,7 +161731,7 @@
       "primary_keyword": "Texas county appraisal district directory retrieval",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -352332,5 +352332,5 @@
       ]
     }
   ],
-  "content_fingerprint_sha256": "288cca530fe7522021f3fc530e8ebbbe727af09622add68e13bace5e5330fea9"
+  "content_fingerprint_sha256": "ab3a5dd6d3acb99e96dfd6dd22275d2ff0cfc0e5d268ce388f7580ba04540bd4"
 }
