@@ -9,7 +9,7 @@
   "inputs": {
     "ledger": {
       "path": "config/mrx-1000-canonical-content-ledger.json",
-      "sha256": "53e343c01af01b94c9adb8c4a0e669bfed436665961e404c4d12cedc62b463cf",
+      "sha256": "454d597b53964736671d030f91238eb67b38657ebad81d38a00fe58bad238257",
       "bytes": 4603284
     },
     "readiness": {
@@ -123648,7 +123648,7 @@
           "state": "WORKSPACE_MDX_PRESENT",
           "path": "src/content/posts/texas-rrc-public-gis-viewer-layer-state-retrieval-provenance-worksheet.mdx",
           "mdx_exists": true,
-          "source_sha256": "37668ba72991f5c962b86cb6d882d7ea0b5de0dff661637eebd17b3901cea8d8",
+          "source_sha256": "9334e1c182d37753bd91f20a051e4bac270211f094e19f535257690a83a1ed63",
           "publication_status": "published",
           "frontmatter_noindex": false,
           "workspace_public_route_configured": true,
@@ -123669,10 +123669,10 @@
             "frontmatter_draft": false,
             "frontmatter_noindex": false,
             "frontmatter_indexable": null,
-            "body_sha256": "8840978e778feb8d5b8b0e46a738d930f3962bb5d29ce0684bd9ac05fb9396ab",
-            "body_bytes": 11744,
-            "body_characters": 11744,
-            "body_word_count": 1508,
+            "body_sha256": "c5c814e08d2cd9bc0d6be7eefaa7c2c042723f540100db34d788ab67dcb46e5b",
+            "body_bytes": 11490,
+            "body_characters": 11490,
+            "body_word_count": 1488,
             "explicit_qa_shell_without_final_copy": false,
             "filename_matches_canonical_slug": true,
             "frontmatter_title_matches_canonical": true,
@@ -123703,9 +123703,9 @@
           "state": "CHECKSUMMED_EXISTING_PUBLIC_ARTICLE_READY_FOR_LLM_REVIEW",
           "checksummed_review_candidate_present": true,
           "path": "src/content/posts/texas-rrc-public-gis-viewer-layer-state-retrieval-provenance-worksheet.mdx",
-          "source_sha256": "37668ba72991f5c962b86cb6d882d7ea0b5de0dff661637eebd17b3901cea8d8",
-          "body_sha256": "8840978e778feb8d5b8b0e46a738d930f3962bb5d29ce0684bd9ac05fb9396ab",
-          "body_word_count": 1508,
+          "source_sha256": "9334e1c182d37753bd91f20a051e4bac270211f094e19f535257690a83a1ed63",
+          "body_sha256": "c5c814e08d2cd9bc0d6be7eefaa7c2c042723f540100db34d788ab67dcb46e5b",
+          "body_word_count": 1488,
           "candidate_type": "existing_public_article",
           "readiness_evidence_verified": true,
           "readiness_evidence_paths": [
@@ -123780,7 +123780,7 @@
           "prerequisite_gates": {
             "checksummed_review_candidate_present": true,
             "review_candidate_path": "src/content/posts/texas-rrc-public-gis-viewer-layer-state-retrieval-provenance-worksheet.mdx",
-            "review_candidate_sha256": "37668ba72991f5c962b86cb6d882d7ea0b5de0dff661637eebd17b3901cea8d8",
+            "review_candidate_sha256": "9334e1c182d37753bd91f20a051e4bac270211f094e19f535257690a83a1ed63",
             "review_candidate_readiness_evidence_verified": true,
             "predecessor_key": null,
             "predecessor_pass_required": false,
@@ -123817,7 +123817,7 @@
           "prerequisite_gates": {
             "checksummed_review_candidate_present": true,
             "review_candidate_path": "src/content/posts/texas-rrc-public-gis-viewer-layer-state-retrieval-provenance-worksheet.mdx",
-            "review_candidate_sha256": "37668ba72991f5c962b86cb6d882d7ea0b5de0dff661637eebd17b3901cea8d8",
+            "review_candidate_sha256": "9334e1c182d37753bd91f20a051e4bac270211f094e19f535257690a83a1ed63",
             "review_candidate_readiness_evidence_verified": true,
             "predecessor_key": "chatgpt",
             "predecessor_pass_required": true,
@@ -123854,7 +123854,7 @@
           "prerequisite_gates": {
             "checksummed_review_candidate_present": true,
             "review_candidate_path": "src/content/posts/texas-rrc-public-gis-viewer-layer-state-retrieval-provenance-worksheet.mdx",
-            "review_candidate_sha256": "37668ba72991f5c962b86cb6d882d7ea0b5de0dff661637eebd17b3901cea8d8",
+            "review_candidate_sha256": "9334e1c182d37753bd91f20a051e4bac270211f094e19f535257690a83a1ed63",
             "review_candidate_readiness_evidence_verified": true,
             "predecessor_key": "google_gemini",
             "predecessor_pass_required": true,
@@ -123891,7 +123891,7 @@
           "prerequisite_gates": {
             "checksummed_review_candidate_present": true,
             "review_candidate_path": "src/content/posts/texas-rrc-public-gis-viewer-layer-state-retrieval-provenance-worksheet.mdx",
-            "review_candidate_sha256": "37668ba72991f5c962b86cb6d882d7ea0b5de0dff661637eebd17b3901cea8d8",
+            "review_candidate_sha256": "9334e1c182d37753bd91f20a051e4bac270211f094e19f535257690a83a1ed63",
             "review_candidate_readiness_evidence_verified": true,
             "predecessor_key": "claude_opus_4_6",
             "predecessor_pass_required": true,
@@ -123928,7 +123928,7 @@
           "prerequisite_gates": {
             "checksummed_review_candidate_present": true,
             "review_candidate_path": "src/content/posts/texas-rrc-public-gis-viewer-layer-state-retrieval-provenance-worksheet.mdx",
-            "review_candidate_sha256": "37668ba72991f5c962b86cb6d882d7ea0b5de0dff661637eebd17b3901cea8d8",
+            "review_candidate_sha256": "9334e1c182d37753bd91f20a051e4bac270211f094e19f535257690a83a1ed63",
             "review_candidate_readiness_evidence_verified": true,
             "predecessor_key": "perplexity",
             "predecessor_pass_required": true,
@@ -352072,5 +352072,5 @@
       ]
     }
   ],
-  "content_fingerprint_sha256": "cdbdcd45ef542dfd9b6b80ae553523d4ea70abec1da77ae945b8a09ebfd7cb8e"
+  "content_fingerprint_sha256": "5e2efc0a786ee101492f69240163f67b96e9dc93b754c667c758092a1f8bd483"
 }
