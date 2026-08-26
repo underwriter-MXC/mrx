@@ -1,7 +1,7 @@
 {
   "program": "MRX 1,000 Article SEO+AEO Production Program",
   "artifact_type": "authorized_release_10_batch",
-  "evidence_scaffold_generated_at_utc": "2026-08-26T08:06:04Z",
+  "evidence_scaffold_generated_at_utc": "2026-08-26T08:27:28Z",
   "decision_authority": {
     "successor_gate_decision_id": "D-2026-0804-16",
     "successor_gate_decision_path": "docs/governance/mrx1000-owner-continuous-publication-directive-2026-08-04.md",
@@ -408,13 +408,16 @@
     "wave130_selection_decision_sha256": "9ec4cf636783d2fb7bc3d0eb13c61e03bd1ecd06bca7843fe829ef23b3e1d4e8",
     "wave131_selection_decision_id": "MRX1000-W131-SELECT-2026-08-26",
     "wave131_selection_decision_path": "docs/governance/mrx1000-wave131-selection-decision-2026-08-26.md",
-    "wave131_selection_decision_sha256": "6c1476d16ed725147fb9e946ca3bdaf564d01522ab7ec24f7411998ca4387bd5"
+    "wave131_selection_decision_sha256": "6c1476d16ed725147fb9e946ca3bdaf564d01522ab7ec24f7411998ca4387bd5",
+    "wave132_selection_decision_id": "MRX1000-W132-SELECT-2026-08-26",
+    "wave132_selection_decision_path": "docs/governance/mrx1000-wave132-selection-decision-2026-08-26.md",
+    "wave132_selection_decision_sha256": "024a62be34aa7d380cd450477c68a67ed219788dd3616d2c52225f09aa8adb2f"
   },
   "identity_authority": {
     "scope_key": "canonical_slug",
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_sha256": "1a22b9f0788946285b8217f3c5679b3fa69de47f1f6395dafd3b560d25646154",
-    "canonical_ledger_generated_at": "2026-07-20T04:53:23.424Z",
+    "canonical_ledger_sha256": "17783bb49f75c134a015002fd4cfe2d6d3ffe15bb287acc633f8cc2e35709933",
+    "canonical_ledger_generated_at": "2026-07-20T08:43:12.386Z",
     "successor_ledger_decision_id": "D-2026-0723-LEDGER-04",
     "successor_ledger_decision_path": "artifacts/mrx1000-release-10/decisions/mrx-ceo-ledger-provenance-successor-20260723-04.md",
     "successor_ledger_decision_sha256": "09eca24bcd0e71563f2ac4197f564eec0ccb43a5ee955216da5c4a2543d04978",
@@ -428,11 +431,11 @@
     "authorization_scope": "declared_program_size_not_a_staged_release_cap",
     "admission_mode": "continuous_quality_gated",
     "continuous_quality_gated_from_selection_rank": 26,
-    "prior_verified_article_count": 207,
+    "prior_verified_article_count": 208,
     "fail_closed": true,
     "earned_scale_gates": [],
-    "exact_admitted_count": 208,
-    "exact_admitted_slate_sha256": "2be037b2e1c0bb2ed99350073ac433b35b65db765a60047a8f3c58344f6ade2c"
+    "exact_admitted_count": 209,
+    "exact_admitted_slate_sha256": "f30379a251cbee0e4bf2eaaccba8d47953688aff6f4068f58764985c02f85f38"
   },
   "articles": [
     {
@@ -7313,10 +7316,45 @@
       "inline_path": "/assets/articles/inline/search-unclaimed-mineral-royalty-payments-texas/texas-unclaimed-mineral-royalty-payments-search.webp",
       "inline_asset_sha256": "16e0385d50748a560af6f96d7763074cd029ea72315478369a396f877d9bdb3f",
       "inline_rendered_text": "Texas unclaimed mineral royalty payments search"
+    },
+    {
+      "selection_rank": 209,
+      "program_row_id": "MRX1000-0337",
+      "source_shortlist_program_row_id": "MRX1000-0337",
+      "slug": "reeves-county-mineral-records-search-log",
+      "title": "Reeves County Mineral Records: A Source-by-Source Search Log",
+      "source_shortlist_title": "Reeves County Mineral Records: A Source-by-Source Search Log",
+      "canonical_url": "https://mineralrightsxchange.com/blog/reeves-county-mineral-records-search-log/",
+      "pillar": "offer-review",
+      "cluster": "offer-review-buyer-comparison-safety",
+      "content_genius_article_uuid": null,
+      "archive_evidence_sha256": "36109527b1d4bce8181a4c0b7d849b09cb2c5c583e240bcc885f2daa127a196d",
+      "repo_path": "src/content/posts/reeves-county-mineral-records-search-log.mdx",
+      "repo_sha256": "fa7d798db8e290dfd6273e58cab7b69b597a4027cfb209bbf32560daca6e6714",
+      "article_sha256": "fa7d798db8e290dfd6273e58cab7b69b597a4027cfb209bbf32560daca6e6714",
+      "hero_path": "/assets/articles/hero/reeves-county-mineral-records-a-source-by-source-search-log.webp",
+      "hero_sha256": "ae002dcf8ab630029c287576bc72559fc005679b4b127ae60027e7ed09449a23",
+      "hero_asset_sha256": "ae002dcf8ab630029c287576bc72559fc005679b4b127ae60027e7ed09449a23",
+      "admission_status": "admitted_quality_gated",
+      "finalization_state": "draft_noindex_admitted",
+      "searchatlas_content_score": null,
+      "searchatlas_word_count": 1392,
+      "risk_citation_remediation": [
+        "The original valuation-offer identity and the colliding page-and-exhibit proposal are rejected. No offer evaluation, document-package completeness job, valuation, fairness, buyer comparison, or transaction recommendation survives.",
+        "Current official Reeves County Clerk, Reeves CAD, Texas Comptroller, Texas GLO, and RRC sources support only their separate route identities, displayed field context, and bounded source roles.",
+        "The article preserves only record located, no record displayed, route unavailable, or unverified within one source row. It does not infer that similarly named or numbered entries refer to the same person, tract, instrument, lease, well, or property.",
+        "Public examples remain blank and privacy-safe; exact names, account numbers, instrument references, screenshots, amounts, legal descriptions, and retained captures stay in an authorized controlled record.",
+        "Continuous quality-gated admission under the owner no-approval directives; no owner publication approval applies."
+      ],
+      "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/reeves-county-mineral-records-search-log.json",
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/reeves-county-mineral-records-search-log/reeves-county-mineral-records-search.webp",
+      "inline_asset_sha256": "3a0ffe4b6ae6858e49e40f0243c0e53ef0f11519b9cb23eacb8e56328e2d8e7e",
+      "inline_rendered_text": "Reeves County mineral records search"
     }
   ],
   "admission_audit": {
-    "admitted_article_count": 208,
+    "admitted_article_count": 209,
     "selection_ranks": [
       1,
       2,
@@ -7525,7 +7563,8 @@
       205,
       206,
       207,
-      208
+      208,
+      209
     ],
     "duplicate_program_row_ids": [],
     "duplicate_slugs": [],
@@ -7584,9 +7623,9 @@
   "two_image_policy": {
     "directive": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
     "retrofit_manifest_path": "config/mrx-article-two-image-retrofit.json",
-    "retrofit_manifest_sha256": "751b8f6ed9c27535fe18371303a1dcab0b3d84575c93deba9c5dd215a35276c2",
-    "public_article_count": 216,
-    "batch_article_count": 208,
+    "retrofit_manifest_sha256": "dbcae7bc6268f510bd0060f7b36b9a81687688895b1846f204fb7598ed367fea",
+    "public_article_count": 217,
+    "batch_article_count": 209,
     "assets_per_article": 2,
     "hero_share_identity_required": true,
     "inline_image_distinct_required": true,
