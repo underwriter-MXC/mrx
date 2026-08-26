@@ -1,7 +1,7 @@
 {
   "program": "MRX 1,000 Article SEO+AEO Production Program",
   "artifact_type": "authorized_release_10_batch",
-  "evidence_scaffold_generated_at_utc": "2026-08-26T07:12:55Z",
+  "evidence_scaffold_generated_at_utc": "2026-08-26T07:27:07Z",
   "decision_authority": {
     "successor_gate_decision_id": "D-2026-0804-16",
     "successor_gate_decision_path": "docs/governance/mrx1000-owner-continuous-publication-directive-2026-08-04.md",
@@ -402,13 +402,16 @@
     "wave128_selection_decision_sha256": "e49e12ae59df5ef511a388b9d12e94068932825e3f327f54270280d1fb332a3a",
     "wave129_selection_decision_id": "MRX1000-W129-SELECT-2026-08-25",
     "wave129_selection_decision_path": "docs/governance/mrx1000-wave129-selection-decision-2026-08-25.md",
-    "wave129_selection_decision_sha256": "6f4e0fbd11e2cdef850066a46d9c139b03bd0841abc02316194208faa56128d6"
+    "wave129_selection_decision_sha256": "6f4e0fbd11e2cdef850066a46d9c139b03bd0841abc02316194208faa56128d6",
+    "wave130_selection_decision_id": "MRX1000-W130-SELECT-2026-08-26",
+    "wave130_selection_decision_path": "docs/governance/mrx1000-wave130-selection-decision-2026-08-26.md",
+    "wave130_selection_decision_sha256": "9ec4cf636783d2fb7bc3d0eb13c61e03bd1ecd06bca7843fe829ef23b3e1d4e8"
   },
   "identity_authority": {
     "scope_key": "canonical_slug",
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_sha256": "1a11f11839136876bf4bf0abc15be2c565cf32bc805182571aaaa9120c601e33",
-    "canonical_ledger_generated_at": "2026-07-20T15:08:31.469Z",
+    "canonical_ledger_sha256": "53e343c01af01b94c9adb8c4a0e669bfed436665961e404c4d12cedc62b463cf",
+    "canonical_ledger_generated_at": "2026-07-20T13:03:41.057Z",
     "successor_ledger_decision_id": "D-2026-0723-LEDGER-04",
     "successor_ledger_decision_path": "artifacts/mrx1000-release-10/decisions/mrx-ceo-ledger-provenance-successor-20260723-04.md",
     "successor_ledger_decision_sha256": "09eca24bcd0e71563f2ac4197f564eec0ccb43a5ee955216da5c4a2543d04978",
@@ -422,11 +425,11 @@
     "authorization_scope": "declared_program_size_not_a_staged_release_cap",
     "admission_mode": "continuous_quality_gated",
     "continuous_quality_gated_from_selection_rank": 26,
-    "prior_verified_article_count": 205,
+    "prior_verified_article_count": 206,
     "fail_closed": true,
     "earned_scale_gates": [],
-    "exact_admitted_count": 206,
-    "exact_admitted_slate_sha256": "43a4a621cb5410f76d863e51c5be278dbd325dcd1f9ab29c73771d26f4956b99"
+    "exact_admitted_count": 207,
+    "exact_admitted_slate_sha256": "57ff3cf19279775c6ce5a5900c35d426219057120f61b3a7f7d4ec290ce71c68"
   },
   "articles": [
     {
@@ -7237,10 +7240,45 @@
       "inline_path": "/assets/articles/inline/mineral-rights-offer-version-control-and-deadline-register/mineral-rights-offer-version-control.webp",
       "inline_asset_sha256": "05a5ca56ae38fceb71df378a08288b6337ff5c32683dbd7d2d310e9e258c046f",
       "inline_rendered_text": "mineral rights offer version control"
+    },
+    {
+      "selection_rank": 207,
+      "program_row_id": "MRX1000-0335",
+      "source_shortlist_program_row_id": "MRX1000-0335",
+      "slug": "texas-rrc-public-gis-viewer-layer-state-retrieval-provenance-worksheet",
+      "title": "Texas RRC Public GIS Viewer Layer-State Retrieval Provenance Worksheet",
+      "source_shortlist_title": "Texas RRC Public GIS Viewer Layer-State Retrieval Provenance Worksheet",
+      "canonical_url": "https://mineralrightsxchange.com/blog/texas-rrc-public-gis-viewer-layer-state-retrieval-provenance-worksheet/",
+      "pillar": "offer-review",
+      "cluster": "offer-review-buyer-comparison-safety",
+      "content_genius_article_uuid": null,
+      "archive_evidence_sha256": "c2f482a7b1ef7e8c8d2147b82ef531a52a3c6b0d21f28b999cd88e4500848cbb",
+      "repo_path": "src/content/posts/texas-rrc-public-gis-viewer-layer-state-retrieval-provenance-worksheet.mdx",
+      "repo_sha256": "37668ba72991f5c962b86cb6d882d7ea0b5de0dff661637eebd17b3901cea8d8",
+      "article_sha256": "37668ba72991f5c962b86cb6d882d7ea0b5de0dff661637eebd17b3901cea8d8",
+      "hero_path": "/assets/articles/hero/texas-rrc-public-gis-viewer-layer-state-retrieval-provenance-worksheet.webp",
+      "hero_sha256": "0d599679a1e6befdcba18cdc93e23cbd625750eba86503488aa8814d2fadad89",
+      "hero_asset_sha256": "0d599679a1e6befdcba18cdc93e23cbd625750eba86503488aa8814d2fadad89",
+      "admission_status": "admitted_quality_gated",
+      "finalization_state": "draft_noindex_admitted",
+      "searchatlas_content_score": null,
+      "searchatlas_word_count": 1506,
+      "risk_citation_remediation": [
+        "The original comparative-valuation identity is rejected. No valuation, offer-comparison, fairness, ranking, negotiation, acceptance, pricing, or transaction recommendation survives.",
+        "Official Texas RRC sources support the viewer route, interface controls, live-displayed version state, nightly update description, technical notices, and informational-data limitations only.",
+        "The article preserves one manual viewer session and only located, not located, or unverified. It does not automate, bulk retrieve, or convert a displayed map state into an authoritative record.",
+        "Search inputs, displayed labels, captures, and retained artifacts remain controlled; the public template contains no real owner, property, lease, well, coordinate, identifier, boundary, or result.",
+        "Continuous quality-gated admission under the owner no-approval directives; no owner publication approval applies."
+      ],
+      "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/texas-rrc-public-gis-viewer-layer-state-retrieval-provenance-worksheet.json",
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/texas-rrc-public-gis-viewer-layer-state-retrieval-provenance-worksheet/texas-rrc-public-gis-viewer-layer-state-retrieval.webp",
+      "inline_asset_sha256": "428efb0ed4b6b14d3383ddd7f5b25d93f30e1a691885255f1ca7c4f1ea58185e",
+      "inline_rendered_text": "Texas RRC Public GIS Viewer layer-state retrieval"
     }
   ],
   "admission_audit": {
-    "admitted_article_count": 206,
+    "admitted_article_count": 207,
     "selection_ranks": [
       1,
       2,
@@ -7447,7 +7485,8 @@
       203,
       204,
       205,
-      206
+      206,
+      207
     ],
     "duplicate_program_row_ids": [],
     "duplicate_slugs": [],
@@ -7506,9 +7545,9 @@
   "two_image_policy": {
     "directive": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
     "retrofit_manifest_path": "config/mrx-article-two-image-retrofit.json",
-    "retrofit_manifest_sha256": "a1bbfcc53b84a1a0c8ad6bfbb2a7cb9f5af2decf9362b03e0d3f1fccd832514f",
-    "public_article_count": 214,
-    "batch_article_count": 206,
+    "retrofit_manifest_sha256": "5b752d253c68923bc919a38315edca59c82afc23bc3bbd249c63174095264add",
+    "public_article_count": 215,
+    "batch_article_count": 207,
     "assets_per_article": 2,
     "hero_share_identity_required": true,
     "inline_image_distinct_required": true,
