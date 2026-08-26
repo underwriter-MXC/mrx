@@ -44,6 +44,7 @@ rsync -a \
   --exclude='coverage/' \
   --exclude='playwright-report/' \
   --exclude='test-results/' \
+  --exclude='tests/' \
   --exclude='tmp/' \
   --exclude='.env' \
   --exclude='.env.*' \
