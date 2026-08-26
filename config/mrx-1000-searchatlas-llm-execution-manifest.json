@@ -1,7 +1,7 @@
 {
   "program": "MRX1000",
   "artifact_type": "searchatlas_ordered_llm_local_execution_manifest",
-  "generated_at": "2026-07-20T14:21:06.392Z",
+  "generated_at": "2026-07-20T23:54:28.026Z",
   "deterministic": true,
   "local_only": true,
   "external_services_called": false,
@@ -9,13 +9,13 @@
   "inputs": {
     "ledger": {
       "path": "config/mrx-1000-canonical-content-ledger.json",
-      "sha256": "8fa964e9c9d5fb506248bb757f23e99650ef0a9378837db50b5bae4ec212b25a",
-      "bytes": 4631352
+      "sha256": "45b6f6f4299b0f0f7237499d1d97e216635373e895fa63265a093cd95a31dfd5",
+      "bytes": 4631710
     },
     "readiness": {
       "path": "reports/mrx-1000-readiness-matrix.json",
-      "sha256": "23ac9c8ee6ee617c4f28f9196d6fbbbb8330c326631d74f2525f0d7f8d4fb926",
-      "bytes": 3454963,
+      "sha256": "ce8f6ea46cab0b514d193816fbad70734f5d18fcdb8020e4ca154a855911ae6f",
+      "bytes": 3454991,
       "sha256_method": "canonical_json_with_top_level_generated_at_masked",
       "generated_at_excluded_from_sha256": true
     },
@@ -225112,7 +225112,7 @@
       "primary_keyword": "recorded mineral deed copy",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -352468,5 +352468,5 @@
       ]
     }
   ],
-  "content_fingerprint_sha256": "dc455592d0dcc4a0ba9822b57af966c5cab7dfe494b777a17d70b33b0d3bbc8a"
+  "content_fingerprint_sha256": "ce8de0ab968eac23ae49e3272725faec63aee6a2af8d79c8cb4e56b3bf6eb52e"
 }
