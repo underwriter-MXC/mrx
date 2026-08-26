@@ -1,7 +1,7 @@
 {
   "program": "MRX1000",
   "artifact_type": "searchatlas_ordered_llm_local_execution_manifest",
-  "generated_at": "2026-07-20T20:49:54.989Z",
+  "generated_at": "2026-07-20T20:49:12.356Z",
   "deterministic": true,
   "local_only": true,
   "external_services_called": false,
@@ -9,13 +9,13 @@
   "inputs": {
     "ledger": {
       "path": "config/mrx-1000-canonical-content-ledger.json",
-      "sha256": "7896b1a58206218bdd1ce30aa3fdcb9b45390f782575e209344a9a16393a9488",
-      "bytes": 4625872
+      "sha256": "4de09ba0889e818363a768e9ac1a11b3c7415eec691c0303c502858c52e11818",
+      "bytes": 4625385
     },
     "readiness": {
       "path": "reports/mrx-1000-readiness-matrix.json",
-      "sha256": "7c555962aa119fb86e8ca6f477e8acd97f9c2f43749f71e6942bcd8416f91343",
-      "bytes": 3452734,
+      "sha256": "10f2953ca60e3e4f2f406b4505071ad54b16df0be45f6b6c9d05c3937603573b",
+      "bytes": 3452762,
       "sha256_method": "canonical_json_with_top_level_generated_at_masked",
       "generated_at_excluded_from_sha256": true
     },
@@ -203666,7 +203666,7 @@
       "primary_keyword": "IRS Form 1099-MISC royalty Box 2",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -352364,5 +352364,5 @@
       ]
     }
   ],
-  "content_fingerprint_sha256": "1651754a487c3433e95fd62f29f1e7e347bf5678349082712f6ccde4429f2bf7"
+  "content_fingerprint_sha256": "cf0538a91e0c810ca7aff577b59cbba67c22510e1f5abdfea6b7fa577f31a392"
 }
