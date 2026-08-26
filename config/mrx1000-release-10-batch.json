@@ -1,7 +1,7 @@
 {
   "program": "MRX 1,000 Article SEO+AEO Production Program",
   "artifact_type": "authorized_release_10_batch",
-  "evidence_scaffold_generated_at_utc": "2026-08-26T14:09:51Z",
+  "evidence_scaffold_generated_at_utc": "2026-08-26T14:32:18Z",
   "decision_authority": {
     "successor_gate_decision_id": "D-2026-0804-16",
     "successor_gate_decision_path": "docs/governance/mrx1000-owner-continuous-publication-directive-2026-08-04.md",
@@ -444,13 +444,16 @@
     "wave147_selection_decision_sha256": "62f46145ec1a83b6a5b19152273743523868fac67997d7a476d6d9151cf225f1",
     "wave148_selection_decision_id": "MRX1000-W148-SELECT-2026-08-26",
     "wave148_selection_decision_path": "docs/governance/mrx1000-wave148-selection-decision-2026-08-26.md",
-    "wave148_selection_decision_sha256": "f80991eee42599822afc305e29c7e427471df105ac61d35c0bf5d7c44f071b05"
+    "wave148_selection_decision_sha256": "f80991eee42599822afc305e29c7e427471df105ac61d35c0bf5d7c44f071b05",
+    "wave149_selection_decision_id": "MRX1000-W149-SELECT-2026-08-26",
+    "wave149_selection_decision_path": "docs/governance/mrx1000-wave149-selection-decision-2026-08-26.md",
+    "wave149_selection_decision_sha256": "5c9100ba19680307d3aa68dbfa3e13f60531834829ba55a054f26677cd27d72e"
   },
   "identity_authority": {
     "scope_key": "canonical_slug",
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_sha256": "3763754bb551f6b8910092e18b7aaae4d17fe68a2aa7b477abe9df4ecc3eee37",
-    "canonical_ledger_generated_at": "2026-07-20T07:35:11.023Z",
+    "canonical_ledger_sha256": "bd9252113bdfa18b68d7e211400dfb369982125744a12693be27e931d041ec68",
+    "canonical_ledger_generated_at": "2026-07-20T22:40:45.914Z",
     "successor_ledger_decision_id": "D-2026-0723-LEDGER-04",
     "successor_ledger_decision_path": "artifacts/mrx1000-release-10/decisions/mrx-ceo-ledger-provenance-successor-20260723-04.md",
     "successor_ledger_decision_sha256": "09eca24bcd0e71563f2ac4197f564eec0ccb43a5ee955216da5c4a2543d04978",
@@ -464,11 +467,11 @@
     "authorization_scope": "declared_program_size_not_a_staged_release_cap",
     "admission_mode": "continuous_quality_gated",
     "continuous_quality_gated_from_selection_rank": 26,
-    "prior_verified_article_count": 219,
+    "prior_verified_article_count": 220,
     "fail_closed": true,
     "earned_scale_gates": [],
-    "exact_admitted_count": 220,
-    "exact_admitted_slate_sha256": "6e88f359b3a0239234cbcdc9b41a4e185d61e9ef04e34921dccca6f255e641a4"
+    "exact_admitted_count": 221,
+    "exact_admitted_slate_sha256": "14fefbb8a7f7c56151f95ed054cb519b5b55973142ed61e68f3d06c2cdfb966a"
   },
   "articles": [
     {
@@ -7781,10 +7784,46 @@
       "inline_path": "/assets/articles/inline/irs-form-8824-source-document-map-for-a-mineral-rights-exchange/irs-form-8824-source-documents.webp",
       "inline_asset_sha256": "4dfec730fe16e66f45b2f6271977f8ed0f5e05f00d2ccf8c28dbfd74a4ba1ace",
       "inline_rendered_text": "IRS Form 8824 source documents"
+    },
+    {
+      "selection_rank": 221,
+      "program_row_id": "MRX1000-0648",
+      "source_shortlist_program_row_id": "MRX1000-0648",
+      "slug": "1031-exchange-evidence-provenance-log-mineral-interest-owners",
+      "title": "1031 Exchange Evidence Provenance Log for Mineral Interest Owners",
+      "source_shortlist_title": "1031 Exchange Evidence Provenance Log for Mineral Interest Owners",
+      "canonical_url": "https://mineralrightsxchange.com/blog/1031-exchange-evidence-provenance-log-mineral-interest-owners/",
+      "pillar": "mineral-rights-taxes",
+      "cluster": "tax-1031-legal-education",
+      "content_genius_article_uuid": null,
+      "archive_evidence_sha256": "b65de22b6f70e2cc058a97d41a0c2760121438517f31e8d8c56b759f874e9abf",
+      "repo_path": "src/content/posts/1031-exchange-evidence-provenance-log-mineral-interest-owners.mdx",
+      "repo_sha256": "889a1f16e3074b7008d70ebb898f202e10556026387c7b58160f5ce89723ba98",
+      "article_sha256": "889a1f16e3074b7008d70ebb898f202e10556026387c7b58160f5ce89723ba98",
+      "hero_path": "/assets/articles/hero/1031-exchange-evidence-provenance-log-for-mineral-interest-owners.webp",
+      "hero_sha256": "51c29ae16fcee1e41bee67364b38f45b54e7f39af8edb0e0fc7408c572700a89",
+      "hero_asset_sha256": "51c29ae16fcee1e41bee67364b38f45b54e7f39af8edb0e0fc7408c572700a89",
+      "admission_status": "admitted_quality_gated",
+      "finalization_state": "draft_noindex_admitted",
+      "searchatlas_content_score": null,
+      "searchatlas_word_count": 2132,
+      "risk_citation_remediation": [
+        "The original MRX1000-0648 comparison identity is rejected as a material collision with the live 1031 comparison and broad educational corpus.",
+        "Current official sources support statutory, regulatory, general sales-and-exchanges, and record-retention context only. They do not establish owner-specific requirements, qualification, deadlines, calculation, filing, retention periods, or transaction results.",
+        "Retrievable, gap-open, and professional-review-required are provenance-routing states only and never establish authenticity, completeness, relevance, sufficiency, eligibility, intermediary status, timing, tax treatment, legal effect, or filing readiness.",
+        "The public article and images expose no real or fictional form, taxpayer, address, TIN, account number, property identifier, legal description, party, date, amount, agreement, notice, source copy, selected answer, signature, seal, logo, deadline, tax result, or conclusion.",
+        "Any requirements decision, interpretation, characterization, authentication, retention decision, eligibility analysis, deadline application, calculation, form or filing work, transaction design or cure, intermediary evaluation, or owner-specific conclusion forces an immediate authorized-professional handoff.",
+        "Continuous quality-gated admission under the owner no-approval directives; no owner publication approval applies."
+      ],
+      "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/1031-exchange-evidence-provenance-log-mineral-interest-owners.json",
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/1031-exchange-evidence-provenance-log-mineral-interest-owners/1031-exchange-recordkeeping-for-mineral-interests.webp",
+      "inline_asset_sha256": "3b356082519f3a7e6fd0588293f43f5e2d4e03dba90f18813e0dbb4586f12c33",
+      "inline_rendered_text": "1031 exchange recordkeeping for mineral interests"
     }
   ],
   "admission_audit": {
-    "admitted_article_count": 220,
+    "admitted_article_count": 221,
     "selection_ranks": [
       1,
       2,
@@ -8005,7 +8044,8 @@
       217,
       218,
       219,
-      220
+      220,
+      221
     ],
     "duplicate_program_row_ids": [],
     "duplicate_slugs": [],
@@ -8064,9 +8104,9 @@
   "two_image_policy": {
     "directive": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
     "retrofit_manifest_path": "config/mrx-article-two-image-retrofit.json",
-    "retrofit_manifest_sha256": "78bc29e86fa5495708de74314e45251a3859f45e332965b99b9e0933fc1533fb",
-    "public_article_count": 228,
-    "batch_article_count": 220,
+    "retrofit_manifest_sha256": "4a1ba68fb8f34e0d7c576b9960b0d4c70fb40e4f7ad856319ae7def34175adb4",
+    "public_article_count": 229,
+    "batch_article_count": 221,
     "assets_per_article": 2,
     "hero_share_identity_required": true,
     "inline_image_distinct_required": true,
