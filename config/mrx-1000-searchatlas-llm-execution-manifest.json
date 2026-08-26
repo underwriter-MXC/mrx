@@ -9,13 +9,13 @@
   "inputs": {
     "ledger": {
       "path": "config/mrx-1000-canonical-content-ledger.json",
-      "sha256": "c0679b17b4ac7cd8452d725365922b3ea7b345b1c6dee03dc59d2570e1159ad6",
-      "bytes": 4629900
+      "sha256": "907520d85a8f68cc5c7d41ae37e8b3594057028a572a48a5112d2d1753ad25fa",
+      "bytes": 4630258
     },
     "readiness": {
       "path": "reports/mrx-1000-readiness-matrix.json",
-      "sha256": "ded68d0ee2469b7bf03a64772767bc4c05cbda93a411321df11f75ed46d498ab",
-      "bytes": 3454440,
+      "sha256": "5cb75a92017db4ceb480fcab4f4967617fbaa5dfb01868db4b2690490150ab7f",
+      "bytes": 3454468,
       "sha256_method": "canonical_json_with_top_level_generated_at_masked",
       "generated_at_excluded_from_sha256": true
     },
@@ -224744,7 +224744,7 @@
       "primary_keyword": "cash for mineral rights tax transcripts",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -352442,5 +352442,5 @@
       ]
     }
   ],
-  "content_fingerprint_sha256": "b05fa2958b422de58a96015679e2dd258dffc86f29132cb5da82e8ee7d087902"
+  "content_fingerprint_sha256": "9117ba05b2ed8019fac08568d30a08636ffc3000b5ba8a51c8327d96bf6e0b22"
 }
