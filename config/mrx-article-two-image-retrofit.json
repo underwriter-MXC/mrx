@@ -1,18 +1,18 @@
 {
   "artifact_type": "mrx_article_two_image_retrofit",
   "schema_version": 1,
-  "generated_at_utc": "2026-08-26T20:15:05Z",
+  "generated_at_utc": "2026-08-26T21:11:08Z",
   "policy_source": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
   "summary": {
-    "article_count": 237,
-    "asset_count": 474,
-    "unique_source_art_count": 237,
-    "unique_hero_sha256_count": 237,
-    "unique_inline_sha256_count": 237,
-    "distinct_article_pair_count": 237,
-    "hero_ocr_pass_count": 237,
-    "inline_ocr_pass_count": 237,
-    "exact_filename_identity_count": 237
+    "article_count": 238,
+    "asset_count": 476,
+    "unique_source_art_count": 238,
+    "unique_hero_sha256_count": 238,
+    "unique_inline_sha256_count": 238,
+    "distinct_article_pair_count": 238,
+    "hero_ocr_pass_count": 238,
+    "inline_ocr_pass_count": 238,
+    "exact_filename_identity_count": 238
   },
   "contact_sheets": {
     "hero": [
@@ -1628,6 +1628,56 @@
           "actual": "How Do I Know if My Mineral\nRights Qualify for Evaluation?",
           "normalized_expected": "how do i know if my mineral rights qualify for evaluation",
           "normalized_actual": "how do i know if my mineral rights qualify for evaluation",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      }
+    },
+    {
+      "slug": "form-50-172-joint-taxation-instruction-source-map-crane-mineral-interests",
+      "title": "Form 50-172 Joint-Taxation Instruction Source Map for Crane Mineral Interests",
+      "keyword": "Form 50-172 Crane mineral interest",
+      "file_path": "src/content/posts/form-50-172-joint-taxation-instruction-source-map-crane-mineral-interests.mdx",
+      "source_public_path": "/assets/articles/hero/form-50-172-joint-taxation-instruction-source-map-for-crane-mineral-interests.webp",
+      "source_artifact_paths": [
+        "artifacts/mrx1000-wave158-creative-sources/form-50-172-joint-taxation-instruction-source-map-crane-mineral-interests-hero-base.png",
+        "artifacts/mrx1000-wave158-creative-sources/form-50-172-joint-taxation-instruction-source-map-crane-mineral-interests-inline-base.png"
+      ],
+      "generated_at_utc": "2026-08-26T21:08:59.042Z",
+      "hero": {
+        "public_path": "/assets/articles/hero/form-50-172-joint-taxation-instruction-source-map-for-crane-mineral-interests.webp",
+        "alt": "A blank source-provenance booklet appears beside the exact Form 50-172 instruction-map title.",
+        "width": 1200,
+        "height": 630,
+        "mime_type": "image/webp",
+        "sha256": "2c233c59bcc6a659f2c18ee9e781e5d6c592a6b0ce9cee338003761ee965eeb8",
+        "perceptual_hash": "0000000000000000000000000000000000000000000100000000000000000000000000000111000000100000011111000111100001111100011111000111110000000000111111110000000011111111000000001111111100000000111111110000000011111111000000001111110000000000111111110000000011111111",
+        "neutralized_art_text_region_count": 1,
+        "ocr": {
+          "expected": "Form 50-172 Joint-Taxation Instruction Source Map for Crane Mineral Interests",
+          "actual": "Form 50-172\nJoint-Taxation\nInstruction Source Map\nfor Crane Mineral Interests",
+          "normalized_expected": "form 50 172 joint taxation instruction source map for crane mineral interests",
+          "normalized_actual": "form 50 172 joint taxation instruction source map for crane mineral interests",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      },
+      "inline": {
+        "public_path": "/assets/articles/inline/form-50-172-joint-taxation-instruction-source-map-crane-mineral-interests/form-50-172-crane-mineral-interest.webp",
+        "alt": "An overhead four-source map appears above the exact Form 50-172 Crane mineral interest keyword.",
+        "rendered_text": "Form 50-172 Crane mineral interest",
+        "visual_variant": "wave158-distinct-generated-strict-overhead-four-source-provenance-map",
+        "width": 1200,
+        "height": 675,
+        "mime_type": "image/webp",
+        "sha256": "65c496273d4630cb617afd7b3d6d85714c12f27ef88fbf16bfeed4bf2270891c",
+        "perceptual_hash": "1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111011111111111111100011111100000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "neutralized_art_text_region_count": 1,
+        "ocr": {
+          "expected": "Form 50-172 Crane mineral interest",
+          "actual": "Form 50-172\nCrane mineral interest",
+          "normalized_expected": "form 50 172 crane mineral interest",
+          "normalized_actual": "form 50 172 crane mineral interest",
           "uppercase_i_confusable_accepted": false,
           "pass": true
         }
