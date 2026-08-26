@@ -1,7 +1,7 @@
 {
   "program": "MRX1000",
   "artifact_type": "searchatlas_ordered_llm_local_execution_manifest",
-  "generated_at": "2026-07-20T10:57:06.509Z",
+  "generated_at": "2026-07-20T14:12:15.608Z",
   "deterministic": true,
   "local_only": true,
   "external_services_called": false,
@@ -9,8 +9,8 @@
   "inputs": {
     "ledger": {
       "path": "config/mrx-1000-canonical-content-ledger.json",
-      "sha256": "1d031050ebda8df5b216dda5a9b4b6298aef7a71da0bdda1349c9cc07f159284",
-      "bytes": 4610525
+      "sha256": "5952921086bf55e8422facb83bd02a2c5b52d294e03713528decbf28e1b26b91",
+      "bytes": 4610201
     },
     "readiness": {
       "path": "reports/mrx-1000-readiness-matrix.json",
@@ -125113,7 +125113,7 @@
       "primary_keyword": "Texas Secretary of State business organization document order request preparation",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -352176,5 +352176,5 @@
       ]
     }
   ],
-  "content_fingerprint_sha256": "6d8b544e81e7c3b7d320a2a5c7b6d4e8d66c2ac3b0ec76070d4c4479dd3957a4"
+  "content_fingerprint_sha256": "3c7471acadc07e214006e086733b4813f3700b435164feda1b931d6181457e9a"
 }
