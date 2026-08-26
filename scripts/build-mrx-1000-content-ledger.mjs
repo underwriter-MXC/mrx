@@ -79,6 +79,7 @@ const SUPERSEDED_CANONICAL_SLUGS = new Set([
   'assessing-competing-mineral-rights-offers-what-you-need-to-know',
   'avoid-surprises-key-costs-to-consider-during-your-mineral-rights-assessment-process',
   'avoid-these-key-mistakes-when-evaluating-mineral-rights-offers-for-maximum-value',
+  'cash-for-mineral-rights-buyer-comparison-before-accepting-an-offer',
   'what-influences-the-suggested-price-for-your-mineral-rights-assessment',
   'what-sellers-get-wrong-about-mineral-rights',
   'what-to-avoid-in-the-mineral-rights-selling-process',
@@ -193,6 +194,10 @@ const SUCCESSOR_CANONICAL_SLUGS = new Map([
   [
     'avoid-these-key-mistakes-when-evaluating-mineral-rights-offers-for-maximum-value',
     'texas-rrc-groundwater-protection-determination-letter-retrieval-provenance-worksheet',
+  ],
+  [
+    'cash-for-mineral-rights-buyer-comparison-before-accepting-an-offer',
+    'texas-rrc-injection-storage-test-report-retrieval-provenance-worksheet',
   ],
   [
     'what-influences-the-suggested-price-for-your-mineral-rights-assessment',
@@ -425,6 +430,7 @@ const APPROVED_REKEY_SEARCH_INTENT_BY_SLUG = new Map([
     'texas-rrc-groundwater-protection-determination-letter-retrieval-provenance-worksheet',
     'informational',
   ],
+  ['texas-rrc-injection-storage-test-report-retrieval-provenance-worksheet', 'informational'],
 ]);
 
 const APPROVED_REKEY_ACTION_REASON_BY_SLUG = new Map([
@@ -463,6 +469,10 @@ const APPROVED_REKEY_ACTION_REASON_BY_SLUG = new Map([
   [
     'texas-rrc-groundwater-protection-determination-letter-retrieval-provenance-worksheet',
     'The original offer-mistakes identity was rejected for direct overlap with the offer-comparison, seller-warning, negotiation, legitimacy, and decision corpus. The approved replacement owns one authorized manual Texas RRC Imaged Records Groundwater Protection Determination Letters profile retrieval provenance record and remains separate from other imaged-record profiles, Groundwater Advisory Unit research guidance, later RRC Online access, Central Records microfilm, filing or request workflows, technical interpretation, environmental or engineering conclusions, compliance, property, valuation, offer, and decision tasks. Current direct profile access returned HTTP 403, so the article records no completed query and keeps the present attempt unverified. The source is prepared for the exact release-10 build, but publication remains controlled by the signed batch, matching evidence, production deployment, and independent verification.',
+  ],
+  [
+    'texas-rrc-injection-storage-test-report-retrieval-provenance-worksheet',
+    'The original cash-for-mineral-rights buyer-comparison identity was rejected for direct overlap with the buyer-comparison, offer-safety, fair-offer, negotiation, and acceptance corpus. The approved replacement owns one authorized manual Texas RRC Imaged Records Injection-Storage Test Reports profile retrieval provenance record and remains separate from the UIC permit query, EDMS H-1/H-1A/W-14 application documents, H-10 annual monitoring reports, H-5 filing, interpretation, compliance, engineering, environmental, property, production, valuation, offer, legal, tax, and transaction tasks. Current direct profile access returned HTTP 403, so the article records no completed query and keeps the present state unverified. Publication remains controlled by the signed batch, matching evidence, production deployment, and independent verification.',
   ],
 ]);
 

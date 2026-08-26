@@ -1,7 +1,7 @@
 {
   "program": "MRX 1,000 Article SEO+AEO Production Program",
   "artifact_type": "authorized_release_10_batch",
-  "evidence_scaffold_generated_at_utc": "2026-08-25T14:39:18Z",
+  "evidence_scaffold_generated_at_utc": "2026-08-25T21:29:05Z",
   "decision_authority": {
     "successor_gate_decision_id": "D-2026-0804-16",
     "successor_gate_decision_path": "docs/governance/mrx1000-owner-continuous-publication-directive-2026-08-04.md",
@@ -390,13 +390,16 @@
     "wave124_selection_decision_sha256": "c019ff961bea5e6c5dd1b72bca50ab493e40da3e502a099c2a67794ec097b2c9",
     "wave125_selection_decision_id": "MRX1000-W125-SELECT-2026-08-25",
     "wave125_selection_decision_path": "docs/governance/mrx1000-wave125-selection-decision-2026-08-25.md",
-    "wave125_selection_decision_sha256": "1e3f8f9d6f6d433429607a207014422892de92cd72eef0f7c3ce028bf3c57c61"
+    "wave125_selection_decision_sha256": "1e3f8f9d6f6d433429607a207014422892de92cd72eef0f7c3ce028bf3c57c61",
+    "wave126_selection_decision_id": "MRX1000-W126-SELECT-2026-08-25",
+    "wave126_selection_decision_path": "docs/governance/mrx1000-wave126-selection-decision-2026-08-25.md",
+    "wave126_selection_decision_sha256": "c9ce01dc25396a6e8db9ee4fcd0eb8908828434a748081d5dc1b51336f9c4662"
   },
   "identity_authority": {
     "scope_key": "canonical_slug",
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_sha256": "ec7097e029dfbf9690ad37a2ab51983d6487ab6f6db93c521ab2c71d5bcc88ec",
-    "canonical_ledger_generated_at": "2026-07-20T02:52:52.774Z",
+    "canonical_ledger_sha256": "6021d2dcb3011dbd897a754d162496e4c80c9ca7f1e5a77324b21d1d9460b015",
+    "canonical_ledger_generated_at": "2026-07-20T20:27:49.576Z",
     "successor_ledger_decision_id": "D-2026-0723-LEDGER-04",
     "successor_ledger_decision_path": "artifacts/mrx1000-release-10/decisions/mrx-ceo-ledger-provenance-successor-20260723-04.md",
     "successor_ledger_decision_sha256": "09eca24bcd0e71563f2ac4197f564eec0ccb43a5ee955216da5c4a2543d04978",
@@ -410,11 +413,11 @@
     "authorization_scope": "declared_program_size_not_a_staged_release_cap",
     "admission_mode": "continuous_quality_gated",
     "continuous_quality_gated_from_selection_rank": 26,
-    "prior_verified_article_count": 201,
+    "prior_verified_article_count": 202,
     "fail_closed": true,
     "earned_scale_gates": [],
-    "exact_admitted_count": 202,
-    "exact_admitted_slate_sha256": "cfb7b6a692c053455c97b89ecd16ffc896911589dd2f2d89fab15ca917c41431"
+    "exact_admitted_count": 203,
+    "exact_admitted_slate_sha256": "5fa87ea081312fbfb90481615c7cd5ea5cb74767d0965d20508a3357a6ae2f4d"
   },
   "articles": [
     {
@@ -7085,10 +7088,45 @@
       "inline_path": "/assets/articles/inline/texas-rrc-groundwater-protection-determination-letter-retrieval-provenance-worksheet/texas-rrc-groundwater-determination-letter-retrieval.webp",
       "inline_asset_sha256": "290d122c7bc37760ce452a9089c05ce401c5e1bf41e434215e65ed5c1a8f1ea2",
       "inline_rendered_text": "Texas RRC groundwater determination letter retrieval"
+    },
+    {
+      "selection_rank": 203,
+      "program_row_id": "MRX1000-0331",
+      "source_shortlist_program_row_id": "MRX1000-0331",
+      "slug": "texas-rrc-injection-storage-test-report-retrieval-provenance-worksheet",
+      "title": "Texas RRC Injection-Storage Test Report Retrieval Provenance Worksheet",
+      "source_shortlist_title": "Texas RRC Injection-Storage Test Report Retrieval Provenance Worksheet",
+      "canonical_url": "https://mineralrightsxchange.com/blog/texas-rrc-injection-storage-test-report-retrieval-provenance-worksheet/",
+      "pillar": "offer-review",
+      "cluster": "offer-review-buyer-comparison-safety",
+      "content_genius_article_uuid": null,
+      "archive_evidence_sha256": "f3fdf65b448deb91159e7f699658e714465a4dda012a6e9c882bca9b3bef44bc",
+      "repo_path": "src/content/posts/texas-rrc-injection-storage-test-report-retrieval-provenance-worksheet.mdx",
+      "repo_sha256": "13a96bf8e6ddaaca0fce06ab2c459c37ea2b5883319df12ba6915a139392358d",
+      "article_sha256": "13a96bf8e6ddaaca0fce06ab2c459c37ea2b5883319df12ba6915a139392358d",
+      "hero_path": "/assets/articles/hero/texas-rrc-injection-storage-test-report-retrieval-provenance-worksheet.webp",
+      "hero_sha256": "5d45616ec3968c781920b3d1c72a424e43b3fd3d09b7b0ff40a992578c30bd82",
+      "hero_asset_sha256": "5d45616ec3968c781920b3d1c72a424e43b3fd3d09b7b0ff40a992578c30bd82",
+      "admission_status": "admitted_quality_gated",
+      "finalization_state": "draft_noindex_admitted",
+      "searchatlas_content_score": null,
+      "searchatlas_word_count": 1180,
+      "risk_citation_remediation": [
+        "The original cash-for-mineral-rights identity is rejected for direct overlap. No buyer-comparison, pricing, negotiation, offer, promotional, acceptance, or transaction claim survives.",
+        "Official Texas RRC sources support only the Imaged Records route, the source-displayed Injection-Storage Test Reports profileId 7 identity and scope, adjacent-route separation, and current source limitations. None establishes a completed retrieval, test result, well, permit, injection or storage condition, compliance, engineering, environmental, property, production, value, offer, legal, tax, or transaction conclusion.",
+        "Direct profile access returned HTTP 403 and no profile page was captured, so the article claims no completed query. Every blocked, error, timeout, validation-failure, default, session, CAPTCHA, viewer, inaccessible, or otherwise inconclusive state remains unverified.",
+        "The article prohibits automation, scraping, repeated or bulk retrieval, bypass, login, payment, request, filing instruction, interpretation, and substantive inference.",
+        "Continuous quality-gated admission under the owner no-approval directives; no owner publication approval applies."
+      ],
+      "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/texas-rrc-injection-storage-test-report-retrieval-provenance-worksheet.json",
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/texas-rrc-injection-storage-test-report-retrieval-provenance-worksheet/texas-rrc-injection-storage-test-report-retrieval.webp",
+      "inline_asset_sha256": "b27aa6a2e96ad217482748d9050f89367058191d9a96a774d67d7fbda3ef9ecf",
+      "inline_rendered_text": "Texas RRC injection-storage test report retrieval"
     }
   ],
   "admission_audit": {
-    "admitted_article_count": 202,
+    "admitted_article_count": 203,
     "selection_ranks": [
       1,
       2,
@@ -7291,7 +7329,8 @@
       199,
       200,
       201,
-      202
+      202,
+      203
     ],
     "duplicate_program_row_ids": [],
     "duplicate_slugs": [],
@@ -7350,9 +7389,9 @@
   "two_image_policy": {
     "directive": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
     "retrofit_manifest_path": "config/mrx-article-two-image-retrofit.json",
-    "retrofit_manifest_sha256": "2a1183e3eac68b4eb203245abfa3fed5ba3c5cf230efb36ccffc7fb20a42054d",
-    "public_article_count": 210,
-    "batch_article_count": 202,
+    "retrofit_manifest_sha256": "5ea6c49c8a763c63fb2550c0701951de425d75060dd9bdb58c89f1059a02364f",
+    "public_article_count": 211,
+    "batch_article_count": 203,
     "assets_per_article": 2,
     "hero_share_identity_required": true,
     "inline_image_distinct_required": true,

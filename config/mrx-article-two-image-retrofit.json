@@ -1,18 +1,18 @@
 {
   "artifact_type": "mrx_article_two_image_retrofit",
   "schema_version": 1,
-  "generated_at_utc": "2026-08-25T14:33:53Z",
+  "generated_at_utc": "2026-08-25T15:00:03Z",
   "policy_source": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
   "summary": {
-    "article_count": 210,
-    "asset_count": 420,
-    "unique_source_art_count": 210,
-    "unique_hero_sha256_count": 210,
-    "unique_inline_sha256_count": 210,
-    "distinct_article_pair_count": 210,
-    "hero_ocr_pass_count": 210,
-    "inline_ocr_pass_count": 210,
-    "exact_filename_identity_count": 210
+    "article_count": 211,
+    "asset_count": 422,
+    "unique_source_art_count": 211,
+    "unique_hero_sha256_count": 211,
+    "unique_inline_sha256_count": 211,
+    "distinct_article_pair_count": 211,
+    "hero_ocr_pass_count": 211,
+    "inline_ocr_pass_count": 211,
+    "exact_filename_identity_count": 211
   },
   "contact_sheets": {
     "hero": [
@@ -6106,6 +6106,56 @@
           "actual": "Texas RRC Injection-Storage Permit\nquery retrieval",
           "normalized_expected": "texas rrc injection storage permit query retrieval",
           "normalized_actual": "texas rrc injection storage permit query retrieval",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      }
+    },
+    {
+      "slug": "texas-rrc-injection-storage-test-report-retrieval-provenance-worksheet",
+      "title": "Texas RRC Injection-Storage Test Report Retrieval Provenance Worksheet",
+      "keyword": "Texas RRC injection-storage test report retrieval",
+      "file_path": "src/content/posts/texas-rrc-injection-storage-test-report-retrieval-provenance-worksheet.mdx",
+      "source_public_path": "/assets/articles/hero/texas-rrc-injection-storage-test-report-retrieval-provenance-worksheet.webp",
+      "source_artifact_paths": [
+        "artifacts/mrx1000-wave126-creative-sources/texas-rrc-injection-storage-test-report-retrieval-provenance-worksheet-hero-base.png",
+        "artifacts/mrx1000-wave126-creative-sources/texas-rrc-injection-storage-test-report-retrieval-provenance-worksheet-inline-base.png"
+      ],
+      "generated_at_utc": "2026-08-25T14:51:57.489Z",
+      "hero": {
+        "public_path": "/assets/articles/hero/texas-rrc-injection-storage-test-report-retrieval-provenance-worksheet.webp",
+        "alt": "An archival research station appears beside the exact injection-storage worksheet title.",
+        "width": 1200,
+        "height": 630,
+        "mime_type": "image/webp",
+        "sha256": "5d45616ec3968c781920b3d1c72a424e43b3fd3d09b7b0ff40a992578c30bd82",
+        "perceptual_hash": "0000000000000000000000000000000000000000001000000111110001110000011111000111000101111000011100111111100001110011000000000000001100000000001001000000000000100100000000000010010000000000110000000000000011101100000000001101111100000000000111110000000000011111",
+        "neutralized_art_text_region_count": 1,
+        "ocr": {
+          "expected": "Texas RRC Injection-Storage Test Report Retrieval Provenance Worksheet",
+          "actual": "Texas RRC Injection-Storage\nTest Report Retrieval\nProvenance Worksheet",
+          "normalized_expected": "texas rrc injection storage test report retrieval provenance worksheet",
+          "normalized_actual": "texas rrc injection storage test report retrieval provenance worksheet",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      },
+      "inline": {
+        "public_path": "/assets/articles/inline/texas-rrc-injection-storage-test-report-retrieval-provenance-worksheet/texas-rrc-injection-storage-test-report-retrieval.webp",
+        "alt": "Three evidence sleeves and a pressure-chart roll appear above the exact retrieval keyword.",
+        "rendered_text": "Texas RRC injection-storage test report retrieval",
+        "visual_variant": "wave126-distinct-generated-top-down-three-sleeve-pressure-chart-evidence-scene",
+        "width": 1200,
+        "height": 675,
+        "mime_type": "image/webp",
+        "sha256": "b27aa6a2e96ad217482748d9050f89367058191d9a96a774d67d7fbda3ef9ecf",
+        "perceptual_hash": "0011111111111111000111111111111100111111111001110011100000011001111111111111111011111111111111111111111111111111111111111111110111111111111111111111111111111101111111111111100000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "neutralized_art_text_region_count": 1,
+        "ocr": {
+          "expected": "Texas RRC injection-storage test report retrieval",
+          "actual": "Texas RRC injection-storage\ntest report retrieval",
+          "normalized_expected": "texas rrc injection storage test report retrieval",
+          "normalized_actual": "texas rrc injection storage test report retrieval",
           "uppercase_i_confusable_accepted": false,
           "pass": true
         }
