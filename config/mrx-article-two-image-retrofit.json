@@ -1,18 +1,18 @@
 {
   "artifact_type": "mrx_article_two_image_retrofit",
   "schema_version": 1,
-  "generated_at_utc": "2026-08-26T09:48:51Z",
+  "generated_at_utc": "2026-08-26T10:11:34Z",
   "policy_source": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
   "summary": {
-    "article_count": 220,
-    "asset_count": 440,
-    "unique_source_art_count": 220,
-    "unique_hero_sha256_count": 220,
-    "unique_inline_sha256_count": 220,
-    "distinct_article_pair_count": 220,
-    "hero_ocr_pass_count": 220,
-    "inline_ocr_pass_count": 220,
-    "exact_filename_identity_count": 220
+    "article_count": 221,
+    "asset_count": 442,
+    "unique_source_art_count": 221,
+    "unique_hero_sha256_count": 221,
+    "unique_inline_sha256_count": 221,
+    "distinct_article_pair_count": 221,
+    "hero_ocr_pass_count": 221,
+    "inline_ocr_pass_count": 221,
+    "exact_filename_identity_count": 221
   },
   "contact_sheets": {
     "hero": [
@@ -4034,6 +4034,56 @@
           "actual": "mineral rights\noperator name change\nlog",
           "normalized_expected": "mineral rights operator name change log",
           "normalized_actual": "mineral rights operator name change log",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      }
+    },
+    {
+      "slug": "mineral-rights-retained-evidence-source-scope-worksheet",
+      "title": "Mineral Rights Retained Evidence Source-Scope Worksheet",
+      "keyword": "mineral rights retained evidence source scope",
+      "file_path": "src/content/posts/mineral-rights-retained-evidence-source-scope-worksheet.mdx",
+      "source_public_path": "/assets/articles/hero/mineral-rights-retained-evidence-source-scope-worksheet.webp",
+      "source_artifact_paths": [
+        "artifacts/mrx1000-wave136-creative-sources/mineral-rights-retained-evidence-source-scope-worksheet-hero-base.png",
+        "artifacts/mrx1000-wave136-creative-sources/mineral-rights-retained-evidence-source-scope-worksheet-inline-base.png"
+      ],
+      "generated_at_utc": "2026-08-26T10:10:16.870Z",
+      "hero": {
+        "public_path": "/assets/articles/hero/mineral-rights-retained-evidence-source-scope-worksheet.webp",
+        "alt": "A blank retained artifact rests on a circular evidence tray beside the exact source-scope worksheet title.",
+        "width": 1200,
+        "height": 630,
+        "mime_type": "image/webp",
+        "sha256": "7c87db07277475747e9e6a61f04e77d9c8a4691212bec1a6a62d9e002d9438a6",
+        "perceptual_hash": "0000000000000110000000000000001100000000000110010000000001111000011110001111111001111000111111100110000001111110000000000111110000000000011111000000000001111100000000000011110000000000001110000000000000000000000000000000000000000000000000000000000000000000",
+        "neutralized_art_text_region_count": 1,
+        "ocr": {
+          "expected": "Mineral Rights Retained Evidence Source-Scope Worksheet",
+          "actual": "Mineral Rights Retained\nEvidence Source-Scope\nWorksheet",
+          "normalized_expected": "mineral rights retained evidence source scope worksheet",
+          "normalized_actual": "mineral rights retained evidence source scope worksheet",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      },
+      "inline": {
+        "public_path": "/assets/articles/inline/mineral-rights-retained-evidence-source-scope-worksheet/mineral-rights-retained-evidence-source-scope.webp",
+        "alt": "A top-down blank four-quadrant worksheet appears above the exact retained-evidence source-scope keyword.",
+        "rendered_text": "mineral rights retained evidence source scope",
+        "visual_variant": "wave136-distinct-generated-strict-overhead-four-quadrant-source-scope-limitation-worksheet",
+        "width": 1200,
+        "height": 675,
+        "mime_type": "image/webp",
+        "sha256": "892e495242384a45fe8a49fa12f790d39f9517c13955c6cc8c0aee262343b62f",
+        "perceptual_hash": "1111111111111111000111111111111100011111111111110001111111111111000111111111111100011111111111110001111111111111000111111111111100011111111101110001111111110011000111111111000100000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "neutralized_art_text_region_count": 1,
+        "ocr": {
+          "expected": "mineral rights retained evidence source scope",
+          "actual": "mineral rights retained\nevidence source scope",
+          "normalized_expected": "mineral rights retained evidence source scope",
+          "normalized_actual": "mineral rights retained evidence source scope",
           "uppercase_i_confusable_accepted": false,
           "pass": true
         }
