@@ -1,18 +1,18 @@
 {
   "artifact_type": "mrx_article_two_image_retrofit",
   "schema_version": 1,
-  "generated_at_utc": "2026-08-26T18:54:31Z",
+  "generated_at_utc": "2026-08-26T19:31:20Z",
   "policy_source": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
   "summary": {
-    "article_count": 235,
-    "asset_count": 470,
-    "unique_source_art_count": 235,
-    "unique_hero_sha256_count": 235,
-    "unique_inline_sha256_count": 235,
-    "distinct_article_pair_count": 235,
-    "hero_ocr_pass_count": 235,
-    "inline_ocr_pass_count": 235,
-    "exact_filename_identity_count": 235
+    "article_count": 236,
+    "asset_count": 472,
+    "unique_source_art_count": 236,
+    "unique_hero_sha256_count": 236,
+    "unique_inline_sha256_count": 236,
+    "distinct_article_pair_count": 236,
+    "hero_ocr_pass_count": 236,
+    "inline_ocr_pass_count": 236,
+    "exact_filename_identity_count": 236
   },
   "contact_sheets": {
     "hero": [
@@ -510,6 +510,56 @@
           "actual": "Brazos CAD mineral and\nindustrial account contact",
           "normalized_expected": "brazos cad mineral and industrial account contact",
           "normalized_actual": "brazos cad mineral and industrial account contact",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      }
+    },
+    {
+      "slug": "brazos-cad-mineral-property-arb-hearing-notice-inventory",
+      "title": "Brazos CAD Mineral Property ARB Hearing Notice Inventory",
+      "keyword": "Brazos CAD mineral property ARB hearing notice",
+      "file_path": "src/content/posts/brazos-cad-mineral-property-arb-hearing-notice-inventory.mdx",
+      "source_public_path": "/assets/articles/hero/brazos-cad-mineral-property-arb-hearing-notice-inventory.webp",
+      "source_artifact_paths": [
+        "artifacts/mrx1000-wave156-creative-sources/brazos-cad-mineral-property-arb-hearing-notice-inventory-hero-base.png",
+        "artifacts/mrx1000-wave156-creative-sources/brazos-cad-mineral-property-arb-hearing-notice-inventory-inline-base.png"
+      ],
+      "generated_at_utc": "2026-08-26T19:28:37.012Z",
+      "hero": {
+        "public_path": "/assets/articles/hero/brazos-cad-mineral-property-arb-hearing-notice-inventory.webp",
+        "alt": "A blank notice sleeve and archival tray appear beside the exact Brazos CAD hearing-notice inventory title.",
+        "width": 1200,
+        "height": 630,
+        "mime_type": "image/webp",
+        "sha256": "3ef96c97e0279f86d1349ae3576d95cdb44885f693a4c7eb16879e7e76d892e2",
+        "perceptual_hash": "0000000011110000000000001111011100000000111101110000000011010110010000000000010001110000011001000111100011110000010000001111110000000000011111000000000001111100000000000111100000000000000000010000000010001111000000001000111100000000110011110000000011000100",
+        "neutralized_art_text_region_count": 1,
+        "ocr": {
+          "expected": "Brazos CAD Mineral Property ARB Hearing Notice Inventory",
+          "actual": "Brazos CAD\nMineral Property\nARB Hearing Notice\nInventory",
+          "normalized_expected": "brazos cad mineral property arb hearing notice inventory",
+          "normalized_actual": "brazos cad mineral property arb hearing notice inventory",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      },
+      "inline": {
+        "public_path": "/assets/articles/inline/brazos-cad-mineral-property-arb-hearing-notice-inventory/brazos-cad-mineral-property-arb-hearing-notice.webp",
+        "alt": "A top-down blank notice inventory appears above the exact Brazos CAD mineral property ARB hearing notice keyword.",
+        "rendered_text": "Brazos CAD mineral property ARB hearing notice",
+        "visual_variant": "wave156-distinct-generated-strict-overhead-notice-and-enclosure-inventory",
+        "width": 1200,
+        "height": 675,
+        "mime_type": "image/webp",
+        "sha256": "1a5468bc557a15c80b13656b8b82b8a4686d0f615eda1037b6687596491093cb",
+        "perceptual_hash": "1111111111111111111111111111111111111111111111111111111111111011111111111111101111111111111100111111111111111011111111111111101111111111111110111111111111111111111111111111110000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "neutralized_art_text_region_count": 1,
+        "ocr": {
+          "expected": "Brazos CAD mineral property ARB hearing notice",
+          "actual": "Brazos CAD mineral property\nARB hearing notice",
+          "normalized_expected": "brazos cad mineral property arb hearing notice",
+          "normalized_actual": "brazos cad mineral property arb hearing notice",
           "uppercase_i_confusable_accepted": false,
           "pass": true
         }
