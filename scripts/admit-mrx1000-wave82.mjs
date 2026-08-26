@@ -76,6 +76,7 @@ const pillar = process.env.MRX_PILLAR ?? 'mineral-rights-value';
 const pillarUrl = process.env.MRX_PILLAR_URL ?? '/mineral-rights-value/';
 const cluster = process.env.MRX_CLUSTER ?? 'valuation-methodology-drivers';
 const funnelStage = process.env.MRX_FUNNEL_STAGE ?? 'consideration';
+const searchIntent = process.env.MRX_SEARCH_INTENT ?? 'informational';
 
 const batchPath = join(root, batchRelativePath);
 const retrofitPath = join(root, retrofitRelativePath);
@@ -393,7 +394,7 @@ if ([priorCanonicalSlug, slug].includes(sourceRow.canonical_slug)) {
     cluster,
     primary_keyword: primaryKeyword,
     secondary_keywords: secondaryKeywords,
-    search_intent: 'informational',
+    search_intent: searchIntent,
     funnel_stage: funnelStage,
     source_system: 'astro_repo',
     source_record_id: `${slug}.mdx`,
