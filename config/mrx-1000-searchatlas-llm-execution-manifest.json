@@ -1,7 +1,7 @@
 {
   "program": "MRX1000",
   "artifact_type": "searchatlas_ordered_llm_local_execution_manifest",
-  "generated_at": "2026-07-20T15:50:30.128Z",
+  "generated_at": "2026-07-20T08:25:37.000Z",
   "deterministic": true,
   "local_only": true,
   "external_services_called": false,
@@ -9,8 +9,8 @@
   "inputs": {
     "ledger": {
       "path": "config/mrx-1000-canonical-content-ledger.json",
-      "sha256": "6ba1accb8d1622be462f5901b1e7d65004dddd19708331c355249a0d567d68d4",
-      "bytes": 4635832
+      "sha256": "ebe6549f825e927cf44ee5a72e259d31e67f1466be39a10dea9432721ab50aa5",
+      "bytes": 4636190
     },
     "readiness": {
       "path": "reports/mrx-1000-readiness-matrix.json",
@@ -256220,7 +256220,7 @@
       "primary_keyword": "Brazos County mineral rights property tax protest",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -352546,5 +352546,5 @@
       ]
     }
   ],
-  "content_fingerprint_sha256": "44af092d2b6a0ff4f04d4fcc2a50294f031c42a561c368d2f31be8d9971e7066"
+  "content_fingerprint_sha256": "57b586ca21a23b83d90a6a4b1316ec9f248902003731dcefeba2eefa4af11079"
 }
