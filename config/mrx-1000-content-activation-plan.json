@@ -1,15 +1,15 @@
 {
   "artifact_type": "mrx1000_content_activation_plan",
   "plan_version": "mrx1000-content-activation-v1.1.0",
-  "generated_at": "2026-07-20T09:12:40.027Z",
+  "generated_at": "2026-07-20T21:44:43.926Z",
   "generated_at_method": "canonical_ledger_generated_at",
   "generator": "scripts/build-mrx-1000-activation-plan.mjs",
-  "content_fingerprint_sha256": "a8135811324fecc25a821a678d7e3b3846199b7caa750654fc9389271b2998ff",
+  "content_fingerprint_sha256": "955b2a3eeab936b176a70b1355fc6d04b6e7a8fd81f196db20b1f27cf23e3795",
   "inputs": {
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_fingerprint_sha256": "5172ae36b402eaf8d04279082ab5ea4a629a908aac934c8b2f6ce8a79e03c650",
+    "canonical_ledger_fingerprint_sha256": "0f1787653ef4cf1d164553670b6782050c5c2628a1fab57afcb13cf56741d3a8",
     "canonical_ledger_fingerprint_verified": true,
-    "canonical_ledger_generated_at": "2026-07-20T09:12:40.027Z",
+    "canonical_ledger_generated_at": "2026-07-20T21:44:43.926Z",
     "owner_decision": {
       "decision_id": "D-2026-0804-16",
       "signed_disposition": "APPROVED_CONTINUOUS_QUALITY_GATED_ARTICLE_PUBLICATION",
@@ -115,9 +115,9 @@
     },
     "by_source_preservation_classification": {
       "incumbent_draft_nonpublic_held": 23,
-      "live_public_published_route": 217,
+      "live_public_published_route": 218,
       "pilot_draft_noindex_stage": 25,
-      "planning_only_inventory": 735
+      "planning_only_inventory": 734
     }
   },
   "rows": [
@@ -20792,7 +20792,7 @@
       "canonical_url": "/blog/reeves-county-mineral-records-search-log/",
       "cluster": "offer-review-buyer-comparison-safety",
       "pillar": "offer-review",
-      "search_intent": "informational",
+      "search_intent": "commercial-investigation",
       "funnel_stage": "decision",
       "source_preservation_classification": "live_public_published_route",
       "source_route_live": true,
@@ -20803,8 +20803,71 @@
       },
       "sibling_link": {
         "target_program_row_id": "MRX1000-0338",
-        "target_title": "Confirm the Legitimacy of Your Mineral Rights Offer: A Comprehensive Guide for Owners",
-        "url": "/blog/confirm-the-legitimacy-of-your-mineral-rights-offer-a-comprehensive-guide-for-owners/",
+        "target_title": "Texas Comptroller Taxable Entity Search Retrieval Provenance Worksheet",
+        "url": "/blog/texas-comptroller-taxable-entity-search-retrieval-provenance-worksheet/",
+        "relationship": "same_cluster_next_by_program_row_id_cyclic",
+        "target_source_preservation_classification": "live_public_published_route",
+        "target_route_live": true,
+        "status": "planned_local_only"
+      },
+      "primary_cta": {
+        "url": "/book/",
+        "label": "Review My Written Offer",
+        "name": "mrx1000-offer-review-book_review-closing_panel",
+        "placement_code": "closing_panel",
+        "placement_guidance": "Place in the closing decision panel after key takeaways and before related articles.",
+        "assignment_rule": "decision_stage_team_handoff",
+        "assignment_basis": "decision:commercial-investigation",
+        "approved_route_evidence": "src/pages/book.astro",
+        "role": "primary_appointment",
+        "is_appointment_cta": true,
+        "status": "planned_local_only"
+      },
+      "appointment_cta": {
+        "url": "/book/",
+        "label": "Review My Written Offer",
+        "name": "mrx1000-offer-review-book_review-closing_panel",
+        "placement_code": "closing_panel",
+        "placement_guidance": "Place in the closing decision panel after key takeaways and before related articles.",
+        "assignment_rule": "decision_stage_team_handoff",
+        "assignment_basis": "decision:commercial-investigation",
+        "approved_route_evidence": "src/pages/book.astro",
+        "role": "same_as_primary_appointment",
+        "distinct_from_primary_cta": false,
+        "status": "planned_local_only"
+      },
+      "evidence": {
+        "triangle_plan_status": "planned_complete",
+        "primary_cta_plan_status": "planned_complete",
+        "appointment_cta_plan_status": "planned_complete",
+        "rendered_status": "not_rendered_or_verified_by_this_plan",
+        "rendered_triangle_verified": false,
+        "live_status": "not_published_or_verified_by_this_plan",
+        "live_triangle_verified": false,
+        "release_status": "released_under_d16_continuous_quality_gate",
+        "numerical_release_cap_applies": false
+      }
+    },
+    {
+      "program_row_id": "MRX1000-0338",
+      "canonical_title": "Texas Comptroller Taxable Entity Search Retrieval Provenance Worksheet",
+      "canonical_slug": "texas-comptroller-taxable-entity-search-retrieval-provenance-worksheet",
+      "canonical_url": "/blog/texas-comptroller-taxable-entity-search-retrieval-provenance-worksheet/",
+      "cluster": "offer-review-buyer-comparison-safety",
+      "pillar": "offer-review",
+      "search_intent": "informational",
+      "funnel_stage": "decision",
+      "source_preservation_classification": "live_public_published_route",
+      "source_route_live": true,
+      "pillar_link": {
+        "url": "/offer-review/",
+        "route_evidence": "src/pages/offer-review.astro",
+        "status": "planned_local_only"
+      },
+      "sibling_link": {
+        "target_program_row_id": "MRX1000-0339",
+        "target_title": "Critical Errors to Steer Clear of When Reviewing Mineral Rights Offers for Accurate Valuation",
+        "url": "/blog/critical-errors-to-steer-clear-of-when-reviewing-mineral-rights-offers-for-accurate-valuation/",
         "relationship": "same_cluster_next_by_program_row_id_cyclic",
         "target_source_preservation_classification": "planning_only_inventory",
         "target_route_live": false,
@@ -20845,69 +20908,6 @@
         "live_status": "not_published_or_verified_by_this_plan",
         "live_triangle_verified": false,
         "release_status": "released_under_d16_continuous_quality_gate",
-        "numerical_release_cap_applies": false
-      }
-    },
-    {
-      "program_row_id": "MRX1000-0338",
-      "canonical_title": "Confirm the Legitimacy of Your Mineral Rights Offer: A Comprehensive Guide for Owners",
-      "canonical_slug": "confirm-the-legitimacy-of-your-mineral-rights-offer-a-comprehensive-guide-for-owners",
-      "canonical_url": "/blog/confirm-the-legitimacy-of-your-mineral-rights-offer-a-comprehensive-guide-for-owners/",
-      "cluster": "offer-review-buyer-comparison-safety",
-      "pillar": "offer-review",
-      "search_intent": "commercial-investigation",
-      "funnel_stage": "decision",
-      "source_preservation_classification": "planning_only_inventory",
-      "source_route_live": false,
-      "pillar_link": {
-        "url": "/offer-review/",
-        "route_evidence": "src/pages/offer-review.astro",
-        "status": "planned_local_only"
-      },
-      "sibling_link": {
-        "target_program_row_id": "MRX1000-0339",
-        "target_title": "Critical Errors to Steer Clear of When Reviewing Mineral Rights Offers for Accurate Valuation",
-        "url": "/blog/critical-errors-to-steer-clear-of-when-reviewing-mineral-rights-offers-for-accurate-valuation/",
-        "relationship": "same_cluster_next_by_program_row_id_cyclic",
-        "target_source_preservation_classification": "planning_only_inventory",
-        "target_route_live": false,
-        "status": "planned_local_only"
-      },
-      "primary_cta": {
-        "url": "/book/",
-        "label": "Review My Written Offer",
-        "name": "mrx1000-offer-review-book_review-closing_panel",
-        "placement_code": "closing_panel",
-        "placement_guidance": "Place in the closing decision panel after key takeaways and before related articles.",
-        "assignment_rule": "decision_stage_team_handoff",
-        "assignment_basis": "decision:commercial-investigation",
-        "approved_route_evidence": "src/pages/book.astro",
-        "role": "primary_appointment",
-        "is_appointment_cta": true,
-        "status": "planned_local_only"
-      },
-      "appointment_cta": {
-        "url": "/book/",
-        "label": "Review My Written Offer",
-        "name": "mrx1000-offer-review-book_review-closing_panel",
-        "placement_code": "closing_panel",
-        "placement_guidance": "Place in the closing decision panel after key takeaways and before related articles.",
-        "assignment_rule": "decision_stage_team_handoff",
-        "assignment_basis": "decision:commercial-investigation",
-        "approved_route_evidence": "src/pages/book.astro",
-        "role": "same_as_primary_appointment",
-        "distinct_from_primary_cta": false,
-        "status": "planned_local_only"
-      },
-      "evidence": {
-        "triangle_plan_status": "planned_complete",
-        "primary_cta_plan_status": "planned_complete",
-        "appointment_cta_plan_status": "planned_complete",
-        "rendered_status": "not_rendered_or_verified_by_this_plan",
-        "rendered_triangle_verified": false,
-        "live_status": "not_published_or_verified_by_this_plan",
-        "live_triangle_verified": false,
-        "release_status": "eligible_for_continuous_quality_review_not_yet_cleared",
         "numerical_release_cap_applies": false
       }
     },
@@ -22755,69 +22755,6 @@
         "status": "planned_local_only"
       },
       "sibling_link": {
-        "target_program_row_id": "MRX1000-0373",
-        "target_title": "Mineral Rights Buyers: Valuation Factors Step By Step",
-        "url": "/blog/mineral-rights-buyers-valuation-factors-step-by-step/",
-        "relationship": "same_cluster_next_by_program_row_id_cyclic",
-        "target_source_preservation_classification": "planning_only_inventory",
-        "target_route_live": false,
-        "status": "planned_local_only"
-      },
-      "primary_cta": {
-        "url": "/book/",
-        "label": "Review My Written Offer",
-        "name": "mrx1000-offer-review-book_review-closing_panel",
-        "placement_code": "closing_panel",
-        "placement_guidance": "Place in the closing decision panel after key takeaways and before related articles.",
-        "assignment_rule": "decision_stage_team_handoff",
-        "assignment_basis": "decision:education",
-        "approved_route_evidence": "src/pages/book.astro",
-        "role": "primary_appointment",
-        "is_appointment_cta": true,
-        "status": "planned_local_only"
-      },
-      "appointment_cta": {
-        "url": "/book/",
-        "label": "Review My Written Offer",
-        "name": "mrx1000-offer-review-book_review-closing_panel",
-        "placement_code": "closing_panel",
-        "placement_guidance": "Place in the closing decision panel after key takeaways and before related articles.",
-        "assignment_rule": "decision_stage_team_handoff",
-        "assignment_basis": "decision:education",
-        "approved_route_evidence": "src/pages/book.astro",
-        "role": "same_as_primary_appointment",
-        "distinct_from_primary_cta": false,
-        "status": "planned_local_only"
-      },
-      "evidence": {
-        "triangle_plan_status": "planned_complete",
-        "primary_cta_plan_status": "planned_complete",
-        "appointment_cta_plan_status": "planned_complete",
-        "rendered_status": "not_rendered_or_verified_by_this_plan",
-        "rendered_triangle_verified": false,
-        "live_status": "not_published_or_verified_by_this_plan",
-        "live_triangle_verified": false,
-        "release_status": "eligible_for_continuous_quality_review_not_yet_cleared",
-        "numerical_release_cap_applies": false
-      }
-    },
-    {
-      "program_row_id": "MRX1000-0373",
-      "canonical_title": "Mineral Rights Buyers: Valuation Factors Step By Step",
-      "canonical_slug": "mineral-rights-buyers-valuation-factors-step-by-step",
-      "canonical_url": "/blog/mineral-rights-buyers-valuation-factors-step-by-step/",
-      "cluster": "offer-review-buyer-comparison-safety",
-      "pillar": "offer-review",
-      "search_intent": "tax-planning",
-      "funnel_stage": "decision",
-      "source_preservation_classification": "planning_only_inventory",
-      "source_route_live": false,
-      "pillar_link": {
-        "url": "/offer-review/",
-        "route_evidence": "src/pages/offer-review.astro",
-        "status": "planned_local_only"
-      },
-      "sibling_link": {
         "target_program_row_id": "MRX1000-0374",
         "target_title": "Mineral Rights Buyers: Valuation Factors Without Obligation",
         "url": "/blog/mineral-rights-buyers-valuation-factors-without-obligation/",
@@ -22833,7 +22770,7 @@
         "placement_code": "closing_panel",
         "placement_guidance": "Place in the closing decision panel after key takeaways and before related articles.",
         "assignment_rule": "decision_stage_team_handoff",
-        "assignment_basis": "decision:tax-planning",
+        "assignment_basis": "decision:education",
         "approved_route_evidence": "src/pages/book.astro",
         "role": "primary_appointment",
         "is_appointment_cta": true,
@@ -22846,7 +22783,7 @@
         "placement_code": "closing_panel",
         "placement_guidance": "Place in the closing decision panel after key takeaways and before related articles.",
         "assignment_rule": "decision_stage_team_handoff",
-        "assignment_basis": "decision:tax-planning",
+        "assignment_basis": "decision:education",
         "approved_route_evidence": "src/pages/book.astro",
         "role": "same_as_primary_appointment",
         "distinct_from_primary_cta": false,
@@ -63063,6 +63000,69 @@
       "canonical_title": "Comparing Mineral Valuation Offers: Key Insights",
       "canonical_slug": "comparing-mineral-valuation-offers-key-insights",
       "canonical_url": "/blog/comparing-mineral-valuation-offers-key-insights/",
+      "cluster": "offer-review-buyer-comparison-safety",
+      "pillar": "offer-review",
+      "search_intent": "commercial-investigation",
+      "funnel_stage": "decision",
+      "source_preservation_classification": "planning_only_inventory",
+      "source_route_live": false,
+      "pillar_link": {
+        "url": "/offer-review/",
+        "route_evidence": "src/pages/offer-review.astro",
+        "status": "planned_local_only"
+      },
+      "sibling_link": {
+        "target_program_row_id": "MRX1000-1044",
+        "target_title": "Confirm the Legitimacy of Your Mineral Rights Offer: A Comprehensive Guide for Owners",
+        "url": "/blog/confirm-the-legitimacy-of-your-mineral-rights-offer-a-comprehensive-guide-for-owners/",
+        "relationship": "same_cluster_next_by_program_row_id_cyclic",
+        "target_source_preservation_classification": "planning_only_inventory",
+        "target_route_live": false,
+        "status": "planned_local_only"
+      },
+      "primary_cta": {
+        "url": "/book/",
+        "label": "Review My Written Offer",
+        "name": "mrx1000-offer-review-book_review-closing_panel",
+        "placement_code": "closing_panel",
+        "placement_guidance": "Place in the closing decision panel after key takeaways and before related articles.",
+        "assignment_rule": "decision_stage_team_handoff",
+        "assignment_basis": "decision:commercial-investigation",
+        "approved_route_evidence": "src/pages/book.astro",
+        "role": "primary_appointment",
+        "is_appointment_cta": true,
+        "status": "planned_local_only"
+      },
+      "appointment_cta": {
+        "url": "/book/",
+        "label": "Review My Written Offer",
+        "name": "mrx1000-offer-review-book_review-closing_panel",
+        "placement_code": "closing_panel",
+        "placement_guidance": "Place in the closing decision panel after key takeaways and before related articles.",
+        "assignment_rule": "decision_stage_team_handoff",
+        "assignment_basis": "decision:commercial-investigation",
+        "approved_route_evidence": "src/pages/book.astro",
+        "role": "same_as_primary_appointment",
+        "distinct_from_primary_cta": false,
+        "status": "planned_local_only"
+      },
+      "evidence": {
+        "triangle_plan_status": "planned_complete",
+        "primary_cta_plan_status": "planned_complete",
+        "appointment_cta_plan_status": "planned_complete",
+        "rendered_status": "not_rendered_or_verified_by_this_plan",
+        "rendered_triangle_verified": false,
+        "live_status": "not_published_or_verified_by_this_plan",
+        "live_triangle_verified": false,
+        "release_status": "eligible_for_continuous_quality_review_not_yet_cleared",
+        "numerical_release_cap_applies": false
+      }
+    },
+    {
+      "program_row_id": "MRX1000-1044",
+      "canonical_title": "Confirm the Legitimacy of Your Mineral Rights Offer: A Comprehensive Guide for Owners",
+      "canonical_slug": "confirm-the-legitimacy-of-your-mineral-rights-offer-a-comprehensive-guide-for-owners",
+      "canonical_url": "/blog/confirm-the-legitimacy-of-your-mineral-rights-offer-a-comprehensive-guide-for-owners/",
       "cluster": "offer-review-buyer-comparison-safety",
       "pillar": "offer-review",
       "search_intent": "commercial-investigation",
