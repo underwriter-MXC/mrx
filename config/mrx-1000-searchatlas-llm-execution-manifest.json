@@ -1,7 +1,7 @@
 {
   "program": "MRX1000",
   "artifact_type": "searchatlas_ordered_llm_local_execution_manifest",
-  "generated_at": "2026-07-20T21:18:28.253Z",
+  "generated_at": "2026-07-20T08:25:37.000Z",
   "deterministic": true,
   "local_only": true,
   "external_services_called": false,
@@ -9,8 +9,8 @@
   "inputs": {
     "ledger": {
       "path": "config/mrx-1000-canonical-content-ledger.json",
-      "sha256": "1d7189d4744f8cd98a0267a9809abd21c17961072ad51c5723e66cb68ab0b3ba",
-      "bytes": 4605076
+      "sha256": "1a22b9f0788946285b8217f3c5679b3fa69de47f1f6395dafd3b560d25646154",
+      "bytes": 4604557
     },
     "readiness": {
       "path": "reports/mrx-1000-readiness-matrix.json",
@@ -124009,7 +124009,7 @@
       "primary_keyword": "Texas unclaimed mineral royalty payments search",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -352098,5 +352098,5 @@
       ]
     }
   ],
-  "content_fingerprint_sha256": "1cecdd27c859f6001e33e1c170cf0e8e2dfbb9f6cdcf9e7f648b05aa0f6fdb14"
+  "content_fingerprint_sha256": "aab22e0ae50eed87540c1eb5bdae9f25582d50775e668dbd9450064c87bd4fd8"
 }
