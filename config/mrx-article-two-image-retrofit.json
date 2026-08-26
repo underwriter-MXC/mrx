@@ -1,18 +1,18 @@
 {
   "artifact_type": "mrx_article_two_image_retrofit",
   "schema_version": 1,
-  "generated_at_utc": "2026-08-26T14:59:42Z",
+  "generated_at_utc": "2026-08-26T15:33:07Z",
   "policy_source": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
   "summary": {
-    "article_count": 230,
-    "asset_count": 460,
-    "unique_source_art_count": 230,
-    "unique_hero_sha256_count": 230,
-    "unique_inline_sha256_count": 230,
-    "distinct_article_pair_count": 230,
-    "hero_ocr_pass_count": 230,
-    "inline_ocr_pass_count": 230,
-    "exact_filename_identity_count": 230
+    "article_count": 231,
+    "asset_count": 462,
+    "unique_source_art_count": 231,
+    "unique_hero_sha256_count": 231,
+    "unique_inline_sha256_count": 231,
+    "distinct_article_pair_count": 231,
+    "hero_ocr_pass_count": 231,
+    "inline_ocr_pass_count": 231,
+    "exact_filename_identity_count": 231
   },
   "contact_sheets": {
     "hero": [
@@ -3274,6 +3274,56 @@
           "actual": "report mineral rights sale federal\ntax return",
           "normalized_expected": "report mineral rights sale federal tax return",
           "normalized_actual": "report mineral rights sale federal tax return",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      }
+    },
+    {
+      "slug": "how-to-retrieve-recorded-mineral-deed-copy-for-cpa-handoff",
+      "title": "How to Retrieve a Recorded Mineral Deed Copy for a CPA Handoff",
+      "keyword": "recorded mineral deed copy",
+      "file_path": "src/content/posts/how-to-retrieve-recorded-mineral-deed-copy-for-cpa-handoff.mdx",
+      "source_public_path": "/assets/articles/hero/how-to-retrieve-a-recorded-mineral-deed-copy-for-a-cpa-handoff.webp",
+      "source_artifact_paths": [
+        "artifacts/mrx1000-wave151-creative-sources/how-to-retrieve-recorded-mineral-deed-copy-for-cpa-handoff-hero-base.png",
+        "artifacts/mrx1000-wave151-creative-sources/how-to-retrieve-recorded-mineral-deed-copy-for-cpa-handoff-inline-base.png"
+      ],
+      "generated_at_utc": "2026-08-26T15:32:34.656Z",
+      "hero": {
+        "public_path": "/assets/articles/hero/how-to-retrieve-a-recorded-mineral-deed-copy-for-a-cpa-handoff.webp",
+        "alt": "A county archive retrieval counter appears beside the exact recorded-mineral-deed-copy article title.",
+        "width": 1200,
+        "height": 630,
+        "mime_type": "image/webp",
+        "sha256": "19217b69726bf21808044b5df07b48c3baae96c40661b84cdbcc91281f725ede",
+        "perceptual_hash": "0000000000111111000000000011111100000000001111110010000000111111011100000011111101110000001000001111000000100000011000000010000000000000111110000000000001111111000000000111101100000000011110000000000001110001000000000111000100000000110000010000000000000011",
+        "neutralized_art_text_region_count": 1,
+        "ocr": {
+          "expected": "How to Retrieve a Recorded Mineral Deed Copy for a CPA Handoff",
+          "actual": "How to Retrieve a\nRecorded Mineral\nDeed Copy for a\nCPA Handoff",
+          "normalized_expected": "how to retrieve a recorded mineral deed copy for a cpa handoff",
+          "normalized_actual": "how to retrieve a recorded mineral deed copy for a cpa handoff",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      },
+      "inline": {
+        "public_path": "/assets/articles/inline/how-to-retrieve-recorded-mineral-deed-copy-for-cpa-handoff/recorded-mineral-deed-copy.webp",
+        "alt": "An overhead blank county-record retrieval log appears above the exact recorded mineral deed copy keyword.",
+        "rendered_text": "recorded mineral deed copy",
+        "visual_variant": "wave151-distinct-generated-strict-overhead-pale-county-record-retrieval-log",
+        "width": 1200,
+        "height": 675,
+        "mime_type": "image/webp",
+        "sha256": "dce0d4e56120c4e4a37aeb15f89043f788674c5141865d177021f7e65a0d7070",
+        "perceptual_hash": "1111111111111111111111111111111111111111111111111111111111111111111111111111111111000111111111111100011111111111110001111111111111000111111111111100011111111111111111111111111100000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "neutralized_art_text_region_count": 1,
+        "ocr": {
+          "expected": "recorded mineral deed copy",
+          "actual": "recorded mineral\ndeed copy",
+          "normalized_expected": "recorded mineral deed copy",
+          "normalized_actual": "recorded mineral deed copy",
           "uppercase_i_confusable_accepted": false,
           "pass": true
         }

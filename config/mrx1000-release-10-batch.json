@@ -1,7 +1,7 @@
 {
   "program": "MRX 1,000 Article SEO+AEO Production Program",
   "artifact_type": "authorized_release_10_batch",
-  "evidence_scaffold_generated_at_utc": "2026-08-26T15:09:08Z",
+  "evidence_scaffold_generated_at_utc": "2026-08-26T15:55:48Z",
   "decision_authority": {
     "successor_gate_decision_id": "D-2026-0804-16",
     "successor_gate_decision_path": "docs/governance/mrx1000-owner-continuous-publication-directive-2026-08-04.md",
@@ -450,13 +450,16 @@
     "wave149_selection_decision_sha256": "5c9100ba19680307d3aa68dbfa3e13f60531834829ba55a054f26677cd27d72e",
     "wave150_selection_decision_id": "MRX1000-W150-SELECT-2026-08-26",
     "wave150_selection_decision_path": "docs/governance/mrx1000-wave150-selection-decision-2026-08-26.md",
-    "wave150_selection_decision_sha256": "562759c27ffbbc7634bf995ec1c9f6c4a45215a2143226e488a9c30180ab5337"
+    "wave150_selection_decision_sha256": "562759c27ffbbc7634bf995ec1c9f6c4a45215a2143226e488a9c30180ab5337",
+    "wave151_selection_decision_id": "MRX1000-W151-SELECT-2026-08-26",
+    "wave151_selection_decision_path": "docs/governance/mrx1000-wave151-selection-decision-2026-08-26.md",
+    "wave151_selection_decision_sha256": "8f8c08a787280977b9b71a99f4bcfb5dbb1a8295792cbb44df7ce90262818f5e"
   },
   "identity_authority": {
     "scope_key": "canonical_slug",
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_sha256": "907520d85a8f68cc5c7d41ae37e8b3594057028a572a48a5112d2d1753ad25fa",
-    "canonical_ledger_generated_at": "2026-07-20T00:41:25.107Z",
+    "canonical_ledger_sha256": "8fa964e9c9d5fb506248bb757f23e99650ef0a9378837db50b5bae4ec212b25a",
+    "canonical_ledger_generated_at": "2026-07-20T14:21:06.392Z",
     "successor_ledger_decision_id": "D-2026-0723-LEDGER-04",
     "successor_ledger_decision_path": "artifacts/mrx1000-release-10/decisions/mrx-ceo-ledger-provenance-successor-20260723-04.md",
     "successor_ledger_decision_sha256": "09eca24bcd0e71563f2ac4197f564eec0ccb43a5ee955216da5c4a2543d04978",
@@ -470,11 +473,11 @@
     "authorization_scope": "declared_program_size_not_a_staged_release_cap",
     "admission_mode": "continuous_quality_gated",
     "continuous_quality_gated_from_selection_rank": 26,
-    "prior_verified_article_count": 221,
+    "prior_verified_article_count": 222,
     "fail_closed": true,
     "earned_scale_gates": [],
-    "exact_admitted_count": 222,
-    "exact_admitted_slate_sha256": "125b09b75b8219d0cab4952b2b52a3d9f74f1bca99e251425d05256a036b136d"
+    "exact_admitted_count": 223,
+    "exact_admitted_slate_sha256": "807a87d6c6c14b99efd7a39ac0afd3078f1568c4ac04f39bb08b596f36e4cebe"
   },
   "articles": [
     {
@@ -7860,10 +7863,47 @@
       "inline_path": "/assets/articles/inline/cash-for-mineral-rights-irs-tax-transcripts-cpa-handoff/cash-for-mineral-rights-tax-transcripts.webp",
       "inline_asset_sha256": "ccedcd2e7aad249bf5ec7ba46beb2600cc5ae67cf2879a205cddef7e3e9025ee",
       "inline_rendered_text": "cash for mineral rights tax transcripts"
+    },
+    {
+      "selection_rank": 223,
+      "program_row_id": "MRX1000-0652",
+      "source_shortlist_program_row_id": "MRX1000-0652",
+      "slug": "how-to-retrieve-recorded-mineral-deed-copy-for-cpa-handoff",
+      "title": "How to Retrieve a Recorded Mineral Deed Copy for a CPA Handoff",
+      "source_shortlist_title": "How to Retrieve a Recorded Mineral Deed Copy for a CPA Handoff",
+      "canonical_url": "https://mineralrightsxchange.com/blog/how-to-retrieve-recorded-mineral-deed-copy-for-cpa-handoff/",
+      "pillar": "mineral-rights-taxes",
+      "cluster": "tax-1031-legal-education",
+      "content_genius_article_uuid": null,
+      "archive_evidence_sha256": "fe74534b88c04569c90abaf72afc0ee50fbed29e1fb7a5f24cce88b7c52ba197",
+      "repo_path": "src/content/posts/how-to-retrieve-recorded-mineral-deed-copy-for-cpa-handoff.mdx",
+      "repo_sha256": "3a056ea6eaf55acdc582f103f09a1c19f077200541f1ccf4880cbbb7c93a8133",
+      "article_sha256": "3a056ea6eaf55acdc582f103f09a1c19f077200541f1ccf4880cbbb7c93a8133",
+      "hero_path": "/assets/articles/hero/how-to-retrieve-a-recorded-mineral-deed-copy-for-a-cpa-handoff.webp",
+      "hero_sha256": "19217b69726bf21808044b5df07b48c3baae96c40661b84cdbcc91281f725ede",
+      "hero_asset_sha256": "19217b69726bf21808044b5df07b48c3baae96c40661b84cdbcc91281f725ede",
+      "admission_status": "admitted_quality_gated",
+      "finalization_state": "draft_noindex_admitted",
+      "searchatlas_content_score": null,
+      "searchatlas_word_count": 2438,
+      "risk_citation_remediation": [
+        "The original broad MRX1000-0652 tax-question identity remains rejected; no repetitive factory body is imported or treated as publication evidence.",
+        "The replacement job is narrowly limited to current official county-record copy retrieval, provenance, unaltered source and receipt preservation, limitation capture, and professional handoff.",
+        "Current Texas statutes and current Tarrant and Harris County Clerk sources support the jurisdiction, copy, certification, index, availability, route, and fee examples used.",
+        "A search result, copy, certification, recording, empty result, or unavailable image is not treated as proof of ownership, title, validity, priority, legal effect, completeness, basis, tax treatment, value, or transaction outcome.",
+        "The public article and images expose no real or fictional person, county, address, instrument number, volume or page, date, legal description, deed language, signature, seal, property, amount, tax entry, offer, result, or conclusion.",
+        "Ownership, deed interpretation, title, validity, record priority, completeness, sufficiency, basis, character, tax, reporting, filing, retention, offer, valuation, security choice, and transaction decisions force an immediate CPA, attorney, or title-professional handoff.",
+        "Continuous quality-gated admission under the owner no-approval directives; no owner publication approval applies."
+      ],
+      "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/how-to-retrieve-recorded-mineral-deed-copy-for-cpa-handoff.json",
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/how-to-retrieve-recorded-mineral-deed-copy-for-cpa-handoff/recorded-mineral-deed-copy.webp",
+      "inline_asset_sha256": "dce0d4e56120c4e4a37aeb15f89043f788674c5141865d177021f7e65a0d7070",
+      "inline_rendered_text": "recorded mineral deed copy"
     }
   ],
   "admission_audit": {
-    "admitted_article_count": 222,
+    "admitted_article_count": 223,
     "selection_ranks": [
       1,
       2,
@@ -8086,7 +8126,8 @@
       219,
       220,
       221,
-      222
+      222,
+      223
     ],
     "duplicate_program_row_ids": [],
     "duplicate_slugs": [],
@@ -8145,9 +8186,9 @@
   "two_image_policy": {
     "directive": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
     "retrofit_manifest_path": "config/mrx-article-two-image-retrofit.json",
-    "retrofit_manifest_sha256": "ac8fe06863f782c480c99412b8c8b7f88ffbc52a6d037ad602a763ed09ad1b51",
-    "public_article_count": 230,
-    "batch_article_count": 222,
+    "retrofit_manifest_sha256": "90245ee982006efe0560f186d89dd4f92eb3d5e9875d9aa51c27c6013fefb478",
+    "public_article_count": 231,
+    "batch_article_count": 223,
     "assets_per_article": 2,
     "hero_share_identity_required": true,
     "inline_image_distinct_required": true,
