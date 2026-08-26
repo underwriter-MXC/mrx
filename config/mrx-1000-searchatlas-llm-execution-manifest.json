@@ -1,7 +1,7 @@
 {
   "program": "MRX1000",
   "artifact_type": "searchatlas_ordered_llm_local_execution_manifest",
-  "generated_at": "2026-07-20T08:25:37.000Z",
+  "generated_at": "2026-07-20T19:55:22.482Z",
   "deterministic": true,
   "local_only": true,
   "external_services_called": false,
@@ -9,13 +9,13 @@
   "inputs": {
     "ledger": {
       "path": "config/mrx-1000-canonical-content-ledger.json",
-      "sha256": "362e45011e390cde1d05f8911c826e74c8cc6024cde8f18a5562636b27da9ee9",
-      "bytes": 4597789
+      "sha256": "48b90a7a90837dbd3b6b992be0db65ca48dc5a9ded59220da8a8f17d1350f9d3",
+      "bytes": 4599526
     },
     "readiness": {
       "path": "reports/mrx-1000-readiness-matrix.json",
-      "sha256": "fec65f072b50871a74daeefb6e93a1bf30bccfd7ec71495edca7162501886312",
-      "bytes": 3446027,
+      "sha256": "6b402e8986efdb39c3528dffbefa362e762c72a2adbb06a200afeeda09a0d93c",
+      "bytes": 3446543,
       "sha256_method": "canonical_json_with_top_level_generated_at_masked",
       "generated_at_excluded_from_sha256": true
     },
@@ -366,30 +366,30 @@
     },
     "by_canonical_inventory_state": {
       "incumbent_draft_nonpublic_held": 23,
-      "live_public_published_route": 212,
+      "live_public_published_route": 213,
       "pilot_draft_noindex_stage": 25,
-      "planning_only_inventory": 740
+      "planning_only_inventory": 739
     },
     "by_searchatlas_action_needed": {
-      "preserve_workspace_public_route_and_search_vendor_identity_before_any_creation": 136,
+      "preserve_workspace_public_route_and_search_vendor_identity_before_any_creation": 137,
       "reconcile_artifact_bound_content_genius_record_no_creation": 2,
       "reconcile_pilot_non_creation_workflow_label_then_bind_or_conditionally_create": 23,
       "reconcile_unambiguous_exact_title_vendor_candidate_no_creation": 140,
       "resolve_ambiguous_exact_title_vendor_candidates_no_creation": 6,
-      "search_vendor_identity_then_conditionally_create_after_identity_and_quality_preflight": 693
+      "search_vendor_identity_then_conditionally_create_after_identity_and_quality_preflight": 692
     },
-    "repo_mdx_present": 260,
-    "workspace_public_route_configured": 212,
+    "repo_mdx_present": 261,
+    "workspace_public_route_configured": 213,
     "planning_searchatlas_map_id_count": 225,
     "planning_searchatlas_title_uuid_count": 200,
     "persisted_ledger_content_genius_article_uuid_count": 0,
-    "checksummed_review_candidate_rows": 236,
-    "rows_without_checksummed_review_candidate": 764,
+    "checksummed_review_candidate_rows": 237,
+    "rows_without_checksummed_review_candidate": 763,
     "by_review_candidate_state": {
-      "CHECKSUMMED_EXISTING_PUBLIC_ARTICLE_READY_FOR_LLM_REVIEW": 212,
+      "CHECKSUMMED_EXISTING_PUBLIC_ARTICLE_READY_FOR_LLM_REVIEW": 213,
       "CHECKSUMMED_HELD_SUBSTANTIVE_DRAFT_READY_FOR_LLM_REVIEW": 23,
       "NO_CHECKSUMMED_REVIEW_CANDIDATE_PILOT_QA_SHELL_ONLY": 24,
-      "NO_WORKSPACE_CONTENT_CANDIDATE": 740,
+      "NO_WORKSPACE_CONTENT_CANDIDATE": 739,
       "ROW2_REMEDIATED_NOINDEX_CANDIDATE_VALIDATED_FOR_ORDERED_LLM_REVIEW": 1
     },
     "pilot_workspace_qa_shell_rows": 25,
@@ -122896,28 +122896,52 @@
     },
     {
       "program_row_id": "MRX1000-0333",
-      "canonical_title": "Cash For Mineral Rights: Royalty Check Review Before Accepting An Offer",
-      "canonical_slug": "cash-for-mineral-rights-royalty-check-review-before-accepting-an-offer",
-      "canonical_url": "https://mineralrightsxchange.com/blog/cash-for-mineral-rights-royalty-check-review-before-accepting-an-offer/",
+      "canonical_title": "Texas RRC Oil and Gas Lease Name Index Retrieval Provenance Worksheet",
+      "canonical_slug": "texas-rrc-oil-and-gas-lease-name-index-retrieval-provenance-worksheet",
+      "canonical_url": "https://mineralrightsxchange.com/blog/texas-rrc-oil-and-gas-lease-name-index-retrieval-provenance-worksheet/",
       "pillar": "offer-review",
       "pillar_url": "/offer-review/",
       "cluster": "offer-review-buyer-comparison-safety",
-      "primary_keyword": "cash for mineral rights",
+      "primary_keyword": "Texas RRC Oil and Gas Lease Name Index retrieval",
       "authoritative_current_state": {
-        "canonical_inventory_state": "planning_only_inventory",
-        "normalized_status": "planning_only_factory_queue_title_metadata",
-        "source_system": "factory_queue_title_metadata",
+        "canonical_inventory_state": "live_public_published_route",
+        "normalized_status": "live_public_published_route_release_10_verified",
+        "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
-          "state": "NO_WORKSPACE_MDX",
-          "path": null,
-          "mdx_exists": false,
-          "source_sha256": null,
-          "publication_status": null,
+          "state": "WORKSPACE_MDX_PRESENT",
+          "path": "src/content/posts/texas-rrc-oil-and-gas-lease-name-index-retrieval-provenance-worksheet.mdx",
+          "mdx_exists": true,
+          "source_sha256": "07f9d0776aecca9f34fffffc90ee7163df3504400f9fa93c81f7b242787b9832",
+          "publication_status": "published",
           "frontmatter_noindex": false,
-          "workspace_public_route_configured": false,
+          "workspace_public_route_configured": true,
           "production_live_verified_in_this_local_build": false,
-          "content_evidence": null
+          "content_evidence": {
+            "frontmatter_title": "Texas RRC Oil and Gas Lease Name Index Retrieval Provenance Worksheet",
+            "frontmatter_slug": null,
+            "frontmatter_publication_status": "published",
+            "frontmatter_reviewed_at": "2026-08-26T06:12:37Z",
+            "frontmatter_reviewed_by": "mrx_compliance-continuous-wave128",
+            "frontmatter_article_id": null,
+            "frontmatter_searchatlas_uuid": null,
+            "frontmatter_workflow_status": null,
+            "frontmatter_remediated_from_sha256": null,
+            "frontmatter_body_checksum_sha256": null,
+            "frontmatter_body_length_chars": 0,
+            "frontmatter_body_word_count": 0,
+            "frontmatter_draft": false,
+            "frontmatter_noindex": false,
+            "frontmatter_indexable": null,
+            "body_sha256": "7e9759efcde8b9f566a145b265d6119301a28224c49e195b9843f2487a727bd7",
+            "body_bytes": 10886,
+            "body_characters": 10886,
+            "body_word_count": 1428,
+            "explicit_qa_shell_without_final_copy": false,
+            "filename_matches_canonical_slug": true,
+            "frontmatter_title_matches_canonical": true,
+            "frontmatter_publication_status_matches_ledger": true
+          }
         },
         "planning_handles": {
           "searchatlas_map_id": null,
@@ -122940,28 +122964,31 @@
           "manual_reconciliation_required": true
         },
         "review_candidate": {
-          "state": "NO_WORKSPACE_CONTENT_CANDIDATE",
-          "checksummed_review_candidate_present": false,
-          "path": null,
-          "source_sha256": null,
-          "body_sha256": null,
-          "body_word_count": null,
-          "candidate_type": null,
-          "readiness_evidence_verified": false,
-          "readiness_evidence_paths": [],
+          "state": "CHECKSUMMED_EXISTING_PUBLIC_ARTICLE_READY_FOR_LLM_REVIEW",
+          "checksummed_review_candidate_present": true,
+          "path": "src/content/posts/texas-rrc-oil-and-gas-lease-name-index-retrieval-provenance-worksheet.mdx",
+          "source_sha256": "07f9d0776aecca9f34fffffc90ee7163df3504400f9fa93c81f7b242787b9832",
+          "body_sha256": "7e9759efcde8b9f566a145b265d6119301a28224c49e195b9843f2487a727bd7",
+          "body_word_count": 1428,
+          "candidate_type": "existing_public_article",
+          "readiness_evidence_verified": true,
+          "readiness_evidence_paths": [
+            "reports/mrx-1000-readiness-matrix.json",
+            "config/mrx-1000-canonical-content-ledger.json"
+          ],
           "readiness_checks": {
-            "workspace_source_checksum_present": false,
+            "workspace_source_checksum_present": true,
             "readiness_row_identity_verified": true,
-            "filename_matches_canonical_slug": false,
-            "frontmatter_title_matches_canonical": false,
-            "frontmatter_publication_status_matches_ledger": false,
-            "substantive_body_at_least_500_words": false,
-            "explicit_qa_shell_absent": false,
-            "review_metadata_present": false,
-            "canonical_state_supports_content_review": false
+            "filename_matches_canonical_slug": true,
+            "frontmatter_title_matches_canonical": true,
+            "frontmatter_publication_status_matches_ledger": true,
+            "substantive_body_at_least_500_words": true,
+            "explicit_qa_shell_absent": true,
+            "review_metadata_present": true,
+            "canonical_state_supports_content_review": true
           },
-          "workspace_mdx_is_review_candidate": false,
-          "workspace_mdx_rejection_reason": "No workspace MDX exists.",
+          "workspace_mdx_is_review_candidate": true,
+          "workspace_mdx_rejection_reason": null,
           "special_candidate_validation": null
         }
       },
@@ -122972,7 +122999,7 @@
         "position_in_batch": 19,
         "batch_size": 25,
         "assignment_policy": "remaining_rows_by_program_row_id",
-        "action_needed": "search_vendor_identity_then_conditionally_create_after_identity_and_quality_preflight",
+        "action_needed": "preserve_workspace_public_route_and_search_vendor_identity_before_any_creation",
         "execution_state": "WAITING_FOR_IDENTITY_CONTENT_AND_REVIEW_GATES_NO_EXTERNAL_WRITE",
         "execution_eligible_now": false,
         "creation_needed_proven": false,
@@ -122986,9 +123013,9 @@
           "read_only_quota_preflight_required_before_external_write": true,
           "canonical_identity_reconciliation_required": true,
           "checksummed_content_candidate_required_before_review": true,
-          "checksummed_content_candidate_present": false,
-          "review_candidate_path_and_sha256_present": false,
-          "review_readiness_evidence_verified": false,
+          "checksummed_content_candidate_present": true,
+          "review_candidate_path_and_sha256_present": true,
+          "review_readiness_evidence_verified": true,
           "compliance_seo_aeo_editorial_gates_required": true
         },
         "evidence": {
@@ -123015,10 +123042,10 @@
           "availability_state": "NOT_CHECKED_BY_LOCAL_ONLY_BUILD",
           "dispatch_eligible_now": false,
           "prerequisite_gates": {
-            "checksummed_review_candidate_present": false,
-            "review_candidate_path": null,
-            "review_candidate_sha256": null,
-            "review_candidate_readiness_evidence_verified": false,
+            "checksummed_review_candidate_present": true,
+            "review_candidate_path": "src/content/posts/texas-rrc-oil-and-gas-lease-name-index-retrieval-provenance-worksheet.mdx",
+            "review_candidate_sha256": "07f9d0776aecca9f34fffffc90ee7163df3504400f9fa93c81f7b242787b9832",
+            "review_candidate_readiness_evidence_verified": true,
             "predecessor_key": null,
             "predecessor_pass_required": false,
             "predecessor_pass_observed": false,
@@ -123052,10 +123079,10 @@
           "availability_state": "NOT_CHECKED_BY_LOCAL_ONLY_BUILD",
           "dispatch_eligible_now": false,
           "prerequisite_gates": {
-            "checksummed_review_candidate_present": false,
-            "review_candidate_path": null,
-            "review_candidate_sha256": null,
-            "review_candidate_readiness_evidence_verified": false,
+            "checksummed_review_candidate_present": true,
+            "review_candidate_path": "src/content/posts/texas-rrc-oil-and-gas-lease-name-index-retrieval-provenance-worksheet.mdx",
+            "review_candidate_sha256": "07f9d0776aecca9f34fffffc90ee7163df3504400f9fa93c81f7b242787b9832",
+            "review_candidate_readiness_evidence_verified": true,
             "predecessor_key": "chatgpt",
             "predecessor_pass_required": true,
             "predecessor_pass_observed": false,
@@ -123089,10 +123116,10 @@
           "availability_state": "UNAVAILABLE_PER_LOCAL_FRAMEWORK_SNAPSHOT",
           "dispatch_eligible_now": false,
           "prerequisite_gates": {
-            "checksummed_review_candidate_present": false,
-            "review_candidate_path": null,
-            "review_candidate_sha256": null,
-            "review_candidate_readiness_evidence_verified": false,
+            "checksummed_review_candidate_present": true,
+            "review_candidate_path": "src/content/posts/texas-rrc-oil-and-gas-lease-name-index-retrieval-provenance-worksheet.mdx",
+            "review_candidate_sha256": "07f9d0776aecca9f34fffffc90ee7163df3504400f9fa93c81f7b242787b9832",
+            "review_candidate_readiness_evidence_verified": true,
             "predecessor_key": "google_gemini",
             "predecessor_pass_required": true,
             "predecessor_pass_observed": false,
@@ -123126,10 +123153,10 @@
           "availability_state": "NOT_CHECKED_BY_LOCAL_ONLY_BUILD",
           "dispatch_eligible_now": false,
           "prerequisite_gates": {
-            "checksummed_review_candidate_present": false,
-            "review_candidate_path": null,
-            "review_candidate_sha256": null,
-            "review_candidate_readiness_evidence_verified": false,
+            "checksummed_review_candidate_present": true,
+            "review_candidate_path": "src/content/posts/texas-rrc-oil-and-gas-lease-name-index-retrieval-provenance-worksheet.mdx",
+            "review_candidate_sha256": "07f9d0776aecca9f34fffffc90ee7163df3504400f9fa93c81f7b242787b9832",
+            "review_candidate_readiness_evidence_verified": true,
             "predecessor_key": "claude_opus_4_6",
             "predecessor_pass_required": true,
             "predecessor_pass_observed": false,
@@ -123163,10 +123190,10 @@
           "availability_state": "NOT_CHECKED_BY_LOCAL_ONLY_BUILD",
           "dispatch_eligible_now": false,
           "prerequisite_gates": {
-            "checksummed_review_candidate_present": false,
-            "review_candidate_path": null,
-            "review_candidate_sha256": null,
-            "review_candidate_readiness_evidence_verified": false,
+            "checksummed_review_candidate_present": true,
+            "review_candidate_path": "src/content/posts/texas-rrc-oil-and-gas-lease-name-index-retrieval-provenance-worksheet.mdx",
+            "review_candidate_sha256": "07f9d0776aecca9f34fffffc90ee7163df3504400f9fa93c81f7b242787b9832",
+            "review_candidate_readiness_evidence_verified": true,
             "predecessor_key": "perplexity",
             "predecessor_pass_required": true,
             "predecessor_pass_observed": false,
@@ -123197,7 +123224,7 @@
           "perplexity",
           "microsoft_copilot"
         ],
-        "next_stage": null,
+        "next_stage": "chatgpt",
         "any_verdict_recorded": false,
         "all_required_verdicts_passed": false,
         "sequence_complete": false,
@@ -123215,7 +123242,7 @@
         "release_action_eligible_now": false,
         "index_submission_eligible_now": false,
         "sitemap_addition_eligible_now": false,
-        "currently_in_workspace_sitemap": false,
+        "currently_in_workspace_sitemap": true,
         "production_live_verified_in_this_local_build": false,
         "release_or_index_action_performed": false,
         "exact_claude_opus_4_6_required_before_release_or_index_transition": true,
@@ -123232,7 +123259,6 @@
         "ORDERED_LLM_REVIEW_SEQUENCE_NOT_COMPLETE",
         "LOCAL_ONLY_MANIFEST_EXTERNAL_DISPATCH_NOT_PERFORMED",
         "ARTICLE_SPECIFIC_QUALITY_CLEARANCE_NOT_COMPLETE",
-        "NO_CHECKSUMMED_REVIEW_CANDIDATE",
         "CONTENT_GENIUS_CANONICAL_ROW_UUID_BINDING_UNPROVEN"
       ]
     },
@@ -351652,14 +351678,14 @@
       ]
     },
     {
-      "program_row_id": "MRX1000-1038",
-      "canonical_title": "Mineral Rights Buyers: Family Decision Guide In 2026",
-      "canonical_slug": "mineral-rights-buyers-family-decision-guide-in-2026",
-      "canonical_url": "https://mineralrightsxchange.com/blog/mineral-rights-buyers-family-decision-guide-in-2026/",
+      "program_row_id": "MRX1000-1039",
+      "canonical_title": "Cash For Mineral Rights: Royalty Check Review Before Accepting An Offer",
+      "canonical_slug": "cash-for-mineral-rights-royalty-check-review-before-accepting-an-offer",
+      "canonical_url": "https://mineralrightsxchange.com/blog/cash-for-mineral-rights-royalty-check-review-before-accepting-an-offer/",
       "pillar": "offer-review",
       "pillar_url": "/offer-review/",
       "cluster": "offer-review-buyer-comparison-safety",
-      "primary_keyword": "mineral rights buyers",
+      "primary_keyword": "cash for mineral rights",
       "authoritative_current_state": {
         "canonical_inventory_state": "planning_only_inventory",
         "normalized_status": "planning_only_factory_queue_title_metadata",
@@ -351994,5 +352020,5 @@
       ]
     }
   ],
-  "content_fingerprint_sha256": "2896da532cf5a97bd4978c4c708bca63150f5dde7f1b0a7288f1c1c5eb00f3ae"
+  "content_fingerprint_sha256": "ab0ccdcc797354db4ccd1360b27e337357fd8fecae7175fa18490077991ec752"
 }
