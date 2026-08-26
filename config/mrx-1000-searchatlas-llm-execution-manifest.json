@@ -1,7 +1,7 @@
 {
   "program": "MRX1000",
   "artifact_type": "searchatlas_ordered_llm_local_execution_manifest",
-  "generated_at": "2026-07-20T16:40:33.318Z",
+  "generated_at": "2026-07-20T23:28:34.190Z",
   "deterministic": true,
   "local_only": true,
   "external_services_called": false,
@@ -9,13 +9,13 @@
   "inputs": {
     "ledger": {
       "path": "config/mrx-1000-canonical-content-ledger.json",
-      "sha256": "d9b43831ec2d2b2d7073d89419df5e93ad3dfbb337968df4fb3fdb629f40f03b",
-      "bytes": 4632779
+      "sha256": "bfbfc14077311449c11b2d8d5ab4ee6d1d958e24adcd5368e06b8b23d59e7d00",
+      "bytes": 4633137
     },
     "readiness": {
       "path": "reports/mrx-1000-readiness-matrix.json",
-      "sha256": "4d20843e9682b4c29df18a92b19e472cbdc1ec70b25f85889e8d9688dac4bf15",
-      "bytes": 3455487,
+      "sha256": "b0c573e378917e04fa3bf6fbe68073b60916887d0f473f55d8777118f92a1ac0",
+      "bytes": 3455515,
       "sha256_method": "canonical_json_with_top_level_generated_at_masked",
       "generated_at_excluded_from_sha256": true
     },
@@ -255484,7 +255484,7 @@
       "primary_keyword": "Brazos CAD mineral account search",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -352494,5 +352494,5 @@
       ]
     }
   ],
-  "content_fingerprint_sha256": "9c9d4a4bd778f1f50a8cfee7a08315023bae2223bd7a910eb3e22b784b7f7e2e"
+  "content_fingerprint_sha256": "cd0ea98c4474cf2d18e423a6e9fa0feceb78b4507ba66ea860b66ae9ac848f1a"
 }
