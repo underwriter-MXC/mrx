@@ -1,7 +1,7 @@
 {
   "program": "MRX1000",
   "artifact_type": "searchatlas_ordered_llm_local_execution_manifest",
-  "generated_at": "2026-07-20T14:16:02.985Z",
+  "generated_at": "2026-07-20T08:25:37.000Z",
   "deterministic": true,
   "local_only": true,
   "external_services_called": false,
@@ -9,13 +9,13 @@
   "inputs": {
     "ledger": {
       "path": "config/mrx-1000-canonical-content-ledger.json",
-      "sha256": "21b602f40d679472315e57e96eed93d2297a9da87a8d5bb8d5b860b537b58e9c",
-      "bytes": 4624286
+      "sha256": "7540ef4f8f40870bdf9b8617b2c01c4c7c2529cec3aef9e70c3ee31d5dda6873",
+      "bytes": 4623871
     },
     "readiness": {
       "path": "reports/mrx-1000-readiness-matrix.json",
-      "sha256": "7b14dc63c87f6efa39cd4a82d1eed059142b0537a420ede82dc59170bfc56837",
-      "bytes": 3453313,
+      "sha256": "e3d317cb4a1fa66503a7533b7bc3dbb671191229746c1b78ccb049e591d5edc8",
+      "bytes": 3453341,
       "sha256_method": "canonical_json_with_top_level_generated_at_masked",
       "generated_at_excluded_from_sha256": true
     },
@@ -182277,7 +182277,7 @@
       "primary_keyword": "Texas county tax assessor collector directory retrieval",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -352358,5 +352358,5 @@
       ]
     }
   ],
-  "content_fingerprint_sha256": "50985e57df765ab322b12a5ad375c4502c7e9b46591ac611978352477b57f8b5"
+  "content_fingerprint_sha256": "ad456826bcf36808f15ae3e1369ac7e8896f65bff486087a9fde5d1d71584b98"
 }
