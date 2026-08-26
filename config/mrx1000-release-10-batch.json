@@ -1,7 +1,7 @@
 {
   "program": "MRX 1,000 Article SEO+AEO Production Program",
   "artifact_type": "authorized_release_10_batch",
-  "evidence_scaffold_generated_at_utc": "2026-08-26T19:32:46Z",
+  "evidence_scaffold_generated_at_utc": "2026-08-26T20:23:01Z",
   "decision_authority": {
     "successor_gate_decision_id": "D-2026-0804-16",
     "successor_gate_decision_path": "docs/governance/mrx1000-owner-continuous-publication-directive-2026-08-04.md",
@@ -468,13 +468,16 @@
     "wave155_selection_decision_sha256": "63271916c691fb0a47a0b0011f436efb1e7f6058dbf7e31d8a61dd1eaad5de17",
     "wave156_selection_decision_id": "MRX1000-W156-SELECT-2026-08-26",
     "wave156_selection_decision_path": "docs/governance/mrx1000-wave156-selection-decision-2026-08-26.md",
-    "wave156_selection_decision_sha256": "a1cbae56f0bc66dc3aacb9bc27f37f71436771790b982b9974194009854796c6"
+    "wave156_selection_decision_sha256": "a1cbae56f0bc66dc3aacb9bc27f37f71436771790b982b9974194009854796c6",
+    "wave157_selection_decision_id": "MRX1000-W157-SELECT-2026-08-26",
+    "wave157_selection_decision_path": "docs/governance/mrx1000-wave157-selection-decision-2026-08-26.md",
+    "wave157_selection_decision_sha256": "8675666a4d18d4ea6bf670dca479b0986e6b77a7b349ffed2ee88b7248e3a128"
   },
   "identity_authority": {
     "scope_key": "canonical_slug",
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_sha256": "441edf8b02d4ac23c67c9ea51dacb4fb4f20ece471d4c76fafe8303da5f2e62a",
-    "canonical_ledger_generated_at": "2026-07-20T22:11:26.679Z",
+    "canonical_ledger_sha256": "cecd4594c9eb22607ada128234b22ed9bd715e7b2ef97dd3a6ebf070ab289535",
+    "canonical_ledger_generated_at": "2026-07-20T03:42:00.514Z",
     "successor_ledger_decision_id": "D-2026-0723-LEDGER-04",
     "successor_ledger_decision_path": "artifacts/mrx1000-release-10/decisions/mrx-ceo-ledger-provenance-successor-20260723-04.md",
     "successor_ledger_decision_sha256": "09eca24bcd0e71563f2ac4197f564eec0ccb43a5ee955216da5c4a2543d04978",
@@ -488,11 +491,11 @@
     "authorization_scope": "declared_program_size_not_a_staged_release_cap",
     "admission_mode": "continuous_quality_gated",
     "continuous_quality_gated_from_selection_rank": 26,
-    "prior_verified_article_count": 227,
+    "prior_verified_article_count": 228,
     "fail_closed": true,
     "earned_scale_gates": [],
-    "exact_admitted_count": 228,
-    "exact_admitted_slate_sha256": "88c7eb422e3a465bebc658beee8dd53e47759131dedf4271611230acdd5bce17"
+    "exact_admitted_count": 229,
+    "exact_admitted_slate_sha256": "4684ab9b235f29b19b67766cc3a2e479dcb98687f901c0e9dfac5564b70dda6f"
   },
   "articles": [
     {
@@ -8100,10 +8103,47 @@
       "inline_path": "/assets/articles/inline/brazos-cad-mineral-property-arb-hearing-notice-inventory/brazos-cad-mineral-property-arb-hearing-notice.webp",
       "inline_asset_sha256": "1a5468bc557a15c80b13656b8b82b8a4686d0f615eda1037b6687596491093cb",
       "inline_rendered_text": "Brazos CAD mineral property ARB hearing notice"
+    },
+    {
+      "selection_rank": 229,
+      "program_row_id": "MRX1000-0756",
+      "source_shortlist_program_row_id": "MRX1000-0756",
+      "slug": "form-50-843-electronic-delivery-request-field-inventory-crane-mineral-properties",
+      "title": "Form 50-843 Electronic Delivery Request Field Inventory for Crane Mineral Properties",
+      "source_shortlist_title": "Form 50-843 Electronic Delivery Request Field Inventory for Crane Mineral Properties",
+      "canonical_url": "https://mineralrightsxchange.com/blog/form-50-843-electronic-delivery-request-field-inventory-crane-mineral-properties/",
+      "pillar": "texas-mineral-rights",
+      "cluster": "texas-county-basin-local-intent",
+      "content_genius_article_uuid": null,
+      "archive_evidence_sha256": "ae83c196dce934f28281863ba73f5ecef1c05571821b8ca8747835b8ca79b5b3",
+      "repo_path": "src/content/posts/form-50-843-electronic-delivery-request-field-inventory-crane-mineral-properties.mdx",
+      "repo_sha256": "4e22481a8b48e9c3f8f64114e2ebcdff2288dc3c67597cbce9ae18fa8316684b",
+      "article_sha256": "4e22481a8b48e9c3f8f64114e2ebcdff2288dc3c67597cbce9ae18fa8316684b",
+      "hero_path": "/assets/articles/hero/form-50-843-electronic-delivery-request-field-inventory-for-crane-mineral-properties.webp",
+      "hero_sha256": "e57751b48e6606400b921e087892bbbbe8c178bdeff2803330d396fa25da1a5b",
+      "hero_asset_sha256": "e57751b48e6606400b921e087892bbbbe8c178bdeff2803330d396fa25da1a5b",
+      "admission_status": "admitted_quality_gated",
+      "finalization_state": "draft_noindex_admitted",
+      "searchatlas_content_score": null,
+      "searchatlas_word_count": 1918,
+      "risk_citation_remediation": [
+        "The original generic MRX1000-0756 Crane County valuation identity is rejected; adjacent family, guide, market-update, risk, timeline, and county-value identities remain planning-only.",
+        "The replacement owns only a blank source-controlled inventory of the current Form 50-843 sections and field labels linked by Crane CAD. It does not repeat contact routing, protest evidence, post-submission status, received-notice inventory, transaction correspondence, or valuation.",
+        "Current Crane CAD, Texas Comptroller, and Texas Tax Code sources support local source identity, current-link and revision provenance, printed blank-form structure, directory and forms context, and Chapter 1 provenance only.",
+        "Recorded, not displayed, revision conflict, and authorized-human-stop are document-control states only and are not converted into form completeness, correct selection, authority, consent, delivery, acceptance, timeliness, legal effect, tax, appraisal, valuation, or outcome conclusions.",
+        "The public template and images expose no person, owner, representative, address, account, legal description, email, signature, real form, selection, property fact, recommendation, result, or outcome.",
+        "Any office selection, private-data entry, form completion, signature, contact, upload, submission, deadline calculation, legal interpretation, tax guidance, appraisal judgment, valuation, representation, or strategy decision forces an authorized-human or qualified-professional stop.",
+        "Continuous quality-gated admission under the owner no-approval directives; no owner publication approval applies."
+      ],
+      "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/form-50-843-electronic-delivery-request-field-inventory-crane-mineral-properties.json",
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/form-50-843-electronic-delivery-request-field-inventory-crane-mineral-properties/form-50-843-crane-mineral-property.webp",
+      "inline_asset_sha256": "3d5f1a4e05610ad83d0bf91811fe4407e425d7801add07f3fb206ef470ea2184",
+      "inline_rendered_text": "Form 50-843 Crane mineral property"
     }
   ],
   "admission_audit": {
-    "admitted_article_count": 228,
+    "admitted_article_count": 229,
     "selection_ranks": [
       1,
       2,
@@ -8332,7 +8372,8 @@
       225,
       226,
       227,
-      228
+      228,
+      229
     ],
     "duplicate_program_row_ids": [],
     "duplicate_slugs": [],
@@ -8391,9 +8432,9 @@
   "two_image_policy": {
     "directive": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
     "retrofit_manifest_path": "config/mrx-article-two-image-retrofit.json",
-    "retrofit_manifest_sha256": "d951b06aee4d808223c1cc489fc60e45779eef1028ecb0a02d7ea7a0eee80c4d",
-    "public_article_count": 236,
-    "batch_article_count": 228,
+    "retrofit_manifest_sha256": "b26753cc98742826c328de90aeec38b5ed03715f89886b60a42f4394324a02b0",
+    "public_article_count": 237,
+    "batch_article_count": 229,
     "assets_per_article": 2,
     "hero_share_identity_required": true,
     "inline_image_distinct_required": true,
