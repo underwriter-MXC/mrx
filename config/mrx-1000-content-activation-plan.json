@@ -1,15 +1,15 @@
 {
   "artifact_type": "mrx1000_content_activation_plan",
   "plan_version": "mrx1000-content-activation-v1.1.0",
-  "generated_at": "2026-07-20T06:53:47.669Z",
+  "generated_at": "2026-07-20T20:49:54.989Z",
   "generated_at_method": "canonical_ledger_generated_at",
   "generator": "scripts/build-mrx-1000-activation-plan.mjs",
-  "content_fingerprint_sha256": "3b708902e6645656e4edd2b7fef8f5bca87e60a6bc1010039d2edc8331ded3c0",
+  "content_fingerprint_sha256": "da877780f5595bc3ba5e9e6820126c33edba94d5e5ccdfffe43943a24d3c7180",
   "inputs": {
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_fingerprint_sha256": "082b965ebcf18f5f1cefda75e1746f2d163d18dbf8341abc0edb66464a242bc0",
+    "canonical_ledger_fingerprint_sha256": "347bc92395ef9f226bda0cfd9cef5ecb4cfa753cbc91a807479e60ff6d86eaba",
     "canonical_ledger_fingerprint_verified": true,
-    "canonical_ledger_generated_at": "2026-07-20T06:53:47.669Z",
+    "canonical_ledger_generated_at": "2026-07-20T20:49:54.989Z",
     "owner_decision": {
       "decision_id": "D-2026-0804-16",
       "signed_disposition": "APPROVED_CONTINUOUS_QUALITY_GATED_ARTICLE_PUBLICATION",
@@ -115,9 +115,9 @@
     },
     "by_source_preservation_classification": {
       "incumbent_draft_nonpublic_held": 23,
-      "live_public_published_route": 226,
+      "live_public_published_route": 227,
       "pilot_draft_noindex_stage": 25,
-      "planning_only_inventory": 726
+      "planning_only_inventory": 725
     }
   },
   "rows": [
@@ -35608,11 +35608,11 @@
       },
       "sibling_link": {
         "target_program_row_id": "MRX1000-0586",
-        "target_title": "Sell Mineral Rights: Guide For Royalty Owners",
-        "url": "/blog/sell-mineral-rights-guide-for-royalty-owners/",
+        "target_title": "IRS Form 1099-MISC Royalty Box 2 Source-Scope Worksheet",
+        "url": "/blog/irs-form-1099-misc-royalty-box-2-source-scope-worksheet/",
         "relationship": "same_cluster_next_by_program_row_id_cyclic",
-        "target_source_preservation_classification": "planning_only_inventory",
-        "target_route_live": false,
+        "target_source_preservation_classification": "live_public_published_route",
+        "target_route_live": true,
         "status": "planned_local_only"
       },
       "primary_cta": {
@@ -35655,15 +35655,15 @@
     },
     {
       "program_row_id": "MRX1000-0586",
-      "canonical_title": "Sell Mineral Rights: Guide For Royalty Owners",
-      "canonical_slug": "sell-mineral-rights-guide-for-royalty-owners",
-      "canonical_url": "/blog/sell-mineral-rights-guide-for-royalty-owners/",
+      "canonical_title": "IRS Form 1099-MISC Royalty Box 2 Source-Scope Worksheet",
+      "canonical_slug": "irs-form-1099-misc-royalty-box-2-source-scope-worksheet",
+      "canonical_url": "/blog/irs-form-1099-misc-royalty-box-2-source-scope-worksheet/",
       "cluster": "royalties-owner-operations",
       "pillar": "oil-and-gas-royalties",
-      "search_intent": "compare-offers",
+      "search_intent": "informational",
       "funnel_stage": "education",
-      "source_preservation_classification": "planning_only_inventory",
-      "source_route_live": false,
+      "source_preservation_classification": "live_public_published_route",
+      "source_route_live": true,
       "pillar_link": {
         "url": "/learning-center/oil-and-gas-royalties/",
         "route_evidence": "src/pages/learning-center/oil-and-gas-royalties/index.astro",
@@ -35685,7 +35685,7 @@
         "placement_code": "mid_article",
         "placement_guidance": "Place after the direct answer or first useful checklist, before the first deep-dive section.",
         "assignment_rule": "education_stage_nurture",
-        "assignment_basis": "education:compare-offers",
+        "assignment_basis": "education:informational",
         "approved_route_evidence": "src/pages/free-guide.astro",
         "role": "primary_nurture",
         "is_appointment_cta": false,
@@ -35698,7 +35698,7 @@
         "placement_code": "closing_team_handoff",
         "placement_guidance": "Place after the final takeaway and primary guide CTA, before related articles, as the optional MRX team handoff.",
         "assignment_rule": "education_stage_optional_team_handoff",
-        "assignment_basis": "education:compare-offers",
+        "assignment_basis": "education:informational",
         "approved_route_evidence": "src/pages/book.astro",
         "role": "secondary_appointment_after_primary_nurture",
         "distinct_from_primary_cta": true,
@@ -35712,7 +35712,7 @@
         "rendered_triangle_verified": false,
         "live_status": "not_published_or_verified_by_this_plan",
         "live_triangle_verified": false,
-        "release_status": "eligible_for_continuous_quality_review_not_yet_cleared",
+        "release_status": "released_under_d16_continuous_quality_gate",
         "numerical_release_cap_applies": false
       }
     },
@@ -37686,69 +37686,6 @@
         "status": "planned_local_only"
       },
       "sibling_link": {
-        "target_program_row_id": "MRX1000-0619",
-        "target_title": "Value Of Royalty Checks: Negotiation Tips For Royalty Owners",
-        "url": "/blog/value-of-royalty-checks-negotiation-tips-for-royalty-owners/",
-        "relationship": "same_cluster_next_by_program_row_id_cyclic",
-        "target_source_preservation_classification": "planning_only_inventory",
-        "target_route_live": false,
-        "status": "planned_local_only"
-      },
-      "primary_cta": {
-        "url": "/free-guide/",
-        "label": "Get the Free Mineral Rights Guide",
-        "name": "mrx1000-oil-and-gas-royalties-free_guide-mid_article",
-        "placement_code": "mid_article",
-        "placement_guidance": "Place after the direct answer or first useful checklist, before the first deep-dive section.",
-        "assignment_rule": "education_stage_nurture",
-        "assignment_basis": "education:valuation",
-        "approved_route_evidence": "src/pages/free-guide.astro",
-        "role": "primary_nurture",
-        "is_appointment_cta": false,
-        "status": "planned_local_only"
-      },
-      "appointment_cta": {
-        "url": "/book/",
-        "label": "Review My Royalty Information",
-        "name": "mrx1000-oil-and-gas-royalties-book_review-closing_team_handoff",
-        "placement_code": "closing_team_handoff",
-        "placement_guidance": "Place after the final takeaway and primary guide CTA, before related articles, as the optional MRX team handoff.",
-        "assignment_rule": "education_stage_optional_team_handoff",
-        "assignment_basis": "education:valuation",
-        "approved_route_evidence": "src/pages/book.astro",
-        "role": "secondary_appointment_after_primary_nurture",
-        "distinct_from_primary_cta": true,
-        "status": "planned_local_only"
-      },
-      "evidence": {
-        "triangle_plan_status": "planned_complete",
-        "primary_cta_plan_status": "planned_complete",
-        "appointment_cta_plan_status": "planned_complete",
-        "rendered_status": "not_rendered_or_verified_by_this_plan",
-        "rendered_triangle_verified": false,
-        "live_status": "not_published_or_verified_by_this_plan",
-        "live_triangle_verified": false,
-        "release_status": "eligible_for_continuous_quality_review_not_yet_cleared",
-        "numerical_release_cap_applies": false
-      }
-    },
-    {
-      "program_row_id": "MRX1000-0619",
-      "canonical_title": "Value Of Royalty Checks: Negotiation Tips For Royalty Owners",
-      "canonical_slug": "value-of-royalty-checks-negotiation-tips-for-royalty-owners",
-      "canonical_url": "/blog/value-of-royalty-checks-negotiation-tips-for-royalty-owners/",
-      "cluster": "royalties-owner-operations",
-      "pillar": "oil-and-gas-royalties",
-      "search_intent": "compare-offers",
-      "funnel_stage": "education",
-      "source_preservation_classification": "planning_only_inventory",
-      "source_route_live": false,
-      "pillar_link": {
-        "url": "/learning-center/oil-and-gas-royalties/",
-        "route_evidence": "src/pages/learning-center/oil-and-gas-royalties/index.astro",
-        "status": "planned_local_only"
-      },
-      "sibling_link": {
         "target_program_row_id": "MRX1000-0621",
         "target_title": "Value Of Royalty Checks: Timeline In 2026",
         "url": "/blog/value-of-royalty-checks-timeline-in-2026/",
@@ -37764,7 +37701,7 @@
         "placement_code": "mid_article",
         "placement_guidance": "Place after the direct answer or first useful checklist, before the first deep-dive section.",
         "assignment_rule": "education_stage_nurture",
-        "assignment_basis": "education:compare-offers",
+        "assignment_basis": "education:valuation",
         "approved_route_evidence": "src/pages/free-guide.astro",
         "role": "primary_nurture",
         "is_appointment_cta": false,
@@ -37777,7 +37714,7 @@
         "placement_code": "closing_team_handoff",
         "placement_guidance": "Place after the final takeaway and primary guide CTA, before related articles, as the optional MRX team handoff.",
         "assignment_rule": "education_stage_optional_team_handoff",
-        "assignment_basis": "education:compare-offers",
+        "assignment_basis": "education:valuation",
         "approved_route_evidence": "src/pages/book.astro",
         "role": "secondary_appointment_after_primary_nurture",
         "distinct_from_primary_cta": true,
@@ -44553,12 +44490,12 @@
         "status": "planned_local_only"
       },
       "sibling_link": {
-        "target_program_row_id": "MRX1000-0526",
-        "target_title": "How to Decode Your Royalty Check Statement",
-        "url": "/blog/how-to-decode-your-royalty-check-statement/",
+        "target_program_row_id": "MRX1000-1053",
+        "target_title": "Sell Mineral Rights: Guide For Royalty Owners",
+        "url": "/blog/sell-mineral-rights-guide-for-royalty-owners/",
         "relationship": "same_cluster_next_by_program_row_id_cyclic",
-        "target_source_preservation_classification": "live_public_published_route",
-        "target_route_live": true,
+        "target_source_preservation_classification": "planning_only_inventory",
+        "target_route_live": false,
         "status": "planned_local_only"
       },
       "primary_cta": {
@@ -63104,6 +63041,69 @@
         "placement_guidance": "Place after the final takeaway and primary guide CTA, before related articles, as the optional MRX team handoff.",
         "assignment_rule": "education_stage_optional_team_handoff",
         "assignment_basis": "education:informational",
+        "approved_route_evidence": "src/pages/book.astro",
+        "role": "secondary_appointment_after_primary_nurture",
+        "distinct_from_primary_cta": true,
+        "status": "planned_local_only"
+      },
+      "evidence": {
+        "triangle_plan_status": "planned_complete",
+        "primary_cta_plan_status": "planned_complete",
+        "appointment_cta_plan_status": "planned_complete",
+        "rendered_status": "not_rendered_or_verified_by_this_plan",
+        "rendered_triangle_verified": false,
+        "live_status": "not_published_or_verified_by_this_plan",
+        "live_triangle_verified": false,
+        "release_status": "eligible_for_continuous_quality_review_not_yet_cleared",
+        "numerical_release_cap_applies": false
+      }
+    },
+    {
+      "program_row_id": "MRX1000-1053",
+      "canonical_title": "Sell Mineral Rights: Guide For Royalty Owners",
+      "canonical_slug": "sell-mineral-rights-guide-for-royalty-owners",
+      "canonical_url": "/blog/sell-mineral-rights-guide-for-royalty-owners/",
+      "cluster": "royalties-owner-operations",
+      "pillar": "oil-and-gas-royalties",
+      "search_intent": "compare-offers",
+      "funnel_stage": "education",
+      "source_preservation_classification": "planning_only_inventory",
+      "source_route_live": false,
+      "pillar_link": {
+        "url": "/learning-center/oil-and-gas-royalties/",
+        "route_evidence": "src/pages/learning-center/oil-and-gas-royalties/index.astro",
+        "status": "planned_local_only"
+      },
+      "sibling_link": {
+        "target_program_row_id": "MRX1000-0526",
+        "target_title": "How to Decode Your Royalty Check Statement",
+        "url": "/blog/how-to-decode-your-royalty-check-statement/",
+        "relationship": "same_cluster_next_by_program_row_id_cyclic",
+        "target_source_preservation_classification": "live_public_published_route",
+        "target_route_live": true,
+        "status": "planned_local_only"
+      },
+      "primary_cta": {
+        "url": "/free-guide/",
+        "label": "Get the Free Mineral Rights Guide",
+        "name": "mrx1000-oil-and-gas-royalties-free_guide-mid_article",
+        "placement_code": "mid_article",
+        "placement_guidance": "Place after the direct answer or first useful checklist, before the first deep-dive section.",
+        "assignment_rule": "education_stage_nurture",
+        "assignment_basis": "education:compare-offers",
+        "approved_route_evidence": "src/pages/free-guide.astro",
+        "role": "primary_nurture",
+        "is_appointment_cta": false,
+        "status": "planned_local_only"
+      },
+      "appointment_cta": {
+        "url": "/book/",
+        "label": "Review My Royalty Information",
+        "name": "mrx1000-oil-and-gas-royalties-book_review-closing_team_handoff",
+        "placement_code": "closing_team_handoff",
+        "placement_guidance": "Place after the final takeaway and primary guide CTA, before related articles, as the optional MRX team handoff.",
+        "assignment_rule": "education_stage_optional_team_handoff",
+        "assignment_basis": "education:compare-offers",
         "approved_route_evidence": "src/pages/book.astro",
         "role": "secondary_appointment_after_primary_nurture",
         "distinct_from_primary_cta": true,
