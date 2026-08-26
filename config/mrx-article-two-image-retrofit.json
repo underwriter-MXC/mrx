@@ -1,18 +1,18 @@
 {
   "artifact_type": "mrx_article_two_image_retrofit",
   "schema_version": 1,
-  "generated_at_utc": "2026-08-25T15:00:03Z",
+  "generated_at_utc": "2026-08-26T05:32:03Z",
   "policy_source": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
   "summary": {
-    "article_count": 211,
-    "asset_count": 422,
-    "unique_source_art_count": 211,
-    "unique_hero_sha256_count": 211,
-    "unique_inline_sha256_count": 211,
-    "distinct_article_pair_count": 211,
-    "hero_ocr_pass_count": 211,
-    "inline_ocr_pass_count": 211,
-    "exact_filename_identity_count": 211
+    "article_count": 212,
+    "asset_count": 424,
+    "unique_source_art_count": 212,
+    "unique_hero_sha256_count": 212,
+    "unique_inline_sha256_count": 212,
+    "distinct_article_pair_count": 212,
+    "hero_ocr_pass_count": 212,
+    "inline_ocr_pass_count": 212,
+    "exact_filename_identity_count": 212
   },
   "contact_sheets": {
     "hero": [
@@ -6206,6 +6206,56 @@
           "actual": "Texas RRC New Lease IDs\nBuilt Query retrieval",
           "normalized_expected": "texas rrc new lease ids built query retrieval",
           "normalized_actual": "texas rrc new lease ids built query retrieval",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      }
+    },
+    {
+      "slug": "texas-rrc-oil-and-gas-well-records-request-preparation-worksheet",
+      "title": "Texas RRC Oil and Gas Well Records Request Preparation Worksheet",
+      "keyword": "Texas RRC well records request preparation",
+      "file_path": "src/content/posts/texas-rrc-oil-and-gas-well-records-request-preparation-worksheet.mdx",
+      "source_public_path": "/assets/articles/hero/texas-rrc-oil-and-gas-well-records-request-preparation-worksheet.webp",
+      "source_artifact_paths": [
+        "artifacts/mrx1000-wave127-creative-sources/texas-rrc-oil-and-gas-well-records-request-preparation-worksheet-hero-base.png",
+        "artifacts/mrx1000-wave127-creative-sources/texas-rrc-oil-and-gas-well-records-request-preparation-worksheet-inline-base.png"
+      ],
+      "generated_at_utc": "2026-08-26T05:31:55.154Z",
+      "hero": {
+        "public_path": "/assets/articles/hero/texas-rrc-oil-and-gas-well-records-request-preparation-worksheet.webp",
+        "alt": "A no-submit well-record request preparation desk appears beside the exact article title.",
+        "width": 1200,
+        "height": 630,
+        "mime_type": "image/webp",
+        "sha256": "5513334b23c5f2d5f81f17d3f8403fb76d89145108510943e87ea6a9cde73ae9",
+        "perceptual_hash": "0000000000000001000000000000000000000000000000000000000000000001000000000000001000100000111000110101100011110111000000001111111100000000111111110000000011111111000000001111111100000000011111110000000011111111000000000111111100000000011111110000000001111110",
+        "neutralized_art_text_region_count": 1,
+        "ocr": {
+          "expected": "Texas RRC Oil and Gas Well Records Request Preparation Worksheet",
+          "actual": "Texas RRC Oil and Gas\nWell Records Request\nPreparation Worksheet",
+          "normalized_expected": "texas rrc oil and gas well records request preparation worksheet",
+          "normalized_actual": "texas rrc oil and gas well records request preparation worksheet",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      },
+      "inline": {
+        "public_path": "/assets/articles/inline/texas-rrc-oil-and-gas-well-records-request-preparation-worksheet/texas-rrc-well-records-request-preparation.webp",
+        "alt": "Five blank locator-field groups appear above the exact request-preparation keyword.",
+        "rendered_text": "Texas RRC well records request preparation",
+        "visual_variant": "wave127-distinct-generated-top-down-five-group-field-classification-scene",
+        "width": 1200,
+        "height": 675,
+        "mime_type": "image/webp",
+        "sha256": "43d7ac14a6c944093eeb440310d8ac0591cf109916f00db19a7df0f876f3f20f",
+        "perceptual_hash": "1111111001111111111111100111111111111110011111111111111001111111111111100111111111111110011111111111111001111111111111100111111111111111111111111111111111111111111111111011111100000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "neutralized_art_text_region_count": 1,
+        "ocr": {
+          "expected": "Texas RRC well records request preparation",
+          "actual": "Texas RRC well records\nrequest preparation",
+          "normalized_expected": "texas rrc well records request preparation",
+          "normalized_actual": "texas rrc well records request preparation",
           "uppercase_i_confusable_accepted": false,
           "pass": true
         }

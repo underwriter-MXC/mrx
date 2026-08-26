@@ -80,6 +80,7 @@ const SUPERSEDED_CANONICAL_SLUGS = new Set([
   'avoid-surprises-key-costs-to-consider-during-your-mineral-rights-assessment-process',
   'avoid-these-key-mistakes-when-evaluating-mineral-rights-offers-for-maximum-value',
   'cash-for-mineral-rights-buyer-comparison-before-accepting-an-offer',
+  'cash-for-mineral-rights-offer-review-for-first-time-sellers',
   'what-influences-the-suggested-price-for-your-mineral-rights-assessment',
   'what-sellers-get-wrong-about-mineral-rights',
   'what-to-avoid-in-the-mineral-rights-selling-process',
@@ -198,6 +199,10 @@ const SUCCESSOR_CANONICAL_SLUGS = new Map([
   [
     'cash-for-mineral-rights-buyer-comparison-before-accepting-an-offer',
     'texas-rrc-injection-storage-test-report-retrieval-provenance-worksheet',
+  ],
+  [
+    'cash-for-mineral-rights-offer-review-for-first-time-sellers',
+    'texas-rrc-oil-and-gas-well-records-request-preparation-worksheet',
   ],
   [
     'what-influences-the-suggested-price-for-your-mineral-rights-assessment',
@@ -431,6 +436,7 @@ const APPROVED_REKEY_SEARCH_INTENT_BY_SLUG = new Map([
     'informational',
   ],
   ['texas-rrc-injection-storage-test-report-retrieval-provenance-worksheet', 'informational'],
+  ['texas-rrc-oil-and-gas-well-records-request-preparation-worksheet', 'informational'],
 ]);
 
 const APPROVED_REKEY_ACTION_REASON_BY_SLUG = new Map([
@@ -473,6 +479,10 @@ const APPROVED_REKEY_ACTION_REASON_BY_SLUG = new Map([
   [
     'texas-rrc-injection-storage-test-report-retrieval-provenance-worksheet',
     'The original cash-for-mineral-rights buyer-comparison identity was rejected for direct overlap with the buyer-comparison, offer-safety, fair-offer, negotiation, and acceptance corpus. The approved replacement owns one authorized manual Texas RRC Imaged Records Injection-Storage Test Reports profile retrieval provenance record and remains separate from the UIC permit query, EDMS H-1/H-1A/W-14 application documents, H-10 annual monitoring reports, H-5 filing, interpretation, compliance, engineering, environmental, property, production, valuation, offer, legal, tax, and transaction tasks. Current direct profile access returned HTTP 403, so the article records no completed query and keeps the present state unverified. Publication remains controlled by the signed batch, matching evidence, production deployment, and independent verification.',
+  ],
+  [
+    'texas-rrc-oil-and-gas-well-records-request-preparation-worksheet',
+    'The original first-time-seller cash-offer identity was rejected for direct overlap with the buyer-comparison, offer-review, fair-offer, lowball, scam, negotiation, and seller-guidance corpus. The approved replacement owns one no-submit Texas RRC Oil and Gas Well Records request-preparation handoff and remains separate from online query execution, Imaged Records profile retrieval, record interpretation, property connection, production, valuation, offer, legal, tax, and transaction tasks. Publication remains controlled by the signed batch, matching evidence, production deployment, and independent verification.',
   ],
 ]);
 
