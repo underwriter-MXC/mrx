@@ -1,7 +1,7 @@
 {
   "program": "MRX 1,000 Article SEO+AEO Production Program",
   "artifact_type": "authorized_release_10_batch",
-  "evidence_scaffold_generated_at_utc": "2026-08-26T07:41:57Z",
+  "evidence_scaffold_generated_at_utc": "2026-08-26T07:56:36Z",
   "decision_authority": {
     "successor_gate_decision_id": "D-2026-0804-16",
     "successor_gate_decision_path": "docs/governance/mrx1000-owner-continuous-publication-directive-2026-08-04.md",
@@ -405,13 +405,16 @@
     "wave129_selection_decision_sha256": "6f4e0fbd11e2cdef850066a46d9c139b03bd0841abc02316194208faa56128d6",
     "wave130_selection_decision_id": "MRX1000-W130-SELECT-2026-08-26",
     "wave130_selection_decision_path": "docs/governance/mrx1000-wave130-selection-decision-2026-08-26.md",
-    "wave130_selection_decision_sha256": "9ec4cf636783d2fb7bc3d0eb13c61e03bd1ecd06bca7843fe829ef23b3e1d4e8"
+    "wave130_selection_decision_sha256": "9ec4cf636783d2fb7bc3d0eb13c61e03bd1ecd06bca7843fe829ef23b3e1d4e8",
+    "wave131_selection_decision_id": "MRX1000-W131-SELECT-2026-08-26",
+    "wave131_selection_decision_path": "docs/governance/mrx1000-wave131-selection-decision-2026-08-26.md",
+    "wave131_selection_decision_sha256": "6c1476d16ed725147fb9e946ca3bdaf564d01522ab7ec24f7411998ca4387bd5"
   },
   "identity_authority": {
     "scope_key": "canonical_slug",
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_sha256": "7d6dddbb0b4681ad5de2081f96ef26e472e3bf03ffc80315871cf1a3f23c51fc",
-    "canonical_ledger_generated_at": "2026-07-20T20:05:45.867Z",
+    "canonical_ledger_sha256": "1d7189d4744f8cd98a0267a9809abd21c17961072ad51c5723e66cb68ab0b3ba",
+    "canonical_ledger_generated_at": "2026-07-20T21:18:28.253Z",
     "successor_ledger_decision_id": "D-2026-0723-LEDGER-04",
     "successor_ledger_decision_path": "artifacts/mrx1000-release-10/decisions/mrx-ceo-ledger-provenance-successor-20260723-04.md",
     "successor_ledger_decision_sha256": "09eca24bcd0e71563f2ac4197f564eec0ccb43a5ee955216da5c4a2543d04978",
@@ -425,11 +428,11 @@
     "authorization_scope": "declared_program_size_not_a_staged_release_cap",
     "admission_mode": "continuous_quality_gated",
     "continuous_quality_gated_from_selection_rank": 26,
-    "prior_verified_article_count": 206,
+    "prior_verified_article_count": 207,
     "fail_closed": true,
     "earned_scale_gates": [],
-    "exact_admitted_count": 207,
-    "exact_admitted_slate_sha256": "f3b48465e07a3c2e45bcbf5bdeb2805003e1f3c6ab2b22de8dc970475afa89a8"
+    "exact_admitted_count": 208,
+    "exact_admitted_slate_sha256": "2be037b2e1c0bb2ed99350073ac433b35b65db765a60047a8f3c58344f6ade2c"
   },
   "articles": [
     {
@@ -7275,10 +7278,45 @@
       "inline_path": "/assets/articles/inline/texas-rrc-public-gis-viewer-layer-state-retrieval-provenance-worksheet/texas-rrc-public-gis-viewer-layer-state-retrieval.webp",
       "inline_asset_sha256": "428efb0ed4b6b14d3383ddd7f5b25d93f30e1a691885255f1ca7c4f1ea58185e",
       "inline_rendered_text": "Texas RRC Public GIS Viewer layer-state retrieval"
+    },
+    {
+      "selection_rank": 208,
+      "program_row_id": "MRX1000-0336",
+      "source_shortlist_program_row_id": "MRX1000-0336",
+      "slug": "search-unclaimed-mineral-royalty-payments-texas",
+      "title": "How to Search for Unclaimed Mineral Royalty Payments in Texas",
+      "source_shortlist_title": "How to Search for Unclaimed Mineral Royalty Payments in Texas",
+      "canonical_url": "https://mineralrightsxchange.com/blog/search-unclaimed-mineral-royalty-payments-texas/",
+      "pillar": "offer-review",
+      "cluster": "offer-review-buyer-comparison-safety",
+      "content_genius_article_uuid": null,
+      "archive_evidence_sha256": "9fbb97252c4a3bb307dd8fa60dfd325cea790b36c7bc46f796794e1dec4e696b",
+      "repo_path": "src/content/posts/search-unclaimed-mineral-royalty-payments-texas.mdx",
+      "repo_sha256": "19550339ed261c5db1dddf0738b9eb3d7811d9a39f5e9aeaa0508f733fb6b37a",
+      "article_sha256": "19550339ed261c5db1dddf0738b9eb3d7811d9a39f5e9aeaa0508f733fb6b37a",
+      "hero_path": "/assets/articles/hero/how-to-search-for-unclaimed-mineral-royalty-payments-in-texas.webp",
+      "hero_sha256": "7b9a64124d96218ffcd9ac6ac68c65fb745cf36c5cf55209037e079e28948bec",
+      "hero_asset_sha256": "7b9a64124d96218ffcd9ac6ac68c65fb745cf36c5cf55209037e079e28948bec",
+      "admission_status": "admitted_quality_gated",
+      "finalization_state": "draft_noindex_admitted",
+      "searchatlas_content_score": null,
+      "searchatlas_word_count": 1531,
+      "risk_citation_remediation": [
+        "The original offer-comparison identity is rejected. No offer evaluation, fairness, ranking, negotiation, acceptance, buyer, valuation, pricing, or transaction recommendation survives.",
+        "Official Texas Comptroller, ClaimItTexas, and Texas Property Code sources support only the state route, mineral-interest and mineral-royalty examples, current instructions, and bounded claims-process context.",
+        "The article preserves one public search attempt and only potential match located, no match displayed, or unverified. It does not convert a name match into ownership, entitlement, title, heirship, or a claim outcome.",
+        "Public examples are blank, redacted, or synthetic; real names, property identifiers, claim numbers, identity records, amounts, and retained captures remain in an authorized controlled reference.",
+        "Continuous quality-gated admission under the owner no-approval directives; no owner publication approval applies."
+      ],
+      "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/search-unclaimed-mineral-royalty-payments-texas.json",
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/search-unclaimed-mineral-royalty-payments-texas/texas-unclaimed-mineral-royalty-payments-search.webp",
+      "inline_asset_sha256": "16e0385d50748a560af6f96d7763074cd029ea72315478369a396f877d9bdb3f",
+      "inline_rendered_text": "Texas unclaimed mineral royalty payments search"
     }
   ],
   "admission_audit": {
-    "admitted_article_count": 207,
+    "admitted_article_count": 208,
     "selection_ranks": [
       1,
       2,
@@ -7486,7 +7524,8 @@
       204,
       205,
       206,
-      207
+      207,
+      208
     ],
     "duplicate_program_row_ids": [],
     "duplicate_slugs": [],
@@ -7545,9 +7584,9 @@
   "two_image_policy": {
     "directive": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
     "retrofit_manifest_path": "config/mrx-article-two-image-retrofit.json",
-    "retrofit_manifest_sha256": "5b752d253c68923bc919a38315edca59c82afc23bc3bbd249c63174095264add",
-    "public_article_count": 215,
-    "batch_article_count": 207,
+    "retrofit_manifest_sha256": "751b8f6ed9c27535fe18371303a1dcab0b3d84575c93deba9c5dd215a35276c2",
+    "public_article_count": 216,
+    "batch_article_count": 208,
     "assets_per_article": 2,
     "hero_share_identity_required": true,
     "inline_image_distinct_required": true,
