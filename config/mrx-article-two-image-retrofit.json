@@ -1,18 +1,18 @@
 {
   "artifact_type": "mrx_article_two_image_retrofit",
   "schema_version": 1,
-  "generated_at_utc": "2026-08-26T18:10:33Z",
+  "generated_at_utc": "2026-08-26T18:54:31Z",
   "policy_source": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
   "summary": {
-    "article_count": 234,
-    "asset_count": 468,
-    "unique_source_art_count": 234,
-    "unique_hero_sha256_count": 234,
-    "unique_inline_sha256_count": 234,
-    "distinct_article_pair_count": 234,
-    "hero_ocr_pass_count": 234,
-    "inline_ocr_pass_count": 234,
-    "exact_filename_identity_count": 234
+    "article_count": 235,
+    "asset_count": 470,
+    "unique_source_art_count": 235,
+    "unique_hero_sha256_count": 235,
+    "unique_inline_sha256_count": 235,
+    "distinct_article_pair_count": 235,
+    "hero_ocr_pass_count": 235,
+    "inline_ocr_pass_count": 235,
+    "exact_filename_identity_count": 235
   },
   "contact_sheets": {
     "hero": [
@@ -510,6 +510,56 @@
           "actual": "Brazos CAD mineral and\nindustrial account contact",
           "normalized_expected": "brazos cad mineral and industrial account contact",
           "normalized_actual": "brazos cad mineral and industrial account contact",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      }
+    },
+    {
+      "slug": "brazos-cad-mineral-property-protest-status-verification-log",
+      "title": "Brazos CAD Mineral Property Protest Status Verification Log",
+      "keyword": "Brazos CAD mineral property protest status",
+      "file_path": "src/content/posts/brazos-cad-mineral-property-protest-status-verification-log.mdx",
+      "source_public_path": "/assets/articles/hero/brazos-cad-mineral-property-protest-status-verification-log.webp",
+      "source_artifact_paths": [
+        "artifacts/mrx1000-wave155-creative-sources/brazos-cad-mineral-property-protest-status-verification-log-hero-base.png",
+        "artifacts/mrx1000-wave155-creative-sources/brazos-cad-mineral-property-protest-status-verification-log-inline-base.png"
+      ],
+      "generated_at_utc": "2026-08-26T18:47:32.971Z",
+      "hero": {
+        "public_path": "/assets/articles/hero/brazos-cad-mineral-property-protest-status-verification-log.webp",
+        "alt": "An abstract status timeline and closed record box appear beside the exact Brazos CAD verification-log title.",
+        "width": 1200,
+        "height": 630,
+        "mime_type": "image/webp",
+        "sha256": "1650b01aaf105a68a14565a3690d14f9f9bc5d8ed766de28ff5ae54b24eb8064",
+        "perceptual_hash": "0000000001111011000000000111101100000000000011110110000000001111011000000000011111110000000111111111000000000111111100000000011100000000000000110000000001001111000000000000011100000000001100000000000000110000000000000111100000000000001111010000000000011110",
+        "neutralized_art_text_region_count": 1,
+        "ocr": {
+          "expected": "Brazos CAD Mineral Property Protest Status Verification Log",
+          "actual": "Brazos CAD\nMineral Property\nProtest Status\nVerification Log",
+          "normalized_expected": "brazos cad mineral property protest status verification log",
+          "normalized_actual": "brazos cad mineral property protest status verification log",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      },
+      "inline": {
+        "public_path": "/assets/articles/inline/brazos-cad-mineral-property-protest-status-verification-log/brazos-cad-mineral-property-protest-status.webp",
+        "alt": "A top-down blank observation ledger appears above the exact Brazos CAD mineral property protest status keyword.",
+        "rendered_text": "Brazos CAD mineral property protest status",
+        "visual_variant": "wave155-distinct-generated-strict-overhead-four-row-status-observation-ledger",
+        "width": 1200,
+        "height": 675,
+        "mime_type": "image/webp",
+        "sha256": "a9a6620768e1c5bf752ebb2a1b2dfce960369c6c6c4b8b8634f4069e37349679",
+        "perceptual_hash": "0000111111110000000011111111010000001111111111100000111111111110000011111111111000001111111101000000111111110000000011111111111000001111111111100000000100001110000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "neutralized_art_text_region_count": 1,
+        "ocr": {
+          "expected": "Brazos CAD mineral property protest status",
+          "actual": "Brazos CAD mineral property\nprotest status",
+          "normalized_expected": "brazos cad mineral property protest status",
+          "normalized_actual": "brazos cad mineral property protest status",
           "uppercase_i_confusable_accepted": false,
           "pass": true
         }

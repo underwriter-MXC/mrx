@@ -1,15 +1,15 @@
 {
   "artifact_type": "mrx1000_content_activation_plan",
   "plan_version": "mrx1000-content-activation-v1.1.0",
-  "generated_at": "2026-07-20T05:01:28.436Z",
+  "generated_at": "2026-07-20T23:19:44.755Z",
   "generated_at_method": "canonical_ledger_generated_at",
   "generator": "scripts/build-mrx-1000-activation-plan.mjs",
-  "content_fingerprint_sha256": "34e0fddfb807191b8206144a55fbbb78ded588cfe9e927dd21bd34917a4b8c90",
+  "content_fingerprint_sha256": "1560f87e62714d9406e69b06d65a40d046fb74e95ee96c02f8d4c6ce09f211a2",
   "inputs": {
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_fingerprint_sha256": "120b139c648937643e59fccdc72f01b4f7435507280b2477ce90d194944d89c6",
+    "canonical_ledger_fingerprint_sha256": "9a47315acb0d6e0a9625d01f50ad0079896a656efa8f007165ca7fe6723081bb",
     "canonical_ledger_fingerprint_verified": true,
-    "canonical_ledger_generated_at": "2026-07-20T05:01:28.436Z",
+    "canonical_ledger_generated_at": "2026-07-20T23:19:44.755Z",
     "owner_decision": {
       "decision_id": "D-2026-0804-16",
       "signed_disposition": "APPROVED_CONTINUOUS_QUALITY_GATED_ARTICLE_PUBLICATION",
@@ -115,9 +115,9 @@
     },
     "by_source_preservation_classification": {
       "incumbent_draft_nonpublic_held": 23,
-      "live_public_published_route": 234,
+      "live_public_published_route": 235,
       "pilot_draft_noindex_stage": 25,
-      "planning_only_inventory": 718
+      "planning_only_inventory": 717
     }
   },
   "rows": [
@@ -45499,11 +45499,11 @@
       },
       "sibling_link": {
         "target_program_row_id": "MRX1000-0749",
-        "target_title": "Brazos County, Texas Mineral Rights Value: Risk Checklist In 2026",
-        "url": "/blog/brazos-county-texas-mineral-rights-value-risk-checklist-in-2026/",
+        "target_title": "Brazos CAD Mineral Property Protest Status Verification Log",
+        "url": "/blog/brazos-cad-mineral-property-protest-status-verification-log/",
         "relationship": "same_cluster_next_by_program_row_id_cyclic",
-        "target_source_preservation_classification": "planning_only_inventory",
-        "target_route_live": false,
+        "target_source_preservation_classification": "live_public_published_route",
+        "target_route_live": true,
         "status": "planned_local_only"
       },
       "primary_cta": {
@@ -45546,15 +45546,15 @@
     },
     {
       "program_row_id": "MRX1000-0749",
-      "canonical_title": "Brazos County, Texas Mineral Rights Value: Risk Checklist In 2026",
-      "canonical_slug": "brazos-county-texas-mineral-rights-value-risk-checklist-in-2026",
-      "canonical_url": "/blog/brazos-county-texas-mineral-rights-value-risk-checklist-in-2026/",
+      "canonical_title": "Brazos CAD Mineral Property Protest Status Verification Log",
+      "canonical_slug": "brazos-cad-mineral-property-protest-status-verification-log",
+      "canonical_url": "/blog/brazos-cad-mineral-property-protest-status-verification-log/",
       "cluster": "texas-county-basin-local-intent",
       "pillar": "texas-mineral-rights",
-      "search_intent": "local-buyer",
+      "search_intent": "local-informational",
       "funnel_stage": "consideration",
-      "source_preservation_classification": "planning_only_inventory",
-      "source_route_live": false,
+      "source_preservation_classification": "live_public_published_route",
+      "source_route_live": true,
       "pillar_link": {
         "url": "/mineral-rights/texas/",
         "route_evidence": "src/pages/mineral-rights/[state].astro#stateGuides:texas",
@@ -45576,7 +45576,7 @@
         "placement_code": "contextual_inline",
         "placement_guidance": "Place after the first comparison, risk, document, or decision-framework section.",
         "assignment_rule": "consideration_stage_assisted_review",
-        "assignment_basis": "consideration:local-buyer",
+        "assignment_basis": "consideration:local-informational",
         "approved_route_evidence": "src/pages/book.astro",
         "role": "primary_appointment",
         "is_appointment_cta": true,
@@ -45589,7 +45589,7 @@
         "placement_code": "contextual_inline",
         "placement_guidance": "Place after the first comparison, risk, document, or decision-framework section.",
         "assignment_rule": "consideration_stage_assisted_review",
-        "assignment_basis": "consideration:local-buyer",
+        "assignment_basis": "consideration:local-informational",
         "approved_route_evidence": "src/pages/book.astro",
         "role": "same_as_primary_appointment",
         "distinct_from_primary_cta": false,
@@ -45603,7 +45603,7 @@
         "rendered_triangle_verified": false,
         "live_status": "not_published_or_verified_by_this_plan",
         "live_triangle_verified": false,
-        "release_status": "eligible_for_continuous_quality_review_not_yet_cleared",
+        "release_status": "released_under_d16_continuous_quality_gate",
         "numerical_release_cap_applies": false
       }
     },
@@ -45687,69 +45687,6 @@
         "status": "planned_local_only"
       },
       "sibling_link": {
-        "target_program_row_id": "MRX1000-0755",
-        "target_title": "Burleson County, Texas Mineral Rights Value: Timeline In 2026",
-        "url": "/blog/burleson-county-texas-mineral-rights-value-timeline-in-2026/",
-        "relationship": "same_cluster_next_by_program_row_id_cyclic",
-        "target_source_preservation_classification": "planning_only_inventory",
-        "target_route_live": false,
-        "status": "planned_local_only"
-      },
-      "primary_cta": {
-        "url": "/book/",
-        "label": "Discuss My Texas Mineral Rights",
-        "name": "mrx1000-texas-mineral-rights-book_review-contextual_inline",
-        "placement_code": "contextual_inline",
-        "placement_guidance": "Place after the first comparison, risk, document, or decision-framework section.",
-        "assignment_rule": "consideration_stage_assisted_review",
-        "assignment_basis": "consideration:education",
-        "approved_route_evidence": "src/pages/book.astro",
-        "role": "primary_appointment",
-        "is_appointment_cta": true,
-        "status": "planned_local_only"
-      },
-      "appointment_cta": {
-        "url": "/book/",
-        "label": "Discuss My Texas Mineral Rights",
-        "name": "mrx1000-texas-mineral-rights-book_review-contextual_inline",
-        "placement_code": "contextual_inline",
-        "placement_guidance": "Place after the first comparison, risk, document, or decision-framework section.",
-        "assignment_rule": "consideration_stage_assisted_review",
-        "assignment_basis": "consideration:education",
-        "approved_route_evidence": "src/pages/book.astro",
-        "role": "same_as_primary_appointment",
-        "distinct_from_primary_cta": false,
-        "status": "planned_local_only"
-      },
-      "evidence": {
-        "triangle_plan_status": "planned_complete",
-        "primary_cta_plan_status": "planned_complete",
-        "appointment_cta_plan_status": "planned_complete",
-        "rendered_status": "not_rendered_or_verified_by_this_plan",
-        "rendered_triangle_verified": false,
-        "live_status": "not_published_or_verified_by_this_plan",
-        "live_triangle_verified": false,
-        "release_status": "eligible_for_continuous_quality_review_not_yet_cleared",
-        "numerical_release_cap_applies": false
-      }
-    },
-    {
-      "program_row_id": "MRX1000-0755",
-      "canonical_title": "Burleson County, Texas Mineral Rights Value: Timeline In 2026",
-      "canonical_slug": "burleson-county-texas-mineral-rights-value-timeline-in-2026",
-      "canonical_url": "/blog/burleson-county-texas-mineral-rights-value-timeline-in-2026/",
-      "cluster": "texas-county-basin-local-intent",
-      "pillar": "texas-mineral-rights",
-      "search_intent": "local-buyer",
-      "funnel_stage": "consideration",
-      "source_preservation_classification": "planning_only_inventory",
-      "source_route_live": false,
-      "pillar_link": {
-        "url": "/mineral-rights/texas/",
-        "route_evidence": "src/pages/mineral-rights/[state].astro#stateGuides:texas",
-        "status": "planned_local_only"
-      },
-      "sibling_link": {
         "target_program_row_id": "MRX1000-0756",
         "target_title": "Crane County, Texas Mineral Rights Value: Family Decision Guide Step By Step",
         "url": "/blog/crane-county-texas-mineral-rights-value-family-decision-guide-step-by-step/",
@@ -45765,7 +45702,7 @@
         "placement_code": "contextual_inline",
         "placement_guidance": "Place after the first comparison, risk, document, or decision-framework section.",
         "assignment_rule": "consideration_stage_assisted_review",
-        "assignment_basis": "consideration:local-buyer",
+        "assignment_basis": "consideration:education",
         "approved_route_evidence": "src/pages/book.astro",
         "role": "primary_appointment",
         "is_appointment_cta": true,
@@ -45778,7 +45715,7 @@
         "placement_code": "contextual_inline",
         "placement_guidance": "Place after the first comparison, risk, document, or decision-framework section.",
         "assignment_rule": "consideration_stage_assisted_review",
-        "assignment_basis": "consideration:local-buyer",
+        "assignment_basis": "consideration:education",
         "approved_route_evidence": "src/pages/book.astro",
         "role": "same_as_primary_appointment",
         "distinct_from_primary_cta": false,
@@ -63075,12 +63012,12 @@
         "status": "planned_local_only"
       },
       "sibling_link": {
-        "target_program_row_id": "MRX1000-0726",
-        "target_title": "Eagle Ford Shale and South Texas Mineral Rights",
-        "url": "/blog/eagle-ford-shale-how-it-affects-mineral-rights-values-in-south-texas/",
+        "target_program_row_id": "MRX1000-1061",
+        "target_title": "Brazos County, Texas Mineral Rights Value: Risk Checklist In 2026",
+        "url": "/blog/brazos-county-texas-mineral-rights-value-risk-checklist-in-2026/",
         "relationship": "same_cluster_next_by_program_row_id_cyclic",
-        "target_source_preservation_classification": "live_public_published_route",
-        "target_route_live": true,
+        "target_source_preservation_classification": "planning_only_inventory",
+        "target_route_live": false,
         "status": "planned_local_only"
       },
       "primary_cta": {
@@ -63104,6 +63041,69 @@
         "placement_guidance": "Place after the first comparison, risk, document, or decision-framework section.",
         "assignment_rule": "consideration_stage_assisted_review",
         "assignment_basis": "consideration:education",
+        "approved_route_evidence": "src/pages/book.astro",
+        "role": "same_as_primary_appointment",
+        "distinct_from_primary_cta": false,
+        "status": "planned_local_only"
+      },
+      "evidence": {
+        "triangle_plan_status": "planned_complete",
+        "primary_cta_plan_status": "planned_complete",
+        "appointment_cta_plan_status": "planned_complete",
+        "rendered_status": "not_rendered_or_verified_by_this_plan",
+        "rendered_triangle_verified": false,
+        "live_status": "not_published_or_verified_by_this_plan",
+        "live_triangle_verified": false,
+        "release_status": "eligible_for_continuous_quality_review_not_yet_cleared",
+        "numerical_release_cap_applies": false
+      }
+    },
+    {
+      "program_row_id": "MRX1000-1061",
+      "canonical_title": "Brazos County, Texas Mineral Rights Value: Risk Checklist In 2026",
+      "canonical_slug": "brazos-county-texas-mineral-rights-value-risk-checklist-in-2026",
+      "canonical_url": "/blog/brazos-county-texas-mineral-rights-value-risk-checklist-in-2026/",
+      "cluster": "texas-county-basin-local-intent",
+      "pillar": "texas-mineral-rights",
+      "search_intent": "local-buyer",
+      "funnel_stage": "consideration",
+      "source_preservation_classification": "planning_only_inventory",
+      "source_route_live": false,
+      "pillar_link": {
+        "url": "/mineral-rights/texas/",
+        "route_evidence": "src/pages/mineral-rights/[state].astro#stateGuides:texas",
+        "status": "planned_local_only"
+      },
+      "sibling_link": {
+        "target_program_row_id": "MRX1000-0726",
+        "target_title": "Eagle Ford Shale and South Texas Mineral Rights",
+        "url": "/blog/eagle-ford-shale-how-it-affects-mineral-rights-values-in-south-texas/",
+        "relationship": "same_cluster_next_by_program_row_id_cyclic",
+        "target_source_preservation_classification": "live_public_published_route",
+        "target_route_live": true,
+        "status": "planned_local_only"
+      },
+      "primary_cta": {
+        "url": "/book/",
+        "label": "Discuss My Texas Mineral Rights",
+        "name": "mrx1000-texas-mineral-rights-book_review-contextual_inline",
+        "placement_code": "contextual_inline",
+        "placement_guidance": "Place after the first comparison, risk, document, or decision-framework section.",
+        "assignment_rule": "consideration_stage_assisted_review",
+        "assignment_basis": "consideration:local-buyer",
+        "approved_route_evidence": "src/pages/book.astro",
+        "role": "primary_appointment",
+        "is_appointment_cta": true,
+        "status": "planned_local_only"
+      },
+      "appointment_cta": {
+        "url": "/book/",
+        "label": "Discuss My Texas Mineral Rights",
+        "name": "mrx1000-texas-mineral-rights-book_review-contextual_inline",
+        "placement_code": "contextual_inline",
+        "placement_guidance": "Place after the first comparison, risk, document, or decision-framework section.",
+        "assignment_rule": "consideration_stage_assisted_review",
+        "assignment_basis": "consideration:local-buyer",
         "approved_route_evidence": "src/pages/book.astro",
         "role": "same_as_primary_appointment",
         "distinct_from_primary_cta": false,
