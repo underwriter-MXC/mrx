@@ -1,7 +1,7 @@
 {
   "program": "MRX1000",
   "artifact_type": "searchatlas_ordered_llm_local_execution_manifest",
-  "generated_at": "2026-07-20T21:44:43.926Z",
+  "generated_at": "2026-07-20T13:56:49.032Z",
   "deterministic": true,
   "local_only": true,
   "external_services_called": false,
@@ -9,8 +9,8 @@
   "inputs": {
     "ledger": {
       "path": "config/mrx-1000-canonical-content-ledger.json",
-      "sha256": "555f13e07269b0e2b3fdd2f3d850703b1014d3c84320b22d5c0b0da9f079eb0c",
-      "bytes": 4608429
+      "sha256": "bd7023920a5f5f5d237e6bcd85178cf716af904b97a0a4477fa3238eda2ef2e5",
+      "bytes": 4607885
     },
     "readiness": {
       "path": "reports/mrx-1000-readiness-matrix.json",
@@ -124745,7 +124745,7 @@
       "primary_keyword": "Texas Comptroller taxable entity search retrieval",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -352150,5 +352150,5 @@
       ]
     }
   ],
-  "content_fingerprint_sha256": "9621652c036cc51ace7087ad845255a3e5ed435cc5196df64d41b22d018a9280"
+  "content_fingerprint_sha256": "2d36e58ea7451a12e3e67bfb89b12b6db7a2f45aadd23eb09898b97f8e06b477"
 }
