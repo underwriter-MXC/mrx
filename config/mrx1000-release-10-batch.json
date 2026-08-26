@@ -1,7 +1,7 @@
 {
   "program": "MRX 1,000 Article SEO+AEO Production Program",
   "artifact_type": "authorized_release_10_batch",
-  "evidence_scaffold_generated_at_utc": "2026-08-26T13:34:53Z",
+  "evidence_scaffold_generated_at_utc": "2026-08-26T14:09:51Z",
   "decision_authority": {
     "successor_gate_decision_id": "D-2026-0804-16",
     "successor_gate_decision_path": "docs/governance/mrx1000-owner-continuous-publication-directive-2026-08-04.md",
@@ -441,13 +441,16 @@
     "wave146_selection_decision_sha256": "885e177bce1027c5e0aa76ac18928ad390c0183ee307b6c128389b57bff921c3",
     "wave147_selection_decision_id": "MRX1000-W147-SELECT-2026-08-26",
     "wave147_selection_decision_path": "docs/governance/mrx1000-wave147-selection-decision-2026-08-26.md",
-    "wave147_selection_decision_sha256": "62f46145ec1a83b6a5b19152273743523868fac67997d7a476d6d9151cf225f1"
+    "wave147_selection_decision_sha256": "62f46145ec1a83b6a5b19152273743523868fac67997d7a476d6d9151cf225f1",
+    "wave148_selection_decision_id": "MRX1000-W148-SELECT-2026-08-26",
+    "wave148_selection_decision_path": "docs/governance/mrx1000-wave148-selection-decision-2026-08-26.md",
+    "wave148_selection_decision_sha256": "f80991eee42599822afc305e29c7e427471df105ac61d35c0bf5d7c44f071b05"
   },
   "identity_authority": {
     "scope_key": "canonical_slug",
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_sha256": "4de09ba0889e818363a768e9ac1a11b3c7415eec691c0303c502858c52e11818",
-    "canonical_ledger_generated_at": "2026-07-20T20:49:54.989Z",
+    "canonical_ledger_sha256": "2f36b7d28d7c83130a7e08aceac96733ecc320c5f1fa51f97f29b6a351b2b405",
+    "canonical_ledger_generated_at": "2026-07-20T07:35:11.023Z",
     "successor_ledger_decision_id": "D-2026-0723-LEDGER-04",
     "successor_ledger_decision_path": "artifacts/mrx1000-release-10/decisions/mrx-ceo-ledger-provenance-successor-20260723-04.md",
     "successor_ledger_decision_sha256": "09eca24bcd0e71563f2ac4197f564eec0ccb43a5ee955216da5c4a2543d04978",
@@ -461,11 +464,11 @@
     "authorization_scope": "declared_program_size_not_a_staged_release_cap",
     "admission_mode": "continuous_quality_gated",
     "continuous_quality_gated_from_selection_rank": 26,
-    "prior_verified_article_count": 218,
+    "prior_verified_article_count": 219,
     "fail_closed": true,
     "earned_scale_gates": [],
-    "exact_admitted_count": 219,
-    "exact_admitted_slate_sha256": "31ff4d3687b06cb40ca070af516d0f0d2335741ebaff8cc5b0c9e9ade1b6b07a"
+    "exact_admitted_count": 220,
+    "exact_admitted_slate_sha256": "6e88f359b3a0239234cbcdc9b41a4e185d61e9ef04e34921dccca6f255e641a4"
   },
   "articles": [
     {
@@ -7742,10 +7745,46 @@
       "inline_path": "/assets/articles/inline/irs-form-1099-misc-royalty-box-2-source-scope-worksheet/irs-form-1099-misc-royalty-box-2.webp",
       "inline_asset_sha256": "f571140418c139e1cc5936f0c25f3397504ca04a7434d137c69b7f233d7c8c28",
       "inline_rendered_text": "IRS Form 1099-MISC royalty Box 2"
+    },
+    {
+      "selection_rank": 220,
+      "program_row_id": "MRX1000-0647",
+      "source_shortlist_program_row_id": "MRX1000-0647",
+      "slug": "irs-form-8824-source-document-map-for-a-mineral-rights-exchange",
+      "title": "IRS Form 8824 Source-Document Map for a Mineral Rights Exchange",
+      "source_shortlist_title": "IRS Form 8824 Source-Document Map for a Mineral Rights Exchange",
+      "canonical_url": "https://mineralrightsxchange.com/blog/irs-form-8824-source-document-map-for-a-mineral-rights-exchange/",
+      "pillar": "mineral-rights-taxes",
+      "cluster": "tax-1031-legal-education",
+      "content_genius_article_uuid": null,
+      "archive_evidence_sha256": "206ea49141fb4d66c083a32f95b2ec25fe559e7d2f35d5384afa5107a44464c8",
+      "repo_path": "src/content/posts/irs-form-8824-source-document-map-for-a-mineral-rights-exchange.mdx",
+      "repo_sha256": "f2376778e849e60f30122f1852b874dceb9fb6a519f57726df76cace2a4e4cc8",
+      "article_sha256": "f2376778e849e60f30122f1852b874dceb9fb6a519f57726df76cace2a4e4cc8",
+      "hero_path": "/assets/articles/hero/irs-form-8824-source-document-map-for-a-mineral-rights-exchange.webp",
+      "hero_sha256": "106fb3f66e6cdf8452200331031296f37b39abe679df971f6473af7c49eb55f0",
+      "hero_asset_sha256": "106fb3f66e6cdf8452200331031296f37b39abe679df971f6473af7c49eb55f0",
+      "admission_status": "admitted_quality_gated",
+      "finalization_state": "draft_noindex_admitted",
+      "searchatlas_content_score": null,
+      "searchatlas_word_count": 1911,
+      "risk_citation_remediation": [
+        "The original MRX1000-0647 identity and nearby MRX1000-0648 through MRX1000-0669 broad 1031, tax-question, and value identities are rejected as-is.",
+        "Current official IRS sources support only the 2025 form identity, parts, request categories, and bounded source-preparation context. They do not establish qualification, select answers, validate dates or amounts, determine deadline compliance, or authorize filing advice.",
+        "Mapped, incomplete, and professional-review-required are source-location outcomes only and never establish relevance, completeness, correctness, qualification, deadline compliance, taxpayer identity, property classification, related-party treatment, amount, basis, gain, liability, filing status, or legal effect.",
+        "The public article and images expose no real or fictional form, name, address, TIN, account number, property identifier, parcel or legal description, date, dollar amount, selected answer, completed outcome, signature, seal, logo, or conclusion.",
+        "Any characterization, selection, calculation, deadline analysis, filing or amendment judgment, exchange structuring, eligibility analysis, transaction design, form completion, QI recommendation, or owner-specific conclusion forces an immediate stop and authorized-professional handoff.",
+        "Continuous quality-gated admission under the owner no-approval directives; no owner publication approval applies."
+      ],
+      "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/irs-form-8824-source-document-map-for-a-mineral-rights-exchange.json",
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/irs-form-8824-source-document-map-for-a-mineral-rights-exchange/irs-form-8824-source-documents.webp",
+      "inline_asset_sha256": "4dfec730fe16e66f45b2f6271977f8ed0f5e05f00d2ccf8c28dbfd74a4ba1ace",
+      "inline_rendered_text": "IRS Form 8824 source documents"
     }
   ],
   "admission_audit": {
-    "admitted_article_count": 219,
+    "admitted_article_count": 220,
     "selection_ranks": [
       1,
       2,
@@ -7965,7 +8004,8 @@
       216,
       217,
       218,
-      219
+      219,
+      220
     ],
     "duplicate_program_row_ids": [],
     "duplicate_slugs": [],
@@ -8024,9 +8064,9 @@
   "two_image_policy": {
     "directive": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
     "retrofit_manifest_path": "config/mrx-article-two-image-retrofit.json",
-    "retrofit_manifest_sha256": "4addc1a1e17a69994051af45c77a772944184d6c9a6c71d01c28da8fd52ddec7",
-    "public_article_count": 227,
-    "batch_article_count": 219,
+    "retrofit_manifest_sha256": "78bc29e86fa5495708de74314e45251a3859f45e332965b99b9e0933fc1533fb",
+    "public_article_count": 228,
+    "batch_article_count": 220,
     "assets_per_article": 2,
     "hero_share_identity_required": true,
     "inline_image_distinct_required": true,

@@ -1,15 +1,15 @@
 {
   "artifact_type": "mrx1000_content_activation_plan",
   "plan_version": "mrx1000-content-activation-v1.1.0",
-  "generated_at": "2026-07-20T20:49:12.356Z",
+  "generated_at": "2026-07-20T07:35:11.023Z",
   "generated_at_method": "canonical_ledger_generated_at",
   "generator": "scripts/build-mrx-1000-activation-plan.mjs",
-  "content_fingerprint_sha256": "da877780f5595bc3ba5e9e6820126c33edba94d5e5ccdfffe43943a24d3c7180",
+  "content_fingerprint_sha256": "f3fdca7a32008b5764b723a1b890158cd64509e82ef23384dc60eddce7e2273d",
   "inputs": {
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_fingerprint_sha256": "347bc92395ef9f226bda0cfd9cef5ecb4cfa753cbc91a807479e60ff6d86eaba",
+    "canonical_ledger_fingerprint_sha256": "d1ce9c2a56cffd42facd31f8c8cac370de988b250dd8c5c45233fbcfa03c0f1f",
     "canonical_ledger_fingerprint_verified": true,
-    "canonical_ledger_generated_at": "2026-07-20T20:49:12.356Z",
+    "canonical_ledger_generated_at": "2026-07-20T07:35:11.023Z",
     "owner_decision": {
       "decision_id": "D-2026-0804-16",
       "signed_disposition": "APPROVED_CONTINUOUS_QUALITY_GATED_ARTICLE_PUBLICATION",
@@ -115,9 +115,9 @@
     },
     "by_source_preservation_classification": {
       "incumbent_draft_nonpublic_held": 23,
-      "live_public_published_route": 227,
+      "live_public_published_route": 228,
       "pilot_draft_noindex_stage": 25,
-      "planning_only_inventory": 725
+      "planning_only_inventory": 724
     }
   },
   "rows": [
@@ -39325,11 +39325,11 @@
       },
       "sibling_link": {
         "target_program_row_id": "MRX1000-0647",
-        "target_title": "1031 Exchange for Mineral Rights: A Smart Move or Risky Decision?",
-        "url": "/blog/1031-exchange-for-mineral-rights-a-smart-move-or-risky-decision/",
+        "target_title": "IRS Form 8824 Source-Document Map for a Mineral Rights Exchange",
+        "url": "/blog/irs-form-8824-source-document-map-for-a-mineral-rights-exchange/",
         "relationship": "same_cluster_next_by_program_row_id_cyclic",
-        "target_source_preservation_classification": "planning_only_inventory",
-        "target_route_live": false,
+        "target_source_preservation_classification": "live_public_published_route",
+        "target_route_live": true,
         "status": "planned_local_only"
       },
       "primary_cta": {
@@ -39372,15 +39372,15 @@
     },
     {
       "program_row_id": "MRX1000-0647",
-      "canonical_title": "1031 Exchange for Mineral Rights: A Smart Move or Risky Decision?",
-      "canonical_slug": "1031-exchange-for-mineral-rights-a-smart-move-or-risky-decision",
-      "canonical_url": "/blog/1031-exchange-for-mineral-rights-a-smart-move-or-risky-decision/",
+      "canonical_title": "IRS Form 8824 Source-Document Map for a Mineral Rights Exchange",
+      "canonical_slug": "irs-form-8824-source-document-map-for-a-mineral-rights-exchange",
+      "canonical_url": "/blog/irs-form-8824-source-document-map-for-a-mineral-rights-exchange/",
       "cluster": "tax-1031-legal-education",
       "pillar": "mineral-rights-taxes",
       "search_intent": "informational",
       "funnel_stage": "education",
-      "source_preservation_classification": "planning_only_inventory",
-      "source_route_live": false,
+      "source_preservation_classification": "live_public_published_route",
+      "source_route_live": true,
       "pillar_link": {
         "url": "/learning-center/mineral-rights-taxes/",
         "route_evidence": "src/pages/learning-center/mineral-rights-taxes/index.astro",
@@ -39429,7 +39429,7 @@
         "rendered_triangle_verified": false,
         "live_status": "not_published_or_verified_by_this_plan",
         "live_triangle_verified": false,
-        "release_status": "eligible_for_continuous_quality_review_not_yet_cleared",
+        "release_status": "released_under_d16_continuous_quality_gate",
         "numerical_release_cap_applies": false
       }
     },
@@ -41907,69 +41907,6 @@
         "status": "planned_local_only"
       },
       "sibling_link": {
-        "target_program_row_id": "MRX1000-0688",
-        "target_title": "Mineral Rights Valuation: Tax Questions Without Obligation",
-        "url": "/blog/mineral-rights-valuation-tax-questions-without-obligation/",
-        "relationship": "same_cluster_next_by_program_row_id_cyclic",
-        "target_source_preservation_classification": "planning_only_inventory",
-        "target_route_live": false,
-        "status": "planned_local_only"
-      },
-      "primary_cta": {
-        "url": "/free-guide/",
-        "label": "Get the Free Mineral Rights Guide",
-        "name": "mrx1000-mineral-rights-taxes-free_guide-mid_article",
-        "placement_code": "mid_article",
-        "placement_guidance": "Place after the direct answer or first useful checklist, before the first deep-dive section.",
-        "assignment_rule": "education_stage_nurture",
-        "assignment_basis": "education:risk-check",
-        "approved_route_evidence": "src/pages/free-guide.astro",
-        "role": "primary_nurture",
-        "is_appointment_cta": false,
-        "status": "planned_local_only"
-      },
-      "appointment_cta": {
-        "url": "/book/",
-        "label": "Prepare Questions for My Adviser",
-        "name": "mrx1000-mineral-rights-taxes-book_review-closing_team_handoff",
-        "placement_code": "closing_team_handoff",
-        "placement_guidance": "Place after the final takeaway and primary guide CTA, before related articles, as the optional MRX team handoff.",
-        "assignment_rule": "education_stage_optional_team_handoff",
-        "assignment_basis": "education:risk-check",
-        "approved_route_evidence": "src/pages/book.astro",
-        "role": "secondary_appointment_after_primary_nurture",
-        "distinct_from_primary_cta": true,
-        "status": "planned_local_only"
-      },
-      "evidence": {
-        "triangle_plan_status": "planned_complete",
-        "primary_cta_plan_status": "planned_complete",
-        "appointment_cta_plan_status": "planned_complete",
-        "rendered_status": "not_rendered_or_verified_by_this_plan",
-        "rendered_triangle_verified": false,
-        "live_status": "not_published_or_verified_by_this_plan",
-        "live_triangle_verified": false,
-        "release_status": "eligible_for_continuous_quality_review_not_yet_cleared",
-        "numerical_release_cap_applies": false
-      }
-    },
-    {
-      "program_row_id": "MRX1000-0688",
-      "canonical_title": "Mineral Rights Valuation: Tax Questions Without Obligation",
-      "canonical_slug": "mineral-rights-valuation-tax-questions-without-obligation",
-      "canonical_url": "/blog/mineral-rights-valuation-tax-questions-without-obligation/",
-      "cluster": "tax-1031-legal-education",
-      "pillar": "mineral-rights-taxes",
-      "search_intent": "inherited-rights",
-      "funnel_stage": "education",
-      "source_preservation_classification": "planning_only_inventory",
-      "source_route_live": false,
-      "pillar_link": {
-        "url": "/learning-center/mineral-rights-taxes/",
-        "route_evidence": "src/pages/learning-center/mineral-rights-taxes/index.astro",
-        "status": "planned_local_only"
-      },
-      "sibling_link": {
         "target_program_row_id": "MRX1000-0689",
         "target_title": "Mineral Rights vs. Other Investment Options in 1031 Exchanges",
         "url": "/blog/mineral-rights-vs-other-investment-options-in-1031-exchanges/",
@@ -41985,7 +41922,7 @@
         "placement_code": "mid_article",
         "placement_guidance": "Place after the direct answer or first useful checklist, before the first deep-dive section.",
         "assignment_rule": "education_stage_nurture",
-        "assignment_basis": "education:inherited-rights",
+        "assignment_basis": "education:risk-check",
         "approved_route_evidence": "src/pages/free-guide.astro",
         "role": "primary_nurture",
         "is_appointment_cta": false,
@@ -41998,7 +41935,7 @@
         "placement_code": "closing_team_handoff",
         "placement_guidance": "Place after the final takeaway and primary guide CTA, before related articles, as the optional MRX team handoff.",
         "assignment_rule": "education_stage_optional_team_handoff",
-        "assignment_basis": "education:inherited-rights",
+        "assignment_basis": "education:risk-check",
         "approved_route_evidence": "src/pages/book.astro",
         "role": "secondary_appointment_after_primary_nurture",
         "distinct_from_primary_cta": true,
@@ -44301,12 +44238,12 @@
         "status": "planned_local_only"
       },
       "sibling_link": {
-        "target_program_row_id": "MRX1000-0626",
-        "target_title": "1031 Exchange for Mineral Rights: Does It Qualify and How Does It Work?",
-        "url": "/blog/1031-exchange-for-mineral-rights-does-it-qualify-and-how-does-it-work/",
+        "target_program_row_id": "MRX1000-1054",
+        "target_title": "1031 Exchange for Mineral Rights: A Smart Move or Risky Decision?",
+        "url": "/blog/1031-exchange-for-mineral-rights-a-smart-move-or-risky-decision/",
         "relationship": "same_cluster_next_by_program_row_id_cyclic",
-        "target_source_preservation_classification": "live_public_published_route",
-        "target_route_live": true,
+        "target_source_preservation_classification": "planning_only_inventory",
+        "target_route_live": false,
         "status": "planned_local_only"
       },
       "primary_cta": {
@@ -63104,6 +63041,69 @@
         "placement_guidance": "Place after the final takeaway and primary guide CTA, before related articles, as the optional MRX team handoff.",
         "assignment_rule": "education_stage_optional_team_handoff",
         "assignment_basis": "education:compare-offers",
+        "approved_route_evidence": "src/pages/book.astro",
+        "role": "secondary_appointment_after_primary_nurture",
+        "distinct_from_primary_cta": true,
+        "status": "planned_local_only"
+      },
+      "evidence": {
+        "triangle_plan_status": "planned_complete",
+        "primary_cta_plan_status": "planned_complete",
+        "appointment_cta_plan_status": "planned_complete",
+        "rendered_status": "not_rendered_or_verified_by_this_plan",
+        "rendered_triangle_verified": false,
+        "live_status": "not_published_or_verified_by_this_plan",
+        "live_triangle_verified": false,
+        "release_status": "eligible_for_continuous_quality_review_not_yet_cleared",
+        "numerical_release_cap_applies": false
+      }
+    },
+    {
+      "program_row_id": "MRX1000-1054",
+      "canonical_title": "1031 Exchange for Mineral Rights: A Smart Move or Risky Decision?",
+      "canonical_slug": "1031-exchange-for-mineral-rights-a-smart-move-or-risky-decision",
+      "canonical_url": "/blog/1031-exchange-for-mineral-rights-a-smart-move-or-risky-decision/",
+      "cluster": "tax-1031-legal-education",
+      "pillar": "mineral-rights-taxes",
+      "search_intent": "informational",
+      "funnel_stage": "education",
+      "source_preservation_classification": "planning_only_inventory",
+      "source_route_live": false,
+      "pillar_link": {
+        "url": "/learning-center/mineral-rights-taxes/",
+        "route_evidence": "src/pages/learning-center/mineral-rights-taxes/index.astro",
+        "status": "planned_local_only"
+      },
+      "sibling_link": {
+        "target_program_row_id": "MRX1000-0626",
+        "target_title": "1031 Exchange for Mineral Rights: Does It Qualify and How Does It Work?",
+        "url": "/blog/1031-exchange-for-mineral-rights-does-it-qualify-and-how-does-it-work/",
+        "relationship": "same_cluster_next_by_program_row_id_cyclic",
+        "target_source_preservation_classification": "live_public_published_route",
+        "target_route_live": true,
+        "status": "planned_local_only"
+      },
+      "primary_cta": {
+        "url": "/free-guide/",
+        "label": "Get the Free Mineral Rights Guide",
+        "name": "mrx1000-mineral-rights-taxes-free_guide-mid_article",
+        "placement_code": "mid_article",
+        "placement_guidance": "Place after the direct answer or first useful checklist, before the first deep-dive section.",
+        "assignment_rule": "education_stage_nurture",
+        "assignment_basis": "education:informational",
+        "approved_route_evidence": "src/pages/free-guide.astro",
+        "role": "primary_nurture",
+        "is_appointment_cta": false,
+        "status": "planned_local_only"
+      },
+      "appointment_cta": {
+        "url": "/book/",
+        "label": "Prepare Questions for My Adviser",
+        "name": "mrx1000-mineral-rights-taxes-book_review-closing_team_handoff",
+        "placement_code": "closing_team_handoff",
+        "placement_guidance": "Place after the final takeaway and primary guide CTA, before related articles, as the optional MRX team handoff.",
+        "assignment_rule": "education_stage_optional_team_handoff",
+        "assignment_basis": "education:informational",
         "approved_route_evidence": "src/pages/book.astro",
         "role": "secondary_appointment_after_primary_nurture",
         "distinct_from_primary_cta": true,
