@@ -1,7 +1,7 @@
 {
   "program": "MRX1000",
   "artifact_type": "searchatlas_ordered_llm_local_execution_manifest",
-  "generated_at": "2026-07-20T12:50:17.598Z",
+  "generated_at": "2026-07-20T14:39:49.824Z",
   "deterministic": true,
   "local_only": true,
   "external_services_called": false,
@@ -9,8 +9,8 @@
   "inputs": {
     "ledger": {
       "path": "config/mrx-1000-canonical-content-ledger.json",
-      "sha256": "fe9ececabd39fec4963dcbcd67bbddc209c1018ba375949cb9c9e7817a3d51c6",
-      "bytes": 4612635
+      "sha256": "1cbd9e92ed5d94439415c02993c7c25c5ef8f8dfe256307eba08177bb24b9cab",
+      "bytes": 4612437
     },
     "readiness": {
       "path": "reports/mrx-1000-readiness-matrix.json",
@@ -125481,7 +125481,7 @@
       "primary_keyword": "Texas Secretary of State registered agent and registered office evidence boundary",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -352202,5 +352202,5 @@
       ]
     }
   ],
-  "content_fingerprint_sha256": "365c0dc3fc51fd911d266d4c72a0ad3b3e742b6a82787ed1b3265fe22d9dad2d"
+  "content_fingerprint_sha256": "d863d4992ac05217f5b6de67f9b5a536066f9f842d1ca792ba5a6b9a8e05d386"
 }
