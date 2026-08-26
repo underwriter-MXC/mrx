@@ -1,15 +1,15 @@
 {
   "artifact_type": "mrx1000_content_activation_plan",
   "plan_version": "mrx1000-content-activation-v1.1.0",
-  "generated_at": "2026-07-20T00:41:25.107Z",
+  "generated_at": "2026-07-20T06:34:02.797Z",
   "generated_at_method": "canonical_ledger_generated_at",
   "generator": "scripts/build-mrx-1000-activation-plan.mjs",
-  "content_fingerprint_sha256": "667216954b008af3be8460cf98248310ca5c2a16242dc9c414bee3c296002784",
+  "content_fingerprint_sha256": "e7c2db6ed51acea43f0fc60fd37b0384dce471c660fc65a7fcd692fd9ce2fe8b",
   "inputs": {
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_fingerprint_sha256": "c0406ef02dbde85e092c4cb22ace50633729195acf1ffbcf0bf948967f3e32fa",
+    "canonical_ledger_fingerprint_sha256": "43a2853fc10f85403684c1b7b4fa27f8d43f1e6286ae38a64c2b83fedc758d21",
     "canonical_ledger_fingerprint_verified": true,
-    "canonical_ledger_generated_at": "2026-07-20T00:41:25.107Z",
+    "canonical_ledger_generated_at": "2026-07-20T06:34:02.797Z",
     "owner_decision": {
       "decision_id": "D-2026-0804-16",
       "signed_disposition": "APPROVED_CONTINUOUS_QUALITY_GATED_ARTICLE_PUBLICATION",
@@ -115,9 +115,9 @@
     },
     "by_source_preservation_classification": {
       "incumbent_draft_nonpublic_held": 23,
-      "live_public_published_route": 229,
+      "live_public_published_route": 230,
       "pilot_draft_noindex_stage": 25,
-      "planning_only_inventory": 723
+      "planning_only_inventory": 722
     }
   },
   "rows": [
@@ -39577,11 +39577,11 @@
       },
       "sibling_link": {
         "target_program_row_id": "MRX1000-0651",
-        "target_title": "Cash For Mineral Rights: Tax Questions Before Accepting An Offer",
-        "url": "/blog/cash-for-mineral-rights-tax-questions-before-accepting-an-offer/",
+        "target_title": "Cash for Mineral Rights: How to Retrieve IRS Tax Transcripts for a CPA Handoff",
+        "url": "/blog/cash-for-mineral-rights-irs-tax-transcripts-cpa-handoff/",
         "relationship": "same_cluster_next_by_program_row_id_cyclic",
-        "target_source_preservation_classification": "planning_only_inventory",
-        "target_route_live": false,
+        "target_source_preservation_classification": "live_public_published_route",
+        "target_route_live": true,
         "status": "planned_local_only"
       },
       "primary_cta": {
@@ -39624,15 +39624,15 @@
     },
     {
       "program_row_id": "MRX1000-0651",
-      "canonical_title": "Cash For Mineral Rights: Tax Questions Before Accepting An Offer",
-      "canonical_slug": "cash-for-mineral-rights-tax-questions-before-accepting-an-offer",
-      "canonical_url": "/blog/cash-for-mineral-rights-tax-questions-before-accepting-an-offer/",
+      "canonical_title": "Cash for Mineral Rights: How to Retrieve IRS Tax Transcripts for a CPA Handoff",
+      "canonical_slug": "cash-for-mineral-rights-irs-tax-transcripts-cpa-handoff",
+      "canonical_url": "/blog/cash-for-mineral-rights-irs-tax-transcripts-cpa-handoff/",
       "cluster": "tax-1031-legal-education",
       "pillar": "mineral-rights-taxes",
-      "search_intent": "local-buyer",
+      "search_intent": "informational",
       "funnel_stage": "education",
-      "source_preservation_classification": "planning_only_inventory",
-      "source_route_live": false,
+      "source_preservation_classification": "live_public_published_route",
+      "source_route_live": true,
       "pillar_link": {
         "url": "/learning-center/mineral-rights-taxes/",
         "route_evidence": "src/pages/learning-center/mineral-rights-taxes/index.astro",
@@ -39654,7 +39654,7 @@
         "placement_code": "mid_article",
         "placement_guidance": "Place after the direct answer or first useful checklist, before the first deep-dive section.",
         "assignment_rule": "education_stage_nurture",
-        "assignment_basis": "education:local-buyer",
+        "assignment_basis": "education:informational",
         "approved_route_evidence": "src/pages/free-guide.astro",
         "role": "primary_nurture",
         "is_appointment_cta": false,
@@ -39667,7 +39667,7 @@
         "placement_code": "closing_team_handoff",
         "placement_guidance": "Place after the final takeaway and primary guide CTA, before related articles, as the optional MRX team handoff.",
         "assignment_rule": "education_stage_optional_team_handoff",
-        "assignment_basis": "education:local-buyer",
+        "assignment_basis": "education:informational",
         "approved_route_evidence": "src/pages/book.astro",
         "role": "secondary_appointment_after_primary_nurture",
         "distinct_from_primary_cta": true,
@@ -39681,7 +39681,7 @@
         "rendered_triangle_verified": false,
         "live_status": "not_published_or_verified_by_this_plan",
         "live_triangle_verified": false,
-        "release_status": "eligible_for_continuous_quality_review_not_yet_cleared",
+        "release_status": "released_under_d16_continuous_quality_gate",
         "numerical_release_cap_applies": false
       }
     },
@@ -40773,69 +40773,6 @@
         "status": "planned_local_only"
       },
       "sibling_link": {
-        "target_program_row_id": "MRX1000-0670",
-        "target_title": "Mineral Appraisal: Tax Questions Before Accepting An Offer",
-        "url": "/blog/mineral-appraisal-tax-questions-before-accepting-an-offer/",
-        "relationship": "same_cluster_next_by_program_row_id_cyclic",
-        "target_source_preservation_classification": "planning_only_inventory",
-        "target_route_live": false,
-        "status": "planned_local_only"
-      },
-      "primary_cta": {
-        "url": "/free-guide/",
-        "label": "Get the Free Mineral Rights Guide",
-        "name": "mrx1000-mineral-rights-taxes-free_guide-mid_article",
-        "placement_code": "mid_article",
-        "placement_guidance": "Place after the direct answer or first useful checklist, before the first deep-dive section.",
-        "assignment_rule": "education_stage_nurture",
-        "assignment_basis": "education:informational",
-        "approved_route_evidence": "src/pages/free-guide.astro",
-        "role": "primary_nurture",
-        "is_appointment_cta": false,
-        "status": "planned_local_only"
-      },
-      "appointment_cta": {
-        "url": "/book/",
-        "label": "Prepare Questions for My Adviser",
-        "name": "mrx1000-mineral-rights-taxes-book_review-closing_team_handoff",
-        "placement_code": "closing_team_handoff",
-        "placement_guidance": "Place after the final takeaway and primary guide CTA, before related articles, as the optional MRX team handoff.",
-        "assignment_rule": "education_stage_optional_team_handoff",
-        "assignment_basis": "education:informational",
-        "approved_route_evidence": "src/pages/book.astro",
-        "role": "secondary_appointment_after_primary_nurture",
-        "distinct_from_primary_cta": true,
-        "status": "planned_local_only"
-      },
-      "evidence": {
-        "triangle_plan_status": "planned_complete",
-        "primary_cta_plan_status": "planned_complete",
-        "appointment_cta_plan_status": "planned_complete",
-        "rendered_status": "not_rendered_or_verified_by_this_plan",
-        "rendered_triangle_verified": false,
-        "live_status": "not_published_or_verified_by_this_plan",
-        "live_triangle_verified": false,
-        "release_status": "eligible_for_continuous_quality_review_not_yet_cleared",
-        "numerical_release_cap_applies": false
-      }
-    },
-    {
-      "program_row_id": "MRX1000-0670",
-      "canonical_title": "Mineral Appraisal: Tax Questions Before Accepting An Offer",
-      "canonical_slug": "mineral-appraisal-tax-questions-before-accepting-an-offer",
-      "canonical_url": "/blog/mineral-appraisal-tax-questions-before-accepting-an-offer/",
-      "cluster": "tax-1031-legal-education",
-      "pillar": "mineral-rights-taxes",
-      "search_intent": "local-buyer",
-      "funnel_stage": "education",
-      "source_preservation_classification": "planning_only_inventory",
-      "source_route_live": false,
-      "pillar_link": {
-        "url": "/learning-center/mineral-rights-taxes/",
-        "route_evidence": "src/pages/learning-center/mineral-rights-taxes/index.astro",
-        "status": "planned_local_only"
-      },
-      "sibling_link": {
         "target_program_row_id": "MRX1000-0671",
         "target_title": "Mineral Appraisal: Tax Questions To Compare Buyers",
         "url": "/blog/mineral-appraisal-tax-questions-to-compare-buyers/",
@@ -40851,7 +40788,7 @@
         "placement_code": "mid_article",
         "placement_guidance": "Place after the direct answer or first useful checklist, before the first deep-dive section.",
         "assignment_rule": "education_stage_nurture",
-        "assignment_basis": "education:local-buyer",
+        "assignment_basis": "education:informational",
         "approved_route_evidence": "src/pages/free-guide.astro",
         "role": "primary_nurture",
         "is_appointment_cta": false,
@@ -40864,7 +40801,7 @@
         "placement_code": "closing_team_handoff",
         "placement_guidance": "Place after the final takeaway and primary guide CTA, before related articles, as the optional MRX team handoff.",
         "assignment_rule": "education_stage_optional_team_handoff",
-        "assignment_basis": "education:local-buyer",
+        "assignment_basis": "education:informational",
         "approved_route_evidence": "src/pages/book.astro",
         "role": "secondary_appointment_after_primary_nurture",
         "distinct_from_primary_cta": true,
@@ -63075,12 +63012,12 @@
         "status": "planned_local_only"
       },
       "sibling_link": {
-        "target_program_row_id": "MRX1000-0626",
-        "target_title": "1031 Exchange for Mineral Rights: Does It Qualify and How Does It Work?",
-        "url": "/blog/1031-exchange-for-mineral-rights-does-it-qualify-and-how-does-it-work/",
+        "target_program_row_id": "MRX1000-1056",
+        "target_title": "Cash For Mineral Rights: Tax Questions Before Accepting An Offer",
+        "url": "/blog/cash-for-mineral-rights-tax-questions-before-accepting-an-offer/",
         "relationship": "same_cluster_next_by_program_row_id_cyclic",
-        "target_source_preservation_classification": "live_public_published_route",
-        "target_route_live": true,
+        "target_source_preservation_classification": "planning_only_inventory",
+        "target_route_live": false,
         "status": "planned_local_only"
       },
       "primary_cta": {
@@ -63104,6 +63041,69 @@
         "placement_guidance": "Place after the final takeaway and primary guide CTA, before related articles, as the optional MRX team handoff.",
         "assignment_rule": "education_stage_optional_team_handoff",
         "assignment_basis": "education:informational",
+        "approved_route_evidence": "src/pages/book.astro",
+        "role": "secondary_appointment_after_primary_nurture",
+        "distinct_from_primary_cta": true,
+        "status": "planned_local_only"
+      },
+      "evidence": {
+        "triangle_plan_status": "planned_complete",
+        "primary_cta_plan_status": "planned_complete",
+        "appointment_cta_plan_status": "planned_complete",
+        "rendered_status": "not_rendered_or_verified_by_this_plan",
+        "rendered_triangle_verified": false,
+        "live_status": "not_published_or_verified_by_this_plan",
+        "live_triangle_verified": false,
+        "release_status": "eligible_for_continuous_quality_review_not_yet_cleared",
+        "numerical_release_cap_applies": false
+      }
+    },
+    {
+      "program_row_id": "MRX1000-1056",
+      "canonical_title": "Cash For Mineral Rights: Tax Questions Before Accepting An Offer",
+      "canonical_slug": "cash-for-mineral-rights-tax-questions-before-accepting-an-offer",
+      "canonical_url": "/blog/cash-for-mineral-rights-tax-questions-before-accepting-an-offer/",
+      "cluster": "tax-1031-legal-education",
+      "pillar": "mineral-rights-taxes",
+      "search_intent": "local-buyer",
+      "funnel_stage": "education",
+      "source_preservation_classification": "planning_only_inventory",
+      "source_route_live": false,
+      "pillar_link": {
+        "url": "/learning-center/mineral-rights-taxes/",
+        "route_evidence": "src/pages/learning-center/mineral-rights-taxes/index.astro",
+        "status": "planned_local_only"
+      },
+      "sibling_link": {
+        "target_program_row_id": "MRX1000-0626",
+        "target_title": "1031 Exchange for Mineral Rights: Does It Qualify and How Does It Work?",
+        "url": "/blog/1031-exchange-for-mineral-rights-does-it-qualify-and-how-does-it-work/",
+        "relationship": "same_cluster_next_by_program_row_id_cyclic",
+        "target_source_preservation_classification": "live_public_published_route",
+        "target_route_live": true,
+        "status": "planned_local_only"
+      },
+      "primary_cta": {
+        "url": "/free-guide/",
+        "label": "Get the Free Mineral Rights Guide",
+        "name": "mrx1000-mineral-rights-taxes-free_guide-mid_article",
+        "placement_code": "mid_article",
+        "placement_guidance": "Place after the direct answer or first useful checklist, before the first deep-dive section.",
+        "assignment_rule": "education_stage_nurture",
+        "assignment_basis": "education:local-buyer",
+        "approved_route_evidence": "src/pages/free-guide.astro",
+        "role": "primary_nurture",
+        "is_appointment_cta": false,
+        "status": "planned_local_only"
+      },
+      "appointment_cta": {
+        "url": "/book/",
+        "label": "Prepare Questions for My Adviser",
+        "name": "mrx1000-mineral-rights-taxes-book_review-closing_team_handoff",
+        "placement_code": "closing_team_handoff",
+        "placement_guidance": "Place after the final takeaway and primary guide CTA, before related articles, as the optional MRX team handoff.",
+        "assignment_rule": "education_stage_optional_team_handoff",
+        "assignment_basis": "education:local-buyer",
         "approved_route_evidence": "src/pages/book.astro",
         "role": "secondary_appointment_after_primary_nurture",
         "distinct_from_primary_cta": true,

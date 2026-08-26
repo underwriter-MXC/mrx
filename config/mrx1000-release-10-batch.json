@@ -1,7 +1,7 @@
 {
   "program": "MRX 1,000 Article SEO+AEO Production Program",
   "artifact_type": "authorized_release_10_batch",
-  "evidence_scaffold_generated_at_utc": "2026-08-26T14:32:18Z",
+  "evidence_scaffold_generated_at_utc": "2026-08-26T15:09:08Z",
   "decision_authority": {
     "successor_gate_decision_id": "D-2026-0804-16",
     "successor_gate_decision_path": "docs/governance/mrx1000-owner-continuous-publication-directive-2026-08-04.md",
@@ -447,13 +447,16 @@
     "wave148_selection_decision_sha256": "f80991eee42599822afc305e29c7e427471df105ac61d35c0bf5d7c44f071b05",
     "wave149_selection_decision_id": "MRX1000-W149-SELECT-2026-08-26",
     "wave149_selection_decision_path": "docs/governance/mrx1000-wave149-selection-decision-2026-08-26.md",
-    "wave149_selection_decision_sha256": "5c9100ba19680307d3aa68dbfa3e13f60531834829ba55a054f26677cd27d72e"
+    "wave149_selection_decision_sha256": "5c9100ba19680307d3aa68dbfa3e13f60531834829ba55a054f26677cd27d72e",
+    "wave150_selection_decision_id": "MRX1000-W150-SELECT-2026-08-26",
+    "wave150_selection_decision_path": "docs/governance/mrx1000-wave150-selection-decision-2026-08-26.md",
+    "wave150_selection_decision_sha256": "562759c27ffbbc7634bf995ec1c9f6c4a45215a2143226e488a9c30180ab5337"
   },
   "identity_authority": {
     "scope_key": "canonical_slug",
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_sha256": "29d0281a0382b4b9818e4d4a77c905877b8f58c012fb150c725c8a4502a08288",
-    "canonical_ledger_generated_at": "2026-07-20T22:40:45.914Z",
+    "canonical_ledger_sha256": "c0679b17b4ac7cd8452d725365922b3ea7b345b1c6dee03dc59d2570e1159ad6",
+    "canonical_ledger_generated_at": "2026-07-20T00:41:25.107Z",
     "successor_ledger_decision_id": "D-2026-0723-LEDGER-04",
     "successor_ledger_decision_path": "artifacts/mrx1000-release-10/decisions/mrx-ceo-ledger-provenance-successor-20260723-04.md",
     "successor_ledger_decision_sha256": "09eca24bcd0e71563f2ac4197f564eec0ccb43a5ee955216da5c4a2543d04978",
@@ -467,11 +470,11 @@
     "authorization_scope": "declared_program_size_not_a_staged_release_cap",
     "admission_mode": "continuous_quality_gated",
     "continuous_quality_gated_from_selection_rank": 26,
-    "prior_verified_article_count": 220,
+    "prior_verified_article_count": 221,
     "fail_closed": true,
     "earned_scale_gates": [],
-    "exact_admitted_count": 221,
-    "exact_admitted_slate_sha256": "14fefbb8a7f7c56151f95ed054cb519b5b55973142ed61e68f3d06c2cdfb966a"
+    "exact_admitted_count": 222,
+    "exact_admitted_slate_sha256": "125b09b75b8219d0cab4952b2b52a3d9f74f1bca99e251425d05256a036b136d"
   },
   "articles": [
     {
@@ -7820,10 +7823,47 @@
       "inline_path": "/assets/articles/inline/1031-exchange-evidence-provenance-log-mineral-interest-owners/1031-exchange-recordkeeping-for-mineral-interests.webp",
       "inline_asset_sha256": "3b356082519f3a7e6fd0588293f43f5e2d4e03dba90f18813e0dbb4586f12c33",
       "inline_rendered_text": "1031 exchange recordkeeping for mineral interests"
+    },
+    {
+      "selection_rank": 222,
+      "program_row_id": "MRX1000-0651",
+      "source_shortlist_program_row_id": "MRX1000-0651",
+      "slug": "cash-for-mineral-rights-irs-tax-transcripts-cpa-handoff",
+      "title": "Cash for Mineral Rights: How to Retrieve IRS Tax Transcripts for a CPA Handoff",
+      "source_shortlist_title": "Cash for Mineral Rights: How to Retrieve IRS Tax Transcripts for a CPA Handoff",
+      "canonical_url": "https://mineralrightsxchange.com/blog/cash-for-mineral-rights-irs-tax-transcripts-cpa-handoff/",
+      "pillar": "mineral-rights-taxes",
+      "cluster": "tax-1031-legal-education",
+      "content_genius_article_uuid": null,
+      "archive_evidence_sha256": "6e865656934473572c8a8a6e28fb55c981aadd66eda6985803d80d0caecb8d44",
+      "repo_path": "src/content/posts/cash-for-mineral-rights-irs-tax-transcripts-cpa-handoff.mdx",
+      "repo_sha256": "e6cc40d9e199fac916e6a6b4262b193ea0e08e9c24f27aaf34d05cad45ae376f",
+      "article_sha256": "e6cc40d9e199fac916e6a6b4262b193ea0e08e9c24f27aaf34d05cad45ae376f",
+      "hero_path": "/assets/articles/hero/cash-for-mineral-rights-how-to-retrieve-irs-tax-transcripts-for-a-cpa-handoff.webp",
+      "hero_sha256": "893b088fd925d30605618c8bedf34aac0b51db296b8d5d83f4e99113b58007b1",
+      "hero_asset_sha256": "893b088fd925d30605618c8bedf34aac0b51db296b8d5d83f4e99113b58007b1",
+      "admission_status": "admitted_quality_gated",
+      "finalization_state": "draft_noindex_admitted",
+      "searchatlas_content_score": null,
+      "searchatlas_word_count": 2585,
+      "risk_citation_remediation": [
+        "MRX1000-0649 and MRX1000-0650 remain preserved, uncounted planning rows with REJECT_NO_SAFE_IDENTITY decisions; no duplicate 1031 article is drafted or admitted.",
+        "The original MRX1000-0651 broad tax-question identity is replaced by one narrow IRS transcript retrieval, source-scope, unaltered-copy, limitation, and CPA-handoff job.",
+        "Current official IRS sources support retrieval routes, limited transcript descriptions, masking and third-party-mailing boundaries, April 2025 Form 4506-T revision control, and transcript-versus-return-copy context only.",
+        "A transcript is not treated as title, deed, lease, division-order, valuation, basis, complete return, complete transaction, offer, or tax-treatment proof. Missing or unavailable data is not treated as negative evidence.",
+        "The public article and images expose no real or fictional taxpayer, tax ID, address, account, return, tax year, transcript entry, payer, property, legal description, offer, date, amount, signature, form facsimile, seal, logo, result, or conclusion.",
+        "Transcript selection, interpretation, completeness, income or gain character, basis, tax, filing, retention, title, offer, valuation, security choice, and transaction decisions force an immediate CPA or attorney handoff.",
+        "Continuous quality-gated admission under the owner no-approval directives; no owner publication approval applies."
+      ],
+      "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/cash-for-mineral-rights-irs-tax-transcripts-cpa-handoff.json",
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/cash-for-mineral-rights-irs-tax-transcripts-cpa-handoff/cash-for-mineral-rights-tax-transcripts.webp",
+      "inline_asset_sha256": "ccedcd2e7aad249bf5ec7ba46beb2600cc5ae67cf2879a205cddef7e3e9025ee",
+      "inline_rendered_text": "cash for mineral rights tax transcripts"
     }
   ],
   "admission_audit": {
-    "admitted_article_count": 221,
+    "admitted_article_count": 222,
     "selection_ranks": [
       1,
       2,
@@ -8045,7 +8085,8 @@
       218,
       219,
       220,
-      221
+      221,
+      222
     ],
     "duplicate_program_row_ids": [],
     "duplicate_slugs": [],
@@ -8104,9 +8145,9 @@
   "two_image_policy": {
     "directive": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
     "retrofit_manifest_path": "config/mrx-article-two-image-retrofit.json",
-    "retrofit_manifest_sha256": "4a1ba68fb8f34e0d7c576b9960b0d4c70fb40e4f7ad856319ae7def34175adb4",
-    "public_article_count": 229,
-    "batch_article_count": 221,
+    "retrofit_manifest_sha256": "ac8fe06863f782c480c99412b8c8b7f88ffbc52a6d037ad602a763ed09ad1b51",
+    "public_article_count": 230,
+    "batch_article_count": 222,
     "assets_per_article": 2,
     "hero_share_identity_required": true,
     "inline_image_distinct_required": true,
