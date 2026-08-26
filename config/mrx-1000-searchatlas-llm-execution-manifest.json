@@ -1,7 +1,7 @@
 {
   "program": "MRX1000",
   "artifact_type": "searchatlas_ordered_llm_local_execution_manifest",
-  "generated_at": "2026-07-20T13:03:41.057Z",
+  "generated_at": "2026-07-20T20:05:45.867Z",
   "deterministic": true,
   "local_only": true,
   "external_services_called": false,
@@ -9,8 +9,8 @@
   "inputs": {
     "ledger": {
       "path": "config/mrx-1000-canonical-content-ledger.json",
-      "sha256": "454d597b53964736671d030f91238eb67b38657ebad81d38a00fe58bad238257",
-      "bytes": 4603284
+      "sha256": "7d6dddbb0b4681ad5de2081f96ef26e472e3bf03ffc80315871cf1a3f23c51fc",
+      "bytes": 4602961
     },
     "readiness": {
       "path": "reports/mrx-1000-readiness-matrix.json",
@@ -123641,7 +123641,7 @@
       "primary_keyword": "Texas RRC Public GIS Viewer layer-state retrieval",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -352072,5 +352072,5 @@
       ]
     }
   ],
-  "content_fingerprint_sha256": "5e2efc0a786ee101492f69240163f67b96e9dc93b754c667c758092a1f8bd483"
+  "content_fingerprint_sha256": "dbd99cbffb7a32550736be1d92091928e68a07c18b099f0b16e8bc5e5ed3b725"
 }
