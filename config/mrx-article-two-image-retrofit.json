@@ -1,18 +1,18 @@
 {
   "artifact_type": "mrx_article_two_image_retrofit",
   "schema_version": 1,
-  "generated_at_utc": "2026-08-26T10:11:34Z",
+  "generated_at_utc": "2026-08-26T10:37:44Z",
   "policy_source": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
   "summary": {
-    "article_count": 221,
-    "asset_count": 442,
-    "unique_source_art_count": 221,
-    "unique_hero_sha256_count": 221,
-    "unique_inline_sha256_count": 221,
-    "distinct_article_pair_count": 221,
-    "hero_ocr_pass_count": 221,
-    "inline_ocr_pass_count": 221,
-    "exact_filename_identity_count": 221
+    "article_count": 222,
+    "asset_count": 444,
+    "unique_source_art_count": 222,
+    "unique_hero_sha256_count": 222,
+    "unique_inline_sha256_count": 222,
+    "distinct_article_pair_count": 222,
+    "hero_ocr_pass_count": 222,
+    "inline_ocr_pass_count": 222,
+    "exact_filename_identity_count": 222
   },
   "contact_sheets": {
     "hero": [
@@ -4868,6 +4868,56 @@
           "actual": "Texas unclaimed mineral\nroyalty payments search",
           "normalized_expected": "texas unclaimed mineral royalty payments search",
           "normalized_actual": "texas unclaimed mineral royalty payments search",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      }
+    },
+    {
+      "slug": "sec-edgar-mineral-rights-offeror-filing-search-retrieval-provenance-worksheet",
+      "title": "SEC EDGAR Mineral Rights Offeror Filing Search Retrieval Provenance Worksheet",
+      "keyword": "SEC EDGAR mineral rights offeror filing search",
+      "file_path": "src/content/posts/sec-edgar-mineral-rights-offeror-filing-search-retrieval-provenance-worksheet.mdx",
+      "source_public_path": "/assets/articles/hero/sec-edgar-mineral-rights-offeror-filing-search-retrieval-provenance-worksheet.webp",
+      "source_artifact_paths": [
+        "artifacts/mrx1000-wave137-creative-sources/sec-edgar-mineral-rights-offeror-filing-search-retrieval-provenance-worksheet-hero-base.png",
+        "artifacts/mrx1000-wave137-creative-sources/sec-edgar-mineral-rights-offeror-filing-search-retrieval-provenance-worksheet-inline-base.png"
+      ],
+      "generated_at_utc": "2026-08-26T10:36:33.912Z",
+      "hero": {
+        "public_path": "/assets/articles/hero/sec-edgar-mineral-rights-offeror-filing-search-retrieval-provenance-worksheet.webp",
+        "alt": "An oblique public-filings research station appears beside the exact SEC EDGAR offeror worksheet title.",
+        "width": 1200,
+        "height": 630,
+        "mime_type": "image/webp",
+        "sha256": "51df8f04514a3b602e607ec7c1e5c95074621c997f6714ec584b1aa77c34a204",
+        "perceptual_hash": "0000000000000000000000000000000000000000000000000111110000000000111111000000000011111000000000001111100011100100111000001110000000000000010000000000000000000000000000000000001100000000111111110000000011111110000000001111000000000000110000000000000000000000",
+        "neutralized_art_text_region_count": 1,
+        "ocr": {
+          "expected": "SEC EDGAR Mineral Rights Offeror Filing Search Retrieval Provenance Worksheet",
+          "actual": "SEC EDGAR Mineral Rights\nOfferor Filing Search\nRetrieval Provenance\nWorksheet",
+          "normalized_expected": "sec edgar mineral rights offeror filing search retrieval provenance worksheet",
+          "normalized_actual": "sec edgar mineral rights offeror filing search retrieval provenance worksheet",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      },
+      "inline": {
+        "public_path": "/assets/articles/inline/sec-edgar-mineral-rights-offeror-filing-search-retrieval-provenance-worksheet/sec-edgar-mineral-rights-offeror-filing-search.webp",
+        "alt": "A top-down blank search-attempt worksheet appears above the exact SEC EDGAR offeror filing-search keyword.",
+        "rendered_text": "SEC EDGAR mineral rights offeror filing search",
+        "visual_variant": "wave137-distinct-generated-strict-overhead-blank-sec-edgar-search-attempt-provenance-worksheet",
+        "width": 1200,
+        "height": 675,
+        "mime_type": "image/webp",
+        "sha256": "92ea3c8eceb4b26baed6560bec8880542432a6e285dc3bac499686093cebe38b",
+        "perceptual_hash": "0000000000000000000111111111011000011111111101100001111111110000000111111111000000011111111100000001111111110000000111111111000000011111111100000001111111110000000111111111000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "neutralized_art_text_region_count": 1,
+        "ocr": {
+          "expected": "SEC EDGAR mineral rights offeror filing search",
+          "actual": "SEC EDGAR mineral rights\nofferor filing search",
+          "normalized_expected": "sec edgar mineral rights offeror filing search",
+          "normalized_actual": "sec edgar mineral rights offeror filing search",
           "uppercase_i_confusable_accepted": false,
           "pass": true
         }
