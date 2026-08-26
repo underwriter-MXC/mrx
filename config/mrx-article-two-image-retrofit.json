@@ -1,18 +1,18 @@
 {
   "artifact_type": "mrx_article_two_image_retrofit",
   "schema_version": 1,
-  "generated_at_utc": "2026-08-26T15:33:07Z",
+  "generated_at_utc": "2026-08-26T16:49:35Z",
   "policy_source": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
   "summary": {
-    "article_count": 231,
-    "asset_count": 462,
-    "unique_source_art_count": 231,
-    "unique_hero_sha256_count": 231,
-    "unique_inline_sha256_count": 231,
-    "distinct_article_pair_count": 231,
-    "hero_ocr_pass_count": 231,
-    "inline_ocr_pass_count": 231,
-    "exact_filename_identity_count": 231
+    "article_count": 232,
+    "asset_count": 464,
+    "unique_source_art_count": 232,
+    "unique_hero_sha256_count": 232,
+    "unique_inline_sha256_count": 232,
+    "distinct_article_pair_count": 232,
+    "hero_ocr_pass_count": 232,
+    "inline_ocr_pass_count": 232,
+    "exact_filename_identity_count": 232
   },
   "contact_sheets": {
     "hero": [
@@ -410,6 +410,56 @@
           "actual": "basis differential\nroyalty statement",
           "normalized_expected": "basis differential royalty statement",
           "normalized_actual": "basis differential royalty statement",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      }
+    },
+    {
+      "slug": "brazos-cad-mineral-account-search-retrieval-provenance-worksheet",
+      "title": "Brazos CAD Mineral Account Search Retrieval Provenance Worksheet",
+      "keyword": "Brazos CAD mineral account search",
+      "file_path": "src/content/posts/brazos-cad-mineral-account-search-retrieval-provenance-worksheet.mdx",
+      "source_public_path": "/assets/articles/hero/brazos-cad-mineral-account-search-retrieval-provenance-worksheet.webp",
+      "source_artifact_paths": [
+        "artifacts/mrx1000-wave152-creative-sources/brazos-cad-mineral-account-search-retrieval-provenance-worksheet-hero-base.png",
+        "artifacts/mrx1000-wave152-creative-sources/brazos-cad-mineral-account-search-retrieval-provenance-worksheet-inline-base.png"
+      ],
+      "generated_at_utc": "2026-08-26T16:48:37.900Z",
+      "hero": {
+        "public_path": "/assets/articles/hero/brazos-cad-mineral-account-search-retrieval-provenance-worksheet.webp",
+        "alt": "A source-scoped property-search desk appears beside the exact Brazos CAD worksheet title.",
+        "width": 1200,
+        "height": 630,
+        "mime_type": "image/webp",
+        "sha256": "192cf8cc0444016546568d69c8ba0c0fb0c39e7d24ce25c7a3f3d48aaeddeda5",
+        "perceptual_hash": "0000000000011111000000000000011100000000001001110000000000110010000000000001001101100000011110000110000001100001010000000000011100000000000011110000000011011111000000001111111100000000111111110000000011111111000000001111111100000000111111110000000011111110",
+        "neutralized_art_text_region_count": 1,
+        "ocr": {
+          "expected": "Brazos CAD Mineral Account Search Retrieval Provenance Worksheet",
+          "actual": "Brazos CAD\nMineral Account\nSearch Retrieval\nProvenance\nWorksheet",
+          "normalized_expected": "brazos cad mineral account search retrieval provenance worksheet",
+          "normalized_actual": "brazos cad mineral account search retrieval provenance worksheet",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      },
+      "inline": {
+        "public_path": "/assets/articles/inline/brazos-cad-mineral-account-search-retrieval-provenance-worksheet/brazos-cad-mineral-account-search.webp",
+        "alt": "A top-down blank five-step attempt log appears above the exact Brazos CAD mineral account search keyword.",
+        "rendered_text": "Brazos CAD mineral account search",
+        "visual_variant": "wave152-distinct-generated-strict-overhead-bright-five-card-brazos-cad-attempt-log",
+        "width": 1200,
+        "height": 675,
+        "mime_type": "image/webp",
+        "sha256": "a44f25ef824ef24b0ca364cd2d331fbd8cbbb6eafbf418b9f091bebb98941a5f",
+        "perceptual_hash": "1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111001111111111111000111111111111100011111111111111000111111111111000011111111111100000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "neutralized_art_text_region_count": 1,
+        "ocr": {
+          "expected": "Brazos CAD mineral account search",
+          "actual": "Brazos CAD mineral\naccount search",
+          "normalized_expected": "brazos cad mineral account search",
+          "normalized_actual": "brazos cad mineral account search",
           "uppercase_i_confusable_accepted": false,
           "pass": true
         }

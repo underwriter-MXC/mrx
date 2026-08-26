@@ -1,7 +1,7 @@
 {
   "program": "MRX 1,000 Article SEO+AEO Production Program",
   "artifact_type": "authorized_release_10_batch",
-  "evidence_scaffold_generated_at_utc": "2026-08-26T15:55:48Z",
+  "evidence_scaffold_generated_at_utc": "2026-08-26T16:53:26Z",
   "decision_authority": {
     "successor_gate_decision_id": "D-2026-0804-16",
     "successor_gate_decision_path": "docs/governance/mrx1000-owner-continuous-publication-directive-2026-08-04.md",
@@ -453,13 +453,16 @@
     "wave150_selection_decision_sha256": "562759c27ffbbc7634bf995ec1c9f6c4a45215a2143226e488a9c30180ab5337",
     "wave151_selection_decision_id": "MRX1000-W151-SELECT-2026-08-26",
     "wave151_selection_decision_path": "docs/governance/mrx1000-wave151-selection-decision-2026-08-26.md",
-    "wave151_selection_decision_sha256": "8f8c08a787280977b9b71a99f4bcfb5dbb1a8295792cbb44df7ce90262818f5e"
+    "wave151_selection_decision_sha256": "8f8c08a787280977b9b71a99f4bcfb5dbb1a8295792cbb44df7ce90262818f5e",
+    "wave152_selection_decision_id": "MRX1000-W152-SELECT-2026-08-26",
+    "wave152_selection_decision_path": "docs/governance/mrx1000-wave152-selection-decision-2026-08-26.md",
+    "wave152_selection_decision_sha256": "6d6f70d9dd570eec8a8c3e827b288543e439473fd07fb90001a3570c33994550"
   },
   "identity_authority": {
     "scope_key": "canonical_slug",
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_sha256": "45b6f6f4299b0f0f7237499d1d97e216635373e895fa63265a093cd95a31dfd5",
-    "canonical_ledger_generated_at": "2026-07-20T14:21:06.392Z",
+    "canonical_ledger_sha256": "d9b43831ec2d2b2d7073d89419df5e93ad3dfbb337968df4fb3fdb629f40f03b",
+    "canonical_ledger_generated_at": "2026-07-20T16:40:33.318Z",
     "successor_ledger_decision_id": "D-2026-0723-LEDGER-04",
     "successor_ledger_decision_path": "artifacts/mrx1000-release-10/decisions/mrx-ceo-ledger-provenance-successor-20260723-04.md",
     "successor_ledger_decision_sha256": "09eca24bcd0e71563f2ac4197f564eec0ccb43a5ee955216da5c4a2543d04978",
@@ -473,11 +476,11 @@
     "authorization_scope": "declared_program_size_not_a_staged_release_cap",
     "admission_mode": "continuous_quality_gated",
     "continuous_quality_gated_from_selection_rank": 26,
-    "prior_verified_article_count": 222,
+    "prior_verified_article_count": 223,
     "fail_closed": true,
     "earned_scale_gates": [],
-    "exact_admitted_count": 223,
-    "exact_admitted_slate_sha256": "807a87d6c6c14b99efd7a39ac0afd3078f1568c4ac04f39bb08b596f36e4cebe"
+    "exact_admitted_count": 224,
+    "exact_admitted_slate_sha256": "be4659c62f4802f09fa8a11ddb482952dc91a32e4088ea84740ab6d75bebc25e"
   },
   "articles": [
     {
@@ -7900,10 +7903,47 @@
       "inline_path": "/assets/articles/inline/how-to-retrieve-recorded-mineral-deed-copy-for-cpa-handoff/recorded-mineral-deed-copy.webp",
       "inline_asset_sha256": "dce0d4e56120c4e4a37aeb15f89043f788674c5141865d177021f7e65a0d7070",
       "inline_rendered_text": "recorded mineral deed copy"
+    },
+    {
+      "selection_rank": 224,
+      "program_row_id": "MRX1000-0746",
+      "source_shortlist_program_row_id": "MRX1000-0746",
+      "slug": "brazos-cad-mineral-account-search-retrieval-provenance-worksheet",
+      "title": "Brazos CAD Mineral Account Search Retrieval Provenance Worksheet",
+      "source_shortlist_title": "Brazos CAD Mineral Account Search Retrieval Provenance Worksheet",
+      "canonical_url": "https://mineralrightsxchange.com/blog/brazos-cad-mineral-account-search-retrieval-provenance-worksheet/",
+      "pillar": "texas-mineral-rights",
+      "cluster": "texas-county-basin-local-intent",
+      "content_genius_article_uuid": null,
+      "archive_evidence_sha256": "82f03b3831a0f8d49c33f51f454b86d85f822a7fbc1e6d9dcb94c3e971d5339b",
+      "repo_path": "src/content/posts/brazos-cad-mineral-account-search-retrieval-provenance-worksheet.mdx",
+      "repo_sha256": "157fca4e473245656beabab610a1f57422ce454bd295ca813fb7541d4a7fd3da",
+      "article_sha256": "157fca4e473245656beabab610a1f57422ce454bd295ca813fb7541d4a7fd3da",
+      "hero_path": "/assets/articles/hero/brazos-cad-mineral-account-search-retrieval-provenance-worksheet.webp",
+      "hero_sha256": "192cf8cc0444016546568d69c8ba0c0fb0c39e7d24ce25c7a3f3d48aaeddeda5",
+      "hero_asset_sha256": "192cf8cc0444016546568d69c8ba0c0fb0c39e7d24ce25c7a3f3d48aaeddeda5",
+      "admission_status": "admitted_quality_gated",
+      "finalization_state": "draft_noindex_admitted",
+      "searchatlas_content_score": null,
+      "searchatlas_word_count": 2321,
+      "risk_citation_remediation": [
+        "MRX1000-0653, 0654-0669, 0671-0725, and 0742-0745 remain preserved and held after read-only Chesty and mrx_ceo collision review; no held factory body is imported or treated as publication evidence.",
+        "The original broad MRX1000-0746 county-value and family-decision identity is rejected; the replacement is a one-interface, one-attempt official-search provenance job.",
+        "Current Brazos CAD, Brazos County, Texas Comptroller, and Texas Tax Code sources support the interface fields, local-office routing, appraisal-record context, and explicit source limitations used.",
+        "Located, not located, and unverified remain attempt-level observations and are not converted into identity, ownership, title, acreage, appraisal, tax, mineral-value, production, offer, or transaction conclusions.",
+        "The reusable public worksheet and images expose no person, owner name, address, account, property ID, geographic ID, abstract, legal description, tax year, value, amount, interest, operator, lease, well, payor, offer, result, or conclusion.",
+        "Any login, account creation, form submission, contact, payment, CAPTCHA, bypass, scraping, bulk collection, legal interpretation, tax interpretation, appraisal dispute, valuation, or transaction question forces a stop and appropriate official or professional handoff.",
+        "Continuous quality-gated admission under the owner no-approval directives; no owner publication approval applies."
+      ],
+      "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/brazos-cad-mineral-account-search-retrieval-provenance-worksheet.json",
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/brazos-cad-mineral-account-search-retrieval-provenance-worksheet/brazos-cad-mineral-account-search.webp",
+      "inline_asset_sha256": "a44f25ef824ef24b0ca364cd2d331fbd8cbbb6eafbf418b9f091bebb98941a5f",
+      "inline_rendered_text": "Brazos CAD mineral account search"
     }
   ],
   "admission_audit": {
-    "admitted_article_count": 223,
+    "admitted_article_count": 224,
     "selection_ranks": [
       1,
       2,
@@ -8127,7 +8167,8 @@
       220,
       221,
       222,
-      223
+      223,
+      224
     ],
     "duplicate_program_row_ids": [],
     "duplicate_slugs": [],
@@ -8186,9 +8227,9 @@
   "two_image_policy": {
     "directive": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
     "retrofit_manifest_path": "config/mrx-article-two-image-retrofit.json",
-    "retrofit_manifest_sha256": "90245ee982006efe0560f186d89dd4f92eb3d5e9875d9aa51c27c6013fefb478",
-    "public_article_count": 231,
-    "batch_article_count": 223,
+    "retrofit_manifest_sha256": "9bb254a173c11e8d0cc2fb7e67af2eaea83c106b48c034320d6e51fe9f16639c",
+    "public_article_count": 232,
+    "batch_article_count": 224,
     "assets_per_article": 2,
     "hero_share_identity_required": true,
     "inline_image_distinct_required": true,
