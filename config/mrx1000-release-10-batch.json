@@ -1,7 +1,7 @@
 {
   "program": "MRX 1,000 Article SEO+AEO Production Program",
   "artifact_type": "authorized_release_10_batch",
-  "evidence_scaffold_generated_at_utc": "2026-08-26T12:34:07Z",
+  "evidence_scaffold_generated_at_utc": "2026-08-26T12:48:18Z",
   "decision_authority": {
     "successor_gate_decision_id": "D-2026-0804-16",
     "successor_gate_decision_path": "docs/governance/mrx1000-owner-continuous-publication-directive-2026-08-04.md",
@@ -432,13 +432,16 @@
     "wave138_selection_decision_sha256": "c6650e3209c8cebf6fa2f9b3f8f7d4c5fd8eb6ad554069ce0e6add50f3eb8f2e",
     "wave144_selection_decision_id": "MRX1000-W144-SELECT-2026-08-26",
     "wave144_selection_decision_path": "docs/governance/mrx1000-wave144-selection-decision-2026-08-26.md",
-    "wave144_selection_decision_sha256": "b0b469f216f25e1fd8559a231f70986496d3150971207e6f65f11ce6c02429fd"
+    "wave144_selection_decision_sha256": "b0b469f216f25e1fd8559a231f70986496d3150971207e6f65f11ce6c02429fd",
+    "wave145_selection_decision_id": "MRX1000-W145-SELECT-2026-08-26",
+    "wave145_selection_decision_path": "docs/governance/mrx1000-wave145-selection-decision-2026-08-26.md",
+    "wave145_selection_decision_sha256": "db66e72d0e2906fee977060cbdad1e34255692879abc4ea45eaec64e8c9b4eba"
   },
   "identity_authority": {
     "scope_key": "canonical_slug",
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_sha256": "69b442f7d8d993e0eb2b197ab37a226dbb079f06625ef3a423c2b795b2d67e7a",
-    "canonical_ledger_generated_at": "2026-07-20T00:57:59.840Z",
+    "canonical_ledger_sha256": "3973eb76f404fa46a5da1324ab05a1e1872e0c7309163d4069ef4fef63dc4233",
+    "canonical_ledger_generated_at": "2026-07-20T01:32:17.690Z",
     "successor_ledger_decision_id": "D-2026-0723-LEDGER-04",
     "successor_ledger_decision_path": "artifacts/mrx1000-release-10/decisions/mrx-ceo-ledger-provenance-successor-20260723-04.md",
     "successor_ledger_decision_sha256": "09eca24bcd0e71563f2ac4197f564eec0ccb43a5ee955216da5c4a2543d04978",
@@ -452,11 +455,11 @@
     "authorization_scope": "declared_program_size_not_a_staged_release_cap",
     "admission_mode": "continuous_quality_gated",
     "continuous_quality_gated_from_selection_rank": 26,
-    "prior_verified_article_count": 215,
+    "prior_verified_article_count": 216,
     "fail_closed": true,
     "earned_scale_gates": [],
-    "exact_admitted_count": 216,
-    "exact_admitted_slate_sha256": "9c8ad956c3c5420f5630d06c4e4be5987c98d32ec174a0db530cbeb7a441e95d"
+    "exact_admitted_count": 217,
+    "exact_admitted_slate_sha256": "48cb4556f75081e8abbc79cbf4f1bca7b7cb3d1f2c4940ea8069809e47b15a02"
   },
   "articles": [
     {
@@ -7623,10 +7626,47 @@
       "inline_path": "/assets/articles/inline/texas-probate-court-appointment-record-retrieval-provenance-worksheet/texas-probate-court-appointment-record-retrieval.webp",
       "inline_asset_sha256": "aa3d9a4f266666fbf3c31ee3b2f0f03b167746167563b96ea972366ef9b25c7b",
       "inline_rendered_text": "Texas probate court appointment record retrieval"
+    },
+    {
+      "selection_rank": 217,
+      "program_row_id": "MRX1000-0460",
+      "source_shortlist_program_row_id": "MRX1000-0460",
+      "slug": "texas-comptroller-county-appraisal-district-directory-retrieval-provenance-worksheet",
+      "title": "Texas Comptroller County Appraisal District Directory Retrieval Provenance Worksheet",
+      "source_shortlist_title": "Texas Comptroller County Appraisal District Directory Retrieval Provenance Worksheet",
+      "canonical_url": "https://mineralrightsxchange.com/blog/texas-comptroller-county-appraisal-district-directory-retrieval-provenance-worksheet/",
+      "pillar": "inherited-mineral-rights",
+      "cluster": "inherited-estate-probate",
+      "content_genius_article_uuid": null,
+      "archive_evidence_sha256": "f8f6a8e57481507aa9bef575d2702ea635f85360d29d676abeedb16059785c1b",
+      "repo_path": "src/content/posts/texas-comptroller-county-appraisal-district-directory-retrieval-provenance-worksheet.mdx",
+      "repo_sha256": "61c106c419af5d6ee4389779fd635f4bd8e2c7c00a8dc1a519e6cba404a5f9f6",
+      "article_sha256": "61c106c419af5d6ee4389779fd635f4bd8e2c7c00a8dc1a519e6cba404a5f9f6",
+      "hero_path": "/assets/articles/hero/texas-comptroller-county-appraisal-district-directory-retrieval-provenance-worksheet.webp",
+      "hero_sha256": "12f47957a3807e8cfde171d14237d005d6c8d6959f08cee2a787f5faaf957c27",
+      "hero_asset_sha256": "12f47957a3807e8cfde171d14237d005d6c8d6959f08cee2a787f5faaf957c27",
+      "admission_status": "admitted_quality_gated",
+      "finalization_state": "draft_noindex_admitted",
+      "searchatlas_content_score": null,
+      "searchatlas_word_count": 1781,
+      "risk_citation_remediation": [
+        "The original broad inherited-mineral evaluation identity and the original MRX1000-0461 through MRX1000-0520 identities are rejected as-is for material collision with the live corpus.",
+        "Current official Texas Comptroller pages support only the directory route, source-displayed contact and taxing-unit fields, agency scope, and the strict directory-only limitation.",
+        "One worksheet records one authorized manual official index route, one selected county page, and one access event; it never combines counties, local systems, properties, people, or records.",
+        "Located, not located, and unverified are attempt-level observations only and never establish authenticity, completeness, currency, certification, identity, jurisdiction, service scope, property connection, title, ownership, mineral connection, appraisal, tax treatment, value, offer quality, or transaction suitability.",
+        "The public article and images expose no real or fictional owner, heir, representative, officeholder, contact value, address, taxing unit, property, mineral interest, tax amount, offer, result, status, seal, or conclusion.",
+        "Any login, account creation, contact, submission, payment, CAPTCHA, bypass, scraping, bulk collection, unavailable route, missing essential label, or uncontrolled evidence requirement forces unverified and an immediate stop.",
+        "Continuous quality-gated admission under the owner no-approval directives; no owner publication approval applies."
+      ],
+      "evidence_packet_path": "artifacts/mrx1000-release-10/evidence/texas-comptroller-county-appraisal-district-directory-retrieval-provenance-worksheet.json",
+      "evidence_packet_path_required": true,
+      "inline_path": "/assets/articles/inline/texas-comptroller-county-appraisal-district-directory-retrieval-provenance-worksheet/texas-county-appraisal-district-directory-retrieval.webp",
+      "inline_asset_sha256": "6d951209c551b6a44d92fb1a34f3e4daa54cc3c0ae84d581637839d10900ca07",
+      "inline_rendered_text": "Texas county appraisal district directory retrieval"
     }
   ],
   "admission_audit": {
-    "admitted_article_count": 216,
+    "admitted_article_count": 217,
     "selection_ranks": [
       1,
       2,
@@ -7843,7 +7883,8 @@
       213,
       214,
       215,
-      216
+      216,
+      217
     ],
     "duplicate_program_row_ids": [],
     "duplicate_slugs": [],
@@ -7902,9 +7943,9 @@
   "two_image_policy": {
     "directive": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
     "retrofit_manifest_path": "config/mrx-article-two-image-retrofit.json",
-    "retrofit_manifest_sha256": "ce24ba23abfea10d32a51cf24e5c0967c7a595ce2c7848f9524ad4a05c272dde",
-    "public_article_count": 224,
-    "batch_article_count": 216,
+    "retrofit_manifest_sha256": "46e71528cf2dff9653d58ed234bd8adf3f9f25afc6ef954e990e394ff035d04a",
+    "public_article_count": 225,
+    "batch_article_count": 217,
     "assets_per_article": 2,
     "hero_share_identity_required": true,
     "inline_image_distinct_required": true,

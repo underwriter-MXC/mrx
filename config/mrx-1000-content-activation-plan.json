@@ -1,15 +1,15 @@
 {
   "artifact_type": "mrx1000_content_activation_plan",
   "plan_version": "mrx1000-content-activation-v1.1.0",
-  "generated_at": "2026-07-20T00:57:59.840Z",
+  "generated_at": "2026-07-20T01:32:17.690Z",
   "generated_at_method": "canonical_ledger_generated_at",
   "generator": "scripts/build-mrx-1000-activation-plan.mjs",
-  "content_fingerprint_sha256": "00891926a30e48011152aeddcbb0251695a15017df9e1bd613257e311127ccfb",
+  "content_fingerprint_sha256": "bd50bbb8b993d4ae4e1b30f7681b214f138587149077bb49ef0686b799ba1b31",
   "inputs": {
     "canonical_ledger_path": "config/mrx-1000-canonical-content-ledger.json",
-    "canonical_ledger_fingerprint_sha256": "e431a7808aac2182207f9112e9aee7b82f8dc5a34868021b4e04aa57130350fc",
+    "canonical_ledger_fingerprint_sha256": "d2efa6b77aca781201d52daf8253dc4b7b21dd682edf0c7f1b83b44fef60852a",
     "canonical_ledger_fingerprint_verified": true,
-    "canonical_ledger_generated_at": "2026-07-20T00:57:59.840Z",
+    "canonical_ledger_generated_at": "2026-07-20T01:32:17.690Z",
     "owner_decision": {
       "decision_id": "D-2026-0804-16",
       "signed_disposition": "APPROVED_CONTINUOUS_QUALITY_GATED_ARTICLE_PUBLICATION",
@@ -115,9 +115,9 @@
     },
     "by_source_preservation_classification": {
       "incumbent_draft_nonpublic_held": 23,
-      "live_public_published_route": 224,
+      "live_public_published_route": 225,
       "pilot_draft_noindex_stage": 25,
-      "planning_only_inventory": 728
+      "planning_only_inventory": 727
     }
   },
   "rows": [
@@ -27102,69 +27102,6 @@
         "status": "planned_local_only"
       },
       "sibling_link": {
-        "target_program_row_id": "MRX1000-0449",
-        "target_title": "Cash For Mineral Rights: Family Decision Guide For Heirs",
-        "url": "/blog/cash-for-mineral-rights-family-decision-guide-for-heirs/",
-        "relationship": "same_cluster_next_by_program_row_id_cyclic",
-        "target_source_preservation_classification": "planning_only_inventory",
-        "target_route_live": false,
-        "status": "planned_local_only"
-      },
-      "primary_cta": {
-        "url": "/free-guide/",
-        "label": "Get the Free Mineral Rights Guide",
-        "name": "mrx1000-inherited-mineral-rights-free_guide-mid_article",
-        "placement_code": "mid_article",
-        "placement_guidance": "Place after the direct answer or first useful checklist, before the first deep-dive section.",
-        "assignment_rule": "education_stage_nurture",
-        "assignment_basis": "education:inherited-rights",
-        "approved_route_evidence": "src/pages/free-guide.astro",
-        "role": "primary_nurture",
-        "is_appointment_cta": false,
-        "status": "planned_local_only"
-      },
-      "appointment_cta": {
-        "url": "/book/",
-        "label": "Organize My Inherited-Rights Records",
-        "name": "mrx1000-inherited-mineral-rights-book_review-closing_team_handoff",
-        "placement_code": "closing_team_handoff",
-        "placement_guidance": "Place after the final takeaway and primary guide CTA, before related articles, as the optional MRX team handoff.",
-        "assignment_rule": "education_stage_optional_team_handoff",
-        "assignment_basis": "education:inherited-rights",
-        "approved_route_evidence": "src/pages/book.astro",
-        "role": "secondary_appointment_after_primary_nurture",
-        "distinct_from_primary_cta": true,
-        "status": "planned_local_only"
-      },
-      "evidence": {
-        "triangle_plan_status": "planned_complete",
-        "primary_cta_plan_status": "planned_complete",
-        "appointment_cta_plan_status": "planned_complete",
-        "rendered_status": "not_rendered_or_verified_by_this_plan",
-        "rendered_triangle_verified": false,
-        "live_status": "not_published_or_verified_by_this_plan",
-        "live_triangle_verified": false,
-        "release_status": "eligible_for_continuous_quality_review_not_yet_cleared",
-        "numerical_release_cap_applies": false
-      }
-    },
-    {
-      "program_row_id": "MRX1000-0449",
-      "canonical_title": "Cash For Mineral Rights: Family Decision Guide For Heirs",
-      "canonical_slug": "cash-for-mineral-rights-family-decision-guide-for-heirs",
-      "canonical_url": "/blog/cash-for-mineral-rights-family-decision-guide-for-heirs/",
-      "cluster": "inherited-estate-probate",
-      "pillar": "inherited-mineral-rights",
-      "search_intent": "sell-now",
-      "funnel_stage": "education",
-      "source_preservation_classification": "planning_only_inventory",
-      "source_route_live": false,
-      "pillar_link": {
-        "url": "/inherited-mineral-rights/",
-        "route_evidence": "src/pages/inherited-mineral-rights.astro",
-        "status": "planned_local_only"
-      },
-      "sibling_link": {
         "target_program_row_id": "MRX1000-0450",
         "target_title": "Cash For Mineral Rights: Mistakes For Heirs",
         "url": "/blog/cash-for-mineral-rights-mistakes-for-heirs/",
@@ -27180,7 +27117,7 @@
         "placement_code": "mid_article",
         "placement_guidance": "Place after the direct answer or first useful checklist, before the first deep-dive section.",
         "assignment_rule": "education_stage_nurture",
-        "assignment_basis": "education:sell-now",
+        "assignment_basis": "education:inherited-rights",
         "approved_route_evidence": "src/pages/free-guide.astro",
         "role": "primary_nurture",
         "is_appointment_cta": false,
@@ -27193,7 +27130,7 @@
         "placement_code": "closing_team_handoff",
         "placement_guidance": "Place after the final takeaway and primary guide CTA, before related articles, as the optional MRX team handoff.",
         "assignment_rule": "education_stage_optional_team_handoff",
-        "assignment_basis": "education:sell-now",
+        "assignment_basis": "education:inherited-rights",
         "approved_route_evidence": "src/pages/book.astro",
         "role": "secondary_appointment_after_primary_nurture",
         "distinct_from_primary_cta": true,
@@ -27796,11 +27733,11 @@
       },
       "sibling_link": {
         "target_program_row_id": "MRX1000-0460",
-        "target_title": "How to Evaluate Your Inherited Mineral Rights",
-        "url": "/blog/how-to-evaluate-your-inherited-mineral-rights/",
+        "target_title": "Texas Comptroller County Appraisal District Directory Retrieval Provenance Worksheet",
+        "url": "/blog/texas-comptroller-county-appraisal-district-directory-retrieval-provenance-worksheet/",
         "relationship": "same_cluster_next_by_program_row_id_cyclic",
-        "target_source_preservation_classification": "planning_only_inventory",
-        "target_route_live": false,
+        "target_source_preservation_classification": "live_public_published_route",
+        "target_route_live": true,
         "status": "planned_local_only"
       },
       "primary_cta": {
@@ -27843,15 +27780,15 @@
     },
     {
       "program_row_id": "MRX1000-0460",
-      "canonical_title": "How to Evaluate Your Inherited Mineral Rights",
-      "canonical_slug": "how-to-evaluate-your-inherited-mineral-rights",
-      "canonical_url": "/blog/how-to-evaluate-your-inherited-mineral-rights/",
+      "canonical_title": "Texas Comptroller County Appraisal District Directory Retrieval Provenance Worksheet",
+      "canonical_slug": "texas-comptroller-county-appraisal-district-directory-retrieval-provenance-worksheet",
+      "canonical_url": "/blog/texas-comptroller-county-appraisal-district-directory-retrieval-provenance-worksheet/",
       "cluster": "inherited-estate-probate",
       "pillar": "inherited-mineral-rights",
       "search_intent": "informational",
       "funnel_stage": "education",
-      "source_preservation_classification": "planning_only_inventory",
-      "source_route_live": false,
+      "source_preservation_classification": "live_public_published_route",
+      "source_route_live": true,
       "pillar_link": {
         "url": "/inherited-mineral-rights/",
         "route_evidence": "src/pages/inherited-mineral-rights.astro",
@@ -27900,7 +27837,7 @@
         "rendered_triangle_verified": false,
         "live_status": "not_published_or_verified_by_this_plan",
         "live_triangle_verified": false,
-        "release_status": "eligible_for_continuous_quality_review_not_yet_cleared",
+        "release_status": "released_under_d16_continuous_quality_gate",
         "numerical_release_cap_applies": false
       }
     },
@@ -63063,6 +63000,69 @@
       "canonical_title": "Avoiding Common Mistakes With Inherited Mineral Rights",
       "canonical_slug": "avoiding-common-mistakes-with-inherited-mineral-rights",
       "canonical_url": "/blog/avoiding-common-mistakes-with-inherited-mineral-rights/",
+      "cluster": "inherited-estate-probate",
+      "pillar": "inherited-mineral-rights",
+      "search_intent": "informational",
+      "funnel_stage": "education",
+      "source_preservation_classification": "planning_only_inventory",
+      "source_route_live": false,
+      "pillar_link": {
+        "url": "/inherited-mineral-rights/",
+        "route_evidence": "src/pages/inherited-mineral-rights.astro",
+        "status": "planned_local_only"
+      },
+      "sibling_link": {
+        "target_program_row_id": "MRX1000-1051",
+        "target_title": "How to Evaluate Your Inherited Mineral Rights",
+        "url": "/blog/how-to-evaluate-your-inherited-mineral-rights/",
+        "relationship": "same_cluster_next_by_program_row_id_cyclic",
+        "target_source_preservation_classification": "planning_only_inventory",
+        "target_route_live": false,
+        "status": "planned_local_only"
+      },
+      "primary_cta": {
+        "url": "/free-guide/",
+        "label": "Get the Free Mineral Rights Guide",
+        "name": "mrx1000-inherited-mineral-rights-free_guide-mid_article",
+        "placement_code": "mid_article",
+        "placement_guidance": "Place after the direct answer or first useful checklist, before the first deep-dive section.",
+        "assignment_rule": "education_stage_nurture",
+        "assignment_basis": "education:informational",
+        "approved_route_evidence": "src/pages/free-guide.astro",
+        "role": "primary_nurture",
+        "is_appointment_cta": false,
+        "status": "planned_local_only"
+      },
+      "appointment_cta": {
+        "url": "/book/",
+        "label": "Organize My Inherited-Rights Records",
+        "name": "mrx1000-inherited-mineral-rights-book_review-closing_team_handoff",
+        "placement_code": "closing_team_handoff",
+        "placement_guidance": "Place after the final takeaway and primary guide CTA, before related articles, as the optional MRX team handoff.",
+        "assignment_rule": "education_stage_optional_team_handoff",
+        "assignment_basis": "education:informational",
+        "approved_route_evidence": "src/pages/book.astro",
+        "role": "secondary_appointment_after_primary_nurture",
+        "distinct_from_primary_cta": true,
+        "status": "planned_local_only"
+      },
+      "evidence": {
+        "triangle_plan_status": "planned_complete",
+        "primary_cta_plan_status": "planned_complete",
+        "appointment_cta_plan_status": "planned_complete",
+        "rendered_status": "not_rendered_or_verified_by_this_plan",
+        "rendered_triangle_verified": false,
+        "live_status": "not_published_or_verified_by_this_plan",
+        "live_triangle_verified": false,
+        "release_status": "eligible_for_continuous_quality_review_not_yet_cleared",
+        "numerical_release_cap_applies": false
+      }
+    },
+    {
+      "program_row_id": "MRX1000-1051",
+      "canonical_title": "How to Evaluate Your Inherited Mineral Rights",
+      "canonical_slug": "how-to-evaluate-your-inherited-mineral-rights",
+      "canonical_url": "/blog/how-to-evaluate-your-inherited-mineral-rights/",
       "cluster": "inherited-estate-probate",
       "pillar": "inherited-mineral-rights",
       "search_intent": "informational",

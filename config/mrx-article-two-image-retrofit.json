@@ -1,18 +1,18 @@
 {
   "artifact_type": "mrx_article_two_image_retrofit",
   "schema_version": 1,
-  "generated_at_utc": "2026-08-26T12:20:44Z",
+  "generated_at_utc": "2026-08-26T12:46:29Z",
   "policy_source": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
   "summary": {
-    "article_count": 224,
-    "asset_count": 448,
-    "unique_source_art_count": 224,
-    "unique_hero_sha256_count": 224,
-    "unique_inline_sha256_count": 224,
-    "distinct_article_pair_count": 224,
-    "hero_ocr_pass_count": 224,
-    "inline_ocr_pass_count": 224,
-    "exact_filename_identity_count": 224
+    "article_count": 225,
+    "asset_count": 450,
+    "unique_source_art_count": 225,
+    "unique_hero_sha256_count": 225,
+    "unique_inline_sha256_count": 225,
+    "distinct_article_pair_count": 225,
+    "hero_ocr_pass_count": 225,
+    "inline_ocr_pass_count": 225,
+    "exact_filename_identity_count": 225
   },
   "contact_sheets": {
     "hero": [
@@ -5264,6 +5264,56 @@
           "actual": "steps to take\nif royalty\nchecks are\ninconsistent a\nmineral owner's\nguide",
           "normalized_expected": "steps to take if royalty checks are inconsistent a mineral owner s guide",
           "normalized_actual": "steps to take if royalty checks are inconsistent a mineral owner s guide",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      }
+    },
+    {
+      "slug": "texas-comptroller-county-appraisal-district-directory-retrieval-provenance-worksheet",
+      "title": "Texas Comptroller County Appraisal District Directory Retrieval Provenance Worksheet",
+      "keyword": "Texas county appraisal district directory retrieval",
+      "file_path": "src/content/posts/texas-comptroller-county-appraisal-district-directory-retrieval-provenance-worksheet.mdx",
+      "source_public_path": "/assets/articles/hero/texas-comptroller-county-appraisal-district-directory-retrieval-provenance-worksheet.webp",
+      "source_artifact_paths": [
+        "artifacts/mrx1000-wave145-creative-sources/texas-comptroller-county-appraisal-district-directory-retrieval-provenance-worksheet-hero-base.png",
+        "artifacts/mrx1000-wave145-creative-sources/texas-comptroller-county-appraisal-district-directory-retrieval-provenance-worksheet-inline-base.png"
+      ],
+      "generated_at_utc": "2026-08-26T12:43:59.845Z",
+      "hero": {
+        "public_path": "/assets/articles/hero/texas-comptroller-county-appraisal-district-directory-retrieval-provenance-worksheet.webp",
+        "alt": "A low-oblique county-directory archive appears beside the exact Texas appraisal-district worksheet title.",
+        "width": 1200,
+        "height": 630,
+        "mime_type": "image/webp",
+        "sha256": "12f47957a3807e8cfde171d14237d005d6c8d6959f08cee2a787f5faaf957c27",
+        "perceptual_hash": "0000000000000010000000000000001000000000000000000111000000000100011100000000110001111100000011001111000000001101111110000011001100000000111101100000000011100110000000001100011100000000000011110000000000011111000000000011111000000000011111100000000000110110",
+        "neutralized_art_text_region_count": 1,
+        "ocr": {
+          "expected": "Texas Comptroller County Appraisal District Directory Retrieval Provenance Worksheet",
+          "actual": "Texas Comptroller\nCounty Appraisal District\nDirectory Retrieval\nProvenance Worksheet",
+          "normalized_expected": "texas comptroller county appraisal district directory retrieval provenance worksheet",
+          "normalized_actual": "texas comptroller county appraisal district directory retrieval provenance worksheet",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      },
+      "inline": {
+        "public_path": "/assets/articles/inline/texas-comptroller-county-appraisal-district-directory-retrieval-provenance-worksheet/texas-county-appraisal-district-directory-retrieval.webp",
+        "alt": "A top-down blank directory worksheet appears above the exact Texas county appraisal-district retrieval keyword.",
+        "rendered_text": "Texas county appraisal district directory retrieval",
+        "visual_variant": "wave145-distinct-generated-strict-overhead-blank-county-appraisal-district-directory-provenance-worksheet",
+        "width": 1200,
+        "height": 675,
+        "mime_type": "image/webp",
+        "sha256": "6d951209c551b6a44d92fb1a34f3e4daa54cc3c0ae84d581637839d10900ca07",
+        "perceptual_hash": "1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111110010000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "neutralized_art_text_region_count": 1,
+        "ocr": {
+          "expected": "Texas county appraisal district directory retrieval",
+          "actual": "Texas county appraisal district\ndirectory retrieval",
+          "normalized_expected": "texas county appraisal district directory retrieval",
+          "normalized_actual": "texas county appraisal district directory retrieval",
           "uppercase_i_confusable_accepted": false,
           "pass": true
         }
