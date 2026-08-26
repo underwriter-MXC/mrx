@@ -9,13 +9,13 @@
   "inputs": {
     "ledger": {
       "path": "config/mrx-1000-canonical-content-ledger.json",
-      "sha256": "15d4f1a198af26fb27687efb74ff5b8eb16b8c04d7a14b54fdab0ce7521ca438",
-      "bytes": 4614339
+      "sha256": "d01325d6636b2cfed11ddca4bcdc328c64d7a034f1254d0d7caf3c96d7e82e79",
+      "bytes": 4614195
     },
     "readiness": {
       "path": "reports/mrx-1000-readiness-matrix.json",
-      "sha256": "283663929b95b7ffab51507398ea28f861ad810610dde213d6db941576f02823",
-      "bytes": 3450494,
+      "sha256": "a1d0fc5f5d4c15f6c3969c1351ead64eaf2567f558d460bc15f65955808a0bb4",
+      "bytes": 3450522,
       "sha256_method": "canonical_json_with_top_level_generated_at_masked",
       "generated_at_excluded_from_sha256": true
     },
@@ -125849,7 +125849,7 @@
       "primary_keyword": "mineral rights retained evidence source scope",
       "authoritative_current_state": {
         "canonical_inventory_state": "live_public_published_route",
-        "normalized_status": "authorized_release_candidate_pending_gate_and_deployment",
+        "normalized_status": "live_public_published_route_release_10_verified",
         "source_system": "astro_repo",
         "pilot_article_id": null,
         "repo": {
@@ -352228,5 +352228,5 @@
       ]
     }
   ],
-  "content_fingerprint_sha256": "72b6dd7dc36129a624c2ec53af9726c55301a303d73ca25c4e5b1928ad5c809b"
+  "content_fingerprint_sha256": "a55bb87ae0719c3d3c517140e9ec4e5a5241b61320c96b147d41327796e129b0"
 }
