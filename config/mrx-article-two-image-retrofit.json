@@ -1,18 +1,18 @@
 {
   "artifact_type": "mrx_article_two_image_retrofit",
   "schema_version": 1,
-  "generated_at_utc": "2026-08-26T09:17:34Z",
+  "generated_at_utc": "2026-08-26T09:48:51Z",
   "policy_source": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
   "summary": {
-    "article_count": 219,
-    "asset_count": 438,
-    "unique_source_art_count": 219,
-    "unique_hero_sha256_count": 219,
-    "unique_inline_sha256_count": 219,
-    "distinct_article_pair_count": 219,
-    "hero_ocr_pass_count": 219,
-    "inline_ocr_pass_count": 219,
-    "exact_filename_identity_count": 219
+    "article_count": 220,
+    "asset_count": 440,
+    "unique_source_art_count": 220,
+    "unique_hero_sha256_count": 220,
+    "unique_inline_sha256_count": 220,
+    "distinct_article_pair_count": 220,
+    "hero_ocr_pass_count": 220,
+    "inline_ocr_pass_count": 220,
+    "exact_filename_identity_count": 220
   },
   "contact_sheets": {
     "hero": [
@@ -7256,6 +7256,56 @@
           "actual": "Texas Secretary of State\nbusiness organization document\norder request preparation",
           "normalized_expected": "texas secretary of state business organization document order request preparation",
           "normalized_actual": "texas secretary of state business organization document order request preparation",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      }
+    },
+    {
+      "slug": "texas-secretary-of-state-registered-agent-and-registered-office-evidence-boundary-worksheet",
+      "title": "Texas Secretary of State Registered Agent and Registered Office Evidence Boundary Worksheet",
+      "keyword": "Texas Secretary of State registered agent and registered office evidence boundary",
+      "file_path": "src/content/posts/texas-secretary-of-state-registered-agent-and-registered-office-evidence-boundary-worksheet.mdx",
+      "source_public_path": "/assets/articles/hero/texas-secretary-of-state-registered-agent-and-registered-office-evidence-boundary-worksheet.webp",
+      "source_artifact_paths": [
+        "artifacts/mrx1000-wave135-creative-sources/texas-secretary-of-state-registered-agent-and-registered-office-evidence-boundary-worksheet-hero-base.png",
+        "artifacts/mrx1000-wave135-creative-sources/texas-secretary-of-state-registered-agent-and-registered-office-evidence-boundary-worksheet-inline-base.png"
+      ],
+      "generated_at_utc": "2026-08-26T09:46:07.243Z",
+      "hero": {
+        "public_path": "/assets/articles/hero/texas-secretary-of-state-registered-agent-and-registered-office-evidence-boundary-worksheet.webp",
+        "alt": "A blank retained-evidence desk appears beside the exact registered-agent and registered-office worksheet title.",
+        "width": 1200,
+        "height": 630,
+        "mime_type": "image/webp",
+        "sha256": "e4ee331f13c2c1e55a6b57a66bd75143da442ce82faa0258bf6224ff01c5f411",
+        "perceptual_hash": "0000000000001100000000000000000000000000000000000000000000111100000000000011111001111000011111100111000001111110011100000111111001000000011111100000000001111110000000001111111000000000111111000000000011111100000000001110000000000000111000000000000000000000",
+        "neutralized_art_text_region_count": 1,
+        "ocr": {
+          "expected": "Texas Secretary of State Registered Agent and Registered Office Evidence Boundary Worksheet",
+          "actual": "Texas Secretary of State\nRegistered Agent and\nRegistered Office\nEvidence Boundary\nWorksheet",
+          "normalized_expected": "texas secretary of state registered agent and registered office evidence boundary worksheet",
+          "normalized_actual": "texas secretary of state registered agent and registered office evidence boundary worksheet",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      },
+      "inline": {
+        "public_path": "/assets/articles/inline/texas-secretary-of-state-registered-agent-and-registered-office-evidence-boundary-worksheet/texas-secretary-of-state-registered-agent-and-registered-office-evidence-boundary.webp",
+        "alt": "A top-down blank transcription grid appears above the exact registered-agent evidence-boundary keyword.",
+        "rendered_text": "Texas Secretary of State registered agent and registered office evidence boundary",
+        "visual_variant": "wave135-distinct-generated-strict-overhead-blank-registered-agent-office-transcription-grid",
+        "width": 1200,
+        "height": 675,
+        "mime_type": "image/webp",
+        "sha256": "f2e7c85f6cf373f2cdea4c43c6866a3a456e76ec6b3fcdfed797b754325161a2",
+        "perceptual_hash": "1111111111111111000111111111111100011111111111110001111111111111000111111111111100011111111111110001111111111111000111111111111110111111111111111111111111111111111111111111111100000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "neutralized_art_text_region_count": 1,
+        "ocr": {
+          "expected": "Texas Secretary of State registered agent and registered office evidence boundary",
+          "actual": "Texas Secretary of State\nregistered agent and registered office\nevidence boundary",
+          "normalized_expected": "texas secretary of state registered agent and registered office evidence boundary",
+          "normalized_actual": "texas secretary of state registered agent and registered office evidence boundary",
           "uppercase_i_confusable_accepted": false,
           "pass": true
         }
