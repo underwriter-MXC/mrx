@@ -1,18 +1,18 @@
 {
   "artifact_type": "mrx_article_two_image_retrofit",
   "schema_version": 1,
-  "generated_at_utc": "2026-08-26T06:16:24Z",
+  "generated_at_utc": "2026-08-26T06:49:39Z",
   "policy_source": "AI Atom Brain/09 Project Packs/MRX/2026-08-11 MRX Two-Image Article Creative Directive.md",
   "summary": {
-    "article_count": 213,
-    "asset_count": 426,
-    "unique_source_art_count": 213,
-    "unique_hero_sha256_count": 213,
-    "unique_inline_sha256_count": 213,
-    "distinct_article_pair_count": 213,
-    "hero_ocr_pass_count": 213,
-    "inline_ocr_pass_count": 213,
-    "exact_filename_identity_count": 213
+    "article_count": 214,
+    "asset_count": 428,
+    "unique_source_art_count": 214,
+    "unique_hero_sha256_count": 214,
+    "unique_inline_sha256_count": 214,
+    "distinct_article_pair_count": 214,
+    "hero_ocr_pass_count": 214,
+    "inline_ocr_pass_count": 214,
+    "exact_filename_identity_count": 214
   },
   "contact_sheets": {
     "hero": [
@@ -3934,6 +3934,56 @@
           "actual": "mineral rights offer sender\nidentity cross-check",
           "normalized_expected": "mineral rights offer sender identity cross check",
           "normalized_actual": "mineral rights offer sender identity cross check",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      }
+    },
+    {
+      "slug": "mineral-rights-offer-version-control-and-deadline-register",
+      "title": "Mineral Rights Offer Version-Control and Deadline Register",
+      "keyword": "mineral rights offer version control",
+      "file_path": "src/content/posts/mineral-rights-offer-version-control-and-deadline-register.mdx",
+      "source_public_path": "/assets/articles/hero/mineral-rights-offer-version-control-and-deadline-register.webp",
+      "source_artifact_paths": [
+        "artifacts/mrx1000-wave129-creative-sources/mineral-rights-offer-version-control-and-deadline-register-hero-base.png",
+        "artifacts/mrx1000-wave129-creative-sources/mineral-rights-offer-version-control-and-deadline-register-inline-base.png"
+      ],
+      "generated_at_utc": "2026-08-26T06:48:00.263Z",
+      "hero": {
+        "public_path": "/assets/articles/hero/mineral-rights-offer-version-control-and-deadline-register.webp",
+        "alt": "A dark oblique offer-version archive station appears beside the exact version-control register title.",
+        "width": 1200,
+        "height": 630,
+        "mime_type": "image/webp",
+        "sha256": "2ffba27845e4d317221d493a21249e9266999e2a528306d3eaeb3a7e92faae40",
+        "perceptual_hash": "0000000000000000000000000000000001000000000000001111100000111000111110000111100011111000001000001111100001111010000000000110001000000000111110000000000011000000000000101110000000000001011101000000000101100000000000101100000000000011001000000000001100000000",
+        "neutralized_art_text_region_count": 1,
+        "ocr": {
+          "expected": "Mineral Rights Offer Version-Control and Deadline Register",
+          "actual": "Mineral Rights Offer\nVersion-Control and\nDeadline Register",
+          "normalized_expected": "mineral rights offer version control and deadline register",
+          "normalized_actual": "mineral rights offer version control and deadline register",
+          "uppercase_i_confusable_accepted": false,
+          "pass": true
+        }
+      },
+      "inline": {
+        "public_path": "/assets/articles/inline/mineral-rights-offer-version-control-and-deadline-register/mineral-rights-offer-version-control.webp",
+        "alt": "A top-down offer-version register board appears above the exact version-control keyword.",
+        "rendered_text": "mineral rights offer version control",
+        "visual_variant": "wave129-distinct-generated-strict-overhead-three-version-deadline-register-board",
+        "width": 1200,
+        "height": 675,
+        "mime_type": "image/webp",
+        "sha256": "05a5ca56ae38fceb71df378a08288b6337ff5c32683dbd7d2d310e9e258c046f",
+        "perceptual_hash": "1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111100000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "neutralized_art_text_region_count": 1,
+        "ocr": {
+          "expected": "mineral rights offer version control",
+          "actual": "mineral rights offer\nversion control",
+          "normalized_expected": "mineral rights offer version control",
+          "normalized_actual": "mineral rights offer version control",
           "uppercase_i_confusable_accepted": false,
           "pass": true
         }

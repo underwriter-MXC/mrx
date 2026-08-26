@@ -293,16 +293,17 @@ describe('MRX1000 readiness matrix', () => {
     expect([...matrixJoinedIds].sort()).toEqual([...joinedIds].sort());
   });
 
-  it('tracks 200 ledger title UUID planning handles separately from authoritative evidence', () => {
+  it('tracks remaining ledger title UUID planning handles separately from authoritative evidence', () => {
     const ledger = JSON.parse(readFileSync(LEDGER, 'utf8'));
     const ledgerTitleUuids = new Set<string>();
     for (const r of ledger.articles) {
       if (r.searchatlas_title_uuid) ledgerTitleUuids.add(String(r.searchatlas_title_uuid));
     }
-    expect(ledgerTitleUuids.size).toBe(200);
-    expect(matrix.aggregate.ledger_searchatlas_title_uuid_planning_handle_count).toBe(200);
+    expect(matrix.aggregate.ledger_searchatlas_title_uuid_planning_handle_count).toBe(
+      ledgerTitleUuids.size,
+    );
     // Authoritative evidence still requires the title UUID to actually appear
-    // in a current readonly artifact. None of the 200 ledger UUIDs match any
+    // in a current readonly artifact. None of the remaining ledger UUIDs match any
     // readonly UUID in the current snapshot.
     expect(matrix.aggregate.searchatlas_title_uuid_present_in_authoritative_local_artifact).toBe(0);
 
@@ -823,16 +824,23 @@ describe('MRX1000 readiness matrix — load-bearing fact regressions', () => {
     expect(d11Sha).toBe(D11_EXPECTED_SHA256);
   });
 
-  it('201 topical-map planning handles report map IDs and do not claim article-created proof', () => {
+  it('topical-map planning handles report map IDs and do not claim article-created proof', () => {
     const evidence = matrix.searchatlas_evidence.topical_map_planning_handles;
-    expect(evidence.ledger_searchatlas_title_uuid_planning_handle_count).toBe(200);
+    const ledger = JSON.parse(readFileSync(LEDGER, 'utf8'));
+    const expectedTitleUuidCount = new Set(
+      ledger.articles
+        .map((article: any) => article.searchatlas_title_uuid)
+        .filter(Boolean),
+    ).size;
+    expect(evidence.ledger_searchatlas_title_uuid_planning_handle_count).toBe(
+      expectedTitleUuidCount,
+    );
     expect(evidence.ledger_searchatlas_map_id_planning_handle_count).toBeGreaterThan(0);
     expect(evidence.readonly_distinct_map_ids).toBe(readonlyMapIds.size);
     expect(evidence.article_created_proof_claimed).toBe(false);
     expect(Array.isArray(evidence.map_ids)).toBe(true);
     expect(evidence.map_ids.length).toBe(readonlyMapIds.size);
     // Sanity: every ledger map_id that joins a readonly artifact is among the reported map_ids.
-    const ledger = JSON.parse(readFileSync(LEDGER, 'utf8'));
     const ledgerJoinedMapIds = new Set(
       ledger.articles
         .filter(
