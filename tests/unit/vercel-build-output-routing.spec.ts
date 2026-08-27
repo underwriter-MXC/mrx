@@ -21,6 +21,25 @@ function matchingRoutes(routes: DeploymentRoute[] | null, path: string) {
 }
 
 describe('prebuilt Vercel deployment routing', () => {
+  it('compiles the global security headers without blocking required first-party services', () => {
+    const routes = compileDeploymentRoutes(vercelConfig) as DeploymentRoute[];
+    const homeHeaders = matchingRoutes(routes, '/').find(
+      (route) => route.headers?.['Content-Security-Policy'],
+    )?.headers;
+
+    expect(homeHeaders?.['Referrer-Policy']).toBe('strict-origin-when-cross-origin');
+    expect(homeHeaders?.['X-Content-Type-Options']).toBe('nosniff');
+
+    const csp = homeHeaders?.['Content-Security-Policy'] ?? '';
+    expect(csp).toContain("default-src 'self'");
+    expect(csp).toContain("object-src 'none'");
+    expect(csp).toContain("frame-ancestors 'none'");
+    expect(csp).toContain('https://www.googletagmanager.com');
+    expect(csp).toContain('https://*.google-analytics.com');
+    expect(csp).toContain('https://*.supabase.co');
+    expect(csp).toContain('wss://*.supabase.co');
+  });
+
   it('compiles every protected route variant into an X-Robots-Tag rule', () => {
     const routes = compileDeploymentRoutes(vercelConfig) as DeploymentRoute[];
     for (const path of [

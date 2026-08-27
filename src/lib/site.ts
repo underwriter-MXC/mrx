@@ -18,11 +18,8 @@ export const SITE = {
   addressRegion: 'TX',
   addressCountry: 'US',
   foundedYear: 2026,
-  // Twitter / X handle for the `twitter:site` meta tag. Leave undefined
-  // until Daryl confirms first-party ownership of the @mineralrightsxchange
-  // X profile; Seo.astro suppresses the `<meta name="twitter:site">` tag
-  // when this is undefined so we never publish a guessed handle.
-  twitterSite: undefined as string | undefined,
+  // First-party profile also declared in Organization.sameAs.
+  twitterSite: '@mineralrightsxchange' as string | undefined,
 } as const;
 
 export const NAV = {

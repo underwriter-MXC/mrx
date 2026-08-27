@@ -16,7 +16,7 @@ describe('site-level JSON-LD graph', () => {
     const org = graph.find((n: any) => n['@type'] === 'Organization') as any;
     expect(org?.name).toBeTruthy();
     expect(org?.url).toBeTruthy();
-    expect(org?.logo).toBe('https://mineralrightsxchange.com/assets/brand/mrx-logo-color.png');
+    expect(org?.logo).toBe('https://mineralrightsxchange.com/assets/brand/mrx-logo-color.webp');
   });
 
   it('WebPage carries a SpeakableSpecification that nominates at least one answer block', () => {

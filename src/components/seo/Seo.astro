@@ -88,17 +88,6 @@ const socialDescription =
         .slice(0, 121)
         .replace(/\s+\S*$/, '')
         .replace(/[\s,;:.!?-]+$/, '')}…`;
-const keywords = Array.from(
-  new Set(
-    `${title} mineral rights mineral rights exchange`
-      .toLowerCase()
-      .replace(/[^a-z0-9\s-]/g, ' ')
-      .split(/\s+/)
-      .filter((term) => term.length > 2),
-  ),
-)
-  .slice(0, 12)
-  .join(', ');
 const tOk =
   exactCanonicalArticleTitle && finalTitle === exactCanonicalMetadataTitle
     ? validateArticleTitle(exactCanonicalArticleTitle, exactCanonicalArticleTitle)
@@ -127,7 +116,6 @@ const graph = buildPageGraph([
 
 <title>{finalTitle}</title>
 <meta name="description" content={description} />
-<meta name="keywords" content={keywords} />
 <meta name="robots" content={robotsContent} />
 <link rel="canonical" href={canonical} />
 {previousPath && <link rel="prev" href={buildCanonical(previousPath, SITE.url)} />}
@@ -169,7 +157,7 @@ const graph = buildPageGraph([
 }
 
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:site" content="@mineralrightsxchange" />
+{SITE.twitterSite && <meta name="twitter:site" content={SITE.twitterSite} />}
 <meta name="twitter:title" content={socialTitle} />
 <meta name="twitter:description" content={socialDescription} />
 <meta name="twitter:image" content={og} />

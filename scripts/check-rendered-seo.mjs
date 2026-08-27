@@ -63,6 +63,16 @@ for (const file of htmlFiles) {
   const title = html.match(/<title>[^<]+<\/title>/i);
   const description = html.match(/<meta\s+name=["']description["'][^>]*content=["'][^"']+["']/i);
   const robots = html.match(/<meta\s+name=["']robots["'][^>]*content=["'][^"']+["']/i);
+  const metaKeywords = html.match(/<meta\s+name=["']keywords["']/i);
+  const twitterSite = html.match(
+    /<meta\s+name=["']twitter:site["'][^>]*content=["']([^"']+)["']/i,
+  )?.[1];
+  const twitterDescription = html.match(
+    /<meta\s+name=["']twitter:description["'][^>]*content=["']([^"']+)["']/i,
+  )?.[1];
+  const ogDescription = html.match(
+    /<meta\s+property=["']og:description["'][^>]*content=["']([^"']+)["']/i,
+  )?.[1];
   const jsonLd = html.match(
     /<script[^>]+type=["']application\/ld\+json["'][^>]*>[\s\S]*?<\/script>/i,
   );
@@ -73,6 +83,16 @@ for (const file of htmlFiles) {
   if (!title) failures.push(`${route}: missing <title>`);
   if (!description) failures.push(`${route}: missing meta description`);
   if (!robots) failures.push(`${route}: missing robots meta`);
+  if (metaKeywords) failures.push(`${route}: obsolete meta keywords tag must not be emitted`);
+  if (twitterSite !== '@mineralrightsxchange') {
+    failures.push(`${route}: twitter:site is ${twitterSite ?? '(missing)'}`);
+  }
+  if (!twitterDescription || twitterDescription.length > 125) {
+    failures.push(`${route}: twitter description missing or over 125 characters`);
+  }
+  if (!ogDescription || ogDescription.length > 125) {
+    failures.push(`${route}: Open Graph description missing or over 125 characters`);
+  }
   if (!jsonLd) failures.push(`${route}: missing JSON-LD graph`);
 
   for (const image of html.matchAll(/<img\b[^>]*>/gi)) {
