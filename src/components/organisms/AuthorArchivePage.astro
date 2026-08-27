@@ -80,7 +80,9 @@ const nextPath = currentPage < lastPage ? archivePagePath(basePath, currentPage 
         <p class="mrx-eyebrow">
           {isEditorialTeam ? 'Publication responsibility' : 'MRX Learning Center author'}
         </p>
-        <h1>{author.data.name}</h1>
+        <h1>
+          Articles by {author.data.name}{currentPage > 1 ? `: Page ${currentPage}` : ''}
+        </h1>
         <strong>{author.data.title}</strong>
         <p>{author.data.description}</p>
         {

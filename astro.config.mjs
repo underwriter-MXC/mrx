@@ -34,6 +34,9 @@ const sitemapPriorityIntegration = {
       // this config file, not the project root.
       const url = new URL('./scripts/postbuild-sitemap.mjs', import.meta.url);
       await import(url.href);
+      const canonicalLinksUrl = new URL('./scripts/postbuild-canonical-links.mjs', import.meta.url);
+      const { rewriteRenderedInternalLinks } = await import(canonicalLinksUrl.href);
+      await rewriteRenderedInternalLinks();
     },
   },
 };

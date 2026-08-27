@@ -9,6 +9,7 @@ import { readdir, readFile } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
 import { extname, join, relative, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { canonicalizeInternalHref, loadRedirectRules } from './postbuild-canonical-links.mjs';
 
 const ROOT = resolve(fileURLToPath(new URL('..', import.meta.url)));
 const candidates = [
@@ -24,6 +25,17 @@ if (!buildRoot) {
   process.exit(1);
 }
 
+const redirectRules = await loadRedirectRules(ROOT);
+const protectedPrefixes = [
+  '/api/',
+  '/account/',
+  '/knowledge/',
+  '/blog/drafts/',
+  '/book/thank-you/',
+  '/free-guide/thank-you/',
+  '/staff/',
+];
+
 const htmlFiles = [];
 async function walk(directory) {
   for (const entry of await readdir(directory, { withFileTypes: true })) {
@@ -35,6 +47,7 @@ async function walk(directory) {
 await walk(buildRoot);
 
 const failures = [];
+const outboundByRoute = new Map();
 for (const file of htmlFiles) {
   const html = await readFile(file, 'utf8');
   const route = routeFor(file);
@@ -64,6 +77,33 @@ for (const file of htmlFiles) {
       failures.push(`${route}: image is missing alt attribute`);
     }
   }
+
+  const outbound = new Set();
+  for (const anchor of html.matchAll(/<a\b[^>]*\bhref=["']([^"']+)["'][^>]*>/gi)) {
+    const tag = anchor[0];
+    const href = anchor[1];
+    const canonicalHref = canonicalizeInternalHref(href, redirectRules);
+    if (canonicalHref !== href) {
+      failures.push(`${route}: internal anchor ${href} should be ${canonicalHref}`);
+    }
+    if (href.startsWith('#')) continue;
+
+    let target;
+    try {
+      target = new URL(canonicalHref, `${SITE}${route}`);
+    } catch {
+      continue;
+    }
+    if (target.origin !== SITE) continue;
+
+    const rel = tag.match(/\brel=["']([^"']*)["']/i)?.[1] ?? '';
+    const isNofollow = /(?:^|\s)nofollow(?:\s|$)/i.test(rel);
+    if (protectedPrefixes.some((prefix) => target.pathname.startsWith(prefix)) && !isNofollow) {
+      failures.push(`${route}: protected internal anchor ${href} must be marked nofollow`);
+    }
+    if (!isNofollow) outbound.add(canonicalRouteFor(target.pathname));
+  }
+  outboundByRoute.set(canonicalRoute, outbound);
 }
 
 // The sitemap is the public discovery contract. Every URL it advertises must
@@ -71,6 +111,8 @@ for (const file of htmlFiles) {
 // canonical URL. Image sitemap entries are assets, so they are intentionally
 // excluded from this page-level assertion.
 const sitemapIndexPath = join(buildRoot, 'sitemap_index.xml');
+const sitemapRoutes = new Set();
+const sitemapMetadata = [];
 if (existsSync(sitemapIndexPath)) {
   const sitemapIndex = await readFile(sitemapIndexPath, 'utf8');
   for (const match of sitemapIndex.matchAll(/<loc>[^<]*\/(sitemap-[^<]+\.xml)<\/loc>/g)) {
@@ -95,6 +137,7 @@ if (existsSync(sitemapIndexPath)) {
         continue;
       }
       const route = parsed.pathname === '/' ? '/' : `${parsed.pathname.replace(/\/$/, '')}/`;
+      sitemapRoutes.add(route);
       const pageFile =
         route === '/'
           ? join(buildRoot, 'index.html')
@@ -114,9 +157,55 @@ if (existsSync(sitemapIndexPath)) {
       if (canonical !== `${SITE}${route}`) {
         failures.push(`${sitemapName}: ${route} canonical is ${canonical ?? '(missing)'}`);
       }
+      const sitemapTitle = normalizedText(page.match(/<title>([\s\S]*?)<\/title>/i)?.[1] ?? '');
+      const sitemapDescription = normalizedText(
+        page.match(/<meta\s+name=["']description["'][^>]*content=["']([^"']*)["']/i)?.[1] ?? '',
+      );
+      const sitemapHeadings = [...page.matchAll(/<h1\b[^>]*>([\s\S]*?)<\/h1>/gi)].map((match) =>
+        normalizedText(match[1]),
+      );
+      if (sitemapHeadings.length !== 1) {
+        failures.push(`${sitemapName}: ${route} has ${sitemapHeadings.length} H1 elements`);
+      }
+      sitemapMetadata.push({
+        route,
+        title: sitemapTitle,
+        description: sitemapDescription,
+        h1: sitemapHeadings[0] ?? '',
+      });
     }
   }
 }
+
+for (const field of ['title', 'description', 'h1']) {
+  const routesByValue = new Map();
+  for (const row of sitemapMetadata) {
+    if (!row[field]) continue;
+    const routes = routesByValue.get(row[field]) ?? [];
+    routes.push(row.route);
+    routesByValue.set(row[field], routes);
+  }
+  for (const routes of routesByValue.values()) {
+    if (routes.length > 1) {
+      failures.push(`duplicate public ${field}: ${routes.join(', ')}`);
+    }
+  }
+}
+
+const inboundCounts = new Map([...sitemapRoutes].map((route) => [route, 0]));
+for (const [source, targets] of outboundByRoute) {
+  for (const target of targets) {
+    if (target !== source && inboundCounts.has(target)) {
+      inboundCounts.set(target, inboundCounts.get(target) + 1);
+    }
+  }
+}
+const orphanRoutes = [...inboundCounts]
+  .filter(([route, count]) => route !== '/' && count === 0)
+  .map(([route]) => route)
+  .sort();
+for (const route of orphanRoutes)
+  failures.push(`${route}: public sitemap orphan with zero inbound links`);
 
 if (failures.length) {
   console.error(`[check-rendered-seo] ${failures.length} failure(s)`);
@@ -125,7 +214,7 @@ if (failures.length) {
 }
 
 console.log(
-  `[check-rendered-seo] PASS: ${htmlFiles.length} rendered HTML pages have canonical/meta/JSON-LD and accessible images`,
+  `[check-rendered-seo] PASS: ${htmlFiles.length} rendered HTML pages have canonical/meta/JSON-LD, accessible images, unique public title/description/H1 metadata, canonical internal links, and ${orphanRoutes.length} sitemap orphan(s)`,
 );
 
 function routeFor(file) {
@@ -134,4 +223,24 @@ function routeFor(file) {
   path = path.replace(/\/index\.html$/, '/').replace(/\.html$/, '');
   if (!path.startsWith('/')) path = `/${path}`;
   return path || '/';
+}
+
+function canonicalRouteFor(pathname) {
+  if (pathname === '/') return '/';
+  if (pathname === '/api' || pathname.startsWith('/api/')) return pathname;
+  if (extname(pathname.split('/').filter(Boolean).at(-1) ?? '')) return pathname;
+  return `${pathname.replace(/\/+$/, '')}/`;
+}
+
+function normalizedText(value) {
+  return value
+    .replace(/<[^>]+>/g, ' ')
+    .replaceAll('&quot;', '"')
+    .replaceAll('&#39;', "'")
+    .replaceAll('&#x27;', "'")
+    .replaceAll('&amp;', '&')
+    .replaceAll('&lt;', '<')
+    .replaceAll('&gt;', '>')
+    .replace(/\s+/g, ' ')
+    .trim();
 }

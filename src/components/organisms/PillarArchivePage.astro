@@ -33,11 +33,19 @@ if (currentPage > inventory.lastPage) {
 const previousPath = currentPage === 2 ? pillar.path : pillarArchivePath(pillar, currentPage - 1);
 const nextPath =
   currentPage < inventory.lastPage ? pillarArchivePath(pillar, currentPage + 1) : undefined;
+const rawArchiveDescription = `Page ${currentPage} of ${inventory.lastPage}. ${description}`;
+const archiveDescription =
+  rawArchiveDescription.length <= 160
+    ? rawArchiveDescription
+    : `${rawArchiveDescription
+        .slice(0, 159)
+        .replace(/\s+\S*$/, '')
+        .replace(/[\s,;:]+$/, '')}.`;
 ---
 
 <MarketingLayout
   title={`${title} · Page ${currentPage} of ${inventory.lastPage}`}
-  description={description}
+  description={archiveDescription}
   path={pillarArchivePath(pillar, currentPage)}
   pageType="blog"
   pageCategory="learning-center-pillar"

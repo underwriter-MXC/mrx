@@ -1,6 +1,7 @@
 ---
 import { getEntry } from 'astro:content';
 import MarketingLayout from '../layouts/MarketingLayout.astro';
+import OwnerSituationLinks from '../components/organisms/OwnerSituationLinks.astro';
 
 const entry = await getEntry('pages', 'how-it-works');
 if (!entry) throw new Error('pages/how-it-works.mdx is missing.');
@@ -21,4 +22,5 @@ export const prerender = true;
   faq={entry.data.faq}
 >
   <Content />
+  <OwnerSituationLinks />
 </MarketingLayout>

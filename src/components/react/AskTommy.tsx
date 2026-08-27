@@ -2099,7 +2099,9 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
                     </p>
                   </div>
                   <span>
-                    <a href="/account/?welcome=conversation">Log in or create an account</a>
+                    <a href="/account/?welcome=conversation" rel="nofollow">
+                      Log in or create an account
+                    </a>
                     <button type="button" onClick={() => setAccountPromptDismissed(true)}>
                       Keep chatting for now
                     </button>

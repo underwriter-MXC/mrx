@@ -27,7 +27,7 @@ const nextPath =
 
 <MarketingLayout
   title={`Mineral Rights Learning Center${pageSuffix} · MRX`}
-  description={`Browse practical MRX mineral-rights articles about offers, ownership, royalties, inherited rights, taxes, and selling decisions for mineral owners${currentPage === 1 ? '.' : `; page ${currentPage} of ${lastPage}.`}`}
+  description={`Explore MRX mineral-rights articles about offers, ownership, royalties, inherited rights, taxes, and selling decisions for mineral owners${currentPage === 1 ? '.' : `; page ${currentPage} of ${lastPage}.`}`}
   path={path}
   previousPath={previousPath}
   nextPath={nextPath}
@@ -42,7 +42,9 @@ const nextPath =
   <section class="mrx-page-hero learning-center-hero">
     <div class="container">
       <p class="mrx-eyebrow">Reviewed mineral-owner education</p>
-      <h1>Straight answers about mineral rights.</h1>
+      <h1>
+        Straight answers about mineral rights.{currentPage > 1 ? ` Page ${currentPage}.` : ''}
+      </h1>
       <p>
         Browse practical articles about offers, ownership, royalties, inherited rights, and selling
         decisions.

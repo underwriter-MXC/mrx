@@ -27,6 +27,8 @@ import CtaBlock from '../../components/molecules/CtaBlock.astro';
 
 <Prose>
 
+# Privacy Policy
+
 Last updated: July 16, 2026
 
 Mineral Rights Xchange ("MRX", "we", "us") respects your privacy. This policy explains what information we collect, how we use it, who we share it with, how long we keep it, and the choices available to you. It applies to mineralrightsxchange.com, Ask Tommy and the other fictional MRX AI Guides, private owner accounts and documents, appointment communications, and direct correspondence with MRX.
@@ -114,5 +116,10 @@ Questions, comments, or requests related to this policy should be directed to ou
   title="Have a privacy or mineral-rights question?"
   body="Ask a question without providing contact information first, or use the account controls to manage saved conversations and private files."
   primaryCta={{ label: 'Ask Tommy', href: '/?ask=1', ctaName: 'pp-cta-block-ask-tommy' }}
-  secondaryCta={{ label: 'Open My Account', href: '/account/', ctaName: 'pp-cta-block-account' }}
+  secondaryCta={{
+    label: 'Open My Account',
+    href: '/account/',
+    ctaName: 'pp-cta-block-account',
+    rel: 'nofollow',
+  }}
 />

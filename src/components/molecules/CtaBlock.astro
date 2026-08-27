@@ -8,8 +8,14 @@ import CtaLink from '../atoms/CtaLink.astro';
 interface Props {
   title: string;
   body: string;
-  primaryCta: { label: string; href: string; ctaName: string };
-  secondaryCta?: { label: string; href: string; ctaName: string; openTommy?: boolean };
+  primaryCta: { label: string; href: string; ctaName: string; rel?: string };
+  secondaryCta?: {
+    label: string;
+    href: string;
+    ctaName: string;
+    openTommy?: boolean;
+    rel?: string;
+  };
   reassurance?: string;
 }
 
@@ -27,7 +33,13 @@ const {
     <h2>{title}</h2>
     <p>{body}</p>
     <div class="row" style="justify-content: center;">
-      <CtaLink ctaName={primaryCta.ctaName} href={primaryCta.href} variant="primary" size="lg">
+      <CtaLink
+        ctaName={primaryCta.ctaName}
+        href={primaryCta.href}
+        rel={primaryCta.rel}
+        variant="primary"
+        size="lg"
+      >
         {primaryCta.label}
       </CtaLink>
       {
@@ -38,6 +50,7 @@ const {
             variant="ghost"
             size="lg"
             openTommy={secondaryCta.openTommy}
+            rel={secondaryCta.rel}
           >
             {secondaryCta.label}
           </CtaLink>
