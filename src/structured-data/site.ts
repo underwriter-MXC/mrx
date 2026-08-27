@@ -9,7 +9,7 @@ export const organization: Organization = {
   name: SITE.name,
   alternateName: SITE.shortName,
   url: SITE.url,
-  logo: `${SITE.url}/assets/brand/mrx-logo-color.png`,
+  logo: `${SITE.url}/assets/brand/mrx-logo-color.webp`,
   description: SITE.description,
   foundingDate: String(SITE.foundedYear),
   // First-party profiles verified against the MRX Search Atlas Brand Vault.

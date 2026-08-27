@@ -32,7 +32,7 @@ const {
   <div class="cta-block">
     <h2>{title}</h2>
     <p>{body}</p>
-    <div class="row" style="justify-content: center;">
+    <div class="row cta-block__actions">
       <CtaLink
         ctaName={primaryCta.ctaName}
         href={primaryCta.href}
@@ -57,13 +57,22 @@ const {
         )
       }
     </div>
-    <p class="text text--sm" style="color: var(--color-ink-300); margin-top: var(--space-3);">
+    <p class="text text--sm cta-block__reassurance">
       {reassurance}
     </p>
   </div>
 </section>
 
 <style>
+  .cta-block__actions {
+    justify-content: center;
+  }
+
+  .cta-block__reassurance {
+    color: var(--color-ink-300);
+    margin-top: var(--space-3);
+  }
+
   .cta-block :global(.btn--ghost) {
     color: var(--color-white);
     border-color: var(--color-white);

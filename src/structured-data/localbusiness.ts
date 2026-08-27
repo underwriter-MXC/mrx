@@ -39,7 +39,7 @@ export const localBusiness: LocalBusiness = {
   '@id': `${SITE.url}/#local`,
   name: SITE.name,
   url: SITE.url,
-  image: `${SITE.url}/assets/brand/mrx-logo-color.png`,
+  image: `${SITE.url}/assets/brand/mrx-logo-color.webp`,
   description: SITE.description,
   // Match the published scope in about.mdx. GBP sees "Country: US" until
   // Daryl confirms a tighter service-area definition; this stays in sync

@@ -135,13 +135,10 @@ const measurement = resolveArticleMeasurementContext({
         <Heading level={2} size="2xl" id="related-posts-heading">
           Related articles
         </Heading>
-        <Text
-          class="text--lead"
-          style="margin-top: var(--space-2); max-width: 60ch; font-size: var(--fs-base);"
-        >
+        <Text class="text--lead related-posts__lede">
           More plain-language explainers in the same topic area.
         </Text>
-        <div class="grid grid--3" style="margin-top: var(--space-4); gap: var(--space-4);">
+        <div class="grid grid--3 related-posts__grid">
           {related.map((p) => {
             const pSlug = p.id.replace(/\.mdx?$/, '');
             return <PostCard post={{ ...p.data, slug: pSlug }} href={`/blog/${pSlug}/`} />;
@@ -151,3 +148,16 @@ const measurement = resolveArticleMeasurementContext({
     )
   }
 </ArticleLayout>
+
+<style>
+  .related-posts__lede {
+    margin-top: var(--space-2);
+    max-width: 60ch;
+    font-size: var(--fs-base);
+  }
+
+  .related-posts__grid {
+    margin-top: var(--space-4);
+    gap: var(--space-4);
+  }
+</style>
