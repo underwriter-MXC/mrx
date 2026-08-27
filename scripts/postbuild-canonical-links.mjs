@@ -14,6 +14,17 @@ import { fileURLToPath } from 'node:url';
 const SITE = 'https://mineralrightsxchange.com';
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 
+// These reviewed articles point to planned/draft siblings for which no
+// scope-equivalent public canonical exists. mrx_ceo approved leaving the
+// destinations nonpublic and unwrapping only these rendered anchors to text.
+export const suppressedInternalRoutes = new Set([
+  '/blog/1031-exchange-fees-for-mineral-rights-sales/',
+  '/blog/understanding-1031-exchange-benefits-for-mineral-rights-owners/',
+  '/blog/how-a-1031-exchange-benefits-mineral-rights-owners/',
+  '/blog/how-to-navigate-a-1031-exchange-for-mineral-rights/',
+  '/blog/how-to-evaluate-mineral-production-in-texas/',
+]);
+
 export async function loadRedirectRules(root = ROOT) {
   const config = JSON.parse(await readFile(join(root, 'vercel.json'), 'utf8'));
   return (config.redirects ?? []).filter(
@@ -50,6 +61,40 @@ export function canonicalizeInternalHref(rawHref, redirectRules = []) {
   return absolute ? `${SITE}${pathname}${suffix}` : `${pathname}${suffix}`;
 }
 
+export function shouldSuppressInternalHref(rawHref) {
+  if (typeof rawHref !== 'string' || rawHref.length === 0) return false;
+  let parsed;
+  try {
+    parsed = new URL(rawHref, `${SITE}/`);
+  } catch {
+    return false;
+  }
+  return parsed.origin === SITE && suppressedInternalRoutes.has(canonicalPathname(parsed.pathname));
+}
+
+export function rewriteInternalAnchorMarkup(source, redirectRules = []) {
+  let changedLinks = 0;
+  let suppressedLinks = 0;
+  const withoutHeldDestinations = source.replace(
+    /<a\b[^>]*?\bhref=(["'])([^"']+)\1[^>]*>([\s\S]*?)<\/a>/gi,
+    (tag, _quote, href, contents) => {
+      if (!shouldSuppressInternalHref(href)) return tag;
+      suppressedLinks += 1;
+      return contents;
+    },
+  );
+  const html = withoutHeldDestinations.replace(
+    /(<a\b[^>]*?\bhref=)(["'])([^"']+)\2/gi,
+    (tag, prefix, quote, href) => {
+      const canonical = canonicalizeInternalHref(href, redirectRules);
+      if (canonical === href) return tag;
+      changedLinks += 1;
+      return `${prefix}${quote}${canonical}${quote}`;
+    },
+  );
+  return { html, changedLinks, suppressedLinks };
+}
+
 export async function rewriteRenderedInternalLinks(root = ROOT) {
   const candidates = [
     join(root, 'dist', 'client'),
@@ -70,27 +115,22 @@ export async function rewriteRenderedInternalLinks(root = ROOT) {
 
   let changedFiles = 0;
   let changedLinks = 0;
+  let suppressedLinks = 0;
   for (const file of htmlFiles) {
     const source = await readFile(file, 'utf8');
-    const rewritten = source.replace(
-      /(<a\b[^>]*?\bhref=)(["'])([^"']+)\2/gi,
-      (tag, prefix, quote, href) => {
-        const canonical = canonicalizeInternalHref(href, redirectRules);
-        if (canonical === href) return tag;
-        changedLinks += 1;
-        return `${prefix}${quote}${canonical}${quote}`;
-      },
-    );
-    if (rewritten !== source) {
-      await writeFile(file, rewritten, 'utf8');
+    const rewritten = rewriteInternalAnchorMarkup(source, redirectRules);
+    changedLinks += rewritten.changedLinks;
+    suppressedLinks += rewritten.suppressedLinks;
+    if (rewritten.html !== source) {
+      await writeFile(file, rewritten.html, 'utf8');
       changedFiles += 1;
     }
   }
 
   console.log(
-    `[postbuild-canonical-links] Rewrote ${changedLinks} internal anchor(s) across ${changedFiles} rendered HTML file(s) in ${buildRoot}`,
+    `[postbuild-canonical-links] Rewrote ${changedLinks} internal anchor(s), suppressed ${suppressedLinks} held destination anchor(s), and changed ${changedFiles} rendered HTML file(s) in ${buildRoot}`,
   );
-  return { changedFiles, changedLinks, buildRoot };
+  return { changedFiles, changedLinks, suppressedLinks, buildRoot };
 }
 
 function canonicalPathname(pathname) {

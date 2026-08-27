@@ -3,6 +3,7 @@ import { defineMiddleware } from 'astro:middleware';
 const NOINDEX_PATH_PREFIXES = [
   '/api/',
   '/account/',
+  '/owner-intake/',
   '/staff/',
   '/staged/',
   '/knowledge/',

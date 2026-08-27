@@ -29,6 +29,7 @@ const redirectRules = await loadRedirectRules(ROOT);
 const protectedPrefixes = [
   '/api/',
   '/account/',
+  '/owner-intake/',
   '/knowledge/',
   '/blog/drafts/',
   '/book/thank-you/',
@@ -48,6 +49,7 @@ await walk(buildRoot);
 
 const failures = [];
 const outboundByRoute = new Map();
+const renderedRoutes = new Set();
 for (const file of htmlFiles) {
   const html = await readFile(file, 'utf8');
   const route = routeFor(file);
@@ -56,6 +58,7 @@ for (const file of htmlFiles) {
   // not carry the site's SEO head.
   if (route.startsWith('/assets/')) continue;
   const canonicalRoute = route === '/' ? '/' : `${route.replace(/\/$/, '')}/`;
+  renderedRoutes.add(canonicalRoute);
   const canonical = html.match(/<link\s+rel=["']canonical["'][^>]*href=["']([^"']+)["']/i)?.[1];
   const title = html.match(/<title>[^<]+<\/title>/i);
   const description = html.match(/<meta\s+name=["']description["'][^>]*content=["'][^"']+["']/i);
@@ -104,6 +107,19 @@ for (const file of htmlFiles) {
     if (!isNofollow) outbound.add(canonicalRouteFor(target.pathname));
   }
   outboundByRoute.set(canonicalRoute, outbound);
+}
+
+// Slash normalization alone cannot make a planned or draft destination live.
+// Fail closed when public rendered HTML points at a route the build does not
+// own so sibling links cannot silently ship as production 404s.
+for (const [source, targets] of outboundByRoute) {
+  for (const target of targets) {
+    const lastSegment = target.split('/').filter(Boolean).at(-1) ?? '';
+    if (extname(lastSegment) || target.startsWith('/api/')) continue;
+    if (!renderedRoutes.has(target)) {
+      failures.push(`${source}: internal anchor target ${target} has no rendered page`);
+    }
+  }
 }
 
 // The sitemap is the public discovery contract. Every URL it advertises must

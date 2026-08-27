@@ -60,7 +60,9 @@ import { NAV, SITE } from '../../lib/site';
           {
             NAV.footer.resources.map((l) => (
               <li>
-                <a href={l.href}>{l.label}</a>
+                <a href={l.href} rel={l.href === '/owner-intake/' ? 'nofollow' : undefined}>
+                  {l.label}
+                </a>
               </li>
             ))
           }
