@@ -7,13 +7,22 @@ import {
 
 const vercelConfig = JSON.parse(readFileSync('vercel.json', 'utf8'));
 
-function matchingRoutes(routes: Array<{ src?: string }>, path: string) {
-  return routes.filter((route) => route.src && new RegExp(route.src).test(path));
+interface DeploymentRoute {
+  src?: string;
+  dest?: string;
+  status?: number;
+  headers?: Record<string, string>;
+  handle?: string;
+  continue?: boolean;
+}
+
+function matchingRoutes(routes: DeploymentRoute[] | null, path: string) {
+  return (routes ?? []).filter((route) => route.src && new RegExp(route.src).test(path));
 }
 
 describe('prebuilt Vercel deployment routing', () => {
   it('compiles every protected route variant into an X-Robots-Tag rule', () => {
-    const routes = compileDeploymentRoutes(vercelConfig);
+    const routes = compileDeploymentRoutes(vercelConfig) as DeploymentRoute[];
     for (const path of [
       '/api',
       '/api/',
@@ -48,7 +57,7 @@ describe('prebuilt Vercel deployment routing', () => {
   });
 
   it('compiles the approved legacy mapping and leaves held drafts unmapped', () => {
-    const routes = compileDeploymentRoutes(vercelConfig);
+    const routes = compileDeploymentRoutes(vercelConfig) as DeploymentRoute[];
     const approved = matchingRoutes(routes, '/blog/how-mineral-rights-ownership-works/').find(
       (route) => route.status === 308,
     );
@@ -63,7 +72,7 @@ describe('prebuilt Vercel deployment routing', () => {
   });
 
   it('merges routes before the filesystem phase and remains idempotent', () => {
-    const deploymentRoutes = compileDeploymentRoutes(vercelConfig);
+    const deploymentRoutes = compileDeploymentRoutes(vercelConfig) as DeploymentRoute[];
     const base = {
       version: 3,
       routes: [
@@ -72,11 +81,17 @@ describe('prebuilt Vercel deployment routing', () => {
         { src: '^/.*$', dest: '/404.html', status: 404 },
       ],
     };
-    const first = mergeDeploymentRouting(base, deploymentRoutes, vercelConfig.crons);
+    const first = mergeDeploymentRouting(base, deploymentRoutes, vercelConfig.crons) as {
+      version: number;
+      routes: DeploymentRoute[];
+      crons?: unknown[];
+    };
     const second = mergeDeploymentRouting(first, deploymentRoutes, vercelConfig.crons);
-    const filesystemIndex = first.routes.findIndex((route) => route.handle === 'filesystem');
+    const filesystemIndex = first.routes.findIndex(
+      (route: DeploymentRoute) => route.handle === 'filesystem',
+    );
     const redirectIndex = first.routes.findIndex(
-      (route) => route.headers?.Location === '/contact/',
+      (route: DeploymentRoute) => route.headers?.Location === '/contact/',
     );
     expect(redirectIndex).toBeGreaterThanOrEqual(0);
     expect(redirectIndex).toBeLessThan(filesystemIndex);
