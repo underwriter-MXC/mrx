@@ -1,0 +1,79 @@
+[
+  {
+    "source_id": "SRC-001",
+    "title": "Live Search Atlas Brand Vault profile and readiness read",
+    "location": "Search Atlas Brand Vault cc79230e-b938-496e-bef1-1f23a0e7e1ce",
+    "retrieved_at": "2026-08-31T16:00:00Z",
+    "supports": ["identity", "audience", "service model", "revenue model", "buyer disclosure", "contact record", "authorship baseline", "social profiles", "readiness"],
+    "limitations": "The live Brand Vault contact record is not evidence of Google Business Profile eligibility or a staffed public location."
+  },
+  {
+    "source_id": "SRC-002",
+    "title": "Live Search Atlas OTTO Knowledge Graph read",
+    "location": "Search Atlas OTTO project e4bab8bb-717e-480c-8dea-1de1b8596eb7 / KG 651830",
+    "retrieved_at": "2026-08-31T16:00:00Z",
+    "supports": ["ProfessionalService type", "service description", "directional-assessment limits", "buyer disclosure", "authorship gap"],
+    "limitations": "Knowledge Graph fields are generation context and proposals; they do not replace source review or prove public deployment."
+  },
+  {
+    "source_id": "SRC-003",
+    "title": "MRX site-level configuration",
+    "location": "src/lib/site.ts",
+    "version": "ca21d446081d83626aab931ebb78eafbfa46c2e8",
+    "retrieved_at": "2026-08-31T16:20:00Z",
+    "supports": ["canonical name", "short name", "domain", "tagline", "description", "email", "coverage", "canonical conversion paths"],
+    "limitations": "The phone field is intentionally unpublished until the website source is separately updated and released."
+  },
+  {
+    "source_id": "SRC-004",
+    "title": "MRX Five Hard Rules",
+    "location": "compliance/five-hard-rules.json",
+    "version": "ca21d446081d83626aab931ebb78eafbfa46c2e8",
+    "retrieved_at": "2026-08-31T16:20:00Z",
+    "supports": ["no guarantees", "no certified appraisal", "no individualized legal or tax advice", "no named-underwriter exposure", "no unsupported claims"],
+    "limitations": "This machine-readable mirror supplements, and does not replace, page-level compliance review."
+  },
+  {
+    "source_id": "SRC-005",
+    "title": "MRX GBP, local, and social activation packet",
+    "location": "docs/MRX_GBP_LOCAL_SOCIAL_ACTIVATION_PACKET.md",
+    "version": "ca21d446081d83626aab931ebb78eafbfa46c2e8",
+    "retrieved_at": "2026-08-31T16:20:00Z",
+    "supports": ["GBP eligibility unverified", "nationwide digital coverage limits", "social identity governance"],
+    "limitations": "Prepared activation material is not proof that a profile or local presence has been activated."
+  },
+  {
+    "source_id": "SRC-006",
+    "title": "MRX icon-library manifest",
+    "location": "public/assets/icons/manifest.json",
+    "version": "ca21d446081d83626aab931ebb78eafbfa46c2e8",
+    "retrieved_at": "2026-08-31T16:20:00Z",
+    "supports": ["primary navy #0B1F3A", "accent gold #C8A24A"],
+    "limitations": "These are the canonical icon-system colors, not an exhaustive design-system token inventory."
+  },
+  {
+    "source_id": "SRC-007",
+    "title": "MRX workspace delivery and owner directives",
+    "location": "AGENTS.md",
+    "version": "ca21d446081d83626aab931ebb78eafbfa46c2e8",
+    "retrieved_at": "2026-08-31T16:20:00Z",
+    "supports": ["publication authority", "exact-title hero/share policy", "separate in-body image gate", "website SEO/AEO prevention", "OTTO reporting separation"],
+    "limitations": "Operational governance is authoritative for workflow but is not a public factual source for unrelated marketing claims."
+  },
+  {
+    "source_id": "SRC-008",
+    "title": "MRX Website OTTO Zero-Pending Release Gate",
+    "location": "/Users/darylhill/Library/Mobile Documents/iCloud~md~obsidian/Documents/Chesty Hermes/Projects/Ai Atom Brain/09 Project Packs/MRX/2026-08-27 MRX Website OTTO Zero-Pending Release Gate.md",
+    "retrieved_at": "2026-08-31T16:20:00Z",
+    "supports": ["Search Atlas recommendation review", "source-first prevention", "entity and content-identity preservation", "post-recrawl reporting rules"],
+    "limitations": "This is MRX workflow doctrine; raw audit observations and OTTO recommendation state remain separate evidence systems."
+  },
+  {
+    "source_id": "SRC-009",
+    "title": "Authenticated June-August 2026 Summit operating doctrine",
+    "location": "/Users/darylhill/.codex/skills/codex-marketing-playbooks/references/",
+    "retrieved_at": "2026-08-31T15:45:00Z",
+    "supports": ["brand context pack structure", "source-first workflow", "generation governance", "AI visibility measurement", "authority disclosure", "paid and local readiness gates"],
+    "limitations": "Summit doctrine supplies process and governance patterns; it is not transcript-grade evidence for MRX-specific claims."
+  }
+]

@@ -1,0 +1,49 @@
+{
+  "notice": "Identifiers and readiness only. Never store passwords, API keys, access credentials, payment data, or one-time codes here.",
+  "website": {
+    "repository": "/Users/darylhill/Documents/MineralRightsXchange.com",
+    "source_worktree": "/Users/darylhill/Documents/MineralRightsXchange.com/.codex-isolated/mrx-seo-aeo-finalize-20260827",
+    "canonical_domain": "https://mineralrightsxchange.com",
+    "production_aliases": ["https://www.mineralrightsxchange.com"],
+    "source_revision_at_pack_creation": "ca21d446081d83626aab931ebb78eafbfa46c2e8",
+    "readiness": "production source verified by the preceding OTTO release; no public source mutation in this run"
+  },
+  "analytics": {
+    "taxonomy": "mrx1000-ga4-v1.1.0",
+    "readiness": "implementation present; external property identifiers and collection state were not revalidated in this brand-context run"
+  },
+  "search_console": {
+    "property": "sc-domain:mineralrightsxchange.com",
+    "readiness": "linked in Search Atlas project context; live reporting was outside this run"
+  },
+  "search_atlas": {
+    "brand_vault_uuid": "cc79230e-b938-496e-bef1-1f23a0e7e1ce",
+    "brand_vault_hostname": "mineralrightsxchange.com",
+    "brand_vault_readiness": "active, indexed, and ready at baseline",
+    "otto_project_uuid": "e4bab8bb-717e-480c-8dea-1de1b8596eb7",
+    "otto_project_id": 99913,
+    "knowledge_graph_id": 651830,
+    "latest_completed_audit_id": 138239,
+    "latest_verified_otto_state": "2515 total, 2515 approved/deployed, 0 pending",
+    "latest_verified_raw_audit_state": "score 958, 356 pages, 354 successful, 2 missing, 1811 raw observations",
+    "readiness": "connected and writable for source-backed brand-context updates"
+  },
+  "google_business_profiles": [
+    {
+      "profile": "not activated from this pack",
+      "readiness": "eligibility and staffed-location or service-area facts remain unverified",
+      "required_action": "keep paused until separate eligibility evidence exists"
+    }
+  ],
+  "google_ads": {"readiness": "not required and not inspected for this unpaid brand-context run"},
+  "meta_ads": {"readiness": "not required and not inspected for this unpaid brand-context run"},
+  "crm_and_call_tracking": {
+    "platform": "GoHighLevel implementation exists in the project",
+    "readiness": "account and call-tracking state were not inspected because no CRM mutation was needed"
+  },
+  "publishing_and_providers": {
+    "article_pipeline": "active in a separate protected writer worktree",
+    "readiness": "do not edit or regenerate overlapping article assets; apply this pack to future generation and review",
+    "paid_distribution": "not authorized or required for this run"
+  }
+}

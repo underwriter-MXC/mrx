@@ -1,0 +1,148 @@
+{
+  "schema_version": "1.0",
+  "catalog_version": "2026-08-28",
+  "run_id": "20260831T161414Z-sp-01-summit-foundation-build-brand-context-pack",
+  "playbook": "SP-01 — Summit Foundation — Build Brand Context Pack",
+  "state": "partially_completed",
+  "mode": "live",
+  "paid": false,
+  "created_at": "2026-08-31T16:14:14.996429+00:00",
+  "updated_at": "2026-08-31T16:27:09Z",
+  "target": {
+    "project": "Mineral Rights Xchange",
+    "domain": "https://mineralrightsxchange.com",
+    "identifiers": {
+      "search_atlas_brand_vault_uuid": "cc79230e-b938-496e-bef1-1f23a0e7e1ce",
+      "search_atlas_otto_project_uuid": "e4bab8bb-717e-480c-8dea-1de1b8596eb7",
+      "search_atlas_otto_project_id": 99913,
+      "search_atlas_knowledge_graph_id": 651830,
+      "search_atlas_llm_visibility_project_id": "b03cfba8-e79b-475b-a4a3-280cceb970ed"
+    },
+    "market": "Mineral and royalty owner education and decision support",
+    "geography": "United States; digital education and review coverage only",
+    "language": "en-US",
+    "device": "not applicable"
+  },
+  "objective": {
+    "business_outcome": "Make MRX brand and generation context source-backed, claim-safe, measurement-governed, and suitable for future June-August 2026 Summit playbooks without changing protected public content.",
+    "decision_supported": "Which Summit-derived MRX brand updates can be applied now without overlapping the active article writer, creating spend, or inventing operating facts?",
+    "success_metric": "Strict brand-pack validation passes; live Brand Vault generation settings and OTTO refine prompts contain the approved author, assessment, advice, buyer, location, schema, article-image, and verification rules; the LLM Visibility denominator is versioned; any remaining indexed-Q&A defect is measured and explicitly separated.",
+    "follow_up_measurement_date": "After a Brand Vault source-index rebuild becomes available"
+  },
+  "scope": {
+    "included": [
+      "MRX-only Brand Context Pack",
+      "live Search Atlas Brand Vault generation settings and global background",
+      "live OTTO Knowledge Graph refine instructions and author write",
+      "Brand Vault indexed-Q&A verification",
+      "Search Atlas LLM Visibility topic and query denominator audit"
+    ],
+    "excluded": [
+      "active article files and assets",
+      "public website source or production deployment",
+      "bulk OTTO regeneration or deployment",
+      "paid media or distribution",
+      "GBP or LocalBusiness activation",
+      "global AI Atom Brain and shared-agent files being handled by separate active tasks"
+    ],
+    "analysis_period": "2026-08-31",
+    "comparison_period": "Live pre-update baseline from 2026-08-31",
+    "timezone": "America/Los_Angeles",
+    "owner": "Daryl Hill"
+  },
+  "sources": [
+    "Authenticated June-August 2026 Summit doctrine and playbook catalog",
+    "MRX AGENTS.md owner and release directives",
+    "src/lib/site.ts",
+    "compliance/five-hard-rules.json",
+    "docs/MRX_GBP_LOCAL_SOCIAL_ACTIVATION_PACKET.md",
+    "public/assets/icons/manifest.json",
+    "live Search Atlas Brand Vault, OTTO Knowledge Graph, and LLM Visibility reads"
+  ],
+  "assumptions": [
+    "The user instruction to take brand action authorizes non-paid, source-backed Search Atlas profile and generation-context writes.",
+    "A generation-context change is not proof that existing indexed Brand Vault documents have been rebuilt.",
+    "The legacy LLM Visibility prompts are measurement stimuli, not approved MRX positioning."
+  ],
+  "thresholds_and_rules": [
+    "No unsupported factual claims, fake local presence, fake entities, guaranteed outcomes, or prompt-only public compliance.",
+    "One active writer per file lane; do not edit the protected article worktree.",
+    "No new or incremental charge.",
+    "Brand Vault indexed-Q&A and generation settings are separate systems and must be verified separately.",
+    "No website deployment or OTTO recrawl is required when no public source changed."
+  ],
+  "dependencies": [
+    "Search Atlas MCP for live reads and permitted writes",
+    "Chrome extension-backed Search Atlas session only if the source-index rebuild is not exposed through MCP",
+    "Chesty/mrx_ceo unavailable; no material executive decision was required for the source-backed changes"
+  ],
+  "authorization": {
+    "mutation_boundary": "Versioned MRX-only brand context artifacts and non-paid Search Atlas Brand Vault/OTTO generation context; no public content, bulk recommendations, deployment, paid spend, GBP activation, or article overlap.",
+    "approval_owner": "Daryl Hill",
+    "approval_status": "approved",
+    "charge_ceiling": null,
+    "currency": "USD",
+    "charge_status": "not_required"
+  },
+  "planned_actions": [
+    {"action_id": "A-001", "description": "Inspect active tasks, branches, worktrees, and protected article scope."},
+    {"action_id": "A-002", "description": "Audit MRX live brand, OTTO, and LLM Visibility state against the three-Summit doctrine."},
+    {"action_id": "A-003", "description": "Create and strictly validate a project-owned MRX Brand Context Pack."},
+    {"action_id": "A-004", "description": "Update live Brand Vault generation settings and global background with approved MRX boundaries."},
+    {"action_id": "A-005", "description": "Update live OTTO refine prompts and organizational author fields."},
+    {"action_id": "A-006", "description": "Verify Brand Vault index readiness and test identity, author, and location-limit retrieval."},
+    {"action_id": "A-007", "description": "Refresh the Brand Vault indexed source corpus if a safe no-cost control is available."},
+    {"action_id": "A-008", "description": "Version the LLM Visibility denominator and separate core from legacy auto-generated prompts."},
+    {"action_id": "A-009", "description": "Avoid public deployment, bulk OTTO work, or paid/local activation when no source change or readiness evidence warrants it."}
+  ],
+  "results": {
+    "completed": [
+      {"action_id": "A-001", "result": "Confirmed the active article writer and the separate AI Atom/shared-software tasks; all edits stayed in the clean MRX technical worktree and non-overlapping docs lane."},
+      {"action_id": "A-002", "result": "Found a missing versioned brand pack, incomplete live generation guardrails, a Brand Vault Q&A author/location retrieval defect, empty embedded color fields, and a legacy LLM Visibility segment with no completed analysis."},
+      {"action_id": "A-003", "result": "Created brand.json, claims.json, sources.json, accounts.json, measurement-register.json, and README.md; the strict validator passed."},
+      {"action_id": "A-004", "result": "Applied source-backed Brand Vault audience, revenue, purpose, author, writing, FAQ, image, metadata, claim, location, schema, title-image, and verification settings; upserted the matching global background without AI regeneration."},
+      {"action_id": "A-005", "result": "OTTO accepted and synchronized refine_prompt, title instructions, meta-description instructions, and authorship fields. The writer reported success, though the compact read endpoint still renders authors as an empty array."},
+      {"action_id": "A-006", "result": "Verified Brand Vault index status ready with 314 documents. Narrow Q&A tests proved the indexed corpus still incorrectly calls Tommy the public author and does not retrieve the explicit local-claim boundaries."},
+      {"action_id": "A-008", "result": "Versioned the 18-topic/49-query denominator: 13 user-created topics and 34 user-created queries in the core segment; 5 auto-generated topics and 15 auto-generated queries in a separately labeled legacy diagnostic segment; no visibility outcome claimed because last_analysis_at is empty."},
+      {"action_id": "A-009", "result": "Made no public source, article, deployment, OTTO recommendation, paid, social, or GBP mutation because the audited evidence did not warrant one."}
+    ],
+    "skipped": [
+      {"action_id": "A-007", "result": "Search Atlas MCP exposes index status and source reads but no source rebuild. The required authenticated Chrome surface was running but its extension connection was unavailable after the permitted retry, so no unsafe UI substitute or forced regeneration was used."}
+    ],
+    "failed": [],
+    "blocked": []
+  },
+  "artifacts": [
+    "docs/brand-context/mrx-summit-2026/brand.json",
+    "docs/brand-context/mrx-summit-2026/claims.json",
+    "docs/brand-context/mrx-summit-2026/sources.json",
+    "docs/brand-context/mrx-summit-2026/accounts.json",
+    "docs/brand-context/mrx-summit-2026/measurement-register.json",
+    "docs/brand-context/mrx-summit-2026/README.md",
+    "program-plans/mrx-three-summit-brand-application-2026-08-31.md"
+  ],
+  "verification": [
+    "validate_brand_pack.py --strict: pass",
+    "All brand-pack JSON files parse with jq",
+    "Brand Vault update_ai_settings returned updated_fields=[default_ai_settings] and echoed all applied settings",
+    "Brand Vault upsert returned is_new=false and ai_generated=false",
+    "OTTO update returned success=true and sync_complete=true for refine/title/meta/authorship fields",
+    "Brand Vault index returned status=ready and document_count=314",
+    "Brand Vault narrow author query returned the incorrect Tommy author, preserving evidence of the remaining index defect",
+    "Brand Vault narrow location query reported the local facts as not established instead of retrieving the explicit approved limits",
+    "LLM Visibility project read returned topics_count=18, queries_count=49, and no last_analysis_at"
+  ],
+  "rollback": {
+    "available": true,
+    "method": "Reapply the pre-run Brand Vault generation values and prior OTTO refine prompt from recorded pre-update reads; revert the documentation commit for local artifacts.",
+    "owner": "Daryl Hill"
+  },
+  "unresolved_uncertainty": [
+    "The Brand Vault indexed-Q&A corpus has not incorporated the approved organizational author and explicit local-claim limits even though its generation settings, global background, and embedded author record are updated.",
+    "The OTTO update endpoint reports stored authorship fields, while the compact OTTO read endpoint still returns authors as an empty array.",
+    "Brand Vault embedded colors remain empty; this is contained by disabling generic image generation and keeping the source-backed colors in the project pack."
+  ],
+  "resume_requirements": [
+    "Restore the ChatGPT Chrome extension connection or expose a Search Atlas Brand Vault source-rebuild API, rebuild the indexed corpus without AI profile regeneration, and rerun the narrow author and location-limit Q&A tests."
+  ]
+}

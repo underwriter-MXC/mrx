@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0",
+  "measurement_system": "Search Atlas LLM Visibility",
+  "project_id": "b03cfba8-e79b-475b-a4a3-280cceb970ed",
+  "domain": "mineralrightsxchange.com",
+  "country": "US",
+  "tracking_mode": "custom",
+  "observed_at": "2026-08-31",
+  "analysis_status": {
+    "last_analysis_at": "",
+    "interpretation": "No completed visibility analysis is recorded, so this register makes no claim about visibility, mentions, rank, sentiment, or citations."
+  },
+  "denominators": {
+    "tracked_topics": 18,
+    "tracked_queries": 49,
+    "user_created_topics": 13,
+    "user_created_queries": 34,
+    "auto_generated_topics": 5,
+    "auto_generated_queries": 15
+  },
+  "core_brand_aligned_segment": {
+    "definition": "User-created topics and queries covering offer review, selling decisions, ownership records, Texas mineral rights, directional valuation education, offer red flags, state records, free underwriter review, 1031 questions, DCF education, leases and division orders, royalty checks, and inherited rights.",
+    "reporting_rule": "Report this fixed 13-topic, 34-query segment separately from the legacy auto-generated segment and preserve the dated denominator. A prompt is a measurement stimulus, not an MRX claim or approved answer."
+  },
+  "legacy_diagnostic_segment": {
+    "topics": [
+      "Mineral rights marketplace",
+      "Mineral rights listings",
+      "Leasing mineral rights",
+      "Mineral rights valuation (auto-generated duplicate)",
+      "Royalty interests trading"
+    ],
+    "query_count": 15,
+    "reason_retained": "These system-generated topics cannot be deleted with the user-topic removal interface. Retaining and labeling them also preserves a diagnostic view of whether external models confuse MRX with a marketplace, listings platform, leasing platform, or trading venue.",
+    "reporting_rule": "Never blend this segment into a core-brand visibility rate without showing its separate denominator and legacy-system origin. Never treat its wording as approved positioning."
+  },
+  "governance": [
+    "Record engine, model, locale, device, run date, prompt text, response evidence, mention, citation, and destination URL for each observation.",
+    "Do not claim improvement without a comparable dated baseline and a fixed denominator.",
+    "Do not delete unfavorable prompts merely to improve a score; change a fixed set only with a versioned rationale.",
+    "Do not trigger paid or separately metered analysis without a charge-specific approval."
+  ]
+}

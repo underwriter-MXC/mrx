@@ -1,0 +1,124 @@
+{
+  "schema_version": "1.0",
+  "status": "approved",
+  "entity": {
+    "display_name": "Mineral Rights Xchange",
+    "short_name": "MRX",
+    "legal_name": "",
+    "canonical_domain": "https://mineralrightsxchange.com",
+    "entity_ids": {
+      "search_atlas_brand_vault_uuid": "cc79230e-b938-496e-bef1-1f23a0e7e1ce",
+      "search_atlas_otto_project_uuid": "e4bab8bb-717e-480c-8dea-1de1b8596eb7",
+      "search_atlas_otto_project_id": 99913,
+      "search_atlas_knowledge_graph_id": 651830
+    }
+  },
+  "offerings": [
+    {"name": "Mineral-rights education and decision support", "description": "Free, no-pressure, plain-language education for owners comparing offers, inherited interests, royalties, production, and sell-or-hold decisions."},
+    {"name": "Secure owner intake", "description": "Situation-specific document and property-detail intake that helps an owner organize records for review."},
+    {"name": "Directional Senior Underwriter review", "description": "A directional assessment based on available public records, production data, owner-provided documents, and stated assumptions; it is not a certified appraisal or professional advice."},
+    {"name": "Disclosed acquisition transaction", "description": "MRX may offer to buy a mineral interest and may earn revenue as the disclosed buyer; transaction terms are provided in writing before an agreement."}
+  ],
+  "audiences": [
+    "U.S. mineral and royalty owners",
+    "Heirs and families organizing inherited mineral interests",
+    "Out-of-state owners",
+    "Owners comparing written purchase offers",
+    "Owners with declining or suspended royalty payments",
+    "Owners who want a no-pressure directional review before deciding whether to hold, lease, or sell"
+  ],
+  "markets_and_locations": [
+    {"market": "United States", "coverage": "Nationwide online education, secure intake, and directional review", "limits": "Nationwide coverage does not establish a storefront, staffed local office, travel-based service area, Google Business Profile eligibility, or licensed local presence."},
+    {"market": "Midland, Texas", "coverage": "The live Brand Vault contains a Midland business-contact record", "limits": "Do not publish or synchronize LocalBusiness schema, map-pack claims, or an in-person service location unless operating facts and platform eligibility are separately verified."}
+  ],
+  "positioning": {
+    "summary": "A careful, source-first educational guide for mineral and royalty owners that explains assumptions and limitations, avoids pressure and unsupported promises, and discloses when MRX may be the buyer.",
+    "differentiators": [
+      "Free, no-pressure education and directional review",
+      "Secure situation-specific owner intake",
+      "Plain-language explanation of sources, assumptions, uncertainty, and limits",
+      "Written disclosure before agreement when MRX may act as buyer"
+    ],
+    "voice": [
+      "Professional and credible",
+      "Educational and answer-first",
+      "Transparent about uncertainty, limitations, and commercial relationship",
+      "Owner-focused, calm, and never coercive"
+    ],
+    "brand_colors": {"primary_navy": "#0B1F3A", "accent_gold": "#C8A24A"}
+  },
+  "conversion_actions": [
+    {"name": "Value My Minerals", "url": "https://mineralrightsxchange.com/mineral-rights-value/"},
+    {"name": "Review My Offer", "url": "https://mineralrightsxchange.com/offer-review/"},
+    {"name": "Inherited Rights", "url": "https://mineralrightsxchange.com/inherited-mineral-rights/"},
+    {"name": "Submit Property Details", "url": "https://mineralrightsxchange.com/owner-intake/"},
+    {"name": "Book My Free Review", "url": "https://mineralrightsxchange.com/book"}
+  ],
+  "canonical_urls": [
+    "https://mineralrightsxchange.com/",
+    "https://mineralrightsxchange.com/about",
+    "https://mineralrightsxchange.com/methodology",
+    "https://mineralrightsxchange.com/how-it-works",
+    "https://mineralrightsxchange.com/learning-center/",
+    "https://mineralrightsxchange.com/mineral-rights-value/",
+    "https://mineralrightsxchange.com/offer-review/",
+    "https://mineralrightsxchange.com/inherited-mineral-rights/",
+    "https://mineralrightsxchange.com/owner-intake/",
+    "https://mineralrightsxchange.com/book",
+    "https://mineralrightsxchange.com/contact/"
+  ],
+  "prohibited_claims_and_topics": [
+    "Guaranteed value, guaranteed offer, guaranteed outcome, or a promise to beat an offer",
+    "Certified appraisal, certified appraiser, USPAP appraisal, formal appraisal, or MRX appraisal report",
+    "Individualized legal, tax, title, accounting, engineering, or investment advice",
+    "Named-underwriter marketing exposure or an AI-guide persona presented as a human, licensed professional, or approved author",
+    "Unsupported statistics, payout figures, customer counts, years-in-business, trusted-by language, credentials, results, testimonials, or social proof",
+    "Marketplace, broker, agent, neutral intermediary, or commission-only positioning unless newly supported and approved",
+    "Local storefront, service-area, Google Business Profile, or licensed-local-presence claims without separate eligibility evidence",
+    "Guaranteed rankings, indexing, answer-engine retrieval, citations, media placement, or model-training access",
+    "Fabricated consensus, entity relationships, reviews, citations, or schema"
+  ],
+  "channel_rules": {
+    "public_website": [
+      "Keep the visible entity, metadata, canonical URLs, native schema, social metadata, sitemap, internal links, images, and machine-readable discovery surfaces consistent and source-backed.",
+      "Use ProfessionalService or Organization when supported; do not add Person or LocalBusiness schema without a separate source and review.",
+      "Treat generated optimization recommendations as proposals and reject unsupported FAQ, NLP, schema, geography, alt text, or claim changes."
+    ],
+    "articles": [
+      "Finalize the canonical article title before asset generation.",
+      "Render that exact title into a unique hero image and use the same canonical asset for page hero, og:image, twitter:image, and CMS featured/share image.",
+      "Verify a separate, meaningful in-body image; the hero and inline image are independent release checks.",
+      "Use MRX Editorial Team as the approved organizational author; do not expose a named underwriter or attribute authorship to an AI-guide persona."
+    ],
+    "search_atlas_and_ai_generation": [
+      "Use the brand pack as the source of truth and keep facts, assumptions, recommendations, approvals, deployments, verification, and outcomes distinct.",
+      "Disable unreviewed FAQ and generic image generation where the tool cannot enforce MRX claim and exact-title image gates.",
+      "Require current primary sources for material claims and preserve reviewed content identity.",
+      "Do not put private owner data or credentials into Brand Vault, prompts, reports, or artifacts."
+    ],
+    "ai_visibility_and_measurement": [
+      "Use fixed, dated prompt sets and record denominator, engine, locale, device, date, and evidence for each observation.",
+      "Describe visibility, citations, indexing, and AI access as measured observations, not guaranteed outcomes.",
+      "Treat llms.txt and Markdown alternatives as optional discovery aids, not ranking or training guarantees."
+    ],
+    "authority_and_offsite": [
+      "Use truthful attribution, disclosure, source identity, and destination-page relevance.",
+      "Do not fabricate independent consensus or imply a disclosed-buyer relationship is neutral third-party advice.",
+      "Any paid distribution or separately metered placement requires charge-specific owner approval before spend."
+    ],
+    "local": [
+      "Nationwide digital coverage does not establish a physical local presence or Google Business Profile eligibility.",
+      "Keep GBP and LocalBusiness activation paused until staffed-location or eligible service-area facts are verified."
+    ],
+    "paid_media": ["Paid activation is outside this brand-pack run and remains paused until account readiness, conversion tracking, claim-safe creative, and a charge ceiling are approved."]
+  },
+  "competitors": [],
+  "competitor_status": "No current competitor set was treated as fact; future competitive work must create a dated, source-backed market snapshot.",
+  "approval": {
+    "owner": "Daryl Hill",
+    "basis": "Standing MRX owner directives and the 2026-08-31 instruction to take brand action from the three latest Summit playbooks",
+    "approved_at": "2026-08-31T16:14:14Z"
+  },
+  "created_at": "2026-08-31T16:14:15.051075+00:00",
+  "updated_at": "2026-08-31T16:14:15.051075+00:00"
+}
