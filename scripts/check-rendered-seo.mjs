@@ -100,13 +100,12 @@ for (const file of htmlFiles) {
   if (isIndexable && /\sstyle\s*=\s*["']/i.test(html)) {
     failures.push(`${route}: indexable page contains an inline style attribute`);
   }
-  if (
-    html.includes(`mailto:underwriter@mineralrightsxchange.com`) &&
-    !/<!--email_off-->[\s\S]*mailto:underwriter@mineralrightsxchange\.com[\s\S]*<!--\/email_off-->/i.test(
-      html,
-    )
-  ) {
-    failures.push(`${route}: footer email is not protected from Cloudflare link rewriting`);
+  const htmlOutsideEmailProtection = html.replace(
+    /<!--email_off-->[\s\S]*?<!--\/email_off-->/gi,
+    '',
+  );
+  if (/href\s*=\s*["']mailto:/i.test(htmlOutsideEmailProtection)) {
+    failures.push(`${route}: mailto link is not protected from Cloudflare link rewriting`);
   }
 
   for (const image of html.matchAll(/<img\b[^>]*>/gi)) {
