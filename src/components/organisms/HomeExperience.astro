@@ -15,59 +15,59 @@ const prompts = [
   {
     label: 'What are my minerals worth?',
     prompt: 'What are my mineral rights worth, and what information do you need to estimate value?',
-    icon: 'icon-market.png',
+    icon: 'icon-market.webp',
   },
   {
     label: 'I received an offer. Is it fair?',
     prompt:
       'I received an offer for my mineral rights. Can you help me understand if it might be fair?',
-    icon: 'icon-offer.png',
+    icon: 'icon-offer.webp',
   },
   {
     label: 'I inherited mineral rights. What now?',
     prompt: 'I inherited mineral rights and I’m not sure what I own. What should I do first?',
-    icon: 'icon-inherited.png',
+    icon: 'icon-inherited.webp',
   },
   {
     label: 'I receive royalties. Should I sell?',
     prompt:
       'I receive royalty checks. Can you help me understand whether I should keep them or consider selling?',
-    icon: 'icon-royalty-checks.png',
+    icon: 'icon-royalty-checks.webp',
   },
 ];
 
 const commitments = [
-  { label: 'Free', icon: 'icon-shield.png' },
-  { label: 'Confidential', icon: 'icon-lock.png' },
-  { label: 'No obligation', icon: 'icon-check.png' },
-  { label: 'No pressure', icon: 'icon-nopressure.png' },
+  { label: 'Free', icon: 'icon-shield.webp' },
+  { label: 'Confidential', icon: 'icon-lock.webp' },
+  { label: 'No obligation', icon: 'icon-check.webp' },
+  { label: 'No pressure', icon: 'icon-nopressure.webp' },
 ];
 
 const benefits = [
   {
     title: 'Avoid selling too cheap',
     copy: 'Understand what can impact value before accepting an offer.',
-    icon: 'icon-market.png',
+    icon: 'icon-market.webp',
   },
   {
     title: 'Understand what you own',
     copy: 'Many owners are not sure how much acreage or royalty interest they have.',
-    icon: 'icon-ownership.png',
+    icon: 'icon-ownership.webp',
   },
   {
     title: 'Compare the whole offer',
     copy: 'See how headline price, title review, terms, and contingencies fit together.',
-    icon: 'icon-offer.png',
+    icon: 'icon-offer.webp',
   },
   {
     title: 'Learn what buyers know',
     copy: 'Production, permits, operators, and future development can affect value.',
-    icon: 'icon-royalty-checks.png',
+    icon: 'icon-royalty-checks.webp',
   },
   {
     title: 'Get answers first',
     copy: 'Ask the important questions with no pressure and no obligation.',
-    icon: 'icon-shield.png',
+    icon: 'icon-shield.webp',
   },
 ];
 
@@ -95,10 +95,10 @@ const commonQuestions = [
         sizes="100vw"
       />
       <img
-        src="/assets/mrx-homepage-v4/backgrounds/hero-tommy-left-layout.png"
+        src="/assets/mrx-homepage-v4/backgrounds/hero-tommy-left-layout-768.webp"
         alt=""
-        width="1536"
-        height="1024"
+        width="768"
+        height="512"
         fetchpriority="high"
         decoding="async"
       />
@@ -331,7 +331,7 @@ const commonQuestions = [
           ))
         }
       </div>
-      <p style="margin-top:1.2rem"><a href="/team/">Meet every MRX AI Guide →</a></p>
+      <p class="mrx-section-followup"><a href="/team/">Meet every MRX AI Guide →</a></p>
     </div>
   </section>
 
@@ -363,7 +363,9 @@ const commonQuestions = [
           })
         }
       </div>
-      <p style="margin-top:1.2rem"><a href="/learning-center/">Search the Learning Center →</a></p>
+      <p class="mrx-section-followup">
+        <a href="/learning-center/">Search the Learning Center →</a>
+      </p>
     </div>
   </section>
 
@@ -417,3 +419,9 @@ const commonQuestions = [
       ),
     );
 </script>
+
+<style>
+  .mrx-section-followup {
+    margin-top: 1.2rem;
+  }
+</style>

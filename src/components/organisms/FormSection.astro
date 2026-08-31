@@ -30,7 +30,7 @@ const formClass = compact ? 'form form--compact' : 'form';
 ---
 
 <form class={formClass} method="POST" action={action} aria-label={legend} data-form-kind={form}>
-  <fieldset style="border: 0; padding: 0; margin: 0; display: contents;">
+  <fieldset class="form__fieldset">
     <legend class="visually-hidden">{legend}</legend>
 
     {
@@ -241,6 +241,15 @@ const formClass = compact ? 'form form--compact' : 'form';
     </p>
   </fieldset>
 </form>
+
+<style>
+  .form__fieldset {
+    display: contents;
+    padding: 0;
+    margin: 0;
+    border: 0;
+  }
+</style>
 
 <script>
   function attachUtmCopy(form: HTMLFormElement) {

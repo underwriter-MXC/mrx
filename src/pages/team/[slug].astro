@@ -36,30 +36,27 @@ const seoDescription = `${guide.name} is a fictional MRX AI Guide for ${guide.he
               ? 'Active fictional MRX AI Guide'
               : 'Fictional MRX AI Guide directory profile'
           }
-        </p><h1>Meet {guide.name}</h1><p style="font-size:1.15rem;color:#8a5d18;font-weight:800">
+        </p><h1>Meet {guide.name}</h1><p class="mrx-guide-profile__role">
           {guide.role}
-        </p><p style="margin-top:1rem;font-size:1.05rem;color:#4d606c">{guide.summary}</p><h2>
+        </p><p class="mrx-guide-profile__summary">{guide.summary}</p><h2>
           What {guide.name} can help organize
         </h2><ul>{guide.helpsWith.map((item) => <li>✓ {item}</li>)}</ul><h2>
           How {guide.name} speaks
-        </h2><blockquote
-          style="margin-top:.7rem;padding:1rem;border-left:4px solid var(--mrx-gold);background:#fff"
-        >
+        </h2><blockquote class="mrx-guide-profile__quote">
           “{guide.greeting}”
         </blockquote><div class="mrx-guide-disclosure">
           <strong>Visible limit</strong><p>{guide.limits}</p>
         </div>{
           guide.status === 'active' ? (
             <button
-              class="mrx-primary"
-              style="margin-top:1.2rem"
+              class="mrx-primary mrx-guide-profile__action"
               type="button"
               data-guide-prompt={`I would like ${guide.name} to help with ${guide.shortRole.toLowerCase()}.`}
             >
               Ask {guide.name}
             </button>
           ) : (
-            <p style="margin-top:1.2rem">
+            <p class="mrx-guide-profile__action">
               <a href="/team/tommy/">Start with Tommy, the active first-response guide →</a>
             </p>
           )
@@ -74,3 +71,28 @@ const seoDescription = `${guide.name} is a fictional MRX AI Guide for ${guide.he
     window.dispatchEvent(new CustomEvent('mrx:open-chat', { detail: { prompt } }));
   });
 </script>
+
+<style>
+  .mrx-guide-profile__role {
+    color: #8a5d18;
+    font-size: 1.15rem;
+    font-weight: 800;
+  }
+
+  .mrx-guide-profile__summary {
+    margin-top: 1rem;
+    color: #4d606c;
+    font-size: 1.05rem;
+  }
+
+  .mrx-guide-profile__quote {
+    padding: 1rem;
+    margin-top: 0.7rem;
+    border-left: 4px solid var(--mrx-gold);
+    background: #fff;
+  }
+
+  .mrx-guide-profile__action {
+    margin-top: 1.2rem;
+  }
+</style>

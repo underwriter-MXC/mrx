@@ -14,10 +14,10 @@ const { items } = Astro.props;
 ---
 
 <nav class="container breadcrumbs" aria-label="Breadcrumb">
-  <ol class="row" style="gap: var(--space-2);">
+  <ol class="row breadcrumbs__list">
     {
       items.map((c, i) => (
-        <li class="row" style="gap: var(--space-2);">
+        <li class="row breadcrumbs__item">
           {i > 0 && (
             <span class="breadcrumbs__sep" aria-hidden="true">
               /
@@ -33,3 +33,10 @@ const { items } = Astro.props;
     }
   </ol>
 </nav>
+
+<style>
+  .breadcrumbs__list,
+  .breadcrumbs__item {
+    gap: var(--space-2);
+  }
+</style>

@@ -57,7 +57,12 @@ export const prerender = true;
                 <picture>
                   <source srcset={`/assets/team/${guide.slug}-128.avif`} type="image/avif" />
                   <source srcset={`/assets/team/${guide.slug}-128.webp`} type="image/webp" />
-                  <img src={`/assets/team/${guide.slug}-128.jpg`} alt="" width="128" height="128" />
+                  <img
+                    src={`/assets/team/${guide.slug}-128.webp`}
+                    alt=""
+                    width="128"
+                    height="128"
+                  />
                 </picture>
                 <span>
                   <strong>{guide.name}</strong>
@@ -139,7 +144,7 @@ export const prerender = true;
                 <source srcset={`/assets/team/${guide.slug}-256.avif`} type="image/avif" />
                 <source srcset={`/assets/team/${guide.slug}-256.webp`} type="image/webp" />
                 <img
-                  src={`/assets/team/${guide.slug}-256.jpg`}
+                  src={`/assets/team/${guide.slug}-256.webp`}
                   alt={`${guide.name}, fictional ${guide.chatRole}`}
                   width="256"
                   height="256"

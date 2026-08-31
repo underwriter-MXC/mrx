@@ -85,6 +85,105 @@
   justify-content: space-between;
 }
 
+.row--start {
+  align-items: flex-start;
+}
+
+/* Reusable content-layout utilities keep public templates free of inline CSS. */
+.u-mt-3 {
+  margin-top: var(--space-3);
+}
+
+.u-mt-4 {
+  margin-top: var(--space-4);
+}
+
+.u-mt-6 {
+  margin-top: var(--space-6);
+}
+
+.u-mt-8 {
+  margin-top: var(--space-8);
+}
+
+.u-mt-10 {
+  margin-top: var(--space-10);
+}
+
+.u-mb-4 {
+  margin-bottom: var(--space-4);
+}
+
+.u-mb-6 {
+  margin-bottom: var(--space-6);
+}
+
+.u-mb-8 {
+  margin-bottom: var(--space-8);
+}
+
+.u-gap-6 {
+  gap: var(--space-6);
+}
+
+.u-measure-60 {
+  max-width: 60ch;
+}
+
+.u-measure-64 {
+  max-width: 64ch;
+}
+
+.u-measure-68 {
+  max-width: 68ch;
+}
+
+.u-measure-76 {
+  max-width: 76ch;
+}
+
+.surface-card {
+  padding: var(--space-5);
+  border-radius: var(--radius-md);
+  background: var(--color-white);
+}
+
+.surface-card--lg {
+  padding: var(--space-6);
+}
+
+.surface-card--bordered {
+  border: 1px solid var(--color-ink-100);
+}
+
+.content-list {
+  padding-left: var(--space-6);
+}
+
+.content-list--disc {
+  list-style: disc;
+}
+
+.table-scroll {
+  overflow-x: auto;
+}
+
+.comparison-table {
+  width: 100%;
+  min-width: 680px;
+  border-collapse: collapse;
+  background: var(--color-white);
+}
+
+.comparison-table th,
+.comparison-table td {
+  padding: var(--space-4);
+}
+
+.comparison-table th {
+  text-align: left;
+}
+
 .section {
   padding-block: clamp(2.25rem, 4.5vw, 3.5rem);
 }

@@ -62,7 +62,10 @@ for (const file of htmlFiles) {
   const canonical = html.match(/<link\s+rel=["']canonical["'][^>]*href=["']([^"']+)["']/i)?.[1];
   const title = html.match(/<title>[^<]+<\/title>/i);
   const description = html.match(/<meta\s+name=["']description["'][^>]*content=["'][^"']+["']/i);
-  const robots = html.match(/<meta\s+name=["']robots["'][^>]*content=["'][^"']+["']/i);
+  const robotsContent = html.match(
+    /<meta\s+name=["']robots["'][^>]*content=["']([^"']+)["']/i,
+  )?.[1];
+  const isIndexable = Boolean(robotsContent && !/\bnoindex\b/i.test(robotsContent));
   const metaKeywords = html.match(/<meta\s+name=["']keywords["']/i);
   const twitterSite = html.match(
     /<meta\s+name=["']twitter:site["'][^>]*content=["']([^"']+)["']/i,
@@ -82,7 +85,7 @@ for (const file of htmlFiles) {
   }
   if (!title) failures.push(`${route}: missing <title>`);
   if (!description) failures.push(`${route}: missing meta description`);
-  if (!robots) failures.push(`${route}: missing robots meta`);
+  if (!robotsContent) failures.push(`${route}: missing robots meta`);
   if (metaKeywords) failures.push(`${route}: obsolete meta keywords tag must not be emitted`);
   if (twitterSite !== '@mineralrightsxchange') {
     failures.push(`${route}: twitter:site is ${twitterSite ?? '(missing)'}`);
@@ -94,10 +97,25 @@ for (const file of htmlFiles) {
     failures.push(`${route}: Open Graph description missing or over 125 characters`);
   }
   if (!jsonLd) failures.push(`${route}: missing JSON-LD graph`);
+  if (isIndexable && /\sstyle\s*=\s*["']/i.test(html)) {
+    failures.push(`${route}: indexable page contains an inline style attribute`);
+  }
+  if (
+    html.includes(`mailto:underwriter@mineralrightsxchange.com`) &&
+    !/<!--email_off-->[\s\S]*mailto:underwriter@mineralrightsxchange\.com[\s\S]*<!--\/email_off-->/i.test(
+      html,
+    )
+  ) {
+    failures.push(`${route}: footer email is not protected from Cloudflare link rewriting`);
+  }
 
   for (const image of html.matchAll(/<img\b[^>]*>/gi)) {
     if (!/\balt\s*=\s*["'][^"']*["']/i.test(image[0])) {
       failures.push(`${route}: image is missing alt attribute`);
+    }
+    const src = image[0].match(/\bsrc\s*=\s*["']([^"']+)["']/i)?.[1] ?? '';
+    if (isIndexable && /\.(?:png|jpe?g)(?:\?|$)/i.test(src)) {
+      failures.push(`${route}: indexable image fallback is not WebP or AVIF: ${src}`);
     }
   }
 

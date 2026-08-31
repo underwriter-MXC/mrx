@@ -86,13 +86,13 @@ import CalloutBox from '../../components/molecules/CalloutBox.astro';
   <Heading id="methodology-plain-english" level={2} size="3xl">
     The approach, in plain English
   </Heading>
-  <Text class="text--lead" style="margin-top: var(--space-3); max-width: 64ch;">
+  <Text class="text--lead u-mt-3 u-measure-64">
     A discounted-cash-flow review models expected future royalty income from the section, applies a
     discount rate that reflects the risk of the cash flows, and arrives at a present-value range.
     The range is the directional assessment; the assumptions and the inputs are what make it useful.
   </Text>
 
-  <ol class="process-steps" style="margin-top: var(--space-8);" aria-label="DCF review steps">
+  <ol class="process-steps u-mt-8" aria-label="DCF review steps">
     <li class="process-step">
       <span class="process-step__title">Pull production</span>
       <span class="process-step__text">Recent and historical royalty income anchors the review when records are available.</span>
@@ -122,8 +122,7 @@ import CalloutBox from '../../components/molecules/CalloutBox.astro';
       What we look at
     </Heading>
     <Text
-      class="text--lead"
-      style="margin-top: var(--space-3); max-width: 64ch; margin-bottom: var(--space-4);"
+      class="text--lead u-mt-3 u-measure-64 u-mb-4"
     >
       The factors below are the primary inputs to the DCF. Each carries a different weight in the
       final range; we state the influence and the source so you can interrogate the result.
@@ -243,17 +242,17 @@ import CalloutBox from '../../components/molecules/CalloutBox.astro';
   <Heading id="methodology-not-title" level={2} size="3xl">
     What this methodology is not
   </Heading>
-  <Text class="text--lead" style="margin-top: var(--space-3); margin-bottom: var(--space-6);">
+  <Text class="text--lead u-mt-3 u-mb-6">
     A published methodology is not the same as a regulated certification. We state the limits
     explicitly so the output is not over-read.
   </Text>
-  <div class="grid grid--2 methodology-card-grid" style="gap: var(--space-6);">
+  <div class="grid grid--2 methodology-card-grid u-gap-6">
     <article>
-      <div class="row" style="align-items: flex-start; gap: var(--space-3);">
+      <div class="row row--start">
         <Icon name="compare" size={28} />
         <div>
           <Tag variant="warning">Limit</Tag>
-          <Heading level={3} size="md" style="margin-top: var(--space-3);">
+          <Heading level={3} size="md" class="u-mt-3">
             It is not a single number
           </Heading>
           <Text>
@@ -264,11 +263,11 @@ import CalloutBox from '../../components/molecules/CalloutBox.astro';
       </div>
     </article>
     <article>
-      <div class="row" style="align-items: flex-start; gap: var(--space-3);">
+      <div class="row row--start">
         <Icon name="shield" size={28} />
         <div>
           <Tag variant="warning">Limit</Tag>
-          <Heading level={3} size="md" style="margin-top: var(--space-3);">
+          <Heading level={3} size="md" class="u-mt-3">
             It is not a certified valuation
           </Heading>
           <Text>
@@ -280,11 +279,11 @@ import CalloutBox from '../../components/molecules/CalloutBox.astro';
       </div>
     </article>
     <article>
-      <div class="row" style="align-items: flex-start; gap: var(--space-3);">
+      <div class="row row--start">
         <Icon name="scale" size={28} />
         <div>
           <Tag variant="warning">Limit</Tag>
-          <Heading level={3} size="md" style="margin-top: var(--space-3);">
+          <Heading level={3} size="md" class="u-mt-3">
             It is not legal or tax advice
           </Heading>
           <Text>
@@ -297,11 +296,11 @@ import CalloutBox from '../../components/molecules/CalloutBox.astro';
       </div>
     </article>
     <article>
-      <div class="row" style="align-items: flex-start; gap: var(--space-3);">
+      <div class="row row--start">
         <Icon name="lock" size={28} />
         <div>
           <Tag variant="warning">Limit</Tag>
-          <Heading level={3} size="md" style="margin-top: var(--space-3);">
+          <Heading level={3} size="md" class="u-mt-3">
             It is not a guarantee of value or sale price
           </Heading>
           <Text>
@@ -320,14 +319,14 @@ import CalloutBox from '../../components/molecules/CalloutBox.astro';
     <Heading id="methodology-output-title" level={2} size="3xl">
       How the output is delivered
     </Heading>
-    <Text class="text--lead" style="margin-top: var(--space-3); max-width: 64ch;">
+    <Text class="text--lead u-mt-3 u-measure-64">
       The review should make the assumptions easier to inspect, not harder. The output stays focused
       on the range, the inputs, and the questions an owner may want to verify.
     </Text>
-    <div class="grid grid--3" style="margin-top: var(--space-8);">
+    <div class="grid grid--3 u-mt-8">
       <article class="methodology-output-card">
         <Icon name="valuation" size={28} />
-        <Heading level={3} size="md" style="margin-top: var(--space-4);">
+        <Heading level={3} size="md" class="u-mt-4">
           A directional range
         </Heading>
         <Text>
@@ -337,7 +336,7 @@ import CalloutBox from '../../components/molecules/CalloutBox.astro';
       </article>
       <article class="methodology-output-card">
         <Icon name="doc" size={28} />
-        <Heading level={3} size="md" style="margin-top: var(--space-4);">
+        <Heading level={3} size="md" class="u-mt-4">
           Stated assumptions
         </Heading>
         <Text>
@@ -347,7 +346,7 @@ import CalloutBox from '../../components/molecules/CalloutBox.astro';
       </article>
       <article class="methodology-output-card">
         <Icon name="process" size={28} />
-        <Heading level={3} size="md" style="margin-top: var(--space-4);">
+        <Heading level={3} size="md" class="u-mt-4">
           A written follow-up
         </Heading>
         <Text>

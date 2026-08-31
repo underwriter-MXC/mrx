@@ -51,22 +51,22 @@ import Icon from '../../components/atoms/Icon.astro';
 
 <section class="container section">
   <Heading level={2} size="3xl">What your underwriter review actually covers</Heading>
-  <Text class="text--lead" style="margin-top: var(--space-3); max-width: 60ch;">The review is a structured look at the factors that drive value, framed by plain-language questions and a published methodology.</Text>
+  <Text class="text--lead u-mt-3 u-measure-60">The review is a structured look at the factors that drive value, framed by plain-language questions and a published methodology.</Text>
 
-  <div class="grid grid--2" style="margin-top: var(--space-10);">
-    <article class="card" style="background: var(--color-white); padding: var(--space-6); border-radius: var(--radius-md); border: 1px solid var(--color-ink-100);">
+  <div class="grid grid--2 u-mt-10">
+    <article class="card surface-card surface-card--lg surface-card--bordered">
       <Heading level={3} size="lg">Production history and royalty income</Heading>
       <Text>We look at recent production data for the section, royalty checks you have received, and how income has trended. Decline-curve context matters: a high check stub from a new well behaves differently from a steady check stub from a mature one.</Text>
     </article>
-    <article class="card" style="background: var(--color-white); padding: var(--space-6); border-radius: var(--radius-md); border: 1px solid var(--color-ink-100);">
+    <article class="card surface-card surface-card--lg surface-card--bordered">
       <Heading level={3} size="lg">Offer terms and clauses</Heading>
       <Text>If you have an offer, we read it. Clawback provisions, depth-of-rights limitations, post-close obligations, and effective dates all change what a headline number means.</Text>
     </article>
-    <article class="card" style="background: var(--color-white); padding: var(--space-6); border-radius: var(--radius-md); border: 1px solid var(--color-ink-100);">
+    <article class="card surface-card surface-card--lg surface-card--bordered">
       <Heading level={3} size="lg">Operator and basin context</Heading>
       <Text>An active operator with a healthy nearby development plan supports a stronger outlook. An operator with a track record of plugging wells and walking away does not. We state the difference plainly.</Text>
     </article>
-    <article class="card" style="background: var(--color-white); padding: var(--space-6); border-radius: var(--radius-md); border: 1px solid var(--color-ink-100);">
+    <article class="card surface-card surface-card--lg surface-card--bordered">
       <Heading level={3} size="lg">Title and acreage confidence</Heading>
       <Text>Unclear title, partial mineral rights, and multiple-heir situations all change the picture. We flag what to verify with a Texas-licensed attorney before you commit to anything.</Text>
     </article>
@@ -78,19 +78,13 @@ import Icon from '../../components/atoms/Icon.astro';
     <Heading level={2} size="3xl">
       The opposite of pressure sales
     </Heading>
-    <Text
-      class="text--lead"
-      style="margin-top: var(--space-3); margin-bottom: var(--space-8); max-width: 60ch;"
-    >
+    <Text class="text--lead u-mt-3 u-mb-8 u-measure-60">
       The review is a working conversation, not a closing attempt. We will tell you when an offer is
       reasonable and when it is not. We will also tell you when the better answer is to hold and see
       what the next year of production looks like.
     </Text>
     <div class="grid grid--3">
-      <article
-        class="card"
-        style="background: var(--color-white); padding: var(--space-5); border-radius: var(--radius-md);"
-      >
+      <article class="card surface-card">
         <Icon name="lock" size={28} class="hero__icon-inline" />
         <Heading level={3} size="md">
           No teaser numbers
@@ -100,10 +94,7 @@ import Icon from '../../components/atoms/Icon.astro';
           range with the assumptions stated, never a one-line promise.
         </Text>
       </article>
-      <article
-        class="card"
-        style="background: var(--color-white); padding: var(--space-5); border-radius: var(--radius-md);"
-      >
+      <article class="card surface-card">
         <Icon name="shield" size={28} class="hero__icon-inline" />
         <Heading level={3} size="md">
           No clawback clauses
@@ -113,10 +104,7 @@ import Icon from '../../components/atoms/Icon.astro';
           relationship in writing before any agreement.
         </Text>
       </article>
-      <article
-        class="card"
-        style="background: var(--color-white); padding: var(--space-5); border-radius: var(--radius-md);"
-      >
+      <article class="card surface-card">
         <Icon name="doc" size={28} class="hero__icon-inline" />
         <Heading level={3} size="md">
           No black box
@@ -135,7 +123,7 @@ import Icon from '../../components/atoms/Icon.astro';
     Frequently asked
   </Heading>
   <FaqBlock pairs={frontmatter.faq} id="hiw-faq" />
-  <p style="margin-top: var(--space-4);">
+  <p class="u-mt-4">
     <a href="/faq" data-cta-name="hiw-faq-more">
       See the full FAQ →
     </a>

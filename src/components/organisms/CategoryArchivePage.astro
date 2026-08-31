@@ -50,10 +50,10 @@ const nextPath = currentPage < lastPage ? archivePagePath(basePath, currentPage 
     <Heading level={1} size="4xl">
       {category.data.label}{currentPage > 1 ? `: Page ${currentPage}` : ''}
     </Heading>
-    <Text class="text--lead" style="margin-top: var(--space-3); max-width: 60ch;">
+    <Text class="text--lead category-archive__lede">
       {category.data.description}
     </Text>
-    <Text style="margin-top: var(--space-3);">
+    <Text class="category-archive__count">
       {totalItems} published {totalItems === 1 ? 'article' : 'articles'} · Page {currentPage} of {
         lastPage
       }
@@ -86,6 +86,15 @@ const nextPath = currentPage < lastPage ? archivePagePath(basePath, currentPage 
 </MarketingLayout>
 
 <style>
+  .category-archive__lede {
+    max-width: 60ch;
+    margin-top: var(--space-3);
+  }
+
+  .category-archive__count {
+    margin-top: var(--space-3);
+  }
+
   .archive-pagination-wrap {
     margin-top: calc(var(--space-8) * -1);
     padding-bottom: var(--space-10);

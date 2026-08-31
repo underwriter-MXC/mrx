@@ -273,7 +273,7 @@ test.describe('Learning Center layout', () => {
       await expect(box).toBeVisible();
       await expect(box.getByRole('heading', { level: 3, name, exact: true })).toBeVisible();
       await expect(box.getByText(position, { exact: true })).toBeVisible();
-      await expect(box.locator('img')).toHaveAttribute('src', `/assets/team/${guide}-256.jpg`);
+      await expect(box.locator('img')).toHaveAttribute('src', `/assets/team/${guide}-256.webp`);
       await expect(
         box.getByRole('link', { name: `More from ${name}`, exact: true }),
       ).toHaveAttribute('href', `/authors/${guide}/`);

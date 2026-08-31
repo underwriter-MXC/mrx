@@ -65,7 +65,7 @@ import Icon from '../../components/atoms/Icon.astro';
   <Heading level={2} size="3xl">
     The short answer
   </Heading>
-  <Text class="text--lead" style="margin-top: var(--space-3); max-width: 68ch;">
+  <Text class="text--lead u-mt-3 u-measure-68">
     Mineral rights can usually be sold in full or in part. Selling converts an ownership interest
     into a negotiated payment and transfers the future benefits and risks attached to the portion
     conveyed. Holding preserves the interest but leaves future income uncertain. A partial sale can
@@ -84,8 +84,8 @@ import Icon from '../../components/atoms/Icon.astro';
     <Heading level={2} size="3xl" id="selling-options-heading">
       Three paths an owner can compare
     </Heading>
-    <div class="grid grid--3" style="margin-top: var(--space-8); gap: var(--space-6);">
-      <article style="background: var(--color-white); padding: var(--space-5); border-radius: var(--radius-md);">
+    <div class="grid grid--3 u-mt-8 u-gap-6">
+      <article class="surface-card">
         <Icon name="process" size={28} class="hero__icon-inline" />
         <Heading level={3} size="md">
           Sell the full interest
@@ -96,7 +96,7 @@ import Icon from '../../components/atoms/Icon.astro';
           terms together.
         </Text>
       </article>
-      <article style="background: var(--color-white); padding: var(--space-5); border-radius: var(--radius-md);">
+      <article class="surface-card">
         <Icon name="mineral" size={28} class="hero__icon-inline" />
         <Heading level={3} size="md">
           Sell only a portion
@@ -106,7 +106,7 @@ import Icon from '../../components/atoms/Icon.astro';
           deed controls exactly what is sold and what remains with the owner.
         </Text>
       </article>
-      <article style="background: var(--color-white); padding: var(--space-5); border-radius: var(--radius-md);">
+      <article class="surface-card">
         <Icon name="scale" size={28} class="hero__icon-inline" />
         <Heading level={3} size="md">
           Hold for now
@@ -124,10 +124,7 @@ import Icon from '../../components/atoms/Icon.astro';
   <Heading level={2} size="3xl" id="sale-process-heading">
     How the mineral-rights selling process works
   </Heading>
-  <ol
-    class="stack"
-    style="margin-top: var(--space-6); padding-left: var(--space-6); max-width: 76ch;"
-  >
+  <ol class="stack content-list u-mt-6 u-measure-76">
     <li>
       <strong>Identify the interest.</strong> Confirm the state, county, legal description,
       ownership documents, lease, division order, operator, and recent payment information
@@ -151,8 +148,10 @@ import Icon from '../../components/atoms/Icon.astro';
       payment conditions, and county recording steps specified by the transaction.
     </li>
   </ol>
-  <p style="margin-top: var(--space-6);">
-    <a href="/blog/how-to-sell-mineral-rights-in-texas/" data-cta-name="smr-process-texas-guide">Read the Texas step-by-step selling article →</a>
+  <p class="u-mt-6">
+    <a href="/blog/how-to-sell-mineral-rights-in-texas/" data-cta-name="smr-process-texas-guide">
+      Read the Texas step-by-step selling article →
+    </a>
   </p>
 </section>
 
@@ -161,68 +160,48 @@ import Icon from '../../components/atoms/Icon.astro';
     <Heading level={2} size="3xl" id="comparison-heading">
       Compare more than the headline amount
     </Heading>
-    <div style="overflow-x: auto; margin-top: var(--space-6);">
-      <table style="width: 100%; min-width: 680px; border-collapse: collapse; background: var(--color-white);">
+    <div class="table-scroll u-mt-6">
+      <table class="comparison-table">
         <thead>
           <tr>
-            <th scope="col" style="text-align: left; padding: var(--space-4);">
-              Offer term
-            </th>
-            <th scope="col" style="text-align: left; padding: var(--space-4);">
-              Question to resolve
-            </th>
-            <th scope="col" style="text-align: left; padding: var(--space-4);">
-              Why it matters
-            </th>
+            <th scope="col">Offer term</th>
+            <th scope="col">Question to resolve</th>
+            <th scope="col">Why it matters</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <th scope="row" style="text-align: left; padding: var(--space-4);">
-              Property and depths
-            </th>
-            <td style="padding: var(--space-4);">
-              Which acres, formations, and interests transfer?
-            </td>
-            <td style="padding: var(--space-4);">Two offers may describe different assets.</td>
+            <th scope="row">Property and depths</th>
+            <td>Which acres, formations, and interests transfer?</td>
+            <td>Two offers may describe different assets.</td>
           </tr>
           <tr>
-            <th scope="row" style="text-align: left; padding: var(--space-4);">
-              Price adjustments
-            </th>
-            <td style="padding: var(--space-4);">When and why can the amount change?</td>
-            <td style="padding: var(--space-4);">
-              The amount at closing may depend on diligence findings.
-            </td>
+            <th scope="row">Price adjustments</th>
+            <td>When and why can the amount change?</td>
+            <td>The amount at closing may depend on diligence findings.</td>
           </tr>
           <tr>
-            <th scope="row" style="text-align: left; padding: var(--space-4);">
-              Effective date
-            </th>
-            <td style="padding: var(--space-4);">Who receives payments during the transition?</td>
-            <td style="padding: var(--space-4);">Cash flow can shift before or after closing.</td>
+            <th scope="row">Effective date</th>
+            <td>Who receives payments during the transition?</td>
+            <td>Cash flow can shift before or after closing.</td>
           </tr>
           <tr>
-            <th scope="row" style="text-align: left; padding: var(--space-4);">
-              Closing conditions
-            </th>
-            <td style="padding: var(--space-4);">
-              What title, funding, or approval conditions remain?
-            </td>
-            <td style="padding: var(--space-4);">Conditions affect timing and certainty.</td>
+            <th scope="row">Closing conditions</th>
+            <td>What title, funding, or approval conditions remain?</td>
+            <td>Conditions affect timing and certainty.</td>
           </tr>
           <tr>
-            <th scope="row" style="text-align: left; padding: var(--space-4);">
-              Post-closing terms
-            </th>
-            <td style="padding: var(--space-4);">What representations or obligations survive?</td>
-            <td style="padding: var(--space-4);">Some responsibilities continue after payment.</td>
+            <th scope="row">Post-closing terms</th>
+            <td>What representations or obligations survive?</td>
+            <td>Some responsibilities continue after payment.</td>
           </tr>
         </tbody>
       </table>
     </div>
-    <p style="margin-top: var(--space-6);">
-      <a href="/offer-review/" data-cta-name="smr-comparison-offer-review">See how MRX organizes an offer review →</a>
+    <p class="u-mt-6">
+      <a href="/offer-review/" data-cta-name="smr-comparison-offer-review">
+        See how MRX organizes an offer review →
+      </a>
     </p>
   </div>
 </section>
@@ -231,37 +210,47 @@ import Icon from '../../components/atoms/Icon.astro';
   <Heading level={2} size="3xl" id="seller-checklist-heading">
     Mineral seller document checklist
   </Heading>
-  <Text class="text--lead" style="margin-top: var(--space-3); max-width: 68ch;">
+  <Text class="text--lead u-mt-3 u-measure-68">
     Start with what you have. Missing records are common; the checklist helps identify which gaps
     matter for the next step.
   </Text>
-  <div class="grid grid--2" style="margin-top: var(--space-6); gap: var(--space-6);">
-    <article style="border: 1px solid var(--color-ink-100); padding: var(--space-5); border-radius: var(--radius-md);">
+  <div class="grid grid--2 u-mt-6 u-gap-6">
+    <article class="surface-card surface-card--bordered">
       <Heading level={3} size="md">
         Ownership and location
       </Heading>
-      <ul class="stack stack--sm" style="list-style: disc; padding-left: var(--space-6);">
+      <ul class="stack stack--sm content-list content-list--disc">
         <li>Mineral deed, probate record, trust document, or other conveyance</li>
         <li>State, county, legal description, and ownership decimal if known</li>
         <li>Lease, amendments, division order, and title material available</li>
       </ul>
     </article>
-    <article style="border: 1px solid var(--color-ink-100); padding: var(--space-5); border-radius: var(--radius-md);">
+    <article class="surface-card surface-card--bordered">
       <Heading level={3} size="md">
         Income, production, and offers
       </Heading>
-      <ul class="stack stack--sm" style="list-style: disc; padding-left: var(--space-6);">
+      <ul class="stack stack--sm content-list content-list--disc">
         <li>Recent royalty statements and operator contact information</li>
         <li>Well, unit, property, and production identifiers available</li>
         <li>Every page and attachment from each written offer</li>
       </ul>
     </article>
   </div>
-  <p style="margin-top: var(--space-6);">
-    <a href="/blog/what-documents-do-you-need-to-sell-mineral-rights-in-texas/" data-cta-name="smr-checklist-documents">Open the detailed Texas document checklist →</a>
+  <p class="u-mt-6">
+    <a
+      href="/blog/what-documents-do-you-need-to-sell-mineral-rights-in-texas/"
+      data-cta-name="smr-checklist-documents"
+    >
+      Open the detailed Texas document checklist →
+    </a>
   </p>
-  <p style="margin-top: var(--space-3);">
-    <a href="/guides/how-to-find-out-what-your-mineral-rights-are.pdf" data-cta-name="smr-checklist-download">Download the mineral-owner records checklist (PDF) →</a>
+  <p class="u-mt-3">
+    <a
+      href="/guides/how-to-find-out-what-your-mineral-rights-are.pdf"
+      data-cta-name="smr-checklist-download"
+    >
+      Download the mineral-owner records checklist (PDF) →
+    </a>
   </p>
 </section>
 
@@ -270,23 +259,23 @@ import Icon from '../../components/atoms/Icon.astro';
     <Heading level={2} size="3xl" id="mrx-role-heading">
       What an MRX review does and where it stops
     </Heading>
-    <div class="grid grid--2" style="margin-top: var(--space-6); gap: var(--space-6);">
-      <article style="background: var(--color-white); padding: var(--space-5); border-radius: var(--radius-md);">
+    <div class="grid grid--2 u-mt-6 u-gap-6">
+      <article class="surface-card">
         <Heading level={3} size="md">
           The review organizes
         </Heading>
-        <ul class="stack stack--sm" style="list-style: disc; padding-left: var(--space-6);">
+        <ul class="stack stack--sm content-list content-list--disc">
           <li>The facts and documents available</li>
           <li>A directional range and the assumptions used</li>
           <li>Written-offer terms that deserve comparison</li>
           <li>Open questions for the buyer or a qualified professional</li>
         </ul>
       </article>
-      <article style="background: var(--color-white); padding: var(--space-5); border-radius: var(--radius-md);">
+      <article class="surface-card">
         <Heading level={3} size="md">
           The review does not provide
         </Heading>
-        <ul class="stack stack--sm" style="list-style: disc; padding-left: var(--space-6);">
+        <ul class="stack stack--sm content-list content-list--disc">
           <li>A formal professional valuation report or fairness opinion</li>
           <li>Legal, tax, accounting, title, reserve, or engineering conclusions</li>
           <li>A guarantee of market value, sale price, title, or future production</li>
@@ -294,12 +283,12 @@ import Icon from '../../components/atoms/Icon.astro';
         </ul>
       </article>
     </div>
-    <Text style="margin-top: var(--space-6); max-width: 76ch;">
+    <Text class="u-mt-6 u-measure-76">
       MRX may be a buyer in a transaction that results from a review. If that happens, the
       relationship is disclosed in writing before an agreement is signed. The full website
       disclosure remains available in the footer.
     </Text>
-    <Text class="text--small" style="margin-top: var(--space-4);">
+    <Text class="text--small u-mt-4">
       Published by the <a href="/authors/mrx-editorial-team/">MRX Editorial Team</a>. Reviewed July
       22, 2026 under the MRX source, editorial, and compliance process.
     </Text>
@@ -311,8 +300,10 @@ import Icon from '../../components/atoms/Icon.astro';
     Frequently asked
   </Heading>
   <FaqBlock pairs={frontmatter.faq} id="smr-faq" />
-  <p style="margin-top: var(--space-4);">
-    <a href="/faq/" data-cta-name="smr-faq-more">See the full FAQ →</a>
+  <p class="u-mt-4">
+    <a href="/faq/" data-cta-name="smr-faq-more">
+      See the full FAQ →
+    </a>
   </p>
 </section>
 

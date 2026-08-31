@@ -13,11 +13,11 @@ interface Props {
 const { categories, currentSlug } = Astro.props;
 ---
 
-<nav class="container" aria-label="Blog categories" style="padding-block: var(--space-6);">
+<nav class="container category-nav" aria-label="Blog categories">
   <ul class="row">
     <li>
       <Tag>
-        <a href="/learning-center/" style="color: inherit; text-decoration: none;">All</a>
+        <a class="category-nav__link" href="/learning-center/">All</a>
       </Tag>
     </li>
     {
@@ -25,8 +25,8 @@ const { categories, currentSlug } = Astro.props;
         <li>
           <Tag>
             <a
+              class="category-nav__link"
               href={`/blog/category/${c.data.slug}/`}
-              style="color: inherit; text-decoration: none;"
               aria-current={currentSlug === c.data.slug ? 'page' : undefined}
             >
               {c.data.label}
@@ -37,3 +37,14 @@ const { categories, currentSlug } = Astro.props;
     }
   </ul>
 </nav>
+
+<style>
+  .category-nav {
+    padding-block: var(--space-6);
+  }
+
+  .category-nav__link {
+    color: inherit;
+    text-decoration: none;
+  }
+</style>
