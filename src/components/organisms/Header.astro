@@ -31,13 +31,7 @@ const getHomeIntentPrompt = (href: string) =>
   <div class="container">
     <div class="header__inner">
       <a class="header__brand" href="/" aria-label={`${SITE.name} home`}>
-        <img
-          src="/assets/brand/mrx-logo-color.webp"
-          alt=""
-          width="400"
-          height="100"
-          aria-hidden="true"
-        />
+        <img src="/assets/brand/mrx-logo-color.webp" alt={SITE.name} width="400" height="100" />
       </a>
       <nav class="header__nav" aria-label="Primary">
         {
@@ -56,15 +50,14 @@ const getHomeIntentPrompt = (href: string) =>
       <div class="header__actions">
         <a
           class="header__account"
-          href="/owner-intake/"
-          rel="nofollow"
-          aria-current={currentPath === '/owner-intake/' ? 'page' : undefined}>Submit details</a
+          href="/book/"
+          aria-current={currentPath === '/book/' ? 'page' : undefined}>Free review</a
         >
-        <a
+        <button
           class="header__account"
-          href="/account/"
-          rel="nofollow"
-          aria-current={currentPath === '/account/' ? 'page' : undefined}>Log In</a
+          type="button"
+          data-account-route
+          aria-current={currentPath === '/account/' ? 'page' : undefined}>Log In</button
         >
         <button
           class="header__ask"
@@ -111,18 +104,16 @@ const getHomeIntentPrompt = (href: string) =>
           ))
         }
         <li>
-          <a
-            href="/owner-intake/"
-            rel="nofollow"
-            aria-current={currentPath === '/owner-intake/' ? 'page' : undefined}
-            >Submit property details</a
+          <a href="/book/" aria-current={currentPath === '/book/' ? 'page' : undefined}
+            >Book a free review</a
           >
         </li>
         <li>
-          <a
-            href="/account/"
-            rel="nofollow"
-            aria-current={currentPath === '/account/' ? 'page' : undefined}>Log In</a
+          <button
+            class="mobile-nav__account"
+            type="button"
+            data-account-route
+            aria-current={currentPath === '/account/' ? 'page' : undefined}>Log In</button
           >
         </li>
         <li>
@@ -167,5 +158,8 @@ const getHomeIntentPrompt = (href: string) =>
       nav?.setAttribute('data-open', 'false');
       btn?.setAttribute('aria-expanded', 'false');
     });
+  });
+  document.querySelectorAll<HTMLButtonElement>('[data-account-route]').forEach((trigger) => {
+    trigger.addEventListener('click', () => window.location.assign('/account/'));
   });
 </script>

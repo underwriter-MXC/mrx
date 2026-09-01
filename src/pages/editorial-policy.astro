@@ -1,0 +1,216 @@
+---
+import MarketingLayout from '../layouts/MarketingLayout.astro';
+import { SITE } from '../lib/site';
+
+export const prerender = true;
+---
+
+<MarketingLayout
+  title="Editorial, Sourcing, and Corrections Policy · MRX"
+  description="How MRX selects sources, separates facts from assumptions, reviews educational content, discloses commercial roles, and corrects material errors."
+  path="/editorial-policy/"
+  pageType="marketing"
+  pageCategory="methodology"
+  breadcrumbs={[
+    { name: 'Home', path: '/' },
+    { name: 'Editorial Policy', path: '/editorial-policy/' },
+  ]}
+>
+  <section class="editorial-hero">
+    <div class="container editorial-hero__inner">
+      <p class="editorial-eyebrow">Public trust policy</p>
+      <h1>Editorial, sourcing, and corrections policy</h1>
+      <p>
+        MRX publishes educational material for mineral and royalty owners. This policy explains how
+        we choose sources, label uncertainty, use AI assistance, review content, disclose commercial
+        roles, and correct material errors.
+      </p>
+      <p class="editorial-updated">Last updated September 1, 2026.</p>
+    </div>
+  </section>
+
+  <main class="editorial-body">
+    <div class="container editorial-body__grid">
+      <div class="editorial-body__content">
+        <section aria-labelledby="editorial-purpose">
+          <h2 id="editorial-purpose">Purpose and boundaries</h2>
+          <p>
+            MRX content helps owners organize facts, documents, assumptions, limitations, and next
+            questions. It does not replace an independent valuation, fairness opinion, title
+            opinion, reserve report, engineering conclusion, or individualized work from an
+            attorney, tax professional, accountant, or other qualified professional.
+          </p>
+        </section>
+
+        <section aria-labelledby="editorial-sources">
+          <h2 id="editorial-sources">Source standards</h2>
+          <ul>
+            <li>Use official agencies, statutes, court or county records, operator filings, and other primary sources when they directly support the claim.</li>
+            <li>Use a credible secondary source when it adds explanation or industry context, while identifying the source and its limits.</li>
+            <li>State access or review dates when a page, dataset, or process can change.</li>
+            <li>Do not treat public production records as proof of private title, ownership, acreage, future drilling, or a single correct price.</li>
+            <li>Do not fabricate quotations, transactions, benchmarks, credentials, testimonials, or relationships.</li>
+          </ul>
+        </section>
+
+        <section aria-labelledby="editorial-evidence">
+          <h2 id="editorial-evidence">Facts, assumptions, and examples</h2>
+          <p>
+            Material factual claims should be traceable to a named source or clearly presented as an
+            assumption, scenario, or general educational example. Hypothetical stories must be
+            labeled as fictional or illustrative. Privacy-safe examples drawn from real owner
+            situations must remove names and details that could identify the person or property.
+          </p>
+        </section>
+
+        <section aria-labelledby="editorial-ai">
+          <h2 id="editorial-ai">How AI may assist</h2>
+          <p>
+            AI may help organize research, draft plain-language explanations, identify missing
+            questions, or check structure. AI output is not treated as a source. Public content must
+            still pass MRX source, editorial, compliance, metadata, and release checks before it is
+            published.
+          </p>
+        </section>
+
+        <section aria-labelledby="editorial-review">
+          <h2 id="editorial-review">Review and attribution</h2>
+          <p>
+            Articles identify an author or editorial team and may show a review date. Material
+            updates should preserve the reviewed topic, revise the update date, and recheck sources,
+            links, disclosures, metadata, and visible claims. Questions that require attorney, tax,
+            accounting, title, reserve, engineering, or independent valuation work are directed to
+            an appropriately qualified professional.
+          </p>
+        </section>
+
+        <section aria-labelledby="editorial-commercial">
+          <h2 id="editorial-commercial">Commercial-role disclosure</h2>
+          <p>
+            MRX begins with educational information and a directional underwriter review. There is
+            no obligation to sell. MRX may be a buyer in a transaction that results from a review;
+            if so, that relationship is disclosed in writing before an agreement is signed. The
+            educational review is not presented as an independent valuation or fairness opinion.
+          </p>
+        </section>
+
+        <section aria-labelledby="editorial-corrections">
+          <h2 id="editorial-corrections">Corrections</h2>
+          <p>
+            MRX reviews specific correction requests against the cited source and the public page.
+            When a material factual error is confirmed, we correct the page, update the review date
+            when appropriate, and re-run the applicable release checks. Editorial disagreement,
+            unsupported marketing requests, or requests to remove accurate public-source context are
+            evaluated separately from factual corrections.
+          </p>
+          <p>
+            Send a page URL, the statement at issue, and the supporting source to
+            <!--email_off--><a href={`mailto:${SITE.email}?subject=${encodeURIComponent('MRX correction request')}`}>{SITE.email}</a><!--/email_off-->.
+          </p>
+        </section>
+      </div>
+
+      <aside class="editorial-body__aside">
+        <h2>Related trust pages</h2>
+        <ul>
+          <li><a href="/methodology/">Methodology, role, and limitations</a></li>
+          <li><a href="/how-it-works/">What the underwriter review covers</a></li>
+          <li><a href="/authors/mrx-editorial-team/">MRX Editorial Team</a></li>
+          <li><a href="/terms/">Terms and AI disclosure</a></li>
+          <li><a href="/privacy-policy/">Privacy policy</a></li>
+        </ul>
+      </aside>
+    </div>
+  </main>
+</MarketingLayout>
+
+<style>
+  .editorial-hero {
+    padding-block: clamp(3rem, 7vw, 6rem);
+    background: linear-gradient(145deg, #f7f2e9, #f7f9fa);
+  }
+
+  .editorial-hero__inner {
+    max-width: 900px;
+  }
+
+  .editorial-eyebrow {
+    margin: 0 0 0.5rem;
+    color: #8b5d16;
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+  }
+
+  .editorial-hero h1,
+  .editorial-body h2 {
+    color: var(--color-brand-900, #071e34);
+  }
+
+  .editorial-hero h1 {
+    max-width: 18ch;
+    margin: 0 0 1rem;
+    font-size: clamp(2.2rem, 6vw, 4.6rem);
+    line-height: 0.98;
+    letter-spacing: -0.04em;
+  }
+
+  .editorial-hero p,
+  .editorial-body p,
+  .editorial-body li {
+    color: var(--color-ink-700, #344955);
+    line-height: 1.65;
+  }
+
+  .editorial-updated {
+    font-size: 0.9rem;
+    font-weight: 700;
+  }
+
+  .editorial-body {
+    padding-block: clamp(2.5rem, 6vw, 5rem);
+  }
+
+  .editorial-body__grid {
+    display: grid;
+    gap: 2rem;
+  }
+
+  .editorial-body__content {
+    max-width: 78ch;
+  }
+
+  .editorial-body__content section + section {
+    margin-top: 2.25rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--color-ink-200, #d7dfe4);
+  }
+
+  .editorial-body h2 {
+    margin: 0 0 0.85rem;
+    font-size: clamp(1.45rem, 3vw, 2rem);
+  }
+
+  .editorial-body__aside {
+    align-self: start;
+    border: 1px solid var(--color-ink-200, #d7dfe4);
+    border-radius: 1rem;
+    background: #f7f9fa;
+    padding: 1.4rem;
+  }
+
+  .editorial-body__aside h2 {
+    font-size: 1.2rem;
+  }
+
+  .editorial-body__aside li + li {
+    margin-top: 0.65rem;
+  }
+
+  @media (min-width: 900px) {
+    .editorial-body__grid {
+      grid-template-columns: minmax(0, 1fr) minmax(260px, 0.35fr);
+    }
+  }
+</style>

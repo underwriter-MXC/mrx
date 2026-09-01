@@ -1,6 +1,7 @@
 ---
 import MarketingLayout from '../layouts/MarketingLayout.astro';
 import IntentPage from '../components/organisms/IntentPage.astro';
+import OfferReviewDecisionFramework from '../components/organisms/OfferReviewDecisionFramework.astro';
 import StaticPillarInventory from '../components/organisms/StaticPillarInventory.astro';
 import { getPillarInventoryPage } from '../lib/pillar-inventory';
 export const prerender = true;
@@ -8,8 +9,8 @@ const inventory = await getPillarInventoryPage('offer-review');
 ---
 
 <MarketingLayout
-  title="Review a Mineral Rights Offer Before Signing · MRX"
-  description="Received a mineral-rights offer? Check the property description, net ownership, adjustment rights, closing terms, and assumptions before you respond."
+  title="Is My Mineral Rights Offer Fair? · MRX"
+  description="Test whether a mineral-rights offer is fair by comparing the exact interest, price assumptions, adjustment rights, deed scope, and closing terms."
   path="/offer-review/"
   pageType="marketing"
   pageCategory="seller-intent"
@@ -19,17 +20,17 @@ const inventory = await getPillarInventoryPage('offer-review');
   ]}
 >
   <IntentPage
-    eyebrow="Look beyond the headline"
-    title="Received a mineral rights offer? Check what the number really covers."
-    lede="An offer may look simple while leaving important details in the property exhibit, title-adjustment language, closing conditions, and buyer rights. Organize those pieces before you compare or sign."
-    answerTitle="Check these first"
+    eyebrow="Fair mineral rights offer review"
+    title="Is my mineral rights offer fair?"
+    lede="You cannot tell from the headline amount alone. Define the exact property and rights, identify every price assumption and adjustment right, then compare the full closing terms before you respond or sign."
+    answerTitle="A fair comparison starts here"
     answerPoints={[
       'The exact acres, depths, counties, and interests included',
       'Whether the amount is gross, net, per acre, or total',
       'What the buyer can change after title or diligence review',
       'Closing date, payment conditions, assignments, and termination rights',
     ]}
-    prompt="I received a mineral rights offer. Help me understand what to check before I respond."
+    prompt="I received a mineral rights offer and want to know whether it is fair. Help me organize the terms and questions before I respond."
     sections={[
       {
         title: 'Start with the property description',
@@ -56,5 +57,6 @@ const inventory = await getPillarInventoryPage('offer-review');
       },
     ]}
   />
+  <OfferReviewDecisionFramework />
   <StaticPillarInventory inventory={inventory} />
 </MarketingLayout>

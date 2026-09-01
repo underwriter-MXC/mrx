@@ -1,0 +1,586 @@
+---
+import MarketingLayout from '../layouts/MarketingLayout.astro';
+
+export const prerender = true;
+---
+
+<MarketingLayout
+  title="Mineral Rights Offer Comparison Tool · MRX"
+  description="Compare two mineral-rights offers side by side. Normalize stated acreage, identify missing terms, and prepare questions before you sign."
+  path="/mineral-rights-offer-comparison/"
+  pageType="marketing"
+  pageCategory="seller-intent"
+  breadcrumbs={[
+    { name: 'Home', path: '/' },
+    { name: 'Review My Offer', path: '/offer-review/' },
+    { name: 'Offer Comparison Tool', path: '/mineral-rights-offer-comparison/' },
+  ]}
+>
+  <section class="compare-hero">
+    <div class="container compare-hero__inner">
+      <p class="compare-eyebrow">Private, in-browser worksheet</p>
+      <h1>Mineral rights offer comparison tool</h1>
+      <p>
+        Put two written offers on the same screen. This worksheet calculates price per stated net
+        mineral acre when both inputs are available and flags unanswered terms. It does not upload,
+        save, or transmit what you type.
+      </p>
+      <aside>
+        This tool does not determine market value or whether an offer is fair. Net mineral acres,
+        net royalty acres, royalty decimals, and rights conveyed are not interchangeable. Confirm
+        what each offer means before relying on a calculated comparison.
+      </aside>
+    </div>
+  </section>
+
+  <section class="compare-tool" aria-labelledby="compare-tool-heading">
+    <div class="container">
+      <div class="compare-tool__head">
+        <div>
+          <p class="compare-eyebrow">Side-by-side terms</p>
+          <h2 id="compare-tool-heading">Compare what each offer actually covers</h2>
+        </div>
+        <button type="button" class="compare-tool__reset" data-reset-comparison
+          >Clear worksheet</button
+        >
+      </div>
+
+      <form data-offer-comparison>
+        <div
+          class="compare-table-wrap"
+          tabindex="0"
+          aria-label="Mineral rights offer comparison worksheet"
+        >
+          <table class="compare-table">
+            <thead>
+              <tr>
+                <th scope="col">Term</th>
+                <th scope="col">Offer A</th>
+                <th scope="col">Offer B</th>
+                <th scope="col">Why it matters</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row"><label for="offer-a-total">Headline total</label></th>
+                <td
+                  ><input
+                    id="offer-a-total"
+                    name="offer-a-total"
+                    type="number"
+                    min="0"
+                    step="0.01"
+                    inputmode="decimal"
+                    placeholder="$ total"
+                    data-total="a"
+                  /></td
+                >
+                <td
+                  ><input
+                    id="offer-b-total"
+                    name="offer-b-total"
+                    type="number"
+                    min="0"
+                    step="0.01"
+                    inputmode="decimal"
+                    placeholder="$ total"
+                    data-total="b"
+                  /></td
+                >
+                <td>The stated amount may still be subject to adjustments or conditions.</td>
+              </tr>
+              <tr>
+                <th scope="row"><label for="offer-a-nma">Stated net mineral acres</label></th>
+                <td
+                  ><input
+                    id="offer-a-nma"
+                    name="offer-a-nma"
+                    type="number"
+                    min="0"
+                    step="0.0001"
+                    inputmode="decimal"
+                    placeholder="NMA"
+                    data-acres="a"
+                  /></td
+                >
+                <td
+                  ><input
+                    id="offer-b-nma"
+                    name="offer-b-nma"
+                    type="number"
+                    min="0"
+                    step="0.0001"
+                    inputmode="decimal"
+                    placeholder="NMA"
+                    data-acres="b"
+                  /></td
+                >
+                <td>Confirm the acreage basis and do not substitute net royalty acres.</td>
+              </tr>
+              <tr class="compare-table__result-row">
+                <th scope="row">Price per stated NMA</th>
+                <td><output data-per-acre="a">Not enough information</output></td>
+                <td><output data-per-acre="b">Not enough information</output></td>
+                <td>A calculation can normalize stated inputs; it cannot prove acreage or value.</td
+                >
+              </tr>
+              <tr>
+                <th scope="row"
+                  ><label for="offer-a-property">Property and rights described exactly?</label></th
+                >
+                <td>
+                  <select id="offer-a-property" name="offer-a-property" data-term="a">
+                    <option value="">Select</option><option>Yes</option><option>No</option><option
+                      >Unclear</option
+                    >
+                  </select>
+                </td>
+                <td>
+                  <select
+                    name="offer-b-property"
+                    aria-label="Offer B property and rights described exactly"
+                    data-term="b"
+                  >
+                    <option value="">Select</option><option>Yes</option><option>No</option><option
+                      >Unclear</option
+                    >
+                  </select>
+                </td>
+                <td
+                  >Acres, county, legal description, formations, depths, and retained rights define
+                  the asset.</td
+                >
+              </tr>
+              <tr>
+                <th scope="row"
+                  ><label for="offer-a-adjustments">Price-adjustment language</label></th
+                >
+                <td
+                  ><textarea
+                    id="offer-a-adjustments"
+                    name="offer-a-adjustments"
+                    rows="3"
+                    placeholder="Title, diligence, acreage, or other adjustments"
+                    data-term="a"></textarea></td
+                >
+                <td
+                  ><textarea
+                    name="offer-b-adjustments"
+                    rows="3"
+                    aria-label="Offer B price-adjustment language"
+                    placeholder="Title, diligence, acreage, or other adjustments"
+                    data-term="b"></textarea></td
+                >
+                <td
+                  >Identify who can change the amount, the calculation, and your right to reject a
+                  revision.</td
+                >
+              </tr>
+              <tr>
+                <th scope="row"
+                  ><label for="offer-a-diligence">Diligence or option period</label></th
+                >
+                <td
+                  ><input
+                    id="offer-a-diligence"
+                    name="offer-a-diligence"
+                    type="text"
+                    placeholder="Days and extension terms"
+                    data-term="a"
+                  /></td
+                >
+                <td
+                  ><input
+                    name="offer-b-diligence"
+                    type="text"
+                    aria-label="Offer B diligence or option period"
+                    placeholder="Days and extension terms"
+                    data-term="b"
+                  /></td
+                >
+                <td>Long or extendable periods can change timing and negotiating flexibility.</td>
+              </tr>
+              <tr>
+                <th scope="row"
+                  ><label for="offer-a-closing">Closing and payment conditions</label></th
+                >
+                <td
+                  ><textarea
+                    id="offer-a-closing"
+                    name="offer-a-closing"
+                    rows="3"
+                    placeholder="Funding, title, deed, and payment sequence"
+                    data-term="a"></textarea></td
+                >
+                <td
+                  ><textarea
+                    name="offer-b-closing"
+                    rows="3"
+                    aria-label="Offer B closing and payment conditions"
+                    placeholder="Funding, title, deed, and payment sequence"
+                    data-term="b"></textarea></td
+                >
+                <td
+                  >Compare when documents transfer, when payment is final, and which conditions
+                  remain.</td
+                >
+              </tr>
+              <tr>
+                <th scope="row"
+                  ><label for="offer-a-effective">Effective date and receivables</label></th
+                >
+                <td
+                  ><input
+                    id="offer-a-effective"
+                    name="offer-a-effective"
+                    type="text"
+                    placeholder="Date and who keeps payments"
+                    data-term="a"
+                  /></td
+                >
+                <td
+                  ><input
+                    name="offer-b-effective"
+                    type="text"
+                    aria-label="Offer B effective date and receivables"
+                    placeholder="Date and who keeps payments"
+                    data-term="b"
+                  /></td
+                >
+                <td>Royalty or other payments may be allocated around an effective date.</td>
+              </tr>
+              <tr>
+                <th scope="row"><label for="offer-a-notes">Other obligations or notes</label></th>
+                <td
+                  ><textarea
+                    id="offer-a-notes"
+                    name="offer-a-notes"
+                    rows="3"
+                    placeholder="Exclusivity, representations, post-closing terms"
+                    data-term="a"></textarea></td
+                >
+                <td
+                  ><textarea
+                    name="offer-b-notes"
+                    rows="3"
+                    aria-label="Offer B other obligations or notes"
+                    placeholder="Exclusivity, representations, post-closing terms"
+                    data-term="b"></textarea></td
+                >
+                <td>Terms beyond price may continue before or after closing.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </form>
+
+      <div class="compare-summary" aria-live="polite">
+        <article>
+          <h3>Offer A unanswered fields</h3>
+          <p><strong data-missing="a">8</strong> of 8 comparison fields still need an answer.</p>
+        </article>
+        <article>
+          <h3>Offer B unanswered fields</h3>
+          <p><strong data-missing="b">8</strong> of 8 comparison fields still need an answer.</p>
+        </article>
+      </div>
+
+      <div class="compare-next">
+        <div>
+          <h2>Use the worksheet to prepare questions. It does not replace review.</h2>
+          <p>
+            Save or print your written offers separately. Bring every exhibit and attachment. MRX
+            can organize the facts, assumptions, missing terms, and questions in a free directional
+            underwriter review, with no obligation to sell.
+          </p>
+        </div>
+        <div class="compare-next__actions">
+          <button type="button" data-print-comparison>Print this worksheet</button>
+          <a href="/book/">Request a free underwriter review</a>
+          <a href="/offer-review/">Return to the fair-offer guide</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</MarketingLayout>
+
+<script>
+  const form = document.querySelector<HTMLFormElement>('[data-offer-comparison]');
+  const sides = ['a', 'b'] as const;
+  const currency = new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD',
+    maximumFractionDigits: 2,
+  });
+
+  function hasValue(field: HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement): boolean {
+    return field.value.trim().length > 0;
+  }
+
+  function updateComparison() {
+    for (const side of sides) {
+      const total = Number(
+        document.querySelector<HTMLInputElement>(`[data-total="${side}"]`)?.value ?? 0,
+      );
+      const acres = Number(
+        document.querySelector<HTMLInputElement>(`[data-acres="${side}"]`)?.value ?? 0,
+      );
+      const output = document.querySelector<HTMLOutputElement>(`[data-per-acre="${side}"]`);
+      if (output) {
+        output.textContent =
+          total > 0 && acres > 0 ? currency.format(total / acres) : 'Not enough information';
+      }
+
+      const requiredFields = [
+        document.querySelector<HTMLInputElement>(`[data-total="${side}"]`),
+        document.querySelector<HTMLInputElement>(`[data-acres="${side}"]`),
+        ...document.querySelectorAll<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>(
+          `[data-term="${side}"]`,
+        ),
+      ].filter((field): field is HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement =>
+        Boolean(field),
+      );
+      const missing = requiredFields.filter((field) => !hasValue(field)).length;
+      const missingOutput = document.querySelector<HTMLElement>(`[data-missing="${side}"]`);
+      if (missingOutput) missingOutput.textContent = String(missing);
+    }
+  }
+
+  form?.addEventListener('input', updateComparison);
+  document.querySelector('[data-reset-comparison]')?.addEventListener('click', () => {
+    form?.reset();
+    updateComparison();
+  });
+  document
+    .querySelector('[data-print-comparison]')
+    ?.addEventListener('click', () => window.print());
+  updateComparison();
+</script>
+
+<style>
+  .compare-hero {
+    padding-block: clamp(3rem, 7vw, 6rem);
+    background: linear-gradient(145deg, #f7f2e9, #f7f9fa);
+  }
+
+  .compare-hero__inner {
+    max-width: 900px;
+  }
+
+  .compare-eyebrow {
+    margin: 0 0 0.5rem;
+    color: #8b5d16;
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+  }
+
+  .compare-hero h1,
+  .compare-tool h2,
+  .compare-tool h3 {
+    color: var(--color-brand-900, #071e34);
+  }
+
+  .compare-hero h1 {
+    max-width: 18ch;
+    margin: 0 0 1rem;
+    font-size: clamp(2.25rem, 6vw, 4.6rem);
+    line-height: 0.98;
+    letter-spacing: -0.045em;
+  }
+
+  .compare-hero p,
+  .compare-hero aside,
+  .compare-tool p,
+  .compare-tool td,
+  .compare-tool th {
+    color: var(--color-ink-700, #344955);
+    line-height: 1.55;
+  }
+
+  .compare-hero aside {
+    margin-top: 1.5rem;
+    border-left: 4px solid #d79a2b;
+    background: #fff;
+    padding: 1rem 1.2rem;
+  }
+
+  .compare-tool {
+    padding-block: clamp(2.5rem, 6vw, 5rem);
+  }
+
+  .compare-tool__head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: end;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .compare-tool__head h2 {
+    margin: 0;
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+  }
+
+  .compare-tool__reset {
+    border: 1px solid var(--color-ink-300, #aebcc5);
+    border-radius: 999px;
+    background: #fff;
+    color: var(--color-brand-900, #071e34);
+    cursor: pointer;
+    padding: 0.65rem 1rem;
+    font-weight: 800;
+  }
+
+  .compare-table-wrap {
+    overflow-x: auto;
+    border: 1px solid var(--color-ink-200, #d7dfe4);
+    border-radius: 1rem;
+  }
+
+  .compare-table {
+    width: 100%;
+    min-width: 960px;
+    border-collapse: collapse;
+    background: #fff;
+  }
+
+  .compare-table th,
+  .compare-table td {
+    padding: 0.9rem;
+    border-bottom: 1px solid var(--color-ink-200, #d7dfe4);
+    text-align: left;
+    vertical-align: top;
+  }
+
+  .compare-table thead th {
+    background: var(--color-brand-900, #071e34);
+    color: #fff;
+  }
+
+  .compare-table tbody th {
+    width: 18%;
+    color: var(--color-brand-900, #071e34);
+  }
+
+  .compare-table td:nth-child(2),
+  .compare-table td:nth-child(3) {
+    width: 24%;
+  }
+
+  .compare-table input,
+  .compare-table select,
+  .compare-table textarea {
+    width: 100%;
+    border: 1px solid var(--color-ink-300, #aebcc5);
+    border-radius: 0.55rem;
+    background: #fff;
+    color: var(--color-brand-900, #071e34);
+    padding: 0.65rem;
+    font: inherit;
+  }
+
+  .compare-table textarea {
+    resize: vertical;
+  }
+
+  .compare-table__result-row {
+    background: #f7f2e9;
+  }
+
+  .compare-table output {
+    color: var(--color-brand-900, #071e34);
+    font-weight: 800;
+  }
+
+  .compare-summary {
+    display: grid;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .compare-summary article {
+    border: 1px solid var(--color-ink-200, #d7dfe4);
+    border-radius: 1rem;
+    background: #f7f9fa;
+    padding: 1rem 1.2rem;
+  }
+
+  .compare-summary h3,
+  .compare-summary p {
+    margin: 0;
+  }
+
+  .compare-next {
+    display: grid;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    border-radius: 1.25rem;
+    background: var(--color-brand-900, #071e34);
+    padding: clamp(1.5rem, 4vw, 2.5rem);
+  }
+
+  .compare-next h2,
+  .compare-next p {
+    color: #fff;
+  }
+
+  .compare-next h2 {
+    margin: 0 0 0.6rem;
+  }
+
+  .compare-next__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .compare-next__actions button,
+  .compare-next__actions a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    border: 1px solid #fff;
+    border-radius: 999px;
+    background: #fff;
+    color: var(--color-brand-900, #071e34);
+    cursor: pointer;
+    padding: 0.65rem 1rem;
+    font: inherit;
+    font-weight: 800;
+    text-decoration: none;
+  }
+
+  @media (min-width: 720px) {
+    .compare-summary {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media print {
+    :global(.header),
+    :global(.footer),
+    .compare-hero,
+    .compare-tool__reset,
+    .compare-next {
+      display: none;
+    }
+
+    .compare-tool {
+      padding: 0;
+    }
+
+    .compare-table-wrap {
+      overflow: visible;
+      border: 0;
+    }
+
+    .compare-table {
+      min-width: 0;
+      font-size: 8pt;
+    }
+  }
+</style>

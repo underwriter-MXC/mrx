@@ -66,7 +66,11 @@
   gap: 0.5rem;
 }
 .header__account {
+  appearance: none;
+  border: 0;
+  background: transparent;
   color: #173e58;
+  cursor: pointer;
   font-size: 0.76rem;
   font-weight: 800;
   white-space: nowrap;
@@ -133,6 +137,23 @@
   border-radius: 999px;
   padding: 0.48rem 0.8rem;
   font-weight: 800;
+}
+.mobile-nav__account {
+  appearance: none;
+  width: fit-content;
+  border: 0;
+  background: transparent;
+  color: var(--color-ink-800);
+  cursor: pointer;
+  font: inherit;
+  font-weight: var(--fw-medium);
+  padding: 0;
+}
+.mobile-nav__account:hover,
+.mobile-nav__account[aria-current='page'] {
+  color: #9a6719;
+  text-decoration: underline;
+  text-underline-offset: 0.22rem;
 }
 .mobile-nav__ask img {
   width: 36px;

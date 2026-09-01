@@ -150,6 +150,9 @@ describe('account conversation onboarding source contract', () => {
     expect(ghlApi).toContain('Your MRX property checklist');
     expect(ghlWebhook).toContain('attachmentUrls: mediaUrls');
     expect(ghlWebhook).toContain("field: 'missing_info_reply'");
-    expect(siteConfig).toContain("{ label: 'Submit Property Details', href: '/owner-intake/' }");
+    expect(siteConfig).toContain("{ label: 'Book a Free Review', href: '/book/' }");
+    expect(siteConfig).not.toContain(
+      "{ label: 'Submit Property Details', href: '/owner-intake/' }",
+    );
   });
 });

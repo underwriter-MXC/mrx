@@ -35,11 +35,12 @@ export const NAV = {
       { label: 'About', href: '/about' },
       { label: 'Meet the AI Guides', href: '/team/' },
       { label: 'Methodology', href: '/methodology' },
+      { label: 'Editorial Policy', href: '/editorial-policy/' },
       { label: 'How It Works', href: '/how-it-works' },
       { label: 'Contact Us', href: '/contact/' },
     ],
     resources: [
-      { label: 'Submit Property Details', href: '/owner-intake/' },
+      { label: 'Book a Free Review', href: '/book/' },
       { label: 'Value My Minerals', href: '/mineral-rights-value/' },
       { label: 'Review My Offer', href: '/offer-review/' },
       { label: 'Inherited Rights', href: '/inherited-mineral-rights/' },
