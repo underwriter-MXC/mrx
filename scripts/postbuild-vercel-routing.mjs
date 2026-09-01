@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Preserve the high-level redirects, headers, and cron configuration from
+ * Preserve the high-level redirects and headers from
  * vercel.json when deploying a locally built Build Output API artifact with
  * `vercel deploy --prebuilt`.
  *
@@ -14,6 +14,16 @@ import { fileURLToPath } from 'node:url';
 import { getTransformedRoutes } from '@vercel/routing-utils';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
+
+// Cron jobs must have exactly one deployment source. Vercel rejects a source
+// deployment when the same job exists in both vercel.json and Build Output API
+// config, so this postbuild step owns the production cron declaration.
+export const DEPLOYMENT_CRONS = [
+  {
+    path: '/api/maintenance/retention',
+    schedule: '17 4 * * *',
+  },
+];
 
 export function compileDeploymentRoutes(vercelConfig) {
   const { routes } = getTransformedRoutes({
@@ -52,12 +62,17 @@ export async function writeVercelBuildOutputRouting(root = ROOT) {
   const vercelPath = join(root, 'vercel.json');
   const outputPath = join(root, '.vercel', 'output', 'config.json');
   const vercelConfig = JSON.parse(await readFile(vercelPath, 'utf8'));
+  if ((vercelConfig.crons ?? []).length > 0) {
+    throw new Error(
+      'Define deployment crons only in scripts/postbuild-vercel-routing.mjs to prevent duplicate Vercel jobs',
+    );
+  }
   const buildOutputConfig = JSON.parse(await readFile(outputPath, 'utf8'));
   const deploymentRoutes = compileDeploymentRoutes(vercelConfig);
   const merged = mergeDeploymentRouting(
     buildOutputConfig,
     deploymentRoutes,
-    vercelConfig.crons ?? [],
+    DEPLOYMENT_CRONS,
   );
   await writeFile(outputPath, `${JSON.stringify(merged, null, 2)}\n`, 'utf8');
   console.log(

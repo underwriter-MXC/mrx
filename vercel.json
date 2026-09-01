@@ -132,12 +132,6 @@
       "permanent": true
     }
   ],
-  "crons": [
-    {
-      "path": "/api/maintenance/retention",
-      "schedule": "17 4 * * *"
-    }
-  ],
   "headers": [
     {
       "source": "/(.*)",

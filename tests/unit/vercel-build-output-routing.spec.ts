@@ -2,6 +2,7 @@ import { readFileSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
 import {
   compileDeploymentRoutes,
+  DEPLOYMENT_CRONS,
   mergeDeploymentRouting,
 } from '../../scripts/postbuild-vercel-routing.mjs';
 
@@ -100,12 +101,12 @@ describe('prebuilt Vercel deployment routing', () => {
         { src: '^/.*$', dest: '/404.html', status: 404 },
       ],
     };
-    const first = mergeDeploymentRouting(base, deploymentRoutes, vercelConfig.crons) as {
+    const first = mergeDeploymentRouting(base, deploymentRoutes, DEPLOYMENT_CRONS) as {
       version: number;
       routes: DeploymentRoute[];
       crons?: unknown[];
     };
-    const second = mergeDeploymentRouting(first, deploymentRoutes, vercelConfig.crons);
+    const second = mergeDeploymentRouting(first, deploymentRoutes, DEPLOYMENT_CRONS);
     const filesystemIndex = first.routes.findIndex(
       (route: DeploymentRoute) => route.handle === 'filesystem',
     );
@@ -115,6 +116,7 @@ describe('prebuilt Vercel deployment routing', () => {
     expect(redirectIndex).toBeGreaterThanOrEqual(0);
     expect(redirectIndex).toBeLessThan(filesystemIndex);
     expect(second).toEqual(first);
-    expect(first.crons).toEqual(vercelConfig.crons);
+    expect(vercelConfig.crons).toBeUndefined();
+    expect(first.crons).toEqual(DEPLOYMENT_CRONS);
   });
 });
