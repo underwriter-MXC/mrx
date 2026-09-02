@@ -41,6 +41,7 @@ rsync -a \
   --exclude='dist/' \
   --exclude='artifacts/' \
   --exclude='reports/' \
+  --exclude='docs/' \
   --exclude='coverage/' \
   --exclude='playwright-report/' \
   --exclude='test-results/' \
@@ -50,7 +51,13 @@ rsync -a \
   --exclude='.env.*' \
   --exclude='public/assets/icons/react/' \
   --exclude='public/assets/icons/*/svg/' \
+  --exclude='scripts/admit-mrx1000-*' \
   "$repo_root/" "$stage_dir/"
+
+# The production build reads this signed owner directive while generating the
+# MRX1000 creative-brief evidence. Other documentation is not a build input.
+copy_parent \
+  docs/governance/mrx1000-owner-continuous-publication-directive-2026-08-04.md
 
 mkdir -p "$stage_dir/artifacts/mrx1000-release-10"
 rsync -a \
