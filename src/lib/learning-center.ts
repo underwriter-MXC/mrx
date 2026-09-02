@@ -1,5 +1,6 @@
 import { getCollection, getEntry } from 'astro:content';
 import { isPublishedPost } from './content-graph';
+import { canonicalStaffSlug } from './staff-identity';
 
 export interface LearningCenterItem {
   slug: string;
@@ -50,7 +51,9 @@ export async function getLearningCenterData() {
           categoryMap.get(post.data.category) || post.data.category.replaceAll('-', ' '),
         tags: post.data.tags,
         author: author?.data.name || 'MRX Editorial Team',
-        authorSlug: author?.id.replace(/\.mdx?$/, '') || 'mrx-editorial-team',
+        authorSlug: canonicalStaffSlug(
+          author?.id.replace(/\.mdx?$/, '') || 'mrx-editorial-team',
+        ),
         publishedAt: post.data.published_at,
         readingMinutes: Math.max(1, Math.round(post.body.split(/\s+/).length / 220)),
         heroImage: post.data.hero_image.src,

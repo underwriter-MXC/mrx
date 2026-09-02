@@ -18,9 +18,9 @@ import {
 import { normalizeMrxText } from '../../lib/platform/style';
 import { guideReplyDelay, remainingGuideReplyDelay } from '../../lib/platform/timing';
 import { fallbackConversationAnswer } from '../../lib/platform/conversation';
-import './AskTommy.css';
+import './AskTravis.css';
 
-type Persona = 'tommy' | 'cooper' | 'charlie' | 'dale' | 'rebecca' | 'angela';
+type Persona = 'travis' | 'connor' | 'clay' | 'owen' | 'laurel' | 'elena';
 type Citation = { id: string; title: string; url: string; excerpt: string };
 type LocationCard = {
   label: string;
@@ -108,12 +108,12 @@ interface Props {
 }
 
 const personaLabels: Record<Persona, string> = {
-  tommy: 'Tommy',
-  cooper: 'Cooper',
-  charlie: 'Charlie',
-  dale: 'Dale',
-  rebecca: 'Rebecca',
-  angela: 'Angela',
+  travis: 'Travis',
+  connor: 'Connor',
+  clay: 'Clay',
+  owen: 'Owen',
+  laurel: 'Laurel',
+  elena: 'Elena',
 };
 
 const personaRole = (persona: Persona) => getGuide(persona)?.chatRole ?? 'MRX Guide';
@@ -122,14 +122,14 @@ const minimumGuideReplyMs = guideReplyDelay(
   import.meta.env.PUBLIC_CHAT_MIN_RESPONSE_DELAY_MS,
 );
 
-const tommyAvatar = '/assets/mrx-homepage-v4/avatars/tommy-hermes-128.webp';
+const travisAvatar = '/assets/mrx-homepage-v4/avatars/travis-hermes-128.webp';
 const bookedAppointmentStorageKey = 'mrx_upcoming_appointment';
-const personas: Persona[] = ['tommy', 'cooper', 'charlie', 'dale', 'rebecca', 'angela'];
+const personas: Persona[] = ['travis', 'connor', 'clay', 'owen', 'laurel', 'elena'];
 const isPersona = (value: unknown): value is Persona =>
   typeof value === 'string' && personas.includes(value as Persona);
-const personaAvatar = (persona: unknown = 'tommy') => {
-  const safePersona = isPersona(persona) ? persona : 'tommy';
-  return safePersona === 'tommy' ? tommyAvatar : `/assets/team/${safePersona}-128.webp`;
+const personaAvatar = (persona: unknown = 'travis') => {
+  const safePersona = isPersona(persona) ? persona : 'travis';
+  return safePersona === 'travis' ? travisAvatar : `/assets/team/${safePersona}-128.webp`;
 };
 
 function asLocationCard(value: unknown): LocationCard | undefined {
@@ -142,7 +142,7 @@ function asLocationCard(value: unknown): LocationCard | undefined {
 
 function recoverAvatar(event: SyntheticEvent<HTMLImageElement>) {
   const image = event.currentTarget;
-  if (image.getAttribute('src') !== tommyAvatar) image.src = tommyAvatar;
+  if (image.getAttribute('src') !== travisAvatar) image.src = travisAvatar;
 }
 
 const initialProfile = (): ProfileDraft => ({
@@ -285,15 +285,15 @@ class ChatErrorBoundary extends Component<{ children: ReactNode }, { failed: boo
     return { failed: true };
   }
   componentDidCatch(error: Error, info: ErrorInfo) {
-    console.error('[Ask Tommy interface]', error.message, info.componentStack);
+    console.error('[Ask Travis interface]', error.message, info.componentStack);
   }
   render() {
     if (this.state.failed)
       return (
-        <button className="tommy-fab" type="button" onClick={() => window.location.reload()}>
-          <img src={tommyAvatar} alt="" />
+        <button className="travis-fab" type="button" onClick={() => window.location.reload()}>
+          <img src={travisAvatar} alt="" />
           <span>
-            <strong>Ask Tommy</strong>
+            <strong>Ask Travis</strong>
             <small>Refresh to reconnect</small>
           </span>
         </button>
@@ -302,7 +302,7 @@ class ChatErrorBoundary extends Component<{ children: ReactNode }, { failed: boo
   }
 }
 
-function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Props) {
+function AskTravisApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Props) {
   const [open, setOpen] = useState(false);
   const [sessionReady, setSessionReady] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
@@ -312,7 +312,7 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
   const [sending, setSending] = useState(false);
   const [typingPersona, setTypingPersona] = useState<Persona | null>(null);
   const [notice, setNotice] = useState('');
-  const [activePersona, setActivePersona] = useState<Persona>('tommy');
+  const [activePersona, setActivePersona] = useState<Persona>('travis');
   const [lastAnswer, setLastAnswer] = useState<Message | null>(null);
   const [deliveryAnswer, setDeliveryAnswer] = useState<Message | null>(null);
   const [deliveryRequested, setDeliveryRequested] = useState<DeliveryChannel[]>([]);
@@ -408,7 +408,7 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
       persona,
       step.startsWith('intro-')
         ? 'profile_prompt'
-        : persona === 'angela'
+        : persona === 'elena'
           ? 'appointment'
           : immediate
             ? 'notice'
@@ -622,11 +622,11 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
       if (sequence) handledSequences.add(sequence);
       beginGuideResponseWindow();
       if (!introStarted.current || detail?.prompt || detail?.booking)
-        setTypingPersona(detail?.booking ? 'angela' : 'tommy');
+        setTypingPersona(detail?.booking ? 'elena' : 'travis');
       setOpen(true);
       if (detail?.prompt) setPendingPrompt(detail.prompt);
       if (detail?.booking) setBookingRequested(true);
-      track('ask_tommy_open', { source: detail?.prompt ? 'prefilled_prompt' : 'site_cta' });
+      track('ask_travis_open', { source: detail?.prompt ? 'prefilled_prompt' : 'site_cta' });
     };
     const listener = (event: Event) => {
       const detail = (event as CustomEvent<ChatOpenDetail>).detail ?? {};
@@ -657,7 +657,7 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
       browserWindow.__mrxChatOpenRequested = true;
       introStarted.current = true;
       beginGuideResponseWindow();
-      setTypingPersona('angela');
+      setTypingPersona('elena');
       setOpen(true);
       setBookingRequested(true);
     }
@@ -680,7 +680,7 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
       return;
     introStarted.current = true;
     setStep('open');
-    void guideSay('How may I help you?', 'tommy', 520);
+    void guideSay('How may I help you?', 'travis', 520);
   }, [open, sessionReady, messages.length, pendingPrompt, bookingRequested]);
 
   useEffect(() => {
@@ -930,7 +930,7 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
     if (!lastAnswer?.content) {
       await guideSay(
         'Ask me your mineral-rights question first. Once I answer, I can send the related information to your email or phone with your permission.',
-        'tommy',
+        'travis',
       );
       return;
     }
@@ -938,7 +938,7 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
     setStep('delivery-channel');
     await guideSay(
       'Would you like me to send this information so you can pull it up later? I can email it, text a link to your phone, or do both.',
-      'tommy',
+      'travis',
     );
   }
 
@@ -950,7 +950,7 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
       setStep('delivery-email');
       await guideSay(
         'What email address should I use? I’ll ask permission before anything is sent.',
-        'tommy',
+        'travis',
       );
       return;
     }
@@ -958,7 +958,7 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
       setStep('delivery-phone');
       await guideSay(
         'What mobile number should I use? I’ll ask permission before I text the link.',
-        'tommy',
+        'travis',
       );
       return;
     }
@@ -976,12 +976,12 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
     if (channel === 'email')
       await guideSay(
         `Is it okay for MRX to email this answer and related link to ${draft.email}?`,
-        'tommy',
+        'travis',
       );
     else
       await guideSay(
         `Is it okay for MRX to text the related link to ${draft.phone}? Message and data rates may apply; you can reply STOP to opt out or HELP for help.`,
-        'tommy',
+        'travis',
       );
   }
 
@@ -990,7 +990,7 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
       setStep('open');
       await guideSay(
         'No problem. I won’t send anything. The information will stay here in this conversation.',
-        'tommy',
+        'travis',
       );
       return;
     }
@@ -1001,7 +1001,7 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
     };
     const nextProfile = { ...profile, permissions: nextPermissions };
     setProfile(nextProfile);
-    setTypingPersona('tommy');
+    setTypingPersona('travis');
     try {
       const response = await fetch('/api/chat/delivery', {
         method: 'POST',
@@ -1027,7 +1027,7 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
       setTypingPersona(null);
       await guideSay(
         `Done. MRX sent it by ${sentLabels.join(' and ')}. You can keep asking questions here anytime.`,
-        'tommy',
+        'travis',
         260,
       );
       result.sent.forEach((channel: DeliveryChannel) =>
@@ -1038,7 +1038,7 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
       setStep('open');
       await guideError(
         'I couldn’t send that just now, so nothing left the site. Your answer is still here, and you can try sending it again in a moment.',
-        'tommy',
+        'travis',
       );
     }
   }
@@ -1046,25 +1046,25 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
   async function beginBooking() {
     beginGuideResponseWindow();
     track('booking_opened', {
-      source: bookedAppointment ? 'existing_appointment' : 'ask_tommy',
+      source: bookedAppointment ? 'existing_appointment' : 'ask_travis',
     });
-    setTypingPersona('angela');
-    setActivePersona('angela');
+    setTypingPersona('elena');
+    setActivePersona('elena');
     setOptions([]);
     setSelectedOption(null);
     if (bookedAppointment) {
       setStep('booking-help');
       await guideSay(
         `You already have a phone appointment booked for ${bookedAppointment.label}. I won’t book another one. What specifically would you like the MRX team to be ready to help with?`,
-        'angela',
+        'elena',
         260,
       );
       return;
     }
     setStep('booking-timezone');
     await guideSay(
-      `Hi${profile.firstName ? `, ${profile.firstName}` : ''}. I’m Angela, the MRX scheduling guide. I’m here to help set up a phone conversation with the MRX team about your mineral rights. I’ll check the live MRX calendar and offer a few real openings. I have your time zone as ${timezoneLabel(profile.timezone)}. Is that right?`,
-      'angela',
+      `Hi${profile.firstName ? `, ${profile.firstName}` : ''}. I’m Elena, the MRX scheduling guide. I’m here to help set up a phone conversation with the MRX team about your mineral rights. I’ll check the live MRX calendar and offer a few real openings. I have your time zone as ${timezoneLabel(profile.timezone)}. Is that right?`,
+      'elena',
       420,
     );
   }
@@ -1073,7 +1073,7 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
     setStep('booking-window');
     await guideSay(
       `Perfect. I’ll show every appointment in ${timezoneLabel(timezone)}. What works better for you: tomorrow afternoon, tomorrow evening, or the next available time?`,
-      'angela',
+      'elena',
       260,
     );
   }
@@ -1086,8 +1086,8 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
       day === 'tomorrow' ? `Tomorrow ${preference}` : 'Show me the next available times';
     addUserMessage(wording);
     setStep('booking-slots');
-    setTypingPersona('angela');
-    setNotice('Angela is checking the MRX calendar…');
+    setTypingPersona('elena');
+    setNotice('Elena is checking the MRX calendar…');
     try {
       const response = await fetch(
         `/api/appointments/availability?timezone=${encodeURIComponent(profile.timezone)}&preference=${encodeURIComponent(preference)}&day=${day}`,
@@ -1100,17 +1100,17 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
         const infrastructureFailure = result.error === 'booking_not_configured' || !response.ok;
         const calendarMessage = infrastructureFailure
           ? result.error === 'booking_not_configured'
-            ? 'I’m sorry. I can’t reach MRX’s live appointment calendar right now, so I won’t make up a time. You can try again in a moment or keep talking with Tommy. No appointment has been created.'
+            ? 'I’m sorry. I can’t reach MRX’s live appointment calendar right now, so I won’t make up a time. You can try again in a moment or keep talking with Travis. No appointment has been created.'
             : 'I’m having trouble reaching the MRX calendar right now, so I didn’t create an appointment. Would you like to try the next available times again?'
           : `I don’t see a ${preference === 'any' ? 'matching' : preference} opening ${day === 'tomorrow' ? 'tomorrow' : 'in the current window'}. Would you like me to check another part of the day or show the next available times?`;
-        if (infrastructureFailure) await guideError(calendarMessage, 'angela');
-        else await guideSay(calendarMessage, 'angela', 260);
+        if (infrastructureFailure) await guideError(calendarMessage, 'elena');
+        else await guideSay(calendarMessage, 'elena', 260);
         return;
       }
       setOptions(result.options);
       await guideSay(
         `I found ${result.options.length === 1 ? 'this opening' : 'these openings'}. Which one works best?`,
-        'angela',
+        'elena',
         260,
       );
       track('availability_offered', {
@@ -1130,8 +1130,8 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
       setTypingPersona(null);
       setStep('booking-window');
       await guideError(
-        'I couldn’t reach the MRX calendar just now, so I didn’t create an appointment. You can try the next available times again or keep talking with Tommy.',
-        'angela',
+        'I couldn’t reach the MRX calendar just now, so I didn’t create an appointment. You can try the next available times again or keep talking with Travis.',
+        'elena',
       );
     }
   }
@@ -1144,13 +1144,13 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
       setStep('booking-name');
       await guideSay(
         `Great, I’ll hold ${option.label} while we finish. What first name should I put on the appointment?`,
-        'angela',
+        'elena',
       );
     } else {
       setStep('booking-email');
       await guideSay(
         `Great, ${profile.firstName}. I’ll hold ${option.label} while we finish. What email should I use for your appointment details and secure MRX member access?`,
-        'angela',
+        'elena',
       );
     }
   }
@@ -1159,19 +1159,19 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
     setStep('booking-email');
     await guideSay(
       'What email should I use for your appointment details and secure MRX member access?',
-      'angela',
+      'elena',
     );
   }
 
   async function askBookingPhone() {
     setStep('booking-phone');
-    await guideSay('What phone number should a senior MRX underwriter team member call?', 'angela');
+    await guideSay('What phone number should a senior MRX underwriter team member call?', 'elena');
   }
 
   async function confirmAppointment(nextProfile: ProfileDraft) {
     if (!selectedOption) return;
     setBooking(true);
-    setTypingPersona('angela');
+    setTypingPersona('elena');
     try {
       const response = await fetch('/api/appointments', {
         method: 'POST',
@@ -1213,10 +1213,10 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
       setStep('booking-help');
       await guideSay(
         `You’re booked for ${selectedOption.label}.${confirmations}${memberAccessMessage} We’ll call ${nextProfile.phone}.`,
-        'angela',
+        'elena',
         260,
       );
-      await guideSay('How may I help you?', 'angela', 220);
+      await guideSay('How may I help you?', 'elena', 220);
       track('appointment_booked', {
         timezone: selectedOption.timezone,
         email_permission: nextProfile.permissions.email,
@@ -1237,7 +1237,7 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
       setStep('open');
       await guideError(
         'I couldn’t confirm that time, so no appointment was created. We can try the calendar again when you’re ready.',
-        'angela',
+        'elena',
       );
     } finally {
       setBooking(false);
@@ -1260,7 +1260,7 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
       setStep('intro-email-consent');
       await guideSay(
         `No problem. May MRX email ${next.email} with the information or case updates you specifically request? This is optional.`,
-        'tommy',
+        'travis',
       );
       return;
     }
@@ -1273,7 +1273,7 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
       addUserMessage(label || value);
       if (value === 'cancel') {
         setStep('open');
-        await guideSay('No problem. I won’t send anything.', 'tommy');
+        await guideSay('No problem. I won’t send anything.', 'travis');
         return;
       }
       return prepareDelivery(value === 'both' ? ['email', 'sms'] : [value as DeliveryChannel]);
@@ -1315,14 +1315,14 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
         setStep('open');
         await guideSay(
           'I saved your choice. Without a phone number, MRX will not text or place a GHL Voice AI update call. What would you like to ask next?',
-          'tommy',
+          'travis',
         );
         return;
       }
       setStep('intro-sms-consent');
       await guideSay(
         `May MRX text ${next.phone} with links or case updates you specifically request? Message and data rates may apply. Reply STOP to opt out or HELP for help.`,
-        'tommy',
+        'travis',
       );
       return;
     }
@@ -1349,14 +1349,14 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
         setStep('open');
         await guideSay(
           'I saved your email, text, and AI-voice choices. MRX has not yet published its human-call disclosure, so I will come back to that one separately. What would you like to ask next?',
-          'tommy',
+          'travis',
         );
         return;
       }
       setStep('intro-call-consent');
       await guideSay(
         `May an MRX team member call ${next.phone} with the mineral-rights case updates you specifically request? This is optional and may be revoked at any time.`,
-        'tommy',
+        'travis',
       );
       return;
     }
@@ -1375,7 +1375,7 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
       setStep('intro-ai-voice-consent');
       await guideSay(
         `May MRX use GoHighLevel Voice AI to call ${next.phone} with an AI-generated voice and give the mineral-rights case updates you specifically request? This is optional, is not required to receive help, and may be revoked at any time.`,
-        'tommy',
+        'travis',
       );
       return;
     }
@@ -1401,7 +1401,7 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
         allowed
           ? 'I saved your choices. MRX must verify your phone number before any GHL Voice AI update, and you can revoke permission at any time. What would you like to ask next?'
           : 'I saved your choices. MRX will not use GHL Voice AI to call you. What would you like to ask next?',
-        'tommy',
+        'travis',
       );
       return;
     }
@@ -1438,7 +1438,7 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
         setStep('open');
         await guideSay(
           'Understood. I can’t book a phone appointment without permission to make the requested call, so nothing was booked. We can keep chatting here.',
-          'angela',
+          'elena',
         );
         return;
       }
@@ -1446,12 +1446,12 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
       setProfile(next);
       if (next.email) {
         setStep('booking-email-consent');
-        await guideSay(`May MRX email the appointment confirmation to ${next.email}?`, 'angela');
+        await guideSay(`May MRX email the appointment confirmation to ${next.email}?`, 'elena');
       } else {
         setStep('booking-sms-consent');
         await guideSay(
           `May MRX text the appointment confirmation to ${next.phone}? Message and data rates may apply; reply STOP to opt out or HELP for help.`,
-          'angela',
+          'elena',
         );
       }
       return;
@@ -1469,7 +1469,7 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
       setStep('booking-sms-consent');
       await guideSay(
         `May MRX also text the appointment confirmation to ${next.phone}? Message and data rates may apply; reply STOP to opt out or HELP for help.`,
-        'angela',
+        'elena',
       );
       return;
     }
@@ -1488,8 +1488,8 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
       setProfile(next);
       setStep('booking-ai-voice-consent');
       await guideSay(
-        `May Angela, MRX’s AI scheduling guide, use GoHighLevel Voice AI to call ${next.phone} with an AI-generated voice for the appointment or document updates you request? MRX will identify itself. This AI-voice permission is optional, may be revoked at any time, and is not required to book or use website help.`,
-        'angela',
+        `May Elena, MRX’s AI scheduling guide, use GoHighLevel Voice AI to call ${next.phone} with an AI-generated voice for the appointment or document updates you request? MRX will identify itself. This AI-voice permission is optional, may be revoked at any time, and is not required to book or use website help.`,
+        'elena',
       );
       return;
     }
@@ -1497,7 +1497,7 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
       const allowed = value === 'yes';
       addUserMessage(
         allowed
-          ? 'Yes, Angela may use GHL Voice AI for appointment or document reminders.'
+          ? 'Yes, Elena may use GHL Voice AI for appointment or document reminders.'
           : 'No GHL Voice AI reminders, please.',
       );
       track('communication_permission', {
@@ -1524,7 +1524,7 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
     if (step === 'intro-name') {
       const firstName = firstNameFrom(text);
       if (!firstName) {
-        await guideError('I didn’t catch the name. What should I call you?', 'tommy');
+        await guideError('I didn’t catch the name. What should I call you?', 'travis');
         return;
       }
       addUserMessage(text);
@@ -1532,13 +1532,13 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
       setProfile(next);
       void saveIntroFact({ firstName });
       setStep('intro-last-name');
-      await guideSay(`Thanks, ${firstName}. What’s your last name?`, 'tommy');
+      await guideSay(`Thanks, ${firstName}. What’s your last name?`, 'travis');
       return;
     }
     if (step === 'intro-last-name') {
       const lastName = text.replace(/[^a-zA-ZÀ-ÿ' -]/g, '').trim();
       if (!lastName) {
-        await guideError('What last name should I save with your conversation?', 'tommy');
+        await guideError('What last name should I save with your conversation?', 'travis');
         return;
       }
       addUserMessage(text);
@@ -1552,13 +1552,13 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
       setStep('intro-email');
       await guideSay(
         'What email should I use for your secure sign-in link? Verifying it lets you return to this private history from another device as your questions and documents build over time.',
-        'tommy',
+        'travis',
       );
       return;
     }
     if (step === 'intro-email') {
       if (!/^\S+@\S+\.\S+$/.test(text)) {
-        await guideError('That email looks incomplete. Please check it and try again.', 'tommy');
+        await guideError('That email looks incomplete. Please check it and try again.', 'travis');
         return;
       }
       addUserMessage(text);
@@ -1571,12 +1571,12 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
         });
         await guideSay(
           `I sent a secure sign-in link to ${text}. You can keep talking here while you verify it. A phone number is optional. Would you like to add one for future follow-up?`,
-          'tommy',
+          'travis',
         );
       } catch {
         await guideError(
           'I could not send the verification link just now. We can keep talking, but this history will stay on this browser until your email is verified. Would you like to add an optional phone number?',
-          'tommy',
+          'travis',
         );
       }
       setStep('intro-phone');
@@ -1587,7 +1587,7 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
       if (text.replace(/\D/g, '').length < 10) {
         await guideError(
           'That number looks incomplete. Include the area code, or choose “Skip phone.”',
-          'tommy',
+          'travis',
         );
         return;
       }
@@ -1599,10 +1599,10 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
         setStep('intro-email-consent');
         await guideSay(
           `Got it. Saving the number does not give MRX permission to contact you. May MRX email ${next.email} with the information or case updates you specifically request? This is optional.`,
-          'tommy',
+          'travis',
         );
       } catch {
-        await guideError('I could not save that number. We can keep talking here.', 'tommy');
+        await guideError('I could not save that number. We can keep talking here.', 'travis');
         setStep('open');
       }
       return;
@@ -1614,14 +1614,14 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
       if (lower.includes('text') || lower.includes('sms') || lower.includes('phone'))
         return handleQuickReply('sms', 'Text it');
       if (isSkip(text)) return handleQuickReply('cancel', 'Never mind');
-      await guideError('Choose email, text message, both, or say “never mind.”', 'tommy');
+      await guideError('Choose email, text message, both, or say “never mind.”', 'travis');
       return;
     }
     if (step === 'delivery-email') {
       if (!/^\S+@\S+\.\S+$/.test(text)) {
         await guideError(
           'That email address doesn’t look complete. Please check it and try again.',
-          'tommy',
+          'travis',
         );
         return;
       }
@@ -1632,7 +1632,7 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
         setStep('delivery-phone');
         await guideSay(
           'And what mobile number should I use for the text? I’ll ask permission before sending it.',
-          'tommy',
+          'travis',
         );
       } else await promptDeliveryConsent(deliveryRequested, 0, next);
       return;
@@ -1641,7 +1641,7 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
       if (text.replace(/\D/g, '').length < 7) {
         await guideError(
           'That phone number looks incomplete. Please include the area code.',
-          'tommy',
+          'travis',
         );
         return;
       }
@@ -1670,7 +1670,7 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
       if (!timezone) {
         await guideError(
           'I want to make sure I show the right times. You can say Eastern, Central, Mountain, Pacific, Alaska, Hawaii, or Arizona.',
-          'angela',
+          'elena',
         );
         return;
       }
@@ -1692,13 +1692,13 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
             text.toLowerCase(),
       );
       if (matched) return selectAppointment(matched);
-      await guideError('Choose one of the available times shown below.', 'angela');
+      await guideError('Choose one of the available times shown below.', 'elena');
       return;
     }
     if (step === 'booking-name') {
       const firstName = firstNameFrom(text);
       if (!firstName) {
-        await guideError('What first name should I place on the appointment?', 'angela');
+        await guideError('What first name should I place on the appointment?', 'elena');
         return;
       }
       addUserMessage(text);
@@ -1711,14 +1711,14 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
       if (isSkip(text)) {
         await guideError(
           'An email is needed to create your secure MRX member access and keep the appointment connected to your profile. What email should I use?',
-          'angela',
+          'elena',
         );
         return;
       }
       if (!/^\S+@\S+\.\S+$/.test(text)) {
         await guideError(
           'That email address doesn’t look complete. Please check it and try again.',
-          'angela',
+          'elena',
         );
         return;
       }
@@ -1731,7 +1731,7 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
       if (text.replace(/\D/g, '').length < 7) {
         await guideError(
           'That phone number looks incomplete. Please include the area code.',
-          'angela',
+          'elena',
         );
         return;
       }
@@ -1739,7 +1739,7 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
       const next = { ...profile, phone: text };
       setProfile(next);
       setStep('booking-call-consent');
-      await guideSay(`May MRX call ${text} for this specific appointment?`, 'angela');
+      await guideSay(`May MRX call ${text} for this specific appointment?`, 'elena');
       return;
     }
     if (step === 'booking-help') {
@@ -1914,7 +1914,7 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
     'intro-sms-consent': 'Yes or no…',
     'intro-call-consent': 'Yes or no…',
     'intro-ai-voice-consent': 'Yes or no…',
-    open: 'Ask Tommy anything about your minerals…',
+    open: 'Ask Travis anything about your minerals…',
     'delivery-channel': 'Email, text, or both…',
     'delivery-email': 'Your email address…',
     'delivery-phone': 'Your mobile number…',
@@ -1929,9 +1929,9 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
     'booking-email-consent': 'Yes or no…',
     'booking-sms-consent': 'Yes or no…',
     'booking-ai-voice-consent': 'Yes or no…',
-    'booking-help': 'Tell Angela what you need help with…',
+    'booking-help': 'Tell Elena what you need help with…',
   };
-  const composerInputId = `tommy-question-${step}`;
+  const composerInputId = `travis-question-${step}`;
   const isEmailStep =
     step === 'intro-email' || step === 'delivery-email' || step === 'booking-email';
   const isPhoneStep =
@@ -1953,8 +1953,8 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
     <>
       {!hideLauncher && (
         <button
-          className="tommy-fab"
-          data-testid="ask-tommy-open"
+          className="travis-fab"
+          data-testid="ask-travis-open"
           data-chat-ready={sessionReady ? 'true' : 'false'}
           type="button"
           onClick={() => {
@@ -1963,63 +1963,63 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
             };
             browserWindow.__mrxChatOpenRequested = true;
             beginGuideResponseWindow();
-            if (!introStarted.current) setTypingPersona('tommy');
+            if (!introStarted.current) setTypingPersona('travis');
             setOpen(true);
-            track('ask_tommy_open', { source: 'floating_button' });
+            track('ask_travis_open', { source: 'floating_button' });
           }}
-          aria-label="Ask Tommy for mineral-rights help"
+          aria-label="Ask Travis for mineral-rights help"
         >
-          <span className="tommy-avatar">
-            <img src={tommyAvatar} alt="" />
+          <span className="travis-avatar">
+            <img src={travisAvatar} alt="" />
             <i aria-hidden="true" />
           </span>
           <span>
-            <strong>Ask Tommy</strong>
+            <strong>Ask Travis</strong>
             <small>Straight answers, 24/7</small>
           </span>
         </button>
       )}
       {open && (
         <div
-          className="tommy-backdrop"
+          className="travis-backdrop"
           onMouseDown={(event) => event.target === event.currentTarget && closeChat()}
         >
           <section
-            className="tommy-panel"
-            data-testid="ask-tommy-dialog"
+            className="travis-panel"
+            data-testid="ask-travis-dialog"
             role="dialog"
             aria-modal="true"
-            aria-labelledby="tommy-title"
+            aria-labelledby="travis-title"
           >
-            <header className="tommy-panel__head">
-              <span className="tommy-avatar">
+            <header className="travis-panel__head">
+              <span className="travis-avatar">
                 <img src={personaAvatar(activePersona)} alt="" onError={recoverAvatar} />
                 <i aria-hidden="true" />
               </span>
               <div>
-                <strong id="tommy-title">Talking with {personaLabels[activePersona]}</strong>
+                <strong id="travis-title">Talking with {personaLabels[activePersona]}</strong>
                 <span>{personaRole(activePersona)} · Here now</span>
               </div>
-              <button type="button" onClick={closeChat} aria-label="Close Ask Tommy">
+              <button type="button" onClick={closeChat} aria-label="Close Ask Travis">
                 ×
               </button>
             </header>
-            <div className="tommy-panel__disclosure">
+            <div className="travis-panel__disclosure">
               Educational information, not a certified appraisal or individualized professional
               advice.
             </div>
-            <div className="tommy-messages" aria-live="polite">
+            <div className="travis-messages" aria-live="polite">
               {messages
                 .filter((message) => message.role === 'user' || Boolean(message.content))
                 .map((message) =>
                   message.role === 'assistant' ? (
-                    <div className="tommy-message-row" key={message.id}>
+                    <div className="travis-message-row" key={message.id}>
                       <img src={personaAvatar(message.persona)} alt="" onError={recoverAvatar} />
-                      <article className="tommy-message tommy-message--assistant">
-                        <small>{getGuideChatLabel(message.persona || 'tommy')}</small>
+                      <article className="travis-message travis-message--assistant">
+                        <small>{getGuideChatLabel(message.persona || 'travis')}</small>
                         <p>{message.content}</p>
                         {!!message.citations?.length && (
-                          <details className="tommy-citations">
+                          <details className="travis-citations">
                             <summary>Source used</summary>
                             <a href={message.citations[0].url} target="_blank" rel="noreferrer">
                               {message.citations[0].title}
@@ -2028,7 +2028,7 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
                         )}
                         {message.locationCard && (
                           <a
-                            className="tommy-location-card"
+                            className="travis-location-card"
                             href={message.locationCard.url}
                             target="_blank"
                             rel="noreferrer"
@@ -2044,18 +2044,18 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
                       </article>
                     </div>
                   ) : (
-                    <article key={message.id} className="tommy-message tommy-message--user">
+                    <article key={message.id} className="travis-message travis-message--user">
                       <p>{message.content}</p>
                     </article>
                   ),
                 )}
               {typingPersona && (
                 <div
-                  className="tommy-message-row tommy-message-row--typing"
+                  className="travis-message-row travis-message-row--typing"
                   aria-label={`${personaLabels[typingPersona]} is typing`}
                 >
                   <img src={personaAvatar(typingPersona)} alt="" onError={recoverAvatar} />
-                  <div className="tommy-typing">
+                  <div className="travis-typing">
                     <span />
                     <span />
                     <span />
@@ -2063,7 +2063,7 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
                 </div>
               )}
               {!!quickReplies.length && (
-                <div className="tommy-quick-replies" aria-label="Suggested replies">
+                <div className="travis-quick-replies" aria-label="Suggested replies">
                   {step === 'open' && lastAnswer && (
                     <p>
                       {bookedAppointment
@@ -2086,7 +2086,7 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
                 </div>
               )}
               {showAccountPrompt && (
-                <aside className="tommy-account-prompt" data-testid="tommy-account-prompt">
+                <aside className="travis-account-prompt" data-testid="travis-account-prompt">
                   <div>
                     <strong>
                       Keep this conversation and any mineral-rights documents together
@@ -2108,10 +2108,10 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
                   </span>
                 </aside>
               )}
-              {notice && <p className="tommy-notice">{notice}</p>}
+              {notice && <p className="travis-notice">{notice}</p>}
               <div ref={endRef} />
             </div>
-            <footer className="tommy-composer">
+            <footer className="travis-composer">
               <form onSubmit={handleComposer} autoComplete="off">
                 <label className="visually-hidden" htmlFor={composerInputId}>
                   Reply to {personaLabels[activePersona]}
@@ -2120,7 +2120,7 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
                   key={composerInputId}
                   id={composerInputId}
                   name={`mrx-chat-${step}`}
-                  data-testid="tommy-composer-input"
+                  data-testid="travis-composer-input"
                   ref={inputRef}
                   type="text"
                   inputMode={isEmailStep ? 'email' : isPhoneStep ? 'tel' : 'text'}
@@ -2146,10 +2146,10 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
                   ↑
                 </button>
               </form>
-              <div className="tommy-composer__actions">
+              <div className="travis-composer__actions">
                 <input
                   ref={fileInputRef}
-                  className="tommy-file-input"
+                  className="travis-file-input"
                   type="file"
                   accept=".pdf,.jpg,.jpeg,.png"
                   onChange={(event) => {
@@ -2162,8 +2162,8 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
                 />
                 <button
                   type="button"
-                  className="tommy-footer-action tommy-footer-action--document"
-                  data-testid="tommy-document-button"
+                  className="travis-footer-action travis-footer-action--document"
+                  data-testid="travis-document-button"
                   onClick={beginDocumentUpload}
                   disabled={uploading || !documentProcessingEnabled}
                   title={
@@ -2181,8 +2181,8 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
                 {bookedAppointment ? (
                   <button
                     type="button"
-                    className="tommy-footer-action tommy-appointment-status"
-                    data-testid="tommy-appointment-status"
+                    className="travis-footer-action travis-appointment-status"
+                    data-testid="travis-appointment-status"
                     title={bookedAppointment.label}
                     onClick={() => window.location.assign('/account/')}
                   >
@@ -2191,7 +2191,7 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
                 ) : (
                   <button
                     type="button"
-                    className="tommy-footer-action tommy-footer-action--appointment"
+                    className="travis-footer-action travis-footer-action--appointment"
                     onClick={beginBooking}
                     disabled={Boolean(typingPersona) || booking}
                   >
@@ -2200,7 +2200,7 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
                 )}
               </div>
               <p>
-                Tommy remembers this conversation on this device. Contact details are only used with
+                Travis remembers this conversation on this device. Contact details are only used with
                 the permissions you choose.
               </p>
             </footer>
@@ -2211,10 +2211,10 @@ function AskTommyApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pro
   );
 }
 
-export default function AskTommy(props: Props) {
+export default function AskTravis(props: Props) {
   return (
     <ChatErrorBoundary>
-      <AskTommyApp {...props} />
+      <AskTravisApp {...props} />
     </ChatErrorBoundary>
   );
 }

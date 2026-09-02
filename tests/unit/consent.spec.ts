@@ -11,7 +11,7 @@ describe('versioned communication receipts', () => {
   it('gates the human-call channel behind a published disclosure version', () => {
     // Per CEO P3 the human-call channel must be disabled until compliance signs
     // off on the disclosure text. The default is `pending` so the channel is
-    // closed and Ask Tommy must short-circuit without writing any receipt.
+    // closed and Ask Travis must short-circuit without writing any receipt.
     expect(HUMAN_CALL_DISCLOSURE_VERSION).toBe('pending');
     expect(isHumanCallChannelEnabled()).toBe(false);
   });

@@ -2,7 +2,7 @@ import { expect, test } from '@playwright/test';
 import { stubAnonymousSession } from './helpers/stub-session';
 
 test.describe('About MRX page', () => {
-  test('explains the current guide team and opens Ask Tommy', async ({ page }) => {
+  test('explains the current guide team and opens Ask Travis', async ({ page }) => {
     await stubAnonymousSession(page);
     await page.goto('/about');
 
@@ -16,7 +16,7 @@ test.describe('About MRX page', () => {
     const heroChatButton = page.locator('.mrx-about-hero [data-about-chat]');
     await expect(heroChatButton).toHaveCount(1);
     await heroChatButton.click();
-    await expect(page.getByTestId('ask-tommy-dialog')).toBeVisible();
+    await expect(page.getByTestId('ask-travis-dialog')).toBeVisible();
     await expect(page.getByText('How may I help you?', { exact: true })).toBeVisible();
   });
 

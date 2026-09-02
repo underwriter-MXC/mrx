@@ -9,7 +9,7 @@ const posts = (await getCollection('posts', isPublishedPost))
   .slice(0, 3);
 
 const assetRoot = '/assets/mrx-homepage-v4/hermes';
-const tommyGuide = getGuide('tommy')!;
+const travisGuide = getGuide('travis')!;
 
 const prompts = [
   {
@@ -86,16 +86,16 @@ const commonQuestions = [
     <picture class="mrx-home-hero__media" aria-hidden="true">
       <source
         type="image/avif"
-        srcset="/assets/mrx-homepage-v4/backgrounds/hero-tommy-left-layout-768.avif 768w, /assets/mrx-homepage-v4/backgrounds/hero-tommy-left-layout-1280.avif 1280w, /assets/mrx-homepage-v4/backgrounds/hero-tommy-left-layout-1536.avif 1536w"
+        srcset="/assets/mrx-homepage-v4/backgrounds/hero-travis-left-layout-768.avif 768w, /assets/mrx-homepage-v4/backgrounds/hero-travis-left-layout-1280.avif 1280w, /assets/mrx-homepage-v4/backgrounds/hero-travis-left-layout-1536.avif 1536w"
         sizes="100vw"
       />
       <source
         type="image/webp"
-        srcset="/assets/mrx-homepage-v4/backgrounds/hero-tommy-left-layout-768.webp 768w, /assets/mrx-homepage-v4/backgrounds/hero-tommy-left-layout-1280.webp 1280w, /assets/mrx-homepage-v4/backgrounds/hero-tommy-left-layout-1536.webp 1536w"
+        srcset="/assets/mrx-homepage-v4/backgrounds/hero-travis-left-layout-768.webp 768w, /assets/mrx-homepage-v4/backgrounds/hero-travis-left-layout-1280.webp 1280w, /assets/mrx-homepage-v4/backgrounds/hero-travis-left-layout-1536.webp 1536w"
         sizes="100vw"
       />
       <img
-        src="/assets/mrx-homepage-v4/backgrounds/hero-tommy-left-layout-768.webp"
+        src="/assets/mrx-homepage-v4/backgrounds/hero-travis-left-layout-768.webp"
         alt=""
         width="768"
         height="512"
@@ -109,12 +109,12 @@ const commonQuestions = [
         <p class="mrx-eyebrow">Free nationwide mineral-rights guidance</p>
         <h1 id="home-title">Got a mineral rights offer? Get straight answers before you sign.</h1>
         <p class="mrx-home-hero__lede">
-          Ask Tommy what may affect its value, whether the offer deserves a closer look, and what to
+          Ask Travis what may affect its value, whether the offer deserves a closer look, and what to
           check next without pressure to sell.
         </p>
         <div class="mrx-home-actions">
           <button class="mrx-primary" type="button" data-open-home-chat
-            >Ask Tommy <span aria-hidden="true">→</span></button
+            >Ask Travis <span aria-hidden="true">→</span></button
           >
           <button
             class="mrx-secondary"
@@ -134,22 +134,22 @@ const commonQuestions = [
           }
         </div>
       </div>
-      <aside class="mrx-chat-preview" aria-label="Ask Tommy conversation starters">
+      <aside class="mrx-chat-preview" aria-label="Ask Travis conversation starters">
         <div class="mrx-chat-preview__head">
           <img
-            src="/assets/mrx-homepage-v4/avatars/tommy-hermes-256.webp"
+            src="/assets/mrx-homepage-v4/avatars/travis-hermes-256.webp"
             alt=""
             width="256"
             height="256"
           />
           <span
-            ><strong>Tommy™</strong><small>{tommyGuide.chatRole}</small><em
+            ><strong>Travis™</strong><small>{travisGuide.chatRole}</small><em
               ><i aria-hidden="true"></i> Here now</em
             ></span
           >
         </div>
         <div class="mrx-chat-preview__bubble">
-          <strong>Hi, I’m Tommy.</strong><span
+          <strong>Hi, I’m Travis.</strong><span
             >Tell me what happened, and we’ll take it one question at a time.</span
           ><b>What would you like help with?</b>
         </div>
@@ -167,12 +167,12 @@ const commonQuestions = [
           }
         </div>
         <button class="mrx-chat-preview__input" type="button" data-open-home-chat
-          ><span>Ask Tommy anything about your mineral rights…</span><b aria-hidden="true">→</b
+          ><span>Ask Travis anything about your mineral rights…</span><b aria-hidden="true">→</b
           ></button
         >
         <div class="mrx-chat-preview__review">
           <strong>Ready for a professional review?</strong><span
-            >Ask Angela to find three phone-call times with the MRX team.</span
+            >Ask Elena to find three phone-call times with the MRX team.</span
           ><button type="button" data-home-booking
             >Book a free mineral review <b aria-hidden="true">→</b></button
           >
@@ -185,9 +185,9 @@ const commonQuestions = [
     </div>
   </section>
 
-  <section class="mrx-benefits" aria-labelledby="why-tommy-title">
+  <section class="mrx-benefits" aria-labelledby="why-travis-title">
     <div class="container">
-      <h2 id="why-tommy-title">Why mineral owners ask Tommy first</h2>
+      <h2 id="why-travis-title">Why mineral owners ask Travis first</h2>
       <div class="mrx-benefits__grid">
         {
           benefits.map((benefit) => (
@@ -216,7 +216,7 @@ const commonQuestions = [
 
   <section class="mrx-common-questions" aria-labelledby="common-questions-title">
     <div class="container">
-      <h2 id="common-questions-title">Common questions mineral owners ask Tommy</h2>
+      <h2 id="common-questions-title">Common questions mineral owners ask Travis</h2>
       <div>
         {
           commonQuestions.map((question) => (
@@ -269,7 +269,7 @@ const commonQuestions = [
         <p class="mrx-eyebrow">How MRX answers</p><h2>
           Answers first. Contact information later.
         </h2><p>
-          Tommy begins with the question you brought. The right MRX AI Guide can then help organize
+          Travis begins with the question you brought. The right MRX AI Guide can then help organize
           the next layer.
         </p>
       </div>
@@ -290,7 +290,7 @@ const commonQuestions = [
           </p>
         </article><article>
           <h3>Choose a next step</h3><p>
-            Keep researching, attach a private document, or let Angela conversationally book a phone
+            Keep researching, attach a private document, or let Elena conversationally book a phone
             call.
           </p>
         </article>

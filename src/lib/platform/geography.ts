@@ -77,7 +77,7 @@ export const US_STATES: StateDefinition[] = [
   { name: 'Wyoming', code: 'WY', fips: '56' },
   { name: 'American Samoa', code: 'AS', fips: '60' },
   { name: 'Guam', code: 'GU', fips: '66' },
-  { name: 'Northern Mariana Islands', code: 'MP', fips: '69' },
+  { name: 'Northern Mmarisol Islands', code: 'MP', fips: '69' },
   { name: 'Puerto Rico', code: 'PR', fips: '72' },
   {
     name: 'U.S. Virgin Islands',

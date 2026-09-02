@@ -321,7 +321,7 @@
   border-top: 1px solid #d8e1e6;
   border-radius: 0 0 14px 14px;
 }
-.angela-intake-backdrop {
+.elena-intake-backdrop {
   position: fixed;
   inset: 0;
   z-index: 10000;
@@ -332,7 +332,7 @@
   background: rgba(5, 20, 34, 0.72);
   backdrop-filter: blur(4px);
 }
-.angela-intake {
+.elena-intake {
   width: min(720px, 100%);
   max-height: calc(100dvh - 2rem);
   overflow-y: auto;
@@ -342,7 +342,7 @@
   color: #142f42;
   box-shadow: 0 28px 90px rgba(3, 17, 29, 0.32);
 }
-.angela-intake__header {
+.elena-intake__header {
   position: sticky;
   top: 0;
   z-index: 2;
@@ -354,53 +354,53 @@
   border-bottom: 1px solid #dfe6ea;
   background: #f8faf8;
 }
-.angela-intake__header img {
+.elena-intake__header img {
   width: 52px;
   height: 52px;
   border-radius: 50%;
   object-fit: cover;
 }
-.angela-intake__header span {
+.elena-intake__header span {
   color: #8a5d18;
   font-size: 0.72rem;
   font-weight: 850;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
-.angela-intake__header h2 {
+.elena-intake__header h2 {
   margin: 0.12rem 0 0;
   font-size: clamp(1.2rem, 4vw, 1.75rem);
 }
-.angela-intake__header > button {
+.elena-intake__header > button {
   min-width: 42px;
   padding: 0.45rem;
   font-size: 1.45rem;
   line-height: 1;
 }
-.angela-intake__intro,
-.angela-intake__form {
+.elena-intake__intro,
+.elena-intake__form {
   padding: clamp(1rem, 4vw, 1.6rem);
 }
-.angela-intake__intro {
+.elena-intake__intro {
   display: grid;
   gap: 0.9rem;
   line-height: 1.6;
 }
-.angela-intake__progress {
+.elena-intake__progress {
   height: 6px;
   margin-bottom: 1.2rem;
   overflow: hidden;
   border-radius: 999px;
   background: #e5ebee;
 }
-.angela-intake__progress span {
+.elena-intake__progress span {
   display: block;
   height: 100%;
   border-radius: inherit;
   background: #b57b23;
   transition: width 0.2s ease;
 }
-.angela-intake fieldset {
+.elena-intake fieldset {
   display: grid;
   gap: 0.9rem;
   min-width: 0;
@@ -408,27 +408,27 @@
   padding: 0;
   border: 0;
 }
-.angela-intake fieldset[hidden] {
+.elena-intake fieldset[hidden] {
   display: none;
 }
-.angela-intake legend {
+.elena-intake legend {
   margin-bottom: 0.35rem;
   font-size: clamp(1.25rem, 4vw, 1.65rem);
   font-weight: 850;
 }
-.angela-intake fieldset > p,
-.angela-intake__complete p {
+.elena-intake fieldset > p,
+.elena-intake__complete p {
   color: #546b79;
 }
-.angela-intake label {
+.elena-intake label {
   display: grid;
   gap: 0.35rem;
   font-size: 0.82rem;
   font-weight: 800;
 }
-.angela-intake input:not([type='checkbox']),
-.angela-intake select,
-.angela-intake textarea {
+.elena-intake input:not([type='checkbox']),
+.elena-intake select,
+.elena-intake textarea {
   width: 100%;
   border: 1px solid #b9c9d2;
   border-radius: 10px;
@@ -437,53 +437,53 @@
   color: #142f42;
   font: inherit;
 }
-.angela-intake label small,
-.angela-intake__followup small {
+.elena-intake label small,
+.elena-intake__followup small {
   color: #657985;
   font-size: 0.72rem;
   font-weight: 500;
 }
-.angela-intake label small {
+.elena-intake label small {
   display: flex;
   align-items: center;
   gap: 0.4rem;
 }
-.angela-intake__grid {
+.elena-intake__grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 0.8rem;
 }
-.angela-intake__followup,
-.angela-intake__complete > div {
+.elena-intake__followup,
+.elena-intake__complete > div {
   display: grid;
   gap: 0.65rem;
   border-radius: 12px;
   background: #f4f7f4;
   padding: 0.9rem;
 }
-.angela-intake__followup label {
+.elena-intake__followup label {
   display: flex;
   align-items: flex-start;
   gap: 0.5rem;
   font-weight: 700;
 }
-.angela-intake__actions {
+.elena-intake__actions {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
   gap: 0.65rem;
   margin-top: 1.2rem;
 }
-.angela-intake .angela-intake__secondary {
+.elena-intake .elena-intake__secondary {
   border: 1px solid #9eb0ba;
   background: #fff;
   color: #173e58;
 }
-.angela-intake__complete {
+.elena-intake__complete {
   display: grid;
   gap: 1rem;
 }
-.angela-intake__complete ul {
+.elena-intake__complete ul {
   display: grid;
   gap: 0.35rem;
   padding-left: 1.15rem;
@@ -504,7 +504,7 @@
   .account-location-form > small {
     max-width: none;
   }
-  .angela-intake__grid {
+  .elena-intake__grid {
     grid-template-columns: 1fr;
   }
 }

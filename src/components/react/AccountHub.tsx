@@ -180,7 +180,7 @@ function AccountExplainer() {
       </p>
       <ul>
         <li>
-          Retain Tommy conversations, cited answers, appointment context, and uploaded
+          Retain Travis conversations, cited answers, appointment context, and uploaded
           mineral-rights documents.
         </li>
         <li>
@@ -269,8 +269,8 @@ export default function AccountHub({ supabaseUrl, supabaseAnonKey }: Props) {
   const accountIntentTitle =
     accountIntent === 'appointment'
       ? 'Your appointment is connected to your owner account'
-      : accountIntent === 'angela'
-        ? 'Angela can finish your owner intake now'
+      : accountIntent === 'elena'
+        ? 'Elena can finish your owner intake now'
         : accountIntent === 'standalone'
           ? 'Start your guided owner intake'
           : accountIntent === '1'
@@ -281,8 +281,8 @@ export default function AccountHub({ supabaseUrl, supabaseAnonKey }: Props) {
   const accountIntentDescription =
     accountIntent === 'appointment'
       ? 'Use the secure email link MRX sent after booking, or request a new one below. Your appointment, conversations, and documents will stay together in your private profile.'
-      : accountIntent === 'angela'
-        ? 'Continue on this device to save property details, unknown answers, and documents so Angela can hand the record to a Senior Underwriter. Your secure email link lets you return from another device.'
+      : accountIntent === 'elena'
+        ? 'Continue on this device to save property details, unknown answers, and documents so Elena can hand the record to a Senior Underwriter. Your secure email link lets you return from another device.'
         : accountIntent === 'standalone'
           ? 'Create a secure owner profile first, then add as many mineral properties as you need. Every question accepts I do not know, and MRX will keep the missing-info checklist on your record.'
           : accountIntent === 'conversation'
@@ -294,7 +294,7 @@ export default function AccountHub({ supabaseUrl, supabaseAnonKey }: Props) {
   useEffect(() => {
     if (
       hasOwnerAccess &&
-      ['appointment', 'angela', 'standalone', 'conversation'].includes(accountIntent)
+      ['appointment', 'elena', 'standalone', 'conversation'].includes(accountIntent)
     ) {
       setIntakeOpen(true);
     }
@@ -391,7 +391,7 @@ export default function AccountHub({ supabaseUrl, supabaseAnonKey }: Props) {
           phone,
           sourceUrl: location.href,
           redirectTo: new URL(
-            accountIntent === 'standalone' ? '/owner-intake/' : '/account/?welcome=angela',
+            accountIntent === 'standalone' ? '/owner-intake/' : '/account/?welcome=elena',
             location.origin,
           ).toString(),
         }),
@@ -423,8 +423,8 @@ export default function AccountHub({ supabaseUrl, supabaseAnonKey }: Props) {
       setStatus(
         response.ok
           ? result.verificationSent
-            ? 'Your private profile is saved. Continue with Angela now on this device. A secure return link was requested for your email so you can come back from another device.'
-            : 'Your private profile is saved. Continue with Angela now on this device. Secure return email is temporarily unavailable, but your intake will stay protected in this browser.'
+            ? 'Your private profile is saved. Continue with Elena now on this device. A secure return link was requested for your email so you can come back from another device.'
+            : 'Your private profile is saved. Continue with Elena now on this device. Secure return email is temporarily unavailable, but your intake will stay protected in this browser.'
           : result.error === 'invalid_phone'
             ? 'Please include a valid phone number with area code.'
             : result.error === 'invalid_full_name'
@@ -706,12 +706,12 @@ export default function AccountHub({ supabaseUrl, supabaseAnonKey }: Props) {
           leaseName: String(data.get('leaseName') || '').trim() || null,
           assessmentDetails: String(data.get('assessmentDetails') || '').trim() || null,
           situationCode: accountSituationCode,
-          intakeVersion: '2026-07-20-angela-v1',
+          intakeVersion: '2026-07-20-elena-v1',
           source:
             accountIntent === 'standalone'
               ? 'standalone_guided_intake'
-              : accountIntent === 'angela' || accountIntent === 'conversation'
-                ? 'angela_post_signup'
+              : accountIntent === 'elena' || accountIntent === 'conversation'
+                ? 'elena_post_signup'
                 : 'account_guided_intake',
           unknownFields: Array.from(data.entries())
             .filter(([key, value]) => key.startsWith('unknown_') && value === 'on')
@@ -793,7 +793,7 @@ export default function AccountHub({ supabaseUrl, supabaseAnonKey }: Props) {
         );
       } else {
         setStatus(
-          `Your property is saved. Angela queued the missing-information checklist by ${followUpResult?.queued?.join(' and ') || channels.join(' and ')}.`,
+          `Your property is saved. Elena queued the missing-information checklist by ${followUpResult?.queued?.join(' and ') || channels.join(' and ')}.`,
         );
       }
     } else {
@@ -935,7 +935,7 @@ export default function AccountHub({ supabaseUrl, supabaseAnonKey }: Props) {
           Continue immediately on this device. MRX also requests a passwordless email link for
           secure return access from another device. Saving your contact details does not give MRX
           permission to send updates or place calls; you can approve each channel separately with
-          Tommy.
+          Travis.
         </small>
         {status && (
           <p className="account-status" role="status">
@@ -948,18 +948,18 @@ export default function AccountHub({ supabaseUrl, supabaseAnonKey }: Props) {
   return (
     <>
       {intakeOpen && (
-        <div className="angela-intake-backdrop" role="presentation">
+        <div className="elena-intake-backdrop" role="presentation">
           <section
-            className="angela-intake"
+            className="elena-intake"
             role="dialog"
             aria-modal="true"
-            aria-labelledby="angela-intake-title"
+            aria-labelledby="elena-intake-title"
           >
-            <header className="angela-intake__header">
-              <img src="/assets/team/angela-128.webp" alt="" width="64" height="64" />
+            <header className="elena-intake__header">
+              <img src="/assets/team/elena-128.webp" alt="" width="64" height="64" />
               <div>
-                <span>Angela · MRX owner intake</span>
-                <h2 id="angela-intake-title">
+                <span>Elena · MRX owner intake</span>
+                <h2 id="elena-intake-title">
                   {intakeStep === 6
                     ? 'Your property is saved'
                     : 'Let’s prepare your underwriter record'}
@@ -971,9 +971,9 @@ export default function AccountHub({ supabaseUrl, supabaseAnonKey }: Props) {
             </header>
 
             {intakeStep === 0 ? (
-              <div className="angela-intake__intro">
+              <div className="elena-intake__intro">
                 <p>
-                  Hi{accountProfile.first_name ? `, ${accountProfile.first_name}` : ''}. I’m Angela.
+                  Hi{accountProfile.first_name ? `, ${accountProfile.first_name}` : ''}. I’m Elena.
                   I’ll ask a few short questions about one mineral property at a time so a Senior
                   Underwriter can prepare a fair, more useful assessment before your call.
                 </p>
@@ -981,19 +981,19 @@ export default function AccountHub({ supabaseUrl, supabaseAnonKey }: Props) {
                   This takes a couple of minutes. If you do not know an answer, that is completely
                   fine. Choose “I don’t know” and I’ll put it on a checklist you can reply to later.
                 </p>
-                <div className="angela-intake__actions">
+                <div className="elena-intake__actions">
                   <button type="button" onClick={() => setIntakeStep(1)}>
                     Start with one property
                   </button>
-                  <button type="button" className="angela-intake__secondary" onClick={finishIntake}>
+                  <button type="button" className="elena-intake__secondary" onClick={finishIntake}>
                     I’ll do this later
                   </button>
                 </div>
               </div>
             ) : (
-              <form ref={intakeFormRef} className="angela-intake__form" onSubmit={saveGuidedIntake}>
+              <form ref={intakeFormRef} className="elena-intake__form" onSubmit={saveGuidedIntake}>
                 {intakeStep < 6 && (
-                  <div className="angela-intake__progress" aria-label={`Step ${intakeStep} of 5`}>
+                  <div className="elena-intake__progress" aria-label={`Step ${intakeStep} of 5`}>
                     <span style={{ width: `${intakeStep * 20}%` }} />
                   </div>
                 )}
@@ -1011,7 +1011,7 @@ export default function AccountHub({ supabaseUrl, supabaseAnonKey }: Props) {
                       placeholder="Example: Reeves County inherited royalties"
                     />
                   </label>
-                  <div className="angela-intake__grid">
+                  <div className="elena-intake__grid">
                     <label>
                       State
                       <input name="state" autoComplete="address-level1" placeholder="Texas" />
@@ -1063,7 +1063,7 @@ export default function AccountHub({ supabaseUrl, supabaseAnonKey }: Props) {
                       <input type="checkbox" name="unknown_taxParcelId" /> I don’t know
                     </small>
                   </label>
-                  <div className="angela-intake__grid">
+                  <div className="elena-intake__grid">
                     <label>
                       Block / section
                       <input name="blockSection" placeholder="Block 13, Section 22" />
@@ -1091,7 +1091,7 @@ export default function AccountHub({ supabaseUrl, supabaseAnonKey }: Props) {
                       <option value="working_interest">Working interest</option>
                     </select>
                   </label>
-                  <div className="angela-intake__grid">
+                  <div className="elena-intake__grid">
                     <label>
                       Net mineral acres owned
                       <input
@@ -1116,7 +1116,7 @@ export default function AccountHub({ supabaseUrl, supabaseAnonKey }: Props) {
 
                 <fieldset hidden={intakeStep !== 4}>
                   <legend>Is it leased or producing?</legend>
-                  <div className="angela-intake__grid">
+                  <div className="elena-intake__grid">
                     <label>
                       Is the property currently leased?
                       <select name="leaseStatus" defaultValue="unknown">
@@ -1141,7 +1141,7 @@ export default function AccountHub({ supabaseUrl, supabaseAnonKey }: Props) {
                       <input type="checkbox" name="unknown_recentCheckAmount" /> I don’t know
                     </small>
                   </label>
-                  <div className="angela-intake__grid">
+                  <div className="elena-intake__grid">
                     <label>
                       Operator, optional
                       <input name="operator" placeholder="Operator name" />
@@ -1163,8 +1163,8 @@ export default function AccountHub({ supabaseUrl, supabaseAnonKey }: Props) {
                       placeholder="Tell us what you want help assessing. It is okay to leave this blank."
                     />
                   </label>
-                  <div className="angela-intake__followup">
-                    <strong>How should Angela send your missing-information checklist?</strong>
+                  <div className="elena-intake__followup">
+                    <strong>How should Elena send your missing-information checklist?</strong>
                     <label>
                       <input type="checkbox" name="followupEmail" />
                       Email it to {accountProfile.email || session?.user.email || 'your email'}
@@ -1185,14 +1185,14 @@ export default function AccountHub({ supabaseUrl, supabaseAnonKey }: Props) {
                 </fieldset>
 
                 {intakeStep === 6 && savedIntake && (
-                  <div className="angela-intake__complete">
+                  <div className="elena-intake__complete">
                     <p>
                       <strong>{savedIntake.label}</strong> is now on your private owner profile.
                     </p>
                     {intakeMissing.length ? (
                       <div>
                         <p>
-                          If you find any of these later, reply to Angela’s message or send a
+                          If you find any of these later, reply to Elena’s message or send a
                           picture:
                         </p>
                         <ul>
@@ -1241,13 +1241,13 @@ export default function AccountHub({ supabaseUrl, supabaseAnonKey }: Props) {
                         }}
                       />
                     </label>
-                    <div className="angela-intake__actions">
+                    <div className="elena-intake__actions">
                       <button type="button" onClick={addAnotherInterest}>
                         Add another property
                       </button>
                       <button
                         type="button"
-                        className="angela-intake__secondary"
+                        className="elena-intake__secondary"
                         onClick={finishIntake}
                       >
                         Finish
@@ -1257,10 +1257,10 @@ export default function AccountHub({ supabaseUrl, supabaseAnonKey }: Props) {
                 )}
 
                 {intakeStep > 0 && intakeStep < 6 && (
-                  <div className="angela-intake__actions">
+                  <div className="elena-intake__actions">
                     <button
                       type="button"
-                      className="angela-intake__secondary"
+                      className="elena-intake__secondary"
                       onClick={() => setIntakeStep((step) => Math.max(0, step - 1))}
                     >
                       Back
@@ -1382,7 +1382,7 @@ export default function AccountHub({ supabaseUrl, supabaseAnonKey }: Props) {
               type="button"
               onClick={() => window.dispatchEvent(new CustomEvent('mrx:open-chat'))}
             >
-              Ask Tommy
+              Ask Travis
             </button>
           </div>
           {!conversations.length ? (
@@ -1412,7 +1412,7 @@ export default function AccountHub({ supabaseUrl, supabaseAnonKey }: Props) {
                         <article key={message.id}>
                           <small>
                             {message.role === 'assistant'
-                              ? getGuideChatLabel(message.persona || 'tommy')
+                              ? getGuideChatLabel(message.persona || 'travis')
                               : 'You'}
                           </small>
                           <p>{message.content}</p>
@@ -1428,7 +1428,7 @@ export default function AccountHub({ supabaseUrl, supabaseAnonKey }: Props) {
           <div className="account-section-head">
             <div>
               <h3>
-                {accountIntent === 'angela' ? 'Angela guided owner intake' : 'Guided owner intake'}
+                {accountIntent === 'elena' ? 'Elena guided owner intake' : 'Guided owner intake'}
               </h3>
               <p>
                 Add one property at a time. Choose I do not know whenever you are not sure; MRX
@@ -1442,7 +1442,7 @@ export default function AccountHub({ supabaseUrl, supabaseAnonKey }: Props) {
                 setIntakeOpen(true);
               }}
             >
-              Start with Angela
+              Start with Elena
             </button>
           </div>
           <details className="account-manual-intake">

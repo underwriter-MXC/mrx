@@ -68,8 +68,8 @@ describe('MRX1000-038 — ga4-measurement resolver', () => {
       contentProgram: 'mrx1000',
       contentCluster: 'inherited-estate-probate',
       contentIntent: 'informational',
-      contentAuthor: 'ariana',
-      contentGuide: 'tommy',
+      contentAuthor: 'marisol',
+      contentGuide: 'travis',
       contentBatch: 'pilot-001',
     });
     expect(context).toEqual({
@@ -78,8 +78,8 @@ describe('MRX1000-038 — ga4-measurement resolver', () => {
       content_program: 'mrx1000',
       content_cluster: 'inherited-estate-probate',
       content_intent: 'informational',
-      content_author: 'ariana',
-      content_guide: 'tommy',
+      content_author: 'marisol',
+      content_guide: 'travis',
       content_batch: 'pilot-001',
     });
   });
@@ -90,8 +90,8 @@ describe('MRX1000-038 — ga4-measurement resolver', () => {
       contentProgram: 'mrx1000',
       contentCluster: 'valuation-methodology-drivers',
       contentIntent: 'commercial-investigation',
-      contentAuthor: 'monty',
-      contentGuide: 'cooper',
+      contentAuthor: 'graham',
+      contentGuide: 'connor',
       contentBatch: 'pilot-001',
     });
     expect(context.content_group).toBe('learning_center');
@@ -201,8 +201,8 @@ describe('MRX1000-038 — ga4-measurement resolver', () => {
       contentProgram: 'mrx1000',
       contentCluster: 'inherited-estate-probate',
       contentIntent: 'informational',
-      contentAuthor: 'ariana',
-      contentGuide: 'tommy',
+      contentAuthor: 'marisol',
+      contentGuide: 'travis',
       contentBatch: 'pilot-001',
     });
     const payload = buildArticleCtaClickPayload(context, {
@@ -217,8 +217,8 @@ describe('MRX1000-038 — ga4-measurement resolver', () => {
     expect(payload.content_program).toBe('mrx1000');
     expect(payload.content_cluster).toBe('inherited-estate-probate');
     expect(payload.content_intent).toBe('informational');
-    expect(payload.content_author).toBe('ariana');
-    expect(payload.content_guide).toBe('tommy');
+    expect(payload.content_author).toBe('marisol');
+    expect(payload.content_guide).toBe('travis');
     expect(payload.content_batch).toBe('pilot-001');
     expect(payload.cta_name).toBe('pilot-foo-cta-book');
     expect(payload.cta_action).toBe('book_review');
@@ -234,8 +234,8 @@ describe('MRX1000-038 — ga4-measurement resolver', () => {
       content_program: 'mrx1000',
       content_cluster: 'tax-1031-legal-education',
       content_intent: 'local',
-      content_author: 'rebecca',
-      content_guide: 'rebecca',
+      content_author: 'laurel',
+      content_guide: 'laurel',
       content_batch: 'pilot-001',
     };
     const payload = buildArticleScrollPayload(context, 'p50');

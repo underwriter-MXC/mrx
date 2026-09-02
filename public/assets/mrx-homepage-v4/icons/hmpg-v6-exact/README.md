@@ -1,6 +1,6 @@
 # HMPG V6 exact cropped icon assets
 
-These PNGs are cropped directly from `tommy-hmpg-v6-reference.jpg`; visible pixels are retained from the source image and surrounding background pixels are made transparent.
+These PNGs are cropped directly from `travis-hmpg-v6-reference.jpg`; visible pixels are retained from the source image and surrounding background pixels are made transparent.
 
 - `chat-bubble.png`: crop box `(76, 776, 111, 811)`
 - `document-offer.png`: crop box `(528, 775, 560, 812)`

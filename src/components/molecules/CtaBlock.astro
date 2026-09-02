@@ -13,7 +13,7 @@ interface Props {
     label: string;
     href: string;
     ctaName: string;
-    openTommy?: boolean;
+    openTravis?: boolean;
     rel?: string;
   };
   reassurance?: string;
@@ -49,7 +49,7 @@ const {
             href={secondaryCta.href}
             variant="ghost"
             size="lg"
-            openTommy={secondaryCta.openTommy}
+            openTravis={secondaryCta.openTravis}
             rel={secondaryCta.rel}
           >
             {secondaryCta.label}

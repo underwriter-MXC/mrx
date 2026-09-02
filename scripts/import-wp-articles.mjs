@@ -54,7 +54,7 @@ for (const item of publishedWordPressArticles) {
   const { frontmatter, body } = splitFrontmatter(source, sourcePath);
   const title = cleanTitle(item.title);
   const description = normalizeDescription(item.meta_description, title);
-  const author = String(item.author || scalar(frontmatter, 'author') || 'Tommy').toLowerCase();
+  const author = String(item.author || scalar(frontmatter, 'author') || 'Travis').toLowerCase();
   const category = normalizeCategory(listValue(frontmatter, 'categories')[0]);
   const publishedAt = normalizeDate(scalar(frontmatter, 'date_published'), '2026-06-01');
   const updatedAt = normalizeDate(scalar(frontmatter, 'date_modified'), publishedAt);

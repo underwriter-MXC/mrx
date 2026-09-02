@@ -1,13 +1,13 @@
 import { describe, expect, it } from 'vitest';
 // The validation population is intentionally plain ESM so the same source powers the staging runner.
 import {
-  buildAskTommyScenarios,
-  summarizeAskTommyScenarios,
-} from '../../scripts/lib/ask-tommy-scenarios.mjs';
+  buildAskTravisScenarios,
+  summarizeAskTravisScenarios,
+} from '../../scripts/lib/ask-travis-scenarios.mjs';
 
-describe('Ask Tommy 100-owner validation population', () => {
-  const scenarios = buildAskTommyScenarios();
-  const summary = summarizeAskTommyScenarios(scenarios);
+describe('Ask Travis 100-owner validation population', () => {
+  const scenarios = buildAskTravisScenarios();
+  const summary = summarizeAskTravisScenarios(scenarios);
 
   it('creates 100 unique, reserved fictitious identities', () => {
     expect(scenarios).toHaveLength(100);

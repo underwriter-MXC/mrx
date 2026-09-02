@@ -9,11 +9,11 @@ interface Props {
   articleTitle: string;
   reviewCta: { label: string; href: string; ctaName: string };
   askCtaName: string;
-  tommyPrompt?: string;
+  travisPrompt?: string;
 }
 
-const { articleTitle, reviewCta, askCtaName, tommyPrompt: promptOverride } = Astro.props;
-const tommyPrompt =
+const { articleTitle, reviewCta, askCtaName, travisPrompt: promptOverride } = Astro.props;
+const travisPrompt =
   promptOverride ??
   `I just read "${articleTitle}." Help me understand what it means for my mineral rights and what information you need from me.`;
 ---
@@ -54,9 +54,9 @@ const tommyPrompt =
 
         <div class="article-closing-cta__divider"><span>or start with a question</span></div>
 
-        <div class="article-closing-cta__tommy">
+        <div class="article-closing-cta__travis">
           <img
-            src="/assets/mrx-homepage-v4/avatars/tommy-hermes-128.webp"
+            src="/assets/mrx-homepage-v4/avatars/travis-hermes-128.webp"
             alt=""
             width="128"
             height="128"
@@ -65,7 +65,7 @@ const tommyPrompt =
           />
           <div>
             <strong>Not ready to share documents?</strong>
-            <span>Tommy can help you figure out what matters first.</span>
+            <span>Travis can help you figure out what matters first.</span>
           </div>
         </div>
 
@@ -73,10 +73,10 @@ const tommyPrompt =
           class="article-closing-cta__ask"
           type="button"
           data-article-cta-chat
-          data-tommy-prompt={tommyPrompt}
+          data-travis-prompt={travisPrompt}
           data-cta-name={askCtaName}
         >
-          Ask Tommy first <span aria-hidden="true">→</span>
+          Ask Travis first <span aria-hidden="true">→</span>
         </button>
       </div>
     </div>
@@ -87,7 +87,7 @@ const tommyPrompt =
   document.querySelectorAll<HTMLElement>('[data-article-cta-chat]').forEach((button) => {
     button.addEventListener('click', () => {
       window.dispatchEvent(
-        new CustomEvent('mrx:open-chat', { detail: { prompt: button.dataset.tommyPrompt } }),
+        new CustomEvent('mrx:open-chat', { detail: { prompt: button.dataset.travisPrompt } }),
       );
     });
   });
@@ -206,7 +206,7 @@ const tommyPrompt =
     text-transform: uppercase;
   }
 
-  .article-closing-cta__tommy {
+  .article-closing-cta__travis {
     display: grid;
     grid-template-columns: 52px minmax(0, 1fr);
     gap: 0.75rem;
@@ -214,7 +214,7 @@ const tommyPrompt =
     margin-bottom: 0.85rem;
   }
 
-  .article-closing-cta__tommy img {
+  .article-closing-cta__travis img {
     width: 52px;
     height: 52px;
     border: 2px solid #d79a2b;
@@ -222,17 +222,17 @@ const tommyPrompt =
     object-fit: cover;
   }
 
-  .article-closing-cta__tommy div {
+  .article-closing-cta__travis div {
     display: grid;
     gap: 0.1rem;
   }
 
-  .article-closing-cta__tommy strong {
+  .article-closing-cta__travis strong {
     color: #fff;
     font-size: 0.88rem;
   }
 
-  .article-closing-cta__tommy span {
+  .article-closing-cta__travis span {
     color: #c8d5de;
     font-size: 0.72rem;
     line-height: 1.4;

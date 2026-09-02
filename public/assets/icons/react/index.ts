@@ -249,10 +249,10 @@ export { MrxEducationLightbulbIcon } from './Education/MrxEducationLightbulbIcon
 export { MrxEducationKnowledgeIcon } from './Education/MrxEducationKnowledgeIcon';
 export { MrxEducationLibraryIcon } from './Education/MrxEducationLibraryIcon';
 export { MrxEducationArticleIcon } from './Education/MrxEducationArticleIcon';
-export { MrxAgentsTommyIcon } from './Agents/MrxAgentsTommyIcon';
-export { MrxAgentsRebeccaIcon } from './Agents/MrxAgentsRebeccaIcon';
-export { MrxAgentsCharlieIcon } from './Agents/MrxAgentsCharlieIcon';
-export { MrxAgentsCooperIcon } from './Agents/MrxAgentsCooperIcon';
+export { MrxAgentsTravisIcon } from './Agents/MrxAgentsTravisIcon';
+export { MrxAgentsLaurelIcon } from './Agents/MrxAgentsLaurelIcon';
+export { MrxAgentsClayIcon } from './Agents/MrxAgentsClayIcon';
+export { MrxAgentsConnorIcon } from './Agents/MrxAgentsConnorIcon';
 export { MrxAgentsChestyIcon } from './Agents/MrxAgentsChestyIcon';
 export { MrxAgentsTexIcon } from './Agents/MrxAgentsTexIcon';
 export { MrxAgentsGrantIcon } from './Agents/MrxAgentsGrantIcon';

@@ -113,7 +113,7 @@ function sourceScope(source) {
     [
       'https://mineralrightsxchange.com/terms/',
       [
-        'The current MRX terms identify Angela as a fictional AI interface, preserve educational and professional limits, describe private-account responsibility, and state that requested-call, transactional communication, and optional marketing choices are separate.',
+        'The current MRX terms identify Elena as a fictional AI interface, preserve educational and professional limits, describe private-account responsibility, and state that requested-call, transactional communication, and optional marketing choices are separate.',
         'The article uses the terms only for AI identity, account responsibility, educational limits, and separate communication-choice boundaries; it does not establish consent for a particular person or provide legal advice.',
       ],
     ],

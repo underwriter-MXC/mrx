@@ -24,7 +24,7 @@ const authenticatedSession = {
       id: '00000000-0000-4000-8000-000000000202',
       role: 'assistant',
       content: 'Compare the complete offer, exact rights conveyed, and obligations after closing.',
-      persona: 'tommy',
+      persona: 'travis',
       created_at: '2026-07-19T14:00:01.000Z',
     },
   ],
@@ -78,7 +78,7 @@ test.describe('MRX owner account experience', () => {
     ).toHaveAttribute('href', '/owner-intake/');
   });
 
-  test('keeps Ask Tommy available before account setup and offers optional continuity after an answer', async ({
+  test('keeps Ask Travis available before account setup and offers optional continuity after an answer', async ({
     page,
   }) => {
     await stubAnonymousSession(page);
@@ -88,7 +88,7 @@ test.describe('MRX owner account experience', () => {
         `data: ${JSON.stringify({
           type: 'message.delta',
           delta: 'Start by comparing the complete offer and the exact rights it would convey.',
-          persona: 'tommy',
+          persona: 'travis',
         })}`,
         '',
         'event: done',
@@ -101,7 +101,7 @@ test.describe('MRX owner account experience', () => {
 
     await page.goto('/');
     await page.locator('[data-open-home-chat]').first().click();
-    const input = page.getByTestId('tommy-composer-input');
+    const input = page.getByTestId('travis-composer-input');
     await expect(input).toBeEnabled();
     await expect(input).toHaveAttribute('name', 'mrx-chat-open');
     await expect(page.getByText('What first name should I use?')).toHaveCount(0);
@@ -112,12 +112,12 @@ test.describe('MRX owner account experience', () => {
     await expect(
       page.getByText('Start by comparing the complete offer and the exact rights it would convey.'),
     ).toBeVisible();
-    await expect(page.getByTestId('tommy-account-prompt')).toContainText(
+    await expect(page.getByTestId('travis-account-prompt')).toContainText(
       'Keep this conversation and any mineral-rights documents together',
     );
     await expect(
       page
-        .getByTestId('tommy-account-prompt')
+        .getByTestId('travis-account-prompt')
         .getByRole('link', { name: 'Log in or create an account' }),
     ).toHaveAttribute('href', '/account/?welcome=conversation');
     await expect(input).toBeEnabled();
@@ -129,7 +129,7 @@ test.describe('MRX owner account experience', () => {
     await page.locator('[data-open-home-chat]').first().click();
 
     await expect(page.getByText('How do I compare this offer?')).toBeVisible();
-    await expect(page.getByTestId('tommy-account-prompt')).toHaveCount(0);
+    await expect(page.getByTestId('travis-account-prompt')).toHaveCount(0);
   });
 
   test('explains the private account before requesting a passwordless link', async ({ page }) => {
@@ -184,7 +184,7 @@ test.describe('MRX owner account experience', () => {
       phone: '(432) 555-0101',
     });
     expect(identityRequest).not.toHaveProperty('permissions');
-    expect(identityRequest?.redirectTo).toMatch(/\/account\/\?welcome=angela$/);
+    expect(identityRequest?.redirectTo).toMatch(/\/account\/\?welcome=elena$/);
     await expect(page.getByRole('dialog')).toContainText('Let’s prepare your underwriter record');
     await expect(page.getByRole('dialog')).toContainText('This takes a couple of minutes');
   });

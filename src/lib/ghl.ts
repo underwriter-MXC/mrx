@@ -286,8 +286,8 @@ async function runFreeGuideAutomation(args: {
 
 async function sendGuideEmail(apiKey: string, contactId: string, form: LeadForm, guideUrl: string) {
   const firstName = form.firstName?.trim() || 'there';
-  const message = `Hi ${firstName},\n\nHere is the MRX guide you requested, "${GUIDE_TITLE}": ${guideUrl}\n\nThis guide is general educational information, not legal, tax, or valuation advice.\n\nAngela\nMineral Rights Xchange`;
-  const html = `<p>Hi ${escapeHtml(firstName)},</p><p>Here is the MRX guide you requested, <strong>${escapeHtml(GUIDE_TITLE)}</strong>:</p><p><a href="${escapeHtml(guideUrl)}">Open the guide</a></p><p>This guide is general educational information, not legal, tax, or valuation advice.</p><p>Angela<br />Mineral Rights Xchange</p>`;
+  const message = `Hi ${firstName},\n\nHere is the MRX guide you requested, "${GUIDE_TITLE}": ${guideUrl}\n\nThis guide is general educational information, not legal, tax, or valuation advice.\n\nElena\nMineral Rights Xchange`;
+  const html = `<p>Hi ${escapeHtml(firstName)},</p><p>Here is the MRX guide you requested, <strong>${escapeHtml(GUIDE_TITLE)}</strong>:</p><p><a href="${escapeHtml(guideUrl)}">Open the guide</a></p><p>This guide is general educational information, not legal, tax, or valuation advice.</p><p>Elena<br />Mineral Rights Xchange</p>`;
   return sendGhlMessage(apiKey, {
     contactId,
     type: 'Email',
@@ -305,7 +305,7 @@ async function sendGuideSms(apiKey: string, contactId: string, form: LeadForm, g
     contactId,
     type: 'SMS',
     toNumber: form.phone,
-    message: `Hi ${firstName}, this is Angela with Mineral Rights Xchange. I just sent your guide, "${GUIDE_TITLE}." Were you able to open it? Here is the link again: ${guideUrl}. Reply STOP to opt out or HELP for help.`,
+    message: `Hi ${firstName}, this is Elena with Mineral Rights Xchange. I just sent your guide, "${GUIDE_TITLE}." Were you able to open it? Here is the link again: ${guideUrl}. Reply STOP to opt out or HELP for help.`,
   });
 }
 

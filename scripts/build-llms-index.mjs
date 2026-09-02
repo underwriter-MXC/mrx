@@ -41,12 +41,12 @@ const STATE_PATHS = [
 
 const GUIDE_PATHS = [
   ['MRX AI Guide Directory', '/team/'],
-  ['Tommy', '/team/tommy/'],
-  ['Cooper', '/team/cooper/'],
-  ['Charlie', '/team/charlie/'],
-  ['Dale', '/team/dale/'],
-  ['Rebecca', '/team/rebecca/'],
-  ['Angela', '/team/angela/'],
+  ['Travis', '/team/travis/'],
+  ['Connor', '/team/connor/'],
+  ['Clay', '/team/clay/'],
+  ['Owen', '/team/owen/'],
+  ['Laurel', '/team/laurel/'],
+  ['Elena', '/team/elena/'],
 ];
 
 const POLICY_PATHS = [
@@ -110,7 +110,7 @@ const lines = [
   '',
   '- Use canonical mineralrightsxchange.com URLs, not staging, WordPress, www, or query-string variants.',
   '- MRX educational content is not a certified appraisal, title opinion, reserve certification, or individualized legal/tax advice.',
-  '- Tommy and the MRX guide team are clearly labeled fictional AI interfaces, not human authors or licensed professionals.',
+  '- Travis and the MRX guide team are clearly labeled fictional AI interfaces, not human authors or licensed professionals.',
   '- Treat regulator, tax, title, and state-specific information as time-sensitive; verify against authoritative sources linked in the article.',
   '',
   '## Owner decision paths',
@@ -121,12 +121,12 @@ const lines = [
   '',
   linkLine(['Learning Center', '/learning-center/']),
   ...[
-    ['Ariana', '/authors/ariana/'],
-    ['Dale', '/authors/dale/'],
-    ['Monty', '/authors/monty/'],
-    ['Rebecca', '/authors/rebecca/'],
-    ['Tommy', '/authors/tommy/'],
-    ['Walt', '/authors/walt/'],
+    ['Marisol', '/authors/marisol/'],
+    ['Owen', '/authors/owen/'],
+    ['Graham', '/authors/graham/'],
+    ['Laurel', '/authors/laurel/'],
+    ['Travis', '/authors/travis/'],
+    ['Wade', '/authors/wade/'],
   ].map(linkLine),
   '',
   `## Published article URLs (${posts.length})`,

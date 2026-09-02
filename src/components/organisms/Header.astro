@@ -40,7 +40,7 @@ const getHomeIntentPrompt = (href: string) =>
               href={item.href}
               aria-current={currentPath === item.href ? 'page' : undefined}
               aria-haspopup={getHomeIntentPrompt(item.href) ? 'dialog' : undefined}
-              data-tommy-prompt={getHomeIntentPrompt(item.href)}
+              data-travis-prompt={getHomeIntentPrompt(item.href)}
             >
               {item.label}
             </a>
@@ -62,18 +62,18 @@ const getHomeIntentPrompt = (href: string) =>
         <button
           class="header__ask"
           type="button"
-          aria-label="Ask Tommy for mineral-rights help"
-          data-open-tommy
-          data-cta-name="header-ask-tommy"
+          aria-label="Ask Travis for mineral-rights help"
+          data-open-travis
+          data-cta-name="header-ask-travis"
         >
           <img
-            src="/assets/mrx-homepage-v4/avatars/tommy-hermes-128.webp"
+            src="/assets/mrx-homepage-v4/avatars/travis-hermes-128.webp"
             alt=""
             width="128"
             height="128"
             aria-hidden="true"
           />
-          <span><strong>Ask Tommy</strong><small>Straight answers, 24/7</small></span>
+          <span><strong>Ask Travis</strong><small>Straight answers, 24/7</small></span>
         </button>
         <button
           class="header__toggle"
@@ -96,7 +96,7 @@ const getHomeIntentPrompt = (href: string) =>
                 href={item.href}
                 aria-current={currentPath === item.href ? 'page' : undefined}
                 aria-haspopup={getHomeIntentPrompt(item.href) ? 'dialog' : undefined}
-                data-tommy-prompt={getHomeIntentPrompt(item.href)}
+                data-travis-prompt={getHomeIntentPrompt(item.href)}
               >
                 {item.label}
               </a>
@@ -117,14 +117,14 @@ const getHomeIntentPrompt = (href: string) =>
           >
         </li>
         <li>
-          <button class="mobile-nav__ask" type="button" data-open-tommy
+          <button class="mobile-nav__ask" type="button" data-open-travis
             ><img
-              src="/assets/mrx-homepage-v4/avatars/tommy-hermes-128.webp"
+              src="/assets/mrx-homepage-v4/avatars/travis-hermes-128.webp"
               alt=""
               width="128"
               height="128"
               aria-hidden="true"
-            /> Ask Tommy for help</button
+            /> Ask Travis for help</button
           >
         </li>
       </ul>
@@ -143,17 +143,17 @@ const getHomeIntentPrompt = (href: string) =>
       btn.setAttribute('aria-expanded', open ? 'false' : 'true');
     });
   }
-  document.querySelectorAll<HTMLElement>('[data-open-tommy]').forEach((trigger) => {
+  document.querySelectorAll<HTMLElement>('[data-open-travis]').forEach((trigger) => {
     trigger.addEventListener('click', () => {
       window.dispatchEvent(new CustomEvent('mrx:open-chat'));
       nav?.setAttribute('data-open', 'false');
       btn?.setAttribute('aria-expanded', 'false');
     });
   });
-  document.querySelectorAll<HTMLAnchorElement>('[data-tommy-prompt]').forEach((trigger) => {
+  document.querySelectorAll<HTMLAnchorElement>('[data-travis-prompt]').forEach((trigger) => {
     trigger.addEventListener('click', (event) => {
       event.preventDefault();
-      const prompt = trigger.dataset.tommyPrompt;
+      const prompt = trigger.dataset.travisPrompt;
       window.dispatchEvent(new CustomEvent('mrx:open-chat', { detail: { prompt } }));
       nav?.setAttribute('data-open', 'false');
       btn?.setAttribute('aria-expanded', 'false');

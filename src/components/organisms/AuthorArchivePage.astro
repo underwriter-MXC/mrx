@@ -6,14 +6,16 @@ import { archivePagePath, type ArchivePage } from '../../lib/archive-pagination'
 import { SITE } from '../../lib/site';
 import JsonLd from '../seo/JsonLd.astro';
 import PaginationNav from '../seo/PaginationNav.astro';
+import { canonicalStaffSlug } from '../../lib/staff-identity';
 
 interface Props extends ArchivePage<CollectionEntry<'posts'>> {
   author: CollectionEntry<'authors'>;
 }
 
 const { author, items, currentPage, lastPage, totalItems } = Astro.props;
-const slug = author.id.replace(/\.mdx?$/, '');
-const guide = getGuide(slug);
+const legacySlug = author.id.replace(/\.mdx?$/, '');
+const slug = canonicalStaffSlug(legacySlug);
+const guide = getGuide(legacySlug);
 const basePath = `/authors/${slug}/`;
 const path = archivePagePath(basePath, currentPage);
 const authorUrl = `${SITE.url}${basePath}`;

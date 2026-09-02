@@ -246,7 +246,7 @@ describe('account signup consent APIs', () => {
     expect(rows.find((row) => row.channel === 'aiVoice')).toMatchObject({ granted: false });
   });
 
-  it('records paired granted=true and granted=false rows when Ask Tommy asks each channel explicitly', async () => {
+  it('records paired granted=true and granted=false rows when Ask Travis asks each channel explicitly', async () => {
     const { POST } = await import('../../src/pages/api/chat/permissions');
     const { api, calls } = createSupabaseMock({
       existingConsentReceipts: [
@@ -266,7 +266,7 @@ describe('account signup consent APIs', () => {
     });
     mockState.getSupabaseServer.mockReturnValue(api);
 
-    // Simulate Ask Tommy submitting the full consent profile after explicit
+    // Simulate Ask Travis submitting the full consent profile after explicit
     // yes/no answers for every channel: email granted, sms denied, call
     // granted, aiVoice denied. The human-call channel is gated (pending
     // disclosure version) so call is dropped server-side and no receipt is

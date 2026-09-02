@@ -1,7 +1,7 @@
 import { expect, test } from '@playwright/test';
 
 test.describe('Inherited mineral rights page', () => {
-  test('keeps the main actions and Tommy checklist visible near the top', async ({ page }) => {
+  test('keeps the main actions and Travis checklist visible near the top', async ({ page }) => {
     await page.goto('/inherited-mineral-rights/');
 
     await expect(
@@ -10,13 +10,13 @@ test.describe('Inherited mineral rights page', () => {
         name: 'Start with the records. Then talk about value.',
       }),
     ).toBeVisible();
-    await expect(page.getByRole('button', { name: 'Ask Tommy what to do first' })).toBeVisible();
+    await expect(page.getByRole('button', { name: 'Ask Travis what to do first' })).toBeVisible();
     await expect(page.getByRole('link', { name: 'See the starting documents' })).toBeVisible();
-    await expect(page.locator('.tommy-checklist')).toBeVisible();
+    await expect(page.locator('.travis-checklist')).toBeVisible();
     await expect(page.getByText('Why these records matter', { exact: true })).toBeVisible();
 
     await page.getByRole('button', { name: 'Send me the comprehensive checklist' }).click();
-    await expect(page.getByTestId('ask-tommy-dialog')).toBeVisible();
+    await expect(page.getByTestId('ask-travis-dialog')).toBeVisible();
     await expect(
       page.getByText(
         'Please send me the comprehensive inherited mineral rights checklist and help me understand what I should gather first.',
@@ -35,7 +35,7 @@ test.describe('Inherited mineral rights page', () => {
     }));
 
     expect(dimensions.pageWidth).toBeLessThanOrEqual(dimensions.viewportWidth);
-    await expect(page.locator('.tommy-checklist')).toBeVisible();
+    await expect(page.locator('.travis-checklist')).toBeVisible();
     await expect(
       page.getByRole('button', { name: 'Send me the comprehensive checklist' }),
     ).toBeVisible();

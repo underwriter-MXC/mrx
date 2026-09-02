@@ -49,7 +49,7 @@ export type ContentCluster =
   | 'title-lease-ownership-documents'
   | 'mrx-methodology-transparency-underwriter-process';
 
-export type ContentGuide = 'tommy' | 'cooper' | 'charlie' | 'dale' | 'rebecca' | 'angela';
+export type ContentGuide = 'travis' | 'connor' | 'clay' | 'owen' | 'laurel' | 'elena';
 
 export type ContentProgram = 'mrx1000' | 'legacy_learning_center';
 
@@ -74,12 +74,12 @@ const CONTENT_CLUSTER_VALUES: readonly ContentCluster[] = [
 ];
 
 const CONTENT_GUIDE_VALUES: readonly ContentGuide[] = [
-  'tommy',
-  'cooper',
-  'charlie',
-  'dale',
-  'rebecca',
-  'angela',
+  'travis',
+  'connor',
+  'clay',
+  'owen',
+  'laurel',
+  'elena',
 ];
 
 /**
@@ -237,7 +237,7 @@ export const MRX_GA4_TAXONOMY = {
 export type CtaAction =
   | 'book_review'
   | 'free_guide'
-  | 'ask_tommy'
+  | 'ask_travis'
   | 'related_article'
   | 'phone'
   | 'email'
@@ -246,7 +246,7 @@ export type CtaAction =
 const CTA_ACTION_HINTS: ReadonlyArray<[RegExp, CtaAction]> = [
   [/\/book(\/|$|\?)/, 'book_review'],
   [/\/free-guide(\/|$|\?)/, 'free_guide'],
-  [/^#?ask-tommy$/, 'ask_tommy'],
+  [/^#?ask-travis$/, 'ask_travis'],
   [/^tel:/, 'phone'],
   [/^mailto:/, 'email'],
 ];

@@ -109,7 +109,19 @@ export type PostsFrontmatter = {
     | 'transactional'
     | 'navigational'
     | 'local';
-  content_guide?: 'tommy' | 'cooper' | 'charlie' | 'dale' | 'rebecca' | 'angela';
+  content_guide?:
+    | 'travis'
+    | 'connor'
+    | 'clay'
+    | 'owen'
+    | 'laurel'
+    | 'elena'
+    | 'tommy'
+    | 'cooper'
+    | 'charlie'
+    | 'dale'
+    | 'rebecca'
+    | 'angela';
   content_batch?: string;
   internal_links?: { hub: string; sibling: string; conversion: '/book/' };
   hero_image: {
@@ -164,7 +176,19 @@ export type PostsFrontmatter = {
   operators?: string[];
   legal_tax_sensitive?: boolean;
   conversion_cta?: { label: string; href: string; prompt?: string };
-  featured_guide?: 'tommy' | 'cooper' | 'charlie' | 'dale' | 'rebecca' | 'angela';
+  featured_guide?:
+    | 'travis'
+    | 'connor'
+    | 'clay'
+    | 'owen'
+    | 'laurel'
+    | 'elena'
+    | 'tommy'
+    | 'cooper'
+    | 'charlie'
+    | 'dale'
+    | 'rebecca'
+    | 'angela';
 };
 
 export type Testimonial = {

@@ -1,4 +1,4 @@
-export type PersonaSlug = 'tommy' | 'cooper' | 'charlie' | 'dale' | 'rebecca' | 'angela';
+export type PersonaSlug = 'travis' | 'connor' | 'clay' | 'owen' | 'laurel' | 'elena';
 
 export interface KnowledgeCitation {
   id: string;

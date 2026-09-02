@@ -18,7 +18,7 @@ describe('Google tag integration', () => {
   });
 
   it('hydrates the sitewide assistant after critical content can paint', () => {
-    expect(layout).toContain('<AskTommy');
+    expect(layout).toContain('<AskTravis');
     expect(layout).toContain('client:idle');
     expect(layout).not.toContain('client:load');
   });

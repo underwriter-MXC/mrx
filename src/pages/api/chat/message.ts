@@ -37,7 +37,7 @@ const RequestSchema = z.object({
       firstName: z.string().max(80).optional(),
       location: z.string().max(200).optional(),
       currentPersona: z
-        .enum(['tommy', 'cooper', 'charlie', 'dale', 'rebecca', 'angela'])
+        .enum(['travis', 'connor', 'clay', 'owen', 'laurel', 'elena'])
         .optional(),
     })
     .optional(),
@@ -227,7 +227,7 @@ export const POST: APIRoute = async (context) => {
     const route = routeGuideDecision(
       effectiveQuestion,
       body.context?.currentPersona ||
-        (typeof ownerContext.lastPersona === 'string' ? ownerContext.lastPersona : 'tommy'),
+        (typeof ownerContext.lastPersona === 'string' ? ownerContext.lastPersona : 'travis'),
     );
     const persona = route.guide;
     const profile = ownerContext.profile as {
@@ -390,7 +390,7 @@ export const POST: APIRoute = async (context) => {
           send({ type: 'done' });
         } catch (error) {
           console.error(
-            '[Ask Tommy stream]',
+            '[Ask Travis stream]',
             error instanceof Error ? error.message : 'stream failed',
           );
           // If the model connection fails before it returns any text, keep the

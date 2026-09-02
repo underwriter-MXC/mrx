@@ -261,14 +261,14 @@ export default function LearningCenter({ posts, initialFilters = {} }: Props) {
       ) : (
         <div className="learning-empty">
           <h2>No close article match yet</h2>
-          <p>Tommy can answer the question directly and point to any useful sources.</p>
+          <p>Travis can answer the question directly and point to any useful sources.</p>
           <button
             type="button"
             onClick={() =>
               window.dispatchEvent(new CustomEvent('mrx:open-chat', { detail: { prompt: query } }))
             }
           >
-            Ask Tommy this question
+            Ask Travis this question
           </button>
         </div>
       )}

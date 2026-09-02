@@ -10,7 +10,7 @@ const viewports = [
 
 test.describe('homepage hero responsive artwork', () => {
   for (const viewport of viewports) {
-    test(`keeps Tommy's head anchored inside the ${viewport.name} hero crop`, async ({ page }) => {
+    test(`keeps Travis's head anchored inside the ${viewport.name} hero crop`, async ({ page }) => {
       await page.setViewportSize({ width: viewport.width, height: viewport.height });
       await page.goto('/');
 

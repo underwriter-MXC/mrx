@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 /**
- * Read-only GoHighLevel connection check for the Ask Tommy booking flow.
+ * Read-only GoHighLevel connection check for the Ask Travis booking flow.
  * It validates the configured calendar and fetches availability without
  * creating contacts, messages, or appointments.
  */
@@ -21,7 +21,7 @@ const missing = [
 ].filter(Boolean);
 
 if (missing.length) {
-  console.error(`Ask Tommy live booking is not configured. Missing: ${missing.join(', ')}`);
+  console.error(`Ask Travis live booking is not configured. Missing: ${missing.join(', ')}`);
   process.exit(2);
 }
 

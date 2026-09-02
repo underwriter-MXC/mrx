@@ -266,9 +266,9 @@ export async function upsertContact(
       ...(profile.phone ? { phone: profile.phone } : {}),
       ...(profile.timezone ? { timezone: profile.timezone } : {}),
       ...(Object.keys(dndSettings).length ? { dndSettings } : {}),
-      source: 'Ask Tommy',
+      source: 'Ask Travis',
       tags: [
-        'ask-tommy',
+        'ask-travis',
         'website-owner',
         ...(profile.ownerMetadata?.testRunId ? ['mrx-staging-test'] : []),
       ],
@@ -866,9 +866,9 @@ export async function sendRequestedInformation(args: {
           contactId,
           type: 'Email',
           emailTo: args.profile.email,
-          subject: 'The MRX information you asked Tommy to send',
+          subject: 'The MRX information you asked Travis to send',
           message: `${normalizedAnswer}\n\nOpen the related MRX page: ${args.link}`,
-          html: `<p>Hi ${escapeHtml(args.profile.firstName)},</p><p>${safeAnswer}</p><p><a href="${escapeHtml(args.link)}">Open the related MRX page</a></p><p>Tommy, MRX Offer and Value Guide</p>`,
+          html: `<p>Hi ${escapeHtml(args.profile.firstName)},</p><p>${safeAnswer}</p><p><a href="${escapeHtml(args.link)}">Open the related MRX page</a></p><p>Travis, MRX Offer and Value Guide</p>`,
         });
         sent.push('email');
       } else if (channel === 'sms' && args.profile.phone && args.profile.permissions.sms) {
@@ -876,7 +876,7 @@ export async function sendRequestedInformation(args: {
           contactId,
           type: 'SMS',
           toNumber: args.profile.phone,
-          message: `Hi ${args.profile.firstName}, here’s the MRX information you asked Tommy to send: ${args.link} Reply STOP to opt out or HELP for help.`,
+          message: `Hi ${args.profile.firstName}, here’s the MRX information you asked Travis to send: ${args.link} Reply STOP to opt out or HELP for help.`,
         });
         sent.push('sms');
       } else {
@@ -901,7 +901,7 @@ export async function sendGhlIntakeChecklist(args: {
   const failures: Array<'email' | 'sms'> = [];
   const checklist = args.missingFields.map((item) => `- ${normalizeMrxText(item)}`).join('\n');
   const plain = [
-    `Angela saved ${normalizeMrxText(args.propertyLabel)} to your private MRX owner profile.`,
+    `Elena saved ${normalizeMrxText(args.propertyLabel)} to your private MRX owner profile.`,
     '',
     'If you find any of these details, reply to this message or send pictures:',
     checklist,
@@ -925,7 +925,7 @@ export async function sendGhlIntakeChecklist(args: {
             emailTo: args.profile.email,
             subject: `Your MRX property checklist: ${normalizeMrxText(args.propertyLabel)}`,
             message: plain,
-            html: `<p>Hi ${escapeHtml(args.profile.firstName)},</p><p>Angela saved <strong>${escapeHtml(normalizeMrxText(args.propertyLabel))}</strong> to your private MRX owner profile.</p><p>If you find any of these details, reply to this email or send pictures:</p><ul>${items}</ul><p>You may also email pictures or documents to <a href="mailto:${DEFAULT_MRX_EMAIL_FROM}">${DEFAULT_MRX_EMAIL_FROM}</a>.</p><p><a href="${escapeHtml(args.accountLink)}">Open your private MRX profile</a></p><p>It is okay if you do not have everything. These details simply help the Senior Underwriter prepare a more useful assessment before your call.</p>`,
+            html: `<p>Hi ${escapeHtml(args.profile.firstName)},</p><p>Elena saved <strong>${escapeHtml(normalizeMrxText(args.propertyLabel))}</strong> to your private MRX owner profile.</p><p>If you find any of these details, reply to this email or send pictures:</p><ul>${items}</ul><p>You may also email pictures or documents to <a href="mailto:${DEFAULT_MRX_EMAIL_FROM}">${DEFAULT_MRX_EMAIL_FROM}</a>.</p><p><a href="${escapeHtml(args.accountLink)}">Open your private MRX profile</a></p><p>It is okay if you do not have everything. These details simply help the Senior Underwriter prepare a more useful assessment before your call.</p>`,
           });
           sent.push('email');
         } else if (channel === 'sms' && args.profile.phone && args.profile.permissions.sms) {
@@ -933,7 +933,7 @@ export async function sendGhlIntakeChecklist(args: {
             contactId,
             type: 'SMS',
             toNumber: args.profile.phone,
-            message: `Hi ${args.profile.firstName}, Angela saved ${args.propertyLabel}. Helpful if available: ${args.missingFields.join('; ')}. Reply here with details or pictures, or email ${DEFAULT_MRX_EMAIL_FROM}. Profile: ${args.accountLink} Reply STOP to opt out or HELP for help.`,
+            message: `Hi ${args.profile.firstName}, Elena saved ${args.propertyLabel}. Helpful if available: ${args.missingFields.join('; ')}. Reply here with details or pictures, or email ${DEFAULT_MRX_EMAIL_FROM}. Profile: ${args.accountLink} Reply STOP to opt out or HELP for help.`,
           });
           sent.push('sms');
         } else {

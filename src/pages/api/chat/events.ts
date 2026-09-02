@@ -14,7 +14,7 @@ import {
 const EventSchema = z.object({
   role: z.enum(['user', 'assistant', 'system']),
   content: z.string().min(1).max(4_000),
-  persona: z.enum(['tommy', 'cooper', 'charlie', 'dale', 'rebecca', 'angela']).optional(),
+  persona: z.enum(['travis', 'connor', 'clay', 'owen', 'laurel', 'elena']).optional(),
   eventType: z
     .enum(['message', 'handoff', 'profile_prompt', 'appointment', 'consent', 'notice'])
     .default('message'),

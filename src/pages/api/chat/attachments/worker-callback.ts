@@ -182,7 +182,7 @@ export const POST: APIRoute = async (context) => {
       conversationId: attachment.conversation_id,
       role: 'assistant',
       content: readSummary.content,
-      persona: 'tommy',
+      persona: 'travis',
       eventType: 'notice',
       metadata: {
         ...readSummary.metadata,

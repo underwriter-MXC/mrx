@@ -12,6 +12,83 @@ const DEPLOY_TARGET = process.env.DEPLOY_TARGET ?? 'cloudflare';
 const isHetzner = DEPLOY_TARGET === 'hetzner';
 const isVercel = DEPLOY_TARGET === 'vercel';
 
+// Keep previously published staff links working while the public identities use
+// their new MRX names. Astro applies these permanent redirects on every adapter.
+const legacyStaffRedirects = {
+  '/team/tommy': '/team/travis/',
+  '/team/cooper': '/team/connor/',
+  '/team/charlie': '/team/clay/',
+  '/team/dale': '/team/owen/',
+  '/team/rebecca': '/team/laurel/',
+  '/team/angela': '/team/elena/',
+  '/team/walt': '/team/wade/',
+  '/team/monty': '/team/graham/',
+  '/team/cami': '/team/cora/',
+  '/team/ariana': '/team/marisol/',
+  '/team/ainsley': '/team/paige/',
+  '/authors/tommy': '/authors/travis/',
+  '/authors/dale': '/authors/owen/',
+  '/authors/rebecca': '/authors/laurel/',
+  '/authors/walt': '/authors/wade/',
+  '/authors/monty': '/authors/graham/',
+  '/authors/ariana': '/authors/marisol/',
+};
+
+const publicStaffNameReplacements = [
+  ['Tommy', 'Travis'],
+  ['Cooper', 'Connor'],
+  ['Charlie', 'Clay'],
+  ['Dale', 'Owen'],
+  ['Rebecca', 'Laurel'],
+  ['Angela', 'Elena'],
+  ['Walt', 'Wade'],
+  ['Monty', 'Graham'],
+  ['Cami', 'Cora'],
+  ['Ariana', 'Marisol'],
+  ['Ainsley', 'Paige'],
+];
+
+/** @param {string} value */
+function canonicalizePublicStaffNames(value) {
+  return publicStaffNameReplacements.reduce((result, [legacy, current]) => {
+    return result
+      .replaceAll(legacy, current)
+      .replaceAll(legacy.toLowerCase(), current.toLowerCase())
+      .replaceAll(legacy.toUpperCase(), current.toUpperCase());
+  }, value);
+}
+
+function rehypeCanonicalStaffNames() {
+  /** @param {any} tree */
+  const transformTree = (tree) => {
+    /** @param {any} node */
+    const visit = (node) => {
+      if (!node || typeof node !== 'object') return;
+      if (typeof node.value === 'string') node.value = canonicalizePublicStaffNames(node.value);
+      if (node.properties && typeof node.properties === 'object') {
+        for (const [key, value] of Object.entries(node.properties)) {
+          if (typeof value === 'string') node.properties[key] = canonicalizePublicStaffNames(value);
+          if (Array.isArray(value)) {
+            node.properties[key] = value.map((item) =>
+              typeof item === 'string' ? canonicalizePublicStaffNames(item) : item,
+            );
+          }
+        }
+      }
+      if (Array.isArray(node.attributes)) {
+        for (const attribute of node.attributes) {
+          if (attribute && typeof attribute.value === 'string') {
+            attribute.value = canonicalizePublicStaffNames(attribute.value);
+          }
+        }
+      }
+      if (Array.isArray(node.children)) node.children.forEach(visit);
+    };
+    visit(tree);
+  };
+  return transformTree;
+}
+
 /**
  * Postbuild integration: rewrite per-page priorities in dist/sitemap-0.xml
  * after the sitemap integration has written it. The @astrojs/sitemap
@@ -48,6 +125,7 @@ const sitemapPriorityIntegration = {
 // the canonical "static + 2 server" pattern for Astro 5 on CF Pages.
 export default defineConfig({
   site: SITE,
+  redirects: legacyStaffRedirects,
   output: 'server',
   build: { inlineStylesheets: 'always' },
   security: { checkOrigin: true },
@@ -57,7 +135,7 @@ export default defineConfig({
       ? vercel()
       : cloudflare({ platformProxy: { enabled: true } }),
   integrations: [
-    mdx(),
+    mdx({ rehypePlugins: [rehypeCanonicalStaffNames] }),
     react(),
     sitemap({
       changefreq: 'weekly',

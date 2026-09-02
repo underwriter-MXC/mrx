@@ -220,7 +220,7 @@ export const ownerSituations: OwnerSituation[] = [
       {
         title: 'Use the right specialist',
         paragraphs: [
-          'Public permit records, lease documents, and site-specific legal advice may all be needed. Charlie can explain geological context, while Rebecca can help route legal questions to a licensed professional.',
+          'Public permit records, lease documents, and site-specific legal advice may all be needed. Clay can explain geological context, while Laurel can help route legal questions to a licensed professional.',
         ],
       },
     ],

@@ -5,8 +5,8 @@ const accountHub = readFileSync(
   new URL('../../src/components/react/AccountHub.tsx', import.meta.url),
   'utf8',
 );
-const askTommy = readFileSync(
-  new URL('../../src/components/react/AskTommy.tsx', import.meta.url),
+const askTravis = readFileSync(
+  new URL('../../src/components/react/AskTravis.tsx', import.meta.url),
   'utf8',
 );
 const identityApi = readFileSync(
@@ -94,27 +94,27 @@ describe('account conversation onboarding source contract', () => {
     expect(ownerSessionApi).toContain("latestPermission.get('call:requested_updates')");
   });
 
-  it('moves requested_updates consent capture into Ask Tommy, including human phone calls', () => {
+  it('moves requested_updates consent capture into Ask Travis, including human phone calls', () => {
     expect(accountHub).not.toContain('Choose how MRX may contact you about this owner account');
     expect(accountHub).not.toContain('CONSENT_DISCLOSURES');
-    expect(askTommy).toContain("| 'intro-call-consent'");
-    expect(askTommy).toContain('call: nextProfile.permissions.call');
-    expect(askTommy).toContain('May an MRX team member call');
-    expect(askTommy).toContain('a human MRX team member may call with my requested updates');
+    expect(askTravis).toContain("| 'intro-call-consent'");
+    expect(askTravis).toContain('call: nextProfile.permissions.call');
+    expect(askTravis).toContain('May an MRX team member call');
+    expect(askTravis).toContain('a human MRX team member may call with my requested updates');
   });
 
-  it('gates the Ask Tommy human-call prompt on the published disclosure version', () => {
+  it('gates the Ask Travis human-call prompt on the published disclosure version', () => {
     // Per CEO P3: the call channel must not be enabled in production until
-    // compliance signs off. Default `pending` short-circuits Ask Tommy to
+    // compliance signs off. Default `pending` short-circuits Ask Travis to
     // "I'll come back to that" without writing any consent receipt.
-    expect(askTommy).toContain('isHumanCallChannelEnabled');
-    expect(askTommy).toContain("I'll come back to that");
-    expect(askTommy).toContain("['email', 'sms', 'aiVoice']");
+    expect(askTravis).toContain('isHumanCallChannelEnabled');
+    expect(askTravis).toContain("I'll come back to that");
+    expect(askTravis).toContain("['email', 'sms', 'aiVoice']");
   });
 
   it('supports guided owner intake, unknown answers, property documents, and staff follow-up', () => {
     expect(ownerIntakePage).toContain('Guided Mineral Owner Intake');
-    expect(accountHub).toContain("accountIntent === 'angela'");
+    expect(accountHub).toContain("accountIntent === 'elena'");
     expect(accountHub).toContain("accountIntent === 'standalone'");
     expect(accountHub).toContain('role="dialog"');
     expect(accountHub).toContain('This takes a couple of minutes');

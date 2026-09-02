@@ -63,7 +63,7 @@ interface Props {
   keyTakeaways?: string[];
   faq?: { question: string; answer: string }[];
   sources?: { label: string; href: string }[];
-  tommyPrompt?: string;
+  travisPrompt?: string;
   /**
    * Pre-resolved GA4 measurement context. The route (blog/[...slug].astro
    * or staged/[slug].astro) computes this once from frontmatter/manifest
@@ -108,7 +108,7 @@ const {
   keyTakeaways = [],
   faq = [],
   sources = [],
-  tommyPrompt,
+  travisPrompt,
   measurement = null,
   internalLinks,
 } = Astro.props;
@@ -319,7 +319,7 @@ const socialImageType = dedicatedSocialImage
       articleTitle={articleTitle}
       reviewCta={primaryCta}
       askCtaName={askCtaName}
-      tommyPrompt={tommyPrompt}
+      travisPrompt={travisPrompt}
     />
   </article>
 </BaseLayout>

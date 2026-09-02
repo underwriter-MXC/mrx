@@ -23,6 +23,7 @@ import {
 import { faqPage } from '../../structured-data/faq';
 import { buildArticleTitle } from '../../lib/seo';
 import { resolveArticleMeasurementContext } from '../../lib/ga4-measurement';
+import { canonicalStaffSlug, canonicalizeStaffNames } from '../../lib/staff-identity';
 
 export async function getStaticPaths() {
   const posts = await getCollection('posts', isPublishedPost);
@@ -49,13 +50,14 @@ const slug = post.id.replace(/\.mdx?$/, '');
 // Article JSON-LD (per SEO plan §2.4)
 const authorEntry = await getEntry(post.data.author);
 const authorName = authorEntry?.data.name ?? 'MRX Editorial Team';
-const authorSlug = authorEntry?.id.replace(/\.mdx?$/, '') ?? 'mrx-editorial-team';
+const legacyAuthorSlug = authorEntry?.id.replace(/\.mdx?$/, '') ?? 'mrx-editorial-team';
+const authorSlug = canonicalStaffSlug(legacyAuthorSlug);
 const authorHref = `/authors/${authorSlug}/`;
 const authorDescription =
   authorEntry?.data.description ??
   'The Mineral Rights Xchange editorial organization responsible for publication and review.';
 const articleGuide =
-  getGuide(authorSlug) ?? getGuide(post.data.featured_guide) ?? getGuide('tommy');
+  getGuide(legacyAuthorSlug) ?? getGuide(post.data.featured_guide) ?? getGuide('travis');
 if (!articleGuide) throw new Error('The default MRX topic guide is missing.');
 const editorialAuthor = await getEntry('authors', 'mrx-editorial-team');
 const editorialAuthorName = editorialAuthor?.data.name ?? 'MRX Editorial Team';
@@ -116,13 +118,15 @@ const measurement = resolveArticleMeasurementContext({
     href: cta.href,
     ctaName: `post-${slug}-cta-review`,
   }}
-  askCtaName={`post-${slug}-cta-ask-tommy`}
+  askCtaName={`post-${slug}-cta-ask-travis`}
   internalLinks={internalLinks}
-  answerSummary={post.data.answer_summary}
+  answerSummary={
+    post.data.answer_summary ? canonicalizeStaffNames(post.data.answer_summary) : undefined
+  }
   keyTakeaways={post.data.key_takeaways}
   faq={post.data.faq}
   sources={post.data.sources}
-  tommyPrompt={cta.prompt}
+  travisPrompt={cta.prompt}
   measurement={measurement}
 >
   <JsonLd slot="structured-data" data={articleJsonLd} />

@@ -11,9 +11,9 @@ const citations = [
   },
 ];
 
-describe('Ask Tommy conversational replies', () => {
+describe('Ask Travis conversational replies', () => {
   it('responds to selling intent with a short, plainspoken answer and one question', () => {
-    const answer = fallbackAnswer('I want to sell', 'tommy', citations);
+    const answer = fallbackAnswer('I want to sell', 'travis', citations);
 
     expect(answer).toContain('Whether selling makes sense depends on your goals');
     expect(answer.split(/\s+/).length).toBeLessThan(55);
@@ -22,7 +22,7 @@ describe('Ask Tommy conversational replies', () => {
   });
 
   it('asks for one detail at a time instead of giving an intake checklist', () => {
-    const answer = fallbackAnswer('I received an offer', 'tommy', citations);
+    const answer = fallbackAnswer('I received an offer', 'travis', citations);
 
     expect(answer.split(/\s+/).length).toBeLessThan(40);
     expect(answer.match(/\?/g)).toHaveLength(1);
@@ -30,7 +30,7 @@ describe('Ask Tommy conversational replies', () => {
   });
 
   it('explains the benefit of basin context without calling it a recording jurisdiction', () => {
-    const answer = fallbackAnswer('The property is in Midland', 'tommy', citations, {
+    const answer = fallbackAnswer('The property is in Midland', 'travis', citations, {
       status: 'resolved',
       scope: 'mineral_interest',
       city: 'Midland',

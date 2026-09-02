@@ -101,8 +101,8 @@ const pathways = [
     aria-hidden="true"
   />
   <img
-    class="mrx-ai-hero__tommy"
-    src="/assets/mrx-homepage-v4/backgrounds/from-scratch/tommy-underwriter-scratch.png"
+    class="mrx-ai-hero__travis"
+    src="/assets/mrx-homepage-v4/backgrounds/from-scratch/travis-underwriter-scratch.png"
     alt=""
     width="545"
     height="1485"
@@ -137,7 +137,7 @@ const pathways = [
           href={phoneHref || '#mrx-ai-chat'}
           aria-label={phoneHref
             ? phoneLabel
-            : 'Phone number not configured; ask Tommy or book online'}
+            : 'Phone number not configured; ask Travis or book online'}
           data-cta-name="home-ai-nav-call"
           data-phone-configured={phoneHref ? 'true' : 'false'}
         >
@@ -172,15 +172,15 @@ const pathways = [
 
     <div class="mrx-ai-hero__grid">
       <div class="mrx-ai-hero__copy">
-        <p class="mrx-ai-hero__kicker">Meet Tommy™</p>
+        <p class="mrx-ai-hero__kicker">Meet Travis™</p>
         <h1 id="mrx-ai-hero-title">
           Don’t Sell Your Mineral Rights Until You Know What They’re Really Worth.
         </h1>
         <p class="mrx-ai-hero__lede">
-          Before accepting an offer, talk with Tommy, MRX AI Underwriter.
+          Before accepting an offer, talk with Travis, MRX AI Underwriter.
         </p>
 
-        <ul class="mrx-ai-hero__checks" aria-label="What Tommy helps mineral owners understand">
+        <ul class="mrx-ai-hero__checks" aria-label="What Travis helps mineral owners understand">
           <li>Understand your minerals</li>
           <li>Compare offers with confidence</li>
           <li>Know your true market value</li>
@@ -225,7 +225,7 @@ const pathways = [
         <div class="mrx-ai-chat__head">
           <img
             class="mrx-ai-chat__avatar"
-            src="/assets/mrx-homepage-v4/avatars/tommy-mrx-underwriter-headshot.jpg"
+            src="/assets/mrx-homepage-v4/avatars/travis-mrx-underwriter-headshot.jpg"
             alt=""
             width="1254"
             height="1254"
@@ -233,7 +233,7 @@ const pathways = [
             aria-hidden="true"
           />
           <div>
-            <strong>Tommy™</strong>
+            <strong>Travis™</strong>
             <p>MRX AI Underwriter</p>
             <p><span></span> Online Now</p>
           </div>
@@ -242,7 +242,7 @@ const pathways = [
         </div>
 
         <div class="mrx-ai-chat__bubble" data-ai-response aria-live="polite">
-          <strong>Hi, I’m <span>Tommy</span>.</strong><br /><br />Most mineral owners don’t need
+          <strong>Hi, I’m <span>Travis</span>.</strong><br /><br />Most mineral owners don’t need
           another sales pitch. They need answers.<br /><br /><b>What’s your biggest question?</b>
         </div>
 
@@ -267,13 +267,13 @@ const pathways = [
         </div>
 
         <form class="mrx-ai-chat__form" data-ai-form>
-          <label class="sr-only" for="mrx-ai-answer">Ask Tommy about your mineral rights</label>
+          <label class="sr-only" for="mrx-ai-answer">Ask Travis about your mineral rights</label>
           <input
             id="mrx-ai-answer"
             name="answer"
             type="text"
             autocomplete="off"
-            placeholder="Ask Tommy anything about your mineral rights..."
+            placeholder="Ask Travis anything about your mineral rights..."
           />
           <button type="submit" aria-label="Send question to MRX AI">➜</button>
         </form>
@@ -338,7 +338,7 @@ const pathways = [
     <p>GHL handoff engine</p>
     <h2 id="mrx-ai-engine-title">From AI intake to GHL calendar, CRM, and underwriter handoff.</h2>
     <p>
-      Tommy’s job is to answer the owner’s first question, collect context, and move qualified
+      Travis’s job is to answer the owner’s first question, collect context, and move qualified
       owners into the GHL calendar. The site uses the verified MRX GHL calendar path for booking and
       the existing GHL contact API path for form submissions.
     </p>
@@ -360,7 +360,7 @@ const pathways = [
       <span>Documents</span><strong>Offer, lease, division order, royalty statement</strong>
     </div>
     <div>
-      <span>Next step</span><strong>Tommy summary → GHL calendar → underwriter review</strong>
+      <span>Next step</span><strong>Travis summary → GHL calendar → underwriter review</strong>
     </div>
   </div>
 </section>
@@ -408,7 +408,7 @@ const pathways = [
     );
     pointer-events: none;
   }
-  .mrx-ai-hero__tommy {
+  .mrx-ai-hero__travis {
     position: absolute;
     z-index: 2;
     left: 44.5%;
@@ -915,7 +915,7 @@ const pathways = [
     .mrx-ai-hero h1 {
       font-size: clamp(3rem, 4.8vw, 4.8rem);
     }
-    .mrx-ai-hero__tommy {
+    .mrx-ai-hero__travis {
       width: min(30vw, 460px);
       left: 43.5%;
     }
@@ -935,7 +935,7 @@ const pathways = [
     .mrx-ai-hero__copy {
       max-width: 720px;
     }
-    .mrx-ai-hero__tommy {
+    .mrx-ai-hero__travis {
       opacity: 0.32;
       left: 72%;
       width: min(46vw, 420px);
@@ -1019,30 +1019,30 @@ const pathways = [
         const text = clean.toLowerCase();
         if (/inherit|heir|probate|deed|title|record|owner/.test(text))
           return [
-            'Cooper',
+            'Connor',
             'MRX Research™',
             'verify ownership records, county context, and document gaps',
           ];
         if (/lease|clause|contract|legal|tax|1031/.test(text))
           return [
-            'Rebecca',
+            'Laurel',
             'MRX Legal™',
             'flag lease, tax, and contract questions to review with qualified advisors',
           ];
         if (/production|decline|well|operator|royalty|check/.test(text))
           return [
-            'Dale',
+            'Owen',
             'MRX Engineering™',
             'organize production history, operator facts, and royalty-check context',
           ];
         if (/market|timing|hold|sell now|wait|strategy/.test(text))
           return [
-            'Monty',
+            'Graham',
             'MRX Strategy™',
             'compare timing, basin context, and decision tradeoffs',
           ];
         return [
-          'Tommy',
+          'Travis',
           'MRX Underwriter™',
           'prepare a directional offer-review and valuation-driver summary',
         ];

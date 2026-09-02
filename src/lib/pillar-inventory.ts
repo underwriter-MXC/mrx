@@ -7,6 +7,7 @@ import {
   type PillarDefinition,
 } from './content-graph';
 import type { ArticlePillar } from './astro/content';
+import { canonicalStaffSlug } from './staff-identity';
 
 /**
  * Pillar inventory: fail-closed article enumeration for any of the 9
@@ -115,8 +116,8 @@ export async function getPillarInventoryPage(
     excerpt: post.data.excerpt,
     category: post.data.category,
     categoryLabel: post.data.category.replaceAll('-', ' '),
-    author: post.data.author.id.replace(/\.mdx?$/, ''),
-    authorSlug: post.data.author.id.replace(/\.mdx?$/, ''),
+    author: canonicalStaffSlug(post.data.author.id.replace(/\.mdx?$/, '')),
+    authorSlug: canonicalStaffSlug(post.data.author.id.replace(/\.mdx?$/, '')),
     publishedAt: post.data.published_at,
     readingMinutes: Math.max(
       1,

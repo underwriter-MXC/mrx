@@ -2,12 +2,12 @@ import { test, expect } from '@playwright/test';
 import { stubAnonymousSession } from './helpers/stub-session';
 
 async function reply(page: any, value: string) {
-  const input = page.getByTestId('tommy-composer-input');
+  const input = page.getByTestId('travis-composer-input');
   await input.fill(value);
   await input.press('Enter');
 }
 
-test.describe('Ask Tommy conversational experience', () => {
+test.describe('Ask Travis conversational experience', () => {
   test('labels the header account control as Log In', async ({ page }) => {
     await stubAnonymousSession(page);
     await page.goto('/');
@@ -17,19 +17,19 @@ test.describe('Ask Tommy conversational experience', () => {
     await expect(banner.getByText(/Owner sign in/i)).toHaveCount(0);
   });
 
-  test('opens the on-screen help window from the top Ask Tommy control', async ({ page }) => {
+  test('opens the on-screen help window from the top Ask Travis control', async ({ page }) => {
     await stubAnonymousSession(page);
     await page.goto('/');
 
     await page
       .getByRole('banner')
-      .getByRole('button', { name: 'Ask Tommy for mineral-rights help', exact: true })
+      .getByRole('button', { name: 'Ask Travis for mineral-rights help', exact: true })
       .click();
 
-    await expect(page.getByTestId('ask-tommy-dialog')).toBeVisible();
+    await expect(page.getByTestId('ask-travis-dialog')).toBeVisible();
   });
 
-  test('opens homepage intent navigation in the assistant and routes inherited-rights help to Cooper', async ({
+  test('opens homepage intent navigation in the assistant and routes inherited-rights help to Connor', async ({
     page,
   }) => {
     await stubAnonymousSession(page);
@@ -40,11 +40,11 @@ test.describe('Ask Tommy conversational experience', () => {
         'event: persona.handoff',
         `data: ${JSON.stringify({
           type: 'persona.handoff',
-          from: 'tommy',
-          to: 'cooper',
+          from: 'travis',
+          to: 'connor',
           reason: 'ownership and county records',
           message:
-            'Cooper is the right MRX guide for ownership and county records. I am bringing Cooper into the conversation.',
+            'Connor is the right MRX guide for ownership and county records. I am bringing Connor into the conversation.',
         })}`,
         '',
         'event: message.delta',
@@ -52,7 +52,7 @@ test.describe('Ask Tommy conversational experience', () => {
           type: 'message.delta',
           delta:
             'I can help you organize the inherited-interest records and the next document to find.',
-          persona: 'cooper',
+          persona: 'connor',
         })}`,
         '',
         'event: done',
@@ -67,8 +67,8 @@ test.describe('Ask Tommy conversational experience', () => {
     const primaryNav = page.getByRole('navigation', { name: 'Primary' });
     await primaryNav.getByRole('link', { name: 'Inherited Rights', exact: true }).click();
 
-    await expect(page.getByTestId('ask-tommy-dialog')).toBeVisible();
-    await expect(page.getByText('Talking with Cooper', { exact: true })).toBeVisible();
+    await expect(page.getByTestId('ask-travis-dialog')).toBeVisible();
+    await expect(page.getByText('Talking with Connor', { exact: true })).toBeVisible();
     await expect(
       page.getByText(
         'I can help you organize the inherited-interest records and the next document to find.',
@@ -85,7 +85,7 @@ test.describe('Ask Tommy conversational experience', () => {
         : 'Before you sign anything, I can help you slow it down and compare the complete offer.';
       const body = [
         'event: message.delta',
-        `data: ${JSON.stringify({ type: 'message.delta', delta: answer, persona: 'tommy' })}`,
+        `data: ${JSON.stringify({ type: 'message.delta', delta: answer, persona: 'travis' })}`,
         '',
         // A stale server may still send this event during a rolling deploy. The
         // client must ignore it instead of interrupting the mineral conversation.
@@ -102,7 +102,7 @@ test.describe('Ask Tommy conversational experience', () => {
 
     await page.goto('/');
     await page.locator('[data-open-home-chat]').first().click();
-    await expect(page.getByTestId('ask-tommy-dialog')).toBeVisible();
+    await expect(page.getByTestId('ask-travis-dialog')).toBeVisible();
     await expect(page.getByText('How may I help you?', { exact: true })).toBeVisible();
     await expect(page.getByText('Skip for now', { exact: true })).toHaveCount(0);
     await expect(page.getByRole('button', { name: 'Document uploads unavailable' })).toBeDisabled();
@@ -114,13 +114,13 @@ test.describe('Ask Tommy conversational experience', () => {
       ),
     ).toBeVisible();
     await expect(page.getByText('What first name should I use?')).toHaveCount(0);
-    await expect(page.getByTestId('tommy-composer-input')).toHaveAttribute(
+    await expect(page.getByTestId('travis-composer-input')).toHaveAttribute(
       'placeholder',
-      'Ask Tommy anything about your minerals…',
+      'Ask Travis anything about your minerals…',
     );
-    await expect(page.getByTestId('tommy-composer-input')).toHaveAttribute('name', 'mrx-chat-open');
+    await expect(page.getByTestId('travis-composer-input')).toHaveAttribute('name', 'mrx-chat-open');
 
-    await expect(page.getByTestId('tommy-account-prompt')).toBeVisible();
+    await expect(page.getByTestId('travis-account-prompt')).toBeVisible();
     await expect(
       page.getByText('Keep this conversation and any mineral-rights documents together'),
     ).toBeVisible();
@@ -136,9 +136,9 @@ test.describe('Ask Tommy conversational experience', () => {
       ),
     ).toBeVisible();
     await expect(page.getByText('What first name should I use?')).toHaveCount(0);
-    await expect(page.getByTestId('tommy-composer-input')).toHaveAttribute('name', 'mrx-chat-open');
+    await expect(page.getByTestId('travis-composer-input')).toHaveAttribute('name', 'mrx-chat-open');
     await page.getByRole('button', { name: 'Keep chatting for now' }).click();
-    await expect(page.getByTestId('tommy-account-prompt')).toHaveCount(0);
+    await expect(page.getByTestId('travis-account-prompt')).toHaveCount(0);
   });
 
   test('collects the basic owner profile before document upload', async ({ page }) => {
@@ -158,7 +158,7 @@ test.describe('Ask Tommy conversational experience', () => {
     ).toBeVisible();
   });
 
-  test('renders an Ask Tommy map card from a grounded location event', async ({ page }) => {
+  test('renders an Ask Travis map card from a grounded location event', async ({ page }) => {
     await stubAnonymousSession(page);
     await page.route('**/api/chat/message', async (route) => {
       const body = [
@@ -183,7 +183,7 @@ test.describe('Ask Tommy conversational experience', () => {
           type: 'message.delta',
           delta:
             'The document-supported location I have is Martin County, Texas. I am showing a map pin from the stored coordinates, not inventing a street address.',
-          persona: 'tommy',
+          persona: 'travis',
         })}`,
         '',
         'event: done',
@@ -196,7 +196,7 @@ test.describe('Ask Tommy conversational experience', () => {
 
     await page.goto('/');
     await page.locator('[data-open-home-chat]').first().click();
-    await expect(page.getByTestId('ask-tommy-dialog')).toBeVisible();
+    await expect(page.getByTestId('ask-travis-dialog')).toBeVisible();
     await reply(page, 'where are my rights located?');
 
     const card = page.getByRole('link', { name: /Open map for Martin County, Texas/i });
@@ -263,8 +263,8 @@ test.describe('Ask Tommy conversational experience', () => {
     });
 
     await page.goto('/?book=1');
-    await expect(page.getByTestId('ask-tommy-dialog')).toBeVisible();
-    await expect(page.getByText('I’m Angela, the MRX scheduling guide.')).toBeVisible();
+    await expect(page.getByTestId('ask-travis-dialog')).toBeVisible();
+    await expect(page.getByText('I’m Elena, the MRX scheduling guide.')).toBeVisible();
     await expect(
       page.getByText('I’ll check the live MRX calendar and offer a few real openings.'),
     ).toBeVisible();
@@ -279,7 +279,7 @@ test.describe('Ask Tommy conversational experience', () => {
     await page.locator('[data-reply="2030-07-16T22:00:00.000Z"]').click();
 
     await expect(page.getByText('What first name should I put on the appointment?')).toBeVisible();
-    await expect(page.getByTestId('tommy-composer-input')).toHaveAttribute(
+    await expect(page.getByTestId('travis-composer-input')).toHaveAttribute(
       'name',
       'mrx-chat-booking-name',
     );
@@ -289,12 +289,12 @@ test.describe('Ask Tommy conversational experience', () => {
         'What email should I use for your appointment details and secure MRX member access?',
       ),
     ).toBeVisible();
-    await expect(page.getByTestId('tommy-composer-input')).toHaveAttribute(
+    await expect(page.getByTestId('travis-composer-input')).toHaveAttribute(
       'name',
       'mrx-chat-booking-email',
     );
-    await expect(page.getByTestId('tommy-composer-input')).toHaveAttribute('autocomplete', 'off');
-    await expect(page.getByTestId('tommy-composer-input')).toHaveAttribute('inputmode', 'email');
+    await expect(page.getByTestId('travis-composer-input')).toHaveAttribute('autocomplete', 'off');
+    await expect(page.getByTestId('travis-composer-input')).toHaveAttribute('inputmode', 'email');
     await reply(page, 'daryl@example.com');
     await expect(
       page.getByText('What phone number should a senior MRX underwriter team member call?'),
@@ -309,7 +309,7 @@ test.describe('Ask Tommy conversational experience', () => {
     await expect(page.getByText('May MRX also text the appointment confirmation')).toBeVisible();
     await page.locator('[data-reply="yes"]').click();
     await expect(
-      page.getByText('May Angela, MRX’s AI scheduling guide, use GoHighLevel Voice AI'),
+      page.getByText('May Elena, MRX’s AI scheduling guide, use GoHighLevel Voice AI'),
     ).toBeVisible();
     await expect(page.getByText('This AI-voice permission is optional')).toBeVisible();
     await page.locator('[data-reply="yes"]').click();
@@ -320,7 +320,7 @@ test.describe('Ask Tommy conversational experience', () => {
     await page.evaluate(() =>
       window.dispatchEvent(new CustomEvent('mrx:open-chat', { detail: { booking: true } })),
     );
-    await expect(page.getByTestId('tommy-appointment-status')).toHaveText('✓ Call booked');
+    await expect(page.getByTestId('travis-appointment-status')).toHaveText('✓ Call booked');
     await expect(page.getByText('I won’t book another one.').last()).toBeVisible();
     await expect(page.getByText('already have a phone appointment booked')).toBeVisible();
 
@@ -328,15 +328,15 @@ test.describe('Ask Tommy conversational experience', () => {
     await page.evaluate(() =>
       window.dispatchEvent(new CustomEvent('mrx:open-chat', { detail: { booking: true } })),
     );
-    await expect(page.getByTestId('tommy-appointment-status')).toHaveText('✓ Call booked');
+    await expect(page.getByTestId('travis-appointment-status')).toHaveText('✓ Call booked');
     await expect(page.getByText('I won’t book another one.').last()).toBeVisible();
   });
 });
 
-test.describe('Ask Tommy mobile conversation', () => {
+test.describe('Ask Travis mobile conversation', () => {
   test.use({ viewport: { width: 390, height: 844 } });
 
-  test('shows the Ask Tommy panel before the hero copy and keeps its main input above the fold', async ({
+  test('shows the Ask Travis panel before the hero copy and keeps its main input above the fold', async ({
     page,
   }) => {
     await page.goto('/');
@@ -366,7 +366,7 @@ test.describe('Ask Tommy mobile conversation', () => {
     await stubAnonymousSession(page);
     await page.goto('/');
     await page.locator('[data-open-home-chat]').first().click();
-    const dialog = page.getByTestId('ask-tommy-dialog');
+    const dialog = page.getByTestId('ask-travis-dialog');
     await expect(dialog).toBeVisible();
     await expect(page.getByText('How may I help you?', { exact: true })).toBeVisible();
     await page.waitForTimeout(350);

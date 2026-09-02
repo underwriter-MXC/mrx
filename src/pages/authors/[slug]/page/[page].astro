@@ -7,6 +7,7 @@ import {
   type ArchivePage,
 } from '../../../../lib/archive-pagination';
 import { isPublishedPost } from '../../../../lib/content-graph';
+import { canonicalStaffSlug } from '../../../../lib/staff-identity';
 
 export const prerender = true;
 
@@ -30,7 +31,7 @@ export async function getStaticPaths() {
           a.id.localeCompare(b.id),
       );
     return archivePageNumbers(authorPosts.length).map((page) => ({
-      params: { slug: authorId, page: String(page) },
+      params: { slug: canonicalStaffSlug(authorId), page: String(page) },
       props: { author, page: paginateArchive(authorPosts, page) },
     }));
   });

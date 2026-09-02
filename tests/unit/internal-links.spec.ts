@@ -69,7 +69,7 @@ describe('rendered internal-link canonicalization', () => {
   it('keeps every intentional account anchor marked nofollow', () => {
     const files = [
       'src/components/organisms/Header.astro',
-      'src/components/react/AskTommy.tsx',
+      'src/components/react/AskTravis.tsx',
       'src/pages/contact.astro',
       'src/pages/communication-preferences.astro',
     ];

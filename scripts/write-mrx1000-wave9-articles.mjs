@@ -1177,7 +1177,7 @@ function renderFrontmatter(article, publishedAt) {
     'draft: false',
     'publication_status: draft',
     'noindex: true',
-    `author: ${q('ariana')}`,
+    `author: ${q('marisol')}`,
     `category: ${q(article.category)}`,
     'tags:',
     ...article.tags.map((tag) => `  - ${q(tag)}`),
@@ -1185,7 +1185,7 @@ function renderFrontmatter(article, publishedAt) {
     `content_program: ${q('mrx1000')}`,
     `content_cluster: ${q(article.cluster)}`,
     `content_intent: ${q(article.intent)}`,
-    `content_guide: ${q('cooper')}`,
+    `content_guide: ${q('connor')}`,
     `content_batch: ${q('wave9')}`,
     'internal_links:',
     `  hub: ${q(article.hub)}`,
@@ -1246,7 +1246,7 @@ function renderFrontmatter(article, publishedAt) {
     `  label: ${q(article.ctaLabel)}`,
     `  href: ${q('/book/')}`,
     `  prompt: ${q(article.ctaPrompt)}`,
-    `featured_guide: ${q('cooper')}`,
+    `featured_guide: ${q('connor')}`,
     '---',
   ];
   return `${lines.join('\n')}\n`;

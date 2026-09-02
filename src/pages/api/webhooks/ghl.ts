@@ -219,7 +219,7 @@ export const POST: APIRoute = async ({ request }) => {
               await supabase.from('messages').insert({
                 conversation_id: conversationId,
                 role: 'system',
-                persona: 'angela',
+                persona: 'elena',
                 event_type: 'notice',
                 content: transcript,
                 metadata: {

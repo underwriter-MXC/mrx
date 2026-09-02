@@ -359,7 +359,7 @@ export async function syncVerifiedOwnerToGhl(profileId: string) {
       : booleanText(facts.get('competing_offer_received')),
     competingOfferAmount: clean(facts.get('competing_offer_amount') || facts.get('offer_amount')),
     appointmentStatus: clean(appointment?.status),
-    bookedBy: appointment ? 'Ask Tommy / Angela' : '',
+    bookedBy: appointment ? 'Ask Travis / Elena' : '',
     consentVersion: clean((consentResult.data ?? [])[0]?.disclosure_version),
     phoneVerified: String(Boolean(profile.phone_verified_at)),
     is1031Interest: booleanText(facts.get('1031_interest')),

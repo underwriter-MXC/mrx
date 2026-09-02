@@ -62,8 +62,8 @@ const seededCandidates: Record<string, AddressCandidate[]> = {
     ],
     ['Dundee Post Office', '6759 State Route 93, Dundee, OH 44624', 40.5861527, -81.6090242],
     [
-      'Bloomingdale Post Office',
-      '111 High Street, Bloomingdale, OH 43910',
+      'Bloomingowen Post Office',
+      '111 High Street, Bloomingowen, OH 43910',
       40.3420319,
       -80.8165726,
     ],
@@ -95,8 +95,8 @@ const seededCandidates: Record<string, AddressCandidate[]> = {
       -93.7652263,
     ],
     [
-      'Barksdale Air Force Base Post Office',
-      '450 Curtiss Road, Barksdale Air Force Base, LA 71110',
+      'Barksowen Air Force Base Post Office',
+      '450 Curtiss Road, Barksowen Air Force Base, LA 71110',
       32.4933344,
       -93.675281,
     ],

@@ -116,7 +116,7 @@ CATEGORIES: dict[str, list[str]] = {
         "Tutorial", "Question", "Idea", "Lightbulb", "Knowledge", "Library", "Article",
     ],
     "agents": [
-        "Tommy", "Rebecca", "Charlie", "Cooper", "Chesty", "Tex", "Grant", "Reed",
+        "Travis", "Laurel", "Clay", "Connor", "Chesty", "Tex", "Grant", "Reed",
         "Mason", "Radar", "Stackhouse", "Iron Mike", "Doc Holliday", "Mission", "Orders",
         "Command Center", "Mission Complete", "Mission Failed", "Mission Processing", "AI Team",
     ],
@@ -193,7 +193,7 @@ def choose_motif(category: str, name: str) -> str:
         (("home", "settings", "login", "logout", "account", "resources", "education", "about", "contact", "pricing"), "navigation"),
         (("stars", "top rated", "award", "veteran", "american flag", "experience"), "trust"),
         (("book", "library", "knowledge", "graduation"), "education"),
-        (("mission", "command", "radar", "chesty", "tommy", "rebecca", "charlie", "cooper", "tex", "grant", "reed", "mason", "stackhouse", "iron mike", "doc holliday"), "agent"),
+        (("mission", "command", "radar", "chesty", "travis", "laurel", "clay", "connor", "tex", "grant", "reed", "mason", "stackhouse", "iron mike", "doc holliday"), "agent"),
         (("megaphone", "seo", "google", "social", "campaign", "traffic", "leads", "funnels"), "marketing"),
         (("success", "warning", "error", "info", "loading", "sync", "refresh", "pending", "offline", "online", "completed", "in progress", "paused", "active", "inactive"), "status"),
     ]

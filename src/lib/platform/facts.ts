@@ -353,7 +353,7 @@ export async function extractDocumentFacts(args: {
 export async function buildOwnerContext(conversationId: string, profileId: string, query = '') {
   const supabase = getSupabaseServer();
   if (!supabase)
-    return { history: [], profile: {}, facts: [], interests: [], memory: [], lastPersona: 'tommy' };
+    return { history: [], profile: {}, facts: [], interests: [], memory: [], lastPersona: 'travis' };
   const [messages, profile, facts, interests, memory] = await Promise.all([
     supabase
       .from('messages')
@@ -395,7 +395,7 @@ export async function buildOwnerContext(conversationId: string, profileId: strin
   const interestRows = interests.data ?? [];
   const messageRows = messages.data ?? [];
   const lastPersona =
-    messageRows.find((message) => typeof message.persona === 'string')?.persona ?? 'tommy';
+    messageRows.find((message) => typeof message.persona === 'string')?.persona ?? 'travis';
   const primaryInterestId = (profileData as { primary_mineral_interest_id?: string })
     .primary_mineral_interest_id;
   if (primaryInterestId) {

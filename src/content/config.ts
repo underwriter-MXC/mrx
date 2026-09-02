@@ -143,7 +143,22 @@ const ContentCluster = z.enum([
   'mrx-methodology-transparency-underwriter-process',
 ]);
 
-const ContentGuide = z.enum(['tommy', 'cooper', 'charlie', 'dale', 'rebecca', 'angela']);
+const ContentGuide = z.enum([
+  'travis',
+  'connor',
+  'clay',
+  'owen',
+  'laurel',
+  'elena',
+  // Immutable reviewed articles retain their legacy internal IDs. Runtime
+  // presentation maps these aliases to the current public staff identities.
+  'tommy',
+  'cooper',
+  'charlie',
+  'dale',
+  'rebecca',
+  'angela',
+]);
 
 const InternalLinkTriangle = z.object({
   hub: z.string().regex(/^\/.+\/$/, 'internal_links.hub must be a trailing-slash path'),
@@ -261,10 +276,7 @@ const posts = defineCollection({
           prompt: z.string().min(10).optional(),
         })
         .optional(),
-      featured_guide: z
-        .enum(['tommy', 'cooper', 'charlie', 'dale', 'rebecca', 'angela'])
-        .optional()
-        .default('tommy'),
+      featured_guide: ContentGuide.optional().default('travis'),
     })
     .superRefine((data, ctx) => {
       // Every tax-legal post must have disclaimer_top: true (per L-2..L-9).

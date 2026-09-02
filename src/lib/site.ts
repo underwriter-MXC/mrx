@@ -51,7 +51,7 @@ export const NAV = {
       { label: 'Terms & AI Disclosure', href: '/terms/' },
       { label: 'Communication Preferences', href: '/communication-preferences/' },
     ],
-    cta: [{ label: 'Ask Tommy', href: '#ask-tommy', variant: 'primary' as const }],
+    cta: [{ label: 'Ask Travis', href: '#ask-travis', variant: 'primary' as const }],
   },
   cta: {
     book: { label: 'Book My Free Review', href: '/book' },

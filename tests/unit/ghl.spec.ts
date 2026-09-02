@@ -168,7 +168,7 @@ describe('submitToGHL', () => {
     ).toBe('2021-04-15');
   });
 
-  it('sends Angela SMS only when SMS consent is explicitly checked', async () => {
+  it('sends Elena SMS only when SMS consent is explicitly checked', async () => {
     fetchSpy
       .mockResolvedValueOnce(okJson({ contact: { id: 'C-789' } }))
       .mockResolvedValueOnce(okJson({ tagsAdded: ['mrx-source-free-guide'] }))
@@ -186,7 +186,7 @@ describe('submitToGHL', () => {
     expect(tagBody.tags).toContain('mrx-free-guide-sms-consent');
     const smsBody = JSON.parse((fetchSpy.mock.calls[3][1] as RequestInit).body as string);
     expect(smsBody.type).toBe('SMS');
-    expect(smsBody.message).toContain('this is Angela with Mineral Rights Xchange');
+    expect(smsBody.message).toContain('this is Elena with Mineral Rights Xchange');
     expect(smsBody.message).toContain('Reply STOP to opt out or HELP for help');
   });
 

@@ -5,7 +5,7 @@ export const CONSENT_VERSION = '2026-07-15-ai-voice-draft';
 /**
  * Human-call channel is gated on a published disclosure version. Until the
  * disclosure text receives compliance sign-off the channel is treated as
- * `pending` and the Ask Tommy prompt short-circuits to "I'll come back to
+ * `pending` and the Ask Travis prompt short-circuits to "I'll come back to
  * that" without writing any consent receipt.
  *
  * Set this constant to a dated, compliance-approved version string (e.g.

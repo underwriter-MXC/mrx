@@ -54,7 +54,7 @@ const Schema = z.object({
   unknownFields: z.array(z.string().trim().min(1).max(80)).max(24).optional(),
   intakeVersion: z.string().trim().max(100).optional(),
   source: z
-    .enum(['account_guided_intake', 'angela_post_signup', 'standalone_guided_intake'])
+    .enum(['account_guided_intake', 'elena_post_signup', 'standalone_guided_intake'])
     .optional(),
 });
 
@@ -238,7 +238,7 @@ export const POST: APIRoute = async (context) => {
       mineral_interest_id: interestId,
       field: 'mineral_rights_assessment_intake',
       value: {
-        intakeVersion: parsed.data.intakeVersion || '2026-07-20-angela-v1',
+        intakeVersion: parsed.data.intakeVersion || '2026-07-20-elena-v1',
         source: parsed.data.source || 'account_guided_intake',
         label,
         locationDescription: locationDescription || null,

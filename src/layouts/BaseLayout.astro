@@ -13,7 +13,7 @@ import Footer from '../components/organisms/Footer.astro';
 import Seo from '../components/seo/Seo.astro';
 import type { Crumb } from '../structured-data/breadcrumb';
 import { SITE } from '../lib/site';
-import AskTommy from '../components/react/AskTommy';
+import AskTravis from '../components/react/AskTravis';
 import type { ArticleMeasurementContext } from '../lib/ga4-measurement';
 
 interface Props {
@@ -378,12 +378,12 @@ const measurementJson = measurement ? JSON.stringify(measurement) : 'null';
           : { event: 'mrx_page_view' };
         __mrxPush(pageViewExtra);
 
-        // /book starts the conversational Angela booking flow. Availability
+        // /book starts the conversational Elena booking flow. Availability
         // remains inside the assistant rather than exposing a public calendar.
         if (window.location.pathname.replace(/\/$/, '') === '/book') {
           __mrxPush({
             event: 'booking_assistant_view',
-            booking_surface: 'angela_conversation',
+            booking_surface: 'elena_conversation',
             booking_source: 'book_page',
           });
         }
@@ -476,7 +476,7 @@ const measurementJson = measurement ? JSON.stringify(measurement) : 'null';
       </main>
       <Footer />
     </div>
-    <AskTommy
+    <AskTravis
       client:idle
       supabaseUrl={import.meta.env.PUBLIC_SUPABASE_URL}
       supabaseAnonKey={import.meta.env.PUBLIC_SUPABASE_ANON_KEY}

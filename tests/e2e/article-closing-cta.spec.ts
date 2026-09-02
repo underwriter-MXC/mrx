@@ -3,7 +3,7 @@ import { expect, test } from '@playwright/test';
 const articlePath = '/blog/how-to-sell-mineral-rights-in-texas/';
 
 test.describe('Universal article closing CTA', () => {
-  test('offers both a Tommy conversation and a mineral-rights review', async ({ page }) => {
+  test('offers both a Travis conversation and a mineral-rights review', async ({ page }) => {
     await page.goto(articlePath);
 
     const cta = page.locator('[data-article-closing-cta]');
@@ -16,8 +16,8 @@ test.describe('Universal article closing CTA', () => {
       /^\/book\/?$/,
     );
 
-    await cta.getByRole('button', { name: /Ask Tommy first/ }).click();
-    await expect(page.locator('.tommy-panel')).toBeVisible();
+    await cta.getByRole('button', { name: /Ask Travis first/ }).click();
+    await expect(page.locator('.travis-panel')).toBeVisible();
 
     await expect(
       page.getByRole('contentinfo').getByRole('heading', {

@@ -14,7 +14,7 @@ import { fallbackConversationAnswer } from '../../src/lib/platform/conversation'
 
 const repoFile = (path: string) => readFileSync(new URL(`../../${path}`, import.meta.url), 'utf8');
 
-describe('Ask Tommy document grounding', () => {
+describe('Ask Travis document grounding', () => {
   it('builds a redacted structured document-read summary for a royalty statement', () => {
     const summary = buildDocumentReadSummary({
       originalName: 'Revenue Statement_LAGUNA RESOURCES_1174_2026-06.pdf',
@@ -153,14 +153,14 @@ describe('Ask Tommy document grounding', () => {
   it('wires worker completion into an in-chat read summary and refreshed chat context', () => {
     const callback = repoFile('src/pages/api/chat/attachments/worker-callback.ts');
     const messageApi = repoFile('src/pages/api/chat/message.ts');
-    const askTommy = repoFile('src/components/react/AskTommy.tsx');
+    const askTravis = repoFile('src/components/react/AskTravis.tsx');
 
     expect(callback).toContain('buildDocumentReadSummary');
     expect(callback).toContain("eventType: 'notice'");
     expect(callback).toContain("source_type: 'summary'");
     expect(messageApi).toContain('documentMemoryForPrompt');
     expect(messageApi).toContain('location.card');
-    expect(askTommy).toContain('pollDocumentRead');
-    expect(askTommy).toContain('tommy-location-card');
+    expect(askTravis).toContain('pollDocumentRead');
+    expect(askTravis).toContain('travis-location-card');
   });
 });

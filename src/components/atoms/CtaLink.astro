@@ -12,7 +12,7 @@ interface Props {
   variant?: 'primary' | 'secondary' | 'ghost';
   size?: 'sm' | 'md' | 'lg';
   class?: string;
-  openTommy?: boolean;
+  openTravis?: boolean;
   rel?: string;
 }
 
@@ -22,7 +22,7 @@ const {
   variant = 'primary',
   size = 'md',
   class: className,
-  openTommy = false,
+  openTravis = false,
   rel,
 } = Astro.props;
 
@@ -38,7 +38,7 @@ if (!ctaName || ctaName.trim() === '') {
 
 <a
   data-cta-name={ctaName}
-  data-open-tommy={openTommy || undefined}
+  data-open-travis={openTravis || undefined}
   href={href}
   rel={rel}
   class:list={['btn', `btn--${variant}`, size !== 'md' ? `btn--${size}` : '', className]}

@@ -216,9 +216,9 @@ test.describe('Learning Center layout', () => {
       await expect(page.getByRole('link', { name: 'Next →', exact: true })).toHaveCount(0);
     }
 
-    await page.goto('/authors/ariana/');
+    await page.goto('/authors/marisol/');
     const authorSummary = await page
-      .getByRole('heading', { level: 2, name: /articles? by Ariana/ })
+      .getByRole('heading', { level: 2, name: /articles? by Marisol/ })
       .innerText();
     const authorTotal = Number(authorSummary.match(/^(\d+)\s+/)?.[1] ?? '0');
     await expect(page.locator('.author-articles__grid article')).toHaveCount(
@@ -226,10 +226,10 @@ test.describe('Learning Center layout', () => {
     );
     if (authorTotal > ARCHIVE_PAGE_SIZE) {
       await page.getByRole('link', { name: 'Next →', exact: true }).click();
-      await expect(page).toHaveURL('/authors/ariana/page/2/');
+      await expect(page).toHaveURL('/authors/marisol/page/2/');
       await expect(page.locator('link[rel="prev"]')).toHaveAttribute(
         'href',
-        'https://mineralrightsxchange.com/authors/ariana/',
+        'https://mineralrightsxchange.com/authors/marisol/',
       );
     } else {
       await expect(page.getByRole('link', { name: 'Next →', exact: true })).toHaveCount(0);
@@ -238,30 +238,30 @@ test.describe('Learning Center layout', () => {
 
   test('each article identifies its real author and relevant MRX topic guide', async ({ page }) => {
     const articles = [
-      ['how-are-mineral-rights-valued', 'dale', 'Dale', 'MRX Production and Royalty Guide'],
+      ['how-are-mineral-rights-valued', 'owen', 'Owen', 'MRX Production and Royalty Guide'],
       [
         'how-to-compare-mineral-rights-buyers-in-texas',
-        'tommy',
-        'Tommy',
+        'travis',
+        'Travis',
         'MRX Offer and Value Guide',
       ],
-      ['how-to-sell-mineral-rights-in-texas', 'tommy', 'Tommy', 'MRX Offer and Value Guide'],
+      ['how-to-sell-mineral-rights-in-texas', 'travis', 'Travis', 'MRX Offer and Value Guide'],
       [
         'texas-severance-tax-what-mineral-rights-owners-need-to-know',
-        'monty',
-        'Monty',
+        'graham',
+        'Graham',
         'MRX Decision-Context Guide',
       ],
       [
         'what-documents-do-you-need-to-sell-mineral-rights-in-texas',
-        'ariana',
-        'Ariana',
+        'marisol',
+        'Marisol',
         'MRX Owner-Options Guide',
       ],
       [
         'what-is-a-clawback-clause-in-a-mineral-rights-sale',
-        'rebecca',
-        'Rebecca',
+        'laurel',
+        'Laurel',
         'MRX Terms and Professional-Routing Guide',
       ],
     ] as const;

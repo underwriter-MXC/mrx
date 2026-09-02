@@ -54,7 +54,7 @@ const prompts = {
     'I want to talk with someone at MRX about my mineral rights and next steps.',
 };
 
-export function buildAskTommyScenarios(runId = '00000000-0000-4000-8000-000000000100') {
+export function buildAskTravisScenarios(runId = '00000000-0000-4000-8000-000000000100') {
   return Array.from({ length: 100 }, (_, index) => {
     const ordinal = index + 1;
     const padded = String(ordinal).padStart(3, '0');
@@ -82,21 +82,21 @@ export function buildAskTommyScenarios(runId = '00000000-0000-4000-8000-00000000
       adversarial: index >= 65 && index < 70,
       expectedGuide:
         category === 'inheritance_estate' || category === 'ownership_records'
-          ? 'cooper'
+          ? 'connor'
           : category === 'geology'
-            ? 'charlie'
+            ? 'clay'
             : category === 'royalty_decline'
-              ? 'dale'
+              ? 'owen'
               : category === 'legal_tax_routing'
-                ? 'rebecca'
+                ? 'laurel'
                 : category === 'scheduling_follow_up'
-                  ? 'angela'
-                  : 'tommy',
+                  ? 'elena'
+                  : 'travis',
     };
   });
 }
 
-export function summarizeAskTommyScenarios(scenarios) {
+export function summarizeAskTravisScenarios(scenarios) {
   const countBy = (field) =>
     Object.fromEntries(
       [...new Set(scenarios.map((scenario) => scenario[field]))].map((value) => [

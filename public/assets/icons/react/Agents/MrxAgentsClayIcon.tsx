@@ -1,10 +1,10 @@
 import * as React from 'react';
 
-export interface MrxAgentsCharlieIconProps extends React.SVGProps<SVGSVGElement> {
+export interface MrxAgentsClayIconProps extends React.SVGProps<SVGSVGElement> {
   title?: string;
 }
 
-export function MrxAgentsCharlieIcon({ title = 'Charlie', ...props }: MrxAgentsCharlieIconProps) {
+export function MrxAgentsClayIcon({ title = 'Clay', ...props }: MrxAgentsClayIconProps) {
   return (
     <svg viewBox="0 0 64 64" fill="none" aria-label={title} role="img" {...props}>
       <title>{title}</title>
@@ -17,4 +17,4 @@ export function MrxAgentsCharlieIcon({ title = 'Charlie', ...props }: MrxAgentsC
   );
 }
 
-export default MrxAgentsCharlieIcon;
+export default MrxAgentsClayIcon;

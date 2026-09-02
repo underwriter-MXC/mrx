@@ -3,13 +3,14 @@ import { getCollection, type CollectionEntry } from 'astro:content';
 import AuthorArchivePage from '../../components/organisms/AuthorArchivePage.astro';
 import { paginateArchive } from '../../lib/archive-pagination';
 import { isPublishedPost } from '../../lib/content-graph';
+import { canonicalStaffSlug } from '../../lib/staff-identity';
 
 export const prerender = true;
 
 export async function getStaticPaths() {
   const authors = await getCollection('authors', (author) => author.data.kind === 'ai-guide');
   return authors.map((author) => ({
-    params: { slug: author.id.replace(/\.mdx?$/, '') },
+    params: { slug: canonicalStaffSlug(author.id.replace(/\.mdx?$/, '')) },
     props: { author },
   }));
 }

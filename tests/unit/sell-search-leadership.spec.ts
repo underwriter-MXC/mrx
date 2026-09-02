@@ -64,12 +64,12 @@ describe('sell-mineral-rights search leadership controls', () => {
     expect(data).toMatch(/^h1:\s*['"]?.*sell mineral rights/im);
     expect(data).toMatch(/^disclaimer_top:\s*false\s*$/m);
     expect(source).toContain('Review My Selling Options');
-    expect(source).toContain('Ask Tommy First');
+    expect(source).toContain('Ask Travis First');
     expect(source).toContain('/blog/how-to-sell-mineral-rights-in-texas/');
     expect(source).toContain('/blog/what-documents-do-you-need-to-sell-mineral-rights-in-texas/');
     expect(source).toContain('/guides/how-to-find-out-what-your-mineral-rights-are.pdf');
-    expect(source).toContain("href: '#ask-tommy'");
-    expect(source).toContain('openTommy: true');
+    expect(source).toContain("href: '#ask-travis'");
+    expect(source).toContain('openTravis: true');
     expect(source).not.toContain('?ask=1');
     expect(source).toContain('reassurance="No card required. No obligation."');
 
@@ -77,13 +77,13 @@ describe('sell-mineral-rights search leadership controls', () => {
     const ctaLink = readFileSync(ctaLinkPath, 'utf8');
     const hero = readFileSync(heroPath, 'utf8');
     const header = readFileSync(headerPath, 'utf8');
-    expect(ctaBlock).toContain('openTommy={secondaryCta.openTommy}');
+    expect(ctaBlock).toContain('openTravis={secondaryCta.openTravis}');
     expect(ctaBlock).toMatch(
       /\.cta-block :global\(\.btn--ghost\)[\s\S]*?color: var\(--color-white\)/,
     );
-    expect(ctaLink).toContain('data-open-tommy={openTommy || undefined}');
+    expect(ctaLink).toContain('data-open-travis={openTravis || undefined}');
     expect(hero).toContain('<h2>{cardHeading}</h2>');
-    expect(header).toContain('aria-label="Ask Tommy for mineral-rights help"');
+    expect(header).toContain('aria-label="Ask Travis for mineral-rights help"');
     expect(source).not.toMatch(/data-cta-name="smr-[^"]+">\s*\n/);
   });
 

@@ -1,7 +1,7 @@
 import { mkdir, writeFile } from 'node:fs/promises';
 import { randomUUID } from 'node:crypto';
 import { resolve } from 'node:path';
-import { buildAskTommyScenarios, summarizeAskTommyScenarios } from './lib/ask-tommy-scenarios.mjs';
+import { buildAskTravisScenarios, summarizeAskTravisScenarios } from './lib/ask-travis-scenarios.mjs';
 import { isProductionHostname } from './lib/production-host.mjs';
 
 const baseUrl = (process.env.MRX_STAGING_BASE_URL || '').replace(/\/$/, '');
@@ -11,7 +11,7 @@ const vercelProtectionCookie = process.env.MRX_STAGING_VERCEL_COOKIE || '';
 const runId = process.env.MRX_TEST_RUN_ID || randomUUID();
 const dryRun = process.argv.includes('--dry-run');
 const outputDirectory = resolve('test-results');
-const scenarios = buildAskTommyScenarios(runId);
+const scenarios = buildAskTravisScenarios(runId);
 
 if (!dryRun) {
   if (!baseUrl || !secret)
@@ -123,7 +123,7 @@ async function executeScenario(scenario) {
   if (restored.profile?.phone !== scenario.phone) errors.push('phone');
   if (messages.filter((message) => message.role === 'user').length !== 1)
     errors.push('user_message_count');
-  const expectedAssistantMessages = scenario.expectedGuide === 'tommy' ? 1 : 2;
+  const expectedAssistantMessages = scenario.expectedGuide === 'travis' ? 1 : 2;
   if (
     messages.filter((message) => message.role === 'assistant').length !== expectedAssistantMessages
   )
@@ -224,7 +224,7 @@ const report = {
   runId,
   generatedAt: new Date().toISOString(),
   mode: dryRun ? 'fixture-validation' : 'staging-integration',
-  population: summarizeAskTommyScenarios(scenarios),
+  population: summarizeAskTravisScenarios(scenarios),
   results,
   cleanup,
   passed: dryRun
@@ -233,12 +233,12 @@ const report = {
 };
 await mkdir(outputDirectory, { recursive: true });
 await writeFile(
-  resolve(outputDirectory, `ask-tommy-100-${runId}.json`),
+  resolve(outputDirectory, `ask-travis-100-${runId}.json`),
   `${JSON.stringify(report, null, 2)}\n`,
 );
 await writeFile(
-  resolve(outputDirectory, `ask-tommy-100-${runId}.md`),
-  `# Ask Tommy 100-conversation report\n\n- Run: ${runId}\n- Mode: ${report.mode}\n- Owners: ${scenarios.length}\n- Passed: ${report.passed ? 'yes' : 'no'}\n- Failed conversations: ${results.filter((result) => !result.passed).length}\n`,
+  resolve(outputDirectory, `ask-travis-100-${runId}.md`),
+  `# Ask Travis 100-conversation report\n\n- Run: ${runId}\n- Mode: ${report.mode}\n- Owners: ${scenarios.length}\n- Passed: ${report.passed ? 'yes' : 'no'}\n- Failed conversations: ${results.filter((result) => !result.passed).length}\n`,
 );
 console.log(JSON.stringify(report, null, 2));
 if (!report.passed) process.exitCode = 1;

@@ -85,7 +85,7 @@ function checklist(processing = false) {
 }
 
 async function reply(page: Page, value: string) {
-  const input = page.getByTestId('tommy-composer-input');
+  const input = page.getByTestId('travis-composer-input');
   await input.fill(value);
   await input.press('Enter');
 }
@@ -447,7 +447,7 @@ async function completeLaunchFunnel(page: Page) {
     () => (window as Window & { __mrxChatReady?: boolean }).__mrxChatReady === true,
   );
   await page.getByRole('button', { name: 'Find three phone times' }).click();
-  await expect(page.getByTestId('ask-tommy-dialog')).toBeVisible();
+  await expect(page.getByTestId('ask-travis-dialog')).toBeVisible();
   await page.locator('[data-reply="timezone-confirm"]').click();
   await expect(
     page.getByText(
@@ -469,7 +469,7 @@ async function completeLaunchFunnel(page: Page) {
   await expect(page.getByText('May MRX also text the appointment confirmation')).toBeVisible();
   await page.locator('[data-reply="no"]').last().click();
   await expect(
-    page.getByText('May Angela, MRX’s AI scheduling guide, use GoHighLevel Voice AI'),
+    page.getByText('May Elena, MRX’s AI scheduling guide, use GoHighLevel Voice AI'),
   ).toBeVisible();
   await page.locator('[data-reply="no"]').last().click();
   await expect(page).toHaveURL(/\/account\/\?welcome=appointment$/);
@@ -511,7 +511,7 @@ async function completeLaunchFunnel(page: Page) {
     .getByLabel('Questions, offers, deadlines, or other details')
     .fill('Explain the recent payment and help me prepare questions for the call.');
   expect(captured.intakePayload).toBeNull();
-  const saveProperty = page.locator('.angela-intake button[type="submit"]');
+  const saveProperty = page.locator('.elena-intake button[type="submit"]');
   await expect(saveProperty).toHaveText('Save this property');
   await saveProperty.click();
   await expect(page.getByRole('heading', { name: 'Your property is saved' })).toBeVisible();

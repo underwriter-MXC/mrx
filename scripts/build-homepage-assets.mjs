@@ -5,11 +5,11 @@ import sharp from 'sharp';
 
 const projectRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const assetRoot = resolve(projectRoot, 'public/assets/mrx-homepage-v4');
-const heroSource = resolve(assetRoot, 'backgrounds/hero-tommy-left-layout.png');
-const avatarSource = resolve(assetRoot, 'hermes/tommy-avatar-circle-1200.png');
+const heroSource = resolve(assetRoot, 'backgrounds/hero-travis-left-layout.png');
+const avatarSource = resolve(assetRoot, 'hermes/travis-avatar-circle-1200.png');
 
 async function buildHero(width) {
-  const base = resolve(assetRoot, `backgrounds/hero-tommy-left-layout-${width}`);
+  const base = resolve(assetRoot, `backgrounds/hero-travis-left-layout-${width}`);
   const pipeline = sharp(heroSource).resize({ width, withoutEnlargement: true });
 
   await Promise.all([
@@ -19,7 +19,7 @@ async function buildHero(width) {
 }
 
 async function buildAvatar(width) {
-  const output = resolve(assetRoot, `avatars/tommy-hermes-${width}.webp`);
+  const output = resolve(assetRoot, `avatars/travis-hermes-${width}.webp`);
   await sharp(avatarSource)
     .resize({ width, height: width, fit: 'cover' })
     .webp({ quality: 86, smartSubsample: true })
