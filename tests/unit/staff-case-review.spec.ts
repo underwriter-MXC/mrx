@@ -369,7 +369,7 @@ describe('MRX staff-only case review workspace', () => {
       'Sort owner cases by',
       'Identity &amp; location',
       'Case summary',
-      'GHL opportunity',
+      'CRM opportunity',
       'Mineral interests',
       'Risk flags',
       'Workspace dossier',

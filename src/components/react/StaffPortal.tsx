@@ -967,7 +967,7 @@ export default function StaffPortal({ supabaseUrl, supabaseAnonKey }: Props) {
       if (!response.ok) throw new Error('stage_update_failed');
       setStatus(
         result.ghlSync?.status === 'sync_failed'
-          ? `Saved ${item.name} in MRX. GHL sync failed; review the mapping or retry.`
+          ? `Saved ${item.name} in MRX. CRM sync failed; review the mapping or retry.`
           : `${item.name} moved to ${labelFor(statusOptions, nextStatus)}.`,
       );
       await refreshDashboard();
@@ -1499,8 +1499,8 @@ export default function StaffPortal({ supabaseUrl, supabaseAnonKey }: Props) {
             >
               <StaffIcon name="sync" />
               {dashboard?.summary.ghlSyncFailures
-                ? `${dashboard.summary.ghlSyncFailures} GHL sync exception${dashboard.summary.ghlSyncFailures === 1 ? '' : 's'}`
-                : 'GHL sync healthy'}
+                ? `${dashboard.summary.ghlSyncFailures} CRM sync exception${dashboard.summary.ghlSyncFailures === 1 ? '' : 's'}`
+                : 'CRM sync healthy'}
             </span>
           </div>
           <div className="staff-user-menu">
@@ -2032,7 +2032,7 @@ export default function StaffPortal({ supabaseUrl, supabaseAnonKey }: Props) {
                                 : 'Never contacted'}
                             </span>
                             <span className="staff-case-row__chip">
-                              GHL: {semantics.isGhlMapped ? semantics.ghlDisplay : 'Not mapped'}
+                              CRM: {semantics.isGhlMapped ? semantics.ghlDisplay : 'Not mapped'}
                             </span>
                           </div>
                         </button>
@@ -2069,8 +2069,8 @@ export default function StaffPortal({ supabaseUrl, supabaseAnonKey }: Props) {
                         </small>
                         <small>
                           {selected.ghl_contact_id
-                            ? `GHL contact ${selected.ghl_contact_id}`
-                            : 'No linked GHL contact'}
+                            ? `CRM contact ${selected.ghl_contact_id}`
+                            : 'No linked CRM contact'}
                         </small>
                       </div>
                       <div className="staff-profile-metrics">
@@ -2371,10 +2371,10 @@ export default function StaffPortal({ supabaseUrl, supabaseAnonKey }: Props) {
                       )}
                     </section>
 
-                    <section aria-labelledby="staff-profile-ghl-heading">
-                      <p className="account-kicker">GHL opportunity</p>
-                      <h3 id="staff-profile-ghl-heading" className="staff-section-title">
-                        Pipeline, stage, opportunity id, monetary value, GHL pipeline status
+                    <section aria-labelledby="staff-profile-crm-heading">
+                      <p className="account-kicker">CRM opportunity</p>
+                      <h3 id="staff-profile-crm-heading" className="staff-section-title">
+                        Pipeline, stage, opportunity id, monetary value, CRM pipeline status
                       </h3>
                       <div className="staff-summary-cards">
                         <div>
@@ -2397,11 +2397,11 @@ export default function StaffPortal({ supabaseUrl, supabaseAnonKey }: Props) {
                           <strong>
                             {workspace?.ghl_pipeline_status?.replaceAll('_', ' ') || 'Not mapped'}
                           </strong>
-                          <small>GHL pipeline status</small>
+                          <small>CRM pipeline status</small>
                         </div>
                       </div>
                       <small>
-                        Sourced from MRX_GHL_OWNER_CASE_STAGE_MAP_JSON or live sync; never a
+                        Sourced from the configured MRX case-stage mapping or live sync; never a
                         hardcoded placeholder.
                       </small>
                     </section>
@@ -2693,8 +2693,8 @@ export default function StaffPortal({ supabaseUrl, supabaseAnonKey }: Props) {
                           />
                         </label>
                         <small>
-                          Staff-only dossier. Saving a mapped status synchronizes the real GHL
-                          opportunity when the owner has a linked GHL contact. Current GHL sync:{' '}
+                          Staff-only dossier. Saving a mapped status synchronizes the real CRM
+                          opportunity when the owner has a linked CRM contact. Current CRM sync:{' '}
                           {workspace?.ghl_pipeline_status?.replaceAll('_', ' ') || 'not attempted'}.
                         </small>
                         <button type="submit">Save private case dossier</button>

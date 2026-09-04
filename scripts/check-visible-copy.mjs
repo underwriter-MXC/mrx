@@ -22,7 +22,7 @@ if (rendered) {
   }
 }
 const allowedExtensions = rendered
-  ? new Set(['.html', '.json', '.txt', '.xml'])
+  ? new Set(['.html', '.js', '.json', '.txt', '.xml'])
   : new Set(['.astro', '.json', '.md', '.mdx', '.ts', '.tsx']);
 const failures = [];
 const contentExtensions = new Set(['.json', '.md', '.mdx', '.txt']);
@@ -58,6 +58,16 @@ function inspectFile(path, displayRoot) {
         : -1;
     lines.forEach((line, index) => {
       const location = `${relative(displayRoot.pathname, path)}:${index + 1}`;
+      const isWebsiteSurface =
+        rendered ||
+        path.includes('/src/components/') ||
+        path.includes('/src/content/') ||
+        (path.includes('/src/pages/') && !path.includes('/src/pages/api/')) ||
+        path.endsWith('/src/lib/platform/consent.ts');
+      if (isWebsiteSurface && /\b(?:GHL|GoHighLevel|HighLevel)\b/.test(line)) {
+        failures.push(`${location}: customer-platform vendor reference`);
+      }
+      if (rendered && extension === '.js') return;
       if (/[\u2014\u2013]/.test(line)) failures.push(`${location}: long dash`);
       const trimmed = line.trim();
       if (trimmed !== '---' && /(^|\s)---(?=\s|$)/.test(line)) {
@@ -102,7 +112,7 @@ if (!rendered) {
 }
 
 if (failures.length) {
-  console.error('MRX public copy contains prohibited dash or content-quality patterns:');
+  console.error('MRX public copy contains prohibited vendor, dash, or content-quality patterns:');
   failures.forEach((failure) => console.error(`- ${failure}`));
   process.exit(1);
 }

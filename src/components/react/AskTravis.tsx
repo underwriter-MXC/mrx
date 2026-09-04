@@ -1314,7 +1314,7 @@ function AskTravisApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pr
         }
         setStep('open');
         await guideSay(
-          'I saved your choice. Without a phone number, MRX will not text or place a GHL Voice AI update call. What would you like to ask next?',
+          'I saved your choice. Without a phone number, MRX will not text or place an AI voice update call. What would you like to ask next?',
           'travis',
         );
         return;
@@ -1374,7 +1374,7 @@ function AskTravisApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pr
       setProfile(next);
       setStep('intro-ai-voice-consent');
       await guideSay(
-        `May MRX use GoHighLevel Voice AI to call ${next.phone} with an AI-generated voice and give the mineral-rights case updates you specifically request? This is optional, is not required to receive help, and may be revoked at any time.`,
+        `May MRX use AI-generated voice technology to call ${next.phone} and give the mineral-rights case updates you specifically request? This is optional, is not required to receive help, and may be revoked at any time.`,
         'travis',
       );
       return;
@@ -1382,9 +1382,7 @@ function AskTravisApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pr
     if (step === 'intro-ai-voice-consent') {
       const allowed = value === 'yes';
       addUserMessage(
-        allowed
-          ? 'Yes, GHL Voice AI may give my requested case updates.'
-          : 'No GHL Voice AI calls.',
+        allowed ? 'Yes, MRX may use AI voice for my requested case updates.' : 'No AI voice calls.',
       );
       const next = {
         ...profile,
@@ -1399,8 +1397,8 @@ function AskTravisApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pr
       setStep('open');
       await guideSay(
         allowed
-          ? 'I saved your choices. MRX must verify your phone number before any GHL Voice AI update, and you can revoke permission at any time. What would you like to ask next?'
-          : 'I saved your choices. MRX will not use GHL Voice AI to call you. What would you like to ask next?',
+          ? 'I saved your choices. MRX must verify your phone number before any AI voice update, and you can revoke permission at any time. What would you like to ask next?'
+          : 'I saved your choices. MRX will not use AI voice to call you. What would you like to ask next?',
         'travis',
       );
       return;
@@ -1488,7 +1486,7 @@ function AskTravisApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pr
       setProfile(next);
       setStep('booking-ai-voice-consent');
       await guideSay(
-        `May Elena, MRX’s AI scheduling guide, use GoHighLevel Voice AI to call ${next.phone} with an AI-generated voice for the appointment or document updates you request? MRX will identify itself. This AI-voice permission is optional, may be revoked at any time, and is not required to book or use website help.`,
+        `May Elena, MRX’s AI scheduling guide, use AI-generated voice technology to call ${next.phone} for the appointment or document updates you request? MRX will identify itself. This AI-voice permission is optional, may be revoked at any time, and is not required to book or use website help.`,
         'elena',
       );
       return;
@@ -1497,8 +1495,8 @@ function AskTravisApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pr
       const allowed = value === 'yes';
       addUserMessage(
         allowed
-          ? 'Yes, Elena may use GHL Voice AI for appointment or document reminders.'
-          : 'No GHL Voice AI reminders, please.',
+          ? 'Yes, Elena may use AI voice for appointment or document reminders.'
+          : 'No AI voice reminders, please.',
       );
       track('communication_permission', {
         channel: 'aiVoice',
@@ -2200,8 +2198,8 @@ function AskTravisApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pr
                 )}
               </div>
               <p>
-                Travis remembers this conversation on this device. Contact details are only used with
-                the permissions you choose.
+                Travis remembers this conversation on this device. Contact details are only used
+                with the permissions you choose.
               </p>
             </footer>
           </section>

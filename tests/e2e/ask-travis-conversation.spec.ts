@@ -118,7 +118,10 @@ test.describe('Ask Travis conversational experience', () => {
       'placeholder',
       'Ask Travis anything about your minerals…',
     );
-    await expect(page.getByTestId('travis-composer-input')).toHaveAttribute('name', 'mrx-chat-open');
+    await expect(page.getByTestId('travis-composer-input')).toHaveAttribute(
+      'name',
+      'mrx-chat-open',
+    );
 
     await expect(page.getByTestId('travis-account-prompt')).toBeVisible();
     await expect(
@@ -136,7 +139,10 @@ test.describe('Ask Travis conversational experience', () => {
       ),
     ).toBeVisible();
     await expect(page.getByText('What first name should I use?')).toHaveCount(0);
-    await expect(page.getByTestId('travis-composer-input')).toHaveAttribute('name', 'mrx-chat-open');
+    await expect(page.getByTestId('travis-composer-input')).toHaveAttribute(
+      'name',
+      'mrx-chat-open',
+    );
     await page.getByRole('button', { name: 'Keep chatting for now' }).click();
     await expect(page.getByTestId('travis-account-prompt')).toHaveCount(0);
   });
@@ -309,7 +315,7 @@ test.describe('Ask Travis conversational experience', () => {
     await expect(page.getByText('May MRX also text the appointment confirmation')).toBeVisible();
     await page.locator('[data-reply="yes"]').click();
     await expect(
-      page.getByText('May Elena, MRX’s AI scheduling guide, use GoHighLevel Voice AI'),
+      page.getByText('May Elena, MRX’s AI scheduling guide, use AI-generated voice technology'),
     ).toBeVisible();
     await expect(page.getByText('This AI-voice permission is optional')).toBeVisible();
     await page.locator('[data-reply="yes"]').click();

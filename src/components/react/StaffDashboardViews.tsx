@@ -260,7 +260,7 @@ export function StaffOverview({
         <div>
           <StaffIcon name="sync" />
           <span>
-            <strong>GHL sync health</strong>
+            <strong>CRM sync health</strong>
             <small>
               {summary.ghlMappedCases} mapped · {summary.ghlSyncFailures} failures
             </small>
@@ -302,7 +302,9 @@ export function StaffPipeline({
         <div>
           <p className="account-kicker">Deals pipeline</p>
           <h2>Move opportunities forward</h2>
-          <p>MRX status is authoritative. Approved stage changes mirror to GHL from the server.</p>
+          <p>
+            MRX status is authoritative. Approved stage changes mirror to the CRM from the server.
+          </p>
         </div>
         <div className="staff-pipeline-totals" aria-label="Pipeline totals">
           <span>
@@ -376,7 +378,7 @@ export function StaffPipeline({
                           <dd>{contactLabel(item)}</dd>
                         </div>
                         <div>
-                          <dt>GHL</dt>
+                          <dt>CRM</dt>
                           <dd
                             className={`staff-sync-state staff-sync-state--${item.ghlSyncStatus}`}
                           >

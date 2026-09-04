@@ -25,7 +25,7 @@ export const CONSENT_DISCLOSURES: Record<keyof ContactProfile['permissions'], st
   marketingSms: 'Optional: text me educational MRX updates. This is not required to book.',
   call: 'I agree that a human representative from Mineral Rights Xchange (MRX) may call me at the phone number I provide about owner-account, document, appointment, and mineral-rights case updates I request. MRX is the calling party, the designated contact number is the one I provided, the call is optional, and I may revoke this permission at any time.',
   aiVoice:
-    'I agree that MRX may use automated or AI-generated voice technology, including GoHighLevel Voice AI, to call me at the phone number I provide, identify MRX, and give only owner-account, document, appointment, and mineral-rights case updates I request. Permission is optional, may be revoked at any time, and is not required for website help.',
+    'I agree that MRX may use automated or AI-generated voice technology to call me at the phone number I provide, identify MRX, and give only owner-account, document, appointment, and mineral-rights case updates I request. Permission is optional, may be revoked at any time, and is not required for website help.',
 };
 
 function utmContext(sourceUrl: string) {

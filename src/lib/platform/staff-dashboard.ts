@@ -171,7 +171,7 @@ function attentionReasons(item: Omit<StaffDashboardCase, 'attentionReasons'>) {
   if (item.daysSinceContact == null) reasons.push('Never contacted');
   else if (item.daysSinceContact > 30) reasons.push('Contact overdue');
   if (item.assigneeLabel === 'Unassigned') reasons.push('Unassigned');
-  if (item.ghlSyncStatus === 'sync_failed') reasons.push('GHL sync failed');
+  if (item.ghlSyncStatus === 'sync_failed') reasons.push('CRM sync failed');
   return reasons;
 }
 

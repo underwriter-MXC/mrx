@@ -104,7 +104,7 @@ describe('staff backoffice dashboard', () => {
       'High risk',
       'Never contacted',
       'Unassigned',
-      'GHL sync failed',
+      'CRM sync failed',
     ]);
   });
 

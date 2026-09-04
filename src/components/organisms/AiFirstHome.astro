@@ -87,7 +87,7 @@ const pathways = [
 <section
   class="mrx-ai-hero"
   aria-labelledby="mrx-ai-hero-title"
-  data-ghl-calendar={ghlCalendarUrl}
+  data-booking-calendar={ghlCalendarUrl}
   data-phone-tel={phoneTel}
 >
   <img
@@ -335,12 +335,14 @@ const pathways = [
 
 <section class="mrx-ai-engine" aria-labelledby="mrx-ai-engine-title">
   <div>
-    <p>GHL handoff engine</p>
-    <h2 id="mrx-ai-engine-title">From AI intake to GHL calendar, CRM, and underwriter handoff.</h2>
+    <p>MRX handoff process</p>
+    <h2 id="mrx-ai-engine-title">
+      From AI intake to scheduling, case review, and underwriter handoff.
+    </h2>
     <p>
       Travis’s job is to answer the owner’s first question, collect context, and move qualified
-      owners into the GHL calendar. The site uses the verified MRX GHL calendar path for booking and
-      the existing GHL contact API path for form submissions.
+      owners into the MRX scheduling process. The site uses a verified booking path and securely
+      routes form submissions into the MRX review workflow.
     </p>
     <a
       class="mrx-ai-button mrx-ai-button--primary mrx-ai-engine__cta"
@@ -350,7 +352,7 @@ const pathways = [
       data-cta-name="home-ai-engine-book">Book Free Review</a
     >
   </div>
-  <div class="mrx-ai-engine__panel" aria-label="GHL-ready owner profile preview">
+  <div class="mrx-ai-engine__panel" aria-label="Review-ready owner profile preview">
     <div>
       <span>Situation</span><strong>Offer review / inherited rights / royalty check question</strong
       >
@@ -360,7 +362,7 @@ const pathways = [
       <span>Documents</span><strong>Offer, lease, division order, royalty statement</strong>
     </div>
     <div>
-      <span>Next step</span><strong>Travis summary → GHL calendar → underwriter review</strong>
+      <span>Next step</span><strong>Travis summary → scheduling → underwriter review</strong>
     </div>
   </div>
 </section>
@@ -997,7 +999,7 @@ const pathways = [
   (() => {
     const initMrxAi = () => {
       const hero = document.querySelector('.mrx-ai-hero');
-      const calendarUrl = hero?.getAttribute('data-ghl-calendar') || '/book';
+      const calendarUrl = hero?.getAttribute('data-booking-calendar') || '/book';
       const aiForm = document.querySelector('[data-ai-form]');
       const response = document.querySelector('[data-ai-response]');
       const quickActions = document.querySelector('.mrx-ai-chat__quick');
@@ -1052,7 +1054,7 @@ const pathways = [
         const clean = (text || '').trim();
         const [agent, role, nextStep] = routeFor(clean);
         response.textContent = clean
-          ? `${agent} · ${role}\n\nGood starting point. I can ${nextStep}. To move this into a real underwriter review, book the free GHL calendar appointment and bring any offer letter, royalty statement, lease, division order, or county/operator details you have.\n\nNext question: what county/state are the minerals in, and do you already have an offer or royalty checks?\n\nBook here: ${calendarUrl}`
+          ? `${agent} · ${role}\n\nGood starting point. I can ${nextStep}. To move this into a real underwriter review, book the free MRX appointment and bring any offer letter, royalty statement, lease, division order, or county/operator details you have.\n\nNext question: what county/state are the minerals in, and do you already have an offer or royalty checks?\n\nBook here: ${calendarUrl}`
           : 'Tell me whether you have an offer, royalty checks, inherited rights, lease papers, or just a question. I will turn that into a cleaner MRX review path and point you to the calendar when you are ready.';
         if (quickActions) quickActions.hidden = true;
         input?.focus();
@@ -1062,7 +1064,7 @@ const pathways = [
           mrx_ai_prompt: clean || 'empty',
           mrx_ai_agent: agent,
           mrx_ai_role: role,
-          conversion_goal: 'ghl_calendar_booking',
+          conversion_goal: 'calendar_booking',
         });
       };
       prompts.forEach((button) =>

@@ -469,7 +469,7 @@ async function completeLaunchFunnel(page: Page) {
   await expect(page.getByText('May MRX also text the appointment confirmation')).toBeVisible();
   await page.locator('[data-reply="no"]').last().click();
   await expect(
-    page.getByText('May Elena, MRX’s AI scheduling guide, use GoHighLevel Voice AI'),
+    page.getByText('May Elena, MRX’s AI scheduling guide, use AI-generated voice technology'),
   ).toBeVisible();
   await page.locator('[data-reply="no"]').last().click();
   await expect(page).toHaveURL(/\/account\/\?welcome=appointment$/);

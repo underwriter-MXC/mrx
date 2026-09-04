@@ -1680,8 +1680,8 @@ export default function AccountHub({ supabaseUrl, supabaseAnonKey }: Props) {
             <div>
               <h3>Private documents</h3>
               <p>
-                Original files and raw OCR remain private in Supabase. GHL receives redacted
-                summaries/status only after processing.
+                Original files and raw OCR remain private in Supabase. MRX's communications system
+                receives redacted summaries/status only after processing.
               </p>
             </div>
             <label>
@@ -1835,8 +1835,8 @@ export default function AccountHub({ supabaseUrl, supabaseAnonKey }: Props) {
             <div>
               <h3>Requested update permissions</h3>
               <p>
-                Website help continues even when every channel is declined. GHL Voice AI is limited
-                to case updates you requested and also requires a verified phone.
+                Website help continues even when every channel is declined. AI voice is limited to
+                case updates you requested and also requires a verified phone.
               </p>
             </div>
           </div>
@@ -1846,7 +1846,7 @@ export default function AccountHub({ supabaseUrl, supabaseAnonKey }: Props) {
                 ['email', 'Email requested updates'],
                 ['call', 'Human phone call requested updates'],
                 ['sms', 'SMS requested updates'],
-                ['aiVoice', 'GHL Voice AI requested updates'],
+                ['aiVoice', 'AI voice requested updates'],
               ] as Array<[keyof RequestedPermissions, string]>
             ).map(([channel, label]) => (
               <div key={channel}>
