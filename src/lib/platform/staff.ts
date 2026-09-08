@@ -77,6 +77,23 @@ export const OWNER_CASE_RATINGS = ['unrated', 'cold', 'warm', 'hot', 'priority']
 export type OwnerCaseStatus = (typeof OWNER_CASE_STATUSES)[number];
 export type OwnerCaseRating = (typeof OWNER_CASE_RATINGS)[number];
 
+export const OWNER_VISIBLE_CASE_STATUSES = [
+  'received',
+  'information_requested',
+  'ready_for_review',
+  'review_completed',
+] as const;
+
+export type OwnerVisibleCaseStatus = (typeof OWNER_VISIBLE_CASE_STATUSES)[number];
+
+export type OwnerVisibleCaseStatusProjection = {
+  status: OwnerVisibleCaseStatus;
+  label: string;
+  description: string;
+  updatedAt: string | null;
+  source: 'staff_case_workspace';
+};
+
 export type OwnerCaseStageMapping = Partial<
   Record<
     OwnerCaseStatus,
@@ -144,6 +161,93 @@ function ownerCaseRating(value: string): OwnerCaseRating | null {
 export function ownerCaseStatusLabel(value: string) {
   const status = ownerCaseStatus(value);
   return status ? statusLabels[status] : 'Unknown status';
+}
+
+const ownerVisibleCaseStatusMap: Record<OwnerCaseStatus, OwnerVisibleCaseStatus | null> = {
+  intake: 'received',
+  needs_info: 'information_requested',
+  research: 'received',
+  underwriting: 'received',
+  ready_for_review: 'ready_for_review',
+  offer_pending: null,
+  offer_sent: null,
+  due_diligence: null,
+  documents_complete: 'ready_for_review',
+  title_review: null,
+  closing_scheduled: null,
+  closed: null,
+  lost: null,
+  on_hold: null,
+};
+
+const ownerVisibleCaseStatusCopy: Record<
+  OwnerVisibleCaseStatus,
+  { label: string; description: string }
+> = {
+  received: {
+    label: 'Received',
+    description: 'MRX has your owner record and can keep organizing it for human review.',
+  },
+  information_requested: {
+    label: 'Information requested',
+    description:
+      'MRX needs additional owner-provided information or documents before review can move forward.',
+  },
+  ready_for_review: {
+    label: 'Ready for review',
+    description:
+      'Your owner record is organized for MRX human review. This is not an offer, appraisal, title opinion, or guarantee.',
+  },
+  review_completed: {
+    label: 'Review completed',
+    description:
+      'MRX has completed a human review step for this owner record. Check your conversations or appointment notes for any next step you requested.',
+  },
+};
+
+export function ownerVisibleCaseStatusForInternalStatus(value: string): OwnerVisibleCaseStatus | null {
+  const status = ownerCaseStatus(value);
+  return status ? ownerVisibleCaseStatusMap[status] : null;
+}
+
+function completedReviewIsCurrent(args: {
+  workspaceStatus: string;
+  workspaceUpdatedAt?: string | null;
+  reviewerId?: string | null;
+  reviewedAt?: string | null;
+}) {
+  if (!args.reviewerId || !args.reviewedAt) return false;
+  if (args.workspaceStatus === 'needs_info' || args.workspaceStatus === 'on_hold') return false;
+  if (!args.workspaceUpdatedAt) return true;
+  const reviewedAt = Date.parse(args.reviewedAt);
+  const workspaceUpdatedAt = Date.parse(args.workspaceUpdatedAt);
+  if (!Number.isFinite(reviewedAt) || !Number.isFinite(workspaceUpdatedAt)) return false;
+  return reviewedAt >= workspaceUpdatedAt;
+}
+
+export function projectOwnerVisibleCaseStatus(
+  workspace: { status?: string | null; updated_at?: string | null } | null | undefined,
+  completedReview?: { reviewerId?: string | null; reviewedAt?: string | null } | null,
+): OwnerVisibleCaseStatusProjection | null {
+  if (!workspace?.status) return null;
+  const hasCompletedReview = completedReviewIsCurrent({
+    workspaceStatus: workspace.status,
+    workspaceUpdatedAt: workspace.updated_at,
+    reviewerId: completedReview?.reviewerId,
+    reviewedAt: completedReview?.reviewedAt,
+  });
+  const status = hasCompletedReview
+    ? 'review_completed'
+    : ownerVisibleCaseStatusForInternalStatus(workspace.status);
+  if (!status) return null;
+  const copy = ownerVisibleCaseStatusCopy[status];
+  return {
+    status,
+    label: copy.label,
+    description: copy.description,
+    updatedAt: hasCompletedReview ? (completedReview?.reviewedAt ?? null) : (workspace.updated_at ?? null),
+    source: 'staff_case_workspace',
+  };
 }
 
 export function ownerCaseRatingTone(value: string) {

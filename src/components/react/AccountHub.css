@@ -294,6 +294,23 @@
 .account-files small {
   color: #667782;
 }
+.account-case-status {
+  display: grid;
+  gap: 0.4rem;
+  border: 1px solid #d8e1e6;
+  border-radius: 14px;
+  background: #f7f8f5;
+  padding: 0.9rem;
+}
+.account-case-status strong {
+  color: #173e58;
+}
+.account-case-status p {
+  color: #425666;
+}
+.account-case-status small {
+  color: #667782;
+}
 .account-controls .account-danger,
 .account-files button:last-child:not(:only-child) {
   background: #7e2020;

@@ -34,6 +34,10 @@ const ownerSessionApi = readFileSync(
   new URL('../../src/pages/api/chat/session.ts', import.meta.url),
   'utf8',
 );
+const ownerCaseStatusApi = readFileSync(
+  new URL('../../src/pages/api/account/case-status.ts', import.meta.url),
+  'utf8',
+);
 const staffCasesApi = readFileSync(
   new URL('../../src/pages/api/staff/cases.ts', import.meta.url),
   'utf8',
@@ -97,6 +101,14 @@ describe('MRX staff-only case review workspace', () => {
     expect(ownerSessionApi).not.toContain('internal_case_notes');
     expect(ownerSessionApi).not.toContain('internal_case_files');
     expect(ownerSessionApi).not.toContain('internal_case_workspaces');
+    expect(ownerCaseStatusApi).toContain(".select('status,updated_at')");
+    expect(ownerCaseStatusApi).toContain(".select('actor_user_id,created_at,event_type')");
+    expect(ownerCaseStatusApi).toContain("staff_owner_case_review_completed");
+    expect(ownerCaseStatusApi).not.toContain('case_rating');
+    expect(ownerCaseStatusApi).not.toContain('underwriter_brief');
+    expect(ownerCaseStatusApi).not.toContain('underwriting_packets');
+    expect(ownerCaseStatusApi).not.toContain('internal_case_notes');
+    expect(ownerCaseStatusApi).not.toContain('internal_case_files');
     expect(ownerExportApi).not.toContain("select('*')");
   });
 

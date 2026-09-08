@@ -6,6 +6,8 @@ import {
   isAdminStaff,
   ownerCaseRatingTone,
   ownerCaseStatusLabel,
+  ownerVisibleCaseStatusForInternalStatus,
+  projectOwnerVisibleCaseStatus,
   resolveOwnerCaseStageMapping,
 } from '../../src/lib/platform/staff';
 import {
@@ -107,6 +109,67 @@ describe('staff case-review workflow guardrails', () => {
       stageName: 'Offer Sent',
     });
     expect(DEFAULT_OWNER_CASE_STAGE_NAMES.on_hold).toBeNull();
+  });
+
+  it('maps internal case statuses to the four approved owner-visible labels only', () => {
+    expect(ownerVisibleCaseStatusForInternalStatus('intake')).toBe('received');
+    expect(ownerVisibleCaseStatusForInternalStatus('research')).toBe('received');
+    expect(ownerVisibleCaseStatusForInternalStatus('underwriting')).toBe('received');
+    expect(ownerVisibleCaseStatusForInternalStatus('on_hold')).toBeNull();
+    expect(ownerVisibleCaseStatusForInternalStatus('needs_info')).toBe('information_requested');
+    expect(ownerVisibleCaseStatusForInternalStatus('ready_for_review')).toBe('ready_for_review');
+    expect(ownerVisibleCaseStatusForInternalStatus('documents_complete')).toBe('ready_for_review');
+    for (const status of [
+      'offer_pending',
+      'offer_sent',
+      'due_diligence',
+      'title_review',
+      'closing_scheduled',
+      'closed',
+      'lost',
+    ]) {
+      expect(ownerVisibleCaseStatusForInternalStatus(status)).toBeNull();
+    }
+
+    const projection = projectOwnerVisibleCaseStatus({
+      status: 'offer_sent',
+      updated_at: '2026-09-08T21:00:00.000Z',
+    });
+    expect(projection).toBeNull();
+    expect(
+      projectOwnerVisibleCaseStatus(
+        { status: 'title_review', updated_at: '2026-09-08T21:00:00.000Z' },
+        { reviewerId: 'staff-1', reviewedAt: '2026-09-08T22:00:00.000Z' },
+      ),
+    ).toEqual({
+      status: 'review_completed',
+      label: 'Review completed',
+      description: expect.stringContaining('completed a human review'),
+      updatedAt: '2026-09-08T22:00:00.000Z',
+      source: 'staff_case_workspace',
+    });
+    expect(
+      projectOwnerVisibleCaseStatus(
+        { status: 'needs_info', updated_at: '2026-09-08T23:00:00.000Z' },
+        { reviewerId: 'staff-1', reviewedAt: '2026-09-08T22:00:00.000Z' },
+      )?.status,
+    ).toBe('information_requested');
+    expect(
+      projectOwnerVisibleCaseStatus(
+        { status: 'on_hold', updated_at: '2026-09-08T23:00:00.000Z' },
+        { reviewerId: 'staff-1', reviewedAt: '2026-09-08T22:00:00.000Z' },
+      ),
+    ).toBeNull();
+    expect(
+      projectOwnerVisibleCaseStatus(
+        { status: 'closed', updated_at: '2026-09-08T23:00:00.000Z' },
+        { reviewerId: 'staff-1', reviewedAt: '2026-09-08T22:00:00.000Z' },
+      ),
+    ).toBeNull();
+    expect(JSON.stringify(projection)).not.toMatch(
+      /offer_sent|case_rating|opportunity|valuation|internal_case_notes|internal_case_files/,
+    );
+    expect(projectOwnerVisibleCaseStatus(null)).toBeNull();
   });
 
   it('keeps GHL identifiers server-owned and attempts a nonblocking live opportunity sync', () => {

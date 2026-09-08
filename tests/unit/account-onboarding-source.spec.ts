@@ -126,6 +126,9 @@ describe('account conversation onboarding source contract', () => {
     expect(accountHub).toContain('This intake does not provide legal, tax, title, appraisal');
     expect(accountHub).toContain('consented_owner_access: true');
     expect(accountHub).toContain('missing_field_count');
+    expect(accountHub).toContain("fetch('/api/account/case-status'");
+    expect(accountHub).toContain('setOwnerCaseStatus(null)');
+    expect(accountHub).toContain('Case status is temporarily unavailable. Try again later.');
     expect(accountHub).toContain('Add another property');
     expect(accountHub).toContain('name="state"');
     expect(accountHub).toContain('name="county"');

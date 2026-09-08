@@ -144,6 +144,14 @@ type OwnerUnderwritingChecklist = {
   }>;
 };
 
+type OwnerCaseStatus = {
+  status: 'received' | 'information_requested' | 'ready_for_review' | 'review_completed';
+  label: string;
+  description: string;
+  updatedAt: string | null;
+  source: 'staff_case_workspace';
+};
+
 const DOCUMENT_TYPE_LABELS: Record<UnderwritingDocumentType, string> = {
   mineral_deed: 'Mineral deed',
   royalty_statement: 'Royalty statement',
@@ -296,6 +304,8 @@ export default function AccountHub({ supabaseUrl, supabaseAnonKey }: Props) {
   const [documentProcessingEnabled, setDocumentProcessingEnabled] = useState(false);
   const [underwritingChecklist, setUnderwritingChecklist] =
     useState<OwnerUnderwritingChecklist | null>(null);
+  const [ownerCaseStatus, setOwnerCaseStatus] = useState<OwnerCaseStatus | null>(null);
+  const [ownerCaseStatusEmpty, setOwnerCaseStatusEmpty] = useState<string | null>(null);
   const [deletionToken, setDeletionToken] = useState<string | null>(null);
   const [deletionPending, setDeletionPending] = useState(false);
   const [intakeOpen, setIntakeOpen] = useState(false);
@@ -401,6 +411,8 @@ export default function AccountHub({ supabaseUrl, supabaseAnonKey }: Props) {
   useEffect(() => {
     if (!supabase || !authReady) return;
     let cancelled = false;
+    setOwnerCaseStatus(null);
+    setOwnerCaseStatusEmpty(null);
     (async () => {
       const headers = session ? { Authorization: `Bearer ${session.access_token}` } : undefined;
       if (session) await fetch('/api/account/claim', { method: 'POST', headers });
@@ -425,6 +437,24 @@ export default function AccountHub({ supabaseUrl, supabaseAnonKey }: Props) {
         setUnderwritingChecklist(checklistResult.checklist ?? null);
         if (typeof checklistResult.processing?.available === 'boolean') {
           setDocumentProcessingEnabled(checklistResult.processing.available);
+        }
+      }
+      try {
+        const caseStatusResponse = await fetch('/api/account/case-status', { headers });
+        if (cancelled) return;
+        if (caseStatusResponse.ok) {
+          const caseStatusResult = await caseStatusResponse.json();
+          if (cancelled) return;
+          setOwnerCaseStatus(caseStatusResult.caseStatus ?? null);
+          setOwnerCaseStatusEmpty(caseStatusResult.emptyState?.message ?? null);
+        } else {
+          setOwnerCaseStatus(null);
+          setOwnerCaseStatusEmpty('Case status is temporarily unavailable. Try again later.');
+        }
+      } catch {
+        if (!cancelled) {
+          setOwnerCaseStatus(null);
+          setOwnerCaseStatusEmpty('Case status is temporarily unavailable. Try again later.');
         }
       }
       setRequestedPermissions({
@@ -1783,6 +1813,49 @@ export default function AccountHub({ supabaseUrl, supabaseAnonKey }: Props) {
                 </div>
               ))}
             </div>
+          )}
+        </section>
+        <section>
+          <div className="account-section-head">
+            <div>
+              <h3>MRX case status</h3>
+              <p>
+                A private, high-level status from the MRX staff case workspace. Internal notes,
+                files, ratings, and valuation fields are never shown here.
+              </p>
+            </div>
+            {ownerCaseStatus && (
+              <span
+                className={
+                  ownerCaseStatus.status === 'review_completed'
+                    ? 'account-verified'
+                    : 'account-device-badge'
+                }
+              >
+                {ownerCaseStatus.label}
+              </span>
+            )}
+          </div>
+          {ownerCaseStatus ? (
+            <div className="account-case-status" role="status" aria-live="polite">
+              <strong>{ownerCaseStatus.label}</strong>
+              <p>{ownerCaseStatus.description}</p>
+              <small>
+                Source: MRX staff case workspace
+                {ownerCaseStatus.updatedAt
+                  ? ` · Updated ${new Date(ownerCaseStatus.updatedAt).toLocaleDateString()}`
+                  : ''}
+              </small>
+              <small>
+                Case-status updates stay in your private account. You can manage account update
+                preferences separately.
+              </small>
+            </div>
+          ) : (
+            <p className="account-empty">
+              {ownerCaseStatusEmpty ||
+                'No MRX case status yet. Save a property or document first, then MRX can start a human review record.'}
+            </p>
           )}
         </section>
         <section>
