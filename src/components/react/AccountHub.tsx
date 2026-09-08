@@ -94,6 +94,7 @@ type MineralInterest = {
   updated_at: string;
 };
 type RequestedPermissions = { email: boolean; sms: boolean; call: boolean; aiVoice: boolean };
+type IntakeQuestionPath = 'offer_review' | 'inherited_or_probate' | 'unleased_or_uncertain';
 type AccountProfile = {
   first_name?: string | null;
   last_name?: string | null;
@@ -153,6 +154,46 @@ const DOCUMENT_TYPE_LABELS: Record<UnderwritingDocumentType, string> = {
   tax_statement: 'Tax statement',
   county_record: 'County record',
   other: 'Other supporting document',
+};
+
+const INTAKE_QUESTION_PATHS: Array<{
+  code: IntakeQuestionPath;
+  label: string;
+  help: string;
+}> = [
+  {
+    code: 'offer_review',
+    label: 'I have an offer or buyer question',
+    help: 'MRX can organize the written offer and questions for human review without promising whether the offer is good or bad.',
+  },
+  {
+    code: 'inherited_or_probate',
+    label: 'I inherited or may inherit mineral rights',
+    help: 'MRX can capture what you were told and what records you have without giving legal, tax, probate, or title advice.',
+  },
+  {
+    code: 'unleased_or_uncertain',
+    label: 'I want to understand what information affects review',
+    help: 'MRX can prepare a record for an underwriter, but this is not an appraisal, valuation, guarantee, or offer.',
+  },
+];
+
+const INTAKE_PATH_COPY: Record<IntakeQuestionPath, { prompt: string; placeholder: string }> = {
+  offer_review: {
+    prompt: 'What does the offer say, and what question do you want a human reviewer to look at?',
+    placeholder:
+      'Example: buyer name, offer amount or terms, deadline, acreage shown, and what you want checked. MRX records this as your statement until reviewed.',
+  },
+  inherited_or_probate: {
+    prompt: 'What were you told about the inherited rights?',
+    placeholder:
+      'Example: who you inherited from, county or operator mentioned, probate/trust/deed references, and what is uncertain. MRX does not provide legal, tax, probate, or title advice.',
+  },
+  unleased_or_uncertain: {
+    prompt: 'What value or ownership question are you trying to prepare for review?',
+    placeholder:
+      'Example: royalty checks, operator names, lease status, acreage shown, or the question you want organized. MRX does not provide an appraisal, value guarantee, or eligibility promise.',
+  },
 };
 
 function isUnderwritingDocumentType(value: string): value is UnderwritingDocumentType {
@@ -266,6 +307,15 @@ export default function AccountHub({ supabaseUrl, supabaseAnonKey }: Props) {
     };
     return aliases[rawSituation] ?? null;
   })();
+  const initialQuestionPath =
+    accountSituationCode === 'offer_review' ||
+    accountSituationCode === 'inherited_or_probate' ||
+    accountSituationCode === 'unleased_or_uncertain'
+      ? accountSituationCode
+      : 'unleased_or_uncertain';
+  const [intakeQuestionPath, setIntakeQuestionPath] =
+    useState<IntakeQuestionPath>(initialQuestionPath);
+  const selectedIntakeSituationCode = accountSituationCode || intakeQuestionPath;
   const accountIntentTitle =
     accountIntent === 'appointment'
       ? 'Your appointment is connected to your owner account'
@@ -303,8 +353,12 @@ export default function AccountHub({ supabaseUrl, supabaseAnonKey }: Props) {
   useEffect(() => {
     if (!hasOwnerAccess || !intakeOpen || intakeStartedTracked.current) return;
     intakeStartedTracked.current = true;
-    trackAccountEvent('intake_started', { source: accountIntent || 'account' });
-  }, [accountIntent, hasOwnerAccess, intakeOpen]);
+    trackAccountEvent('intake_started', {
+      source: accountIntent || 'account',
+      question_path: intakeQuestionPath,
+      consented_owner_access: true,
+    });
+  }, [accountIntent, hasOwnerAccess, intakeOpen, intakeQuestionPath]);
 
   useEffect(() => {
     if (!supabase) {
@@ -705,8 +759,9 @@ export default function AccountHub({ supabaseUrl, supabaseAnonKey }: Props) {
           operator: String(data.get('operator') || '').trim() || null,
           leaseName: String(data.get('leaseName') || '').trim() || null,
           assessmentDetails: String(data.get('assessmentDetails') || '').trim() || null,
-          situationCode: accountSituationCode,
-          intakeVersion: '2026-07-20-elena-v1',
+          situationCode: selectedIntakeSituationCode,
+          intakeQuestionPath,
+          intakeVersion: '2026-09-08-guided-owner-intake-v2',
           source:
             accountIntent === 'standalone'
               ? 'standalone_guided_intake'
@@ -800,7 +855,11 @@ export default function AccountHub({ supabaseUrl, supabaseAnonKey }: Props) {
       setStatus('Your property is saved for Senior Underwriter review.');
     }
     setIntakeStep(6);
-    trackAccountEvent('intake_completed', { mineral_interest_id: result.interestId });
+    trackAccountEvent('intake_completed', {
+      mineral_interest_id: result.interestId,
+      question_path: intakeQuestionPath,
+      missing_field_count: result.missingFields?.length ?? 0,
+    });
   }
 
   function finishIntake() {
@@ -981,6 +1040,29 @@ export default function AccountHub({ supabaseUrl, supabaseAnonKey }: Props) {
                   This takes a couple of minutes. If you do not know an answer, that is completely
                   fine. Choose “I don’t know” and I’ll put it on a checklist you can reply to later.
                 </p>
+                <fieldset className="elena-intake__path-picker">
+                  <legend>What do you want help preparing?</legend>
+                  {INTAKE_QUESTION_PATHS.map((path) => (
+                    <label key={path.code}>
+                      <input
+                        type="radio"
+                        name="intakeQuestionPathChoice"
+                        value={path.code}
+                        checked={intakeQuestionPath === path.code}
+                        onChange={() => setIntakeQuestionPath(path.code)}
+                      />
+                      <span>
+                        <strong>{path.label}</strong>
+                        <small>{path.help}</small>
+                      </span>
+                    </label>
+                  ))}
+                </fieldset>
+                <p className="elena-intake__boundary-note">
+                  MRX stores your answers as owner statements until a human reviewer verifies them.
+                  This intake does not provide legal, tax, title, appraisal, valuation, eligibility,
+                  offer-quality, or outcome advice.
+                </p>
                 <div className="elena-intake__actions">
                   <button type="button" onClick={() => setIntakeStep(1)}>
                     Start with one property
@@ -997,6 +1079,7 @@ export default function AccountHub({ supabaseUrl, supabaseAnonKey }: Props) {
                     <span style={{ width: `${intakeStep * 20}%` }} />
                   </div>
                 )}
+                <input type="hidden" name="intakeQuestionPath" value={intakeQuestionPath} />
 
                 <fieldset hidden={intakeStep !== 1}>
                   <legend>Where are these minerals?</legend>
@@ -1156,13 +1239,18 @@ export default function AccountHub({ supabaseUrl, supabaseAnonKey }: Props) {
                 <fieldset hidden={intakeStep !== 5}>
                   <legend>Anything else the Senior Underwriter should know?</legend>
                   <label>
-                    Questions, offers, deadlines, or other details
+                    {INTAKE_PATH_COPY[intakeQuestionPath].prompt}
                     <textarea
                       name="assessmentDetails"
                       rows={4}
-                      placeholder="Tell us what you want help assessing. It is okay to leave this blank."
+                      placeholder={INTAKE_PATH_COPY[intakeQuestionPath].placeholder}
                     />
                   </label>
+                  <p className="elena-intake__boundary-note">
+                    Use this box for your question and owner-provided context only. Upload documents
+                    later only if needed; do not add Social Security numbers, bank details, or other
+                    unnecessary sensitive information.
+                  </p>
                   <div className="elena-intake__followup">
                     <strong>How should Elena send your missing-information checklist?</strong>
                     <label>

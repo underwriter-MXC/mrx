@@ -12,7 +12,13 @@ describe('situation-aware underwriting intake', () => {
     expect(intakeApi).toContain('situationCode: z.enum(UNDERWRITING_SITUATIONS)');
     expect(intakeApi).toContain('situationCodes: parsed.data.situationCode');
     expect(accountHub).toContain("get('situation')");
-    expect(accountHub).toContain('situationCode: accountSituationCode');
+    expect(accountHub).toContain(
+      'selectedIntakeSituationCode = accountSituationCode || intakeQuestionPath',
+    );
+    expect(accountHub).toContain('situationCode: selectedIntakeSituationCode');
+    expect(accountHub).toContain('intakeQuestionPath');
+    expect(accountHub).toContain("'1031-exchange': 'tax_sensitive_1031'");
+    expect(intakeApi).toContain('sourceSituationCode: parsed.data.situationCode || null');
   });
 
   it('maps saved owner situation slugs to underwriting requirement situations', () => {
@@ -26,10 +32,6 @@ describe('situation-aware underwriting intake', () => {
           { value: { situationCodes: ['suspicious-seller'] } },
         ],
       }),
-    ).toEqual([
-      'inherited_or_probate',
-      'offer_review',
-      'tax_sensitive_1031',
-    ]);
+    ).toEqual(['inherited_or_probate', 'offer_review', 'tax_sensitive_1031']);
   });
 });

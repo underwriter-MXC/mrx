@@ -51,6 +51,9 @@ const Schema = z.object({
   leaseName: OptionalText(160),
   assessmentDetails: OptionalText(8_000),
   situationCode: z.enum(UNDERWRITING_SITUATIONS).nullable().optional(),
+  intakeQuestionPath: z
+    .enum(['offer_review', 'inherited_or_probate', 'unleased_or_uncertain'])
+    .optional(),
   unknownFields: z.array(z.string().trim().min(1).max(80)).max(24).optional(),
   intakeVersion: z.string().trim().max(100).optional(),
   source: z
@@ -259,6 +262,11 @@ export const POST: APIRoute = async (context) => {
         leaseName: parsed.data.leaseName || null,
         assessmentDetails: parsed.data.assessmentDetails || null,
         situationCodes: parsed.data.situationCode ? [parsed.data.situationCode] : [],
+        intakeQuestionPath: parsed.data.intakeQuestionPath || parsed.data.situationCode || null,
+        sourceSituationCode: parsed.data.situationCode || null,
+        ownerStatement: true,
+        verifiedByMrx: false,
+        humanReviewRequired: true,
         missingFields,
       },
       source: 'owner_profile',
@@ -304,7 +312,7 @@ export const POST: APIRoute = async (context) => {
         status: missingFields.length ? 'needs_info' : 'underwriting',
         verification_confidence: missingFields.length ? 'low' : 'medium',
         underwriter_brief:
-          `Senior Underwriter review requested for ${label}. ${parsed.data.assessmentDetails || ''}`.trim(),
+          `Senior Underwriter review requested for ${label}. Owner-stated question path: ${parsed.data.intakeQuestionPath || parsed.data.situationCode || 'general review'}. ${parsed.data.assessmentDetails || ''}`.trim(),
         confidence_gaps: missingFields.join('\n'),
         recommended_focus: missingFields.length
           ? 'Review the missing-information checklist and owner replies before valuation preparation.'

@@ -119,6 +119,13 @@ describe('account conversation onboarding source contract', () => {
     expect(accountHub).toContain('role="dialog"');
     expect(accountHub).toContain('This takes a couple of minutes');
     expect(accountHub).toContain('that is completely');
+    expect(accountHub).toContain('What do you want help preparing?');
+    expect(accountHub).toContain('I have an offer or buyer question');
+    expect(accountHub).toContain('I inherited or may inherit mineral rights');
+    expect(accountHub).toContain('owner statements until a human reviewer verifies them');
+    expect(accountHub).toContain('This intake does not provide legal, tax, title, appraisal');
+    expect(accountHub).toContain('consented_owner_access: true');
+    expect(accountHub).toContain('missing_field_count');
     expect(accountHub).toContain('Add another property');
     expect(accountHub).toContain('name="state"');
     expect(accountHub).toContain('name="county"');
@@ -143,6 +150,11 @@ describe('account conversation onboarding source contract', () => {
     expect(mineralInterestApi).toContain(
       "status: missingFields.length ? 'needs_info' : 'underwriting'",
     );
+    expect(mineralInterestApi).toContain('intakeQuestionPath: z');
+    expect(mineralInterestApi).toContain("'inherited_or_probate', 'unleased_or_uncertain'");
+    expect(mineralInterestApi).toContain('ownerStatement: true');
+    expect(mineralInterestApi).toContain('verifiedByMrx: false');
+    expect(mineralInterestApi).toContain('humanReviewRequired: true');
     expect(mineralInterestApi).toContain("field: 'missing_info_checklist'");
     expect(mineralInterestApi).toContain('underwriter@mineralrightsxchange.com');
     expect(intakeFollowUpApi).toContain('sendGhlIntakeChecklist');

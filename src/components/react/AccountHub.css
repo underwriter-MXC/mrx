@@ -386,6 +386,43 @@
   gap: 0.9rem;
   line-height: 1.6;
 }
+.elena-intake__path-picker {
+  display: grid;
+  gap: 0.7rem;
+  padding: 0.9rem;
+  border: 1px solid #d8e1e6;
+  border-radius: 14px;
+  background: #f7f8f5;
+}
+.elena-intake__path-picker legend {
+  margin-bottom: 0.3rem;
+  font-size: 0.95rem;
+}
+.elena-intake__path-picker label {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: start;
+  gap: 0.55rem;
+  font-size: 0.86rem;
+  cursor: pointer;
+}
+.elena-intake__path-picker span {
+  display: grid;
+  gap: 0.12rem;
+}
+.elena-intake__path-picker small,
+.elena-intake__boundary-note {
+  color: #657985;
+  font-size: 0.76rem;
+  font-weight: 500;
+  line-height: 1.48;
+}
+.elena-intake__boundary-note {
+  padding: 0.75rem;
+  border-radius: 12px;
+  background: #fff9ed;
+  color: #6f4a12;
+}
 .elena-intake__progress {
   height: 6px;
   margin-bottom: 1.2rem;
