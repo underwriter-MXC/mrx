@@ -7,6 +7,13 @@ import { refreshCompletedLead } from '../../../lib/platform/communications';
 import { documentWorkerAvailable } from '../../../lib/platform/documents';
 import { isHumanCallChannelEnabled } from '../../../lib/platform/consent';
 
+function safeOwnerDocumentDisplayName(value: string | null | undefined) {
+  const basename = String(value || 'uploaded document')
+    .split(/[\\/]/)
+    .pop()!;
+  return basename.replace(/[\u0000-\u001f\u007f]/g, '').trim().slice(0, 120) || 'uploaded document';
+}
+
 export const POST: APIRoute = async (context) => {
   try {
     assertRateLimit(`session:${clientKey(context)}`, 20);
@@ -153,7 +160,10 @@ export const GET: APIRoute = async (context) => {
       ownerFacts: Object.fromEntries(newestFactByField),
       facts: facts.data ?? [],
       interests: interests.data ?? [],
-      documents: documents.data ?? [],
+      documents: (documents.data ?? []).map((document) => ({
+        ...document,
+        display_name: safeOwnerDocumentDisplayName(document.original_name),
+      })),
       appointments: appointments.data ?? [],
       conversations: conversations.data ?? [],
       permissions: {

@@ -30,6 +30,7 @@ type Attachment = {
   id: string;
   mineral_interest_id?: string | null;
   original_name: string;
+  display_name?: string | null;
   document_type?: string | null;
   mime_type: string;
   size_bytes: number;
@@ -110,13 +111,16 @@ type AccountProfile = {
 };
 
 type OwnerUnderwritingChecklist = {
-  readinessStatus: 'collecting' | 'ready';
+  readinessStatus: 'provided' | 'missing' | 'unknown' | 'human_review';
+  readinessNotice?: string;
+  correctionPath?: string;
   summary: {
     total: number;
     complete: number;
     needsUpload: number;
     processing: number;
     needsStaffReview: number;
+    humanReview?: number;
   };
   items: Array<{
     requirementKey: string;
@@ -134,6 +138,8 @@ type OwnerUnderwritingChecklist = {
       | 'waived'
       | 'rejected'
       | 'not_applicable';
+    documentReadinessState?: 'provided' | 'missing' | 'unknown' | 'human_review';
+    reviewAudit?: { reviewer?: string | null; reviewedAt?: string | null } | null;
     ownerAction: 'complete' | 'wait' | 'upload' | 'reupload';
   }>;
 };
@@ -202,6 +208,22 @@ function isUnderwritingDocumentType(value: string): value is UnderwritingDocumen
 
 function selectedDocumentType(value: string): UnderwritingDocumentType {
   return isUnderwritingDocumentType(value) ? value : 'other';
+}
+
+function documentReadinessLabel(value: OwnerUnderwritingChecklist['readinessStatus']) {
+  if (value === 'human_review') return 'Ready for human review';
+  if (value === 'provided') return 'Documents provided';
+  if (value === 'missing') return 'Documents missing';
+  return 'Readiness unknown';
+}
+
+function checklistItemReadinessLabel(
+  value: NonNullable<OwnerUnderwritingChecklist['items'][number]['documentReadinessState']>,
+) {
+  if (value === 'human_review') return 'Human-reviewed';
+  if (value === 'provided') return 'Provided';
+  if (value === 'missing') return 'Missing';
+  return 'Unknown';
 }
 
 function trackAccountEvent(event: string, detail: Record<string, unknown> = {}) {
@@ -1832,16 +1854,23 @@ export default function AccountHub({ supabaseUrl, supabaseAnonKey }: Props) {
               {underwritingChecklist && (
                 <span
                   className={
-                    underwritingChecklist.readinessStatus === 'ready'
+                    underwritingChecklist.readinessStatus === 'human_review'
                       ? 'account-verified'
                       : 'account-device-badge'
                   }
                 >
+                  {documentReadinessLabel(underwritingChecklist.readinessStatus)} ·{' '}
                   {underwritingChecklist.summary.complete} of {underwritingChecklist.summary.total}{' '}
                   complete
                 </span>
               )}
             </div>
+            {underwritingChecklist?.readinessNotice && (
+              <p className="account-empty">{underwritingChecklist.readinessNotice}</p>
+            )}
+            {underwritingChecklist?.correctionPath && (
+              <p className="account-empty">{underwritingChecklist.correctionPath}</p>
+            )}
             {!underwritingChecklist?.items.length ? (
               <p className="account-empty">
                 Save a mineral property to generate its document checklist.
@@ -1853,6 +1882,17 @@ export default function AccountHub({ supabaseUrl, supabaseAnonKey }: Props) {
                     <span>
                       <strong>{item.label}</strong>
                       <small>
+                        {checklistItemReadinessLabel(
+                          item.documentReadinessState ??
+                            (item.ownerAction === 'complete'
+                              ? 'human_review'
+                              : item.ownerAction === 'wait'
+                                ? 'provided'
+                                : item.requirementLevel === 'recommended'
+                                  ? 'unknown'
+                                  : 'missing'),
+                        )}{' '}
+                        ·{' '}
                         {item.requirementLevel === 'required'
                           ? 'Required for packet readiness'
                           : 'Recommended if available'}{' '}
@@ -1866,6 +1906,9 @@ export default function AccountHub({ supabaseUrl, supabaseAnonKey }: Props) {
                               : `Upload ${item.acceptedDocumentTypes
                                   .map((type) => DOCUMENT_TYPE_LABELS[type])
                                   .join(' or ')}`}
+                        {item.reviewAudit?.reviewedAt
+                          ? ` · ${item.reviewAudit.reviewer || 'MRX human reviewer'} ${new Date(item.reviewAudit.reviewedAt).toLocaleDateString()}`
+                          : ''}
                       </small>
                     </span>
                     {(item.ownerAction === 'upload' || item.ownerAction === 'reupload') && (
@@ -1895,7 +1938,7 @@ export default function AccountHub({ supabaseUrl, supabaseAnonKey }: Props) {
               {attachments.map((file) => (
                 <div key={file.id}>
                   <span>
-                    <strong>{file.original_name}</strong>
+                    <strong>{file.display_name || file.original_name}</strong>
                     <small>
                       {file.document_type && isUnderwritingDocumentType(file.document_type)
                         ? `${DOCUMENT_TYPE_LABELS[file.document_type]} · `

@@ -86,7 +86,9 @@ function packetResponse(bundle: Awaited<ReturnType<typeof loadUnderwritingPacket
           packet_version: bundle.packetRecord.packet_version,
           packet_hash: bundle.packetRecord.packet_hash,
           source_fingerprint: bundle.packetRecord.source_fingerprint,
+          finalized_by: bundle.packetRecord.finalized_by,
           finalized_at: bundle.packetRecord.finalized_at,
+          reopened_by: bundle.packetRecord.reopened_by,
           reopened_at: bundle.packetRecord.reopened_at,
         }
       : null,
@@ -419,10 +421,19 @@ export const POST: APIRoute = async (context) => {
           required: item.required,
           requirementLevel: item.requirementLevel,
           status: item.effectiveStatus,
+          documentReadinessState: item.ownerDocumentReadinessState,
           attachmentId: item.attachmentId,
           verifiedAt: item.verifiedAt,
           waivedAt: item.waivedAt,
         })),
+        reviewerAudit: bundle.requirements
+          .filter((item) => item.verified_at || item.waived_at)
+          .map((item) => ({
+            requirementKey: item.requirement_key,
+            reviewerStaffProfileId: item.verified_by ?? item.waived_by,
+            reviewedAt: item.verified_at ?? item.waived_at,
+            disposition: item.verified_at ? 'verified' : 'waived',
+          })),
         missingItems: bundle.packet.requirements
           .filter((item) =>
             ['missing', 'processing', 'uploaded', 'rejected'].includes(item.effectiveStatus),

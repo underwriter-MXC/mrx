@@ -4,6 +4,9 @@ import { describe, expect, it } from 'vitest';
 const repoFile = (path: string) => readFileSync(new URL(`../../${path}`, import.meta.url), 'utf8');
 
 const migration = repoFile('supabase/migrations/20260722120000_mrx_underwriting_intake_packet.sql');
+const readinessV2Migration = repoFile(
+  'supabase/migrations/20260908173500_mrx_underwriting_readiness_v2_default.sql',
+);
 const ownerChecklistApi = repoFile('src/pages/api/account/underwriting-checklist.ts');
 const staffPacketApi = repoFile('src/pages/api/staff/cases/[profileId]/underwriting-packet.ts');
 const attachmentSignApi = repoFile('src/pages/api/chat/attachments/sign.ts');
@@ -22,6 +25,9 @@ describe('underwriting packet persistence and API boundaries', () => {
     expect(migration).toContain('waiver_reason text');
     expect(migration).toContain('source_fingerprint text');
     expect(migration).toContain('packet_snapshot jsonb');
+    expect(migration).toContain("mrx-underwriting-readiness-v1");
+    expect(readinessV2Migration).toContain("mrx-underwriting-readiness-v2");
+    expect(readinessV2Migration).toContain('alter column readiness_version set default');
     expect(migration).toContain('create policy "Staff manages underwriting requirements"');
     expect(migration).toContain('public.is_mrx_admin() or exists');
     expect(migration).toContain('case_assignments');
@@ -49,9 +55,13 @@ describe('underwriting packet persistence and API boundaries', () => {
     expect(ownerChecklistApi).toContain('projectOwnerUnderwritingChecklist');
     expect(ownerChecklistApi).toContain('documentWorkerAvailable');
     expect(ownerChecklistApi).toContain('readinessBlockers');
+    expect(accountHub).toContain('documentReadinessLabel');
+    expect(accountHub).toContain('reviewAudit');
+    expect(accountHub).toContain('display_name');
     expect(ownerChecklistApi).not.toContain('waiver_reason');
     expect(ownerChecklistApi).not.toContain('verified_by');
     expect(ownerChecklistApi).not.toContain('underwriter_brief');
+    expect(accountHub).toContain('not an offer, appraisal');
   });
 
   it('gates verification, waiver, and final readiness through the staff case route', () => {
@@ -69,6 +79,8 @@ describe('underwriting packet persistence and API boundaries', () => {
     expect(staffPacketApi).toContain("eventType: 'staff_underwriting_requirement_waived'");
     expect(staffPacketApi).toContain("eventType: 'staff_underwriting_packet_finalized'");
     expect(staffPacketApi).toContain("eventType: 'staff_underwriting_fact_confirmed'");
+    expect(staffPacketApi).toContain('reviewerStaffProfileId');
+    expect(staffPacketApi).toContain('documentReadinessState');
     expect(staffPacketApi).toContain('documentWorkerAvailable');
     expect(staffPortal).toContain('Underwriter packet readiness');
     expect(staffPortal).toContain('Finalize packet readiness');

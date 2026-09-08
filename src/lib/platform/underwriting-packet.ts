@@ -21,7 +21,7 @@ export const UNDERWRITING_DOCUMENT_TYPES = [
  * the readiness rules or packet shape change so old decisions remain
  * auditable instead of silently being interpreted under new rules.
  */
-export const UNDERWRITING_READINESS_VERSION = 'mrx-underwriting-readiness-v1';
+export const UNDERWRITING_READINESS_VERSION = 'mrx-underwriting-readiness-v2';
 export const UNDERWRITING_PACKET_VERSION = 'mrx-underwriting-packet-v1';
 
 export type UnderwritingDocumentType = (typeof UNDERWRITING_DOCUMENT_TYPES)[number];
@@ -52,6 +52,7 @@ export type RequirementStatus =
   | 'rejected'
   | 'not_applicable';
 export type EffectiveRequirementStatus = RequirementStatus | 'missing';
+export type OwnerDocumentReadinessState = 'provided' | 'missing' | 'unknown' | 'human_review';
 
 export type MineralInterestForPacket = {
   id: string;
@@ -143,9 +144,12 @@ export type UnderwritingRequirementDefinition = {
 export type DerivedUnderwritingRequirement = UnderwritingRequirementDefinition & {
   storedStatus: RequirementStatus;
   effectiveStatus: EffectiveRequirementStatus;
+  ownerDocumentReadinessState: OwnerDocumentReadinessState;
   attachmentId: string | null;
   verifiedAt: string | null;
   waivedAt: string | null;
+  reviewedAt: string | null;
+  ownerReviewerIdentity: string | null;
   updatedAt: string | null;
 };
 
@@ -530,6 +534,32 @@ function effectiveStatus(
   return { status: 'processing', attachmentId: matching.id };
 }
 
+function ownerDocumentReadinessState(
+  requirement: UnderwritingRequirementDefinition,
+  status: EffectiveRequirementStatus,
+): OwnerDocumentReadinessState {
+  if (status === 'verified' || status === 'waived') return 'human_review';
+  if (status === 'uploaded' || status === 'processing') return 'provided';
+  if (status === 'not_applicable' || (!requirement.required && status === 'missing')) return 'unknown';
+  return 'missing';
+}
+
+function ownerChecklistReadinessStatus(packet: DerivedUnderwritingPacket): OwnerDocumentReadinessState {
+  if (packet.isFinalized) return 'human_review';
+  if (!packet.requirements.length) return 'unknown';
+  if (
+    packet.blockers.some((blocker) =>
+      ['required_document_missing', 'required_document_rejected'].includes(blocker.code),
+    )
+  ) {
+    return 'missing';
+  }
+  if (packet.requirements.some((item) => item.ownerDocumentReadinessState === 'provided')) {
+    return 'provided';
+  }
+  return packet.canFinalize ? 'provided' : 'unknown';
+}
+
 export function deriveUnderwritingPacket(
   input: UnderwritingPacketInput,
 ): DerivedUnderwritingPacket {
@@ -541,13 +571,17 @@ export function deriveUnderwritingPacket(
   const requirements = definitions.map((definition) => {
     const stored = storedByKey.get(definition.requirementKey);
     const effective = effectiveStatus(definition, stored, input.attachments);
+    const reviewedAt = stored?.verified_at ?? stored?.waived_at ?? null;
     return {
       ...definition,
       storedStatus: normalizeRequirementStatus(stored?.status),
       effectiveStatus: effective.status,
+      ownerDocumentReadinessState: ownerDocumentReadinessState(definition, effective.status),
       attachmentId: effective.attachmentId,
       verifiedAt: stored?.verified_at ?? null,
       waivedAt: stored?.waived_at ?? null,
+      reviewedAt,
+      ownerReviewerIdentity: reviewedAt ? 'MRX human reviewer' : null,
       updatedAt: stored?.updated_at ?? null,
     };
   });
@@ -679,7 +713,11 @@ export function deriveUnderwritingPacket(
 
 export function projectOwnerUnderwritingChecklist(packet: DerivedUnderwritingPacket) {
   return {
-    readinessStatus: packet.isFinalized ? 'ready' : 'collecting',
+    readinessStatus: ownerChecklistReadinessStatus(packet),
+    readinessNotice:
+      'Document readiness organizes what has been provided, what is missing or unknown, and what is ready for human review. It is not proof of ownership, title, completeness, value, eligibility, or an MRX offer.',
+    correctionPath:
+      'If a document type, status, or remembered fact is wrong, use Correct/Remove in your private profile or upload a replacement; MRX keeps corrections on the reviewer audit trail.',
     summary: {
       total: packet.counts.total,
       complete: packet.counts.complete,
@@ -691,6 +729,9 @@ export function projectOwnerUnderwritingChecklist(packet: DerivedUnderwritingPac
       ).length,
       needsStaffReview: packet.requirements.filter(
         (requirement) => requirement.effectiveStatus === 'uploaded',
+      ).length,
+      humanReview: packet.requirements.filter(
+        (requirement) => requirement.ownerDocumentReadinessState === 'human_review',
       ).length,
     },
     items: packet.requirements.map((requirement) => {
@@ -713,6 +754,13 @@ export function projectOwnerUnderwritingChecklist(packet: DerivedUnderwritingPac
         requirementLevel: requirement.requirementLevel,
         acceptedDocumentTypes: requirement.acceptedDocumentTypes,
         status: requirement.effectiveStatus,
+        documentReadinessState: requirement.ownerDocumentReadinessState,
+        reviewAudit: requirement.reviewedAt
+          ? {
+              reviewer: requirement.ownerReviewerIdentity,
+              reviewedAt: requirement.reviewedAt,
+            }
+          : null,
         ownerAction,
       };
     }),

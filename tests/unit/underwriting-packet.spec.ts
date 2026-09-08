@@ -345,6 +345,11 @@ describe('MRX underwriting intake packet', () => {
         ['complete', 'wait', 'upload', 'reupload'].includes(item.ownerAction),
       ),
     ).toBe(true);
+    expect(owner.readinessNotice).toContain('not proof of ownership');
+    expect(owner.correctionPath).toContain('Correct/Remove');
+    expect(owner.items.every((item) => item.reviewAudit?.reviewedAt || item.reviewAudit === null)).toBe(
+      true,
+    );
   });
 
   it('enforces role separation for verification, waiver, and final readiness', () => {
@@ -509,6 +514,56 @@ describe('MRX underwriting intake packet', () => {
     });
     expect(packet.canFinalize).toBe(false);
     expect(packet.blockers.map((item) => item.code)).toContain('candidate_facts_unresolved');
-    expect(packet.readiness.version).toBe('mrx-underwriting-readiness-v1');
+    expect(packet.readiness.version).toBe('mrx-underwriting-readiness-v2');
+  });
+
+  it('projects owner-facing document readiness states without making title or value claims', () => {
+    const definitions = buildUnderwritingRequirementDefinitions({
+      situations: ['leased', 'producing'],
+      interests: [{ ...interest, inherited: false, lease_status: 'yes', producing_status: 'yes' }],
+    });
+    const royaltyRequirement = definitions.find((item) =>
+      item.requirementKey.endsWith(':royalty-statement'),
+    )!;
+    const packet = deriveUnderwritingPacket({
+      situations: ['leased', 'producing'],
+      interests: [{ ...interest, inherited: false, lease_status: 'yes', producing_status: 'yes' }],
+      attachments: [
+        {
+          id: '33333333-3333-4333-8333-333333333399',
+          mineral_interest_id: interest.id,
+          document_type: 'royalty_statement',
+          status: 'ready',
+          updated_at: '2026-07-22T12:00:00.000Z',
+        },
+      ],
+      requirements: [
+        {
+          requirement_key: royaltyRequirement.requirementKey,
+          label: royaltyRequirement.label,
+          required: true,
+          requirement_level: 'required',
+          accepted_document_types: royaltyRequirement.acceptedDocumentTypes,
+          status: 'verified',
+          attachment_id: '33333333-3333-4333-8333-333333333399',
+          verified_by: 'staff-profile-reviewer',
+          verified_at: '2026-07-22T12:30:00.000Z',
+        },
+      ],
+      workspace,
+      sourceFingerprint: 'owner-readiness-states',
+    });
+    const owner = projectOwnerUnderwritingChecklist(packet);
+    const royalty = owner.items.find((item) => item.requirementKey === royaltyRequirement.requirementKey);
+
+    expect(owner.readinessStatus).toBe('missing');
+    expect(royalty?.documentReadinessState).toBe('human_review');
+    expect(royalty?.reviewAudit).toEqual({
+      reviewer: 'MRX human reviewer',
+      reviewedAt: '2026-07-22T12:30:00.000Z',
+    });
+    expect(JSON.stringify(owner)).not.toContain('staff-profile-reviewer');
+    expect(owner.readinessNotice).toContain('not proof of ownership');
+    expect(owner.readinessNotice).toContain('value');
   });
 });
