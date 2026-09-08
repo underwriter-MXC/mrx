@@ -178,6 +178,18 @@ type InternalWorkspace = {
   updated_at: string;
 };
 
+type OutcomeReport = {
+  formula: string;
+  observationCoverage: 'instrumented' | 'unavailable';
+  relevantCompletedCase: 0 | 1 | 'unavailable';
+  completedHumanReview: 0 | 1 | 'unavailable';
+  agreedNextStepCase: 0 | 1 | 'unavailable';
+  conversionRate: number | 'unavailable';
+  byVerifiedSource: Record<string, { completedHumanReview: 0 | 1; agreedNextStepCase: 0 | 1 }>;
+};
+
+type OutcomeReportState = { ownerId: string; report: OutcomeReport } | null;
+
 type FilterPriority = 'normal' | 'high' | 'urgent';
 type FilterVerification = 'unknown' | 'low' | 'medium' | 'high';
 type FilterRiskYesNo = 'any' | 'yes' | 'no';
@@ -691,6 +703,8 @@ export default function StaffPortal({ supabaseUrl, supabaseAnonKey }: Props) {
   const [selectedCase, setSelectedCase] = useState<StaffCase | null>(null);
   const [envelope, setEnvelope] = useState<PageEnvelope | null>(null);
   const [status, setStatus] = useState('');
+  const [outcomeReportState, setOutcomeReportState] = useState<OutcomeReportState>(null);
+  const [outcomeBusy, setOutcomeBusy] = useState(false);
   const [loading, setLoading] = useState(true);
   const [refining, setRefining] = useState(false);
   const [isRecoverySession, setIsRecoverySession] = useState(false);
@@ -881,6 +895,28 @@ export default function StaffPortal({ supabaseUrl, supabaseAnonKey }: Props) {
       .finally(() => setPacketLoading(false));
     return () => controller.abort();
   }, [session, isRecoverySession, selectedCase?.id, cases]);
+
+  useEffect(() => {
+    const ownerId = selectedCase?.id;
+    if (!session || !ownerId || isRecoverySession) {
+      setOutcomeReportState(null);
+      return;
+    }
+    const controller = new AbortController();
+    setOutcomeReportState(null);
+    fetch(`/api/staff/cases/${ownerId}/outcome`, {
+      headers: bearerHeaders(session),
+      signal: controller.signal,
+    })
+      .then((response) => (response.ok ? response.json() : null))
+      .then((payload) => {
+        if (payload?.report) setOutcomeReportState({ ownerId, report: payload.report });
+      })
+      .catch((error) => {
+        if (error?.name !== 'AbortError') setOutcomeReportState(null);
+      });
+    return () => controller.abort();
+  }, [session, isRecoverySession, selectedCase?.id]);
 
   function updateFilter<K extends keyof Filters>(key: K, value: Filters[K]) {
     setFilters((current) => {
@@ -1342,6 +1378,60 @@ export default function StaffPortal({ supabaseUrl, supabaseAnonKey }: Props) {
     await refreshDashboard();
   }
 
+  async function recordCaseOutcome(ownerId: string, event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    if (!session || outcomeBusy) return;
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+    const action = String(formData.get('action') || '');
+    const occurredAt = isoDateTimeValue(formData.get('occurredAt'));
+    if (!occurredAt) {
+      setStatus('Choose and keep the occurred-at time so retries use the same audit key.');
+      return;
+    }
+    const actionId = `${ownerId}:${action}:${occurredAt}`;
+    const payload: Record<string, unknown> = {
+      action,
+      actionId,
+      occurredAt,
+      evidenceLabel: 'actual',
+    };
+    if (action === 'record_relevant_case_completed') {
+      payload.evidenceSource = String(formData.get('evidenceSource') || 'required_case_fields');
+    } else if (action === 'complete_human_review') {
+      payload.reviewScope = String(formData.get('reviewScope') || 'case_review');
+    } else if (action === 'record_agreed_next_step') {
+      payload.agreementStatus = 'agreed';
+      payload.nextStepType = String(formData.get('nextStepType') || 'owner_requested_follow_up');
+    }
+    setOutcomeBusy(true);
+    try {
+      const response = await fetch(`/api/staff/cases/${ownerId}/outcome`, {
+        method: 'POST',
+        headers: { ...bearerHeaders(session), 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+      const result = await response.json().catch(() => ({ error: 'invalid_response' }));
+      if (!response.ok) {
+        setStatus(`Outcome not recorded: ${result.error || 'check sequence and evidence'}.`);
+        return;
+      }
+      const reportResponse = await fetch(`/api/staff/cases/${ownerId}/outcome`, {
+        headers: bearerHeaders(session),
+      });
+      const report = await reportResponse.json().catch(() => null);
+      if (reportResponse.ok && report?.report) setOutcomeReportState({ ownerId, report: report.report });
+      setStatus(
+        `${result.eventType} recorded${result.deduped ? ' as duplicate replay' : ''}; analytics ${result.analyticsStatus || 'unchanged'}.`,
+      );
+      form.reset();
+    } catch {
+      setStatus('Outcome submission failed before confirmation. Retry without changing occurred-at.');
+    } finally {
+      setOutcomeBusy(false);
+    }
+  }
+
   if (isRecoverySession && session)
     return (
       <form className="account-card account-signin" onSubmit={setRecoveredPassword}>
@@ -1437,6 +1527,8 @@ export default function StaffPortal({ supabaseUrl, supabaseAnonKey }: Props) {
 
   const selected = selectedCase ?? cases[0] ?? null;
   const workspace = selected ? caseWorkspace(selected) : null;
+  const outcomeReport =
+    selected && outcomeReportState?.ownerId === selected.id ? outcomeReportState.report : null;
   const summary = filterSummary(filters);
   const facets = envelope?.facets ?? {
     mineralCounties: [],
@@ -2369,6 +2461,85 @@ export default function StaffPortal({ supabaseUrl, supabaseAnonKey }: Props) {
                           </div>
                         </>
                       )}
+                    </section>
+
+                    <section aria-labelledby="staff-profile-outcomes-heading">
+                      <p className="account-kicker">Outcome attribution</p>
+                      <h3 id="staff-profile-outcomes-heading" className="staff-section-title">
+                        Relevant case → human review → agreed next step
+                      </h3>
+                      <div className="staff-summary-cards">
+                        <div>
+                          <strong>{outcomeReport?.relevantCompletedCase ?? 'Unavailable'}</strong>
+                          <small>Relevant completed intake/case submission flag</small>
+                        </div>
+                        <div>
+                          <strong>{outcomeReport?.completedHumanReview ?? 'Unavailable'}</strong>
+                          <small>Actual completed human review flag</small>
+                        </div>
+                        <div>
+                          <strong>{outcomeReport?.agreedNextStepCase ?? 'Unavailable'}</strong>
+                          <small>Agreed next-step case flag</small>
+                        </div>
+                        <div>
+                          <strong>
+                            {typeof outcomeReport?.conversionRate === 'number'
+                              ? `${Math.round(outcomeReport.conversionRate * 100)}%`
+                              : 'Unavailable'}
+                          </strong>
+                          <small>Agreed next step / human reviews</small>
+                        </div>
+                      </div>
+                      <form className="staff-workspace-form" onSubmit={(event) => recordCaseOutcome(selected.id, event)}>
+                        <label>
+                          Outcome to record
+                          <select name="action" required>
+                            <option value="record_relevant_case_completed">
+                              Relevant completed case submission
+                            </option>
+                            <option value="complete_human_review">Completed human review</option>
+                            <option value="record_agreed_next_step">Agreed next step</option>
+                          </select>
+                        </label>
+                        <label>
+                          Occurred at
+                          <input name="occurredAt" type="datetime-local" required />
+                        </label>
+                        <label>
+                          Relevant-case evidence source
+                          <select name="evidenceSource">
+                            <option value="required_case_fields">Required fields verified</option>
+                            <option value="authorized_staff_attestation">
+                              Authorized staff attestation
+                            </option>
+                          </select>
+                        </label>
+                        <label>
+                          Human review scope
+                          <select name="reviewScope">
+                            <option value="case_review">Case review</option>
+                            <option value="offer_review">Offer review</option>
+                            <option value="title_review">Title review</option>
+                          </select>
+                        </label>
+                        <label>
+                          Agreed next step
+                          <select name="nextStepType">
+                            <option value="owner_requested_follow_up">Owner requested follow-up</option>
+                            <option value="book_underwriter_call">Book underwriter call</option>
+                            <option value="request_documents">Request documents</option>
+                            <option value="send_offer_packet">Send offer packet</option>
+                          </select>
+                        </label>
+                        <button type="submit" disabled={outcomeBusy}>
+                          {outcomeBusy ? 'Recording…' : 'Record actual outcome'}
+                        </button>
+                      </form>
+                      <small>
+                        Staff-only capture records actual events, enforces the sequence, dedupes replay
+                        by action id, and only exports aggregate analytics when explicit analytics consent
+                        is currently granted.
+                      </small>
                     </section>
 
                     <section aria-labelledby="staff-profile-crm-heading">

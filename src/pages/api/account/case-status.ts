@@ -24,10 +24,11 @@ export const GET: APIRoute = async (context) => {
         .maybeSingle(),
       supabase
         .from('audit_events')
-        .select('actor_user_id,created_at,event_type')
+        .select('actor_user_id,created_at,event_type,metadata')
         .eq('profile_id', session.profileId)
         .eq('event_type', 'staff_owner_case_review_completed')
-        .order('created_at', { ascending: false })
+        .eq('metadata->>evidenceLabel', 'actual')
+        .order('metadata->>occurredAt', { ascending: false })
         .limit(1)
         .maybeSingle(),
     ]);
@@ -35,7 +36,10 @@ export const GET: APIRoute = async (context) => {
     if (completedReviewResult.error) throw completedReviewResult.error;
     const caseStatus = projectOwnerVisibleCaseStatus(workspaceResult.data, {
       reviewerId: completedReviewResult.data?.actor_user_id ?? null,
-      reviewedAt: completedReviewResult.data?.created_at ?? null,
+      reviewedAt:
+        typeof completedReviewResult.data?.metadata?.occurredAt === 'string'
+          ? completedReviewResult.data.metadata.occurredAt
+          : null,
     });
 
     return json({

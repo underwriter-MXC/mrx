@@ -102,8 +102,9 @@ describe('MRX staff-only case review workspace', () => {
     expect(ownerSessionApi).not.toContain('internal_case_files');
     expect(ownerSessionApi).not.toContain('internal_case_workspaces');
     expect(ownerCaseStatusApi).toContain(".select('status,updated_at')");
-    expect(ownerCaseStatusApi).toContain(".select('actor_user_id,created_at,event_type')");
+    expect(ownerCaseStatusApi).toContain(".select('actor_user_id,created_at,event_type,metadata')");
     expect(ownerCaseStatusApi).toContain("staff_owner_case_review_completed");
+    expect(ownerCaseStatusApi).toContain(".eq('metadata->>evidenceLabel', 'actual')");
     expect(ownerCaseStatusApi).not.toContain('case_rating');
     expect(ownerCaseStatusApi).not.toContain('underwriter_brief');
     expect(ownerCaseStatusApi).not.toContain('underwriting_packets');
@@ -396,6 +397,12 @@ describe('MRX staff-only case review workspace', () => {
     expect(staffPortalTsx).toContain('aria-live="polite"');
     expect(staffPortalTsx).toContain('Never contacted');
     expect(staffPortalTsx).toContain('Severity:');
+    expect(staffPortalTsx).toContain('Outcome attribution');
+    expect(staffPortalTsx).toContain('Record actual outcome');
+    expect(staffPortalTsx).toContain('type="datetime-local" required');
+    expect(staffPortalTsx).toContain('outcomeBusy');
+    expect(staffPortalTsx).toContain('setOutcomeReportState({ ownerId, report: payload.report })');
+    expect(staffPortalTsx).toContain('Retry without changing occurred-at');
   });
 
   it('staff portal CSS includes the v1 searchable Owner Cases additions without AccountHub regressions', () => {

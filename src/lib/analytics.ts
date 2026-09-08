@@ -21,7 +21,10 @@ export type DataLayerEvent =
   | { event: 'intake_completed'; mineral_interest_id?: string }
   | { event: 'document_received'; document_type?: string; status?: string }
   | { event: 'case_ready'; profile_id?: string }
-  | { event: 'appointment_held'; mrx_calendar_event_id?: string };
+  | { event: 'appointment_held'; mrx_calendar_event_id?: string }
+  | { event: 'relevant_case_completed' }
+  | { event: 'case_human_review_completed' }
+  | { event: 'case_agreed_next_step' };
 
 declare global {
   interface Window {

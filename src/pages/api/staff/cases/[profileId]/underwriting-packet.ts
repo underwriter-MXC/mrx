@@ -528,6 +528,7 @@ export const POST: APIRoute = async (context) => {
       await sendGa4ServerEvent({
         event: 'case_ready',
         profileId,
+        analyticsConsent: 'unavailable',
         params: { packet_version: PACKET_VERSION, readiness_version: READINESS_VERSION },
       }).catch((error) =>
         console.error(

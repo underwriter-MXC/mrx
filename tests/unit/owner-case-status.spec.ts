@@ -111,7 +111,7 @@ describe('owner private case status API', () => {
     expect(calls.tables).toContain('audit_events');
     expect(calls.tables).not.toContain('underwriting_packets');
     expect(calls.selects).toContain('status,updated_at');
-    expect(calls.selects).toContain('actor_user_id,created_at,event_type');
+    expect(calls.selects).toContain('actor_user_id,created_at,event_type,metadata');
     expect(calls.eq).toContainEqual(['profile_id', mockState.session.profileId]);
     expect(calls.eq).toContainEqual(['event_type', 'staff_owner_case_review_completed']);
     expect(body.caseStatus).toEqual({
@@ -172,6 +172,7 @@ describe('owner private case status API', () => {
         actor_user_id: 'reviewer-user-1',
         created_at: '2026-09-08T22:00:00.000Z',
         event_type: 'staff_owner_case_review_completed',
+        metadata: { evidenceLabel: 'actual', occurredAt: '2026-09-08T22:00:00.000Z' },
       },
     );
     mockState.getSupabaseServer.mockReturnValue(api);
@@ -199,8 +200,9 @@ describe('owner private case status API', () => {
         { status: internalStatus, updated_at: '2026-09-08T23:00:00.000Z' },
         {
           actor_user_id: 'reviewer-user-1',
-          created_at: '2026-09-08T22:00:00.000Z',
+          created_at: '2026-09-08T23:30:00.000Z',
           event_type: 'staff_owner_case_review_completed',
+          metadata: { evidenceLabel: 'actual', occurredAt: '2026-09-08T22:00:00.000Z' },
         },
       );
       mockState.getSupabaseServer.mockReturnValue(api);

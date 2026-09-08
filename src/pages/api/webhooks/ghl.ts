@@ -295,6 +295,7 @@ export const POST: APIRoute = async ({ request }) => {
                 await sendGa4ServerEvent({
                   event: 'appointment_held',
                   profileId: profile.id,
+                  analyticsConsent: 'unavailable',
                   params: { mrx_calendar_event_id: ghlAppointmentId },
                 }).catch((error) =>
                   console.error(
