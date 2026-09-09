@@ -73,23 +73,23 @@ const INPUT_EVIDENCE_PATHS = new Map([
 const OPTIONAL_INPUTS = {
   row2RemediatedCandidate: path.join(
     MRX_ROOT,
-    '.worktrees/t_953629dc/drafts/mrx1000/pilot-001/searchatlas/inherited-mineral-rights-buyers-compared.remediated.noindex.mdx',
+    'docs/evidence/mrx1000-row2/drafts/mrx1000/pilot-001/searchatlas/inherited-mineral-rights-buyers-compared.remediated.noindex.mdx',
   ),
   row2RawVendorDraft: path.join(
     MRX_ROOT,
-    '.worktrees/t_953629dc/drafts/mrx1000/pilot-001/searchatlas/inherited-mineral-rights-buyers-compared.mdx',
+    'docs/evidence/mrx1000-row2/drafts/mrx1000/pilot-001/searchatlas/inherited-mineral-rights-buyers-compared.mdx',
   ),
   row2RecoveryEvidence: path.join(
     MRX_ROOT,
-    '.worktrees/t_953629dc/reports/mrx1000-row2-exact-local-recovery-final-remediation-evidence.md',
+    'docs/evidence/mrx1000-row2/reports/mrx1000-row2-exact-local-recovery-final-remediation-evidence.md',
   ),
   row2FreshComplianceAudit: path.join(
     MRX_ROOT,
-    '.worktrees/t_953629dc/reports/mrx1000-row2-remediated-fresh-post-recovery-audit-compliance.md',
+    'docs/evidence/mrx1000-row2/reports/mrx1000-row2-remediated-fresh-post-recovery-audit-compliance.md',
   ),
   row2FreshSeoAeoAudit: path.join(
     MRX_ROOT,
-    '.worktrees/t_953629dc/reports/mrx1000-055-fresh-seo-aeo-audit-after-exact-row2-recovery.md',
+    'docs/evidence/mrx1000-row2/reports/mrx1000-055-fresh-seo-aeo-audit-after-exact-row2-recovery.md',
   ),
 };
 
