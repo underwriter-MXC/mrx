@@ -6,7 +6,7 @@ import { runtimeEnv } from './runtime-env';
  * Configuration is optional so local/test requests never reach GA4.
  */
 export async function sendGa4ServerEvent(args: {
-  event: 'appointment_held' | 'case_ready';
+  event: 'appointment_booked' | 'appointment_held' | 'case_ready' | 'closed_won';
   profileId: string;
   params?: Record<string, string | number | boolean | null | undefined>;
 }) {

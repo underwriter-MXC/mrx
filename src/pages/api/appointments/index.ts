@@ -19,6 +19,7 @@ import {
   provisionAppointmentMemberAccess,
   resolveOwnerSession,
 } from '../../../lib/platform/identity';
+import { sendGa4ServerEvent } from '../../../lib/platform/analytics';
 
 const Schema = z.object({
   profile: z.object({
@@ -218,6 +219,16 @@ export const POST: APIRoute = async (context) => {
       status: 'queued',
       metadata: { ghlAppointmentId: booked.id, startsAt: parsed.data.option.start },
     });
+    await sendGa4ServerEvent({
+      event: 'appointment_booked',
+      profileId: session.profileId,
+      params: { booking_calendar: 'mrx_senior_underwriter' },
+    }).catch((error) =>
+      console.error(
+        '[GA4 appointment-booked event]',
+        error instanceof Error ? error.message : 'send_failed',
+      ),
+    );
     return json({
       ok: true,
       appointmentId: booked.id,

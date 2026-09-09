@@ -10,6 +10,7 @@ import {
   resolveOwnerCaseStageMapping,
 } from '../../../../../lib/platform/staff';
 import { ghlConfigured, syncGhlOwnerCaseOpportunity } from '../../../../../lib/platform/ghl';
+import { sendGa4ServerEvent } from '../../../../../lib/platform/analytics';
 import {
   assertRateLimit,
   assertSameOrigin,
@@ -213,6 +214,14 @@ export const PUT: APIRoute = async (context) => {
         ghlPipelineStatus: ghlSync.status,
       },
     });
+    if (parsed.data.status === 'closed' && existing?.status !== 'closed' && ghlSync.ok) {
+      await sendGa4ServerEvent({ event: 'closed_won', profileId }).catch((error) =>
+        console.error(
+          '[GA4 closed-won event]',
+          error instanceof Error ? error.message : 'send_failed',
+        ),
+      );
+    }
     return json({ ok: true, workspace, ghlSync }, { status: existing ? 200 : 201 });
   } catch (error) {
     return safeError(error);

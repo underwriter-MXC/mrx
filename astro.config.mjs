@@ -128,7 +128,11 @@ export default defineConfig({
   redirects: legacyStaffRedirects,
   output: 'server',
   build: { inlineStylesheets: 'always' },
-  security: { checkOrigin: true },
+  // Vercel/Cloudflare can expose an internal function origin to Astro, which
+  // made legitimate apex POSTs fail before route code ran. Browser-mutating
+  // routes use the proxy-aware assertSameOrigin guard; webhooks use signatures
+  // and staging-only test routes require their dedicated test secret.
+  security: { checkOrigin: false },
   adapter: isHetzner
     ? node({ mode: 'standalone' })
     : isVercel

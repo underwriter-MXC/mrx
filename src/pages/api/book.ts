@@ -11,6 +11,7 @@ import type { APIRoute } from 'astro';
 import { LeadFormSchema } from '../../lib/form';
 import { submitToGHL, buildCalendarRedirect } from '../../lib/ghl';
 import { serverEnv } from '../../lib/astro/env';
+import { assertSameOrigin } from '../../lib/platform/security';
 
 export const GET: APIRoute = async () =>
   new Response(JSON.stringify({ ok: false, error: 'method_not_allowed' }), {
@@ -24,6 +25,7 @@ export const GET: APIRoute = async () =>
   });
 
 export const POST: APIRoute = async (ctx) => {
+  assertSameOrigin(ctx.request);
   const formData = await ctx.request.formData();
   const raw = Object.fromEntries(formData.entries());
   const parsed = LeadFormSchema.safeParse(raw);

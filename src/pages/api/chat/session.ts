@@ -1,7 +1,13 @@
 import type { APIRoute } from 'astro';
 import { hasDeviceOwnerProfile, resolveOwnerSession } from '../../../lib/platform/identity';
 import { getSupabaseServer } from '../../../lib/platform/supabase';
-import { assertRateLimit, clientKey, json, safeError } from '../../../lib/platform/security';
+import {
+  assertRateLimit,
+  assertSameOrigin,
+  clientKey,
+  json,
+  safeError,
+} from '../../../lib/platform/security';
 import { syncVerifiedOwnerToGhl } from '../../../lib/platform/crm';
 import { refreshCompletedLead } from '../../../lib/platform/communications';
 import { documentWorkerAvailable } from '../../../lib/platform/documents';
@@ -9,6 +15,7 @@ import { isHumanCallChannelEnabled } from '../../../lib/platform/consent';
 
 export const POST: APIRoute = async (context) => {
   try {
+    assertSameOrigin(context.request);
     assertRateLimit(`session:${clientKey(context)}`, 20);
     const session = await resolveOwnerSession(context);
     if (session.emailVerified && session.persisted) {
@@ -167,8 +174,8 @@ export const GET: APIRoute = async (context) => {
         // any prior receipt can take effect.
         call: isHumanCallChannelEnabled()
           ? (latestPermission.get('call:requested_updates') ??
-              latestPermission.get('call:requested_appointment') ??
-              false)
+            latestPermission.get('call:requested_appointment') ??
+            false)
           : false,
       },
       documentUploadsEnabled: deviceAccess,

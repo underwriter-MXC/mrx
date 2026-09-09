@@ -10,6 +10,18 @@ const staffPacketSource = readFileSync(
   new URL('../../src/pages/api/staff/cases/[profileId]/underwriting-packet.ts', import.meta.url),
   'utf8',
 );
+const appointmentsSource = readFileSync(
+  new URL('../../src/pages/api/appointments/index.ts', import.meta.url),
+  'utf8',
+);
+const staffWorkspaceSource = readFileSync(
+  new URL('../../src/pages/api/staff/cases/[profileId]/workspace.ts', import.meta.url),
+  'utf8',
+);
+const askTravisSource = readFileSync(
+  new URL('../../src/components/react/AskTravis.tsx', import.meta.url),
+  'utf8',
+);
 
 describe('server-side funnel lifecycle analytics', () => {
   afterEach(() => {
@@ -57,10 +69,17 @@ describe('server-side funnel lifecycle analytics', () => {
     expect(JSON.stringify(payload)).not.toMatch(/rawText|encrypted_raw_text|storage_path/i);
   });
 
-  it('wires appointment-held and finalized-case events to their authoritative transitions', () => {
+  it('wires funnel events to authoritative, non-test transitions', () => {
+    expect(appointmentsSource).toContain("event: 'appointment_booked'");
+    expect(appointmentsSource).toContain("booking_calendar: 'mrx_senior_underwriter'");
+    expect(askTravisSource).toContain("track('booking_confirmation_shown'");
+    expect(askTravisSource).not.toContain("track('appointment_booked'");
     expect(webhookSource).toContain("event: 'appointment_held'");
     expect(webhookSource).toContain("localAppointmentStatus === 'completed'");
     expect(staffPacketSource).toContain("event: 'case_ready'");
     expect(staffPacketSource).toContain("rpc('finalize_underwriting_packet'");
+    expect(staffWorkspaceSource).toContain("event: 'closed_won'");
+    expect(staffWorkspaceSource).toContain("existing?.status !== 'closed'");
+    expect(staffWorkspaceSource).toContain('ghlSync.ok');
   });
 });

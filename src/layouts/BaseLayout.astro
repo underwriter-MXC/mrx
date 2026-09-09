@@ -282,7 +282,21 @@ const measurementJson = measurement ? JSON.stringify(measurement) : 'null';
       }
 
       function __mrxPush(payload) {
-        window.dataLayer.push(__mrxParams(payload));
+        var enriched = __mrxParams(payload);
+        window.dataLayer.push(enriched);
+        // This site loads gtag.js directly rather than a GTM container. Plain
+        // `{ event: ... }` dataLayer objects are useful for diagnostics and
+        // future GTM compatibility, but gtag.js does not send them as GA4
+        // events. Mirror the privacy-safe payload through gtag explicitly.
+        if (payload && payload.event && typeof window.gtag === 'function') {
+          var ga4Params = {};
+          for (var key in enriched) {
+            if (key !== 'event' && Object.prototype.hasOwnProperty.call(enriched, key)) {
+              ga4Params[key] = enriched[key];
+            }
+          }
+          window.gtag('event', payload.event, ga4Params);
+        }
       }
       window.__mrxPush = __mrxPush;
       window.__mrxMeasurement = __mrxMeasurement;
@@ -351,7 +365,7 @@ const measurementJson = measurement ? JSON.stringify(measurement) : 'null';
                 event: 'article_scroll',
                 scroll_depth: label,
               });
-              window.dataLayer.push(__mrxParams(payload));
+              __mrxPush(payload);
             }
           });
         }
@@ -421,7 +435,7 @@ const measurementJson = measurement ? JSON.stringify(measurement) : 'null';
                 cta_location: __mrxClassifyCtaLocation(sectionRole),
                 link_url: __mrxSanitizeLinkUrl(href),
               });
-              window.dataLayer.push(__mrxParams(payload));
+              __mrxPush(payload);
             }
           });
         });

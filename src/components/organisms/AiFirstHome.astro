@@ -1010,8 +1010,7 @@ const pathways = [
       );
       bookLinks.forEach((link) =>
         link.addEventListener('click', () => {
-          window.dataLayer = window.dataLayer || [];
-          window.dataLayer.push({
+          window.__mrxPush?.({
             event: 'mrx_calendar_click',
             source: link.getAttribute('data-cta-name') || 'home-ai',
           });
@@ -1049,7 +1048,7 @@ const pathways = [
           'prepare a directional offer-review and valuation-driver summary',
         ];
       };
-      const replyFor = (text) => {
+      const replyFor = (text, promptSource) => {
         if (!response) return;
         const clean = (text || '').trim();
         const [agent, role, nextStep] = routeFor(clean);
@@ -1058,21 +1057,24 @@ const pathways = [
           : 'Tell me whether you have an offer, royalty checks, inherited rights, lease papers, or just a question. I will turn that into a cleaner MRX review path and point you to the calendar when you are ready.';
         if (quickActions) quickActions.hidden = true;
         input?.focus();
-        window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push({
+        window.__mrxPush?.({
           event: 'mrx_ai_interaction',
-          mrx_ai_prompt: clean || 'empty',
+          // Never send owner-entered text to analytics. It can contain names,
+          // contact details, legal descriptions, or offer-document content.
+          prompt_source: clean ? promptSource : 'empty',
           mrx_ai_agent: agent,
           mrx_ai_role: role,
           conversion_goal: 'calendar_booking',
         });
       };
       prompts.forEach((button) =>
-        button.addEventListener('click', () => replyFor(button.getAttribute('data-ai-prompt'))),
+        button.addEventListener('click', () =>
+          replyFor(button.getAttribute('data-ai-prompt'), 'preset'),
+        ),
       );
       aiForm?.addEventListener('submit', (event) => {
         event.preventDefault();
-        replyFor(input?.value || '');
+        replyFor(input?.value || '', 'custom');
       });
     };
     if (document.readyState === 'loading') {

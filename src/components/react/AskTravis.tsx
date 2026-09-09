@@ -1217,7 +1217,10 @@ function AskTravisApp({ supabaseUrl, supabaseAnonKey, hideLauncher = false }: Pr
         260,
       );
       await guideSay('How may I help you?', 'elena', 220);
-      track('appointment_booked', {
+      // The API emits the authoritative appointment_booked event only after
+      // the calendar service accepts the booking. This browser event measures confirmation UX
+      // without double-counting the conversion across client and server.
+      track('booking_confirmation_shown', {
         timezone: selectedOption.timezone,
         email_permission: nextProfile.permissions.email,
         sms_permission: nextProfile.permissions.sms,

@@ -8,6 +8,7 @@
 import type { APIRoute } from 'astro';
 import { FreeGuideLeadFormSchema } from '../../lib/form';
 import { submitToGHL } from '../../lib/ghl';
+import { assertSameOrigin } from '../../lib/platform/security';
 
 export const GET: APIRoute = async () =>
   new Response(JSON.stringify({ ok: false, error: 'method_not_allowed' }), {
@@ -21,6 +22,7 @@ export const GET: APIRoute = async () =>
   });
 
 export const POST: APIRoute = async (ctx) => {
+  assertSameOrigin(ctx.request);
   const formData = await ctx.request.formData();
   const raw = Object.fromEntries(formData.entries());
   const parsed = FreeGuideLeadFormSchema.safeParse(raw);
