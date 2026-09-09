@@ -5,6 +5,8 @@ playwright-report/
 test-results/
 coverage/
 .worktrees/
+# Historical audit inputs are checksum-pinned; formatting would invalidate them.
+docs/evidence/mrx1000-row2/
 .codex-isolated/
 *.min.js
 pnpm-lock.yaml

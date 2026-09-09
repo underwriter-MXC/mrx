@@ -14,7 +14,7 @@
     },
     "readiness": {
       "path": "reports/mrx-1000-readiness-matrix.json",
-      "sha256": "f764f4c57ef6b2c656391127f47518474a7642eb4f8973450b72ab08205ae92b",
+      "sha256": "28284b4aa2b438776a0351855cd84123560f9c350e52438c8d6c4b88cae0cda5",
       "bytes": 3458871,
       "sha256_method": "canonical_json_with_top_level_generated_at_masked",
       "generated_at_excluded_from_sha256": true
@@ -70,31 +70,31 @@
       "bytes": 14249
     },
     "row2RemediatedCandidate": {
-      "path": ".worktrees/t_953629dc/drafts/mrx1000/pilot-001/searchatlas/inherited-mineral-rights-buyers-compared.remediated.noindex.mdx",
+      "path": "docs/evidence/mrx1000-row2/drafts/mrx1000/pilot-001/searchatlas/inherited-mineral-rights-buyers-compared.remediated.noindex.mdx",
       "present": true,
       "sha256": "8733083dca7e5b6417bad06c7e6d993f3589890ebfdbf7d8e8404ef2b88fd74d",
       "bytes": 14699
     },
     "row2RawVendorDraft": {
-      "path": ".worktrees/t_953629dc/drafts/mrx1000/pilot-001/searchatlas/inherited-mineral-rights-buyers-compared.mdx",
+      "path": "docs/evidence/mrx1000-row2/drafts/mrx1000/pilot-001/searchatlas/inherited-mineral-rights-buyers-compared.mdx",
       "present": true,
       "sha256": "fa7664878de826d1fb7723d4b50dc2d2c65f5dbb72857307b39432093bc07e9e",
       "bytes": 13698
     },
     "row2RecoveryEvidence": {
-      "path": ".worktrees/t_953629dc/reports/mrx1000-row2-exact-local-recovery-final-remediation-evidence.md",
+      "path": "docs/evidence/mrx1000-row2/reports/mrx1000-row2-exact-local-recovery-final-remediation-evidence.md",
       "present": true,
       "sha256": "13e2b8b3cd9babcef42e321a177004628759cebec9b1701a195c5c85c93dd915",
       "bytes": 5201
     },
     "row2FreshComplianceAudit": {
-      "path": ".worktrees/t_953629dc/reports/mrx1000-row2-remediated-fresh-post-recovery-audit-compliance.md",
+      "path": "docs/evidence/mrx1000-row2/reports/mrx1000-row2-remediated-fresh-post-recovery-audit-compliance.md",
       "present": true,
       "sha256": "03437048d097cd95356d99c40653fe6967f8ad9f6c37e84a777404c737b2cdca",
       "bytes": 28136
     },
     "row2FreshSeoAeoAudit": {
-      "path": ".worktrees/t_953629dc/reports/mrx1000-055-fresh-seo-aeo-audit-after-exact-row2-recovery.md",
+      "path": "docs/evidence/mrx1000-row2/reports/mrx1000-055-fresh-seo-aeo-audit-after-exact-row2-recovery.md",
       "present": true,
       "sha256": "e4de274bccc48d4e614258fd09792c820cea3531366612187cedc4172eda6964",
       "bytes": 9711
@@ -879,31 +879,31 @@
         "review_candidate": {
           "state": "ROW2_REMEDIATED_NOINDEX_CANDIDATE_VALIDATED_FOR_ORDERED_LLM_REVIEW",
           "checksummed_review_candidate_present": true,
-          "path": ".worktrees/t_953629dc/drafts/mrx1000/pilot-001/searchatlas/inherited-mineral-rights-buyers-compared.remediated.noindex.mdx",
+          "path": "docs/evidence/mrx1000-row2/drafts/mrx1000/pilot-001/searchatlas/inherited-mineral-rights-buyers-compared.remediated.noindex.mdx",
           "source_sha256": "8733083dca7e5b6417bad06c7e6d993f3589890ebfdbf7d8e8404ef2b88fd74d",
           "body_sha256": "abcbcbb0eb97e9b3c03da786e092ed6f425d991cef80600018ccf19f5bb46d07",
           "body_word_count": 1894,
           "candidate_type": "row2_remediated_noindex_candidate",
           "readiness_evidence_verified": true,
           "readiness_evidence_paths": [
-            ".worktrees/t_953629dc/reports/mrx1000-row2-exact-local-recovery-final-remediation-evidence.md",
-            ".worktrees/t_953629dc/reports/mrx1000-row2-remediated-fresh-post-recovery-audit-compliance.md",
-            ".worktrees/t_953629dc/reports/mrx1000-055-fresh-seo-aeo-audit-after-exact-row2-recovery.md"
+            "docs/evidence/mrx1000-row2/reports/mrx1000-row2-exact-local-recovery-final-remediation-evidence.md",
+            "docs/evidence/mrx1000-row2/reports/mrx1000-row2-remediated-fresh-post-recovery-audit-compliance.md",
+            "docs/evidence/mrx1000-row2/reports/mrx1000-055-fresh-seo-aeo-audit-after-exact-row2-recovery.md"
           ],
           "workspace_mdx_is_review_candidate": false,
           "workspace_mdx_rejection_reason": "Pilot workspace MDX is an explicit staged QA shell; final article copy is absent.",
           "special_candidate_validation": {
             "validated": true,
             "state": "ROW2_REMEDIATED_NOINDEX_CANDIDATE_VALIDATED_FOR_ORDERED_LLM_REVIEW",
-            "candidate_path": ".worktrees/t_953629dc/drafts/mrx1000/pilot-001/searchatlas/inherited-mineral-rights-buyers-compared.remediated.noindex.mdx",
+            "candidate_path": "docs/evidence/mrx1000-row2/drafts/mrx1000/pilot-001/searchatlas/inherited-mineral-rights-buyers-compared.remediated.noindex.mdx",
             "candidate_sha256": "8733083dca7e5b6417bad06c7e6d993f3589890ebfdbf7d8e8404ef2b88fd74d",
             "candidate_body_sha256": "abcbcbb0eb97e9b3c03da786e092ed6f425d991cef80600018ccf19f5bb46d07",
             "candidate_word_count": 1894,
             "readiness_evidence_verified": true,
             "readiness_evidence_paths": [
-              ".worktrees/t_953629dc/reports/mrx1000-row2-exact-local-recovery-final-remediation-evidence.md",
-              ".worktrees/t_953629dc/reports/mrx1000-row2-remediated-fresh-post-recovery-audit-compliance.md",
-              ".worktrees/t_953629dc/reports/mrx1000-055-fresh-seo-aeo-audit-after-exact-row2-recovery.md"
+              "docs/evidence/mrx1000-row2/reports/mrx1000-row2-exact-local-recovery-final-remediation-evidence.md",
+              "docs/evidence/mrx1000-row2/reports/mrx1000-row2-remediated-fresh-post-recovery-audit-compliance.md",
+              "docs/evidence/mrx1000-row2/reports/mrx1000-055-fresh-seo-aeo-audit-after-exact-row2-recovery.md"
             ],
             "rejection_reasons": [],
             "rejected_candidate_observation": null
@@ -961,7 +961,7 @@
           "dispatch_eligible_now": false,
           "prerequisite_gates": {
             "checksummed_review_candidate_present": true,
-            "review_candidate_path": ".worktrees/t_953629dc/drafts/mrx1000/pilot-001/searchatlas/inherited-mineral-rights-buyers-compared.remediated.noindex.mdx",
+            "review_candidate_path": "docs/evidence/mrx1000-row2/drafts/mrx1000/pilot-001/searchatlas/inherited-mineral-rights-buyers-compared.remediated.noindex.mdx",
             "review_candidate_sha256": "8733083dca7e5b6417bad06c7e6d993f3589890ebfdbf7d8e8404ef2b88fd74d",
             "review_candidate_readiness_evidence_verified": true,
             "predecessor_key": null,
@@ -998,7 +998,7 @@
           "dispatch_eligible_now": false,
           "prerequisite_gates": {
             "checksummed_review_candidate_present": true,
-            "review_candidate_path": ".worktrees/t_953629dc/drafts/mrx1000/pilot-001/searchatlas/inherited-mineral-rights-buyers-compared.remediated.noindex.mdx",
+            "review_candidate_path": "docs/evidence/mrx1000-row2/drafts/mrx1000/pilot-001/searchatlas/inherited-mineral-rights-buyers-compared.remediated.noindex.mdx",
             "review_candidate_sha256": "8733083dca7e5b6417bad06c7e6d993f3589890ebfdbf7d8e8404ef2b88fd74d",
             "review_candidate_readiness_evidence_verified": true,
             "predecessor_key": "chatgpt",
@@ -1035,7 +1035,7 @@
           "dispatch_eligible_now": false,
           "prerequisite_gates": {
             "checksummed_review_candidate_present": true,
-            "review_candidate_path": ".worktrees/t_953629dc/drafts/mrx1000/pilot-001/searchatlas/inherited-mineral-rights-buyers-compared.remediated.noindex.mdx",
+            "review_candidate_path": "docs/evidence/mrx1000-row2/drafts/mrx1000/pilot-001/searchatlas/inherited-mineral-rights-buyers-compared.remediated.noindex.mdx",
             "review_candidate_sha256": "8733083dca7e5b6417bad06c7e6d993f3589890ebfdbf7d8e8404ef2b88fd74d",
             "review_candidate_readiness_evidence_verified": true,
             "predecessor_key": "google_gemini",
@@ -1073,7 +1073,7 @@
           "dispatch_eligible_now": false,
           "prerequisite_gates": {
             "checksummed_review_candidate_present": true,
-            "review_candidate_path": ".worktrees/t_953629dc/drafts/mrx1000/pilot-001/searchatlas/inherited-mineral-rights-buyers-compared.remediated.noindex.mdx",
+            "review_candidate_path": "docs/evidence/mrx1000-row2/drafts/mrx1000/pilot-001/searchatlas/inherited-mineral-rights-buyers-compared.remediated.noindex.mdx",
             "review_candidate_sha256": "8733083dca7e5b6417bad06c7e6d993f3589890ebfdbf7d8e8404ef2b88fd74d",
             "review_candidate_readiness_evidence_verified": true,
             "predecessor_key": "claude_action_time_named_model",
@@ -352650,5 +352650,5 @@
       ]
     }
   ],
-  "content_fingerprint_sha256": "b730c51356787774c71982e4cea4ea90b08d3347707efa514e79e90d5d4870db"
+  "content_fingerprint_sha256": "3d5d4b7fd80aa142fdb261d62eea15637329cfe958ce61089f2f77b00a8a8c56"
 }

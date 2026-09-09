@@ -537,7 +537,7 @@ describe('MRX1000 SearchAtlas + ordered LLM execution manifest', () => {
       validated: true,
       state: 'ROW2_REMEDIATED_NOINDEX_CANDIDATE_VALIDATED_FOR_ORDERED_LLM_REVIEW',
       candidate_path:
-        '.worktrees/t_953629dc/drafts/mrx1000/pilot-001/searchatlas/inherited-mineral-rights-buyers-compared.remediated.noindex.mdx',
+        'docs/evidence/mrx1000-row2/drafts/mrx1000/pilot-001/searchatlas/inherited-mineral-rights-buyers-compared.remediated.noindex.mdx',
       candidate_sha256: '8733083dca7e5b6417bad06c7e6d993f3589890ebfdbf7d8e8404ef2b88fd74d',
       candidate_body_sha256: 'abcbcbb0eb97e9b3c03da786e092ed6f425d991cef80600018ccf19f5bb46d07',
       candidate_word_count: 1894,
@@ -551,9 +551,9 @@ describe('MRX1000 SearchAtlas + ordered LLM execution manifest', () => {
       body_sha256: 'abcbcbb0eb97e9b3c03da786e092ed6f425d991cef80600018ccf19f5bb46d07',
       body_word_count: 1894,
       readiness_evidence_paths: [
-        '.worktrees/t_953629dc/reports/mrx1000-row2-exact-local-recovery-final-remediation-evidence.md',
-        '.worktrees/t_953629dc/reports/mrx1000-row2-remediated-fresh-post-recovery-audit-compliance.md',
-        '.worktrees/t_953629dc/reports/mrx1000-055-fresh-seo-aeo-audit-after-exact-row2-recovery.md',
+        'docs/evidence/mrx1000-row2/reports/mrx1000-row2-exact-local-recovery-final-remediation-evidence.md',
+        'docs/evidence/mrx1000-row2/reports/mrx1000-row2-remediated-fresh-post-recovery-audit-compliance.md',
+        'docs/evidence/mrx1000-row2/reports/mrx1000-055-fresh-seo-aeo-audit-after-exact-row2-recovery.md',
       ],
     });
     expect(row2?.review_gate.next_stage).toBe('chatgpt');

@@ -2,6 +2,7 @@
 import { existsSync, readFileSync } from 'node:fs';
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { dirname, join, resolve } from 'node:path';
+import { buildSocialDescription } from '../src/lib/social-description.mjs';
 
 const ROOT = resolve(import.meta.dirname, '..');
 const MANIFEST = join(ROOT, 'config', 'mrx-1000-pilot-batch-001.json');
@@ -67,10 +68,12 @@ for (const article of manifest.articles) {
     og_type_article: ogType === 'article',
     og_image_absolute: heroSrc.startsWith('https://mineralrightsxchange.com/'),
     og_title_exact: ogTitle === article.title,
-    og_description_exact: ogDescription === frontmatterDescription(article.slug),
+    og_description_exact:
+      ogDescription === buildSocialDescription(frontmatterDescription(article.slug)),
     twitter_card_large_image: twitterCard === 'summary_large_image',
     twitter_title_exact: twitterTitle === article.title,
-    twitter_description_exact: twitterDescription === frontmatterDescription(article.slug),
+    twitter_description_exact:
+      twitterDescription === buildSocialDescription(frontmatterDescription(article.slug)),
     twitter_image_matches_og: socialSrc === heroSrc,
     article_jsonld_stage_id: articleNode?.['@id'] === `${expectedCanonical}#article`,
     article_jsonld_stage_page:

@@ -18,6 +18,7 @@ import {
   OG_IMAGE_TYPE,
 } from '../../lib/seo';
 import { SITE } from '../../lib/site';
+import { buildSocialDescription } from '../../lib/social-description.mjs';
 import { jsonLdStringify, buildPageGraph } from '../../lib/jsonld';
 import { siteGraph } from '../../structured-data/site';
 import type { Crumb } from '../../structured-data/breadcrumb';
@@ -81,13 +82,7 @@ const exactCanonicalMetadataTitle = exactCanonicalArticleTitle
   ? buildArticleTitle(exactCanonicalArticleTitle, exactCanonicalArticleTitle)
   : undefined;
 const socialTitle = exactCanonicalArticleTitle ?? finalTitle;
-const socialDescription =
-  description.length <= 125
-    ? description
-    : `${description
-        .slice(0, 121)
-        .replace(/\s+\S*$/, '')
-        .replace(/[\s,;:.!?-]+$/, '')}…`;
+const socialDescription = buildSocialDescription(description);
 const tOk =
   exactCanonicalArticleTitle && finalTitle === exactCanonicalMetadataTitle
     ? validateArticleTitle(exactCanonicalArticleTitle, exactCanonicalArticleTitle)
