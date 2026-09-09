@@ -29,6 +29,7 @@ export function compileDeploymentRoutes(vercelConfig) {
   const { routes } = getTransformedRoutes({
     redirects: vercelConfig.redirects ?? [],
     headers: vercelConfig.headers ?? [],
+    trailingSlash: vercelConfig.trailingSlash,
   });
   return routes;
 }

@@ -2,6 +2,7 @@
   "buildCommand": "pnpm build:vercel",
   "installCommand": "pnpm install --frozen-lockfile",
   "framework": "astro",
+  "trailingSlash": true,
   "git": {
     "deploymentEnabled": false
   },

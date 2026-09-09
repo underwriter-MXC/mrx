@@ -91,6 +91,25 @@ describe('prebuilt Vercel deployment routing', () => {
     ).toBe(false);
   });
 
+  it('consolidates extensionless URLs on their canonical trailing-slash form', () => {
+    const routes = compileDeploymentRoutes(vercelConfig) as DeploymentRoute[];
+    const canonicalRedirect = matchingRoutes(routes, '/about').find(
+      (route) => route.status === 308 && route.headers?.Location === '/$1/',
+    );
+
+    expect(canonicalRedirect).toBeDefined();
+    expect(
+      matchingRoutes(routes, '/about/').some(
+        (route) => route.status === 308 && route.headers?.Location === '/$1/',
+      ),
+    ).toBe(false);
+    expect(
+      matchingRoutes(routes, '/robots.txt').some(
+        (route) => route.status === 308 && route.headers?.Location === '/$1/',
+      ),
+    ).toBe(false);
+  });
+
   it('merges routes before the filesystem phase and remains idempotent', () => {
     const deploymentRoutes = compileDeploymentRoutes(vercelConfig) as DeploymentRoute[];
     const base = {
