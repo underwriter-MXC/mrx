@@ -91,6 +91,15 @@ describe('prebuilt Vercel deployment routing', () => {
     ).toBe(false);
   });
 
+  it('redirects trailing-slash Ariana archive pages while preserving the page number', () => {
+    const routes = compileDeploymentRoutes(vercelConfig) as DeploymentRoute[];
+    const redirect = matchingRoutes(routes, '/authors/ariana/page/8/').find(
+      (route) => route.status === 308,
+    );
+
+    expect(redirect?.headers?.Location).toBe('/authors/marisol/page/$1/');
+  });
+
   it('consolidates extensionless URLs on their canonical trailing-slash form', () => {
     const routes = compileDeploymentRoutes(vercelConfig) as DeploymentRoute[];
     const canonicalRedirect = matchingRoutes(routes, '/about').find(

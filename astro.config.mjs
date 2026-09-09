@@ -14,6 +14,13 @@ const isVercel = DEPLOY_TARGET === 'vercel';
 
 // Keep previously published staff links working while the public identities use
 // their new MRX names. Astro applies these permanent redirects on every adapter.
+const legacyAuthorPaginationRedirects = Object.fromEntries(
+  Array.from({ length: 7 }, (_, index) => {
+    const page = index + 2;
+    return [`/authors/ariana/page/${page}`, `/authors/marisol/page/${page}/`];
+  }),
+);
+
 const legacyStaffRedirects = {
   '/team/tommy': '/team/travis/',
   '/team/cooper': '/team/connor/',
@@ -32,6 +39,7 @@ const legacyStaffRedirects = {
   '/authors/walt': '/authors/wade/',
   '/authors/monty': '/authors/graham/',
   '/authors/ariana': '/authors/marisol/',
+  ...legacyAuthorPaginationRedirects,
 };
 
 const publicStaffNameReplacements = [

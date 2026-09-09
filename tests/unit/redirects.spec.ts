@@ -51,4 +51,14 @@ describe('canonical owner-situation redirects', () => {
       permanent: true,
     });
   });
+
+  it('preserves every historical Ariana archive page when redirecting to Marisol', async () => {
+    const astroConfig = (await import('../../astro.config.mjs')).default;
+
+    for (let page = 2; page <= 8; page += 1) {
+      expect(astroConfig.redirects).toMatchObject({
+        [`/authors/ariana/page/${page}`]: `/authors/marisol/page/${page}/`,
+      });
+    }
+  });
 });
