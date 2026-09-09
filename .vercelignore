@@ -18,8 +18,8 @@ tmp/
 # Vercel's per-deployment file limit. Production archive deployments use
 # scripts/prepare-vercel-deploy-stage.sh to add only the signed inputs needed
 # by the fail-closed MRX1000 release gate.
-artifacts/
-reports/
+artifacts/*
+reports/*
 
 # The icon-library React sources and master SVGs are authoring inputs only.
 # Runtime code has no imports of them; retain optimized SVG and PNG public
@@ -31,4 +31,56 @@ public/assets/icons/*/svg/
 # hash-bound governance receipts required by the fail-closed release gate.
 docs/*
 !docs/governance
+docs/governance/*
+!docs/governance/mrx1000-owner-continuous-publication-directive-2026-08-04.md
 scripts/audit-staged-content.mjs
+
+# Remote builds need the same narrow signed inputs as prepare-vercel-deploy-stage.sh.
+tests/
+scripts/admit-mrx1000-*
+!artifacts/mrx1000-release-10
+artifacts/mrx1000-release-10/*
+!artifacts/mrx1000-release-10/decisions
+!artifacts/mrx1000-release-10/reviews
+artifacts/mrx1000-release-10/reviews/*
+!artifacts/mrx1000-release-10/reviews/final
+!artifacts/mrx1000-release-10/creative-remediation-15d
+!reports/mrx1000-first-completed-release-batch-v2
+reports/mrx1000-first-completed-release-batch-v2/*
+!reports/mrx1000-release-10-lifecycle
+reports/mrx1000-release-10-lifecycle/*
+!reports/mrx1000-wave2-creative-revalidate-9x8-20260801T021210Z
+reports/mrx1000-wave2-creative-revalidate-9x8-20260801T021210Z/*
+!artifacts/mrx1000-release-10/release
+artifacts/mrx1000-release-10/release/*
+!artifacts/mrx1000-release-10/creative-remediation-15d/wave2-creative-remediation-15d-20260801T020500Z.json
+!artifacts/mrx1000-release-10/creative-remediation-15d/wave2-creative-remediation-15d-20260801T020500Z.json.sha256
+!artifacts/mrx1000-release-10/creative-remediation-15d/wave2-creative-remediation-15d-20260801T020500Z.md
+!artifacts/mrx1000-release-10/creative-remediation-15d/wave2-creative-remediation-15d-20260801T020500Z.md.sha256
+!artifacts/mrx1000-release-10/release/bound-pre-edit-batch.json
+!artifacts/mrx1000-release-10/release/bound-pre-edit-batch.json.sha256
+!artifacts/mrx1000-release-10/release/retained-production-baseline.json
+!artifacts/mrx1000-release-10/release/retained-production-baseline.json.sha256
+!reports/mrx1000-first-completed-release-batch-v2/first-completed-release-batch-v2.json
+!reports/mrx1000-first-completed-release-batch-v2/first-completed-release-batch-v2.json.sha256
+!reports/mrx1000-release-10-lifecycle/gsc-url-inspection-2026-07-31.json
+!reports/mrx1000-release-10-lifecycle/gsc-url-inspection-2026-07-31.json.sha256
+!reports/mrx1000-release-10-lifecycle/gsc-url-inspection-2026-07-31.md
+!reports/mrx1000-release-10-lifecycle/gsc-url-inspection-2026-07-31.md.sha256
+!reports/mrx1000-wave2-creative-revalidate-9x8-20260801T021210Z/mrx1000-wave2-creative-revalidate-9x8-20260801T021210Z.json
+!reports/mrx1000-wave2-creative-revalidate-9x8-20260801T021210Z/mrx1000-wave2-creative-revalidate-9x8-20260801T021210Z.json.sha256
+!reports/mrx1000-wave2-creative-revalidate-9x8-20260801T021210Z/mrx1000-wave2-creative-revalidate-9x8-20260801T021210Z.md
+!reports/mrx1000-wave2-creative-revalidate-9x8-20260801T021210Z/mrx1000-wave2-creative-revalidate-9x8-20260801T021210Z.md.sha256
+!reports/mrx1000-wave2-final2-gates.log
+!reports/mrx1000-wave2-final2-gates.log.sha256
+!reports/mrx1000-wave2-pre-release-qa.json
+!reports/mrx1000-wave2-pre-release-qa.json.sha256
+!reports/mrx1000-wave2-pre-release-qa.md
+!reports/mrx1000-wave2-pre-release-qa.md.sha256
+!reports/mrx1000-wave2-release-manifest-20260801T003929Z.json
+!reports/mrx1000-wave2-release-manifest-20260801T003929Z.json.sha256
+!reports/mrx1000-wave2-rollback-packet-20260801T003929Z.json
+!reports/mrx1000-wave2-rollback-packet-20260801T003929Z.json.sha256
+
+# Historical per-wave authoring utilities are not production build inputs.
+scripts/build-mrx1000-wave*
