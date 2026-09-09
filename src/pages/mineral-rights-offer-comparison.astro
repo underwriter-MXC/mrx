@@ -22,8 +22,9 @@ export const prerender = true;
       <h1>Mineral rights offer comparison tool</h1>
       <p>
         Put two written offers on the same screen. This worksheet calculates price per stated net
-        mineral acre when both inputs are available and flags unanswered terms. It does not upload,
-        save, or transmit what you type.
+        mineral acre when both inputs are available and flags unanswered terms. Your entries stay in
+        this page until you clear it or leave. MRX does not upload or save the worksheet values.
+        General tool-use events contain no worksheet entries.
       </p>
       <aside>
         This tool does not determine market value or whether an offer is fair. Net mineral acres,
@@ -45,7 +46,11 @@ export const prerender = true;
         >
       </div>
 
-      <form data-offer-comparison>
+      <p>
+        Leave unknown amounts blank. Write “unknown” where a term is unclear. Do not enter names,
+        account numbers, signatures, or document text that identifies an owner.
+      </p>
+      <form data-offer-comparison autocomplete="off">
         <div
           class="compare-table-wrap"
           tabindex="0"
@@ -62,6 +67,32 @@ export const prerender = true;
             </thead>
             <tbody>
               <tr>
+                <th scope="row">Kind of interest</th>
+                {
+                  (['a', 'b'] as const).map((side) => (
+                    <td>
+                      <label class="compare-side-label" for={`offer-${side}-interest`}>
+                        Offer {side.toUpperCase()}
+                      </label>
+                      <select
+                        id={`offer-${side}-interest`}
+                        name={`offer-${side}-interest`}
+                        data-interest={side}
+                      >
+                        <option value="">Select interest type</option>
+                        <option value="mineral">Mineral interest (stated NMA)</option>
+                        <option value="royalty">Royalty interest (other basis)</option>
+                        <option value="unknown">I am not sure</option>
+                      </select>
+                    </td>
+                  ))
+                }
+                <td
+                  >Use only the basis identified in the offer. A royalty decimal or net royalty acre
+                  is not a net mineral acre.</td
+                >
+              </tr>
+              <tr>
                 <th scope="row"><label for="offer-a-total">Headline total</label></th>
                 <td
                   ><input
@@ -77,6 +108,7 @@ export const prerender = true;
                 >
                 <td
                   ><input
+                    aria-label="Offer B headline total"
                     id="offer-b-total"
                     name="offer-b-total"
                     type="number"
@@ -105,6 +137,7 @@ export const prerender = true;
                 >
                 <td
                   ><input
+                    aria-label="Offer B stated net mineral acres"
                     id="offer-b-nma"
                     name="offer-b-nma"
                     type="number"
@@ -118,7 +151,7 @@ export const prerender = true;
                 <td>Confirm the acreage basis and do not substitute net royalty acres.</td>
               </tr>
               <tr class="compare-table__result-row">
-                <th scope="row">Price per stated NMA</th>
+                <th scope="row">Amount per stated net mineral acre</th>
                 <td><output data-per-acre="a">Not enough information</output></td>
                 <td><output data-per-acre="b">Not enough information</output></td>
                 <td>A calculation can normalize stated inputs; it cannot prove acreage or value.</td
@@ -137,6 +170,7 @@ export const prerender = true;
                 </td>
                 <td>
                   <select
+                    id="offer-b-property"
                     name="offer-b-property"
                     aria-label="Offer B property and rights described exactly"
                     data-term="b"
@@ -165,6 +199,7 @@ export const prerender = true;
                 >
                 <td
                   ><textarea
+                    id="offer-b-adjustments"
                     name="offer-b-adjustments"
                     rows="3"
                     aria-label="Offer B price-adjustment language"
@@ -191,6 +226,7 @@ export const prerender = true;
                 >
                 <td
                   ><input
+                    id="offer-b-diligence"
                     name="offer-b-diligence"
                     type="text"
                     aria-label="Offer B diligence or option period"
@@ -214,6 +250,7 @@ export const prerender = true;
                 >
                 <td
                   ><textarea
+                    id="offer-b-closing"
                     name="offer-b-closing"
                     rows="3"
                     aria-label="Offer B closing and payment conditions"
@@ -240,6 +277,7 @@ export const prerender = true;
                 >
                 <td
                   ><input
+                    id="offer-b-effective"
                     name="offer-b-effective"
                     type="text"
                     aria-label="Offer B effective date and receivables"
@@ -261,6 +299,7 @@ export const prerender = true;
                 >
                 <td
                   ><textarea
+                    id="offer-b-notes"
                     name="offer-b-notes"
                     rows="3"
                     aria-label="Offer B other obligations or notes"
@@ -274,16 +313,71 @@ export const prerender = true;
         </div>
       </form>
 
+      <button type="button" class="compare-tool__reset" data-show-questions
+        >Show questions to resolve</button
+      >
       <div class="compare-summary" aria-live="polite">
-        <article>
-          <h3>Offer A unanswered fields</h3>
-          <p><strong data-missing="a">8</strong> of 8 comparison fields still need an answer.</p>
-        </article>
-        <article>
-          <h3>Offer B unanswered fields</h3>
-          <p><strong data-missing="b">8</strong> of 8 comparison fields still need an answer.</p>
-        </article>
+        {
+          (['a', 'b'] as const).map((side) => (
+            <article>
+              <h3>Offer {side.toUpperCase()}: questions to resolve</h3>
+              <p data-question-count={side}>Choose the interest type and add the facts you know.</p>
+              <ul data-questions={side} />
+            </article>
+          ))
+        }
       </div>
+      <p>
+        These prompts flag missing or unclear entries. Filling every field does not verify the offer
+        or establish that it is fair.
+      </p>
+      <noscript
+        ><p>
+          The calculation needs JavaScript. You can still use the blank table, explanations, and
+          example below as a written checklist.
+        </p></noscript
+      >
+
+      <section class="compare-example" aria-labelledby="comparison-example">
+        <p class="compare-eyebrow">Hypothetical example · not an actual offer</p>
+        <h2 id="comparison-example">A larger headline can describe more property</h2>
+        <p>
+          Suppose Offer A states $40,000 for 10 net mineral acres and Offer B states $60,000 for 20
+          net mineral acres. The arithmetic is $4,000 and $3,000 per stated NMA. These invented
+          numbers illustrate division only; they are not market prices or valuation guidance.
+        </p>
+        <p>
+          The offers cover different quantities. Before treating them as comparable, identify the
+          exact property, depths, retained rights, adjustments, and payment conditions. This
+          worksheet cannot determine which offer is better.
+        </p>
+      </section>
+      <section class="compare-example" aria-labelledby="comparison-method">
+        <h2 id="comparison-method">How this worksheet works</h2>
+        <p>
+          For a mineral-interest selection, the calculation divides a positive stated total by
+          positive stated net mineral acres. Other interest types and unknown or invalid inputs
+          receive no per-net-mineral-acre calculation. Questions reflect the fields supplied, not an
+          examination of your documents. Unknown terms remain questions.
+        </p>
+        <p>
+          The result is arithmetic derived only from your entered offer terms. It is not an
+          appraisal, valuation, market-price estimate, recommendation, assessment of offer quality,
+          or evidence of what another buyer would pay. This worksheet does not guarantee an offer,
+          transaction, price, qualification, or outcome.
+        </p>
+        <p>
+          MRX publishes and maintains this educational worksheet. Fictional AI guides are not human
+          employees or licensed professionals. MRX may become a buyer; that relationship is
+          disclosed in writing before an agreement is signed. A qualified professional must address
+          owner-specific legal, tax, title, or valuation conclusions.
+        </p>
+        <p>
+          <a href="/methodology/">Read MRX’s methodology and role</a> · <a href="/editorial-policy/"
+            >Read the editorial and correction policy</a
+          > · <a href="/offer-review/">Use the four-part offer framework</a>
+        </p>
+      </section>
 
       <div class="compare-next">
         <div>
@@ -296,7 +390,7 @@ export const prerender = true;
         </div>
         <div class="compare-next__actions">
           <button type="button" data-print-comparison>Print this worksheet</button>
-          <a href="/book/">Request a free underwriter review</a>
+          <a href="/book/" data-comparison-review>Request a free underwriter review</a>
           <a href="/offer-review/">Return to the fair-offer guide</a>
         </div>
       </div>
@@ -305,6 +399,12 @@ export const prerender = true;
 </MarketingLayout>
 
 <script>
+  import {
+    compareOffer,
+    comparisonEvent,
+    type ComparisonAction,
+    type InterestType,
+  } from '../lib/offer-comparison';
   const form = document.querySelector<HTMLFormElement>('[data-offer-comparison]');
   const sides = ['a', 'b'] as const;
   const currency = new Intl.NumberFormat('en-US', {
@@ -312,48 +412,84 @@ export const prerender = true;
     currency: 'USD',
     maximumFractionDigits: 2,
   });
-
-  function hasValue(field: HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement): boolean {
-    return field.value.trim().length > 0;
+  const emitted = new Set<ComparisonAction>();
+  function track(action: ComparisonAction) {
+    if (emitted.has(action)) return;
+    emitted.add(action);
+    // Fixed fields only: never input values, raw location, UTM, owner or document IDs.
+    const payload = comparisonEvent(action);
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push(payload);
+    const analyticsWindow = window as Window & { gtag?: (...args: unknown[]) => void };
+    analyticsWindow.gtag?.('event', payload.event, {
+      tool_version: payload.tool_version,
+      page_location: 'https://mineralrightsxchange.com/mineral-rights-offer-comparison/',
+      page_referrer: '',
+      transport_type: 'beacon',
+    });
   }
-
+  function value(side: string, key: string) {
+    return (
+      form?.querySelector<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>(
+        `[name="offer-${side}-${key}"]`,
+      )?.value ?? ''
+    );
+  }
   function updateComparison() {
     for (const side of sides) {
-      const total = Number(
-        document.querySelector<HTMLInputElement>(`[data-total="${side}"]`)?.value ?? 0,
-      );
-      const acres = Number(
-        document.querySelector<HTMLInputElement>(`[data-acres="${side}"]`)?.value ?? 0,
-      );
+      const result = compareOffer({
+        interestType: value(side, 'interest') as InterestType,
+        total: value(side, 'total'),
+        acres: value(side, 'nma'),
+        property: value(side, 'property'),
+        adjustments: value(side, 'adjustments'),
+        diligence: value(side, 'diligence'),
+        closing: value(side, 'closing'),
+        effective: value(side, 'effective'),
+        notes: value(side, 'notes'),
+      });
       const output = document.querySelector<HTMLOutputElement>(`[data-per-acre="${side}"]`);
-      if (output) {
+      if (output)
         output.textContent =
-          total > 0 && acres > 0 ? currency.format(total / acres) : 'Not enough information';
+          result.perAcre === null ? result.calculationNote : currency.format(result.perAcre);
+      const list = document.querySelector<HTMLElement>(`[data-questions="${side}"]`);
+      if (list) {
+        list.replaceChildren(
+          ...result.questions.map((question) => {
+            const item = document.createElement('li');
+            item.textContent = question;
+            return item;
+          }),
+        );
       }
-
-      const requiredFields = [
-        document.querySelector<HTMLInputElement>(`[data-total="${side}"]`),
-        document.querySelector<HTMLInputElement>(`[data-acres="${side}"]`),
-        ...document.querySelectorAll<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>(
-          `[data-term="${side}"]`,
-        ),
-      ].filter((field): field is HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement =>
-        Boolean(field),
-      );
-      const missing = requiredFields.filter((field) => !hasValue(field)).length;
-      const missingOutput = document.querySelector<HTMLElement>(`[data-missing="${side}"]`);
-      if (missingOutput) missingOutput.textContent = String(missing);
+      const count = document.querySelector<HTMLElement>(`[data-question-count="${side}"]`);
+      if (count)
+        count.textContent = result.questions.length
+          ? `${result.questions.length} questions remain from these entries.`
+          : 'No blank or unclear entries flagged. The offer still needs verification.';
     }
   }
-
-  form?.addEventListener('input', updateComparison);
+  form?.addEventListener('submit', (event) => event.preventDefault());
+  form?.addEventListener('input', () => {
+    track('started');
+    updateComparison();
+  });
+  document.querySelector('[data-show-questions]')?.addEventListener('click', () => {
+    track('questions_viewed');
+    updateComparison();
+    document.querySelector('.compare-summary')?.scrollIntoView({ block: 'nearest' });
+  });
   document.querySelector('[data-reset-comparison]')?.addEventListener('click', () => {
     form?.reset();
     updateComparison();
   });
+  document.querySelector('[data-print-comparison]')?.addEventListener('click', () => {
+    track('print_requested');
+    window.print();
+  });
   document
-    .querySelector('[data-print-comparison]')
-    ?.addEventListener('click', () => window.print());
+    .querySelector('[data-comparison-review]')
+    ?.addEventListener('click', () => track('review_selected'));
   updateComparison();
 </script>
 
@@ -554,6 +690,65 @@ export const prerender = true;
     text-decoration: none;
   }
 
+  .compare-example {
+    margin-block: 2rem;
+    max-width: 78ch;
+  }
+  .compare-side-label {
+    display: block;
+    font-weight: 700;
+  }
+  [data-show-questions] {
+    margin-top: 1rem;
+  }
+  .compare-table :is(input, textarea, select):focus-visible {
+    outline: 3px solid #9a6719;
+    outline-offset: 2px;
+  }
+  @media screen and (max-width: 700px) {
+    .compare-table {
+      min-width: 0;
+    }
+    .compare-table thead {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip-path: inset(50%);
+    }
+    .compare-table tbody,
+    .compare-table tr {
+      display: block;
+    }
+    .compare-table tr {
+      padding: 0.7rem;
+      border-bottom: 2px solid #d7dfe4;
+    }
+    .compare-table tbody th,
+    .compare-table td:nth-child(n) {
+      display: block;
+      width: 100%;
+      padding: 0.45rem;
+      border: 0;
+    }
+    .compare-table td:nth-child(2)::before {
+      content: 'Offer A';
+      display: block;
+      font-weight: 700;
+    }
+    .compare-table td:nth-child(3)::before {
+      content: 'Offer B';
+      display: block;
+      font-weight: 700;
+    }
+    .compare-side-label {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip-path: inset(50%);
+    }
+  }
   @media (min-width: 720px) {
     .compare-summary {
       grid-template-columns: repeat(2, minmax(0, 1fr));

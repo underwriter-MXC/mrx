@@ -3,10 +3,14 @@ import { getCollection } from 'astro:content';
 import { activeGuides } from '../../data/guides';
 import { stateGuides } from '../../data/states';
 import { isPublishedPost } from '../../lib/content-graph';
+import { OWNER_STARTER_SLUGS } from '../../lib/owner-resource-priority';
 
-const posts = (await getCollection('posts', isPublishedPost))
-  .sort((a, b) => new Date(b.data.published_at).getTime() - new Date(a.data.published_at).getTime())
-  .slice(0, 3);
+const publicPosts = await getCollection('posts', isPublishedPost);
+const posts = OWNER_STARTER_SLUGS.slice(0, 3).map((slug) => {
+  const post = publicPosts.find((entry) => entry.id.replace(/\.mdx?$/, '') === slug);
+  if (!post) throw new Error('Missing published owner starting resource: ' + slug);
+  return post;
+});
 
 const assetRoot = '/assets/mrx-homepage-v4/hermes';
 const prompts = [
@@ -107,8 +111,8 @@ const commonQuestions = [
         <p class="mrx-eyebrow">Free nationwide mineral-rights guidance</p>
         <h1 id="home-title">Got a mineral rights offer? Get straight answers before you sign.</h1>
         <p class="mrx-home-hero__lede">
-          Ask Travis, a fictional MRX AI Guide, what may affect its value, whether the offer deserves
-          a closer look, and what to check next without pressure to sell.
+          Ask Travis, a fictional MRX AI Guide, what may affect its value, whether the offer
+          deserves a closer look, and what to check next without pressure to sell.
         </p>
         <div class="mrx-home-actions">
           <button class="mrx-primary" type="button" data-open-home-chat
@@ -362,7 +366,9 @@ const commonQuestions = [
         }
       </div>
       <p class="mrx-section-followup">
-        <a href="/learning-center/">Search the Learning Center →</a>
+        <a href="/mineral-rights-offer-comparison/">Compare two written offers →</a> ·
+        <a href="/sell-mineral-rights/">Explore selling or holding →</a> ·
+        <a href="/learning-center/">Search all reviewed resources →</a>
       </p>
     </div>
   </section>

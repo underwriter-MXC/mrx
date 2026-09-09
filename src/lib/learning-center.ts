@@ -1,3 +1,4 @@
+import { ownerResourcePriority } from './owner-resource-priority';
 import { getCollection, getEntry } from 'astro:content';
 import { isPublishedPost } from './content-graph';
 import { canonicalStaffSlug } from './staff-identity';
@@ -51,9 +52,7 @@ export async function getLearningCenterData() {
           categoryMap.get(post.data.category) || post.data.category.replaceAll('-', ' '),
         tags: post.data.tags,
         author: author?.data.name || 'MRX Editorial Team',
-        authorSlug: canonicalStaffSlug(
-          author?.id.replace(/\.mdx?$/, '') || 'mrx-editorial-team',
-        ),
+        authorSlug: canonicalStaffSlug(author?.id.replace(/\.mdx?$/, '') || 'mrx-editorial-team'),
         publishedAt: post.data.published_at,
         readingMinutes: Math.max(1, Math.round(post.body.split(/\s+/).length / 220)),
         heroImage: post.data.hero_image.src,
@@ -65,6 +64,7 @@ export async function getLearningCenterData() {
 
   items.sort(
     (a, b) =>
+      ownerResourcePriority(a.slug) - ownerResourcePriority(b.slug) ||
       Number(b.featured) - Number(a.featured) ||
       new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime() ||
       a.slug.localeCompare(b.slug),

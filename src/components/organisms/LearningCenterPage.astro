@@ -1,4 +1,5 @@
 ---
+import OwnerDecisionResources from './OwnerDecisionResources.astro';
 import MarketingLayout from '../../layouts/MarketingLayout.astro';
 import { archivePagePath, type ArchivePage } from '../../lib/archive-pagination';
 import type {
@@ -51,6 +52,7 @@ const nextPath =
       </p>
     </div>
   </section>
+  {currentPage === 1 && <OwnerDecisionResources />}
   <section class="mrx-section learning-center-section">
     <div class="container">
       <LearningCenterArchive
@@ -65,7 +67,7 @@ const nextPath =
       />
     </div>
   </section>
-  <PillarNavGrid eyebrow="Browse by topic" heading="All nine MRX1000 pillars in one place" />
+  <PillarNavGrid eyebrow="Browse by topic" heading="Explore mineral-rights topics" />
 </MarketingLayout>
 
 <style>

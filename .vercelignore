@@ -84,3 +84,6 @@ artifacts/mrx1000-release-10/release/*
 
 # Historical per-wave authoring utilities are not production build inputs.
 scripts/build-mrx1000-wave*
+
+# Preserve an unrelated local duplicate without uploading it to production.
+src/components/react/AccountHub 2.tsx

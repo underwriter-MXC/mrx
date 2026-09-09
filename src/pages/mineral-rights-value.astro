@@ -1,4 +1,5 @@
 ---
+import OwnerDecisionResources from '../components/organisms/OwnerDecisionResources.astro';
 import MarketingLayout from '../layouts/MarketingLayout.astro';
 import IntentPage from '../components/organisms/IntentPage.astro';
 import StaticPillarInventory from '../components/organisms/StaticPillarInventory.astro';
@@ -57,5 +58,6 @@ const inventory = await getPillarInventoryPage('mineral-rights-value');
       },
     ]}
   />
+  <OwnerDecisionResources />
   <StaticPillarInventory inventory={inventory} />
 </MarketingLayout>

@@ -1,5 +1,6 @@
 ---
 import { getEntry } from 'astro:content';
+import OwnerDecisionResources from '../components/organisms/OwnerDecisionResources.astro';
 import MarketingLayout from '../layouts/MarketingLayout.astro';
 import StaticPillarInventory from '../components/organisms/StaticPillarInventory.astro';
 import { getPillarInventoryPage } from '../lib/pillar-inventory';
@@ -24,5 +25,6 @@ export const prerender = true;
   faq={entry.data.faq}
 >
   <Content />
+  <OwnerDecisionResources />
   <StaticPillarInventory inventory={inventory} />
 </MarketingLayout>
