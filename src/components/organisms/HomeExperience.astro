@@ -1,6 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
-import { activeGuides, getGuide } from '../../data/guides';
+import { activeGuides } from '../../data/guides';
 import { stateGuides } from '../../data/states';
 import { isPublishedPost } from '../../lib/content-graph';
 
@@ -9,8 +9,6 @@ const posts = (await getCollection('posts', isPublishedPost))
   .slice(0, 3);
 
 const assetRoot = '/assets/mrx-homepage-v4/hermes';
-const travisGuide = getGuide('travis')!;
-
 const prompts = [
   {
     label: 'What are my minerals worth?',
@@ -109,8 +107,8 @@ const commonQuestions = [
         <p class="mrx-eyebrow">Free nationwide mineral-rights guidance</p>
         <h1 id="home-title">Got a mineral rights offer? Get straight answers before you sign.</h1>
         <p class="mrx-home-hero__lede">
-          Ask Travis what may affect its value, whether the offer deserves a closer look, and what to
-          check next without pressure to sell.
+          Ask Travis, a fictional MRX AI Guide, what may affect its value, whether the offer deserves
+          a closer look, and what to check next without pressure to sell.
         </p>
         <div class="mrx-home-actions">
           <button class="mrx-primary" type="button" data-open-home-chat
@@ -143,7 +141,7 @@ const commonQuestions = [
             height="256"
           />
           <span
-            ><strong>Travis™</strong><small>{travisGuide.chatRole}</small><em
+            ><strong>Travis™</strong><small>Fictional MRX AI Guide</small><em
               ><i aria-hidden="true"></i> Here now</em
             ></span
           >
@@ -178,8 +176,8 @@ const commonQuestions = [
           >
         </div>
         <p class="mrx-chat-preview__disclosure">
-          Educational information, not a certified appraisal or individualized legal, tax, or
-          financial advice.
+          Travis is not a human employee or licensed professional. Educational information only, not
+          a regulated valuation or individualized legal, tax, or financial advice.
         </p>
       </aside>
     </div>

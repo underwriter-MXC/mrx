@@ -173,8 +173,8 @@ export const ownerSituations: OwnerSituation[] = [
     answerTitle: 'Confirm with licensed advisers',
     answerPoints: [
       'Whether the property and transaction may qualify',
-      'Identification and closing deadlines',
-      'Qualified intermediary requirements',
+      'Which identification and closing deadlines advisers should verify',
+      'Which qualified intermediary requirements advisers should verify',
       'Ownership, entity, debt, and related-party issues',
     ],
     prompt:
@@ -183,13 +183,13 @@ export const ownerSituations: OwnerSituation[] = [
       {
         title: 'Do not rely on a buyer’s tax promise',
         paragraphs: [
-          'Eligibility depends on the facts, current law, and transaction structure. MRX can help prepare a question list, but only licensed tax and legal advisers should guide the transaction.',
+          'Eligibility depends on the facts, current law, and transaction structure. Current IRS rules can change. MRX can help prepare a question list, but only licensed tax and legal advisers should guide the transaction.',
         ],
       },
       {
         title: 'Timing can matter',
         paragraphs: [
-          'Discuss the possible exchange before signing or closing. Ask qualified advisers about current deadlines and documentation rather than relying on website summaries.',
+          'Discuss the possible exchange before signing or closing. Ask qualified advisers which current deadlines, documentation, and intermediary steps apply rather than relying on website summaries.',
         ],
       },
     ],

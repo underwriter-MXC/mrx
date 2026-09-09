@@ -18,7 +18,7 @@ faq:
   - question: 'Does this methodology produce a regulated or certified valuation?'
     answer: 'No. The methodology is published to show our work, not to claim a regulated or certified valuation. Our review is a directional underwriter assessment. For certified work, owners often consider engaging a Texas-licensed appraiser; we can help you think through when that makes sense.'
   - question: 'Do you use one number, or a range?'
-    answer: 'A range, with the assumptions stated. A single number is almost always a teaser.'
+    answer: 'A range, with the assumptions stated. A single number can hide assumptions unless the inputs and limits are stated.'
   - question: 'What is the most important factor in the range?'
     answer: 'Production history. Recent and historical production data, decline-curve context, and operator activity are typically the most informative inputs. The other factors in the table are layered on top of those.'
   - question: 'Will you tell me whether to sell?'
@@ -57,7 +57,7 @@ import CalloutBox from '../../components/molecules/CalloutBox.astro';
   secondaryCta={frontmatter.secondary_cta}
   cardHeading="What the DCF review weighs"
   cardItems={[
-    '12-24 months of historical production for the section',
+    'Recent or historical production records when available',
     'Decline-curve context: type, terminal rate, and basin',
     'Risk-adjusted discount rate, stated in the written review',
     'Offer-clause review if you have an LOI in hand',
@@ -124,8 +124,9 @@ import CalloutBox from '../../components/molecules/CalloutBox.astro';
     <Text
       class="text--lead u-mt-3 u-measure-64 u-mb-4"
     >
-      The factors below are the primary inputs to the DCF. Each carries a different weight in the
-      final range; we state the influence and the source so you can interrogate the result.
+      The factors below are primary inputs to the DCF when they are available. Each carries a
+      different weight in the final range; we state the influence and the source or internal
+      assumption so you can interrogate the result.
     </Text>
 
     <nav class="methodology-chip-rail" aria-label="Jump to DCF factor">
@@ -146,7 +147,7 @@ import CalloutBox from '../../components/molecules/CalloutBox.astro';
           id: 'dcf-production',
           factor: 'Production history',
           description:
-            '12-24 months of historical production for the section, when available; older production data may be used when newer data is unavailable.',
+            'Recent and historical production records when available; the period reviewed depends on the property, operator data, owner records, and public-source availability.',
           weight: 'high',
           source: 'Public Texas RRC data, operator disclosures, owner-supplied check stubs',
           whyItMoves:
@@ -158,7 +159,7 @@ import CalloutBox from '../../components/molecules/CalloutBox.astro';
           description:
             'Type of decline (exponential or hyperbolic), expected terminal rate, and basin context.',
           weight: 'high',
-          source: 'Operator decline-curve disclosures, MRX internal rate database',
+          source: 'Operator decline-curve disclosures; MRX internal underwriting assumptions',
           whyItMoves:
             'The decline shape changes how quickly expected royalty income falls over time.',
         },
@@ -198,7 +199,7 @@ import CalloutBox from '../../components/molecules/CalloutBox.astro';
           description:
             'A risk-adjusted rate reflecting operator, basin, and title confidence. Stated in the written review.',
           weight: 'high',
-          source: 'MRX internal rate card; reviewed periodically',
+          source: 'MRX internal underwriting assumptions; reviewed periodically',
           whyItMoves:
             'Higher uncertainty requires a higher discount rate, which lowers present value.',
         },
@@ -256,8 +257,9 @@ import CalloutBox from '../../components/molecules/CalloutBox.astro';
             It is not a single number
           </Heading>
           <Text>
-            A single number is almost always a teaser. The output of the review is a range with the
-            assumptions stated, so you can see how the answer moves when the inputs change.
+            A single number can hide assumptions unless the inputs and limits are stated. The output
+            of the review is a range with the assumptions stated, so you can see how the answer moves
+            when the inputs change.
           </Text>
         </div>
       </div>
@@ -331,7 +333,7 @@ import CalloutBox from '../../components/molecules/CalloutBox.astro';
         </Heading>
         <Text>
           Each review produces a low-to-high range with a central case, scaled to the interest you
-          hold. Not a single number, not a teaser.
+          hold, with stated inputs and limits.
         </Text>
       </article>
       <article class="methodology-output-card">
